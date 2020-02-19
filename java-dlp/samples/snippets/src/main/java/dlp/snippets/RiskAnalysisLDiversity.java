@@ -173,6 +173,7 @@ class RiskAnalysisLDiversity {
       }
     }
   }
+
   // handleMessage injects the job and settableFuture into the message reciever interface
   private static void handleMessage(
       DlpJob job,

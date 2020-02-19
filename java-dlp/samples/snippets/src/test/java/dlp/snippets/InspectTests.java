@@ -33,19 +33,16 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class InspectTests {
 
-  private ByteArrayOutputStream bout;
-
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String GCS_PATH = System.getenv("GCS_PATH");
   private static final String TOPIC_ID = System.getenv("PUB_SUB_TOPIC");
   private static final String SUBSCRIPTION_ID = System.getenv("PUB_SUB_SUBSCRIPTION");
   private static final String DATASET_ID = System.getenv("BIGQUERY_DATASET");
   private static final String TABLE_ID = System.getenv("BIGQUERY_TABLE");
-
   // TODO: Update as ENV_VARs
   private static final String datastoreNamespace = "";
   private static final String datastoreKind = "dlp";
-
+  private ByteArrayOutputStream bout;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(

@@ -16,6 +16,9 @@
 
 package dlp.snippets;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
+
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.CloudStorageOptions;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
@@ -23,129 +26,120 @@ import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectJobConfig;
 import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.ProjectName;
-import com.google.privacy.dlp.v2.StorageConfig;
 import com.google.privacy.dlp.v2.Schedule;
+import com.google.privacy.dlp.v2.StorageConfig;
 import com.google.protobuf.Duration;
-
-
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.io.IOException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 
 @RunWith(JUnit4.class)
 public class TriggersTests {
 
-    private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-    private static final String GCS_PATH = System.getenv("GCS_PATH");
+  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String GCS_PATH = System.getenv("GCS_PATH");
 
-    private ByteArrayOutputStream bout;
+  private ByteArrayOutputStream bout;
 
-    private static void requireEnvVar(String varName) {
-        assertNotNull(
-                String.format("Environment variable '%s' must be set to perform these tests.", varName),
-                System.getenv(varName));
+  private static void requireEnvVar(String varName) {
+    assertNotNull(
+        String.format("Environment variable '%s' must be set to perform these tests.", varName),
+        System.getenv(varName));
+  }
+
+  private static JobTrigger createTrigger() throws IOException {
+    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+      CloudStorageOptions cloudStorageOptions =
+          CloudStorageOptions.newBuilder()
+              .setFileSet(CloudStorageOptions.FileSet.newBuilder().setUrl(GCS_PATH))
+              .build();
+      StorageConfig storageConfig =
+          StorageConfig.newBuilder().setCloudStorageOptions(cloudStorageOptions).build();
+
+      InspectJobConfig inspectJobConfig =
+          InspectJobConfig.newBuilder()
+              .setInspectConfig(InspectConfig.newBuilder().build())
+              .setStorageConfig(storageConfig)
+              .build();
+
+      Duration duration = Duration.newBuilder().setSeconds(24 * 3600).build();
+      Schedule schedule = Schedule.newBuilder().setRecurrencePeriodDuration(duration).build();
+      JobTrigger.Trigger trigger = JobTrigger.Trigger.newBuilder().setSchedule(schedule).build();
+      JobTrigger jobTrigger =
+          JobTrigger.newBuilder()
+              .setInspectJob(inspectJobConfig)
+              .setStatus(JobTrigger.Status.HEALTHY)
+              .addTriggers(trigger)
+              .build();
+
+      CreateJobTriggerRequest createJobTriggerRequest =
+          CreateJobTriggerRequest.newBuilder()
+              .setParent(ProjectName.of(PROJECT_ID).toString())
+              .setJobTrigger(jobTrigger)
+              .build();
+
+      return dlpServiceClient.createJobTrigger(createJobTriggerRequest);
+    }
+  }
+
+  @BeforeClass
+  public static void checkRequirements() {
+    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+    requireEnvVar("GOOGLE_CLOUD_PROJECT");
+    requireEnvVar("GCS_PATH");
+  }
+
+  @Before
+  public void setUp() {
+    bout = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(bout));
+  }
+
+  @After
+  public void tearDown() {
+    System.setOut(null);
+    bout.reset();
+  }
+
+  @Test
+  public void testCreateTrigger() throws Exception {
+    TriggersCreate.createTrigger(PROJECT_ID, GCS_PATH);
+    String output = bout.toString();
+    assertThat(output, CoreMatchers.containsString("Created Trigger:"));
+  }
+
+  @Test
+  public void testListTrigger() throws Exception {
+    TriggersList.listTriggers(PROJECT_ID);
+    String output = bout.toString();
+    assertThat(output, CoreMatchers.containsString("DLP triggers found:"));
+  }
+
+  @Test
+  public void testDeleteTrigger() throws Exception {
+    JobTrigger trigger = createTrigger();
+    String triggerName = createTrigger().getName();
+    String triggerId;
+
+    Matcher matcher = Pattern.compile("jobTriggers/").matcher(triggerName);
+    if (matcher.find()) {
+      triggerId = triggerName.substring(matcher.end());
+    } else {
+      throw new Exception("Could not extract triggerID");
     }
 
-    private static JobTrigger createTrigger() throws IOException {
-        try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-            CloudStorageOptions cloudStorageOptions =
-                    CloudStorageOptions.newBuilder()
-                            .setFileSet(CloudStorageOptions.FileSet.newBuilder().setUrl(GCS_PATH))
-                            .build();
-            StorageConfig storageConfig =
-                    StorageConfig.newBuilder().setCloudStorageOptions(cloudStorageOptions).build();
-
-
-            InspectJobConfig inspectJobConfig =
-                    InspectJobConfig.newBuilder()
-                            .setInspectConfig(InspectConfig.newBuilder().build())
-                            .setStorageConfig(storageConfig)
-                            .build();
-
-            Duration duration = Duration.newBuilder().setSeconds(24 * 3600).build();
-            Schedule schedule = Schedule.newBuilder().setRecurrencePeriodDuration(duration).build();
-            JobTrigger.Trigger trigger = JobTrigger.Trigger.newBuilder().setSchedule(schedule).build();
-            JobTrigger jobTrigger =
-                    JobTrigger.newBuilder()
-                            .setInspectJob(inspectJobConfig)
-                            .setStatus(JobTrigger.Status.HEALTHY)
-                            .addTriggers(trigger)
-                            .build();
-
-            CreateJobTriggerRequest createJobTriggerRequest =
-                    CreateJobTriggerRequest.newBuilder()
-                            .setParent(ProjectName.of(PROJECT_ID).toString())
-                            .setJobTrigger(jobTrigger)
-                            .build();
-
-            return dlpServiceClient.createJobTrigger(createJobTriggerRequest);
-        }
-    }
-
-    @BeforeClass
-    public static void checkRequirements() {
-        requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-        requireEnvVar("GOOGLE_CLOUD_PROJECT");
-        requireEnvVar("GCS_PATH");
-    }
-
-    @Before
-    public void setUp() {
-        bout = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(bout));
-    }
-
-    @After
-    public void tearDown() {
-        System.setOut(null);
-        bout.reset();
-    }
-
-    @Test
-    public void testCreateTrigger() throws Exception {
-        TriggersCreate.createTrigger(PROJECT_ID, GCS_PATH);
-        String output = bout.toString();
-        assertThat(output, CoreMatchers.containsString("Created Trigger:"));
-    }
-
-    @Test
-    public void testListTrigger() throws Exception {
-        TriggersList.listTriggers(PROJECT_ID);
-        String output = bout.toString();
-        assertThat(output, CoreMatchers.containsString("DLP triggers found:"));
-    }
-
-    @Test
-    public void testDeleteTrigger() throws Exception {
-        JobTrigger trigger = createTrigger();
-        String triggerName = createTrigger().getName();
-        String triggerId;
-
-        Matcher matcher = Pattern.compile("jobTriggers/").matcher(triggerName);
-        if(matcher.find()) {
-            triggerId = triggerName.substring(matcher.end());
-        } else {
-            throw new Exception("Could not extract triggerID");
-        }
-
-        // Delete the job with the specified ID
-        TriggersDelete.deleteTrigger(PROJECT_ID, triggerId);
-        String output = bout.toString();
-        assertThat(output, CoreMatchers.containsString("Trigger deleted:"));
-    }
+    // Delete the job with the specified ID
+    TriggersDelete.deleteTrigger(PROJECT_ID, triggerId);
+    String output = bout.toString();
+    assertThat(output, CoreMatchers.containsString("Trigger deleted:"));
+  }
 }

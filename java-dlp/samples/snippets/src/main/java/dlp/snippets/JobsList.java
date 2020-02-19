@@ -23,43 +23,42 @@ import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpJobType;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ProjectName;
-
 import java.io.IOException;
 
 public class JobsList {
 
-    public static void listJobs() throws IOException {
-        // TODO(developer): Replace these variables before running the sample.
-        String projectId = "your-project-id";
-        listJobs(projectId);
+  public static void listJobs() throws IOException {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "your-project-id";
+    listJobs(projectId);
+  }
+
+  // Lists DLP jobs
+  public static void listJobs(String projectId) throws IOException {
+    // Initialize client that will be used to send requests. This client only needs to be created
+    // once, and can be reused for multiple requests. After completing all of your requests, call
+    // the "close" method on the client to safely clean up any remaining background resources.
+    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+
+      // Construct the request to be sent by the client.
+      // For more info on filters and job types,
+      // see https://cloud.google.com/dlp/docs/reference/rest/v2/projects.dlpJobs/list
+      ListDlpJobsRequest listDlpJobsRequest =
+          ListDlpJobsRequest.newBuilder()
+              .setParent(ProjectName.of(projectId).toString())
+              .setFilter("state=DONE")
+              .setType(DlpJobType.valueOf("INSPECT_JOB"))
+              .build();
+
+      // Send the request to list jobs and process the response
+      DlpServiceClient.ListDlpJobsPagedResponse response =
+          dlpServiceClient.listDlpJobs(listDlpJobsRequest);
+
+      System.out.println("DLP jobs found:");
+      for (DlpJob dlpJob : response.getPage().getValues()) {
+        System.out.println(dlpJob.getName() + " -- " + dlpJob.getState());
+      }
     }
-
-    // Lists DLP jobs
-    public static void listJobs(String projectId) throws IOException {
-        // Initialize client that will be used to send requests. This client only needs to be created
-        // once, and can be reused for multiple requests. After completing all of your requests, call
-        // the "close" method on the client to safely clean up any remaining background resources.
-        try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-
-            // Construct the request to be sent by the client.
-            // For more info on filters and job types,
-            // see https://cloud.google.com/dlp/docs/reference/rest/v2/projects.dlpJobs/list
-            ListDlpJobsRequest listDlpJobsRequest =
-                    ListDlpJobsRequest.newBuilder()
-                            .setParent(ProjectName.of(projectId).toString())
-                            .setFilter("state=DONE")
-                            .setType(DlpJobType.valueOf("INSPECT_JOB"))
-                            .build();
-
-            // Send the request to list jobs and process the response
-            DlpServiceClient.ListDlpJobsPagedResponse response =
-                    dlpServiceClient.listDlpJobs(listDlpJobsRequest);
-
-            System.out.println("DLP jobs found:");
-            for (DlpJob dlpJob : response.getPage().getValues()) {
-                System.out.println(dlpJob.getName() + " -- " + dlpJob.getState());
-            }
-        }
-    }
+  }
 }
 // [END dlp_list_jobs]

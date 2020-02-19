@@ -16,6 +16,11 @@
 
 package dlp.snippets;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
@@ -23,46 +28,39 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
-
 @RunWith(JUnit4.class)
-
 public class InfoTypesTests {
 
-    private ByteArrayOutputStream bout;
+  private ByteArrayOutputStream bout;
 
-    private static void requireEnvVar(String varName) {
-        assertNotNull(
-                String.format("Environment variable '%s' must be set to perform these tests.", varName),
-                System.getenv(varName));
-    }
+  private static void requireEnvVar(String varName) {
+    assertNotNull(
+        String.format("Environment variable '%s' must be set to perform these tests.", varName),
+        System.getenv(varName));
+  }
 
-    @Before
-    public void checkRequirements() {
-        requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    }
+  @Before
+  public void checkRequirements() {
+    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+  }
 
-    @Before
-    public void setUp() {
-        bout = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(bout));
-    }
+  @Before
+  public void setUp() {
+    bout = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(bout));
+  }
 
-    @After
-    public void tearDown() {
-        System.setOut(null);
-        bout.reset();
-    }
+  @After
+  public void tearDown() {
+    System.setOut(null);
+    bout.reset();
+  }
 
-    @Test
-    public void testListInfoTypes() throws Exception {
-        InfoTypesList.listInfoTypes();
-        String output = bout.toString();
-        assertThat(output, CoreMatchers.containsString("Name"));
-        assertThat(output, CoreMatchers.containsString("Display name"));
-    }
+  @Test
+  public void testListInfoTypes() throws Exception {
+    InfoTypesList.listInfoTypes();
+    String output = bout.toString();
+    assertThat(output, CoreMatchers.containsString("Name"));
+    assertThat(output, CoreMatchers.containsString("Display name"));
+  }
 }

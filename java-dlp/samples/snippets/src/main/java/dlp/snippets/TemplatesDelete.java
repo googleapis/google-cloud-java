@@ -17,37 +17,38 @@
 package dlp.snippets;
 
 // [START dlp_delete_inspect_template]
+
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
-
 import java.io.IOException;
 
 class TemplatesDelete {
 
-    public static void deleteInspectTemplate() throws IOException {
-        // TODO(developer): Replace these variables before running the sample.
-        String projectId = "your-project-id";
-        String templateId = "your-template-id";
-        deleteInspectTemplate(projectId, templateId);
+  public static void deleteInspectTemplate() throws IOException {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "your-project-id";
+    String templateId = "your-template-id";
+    deleteInspectTemplate(projectId, templateId);
+  }
+
+  // Delete an existing template
+  public static void deleteInspectTemplate(String projectId, String templateId) throws IOException {
+    // Construct the template name to be deleted
+    String templateName = String.format("projects/%s/inspectTemplates/%s", projectId, templateId);
+
+    // Initialize client that will be used to send requests. This client only needs to be created
+    // once, and can be reused for multiple requests. After completing all of your requests, call
+    // the "close" method on the client to safely clean up any remaining background resources.
+    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+
+      // Create delete template request to be sent by the client
+      DeleteInspectTemplateRequest request =
+          DeleteInspectTemplateRequest.newBuilder().setName(templateName).build();
+
+      // Send the request with the client
+      dlpServiceClient.deleteInspectTemplate(request);
+      System.out.printf("Deleted template: %s\n", templateName);
     }
-    // Delete an existing template
-    public static void deleteInspectTemplate(String projectId, String templateId) throws IOException{
-        // Construct the template name to be deleted
-        String templateName = String.format("projects/%s/inspectTemplates/%s", projectId, templateId);
-
-        // Initialize client that will be used to send requests. This client only needs to be created
-        // once, and can be reused for multiple requests. After completing all of your requests, call
-        // the "close" method on the client to safely clean up any remaining background resources.
-        try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-
-            // Create delete template request to be sent by the client
-            DeleteInspectTemplateRequest request =
-                    DeleteInspectTemplateRequest.newBuilder().setName(templateName).build();
-
-            // Send the request with the client
-            dlpServiceClient.deleteInspectTemplate(request);
-            System.out.printf("Deleted template: %s\n", templateName);
-        }
-    }
+  }
 }
 // [END dlp_delete_inspect_template]

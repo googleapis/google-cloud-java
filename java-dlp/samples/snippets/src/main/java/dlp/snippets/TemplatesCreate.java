@@ -17,69 +17,66 @@
 package dlp.snippets;
 
 // [START dlp_create_inspect_template]
+
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.InfoType;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.ProjectName;
-
 import java.io.IOException;
 import java.util.List;
-import java.util.stream.Stream;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 class TemplatesCreate {
 
-    public static void createInspectTemplate() throws IOException {
-        // TODO(developer): Replace these variables before running the sample.
-        String projectId = "your-project-id";
-        createInspectTemplate(projectId);
+  public static void createInspectTemplate() throws IOException {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "your-project-id";
+    createInspectTemplate(projectId);
+  }
+
+  // Creates a template to persist configuration information
+  public static void createInspectTemplate(String projectId) throws IOException {
+    // Initialize client that will be used to send requests. This client only needs to be created
+    // once, and can be reused for multiple requests. After completing all of your requests, call
+    // the "close" method on the client to safely clean up any remaining background resources.
+    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+      // Specify the type of info the inspection will look for.
+      // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types
+      List<InfoType> infoTypes =
+          Stream.of("PHONE_NUMBER", "EMAIL_ADDRESS", "CREDIT_CARD_NUMBER")
+              .map(it -> InfoType.newBuilder().setName(it).build())
+              .collect(Collectors.toList());
+
+      // Construct the inspection configuration for the template
+      InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
+
+      // Optionally set a display name and a description for the template
+      String displayName = "Inspection Config Template";
+      String description = "Save configuration for future inspection jobs";
+
+      // Build the template
+      InspectTemplate inspectTemplate =
+          InspectTemplate.newBuilder()
+              .setInspectConfig(inspectConfig)
+              .setDisplayName(displayName)
+              .setDescription(description)
+              .build();
+
+      // Create the request to be sent by the client
+      CreateInspectTemplateRequest createInspectTemplateRequest =
+          CreateInspectTemplateRequest.newBuilder()
+              .setParent(ProjectName.of(projectId).toString())
+              .setInspectTemplate(inspectTemplate)
+              .build();
+
+      // Send the request to the API and process the response
+      InspectTemplate response =
+          dlpServiceClient.createInspectTemplate(createInspectTemplateRequest);
+      System.out.printf("Template created: %s", response.getName());
     }
-
-    // Creates a template to persist configuration information
-    public static void createInspectTemplate(String projectId) throws IOException {
-        // Initialize client that will be used to send requests. This client only needs to be created
-        // once, and can be reused for multiple requests. After completing all of your requests, call
-        // the "close" method on the client to safely clean up any remaining background resources.
-        try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-            // Specify the type of info the inspection will look for.
-            // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types
-            List<InfoType> infoTypes =
-                    Stream.of("PHONE_NUMBER", "EMAIL_ADDRESS", "CREDIT_CARD_NUMBER")
-                            .map(it -> InfoType.newBuilder().setName(it).build())
-                            .collect(Collectors.toList());
-
-            // Construct the inspection configuration for the template
-            InspectConfig inspectConfig =
-                    InspectConfig.newBuilder()
-                            .addAllInfoTypes(infoTypes)
-                            .build();
-
-            // Optionally set a display name and a description for the template
-            String displayName = "Inspection Config Template";
-            String description = "Save configuration for future inspection jobs";
-
-            // Build the template
-            InspectTemplate inspectTemplate =
-                    InspectTemplate.newBuilder()
-                            .setInspectConfig(inspectConfig)
-                            .setDisplayName(displayName)
-                            .setDescription(description)
-                            .build();
-
-            // Create the request to be sent by the client
-            CreateInspectTemplateRequest createInspectTemplateRequest =
-                    CreateInspectTemplateRequest.newBuilder()
-                            .setParent(ProjectName.of(projectId).toString())
-                            .setInspectTemplate(inspectTemplate)
-                            .build();
-
-            // Send the request to the API and process the response
-            InspectTemplate response =
-                    dlpServiceClient.createInspectTemplate(createInspectTemplateRequest);
-            System.out.printf("Template created: %s", response.getName());
-        }
-    }
+  }
 }
 // [END dlp_create_inspect_template]

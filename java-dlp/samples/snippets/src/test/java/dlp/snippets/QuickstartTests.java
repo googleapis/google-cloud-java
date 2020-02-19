@@ -33,16 +33,14 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class QuickstartTests {
 
-  private ByteArrayOutputStream bout;
-
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private ByteArrayOutputStream bout;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
         String.format("Environment variable '%s' must be set to perform these tests.", varName),
         System.getenv(varName));
   }
-
 
   @BeforeClass
   public static void checkRequirements() {
