@@ -36,6 +36,8 @@ public class DatasetInfoTest {
       ImmutableList.of(
           Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
           Acl.of(new Acl.View(TableId.of("project", "dataset", "table"))));
+  private static final List<Acl> ACCESS_RULES_IAM_MEMBER =
+      ImmutableList.of(Acl.of(new Acl.IamMember("allUsers"), Acl.Role.READER));
   private static final Map<String, String> LABELS =
       ImmutableMap.of(
           "example-label1", "example-value1",
@@ -76,10 +78,15 @@ public class DatasetInfoTest {
           .setDatasetId(DATASET_ID_COMPLETE)
           .setAcl(ACCESS_RULES_COMPLETE)
           .build();
+  private static final DatasetInfo DATASET_INFO_COMPLETE_WITH_IAM_MEMBER =
+      DATASET_INFO.toBuilder().setAcl(ACCESS_RULES_IAM_MEMBER).build();
 
   @Test
   public void testToBuilder() {
     compareDatasets(DATASET_INFO, DATASET_INFO.toBuilder().build());
+    compareDatasets(
+        DATASET_INFO_COMPLETE_WITH_IAM_MEMBER,
+        DATASET_INFO_COMPLETE_WITH_IAM_MEMBER.toBuilder().build());
     DatasetInfo datasetInfo =
         DATASET_INFO
             .toBuilder()

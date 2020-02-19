@@ -28,8 +28,11 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.paging.Page;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.Date;
 import com.google.cloud.RetryOption;
+import com.google.cloud.bigquery.Acl;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetField;
@@ -373,6 +376,21 @@ public class ITBigQueryTest {
     assertNotNull(dataset.getGeneratedId());
     assertNotNull(dataset.getLastModified());
     assertNotNull(dataset.getSelfLink());
+  }
+
+  @Test
+  public void testDatasetUpdateAccess() throws IOException {
+    Dataset dataset = bigquery.getDataset(DATASET);
+    ServiceAccountCredentials credentials =
+        (ServiceAccountCredentials) GoogleCredentials.getApplicationDefault();
+    List<Acl> acl =
+        ImmutableList.of(
+            Acl.of(new Acl.Group("projectOwners"), Acl.Role.OWNER),
+            Acl.of(new Acl.User(credentials.getClientEmail()), Acl.Role.OWNER),
+            Acl.of(new Acl.IamMember("allUsers"), Acl.Role.READER));
+    Dataset remoteDataset = dataset.toBuilder().setAcl(acl).build().update();
+    assertNotNull(remoteDataset);
+    assertEquals(3, remoteDataset.getAcl().size());
   }
 
   @Test

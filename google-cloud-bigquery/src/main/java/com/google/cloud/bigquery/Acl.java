@@ -103,7 +103,8 @@ public final class Acl implements Serializable {
       DOMAIN,
       GROUP,
       USER,
-      VIEW
+      VIEW,
+      IAM_MEMBER
     }
 
     Entity(Type type) {
@@ -131,6 +132,9 @@ public final class Acl implements Serializable {
       }
       if (access.getView() != null) {
         return new View(TableId.fromPb(access.getView()));
+      }
+      if (access.getIamMember() != null) {
+        return new IamMember(access.getIamMember());
       }
       // Unreachable
       throw new BigQueryException(
@@ -380,6 +384,53 @@ public final class Acl implements Serializable {
     @Override
     Access toPb() {
       return new Access().setView(id.toPb());
+    }
+  }
+
+  /**
+   * Class for a BigQuery IamMember entity. Objects of this class represent a iamMember to grant
+   * access to given the IAM Policy.
+   */
+  public static final class IamMember extends Entity {
+
+    private final String iamMember;
+
+    /** Creates a iamMember entity given the iamMember. */
+    public IamMember(String iamMember) {
+      super(Type.IAM_MEMBER);
+      this.iamMember = iamMember;
+    }
+
+    /** Returns iamMember. */
+    public String getIamMember() {
+      return iamMember;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (this == obj) {
+        return true;
+      }
+      if (obj == null || getClass() != obj.getClass()) {
+        return false;
+      }
+      IamMember iam = (IamMember) obj;
+      return Objects.equals(getType(), iam.getType()) && Objects.equals(iamMember, iam.iamMember);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(getType(), iamMember);
+    }
+
+    @Override
+    public String toString() {
+      return toPb().toString();
+    }
+
+    @Override
+    Access toPb() {
+      return new Access().setIamMember(iamMember);
     }
   }
 
