@@ -36,16 +36,16 @@ public class InspectTests {
   private ByteArrayOutputStream bout;
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String GCS_PATH = System.getenv("GCS_PATH");
+  private static final String TOPIC_ID = System.getenv("PUB_SUB_TOPIC");
+  private static final String SUBSCRIPTION_ID = System.getenv("PUB_SUB_SUBSCRIPTION");
+  private static final String DATASET_ID = System.getenv("BIGQUERY_DATASET");
+  private static final String TABLE_ID = System.getenv("BIGQUERY_TABLE");
 
   // TODO: Update as ENV_VARs
-  private static final String bucketName = PROJECT_ID + "/dlp";
-  private static final String pubSubTopicId = "dlp-tests";
-  private static final String pubSubSubscriptionId = "dlp-test";
-
   private static final String datastoreNamespace = "";
   private static final String datastoreKind = "dlp";
 
-  private static final String BIGQUERY_DATASET = "integration_tests_dlp";
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -57,6 +57,11 @@ public class InspectTests {
   public void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("GOOGLE_CLOUD_PROJECT");
+    requireEnvVar("GCS_PATH");
+    requireEnvVar("PUB_SUB_TOPIC");
+    requireEnvVar("PUB_SUB_SUBSCRIPTION");
+    requireEnvVar("BIGQUERY_DATASET");
+    requireEnvVar("BIGQUERY_TABLE");
   }
 
   @Before
@@ -98,8 +103,7 @@ public class InspectTests {
 
   @Test
   public void testInspectGcsFile() throws InterruptedException, ExecutionException, IOException {
-    String gcsUri = String.format("gs://%s/test.txt", bucketName);
-    InspectGcsFile.inspectGcsFile(PROJECT_ID, gcsUri, pubSubTopicId, pubSubSubscriptionId);
+    InspectGcsFile.inspectGcsFile(PROJECT_ID, GCS_PATH, TOPIC_ID, SUBSCRIPTION_ID);
 
     String output = bout.toString();
     assertThat(output, containsString("Info type: PHONE_NUMBER"));
@@ -110,7 +114,7 @@ public class InspectTests {
   public void testInspectDatastoreEntity()
       throws InterruptedException, ExecutionException, IOException {
     InspectDatastoreEntity.insepctDatastoreEntity(
-        PROJECT_ID, datastoreNamespace, datastoreKind, pubSubTopicId, pubSubSubscriptionId);
+        PROJECT_ID, datastoreNamespace, datastoreKind, TOPIC_ID, SUBSCRIPTION_ID);
 
     String output = bout.toString();
     assertThat(output, containsString("Info type: PHONE_NUMBER"));
@@ -118,10 +122,10 @@ public class InspectTests {
   }
 
   @Test
-  public void testInspectBiqQueryTable()
+  public void testInspectBigQueryTable()
       throws InterruptedException, ExecutionException, IOException {
     InspectBigQueryTable.inspectBigQueryTable(
-        PROJECT_ID, BIGQUERY_DATASET, "harmful", pubSubTopicId, pubSubSubscriptionId);
+        PROJECT_ID, DATASET_ID, TABLE_ID, TOPIC_ID, SUBSCRIPTION_ID);
 
     String output = bout.toString();
     assertThat(output, containsString("Info type: PHONE_NUMBER"));

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.dlp;
+package dlp.snippets;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertNotNull;
@@ -26,67 +26,56 @@ import java.io.PrintStream;
 import java.util.regex.Pattern;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-// CHECKSTYLE OFF: AbbreviationAsWordInName
-public class RiskAnalysisIT {
+public class RiskAnalysisTests {
 
-  // CHECKSTYLE ON: AbbreviationAsWordInName
+  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String TOPIC_ID = System.getenv("PUB_SUB_TOPIC");
+  private static final String SUBSCRIPTION_ID = System.getenv("PUB_SUB_SUBSCRIPTION");
+  private static final String DATASET_ID = System.getenv("BIGQUERY_DATASET");
+  private static final String TABLE_ID = System.getenv("BIGQUERY_TABLE");
   private ByteArrayOutputStream bout;
-  private PrintStream out;
 
-  private String topicId = "dlp-tests";
-  private String subscriptionId = "dlp-test";
+  private static void requireEnvVar(String varName) {
+    assertNotNull(
+        String.format("Environment variable '%s' must be set to perform these tests.", varName),
+        System.getenv(varName));
+  }
+
+  @BeforeClass
+  public static void checkRequirements() {
+    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+    requireEnvVar("GOOGLE_CLOUD_PROJECT");
+    requireEnvVar("PUB_SUB_TOPIC");
+    requireEnvVar("PUB_SUB_SUBSCRIPTION");
+    requireEnvVar("BIGQUERY_DATASET");
+    requireEnvVar("BIGQUERY_TABLE");
+  }
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
-    assertNotNull(System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
-    assertNotNull(System.getenv("DLP_DEID_WRAPPED_KEY"));
-    assertNotNull(System.getenv("DLP_DEID_KEY_NAME"));
+    System.setOut(new PrintStream(bout));
   }
 
   @Test
   public void testNumericalStats() throws Exception {
-    RiskAnalysis.main(
-        new String[] {
-          "-n",
-          "-datasetId",
-          "integration_tests_dlp",
-          "-tableId",
-          "harmful",
-          "-columnName",
-          "Age",
-          "-topicId",
-          topicId,
-          "-subscriptionId",
-          subscriptionId
-        });
+    RiskAnalysisNumericalStats.numericalStatsAnalysis(
+        PROJECT_ID, DATASET_ID, TABLE_ID, TOPIC_ID, SUBSCRIPTION_ID);
     String output = bout.toString();
     assertThat(output, containsString("Value at "));
   }
 
   @Test
   public void testCategoricalStats() throws Exception {
-    RiskAnalysis.main(
-        new String[] {
-          "-c",
-          "-datasetId",
-          "integration_tests_dlp",
-          "-tableId",
-          "harmful",
-          "-columnName",
-          "Mystery",
-          "-topicId",
-          topicId,
-          "-subscriptionId",
-          subscriptionId
-        });
+    RiskAnalysisCategoricalStats.categoricalStatsAnalysis(
+        PROJECT_ID, DATASET_ID, TABLE_ID, TOPIC_ID, SUBSCRIPTION_ID);
+
     String output = bout.toString();
 
     assertTrue(Pattern.compile("Most common value occurs \\d time").matcher(output).find());
@@ -95,21 +84,8 @@ public class RiskAnalysisIT {
 
   @Test
   public void testKAnonymity() throws Exception {
-    RiskAnalysis.main(
-        new String[] {
-          "-a",
-          "-datasetId",
-          "integration_tests_dlp",
-          "-tableId",
-          "harmful",
-          "-quasiIdColumnNames",
-          "Age",
-          "Mystery",
-          "-topicId",
-          topicId,
-          "-subscriptionId",
-          subscriptionId
-        });
+    RiskAnalysisKAnonymity.calculateKAnonymity(
+        PROJECT_ID, DATASET_ID, TABLE_ID, TOPIC_ID, SUBSCRIPTION_ID);
     String output = bout.toString();
     assertTrue(Pattern.compile("Bucket size range: \\[\\d, \\d\\]").matcher(output).find());
     assertTrue(output.contains("Quasi-ID values: integer_value: 19"));
@@ -118,23 +94,8 @@ public class RiskAnalysisIT {
 
   @Test
   public void testLDiversity() throws Exception {
-    RiskAnalysis.main(
-        new String[] {
-          "-l",
-          "-datasetId",
-          "integration_tests_dlp",
-          "-tableId",
-          "harmful",
-          "-sensitiveAttribute",
-          "Name",
-          "-quasiIdColumnNames",
-          "Age",
-          "Mystery",
-          "-topicId",
-          topicId,
-          "-subscriptionId",
-          subscriptionId
-        });
+    RiskAnalysisLDiversity.calculateLDiversity(
+        PROJECT_ID, DATASET_ID, TABLE_ID, TOPIC_ID, SUBSCRIPTION_ID);
     String output = bout.toString();
     assertTrue(output.contains("Quasi-ID values: integer_value: 19"));
     assertTrue(output.contains("Class size: 1"));
@@ -143,26 +104,8 @@ public class RiskAnalysisIT {
 
   @Test
   public void testKMap() throws Exception {
-    RiskAnalysis.main(
-        new String[] {
-          "-m",
-          "-datasetId",
-          "integration_tests_dlp",
-          "-tableId",
-          "harmful",
-          "-topicId",
-          topicId,
-          "-subscriptionId",
-          subscriptionId,
-          "-regionCode",
-          "US",
-          "-quasiIdColumnNames",
-          "Age",
-          "Gender",
-          "-infoTypes",
-          "AGE",
-          "GENDER"
-        });
+    RiskAnalysisKMap.calculateKMap(PROJECT_ID, DATASET_ID, TABLE_ID, TOPIC_ID, SUBSCRIPTION_ID);
+
     String output = bout.toString();
 
     assertTrue(Pattern.compile("Anonymity range: \\[\\d, \\d]").matcher(output).find());
