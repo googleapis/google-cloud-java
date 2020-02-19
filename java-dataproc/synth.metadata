@@ -1,20 +1,6 @@
 {
-  "updateTime": "2020-02-14T22:46:21.912764Z",
+  "updateTime": "2020-02-18T23:48:43.590140Z",
   "sources": [
-    {
-      "git": {
-        "name": ".",
-        "remote": "https://github.com/googleapis/java-dataproc.git",
-        "sha": "66ffa4a49c49e04f31d46cb6727d8d8475c674a8"
-      }
-    },
-    {
-      "git": {
-        "name": "synthtool",
-        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
-        "sha": "dd7cd93888cbeb1d4c56a1ca814491c7813160e8"
-      }
-    },
     {
       "generator": {
         "name": "artman",
@@ -24,11 +10,25 @@
     },
     {
       "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-dataproc.git",
+        "sha": "7ffc22b6a0119c9d6302ebc8a60eaad97cc92a37"
+      }
+    },
+    {
+      "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d9835e922ea79eed8497db270d2f9f85099a519c",
-        "internalRef": "295185610",
-        "log": "d9835e922ea79eed8497db270d2f9f85099a519c\nUpdate some minor docs changes about user event proto\n\nPiperOrigin-RevId: 295185610\n\n5f311e416e69c170243de722023b22f3df89ec1c\nfix: use correct PHP package name in gapic configuration\n\nPiperOrigin-RevId: 295161330\n\n6cdd74dcdb071694da6a6b5a206e3a320b62dd11\npubsub: v1 add client config annotations and retry config\n\nPiperOrigin-RevId: 295158776\n\n5169f46d9f792e2934d9fa25c36d0515b4fd0024\nAdded cloud asset api v1p4beta1.\n\nPiperOrigin-RevId: 295026522\n\n56b55aa8818cd0a532a7d779f6ef337ba809ccbd\nFix: Resource annotations for CreateTimeSeriesRequest and ListTimeSeriesRequest should refer to valid resources. TimeSeries is not a named resource.\n\nPiperOrigin-RevId: 294931650\n\n"
+        "sha": "ab2685d8d3a0e191dc8aef83df36773c07cb3d06",
+        "internalRef": "295738415",
+        "log": "ab2685d8d3a0e191dc8aef83df36773c07cb3d06\nfix: Dataproc v1 - AutoscalingPolicy annotation\n\nThis adds the second resource name pattern to the\nAutoscalingPolicy resource.\n\nCommitter: @lukesneeringer\nPiperOrigin-RevId: 295738415\n\n8a1020bf6828f6e3c84c3014f2c51cb62b739140\nUpdate cloud asset api v1p4beta1.\n\nPiperOrigin-RevId: 295286165\n\n5cfa105206e77670369e4b2225597386aba32985\nAdd service control related proto build rule.\n\nPiperOrigin-RevId: 295262088\n\nee4dddf805072004ab19ac94df2ce669046eec26\nmonitoring v3: Add prefix \"https://cloud.google.com/\" into the link for global access\ncl 295167522, get ride of synth.py hacks\n\nPiperOrigin-RevId: 295238095\n\n"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
+        "sha": "dd7cd93888cbeb1d4c56a1ca814491c7813160e8"
       }
     },
     {
