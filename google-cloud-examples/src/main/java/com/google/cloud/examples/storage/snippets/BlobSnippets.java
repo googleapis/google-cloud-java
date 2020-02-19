@@ -32,17 +32,13 @@ import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Blob.BlobSourceOption;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.CopyWriter;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.StorageException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.ByteBuffer;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /** This class contains a number of snippets for the {@link Blob} class. */
@@ -93,87 +89,6 @@ public class BlobSnippets {
     }
     // [END reload]
     return latestBlob;
-  }
-
-  /** Example of replacing blob's metadata. */
-  // [TARGET update(BlobTargetOption...)]
-  public Blob update() {
-    // [START update]
-    Map<String, String> newMetadata = new HashMap<>();
-    newMetadata.put("key", "value");
-    blob.toBuilder().setMetadata(null).build().update();
-    Blob updatedBlob = blob.toBuilder().setMetadata(newMetadata).build().update();
-    // [END update]
-    return updatedBlob;
-  }
-
-  /**
-   * Example of deleting the blob, if its generation matches the {@link Blob#getGeneration()} value,
-   * otherwise a {@link StorageException} is thrown.
-   */
-  // [TARGET delete(BlobSourceOption...)]
-  public boolean delete() {
-    // [START delete]
-    boolean deleted = blob.delete(BlobSourceOption.generationMatch());
-    if (deleted) {
-      // the blob was deleted
-    } else {
-      // the blob was not found
-    }
-    // [END delete]
-    return deleted;
-  }
-
-  /** Example of copying the blob to a different bucket with a different name. */
-  // [TARGET copyTo(BlobId, BlobSourceOption...)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "copy_blob_name"]
-  public Blob copyToId(String bucketName, String blobName) {
-    // [START copyToId]
-    CopyWriter copyWriter = blob.copyTo(BlobId.of(bucketName, blobName));
-    Blob copiedBlob = copyWriter.getResult();
-    // [END copyToId]
-    return copiedBlob;
-  }
-
-  /** Example of copying the blob to a different bucket, keeping the original name. */
-  // [TARGET copyTo(String, BlobSourceOption...)]
-  // [VARIABLE "my_unique_bucket"]
-  public Blob copyToBucket(String bucketName) {
-    // [START copyToBucket]
-    CopyWriter copyWriter = blob.copyTo(bucketName);
-    Blob copiedBlob = copyWriter.getResult();
-    // [END copyToBucket]
-    return copiedBlob;
-  }
-
-  /** Example of copying the blob to a different bucket with a different name. */
-  // [TARGET copyTo(String, String, BlobSourceOption...)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "copy_blob_name"]
-  public Blob copyToStrings(String bucketName, String blobName) {
-    // [START copyToStrings]
-    CopyWriter copyWriter = blob.copyTo(bucketName, blobName);
-    Blob copiedBlob = copyWriter.getResult();
-    // [END copyToStrings]
-    return copiedBlob;
-  }
-
-  /** Example of moving a blob to a different bucket with a different name. */
-  // [TARGET copyTo(String, String, BlobSourceOption...)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "move_blob_name"]
-  public Blob moveTo(String destBucket, String destBlob) {
-    // [START storageMoveFile]
-    CopyWriter copyWriter = blob.copyTo(destBucket, destBlob);
-    Blob copiedBlob = copyWriter.getResult();
-    boolean deleted = blob.delete();
-    // [END storageMoveFile]
-    if (deleted) {
-      return copiedBlob;
-    } else {
-      return null;
-    }
   }
 
   /** Example of reading the blob's content through a reader. */

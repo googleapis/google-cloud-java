@@ -24,7 +24,6 @@ package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob;
@@ -82,35 +81,6 @@ public class BucketSnippets {
     Bucket updatedBucket = bucket.toBuilder().setVersioningEnabled(true).build().update();
     // [END update]
     return updatedBucket;
-  }
-
-  /**
-   * Example of deleting the bucket, if its metageneration matches the {@link
-   * Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
-   */
-  // [TARGET delete(BucketSourceOption...)]
-  public boolean delete() {
-    // [START delete]
-    boolean deleted = bucket.delete(BucketSourceOption.metagenerationMatch());
-    if (deleted) {
-      // the bucket was deleted
-    } else {
-      // the bucket was not found
-    }
-    // [END delete]
-    return deleted;
-  }
-
-  /** Example of listing the blobs in the bucket. */
-  // [TARGET list(BlobListOption...)]
-  public Page<Blob> listBlobs() {
-    // [START listBlobs]
-    Page<Blob> blobs = bucket.list();
-    for (Blob blob : blobs.iterateAll()) {
-      // do something with the blob
-    }
-    // [END listBlobs]
-    return blobs;
   }
 
   /**
