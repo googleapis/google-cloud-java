@@ -1,9 +1,16 @@
 {
-    "name": "google-cloud-speech",
-    "name_pretty": "Google Cloud Speech",
-    "release_level": "ga",
-    "language": "java",
-    "repo": "googleapis/java-speech",
-    "repo_short": "java-speech",
-    "distribution_name": "google-cloud-speech"
+  "name": "google-cloud-speech",
+  "name_pretty": "Cloud Speech",
+  "release_level": "ga",
+  "language": "java",
+  "repo": "googleapis/java-speech",
+  "repo_short": "java-speech",
+  "distribution_name": "com.google.cloud:google-cloud-speech",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-speech/latest/",
+  "transport": "grpc",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/559758",
+  "requires_billing": false,
+  "api_id": "speech.googleapis.com",
+  "product_documentation": "https://cloud.google.com/speech-to-text/docs/",
+  "api_description": "enables easy integration of Google speech recognition technologies into developer applications. Send audio and receive a text transcription from the Speech-to-Text API service."
 }
