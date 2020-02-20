@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.125.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.124.0...v0.125.0) (2020-02-18)
+
+
+### Features
+
+* add ArrowSerializationOptions to TableReadOptions ([#76](https://www.github.com/googleapis/java-bigquerystorage/issues/76)) ([df5d4cb](https://www.github.com/googleapis/java-bigquerystorage/commit/df5d4cba8f599ad60abc1266f75f63ffaa1d03e1))
+* re-generated  to pick up changes in the API or client library generator. ([#70](https://www.github.com/googleapis/java-bigquerystorage/issues/70)) ([3631965](https://www.github.com/googleapis/java-bigquerystorage/commit/363196550f5d5a7381ec88e3404d334475fe430e))
+* re-generated  to pick up changes in the API or client library generator. ([#74](https://www.github.com/googleapis/java-bigquerystorage/issues/74)) ([a41f1a7](https://www.github.com/googleapis/java-bigquerystorage/commit/a41f1a7bcffc1d2076ecbf4647eb2e128ba595be))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([#73](https://www.github.com/googleapis/java-bigquerystorage/issues/73)) ([a822658](https://www.github.com/googleapis/java-bigquerystorage/commit/a822658649c1c306933ea97d466f254b391622eb))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([#79](https://www.github.com/googleapis/java-bigquerystorage/issues/79)) ([2c1c640](https://www.github.com/googleapis/java-bigquerystorage/commit/2c1c64074d0012b9b3c9d729278f643e5fde1658))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([#78](https://www.github.com/googleapis/java-bigquerystorage/issues/78)) ([c4814dc](https://www.github.com/googleapis/java-bigquerystorage/commit/c4814dc0900e95828ae296ff44e4fa4b40daa6cd))
+* update dependency org.apache.avro:avro to v1.9.2 ([#77](https://www.github.com/googleapis/java-bigquerystorage/issues/77)) ([8f8fa6a](https://www.github.com/googleapis/java-bigquerystorage/commit/8f8fa6ae7163a295c3586c575751a6481341dc6b))
+
 ## [0.124.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.123.0...v0.124.0) (2020-02-07)
 
 
