@@ -2,12 +2,15 @@
   "name": "vision",
   "name_pretty": "Cloud Vision",
   "product_documentation": "https://cloud.google.com/vision/docs/",
-  "client_documentation": "https://googleapis.dev/java/java-vision/latest",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-vision/latest/",
   "issue_tracker": "https://issuetracker.google.com/issues?q=status:open%20componentid:187174",
   "release_level": "ga",
   "language": "java",
   "repo": "googleapis/java-vision",
   "repo_short": "java-vision",
   "distribution_name": "com.google.cloud:google-cloud-vision",
-  "api_id": "vision.googleapis.com"
+  "api_id": "vision.googleapis.com",
+  "transport": "grpc",
+  "requires_billing": true,
+  "api_description": "allows developers to easily integrate vision detection features within applications, including image labeling, face and landmark detection, optical character recognition (OCR), and tagging of explicit content."
 }
