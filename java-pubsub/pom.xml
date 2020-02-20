@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.102.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-pubsub:current} -->
+  <version>1.103.0</version><!-- {x-version-update:google-cloud-pubsub:current} -->
   <name>Google Cloud Pub/Sub Parent</name>
   <url>https://github.com/googleapis/java-pubsub</url>
   <description>
@@ -86,17 +86,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-pubsub-v1</artifactId>
-        <version>1.84.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-pubsub-v1:current} -->
+        <version>1.85.0</version><!-- {x-version-update:proto-google-cloud-pubsub-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-pubsub-v1</artifactId>
-        <version>1.84.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-pubsub-v1:current} -->
+        <version>1.85.0</version><!-- {x-version-update:grpc-google-cloud-pubsub-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-pubsub</artifactId>
-        <version>1.102.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-pubsub:current} -->
+        <version>1.103.0</version><!-- {x-version-update:google-cloud-pubsub:current} -->
       </dependency>
 
       <dependency>

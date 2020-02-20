@@ -37,16 +37,16 @@ If you are using Maven without a BOM, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub</artifactId>
-  <version>1.102.1</version>
+  <version>1.103.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-pubsub:1.102.1'
+compile 'com.google.cloud:google-cloud-pubsub:1.103.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.102.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.103.0"
 ```
 [//]: # ({x-version-update-end})
 
