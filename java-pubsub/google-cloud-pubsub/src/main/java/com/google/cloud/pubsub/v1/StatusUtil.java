@@ -36,6 +36,7 @@ final class StatusUtil {
       case CANCELLED:
       case RESOURCE_EXHAUSTED:
       case ABORTED:
+      case UNKNOWN:
         return true;
       case UNAVAILABLE:
         // TODO(pongad): check that ApiException propagate message properly.
