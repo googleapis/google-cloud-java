@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.107.0](https://www.github.com/googleapis/java-bigquery/compare/v1.106.0...v1.107.0) (2020-02-19)
+
+
+### Features
+
+* expose location field of model ([#175](https://www.github.com/googleapis/java-bigquery/issues/175)) ([646c2b4](https://www.github.com/googleapis/java-bigquery/commit/646c2b43b2ccbc609e0d5b85a7e4fbf502bb1243))
+* expose slotms field in querystage ([#172](https://www.github.com/googleapis/java-bigquery/issues/172)) ([4a82b3c](https://www.github.com/googleapis/java-bigquery/commit/4a82b3cd1aa821d72efc7046329db075c10ae344))
+
+
+### Bug Fixes
+
+* allUsers access ([#178](https://www.github.com/googleapis/java-bigquery/issues/178)) ([7464e23](https://www.github.com/googleapis/java-bigquery/commit/7464e234c00da047a06744eef6c7f281d90217cd))
+
+
+### Dependencies
+
+* update core dependencies to v1.92.5 ([#162](https://www.github.com/googleapis/java-bigquery/issues/162)) ([6ea4141](https://www.github.com/googleapis/java-bigquery/commit/6ea41413aed3d6cc81b9c4995a21f1017e268c74))
+* update core transport dependencies to v1.34.2 ([#168](https://www.github.com/googleapis/java-bigquery/issues/168)) ([c35069d](https://www.github.com/googleapis/java-bigquery/commit/c35069d4e91939e51f2101f2b8f93d2f67c089c5))
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20191211-1.30.8 ([#161](https://www.github.com/googleapis/java-bigquery/issues/161)) ([54872ba](https://www.github.com/googleapis/java-bigquery/commit/54872ba95ff0903817df217dfa6da883d43e6ace))
+* update dependency com.google.cloud:libraries-bom to v4 ([#159](https://www.github.com/googleapis/java-bigquery/issues/159)) ([95e4ff0](https://www.github.com/googleapis/java-bigquery/commit/95e4ff068dd8650ec0acebbe23e958c6e361ed36))
+* update dependency com.google.cloud:libraries-bom to v4.0.1 ([#167](https://www.github.com/googleapis/java-bigquery/issues/167)) ([633ea52](https://www.github.com/googleapis/java-bigquery/commit/633ea52ddc3677e8091c1f69283a864929227a17))
+* update dependency com.google.cloud:libraries-bom to v4.1.0 ([#170](https://www.github.com/googleapis/java-bigquery/issues/170)) ([6acedda](https://www.github.com/googleapis/java-bigquery/commit/6aceddad33da3055b24a8ae0420c25d85cfb09fb))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([#171](https://www.github.com/googleapis/java-bigquery/issues/171)) ([6f292f5](https://www.github.com/googleapis/java-bigquery/commit/6f292f52728992bfeb511b97b1dd778e1ef8db2c))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([#169](https://www.github.com/googleapis/java-bigquery/issues/169)) ([5212b2f](https://www.github.com/googleapis/java-bigquery/commit/5212b2f892074be36204fa9ef3e2dff7474828eb))
+
+
+### Documentation
+
+* broken links ([#154](https://www.github.com/googleapis/java-bigquery/issues/154)) ([e060aba](https://www.github.com/googleapis/java-bigquery/commit/e060aba2ed030a13e50f5e0f5597b3e04ad9c292))
+
 ## [1.106.0](https://www.github.com/googleapis/java-bigquery/compare/v1.105.0...v1.106.0) (2020-02-03)
 
 
