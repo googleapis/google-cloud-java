@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.123.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.122.0...v0.123.0) (2020-02-17)
+
+
+### Features
+
+* re-generated  to pick up changes in the API or client library generator. ([#52](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/52)) ([1b9ea95](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/1b9ea956803c8ffd4fa61d5d393b21bea73ea3cd))
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([#58](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/58)) ([fc741c7](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/fc741c7c0111b287b3ee81b56fb1e52ee26d5189))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([#57](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/57)) ([78450c0](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/78450c0241239dd31f26d6f54b3d32314be2eadc))
+
 ## [0.122.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.121.0...v0.122.0) (2020-02-03)
 
 
