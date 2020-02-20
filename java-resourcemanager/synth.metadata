@@ -1,11 +1,25 @@
 {
-  "updateTime": "2020-02-01T08:58:30.241177Z",
+  "updateTime": "2020-02-20T19:28:02.479801Z",
   "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "git@github.com:googleapis/java-resourcemanager.git",
+        "sha": "9b45906f307511460a77c57308c56b1ea8242bcc"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "git@github.com:chingor13/synthtool.git",
+        "sha": "703c4d78243009407f63a03a3f551cd5baf7e506"
+      }
+    },
     {
       "template": {
         "name": "java_library",
         "origin": "synthtool.gcp",
-        "version": "2019.10.17"
+        "version": "2020.2.4"
       }
     }
   ]
