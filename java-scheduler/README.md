@@ -23,7 +23,6 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     </dependency>
   </dependencies>
 </dependencyManagement>
-
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
@@ -80,6 +79,8 @@ to add `google-cloud-scheduler` as a dependency in your code.
 
 See the [Google Cloud Scheduler client library docs][javadocs] to learn how to
 use this Google Cloud Scheduler Client Library.
+
+
 
 
 
@@ -153,3 +154,4 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=cloudscheduler.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
