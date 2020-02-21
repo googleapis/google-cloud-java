@@ -299,11 +299,6 @@ public class ITStorageSnippets {
     assertNotNull(userAcl);
     assertEquals(USER_EMAIL, ((User) userAcl.getEntity()).getEmail());
 
-    acls =
-        Sets.newHashSet(
-            storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
-    assertTrue(acls.contains(updatedAcl));
-
     assertNotNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     assertTrue(storageSnippets.deleteBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
@@ -410,5 +405,20 @@ public class ITStorageSnippets {
 
     assertTrue(snippetOutput.contains("service"));
     assertTrue(snippetOutput.contains("@gs-project-accounts.iam.gserviceaccount.com"));
+  }
+
+  @Test
+  public void testDefaultKMSKey() {
+    Bucket bucket = storageSnippets.setDefaultKmsKey(BUCKET, KMS_KEY_NAME);
+    assertEquals(KMS_KEY_NAME, bucket.getDefaultKmsKeyName());
+    // Remove default key
+    storageSnippets.setDefaultKmsKey(BUCKET, null);
+  }
+
+  @Test
+  public void testCreateKMSEncryptedBlob() {
+    String blobName = "kms-encrypted-blob";
+    Blob blob = storageSnippets.createKmsEncrpytedBlob(BUCKET, blobName, KMS_KEY_NAME);
+    assertNotNull(blob);
   }
 }
