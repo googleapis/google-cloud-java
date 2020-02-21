@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-02-20T20:43:43.049060Z",
+  "updateTime": "2020-02-20T23:05:58.469408Z",
   "sources": [
     {
       "generator": {
@@ -11,23 +11,24 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/java-speech.git",
-        "sha": "b3e7ebc54ebb09046f607305038b54c39a0a78ed"
+        "remote": "https://github.com/googleapis/java-speech.git",
+        "sha": "655c24360c50a40db6ee127bb21029d05b49d494"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e76149c3d992337f85eeb45643106aacae7ede82",
-        "internalRef": "296266862"
+        "sha": "3eaaaf8626ce5b0c0bc7eee05e143beffa373b01",
+        "internalRef": "296274723",
+        "log": "3eaaaf8626ce5b0c0bc7eee05e143beffa373b01\nAdd BUILD.bazel for v1 secretmanager.googleapis.com\n\nPiperOrigin-RevId: 296274723\n\n"
       }
     },
     {
       "git": {
         "name": "synthtool",
-        "remote": "git@github.com:chingor13/synthtool.git",
-        "sha": "302381c57cc3ac6a34b0a714aaea9772341b19d0"
+        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
+        "sha": "706a38c26db42299845396cdae55db635c38794a"
       }
     },
     {

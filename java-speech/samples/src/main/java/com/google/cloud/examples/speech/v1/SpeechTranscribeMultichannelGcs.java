@@ -17,7 +17,9 @@
 // sample-metadata:
 //   title: Multi-Channel Audio Transcription (Cloud Storage)
 //   description: Transcribe a short audio file from Cloud Storage with multiple channels
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeMultichannelGcs [--args='[--storage_uri "gs://cloud-samples-data/speech/multi.wav"]']
+//   usage: gradle run
+// -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeMultichannelGcs
+// [--args='[--storage_uri "gs://cloud-samples-data/speech/multi.wav"]']
 
 package com.google.cloud.examples.speech.v1;
 

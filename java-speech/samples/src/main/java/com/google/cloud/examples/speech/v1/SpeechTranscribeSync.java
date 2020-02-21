@@ -17,7 +17,8 @@
 // sample-metadata:
 //   title: Transcribe Audio File (Local File)
 //   description: Transcribe a short audio file using synchronous speech recognition
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeSync [--args='[--local_file_path "resources/brooklyn_bridge.raw"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeSync
+// [--args='[--local_file_path "resources/brooklyn_bridge.raw"]']
 
 package com.google.cloud.examples.speech.v1;
 

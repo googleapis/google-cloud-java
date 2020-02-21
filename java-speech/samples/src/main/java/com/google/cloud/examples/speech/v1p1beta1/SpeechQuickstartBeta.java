@@ -17,7 +17,8 @@
 // sample-metadata:
 //   title: Quickstart Beta
 //   description: Performs synchronous speech recognition on an audio file
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechQuickstartBeta [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.mp3"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechQuickstartBeta
+// [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.mp3"]']
 
 package com.google.cloud.examples.speech.v1p1beta1;
 

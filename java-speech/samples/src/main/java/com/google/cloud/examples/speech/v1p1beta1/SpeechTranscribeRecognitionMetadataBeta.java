@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_recognition_metadata_beta")
+// DO NOT EDIT! This is a generated sample ("Request",
+// "speech_transcribe_recognition_metadata_beta")
 // sample-metadata:
 //   title: Adding recognition metadata (Local File) (Beta)
 //   description: Adds additional details short audio file included in this recognition request
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeRecognitionMetadataBeta [--args='[--local_file_path "resources/commercial_mono.wav"]']
+//   usage: gradle run
+// -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeRecognitionMetadataBeta
+// [--args='[--local_file_path "resources/commercial_mono.wav"]']
 
 package com.google.cloud.examples.speech.v1p1beta1;
 

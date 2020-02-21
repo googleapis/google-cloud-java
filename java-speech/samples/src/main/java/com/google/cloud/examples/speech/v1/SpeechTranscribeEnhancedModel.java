@@ -17,7 +17,8 @@
 // sample-metadata:
 //   title: Using Enhanced Models (Local File)
 //   description: Transcribe a short audio file using an enhanced model
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeEnhancedModel [--args='[--local_file_path "resources/hello.wav"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeEnhancedModel
+// [--args='[--local_file_path "resources/hello.wav"]']
 
 package com.google.cloud.examples.speech.v1;
 

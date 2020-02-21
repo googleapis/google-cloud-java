@@ -13,11 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_word_level_confidence_beta")
+// DO NOT EDIT! This is a generated sample ("Request",
+// "speech_transcribe_word_level_confidence_beta")
 // sample-metadata:
 //   title: Enabling word-level confidence (Local File) (Beta)
-//   description: Print confidence level for individual words in a transcription of a short audio file.
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeWordLevelConfidenceBeta [--args='[--local_file_path "resources/brooklyn_bridge.flac"]']
+//   description: Print confidence level for individual words in a transcription of a short audio
+// file.
+//   usage: gradle run
+// -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeWordLevelConfidenceBeta
+// [--args='[--local_file_path "resources/brooklyn_bridge.flac"]']
 
 package com.google.cloud.examples.speech.v1p1beta1;
 

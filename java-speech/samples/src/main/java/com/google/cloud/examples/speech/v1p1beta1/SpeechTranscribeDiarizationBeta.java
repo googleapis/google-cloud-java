@@ -13,12 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",  "speech_transcribe_diarization_beta")
+// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",
+// "speech_transcribe_diarization_beta")
 // sample-metadata:
 //   title: Separating different speakers (Local File) (LRO) (Beta)
-//   description: Print confidence level for individual words in a transcription of a short audio file
+//   description: Print confidence level for individual words in a transcription of a short audio
+// file
 //     Separating different speakers in an audio file recording
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeDiarizationBeta [--args='[--local_file_path "resources/commercial_mono.wav"]']
+//   usage: gradle run
+// -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeDiarizationBeta
+// [--args='[--local_file_path "resources/commercial_mono.wav"]']
 
 package com.google.cloud.examples.speech.v1p1beta1;
 

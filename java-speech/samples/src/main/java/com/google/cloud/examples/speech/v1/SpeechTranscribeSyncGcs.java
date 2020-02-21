@@ -16,8 +16,10 @@
 // DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_sync_gcs")
 // sample-metadata:
 //   title: Transcript Audio File (Cloud Storage)
-//   description: Transcribe short audio file from Cloud Storage using synchronous speech recognition
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeSyncGcs [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.raw"]']
+//   description: Transcribe short audio file from Cloud Storage using synchronous speech
+// recognition
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeSyncGcs
+// [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.raw"]']
 
 package com.google.cloud.examples.speech.v1;
 

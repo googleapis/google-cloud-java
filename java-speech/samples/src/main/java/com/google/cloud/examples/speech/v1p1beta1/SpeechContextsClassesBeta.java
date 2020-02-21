@@ -17,7 +17,9 @@
 // sample-metadata:
 //   title: Using Context Classes (Cloud Storage)
 //   description: Transcribe a short audio file with static context classes.
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechContextsClassesBeta [--args='[--storage_uri "gs://cloud-samples-data/speech/time.mp3"] [--phrase "$TIME"]']
+//   usage: gradle run
+// -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechContextsClassesBeta
+// [--args='[--storage_uri "gs://cloud-samples-data/speech/time.mp3"] [--phrase "$TIME"]']
 
 package com.google.cloud.examples.speech.v1p1beta1;
 

@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",  "speech_transcribe_async_gcs")
+// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",
+// "speech_transcribe_async_gcs")
 // sample-metadata:
 //   title: Transcript Audio File using Long Running Operation (Cloud Storage) (LRO)
-//   description: Transcribe long audio file from Cloud Storage using asynchronous speech recognition
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeAsyncGcs [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.raw"]']
+//   description: Transcribe long audio file from Cloud Storage using asynchronous speech
+// recognition
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeAsyncGcs
+// [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.raw"]']
 
 package com.google.cloud.examples.speech.v1;
 

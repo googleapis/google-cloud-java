@@ -16,8 +16,11 @@
 // DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_multilanguage_beta")
 // sample-metadata:
 //   title: Detecting language spoken automatically (Local File) (Beta)
-//   description: Transcribe a short audio file with language detected from a list of possible languages
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeMultilanguageBeta [--args='[--local_file_path "resources/brooklyn_bridge.flac"]']
+//   description: Transcribe a short audio file with language detected from a list of possible
+// languages
+//   usage: gradle run
+// -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeMultilanguageBeta
+// [--args='[--local_file_path "resources/brooklyn_bridge.flac"]']
 
 package com.google.cloud.examples.speech.v1p1beta1;
 

@@ -17,7 +17,9 @@
 // sample-metadata:
 //   title: Getting punctuation in results (Local File) (Beta)
 //   description: Transcribe a short audio file with punctuation
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeAutoPunctuationBeta [--args='[--local_file_path "resources/commercial_mono.wav"]']
+//   usage: gradle run
+// -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeAutoPunctuationBeta
+// [--args='[--local_file_path "resources/commercial_mono.wav"]']
 
 package com.google.cloud.examples.speech.v1p1beta1;
 

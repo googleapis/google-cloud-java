@@ -16,8 +16,11 @@
 // DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_model_selection_gcs")
 // sample-metadata:
 //   title: Selecting a Transcription Model (Cloud Storage)
-//   description: Transcribe a short audio file from Cloud Storage using a specified transcription model
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeModelSelectionGcs [--args='[--storage_uri "gs://cloud-samples-data/speech/hello.wav"] [--model "phone_call"]']
+//   description: Transcribe a short audio file from Cloud Storage using a specified transcription
+// model
+//   usage: gradle run
+// -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeModelSelectionGcs
+// [--args='[--storage_uri "gs://cloud-samples-data/speech/hello.wav"] [--model "phone_call"]']
 
 package com.google.cloud.examples.speech.v1;
 

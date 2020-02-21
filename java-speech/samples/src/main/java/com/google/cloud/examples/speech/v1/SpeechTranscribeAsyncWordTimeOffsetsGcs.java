@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",  "speech_transcribe_async_word_time_offsets_gcs")
+// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",
+// "speech_transcribe_async_word_time_offsets_gcs")
 // sample-metadata:
 //   title: Getting word timestamps (Cloud Storage) (LRO)
 //   description: Print start and end time of each word spoken in audio file from Cloud Storage
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeAsyncWordTimeOffsetsGcs [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.flac"]']
+//   usage: gradle run
+// -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeAsyncWordTimeOffsetsGcs
+// [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.flac"]']
 
 package com.google.cloud.examples.speech.v1;
 

@@ -17,7 +17,8 @@
 // sample-metadata:
 //   title: Multi-Channel Audio Transcription (Local File)
 //   description: Transcribe a short audio file with multiple channels
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeMultichannel [--args='[--local_file_path "resources/multi.wav"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeMultichannel
+// [--args='[--local_file_path "resources/multi.wav"]']
 
 package com.google.cloud.examples.speech.v1;
 

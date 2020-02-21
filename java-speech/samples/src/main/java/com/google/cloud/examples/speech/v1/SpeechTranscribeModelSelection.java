@@ -17,7 +17,9 @@
 // sample-metadata:
 //   title: Selecting a Transcription Model (Local File)
 //   description: Transcribe a short audio file using a specified transcription model
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeModelSelection [--args='[--local_file_path "resources/hello.wav"] [--model "phone_call"]']
+//   usage: gradle run
+// -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeModelSelection
+// [--args='[--local_file_path "resources/hello.wav"] [--model "phone_call"]']
 
 package com.google.cloud.examples.speech.v1;
 

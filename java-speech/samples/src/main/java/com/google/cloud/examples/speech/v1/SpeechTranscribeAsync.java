@@ -17,7 +17,8 @@
 // sample-metadata:
 //   title: Transcribe Audio File using Long Running Operation (Local File) (LRO)
 //   description: Transcribe a long audio file using asynchronous speech recognition
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeAsync [--args='[--local_file_path "resources/brooklyn_bridge.raw"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeAsync
+// [--args='[--local_file_path "resources/brooklyn_bridge.raw"]']
 
 package com.google.cloud.examples.speech.v1;
 
