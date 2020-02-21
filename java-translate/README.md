@@ -23,7 +23,6 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     </dependency>
   </dependencies>
 </dependencyManagement>
-
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
@@ -161,6 +160,8 @@ we put together all the code shown above into one program. The program assumes t
 Default Credentials or a valid API key are available.
 
 
+
+
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
@@ -230,3 +231,4 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=translation.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
