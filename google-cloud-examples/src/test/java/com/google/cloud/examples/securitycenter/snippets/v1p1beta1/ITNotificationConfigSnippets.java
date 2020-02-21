@@ -18,6 +18,7 @@ package com.google.cloud.examples.securitycenter.snippets.v1p1beta1;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
 import org.junit.Test;
 
 /** Smoke tests for {@link NotificationConfigSnippets} */
