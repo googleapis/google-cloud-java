@@ -64,6 +64,7 @@ public class NotificationReceiver {
           Subscriber.newBuilder(subscriptionName, new NotificationMessageReceiver()).build();
       subscriber.startAsync().awaitRunning();
 
+      // This sets the timeout value of the subscriber to 10s.
       subscriber.awaitTerminated(10_000, TimeUnit.MILLISECONDS);
     } catch (IllegalStateException | TimeoutException e) {
       System.out.println("Subscriber stopped: " + e);

@@ -32,7 +32,7 @@ final class NotificationConfigSnippets {
   private NotificationConfigSnippets() {}
 
   public static NotificationConfig createNotificationConfig(
-      String organizationId, String pubsubTopic, String notificationConfigId) {
+      String organizationId, String pubsubTopic, String notificationConfigId) throws IOException {
 
     // [START scc_create_notification_config]
     // TODO(UpdateMe) String organizationId = "{your-org-id}";
@@ -60,14 +60,12 @@ final class NotificationConfigSnippets {
       NotificationConfig response = client.createNotificationConfig(request);
       System.out.println(String.format("Notification config was created: %s", response));
       return response;
-    } catch (IOException e) {
-      throw new RuntimeException(e);
     }
     // [END scc_create_notification_config]
   }
 
   public static boolean deleteNotificationConfig(
-      String organizationId, String notificationConfigId) {
+      String organizationId, String notificationConfigId) throws IOException {
 
     // [START scc_delete_notification_config]
     // TODO(UpdateMe) String organizationId = "{your-org-id}";
@@ -83,8 +81,6 @@ final class NotificationConfigSnippets {
       client.deleteNotificationConfig(notificationConfigName);
 
       System.out.println(String.format("Deleted Notification config: %s", notificationConfigName));
-    } catch (IOException e) {
-      throw new RuntimeException(e);
     }
     // [END scc_delete_notification_config]
 
@@ -92,7 +88,7 @@ final class NotificationConfigSnippets {
   }
 
   public static NotificationConfig getNotificationConfig(
-      String organizationId, String notificationConfigId) {
+      String organizationId, String notificationConfigId) throws IOException {
 
     // [START scc_get_notification_config]
     // TODO(UpdateMe) String organizationId = "{your-org-id}";
@@ -108,13 +104,11 @@ final class NotificationConfigSnippets {
 
       System.out.println(String.format("Notification config: %s", response));
       return response;
-    } catch (IOException e) {
-      throw new RuntimeException(e);
     }
     // [END scc_get_notification_config]
   }
 
-  public static ImmutableList<NotificationConfig> listNotificationConfigs(String organizationId) {
+  public static ImmutableList<NotificationConfig> listNotificationConfigs(String organizationId) throws IOException {
     // [START scc_list_notification_configs]
     // TODO(UpdateMe) String organizationId = "{your-org-id}";
 
@@ -129,14 +123,12 @@ final class NotificationConfigSnippets {
       System.out.println(
           String.format("List notifications response: %s", response.getPage().getValues()));
       return notificationConfigs;
-    } catch (IOException e) {
-      throw new RuntimeException(e);
     }
     // [END scc_list_notification_configs]
   }
 
   public static NotificationConfig updateNotificationConfig(
-      String organizationId, String notificationConfigId, String pubsubTopic) {
+      String organizationId, String notificationConfigId, String pubsubTopic) throws IOException {
     // [START scc_update_notification_config]
     // TODO(UpdateMe) String organizationId = "{your-org-id}";
     // TODO(UpdateMe) String notificationConfigId = "{your-config-id}";
@@ -161,8 +153,6 @@ final class NotificationConfigSnippets {
 
       System.out.println(String.format("Notification config: %s", updatedConfig));
       return updatedConfig;
-    } catch (IOException e) {
-      throw new RuntimeException(e);
     }
     // [END scc_update_notification_config]
   }
