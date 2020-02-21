@@ -24,7 +24,7 @@ import org.junit.Test;
 public class ITNotificationConfigSnippets {
 
   @Test
-  public void testCreateNotificationConfig() {
+  public void testCreateNotificationConfig() throws IOException {
     assertNotNull(
         NotificationConfigSnippets.createNotificationConfig(
             getOrganizationId(), getPubsubTopic(), "java-notification-config-create"));
@@ -33,7 +33,7 @@ public class ITNotificationConfigSnippets {
   }
 
   @Test
-  public void testDeleteNotificationConfig() {
+  public void testDeleteNotificationConfig() throws IOException {
     createConfig("java-notification-config-delete");
 
     assertTrue(
@@ -42,7 +42,7 @@ public class ITNotificationConfigSnippets {
   }
 
   @Test
-  public void testListNotificationConfig() {
+  public void testListNotificationConfig() throws IOException {
     createConfig("java-notification-config-list");
 
     assertNotNull(NotificationConfigSnippets.listNotificationConfigs(getOrganizationId()));
@@ -51,7 +51,7 @@ public class ITNotificationConfigSnippets {
   }
 
   @Test
-  public void testGetNotificationConfig() {
+  public void testGetNotificationConfig() throws IOException {
     createConfig("java-notification-config-get");
 
     assertNotNull(
@@ -62,7 +62,7 @@ public class ITNotificationConfigSnippets {
   }
 
   @Test
-  public void testUpdateNotificationConfig() {
+  public void testUpdateNotificationConfig() throws IOException {
     createConfig("java-notification-config-update");
 
     assertNotNull(
@@ -72,12 +72,12 @@ public class ITNotificationConfigSnippets {
     deleteConfig("java-notification-config-update");
   }
 
-  private static void createConfig(String configId) {
+  private static void createConfig(String configId) throws IOException {
     NotificationConfigSnippets.createNotificationConfig(
         getOrganizationId(), getPubsubTopic(), configId);
   }
 
-  private static void deleteConfig(String configId) {
+  private static void deleteConfig(String configId) throws IOException {
     assertTrue(NotificationConfigSnippets.deleteNotificationConfig(getOrganizationId(), configId));
   }
 
