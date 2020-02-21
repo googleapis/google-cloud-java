@@ -62,14 +62,21 @@ integration)
     bash .kokoro/coerce_logs.sh
     ;;
 samples)
-    mvn -B \
-      -Penable-samples \
-      -DtrimStackTrace=false \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -fae \
-      verify
-    bash .kokoro/coerce_logs.sh
+    if [[ -f samples/pom.xml ]]
+    then
+        pushd samples
+        mvn -B \
+          -Penable-samples \
+          -DtrimStackTrace=false \
+          -Dclirr.skip=true \
+          -Denforcer.skip=true \
+          -fae \
+          verify
+        bash .kokoro/coerce_logs.sh
+        popd
+    else
+        echo "no sample pom.xml found - skipping sample tests"
+    fi
     ;;
 clirr)
     mvn -B -Denforcer.skip=true clirr:check

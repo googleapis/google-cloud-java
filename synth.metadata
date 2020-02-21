@@ -1,11 +1,25 @@
 {
-  "updateTime": "2020-02-01T09:13:37.746201Z",
+  "updateTime": "2020-02-21T23:10:53.290677Z",
   "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-logging-logback.git",
+        "sha": "eb7cd0d4a9ea0e1e1acd1b99fec081213d7f67ee"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
+        "sha": "706a38c26db42299845396cdae55db635c38794a"
+      }
+    },
     {
       "template": {
         "name": "java_library",
         "origin": "synthtool.gcp",
-        "version": "2019.10.17"
+        "version": "2020.2.4"
       }
     }
   ]
