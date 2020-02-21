@@ -1,11 +1,25 @@
 {
-  "updateTime": "2020-02-01T09:13:12.848928Z",
+  "updateTime": "2020-02-21T23:10:24.226106Z",
   "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-core.git",
+        "sha": "2e52f8a5a267b8cf43b696011c305ed33cf0762f"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
+        "sha": "706a38c26db42299845396cdae55db635c38794a"
+      }
+    },
     {
       "template": {
         "name": "java_library",
         "origin": "synthtool.gcp",
-        "version": "2019.10.17"
+        "version": "2020.2.4"
       }
     }
   ]
