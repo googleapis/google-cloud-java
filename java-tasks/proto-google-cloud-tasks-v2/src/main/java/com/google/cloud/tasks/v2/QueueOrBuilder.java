@@ -378,4 +378,46 @@ public interface QueueOrBuilder
    * <code>.google.protobuf.Timestamp purge_time = 6;</code>
    */
   com.google.protobuf.TimestampOrBuilder getPurgeTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for writing logs to
+   * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+   * field is unset, then no logs are written.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+   *
+   * @return Whether the stackdriverLoggingConfig field is set.
+   */
+  boolean hasStackdriverLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for writing logs to
+   * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+   * field is unset, then no logs are written.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+   *
+   * @return The stackdriverLoggingConfig.
+   */
+  com.google.cloud.tasks.v2.StackdriverLoggingConfig getStackdriverLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for writing logs to
+   * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+   * field is unset, then no logs are written.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+   */
+  com.google.cloud.tasks.v2.StackdriverLoggingConfigOrBuilder
+      getStackdriverLoggingConfigOrBuilder();
 }

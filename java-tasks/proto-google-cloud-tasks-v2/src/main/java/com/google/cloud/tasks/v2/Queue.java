@@ -150,6 +150,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 74:
+            {
+              com.google.cloud.tasks.v2.StackdriverLoggingConfig.Builder subBuilder = null;
+              if (stackdriverLoggingConfig_ != null) {
+                subBuilder = stackdriverLoggingConfig_.toBuilder();
+              }
+              stackdriverLoggingConfig_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2.StackdriverLoggingConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(stackdriverLoggingConfig_);
+                stackdriverLoggingConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -820,6 +837,58 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     return getPurgeTime();
   }
 
+  public static final int STACKDRIVER_LOGGING_CONFIG_FIELD_NUMBER = 9;
+  private com.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriverLoggingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for writing logs to
+   * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+   * field is unset, then no logs are written.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+   *
+   * @return Whether the stackdriverLoggingConfig field is set.
+   */
+  public boolean hasStackdriverLoggingConfig() {
+    return stackdriverLoggingConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for writing logs to
+   * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+   * field is unset, then no logs are written.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+   *
+   * @return The stackdriverLoggingConfig.
+   */
+  public com.google.cloud.tasks.v2.StackdriverLoggingConfig getStackdriverLoggingConfig() {
+    return stackdriverLoggingConfig_ == null
+        ? com.google.cloud.tasks.v2.StackdriverLoggingConfig.getDefaultInstance()
+        : stackdriverLoggingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for writing logs to
+   * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+   * field is unset, then no logs are written.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+   */
+  public com.google.cloud.tasks.v2.StackdriverLoggingConfigOrBuilder
+      getStackdriverLoggingConfigOrBuilder() {
+    return getStackdriverLoggingConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -852,6 +921,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     if (purgeTime_ != null) {
       output.writeMessage(6, getPurgeTime());
     }
+    if (stackdriverLoggingConfig_ != null) {
+      output.writeMessage(9, getStackdriverLoggingConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -880,6 +952,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     }
     if (purgeTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getPurgeTime());
+    }
+    if (stackdriverLoggingConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, getStackdriverLoggingConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -914,6 +991,10 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     if (hasPurgeTime()) {
       if (!getPurgeTime().equals(other.getPurgeTime())) return false;
     }
+    if (hasStackdriverLoggingConfig() != other.hasStackdriverLoggingConfig()) return false;
+    if (hasStackdriverLoggingConfig()) {
+      if (!getStackdriverLoggingConfig().equals(other.getStackdriverLoggingConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -944,6 +1025,10 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     if (hasPurgeTime()) {
       hash = (37 * hash) + PURGE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getPurgeTime().hashCode();
+    }
+    if (hasStackdriverLoggingConfig()) {
+      hash = (37 * hash) + STACKDRIVER_LOGGING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getStackdriverLoggingConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1118,6 +1203,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         purgeTime_ = null;
         purgeTimeBuilder_ = null;
       }
+      if (stackdriverLoggingConfigBuilder_ == null) {
+        stackdriverLoggingConfig_ = null;
+      } else {
+        stackdriverLoggingConfig_ = null;
+        stackdriverLoggingConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1165,6 +1256,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         result.purgeTime_ = purgeTime_;
       } else {
         result.purgeTime_ = purgeTimeBuilder_.build();
+      }
+      if (stackdriverLoggingConfigBuilder_ == null) {
+        result.stackdriverLoggingConfig_ = stackdriverLoggingConfig_;
+      } else {
+        result.stackdriverLoggingConfig_ = stackdriverLoggingConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1233,6 +1329,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPurgeTime()) {
         mergePurgeTime(other.getPurgeTime());
+      }
+      if (other.hasStackdriverLoggingConfig()) {
+        mergeStackdriverLoggingConfig(other.getStackdriverLoggingConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2669,6 +2768,215 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         purgeTime_ = null;
       }
       return purgeTimeBuilder_;
+    }
+
+    private com.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriverLoggingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2.StackdriverLoggingConfig,
+            com.google.cloud.tasks.v2.StackdriverLoggingConfig.Builder,
+            com.google.cloud.tasks.v2.StackdriverLoggingConfigOrBuilder>
+        stackdriverLoggingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for writing logs to
+     * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+     * field is unset, then no logs are written.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+     *
+     * @return Whether the stackdriverLoggingConfig field is set.
+     */
+    public boolean hasStackdriverLoggingConfig() {
+      return stackdriverLoggingConfigBuilder_ != null || stackdriverLoggingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for writing logs to
+     * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+     * field is unset, then no logs are written.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+     *
+     * @return The stackdriverLoggingConfig.
+     */
+    public com.google.cloud.tasks.v2.StackdriverLoggingConfig getStackdriverLoggingConfig() {
+      if (stackdriverLoggingConfigBuilder_ == null) {
+        return stackdriverLoggingConfig_ == null
+            ? com.google.cloud.tasks.v2.StackdriverLoggingConfig.getDefaultInstance()
+            : stackdriverLoggingConfig_;
+      } else {
+        return stackdriverLoggingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for writing logs to
+     * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+     * field is unset, then no logs are written.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+     */
+    public Builder setStackdriverLoggingConfig(
+        com.google.cloud.tasks.v2.StackdriverLoggingConfig value) {
+      if (stackdriverLoggingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stackdriverLoggingConfig_ = value;
+        onChanged();
+      } else {
+        stackdriverLoggingConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for writing logs to
+     * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+     * field is unset, then no logs are written.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+     */
+    public Builder setStackdriverLoggingConfig(
+        com.google.cloud.tasks.v2.StackdriverLoggingConfig.Builder builderForValue) {
+      if (stackdriverLoggingConfigBuilder_ == null) {
+        stackdriverLoggingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        stackdriverLoggingConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for writing logs to
+     * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+     * field is unset, then no logs are written.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+     */
+    public Builder mergeStackdriverLoggingConfig(
+        com.google.cloud.tasks.v2.StackdriverLoggingConfig value) {
+      if (stackdriverLoggingConfigBuilder_ == null) {
+        if (stackdriverLoggingConfig_ != null) {
+          stackdriverLoggingConfig_ =
+              com.google.cloud.tasks.v2.StackdriverLoggingConfig.newBuilder(
+                      stackdriverLoggingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stackdriverLoggingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        stackdriverLoggingConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for writing logs to
+     * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+     * field is unset, then no logs are written.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+     */
+    public Builder clearStackdriverLoggingConfig() {
+      if (stackdriverLoggingConfigBuilder_ == null) {
+        stackdriverLoggingConfig_ = null;
+        onChanged();
+      } else {
+        stackdriverLoggingConfig_ = null;
+        stackdriverLoggingConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for writing logs to
+     * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+     * field is unset, then no logs are written.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+     */
+    public com.google.cloud.tasks.v2.StackdriverLoggingConfig.Builder
+        getStackdriverLoggingConfigBuilder() {
+
+      onChanged();
+      return getStackdriverLoggingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for writing logs to
+     * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+     * field is unset, then no logs are written.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+     */
+    public com.google.cloud.tasks.v2.StackdriverLoggingConfigOrBuilder
+        getStackdriverLoggingConfigOrBuilder() {
+      if (stackdriverLoggingConfigBuilder_ != null) {
+        return stackdriverLoggingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return stackdriverLoggingConfig_ == null
+            ? com.google.cloud.tasks.v2.StackdriverLoggingConfig.getDefaultInstance()
+            : stackdriverLoggingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for writing logs to
+     * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+     * field is unset, then no logs are written.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2.StackdriverLoggingConfig,
+            com.google.cloud.tasks.v2.StackdriverLoggingConfig.Builder,
+            com.google.cloud.tasks.v2.StackdriverLoggingConfigOrBuilder>
+        getStackdriverLoggingConfigFieldBuilder() {
+      if (stackdriverLoggingConfigBuilder_ == null) {
+        stackdriverLoggingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2.StackdriverLoggingConfig,
+                com.google.cloud.tasks.v2.StackdriverLoggingConfig.Builder,
+                com.google.cloud.tasks.v2.StackdriverLoggingConfigOrBuilder>(
+                getStackdriverLoggingConfig(), getParentForChildren(), isClean());
+        stackdriverLoggingConfig_ = null;
+      }
+      return stackdriverLoggingConfigBuilder_;
     }
 
     @java.lang.Override
