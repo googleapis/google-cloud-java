@@ -64,8 +64,8 @@ final class NotificationConfigSnippets {
     // [END scc_create_notification_config]
   }
 
-  public static boolean deleteNotificationConfig(
-      String organizationId, String notificationConfigId) throws IOException {
+  public static boolean deleteNotificationConfig(String organizationId, String notificationConfigId)
+      throws IOException {
 
     // [START scc_delete_notification_config]
     // TODO(UpdateMe) String organizationId = "{your-org-id}";
@@ -108,7 +108,8 @@ final class NotificationConfigSnippets {
     // [END scc_get_notification_config]
   }
 
-  public static ImmutableList<NotificationConfig> listNotificationConfigs(String organizationId) throws IOException {
+  public static ImmutableList<NotificationConfig> listNotificationConfigs(String organizationId)
+      throws IOException {
     // [START scc_list_notification_configs]
     // TODO(UpdateMe) String organizationId = "{your-org-id}";
 
