@@ -186,6 +186,50 @@ public class StorageSnippets {
     return blob;
   }
 
+  /** Example of uploading a blob encrypted service side with a Cloud KMS key. */
+  public Blob createKmsEncrpytedBlob(String bucketName, String blobName, String kmsKeyName) {
+    // [START storage_upload_with_kms_key]
+    byte[] data = "Hello, World!".getBytes(UTF_8);
+
+    // The name of the existing bucket to set a default KMS key for, e.g. "my-bucket"
+    // String bucketName = "my-bucket"
+
+    // The name of the KMS-key to use as a default
+    // Key names are provided in the following format:
+    // 'projects/<PROJECT>/locations/<LOCATION>/keyRings/<RING_NAME>/cryptoKeys/<KEY_NAME>'
+    // String kmsKeyName = ""
+
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
+    Blob blob = storage.create(blobInfo, data, BlobTargetOption.kmsKeyName(kmsKeyName));
+    // [END storage_upload_with_kms_key]
+    return blob;
+  }
+
+  /** Example of setting a default KMS key on a bucket. */
+  public Bucket setDefaultKmsKey(String bucketName, String kmsKeyName) throws StorageException {
+    // [START storage_set_bucket_default_kms_key]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of the existing bucket to set a default KMS key for, e.g. "my-bucket"
+    // String bucketName = "my-bucket"
+
+    // The name of the KMS-key to use as a default
+    // Key names are provided in the following format:
+    // 'projects/<PROJECT>/locations/<LOCATION>/keyRings/<RING_NAME>/cryptoKeys/<KEY_NAME>'
+    // String kmsKeyName = ""
+
+    BucketInfo bucketInfo =
+        BucketInfo.newBuilder(bucketName).setDefaultKmsKeyName(kmsKeyName).build();
+
+    Bucket bucket = storage.update(bucketInfo);
+
+    System.out.println("Default KMS Key Name: " + bucket.getDefaultKmsKeyName());
+    // [END storage_set_bucket_default_kms_key]
+    return bucket;
+  }
+
   /**
    * Example of getting information on a blob, only if its metageneration matches a value, otherwise
    * a {@link StorageException} is thrown.
