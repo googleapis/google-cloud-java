@@ -180,7 +180,7 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Creates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -216,7 +216,7 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Creates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -248,7 +248,7 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Creates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -278,7 +278,7 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Creates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -306,7 +306,7 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Updates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -367,7 +367,7 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Updates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -403,7 +403,7 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Updates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -437,7 +437,7 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Updates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -469,7 +469,7 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Deletes a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -505,7 +505,7 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Deletes a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -537,7 +537,7 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Deletes a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -567,7 +567,7 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Deletes a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -840,10 +840,10 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Gets cluster diagnostic information. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    * After the operation completes, [Operation.response][google.longrunning.Operation.response]
    * contains
-   * [DiagnoseClusterResults](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+   * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
    *
    * <p>Sample code:
    *
@@ -879,10 +879,10 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Gets cluster diagnostic information. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    * After the operation completes, [Operation.response][google.longrunning.Operation.response]
    * contains
-   * [DiagnoseClusterResults](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+   * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
    *
    * <p>Sample code:
    *
@@ -914,10 +914,10 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Gets cluster diagnostic information. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    * After the operation completes, [Operation.response][google.longrunning.Operation.response]
    * contains
-   * [DiagnoseClusterResults](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+   * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
    *
    * <p>Sample code:
    *
@@ -947,10 +947,10 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Gets cluster diagnostic information. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    * After the operation completes, [Operation.response][google.longrunning.Operation.response]
    * contains
-   * [DiagnoseClusterResults](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+   * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
    *
    * <p>Sample code:
    *

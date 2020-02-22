@@ -619,7 +619,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when this state was entered.
+   * Output only. Time when this state was entered (see JSON representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>
@@ -635,7 +636,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when this state was entered.
+   * Output only. Time when this state was entered (see JSON representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>
@@ -653,7 +655,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when this state was entered.
+   * Output only. Time when this state was entered (see JSON representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>
@@ -1306,7 +1309,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1322,7 +1326,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1344,7 +1349,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1368,7 +1374,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1389,7 +1396,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1417,7 +1425,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1439,7 +1448,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1455,7 +1465,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1475,7 +1486,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>

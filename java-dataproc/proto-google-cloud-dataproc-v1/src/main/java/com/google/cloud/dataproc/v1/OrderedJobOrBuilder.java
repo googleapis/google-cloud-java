@@ -65,213 +65,93 @@ public interface OrderedJobOrBuilder
   com.google.protobuf.ByteString getStepIdBytes();
 
   /**
-   *
-   *
-   * <pre>
-   * Job is a Hadoop job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 2;</code>
    *
    * @return Whether the hadoopJob field is set.
    */
   boolean hasHadoopJob();
   /**
-   *
-   *
-   * <pre>
-   * Job is a Hadoop job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 2;</code>
    *
    * @return The hadoopJob.
    */
   com.google.cloud.dataproc.v1.HadoopJob getHadoopJob();
-  /**
-   *
-   *
-   * <pre>
-   * Job is a Hadoop job.
-   * </pre>
-   *
-   * <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 2;</code>
-   */
+  /** <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 2;</code> */
   com.google.cloud.dataproc.v1.HadoopJobOrBuilder getHadoopJobOrBuilder();
 
   /**
-   *
-   *
-   * <pre>
-   * Job is a Spark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1.SparkJob spark_job = 3;</code>
    *
    * @return Whether the sparkJob field is set.
    */
   boolean hasSparkJob();
   /**
-   *
-   *
-   * <pre>
-   * Job is a Spark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1.SparkJob spark_job = 3;</code>
    *
    * @return The sparkJob.
    */
   com.google.cloud.dataproc.v1.SparkJob getSparkJob();
-  /**
-   *
-   *
-   * <pre>
-   * Job is a Spark job.
-   * </pre>
-   *
-   * <code>.google.cloud.dataproc.v1.SparkJob spark_job = 3;</code>
-   */
+  /** <code>.google.cloud.dataproc.v1.SparkJob spark_job = 3;</code> */
   com.google.cloud.dataproc.v1.SparkJobOrBuilder getSparkJobOrBuilder();
 
   /**
-   *
-   *
-   * <pre>
-   * Job is a Pyspark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 4;</code>
    *
    * @return Whether the pysparkJob field is set.
    */
   boolean hasPysparkJob();
   /**
-   *
-   *
-   * <pre>
-   * Job is a Pyspark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 4;</code>
    *
    * @return The pysparkJob.
    */
   com.google.cloud.dataproc.v1.PySparkJob getPysparkJob();
-  /**
-   *
-   *
-   * <pre>
-   * Job is a Pyspark job.
-   * </pre>
-   *
-   * <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 4;</code>
-   */
+  /** <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 4;</code> */
   com.google.cloud.dataproc.v1.PySparkJobOrBuilder getPysparkJobOrBuilder();
 
   /**
-   *
-   *
-   * <pre>
-   * Job is a Hive job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1.HiveJob hive_job = 5;</code>
    *
    * @return Whether the hiveJob field is set.
    */
   boolean hasHiveJob();
   /**
-   *
-   *
-   * <pre>
-   * Job is a Hive job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1.HiveJob hive_job = 5;</code>
    *
    * @return The hiveJob.
    */
   com.google.cloud.dataproc.v1.HiveJob getHiveJob();
-  /**
-   *
-   *
-   * <pre>
-   * Job is a Hive job.
-   * </pre>
-   *
-   * <code>.google.cloud.dataproc.v1.HiveJob hive_job = 5;</code>
-   */
+  /** <code>.google.cloud.dataproc.v1.HiveJob hive_job = 5;</code> */
   com.google.cloud.dataproc.v1.HiveJobOrBuilder getHiveJobOrBuilder();
 
   /**
-   *
-   *
-   * <pre>
-   * Job is a Pig job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1.PigJob pig_job = 6;</code>
    *
    * @return Whether the pigJob field is set.
    */
   boolean hasPigJob();
   /**
-   *
-   *
-   * <pre>
-   * Job is a Pig job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1.PigJob pig_job = 6;</code>
    *
    * @return The pigJob.
    */
   com.google.cloud.dataproc.v1.PigJob getPigJob();
-  /**
-   *
-   *
-   * <pre>
-   * Job is a Pig job.
-   * </pre>
-   *
-   * <code>.google.cloud.dataproc.v1.PigJob pig_job = 6;</code>
-   */
+  /** <code>.google.cloud.dataproc.v1.PigJob pig_job = 6;</code> */
   com.google.cloud.dataproc.v1.PigJobOrBuilder getPigJobOrBuilder();
 
   /**
-   *
-   *
-   * <pre>
-   * Job is a SparkSql job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 7;</code>
    *
    * @return Whether the sparkSqlJob field is set.
    */
   boolean hasSparkSqlJob();
   /**
-   *
-   *
-   * <pre>
-   * Job is a SparkSql job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 7;</code>
    *
    * @return The sparkSqlJob.
    */
   com.google.cloud.dataproc.v1.SparkSqlJob getSparkSqlJob();
-  /**
-   *
-   *
-   * <pre>
-   * Job is a SparkSql job.
-   * </pre>
-   *
-   * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 7;</code>
-   */
+  /** <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 7;</code> */
   com.google.cloud.dataproc.v1.SparkSqlJobOrBuilder getSparkSqlJobOrBuilder();
 
   /**

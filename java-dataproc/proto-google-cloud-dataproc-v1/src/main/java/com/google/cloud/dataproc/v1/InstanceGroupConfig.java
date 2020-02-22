@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * Optional. The config settings for Compute Engine resources in
+ * The config settings for Compute Engine resources in
  * an instance group, such as a master or worker group.
  * </pre>
  *
@@ -911,7 +911,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The config settings for Compute Engine resources in
+   * The config settings for Compute Engine resources in
    * an instance group, such as a master or worker group.
    * </pre>
    *

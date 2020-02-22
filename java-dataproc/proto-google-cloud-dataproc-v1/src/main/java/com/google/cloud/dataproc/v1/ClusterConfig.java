@@ -205,6 +205,22 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 138:
+            {
+              com.google.cloud.dataproc.v1.LifecycleConfig.Builder subBuilder = null;
+              if (lifecycleConfig_ != null) {
+                subBuilder = lifecycleConfig_.toBuilder();
+              }
+              lifecycleConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.LifecycleConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lifecycleConfig_);
+                lifecycleConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 146:
             {
               com.google.cloud.dataproc.v1.AutoscalingConfig.Builder subBuilder = null;
@@ -877,6 +893,57 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     return getSecurityConfig();
   }
 
+  public static final int LIFECYCLE_CONFIG_FIELD_NUMBER = 17;
+  private com.google.cloud.dataproc.v1.LifecycleConfig lifecycleConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Lifecycle setting for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the lifecycleConfig field is set.
+   */
+  public boolean hasLifecycleConfig() {
+    return lifecycleConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Lifecycle setting for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The lifecycleConfig.
+   */
+  public com.google.cloud.dataproc.v1.LifecycleConfig getLifecycleConfig() {
+    return lifecycleConfig_ == null
+        ? com.google.cloud.dataproc.v1.LifecycleConfig.getDefaultInstance()
+        : lifecycleConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Lifecycle setting for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  public com.google.cloud.dataproc.v1.LifecycleConfigOrBuilder getLifecycleConfigOrBuilder() {
+    return getLifecycleConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -917,6 +984,9 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (securityConfig_ != null) {
       output.writeMessage(16, getSecurityConfig());
+    }
+    if (lifecycleConfig_ != null) {
+      output.writeMessage(17, getLifecycleConfig());
     }
     if (autoscalingConfig_ != null) {
       output.writeMessage(18, getAutoscalingConfig());
@@ -959,6 +1029,9 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (securityConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getSecurityConfig());
+    }
+    if (lifecycleConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getLifecycleConfig());
     }
     if (autoscalingConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getAutoscalingConfig());
@@ -1013,6 +1086,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasSecurityConfig()) {
       if (!getSecurityConfig().equals(other.getSecurityConfig())) return false;
     }
+    if (hasLifecycleConfig() != other.hasLifecycleConfig()) return false;
+    if (hasLifecycleConfig()) {
+      if (!getLifecycleConfig().equals(other.getLifecycleConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1061,6 +1138,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasSecurityConfig()) {
       hash = (37 * hash) + SECURITY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSecurityConfig().hashCode();
+    }
+    if (hasLifecycleConfig()) {
+      hash = (37 * hash) + LIFECYCLE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getLifecycleConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1265,6 +1346,12 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         securityConfig_ = null;
         securityConfigBuilder_ = null;
       }
+      if (lifecycleConfigBuilder_ == null) {
+        lifecycleConfig_ = null;
+      } else {
+        lifecycleConfig_ = null;
+        lifecycleConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1342,6 +1429,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         result.securityConfig_ = securityConfig_;
       } else {
         result.securityConfig_ = securityConfigBuilder_.build();
+      }
+      if (lifecycleConfigBuilder_ == null) {
+        result.lifecycleConfig_ = lifecycleConfig_;
+      } else {
+        result.lifecycleConfig_ = lifecycleConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1446,6 +1538,9 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSecurityConfig()) {
         mergeSecurityConfig(other.getSecurityConfig());
+      }
+      if (other.hasLifecycleConfig()) {
+        mergeLifecycleConfig(other.getLifecycleConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3903,6 +3998,210 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         securityConfig_ = null;
       }
       return securityConfigBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.LifecycleConfig lifecycleConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.LifecycleConfig,
+            com.google.cloud.dataproc.v1.LifecycleConfig.Builder,
+            com.google.cloud.dataproc.v1.LifecycleConfigOrBuilder>
+        lifecycleConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Lifecycle setting for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the lifecycleConfig field is set.
+     */
+    public boolean hasLifecycleConfig() {
+      return lifecycleConfigBuilder_ != null || lifecycleConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Lifecycle setting for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The lifecycleConfig.
+     */
+    public com.google.cloud.dataproc.v1.LifecycleConfig getLifecycleConfig() {
+      if (lifecycleConfigBuilder_ == null) {
+        return lifecycleConfig_ == null
+            ? com.google.cloud.dataproc.v1.LifecycleConfig.getDefaultInstance()
+            : lifecycleConfig_;
+      } else {
+        return lifecycleConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Lifecycle setting for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLifecycleConfig(com.google.cloud.dataproc.v1.LifecycleConfig value) {
+      if (lifecycleConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lifecycleConfig_ = value;
+        onChanged();
+      } else {
+        lifecycleConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Lifecycle setting for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLifecycleConfig(
+        com.google.cloud.dataproc.v1.LifecycleConfig.Builder builderForValue) {
+      if (lifecycleConfigBuilder_ == null) {
+        lifecycleConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        lifecycleConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Lifecycle setting for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeLifecycleConfig(com.google.cloud.dataproc.v1.LifecycleConfig value) {
+      if (lifecycleConfigBuilder_ == null) {
+        if (lifecycleConfig_ != null) {
+          lifecycleConfig_ =
+              com.google.cloud.dataproc.v1.LifecycleConfig.newBuilder(lifecycleConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          lifecycleConfig_ = value;
+        }
+        onChanged();
+      } else {
+        lifecycleConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Lifecycle setting for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLifecycleConfig() {
+      if (lifecycleConfigBuilder_ == null) {
+        lifecycleConfig_ = null;
+        onChanged();
+      } else {
+        lifecycleConfig_ = null;
+        lifecycleConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Lifecycle setting for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.LifecycleConfig.Builder getLifecycleConfigBuilder() {
+
+      onChanged();
+      return getLifecycleConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Lifecycle setting for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.LifecycleConfigOrBuilder getLifecycleConfigOrBuilder() {
+      if (lifecycleConfigBuilder_ != null) {
+        return lifecycleConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return lifecycleConfig_ == null
+            ? com.google.cloud.dataproc.v1.LifecycleConfig.getDefaultInstance()
+            : lifecycleConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Lifecycle setting for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.LifecycleConfig,
+            com.google.cloud.dataproc.v1.LifecycleConfig.Builder,
+            com.google.cloud.dataproc.v1.LifecycleConfigOrBuilder>
+        getLifecycleConfigFieldBuilder() {
+      if (lifecycleConfigBuilder_ == null) {
+        lifecycleConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.LifecycleConfig,
+                com.google.cloud.dataproc.v1.LifecycleConfig.Builder,
+                com.google.cloud.dataproc.v1.LifecycleConfigOrBuilder>(
+                getLifecycleConfig(), getParentForChildren(), isClean());
+        lifecycleConfig_ = null;
+      }
+      return lifecycleConfigBuilder_;
     }
 
     @java.lang.Override

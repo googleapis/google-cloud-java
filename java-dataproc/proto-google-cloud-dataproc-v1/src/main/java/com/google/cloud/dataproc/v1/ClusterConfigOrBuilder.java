@@ -525,4 +525,45 @@ public interface ClusterConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.SecurityConfigOrBuilder getSecurityConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Lifecycle setting for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the lifecycleConfig field is set.
+   */
+  boolean hasLifecycleConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Lifecycle setting for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The lifecycleConfig.
+   */
+  com.google.cloud.dataproc.v1.LifecycleConfig getLifecycleConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Lifecycle setting for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.LifecycleConfig lifecycle_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.LifecycleConfigOrBuilder getLifecycleConfigOrBuilder();
 }
