@@ -1,11 +1,11 @@
 {
-  "updateTime": "2020-02-21T23:10:24.226106Z",
+  "updateTime": "2020-02-22T10:15:46.136111Z",
   "sources": [
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-core.git",
-        "sha": "2e52f8a5a267b8cf43b696011c305ed33cf0762f"
+        "sha": "b8838eb5d76c7f64a579113f6622e1314af3cd1e"
       }
     },
     {
