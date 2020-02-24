@@ -1,11 +1,11 @@
 {
-  "updateTime": "2020-02-21T23:10:53.290677Z",
+  "updateTime": "2020-02-22T10:16:04.749530Z",
   "sources": [
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-logging-logback.git",
-        "sha": "eb7cd0d4a9ea0e1e1acd1b99fec081213d7f67ee"
+        "sha": "2256b32a7cf8ce878037888d5793215e68c2886a"
       }
     },
     {
