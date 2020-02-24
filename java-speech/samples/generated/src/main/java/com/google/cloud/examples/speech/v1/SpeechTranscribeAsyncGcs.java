@@ -13,14 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",
-// "speech_transcribe_async_word_time_offsets_gcs")
+// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",  "speech_transcribe_async_gcs")
 // sample-metadata:
-//   title: Getting word timestamps (Cloud Storage) (LRO)
-//   description: Print start and end time of each word spoken in audio file from Cloud Storage
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeAsyncWordTimeOffsetsGcs
-// [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.flac"]']
+//   title: Transcript Audio File using Long Running Operation (Cloud Storage) (LRO)
+//   description: Transcribe long audio file from Cloud Storage using asynchronous speech recognition
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeAsyncGcs [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.raw"]']
 
 package com.google.cloud.examples.speech.v1;
 
@@ -33,14 +30,13 @@ import com.google.cloud.speech.v1.RecognitionConfig;
 import com.google.cloud.speech.v1.SpeechClient;
 import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1.SpeechRecognitionResult;
-import com.google.cloud.speech.v1.WordInfo;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 
-public class SpeechTranscribeAsyncWordTimeOffsetsGcs {
-  // [START speech_transcribe_async_word_time_offsets_gcs]
+public class SpeechTranscribeAsyncGcs {
+  // [START speech_transcribe_async_gcs]
   /*
    * Please include the following imports to run this sample.
    *
@@ -53,33 +49,36 @@ public class SpeechTranscribeAsyncWordTimeOffsetsGcs {
    * import com.google.cloud.speech.v1.SpeechClient;
    * import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
    * import com.google.cloud.speech.v1.SpeechRecognitionResult;
-   * import com.google.cloud.speech.v1.WordInfo;
    */
 
   public static void sampleLongRunningRecognize() {
     // TODO(developer): Replace these variables before running the sample.
-    String storageUri = "gs://cloud-samples-data/speech/brooklyn_bridge.flac";
+    String storageUri = "gs://cloud-samples-data/speech/brooklyn_bridge.raw";
     sampleLongRunningRecognize(storageUri);
   }
 
   /**
-   * Print start and end time of each word spoken in audio file from Cloud Storage
+   * Transcribe long audio file from Cloud Storage using asynchronous speech recognition
    *
    * @param storageUri URI for audio file in Cloud Storage, e.g. gs://[BUCKET]/[FILE]
    */
   public static void sampleLongRunningRecognize(String storageUri) {
     try (SpeechClient speechClient = SpeechClient.create()) {
 
-      // When enabled, the first result returned by the API will include a list
-      // of words and the start and end time offsets (timestamps) for those words.
-      boolean enableWordTimeOffsets = true;
+      // Sample rate in Hertz of the audio data sent
+      int sampleRateHertz = 16000;
 
       // The language of the supplied audio
       String languageCode = "en-US";
+
+      // Encoding of audio data sent. This sample sets this explicitly.
+      // This field is optional for FLAC and WAV audio formats.
+      RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.LINEAR16;
       RecognitionConfig config =
           RecognitionConfig.newBuilder()
-              .setEnableWordTimeOffsets(enableWordTimeOffsets)
+              .setSampleRateHertz(sampleRateHertz)
               .setLanguageCode(languageCode)
+              .setEncoding(encoding)
               .build();
       RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(storageUri).build();
       LongRunningRecognizeRequest request =
@@ -89,26 +88,16 @@ public class SpeechTranscribeAsyncWordTimeOffsetsGcs {
 
       System.out.println("Waiting for operation to complete...");
       LongRunningRecognizeResponse response = future.get();
-      // The first result includes start and end time word offsets
-      SpeechRecognitionResult result = response.getResultsList().get(0);
-      // First alternative is the most probable result
-      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
-      System.out.printf("Transcript: %s\n", alternative.getTranscript());
-      // Print the start and end time of each word
-      for (WordInfo word : alternative.getWordsList()) {
-        System.out.printf("Word: %s\n", word.getWord());
-        System.out.printf(
-            "Start time: %s seconds %s nanos\n",
-            word.getStartTime().getSeconds(), word.getStartTime().getNanos());
-        System.out.printf(
-            "End time: %s seconds %s nanos\n",
-            word.getEndTime().getSeconds(), word.getEndTime().getNanos());
+      for (SpeechRecognitionResult result : response.getResultsList()) {
+        // First alternative is the most probable result
+        SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+        System.out.printf("Transcript: %s\n", alternative.getTranscript());
       }
     } catch (Exception exception) {
       System.err.println("Failed to create the client due to: " + exception);
     }
   }
-  // [END speech_transcribe_async_word_time_offsets_gcs]
+  // [END speech_transcribe_async_gcs]
 
   public static void main(String[] args) throws Exception {
     Options options = new Options();
@@ -117,7 +106,7 @@ public class SpeechTranscribeAsyncWordTimeOffsetsGcs {
 
     CommandLine cl = (new DefaultParser()).parse(options, args);
     String storageUri =
-        cl.getOptionValue("storage_uri", "gs://cloud-samples-data/speech/brooklyn_bridge.flac");
+        cl.getOptionValue("storage_uri", "gs://cloud-samples-data/speech/brooklyn_bridge.raw");
 
     sampleLongRunningRecognize(storageUri);
   }

@@ -13,19 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_enhanced_model")
+// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",  "speech_transcribe_async")
 // sample-metadata:
-//   title: Using Enhanced Models (Local File)
-//   description: Transcribe a short audio file using an enhanced model
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeEnhancedModel
-// [--args='[--local_file_path "resources/hello.wav"]']
+//   title: Transcribe Audio File using Long Running Operation (Local File) (LRO)
+//   description: Transcribe a long audio file using asynchronous speech recognition
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeAsync [--args='[--local_file_path "resources/brooklyn_bridge.raw"]']
 
 package com.google.cloud.examples.speech.v1;
 
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.speech.v1.LongRunningRecognizeMetadata;
+import com.google.cloud.speech.v1.LongRunningRecognizeRequest;
+import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1.RecognitionAudio;
 import com.google.cloud.speech.v1.RecognitionConfig;
-import com.google.cloud.speech.v1.RecognizeRequest;
-import com.google.cloud.speech.v1.RecognizeResponse;
 import com.google.cloud.speech.v1.SpeechClient;
 import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1.SpeechRecognitionResult;
@@ -38,15 +39,17 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 
-public class SpeechTranscribeEnhancedModel {
-  // [START speech_transcribe_enhanced_model]
+public class SpeechTranscribeAsync {
+  // [START speech_transcribe_async]
   /*
    * Please include the following imports to run this sample.
    *
+   * import com.google.api.gax.longrunning.OperationFuture;
+   * import com.google.cloud.speech.v1.LongRunningRecognizeMetadata;
+   * import com.google.cloud.speech.v1.LongRunningRecognizeRequest;
+   * import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
    * import com.google.cloud.speech.v1.RecognitionAudio;
    * import com.google.cloud.speech.v1.RecognitionConfig;
-   * import com.google.cloud.speech.v1.RecognizeRequest;
-   * import com.google.cloud.speech.v1.RecognizeResponse;
    * import com.google.cloud.speech.v1.SpeechClient;
    * import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
    * import com.google.cloud.speech.v1.SpeechRecognitionResult;
@@ -56,44 +59,46 @@ public class SpeechTranscribeEnhancedModel {
    * import java.nio.file.Paths;
    */
 
-  public static void sampleRecognize() {
+  public static void sampleLongRunningRecognize() {
     // TODO(developer): Replace these variables before running the sample.
-    String localFilePath = "resources/hello.wav";
-    sampleRecognize(localFilePath);
+    String localFilePath = "resources/brooklyn_bridge.raw";
+    sampleLongRunningRecognize(localFilePath);
   }
 
   /**
-   * Transcribe a short audio file using an enhanced model
+   * Transcribe a long audio file using asynchronous speech recognition
    *
    * @param localFilePath Path to local audio file, e.g. /path/audio.wav
    */
-  public static void sampleRecognize(String localFilePath) {
+  public static void sampleLongRunningRecognize(String localFilePath) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-
-      // The enhanced model to use, e.g. phone_call
-      // Currently phone_call is the only model available as an enhanced model.
-      String model = "phone_call";
-
-      // Use an enhanced model for speech recognition (when set to true).
-      // Project must be eligible for requesting enhanced models.
-      // Enhanced speech models require that you opt-in to data logging.
-      boolean useEnhanced = true;
 
       // The language of the supplied audio
       String languageCode = "en-US";
+
+      // Sample rate in Hertz of the audio data sent
+      int sampleRateHertz = 16000;
+
+      // Encoding of audio data sent. This sample sets this explicitly.
+      // This field is optional for FLAC and WAV audio formats.
+      RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.LINEAR16;
       RecognitionConfig config =
           RecognitionConfig.newBuilder()
-              .setModel(model)
-              .setUseEnhanced(useEnhanced)
               .setLanguageCode(languageCode)
+              .setSampleRateHertz(sampleRateHertz)
+              .setEncoding(encoding)
               .build();
       Path path = Paths.get(localFilePath);
       byte[] data = Files.readAllBytes(path);
       ByteString content = ByteString.copyFrom(data);
       RecognitionAudio audio = RecognitionAudio.newBuilder().setContent(content).build();
-      RecognizeRequest request =
-          RecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
-      RecognizeResponse response = speechClient.recognize(request);
+      LongRunningRecognizeRequest request =
+          LongRunningRecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
+      OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> future =
+          speechClient.longRunningRecognizeAsync(request);
+
+      System.out.println("Waiting for operation to complete...");
+      LongRunningRecognizeResponse response = future.get();
       for (SpeechRecognitionResult result : response.getResultsList()) {
         // First alternative is the most probable result
         SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
@@ -103,7 +108,7 @@ public class SpeechTranscribeEnhancedModel {
       System.err.println("Failed to create the client due to: " + exception);
     }
   }
-  // [END speech_transcribe_enhanced_model]
+  // [END speech_transcribe_async]
 
   public static void main(String[] args) throws Exception {
     Options options = new Options();
@@ -111,8 +116,8 @@ public class SpeechTranscribeEnhancedModel {
         Option.builder("").required(false).hasArg(true).longOpt("local_file_path").build());
 
     CommandLine cl = (new DefaultParser()).parse(options, args);
-    String localFilePath = cl.getOptionValue("local_file_path", "resources/hello.wav");
+    String localFilePath = cl.getOptionValue("local_file_path", "resources/brooklyn_bridge.raw");
 
-    sampleRecognize(localFilePath);
+    sampleLongRunningRecognize(localFilePath);
   }
 }

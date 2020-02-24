@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_sync_gcs")
+// DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_multichannel_gcs")
 // sample-metadata:
-//   title: Transcript Audio File (Cloud Storage)
-//   description: Transcribe short audio file from Cloud Storage using synchronous speech
-// recognition
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeSyncGcs
-// [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.raw"]']
+//   title: Multi-Channel Audio Transcription (Cloud Storage)
+//   description: Transcribe a short audio file from Cloud Storage with multiple channels
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeMultichannelGcs [--args='[--storage_uri "gs://cloud-samples-data/speech/multi.wav"]']
 
 package com.google.cloud.examples.speech.v1;
 
@@ -35,8 +33,8 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 
-public class SpeechTranscribeSyncGcs {
-  // [START speech_transcribe_sync_gcs]
+public class SpeechTranscribeMultichannelGcs {
+  // [START speech_transcribe_multichannel_gcs]
   /*
    * Please include the following imports to run this sample.
    *
@@ -51,38 +49,41 @@ public class SpeechTranscribeSyncGcs {
 
   public static void sampleRecognize() {
     // TODO(developer): Replace these variables before running the sample.
-    String storageUri = "gs://cloud-samples-data/speech/brooklyn_bridge.raw";
+    String storageUri = "gs://cloud-samples-data/speech/multi.wav";
     sampleRecognize(storageUri);
   }
 
   /**
-   * Transcribe short audio file from Cloud Storage using synchronous speech recognition
+   * Transcribe a short audio file from Cloud Storage with multiple channels
    *
    * @param storageUri URI for audio file in Cloud Storage, e.g. gs://[BUCKET]/[FILE]
    */
   public static void sampleRecognize(String storageUri) {
     try (SpeechClient speechClient = SpeechClient.create()) {
 
-      // Sample rate in Hertz of the audio data sent
-      int sampleRateHertz = 16000;
+      // The number of channels in the input audio file (optional)
+      int audioChannelCount = 2;
+
+      // When set to true, each audio channel will be recognized separately.
+      // The recognition result will contain a channel_tag field to state which
+      // channel that result belongs to
+      boolean enableSeparateRecognitionPerChannel = true;
 
       // The language of the supplied audio
       String languageCode = "en-US";
-
-      // Encoding of audio data sent. This sample sets this explicitly.
-      // This field is optional for FLAC and WAV audio formats.
-      RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.LINEAR16;
       RecognitionConfig config =
           RecognitionConfig.newBuilder()
-              .setSampleRateHertz(sampleRateHertz)
+              .setAudioChannelCount(audioChannelCount)
+              .setEnableSeparateRecognitionPerChannel(enableSeparateRecognitionPerChannel)
               .setLanguageCode(languageCode)
-              .setEncoding(encoding)
               .build();
       RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(storageUri).build();
       RecognizeRequest request =
           RecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
       RecognizeResponse response = speechClient.recognize(request);
       for (SpeechRecognitionResult result : response.getResultsList()) {
+        // channelTag to recognize which audio channel this result is for
+        System.out.printf("Channel tag: %s\n", result.getChannelTag());
         // First alternative is the most probable result
         SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
         System.out.printf("Transcript: %s\n", alternative.getTranscript());
@@ -91,7 +92,7 @@ public class SpeechTranscribeSyncGcs {
       System.err.println("Failed to create the client due to: " + exception);
     }
   }
-  // [END speech_transcribe_sync_gcs]
+  // [END speech_transcribe_multichannel_gcs]
 
   public static void main(String[] args) throws Exception {
     Options options = new Options();
@@ -100,7 +101,7 @@ public class SpeechTranscribeSyncGcs {
 
     CommandLine cl = (new DefaultParser()).parse(options, args);
     String storageUri =
-        cl.getOptionValue("storage_uri", "gs://cloud-samples-data/speech/brooklyn_bridge.raw");
+        cl.getOptionValue("storage_uri", "gs://cloud-samples-data/speech/multi.wav");
 
     sampleRecognize(storageUri);
   }

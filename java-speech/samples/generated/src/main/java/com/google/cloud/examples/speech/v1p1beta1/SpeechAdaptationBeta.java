@@ -17,9 +17,7 @@
 // sample-metadata:
 //   title: Speech Adaptation (Cloud Storage)
 //   description: Transcribe a short audio file with speech adaptation.
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechAdaptationBeta
-// [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.mp3"] [--phrase "Brooklyn
-// Bridge"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechAdaptationBeta [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.mp3"] [--phrase "Brooklyn Bridge"]']
 
 package com.google.cloud.examples.speech.v1p1beta1;
 

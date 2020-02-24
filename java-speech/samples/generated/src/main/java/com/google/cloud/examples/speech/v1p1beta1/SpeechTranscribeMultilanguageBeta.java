@@ -13,20 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("Request",
-// "speech_transcribe_recognition_metadata_beta")
+// DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_multilanguage_beta")
 // sample-metadata:
-//   title: Adding recognition metadata (Local File) (Beta)
-//   description: Adds additional details short audio file included in this recognition request
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeRecognitionMetadataBeta
-// [--args='[--local_file_path "resources/commercial_mono.wav"]']
+//   title: Detecting language spoken automatically (Local File) (Beta)
+//   description: Transcribe a short audio file with language detected from a list of possible languages
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeMultilanguageBeta [--args='[--local_file_path "resources/brooklyn_bridge.flac"]']
 
 package com.google.cloud.examples.speech.v1p1beta1;
 
 import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
-import com.google.cloud.speech.v1p1beta1.RecognitionMetadata;
 import com.google.cloud.speech.v1p1beta1.RecognizeRequest;
 import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
 import com.google.cloud.speech.v1p1beta1.SpeechClient;
@@ -36,19 +32,20 @@ import com.google.protobuf.ByteString;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 
-public class SpeechTranscribeRecognitionMetadataBeta {
-  // [START speech_transcribe_recognition_metadata_beta]
+public class SpeechTranscribeMultilanguageBeta {
+  // [START speech_transcribe_multilanguage_beta]
   /*
    * Please include the following imports to run this sample.
    *
    * import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
    * import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
-   * import com.google.cloud.speech.v1p1beta1.RecognitionMetadata;
    * import com.google.cloud.speech.v1p1beta1.RecognizeRequest;
    * import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
    * import com.google.cloud.speech.v1p1beta1.SpeechClient;
@@ -58,47 +55,38 @@ public class SpeechTranscribeRecognitionMetadataBeta {
    * import java.nio.file.Files;
    * import java.nio.file.Path;
    * import java.nio.file.Paths;
+   * import java.util.Arrays;
+   * import java.util.List;
    */
 
   public static void sampleRecognize() {
     // TODO(developer): Replace these variables before running the sample.
-    String localFilePath = "resources/commercial_mono.wav";
+    String localFilePath = "resources/brooklyn_bridge.flac";
     sampleRecognize(localFilePath);
   }
 
   /**
-   * Adds additional details short audio file included in this recognition request
+   * Transcribe a short audio file with language detected from a list of possible languages
    *
    * @param localFilePath Path to local audio file, e.g. /path/audio.wav
    */
   public static void sampleRecognize(String localFilePath) {
     try (SpeechClient speechClient = SpeechClient.create()) {
 
-      // The use case of the audio, e.g. PHONE_CALL, DISCUSSION, PRESENTATION, et al.
-      RecognitionMetadata.InteractionType interactionType =
-          RecognitionMetadata.InteractionType.VOICE_SEARCH;
-
-      // The kind of device used to capture the audio
-      RecognitionMetadata.RecordingDeviceType recordingDeviceType =
-          RecognitionMetadata.RecordingDeviceType.SMARTPHONE;
-
-      // The device used to make the recording.
-      // Arbitrary string, e.g. 'Pixel XL', 'VoIP', 'Cardioid Microphone', or other value.
-      String recordingDeviceName = "Pixel 3";
-      RecognitionMetadata metadata =
-          RecognitionMetadata.newBuilder()
-              .setInteractionType(interactionType)
-              .setRecordingDeviceType(recordingDeviceType)
-              .setRecordingDeviceName(recordingDeviceName)
-              .build();
-
       // The language of the supplied audio. Even though additional languages are
       // provided by alternative_language_codes, a primary language is still required.
-      String languageCode = "en-US";
+      String languageCode = "fr";
+
+      // Specify up to 3 additional languages as possible alternative languages
+      // of the supplied audio.
+      String alternativeLanguageCodesElement = "es";
+      String alternativeLanguageCodesElement2 = "en";
+      List<String> alternativeLanguageCodes =
+          Arrays.asList(alternativeLanguageCodesElement, alternativeLanguageCodesElement2);
       RecognitionConfig config =
           RecognitionConfig.newBuilder()
-              .setMetadata(metadata)
               .setLanguageCode(languageCode)
+              .addAllAlternativeLanguageCodes(alternativeLanguageCodes)
               .build();
       Path path = Paths.get(localFilePath);
       byte[] data = Files.readAllBytes(path);
@@ -108,6 +96,8 @@ public class SpeechTranscribeRecognitionMetadataBeta {
           RecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
       RecognizeResponse response = speechClient.recognize(request);
       for (SpeechRecognitionResult result : response.getResultsList()) {
+        // The languageCode which was detected as the most likely being spoken in the audio
+        System.out.printf("Detected language: %s\n", result.getLanguageCode());
         // First alternative is the most probable result
         SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
         System.out.printf("Transcript: %s\n", alternative.getTranscript());
@@ -116,7 +106,7 @@ public class SpeechTranscribeRecognitionMetadataBeta {
       System.err.println("Failed to create the client due to: " + exception);
     }
   }
-  // [END speech_transcribe_recognition_metadata_beta]
+  // [END speech_transcribe_multilanguage_beta]
 
   public static void main(String[] args) throws Exception {
     Options options = new Options();
@@ -124,7 +114,7 @@ public class SpeechTranscribeRecognitionMetadataBeta {
         Option.builder("").required(false).hasArg(true).longOpt("local_file_path").build());
 
     CommandLine cl = (new DefaultParser()).parse(options, args);
-    String localFilePath = cl.getOptionValue("local_file_path", "resources/commercial_mono.wav");
+    String localFilePath = cl.getOptionValue("local_file_path", "resources/brooklyn_bridge.flac");
 
     sampleRecognize(localFilePath);
   }

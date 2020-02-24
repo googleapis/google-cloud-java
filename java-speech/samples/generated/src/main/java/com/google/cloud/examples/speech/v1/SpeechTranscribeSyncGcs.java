@@ -13,93 +13,73 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",  "speech_transcribe_async")
+// DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_sync_gcs")
 // sample-metadata:
-//   title: Transcribe Audio File using Long Running Operation (Local File) (LRO)
-//   description: Transcribe a long audio file using asynchronous speech recognition
-//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeAsync
-// [--args='[--local_file_path "resources/brooklyn_bridge.raw"]']
+//   title: Transcript Audio File (Cloud Storage)
+//   description: Transcribe short audio file from Cloud Storage using synchronous speech recognition
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeSyncGcs [--args='[--storage_uri "gs://cloud-samples-data/speech/brooklyn_bridge.raw"]']
 
 package com.google.cloud.examples.speech.v1;
 
-import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.speech.v1.LongRunningRecognizeMetadata;
-import com.google.cloud.speech.v1.LongRunningRecognizeRequest;
-import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1.RecognitionAudio;
 import com.google.cloud.speech.v1.RecognitionConfig;
+import com.google.cloud.speech.v1.RecognizeRequest;
+import com.google.cloud.speech.v1.RecognizeResponse;
 import com.google.cloud.speech.v1.SpeechClient;
 import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1.SpeechRecognitionResult;
-import com.google.protobuf.ByteString;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 
-public class SpeechTranscribeAsync {
-  // [START speech_transcribe_async]
+public class SpeechTranscribeSyncGcs {
+  // [START speech_transcribe_sync_gcs]
   /*
    * Please include the following imports to run this sample.
    *
-   * import com.google.api.gax.longrunning.OperationFuture;
-   * import com.google.cloud.speech.v1.LongRunningRecognizeMetadata;
-   * import com.google.cloud.speech.v1.LongRunningRecognizeRequest;
-   * import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
    * import com.google.cloud.speech.v1.RecognitionAudio;
    * import com.google.cloud.speech.v1.RecognitionConfig;
+   * import com.google.cloud.speech.v1.RecognizeRequest;
+   * import com.google.cloud.speech.v1.RecognizeResponse;
    * import com.google.cloud.speech.v1.SpeechClient;
    * import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
    * import com.google.cloud.speech.v1.SpeechRecognitionResult;
-   * import com.google.protobuf.ByteString;
-   * import java.nio.file.Files;
-   * import java.nio.file.Path;
-   * import java.nio.file.Paths;
    */
 
-  public static void sampleLongRunningRecognize() {
+  public static void sampleRecognize() {
     // TODO(developer): Replace these variables before running the sample.
-    String localFilePath = "resources/brooklyn_bridge.raw";
-    sampleLongRunningRecognize(localFilePath);
+    String storageUri = "gs://cloud-samples-data/speech/brooklyn_bridge.raw";
+    sampleRecognize(storageUri);
   }
 
   /**
-   * Transcribe a long audio file using asynchronous speech recognition
+   * Transcribe short audio file from Cloud Storage using synchronous speech recognition
    *
-   * @param localFilePath Path to local audio file, e.g. /path/audio.wav
+   * @param storageUri URI for audio file in Cloud Storage, e.g. gs://[BUCKET]/[FILE]
    */
-  public static void sampleLongRunningRecognize(String localFilePath) {
+  public static void sampleRecognize(String storageUri) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-
-      // The language of the supplied audio
-      String languageCode = "en-US";
 
       // Sample rate in Hertz of the audio data sent
       int sampleRateHertz = 16000;
+
+      // The language of the supplied audio
+      String languageCode = "en-US";
 
       // Encoding of audio data sent. This sample sets this explicitly.
       // This field is optional for FLAC and WAV audio formats.
       RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.LINEAR16;
       RecognitionConfig config =
           RecognitionConfig.newBuilder()
-              .setLanguageCode(languageCode)
               .setSampleRateHertz(sampleRateHertz)
+              .setLanguageCode(languageCode)
               .setEncoding(encoding)
               .build();
-      Path path = Paths.get(localFilePath);
-      byte[] data = Files.readAllBytes(path);
-      ByteString content = ByteString.copyFrom(data);
-      RecognitionAudio audio = RecognitionAudio.newBuilder().setContent(content).build();
-      LongRunningRecognizeRequest request =
-          LongRunningRecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
-      OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> future =
-          speechClient.longRunningRecognizeAsync(request);
-
-      System.out.println("Waiting for operation to complete...");
-      LongRunningRecognizeResponse response = future.get();
+      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(storageUri).build();
+      RecognizeRequest request =
+          RecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
+      RecognizeResponse response = speechClient.recognize(request);
       for (SpeechRecognitionResult result : response.getResultsList()) {
         // First alternative is the most probable result
         SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
@@ -109,16 +89,17 @@ public class SpeechTranscribeAsync {
       System.err.println("Failed to create the client due to: " + exception);
     }
   }
-  // [END speech_transcribe_async]
+  // [END speech_transcribe_sync_gcs]
 
   public static void main(String[] args) throws Exception {
     Options options = new Options();
     options.addOption(
-        Option.builder("").required(false).hasArg(true).longOpt("local_file_path").build());
+        Option.builder("").required(false).hasArg(true).longOpt("storage_uri").build());
 
     CommandLine cl = (new DefaultParser()).parse(options, args);
-    String localFilePath = cl.getOptionValue("local_file_path", "resources/brooklyn_bridge.raw");
+    String storageUri =
+        cl.getOptionValue("storage_uri", "gs://cloud-samples-data/speech/brooklyn_bridge.raw");
 
-    sampleLongRunningRecognize(localFilePath);
+    sampleRecognize(storageUri);
   }
 }

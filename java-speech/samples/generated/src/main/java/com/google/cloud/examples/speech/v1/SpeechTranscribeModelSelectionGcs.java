@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_multichannel_gcs")
+// DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_model_selection_gcs")
 // sample-metadata:
-//   title: Multi-Channel Audio Transcription (Cloud Storage)
-//   description: Transcribe a short audio file from Cloud Storage with multiple channels
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeMultichannelGcs
-// [--args='[--storage_uri "gs://cloud-samples-data/speech/multi.wav"]']
+//   title: Selecting a Transcription Model (Cloud Storage)
+//   description: Transcribe a short audio file from Cloud Storage using a specified transcription model
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeModelSelectionGcs [--args='[--storage_uri "gs://cloud-samples-data/speech/hello.wav"] [--model "phone_call"]']
 
 package com.google.cloud.examples.speech.v1;
 
@@ -35,8 +33,8 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 
-public class SpeechTranscribeMultichannelGcs {
-  // [START speech_transcribe_multichannel_gcs]
+public class SpeechTranscribeModelSelectionGcs {
+  // [START speech_transcribe_model_selection_gcs]
   /*
    * Please include the following imports to run this sample.
    *
@@ -51,41 +49,31 @@ public class SpeechTranscribeMultichannelGcs {
 
   public static void sampleRecognize() {
     // TODO(developer): Replace these variables before running the sample.
-    String storageUri = "gs://cloud-samples-data/speech/multi.wav";
-    sampleRecognize(storageUri);
+    String storageUri = "gs://cloud-samples-data/speech/hello.wav";
+    String model = "phone_call";
+    sampleRecognize(storageUri, model);
   }
 
   /**
-   * Transcribe a short audio file from Cloud Storage with multiple channels
+   * Transcribe a short audio file from Cloud Storage using a specified transcription model
    *
    * @param storageUri URI for audio file in Cloud Storage, e.g. gs://[BUCKET]/[FILE]
+   * @param model The transcription model to use, e.g. video, phone_call, default For a list of
+   *     available transcription models, see:
+   *     https://cloud.google.com/speech-to-text/docs/transcription-model#transcription_models
    */
-  public static void sampleRecognize(String storageUri) {
+  public static void sampleRecognize(String storageUri, String model) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-
-      // The number of channels in the input audio file (optional)
-      int audioChannelCount = 2;
-
-      // When set to true, each audio channel will be recognized separately.
-      // The recognition result will contain a channel_tag field to state which
-      // channel that result belongs to
-      boolean enableSeparateRecognitionPerChannel = true;
 
       // The language of the supplied audio
       String languageCode = "en-US";
       RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              .setAudioChannelCount(audioChannelCount)
-              .setEnableSeparateRecognitionPerChannel(enableSeparateRecognitionPerChannel)
-              .setLanguageCode(languageCode)
-              .build();
+          RecognitionConfig.newBuilder().setModel(model).setLanguageCode(languageCode).build();
       RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(storageUri).build();
       RecognizeRequest request =
           RecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
       RecognizeResponse response = speechClient.recognize(request);
       for (SpeechRecognitionResult result : response.getResultsList()) {
-        // channelTag to recognize which audio channel this result is for
-        System.out.printf("Channel tag: %s\n", result.getChannelTag());
         // First alternative is the most probable result
         SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
         System.out.printf("Transcript: %s\n", alternative.getTranscript());
@@ -94,17 +82,19 @@ public class SpeechTranscribeMultichannelGcs {
       System.err.println("Failed to create the client due to: " + exception);
     }
   }
-  // [END speech_transcribe_multichannel_gcs]
+  // [END speech_transcribe_model_selection_gcs]
 
   public static void main(String[] args) throws Exception {
     Options options = new Options();
     options.addOption(
         Option.builder("").required(false).hasArg(true).longOpt("storage_uri").build());
+    options.addOption(Option.builder("").required(false).hasArg(true).longOpt("model").build());
 
     CommandLine cl = (new DefaultParser()).parse(options, args);
     String storageUri =
-        cl.getOptionValue("storage_uri", "gs://cloud-samples-data/speech/multi.wav");
+        cl.getOptionValue("storage_uri", "gs://cloud-samples-data/speech/hello.wav");
+    String model = cl.getOptionValue("model", "phone_call");
 
-    sampleRecognize(storageUri);
+    sampleRecognize(storageUri, model);
   }
 }

@@ -13,83 +13,76 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_multilanguage_beta")
+// DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_sync")
 // sample-metadata:
-//   title: Detecting language spoken automatically (Local File) (Beta)
-//   description: Transcribe a short audio file with language detected from a list of possible
-// languages
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeMultilanguageBeta
-// [--args='[--local_file_path "resources/brooklyn_bridge.flac"]']
+//   title: Transcribe Audio File (Local File)
+//   description: Transcribe a short audio file using synchronous speech recognition
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1.SpeechTranscribeSync [--args='[--local_file_path "resources/brooklyn_bridge.raw"]']
 
-package com.google.cloud.examples.speech.v1p1beta1;
+package com.google.cloud.examples.speech.v1;
 
-import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
-import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
-import com.google.cloud.speech.v1p1beta1.RecognizeRequest;
-import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
-import com.google.cloud.speech.v1p1beta1.SpeechClient;
-import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
-import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
+import com.google.cloud.speech.v1.RecognitionAudio;
+import com.google.cloud.speech.v1.RecognitionConfig;
+import com.google.cloud.speech.v1.RecognizeRequest;
+import com.google.cloud.speech.v1.RecognizeResponse;
+import com.google.cloud.speech.v1.SpeechClient;
+import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
+import com.google.cloud.speech.v1.SpeechRecognitionResult;
 import com.google.protobuf.ByteString;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 
-public class SpeechTranscribeMultilanguageBeta {
-  // [START speech_transcribe_multilanguage_beta]
+public class SpeechTranscribeSync {
+  // [START speech_transcribe_sync]
   /*
    * Please include the following imports to run this sample.
    *
-   * import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
-   * import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
-   * import com.google.cloud.speech.v1p1beta1.RecognizeRequest;
-   * import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
-   * import com.google.cloud.speech.v1p1beta1.SpeechClient;
-   * import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
-   * import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
+   * import com.google.cloud.speech.v1.RecognitionAudio;
+   * import com.google.cloud.speech.v1.RecognitionConfig;
+   * import com.google.cloud.speech.v1.RecognizeRequest;
+   * import com.google.cloud.speech.v1.RecognizeResponse;
+   * import com.google.cloud.speech.v1.SpeechClient;
+   * import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
+   * import com.google.cloud.speech.v1.SpeechRecognitionResult;
    * import com.google.protobuf.ByteString;
    * import java.nio.file.Files;
    * import java.nio.file.Path;
    * import java.nio.file.Paths;
-   * import java.util.Arrays;
-   * import java.util.List;
    */
 
   public static void sampleRecognize() {
     // TODO(developer): Replace these variables before running the sample.
-    String localFilePath = "resources/brooklyn_bridge.flac";
+    String localFilePath = "resources/brooklyn_bridge.raw";
     sampleRecognize(localFilePath);
   }
 
   /**
-   * Transcribe a short audio file with language detected from a list of possible languages
+   * Transcribe a short audio file using synchronous speech recognition
    *
    * @param localFilePath Path to local audio file, e.g. /path/audio.wav
    */
   public static void sampleRecognize(String localFilePath) {
     try (SpeechClient speechClient = SpeechClient.create()) {
 
-      // The language of the supplied audio. Even though additional languages are
-      // provided by alternative_language_codes, a primary language is still required.
-      String languageCode = "fr";
+      // The language of the supplied audio
+      String languageCode = "en-US";
 
-      // Specify up to 3 additional languages as possible alternative languages
-      // of the supplied audio.
-      String alternativeLanguageCodesElement = "es";
-      String alternativeLanguageCodesElement2 = "en";
-      List<String> alternativeLanguageCodes =
-          Arrays.asList(alternativeLanguageCodesElement, alternativeLanguageCodesElement2);
+      // Sample rate in Hertz of the audio data sent
+      int sampleRateHertz = 16000;
+
+      // Encoding of audio data sent. This sample sets this explicitly.
+      // This field is optional for FLAC and WAV audio formats.
+      RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.LINEAR16;
       RecognitionConfig config =
           RecognitionConfig.newBuilder()
               .setLanguageCode(languageCode)
-              .addAllAlternativeLanguageCodes(alternativeLanguageCodes)
+              .setSampleRateHertz(sampleRateHertz)
+              .setEncoding(encoding)
               .build();
       Path path = Paths.get(localFilePath);
       byte[] data = Files.readAllBytes(path);
@@ -99,8 +92,6 @@ public class SpeechTranscribeMultilanguageBeta {
           RecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
       RecognizeResponse response = speechClient.recognize(request);
       for (SpeechRecognitionResult result : response.getResultsList()) {
-        // The languageCode which was detected as the most likely being spoken in the audio
-        System.out.printf("Detected language: %s\n", result.getLanguageCode());
         // First alternative is the most probable result
         SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
         System.out.printf("Transcript: %s\n", alternative.getTranscript());
@@ -109,7 +100,7 @@ public class SpeechTranscribeMultilanguageBeta {
       System.err.println("Failed to create the client due to: " + exception);
     }
   }
-  // [END speech_transcribe_multilanguage_beta]
+  // [END speech_transcribe_sync]
 
   public static void main(String[] args) throws Exception {
     Options options = new Options();
@@ -117,7 +108,7 @@ public class SpeechTranscribeMultilanguageBeta {
         Option.builder("").required(false).hasArg(true).longOpt("local_file_path").build());
 
     CommandLine cl = (new DefaultParser()).parse(options, args);
-    String localFilePath = cl.getOptionValue("local_file_path", "resources/brooklyn_bridge.flac");
+    String localFilePath = cl.getOptionValue("local_file_path", "resources/brooklyn_bridge.raw");
 
     sampleRecognize(localFilePath);
   }

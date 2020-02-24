@@ -13,23 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("Request",  "speech_transcribe_auto_punctuation_beta")
+// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",  "speech_transcribe_diarization_beta")
 // sample-metadata:
-//   title: Getting punctuation in results (Local File) (Beta)
-//   description: Transcribe a short audio file with punctuation
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeAutoPunctuationBeta
-// [--args='[--local_file_path "resources/commercial_mono.wav"]']
+//   title: Separating different speakers (Local File) (LRO) (Beta)
+//   description: Print confidence level for individual words in a transcription of a short audio file
+//     Separating different speakers in an audio file recording
+//   usage: gradle run -PmainClass=com.google.cloud.examples.speech.v1p1beta1.SpeechTranscribeDiarizationBeta [--args='[--local_file_path "resources/commercial_mono.wav"]']
 
 package com.google.cloud.examples.speech.v1p1beta1;
 
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata;
+import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest;
+import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
-import com.google.cloud.speech.v1p1beta1.RecognizeRequest;
-import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
 import com.google.cloud.speech.v1p1beta1.SpeechClient;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
+import com.google.cloud.speech.v1p1beta1.WordInfo;
 import com.google.protobuf.ByteString;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -39,67 +41,83 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 
-public class SpeechTranscribeAutoPunctuationBeta {
-  // [START speech_transcribe_auto_punctuation_beta]
+public class SpeechTranscribeDiarizationBeta {
+  // [START speech_transcribe_diarization_beta]
   /*
    * Please include the following imports to run this sample.
    *
+   * import com.google.api.gax.longrunning.OperationFuture;
+   * import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata;
+   * import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest;
+   * import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse;
    * import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
    * import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
-   * import com.google.cloud.speech.v1p1beta1.RecognizeRequest;
-   * import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
    * import com.google.cloud.speech.v1p1beta1.SpeechClient;
    * import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
    * import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
+   * import com.google.cloud.speech.v1p1beta1.WordInfo;
    * import com.google.protobuf.ByteString;
    * import java.nio.file.Files;
    * import java.nio.file.Path;
    * import java.nio.file.Paths;
    */
 
-  public static void sampleRecognize() {
+  public static void sampleLongRunningRecognize() {
     // TODO(developer): Replace these variables before running the sample.
     String localFilePath = "resources/commercial_mono.wav";
-    sampleRecognize(localFilePath);
+    sampleLongRunningRecognize(localFilePath);
   }
 
   /**
-   * Transcribe a short audio file with punctuation
+   * Print confidence level for individual words in a transcription of a short audio file Separating
+   * different speakers in an audio file recording
    *
    * @param localFilePath Path to local audio file, e.g. /path/audio.wav
    */
-  public static void sampleRecognize(String localFilePath) {
+  public static void sampleLongRunningRecognize(String localFilePath) {
     try (SpeechClient speechClient = SpeechClient.create()) {
 
-      // When enabled, trascription results may include punctuation
-      // (available for select languages).
-      boolean enableAutomaticPunctuation = true;
+      // If enabled, each word in the first alternative of each result will be
+      // tagged with a speaker tag to identify the speaker.
+      boolean enableSpeakerDiarization = true;
 
-      // The language of the supplied audio. Even though additional languages are
-      // provided by alternative_language_codes, a primary language is still required.
+      // Optional. Specifies the estimated number of speakers in the conversation.
+      int diarizationSpeakerCount = 2;
+
+      // The language of the supplied audio
       String languageCode = "en-US";
       RecognitionConfig config =
           RecognitionConfig.newBuilder()
-              .setEnableAutomaticPunctuation(enableAutomaticPunctuation)
+              .setEnableSpeakerDiarization(enableSpeakerDiarization)
+              .setDiarizationSpeakerCount(diarizationSpeakerCount)
               .setLanguageCode(languageCode)
               .build();
       Path path = Paths.get(localFilePath);
       byte[] data = Files.readAllBytes(path);
       ByteString content = ByteString.copyFrom(data);
       RecognitionAudio audio = RecognitionAudio.newBuilder().setContent(content).build();
-      RecognizeRequest request =
-          RecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
-      RecognizeResponse response = speechClient.recognize(request);
+      LongRunningRecognizeRequest request =
+          LongRunningRecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
+      OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> future =
+          speechClient.longRunningRecognizeAsync(request);
+
+      System.out.println("Waiting for operation to complete...");
+      LongRunningRecognizeResponse response = future.get();
       for (SpeechRecognitionResult result : response.getResultsList()) {
-        // First alternative is the most probable result
+        // First alternative has words tagged with speakers
         SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
         System.out.printf("Transcript: %s\n", alternative.getTranscript());
+        // Print the speakerTag of each word
+        for (WordInfo word : alternative.getWordsList()) {
+          System.out.printf("Word: %s\n", word.getWord());
+          System.out.printf("Speaker tag: %s\n", word.getSpeakerTag());
+        }
       }
     } catch (Exception exception) {
       System.err.println("Failed to create the client due to: " + exception);
     }
   }
-  // [END speech_transcribe_auto_punctuation_beta]
+  // [END speech_transcribe_diarization_beta]
 
   public static void main(String[] args) throws Exception {
     Options options = new Options();
@@ -109,6 +127,6 @@ public class SpeechTranscribeAutoPunctuationBeta {
     CommandLine cl = (new DefaultParser()).parse(options, args);
     String localFilePath = cl.getOptionValue("local_file_path", "resources/commercial_mono.wav");
 
-    sampleRecognize(localFilePath);
+    sampleLongRunningRecognize(localFilePath);
   }
 }
