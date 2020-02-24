@@ -345,6 +345,25 @@ Add the following to your project's pom.xml.
     </dependencyManagement>
 ```
 
+## Container Deployment
+
+While deploying this client in [Google Kubernetes Engine(GKE)](https://cloud.google.com/kubernetes-engine) with [CoS](https://cloud.google.com/container-optimized-os/docs/). Please make sure to provide CPU configuration in your deployment file. With default configuration JVM detects only 1 CPU, which affects the number of channels with the client, resulting in performance repercussion.
+
+Also, The number of `grpc-nio-worker-ELG-1-#` thread is same as number of CPUs. These are managed by a single `grpc-default-executor-#` thread, which is shared among multiple client instances.
+
+For example:
+```yaml
+appVersion: v1
+...
+spec:
+  ...
+  container:
+    resources:
+      requests:
+        cpu: "1" # Here 1 represents 100% of single node CPUs whereas other than 1 represents the number of CPU it would use from a node.
+```
+see [Assign CPU Resources to Containers](https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/#specify-a-cpu-request-and-a-cpu-limit) for more information.
+
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting
