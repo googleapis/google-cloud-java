@@ -1,18 +1,18 @@
 {
-  "updateTime": "2020-02-21T23:04:32.148934Z",
+  "updateTime": "2020-02-22T10:09:34.139347Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.45.0",
-        "dockerImage": "googleapis/artman@sha256:6aec9c34db0e4be221cdaf6faba27bdc07cfea846808b3d3b964dfce3a9a0f9b"
+        "version": "0.45.1",
+        "dockerImage": "googleapis/artman@sha256:36956ca6a4dc70a59de5d5d0fd35061b050bb56884516f0898f46d8220f25738"
       }
     },
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-tasks.git",
-        "sha": "1ffe5bc2086312272b79ec451feaeeb01f163626"
+        "sha": "6be034c482437a1a333072d5ecdf997b31bb5177"
       }
     },
     {
@@ -20,8 +20,7 @@
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
         "sha": "7f910bcc4fc4704947ccfd3ceed015d16b9e00c2",
-        "internalRef": "296451205",
-        "log": "7f910bcc4fc4704947ccfd3ceed015d16b9e00c2\nUpdate Dataproc v1beta2 client.\n\nPiperOrigin-RevId: 296451205\n\nde287524405a3dce124d301634731584fc0432d7\nFix: Reinstate method signatures that had been missed off some RPCs\nFix: Correct resource types for two fields\n\nPiperOrigin-RevId: 296435091\n\ne5bc9566ae057fb4c92f8b7e047f1c8958235b53\nDeprecate the endpoint_uris field, as it is unused.\n\nPiperOrigin-RevId: 296357191\n\n8c12e2b4dca94e12bff9f538bdac29524ff7ef7a\nUpdate Dataproc v1 client.\n\nPiperOrigin-RevId: 296336662\n\n17567c4a1ef0a9b50faa87024d66f8acbb561089\nRemoving erroneous comment, a la https://github.com/googleapis/java-speech/pull/103\n\nPiperOrigin-RevId: 296332968\n\n"
+        "internalRef": "296451205"
       }
     },
     {
