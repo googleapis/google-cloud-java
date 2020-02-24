@@ -13,49 +13,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("RequestPaged",  "job_search_commute_search")
+// DO NOT EDIT! This is a generated sample ("RequestPaged",  "job_search_custom_ranking_search")
 // sample-metadata:
 //   title:
-//   description: Search Jobs using commute distance
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCommuteSearch
-// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
-// tenancy is optional)"]']
+//   description: Search Jobs using custom rankings
+//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCustomRankingSearch [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using tenancy is optional)"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 
-import com.google.cloud.talent.v4beta1.CommuteFilter;
-import com.google.cloud.talent.v4beta1.CommuteMethod;
 import com.google.cloud.talent.v4beta1.Job;
-import com.google.cloud.talent.v4beta1.JobQuery;
 import com.google.cloud.talent.v4beta1.JobServiceClient;
 import com.google.cloud.talent.v4beta1.RequestMetadata;
 import com.google.cloud.talent.v4beta1.SearchJobsRequest;
+import com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo;
+import com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob;
 import com.google.cloud.talent.v4beta1.TenantName;
 import com.google.cloud.talent.v4beta1.TenantOrProjectName;
-import com.google.protobuf.Duration;
-import com.google.type.LatLng;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 
-public class JobSearchCommuteSearch {
-  // [START job_search_commute_search]
+public class JobSearchCustomRankingSearch {
+  // [START job_search_custom_ranking_search]
   /*
    * Please include the following imports to run this sample.
    *
-   * import com.google.cloud.talent.v4beta1.CommuteFilter;
-   * import com.google.cloud.talent.v4beta1.CommuteMethod;
    * import com.google.cloud.talent.v4beta1.Job;
-   * import com.google.cloud.talent.v4beta1.JobQuery;
    * import com.google.cloud.talent.v4beta1.JobServiceClient;
    * import com.google.cloud.talent.v4beta1.RequestMetadata;
    * import com.google.cloud.talent.v4beta1.SearchJobsRequest;
+   * import com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo;
    * import com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob;
    * import com.google.cloud.talent.v4beta1.TenantName;
    * import com.google.cloud.talent.v4beta1.TenantOrProjectName;
-   * import com.google.protobuf.Duration;
-   * import com.google.type.LatLng;
    */
 
   public static void sampleSearchJobs() {
@@ -65,7 +56,12 @@ public class JobSearchCommuteSearch {
     sampleSearchJobs(projectId, tenantId);
   }
 
-  /** Search Jobs using commute distance */
+  /**
+   * Search Jobs using custom rankings
+   *
+   * @param projectId Your Google Cloud Project ID
+   * @param tenantId Identifier of the Tenantd
+   */
   public static void sampleSearchJobs(String projectId, String tenantId) {
     try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
       TenantOrProjectName parent = TenantName.of(projectId, tenantId);
@@ -78,25 +74,21 @@ public class JobSearchCommuteSearch {
               .setSessionId(sessionId)
               .setUserId(userId)
               .build();
-      CommuteMethod commuteMethod = CommuteMethod.TRANSIT;
-      long seconds = 1800L;
-      Duration travelDuration = Duration.newBuilder().setSeconds(seconds).build();
-      double latitude = 37.422408;
-      double longitude = -122.084068;
-      LatLng startCoordinates =
-          LatLng.newBuilder().setLatitude(latitude).setLongitude(longitude).build();
-      CommuteFilter commuteFilter =
-          CommuteFilter.newBuilder()
-              .setCommuteMethod(commuteMethod)
-              .setTravelDuration(travelDuration)
-              .setStartCoordinates(startCoordinates)
+      SearchJobsRequest.CustomRankingInfo.ImportanceLevel importanceLevel =
+          SearchJobsRequest.CustomRankingInfo.ImportanceLevel.EXTREME;
+      String rankingExpression = "(someFieldLong + 25) * 0.25";
+      SearchJobsRequest.CustomRankingInfo customRankingInfo =
+          SearchJobsRequest.CustomRankingInfo.newBuilder()
+              .setImportanceLevel(importanceLevel)
+              .setRankingExpression(rankingExpression)
               .build();
-      JobQuery jobQuery = JobQuery.newBuilder().setCommuteFilter(commuteFilter).build();
+      String orderBy = "custom_ranking desc";
       SearchJobsRequest request =
           SearchJobsRequest.newBuilder()
               .setParent(parent.toString())
               .setRequestMetadata(requestMetadata)
-              .setJobQuery(jobQuery)
+              .setCustomRankingInfo(customRankingInfo)
+              .setOrderBy(orderBy)
               .build();
       for (SearchJobsResponse.MatchingJob responseItem :
           jobServiceClient.searchJobs(request).iterateAll()) {
@@ -110,7 +102,7 @@ public class JobSearchCommuteSearch {
       System.err.println("Failed to create the client due to: " + exception);
     }
   }
-  // [END job_search_commute_search]
+  // [END job_search_custom_ranking_search]
 
   public static void main(String[] args) throws Exception {
     Options options = new Options();

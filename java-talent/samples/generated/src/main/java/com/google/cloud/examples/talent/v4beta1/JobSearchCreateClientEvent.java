@@ -17,11 +17,7 @@
 // sample-metadata:
 //   title:
 //   description: Creates a client event
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCreateClientEvent
-// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
-// tenancy is optional)"] [--request_id "[request_id from ResponseMetadata]"] [--event_id "[Set this
-// to a unique identifier]"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCreateClientEvent [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using tenancy is optional)"] [--request_id "[request_id from ResponseMetadata]"] [--event_id "[Set this to a unique identifier]"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 
@@ -80,8 +76,7 @@ public class JobSearchCreateClientEvent {
 
       // The timestamp of the event as seconds of UTC time since Unix epoch
       // For more information on how to create google.protobuf.Timestamps
-      // See:
-      // https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/timestamp.proto
+      // See: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/timestamp.proto
       long seconds = 0L;
       Timestamp createTime = Timestamp.newBuilder().setSeconds(seconds).build();
 

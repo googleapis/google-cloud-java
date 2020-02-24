@@ -13,24 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",
-// "job_search_batch_create_jobs")
+// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",  "job_search_batch_create_jobs")
 // sample-metadata:
 //   title:
 //   description: Batch Create Jobs
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchBatchCreateJobs
-// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
-// tenancy is optional)"] [--company_name_one "Company name, e.g.
-// projects/your-project/companies/company-id"] [--requisition_id_one "Job requisition ID, aka
-// Posting ID. Unique per job."] [--title_one "Software Engineer"] [--description_one "This is a
-// description of this <i>wonderful</i> job!"] [--job_application_url_one
-// "https://www.example.org/job-posting/123"] [--address_one "1600 Amphitheatre Parkway, Mountain
-// View, CA 94043"] [--language_code_one "en-US"] [--company_name_two "Company name, e.g.
-// projects/your-project/companies/company-id"] [--requisition_id_two "Job requisition ID, aka
-// Posting ID. Unique per job."] [--title_two "Quality Assurance"] [--description_two "This is a
-// description of this <i>wonderful</i> job!"] [--job_application_url_two
-// "https://www.example.org/job-posting/123"] [--address_two "111 8th Avenue, New York, NY 10011"]
-// [--language_code_two "en-US"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchBatchCreateJobs [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using tenancy is optional)"] [--company_name_one "Company name, e.g. projects/your-project/companies/company-id"] [--requisition_id_one "Job requisition ID, aka Posting ID. Unique per job."] [--title_one "Software Engineer"] [--description_one "This is a description of this <i>wonderful</i> job!"] [--job_application_url_one "https://www.example.org/job-posting/123"] [--address_one "1600 Amphitheatre Parkway, Mountain View, CA 94043"] [--language_code_one "en-US"] [--company_name_two "Company name, e.g. projects/your-project/companies/company-id"] [--requisition_id_two "Job requisition ID, aka Posting ID. Unique per job."] [--title_two "Quality Assurance"] [--description_two "This is a description of this <i>wonderful</i> job!"] [--job_application_url_two "https://www.example.org/job-posting/123"] [--address_two "111 8th Avenue, New York, NY 10011"] [--language_code_two "en-US"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 
@@ -38,6 +25,7 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.talent.v4beta1.BatchCreateJobsRequest;
 import com.google.cloud.talent.v4beta1.BatchOperationMetadata;
 import com.google.cloud.talent.v4beta1.Job;
+import com.google.cloud.talent.v4beta1.Job.ApplicationInfo;
 import com.google.cloud.talent.v4beta1.JobOperationResult;
 import com.google.cloud.talent.v4beta1.JobServiceClient;
 import com.google.cloud.talent.v4beta1.TenantName;

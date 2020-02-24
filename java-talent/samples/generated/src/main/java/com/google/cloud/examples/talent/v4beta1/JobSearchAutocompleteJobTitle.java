@@ -17,16 +17,13 @@
 // sample-metadata:
 //   title:
 //   description: Complete job title given partial text (autocomplete)
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchAutocompleteJobTitle
-// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
-// tenancy is optional)"] [--query "[partially typed job title]"] [--num_results 5] [--language_code
-// "en-US"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchAutocompleteJobTitle [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using tenancy is optional)"] [--query "[partially typed job title]"] [--num_results 5] [--language_code "en-US"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 
 import com.google.cloud.talent.v4beta1.CompleteQueryRequest;
 import com.google.cloud.talent.v4beta1.CompleteQueryResponse;
+import com.google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult;
 import com.google.cloud.talent.v4beta1.CompletionClient;
 import com.google.cloud.talent.v4beta1.TenantName;
 import com.google.cloud.talent.v4beta1.TenantOrProjectName;

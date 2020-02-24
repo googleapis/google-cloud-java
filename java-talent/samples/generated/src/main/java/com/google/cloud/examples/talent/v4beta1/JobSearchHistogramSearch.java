@@ -17,9 +17,7 @@
 // sample-metadata:
 //   title:
 //   description: Search Jobs with histogram queries
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchHistogramSearch
-// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
-// tenancy is optional)"] [--query "count(base_compensation, [bucket(12, 20)])"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchHistogramSearch [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using tenancy is optional)"] [--query "count(base_compensation, [bucket(12, 20)])"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 
@@ -28,6 +26,7 @@ import com.google.cloud.talent.v4beta1.Job;
 import com.google.cloud.talent.v4beta1.JobServiceClient;
 import com.google.cloud.talent.v4beta1.RequestMetadata;
 import com.google.cloud.talent.v4beta1.SearchJobsRequest;
+import com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob;
 import com.google.cloud.talent.v4beta1.TenantName;
 import com.google.cloud.talent.v4beta1.TenantOrProjectName;
 import java.util.Arrays;

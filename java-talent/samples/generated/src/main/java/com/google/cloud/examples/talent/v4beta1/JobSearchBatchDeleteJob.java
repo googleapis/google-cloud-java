@@ -13,19 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("RequestPaged",  "job_search_list_jobs")
+// DO NOT EDIT! This is a generated sample ("Request",  "job_search_batch_delete_job")
 // sample-metadata:
 //   title:
-//   description: List Jobs
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchListJobs
-// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
-// tenancy is optional)"] [--filter "companyName=projects/my-project/companies/company-id"]']
+//   description: Batch delete jobs using a filter
+//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchBatchDeleteJob [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using tenancy is optional)"] [--filter "[Query]"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 
-import com.google.cloud.talent.v4beta1.Job;
+import com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest;
 import com.google.cloud.talent.v4beta1.JobServiceClient;
-import com.google.cloud.talent.v4beta1.ListJobsRequest;
 import com.google.cloud.talent.v4beta1.TenantName;
 import com.google.cloud.talent.v4beta1.TenantOrProjectName;
 import org.apache.commons.cli.CommandLine;
@@ -33,48 +30,48 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 
-public class JobSearchListJobs {
-  // [START job_search_list_jobs]
+public class JobSearchBatchDeleteJob {
+  // [START job_search_batch_delete_job]
   /*
    * Please include the following imports to run this sample.
    *
-   * import com.google.cloud.talent.v4beta1.Job;
+   * import com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest;
    * import com.google.cloud.talent.v4beta1.JobServiceClient;
-   * import com.google.cloud.talent.v4beta1.ListJobsRequest;
    * import com.google.cloud.talent.v4beta1.TenantName;
    * import com.google.cloud.talent.v4beta1.TenantOrProjectName;
    */
 
-  public static void sampleListJobs() {
+  public static void sampleBatchDeleteJobs() {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "Your Google Cloud Project ID";
     String tenantId = "Your Tenant ID (using tenancy is optional)";
-    String filter = "companyName=projects/my-project/companies/company-id";
-    sampleListJobs(projectId, tenantId, filter);
+    String filter = "[Query]";
+    sampleBatchDeleteJobs(projectId, tenantId, filter);
   }
 
   /**
-   * List Jobs
+   * Batch delete jobs using a filter
    *
    * @param projectId Your Google Cloud Project ID
-   * @param tenantId Identifier of the Tenant
+   * @param tenantId Identifier of the Tenantd
+   * @param filter The filter string specifies the jobs to be deleted. For example: companyName =
+   *     "projects/api-test-project/companies/123" AND equisitionId = "req-1"
    */
-  public static void sampleListJobs(String projectId, String tenantId, String filter) {
+  public static void sampleBatchDeleteJobs(String projectId, String tenantId, String filter) {
     try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
       TenantOrProjectName parent = TenantName.of(projectId, tenantId);
-      ListJobsRequest request =
-          ListJobsRequest.newBuilder().setParent(parent.toString()).setFilter(filter).build();
-      for (Job responseItem : jobServiceClient.listJobs(request).iterateAll()) {
-        System.out.printf("Job name: %s\n", responseItem.getName());
-        System.out.printf("Job requisition ID: %s\n", responseItem.getRequisitionId());
-        System.out.printf("Job title: %s\n", responseItem.getTitle());
-        System.out.printf("Job description: %s\n", responseItem.getDescription());
-      }
+      BatchDeleteJobsRequest request =
+          BatchDeleteJobsRequest.newBuilder()
+              .setParent(parent.toString())
+              .setFilter(filter)
+              .build();
+      jobServiceClient.batchDeleteJobs(request);
+      System.out.println("Batch deleted jobs from filter");
     } catch (Exception exception) {
       System.err.println("Failed to create the client due to: " + exception);
     }
   }
-  // [END job_search_list_jobs]
+  // [END job_search_batch_delete_job]
 
   public static void main(String[] args) throws Exception {
     Options options = new Options();
@@ -86,9 +83,8 @@ public class JobSearchListJobs {
     CommandLine cl = (new DefaultParser()).parse(options, args);
     String projectId = cl.getOptionValue("project_id", "Your Google Cloud Project ID");
     String tenantId = cl.getOptionValue("tenant_id", "Your Tenant ID (using tenancy is optional)");
-    String filter =
-        cl.getOptionValue("filter", "companyName=projects/my-project/companies/company-id");
+    String filter = cl.getOptionValue("filter", "[Query]");
 
-    sampleListJobs(projectId, tenantId, filter);
+    sampleBatchDeleteJobs(projectId, tenantId, filter);
   }
 }

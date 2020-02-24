@@ -17,9 +17,7 @@
 // sample-metadata:
 //   title:
 //   description: Get Job
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchGetJob
-// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
-// tenancy is optional)"] [--job_id "Job ID"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchGetJob [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using tenancy is optional)"] [--job_id "Job ID"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 
