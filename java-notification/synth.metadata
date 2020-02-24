@@ -1,11 +1,11 @@
 {
-  "updateTime": "2020-02-21T23:11:14.296540Z",
+  "updateTime": "2020-02-22T10:16:17.485704Z",
   "sources": [
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-notification.git",
-        "sha": "ac4589ec2e2d5adec791dea6187f7d7dac83ed25"
+        "sha": "21f2415497dbe8c71588a6caea5f3746f055c483"
       }
     },
     {
