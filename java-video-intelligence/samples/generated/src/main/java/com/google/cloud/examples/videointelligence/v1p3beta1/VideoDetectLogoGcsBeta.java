@@ -13,14 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",
-// "video_detect_logo_gcs_beta")
+// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",  "video_detect_logo_gcs_beta")
 // sample-metadata:
 //   title:
-//   description: Performs asynchronous video annotation for logo recognition on a file hosted in
-// GCS.
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.videointelligence.v1p3beta1.VideoDetectLogoGcsBeta
+//   description: Performs asynchronous video annotation for logo recognition on a file hosted in GCS.
+//   usage: gradle run -PmainClass=com.google.cloud.examples.videointelligence.v1p3beta1.VideoDetectLogoGcsBeta
 
 package com.google.cloud.examples.videointelligence.v1p3beta1;
 
@@ -86,13 +83,11 @@ public class VideoDetectLogoGcsBeta {
       for (LogoRecognitionAnnotation logoRecognitionAnnotation :
           annotationResult.getLogoRecognitionAnnotationsList()) {
         Entity entity = logoRecognitionAnnotation.getEntity();
-        // Opaque entity ID. Some IDs may be available in [Google Knowledge Graph Search
-        // API](https://developers.google.com/knowledge-graph/).
+        // Opaque entity ID. Some IDs may be available in [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/).
         System.out.printf("Entity Id : %s\n", entity.getEntityId());
         // Textual description, e.g. `Google`.
         System.out.printf("Description : %s\n", entity.getDescription());
-        // All logo tracks where the recognized logo appears. Each track corresponds to one logo
-        // instance appearing in consecutive frames.
+        // All logo tracks where the recognized logo appears. Each track corresponds to one logo instance appearing in consecutive frames.
         for (Track track : logoRecognitionAnnotation.getTracksList()) {
           // Video segment of a track.
           VideoSegment segment = track.getSegment();
@@ -128,8 +123,7 @@ public class VideoDetectLogoGcsBeta {
             System.out.printf("\t\tValue : %s\n", trackAttribute.getValue());
           }
         }
-        // All video segments where the recognized logo appears. There might be multiple instances
-        // of the same logo class appearing in one VideoSegment.
+        // All video segments where the recognized logo appears. There might be multiple instances of the same logo class appearing in one VideoSegment.
         for (VideoSegment logoRecognitionAnnotationSegment :
             logoRecognitionAnnotation.getSegmentsList()) {
           Duration logoRecognitionAnnotationSegmentStartTimeOffset =
