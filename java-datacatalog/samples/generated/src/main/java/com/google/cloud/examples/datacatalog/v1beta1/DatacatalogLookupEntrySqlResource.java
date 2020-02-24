@@ -17,9 +17,7 @@
 // sample-metadata:
 //   title:
 //   description: Lookup Entry using SQL resource
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.datacatalog.v1beta1.DatacatalogLookupEntrySqlResource
-// [--args='[--sql_name "[SQL Resource Name]"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.datacatalog.v1beta1.DatacatalogLookupEntrySqlResource [--args='[--sql_name "[SQL Resource Name]"]']
 
 package com.google.cloud.examples.datacatalog.v1beta1;
 

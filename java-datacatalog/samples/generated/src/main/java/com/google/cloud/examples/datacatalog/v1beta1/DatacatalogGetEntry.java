@@ -17,9 +17,7 @@
 // sample-metadata:
 //   title:
 //   description: Get Entry
-//   usage: gradle run -PmainClass=com.google.cloud.examples.datacatalog.v1beta1.DatacatalogGetEntry
-// [--args='[--project_id "[Google Cloud Project ID]"] [--location_id "[Google Cloud Location ID]"]
-// [--entry_group_id "[Entry Group ID]"] [--entry_id "[Entry ID]"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.datacatalog.v1beta1.DatacatalogGetEntry [--args='[--project_id "[Google Cloud Project ID]"] [--location_id "[Google Cloud Location ID]"] [--entry_group_id "[Entry Group ID]"] [--entry_id "[Entry ID]"]']
 
 package com.google.cloud.examples.datacatalog.v1beta1;
 

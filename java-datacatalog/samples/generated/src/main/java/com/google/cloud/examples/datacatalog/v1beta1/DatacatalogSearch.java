@@ -17,14 +17,13 @@
 // sample-metadata:
 //   title:
 //   description: Search Catalog
-//   usage: gradle run -PmainClass=com.google.cloud.examples.datacatalog.v1beta1.DatacatalogSearch
-// [--args='[--include_project_id "[Google Cloud Project ID]"] [--include_gcp_public_datasets false]
-// [--query "[String in search query syntax]"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.datacatalog.v1beta1.DatacatalogSearch [--args='[--include_project_id "[Google Cloud Project ID]"] [--include_gcp_public_datasets false] [--query "[String in search query syntax]"]']
 
 package com.google.cloud.examples.datacatalog.v1beta1;
 
 import com.google.cloud.datacatalog.v1beta1.DataCatalogClient;
 import com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest;
+import com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope;
 import com.google.cloud.datacatalog.v1beta1.SearchCatalogResult;
 import java.util.Arrays;
 import java.util.List;
