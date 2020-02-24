@@ -337,7 +337,7 @@ Add the following to your project's pom.xml.
         <dependency>
           <groupId>io.grpc</groupId>
           <artifactId>grpc-bom</artifactId>
-          <version>1.26.0</version>
+          <version>1.27.0</version>
           <type>pom</type>
           <scope>import</scope>
         </dependency>
