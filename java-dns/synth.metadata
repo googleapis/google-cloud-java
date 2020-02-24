@@ -1,11 +1,11 @@
 {
-  "updateTime": "2020-02-21T22:49:29.133303Z",
+  "updateTime": "2020-02-22T09:52:25.097142Z",
   "sources": [
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dns.git",
-        "sha": "cc62e72fe39e692333f7279816f3084e7a341114"
+        "sha": "9bd79df0d1685d634364680ef0fa4e0ab30ae27c"
       }
     },
     {
