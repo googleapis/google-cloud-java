@@ -139,10 +139,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The Instance which will (partially) replace the current value.
+   * Required. The Instance which will (partially) replace the current value.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instance field is set.
    */
@@ -153,10 +155,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The Instance which will (partially) replace the current value.
+   * Required. The Instance which will (partially) replace the current value.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instance.
    */
@@ -169,10 +173,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The Instance which will (partially) replace the current value.
+   * Required. The Instance which will (partially) replace the current value.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.bigtable.admin.v2.InstanceOrBuilder getInstanceOrBuilder() {
     return getInstance();
@@ -184,11 +190,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The subset of Instance fields which should be replaced.
+   * Required. The subset of Instance fields which should be replaced.
    * Must be explicitly set.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -199,11 +206,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The subset of Instance fields which should be replaced.
+   * Required. The subset of Instance fields which should be replaced.
    * Must be explicitly set.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -214,11 +222,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The subset of Instance fields which should be replaced.
+   * Required. The subset of Instance fields which should be replaced.
    * Must be explicitly set.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -593,10 +602,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The Instance which will (partially) replace the current value.
+     * Required. The Instance which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the instance field is set.
      */
@@ -607,10 +618,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The Instance which will (partially) replace the current value.
+     * Required. The Instance which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The instance.
      */
@@ -627,10 +640,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The Instance which will (partially) replace the current value.
+     * Required. The Instance which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInstance(com.google.bigtable.admin.v2.Instance value) {
       if (instanceBuilder_ == null) {
@@ -649,10 +664,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The Instance which will (partially) replace the current value.
+     * Required. The Instance which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInstance(com.google.bigtable.admin.v2.Instance.Builder builderForValue) {
       if (instanceBuilder_ == null) {
@@ -668,10 +685,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The Instance which will (partially) replace the current value.
+     * Required. The Instance which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeInstance(com.google.bigtable.admin.v2.Instance value) {
       if (instanceBuilder_ == null) {
@@ -694,10 +713,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The Instance which will (partially) replace the current value.
+     * Required. The Instance which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearInstance() {
       if (instanceBuilder_ == null) {
@@ -714,10 +735,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The Instance which will (partially) replace the current value.
+     * Required. The Instance which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.admin.v2.Instance.Builder getInstanceBuilder() {
 
@@ -728,10 +751,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The Instance which will (partially) replace the current value.
+     * Required. The Instance which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.admin.v2.InstanceOrBuilder getInstanceOrBuilder() {
       if (instanceBuilder_ != null) {
@@ -746,10 +771,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The Instance which will (partially) replace the current value.
+     * Required. The Instance which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.admin.v2.Instance,
@@ -778,11 +805,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The subset of Instance fields which should be replaced.
+     * Required. The subset of Instance fields which should be replaced.
      * Must be explicitly set.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -793,11 +821,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The subset of Instance fields which should be replaced.
+     * Required. The subset of Instance fields which should be replaced.
      * Must be explicitly set.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -814,11 +843,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The subset of Instance fields which should be replaced.
+     * Required. The subset of Instance fields which should be replaced.
      * Must be explicitly set.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -837,11 +867,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The subset of Instance fields which should be replaced.
+     * Required. The subset of Instance fields which should be replaced.
      * Must be explicitly set.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -857,11 +888,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The subset of Instance fields which should be replaced.
+     * Required. The subset of Instance fields which should be replaced.
      * Must be explicitly set.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -882,11 +914,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The subset of Instance fields which should be replaced.
+     * Required. The subset of Instance fields which should be replaced.
      * Must be explicitly set.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -903,11 +936,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The subset of Instance fields which should be replaced.
+     * Required. The subset of Instance fields which should be replaced.
      * Must be explicitly set.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -918,11 +952,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The subset of Instance fields which should be replaced.
+     * Required. The subset of Instance fields which should be replaced.
      * Must be explicitly set.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -937,11 +972,12 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The subset of Instance fields which should be replaced.
+     * Required. The subset of Instance fields which should be replaced.
      * Must be explicitly set.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

@@ -27,14 +27,16 @@ public interface ListSnapshotsRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the cluster for which snapshots should be listed.
+   * Required. The unique name of the cluster for which snapshots should be listed.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
-   * Use `&lt;cluster&gt; = '-'` to list snapshots for all clusters in an instance,
-   * e.g., `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/-`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+   * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
+   * e.g., `projects/{project}/instances/{instance}/clusters/-`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -43,14 +45,16 @@ public interface ListSnapshotsRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the cluster for which snapshots should be listed.
+   * Required. The unique name of the cluster for which snapshots should be listed.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
-   * Use `&lt;cluster&gt; = '-'` to list snapshots for all clusters in an instance,
-   * e.g., `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/-`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+   * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
+   * e.g., `projects/{project}/instances/{instance}/clusters/-`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

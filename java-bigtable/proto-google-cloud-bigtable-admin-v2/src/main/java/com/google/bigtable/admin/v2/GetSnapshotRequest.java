@@ -122,12 +122,14 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The unique name of the requested snapshot.
+   * Required. The unique name of the requested snapshot.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -146,12 +148,14 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The unique name of the requested snapshot.
+   * Required. The unique name of the requested snapshot.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -494,12 +498,14 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The unique name of the requested snapshot.
+     * Required. The unique name of the requested snapshot.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -518,12 +524,14 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The unique name of the requested snapshot.
+     * Required. The unique name of the requested snapshot.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -542,12 +550,14 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The unique name of the requested snapshot.
+     * Required. The unique name of the requested snapshot.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -565,12 +575,14 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The unique name of the requested snapshot.
+     * Required. The unique name of the requested snapshot.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -584,12 +596,14 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The unique name of the requested snapshot.
+     * Required. The unique name of the requested snapshot.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

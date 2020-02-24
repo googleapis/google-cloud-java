@@ -135,14 +135,16 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The unique name of the cluster for which snapshots should be listed.
+   * Required. The unique name of the cluster for which snapshots should be listed.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
-   * Use `&lt;cluster&gt; = '-'` to list snapshots for all clusters in an instance,
-   * e.g., `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/-`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+   * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
+   * e.g., `projects/{project}/instances/{instance}/clusters/-`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -161,14 +163,16 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The unique name of the cluster for which snapshots should be listed.
+   * Required. The unique name of the cluster for which snapshots should be listed.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
-   * Use `&lt;cluster&gt; = '-'` to list snapshots for all clusters in an instance,
-   * e.g., `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/-`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+   * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
+   * e.g., `projects/{project}/instances/{instance}/clusters/-`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -608,14 +612,16 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the cluster for which snapshots should be listed.
+     * Required. The unique name of the cluster for which snapshots should be listed.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
-     * Use `&lt;cluster&gt; = '-'` to list snapshots for all clusters in an instance,
-     * e.g., `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/-`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+     * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
+     * e.g., `projects/{project}/instances/{instance}/clusters/-`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -634,14 +640,16 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the cluster for which snapshots should be listed.
+     * Required. The unique name of the cluster for which snapshots should be listed.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
-     * Use `&lt;cluster&gt; = '-'` to list snapshots for all clusters in an instance,
-     * e.g., `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/-`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+     * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
+     * e.g., `projects/{project}/instances/{instance}/clusters/-`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -660,14 +668,16 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the cluster for which snapshots should be listed.
+     * Required. The unique name of the cluster for which snapshots should be listed.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
-     * Use `&lt;cluster&gt; = '-'` to list snapshots for all clusters in an instance,
-     * e.g., `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/-`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+     * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
+     * e.g., `projects/{project}/instances/{instance}/clusters/-`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -685,14 +695,16 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the cluster for which snapshots should be listed.
+     * Required. The unique name of the cluster for which snapshots should be listed.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
-     * Use `&lt;cluster&gt; = '-'` to list snapshots for all clusters in an instance,
-     * e.g., `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/-`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+     * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
+     * e.g., `projects/{project}/instances/{instance}/clusters/-`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -706,14 +718,16 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the cluster for which snapshots should be listed.
+     * Required. The unique name of the cluster for which snapshots should be listed.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
-     * Use `&lt;cluster&gt; = '-'` to list snapshots for all clusters in an instance,
-     * e.g., `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/-`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+     * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
+     * e.g., `projects/{project}/instances/{instance}/clusters/-`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

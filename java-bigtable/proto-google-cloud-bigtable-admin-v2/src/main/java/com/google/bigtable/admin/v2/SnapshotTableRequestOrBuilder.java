@@ -29,7 +29,7 @@ public interface SnapshotTableRequestOrBuilder
    * <pre>
    * The unique name of the table to have the snapshot taken.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -43,7 +43,7 @@ public interface SnapshotTableRequestOrBuilder
    * <pre>
    * The unique name of the table to have the snapshot taken.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -58,7 +58,7 @@ public interface SnapshotTableRequestOrBuilder
    * <pre>
    * The name of the cluster where the snapshot will be created in.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *
    * <code>string cluster = 2;</code>
@@ -72,7 +72,7 @@ public interface SnapshotTableRequestOrBuilder
    * <pre>
    * The name of the cluster where the snapshot will be created in.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *
    * <code>string cluster = 2;</code>
@@ -88,7 +88,7 @@ public interface SnapshotTableRequestOrBuilder
    * The ID by which the new snapshot should be referred to within the parent
    * cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
    * rather than
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/mysnapshot`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * </pre>
    *
    * <code>string snapshot_id = 3;</code>
@@ -103,7 +103,7 @@ public interface SnapshotTableRequestOrBuilder
    * The ID by which the new snapshot should be referred to within the parent
    * cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
    * rather than
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/mysnapshot`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * </pre>
    *
    * <code>string snapshot_id = 3;</code>

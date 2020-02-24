@@ -27,11 +27,13 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the project for which a list of instances is requested.
-   * Values are of the form `projects/&lt;project&gt;`.
+   * Required. The unique name of the project for which a list of instances is requested.
+   * Values are of the form `projects/{project}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the project for which a list of instances is requested.
-   * Values are of the form `projects/&lt;project&gt;`.
+   * Required. The unique name of the project for which a list of instances is requested.
+   * Values are of the form `projects/{project}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

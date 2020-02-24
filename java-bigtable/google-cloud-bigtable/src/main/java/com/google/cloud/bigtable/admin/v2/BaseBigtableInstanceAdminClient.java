@@ -162,15 +162,16 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the project in which to create the new instance. Values are of
-   *     the form `projects/&lt;project&gt;`.
-   * @param instanceId The ID to be used when referring to the new instance within its project,
-   *     e.g., just `myinstance` rather than `projects/myproject/instances/myinstance`.
-   * @param instance The instance to create. Fields marked `OutputOnly` must be left blank.
-   * @param clusters The clusters to be created within the instance, mapped by desired cluster ID,
-   *     e.g., just `mycluster` rather than
+   * @param parent Required. The unique name of the project in which to create the new instance.
+   *     Values are of the form `projects/{project}`.
+   * @param instanceId Required. The ID to be used when referring to the new instance within its
+   *     project, e.g., just `myinstance` rather than `projects/myproject/instances/myinstance`.
+   * @param instance Required. The instance to create. Fields marked `OutputOnly` must be left
+   *     blank.
+   * @param clusters Required. The clusters to be created within the instance, mapped by desired
+   *     cluster ID, e.g., just `mycluster` rather than
    *     `projects/myproject/instances/myinstance/clusters/mycluster`. Fields marked `OutputOnly`
-   *     must be left blank. Currently, at most two clusters can be specified.
+   *     must be left blank. Currently, at most four clusters can be specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -203,15 +204,16 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the project in which to create the new instance. Values are of
-   *     the form `projects/&lt;project&gt;`.
-   * @param instanceId The ID to be used when referring to the new instance within its project,
-   *     e.g., just `myinstance` rather than `projects/myproject/instances/myinstance`.
-   * @param instance The instance to create. Fields marked `OutputOnly` must be left blank.
-   * @param clusters The clusters to be created within the instance, mapped by desired cluster ID,
-   *     e.g., just `mycluster` rather than
+   * @param parent Required. The unique name of the project in which to create the new instance.
+   *     Values are of the form `projects/{project}`.
+   * @param instanceId Required. The ID to be used when referring to the new instance within its
+   *     project, e.g., just `myinstance` rather than `projects/myproject/instances/myinstance`.
+   * @param instance Required. The instance to create. Fields marked `OutputOnly` must be left
+   *     blank.
+   * @param clusters Required. The clusters to be created within the instance, mapped by desired
+   *     cluster ID, e.g., just `mycluster` rather than
    *     `projects/myproject/instances/myinstance/clusters/mycluster`. Fields marked `OutputOnly`
-   *     must be left blank. Currently, at most two clusters can be specified.
+   *     must be left blank. Currently, at most four clusters can be specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -331,8 +333,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the requested instance. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @param name Required. The unique name of the requested instance. Values are of the form
+   *     `projects/{project}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Instance getInstance(InstanceName name) {
@@ -354,8 +356,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the requested instance. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @param name Required. The unique name of the requested instance. Values are of the form
+   *     `projects/{project}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Instance getInstance(String name) {
@@ -421,8 +423,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the project for which a list of instances is requested. Values
-   *     are of the form `projects/&lt;project&gt;`.
+   * @param parent Required. The unique name of the project for which a list of instances is
+   *     requested. Values are of the form `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesResponse listInstances(ProjectName parent) {
@@ -446,8 +448,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the project for which a list of instances is requested. Values
-   *     are of the form `projects/&lt;project&gt;`.
+   * @param parent Required. The unique name of the project for which a list of instances is
+   *     requested. Values are of the form `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesResponse listInstances(String parent) {
@@ -502,7 +504,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Partially updates an instance within a project.
+   * Partially updates an instance within a project. This method can modify all fields of an
+   * Instance and is the preferred way to update an Instance.
    *
    * <p>Sample code:
    *
@@ -514,9 +517,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance The Instance which will (partially) replace the current value.
-   * @param updateMask The subset of Instance fields which should be replaced. Must be explicitly
-   *     set.
+   * @param instance Required. The Instance which will (partially) replace the current value.
+   * @param updateMask Required. The subset of Instance fields which should be replaced. Must be
+   *     explicitly set.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -533,7 +536,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Partially updates an instance within a project.
+   * Partially updates an instance within a project. This method can modify all fields of an
+   * Instance and is the preferred way to update an Instance.
    *
    * <p>Sample code:
    *
@@ -561,7 +565,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Partially updates an instance within a project.
+   * Partially updates an instance within a project. This method can modify all fields of an
+   * Instance and is the preferred way to update an Instance.
    *
    * <p>Sample code:
    *
@@ -587,7 +592,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Partially updates an instance within a project.
+   * Partially updates an instance within a project. This method can modify all fields of an
+   * Instance and is the preferred way to update an Instance.
    *
    * <p>Sample code:
    *
@@ -623,8 +629,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the instance to be deleted. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @param name Required. The unique name of the instance to be deleted. Values are of the form
+   *     `projects/{project}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteInstance(InstanceName name) {
@@ -646,8 +652,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the instance to be deleted. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @param name Required. The unique name of the instance to be deleted. Values are of the form
+   *     `projects/{project}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteInstance(String name) {
@@ -715,11 +721,13 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance in which to create the new cluster. Values are of
-   *     the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
-   * @param clusterId The ID to be used when referring to the new cluster within its instance, e.g.,
-   *     just `mycluster` rather than `projects/myproject/instances/myinstance/clusters/mycluster`.
-   * @param cluster The cluster to be created. Fields marked `OutputOnly` must be left blank.
+   * @param parent Required. The unique name of the instance in which to create the new cluster.
+   *     Values are of the form `projects/{project}/instances/{instance}`.
+   * @param clusterId Required. The ID to be used when referring to the new cluster within its
+   *     instance, e.g., just `mycluster` rather than
+   *     `projects/myproject/instances/myinstance/clusters/mycluster`.
+   * @param cluster Required. The cluster to be created. Fields marked `OutputOnly` must be left
+   *     blank.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -750,11 +758,13 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance in which to create the new cluster. Values are of
-   *     the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
-   * @param clusterId The ID to be used when referring to the new cluster within its instance, e.g.,
-   *     just `mycluster` rather than `projects/myproject/instances/myinstance/clusters/mycluster`.
-   * @param cluster The cluster to be created. Fields marked `OutputOnly` must be left blank.
+   * @param parent Required. The unique name of the instance in which to create the new cluster.
+   *     Values are of the form `projects/{project}/instances/{instance}`.
+   * @param clusterId Required. The ID to be used when referring to the new cluster within its
+   *     instance, e.g., just `mycluster` rather than
+   *     `projects/myproject/instances/myinstance/clusters/mycluster`.
+   * @param cluster Required. The cluster to be created. Fields marked `OutputOnly` must be left
+   *     blank.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -867,8 +877,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the requested cluster. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
+   * @param name Required. The unique name of the requested cluster. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Cluster getCluster(ClusterName name) {
@@ -890,8 +900,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the requested cluster. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
+   * @param name Required. The unique name of the requested cluster. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Cluster getCluster(String name) {
@@ -957,9 +967,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance for which a list of clusters is requested. Values
-   *     are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`. Use
-   *     `&lt;instance&gt; = '-'` to list Clusters for all Instances in a project, e.g.,
+   * @param parent Required. The unique name of the instance for which a list of clusters is
+   *     requested. Values are of the form `projects/{project}/instances/{instance}`. Use
+   *     `{instance} = '-'` to list Clusters for all Instances in a project, e.g.,
    *     `projects/myproject/instances/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -984,9 +994,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance for which a list of clusters is requested. Values
-   *     are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`. Use
-   *     `&lt;instance&gt; = '-'` to list Clusters for all Instances in a project, e.g.,
+   * @param parent Required. The unique name of the instance for which a list of clusters is
+   *     requested. Values are of the form `projects/{project}/instances/{instance}`. Use
+   *     `{instance} = '-'` to list Clusters for all Instances in a project, e.g.,
    *     `projects/myproject/instances/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1130,8 +1140,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the cluster to be deleted. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
+   * @param name Required. The unique name of the cluster to be deleted. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCluster(ClusterName name) {
@@ -1153,8 +1163,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the cluster to be deleted. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
+   * @param name Required. The unique name of the cluster to be deleted. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCluster(String name) {
@@ -1222,12 +1232,13 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance in which to create the new app profile. Values
-   *     are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
-   * @param appProfileId The ID to be used when referring to the new app profile within its
-   *     instance, e.g., just `myprofile` rather than
+   * @param parent Required. The unique name of the instance in which to create the new app profile.
+   *     Values are of the form `projects/{project}/instances/{instance}`.
+   * @param appProfileId Required. The ID to be used when referring to the new app profile within
+   *     its instance, e.g., just `myprofile` rather than
    *     `projects/myproject/instances/myinstance/appProfiles/myprofile`.
-   * @param appProfile The app profile to be created. Fields marked `OutputOnly` will be ignored.
+   * @param appProfile Required. The app profile to be created. Fields marked `OutputOnly` will be
+   *     ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AppProfile createAppProfile(
@@ -1256,12 +1267,13 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance in which to create the new app profile. Values
-   *     are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
-   * @param appProfileId The ID to be used when referring to the new app profile within its
-   *     instance, e.g., just `myprofile` rather than
+   * @param parent Required. The unique name of the instance in which to create the new app profile.
+   *     Values are of the form `projects/{project}/instances/{instance}`.
+   * @param appProfileId Required. The ID to be used when referring to the new app profile within
+   *     its instance, e.g., just `myprofile` rather than
    *     `projects/myproject/instances/myinstance/appProfiles/myprofile`.
-   * @param appProfile The app profile to be created. Fields marked `OutputOnly` will be ignored.
+   * @param appProfile Required. The app profile to be created. Fields marked `OutputOnly` will be
+   *     ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AppProfile createAppProfile(
@@ -1341,8 +1353,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the requested app profile. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/&lt;app_profile&gt;`.
+   * @param name Required. The unique name of the requested app profile. Values are of the form
+   *     `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AppProfile getAppProfile(AppProfileName name) {
@@ -1364,8 +1376,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the requested app profile. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/&lt;app_profile&gt;`.
+   * @param name Required. The unique name of the requested app profile. Values are of the form
+   *     `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AppProfile getAppProfile(String name) {
@@ -1433,9 +1445,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance for which a list of app profiles is requested.
-   *     Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`. Use
-   *     `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project, e.g.,
+   * @param parent Required. The unique name of the instance for which a list of app profiles is
+   *     requested. Values are of the form `projects/{project}/instances/{instance}`. Use
+   *     `{instance} = '-'` to list AppProfiles for all Instances in a project, e.g.,
    *     `projects/myproject/instances/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1462,9 +1474,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance for which a list of app profiles is requested.
-   *     Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`. Use
-   *     `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project, e.g.,
+   * @param parent Required. The unique name of the instance for which a list of app profiles is
+   *     requested. Values are of the form `projects/{project}/instances/{instance}`. Use
+   *     `{instance} = '-'` to list AppProfiles for all Instances in a project, e.g.,
    *     `projects/myproject/instances/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1569,9 +1581,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param appProfile The app profile which will (partially) replace the current value.
-   * @param updateMask The subset of app profile fields which should be replaced. If unset, all
-   *     fields will be replaced.
+   * @param appProfile Required. The app profile which will (partially) replace the current value.
+   * @param updateMask Required. The subset of app profile fields which should be replaced. If
+   *     unset, all fields will be replaced.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1677,8 +1689,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the app profile to be deleted. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/&lt;app_profile&gt;`.
+   * @param name Required. The unique name of the app profile to be deleted. Values are of the form
+   *     `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAppProfile(AppProfileName name) {
@@ -1700,8 +1712,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the app profile to be deleted. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/&lt;app_profile&gt;`.
+   * @param name Required. The unique name of the app profile to be deleted. Values are of the form
+   *     `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAppProfile(String name) {

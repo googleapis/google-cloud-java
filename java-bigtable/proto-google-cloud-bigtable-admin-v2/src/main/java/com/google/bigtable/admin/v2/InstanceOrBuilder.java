@@ -27,12 +27,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The unique name of the instance. Values are of the form
-   * `projects/&lt;project&gt;/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
+   * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -41,12 +40,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The unique name of the instance. Values are of the form
-   * `projects/&lt;project&gt;/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
+   * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -56,12 +54,12 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * The descriptive name for this instance as it appears in UIs.
+   * Required. The descriptive name for this instance as it appears in UIs.
    * Can be changed at any time, but should be kept globally unique
    * to avoid confusion.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -70,12 +68,12 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * The descriptive name for this instance as it appears in UIs.
+   * Required. The descriptive name for this instance as it appears in UIs.
    * Can be changed at any time, but should be kept globally unique
    * to avoid confusion.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */

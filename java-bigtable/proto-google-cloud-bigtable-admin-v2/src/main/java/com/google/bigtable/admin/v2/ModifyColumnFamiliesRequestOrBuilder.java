@@ -27,12 +27,14 @@ public interface ModifyColumnFamiliesRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the table whose families should be modified.
+   * Required. The unique name of the table whose families should be modified.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -41,12 +43,14 @@ public interface ModifyColumnFamiliesRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the table whose families should be modified.
+   * Required. The unique name of the table whose families should be modified.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -56,14 +60,14 @@ public interface ModifyColumnFamiliesRequestOrBuilder
    *
    *
    * <pre>
-   * Modifications to be atomically applied to the specified table's families.
+   * Required. Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
    * masked by later ones (in the case of repeated updates to the same family,
    * for example).
    * </pre>
    *
    * <code>
-   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>
@@ -72,14 +76,14 @@ public interface ModifyColumnFamiliesRequestOrBuilder
    *
    *
    * <pre>
-   * Modifications to be atomically applied to the specified table's families.
+   * Required. Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
    * masked by later ones (in the case of repeated updates to the same family,
    * for example).
    * </pre>
    *
    * <code>
-   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification getModifications(int index);
@@ -87,14 +91,14 @@ public interface ModifyColumnFamiliesRequestOrBuilder
    *
    *
    * <pre>
-   * Modifications to be atomically applied to the specified table's families.
+   * Required. Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
    * masked by later ones (in the case of repeated updates to the same family,
    * for example).
    * </pre>
    *
    * <code>
-   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   int getModificationsCount();
@@ -102,14 +106,14 @@ public interface ModifyColumnFamiliesRequestOrBuilder
    *
    *
    * <pre>
-   * Modifications to be atomically applied to the specified table's families.
+   * Required. Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
    * masked by later ones (in the case of repeated updates to the same family,
    * for example).
    * </pre>
    *
    * <code>
-   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   java.util.List<
@@ -119,14 +123,14 @@ public interface ModifyColumnFamiliesRequestOrBuilder
    *
    *
    * <pre>
-   * Modifications to be atomically applied to the specified table's families.
+   * Required. Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
    * masked by later ones (in the case of repeated updates to the same family,
    * for example).
    * </pre>
    *
    * <code>
-   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder

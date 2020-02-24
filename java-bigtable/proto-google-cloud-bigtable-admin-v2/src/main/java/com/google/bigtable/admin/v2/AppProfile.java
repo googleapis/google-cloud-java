@@ -180,10 +180,11 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read/write requests may be routed to any cluster in the instance, and will
-   * fail over to another cluster in the event of transient errors or delays.
-   * Choosing this option sacrifices read-your-writes consistency to improve
-   * availability.
+   * Read/write requests are routed to the nearest cluster in the instance, and
+   * will fail over to the nearest cluster that is available in the event of
+   * transient errors or delays. Clusters in a region are considered
+   * equidistant. Choosing this option sacrifices read-your-writes consistency
+   * to improve availability.
    * </pre>
    *
    * Protobuf type {@code google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny}
@@ -420,10 +421,11 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read/write requests may be routed to any cluster in the instance, and will
-     * fail over to another cluster in the event of transient errors or delays.
-     * Choosing this option sacrifices read-your-writes consistency to improve
-     * availability.
+     * Read/write requests are routed to the nearest cluster in the instance, and
+     * will fail over to the nearest cluster that is available in the event of
+     * transient errors or delays. Clusters in a region are considered
+     * equidistant. Choosing this option sacrifices read-your-writes consistency
+     * to improve availability.
      * </pre>
      *
      * Protobuf type {@code google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny}
@@ -686,7 +688,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Unconditionally routes all read/write requests to a specific cluster.
-   * This option preserves read-your-writes consistency, but does not improve
+   * This option preserves read-your-writes consistency but does not improve
    * availability.
    * </pre>
    *
@@ -1022,7 +1024,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Unconditionally routes all read/write requests to a specific cluster.
-     * This option preserves read-your-writes consistency, but does not improve
+     * This option preserves read-your-writes consistency but does not improve
      * availability.
      * </pre>
      *
@@ -1619,7 +1621,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Use a multi-cluster routing policy that may pick any cluster.
+   * Use a multi-cluster routing policy.
    * </pre>
    *
    * <code>
@@ -1635,7 +1637,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Use a multi-cluster routing policy that may pick any cluster.
+   * Use a multi-cluster routing policy.
    * </pre>
    *
    * <code>
@@ -1655,7 +1657,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Use a multi-cluster routing policy that may pick any cluster.
+   * Use a multi-cluster routing policy.
    * </pre>
    *
    * <code>
@@ -2532,7 +2534,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use a multi-cluster routing policy that may pick any cluster.
+     * Use a multi-cluster routing policy.
      * </pre>
      *
      * <code>
@@ -2548,7 +2550,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use a multi-cluster routing policy that may pick any cluster.
+     * Use a multi-cluster routing policy.
      * </pre>
      *
      * <code>
@@ -2577,7 +2579,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use a multi-cluster routing policy that may pick any cluster.
+     * Use a multi-cluster routing policy.
      * </pre>
      *
      * <code>
@@ -2602,7 +2604,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use a multi-cluster routing policy that may pick any cluster.
+     * Use a multi-cluster routing policy.
      * </pre>
      *
      * <code>
@@ -2624,7 +2626,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use a multi-cluster routing policy that may pick any cluster.
+     * Use a multi-cluster routing policy.
      * </pre>
      *
      * <code>
@@ -2661,7 +2663,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use a multi-cluster routing policy that may pick any cluster.
+     * Use a multi-cluster routing policy.
      * </pre>
      *
      * <code>
@@ -2688,7 +2690,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use a multi-cluster routing policy that may pick any cluster.
+     * Use a multi-cluster routing policy.
      * </pre>
      *
      * <code>
@@ -2703,7 +2705,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use a multi-cluster routing policy that may pick any cluster.
+     * Use a multi-cluster routing policy.
      * </pre>
      *
      * <code>
@@ -2726,7 +2728,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use a multi-cluster routing policy that may pick any cluster.
+     * Use a multi-cluster routing policy.
      * </pre>
      *
      * <code>

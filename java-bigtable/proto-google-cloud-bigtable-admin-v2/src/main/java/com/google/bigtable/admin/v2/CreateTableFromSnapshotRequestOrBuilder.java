@@ -27,11 +27,13 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the instance in which to create the table.
-   * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the instance in which to create the table.
+   * Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the instance in which to create the table.
-   * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the instance in which to create the table.
+   * Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -54,11 +58,11 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * The name by which the new table should be referred to within the parent
-   * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
+   * Required. The name by which the new table should be referred to within the parent
+   * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
    * </pre>
    *
-   * <code>string table_id = 2;</code>
+   * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The tableId.
    */
@@ -67,11 +71,11 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * The name by which the new table should be referred to within the parent
-   * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
+   * Required. The name by which the new table should be referred to within the parent
+   * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
    * </pre>
    *
-   * <code>string table_id = 2;</code>
+   * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for tableId.
    */
@@ -81,13 +85,15 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the snapshot from which to restore the table. The
+   * Required. The unique name of the snapshot from which to restore the table. The
    * snapshot and the table must be in the same instance.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
    *
-   * <code>string source_snapshot = 3;</code>
+   * <code>
+   * string source_snapshot = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The sourceSnapshot.
    */
@@ -96,13 +102,15 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the snapshot from which to restore the table. The
+   * Required. The unique name of the snapshot from which to restore the table. The
    * snapshot and the table must be in the same instance.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
    *
-   * <code>string source_snapshot = 3;</code>
+   * <code>
+   * string source_snapshot = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for sourceSnapshot.
    */

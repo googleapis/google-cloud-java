@@ -27,12 +27,14 @@ public interface CheckConsistencyRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the Table for which to check replication consistency.
+   * Required. The unique name of the Table for which to check replication consistency.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -41,12 +43,14 @@ public interface CheckConsistencyRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the Table for which to check replication consistency.
+   * Required. The unique name of the Table for which to check replication consistency.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -56,10 +60,10 @@ public interface CheckConsistencyRequestOrBuilder
    *
    *
    * <pre>
-   * The token created using GenerateConsistencyToken for the Table.
+   * Required. The token created using GenerateConsistencyToken for the Table.
    * </pre>
    *
-   * <code>string consistency_token = 2;</code>
+   * <code>string consistency_token = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The consistencyToken.
    */
@@ -68,10 +72,10 @@ public interface CheckConsistencyRequestOrBuilder
    *
    *
    * <pre>
-   * The token created using GenerateConsistencyToken for the Table.
+   * Required. The token created using GenerateConsistencyToken for the Table.
    * </pre>
    *
-   * <code>string consistency_token = 2;</code>
+   * <code>string consistency_token = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for consistencyToken.
    */

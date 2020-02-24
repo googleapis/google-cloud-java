@@ -27,12 +27,14 @@ public interface CreateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the instance in which to create the new app profile.
+   * Required. The unique name of the instance in which to create the new app profile.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -41,12 +43,14 @@ public interface CreateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the instance in which to create the new app profile.
+   * Required. The unique name of the instance in which to create the new app profile.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -56,12 +60,12 @@ public interface CreateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The ID to be used when referring to the new app profile within its
+   * Required. The ID to be used when referring to the new app profile within its
    * instance, e.g., just `myprofile` rather than
    * `projects/myproject/instances/myinstance/appProfiles/myprofile`.
    * </pre>
    *
-   * <code>string app_profile_id = 2;</code>
+   * <code>string app_profile_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The appProfileId.
    */
@@ -70,12 +74,12 @@ public interface CreateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The ID to be used when referring to the new app profile within its
+   * Required. The ID to be used when referring to the new app profile within its
    * instance, e.g., just `myprofile` rather than
    * `projects/myproject/instances/myinstance/appProfiles/myprofile`.
    * </pre>
    *
-   * <code>string app_profile_id = 2;</code>
+   * <code>string app_profile_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for appProfileId.
    */
@@ -85,11 +89,13 @@ public interface CreateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The app profile to be created.
+   * Required. The app profile to be created.
    * Fields marked `OutputOnly` will be ignored.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the appProfile field is set.
    */
@@ -98,11 +104,13 @@ public interface CreateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The app profile to be created.
+   * Required. The app profile to be created.
    * Fields marked `OutputOnly` will be ignored.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The appProfile.
    */
@@ -111,11 +119,13 @@ public interface CreateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The app profile to be created.
+   * Required. The app profile to be created.
    * Fields marked `OutputOnly` will be ignored.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.bigtable.admin.v2.AppProfileOrBuilder getAppProfileOrBuilder();
 

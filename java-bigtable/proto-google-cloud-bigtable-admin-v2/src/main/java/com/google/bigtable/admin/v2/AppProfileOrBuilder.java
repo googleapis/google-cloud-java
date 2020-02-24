@@ -120,7 +120,7 @@ public interface AppProfileOrBuilder
    *
    *
    * <pre>
-   * Use a multi-cluster routing policy that may pick any cluster.
+   * Use a multi-cluster routing policy.
    * </pre>
    *
    * <code>
@@ -134,7 +134,7 @@ public interface AppProfileOrBuilder
    *
    *
    * <pre>
-   * Use a multi-cluster routing policy that may pick any cluster.
+   * Use a multi-cluster routing policy.
    * </pre>
    *
    * <code>
@@ -148,7 +148,7 @@ public interface AppProfileOrBuilder
    *
    *
    * <pre>
-   * Use a multi-cluster routing policy that may pick any cluster.
+   * Use a multi-cluster routing policy.
    * </pre>
    *
    * <code>

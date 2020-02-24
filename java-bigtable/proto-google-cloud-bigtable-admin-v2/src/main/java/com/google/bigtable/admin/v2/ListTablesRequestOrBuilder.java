@@ -27,11 +27,13 @@ public interface ListTablesRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the instance for which tables should be listed.
-   * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the instance for which tables should be listed.
+   * Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface ListTablesRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the instance for which tables should be listed.
-   * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the instance for which tables should be listed.
+   * Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -55,7 +59,7 @@ public interface ListTablesRequestOrBuilder
    *
    * <pre>
    * The view to be applied to the returned tables' fields.
-   * Defaults to `NAME_ONLY` if unspecified; no others are currently supported.
+   * Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table.View view = 2;</code>
@@ -68,7 +72,7 @@ public interface ListTablesRequestOrBuilder
    *
    * <pre>
    * The view to be applied to the returned tables' fields.
-   * Defaults to `NAME_ONLY` if unspecified; no others are currently supported.
+   * Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table.View view = 2;</code>
@@ -82,7 +86,12 @@ public interface ListTablesRequestOrBuilder
    *
    * <pre>
    * Maximum number of results per page.
-   * CURRENTLY UNIMPLEMENTED AND IGNORED.
+   * A page_size of zero lets the server choose the number of items to return.
+   * A page_size which is strictly positive will return at most that many items.
+   * A negative page_size will cause an error.
+   * Following the first request, subsequent paginated calls are not required
+   * to pass a page_size. If a page_size is set in subsequent calls, it must
+   * match the page_size given in the first request.
    * </pre>
    *
    * <code>int32 page_size = 4;</code>

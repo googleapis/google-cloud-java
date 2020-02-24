@@ -353,8 +353,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only populates `name` and fields related to the table's
-     * replication state.
+     * Only populates `name` and fields related to the table's replication
+     * state.
      * </pre>
      *
      * <code>REPLICATION_VIEW = 3;</code>
@@ -407,8 +407,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only populates `name` and fields related to the table's
-     * replication state.
+     * Only populates `name` and fields related to the table's replication
+     * state.
      * </pre>
      *
      * <code>REPLICATION_VIEW = 3;</code>
@@ -517,8 +517,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The state of replication for the table in this cluster.
+     * Output only. The state of replication for the table in this cluster.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
@@ -531,8 +530,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The state of replication for the table in this cluster.
+     * Output only. The state of replication for the table in this cluster.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
@@ -855,8 +853,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The state of replication for the table in this cluster.
+     * Output only. The state of replication for the table in this cluster.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
@@ -871,8 +868,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The state of replication for the table in this cluster.
+     * Output only. The state of replication for the table in this cluster.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
@@ -1220,8 +1216,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (`OutputOnly`)
-       * The state of replication for the table in this cluster.
+       * Output only. The state of replication for the table in this cluster.
        * </pre>
        *
        * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
@@ -1236,8 +1231,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (`OutputOnly`)
-       * The state of replication for the table in this cluster.
+       * Output only. The state of replication for the table in this cluster.
        * </pre>
        *
        * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
@@ -1255,8 +1249,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (`OutputOnly`)
-       * The state of replication for the table in this cluster.
+       * Output only. The state of replication for the table in this cluster.
        * </pre>
        *
        * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
@@ -1278,8 +1271,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (`OutputOnly`)
-       * The state of replication for the table in this cluster.
+       * Output only. The state of replication for the table in this cluster.
        * </pre>
        *
        * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
@@ -1302,8 +1294,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (`OutputOnly`)
-       * The state of replication for the table in this cluster.
+       * Output only. The state of replication for the table in this cluster.
        * </pre>
        *
        * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
@@ -1376,8 +1367,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The unique name of the table. Values are of the form
+   * Output only. The unique name of the table. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
    * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
    * </pre>
@@ -1401,8 +1391,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The unique name of the table. Values are of the form
+   * Output only. The unique name of the table. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
    * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
    * </pre>
@@ -1461,8 +1450,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * Map from cluster ID to per-cluster table state.
+   * Output only. Map from cluster ID to per-cluster table state.
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
@@ -1488,8 +1476,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * Map from cluster ID to per-cluster table state.
+   * Output only. Map from cluster ID to per-cluster table state.
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
@@ -1507,8 +1494,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * Map from cluster ID to per-cluster table state.
+   * Output only. Map from cluster ID to per-cluster table state.
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
@@ -1531,8 +1517,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * Map from cluster ID to per-cluster table state.
+   * Output only. Map from cluster ID to per-cluster table state.
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
@@ -1677,7 +1662,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * The granularity (i.e. `MILLIS`) at which timestamps are stored in
    * this table. Timestamps not matching the granularity will be rejected.
    * If unspecified at creation time, the value will be set to `MILLIS`.
-   * Views: `SCHEMA_VIEW`, `FULL`
+   * Views: `SCHEMA_VIEW`, `FULL`.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
@@ -1695,7 +1680,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * The granularity (i.e. `MILLIS`) at which timestamps are stored in
    * this table. Timestamps not matching the granularity will be rejected.
    * If unspecified at creation time, the value will be set to `MILLIS`.
-   * Views: `SCHEMA_VIEW`, `FULL`
+   * Views: `SCHEMA_VIEW`, `FULL`.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
@@ -2121,8 +2106,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The unique name of the table. Values are of the form
+     * Output only. The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
@@ -2146,8 +2130,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The unique name of the table. Values are of the form
+     * Output only. The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
@@ -2171,8 +2154,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The unique name of the table. Values are of the form
+     * Output only. The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
@@ -2195,8 +2177,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The unique name of the table. Values are of the form
+     * Output only. The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
@@ -2215,8 +2196,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The unique name of the table. Values are of the form
+     * Output only. The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
@@ -2273,8 +2253,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * Map from cluster ID to per-cluster table state.
+     * Output only. Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
@@ -2300,8 +2279,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * Map from cluster ID to per-cluster table state.
+     * Output only. Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
@@ -2319,8 +2297,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * Map from cluster ID to per-cluster table state.
+     * Output only. Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
@@ -2343,8 +2320,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * Map from cluster ID to per-cluster table state.
+     * Output only. Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
@@ -2375,8 +2351,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * Map from cluster ID to per-cluster table state.
+     * Output only. Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
@@ -2403,8 +2378,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * Map from cluster ID to per-cluster table state.
+     * Output only. Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
@@ -2429,8 +2403,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * Map from cluster ID to per-cluster table state.
+     * Output only. Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
@@ -2636,7 +2609,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
-     * Views: `SCHEMA_VIEW`, `FULL`
+     * Views: `SCHEMA_VIEW`, `FULL`.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
@@ -2654,7 +2627,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
-     * Views: `SCHEMA_VIEW`, `FULL`
+     * Views: `SCHEMA_VIEW`, `FULL`.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
@@ -2675,7 +2648,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
-     * Views: `SCHEMA_VIEW`, `FULL`
+     * Views: `SCHEMA_VIEW`, `FULL`.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
@@ -2698,7 +2671,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
-     * Views: `SCHEMA_VIEW`, `FULL`
+     * Views: `SCHEMA_VIEW`, `FULL`.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
@@ -2723,7 +2696,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
-     * Views: `SCHEMA_VIEW`, `FULL`
+     * Views: `SCHEMA_VIEW`, `FULL`.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>

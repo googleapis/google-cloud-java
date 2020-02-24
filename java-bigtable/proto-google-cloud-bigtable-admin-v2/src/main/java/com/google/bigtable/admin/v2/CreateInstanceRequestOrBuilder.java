@@ -27,11 +27,13 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the project in which to create the new instance.
-   * Values are of the form `projects/&lt;project&gt;`.
+   * Required. The unique name of the project in which to create the new instance.
+   * Values are of the form `projects/{project}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the project in which to create the new instance.
-   * Values are of the form `projects/&lt;project&gt;`.
+   * Required. The unique name of the project in which to create the new instance.
+   * Values are of the form `projects/{project}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -54,12 +58,12 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * The ID to be used when referring to the new instance within its project,
+   * Required. The ID to be used when referring to the new instance within its project,
    * e.g., just `myinstance` rather than
    * `projects/myproject/instances/myinstance`.
    * </pre>
    *
-   * <code>string instance_id = 2;</code>
+   * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The instanceId.
    */
@@ -68,12 +72,12 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * The ID to be used when referring to the new instance within its project,
+   * Required. The ID to be used when referring to the new instance within its project,
    * e.g., just `myinstance` rather than
    * `projects/myproject/instances/myinstance`.
    * </pre>
    *
-   * <code>string instance_id = 2;</code>
+   * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for instanceId.
    */
@@ -83,11 +87,13 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * The instance to create.
+   * Required. The instance to create.
    * Fields marked `OutputOnly` must be left blank.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instance field is set.
    */
@@ -96,11 +102,13 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * The instance to create.
+   * Required. The instance to create.
    * Fields marked `OutputOnly` must be left blank.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instance.
    */
@@ -109,11 +117,13 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * The instance to create.
+   * Required. The instance to create.
    * Fields marked `OutputOnly` must be left blank.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.bigtable.admin.v2.InstanceOrBuilder getInstanceOrBuilder();
 
@@ -121,28 +131,32 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * The clusters to be created within the instance, mapped by desired
+   * Required. The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently, at most two clusters can be specified.
+   * Currently, at most four clusters can be specified.
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getClustersCount();
   /**
    *
    *
    * <pre>
-   * The clusters to be created within the instance, mapped by desired
+   * Required. The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently, at most two clusters can be specified.
+   * Currently, at most four clusters can be specified.
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean containsClusters(java.lang.String key);
   /** Use {@link #getClustersMap()} instead. */
@@ -152,28 +166,32 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * The clusters to be created within the instance, mapped by desired
+   * Required. The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently, at most two clusters can be specified.
+   * Currently, at most four clusters can be specified.
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Cluster> getClustersMap();
   /**
    *
    *
    * <pre>
-   * The clusters to be created within the instance, mapped by desired
+   * Required. The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently, at most two clusters can be specified.
+   * Currently, at most four clusters can be specified.
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.bigtable.admin.v2.Cluster getClustersOrDefault(
       java.lang.String key, com.google.bigtable.admin.v2.Cluster defaultValue);
@@ -181,14 +199,16 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * The clusters to be created within the instance, mapped by desired
+   * Required. The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently, at most two clusters can be specified.
+   * Currently, at most four clusters can be specified.
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.bigtable.admin.v2.Cluster getClustersOrThrow(java.lang.String key);
 }

@@ -27,11 +27,13 @@ public interface CreateTableRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the instance in which to create the table.
-   * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the instance in which to create the table.
+   * Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface CreateTableRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the instance in which to create the table.
-   * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the instance in which to create the table.
+   * Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -54,11 +58,12 @@ public interface CreateTableRequestOrBuilder
    *
    *
    * <pre>
-   * The name by which the new table should be referred to within the parent
-   * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
+   * Required. The name by which the new table should be referred to within the parent
+   * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+   * Maximum 50 characters.
    * </pre>
    *
-   * <code>string table_id = 2;</code>
+   * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The tableId.
    */
@@ -67,11 +72,12 @@ public interface CreateTableRequestOrBuilder
    *
    *
    * <pre>
-   * The name by which the new table should be referred to within the parent
-   * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
+   * Required. The name by which the new table should be referred to within the parent
+   * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+   * Maximum 50 characters.
    * </pre>
    *
-   * <code>string table_id = 2;</code>
+   * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for tableId.
    */
@@ -81,10 +87,11 @@ public interface CreateTableRequestOrBuilder
    *
    *
    * <pre>
-   * The Table to create.
+   * Required. The Table to create.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+   * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the table field is set.
    */
@@ -93,10 +100,11 @@ public interface CreateTableRequestOrBuilder
    *
    *
    * <pre>
-   * The Table to create.
+   * Required. The Table to create.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+   * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The table.
    */
@@ -105,10 +113,11 @@ public interface CreateTableRequestOrBuilder
    *
    *
    * <pre>
-   * The Table to create.
+   * Required. The Table to create.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+   * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.bigtable.admin.v2.TableOrBuilder getTableOrBuilder();
 

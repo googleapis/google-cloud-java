@@ -169,11 +169,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The unique name of the project in which to create the new instance.
-   * Values are of the form `projects/&lt;project&gt;`.
+   * Required. The unique name of the project in which to create the new instance.
+   * Values are of the form `projects/{project}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -192,11 +194,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The unique name of the project in which to create the new instance.
-   * Values are of the form `projects/&lt;project&gt;`.
+   * Required. The unique name of the project in which to create the new instance.
+   * Values are of the form `projects/{project}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -218,12 +222,12 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The ID to be used when referring to the new instance within its project,
+   * Required. The ID to be used when referring to the new instance within its project,
    * e.g., just `myinstance` rather than
    * `projects/myproject/instances/myinstance`.
    * </pre>
    *
-   * <code>string instance_id = 2;</code>
+   * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The instanceId.
    */
@@ -242,12 +246,12 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The ID to be used when referring to the new instance within its project,
+   * Required. The ID to be used when referring to the new instance within its project,
    * e.g., just `myinstance` rather than
    * `projects/myproject/instances/myinstance`.
    * </pre>
    *
-   * <code>string instance_id = 2;</code>
+   * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for instanceId.
    */
@@ -269,11 +273,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The instance to create.
+   * Required. The instance to create.
    * Fields marked `OutputOnly` must be left blank.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instance field is set.
    */
@@ -284,11 +290,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The instance to create.
+   * Required. The instance to create.
    * Fields marked `OutputOnly` must be left blank.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instance.
    */
@@ -301,11 +309,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The instance to create.
+   * Required. The instance to create.
    * Fields marked `OutputOnly` must be left blank.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.bigtable.admin.v2.InstanceOrBuilder getInstanceOrBuilder() {
     return getInstance();
@@ -345,14 +355,16 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The clusters to be created within the instance, mapped by desired
+   * Required. The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently, at most two clusters can be specified.
+   * Currently, at most four clusters can be specified.
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean containsClusters(java.lang.String key) {
     if (key == null) {
@@ -369,14 +381,16 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The clusters to be created within the instance, mapped by desired
+   * Required. The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently, at most two clusters can be specified.
+   * Currently, at most four clusters can be specified.
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Cluster> getClustersMap() {
     return internalGetClusters().getMap();
@@ -385,14 +399,16 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The clusters to be created within the instance, mapped by desired
+   * Required. The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently, at most two clusters can be specified.
+   * Currently, at most four clusters can be specified.
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.bigtable.admin.v2.Cluster getClustersOrDefault(
       java.lang.String key, com.google.bigtable.admin.v2.Cluster defaultValue) {
@@ -407,14 +423,16 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The clusters to be created within the instance, mapped by desired
+   * Required. The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently, at most two clusters can be specified.
+   * Currently, at most four clusters can be specified.
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.bigtable.admin.v2.Cluster getClustersOrThrow(java.lang.String key) {
     if (key == null) {
@@ -840,11 +858,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The unique name of the project in which to create the new instance.
-     * Values are of the form `projects/&lt;project&gt;`.
+     * Required. The unique name of the project in which to create the new instance.
+     * Values are of the form `projects/{project}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -863,11 +883,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The unique name of the project in which to create the new instance.
-     * Values are of the form `projects/&lt;project&gt;`.
+     * Required. The unique name of the project in which to create the new instance.
+     * Values are of the form `projects/{project}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -886,11 +908,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The unique name of the project in which to create the new instance.
-     * Values are of the form `projects/&lt;project&gt;`.
+     * Required. The unique name of the project in which to create the new instance.
+     * Values are of the form `projects/{project}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -908,11 +932,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The unique name of the project in which to create the new instance.
-     * Values are of the form `projects/&lt;project&gt;`.
+     * Required. The unique name of the project in which to create the new instance.
+     * Values are of the form `projects/{project}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -926,11 +952,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The unique name of the project in which to create the new instance.
-     * Values are of the form `projects/&lt;project&gt;`.
+     * Required. The unique name of the project in which to create the new instance.
+     * Values are of the form `projects/{project}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -951,12 +979,12 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The ID to be used when referring to the new instance within its project,
+     * Required. The ID to be used when referring to the new instance within its project,
      * e.g., just `myinstance` rather than
      * `projects/myproject/instances/myinstance`.
      * </pre>
      *
-     * <code>string instance_id = 2;</code>
+     * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The instanceId.
      */
@@ -975,12 +1003,12 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The ID to be used when referring to the new instance within its project,
+     * Required. The ID to be used when referring to the new instance within its project,
      * e.g., just `myinstance` rather than
      * `projects/myproject/instances/myinstance`.
      * </pre>
      *
-     * <code>string instance_id = 2;</code>
+     * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for instanceId.
      */
@@ -999,12 +1027,12 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The ID to be used when referring to the new instance within its project,
+     * Required. The ID to be used when referring to the new instance within its project,
      * e.g., just `myinstance` rather than
      * `projects/myproject/instances/myinstance`.
      * </pre>
      *
-     * <code>string instance_id = 2;</code>
+     * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The instanceId to set.
      * @return This builder for chaining.
@@ -1022,12 +1050,12 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The ID to be used when referring to the new instance within its project,
+     * Required. The ID to be used when referring to the new instance within its project,
      * e.g., just `myinstance` rather than
      * `projects/myproject/instances/myinstance`.
      * </pre>
      *
-     * <code>string instance_id = 2;</code>
+     * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1041,12 +1069,12 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The ID to be used when referring to the new instance within its project,
+     * Required. The ID to be used when referring to the new instance within its project,
      * e.g., just `myinstance` rather than
      * `projects/myproject/instances/myinstance`.
      * </pre>
      *
-     * <code>string instance_id = 2;</code>
+     * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for instanceId to set.
      * @return This builder for chaining.
@@ -1072,11 +1100,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance to create.
+     * Required. The instance to create.
      * Fields marked `OutputOnly` must be left blank.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the instance field is set.
      */
@@ -1087,11 +1117,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance to create.
+     * Required. The instance to create.
      * Fields marked `OutputOnly` must be left blank.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The instance.
      */
@@ -1108,11 +1140,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance to create.
+     * Required. The instance to create.
      * Fields marked `OutputOnly` must be left blank.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInstance(com.google.bigtable.admin.v2.Instance value) {
       if (instanceBuilder_ == null) {
@@ -1131,11 +1165,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance to create.
+     * Required. The instance to create.
      * Fields marked `OutputOnly` must be left blank.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInstance(com.google.bigtable.admin.v2.Instance.Builder builderForValue) {
       if (instanceBuilder_ == null) {
@@ -1151,11 +1187,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance to create.
+     * Required. The instance to create.
      * Fields marked `OutputOnly` must be left blank.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeInstance(com.google.bigtable.admin.v2.Instance value) {
       if (instanceBuilder_ == null) {
@@ -1178,11 +1216,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance to create.
+     * Required. The instance to create.
      * Fields marked `OutputOnly` must be left blank.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearInstance() {
       if (instanceBuilder_ == null) {
@@ -1199,11 +1239,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance to create.
+     * Required. The instance to create.
      * Fields marked `OutputOnly` must be left blank.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.admin.v2.Instance.Builder getInstanceBuilder() {
 
@@ -1214,11 +1256,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance to create.
+     * Required. The instance to create.
      * Fields marked `OutputOnly` must be left blank.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.admin.v2.InstanceOrBuilder getInstanceOrBuilder() {
       if (instanceBuilder_ != null) {
@@ -1233,11 +1277,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance to create.
+     * Required. The instance to create.
      * Fields marked `OutputOnly` must be left blank.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.admin.v2.Instance,
@@ -1288,14 +1334,16 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The clusters to be created within the instance, mapped by desired
+     * Required. The clusters to be created within the instance, mapped by desired
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most two clusters can be specified.
+     * Currently, at most four clusters can be specified.
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean containsClusters(java.lang.String key) {
       if (key == null) {
@@ -1312,14 +1360,16 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The clusters to be created within the instance, mapped by desired
+     * Required. The clusters to be created within the instance, mapped by desired
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most two clusters can be specified.
+     * Currently, at most four clusters can be specified.
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Cluster> getClustersMap() {
       return internalGetClusters().getMap();
@@ -1328,14 +1378,16 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The clusters to be created within the instance, mapped by desired
+     * Required. The clusters to be created within the instance, mapped by desired
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most two clusters can be specified.
+     * Currently, at most four clusters can be specified.
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.admin.v2.Cluster getClustersOrDefault(
         java.lang.String key, com.google.bigtable.admin.v2.Cluster defaultValue) {
@@ -1350,14 +1402,16 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The clusters to be created within the instance, mapped by desired
+     * Required. The clusters to be created within the instance, mapped by desired
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most two clusters can be specified.
+     * Currently, at most four clusters can be specified.
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.admin.v2.Cluster getClustersOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1379,14 +1433,16 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The clusters to be created within the instance, mapped by desired
+     * Required. The clusters to be created within the instance, mapped by desired
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most two clusters can be specified.
+     * Currently, at most four clusters can be specified.
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeClusters(java.lang.String key) {
       if (key == null) {
@@ -1405,14 +1461,16 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The clusters to be created within the instance, mapped by desired
+     * Required. The clusters to be created within the instance, mapped by desired
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most two clusters can be specified.
+     * Currently, at most four clusters can be specified.
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder putClusters(java.lang.String key, com.google.bigtable.admin.v2.Cluster value) {
       if (key == null) {
@@ -1428,14 +1486,16 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The clusters to be created within the instance, mapped by desired
+     * Required. The clusters to be created within the instance, mapped by desired
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most two clusters can be specified.
+     * Currently, at most four clusters can be specified.
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder putAllClusters(
         java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Cluster> values) {

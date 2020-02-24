@@ -1702,12 +1702,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The unique name of the table whose families should be modified.
+   * Required. The unique name of the table whose families should be modified.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -1726,12 +1728,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The unique name of the table whose families should be modified.
+   * Required. The unique name of the table whose families should be modified.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -1754,14 +1758,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Modifications to be atomically applied to the specified table's families.
+   * Required. Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
    * masked by later ones (in the case of repeated updates to the same family,
    * for example).
    * </pre>
    *
    * <code>
-   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>
@@ -1772,14 +1776,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Modifications to be atomically applied to the specified table's families.
+   * Required. Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
    * masked by later ones (in the case of repeated updates to the same family,
    * for example).
    * </pre>
    *
    * <code>
-   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public java.util.List<
@@ -1791,14 +1795,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Modifications to be atomically applied to the specified table's families.
+   * Required. Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
    * masked by later ones (in the case of repeated updates to the same family,
    * for example).
    * </pre>
    *
    * <code>
-   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public int getModificationsCount() {
@@ -1808,14 +1812,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Modifications to be atomically applied to the specified table's families.
+   * Required. Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
    * masked by later ones (in the case of repeated updates to the same family,
    * for example).
    * </pre>
    *
    * <code>
-   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification getModifications(
@@ -1826,14 +1830,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Modifications to be atomically applied to the specified table's families.
+   * Required. Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
    * masked by later ones (in the case of repeated updates to the same family,
    * for example).
    * </pre>
    *
    * <code>
-   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder
@@ -2224,12 +2228,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unique name of the table whose families should be modified.
+     * Required. The unique name of the table whose families should be modified.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+     * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -2248,12 +2254,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unique name of the table whose families should be modified.
+     * Required. The unique name of the table whose families should be modified.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+     * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -2272,12 +2280,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unique name of the table whose families should be modified.
+     * Required. The unique name of the table whose families should be modified.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+     * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2295,12 +2305,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unique name of the table whose families should be modified.
+     * Required. The unique name of the table whose families should be modified.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+     * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2314,12 +2326,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unique name of the table whose families should be modified.
+     * Required. The unique name of the table whose families should be modified.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+     * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2358,14 +2372,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>
@@ -2380,14 +2394,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public int getModificationsCount() {
@@ -2401,14 +2415,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification getModifications(
@@ -2423,14 +2437,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setModifications(
@@ -2451,14 +2465,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setModifications(
@@ -2478,14 +2492,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addModifications(
@@ -2506,14 +2520,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addModifications(
@@ -2534,14 +2548,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addModifications(
@@ -2560,14 +2574,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addModifications(
@@ -2587,14 +2601,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addAllModifications(
@@ -2614,14 +2628,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearModifications() {
@@ -2638,14 +2652,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder removeModifications(int index) {
@@ -2662,14 +2676,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder
@@ -2680,14 +2694,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder
@@ -2702,14 +2716,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<
@@ -2726,14 +2740,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder
@@ -2747,14 +2761,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder
@@ -2769,14 +2783,14 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Modifications to be atomically applied to the specified table's families.
+     * Required. Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
      * masked by later ones (in the case of repeated updates to the same family,
      * for example).
      * </pre>
      *
      * <code>
-     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<

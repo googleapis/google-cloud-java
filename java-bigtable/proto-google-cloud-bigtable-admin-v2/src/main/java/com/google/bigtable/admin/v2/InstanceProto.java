@@ -62,45 +62,57 @@ public final class InstanceProto {
     java.lang.String[] descriptorData = {
       "\n\'google/bigtable/admin/v2/instance.prot"
           + "o\022\030google.bigtable.admin.v2\032\034google/api/"
-          + "annotations.proto\032%google/bigtable/admin"
-          + "/v2/common.proto\"\203\003\n\010Instance\022\014\n\004name\030\001 "
-          + "\001(\t\022\024\n\014display_name\030\002 \001(\t\0227\n\005state\030\003 \001(\016"
-          + "2(.google.bigtable.admin.v2.Instance.Sta"
-          + "te\0225\n\004type\030\004 \001(\0162\'.google.bigtable.admin"
-          + ".v2.Instance.Type\022>\n\006labels\030\005 \003(\0132..goog"
-          + "le.bigtable.admin.v2.Instance.LabelsEntr"
-          + "y\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
-          + " \001(\t:\0028\001\"5\n\005State\022\023\n\017STATE_NOT_KNOWN\020\000\022\t"
-          + "\n\005READY\020\001\022\014\n\010CREATING\020\002\"=\n\004Type\022\024\n\020TYPE_"
-          + "UNSPECIFIED\020\000\022\016\n\nPRODUCTION\020\001\022\017\n\013DEVELOP"
-          + "MENT\020\002\"\216\002\n\007Cluster\022\014\n\004name\030\001 \001(\t\022\020\n\010loca"
-          + "tion\030\002 \001(\t\0226\n\005state\030\003 \001(\0162\'.google.bigta"
-          + "ble.admin.v2.Cluster.State\022\023\n\013serve_node"
-          + "s\030\004 \001(\005\022C\n\024default_storage_type\030\005 \001(\0162%."
-          + "google.bigtable.admin.v2.StorageType\"Q\n\005"
-          + "State\022\023\n\017STATE_NOT_KNOWN\020\000\022\t\n\005READY\020\001\022\014\n"
-          + "\010CREATING\020\002\022\014\n\010RESIZING\020\003\022\014\n\010DISABLED\020\004\""
-          + "\202\003\n\nAppProfile\022\014\n\004name\030\001 \001(\t\022\014\n\004etag\030\002 \001"
-          + "(\t\022\023\n\013description\030\003 \001(\t\022g\n\035multi_cluster"
-          + "_routing_use_any\030\005 \001(\0132>.google.bigtable"
-          + ".admin.v2.AppProfile.MultiClusterRouting"
-          + "UseAnyH\000\022[\n\026single_cluster_routing\030\006 \001(\013"
-          + "29.google.bigtable.admin.v2.AppProfile.S"
-          + "ingleClusterRoutingH\000\032\033\n\031MultiClusterRou"
-          + "tingUseAny\032N\n\024SingleClusterRouting\022\022\n\ncl"
-          + "uster_id\030\001 \001(\t\022\"\n\032allow_transactional_wr"
-          + "ites\030\002 \001(\010B\020\n\016routing_policyB\260\001\n\034com.goo"
-          + "gle.bigtable.admin.v2B\rInstanceProtoP\001Z="
-          + "google.golang.org/genproto/googleapis/bi"
-          + "gtable/admin/v2;admin\252\002\036Google.Cloud.Big"
-          + "table.Admin.V2\312\002\036Google\\Cloud\\Bigtable\\A"
-          + "dmin\\V2b\006proto3"
+          + "annotations.proto\032\037google/api/field_beha"
+          + "vior.proto\032\031google/api/resource.proto\032%g"
+          + "oogle/bigtable/admin/v2/common.proto\"\335\003\n"
+          + "\010Instance\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display_"
+          + "name\030\002 \001(\tB\003\340A\002\0227\n\005state\030\003 \001(\0162(.google."
+          + "bigtable.admin.v2.Instance.State\0225\n\004type"
+          + "\030\004 \001(\0162\'.google.bigtable.admin.v2.Instan"
+          + "ce.Type\022>\n\006labels\030\005 \003(\0132..google.bigtabl"
+          + "e.admin.v2.Instance.LabelsEntry\032-\n\013Label"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"5"
+          + "\n\005State\022\023\n\017STATE_NOT_KNOWN\020\000\022\t\n\005READY\020\001\022"
+          + "\014\n\010CREATING\020\002\"=\n\004Type\022\024\n\020TYPE_UNSPECIFIE"
+          + "D\020\000\022\016\n\nPRODUCTION\020\001\022\017\n\013DEVELOPMENT\020\002:N\352A"
+          + "K\n bigtable.googleapis.com/Instance\022\'pro"
+          + "jects/{project}/instances/{instance}\"\247\003\n"
+          + "\007Cluster\022\021\n\004name\030\001 \001(\tB\003\340A\003\0228\n\010location\030"
+          + "\002 \001(\tB&\372A#\n!locations.googleapis.com/Loc"
+          + "ation\022;\n\005state\030\003 \001(\0162\'.google.bigtable.a"
+          + "dmin.v2.Cluster.StateB\003\340A\003\022\030\n\013serve_node"
+          + "s\030\004 \001(\005B\003\340A\002\022C\n\024default_storage_type\030\005 \001"
+          + "(\0162%.google.bigtable.admin.v2.StorageTyp"
+          + "e\"Q\n\005State\022\023\n\017STATE_NOT_KNOWN\020\000\022\t\n\005READY"
+          + "\020\001\022\014\n\010CREATING\020\002\022\014\n\010RESIZING\020\003\022\014\n\010DISABL"
+          + "ED\020\004:`\352A]\n\037bigtable.googleapis.com/Clust"
+          + "er\022:projects/{project}/instances/{instan"
+          + "ce}/clusters/{cluster}\"\356\003\n\nAppProfile\022\014\n"
+          + "\004name\030\001 \001(\t\022\014\n\004etag\030\002 \001(\t\022\023\n\013description"
+          + "\030\003 \001(\t\022g\n\035multi_cluster_routing_use_any\030"
+          + "\005 \001(\0132>.google.bigtable.admin.v2.AppProf"
+          + "ile.MultiClusterRoutingUseAnyH\000\022[\n\026singl"
+          + "e_cluster_routing\030\006 \001(\01329.google.bigtabl"
+          + "e.admin.v2.AppProfile.SingleClusterRouti"
+          + "ngH\000\032\033\n\031MultiClusterRoutingUseAny\032N\n\024Sin"
+          + "gleClusterRouting\022\022\n\ncluster_id\030\001 \001(\t\022\"\n"
+          + "\032allow_transactional_writes\030\002 \001(\010:j\352Ag\n\""
+          + "bigtable.googleapis.com/AppProfile\022Aproj"
+          + "ects/{project}/instances/{instance}/appP"
+          + "rofiles/{app_profile}B\020\n\016routing_policyB"
+          + "\260\001\n\034com.google.bigtable.admin.v2B\rInstan"
+          + "ceProtoP\001Z=google.golang.org/genproto/go"
+          + "ogleapis/bigtable/admin/v2;admin\252\002\036Googl"
+          + "e.Cloud.Bigtable.Admin.V2\312\002\036Google\\Cloud"
+          + "\\Bigtable\\Admin\\V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.bigtable.admin.v2.CommonProto.getDescriptor(),
             });
     internal_static_google_bigtable_admin_v2_Instance_descriptor =
@@ -154,7 +166,16 @@ public final class InstanceProto {
             new java.lang.String[] {
               "ClusterId", "AllowTransactionalWrites",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.bigtable.admin.v2.CommonProto.getDescriptor();
   }
 

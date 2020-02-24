@@ -27,12 +27,14 @@ public interface GetTableRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the requested table.
+   * Required. The unique name of the requested table.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -41,12 +43,14 @@ public interface GetTableRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the requested table.
+   * Required. The unique name of the requested table.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

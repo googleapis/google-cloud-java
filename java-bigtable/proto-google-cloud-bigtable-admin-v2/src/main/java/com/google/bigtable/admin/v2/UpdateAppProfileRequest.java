@@ -144,10 +144,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The app profile which will (partially) replace the current value.
+   * Required. The app profile which will (partially) replace the current value.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the appProfile field is set.
    */
@@ -158,10 +160,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The app profile which will (partially) replace the current value.
+   * Required. The app profile which will (partially) replace the current value.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The appProfile.
    */
@@ -174,10 +178,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The app profile which will (partially) replace the current value.
+   * Required. The app profile which will (partially) replace the current value.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.bigtable.admin.v2.AppProfileOrBuilder getAppProfileOrBuilder() {
     return getAppProfile();
@@ -189,11 +195,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The subset of app profile fields which should be replaced.
+   * Required. The subset of app profile fields which should be replaced.
    * If unset, all fields will be replaced.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -204,11 +211,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The subset of app profile fields which should be replaced.
+   * Required. The subset of app profile fields which should be replaced.
    * If unset, all fields will be replaced.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -219,11 +227,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The subset of app profile fields which should be replaced.
+   * Required. The subset of app profile fields which should be replaced.
    * If unset, all fields will be replaced.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -629,10 +638,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile which will (partially) replace the current value.
+     * Required. The app profile which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the appProfile field is set.
      */
@@ -643,10 +654,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile which will (partially) replace the current value.
+     * Required. The app profile which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The appProfile.
      */
@@ -663,10 +676,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile which will (partially) replace the current value.
+     * Required. The app profile which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAppProfile(com.google.bigtable.admin.v2.AppProfile value) {
       if (appProfileBuilder_ == null) {
@@ -685,10 +700,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile which will (partially) replace the current value.
+     * Required. The app profile which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAppProfile(com.google.bigtable.admin.v2.AppProfile.Builder builderForValue) {
       if (appProfileBuilder_ == null) {
@@ -704,10 +721,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile which will (partially) replace the current value.
+     * Required. The app profile which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeAppProfile(com.google.bigtable.admin.v2.AppProfile value) {
       if (appProfileBuilder_ == null) {
@@ -730,10 +749,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile which will (partially) replace the current value.
+     * Required. The app profile which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearAppProfile() {
       if (appProfileBuilder_ == null) {
@@ -750,10 +771,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile which will (partially) replace the current value.
+     * Required. The app profile which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.admin.v2.AppProfile.Builder getAppProfileBuilder() {
 
@@ -764,10 +787,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile which will (partially) replace the current value.
+     * Required. The app profile which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.admin.v2.AppProfileOrBuilder getAppProfileOrBuilder() {
       if (appProfileBuilder_ != null) {
@@ -782,10 +807,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile which will (partially) replace the current value.
+     * Required. The app profile which will (partially) replace the current value.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.admin.v2.AppProfile,
@@ -814,11 +841,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The subset of app profile fields which should be replaced.
+     * Required. The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -829,11 +857,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The subset of app profile fields which should be replaced.
+     * Required. The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -850,11 +879,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The subset of app profile fields which should be replaced.
+     * Required. The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -873,11 +903,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The subset of app profile fields which should be replaced.
+     * Required. The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -893,11 +924,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The subset of app profile fields which should be replaced.
+     * Required. The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -918,11 +950,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The subset of app profile fields which should be replaced.
+     * Required. The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -939,11 +972,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The subset of app profile fields which should be replaced.
+     * Required. The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -954,11 +988,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The subset of app profile fields which should be replaced.
+     * Required. The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -973,11 +1008,12 @@ public final class UpdateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The subset of app profile fields which should be replaced.
+     * Required. The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

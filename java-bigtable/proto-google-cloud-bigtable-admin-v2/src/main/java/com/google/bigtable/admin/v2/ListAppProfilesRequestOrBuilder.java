@@ -27,14 +27,16 @@ public interface ListAppProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the instance for which a list of app profiles is
+   * Required. The unique name of the instance for which a list of app profiles is
    * requested. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
-   * Use `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project,
+   * `projects/{project}/instances/{instance}`.
+   * Use `{instance} = '-'` to list AppProfiles for all Instances in a project,
    * e.g., `projects/myproject/instances/-`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -43,14 +45,16 @@ public interface ListAppProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the instance for which a list of app profiles is
+   * Required. The unique name of the instance for which a list of app profiles is
    * requested. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
-   * Use `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project,
+   * `projects/{project}/instances/{instance}`.
+   * Use `{instance} = '-'` to list AppProfiles for all Instances in a project,
    * e.g., `projects/myproject/instances/-`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -61,7 +65,12 @@ public interface ListAppProfilesRequestOrBuilder
    *
    * <pre>
    * Maximum number of results per page.
-   * CURRENTLY UNIMPLEMENTED AND IGNORED.
+   * A page_size of zero lets the server choose the number of items to return.
+   * A page_size which is strictly positive will return at most that many items.
+   * A negative page_size will cause an error.
+   * Following the first request, subsequent paginated calls are not required
+   * to pass a page_size. If a page_size is set in subsequent calls, it must
+   * match the page_size given in the first request.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>

@@ -345,8 +345,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The unique name of the snapshot.
+   * Output only. The unique name of the snapshot.
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
    * </pre>
@@ -370,8 +369,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The unique name of the snapshot.
+   * Output only. The unique name of the snapshot.
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
    * </pre>
@@ -398,8 +396,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The source table at the time the snapshot was taken.
+   * Output only. The source table at the time the snapshot was taken.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
@@ -413,8 +410,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The source table at the time the snapshot was taken.
+   * Output only. The source table at the time the snapshot was taken.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
@@ -430,8 +426,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The source table at the time the snapshot was taken.
+   * Output only. The source table at the time the snapshot was taken.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
@@ -446,8 +441,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The size of the data in the source table at the time the snapshot was
+   * Output only. The size of the data in the source table at the time the snapshot was
    * taken. In some cases, this value may be computed asynchronously via a
    * background process and a placeholder of 0 will be used in the meantime.
    * </pre>
@@ -466,8 +460,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The time when the snapshot is created.
+   * Output only. The time when the snapshot is created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -481,8 +474,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The time when the snapshot is created.
+   * Output only. The time when the snapshot is created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -496,8 +488,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The time when the snapshot is created.
+   * Output only. The time when the snapshot is created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -512,8 +503,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The time when the snapshot will be deleted. The maximum amount of time a
+   * Output only. The time when the snapshot will be deleted. The maximum amount of time a
    * snapshot can stay active is 365 days. If 'ttl' is not specified,
    * the default maximum of 365 days will be used.
    * </pre>
@@ -529,8 +519,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The time when the snapshot will be deleted. The maximum amount of time a
+   * Output only. The time when the snapshot will be deleted. The maximum amount of time a
    * snapshot can stay active is 365 days. If 'ttl' is not specified,
    * the default maximum of 365 days will be used.
    * </pre>
@@ -546,8 +535,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The time when the snapshot will be deleted. The maximum amount of time a
+   * Output only. The time when the snapshot will be deleted. The maximum amount of time a
    * snapshot can stay active is 365 days. If 'ttl' is not specified,
    * the default maximum of 365 days will be used.
    * </pre>
@@ -564,8 +552,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The current state of the snapshot.
+   * Output only. The current state of the snapshot.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
@@ -579,8 +566,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The current state of the snapshot.
+   * Output only. The current state of the snapshot.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
@@ -600,8 +586,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * Description of the snapshot.
+   * Output only. Description of the snapshot.
    * </pre>
    *
    * <code>string description = 7;</code>
@@ -623,8 +608,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * Description of the snapshot.
+   * Output only. Description of the snapshot.
    * </pre>
    *
    * <code>string description = 7;</code>
@@ -1097,8 +1081,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The unique name of the snapshot.
+     * Output only. The unique name of the snapshot.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
      * </pre>
@@ -1122,8 +1105,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The unique name of the snapshot.
+     * Output only. The unique name of the snapshot.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
      * </pre>
@@ -1147,8 +1129,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The unique name of the snapshot.
+     * Output only. The unique name of the snapshot.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
      * </pre>
@@ -1171,8 +1152,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The unique name of the snapshot.
+     * Output only. The unique name of the snapshot.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
      * </pre>
@@ -1191,8 +1171,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The unique name of the snapshot.
+     * Output only. The unique name of the snapshot.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
      * </pre>
@@ -1223,8 +1202,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The source table at the time the snapshot was taken.
+     * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
@@ -1238,8 +1216,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The source table at the time the snapshot was taken.
+     * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
@@ -1259,8 +1236,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The source table at the time the snapshot was taken.
+     * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
@@ -1282,8 +1258,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The source table at the time the snapshot was taken.
+     * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
@@ -1302,8 +1277,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The source table at the time the snapshot was taken.
+     * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
@@ -1329,8 +1303,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The source table at the time the snapshot was taken.
+     * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
@@ -1350,8 +1323,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The source table at the time the snapshot was taken.
+     * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
@@ -1365,8 +1337,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The source table at the time the snapshot was taken.
+     * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
@@ -1384,8 +1355,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The source table at the time the snapshot was taken.
+     * Output only. The source table at the time the snapshot was taken.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
@@ -1412,8 +1382,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The size of the data in the source table at the time the snapshot was
+     * Output only. The size of the data in the source table at the time the snapshot was
      * taken. In some cases, this value may be computed asynchronously via a
      * background process and a placeholder of 0 will be used in the meantime.
      * </pre>
@@ -1429,8 +1398,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The size of the data in the source table at the time the snapshot was
+     * Output only. The size of the data in the source table at the time the snapshot was
      * taken. In some cases, this value may be computed asynchronously via a
      * background process and a placeholder of 0 will be used in the meantime.
      * </pre>
@@ -1450,8 +1418,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The size of the data in the source table at the time the snapshot was
+     * Output only. The size of the data in the source table at the time the snapshot was
      * taken. In some cases, this value may be computed asynchronously via a
      * background process and a placeholder of 0 will be used in the meantime.
      * </pre>
@@ -1477,8 +1444,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot is created.
+     * Output only. The time when the snapshot is created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1492,8 +1458,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot is created.
+     * Output only. The time when the snapshot is created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1513,8 +1478,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot is created.
+     * Output only. The time when the snapshot is created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1536,8 +1500,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot is created.
+     * Output only. The time when the snapshot is created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1556,8 +1519,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot is created.
+     * Output only. The time when the snapshot is created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1581,8 +1543,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot is created.
+     * Output only. The time when the snapshot is created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1602,8 +1563,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot is created.
+     * Output only. The time when the snapshot is created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1617,8 +1577,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot is created.
+     * Output only. The time when the snapshot is created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1636,8 +1595,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot is created.
+     * Output only. The time when the snapshot is created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1669,8 +1627,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot will be deleted. The maximum amount of time a
+     * Output only. The time when the snapshot will be deleted. The maximum amount of time a
      * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
@@ -1686,8 +1643,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot will be deleted. The maximum amount of time a
+     * Output only. The time when the snapshot will be deleted. The maximum amount of time a
      * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
@@ -1709,8 +1665,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot will be deleted. The maximum amount of time a
+     * Output only. The time when the snapshot will be deleted. The maximum amount of time a
      * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
@@ -1734,8 +1689,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot will be deleted. The maximum amount of time a
+     * Output only. The time when the snapshot will be deleted. The maximum amount of time a
      * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
@@ -1756,8 +1710,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot will be deleted. The maximum amount of time a
+     * Output only. The time when the snapshot will be deleted. The maximum amount of time a
      * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
@@ -1783,8 +1736,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot will be deleted. The maximum amount of time a
+     * Output only. The time when the snapshot will be deleted. The maximum amount of time a
      * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
@@ -1806,8 +1758,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot will be deleted. The maximum amount of time a
+     * Output only. The time when the snapshot will be deleted. The maximum amount of time a
      * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
@@ -1823,8 +1774,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot will be deleted. The maximum amount of time a
+     * Output only. The time when the snapshot will be deleted. The maximum amount of time a
      * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
@@ -1844,8 +1794,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The time when the snapshot will be deleted. The maximum amount of time a
+     * Output only. The time when the snapshot will be deleted. The maximum amount of time a
      * snapshot can stay active is 365 days. If 'ttl' is not specified,
      * the default maximum of 365 days will be used.
      * </pre>
@@ -1874,8 +1823,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The current state of the snapshot.
+     * Output only. The current state of the snapshot.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
@@ -1889,8 +1837,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The current state of the snapshot.
+     * Output only. The current state of the snapshot.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
@@ -1907,8 +1854,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The current state of the snapshot.
+     * Output only. The current state of the snapshot.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
@@ -1925,8 +1871,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The current state of the snapshot.
+     * Output only. The current state of the snapshot.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
@@ -1947,8 +1892,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The current state of the snapshot.
+     * Output only. The current state of the snapshot.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
@@ -1967,8 +1911,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * Description of the snapshot.
+     * Output only. Description of the snapshot.
      * </pre>
      *
      * <code>string description = 7;</code>
@@ -1990,8 +1933,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * Description of the snapshot.
+     * Output only. Description of the snapshot.
      * </pre>
      *
      * <code>string description = 7;</code>
@@ -2013,8 +1955,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * Description of the snapshot.
+     * Output only. Description of the snapshot.
      * </pre>
      *
      * <code>string description = 7;</code>
@@ -2035,8 +1976,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * Description of the snapshot.
+     * Output only. Description of the snapshot.
      * </pre>
      *
      * <code>string description = 7;</code>
@@ -2053,8 +1993,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * Description of the snapshot.
+     * Output only. Description of the snapshot.
      * </pre>
      *
      * <code>string description = 7;</code>

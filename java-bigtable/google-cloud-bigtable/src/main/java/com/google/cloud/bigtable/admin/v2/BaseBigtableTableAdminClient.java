@@ -155,11 +155,12 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance in which to create the table. Values are of the
-   *     form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
-   * @param tableId The name by which the new table should be referred to within the parent
-   *     instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
-   * @param table The Table to create.
+   * @param parent Required. The unique name of the instance in which to create the table. Values
+   *     are of the form `projects/{project}/instances/{instance}`.
+   * @param tableId Required. The name by which the new table should be referred to within the
+   *     parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`. Maximum 50
+   *     characters.
+   * @param table Required. The Table to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Table createTable(InstanceName parent, String tableId, Table table) {
@@ -188,11 +189,12 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance in which to create the table. Values are of the
-   *     form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
-   * @param tableId The name by which the new table should be referred to within the parent
-   *     instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
-   * @param table The Table to create.
+   * @param parent Required. The unique name of the instance in which to create the table. Values
+   *     are of the form `projects/{project}/instances/{instance}`.
+   * @param tableId Required. The name by which the new table should be referred to within the
+   *     parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`. Maximum 50
+   *     characters.
+   * @param table Required. The Table to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Table createTable(String parent, String tableId, Table table) {
@@ -281,13 +283,13 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance in which to create the table. Values are of the
-   *     form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
-   * @param tableId The name by which the new table should be referred to within the parent
-   *     instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
-   * @param sourceSnapshot The unique name of the snapshot from which to restore the table. The
-   *     snapshot and the table must be in the same instance. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * @param parent Required. The unique name of the instance in which to create the table. Values
+   *     are of the form `projects/{project}/instances/{instance}`.
+   * @param tableId Required. The name by which the new table should be referred to within the
+   *     parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+   * @param sourceSnapshot Required. The unique name of the snapshot from which to restore the
+   *     table. The snapshot and the table must be in the same instance. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -324,13 +326,13 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance in which to create the table. Values are of the
-   *     form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
-   * @param tableId The name by which the new table should be referred to within the parent
-   *     instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
-   * @param sourceSnapshot The unique name of the snapshot from which to restore the table. The
-   *     snapshot and the table must be in the same instance. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * @param parent Required. The unique name of the instance in which to create the table. Values
+   *     are of the form `projects/{project}/instances/{instance}`.
+   * @param tableId Required. The name by which the new table should be referred to within the
+   *     parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+   * @param sourceSnapshot Required. The unique name of the snapshot from which to restore the
+   *     table. The snapshot and the table must be in the same instance. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -465,8 +467,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance for which tables should be listed. Values are of
-   *     the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @param parent Required. The unique name of the instance for which tables should be listed.
+   *     Values are of the form `projects/{project}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTablesPagedResponse listTables(InstanceName parent) {
@@ -490,8 +492,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the instance for which tables should be listed. Values are of
-   *     the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @param parent Required. The unique name of the instance for which tables should be listed.
+   *     Values are of the form `projects/{project}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTablesPagedResponse listTables(String parent) {
@@ -592,8 +594,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the requested table. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * @param name Required. The unique name of the requested table. Values are of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Table getTable(TableName name) {
@@ -615,8 +617,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the requested table. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * @param name Required. The unique name of the requested table. Values are of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Table getTable(String name) {
@@ -682,8 +684,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the table to be deleted. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * @param name Required. The unique name of the table to be deleted. Values are of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTable(TableName name) {
@@ -705,8 +707,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the table to be deleted. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * @param name Required. The unique name of the table to be deleted. Values are of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTable(String name) {
@@ -775,11 +777,11 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the table whose families should be modified. Values are of the
-   *     form `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
-   * @param modifications Modifications to be atomically applied to the specified table's families.
-   *     Entries are applied in order, meaning that earlier modifications can be masked by later
-   *     ones (in the case of repeated updates to the same family, for example).
+   * @param name Required. The unique name of the table whose families should be modified. Values
+   *     are of the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @param modifications Required. Modifications to be atomically applied to the specified table's
+   *     families. Entries are applied in order, meaning that earlier modifications can be masked by
+   *     later ones (in the case of repeated updates to the same family, for example).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Table modifyColumnFamilies(
@@ -808,11 +810,11 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the table whose families should be modified. Values are of the
-   *     form `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
-   * @param modifications Modifications to be atomically applied to the specified table's families.
-   *     Entries are applied in order, meaning that earlier modifications can be masked by later
-   *     ones (in the case of repeated updates to the same family, for example).
+   * @param name Required. The unique name of the table whose families should be modified. Values
+   *     are of the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @param modifications Required. Modifications to be atomically applied to the specified table's
+   *     families. Entries are applied in order, meaning that earlier modifications can be masked by
+   *     later ones (in the case of repeated updates to the same family, for example).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Table modifyColumnFamilies(
@@ -940,8 +942,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the Table for which to create a consistency token. Values are of
-   *     the form `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * @param name Required. The unique name of the Table for which to create a consistency token.
+   *     Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GenerateConsistencyTokenResponse generateConsistencyToken(TableName name) {
@@ -967,8 +969,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the Table for which to create a consistency token. Values are of
-   *     the form `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * @param name Required. The unique name of the Table for which to create a consistency token.
+   *     Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GenerateConsistencyTokenResponse generateConsistencyToken(String name) {
@@ -1043,9 +1045,10 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the Table for which to check replication consistency. Values are
-   *     of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
-   * @param consistencyToken The token created using GenerateConsistencyToken for the Table.
+   * @param name Required. The unique name of the Table for which to check replication consistency.
+   *     Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @param consistencyToken Required. The token created using GenerateConsistencyToken for the
+   *     Table.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CheckConsistencyResponse checkConsistency(TableName name, String consistencyToken) {
@@ -1072,9 +1075,10 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the Table for which to check replication consistency. Values are
-   *     of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
-   * @param consistencyToken The token created using GenerateConsistencyToken for the Table.
+   * @param name Required. The unique name of the Table for which to check replication consistency.
+   *     Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @param consistencyToken Required. The token created using GenerateConsistencyToken for the
+   *     Table.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CheckConsistencyResponse checkConsistency(String name, String consistencyToken) {
@@ -1140,7 +1144,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the access control policy for a table resource. Returns an empty policy if an table exists
+   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
    * but does not have a policy set.
    *
    * <p>Sample code:
@@ -1163,7 +1167,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the access control policy for a table resource. Returns an empty policy if an table exists
+   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
    * but does not have a policy set.
    *
    * <p>Sample code:
@@ -1187,7 +1191,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the access control policy for a table resource. Returns an empty policy if an table exists
+   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
    * but does not have a policy set.
    *
    * <p>Sample code:
@@ -1210,7 +1214,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on a table resource. Replaces any existing policy.
+   * Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -1237,7 +1241,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on a table resource. Replaces any existing policy.
+   * Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -1262,7 +1266,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on a table resource. Replaces any existing policy.
+   * Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -1388,12 +1392,12 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The unique name of the table to have the snapshot taken. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   *     `projects/{project}/instances/{instance}/tables/{table}`.
    * @param cluster The name of the cluster where the snapshot will be created in. Values are of the
-   *     form `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
+   *     form `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * @param snapshotId The ID by which the new snapshot should be referred to within the parent
    *     cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]&#42;` rather than
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/mysnapshot`.
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * @param description Description of the snapshot.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1434,12 +1438,12 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The unique name of the table to have the snapshot taken. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   *     `projects/{project}/instances/{instance}/tables/{table}`.
    * @param cluster The name of the cluster where the snapshot will be created in. Values are of the
-   *     form `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
+   *     form `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * @param snapshotId The ID by which the new snapshot should be referred to within the parent
    *     cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]&#42;` rather than
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/mysnapshot`.
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * @param description Description of the snapshot.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1583,8 +1587,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the requested snapshot. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * @param name Required. The unique name of the requested snapshot. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Snapshot getSnapshot(SnapshotName name) {
@@ -1611,8 +1615,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the requested snapshot. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * @param name Required. The unique name of the requested snapshot. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Snapshot getSnapshot(String name) {
@@ -1695,10 +1699,10 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the cluster for which snapshots should be listed. Values are
-   *     of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
-   *     Use `&lt;cluster&gt; = '-'` to list snapshots for all clusters in an instance, e.g.,
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/-`.
+   * @param parent Required. The unique name of the cluster for which snapshots should be listed.
+   *     Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`. Use
+   *     `{cluster} = '-'` to list snapshots for all clusters in an instance, e.g.,
+   *     `projects/{project}/instances/{instance}/clusters/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSnapshotsPagedResponse listSnapshots(ClusterName parent) {
@@ -1729,10 +1733,10 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique name of the cluster for which snapshots should be listed. Values are
-   *     of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
-   *     Use `&lt;cluster&gt; = '-'` to list snapshots for all clusters in an instance, e.g.,
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/-`.
+   * @param parent Required. The unique name of the cluster for which snapshots should be listed.
+   *     Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`. Use
+   *     `{cluster} = '-'` to list snapshots for all clusters in an instance, e.g.,
+   *     `projects/{project}/instances/{instance}/clusters/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSnapshotsPagedResponse listSnapshots(String parent) {
@@ -1854,8 +1858,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the snapshot to be deleted. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * @param name Required. The unique name of the snapshot to be deleted. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSnapshot(SnapshotName name) {
@@ -1882,8 +1886,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the snapshot to be deleted. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * @param name Required. The unique name of the snapshot to be deleted. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSnapshot(String name) {

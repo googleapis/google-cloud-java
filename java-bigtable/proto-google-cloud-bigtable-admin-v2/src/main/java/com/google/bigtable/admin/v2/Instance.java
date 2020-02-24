@@ -24,8 +24,8 @@ package com.google.bigtable.admin.v2;
  * <pre>
  * A collection of Bigtable [Tables][google.bigtable.admin.v2.Table] and
  * the resources that serve them.
- * All tables in an instance are served from a single
- * [Cluster][google.bigtable.admin.v2.Cluster].
+ * All tables in an instance are served from all
+ * [Clusters][google.bigtable.admin.v2.Cluster] in the instance.
  * </pre>
  *
  * Protobuf type {@code google.bigtable.admin.v2.Instance}
@@ -497,12 +497,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The unique name of the instance. Values are of the form
-   * `projects/&lt;project&gt;/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
+   * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -521,12 +520,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The unique name of the instance. Values are of the form
-   * `projects/&lt;project&gt;/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
+   * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -548,12 +546,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The descriptive name for this instance as it appears in UIs.
+   * Required. The descriptive name for this instance as it appears in UIs.
    * Can be changed at any time, but should be kept globally unique
    * to avoid confusion.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -572,12 +570,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The descriptive name for this instance as it appears in UIs.
+   * Required. The descriptive name for this instance as it appears in UIs.
    * Can be changed at any time, but should be kept globally unique
    * to avoid confusion.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -999,8 +997,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A collection of Bigtable [Tables][google.bigtable.admin.v2.Table] and
    * the resources that serve them.
-   * All tables in an instance are served from a single
-   * [Cluster][google.bigtable.admin.v2.Cluster].
+   * All tables in an instance are served from all
+   * [Clusters][google.bigtable.admin.v2.Cluster] in the instance.
    * </pre>
    *
    * Protobuf type {@code google.bigtable.admin.v2.Instance}
@@ -1204,12 +1202,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The unique name of the instance. Values are of the form
-     * `projects/&lt;project&gt;/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
+     * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The name.
      */
@@ -1228,12 +1225,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The unique name of the instance. Values are of the form
-     * `projects/&lt;project&gt;/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
+     * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for name.
      */
@@ -1252,12 +1248,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The unique name of the instance. Values are of the form
-     * `projects/&lt;project&gt;/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
+     * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1275,12 +1270,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The unique name of the instance. Values are of the form
-     * `projects/&lt;project&gt;/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
+     * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1294,12 +1288,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The unique name of the instance. Values are of the form
-     * `projects/&lt;project&gt;/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
+     * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1320,12 +1313,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The descriptive name for this instance as it appears in UIs.
+     * Required. The descriptive name for this instance as it appears in UIs.
      * Can be changed at any time, but should be kept globally unique
      * to avoid confusion.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -1344,12 +1337,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The descriptive name for this instance as it appears in UIs.
+     * Required. The descriptive name for this instance as it appears in UIs.
      * Can be changed at any time, but should be kept globally unique
      * to avoid confusion.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -1368,12 +1361,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The descriptive name for this instance as it appears in UIs.
+     * Required. The descriptive name for this instance as it appears in UIs.
      * Can be changed at any time, but should be kept globally unique
      * to avoid confusion.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1391,12 +1384,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The descriptive name for this instance as it appears in UIs.
+     * Required. The descriptive name for this instance as it appears in UIs.
      * Can be changed at any time, but should be kept globally unique
      * to avoid confusion.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1410,12 +1403,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The descriptive name for this instance as it appears in UIs.
+     * Required. The descriptive name for this instance as it appears in UIs.
      * Can be changed at any time, but should be kept globally unique
      * to avoid confusion.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.

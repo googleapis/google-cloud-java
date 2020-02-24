@@ -27,10 +27,12 @@ public interface UpdateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The app profile which will (partially) replace the current value.
+   * Required. The app profile which will (partially) replace the current value.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the appProfile field is set.
    */
@@ -39,10 +41,12 @@ public interface UpdateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The app profile which will (partially) replace the current value.
+   * Required. The app profile which will (partially) replace the current value.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The appProfile.
    */
@@ -51,10 +55,12 @@ public interface UpdateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The app profile which will (partially) replace the current value.
+   * Required. The app profile which will (partially) replace the current value.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile app_profile = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.bigtable.admin.v2.AppProfileOrBuilder getAppProfileOrBuilder();
 
@@ -62,11 +68,12 @@ public interface UpdateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The subset of app profile fields which should be replaced.
+   * Required. The subset of app profile fields which should be replaced.
    * If unset, all fields will be replaced.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -75,11 +82,12 @@ public interface UpdateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The subset of app profile fields which should be replaced.
+   * Required. The subset of app profile fields which should be replaced.
    * If unset, all fields will be replaced.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -88,11 +96,12 @@ public interface UpdateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The subset of app profile fields which should be replaced.
+   * Required. The subset of app profile fields which should be replaced.
    * If unset, all fields will be replaced.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 

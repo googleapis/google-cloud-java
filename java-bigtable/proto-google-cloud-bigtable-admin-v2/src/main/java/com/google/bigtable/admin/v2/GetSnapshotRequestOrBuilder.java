@@ -27,12 +27,14 @@ public interface GetSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the requested snapshot.
+   * Required. The unique name of the requested snapshot.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -41,12 +43,14 @@ public interface GetSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the requested snapshot.
+   * Required. The unique name of the requested snapshot.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

@@ -27,12 +27,14 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the instance in which to create the new cluster.
+   * Required. The unique name of the instance in which to create the new cluster.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -41,12 +43,14 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the instance in which to create the new cluster.
+   * Required. The unique name of the instance in which to create the new cluster.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -56,12 +60,12 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * The ID to be used when referring to the new cluster within its instance,
+   * Required. The ID to be used when referring to the new cluster within its instance,
    * e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * </pre>
    *
-   * <code>string cluster_id = 2;</code>
+   * <code>string cluster_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The clusterId.
    */
@@ -70,12 +74,12 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * The ID to be used when referring to the new cluster within its instance,
+   * Required. The ID to be used when referring to the new cluster within its instance,
    * e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * </pre>
    *
-   * <code>string cluster_id = 2;</code>
+   * <code>string cluster_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for clusterId.
    */
@@ -85,11 +89,12 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * The cluster to be created.
+   * Required. The cluster to be created.
    * Fields marked `OutputOnly` must be left blank.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Cluster cluster = 3;</code>
+   * <code>.google.bigtable.admin.v2.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the cluster field is set.
    */
@@ -98,11 +103,12 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * The cluster to be created.
+   * Required. The cluster to be created.
    * Fields marked `OutputOnly` must be left blank.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Cluster cluster = 3;</code>
+   * <code>.google.bigtable.admin.v2.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The cluster.
    */
@@ -111,11 +117,12 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * The cluster to be created.
+   * Required. The cluster to be created.
    * Fields marked `OutputOnly` must be left blank.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Cluster cluster = 3;</code>
+   * <code>.google.bigtable.admin.v2.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.bigtable.admin.v2.ClusterOrBuilder getClusterOrBuilder();
 }

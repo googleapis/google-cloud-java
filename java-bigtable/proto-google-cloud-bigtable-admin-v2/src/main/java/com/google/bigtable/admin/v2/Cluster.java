@@ -359,12 +359,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The unique name of the cluster. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/[a-z][-a-z0-9]*`.
+   * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -383,12 +382,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The unique name of the cluster. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/[a-z][-a-z0-9]*`.
+   * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -414,10 +412,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * The location where this cluster's nodes and storage reside. For best
    * performance, clients should be located as close as possible to this
    * cluster. Currently only zones are supported, so values should be of the
-   * form `projects/&lt;project&gt;/locations/&lt;zone&gt;`.
+   * form `projects/{project}/locations/{zone}`.
    * </pre>
    *
-   * <code>string location = 2;</code>
+   * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The location.
    */
@@ -440,10 +438,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * The location where this cluster's nodes and storage reside. For best
    * performance, clients should be located as close as possible to this
    * cluster. Currently only zones are supported, so values should be of the
-   * form `projects/&lt;project&gt;/locations/&lt;zone&gt;`.
+   * form `projects/{project}/locations/{zone}`.
    * </pre>
    *
-   * <code>string location = 2;</code>
+   * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for location.
    */
@@ -465,11 +463,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The current state of the cluster.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Cluster.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -480,11 +479,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The current state of the cluster.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Cluster.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -501,11 +501,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The number of nodes allocated to this cluster. More nodes enable higher
+   * Required. The number of nodes allocated to this cluster. More nodes enable higher
    * throughput and more consistent performance.
    * </pre>
    *
-   * <code>int32 serve_nodes = 4;</code>
+   * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The serveNodes.
    */
@@ -934,12 +934,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The unique name of the cluster. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/[a-z][-a-z0-9]*`.
+     * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The name.
      */
@@ -958,12 +957,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The unique name of the cluster. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/[a-z][-a-z0-9]*`.
+     * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for name.
      */
@@ -982,12 +980,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The unique name of the cluster. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/[a-z][-a-z0-9]*`.
+     * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1005,12 +1002,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The unique name of the cluster. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/[a-z][-a-z0-9]*`.
+     * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1024,12 +1020,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The unique name of the cluster. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/[a-z][-a-z0-9]*`.
+     * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1054,10 +1049,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The location where this cluster's nodes and storage reside. For best
      * performance, clients should be located as close as possible to this
      * cluster. Currently only zones are supported, so values should be of the
-     * form `projects/&lt;project&gt;/locations/&lt;zone&gt;`.
+     * form `projects/{project}/locations/{zone}`.
      * </pre>
      *
-     * <code>string location = 2;</code>
+     * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The location.
      */
@@ -1080,10 +1075,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The location where this cluster's nodes and storage reside. For best
      * performance, clients should be located as close as possible to this
      * cluster. Currently only zones are supported, so values should be of the
-     * form `projects/&lt;project&gt;/locations/&lt;zone&gt;`.
+     * form `projects/{project}/locations/{zone}`.
      * </pre>
      *
-     * <code>string location = 2;</code>
+     * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for location.
      */
@@ -1106,10 +1101,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The location where this cluster's nodes and storage reside. For best
      * performance, clients should be located as close as possible to this
      * cluster. Currently only zones are supported, so values should be of the
-     * form `projects/&lt;project&gt;/locations/&lt;zone&gt;`.
+     * form `projects/{project}/locations/{zone}`.
      * </pre>
      *
-     * <code>string location = 2;</code>
+     * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The location to set.
      * @return This builder for chaining.
@@ -1131,10 +1126,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The location where this cluster's nodes and storage reside. For best
      * performance, clients should be located as close as possible to this
      * cluster. Currently only zones are supported, so values should be of the
-     * form `projects/&lt;project&gt;/locations/&lt;zone&gt;`.
+     * form `projects/{project}/locations/{zone}`.
      * </pre>
      *
-     * <code>string location = 2;</code>
+     * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1152,10 +1147,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The location where this cluster's nodes and storage reside. For best
      * performance, clients should be located as close as possible to this
      * cluster. Currently only zones are supported, so values should be of the
-     * form `projects/&lt;project&gt;/locations/&lt;zone&gt;`.
+     * form `projects/{project}/locations/{zone}`.
      * </pre>
      *
-     * <code>string location = 2;</code>
+     * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for location to set.
      * @return This builder for chaining.
@@ -1176,11 +1171,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The current state of the cluster.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for state.
      */
@@ -1191,11 +1187,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The current state of the cluster.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
@@ -1209,11 +1206,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The current state of the cluster.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The state.
      */
@@ -1227,11 +1225,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The current state of the cluster.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The state to set.
      * @return This builder for chaining.
@@ -1249,11 +1248,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
      * The current state of the cluster.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1269,11 +1269,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of nodes allocated to this cluster. More nodes enable higher
+     * Required. The number of nodes allocated to this cluster. More nodes enable higher
      * throughput and more consistent performance.
      * </pre>
      *
-     * <code>int32 serve_nodes = 4;</code>
+     * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The serveNodes.
      */
@@ -1284,11 +1284,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of nodes allocated to this cluster. More nodes enable higher
+     * Required. The number of nodes allocated to this cluster. More nodes enable higher
      * throughput and more consistent performance.
      * </pre>
      *
-     * <code>int32 serve_nodes = 4;</code>
+     * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The serveNodes to set.
      * @return This builder for chaining.
@@ -1303,11 +1303,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of nodes allocated to this cluster. More nodes enable higher
+     * Required. The number of nodes allocated to this cluster. More nodes enable higher
      * throughput and more consistent performance.
      * </pre>
      *
-     * <code>int32 serve_nodes = 4;</code>
+     * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

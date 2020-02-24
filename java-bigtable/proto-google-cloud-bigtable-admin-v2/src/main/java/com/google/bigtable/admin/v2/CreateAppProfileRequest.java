@@ -146,12 +146,14 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The unique name of the instance in which to create the new app profile.
+   * Required. The unique name of the instance in which to create the new app profile.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -170,12 +172,14 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The unique name of the instance in which to create the new app profile.
+   * Required. The unique name of the instance in which to create the new app profile.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -197,12 +201,12 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The ID to be used when referring to the new app profile within its
+   * Required. The ID to be used when referring to the new app profile within its
    * instance, e.g., just `myprofile` rather than
    * `projects/myproject/instances/myinstance/appProfiles/myprofile`.
    * </pre>
    *
-   * <code>string app_profile_id = 2;</code>
+   * <code>string app_profile_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The appProfileId.
    */
@@ -221,12 +225,12 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The ID to be used when referring to the new app profile within its
+   * Required. The ID to be used when referring to the new app profile within its
    * instance, e.g., just `myprofile` rather than
    * `projects/myproject/instances/myinstance/appProfiles/myprofile`.
    * </pre>
    *
-   * <code>string app_profile_id = 2;</code>
+   * <code>string app_profile_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for appProfileId.
    */
@@ -248,11 +252,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The app profile to be created.
+   * Required. The app profile to be created.
    * Fields marked `OutputOnly` will be ignored.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the appProfile field is set.
    */
@@ -263,11 +269,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The app profile to be created.
+   * Required. The app profile to be created.
    * Fields marked `OutputOnly` will be ignored.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The appProfile.
    */
@@ -280,11 +288,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The app profile to be created.
+   * Required. The app profile to be created.
    * Fields marked `OutputOnly` will be ignored.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.bigtable.admin.v2.AppProfileOrBuilder getAppProfileOrBuilder() {
     return getAppProfile();
@@ -689,12 +699,14 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The unique name of the instance in which to create the new app profile.
+     * Required. The unique name of the instance in which to create the new app profile.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * `projects/{project}/instances/{instance}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -713,12 +725,14 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The unique name of the instance in which to create the new app profile.
+     * Required. The unique name of the instance in which to create the new app profile.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * `projects/{project}/instances/{instance}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -737,12 +751,14 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The unique name of the instance in which to create the new app profile.
+     * Required. The unique name of the instance in which to create the new app profile.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * `projects/{project}/instances/{instance}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -760,12 +776,14 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The unique name of the instance in which to create the new app profile.
+     * Required. The unique name of the instance in which to create the new app profile.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * `projects/{project}/instances/{instance}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -779,12 +797,14 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The unique name of the instance in which to create the new app profile.
+     * Required. The unique name of the instance in which to create the new app profile.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * `projects/{project}/instances/{instance}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -805,12 +825,12 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID to be used when referring to the new app profile within its
+     * Required. The ID to be used when referring to the new app profile within its
      * instance, e.g., just `myprofile` rather than
      * `projects/myproject/instances/myinstance/appProfiles/myprofile`.
      * </pre>
      *
-     * <code>string app_profile_id = 2;</code>
+     * <code>string app_profile_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The appProfileId.
      */
@@ -829,12 +849,12 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID to be used when referring to the new app profile within its
+     * Required. The ID to be used when referring to the new app profile within its
      * instance, e.g., just `myprofile` rather than
      * `projects/myproject/instances/myinstance/appProfiles/myprofile`.
      * </pre>
      *
-     * <code>string app_profile_id = 2;</code>
+     * <code>string app_profile_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for appProfileId.
      */
@@ -853,12 +873,12 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID to be used when referring to the new app profile within its
+     * Required. The ID to be used when referring to the new app profile within its
      * instance, e.g., just `myprofile` rather than
      * `projects/myproject/instances/myinstance/appProfiles/myprofile`.
      * </pre>
      *
-     * <code>string app_profile_id = 2;</code>
+     * <code>string app_profile_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The appProfileId to set.
      * @return This builder for chaining.
@@ -876,12 +896,12 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID to be used when referring to the new app profile within its
+     * Required. The ID to be used when referring to the new app profile within its
      * instance, e.g., just `myprofile` rather than
      * `projects/myproject/instances/myinstance/appProfiles/myprofile`.
      * </pre>
      *
-     * <code>string app_profile_id = 2;</code>
+     * <code>string app_profile_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -895,12 +915,12 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID to be used when referring to the new app profile within its
+     * Required. The ID to be used when referring to the new app profile within its
      * instance, e.g., just `myprofile` rather than
      * `projects/myproject/instances/myinstance/appProfiles/myprofile`.
      * </pre>
      *
-     * <code>string app_profile_id = 2;</code>
+     * <code>string app_profile_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for appProfileId to set.
      * @return This builder for chaining.
@@ -926,11 +946,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile to be created.
+     * Required. The app profile to be created.
      * Fields marked `OutputOnly` will be ignored.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the appProfile field is set.
      */
@@ -941,11 +963,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile to be created.
+     * Required. The app profile to be created.
      * Fields marked `OutputOnly` will be ignored.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The appProfile.
      */
@@ -962,11 +986,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile to be created.
+     * Required. The app profile to be created.
      * Fields marked `OutputOnly` will be ignored.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAppProfile(com.google.bigtable.admin.v2.AppProfile value) {
       if (appProfileBuilder_ == null) {
@@ -985,11 +1011,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile to be created.
+     * Required. The app profile to be created.
      * Fields marked `OutputOnly` will be ignored.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAppProfile(com.google.bigtable.admin.v2.AppProfile.Builder builderForValue) {
       if (appProfileBuilder_ == null) {
@@ -1005,11 +1033,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile to be created.
+     * Required. The app profile to be created.
      * Fields marked `OutputOnly` will be ignored.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeAppProfile(com.google.bigtable.admin.v2.AppProfile value) {
       if (appProfileBuilder_ == null) {
@@ -1032,11 +1062,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile to be created.
+     * Required. The app profile to be created.
      * Fields marked `OutputOnly` will be ignored.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearAppProfile() {
       if (appProfileBuilder_ == null) {
@@ -1053,11 +1085,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile to be created.
+     * Required. The app profile to be created.
      * Fields marked `OutputOnly` will be ignored.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.admin.v2.AppProfile.Builder getAppProfileBuilder() {
 
@@ -1068,11 +1102,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile to be created.
+     * Required. The app profile to be created.
      * Fields marked `OutputOnly` will be ignored.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.admin.v2.AppProfileOrBuilder getAppProfileOrBuilder() {
       if (appProfileBuilder_ != null) {
@@ -1087,11 +1123,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The app profile to be created.
+     * Required. The app profile to be created.
      * Fields marked `OutputOnly` will be ignored.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.admin.v2.AppProfile,

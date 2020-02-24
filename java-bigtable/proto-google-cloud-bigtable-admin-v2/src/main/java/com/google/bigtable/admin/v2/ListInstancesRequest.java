@@ -125,11 +125,13 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The unique name of the project for which a list of instances is requested.
-   * Values are of the form `projects/&lt;project&gt;`.
+   * Required. The unique name of the project for which a list of instances is requested.
+   * Values are of the form `projects/{project}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -148,11 +150,13 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The unique name of the project for which a list of instances is requested.
-   * Values are of the form `projects/&lt;project&gt;`.
+   * Required. The unique name of the project for which a list of instances is requested.
+   * Values are of the form `projects/{project}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -554,11 +558,13 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the project for which a list of instances is requested.
-     * Values are of the form `projects/&lt;project&gt;`.
+     * Required. The unique name of the project for which a list of instances is requested.
+     * Values are of the form `projects/{project}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -577,11 +583,13 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the project for which a list of instances is requested.
-     * Values are of the form `projects/&lt;project&gt;`.
+     * Required. The unique name of the project for which a list of instances is requested.
+     * Values are of the form `projects/{project}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -600,11 +608,13 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the project for which a list of instances is requested.
-     * Values are of the form `projects/&lt;project&gt;`.
+     * Required. The unique name of the project for which a list of instances is requested.
+     * Values are of the form `projects/{project}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -622,11 +632,13 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the project for which a list of instances is requested.
-     * Values are of the form `projects/&lt;project&gt;`.
+     * Required. The unique name of the project for which a list of instances is requested.
+     * Values are of the form `projects/{project}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -640,11 +652,13 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the project for which a list of instances is requested.
-     * Values are of the form `projects/&lt;project&gt;`.
+     * Required. The unique name of the project for which a list of instances is requested.
+     * Values are of the form `projects/{project}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

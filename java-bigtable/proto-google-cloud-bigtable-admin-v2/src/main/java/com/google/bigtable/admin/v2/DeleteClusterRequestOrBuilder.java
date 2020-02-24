@@ -27,11 +27,13 @@ public interface DeleteClusterRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the cluster to be deleted. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
+   * Required. The unique name of the cluster to be deleted. Values are of the form
+   * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface DeleteClusterRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the cluster to be deleted. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;`.
+   * Required. The unique name of the cluster to be deleted. Values are of the form
+   * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

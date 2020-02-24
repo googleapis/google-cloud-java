@@ -1151,7 +1151,9 @@ public final class BigtableInstanceAdminGrpc {
      *
      *
      * <pre>
-     * Updates an instance within a project.
+     * Updates an instance within a project. This method updates only the display
+     * name and type for an Instance. To update other Instance properties, such as
+     * labels, use PartialUpdateInstance.
      * </pre>
      */
     public void updateInstance(
@@ -1164,7 +1166,8 @@ public final class BigtableInstanceAdminGrpc {
      *
      *
      * <pre>
-     * Partially updates an instance within a project.
+     * Partially updates an instance within a project. This method can modify all
+     * fields of an Instance and is the preferred way to update an Instance.
      * </pre>
      */
     public void partialUpdateInstance(
@@ -1563,7 +1566,9 @@ public final class BigtableInstanceAdminGrpc {
      *
      *
      * <pre>
-     * Updates an instance within a project.
+     * Updates an instance within a project. This method updates only the display
+     * name and type for an Instance. To update other Instance properties, such as
+     * labels, use PartialUpdateInstance.
      * </pre>
      */
     public void updateInstance(
@@ -1579,7 +1584,8 @@ public final class BigtableInstanceAdminGrpc {
      *
      *
      * <pre>
-     * Partially updates an instance within a project.
+     * Partially updates an instance within a project. This method can modify all
+     * fields of an Instance and is the preferred way to update an Instance.
      * </pre>
      */
     public void partialUpdateInstance(
@@ -1890,7 +1896,9 @@ public final class BigtableInstanceAdminGrpc {
      *
      *
      * <pre>
-     * Updates an instance within a project.
+     * Updates an instance within a project. This method updates only the display
+     * name and type for an Instance. To update other Instance properties, such as
+     * labels, use PartialUpdateInstance.
      * </pre>
      */
     public com.google.bigtable.admin.v2.Instance updateInstance(
@@ -1903,7 +1911,8 @@ public final class BigtableInstanceAdminGrpc {
      *
      *
      * <pre>
-     * Partially updates an instance within a project.
+     * Partially updates an instance within a project. This method can modify all
+     * fields of an Instance and is the preferred way to update an Instance.
      * </pre>
      */
     public com.google.longrunning.Operation partialUpdateInstance(
@@ -2165,7 +2174,9 @@ public final class BigtableInstanceAdminGrpc {
      *
      *
      * <pre>
-     * Updates an instance within a project.
+     * Updates an instance within a project. This method updates only the display
+     * name and type for an Instance. To update other Instance properties, such as
+     * labels, use PartialUpdateInstance.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.bigtable.admin.v2.Instance>
@@ -2178,7 +2189,8 @@ public final class BigtableInstanceAdminGrpc {
      *
      *
      * <pre>
-     * Partially updates an instance within a project.
+     * Partially updates an instance within a project. This method can modify all
+     * fields of an Instance and is the preferred way to update an Instance.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

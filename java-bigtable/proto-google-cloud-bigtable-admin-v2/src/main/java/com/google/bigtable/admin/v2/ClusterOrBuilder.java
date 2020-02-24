@@ -27,12 +27,11 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The unique name of the cluster. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/[a-z][-a-z0-9]*`.
+   * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -41,12 +40,11 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The unique name of the cluster. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/[a-z][-a-z0-9]*`.
+   * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -60,10 +58,10 @@ public interface ClusterOrBuilder
    * The location where this cluster's nodes and storage reside. For best
    * performance, clients should be located as close as possible to this
    * cluster. Currently only zones are supported, so values should be of the
-   * form `projects/&lt;project&gt;/locations/&lt;zone&gt;`.
+   * form `projects/{project}/locations/{zone}`.
    * </pre>
    *
-   * <code>string location = 2;</code>
+   * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The location.
    */
@@ -76,10 +74,10 @@ public interface ClusterOrBuilder
    * The location where this cluster's nodes and storage reside. For best
    * performance, clients should be located as close as possible to this
    * cluster. Currently only zones are supported, so values should be of the
-   * form `projects/&lt;project&gt;/locations/&lt;zone&gt;`.
+   * form `projects/{project}/locations/{zone}`.
    * </pre>
    *
-   * <code>string location = 2;</code>
+   * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for location.
    */
@@ -89,11 +87,12 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The current state of the cluster.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Cluster.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -102,11 +101,12 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The current state of the cluster.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Cluster.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -116,11 +116,11 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * The number of nodes allocated to this cluster. More nodes enable higher
+   * Required. The number of nodes allocated to this cluster. More nodes enable higher
    * throughput and more consistent performance.
    * </pre>
    *
-   * <code>int32 serve_nodes = 4;</code>
+   * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The serveNodes.
    */

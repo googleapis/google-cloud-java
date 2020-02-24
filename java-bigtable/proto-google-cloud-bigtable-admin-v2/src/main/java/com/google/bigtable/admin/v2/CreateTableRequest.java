@@ -714,11 +714,13 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The unique name of the instance in which to create the table.
-   * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the instance in which to create the table.
+   * Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -737,11 +739,13 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The unique name of the instance in which to create the table.
-   * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the instance in which to create the table.
+   * Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -763,11 +767,12 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The name by which the new table should be referred to within the parent
-   * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
+   * Required. The name by which the new table should be referred to within the parent
+   * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+   * Maximum 50 characters.
    * </pre>
    *
-   * <code>string table_id = 2;</code>
+   * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The tableId.
    */
@@ -786,11 +791,12 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The name by which the new table should be referred to within the parent
-   * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
+   * Required. The name by which the new table should be referred to within the parent
+   * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+   * Maximum 50 characters.
    * </pre>
    *
-   * <code>string table_id = 2;</code>
+   * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for tableId.
    */
@@ -812,10 +818,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Table to create.
+   * Required. The Table to create.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+   * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the table field is set.
    */
@@ -826,10 +833,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Table to create.
+   * Required. The Table to create.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+   * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The table.
    */
@@ -840,10 +848,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Table to create.
+   * Required. The Table to create.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+   * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.bigtable.admin.v2.TableOrBuilder getTableOrBuilder() {
     return getTable();
@@ -1405,11 +1414,13 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The unique name of the instance in which to create the table.
-     * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Required. The unique name of the instance in which to create the table.
+     * Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -1428,11 +1439,13 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The unique name of the instance in which to create the table.
-     * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Required. The unique name of the instance in which to create the table.
+     * Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -1451,11 +1464,13 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The unique name of the instance in which to create the table.
-     * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Required. The unique name of the instance in which to create the table.
+     * Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -1473,11 +1488,13 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The unique name of the instance in which to create the table.
-     * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Required. The unique name of the instance in which to create the table.
+     * Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1491,11 +1508,13 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The unique name of the instance in which to create the table.
-     * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Required. The unique name of the instance in which to create the table.
+     * Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -1516,11 +1535,12 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name by which the new table should be referred to within the parent
-     * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
+     * Required. The name by which the new table should be referred to within the parent
+     * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+     * Maximum 50 characters.
      * </pre>
      *
-     * <code>string table_id = 2;</code>
+     * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The tableId.
      */
@@ -1539,11 +1559,12 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name by which the new table should be referred to within the parent
-     * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
+     * Required. The name by which the new table should be referred to within the parent
+     * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+     * Maximum 50 characters.
      * </pre>
      *
-     * <code>string table_id = 2;</code>
+     * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for tableId.
      */
@@ -1562,11 +1583,12 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name by which the new table should be referred to within the parent
-     * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
+     * Required. The name by which the new table should be referred to within the parent
+     * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+     * Maximum 50 characters.
      * </pre>
      *
-     * <code>string table_id = 2;</code>
+     * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The tableId to set.
      * @return This builder for chaining.
@@ -1584,11 +1606,12 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name by which the new table should be referred to within the parent
-     * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
+     * Required. The name by which the new table should be referred to within the parent
+     * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+     * Maximum 50 characters.
      * </pre>
      *
-     * <code>string table_id = 2;</code>
+     * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1602,11 +1625,12 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name by which the new table should be referred to within the parent
-     * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
+     * Required. The name by which the new table should be referred to within the parent
+     * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+     * Maximum 50 characters.
      * </pre>
      *
-     * <code>string table_id = 2;</code>
+     * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for tableId to set.
      * @return This builder for chaining.
@@ -1632,10 +1656,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Table to create.
+     * Required. The Table to create.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+     * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the table field is set.
      */
@@ -1646,10 +1671,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Table to create.
+     * Required. The Table to create.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+     * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The table.
      */
@@ -1664,10 +1690,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Table to create.
+     * Required. The Table to create.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+     * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTable(com.google.bigtable.admin.v2.Table value) {
       if (tableBuilder_ == null) {
@@ -1686,10 +1713,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Table to create.
+     * Required. The Table to create.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+     * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTable(com.google.bigtable.admin.v2.Table.Builder builderForValue) {
       if (tableBuilder_ == null) {
@@ -1705,10 +1733,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Table to create.
+     * Required. The Table to create.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+     * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTable(com.google.bigtable.admin.v2.Table value) {
       if (tableBuilder_ == null) {
@@ -1729,10 +1758,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Table to create.
+     * Required. The Table to create.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+     * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTable() {
       if (tableBuilder_ == null) {
@@ -1749,10 +1779,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Table to create.
+     * Required. The Table to create.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+     * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.admin.v2.Table.Builder getTableBuilder() {
 
@@ -1763,10 +1794,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Table to create.
+     * Required. The Table to create.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+     * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.admin.v2.TableOrBuilder getTableOrBuilder() {
       if (tableBuilder_ != null) {
@@ -1779,10 +1811,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Table to create.
+     * Required. The Table to create.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+     * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.admin.v2.Table,
