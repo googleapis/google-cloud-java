@@ -1,18 +1,18 @@
 {
-  "updateTime": "2020-02-21T22:40:34.334445Z",
+  "updateTime": "2020-02-22T09:41:35.370556Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.45.0",
-        "dockerImage": "googleapis/artman@sha256:6aec9c34db0e4be221cdaf6faba27bdc07cfea846808b3d3b964dfce3a9a0f9b"
+        "version": "0.45.1",
+        "dockerImage": "googleapis/artman@sha256:36956ca6a4dc70a59de5d5d0fd35061b050bb56884516f0898f46d8220f25738"
       }
     },
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquery.git",
-        "sha": "93e61f801f73cded001a1482bc45d4b6e3fa1356"
+        "sha": "caa32e3caf2ac29c92ee49163dfb621438658cef"
       }
     },
     {
