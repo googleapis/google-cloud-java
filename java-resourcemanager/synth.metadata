@@ -1,11 +1,11 @@
 {
-  "updateTime": "2020-02-21T23:00:12.060602Z",
+  "updateTime": "2020-02-22T10:03:43.379378Z",
   "sources": [
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-resourcemanager.git",
-        "sha": "db8297bb29dcc4ff352416b33464f664ad44311c"
+        "sha": "4a9bea5d1f6648cb6240c714c4666758bfa14876"
       }
     },
     {
