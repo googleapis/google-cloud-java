@@ -1,18 +1,18 @@
 {
-  "updateTime": "2020-02-21T22:52:00.615396Z",
+  "updateTime": "2020-02-22T09:55:07.817278Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.45.0",
-        "dockerImage": "googleapis/artman@sha256:6aec9c34db0e4be221cdaf6faba27bdc07cfea846808b3d3b964dfce3a9a0f9b"
+        "version": "0.45.1",
+        "dockerImage": "googleapis/artman@sha256:36956ca6a4dc70a59de5d5d0fd35061b050bb56884516f0898f46d8220f25738"
       }
     },
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-gameservices.git",
-        "sha": "7307dc46cb6fb508b2b1f0f625fed283bb1462ea"
+        "sha": "06fede27cca675c52112459cbbc290d457728c85"
       }
     },
     {
@@ -20,8 +20,7 @@
         "name": "googleapis-private",
         "remote": "https://github.com/googleapis/googleapis-private.git",
         "sha": "93896777e78b247f3a2228bde08b1fe1cf4179a5",
-        "internalRef": "295938567",
-        "log": "93896777e78b247f3a2228bde08b1fe1cf4179a5\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 295938567\n\n"
+        "internalRef": "295938567"
       }
     },
     {
