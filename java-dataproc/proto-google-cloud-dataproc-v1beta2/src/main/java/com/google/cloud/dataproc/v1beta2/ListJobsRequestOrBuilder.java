@@ -54,7 +54,7 @@ public interface ListJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -66,7 +66,7 @@ public interface ListJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -82,7 +82,7 @@ public interface ListJobsRequestOrBuilder
    * Optional. The number of results to return in each response.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -96,7 +96,7 @@ public interface ListJobsRequestOrBuilder
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -109,7 +109,7 @@ public interface ListJobsRequestOrBuilder
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -123,7 +123,7 @@ public interface ListJobsRequestOrBuilder
    * submitted to the named cluster.
    * </pre>
    *
-   * <code>string cluster_name = 4;</code>
+   * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The clusterName.
    */
@@ -136,7 +136,7 @@ public interface ListJobsRequestOrBuilder
    * submitted to the named cluster.
    * </pre>
    *
-   * <code>string cluster_name = 4;</code>
+   * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for clusterName.
    */
@@ -151,7 +151,8 @@ public interface ListJobsRequestOrBuilder
    * If `filter` is provided, `jobStateMatcher` will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for jobStateMatcher.
@@ -166,7 +167,8 @@ public interface ListJobsRequestOrBuilder
    * If `filter` is provided, `jobStateMatcher` will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The jobStateMatcher.
@@ -189,7 +191,7 @@ public interface ListJobsRequestOrBuilder
    * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
    * </pre>
    *
-   * <code>string filter = 7;</code>
+   * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -210,7 +212,7 @@ public interface ListJobsRequestOrBuilder
    * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
    * </pre>
    *
-   * <code>string filter = 7;</code>
+   * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */

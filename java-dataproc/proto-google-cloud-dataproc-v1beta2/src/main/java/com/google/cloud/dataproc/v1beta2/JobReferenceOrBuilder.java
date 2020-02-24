@@ -60,7 +60,7 @@ public interface JobReferenceOrBuilder
    * If not specified by the caller, the job ID will be provided by the server.
    * </pre>
    *
-   * <code>string job_id = 2;</code>
+   * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The jobId.
    */
@@ -75,7 +75,7 @@ public interface JobReferenceOrBuilder
    * If not specified by the caller, the job ID will be provided by the server.
    * </pre>
    *
-   * <code>string job_id = 2;</code>
+   * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for jobId.
    */

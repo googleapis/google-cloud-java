@@ -1,27 +1,27 @@
 {
-  "updateTime": "2020-02-21T09:47:48.033325Z",
+  "updateTime": "2020-02-22T09:49:05.264543Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.45.0",
-        "dockerImage": "googleapis/artman@sha256:6aec9c34db0e4be221cdaf6faba27bdc07cfea846808b3d3b964dfce3a9a0f9b"
+        "version": "0.45.1",
+        "dockerImage": "googleapis/artman@sha256:36956ca6a4dc70a59de5d5d0fd35061b050bb56884516f0898f46d8220f25738"
       }
     },
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dataproc.git",
-        "sha": "9f02988efe5f2a603c1e8e016d966dfe2c1e13f5"
+        "sha": "ce4bd9177439ff9431cec1f8e56ee2c07ab75870"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e5bc9566ae057fb4c92f8b7e047f1c8958235b53",
-        "internalRef": "296357191",
-        "log": "e5bc9566ae057fb4c92f8b7e047f1c8958235b53\nDeprecate the endpoint_uris field, as it is unused.\n\nPiperOrigin-RevId: 296357191\n\n8c12e2b4dca94e12bff9f538bdac29524ff7ef7a\nUpdate Dataproc v1 client.\n\nPiperOrigin-RevId: 296336662\n\n17567c4a1ef0a9b50faa87024d66f8acbb561089\nRemoving erroneous comment, a la https://github.com/googleapis/java-speech/pull/103\n\nPiperOrigin-RevId: 296332968\n\n3eaaaf8626ce5b0c0bc7eee05e143beffa373b01\nAdd BUILD.bazel for v1 secretmanager.googleapis.com\n\nPiperOrigin-RevId: 296274723\n\ne76149c3d992337f85eeb45643106aacae7ede82\nMove securitycenter v1 to use generate from annotations.\n\nPiperOrigin-RevId: 296266862\n\n203740c78ac69ee07c3bf6be7408048751f618f8\nAdd StackdriverLoggingConfig field to Cloud Tasks v2 API.\n\nPiperOrigin-RevId: 296256388\n\ne4117d5e9ed8bbca28da4a60a94947ca51cb2083\nCreate a Bazel BUILD file for the google.actions.type export.\n\nPiperOrigin-RevId: 296212567\n\na9639a0a9854fd6e1be08bba1ac3897f4f16cb2f\nAdd secretmanager.googleapis.com v1 protos\n\nPiperOrigin-RevId: 295983266\n\nce4f4c21d9dd2bfab18873a80449b9d9851efde8\nasset: v1p1beta1 remove SearchResources and SearchIamPolicies\n\nPiperOrigin-RevId: 295861722\n\ncb61d6c2d070b589980c779b68ffca617f789116\nasset: v1p1beta1 remove SearchResources and SearchIamPolicies\n\nPiperOrigin-RevId: 295855449\n\n"
+        "sha": "7f910bcc4fc4704947ccfd3ceed015d16b9e00c2",
+        "internalRef": "296451205",
+        "log": "7f910bcc4fc4704947ccfd3ceed015d16b9e00c2\nUpdate Dataproc v1beta2 client.\n\nPiperOrigin-RevId: 296451205\n\nde287524405a3dce124d301634731584fc0432d7\nFix: Reinstate method signatures that had been missed off some RPCs\nFix: Correct resource types for two fields\n\nPiperOrigin-RevId: 296435091\n\n"
       }
     },
     {

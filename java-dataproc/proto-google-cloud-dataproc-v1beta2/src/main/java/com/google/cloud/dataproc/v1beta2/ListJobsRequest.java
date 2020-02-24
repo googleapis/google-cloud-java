@@ -370,7 +370,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -392,7 +392,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -420,7 +420,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * Optional. The number of results to return in each response.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -438,7 +438,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -461,7 +461,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -487,7 +487,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * submitted to the named cluster.
    * </pre>
    *
-   * <code>string cluster_name = 4;</code>
+   * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The clusterName.
    */
@@ -510,7 +510,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * submitted to the named cluster.
    * </pre>
    *
-   * <code>string cluster_name = 4;</code>
+   * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for clusterName.
    */
@@ -537,7 +537,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * If `filter` is provided, `jobStateMatcher` will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for jobStateMatcher.
@@ -554,7 +555,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * If `filter` is provided, `jobStateMatcher` will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The jobStateMatcher.
@@ -586,7 +588,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
    * </pre>
    *
-   * <code>string filter = 7;</code>
+   * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -617,7 +619,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
    * </pre>
    *
-   * <code>string filter = 7;</code>
+   * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -1163,7 +1165,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1185,7 +1187,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1207,7 +1209,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1228,7 +1230,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1245,7 +1247,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1272,7 +1274,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * Optional. The number of results to return in each response.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -1286,7 +1288,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * Optional. The number of results to return in each response.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -1304,7 +1306,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * Optional. The number of results to return in each response.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1324,7 +1326,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -1347,7 +1349,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -1370,7 +1372,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -1392,7 +1394,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1410,7 +1412,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
@@ -1435,7 +1437,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * submitted to the named cluster.
      * </pre>
      *
-     * <code>string cluster_name = 4;</code>
+     * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The clusterName.
      */
@@ -1458,7 +1460,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * submitted to the named cluster.
      * </pre>
      *
-     * <code>string cluster_name = 4;</code>
+     * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for clusterName.
      */
@@ -1481,7 +1483,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * submitted to the named cluster.
      * </pre>
      *
-     * <code>string cluster_name = 4;</code>
+     * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The clusterName to set.
      * @return This builder for chaining.
@@ -1503,7 +1505,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * submitted to the named cluster.
      * </pre>
      *
-     * <code>string cluster_name = 4;</code>
+     * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1521,7 +1523,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * submitted to the named cluster.
      * </pre>
      *
-     * <code>string cluster_name = 4;</code>
+     * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for clusterName to set.
      * @return This builder for chaining.
@@ -1547,7 +1549,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for jobStateMatcher.
@@ -1564,7 +1567,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for jobStateMatcher to set.
@@ -1584,7 +1588,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The jobStateMatcher.
@@ -1607,7 +1612,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The jobStateMatcher to set.
@@ -1632,7 +1638,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -1661,7 +1668,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 7;</code>
+     * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -1692,7 +1699,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 7;</code>
+     * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -1723,7 +1730,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 7;</code>
+     * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1753,7 +1760,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 7;</code>
+     * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1779,7 +1786,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 7;</code>
+     * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.

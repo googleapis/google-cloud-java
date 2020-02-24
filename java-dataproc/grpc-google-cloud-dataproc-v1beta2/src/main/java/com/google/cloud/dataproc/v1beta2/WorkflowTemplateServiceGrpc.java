@@ -27,7 +27,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  * <pre>
  * The API interface for managing Workflow Templates in the
- * Cloud Dataproc API.
+ * Dataproc API.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -514,7 +514,7 @@ public final class WorkflowTemplateServiceGrpc {
    *
    * <pre>
    * The API interface for managing Workflow Templates in the
-   * Cloud Dataproc API.
+   * Dataproc API.
    * </pre>
    */
   public abstract static class WorkflowTemplateServiceImplBase implements io.grpc.BindableService {
@@ -563,9 +563,9 @@ public final class WorkflowTemplateServiceGrpc {
      * This will cause any inflight jobs to be cancelled and workflow-owned
      * clusters to be deleted.
      * The [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+     * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
      * Also see [Using
-     * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+     * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
      * On successful completion,
      * [Operation.response][google.longrunning.Operation.response] will be
      * [Empty][google.protobuf.Empty].
@@ -594,9 +594,9 @@ public final class WorkflowTemplateServiceGrpc {
      * This will cause any inflight jobs to be cancelled and workflow-owned
      * clusters to be deleted.
      * The [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+     * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
      * Also see [Using
-     * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+     * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
      * On successful completion,
      * [Operation.response][google.longrunning.Operation.response] will be
      * [Empty][google.protobuf.Empty].
@@ -711,7 +711,7 @@ public final class WorkflowTemplateServiceGrpc {
    *
    * <pre>
    * The API interface for managing Workflow Templates in the
-   * Cloud Dataproc API.
+   * Dataproc API.
    * </pre>
    */
   public static final class WorkflowTemplateServiceStub
@@ -780,9 +780,9 @@ public final class WorkflowTemplateServiceGrpc {
      * This will cause any inflight jobs to be cancelled and workflow-owned
      * clusters to be deleted.
      * The [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+     * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
      * Also see [Using
-     * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+     * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
      * On successful completion,
      * [Operation.response][google.longrunning.Operation.response] will be
      * [Empty][google.protobuf.Empty].
@@ -814,9 +814,9 @@ public final class WorkflowTemplateServiceGrpc {
      * This will cause any inflight jobs to be cancelled and workflow-owned
      * clusters to be deleted.
      * The [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+     * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
      * Also see [Using
-     * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+     * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
      * On successful completion,
      * [Operation.response][google.longrunning.Operation.response] will be
      * [Empty][google.protobuf.Empty].
@@ -889,7 +889,7 @@ public final class WorkflowTemplateServiceGrpc {
    *
    * <pre>
    * The API interface for managing Workflow Templates in the
-   * Cloud Dataproc API.
+   * Dataproc API.
    * </pre>
    */
   public static final class WorkflowTemplateServiceBlockingStub
@@ -951,9 +951,9 @@ public final class WorkflowTemplateServiceGrpc {
      * This will cause any inflight jobs to be cancelled and workflow-owned
      * clusters to be deleted.
      * The [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+     * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
      * Also see [Using
-     * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+     * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
      * On successful completion,
      * [Operation.response][google.longrunning.Operation.response] will be
      * [Empty][google.protobuf.Empty].
@@ -982,9 +982,9 @@ public final class WorkflowTemplateServiceGrpc {
      * This will cause any inflight jobs to be cancelled and workflow-owned
      * clusters to be deleted.
      * The [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+     * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
      * Also see [Using
-     * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+     * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
      * On successful completion,
      * [Operation.response][google.longrunning.Operation.response] will be
      * [Empty][google.protobuf.Empty].
@@ -1045,7 +1045,7 @@ public final class WorkflowTemplateServiceGrpc {
    *
    * <pre>
    * The API interface for managing Workflow Templates in the
-   * Cloud Dataproc API.
+   * Dataproc API.
    * </pre>
    */
   public static final class WorkflowTemplateServiceFutureStub
@@ -1110,9 +1110,9 @@ public final class WorkflowTemplateServiceGrpc {
      * This will cause any inflight jobs to be cancelled and workflow-owned
      * clusters to be deleted.
      * The [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+     * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
      * Also see [Using
-     * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+     * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
      * On successful completion,
      * [Operation.response][google.longrunning.Operation.response] will be
      * [Empty][google.protobuf.Empty].
@@ -1143,9 +1143,9 @@ public final class WorkflowTemplateServiceGrpc {
      * This will cause any inflight jobs to be cancelled and workflow-owned
      * clusters to be deleted.
      * The [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+     * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
      * Also see [Using
-     * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+     * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
      * On successful completion,
      * [Operation.response][google.longrunning.Operation.response] will be
      * [Empty][google.protobuf.Empty].

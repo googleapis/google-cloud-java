@@ -36,8 +36,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: The API interface for managing autoscaling policies in the Google Cloud
- * Dataproc API.
+ * Service Description: The API interface for managing autoscaling policies in the Cloud Dataproc
+ * API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

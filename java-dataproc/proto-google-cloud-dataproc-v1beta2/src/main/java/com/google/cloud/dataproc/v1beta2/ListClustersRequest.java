@@ -195,7 +195,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -217,7 +217,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -873,7 +873,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -895,7 +895,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -917,7 +917,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -938,7 +938,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -955,7 +955,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>

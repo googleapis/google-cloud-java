@@ -121,7 +121,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
    * Maximum value is 10.
    * </pre>
    *
-   * <code>int32 max_failures_per_hour = 1;</code>
+   * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The maxFailuresPerHour.
    */
@@ -458,7 +458,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      * Maximum value is 10.
      * </pre>
      *
-     * <code>int32 max_failures_per_hour = 1;</code>
+     * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The maxFailuresPerHour.
      */
@@ -477,7 +477,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      * Maximum value is 10.
      * </pre>
      *
-     * <code>int32 max_failures_per_hour = 1;</code>
+     * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The maxFailuresPerHour to set.
      * @return This builder for chaining.
@@ -500,7 +500,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      * Maximum value is 10.
      * </pre>
      *
-     * <code>int32 max_failures_per_hour = 1;</code>
+     * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

@@ -30,7 +30,9 @@ public interface ListJobsResponseOrBuilder
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1beta2.Job> getJobsList();
   /**
@@ -40,7 +42,9 @@ public interface ListJobsResponseOrBuilder
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.Job getJobs(int index);
   /**
@@ -50,7 +54,9 @@ public interface ListJobsResponseOrBuilder
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getJobsCount();
   /**
@@ -60,7 +66,9 @@ public interface ListJobsResponseOrBuilder
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1beta2.JobOrBuilder> getJobsOrBuilderList();
   /**
@@ -70,7 +78,9 @@ public interface ListJobsResponseOrBuilder
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.JobOrBuilder getJobsOrBuilder(int index);
 
@@ -83,7 +93,7 @@ public interface ListJobsResponseOrBuilder
    * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The nextPageToken.
    */
@@ -97,7 +107,7 @@ public interface ListJobsResponseOrBuilder
    * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for nextPageToken.
    */

@@ -30,7 +30,9 @@ public interface JobStatusOrBuilder
    * Output only. A state message specifying the overall job state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -42,7 +44,9 @@ public interface JobStatusOrBuilder
    * Output only. A state message specifying the overall job state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -52,11 +56,11 @@ public interface JobStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. Optional job state details, such as an error
+   * Output only. Optional Job state details, such as an error
    * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
    * </pre>
    *
-   * <code>string details = 2;</code>
+   * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The details.
    */
@@ -65,11 +69,11 @@ public interface JobStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. Optional job state details, such as an error
+   * Output only. Optional Job state details, such as an error
    * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
    * </pre>
    *
-   * <code>string details = 2;</code>
+   * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for details.
    */
@@ -82,7 +86,9 @@ public interface JobStatusOrBuilder
    * Output only. The time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the stateStartTime field is set.
    */
@@ -94,7 +100,9 @@ public interface JobStatusOrBuilder
    * Output only. The time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The stateStartTime.
    */
@@ -106,7 +114,9 @@ public interface JobStatusOrBuilder
    * Output only. The time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder();
 
@@ -118,7 +128,9 @@ public interface JobStatusOrBuilder
    * status reported by the agent.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for substate.
    */
@@ -131,7 +143,9 @@ public interface JobStatusOrBuilder
    * status reported by the agent.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The substate.
    */

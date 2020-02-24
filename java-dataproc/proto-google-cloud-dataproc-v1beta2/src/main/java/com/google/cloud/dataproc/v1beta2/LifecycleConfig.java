@@ -213,11 +213,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The duration to keep the cluster alive while idling.
-   * Passing this threshold will cause the cluster to be
-   * deleted. Valid range: **[10m, 14d]**.
-   * Example: **"10m"**, the minimum value, to delete the
-   * cluster when it has had no jobs running for 10 minutes.
+   * Optional. The duration to keep the cluster alive while idling (when no jobs
+   * are running). Passing this threshold will cause the cluster to be
+   * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+   * representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -232,11 +232,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The duration to keep the cluster alive while idling.
-   * Passing this threshold will cause the cluster to be
-   * deleted. Valid range: **[10m, 14d]**.
-   * Example: **"10m"**, the minimum value, to delete the
-   * cluster when it has had no jobs running for 10 minutes.
+   * Optional. The duration to keep the cluster alive while idling (when no jobs
+   * are running). Passing this threshold will cause the cluster to be
+   * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+   * representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -253,11 +253,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The duration to keep the cluster alive while idling.
-   * Passing this threshold will cause the cluster to be
-   * deleted. Valid range: **[10m, 14d]**.
-   * Example: **"10m"**, the minimum value, to delete the
-   * cluster when it has had no jobs running for 10 minutes.
+   * Optional. The duration to keep the cluster alive while idling (when no jobs
+   * are running). Passing this threshold will cause the cluster to be
+   * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+   * representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -272,10 +272,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The time when cluster will be auto-deleted.
+   * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+   * <code>
+   * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the autoDeleteTime field is set.
    */
@@ -286,10 +289,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The time when cluster will be auto-deleted.
+   * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+   * <code>
+   * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The autoDeleteTime.
    */
@@ -303,10 +309,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The time when cluster will be auto-deleted.
+   * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+   * <code>
+   * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getAutoDeleteTimeOrBuilder() {
     if (ttlCase_ == 2) {
@@ -321,11 +330,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. The lifetime duration of cluster. The cluster will be
-   * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
-   * Example: **"1d"**, to delete the cluster 1 day after its creation..
+   * auto-deleted at the end of this period. Minimum value is 10 minutes;
+   * maximum value is 14 days (see JSON representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
-   * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+   * <code>.google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the autoDeleteTtl field is set.
    */
@@ -337,11 +348,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. The lifetime duration of cluster. The cluster will be
-   * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
-   * Example: **"1d"**, to delete the cluster 1 day after its creation..
+   * auto-deleted at the end of this period. Minimum value is 10 minutes;
+   * maximum value is 14 days (see JSON representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
-   * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+   * <code>.google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The autoDeleteTtl.
    */
@@ -356,11 +369,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. The lifetime duration of cluster. The cluster will be
-   * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
-   * Example: **"1d"**, to delete the cluster 1 day after its creation..
+   * auto-deleted at the end of this period. Minimum value is 10 minutes;
+   * maximum value is 14 days (see JSON representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
-   * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+   * <code>.google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.DurationOrBuilder getAutoDeleteTtlOrBuilder() {
     if (ttlCase_ == 3) {
@@ -376,7 +391,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Output only. The time when cluster became idle (most recent job finished)
-   * and became eligible for deletion due to idleness.
+   * and became eligible for deletion due to idleness (see JSON representation
+   * of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>
@@ -393,7 +410,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Output only. The time when cluster became idle (most recent job finished)
-   * and became eligible for deletion due to idleness.
+   * and became eligible for deletion due to idleness (see JSON representation
+   * of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>
@@ -412,7 +431,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Output only. The time when cluster became idle (most recent job finished)
-   * and became eligible for deletion due to idleness.
+   * and became eligible for deletion due to idleness (see JSON representation
+   * of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>
@@ -877,11 +898,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The duration to keep the cluster alive while idling.
-     * Passing this threshold will cause the cluster to be
-     * deleted. Valid range: **[10m, 14d]**.
-     * Example: **"10m"**, the minimum value, to delete the
-     * cluster when it has had no jobs running for 10 minutes.
+     * Optional. The duration to keep the cluster alive while idling (when no jobs
+     * are running). Passing this threshold will cause the cluster to be
+     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * </pre>
      *
      * <code>
@@ -897,11 +918,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The duration to keep the cluster alive while idling.
-     * Passing this threshold will cause the cluster to be
-     * deleted. Valid range: **[10m, 14d]**.
-     * Example: **"10m"**, the minimum value, to delete the
-     * cluster when it has had no jobs running for 10 minutes.
+     * Optional. The duration to keep the cluster alive while idling (when no jobs
+     * are running). Passing this threshold will cause the cluster to be
+     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * </pre>
      *
      * <code>
@@ -923,11 +944,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The duration to keep the cluster alive while idling.
-     * Passing this threshold will cause the cluster to be
-     * deleted. Valid range: **[10m, 14d]**.
-     * Example: **"10m"**, the minimum value, to delete the
-     * cluster when it has had no jobs running for 10 minutes.
+     * Optional. The duration to keep the cluster alive while idling (when no jobs
+     * are running). Passing this threshold will cause the cluster to be
+     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * </pre>
      *
      * <code>
@@ -951,11 +972,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The duration to keep the cluster alive while idling.
-     * Passing this threshold will cause the cluster to be
-     * deleted. Valid range: **[10m, 14d]**.
-     * Example: **"10m"**, the minimum value, to delete the
-     * cluster when it has had no jobs running for 10 minutes.
+     * Optional. The duration to keep the cluster alive while idling (when no jobs
+     * are running). Passing this threshold will cause the cluster to be
+     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * </pre>
      *
      * <code>
@@ -976,11 +997,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The duration to keep the cluster alive while idling.
-     * Passing this threshold will cause the cluster to be
-     * deleted. Valid range: **[10m, 14d]**.
-     * Example: **"10m"**, the minimum value, to delete the
-     * cluster when it has had no jobs running for 10 minutes.
+     * Optional. The duration to keep the cluster alive while idling (when no jobs
+     * are running). Passing this threshold will cause the cluster to be
+     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * </pre>
      *
      * <code>
@@ -1008,11 +1029,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The duration to keep the cluster alive while idling.
-     * Passing this threshold will cause the cluster to be
-     * deleted. Valid range: **[10m, 14d]**.
-     * Example: **"10m"**, the minimum value, to delete the
-     * cluster when it has had no jobs running for 10 minutes.
+     * Optional. The duration to keep the cluster alive while idling (when no jobs
+     * are running). Passing this threshold will cause the cluster to be
+     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * </pre>
      *
      * <code>
@@ -1034,11 +1055,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The duration to keep the cluster alive while idling.
-     * Passing this threshold will cause the cluster to be
-     * deleted. Valid range: **[10m, 14d]**.
-     * Example: **"10m"**, the minimum value, to delete the
-     * cluster when it has had no jobs running for 10 minutes.
+     * Optional. The duration to keep the cluster alive while idling (when no jobs
+     * are running). Passing this threshold will cause the cluster to be
+     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * </pre>
      *
      * <code>
@@ -1054,11 +1075,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The duration to keep the cluster alive while idling.
-     * Passing this threshold will cause the cluster to be
-     * deleted. Valid range: **[10m, 14d]**.
-     * Example: **"10m"**, the minimum value, to delete the
-     * cluster when it has had no jobs running for 10 minutes.
+     * Optional. The duration to keep the cluster alive while idling (when no jobs
+     * are running). Passing this threshold will cause the cluster to be
+     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * </pre>
      *
      * <code>
@@ -1078,11 +1099,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The duration to keep the cluster alive while idling.
-     * Passing this threshold will cause the cluster to be
-     * deleted. Valid range: **[10m, 14d]**.
-     * Example: **"10m"**, the minimum value, to delete the
-     * cluster when it has had no jobs running for 10 minutes.
+     * Optional. The duration to keep the cluster alive while idling (when no jobs
+     * are running). Passing this threshold will cause the cluster to be
+     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * </pre>
      *
      * <code>
@@ -1115,10 +1136,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted.
+     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the autoDeleteTime field is set.
      */
@@ -1129,10 +1153,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted.
+     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The autoDeleteTime.
      */
@@ -1153,10 +1180,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted.
+     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAutoDeleteTime(com.google.protobuf.Timestamp value) {
       if (autoDeleteTimeBuilder_ == null) {
@@ -1175,10 +1205,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted.
+     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAutoDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (autoDeleteTimeBuilder_ == null) {
@@ -1194,10 +1227,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted.
+     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeAutoDeleteTime(com.google.protobuf.Timestamp value) {
       if (autoDeleteTimeBuilder_ == null) {
@@ -1223,10 +1259,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted.
+     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAutoDeleteTime() {
       if (autoDeleteTimeBuilder_ == null) {
@@ -1248,10 +1287,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted.
+     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getAutoDeleteTimeBuilder() {
       return getAutoDeleteTimeFieldBuilder().getBuilder();
@@ -1260,10 +1302,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted.
+     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getAutoDeleteTimeOrBuilder() {
       if ((ttlCase_ == 2) && (autoDeleteTimeBuilder_ != null)) {
@@ -1279,10 +1324,13 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted.
+     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1317,11 +1365,14 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The lifetime duration of cluster. The cluster will be
-     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
-     * Example: **"1d"**, to delete the cluster 1 day after its creation..
+     * auto-deleted at the end of this period. Minimum value is 10 minutes;
+     * maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+     * <code>
+     * .google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the autoDeleteTtl field is set.
      */
@@ -1333,11 +1384,14 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The lifetime duration of cluster. The cluster will be
-     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
-     * Example: **"1d"**, to delete the cluster 1 day after its creation..
+     * auto-deleted at the end of this period. Minimum value is 10 minutes;
+     * maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+     * <code>
+     * .google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The autoDeleteTtl.
      */
@@ -1359,11 +1413,14 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The lifetime duration of cluster. The cluster will be
-     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
-     * Example: **"1d"**, to delete the cluster 1 day after its creation..
+     * auto-deleted at the end of this period. Minimum value is 10 minutes;
+     * maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+     * <code>
+     * .google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAutoDeleteTtl(com.google.protobuf.Duration value) {
       if (autoDeleteTtlBuilder_ == null) {
@@ -1383,11 +1440,14 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The lifetime duration of cluster. The cluster will be
-     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
-     * Example: **"1d"**, to delete the cluster 1 day after its creation..
+     * auto-deleted at the end of this period. Minimum value is 10 minutes;
+     * maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+     * <code>
+     * .google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAutoDeleteTtl(com.google.protobuf.Duration.Builder builderForValue) {
       if (autoDeleteTtlBuilder_ == null) {
@@ -1404,11 +1464,14 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The lifetime duration of cluster. The cluster will be
-     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
-     * Example: **"1d"**, to delete the cluster 1 day after its creation..
+     * auto-deleted at the end of this period. Minimum value is 10 minutes;
+     * maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+     * <code>
+     * .google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeAutoDeleteTtl(com.google.protobuf.Duration value) {
       if (autoDeleteTtlBuilder_ == null) {
@@ -1435,11 +1498,14 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The lifetime duration of cluster. The cluster will be
-     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
-     * Example: **"1d"**, to delete the cluster 1 day after its creation..
+     * auto-deleted at the end of this period. Minimum value is 10 minutes;
+     * maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+     * <code>
+     * .google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAutoDeleteTtl() {
       if (autoDeleteTtlBuilder_ == null) {
@@ -1462,11 +1528,14 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The lifetime duration of cluster. The cluster will be
-     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
-     * Example: **"1d"**, to delete the cluster 1 day after its creation..
+     * auto-deleted at the end of this period. Minimum value is 10 minutes;
+     * maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+     * <code>
+     * .google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Duration.Builder getAutoDeleteTtlBuilder() {
       return getAutoDeleteTtlFieldBuilder().getBuilder();
@@ -1476,11 +1545,14 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The lifetime duration of cluster. The cluster will be
-     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
-     * Example: **"1d"**, to delete the cluster 1 day after its creation..
+     * auto-deleted at the end of this period. Minimum value is 10 minutes;
+     * maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+     * <code>
+     * .google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.DurationOrBuilder getAutoDeleteTtlOrBuilder() {
       if ((ttlCase_ == 3) && (autoDeleteTtlBuilder_ != null)) {
@@ -1497,11 +1569,14 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The lifetime duration of cluster. The cluster will be
-     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
-     * Example: **"1d"**, to delete the cluster 1 day after its creation..
+     * auto-deleted at the end of this period. Minimum value is 10 minutes;
+     * maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
-     * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+     * <code>
+     * .google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -1537,7 +1612,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The time when cluster became idle (most recent job finished)
-     * and became eligible for deletion due to idleness.
+     * and became eligible for deletion due to idleness (see JSON representation
+     * of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1554,7 +1631,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The time when cluster became idle (most recent job finished)
-     * and became eligible for deletion due to idleness.
+     * and became eligible for deletion due to idleness (see JSON representation
+     * of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1577,7 +1656,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The time when cluster became idle (most recent job finished)
-     * and became eligible for deletion due to idleness.
+     * and became eligible for deletion due to idleness (see JSON representation
+     * of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1602,7 +1683,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The time when cluster became idle (most recent job finished)
-     * and became eligible for deletion due to idleness.
+     * and became eligible for deletion due to idleness (see JSON representation
+     * of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1624,7 +1707,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The time when cluster became idle (most recent job finished)
-     * and became eligible for deletion due to idleness.
+     * and became eligible for deletion due to idleness (see JSON representation
+     * of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1653,7 +1738,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The time when cluster became idle (most recent job finished)
-     * and became eligible for deletion due to idleness.
+     * and became eligible for deletion due to idleness (see JSON representation
+     * of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1676,7 +1763,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The time when cluster became idle (most recent job finished)
-     * and became eligible for deletion due to idleness.
+     * and became eligible for deletion due to idleness (see JSON representation
+     * of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1693,7 +1782,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The time when cluster became idle (most recent job finished)
-     * and became eligible for deletion due to idleness.
+     * and became eligible for deletion due to idleness (see JSON representation
+     * of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1714,7 +1805,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The time when cluster became idle (most recent job finished)
-     * and became eligible for deletion due to idleness.
+     * and became eligible for deletion due to idleness (see JSON representation
+     * of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>

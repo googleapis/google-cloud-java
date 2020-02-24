@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1beta2;
  *
  *
  * <pre>
- * A Cloud Dataproc job for running [Apache Spark
+ * A Dataproc job for running [Apache Spark
  * SQL](http://spark.apache.org/sql/) queries.
  * </pre>
  *
@@ -389,7 +389,8 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * Spark SQL command: SET `name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 3;</code>
+   * <code>map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean containsScriptVariables(java.lang.String key) {
     if (key == null) {
@@ -410,7 +411,8 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * Spark SQL command: SET `name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 3;</code>
+   * <code>map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
     return internalGetScriptVariables().getMap();
@@ -423,7 +425,8 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * Spark SQL command: SET `name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 3;</code>
+   * <code>map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getScriptVariablesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
@@ -441,7 +444,8 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * Spark SQL command: SET `name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 3;</code>
+   * <code>map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getScriptVariablesOrThrow(java.lang.String key) {
     if (key == null) {
@@ -485,10 +489,11 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 4;</code>
+   * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
@@ -507,10 +512,11 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 4;</code>
+   * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
@@ -521,10 +527,11 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 4;</code>
+   * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getPropertiesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
@@ -540,10 +547,11 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 4;</code>
+   * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
@@ -565,7 +573,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 56;</code>
+   * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the jarFileUris.
    */
@@ -579,7 +587,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 56;</code>
+   * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of jarFileUris.
    */
@@ -593,7 +601,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 56;</code>
+   * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The jarFileUris at the given index.
@@ -608,7 +616,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 56;</code>
+   * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the jarFileUris at the given index.
@@ -626,7 +634,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the loggingConfig field is set.
    */
@@ -640,7 +650,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The loggingConfig.
    */
@@ -656,7 +668,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
     return getLoggingConfig();
@@ -917,7 +931,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Cloud Dataproc job for running [Apache Spark
+   * A Dataproc job for running [Apache Spark
    * SQL](http://spark.apache.org/sql/) queries.
    * </pre>
    *
@@ -1535,7 +1549,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Spark SQL command: SET `name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean containsScriptVariables(java.lang.String key) {
       if (key == null) {
@@ -1556,7 +1572,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Spark SQL command: SET `name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
       return internalGetScriptVariables().getMap();
@@ -1569,7 +1587,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Spark SQL command: SET `name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getScriptVariablesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -1587,7 +1607,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Spark SQL command: SET `name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getScriptVariablesOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1612,7 +1634,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Spark SQL command: SET `name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeScriptVariables(java.lang.String key) {
       if (key == null) {
@@ -1634,7 +1658,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Spark SQL command: SET `name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putScriptVariables(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1654,7 +1680,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Spark SQL command: SET `name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllScriptVariables(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableScriptVariables().getMutableMap().putAll(values);
@@ -1695,10 +1723,11 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Cloud Dataproc API may be overwritten.
+     * Dataproc API may be overwritten.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 4;</code>
+     * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
@@ -1717,10 +1746,11 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Cloud Dataproc API may be overwritten.
+     * Dataproc API may be overwritten.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 4;</code>
+     * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
@@ -1731,10 +1761,11 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Cloud Dataproc API may be overwritten.
+     * Dataproc API may be overwritten.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 4;</code>
+     * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getPropertiesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -1750,10 +1781,11 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Cloud Dataproc API may be overwritten.
+     * Dataproc API may be overwritten.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 4;</code>
+     * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1776,10 +1808,11 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Cloud Dataproc API may be overwritten.
+     * Dataproc API may be overwritten.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 4;</code>
+     * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeProperties(java.lang.String key) {
       if (key == null) {
@@ -1799,10 +1832,11 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Cloud Dataproc API may be overwritten.
+     * Dataproc API may be overwritten.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 4;</code>
+     * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putProperties(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1820,10 +1854,11 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Cloud Dataproc API may be overwritten.
+     * Dataproc API may be overwritten.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 4;</code>
+     * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllProperties(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableProperties().getMutableMap().putAll(values);
@@ -1846,7 +1881,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 56;</code>
+     * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the jarFileUris.
      */
@@ -1860,7 +1895,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 56;</code>
+     * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of jarFileUris.
      */
@@ -1874,7 +1909,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 56;</code>
+     * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The jarFileUris at the given index.
@@ -1889,7 +1924,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 56;</code>
+     * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the jarFileUris at the given index.
@@ -1904,7 +1939,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 56;</code>
+     * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The jarFileUris to set.
@@ -1926,7 +1961,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 56;</code>
+     * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The jarFileUris to add.
      * @return This builder for chaining.
@@ -1947,7 +1982,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 56;</code>
+     * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The jarFileUris to add.
      * @return This builder for chaining.
@@ -1965,7 +2000,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 56;</code>
+     * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1982,7 +2017,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 56;</code>
+     * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the jarFileUris to add.
      * @return This builder for chaining.
@@ -2011,7 +2046,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the loggingConfig field is set.
      */
@@ -2025,7 +2062,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The loggingConfig.
      */
@@ -2045,7 +2084,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setLoggingConfig(com.google.cloud.dataproc.v1beta2.LoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
@@ -2067,7 +2108,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setLoggingConfig(
         com.google.cloud.dataproc.v1beta2.LoggingConfig.Builder builderForValue) {
@@ -2087,7 +2130,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeLoggingConfig(com.google.cloud.dataproc.v1beta2.LoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
@@ -2113,7 +2158,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearLoggingConfig() {
       if (loggingConfigBuilder_ == null) {
@@ -2133,7 +2180,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.LoggingConfig.Builder getLoggingConfigBuilder() {
 
@@ -2147,7 +2196,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
       if (loggingConfigBuilder_ != null) {
@@ -2165,7 +2216,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.LoggingConfig,

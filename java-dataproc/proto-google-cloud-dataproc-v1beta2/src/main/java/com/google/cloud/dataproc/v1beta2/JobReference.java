@@ -180,7 +180,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    * If not specified by the caller, the job ID will be provided by the server.
    * </pre>
    *
-   * <code>string job_id = 2;</code>
+   * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The jobId.
    */
@@ -205,7 +205,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    * If not specified by the caller, the job ID will be provided by the server.
    * </pre>
    *
-   * <code>string job_id = 2;</code>
+   * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for jobId.
    */
@@ -675,7 +675,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The jobId.
      */
@@ -700,7 +700,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for jobId.
      */
@@ -725,7 +725,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The jobId to set.
      * @return This builder for chaining.
@@ -749,7 +749,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -769,7 +769,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for jobId to set.
      * @return This builder for chaining.

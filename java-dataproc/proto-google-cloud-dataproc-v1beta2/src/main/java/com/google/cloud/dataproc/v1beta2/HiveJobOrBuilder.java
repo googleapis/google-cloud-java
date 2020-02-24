@@ -92,7 +92,7 @@ public interface HiveJobOrBuilder
    * executing independent parallel queries.
    * </pre>
    *
-   * <code>bool continue_on_failure = 3;</code>
+   * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The continueOnFailure.
    */
@@ -106,7 +106,8 @@ public interface HiveJobOrBuilder
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getScriptVariablesCount();
   /**
@@ -117,7 +118,8 @@ public interface HiveJobOrBuilder
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsScriptVariables(java.lang.String key);
   /** Use {@link #getScriptVariablesMap()} instead. */
@@ -131,7 +133,8 @@ public interface HiveJobOrBuilder
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap();
   /**
@@ -142,7 +145,8 @@ public interface HiveJobOrBuilder
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getScriptVariablesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -153,7 +157,8 @@ public interface HiveJobOrBuilder
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getScriptVariablesOrThrow(java.lang.String key);
 
@@ -162,12 +167,13 @@ public interface HiveJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getPropertiesCount();
   /**
@@ -175,12 +181,13 @@ public interface HiveJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsProperties(java.lang.String key);
   /** Use {@link #getPropertiesMap()} instead. */
@@ -191,12 +198,13 @@ public interface HiveJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
   /**
@@ -204,12 +212,13 @@ public interface HiveJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -217,12 +226,13 @@ public interface HiveJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getPropertiesOrThrow(java.lang.String key);
 
@@ -235,7 +245,7 @@ public interface HiveJobOrBuilder
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the jarFileUris.
    */
@@ -249,7 +259,7 @@ public interface HiveJobOrBuilder
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of jarFileUris.
    */
@@ -263,7 +273,7 @@ public interface HiveJobOrBuilder
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The jarFileUris at the given index.
@@ -278,7 +288,7 @@ public interface HiveJobOrBuilder
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the jarFileUris at the given index.

@@ -33,7 +33,9 @@ public interface JobOrBuilder
    * &lt;code&gt;job_id&lt;/code&gt;.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobReference reference = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the reference field is set.
    */
@@ -48,7 +50,9 @@ public interface JobOrBuilder
    * &lt;code&gt;job_id&lt;/code&gt;.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobReference reference = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The reference.
    */
@@ -63,7 +67,9 @@ public interface JobOrBuilder
    * &lt;code&gt;job_id&lt;/code&gt;.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobReference reference = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.JobReferenceOrBuilder getReferenceOrBuilder();
 
@@ -112,248 +118,108 @@ public interface JobOrBuilder
   com.google.cloud.dataproc.v1beta2.JobPlacementOrBuilder getPlacementOrBuilder();
 
   /**
-   *
-   *
-   * <pre>
-   * Job is a Hadoop job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code>
    *
    * @return Whether the hadoopJob field is set.
    */
   boolean hasHadoopJob();
   /**
-   *
-   *
-   * <pre>
-   * Job is a Hadoop job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code>
    *
    * @return The hadoopJob.
    */
   com.google.cloud.dataproc.v1beta2.HadoopJob getHadoopJob();
-  /**
-   *
-   *
-   * <pre>
-   * Job is a Hadoop job.
-   * </pre>
-   *
-   * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code>
-   */
+  /** <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code> */
   com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder getHadoopJobOrBuilder();
 
   /**
-   *
-   *
-   * <pre>
-   * Job is a Spark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code>
    *
    * @return Whether the sparkJob field is set.
    */
   boolean hasSparkJob();
   /**
-   *
-   *
-   * <pre>
-   * Job is a Spark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code>
    *
    * @return The sparkJob.
    */
   com.google.cloud.dataproc.v1beta2.SparkJob getSparkJob();
-  /**
-   *
-   *
-   * <pre>
-   * Job is a Spark job.
-   * </pre>
-   *
-   * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code>
-   */
+  /** <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code> */
   com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder getSparkJobOrBuilder();
 
   /**
-   *
-   *
-   * <pre>
-   * Job is a Pyspark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code>
    *
    * @return Whether the pysparkJob field is set.
    */
   boolean hasPysparkJob();
   /**
-   *
-   *
-   * <pre>
-   * Job is a Pyspark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code>
    *
    * @return The pysparkJob.
    */
   com.google.cloud.dataproc.v1beta2.PySparkJob getPysparkJob();
-  /**
-   *
-   *
-   * <pre>
-   * Job is a Pyspark job.
-   * </pre>
-   *
-   * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code>
-   */
+  /** <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code> */
   com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder getPysparkJobOrBuilder();
 
   /**
-   *
-   *
-   * <pre>
-   * Job is a Hive job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code>
    *
    * @return Whether the hiveJob field is set.
    */
   boolean hasHiveJob();
   /**
-   *
-   *
-   * <pre>
-   * Job is a Hive job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code>
    *
    * @return The hiveJob.
    */
   com.google.cloud.dataproc.v1beta2.HiveJob getHiveJob();
-  /**
-   *
-   *
-   * <pre>
-   * Job is a Hive job.
-   * </pre>
-   *
-   * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code>
-   */
+  /** <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code> */
   com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder getHiveJobOrBuilder();
 
   /**
-   *
-   *
-   * <pre>
-   * Job is a Pig job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code>
    *
    * @return Whether the pigJob field is set.
    */
   boolean hasPigJob();
   /**
-   *
-   *
-   * <pre>
-   * Job is a Pig job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code>
    *
    * @return The pigJob.
    */
   com.google.cloud.dataproc.v1beta2.PigJob getPigJob();
-  /**
-   *
-   *
-   * <pre>
-   * Job is a Pig job.
-   * </pre>
-   *
-   * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code>
-   */
+  /** <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code> */
   com.google.cloud.dataproc.v1beta2.PigJobOrBuilder getPigJobOrBuilder();
 
   /**
-   *
-   *
-   * <pre>
-   * Job is a SparkR job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
    *
    * @return Whether the sparkRJob field is set.
    */
   boolean hasSparkRJob();
   /**
-   *
-   *
-   * <pre>
-   * Job is a SparkR job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
    *
    * @return The sparkRJob.
    */
   com.google.cloud.dataproc.v1beta2.SparkRJob getSparkRJob();
-  /**
-   *
-   *
-   * <pre>
-   * Job is a SparkR job.
-   * </pre>
-   *
-   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
-   */
+  /** <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code> */
   com.google.cloud.dataproc.v1beta2.SparkRJobOrBuilder getSparkRJobOrBuilder();
 
   /**
-   *
-   *
-   * <pre>
-   * Job is a SparkSql job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code>
    *
    * @return Whether the sparkSqlJob field is set.
    */
   boolean hasSparkSqlJob();
   /**
-   *
-   *
-   * <pre>
-   * Job is a SparkSql job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code>
    *
    * @return The sparkSqlJob.
    */
   com.google.cloud.dataproc.v1beta2.SparkSqlJob getSparkSqlJob();
-  /**
-   *
-   *
-   * <pre>
-   * Job is a SparkSql job.
-   * </pre>
-   *
-   * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code>
-   */
+  /** <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code> */
   com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder getSparkSqlJobOrBuilder();
 
   /**
@@ -365,7 +231,9 @@ public interface JobOrBuilder
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobStatus status = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the status field is set.
    */
@@ -379,7 +247,9 @@ public interface JobOrBuilder
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobStatus status = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The status.
    */
@@ -393,7 +263,9 @@ public interface JobOrBuilder
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobStatus status = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder getStatusOrBuilder();
 
@@ -404,7 +276,9 @@ public interface JobOrBuilder
    * Output only. The previous job status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1beta2.JobStatus> getStatusHistoryList();
   /**
@@ -414,7 +288,9 @@ public interface JobOrBuilder
    * Output only. The previous job status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.JobStatus getStatusHistory(int index);
   /**
@@ -424,7 +300,9 @@ public interface JobOrBuilder
    * Output only. The previous job status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getStatusHistoryCount();
   /**
@@ -434,7 +312,9 @@ public interface JobOrBuilder
    * Output only. The previous job status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>
       getStatusHistoryOrBuilderList();
@@ -445,7 +325,9 @@ public interface JobOrBuilder
    * Output only. The previous job status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder getStatusHistoryOrBuilder(int index);
 
@@ -458,7 +340,9 @@ public interface JobOrBuilder
    * may be changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1beta2.YarnApplication> getYarnApplicationsList();
   /**
@@ -470,7 +354,9 @@ public interface JobOrBuilder
    * may be changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.YarnApplication getYarnApplications(int index);
   /**
@@ -482,7 +368,9 @@ public interface JobOrBuilder
    * may be changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getYarnApplicationsCount();
   /**
@@ -494,7 +382,9 @@ public interface JobOrBuilder
    * may be changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder>
       getYarnApplicationsOrBuilderList();
@@ -507,7 +397,9 @@ public interface JobOrBuilder
    * may be changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder getYarnApplicationsOrBuilder(
       int index);
@@ -520,7 +412,7 @@ public interface JobOrBuilder
    * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
    * </pre>
    *
-   * <code>string submitted_by = 10;</code>
+   * <code>string submitted_by = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The submittedBy.
    */
@@ -533,7 +425,7 @@ public interface JobOrBuilder
    * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
    * </pre>
    *
-   * <code>string submitted_by = 10;</code>
+   * <code>string submitted_by = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for submittedBy.
    */
@@ -547,7 +439,8 @@ public interface JobOrBuilder
    * driver program.
    * </pre>
    *
-   * <code>string driver_output_resource_uri = 17;</code>
+   * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The driverOutputResourceUri.
    */
@@ -560,7 +453,8 @@ public interface JobOrBuilder
    * driver program.
    * </pre>
    *
-   * <code>string driver_output_resource_uri = 17;</code>
+   * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for driverOutputResourceUri.
    */
@@ -575,7 +469,7 @@ public interface JobOrBuilder
    * control files may be placed in the same location as `driver_output_uri`.
    * </pre>
    *
-   * <code>string driver_control_files_uri = 15;</code>
+   * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The driverControlFilesUri.
    */
@@ -589,7 +483,7 @@ public interface JobOrBuilder
    * control files may be placed in the same location as `driver_output_uri`.
    * </pre>
    *
-   * <code>string driver_control_files_uri = 15;</code>
+   * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for driverControlFilesUri.
    */
@@ -608,7 +502,7 @@ public interface JobOrBuilder
    * associated with a job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
@@ -624,7 +518,7 @@ public interface JobOrBuilder
    * associated with a job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -643,7 +537,7 @@ public interface JobOrBuilder
    * associated with a job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -659,7 +553,7 @@ public interface JobOrBuilder
    * associated with a job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -675,7 +569,7 @@ public interface JobOrBuilder
    * associated with a job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -686,7 +580,9 @@ public interface JobOrBuilder
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 20;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the scheduling field is set.
    */
@@ -698,7 +594,9 @@ public interface JobOrBuilder
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 20;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The scheduling.
    */
@@ -710,7 +608,9 @@ public interface JobOrBuilder
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 20;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.JobSchedulingOrBuilder getSchedulingOrBuilder();
 
@@ -723,7 +623,7 @@ public interface JobOrBuilder
    * may be reused over time.
    * </pre>
    *
-   * <code>string job_uuid = 22;</code>
+   * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The jobUuid.
    */
@@ -737,7 +637,7 @@ public interface JobOrBuilder
    * may be reused over time.
    * </pre>
    *
-   * <code>string job_uuid = 22;</code>
+   * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for jobUuid.
    */

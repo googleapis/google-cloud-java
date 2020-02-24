@@ -174,7 +174,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The version of software inside the cluster. It must be one of the
-   * supported [Cloud Dataproc
+   * supported [Dataproc
    * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
    * such as "1.2" (including a subminor version, such as "1.2.29"), or the
    * ["preview"
@@ -202,7 +202,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The version of software inside the cluster. It must be one of the
-   * supported [Cloud Dataproc
+   * supported [Dataproc
    * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
    * such as "1.2" (including a subminor version, such as "1.2.29"), or the
    * ["preview"
@@ -883,7 +883,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of software inside the cluster. It must be one of the
-     * supported [Cloud Dataproc
+     * supported [Dataproc
      * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
      * such as "1.2" (including a subminor version, such as "1.2.29"), or the
      * ["preview"
@@ -911,7 +911,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of software inside the cluster. It must be one of the
-     * supported [Cloud Dataproc
+     * supported [Dataproc
      * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
      * such as "1.2" (including a subminor version, such as "1.2.29"), or the
      * ["preview"
@@ -939,7 +939,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of software inside the cluster. It must be one of the
-     * supported [Cloud Dataproc
+     * supported [Dataproc
      * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
      * such as "1.2" (including a subminor version, such as "1.2.29"), or the
      * ["preview"
@@ -966,7 +966,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of software inside the cluster. It must be one of the
-     * supported [Cloud Dataproc
+     * supported [Dataproc
      * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
      * such as "1.2" (including a subminor version, such as "1.2.29"), or the
      * ["preview"
@@ -989,7 +989,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of software inside the cluster. It must be one of the
-     * supported [Cloud Dataproc
+     * supported [Dataproc
      * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
      * such as "1.2" (including a subminor version, such as "1.2.29"), or the
      * ["preview"

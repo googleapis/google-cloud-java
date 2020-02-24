@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1beta2;
  *
  *
  * <pre>
- * A Cloud Dataproc workflow template resource.
+ * A Dataproc workflow template resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.WorkflowMetadata}
@@ -1262,7 +1262,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A Cloud Dataproc workflow template resource.
+   * A Dataproc workflow template resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.WorkflowMetadata}

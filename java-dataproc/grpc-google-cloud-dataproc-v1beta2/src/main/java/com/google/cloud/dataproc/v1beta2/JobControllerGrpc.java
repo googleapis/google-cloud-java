@@ -444,9 +444,9 @@ public final class JobControllerGrpc {
      * <pre>
      * Starts a job cancellation request. To access the job resource
      * after cancellation, call
-     * [regions/{region}/jobs.list](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
+     * [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
      * or
-     * [regions/{region}/jobs.get](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+     * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
      * </pre>
      */
     public void cancelJob(
@@ -605,9 +605,9 @@ public final class JobControllerGrpc {
      * <pre>
      * Starts a job cancellation request. To access the job resource
      * after cancellation, call
-     * [regions/{region}/jobs.list](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
+     * [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
      * or
-     * [regions/{region}/jobs.get](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+     * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
      * </pre>
      */
     public void cancelJob(
@@ -714,9 +714,9 @@ public final class JobControllerGrpc {
      * <pre>
      * Starts a job cancellation request. To access the job resource
      * after cancellation, call
-     * [regions/{region}/jobs.list](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
+     * [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
      * or
-     * [regions/{region}/jobs.get](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+     * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
      * </pre>
      */
     public com.google.cloud.dataproc.v1beta2.Job cancelJob(
@@ -820,9 +820,9 @@ public final class JobControllerGrpc {
      * <pre>
      * Starts a job cancellation request. To access the job resource
      * after cancellation, call
-     * [regions/{region}/jobs.list](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
+     * [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
      * or
-     * [regions/{region}/jobs.get](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+     * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataproc.v1beta2.Job>

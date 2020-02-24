@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1beta2;
  *
  *
  * <pre>
- * Cloud Dataproc job status.
+ * Dataproc job status.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.JobStatus}
@@ -506,7 +506,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The agent-reported status is out of date, which may be caused by a
-     * loss of communication between the agent and Cloud Dataproc. If the
+     * loss of communication between the agent and Dataproc. If the
      * agent does not send a timely update, the job will fail.
      * Applies to RUNNING state.
      * </pre>
@@ -556,7 +556,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The agent-reported status is out of date, which may be caused by a
-     * loss of communication between the agent and Cloud Dataproc. If the
+     * loss of communication between the agent and Dataproc. If the
      * agent does not send a timely update, the job will fail.
      * Applies to RUNNING state.
      * </pre>
@@ -655,7 +655,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. A state message specifying the overall job state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -669,7 +671,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. A state message specifying the overall job state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -686,11 +690,11 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Optional job state details, such as an error
+   * Output only. Optional Job state details, such as an error
    * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
    * </pre>
    *
-   * <code>string details = 2;</code>
+   * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The details.
    */
@@ -709,11 +713,11 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Optional job state details, such as an error
+   * Output only. Optional Job state details, such as an error
    * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
    * </pre>
    *
-   * <code>string details = 2;</code>
+   * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for details.
    */
@@ -738,7 +742,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the stateStartTime field is set.
    */
@@ -752,7 +758,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The stateStartTime.
    */
@@ -768,7 +776,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder() {
     return getStateStartTime();
@@ -784,7 +794,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * status reported by the agent.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for substate.
    */
@@ -799,7 +811,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * status reported by the agent.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The substate.
    */
@@ -1007,7 +1021,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Dataproc job status.
+   * Dataproc job status.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.JobStatus}
@@ -1194,7 +1208,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. A state message specifying the overall job state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for state.
      */
@@ -1208,7 +1224,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. A state message specifying the overall job state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
@@ -1225,7 +1243,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. A state message specifying the overall job state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The state.
      */
@@ -1244,7 +1264,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. A state message specifying the overall job state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The state to set.
      * @return This builder for chaining.
@@ -1265,7 +1287,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. A state message specifying the overall job state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1281,11 +1305,11 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Optional job state details, such as an error
+     * Output only. Optional Job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
-     * <code>string details = 2;</code>
+     * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The details.
      */
@@ -1304,11 +1328,11 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Optional job state details, such as an error
+     * Output only. Optional Job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
-     * <code>string details = 2;</code>
+     * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for details.
      */
@@ -1327,11 +1351,11 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Optional job state details, such as an error
+     * Output only. Optional Job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
-     * <code>string details = 2;</code>
+     * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The details to set.
      * @return This builder for chaining.
@@ -1349,11 +1373,11 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Optional job state details, such as an error
+     * Output only. Optional Job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
-     * <code>string details = 2;</code>
+     * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1367,11 +1391,11 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Optional job state details, such as an error
+     * Output only. Optional Job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
-     * <code>string details = 2;</code>
+     * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for details to set.
      * @return This builder for chaining.
@@ -1400,7 +1424,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the stateStartTime field is set.
      */
@@ -1414,7 +1440,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The stateStartTime.
      */
@@ -1434,7 +1462,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStateStartTime(com.google.protobuf.Timestamp value) {
       if (stateStartTimeBuilder_ == null) {
@@ -1456,7 +1486,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStateStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (stateStartTimeBuilder_ == null) {
@@ -1475,7 +1507,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeStateStartTime(com.google.protobuf.Timestamp value) {
       if (stateStartTimeBuilder_ == null) {
@@ -1501,7 +1535,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearStateStartTime() {
       if (stateStartTimeBuilder_ == null) {
@@ -1521,7 +1557,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStateStartTimeBuilder() {
 
@@ -1535,7 +1573,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder() {
       if (stateStartTimeBuilder_ != null) {
@@ -1553,7 +1593,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1581,7 +1623,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for substate.
      */
@@ -1596,7 +1640,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for substate to set.
      * @return This builder for chaining.
@@ -1614,7 +1660,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The substate.
      */
@@ -1634,7 +1682,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The substate to set.
      * @return This builder for chaining.
@@ -1656,7 +1706,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */

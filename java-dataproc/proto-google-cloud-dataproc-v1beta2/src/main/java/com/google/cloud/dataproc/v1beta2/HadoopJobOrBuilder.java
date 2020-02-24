@@ -93,7 +93,7 @@ public interface HadoopJobOrBuilder
    * submission.
    * </pre>
    *
-   * <code>repeated string args = 3;</code>
+   * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the args.
    */
@@ -108,7 +108,7 @@ public interface HadoopJobOrBuilder
    * submission.
    * </pre>
    *
-   * <code>repeated string args = 3;</code>
+   * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of args.
    */
@@ -123,7 +123,7 @@ public interface HadoopJobOrBuilder
    * submission.
    * </pre>
    *
-   * <code>repeated string args = 3;</code>
+   * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The args at the given index.
@@ -139,7 +139,7 @@ public interface HadoopJobOrBuilder
    * submission.
    * </pre>
    *
-   * <code>repeated string args = 3;</code>
+   * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the args at the given index.
@@ -154,7 +154,7 @@ public interface HadoopJobOrBuilder
    * Hadoop driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the jarFileUris.
    */
@@ -167,7 +167,7 @@ public interface HadoopJobOrBuilder
    * Hadoop driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of jarFileUris.
    */
@@ -180,7 +180,7 @@ public interface HadoopJobOrBuilder
    * Hadoop driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The jarFileUris at the given index.
@@ -194,7 +194,7 @@ public interface HadoopJobOrBuilder
    * Hadoop driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the jarFileUris at the given index.
@@ -210,7 +210,7 @@ public interface HadoopJobOrBuilder
    * for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the fileUris.
    */
@@ -224,7 +224,7 @@ public interface HadoopJobOrBuilder
    * for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of fileUris.
    */
@@ -238,7 +238,7 @@ public interface HadoopJobOrBuilder
    * for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The fileUris at the given index.
@@ -253,7 +253,7 @@ public interface HadoopJobOrBuilder
    * for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the fileUris at the given index.
@@ -269,7 +269,7 @@ public interface HadoopJobOrBuilder
    * .jar, .tar, .tar.gz, .tgz, or .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the archiveUris.
    */
@@ -283,7 +283,7 @@ public interface HadoopJobOrBuilder
    * .jar, .tar, .tar.gz, .tgz, or .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of archiveUris.
    */
@@ -297,7 +297,7 @@ public interface HadoopJobOrBuilder
    * .jar, .tar, .tar.gz, .tgz, or .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The archiveUris at the given index.
@@ -312,7 +312,7 @@ public interface HadoopJobOrBuilder
    * .jar, .tar, .tar.gz, .tgz, or .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the archiveUris at the given index.
@@ -324,12 +324,13 @@ public interface HadoopJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getPropertiesCount();
   /**
@@ -337,12 +338,13 @@ public interface HadoopJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsProperties(java.lang.String key);
   /** Use {@link #getPropertiesMap()} instead. */
@@ -353,12 +355,13 @@ public interface HadoopJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
   /**
@@ -366,12 +369,13 @@ public interface HadoopJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -379,12 +383,13 @@ public interface HadoopJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getPropertiesOrThrow(java.lang.String key);
 
@@ -395,7 +400,9 @@ public interface HadoopJobOrBuilder
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the loggingConfig field is set.
    */
@@ -407,7 +414,9 @@ public interface HadoopJobOrBuilder
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The loggingConfig.
    */
@@ -419,7 +428,9 @@ public interface HadoopJobOrBuilder
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
 

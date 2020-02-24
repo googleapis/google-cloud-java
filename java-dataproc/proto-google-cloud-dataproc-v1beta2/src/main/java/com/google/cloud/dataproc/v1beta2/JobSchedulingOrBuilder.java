@@ -35,7 +35,7 @@ public interface JobSchedulingOrBuilder
    * Maximum value is 10.
    * </pre>
    *
-   * <code>int32 max_failures_per_hour = 1;</code>
+   * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The maxFailuresPerHour.
    */

@@ -533,7 +533,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
+   * Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
    * TimelineServer that provides application-specific information. The URL uses
    * the internal hostname, and requires a proxy server for resolution and,
    * possibly, access.
@@ -558,7 +558,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
+   * Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
    * TimelineServer that provides application-specific information. The URL uses
    * the internal hostname, and requires a proxy server for resolution and,
    * possibly, access.
@@ -1212,7 +1212,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
+     * Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
      * TimelineServer that provides application-specific information. The URL uses
      * the internal hostname, and requires a proxy server for resolution and,
      * possibly, access.
@@ -1237,7 +1237,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
+     * Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
      * TimelineServer that provides application-specific information. The URL uses
      * the internal hostname, and requires a proxy server for resolution and,
      * possibly, access.
@@ -1262,7 +1262,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
+     * Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
      * TimelineServer that provides application-specific information. The URL uses
      * the internal hostname, and requires a proxy server for resolution and,
      * possibly, access.
@@ -1286,7 +1286,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
+     * Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
      * TimelineServer that provides application-specific information. The URL uses
      * the internal hostname, and requires a proxy server for resolution and,
      * possibly, access.
@@ -1306,7 +1306,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
+     * Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
      * TimelineServer that provides application-specific information. The URL uses
      * the internal hostname, and requires a proxy server for resolution and,
      * possibly, access.
