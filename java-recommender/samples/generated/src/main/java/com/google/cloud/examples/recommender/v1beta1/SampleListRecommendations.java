@@ -17,8 +17,7 @@
 // sample-metadata:
 //   title: List Recommendations
 //   description: List recommendations for a specified project, location, and recommender.
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.recommender.v1beta1.SampleListRecommendations
+//   usage: gradle run -PmainClass=com.google.cloud.examples.recommender.v1beta1.SampleListRecommendations
 
 package com.google.cloud.examples.recommender.v1beta1;
 
