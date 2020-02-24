@@ -37,19 +37,24 @@ if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTI
     export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_ROOT}/src/${GOOGLE_APPLICATION_CREDENTIALS})
 fi
 
+RETURN_CODE=0
+set +e
+
 case ${JOB_TYPE} in
 test)
     mvn test -B -Dclirr.skip=true -Denforcer.skip=true
+    RETURN_CODE=$?
     bash ${KOKORO_GFILE_DIR}/codecov.sh
-    bash .kokoro/coerce_logs.sh
     ;;
 lint)
     mvn \
       -Penable-samples \
       com.coveo:fmt-maven-plugin:check
+    RETURN_CODE=$?
     ;;
 javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc
+    RETURN_CODE=$?
     ;;
 integration)
     mvn -B ${INTEGRATION_TEST_ARGS} \
@@ -59,7 +64,7 @@ integration)
       -Denforcer.skip=true \
       -fae \
       verify
-    bash .kokoro/coerce_logs.sh
+    RETURN_CODE=$?
     ;;
 samples)
     if [[ -f samples/pom.xml ]]
@@ -72,7 +77,7 @@ samples)
           -Denforcer.skip=true \
           -fae \
           verify
-        bash .kokoro/coerce_logs.sh
+        RETURN_CODE=$?
         popd
     else
         echo "no sample pom.xml found - skipping sample tests"
@@ -80,7 +85,20 @@ samples)
     ;;
 clirr)
     mvn -B -Denforcer.skip=true clirr:check
+    RETURN_CODE=$?
     ;;
 *)
     ;;
 esac
+
+# fix output location of logs
+bash .kokoro/coerce_logs.sh
+
+if [[ "${ENABLE_BUILD_COP}" == "true" ]]
+then
+    chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/buildcop
+    ${KOKORO_GFILE_DIR}/linux_amd64/buildcop -repo=googleapis/java-kms
+fi
+
+echo "exiting with ${RETURN_CODE}"
+exit ${RETURN_CODE}
