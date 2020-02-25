@@ -9,30 +9,10 @@ java: &java
   invocation: "{bin} -Dexec.mainClass={class} -Dexec.args='@args'"
 samples:
 - <<: *java
-  sample: "speech_transcribe_multilanguage_beta"
-  path: "{base_path}/SpeechTranscribeMultilanguageBeta.java"
-  class: "{package}.SpeechTranscribeMultilanguageBeta"
-  region_tag: "speech_transcribe_multilanguage_beta"
-- <<: *java
-  sample: "speech_transcribe_recognition_metadata_beta"
-  path: "{base_path}/SpeechTranscribeRecognitionMetadataBeta.java"
-  class: "{package}.SpeechTranscribeRecognitionMetadataBeta"
-  region_tag: "speech_transcribe_recognition_metadata_beta"
-- <<: *java
   sample: "speech_contexts_classes_beta"
   path: "{base_path}/SpeechContextsClassesBeta.java"
   class: "{package}.SpeechContextsClassesBeta"
   region_tag: "speech_contexts_classes_beta"
-- <<: *java
-  sample: "speech_adaptation_beta"
-  path: "{base_path}/SpeechAdaptationBeta.java"
-  class: "{package}.SpeechAdaptationBeta"
-  region_tag: "speech_adaptation_beta"
-- <<: *java
-  sample: "speech_transcribe_word_level_confidence_beta"
-  path: "{base_path}/SpeechTranscribeWordLevelConfidenceBeta.java"
-  class: "{package}.SpeechTranscribeWordLevelConfidenceBeta"
-  region_tag: "speech_transcribe_word_level_confidence_beta"
 - <<: *java
   sample: "speech_transcribe_auto_punctuation_beta"
   path: "{base_path}/SpeechTranscribeAutoPunctuationBeta.java"
@@ -43,6 +23,26 @@ samples:
   path: "{base_path}/SpeechQuickstartBeta.java"
   class: "{package}.SpeechQuickstartBeta"
   region_tag: "speech_quickstart_beta"
+- <<: *java
+  sample: "speech_transcribe_word_level_confidence_beta"
+  path: "{base_path}/SpeechTranscribeWordLevelConfidenceBeta.java"
+  class: "{package}.SpeechTranscribeWordLevelConfidenceBeta"
+  region_tag: "speech_transcribe_word_level_confidence_beta"
+- <<: *java
+  sample: "speech_adaptation_beta"
+  path: "{base_path}/SpeechAdaptationBeta.java"
+  class: "{package}.SpeechAdaptationBeta"
+  region_tag: "speech_adaptation_beta"
+- <<: *java
+  sample: "speech_transcribe_multilanguage_beta"
+  path: "{base_path}/SpeechTranscribeMultilanguageBeta.java"
+  class: "{package}.SpeechTranscribeMultilanguageBeta"
+  region_tag: "speech_transcribe_multilanguage_beta"
+- <<: *java
+  sample: "speech_transcribe_recognition_metadata_beta"
+  path: "{base_path}/SpeechTranscribeRecognitionMetadataBeta.java"
+  class: "{package}.SpeechTranscribeRecognitionMetadataBeta"
+  region_tag: "speech_transcribe_recognition_metadata_beta"
 - <<: *java
   sample: "speech_transcribe_diarization_beta"
   path: "{base_path}/SpeechTranscribeDiarizationBeta.java"

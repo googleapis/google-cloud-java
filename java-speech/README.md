@@ -17,13 +17,12 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>4.1.0</version>
+      <version>4.1.1</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
   </dependencies>
 </dependencyManagement>
-
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
@@ -120,6 +119,35 @@ For an example audio file, you can use the [audio.raw](https://github.com/Google
 Note, to play the file on Unix-like system you may use the following command: `play -t raw -r 16k -e signed -b 16 -c 1 audio.raw`
 
 
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-speech/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Transcribe Audio File using Long Running Operation (Local File) (LRO) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsync.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsync.java) |
+| Transcript Audio File using Long Running Operation (Cloud Storage) (LRO) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsyncGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsyncGcs.java) |
+| Getting word timestamps (Cloud Storage) (LRO) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsyncWordTimeOffsetsGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsyncWordTimeOffsetsGcs.java) |
+| Using Enhanced Models (Local File) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeEnhancedModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeEnhancedModel.java) |
+| Selecting a Transcription Model (Local File) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeModelSelection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeModelSelection.java) |
+| Selecting a Transcription Model (Cloud Storage) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeModelSelectionGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeModelSelectionGcs.java) |
+| Multi-Channel Audio Transcription (Local File) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeMultichannel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeMultichannel.java) |
+| Multi-Channel Audio Transcription (Cloud Storage) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeMultichannelGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeMultichannelGcs.java) |
+| Transcribe Audio File (Local File) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeSync.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeSync.java) |
+| Transcript Audio File (Cloud Storage) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeSyncGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeSyncGcs.java) |
+| Speech Adaptation (Cloud Storage) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechAdaptationBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechAdaptationBeta.java) |
+| Using Context Classes (Cloud Storage) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechContextsClassesBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechContextsClassesBeta.java) |
+| Quickstart Beta | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechQuickstartBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechQuickstartBeta.java) |
+| Getting punctuation in results (Local File) (Beta) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeAutoPunctuationBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeAutoPunctuationBeta.java) |
+| Separating different speakers (Local File) (LRO) (Beta) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeDiarizationBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeDiarizationBeta.java) |
+| Detecting language spoken automatically (Local File) (Beta) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeMultilanguageBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeMultilanguageBeta.java) |
+| Adding recognition metadata (Local File) (Beta) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeRecognitionMetadataBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeRecognitionMetadataBeta.java) |
+| Enabling word-level confidence (Local File) (Beta) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeWordLevelConfidenceBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeWordLevelConfidenceBeta.java) |
+
+
+
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
@@ -189,3 +217,4 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=speech.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
