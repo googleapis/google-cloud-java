@@ -20,13 +20,12 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>3.4.0</version>
+      <version>4.1.1</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
   </dependencies>
 </dependencyManagement>
-
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
@@ -66,7 +65,7 @@ See the [Authentication][authentication] section in the base directory's README.
 ### Prerequisites
 
 You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Billing Budgets [API enabled][enable-api].
-
+You will need to [enable billing][enable-billing] to use Google Cloud Billing Budgets.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -83,6 +82,8 @@ to add `google-cloud-billingbudgets` as a dependency in your code.
 
 See the [Cloud Billing Budgets client library docs][javadocs] to learn how to
 use this Cloud Billing Budgets Client Library.
+
+
 
 
 
@@ -156,6 +157,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [contributing]: https://github.com/googleapis/java-billingbudgets/blob/master/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/java-billingbudgets/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-billingbudgets/blob/master/LICENSE
-
+[enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=billingbudgets.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png

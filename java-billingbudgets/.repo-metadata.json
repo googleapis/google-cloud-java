@@ -10,5 +10,7 @@
     "repo": "googleapis/java-billingbudgets",
     "repo_short": "java-billingbudgets",
     "distribution_name": "com.google.cloud:google-cloud-billingbudgets",
-    "api_id": "billingbudgets.googleapis.com"
+    "api_id": "billingbudgets.googleapis.com",
+    "transport": "grpc",
+    "requires_billing": true
 }
