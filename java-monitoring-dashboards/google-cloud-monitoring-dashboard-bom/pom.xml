@@ -12,7 +12,7 @@
   </parent>
 
   <name>Google Cloud Monitoring Dashboard BOM</name>
-  <url>https://github.com/googleapis/java-monitoring-dashboard</url>
+  <url>https://github.com/googleapis/java-monitoring-dashboards</url>
   <description>
     BOM for Google Cloud Monitoring Dashboard
   </description>
@@ -34,9 +34,9 @@
   </developers>
 
   <scm>
-    <connection>scm:git:https://github.com/googleapis/java-monitoring-dashboard.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-monitoring-dashboard.git</developerConnection>
-    <url>https://github.com/googleapis/java-monitoring-dashboard</url>
+    <connection>scm:git:https://github.com/googleapis/java-monitoring-dashboards.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-monitoring-dashboards.git</developerConnection>
+    <url>https://github.com/googleapis/java-monitoring-dashboards</url>
   </scm>
 
   <distributionManagement>
