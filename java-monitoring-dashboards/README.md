@@ -1,6 +1,6 @@
-# Google Cloud Java Client for Google Cloud Monitoring Dashboards
+# Google Google Cloud Monitoring Dashboards Client for Java
 
-Java idiomatic client for [Google Cloud Monitoring Dashboards][api-reference].
+Java idiomatic client for [Google Cloud Monitoring Dashboards][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -13,8 +13,31 @@ Java idiomatic client for [Google Cloud Monitoring Dashboards][api-reference].
 
 ## Quickstart
 
-[//]: # ({x-version-update-start:monitoring-dashboards:released})
-If you are using Maven, add this to your pom.xml file
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>4.1.1</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-monitoring-dashboards</artifactId>
+  </dependency>
+</dependencies>
+```
+
+[//]: # ({x-version-update-start:google-cloud-monitoring-dashboards:released})
+
+If you are using Maven without BOM, add this to your dependencies:
+
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
@@ -22,6 +45,7 @@ If you are using Maven, add this to your pom.xml file
   <version>0.0.0</version>
 </dependency>
 ```
+
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-monitoring-dashboards:0.0.0'
@@ -36,22 +60,13 @@ libraryDependencies += "com.google.cloud" % "google-cloud-monitoring-dashboards"
 
 See the [Authentication][authentication] section in the base directory's README.
 
-## About Google Cloud Monitoring Dashboards
-
-[Google Cloud Monitoring Dashboards][api-reference] are one way for you to view and analyze metric
-data that is important to you. The Stackdriver Monitoring console provides predefined dashboards for
-the resources and services that you use. These dashboards require no setup or configuration effort.
-
-See the [Google Cloud Monitoring Dashboards client library docs][javadocs] to learn how to
-use this Google Cloud Monitoring Dashboards Client Library.
-
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Developers Console][developer-console] project with the
-Google Cloud Monitoring Dashboards API enabled. [Follow these instructions][create-project] to get your
-project set up. You will also need to set up the local development environment by
+You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Monitoring Dashboards [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Google Cloud Monitoring Dashboards.
+[Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
@@ -59,6 +74,19 @@ project set up. You will also need to set up the local development environment b
 
 You'll need to obtain the `google-cloud-monitoring-dashboards` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-monitoring-dashboards` as a dependency in your code.
+
+## About Google Cloud Monitoring Dashboards
+
+
+[Google Cloud Monitoring Dashboards][product-docs] are one way for you to view and analyze metric data. The Cloud Console provides predefined dashboards that require no setup or configuration. You can also define custom dashboards. With custom dashboards, you have complete control over the charts that are displayed and their configuration.
+
+See the [Google Cloud Monitoring Dashboards client library docs][javadocs] to learn how to
+use this Google Cloud Monitoring Dashboards Client Library.
+
+
+
+
+
 
 ## Troubleshooting
 
@@ -76,14 +104,17 @@ Java 7 or above is required for using this client.
 
 This library follows [Semantic Versioning](http://semver.org/).
 
+
 It is currently in major version zero (``0.y.z``), which means that anything may change at any time
 and the public API should not be considered stable.
 
+
 ## Contributing
+
 
 Contributions to this library are always welcome and highly encouraged.
 
-See [CONTRIBUTING.md][contributing] documentation for more information on how to get started.
+See [CONTRIBUTING][contributing] for more information how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in
 this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more
@@ -103,7 +134,6 @@ Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
-[api-reference]: https://cloud.google.com/monitoring/dashboards/api-dashboard
 [product-docs]: https://cloud.google.com/monitoring/charts/dashboards
 [javadocs]: https://googleapis.dev/java/java-monitoring-dashboards/latest
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-monitoring-dashboards/java7.svg
@@ -127,3 +157,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [contributing]: https://github.com/googleapis/java-monitoring-dashboards/blob/master/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/java-monitoring-dashboards/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-monitoring-dashboards/blob/master/LICENSE
+[enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=monitoring.googleapis.com
+[libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png

@@ -33,8 +33,4 @@ for version in versions:
         bazel_target=f'//google/monitoring/dashboard/{version}:google-cloud-monitoring-dashboard-{version}-java',
     )
 
-common_templates = gcp.CommonTemplates()
-templates = common_templates.java_library()
-s.copy(templates, excludes=[
-    'README.md',
-])
+java.common_templates()

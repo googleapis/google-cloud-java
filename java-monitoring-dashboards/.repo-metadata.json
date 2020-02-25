@@ -3,10 +3,13 @@
   "name_pretty": "Google Cloud Monitoring Dashboards",
   "product_documentation": "https://cloud.google.com/monitoring/charts/dashboards",
   "client_documentation": "https://googleapis.dev/java/java-monitoring-dashboards/latest",
+  "api_description": "are one way for you to view and analyze metric data. The Cloud Console provides predefined dashboards that require no setup or configuration. You can also define custom dashboards. With custom dashboards, you have complete control over the charts that are displayed and their configuration.",
   "release_level": "beta",
   "language": "java",
   "repo": "googleapis/java-monitoring-dashboards",
   "repo_short": "java-monitoring-dashboards",
   "distribution_name": "com.google.cloud:google-cloud-monitoring-dashboards",
-  "api_id": "monitoring.googleapis.com"
+  "api_id": "monitoring.googleapis.com",
+  "transport": "grpc",
+  "requires_billing": true
 }
