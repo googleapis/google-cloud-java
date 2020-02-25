@@ -44,7 +44,6 @@ case ${JOB_TYPE} in
 test)
     mvn test -B -Dclirr.skip=true -Denforcer.skip=true
     RETURN_CODE=$?
-    bash ${KOKORO_GFILE_DIR}/codecov.sh
     ;;
 lint)
     mvn \
@@ -90,6 +89,11 @@ clirr)
 *)
     ;;
 esac
+
+if [ "${REPORT_COVERAGE}" == "true" ]
+then
+  bash ${KOKORO_GFILE_DIR}/codecov.sh
+fi
 
 # fix output location of logs
 bash .kokoro/coerce_logs.sh
