@@ -20,13 +20,12 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>4.1.0</version>
+      <version>4.1.1</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
   </dependencies>
 </dependencyManagement>
-
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
@@ -84,6 +83,38 @@ to add `google-cloud-talent` as a dependency in your code.
 See the [Google Cloud Talent Solution client library docs][javadocs] to learn how to
 use this Google Cloud Talent Solution Client Library.
 
+
+
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-talent/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchAutocompleteJobTitle.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchAutocompleteJobTitle.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchBatchCreateJobs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchBatchCreateJobs.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchBatchDeleteJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchBatchDeleteJob.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchBatchUpdateJobs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchBatchUpdateJobs.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCommuteSearch.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCommuteSearch.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCreateClientEvent.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCreateClientEvent.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCreateCompany.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCreateCompany.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCreateJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCreateJob.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCreateJobCustomAttributes.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCreateJobCustomAttributes.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCreateTenant.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCreateTenant.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCustomRankingSearch.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchCustomRankingSearch.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchDeleteCompany.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchDeleteCompany.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchDeleteJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchDeleteJob.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchDeleteTenant.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchDeleteTenant.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchGetCompany.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchGetCompany.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchGetJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchGetJob.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchGetTenant.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchGetTenant.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchHistogramSearch.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchHistogramSearch.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchListCompanies.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchListCompanies.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchListJobs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchListJobs.java) |
+| None | [source code](https://github.com/googleapis/java-talent/blob/master/samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchListTenants.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/talent/v4beta1/JobSearchListTenants.java) |
 
 
 
@@ -159,3 +190,4 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=jobs.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
