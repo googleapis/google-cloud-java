@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-02-22T09:49:05.264543Z",
+  "updateTime": "2020-02-24T22:48:54.326367Z",
   "sources": [
     {
       "generator": {
@@ -10,25 +10,11 @@
     },
     {
       "git": {
-        "name": ".",
-        "remote": "https://github.com/googleapis/java-dataproc.git",
-        "sha": "ce4bd9177439ff9431cec1f8e56ee2c07ab75870"
-      }
-    },
-    {
-      "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "7f910bcc4fc4704947ccfd3ceed015d16b9e00c2",
-        "internalRef": "296451205",
-        "log": "7f910bcc4fc4704947ccfd3ceed015d16b9e00c2\nUpdate Dataproc v1beta2 client.\n\nPiperOrigin-RevId: 296451205\n\nde287524405a3dce124d301634731584fc0432d7\nFix: Reinstate method signatures that had been missed off some RPCs\nFix: Correct resource types for two fields\n\nPiperOrigin-RevId: 296435091\n\n"
-      }
-    },
-    {
-      "git": {
-        "name": "synthtool",
-        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
-        "sha": "706a38c26db42299845396cdae55db635c38794a"
+        "sha": "1e47e676cddbbd8d93f19ba0665af15b5532417e",
+        "internalRef": "296901854",
+        "log": "1e47e676cddbbd8d93f19ba0665af15b5532417e\nFix: Restore a method signature for UpdateCluster\n\nPiperOrigin-RevId: 296901854\n\n"
       }
     },
     {
