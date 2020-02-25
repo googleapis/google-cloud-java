@@ -1,20 +1,6 @@
 {
-  "updateTime": "2020-02-22T10:03:43.379378Z",
+  "updateTime": "2020-02-24T23:03:09.088925Z",
   "sources": [
-    {
-      "git": {
-        "name": ".",
-        "remote": "https://github.com/googleapis/java-resourcemanager.git",
-        "sha": "4a9bea5d1f6648cb6240c714c4666758bfa14876"
-      }
-    },
-    {
-      "git": {
-        "name": "synthtool",
-        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
-        "sha": "706a38c26db42299845396cdae55db635c38794a"
-      }
-    },
     {
       "template": {
         "name": "java_library",
