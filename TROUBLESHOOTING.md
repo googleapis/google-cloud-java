@@ -65,7 +65,7 @@ in your pom.xml:
           <dependency>
             <groupId>com.google.cloud.tools</groupId>
             <artifactId>linkage-checker-enforcer-rules</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.3</version>
           </dependency>
         </dependencies>
         <executions>
@@ -111,7 +111,7 @@ There are different strategies to resolve conflicts, but you must understand the
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>4.0.0</version>
+        <version>4.1.1</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
