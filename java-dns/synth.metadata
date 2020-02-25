@@ -1,20 +1,6 @@
 {
-  "updateTime": "2020-02-22T09:52:25.097142Z",
+  "updateTime": "2020-02-24T22:52:05.608802Z",
   "sources": [
-    {
-      "git": {
-        "name": ".",
-        "remote": "https://github.com/googleapis/java-dns.git",
-        "sha": "9bd79df0d1685d634364680ef0fa4e0ab30ae27c"
-      }
-    },
-    {
-      "git": {
-        "name": "synthtool",
-        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
-        "sha": "706a38c26db42299845396cdae55db635c38794a"
-      }
-    },
     {
       "template": {
         "name": "java_library",
