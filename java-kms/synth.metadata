@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-02-22T09:57:53.238956Z",
+  "updateTime": "2020-02-24T22:57:22.921672Z",
   "sources": [
     {
       "generator": {
@@ -10,24 +10,11 @@
     },
     {
       "git": {
-        "name": ".",
-        "remote": "https://github.com/googleapis/java-kms.git",
-        "sha": "ca824828070381371e66ff6608ba72b4f7212003"
-      }
-    },
-    {
-      "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "7f910bcc4fc4704947ccfd3ceed015d16b9e00c2",
-        "internalRef": "296451205"
-      }
-    },
-    {
-      "git": {
-        "name": "synthtool",
-        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
-        "sha": "706a38c26db42299845396cdae55db635c38794a"
+        "sha": "1e47e676cddbbd8d93f19ba0665af15b5532417e",
+        "internalRef": "296901854",
+        "log": "1e47e676cddbbd8d93f19ba0665af15b5532417e\nFix: Restore a method signature for UpdateCluster\n\nPiperOrigin-RevId: 296901854\n\n"
       }
     },
     {
