@@ -1,6 +1,6 @@
-# Google Google BigQuery Data Transfer Service Client for Java
+# Google BigQuery Data Transfer Service Client for Java
 
-Java idiomatic client for [Google BigQuery Data Transfer Service][product-docs].
+Java idiomatic client for [BigQuery Data Transfer Service][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -64,8 +64,8 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google BigQuery Data Transfer Service [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Google BigQuery Data Transfer Service.
+You will need a [Google Cloud Platform Console][developer-console] project with the BigQuery Data Transfer Service [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google BigQuery Data Transfer Service.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -75,13 +75,13 @@ You will need to [enable billing][enable-billing] to use Google Google BigQuery 
 You'll need to obtain the `google-cloud-bigquerydatatransfer` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-bigquerydatatransfer` as a dependency in your code.
 
-## About Google BigQuery Data Transfer Service
+## About BigQuery Data Transfer Service
 
 
-[Google BigQuery Data Transfer Service][product-docs] transfers data from partner SaaS applications to Google BigQuery on a scheduled, managed basis.
+[BigQuery Data Transfer Service][product-docs] transfers data from partner SaaS applications to Google BigQuery on a scheduled, managed basis.
 
-See the [Google BigQuery Data Transfer Service client library docs][javadocs] to learn how to
-use this Google BigQuery Data Transfer Service Client Library.
+See the [BigQuery Data Transfer Service client library docs][javadocs] to learn how to
+use this BigQuery Data Transfer Service Client Library.
 
 
 
@@ -94,7 +94,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google BigQuery Data Transfer Service uses gRPC for the transport layer.
+BigQuery Data Transfer Service uses gRPC for the transport layer.
 
 ## Java Versions
 
