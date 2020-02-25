@@ -20,13 +20,12 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>4.1.0</version>
+      <version>4.1.1</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
   </dependencies>
 </dependencyManagement>
-
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
@@ -84,6 +83,21 @@ to add `google-cloud-datacatalog` as a dependency in your code.
 See the [Google Cloud Data Catalog client library docs][javadocs] to learn how to
 use this Google Cloud Data Catalog Client Library.
 
+
+
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-datacatalog/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| None | [source code](https://github.com/googleapis/java-datacatalog/blob/master/samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogGetEntry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogGetEntry.java) |
+| None | [source code](https://github.com/googleapis/java-datacatalog/blob/master/samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogLookupEntry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogLookupEntry.java) |
+| None | [source code](https://github.com/googleapis/java-datacatalog/blob/master/samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogLookupEntrySqlResource.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogLookupEntrySqlResource.java) |
+| None | [source code](https://github.com/googleapis/java-datacatalog/blob/master/samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogSearch.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogSearch.java) |
 
 
 
@@ -159,3 +173,4 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=datacatalog.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
