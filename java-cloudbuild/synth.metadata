@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-02-22T09:44:35.038246Z",
+  "updateTime": "2020-02-24T22:44:28.296659Z",
   "sources": [
     {
       "generator": {
@@ -10,24 +10,11 @@
     },
     {
       "git": {
-        "name": ".",
-        "remote": "https://github.com/googleapis/java-cloudbuild.git",
-        "sha": "87389a4ade0a7c18b4857c5e2c7c920564fed85d"
-      }
-    },
-    {
-      "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "7f910bcc4fc4704947ccfd3ceed015d16b9e00c2",
-        "internalRef": "296451205"
-      }
-    },
-    {
-      "git": {
-        "name": "synthtool",
-        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
-        "sha": "706a38c26db42299845396cdae55db635c38794a"
+        "sha": "1e47e676cddbbd8d93f19ba0665af15b5532417e",
+        "internalRef": "296901854",
+        "log": "1e47e676cddbbd8d93f19ba0665af15b5532417e\nFix: Restore a method signature for UpdateCluster\n\nPiperOrigin-RevId: 296901854\n\n"
       }
     },
     {
