@@ -109,7 +109,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
-      <version>1.106.0</version>
+      <version>1.107.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
