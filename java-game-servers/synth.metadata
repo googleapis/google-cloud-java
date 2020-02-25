@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-02-22T09:55:07.817278Z",
+  "updateTime": "2020-02-24T22:54:43.345556Z",
   "sources": [
     {
       "generator": {
@@ -10,24 +10,10 @@
     },
     {
       "git": {
-        "name": ".",
-        "remote": "https://github.com/googleapis/java-gameservices.git",
-        "sha": "06fede27cca675c52112459cbbc290d457728c85"
-      }
-    },
-    {
-      "git": {
         "name": "googleapis-private",
         "remote": "https://github.com/googleapis/googleapis-private.git",
         "sha": "93896777e78b247f3a2228bde08b1fe1cf4179a5",
         "internalRef": "295938567"
-      }
-    },
-    {
-      "git": {
-        "name": "synthtool",
-        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
-        "sha": "706a38c26db42299845396cdae55db635c38794a"
       }
     },
     {
