@@ -1,20 +1,6 @@
 {
-  "updateTime": "2020-02-22T10:16:17.485704Z",
+  "updateTime": "2020-02-24T23:15:34.835217Z",
   "sources": [
-    {
-      "git": {
-        "name": ".",
-        "remote": "https://github.com/googleapis/java-notification.git",
-        "sha": "21f2415497dbe8c71588a6caea5f3746f055c483"
-      }
-    },
-    {
-      "git": {
-        "name": "synthtool",
-        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
-        "sha": "706a38c26db42299845396cdae55db635c38794a"
-      }
-    },
     {
       "template": {
         "name": "java_library",
