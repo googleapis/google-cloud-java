@@ -30,13 +30,6 @@ class Main {
     }
 
     String storageEmulatorHost = System.getenv("STORAGE_EMULATOR_HOST");
-    if (storageEmulatorHost == null || storageEmulatorHost.equals("")) {
-      // We could use system properties here too, but every other language uses
-      // an environment variable called STORAGE_EMULATOR_HOST, so the
-      // consistency is nice to maintain.
-      System.err.println("Please set STORAGE_EMULATOR_HOST=localhost:8080");
-      System.exit(1);
-    }
 
     System.out.println("Server starting up...");
 
