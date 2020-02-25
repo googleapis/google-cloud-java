@@ -1,26 +1,13 @@
 {
-  "updateTime": "2020-02-22T09:39:13.569661Z",
+  "updateTime": "2020-02-24T22:38:20.170376Z",
   "sources": [
-    {
-      "git": {
-        "name": ".",
-        "remote": "https://github.com/googleapis/java-accessapproval.git",
-        "sha": "56168cb111f6552de2a068b8c9b2f2b9fe3f8653"
-      }
-    },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "7f910bcc4fc4704947ccfd3ceed015d16b9e00c2",
-        "internalRef": "296451205"
-      }
-    },
-    {
-      "git": {
-        "name": "synthtool",
-        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
-        "sha": "706a38c26db42299845396cdae55db635c38794a"
+        "sha": "1e47e676cddbbd8d93f19ba0665af15b5532417e",
+        "internalRef": "296901854",
+        "log": "1e47e676cddbbd8d93f19ba0665af15b5532417e\nFix: Restore a method signature for UpdateCluster\n\nPiperOrigin-RevId: 296901854\n\n"
       }
     },
     {
