@@ -26,14 +26,11 @@ config_pattern = '/google/logging/artman_logging.yaml'
 
 for version in versions:
   library = java.gapic_library(
-      service=service,
-      version=version,
-      config_pattern=config_pattern,
-      package_pattern='com.google.{service}.{version}'
+    service=service,
+    version=version,
+    config_pattern=config_pattern,
+    package_pattern='com.google.{service}.{version}',
+    gapic=gapic,
   )
 
-common_templates = gcp.CommonTemplates()
-templates = common_templates.java_library()
-s.copy(templates, excludes=[
-    'README.md',
-])
+java.common_templates()
