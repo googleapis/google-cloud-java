@@ -17,6 +17,7 @@
 package com.google.cloud.benchwrapper;
 
 import io.grpc.stub.StreamObserver;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
@@ -57,18 +58,7 @@ class StorageBenchWrapperImpl extends StorageBenchWrapperImplBase {
     System.out.println("read has been called");
 
     Blob blob = client.get(BlobId.of(request.getBucketName(), request.getObjectName()));
-
-    try (ReadChannel reader = blob.reader()) {
-      ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
-      while (reader.read(bytes) > 0) {
-        bytes.flip();
-        // do nothing with bytes
-        bytes.clear();
-      }
-    } catch (Exception e) {
-      e.printStackTrace();
-      System.exit(1);
-    }
+    byte[] fileContent = blob.getContent();
 
     EmptyResponse reply = EmptyResponse.newBuilder().build();
     responseObserver.onNext(reply);
