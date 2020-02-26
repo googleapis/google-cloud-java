@@ -19,10 +19,10 @@ package com.example.datacatalog;
 // [START datacatalog_create_entry_group_tag]
 
 import com.google.api.gax.rpc.AlreadyExistsException;
-import com.google.cloud.datacatalog.CreateEntryGroupRequest;
-import com.google.cloud.datacatalog.EntryGroup;
-import com.google.cloud.datacatalog.LocationName;
+import com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest;
 import com.google.cloud.datacatalog.v1beta1.DataCatalogClient;
+import com.google.cloud.datacatalog.v1beta1.EntryGroup;
+import com.google.cloud.datacatalog.v1beta1.LocationName;
 import java.io.IOException;
 
 public class CreateEntryGroup {

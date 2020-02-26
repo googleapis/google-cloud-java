@@ -19,14 +19,14 @@ package com.example.datacatalog;
 // [START datacatalog_create_fileset_tag]
 
 import com.google.api.gax.rpc.AlreadyExistsException;
-import com.google.cloud.datacatalog.ColumnSchema;
-import com.google.cloud.datacatalog.CreateEntryRequest;
-import com.google.cloud.datacatalog.Entry;
-import com.google.cloud.datacatalog.EntryGroupName;
-import com.google.cloud.datacatalog.EntryType;
-import com.google.cloud.datacatalog.GcsFilesetSpec;
-import com.google.cloud.datacatalog.Schema;
+import com.google.cloud.datacatalog.v1beta1.ColumnSchema;
+import com.google.cloud.datacatalog.v1beta1.CreateEntryRequest;
 import com.google.cloud.datacatalog.v1beta1.DataCatalogClient;
+import com.google.cloud.datacatalog.v1beta1.Entry;
+import com.google.cloud.datacatalog.v1beta1.EntryGroupName;
+import com.google.cloud.datacatalog.v1beta1.EntryType;
+import com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec;
+import com.google.cloud.datacatalog.v1beta1.Schema;
 import java.io.IOException;
 
 public class CreateFilesetEntry {

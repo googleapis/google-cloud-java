@@ -19,9 +19,9 @@ package com.example.datacatalog;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.datacatalog.EntryGroupName;
-import com.google.cloud.datacatalog.EntryName;
 import com.google.cloud.datacatalog.v1beta1.DataCatalogClient;
+import com.google.cloud.datacatalog.v1beta1.EntryGroupName;
+import com.google.cloud.datacatalog.v1beta1.EntryName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
