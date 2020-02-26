@@ -12,24 +12,25 @@ Java idiomatic client for [Stackdriver Logging][product-docs].
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 ```xml
-<dependencyManagement>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>libraries-bom</artifactId>
+        <version>4.1.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>4.1.0</version>
-      <type>pom</type>
-      <scope>import</scope>
+      <artifactId>google-cloud-logging</artifactId>
     </dependency>
   </dependencies>
-</dependencyManagement>
 
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-logging</artifactId>
-  </dependency>
-</dependencies>
 ```
 
 [//]: # ({x-version-update-start:google-cloud-logging:released})
@@ -37,11 +38,12 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 If you are using Maven without BOM, add this to your dependencies:
 
 ```xml
-<dependency>
-  <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-logging</artifactId>
-  <version>1.100.0</version>
-</dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-logging</artifactId>
+      <version>1.100.0</version>
+    </dependency>
+
 ```
 
 If you are using Gradle, add this to your dependencies
@@ -189,6 +191,19 @@ we put together all the code shown above into three programs. The programs assum
 running on Compute Engine or from your own desktop.
 
 
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-logging/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| List Logs | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/ListLogs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/ListLogs.java) |
+| Quickstart Sample | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/QuickstartSample.java) |
+
+
+
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
@@ -258,3 +273,4 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=logging.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
