@@ -52,7 +52,7 @@ public interface EventInputOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of parameters associated with the event.
+   * The collection of parameters associated with the event.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -64,7 +64,7 @@ public interface EventInputOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of parameters associated with the event.
+   * The collection of parameters associated with the event.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -76,7 +76,7 @@ public interface EventInputOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of parameters associated with the event.
+   * The collection of parameters associated with the event.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 2;</code>

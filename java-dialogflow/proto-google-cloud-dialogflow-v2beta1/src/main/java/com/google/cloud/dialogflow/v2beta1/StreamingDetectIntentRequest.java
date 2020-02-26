@@ -162,6 +162,21 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
               inputAudio_ = input.readBytes();
               break;
             }
+          case 58:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (outputAudioConfigMask_ != null) {
+                subBuilder = outputAudioConfigMask_.toBuilder();
+              }
+              outputAudioConfigMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(outputAudioConfigMask_);
+                outputAudioConfigMask_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -267,7 +282,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The parameters of this query.
+   * The parameters of this query.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -281,7 +296,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The parameters of this query.
+   * The parameters of this query.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -297,7 +312,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The parameters of this query.
+   * The parameters of this query.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -370,7 +385,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * DEPRECATED. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2beta1.InputAudioConfig.single_utterance] instead.
-   * Optional. If `false` (default), recognition does not cease until the
+   * If `false` (default), recognition does not cease until the
    * client closes the stream.
    * If `true`, the recognizer will detect a single spoken utterance in input
    * audio. Recognition ceases when it detects the audio's voice has
@@ -394,7 +409,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Instructs the speech synthesizer how to generate the output
+   * Instructs the speech synthesizer how to generate the output
    * audio. If this field is not set and agent-level speech synthesizer is not
    * configured, no output audio is generated.
    * </pre>
@@ -410,7 +425,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Instructs the speech synthesizer how to generate the output
+   * Instructs the speech synthesizer how to generate the output
    * audio. If this field is not set and agent-level speech synthesizer is not
    * configured, no output audio is generated.
    * </pre>
@@ -428,7 +443,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Instructs the speech synthesizer how to generate the output
+   * Instructs the speech synthesizer how to generate the output
    * audio. If this field is not set and agent-level speech synthesizer is not
    * configured, no output audio is generated.
    * </pre>
@@ -440,13 +455,70 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     return getOutputAudioConfig();
   }
 
+  public static final int OUTPUT_AUDIO_CONFIG_MASK_FIELD_NUMBER = 7;
+  private com.google.protobuf.FieldMask outputAudioConfigMask_;
+  /**
+   *
+   *
+   * <pre>
+   * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+   * request-level config should override speech synthesizer settings defined at
+   * agent-level.
+   * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+   * config in its entirety.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+   *
+   * @return Whether the outputAudioConfigMask field is set.
+   */
+  public boolean hasOutputAudioConfigMask() {
+    return outputAudioConfigMask_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+   * request-level config should override speech synthesizer settings defined at
+   * agent-level.
+   * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+   * config in its entirety.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+   *
+   * @return The outputAudioConfigMask.
+   */
+  public com.google.protobuf.FieldMask getOutputAudioConfigMask() {
+    return outputAudioConfigMask_ == null
+        ? com.google.protobuf.FieldMask.getDefaultInstance()
+        : outputAudioConfigMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+   * request-level config should override speech synthesizer settings defined at
+   * agent-level.
+   * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+   * config in its entirety.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+   */
+  public com.google.protobuf.FieldMaskOrBuilder getOutputAudioConfigMaskOrBuilder() {
+    return getOutputAudioConfigMask();
+  }
+
   public static final int INPUT_AUDIO_FIELD_NUMBER = 6;
   private com.google.protobuf.ByteString inputAudio_;
   /**
    *
    *
    * <pre>
-   * Optional. The input audio content to be recognized. Must be sent if
+   * The input audio content to be recognized. Must be sent if
    * `query_input` was set to a streaming input audio config. The complete audio
    * over all streaming messages must not exceed 1 minute.
    * </pre>
@@ -491,6 +563,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     if (!inputAudio_.isEmpty()) {
       output.writeBytes(6, inputAudio_);
     }
+    if (outputAudioConfigMask_ != null) {
+      output.writeMessage(7, getOutputAudioConfigMask());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -517,6 +592,10 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     }
     if (!inputAudio_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(6, inputAudio_);
+    }
+    if (outputAudioConfigMask_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(7, getOutputAudioConfigMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -548,6 +627,10 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     if (hasOutputAudioConfig()) {
       if (!getOutputAudioConfig().equals(other.getOutputAudioConfig())) return false;
     }
+    if (hasOutputAudioConfigMask() != other.hasOutputAudioConfigMask()) return false;
+    if (hasOutputAudioConfigMask()) {
+      if (!getOutputAudioConfigMask().equals(other.getOutputAudioConfigMask())) return false;
+    }
     if (!getInputAudio().equals(other.getInputAudio())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -575,6 +658,10 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     if (hasOutputAudioConfig()) {
       hash = (37 * hash) + OUTPUT_AUDIO_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getOutputAudioConfig().hashCode();
+    }
+    if (hasOutputAudioConfigMask()) {
+      hash = (37 * hash) + OUTPUT_AUDIO_CONFIG_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputAudioConfigMask().hashCode();
     }
     hash = (37 * hash) + INPUT_AUDIO_FIELD_NUMBER;
     hash = (53 * hash) + getInputAudio().hashCode();
@@ -770,6 +857,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
         outputAudioConfig_ = null;
         outputAudioConfigBuilder_ = null;
       }
+      if (outputAudioConfigMaskBuilder_ == null) {
+        outputAudioConfigMask_ = null;
+      } else {
+        outputAudioConfigMask_ = null;
+        outputAudioConfigMaskBuilder_ = null;
+      }
       inputAudio_ = com.google.protobuf.ByteString.EMPTY;
 
       return this;
@@ -816,6 +909,11 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
         result.outputAudioConfig_ = outputAudioConfig_;
       } else {
         result.outputAudioConfig_ = outputAudioConfigBuilder_.build();
+      }
+      if (outputAudioConfigMaskBuilder_ == null) {
+        result.outputAudioConfigMask_ = outputAudioConfigMask_;
+      } else {
+        result.outputAudioConfigMask_ = outputAudioConfigMaskBuilder_.build();
       }
       result.inputAudio_ = inputAudio_;
       onBuilt();
@@ -885,6 +983,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       }
       if (other.hasOutputAudioConfig()) {
         mergeOutputAudioConfig(other.getOutputAudioConfig());
+      }
+      if (other.hasOutputAudioConfigMask()) {
+        mergeOutputAudioConfigMask(other.getOutputAudioConfigMask());
       }
       if (other.getInputAudio() != com.google.protobuf.ByteString.EMPTY) {
         setInputAudio(other.getInputAudio());
@@ -1081,7 +1182,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The parameters of this query.
+     * The parameters of this query.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -1095,7 +1196,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The parameters of this query.
+     * The parameters of this query.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -1115,7 +1216,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The parameters of this query.
+     * The parameters of this query.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -1137,7 +1238,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The parameters of this query.
+     * The parameters of this query.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -1157,7 +1258,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The parameters of this query.
+     * The parameters of this query.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -1183,7 +1284,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The parameters of this query.
+     * The parameters of this query.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -1203,7 +1304,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The parameters of this query.
+     * The parameters of this query.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -1217,7 +1318,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The parameters of this query.
+     * The parameters of this query.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -1235,7 +1336,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The parameters of this query.
+     * The parameters of this query.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -1485,7 +1586,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * DEPRECATED. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2beta1.InputAudioConfig.single_utterance] instead.
-     * Optional. If `false` (default), recognition does not cease until the
+     * If `false` (default), recognition does not cease until the
      * client closes the stream.
      * If `true`, the recognizer will detect a single spoken utterance in input
      * audio. Recognition ceases when it detects the audio's voice has
@@ -1507,7 +1608,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * DEPRECATED. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2beta1.InputAudioConfig.single_utterance] instead.
-     * Optional. If `false` (default), recognition does not cease until the
+     * If `false` (default), recognition does not cease until the
      * client closes the stream.
      * If `true`, the recognizer will detect a single spoken utterance in input
      * audio. Recognition ceases when it detects the audio's voice has
@@ -1533,7 +1634,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * DEPRECATED. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2beta1.InputAudioConfig.single_utterance] instead.
-     * Optional. If `false` (default), recognition does not cease until the
+     * If `false` (default), recognition does not cease until the
      * client closes the stream.
      * If `true`, the recognizer will detect a single spoken utterance in input
      * audio. Recognition ceases when it detects the audio's voice has
@@ -1564,7 +1665,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Instructs the speech synthesizer how to generate the output
+     * Instructs the speech synthesizer how to generate the output
      * audio. If this field is not set and agent-level speech synthesizer is not
      * configured, no output audio is generated.
      * </pre>
@@ -1580,7 +1681,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Instructs the speech synthesizer how to generate the output
+     * Instructs the speech synthesizer how to generate the output
      * audio. If this field is not set and agent-level speech synthesizer is not
      * configured, no output audio is generated.
      * </pre>
@@ -1602,7 +1703,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Instructs the speech synthesizer how to generate the output
+     * Instructs the speech synthesizer how to generate the output
      * audio. If this field is not set and agent-level speech synthesizer is not
      * configured, no output audio is generated.
      * </pre>
@@ -1627,7 +1728,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Instructs the speech synthesizer how to generate the output
+     * Instructs the speech synthesizer how to generate the output
      * audio. If this field is not set and agent-level speech synthesizer is not
      * configured, no output audio is generated.
      * </pre>
@@ -1649,7 +1750,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Instructs the speech synthesizer how to generate the output
+     * Instructs the speech synthesizer how to generate the output
      * audio. If this field is not set and agent-level speech synthesizer is not
      * configured, no output audio is generated.
      * </pre>
@@ -1678,7 +1779,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Instructs the speech synthesizer how to generate the output
+     * Instructs the speech synthesizer how to generate the output
      * audio. If this field is not set and agent-level speech synthesizer is not
      * configured, no output audio is generated.
      * </pre>
@@ -1700,7 +1801,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Instructs the speech synthesizer how to generate the output
+     * Instructs the speech synthesizer how to generate the output
      * audio. If this field is not set and agent-level speech synthesizer is not
      * configured, no output audio is generated.
      * </pre>
@@ -1717,7 +1818,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Instructs the speech synthesizer how to generate the output
+     * Instructs the speech synthesizer how to generate the output
      * audio. If this field is not set and agent-level speech synthesizer is not
      * configured, no output audio is generated.
      * </pre>
@@ -1738,7 +1839,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Instructs the speech synthesizer how to generate the output
+     * Instructs the speech synthesizer how to generate the output
      * audio. If this field is not set and agent-level speech synthesizer is not
      * configured, no output audio is generated.
      * </pre>
@@ -1762,12 +1863,233 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       return outputAudioConfigBuilder_;
     }
 
+    private com.google.protobuf.FieldMask outputAudioConfigMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        outputAudioConfigMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+     * request-level config should override speech synthesizer settings defined at
+     * agent-level.
+     * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+     * config in its entirety.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+     *
+     * @return Whether the outputAudioConfigMask field is set.
+     */
+    public boolean hasOutputAudioConfigMask() {
+      return outputAudioConfigMaskBuilder_ != null || outputAudioConfigMask_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+     * request-level config should override speech synthesizer settings defined at
+     * agent-level.
+     * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+     * config in its entirety.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+     *
+     * @return The outputAudioConfigMask.
+     */
+    public com.google.protobuf.FieldMask getOutputAudioConfigMask() {
+      if (outputAudioConfigMaskBuilder_ == null) {
+        return outputAudioConfigMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : outputAudioConfigMask_;
+      } else {
+        return outputAudioConfigMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+     * request-level config should override speech synthesizer settings defined at
+     * agent-level.
+     * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+     * config in its entirety.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+     */
+    public Builder setOutputAudioConfigMask(com.google.protobuf.FieldMask value) {
+      if (outputAudioConfigMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputAudioConfigMask_ = value;
+        onChanged();
+      } else {
+        outputAudioConfigMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+     * request-level config should override speech synthesizer settings defined at
+     * agent-level.
+     * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+     * config in its entirety.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+     */
+    public Builder setOutputAudioConfigMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (outputAudioConfigMaskBuilder_ == null) {
+        outputAudioConfigMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputAudioConfigMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+     * request-level config should override speech synthesizer settings defined at
+     * agent-level.
+     * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+     * config in its entirety.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+     */
+    public Builder mergeOutputAudioConfigMask(com.google.protobuf.FieldMask value) {
+      if (outputAudioConfigMaskBuilder_ == null) {
+        if (outputAudioConfigMask_ != null) {
+          outputAudioConfigMask_ =
+              com.google.protobuf.FieldMask.newBuilder(outputAudioConfigMask_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          outputAudioConfigMask_ = value;
+        }
+        onChanged();
+      } else {
+        outputAudioConfigMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+     * request-level config should override speech synthesizer settings defined at
+     * agent-level.
+     * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+     * config in its entirety.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+     */
+    public Builder clearOutputAudioConfigMask() {
+      if (outputAudioConfigMaskBuilder_ == null) {
+        outputAudioConfigMask_ = null;
+        onChanged();
+      } else {
+        outputAudioConfigMask_ = null;
+        outputAudioConfigMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+     * request-level config should override speech synthesizer settings defined at
+     * agent-level.
+     * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+     * config in its entirety.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getOutputAudioConfigMaskBuilder() {
+
+      onChanged();
+      return getOutputAudioConfigMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+     * request-level config should override speech synthesizer settings defined at
+     * agent-level.
+     * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+     * config in its entirety.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getOutputAudioConfigMaskOrBuilder() {
+      if (outputAudioConfigMaskBuilder_ != null) {
+        return outputAudioConfigMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return outputAudioConfigMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : outputAudioConfigMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+     * request-level config should override speech synthesizer settings defined at
+     * agent-level.
+     * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+     * config in its entirety.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getOutputAudioConfigMaskFieldBuilder() {
+      if (outputAudioConfigMaskBuilder_ == null) {
+        outputAudioConfigMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getOutputAudioConfigMask(), getParentForChildren(), isClean());
+        outputAudioConfigMask_ = null;
+      }
+      return outputAudioConfigMaskBuilder_;
+    }
+
     private com.google.protobuf.ByteString inputAudio_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
      *
      * <pre>
-     * Optional. The input audio content to be recognized. Must be sent if
+     * The input audio content to be recognized. Must be sent if
      * `query_input` was set to a streaming input audio config. The complete audio
      * over all streaming messages must not exceed 1 minute.
      * </pre>
@@ -1783,7 +2105,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input audio content to be recognized. Must be sent if
+     * The input audio content to be recognized. Must be sent if
      * `query_input` was set to a streaming input audio config. The complete audio
      * over all streaming messages must not exceed 1 minute.
      * </pre>
@@ -1806,7 +2128,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input audio content to be recognized. Must be sent if
+     * The input audio content to be recognized. Must be sent if
      * `query_input` was set to a streaming input audio config. The complete audio
      * over all streaming messages must not exceed 1 minute.
      * </pre>

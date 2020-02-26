@@ -22,30 +22,30 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Agents.GetValidationResult][google.cloud.dialogflow.v2beta1.Agents.GetValidationResult].
+ * Contains basic configuration for a sub-agent.
  * </pre>
  *
- * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetValidationResultRequest}
+ * Protobuf type {@code google.cloud.dialogflow.v2beta1.SubAgent}
  */
-public final class GetValidationResultRequest extends com.google.protobuf.GeneratedMessageV3
+public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.GetValidationResultRequest)
-    GetValidationResultRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SubAgent)
+    SubAgentOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetValidationResultRequest.newBuilder() to construct.
-  private GetValidationResultRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SubAgent.newBuilder() to construct.
+  private SubAgent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetValidationResultRequest() {
-    parent_ = "";
-    languageCode_ = "";
+  private SubAgent() {
+    project_ = "";
+    environment_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetValidationResultRequest();
+    return new SubAgent();
   }
 
   @java.lang.Override
@@ -53,7 +53,7 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
     return this.unknownFields;
   }
 
-  private GetValidationResultRequest(
+  private SubAgent(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -75,14 +75,14 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              parent_ = s;
+              project_ = s;
               break;
             }
-          case 26:
+          case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              languageCode_ = s;
+              environment_ = s;
               break;
             }
           default:
@@ -106,41 +106,41 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.AgentProto
-        .internal_static_google_cloud_dialogflow_v2beta1_GetValidationResultRequest_descriptor;
+        .internal_static_google_cloud_dialogflow_v2beta1_SubAgent_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.dialogflow.v2beta1.AgentProto
-        .internal_static_google_cloud_dialogflow_v2beta1_GetValidationResultRequest_fieldAccessorTable
+        .internal_static_google_cloud_dialogflow_v2beta1_SubAgent_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest.class,
-            com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest.Builder.class);
+            com.google.cloud.dialogflow.v2beta1.SubAgent.class,
+            com.google.cloud.dialogflow.v2beta1.SubAgent.Builder.class);
   }
 
-  public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+  public static final int PROJECT_FIELD_NUMBER = 1;
+  private volatile java.lang.Object project_;
   /**
    *
    *
    * <pre>
-   * Required. The project that the agent is associated with.
+   * Required. The project of this agent.
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string project = 1;</code>
    *
-   * @return The parent.
+   * @return The project.
    */
-  public java.lang.String getParent() {
-    java.lang.Object ref = parent_;
+  public java.lang.String getProject() {
+    java.lang.Object ref = project_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      parent_ = s;
+      project_ = s;
       return s;
     }
   }
@@ -148,51 +148,49 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The project that the agent is associated with.
+   * Required. The project of this agent.
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string project = 1;</code>
    *
-   * @return The bytes for parent.
+   * @return The bytes for project.
    */
-  public com.google.protobuf.ByteString getParentBytes() {
-    java.lang.Object ref = parent_;
+  public com.google.protobuf.ByteString getProjectBytes() {
+    java.lang.Object ref = project_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      parent_ = b;
+      project_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object languageCode_;
+  public static final int ENVIRONMENT_FIELD_NUMBER = 2;
+  private volatile java.lang.Object environment_;
   /**
    *
    *
    * <pre>
-   * Optional. The language for which you want a validation result. If not
-   * specified, the agent's default language is used. [Many
-   * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-   * are supported. Note: languages must be enabled in the agent before they can
-   * be used.
+   * Optional. The unique identifier (`environment name` in dialogflow console)
+   * of this sub-agent environment. Assumes draft environment if `environment`
+   * is not set.
    * </pre>
    *
-   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string environment = 2;</code>
    *
-   * @return The languageCode.
+   * @return The environment.
    */
-  public java.lang.String getLanguageCode() {
-    java.lang.Object ref = languageCode_;
+  public java.lang.String getEnvironment() {
+    java.lang.Object ref = environment_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      languageCode_ = s;
+      environment_ = s;
       return s;
     }
   }
@@ -200,23 +198,21 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. The language for which you want a validation result. If not
-   * specified, the agent's default language is used. [Many
-   * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-   * are supported. Note: languages must be enabled in the agent before they can
-   * be used.
+   * Optional. The unique identifier (`environment name` in dialogflow console)
+   * of this sub-agent environment. Assumes draft environment if `environment`
+   * is not set.
    * </pre>
    *
-   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string environment = 2;</code>
    *
-   * @return The bytes for languageCode.
+   * @return The bytes for environment.
    */
-  public com.google.protobuf.ByteString getLanguageCodeBytes() {
-    java.lang.Object ref = languageCode_;
+  public com.google.protobuf.ByteString getEnvironmentBytes() {
+    java.lang.Object ref = environment_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      languageCode_ = b;
+      environment_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -237,11 +233,11 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
+    if (!getProjectBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, project_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, languageCode_);
+    if (!getEnvironmentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, environment_);
     }
     unknownFields.writeTo(output);
   }
@@ -252,11 +248,11 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, project_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, languageCode_);
+    if (!getEnvironmentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, environment_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -268,14 +264,14 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest)) {
+    if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.SubAgent)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest other =
-        (com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest) obj;
+    com.google.cloud.dialogflow.v2beta1.SubAgent other =
+        (com.google.cloud.dialogflow.v2beta1.SubAgent) obj;
 
-    if (!getParent().equals(other.getParent())) return false;
-    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (!getProject().equals(other.getProject())) return false;
+    if (!getEnvironment().equals(other.getEnvironment())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -287,80 +283,80 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PARENT_FIELD_NUMBER;
-    hash = (53 * hash) + getParent().hashCode();
-    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getLanguageCode().hashCode();
+    hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+    hash = (53 * hash) + getProject().hashCode();
+    hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
+    hash = (53 * hash) + getEnvironment().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest parseFrom(
-      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.dialogflow.v2beta1.SubAgent parseFrom(java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2beta1.SubAgent parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2beta1.SubAgent parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2beta1.SubAgent parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest parseFrom(
-      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.dialogflow.v2beta1.SubAgent parseFrom(byte[] data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2beta1.SubAgent parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest parseFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.dialogflow.v2beta1.SubAgent parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2beta1.SubAgent parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest parseDelimitedFrom(
+  public static com.google.cloud.dialogflow.v2beta1.SubAgent parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest parseDelimitedFrom(
+  public static com.google.cloud.dialogflow.v2beta1.SubAgent parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2beta1.SubAgent parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2beta1.SubAgent parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -377,8 +373,7 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(
-      com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.SubAgent prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -396,31 +391,31 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The request message for [Agents.GetValidationResult][google.cloud.dialogflow.v2beta1.Agents.GetValidationResult].
+   * Contains basic configuration for a sub-agent.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetValidationResultRequest}
+   * Protobuf type {@code google.cloud.dialogflow.v2beta1.SubAgent}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.GetValidationResultRequest)
-      com.google.cloud.dialogflow.v2beta1.GetValidationResultRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.SubAgent)
+      com.google.cloud.dialogflow.v2beta1.SubAgentOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.AgentProto
-          .internal_static_google_cloud_dialogflow_v2beta1_GetValidationResultRequest_descriptor;
+          .internal_static_google_cloud_dialogflow_v2beta1_SubAgent_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.dialogflow.v2beta1.AgentProto
-          .internal_static_google_cloud_dialogflow_v2beta1_GetValidationResultRequest_fieldAccessorTable
+          .internal_static_google_cloud_dialogflow_v2beta1_SubAgent_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest.class,
-              com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.SubAgent.class,
+              com.google.cloud.dialogflow.v2beta1.SubAgent.Builder.class);
     }
 
-    // Construct using com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest.newBuilder()
+    // Construct using com.google.cloud.dialogflow.v2beta1.SubAgent.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -437,9 +432,9 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      parent_ = "";
+      project_ = "";
 
-      languageCode_ = "";
+      environment_ = "";
 
       return this;
     }
@@ -447,18 +442,17 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.dialogflow.v2beta1.AgentProto
-          .internal_static_google_cloud_dialogflow_v2beta1_GetValidationResultRequest_descriptor;
+          .internal_static_google_cloud_dialogflow_v2beta1_SubAgent_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest
-        getDefaultInstanceForType() {
-      return com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest.getDefaultInstance();
+    public com.google.cloud.dialogflow.v2beta1.SubAgent getDefaultInstanceForType() {
+      return com.google.cloud.dialogflow.v2beta1.SubAgent.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest build() {
-      com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest result = buildPartial();
+    public com.google.cloud.dialogflow.v2beta1.SubAgent build() {
+      com.google.cloud.dialogflow.v2beta1.SubAgent result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -466,11 +460,11 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest buildPartial() {
-      com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest result =
-          new com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest(this);
-      result.parent_ = parent_;
-      result.languageCode_ = languageCode_;
+    public com.google.cloud.dialogflow.v2beta1.SubAgent buildPartial() {
+      com.google.cloud.dialogflow.v2beta1.SubAgent result =
+          new com.google.cloud.dialogflow.v2beta1.SubAgent(this);
+      result.project_ = project_;
+      result.environment_ = environment_;
       onBuilt();
       return result;
     }
@@ -510,24 +504,22 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest) {
-        return mergeFrom((com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest) other);
+      if (other instanceof com.google.cloud.dialogflow.v2beta1.SubAgent) {
+        return mergeFrom((com.google.cloud.dialogflow.v2beta1.SubAgent) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest other) {
-      if (other
-          == com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest.getDefaultInstance())
-        return this;
-      if (!other.getParent().isEmpty()) {
-        parent_ = other.parent_;
+    public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.SubAgent other) {
+      if (other == com.google.cloud.dialogflow.v2beta1.SubAgent.getDefaultInstance()) return this;
+      if (!other.getProject().isEmpty()) {
+        project_ = other.project_;
         onChanged();
       }
-      if (!other.getLanguageCode().isEmpty()) {
-        languageCode_ = other.languageCode_;
+      if (!other.getEnvironment().isEmpty()) {
+        environment_ = other.environment_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -545,13 +537,11 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest parsedMessage = null;
+      com.google.cloud.dialogflow.v2beta1.SubAgent parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest)
-                e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.dialogflow.v2beta1.SubAgent) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -561,25 +551,25 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
       return this;
     }
 
-    private java.lang.Object parent_ = "";
+    private java.lang.Object project_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The project that the agent is associated with.
+     * Required. The project of this agent.
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project = 1;</code>
      *
-     * @return The parent.
+     * @return The project.
      */
-    public java.lang.String getParent() {
-      java.lang.Object ref = parent_;
+    public java.lang.String getProject() {
+      java.lang.Object ref = project_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        parent_ = s;
+        project_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -589,20 +579,20 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project that the agent is associated with.
+     * Required. The project of this agent.
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project = 1;</code>
      *
-     * @return The bytes for parent.
+     * @return The bytes for project.
      */
-    public com.google.protobuf.ByteString getParentBytes() {
-      java.lang.Object ref = parent_;
+    public com.google.protobuf.ByteString getProjectBytes() {
+      java.lang.Object ref = project_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        parent_ = b;
+        project_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -612,21 +602,21 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project that the agent is associated with.
+     * Required. The project of this agent.
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project = 1;</code>
      *
-     * @param value The parent to set.
+     * @param value The project to set.
      * @return This builder for chaining.
      */
-    public Builder setParent(java.lang.String value) {
+    public Builder setProject(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      parent_ = value;
+      project_ = value;
       onChanged();
       return this;
     }
@@ -634,17 +624,17 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project that the agent is associated with.
+     * Required. The project of this agent.
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project = 1;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearParent() {
+    public Builder clearProject() {
 
-      parent_ = getDefaultInstance().getParent();
+      project_ = getDefaultInstance().getProject();
       onChanged();
       return this;
     }
@@ -652,48 +642,46 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project that the agent is associated with.
+     * Required. The project of this agent.
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project = 1;</code>
      *
-     * @param value The bytes for parent to set.
+     * @param value The bytes for project to set.
      * @return This builder for chaining.
      */
-    public Builder setParentBytes(com.google.protobuf.ByteString value) {
+    public Builder setProjectBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      parent_ = value;
+      project_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object languageCode_ = "";
+    private java.lang.Object environment_ = "";
     /**
      *
      *
      * <pre>
-     * Optional. The language for which you want a validation result. If not
-     * specified, the agent's default language is used. [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The unique identifier (`environment name` in dialogflow console)
+     * of this sub-agent environment. Assumes draft environment if `environment`
+     * is not set.
      * </pre>
      *
-     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string environment = 2;</code>
      *
-     * @return The languageCode.
+     * @return The environment.
      */
-    public java.lang.String getLanguageCode() {
-      java.lang.Object ref = languageCode_;
+    public java.lang.String getEnvironment() {
+      java.lang.Object ref = environment_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        languageCode_ = s;
+        environment_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -703,23 +691,21 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The language for which you want a validation result. If not
-     * specified, the agent's default language is used. [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The unique identifier (`environment name` in dialogflow console)
+     * of this sub-agent environment. Assumes draft environment if `environment`
+     * is not set.
      * </pre>
      *
-     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string environment = 2;</code>
      *
-     * @return The bytes for languageCode.
+     * @return The bytes for environment.
      */
-    public com.google.protobuf.ByteString getLanguageCodeBytes() {
-      java.lang.Object ref = languageCode_;
+    public com.google.protobuf.ByteString getEnvironmentBytes() {
+      java.lang.Object ref = environment_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        languageCode_ = b;
+        environment_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -729,24 +715,22 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The language for which you want a validation result. If not
-     * specified, the agent's default language is used. [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The unique identifier (`environment name` in dialogflow console)
+     * of this sub-agent environment. Assumes draft environment if `environment`
+     * is not set.
      * </pre>
      *
-     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string environment = 2;</code>
      *
-     * @param value The languageCode to set.
+     * @param value The environment to set.
      * @return This builder for chaining.
      */
-    public Builder setLanguageCode(java.lang.String value) {
+    public Builder setEnvironment(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      languageCode_ = value;
+      environment_ = value;
       onChanged();
       return this;
     }
@@ -754,20 +738,18 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The language for which you want a validation result. If not
-     * specified, the agent's default language is used. [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The unique identifier (`environment name` in dialogflow console)
+     * of this sub-agent environment. Assumes draft environment if `environment`
+     * is not set.
      * </pre>
      *
-     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string environment = 2;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearLanguageCode() {
+    public Builder clearEnvironment() {
 
-      languageCode_ = getDefaultInstance().getLanguageCode();
+      environment_ = getDefaultInstance().getEnvironment();
       onChanged();
       return this;
     }
@@ -775,25 +757,23 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The language for which you want a validation result. If not
-     * specified, the agent's default language is used. [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The unique identifier (`environment name` in dialogflow console)
+     * of this sub-agent environment. Assumes draft environment if `environment`
+     * is not set.
      * </pre>
      *
-     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string environment = 2;</code>
      *
-     * @param value The bytes for languageCode to set.
+     * @param value The bytes for environment to set.
      * @return This builder for chaining.
      */
-    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+    public Builder setEnvironmentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      languageCode_ = value;
+      environment_ = value;
       onChanged();
       return this;
     }
@@ -809,45 +789,42 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.GetValidationResultRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.SubAgent)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.GetValidationResultRequest)
-  private static final com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest
-      DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.SubAgent)
+  private static final com.google.cloud.dialogflow.v2beta1.SubAgent DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.SubAgent();
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest
-      getDefaultInstance() {
+  public static com.google.cloud.dialogflow.v2beta1.SubAgent getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetValidationResultRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetValidationResultRequest>() {
+  private static final com.google.protobuf.Parser<SubAgent> PARSER =
+      new com.google.protobuf.AbstractParser<SubAgent>() {
         @java.lang.Override
-        public GetValidationResultRequest parsePartialFrom(
+        public SubAgent parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetValidationResultRequest(input, extensionRegistry);
+          return new SubAgent(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<GetValidationResultRequest> parser() {
+  public static com.google.protobuf.Parser<SubAgent> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetValidationResultRequest> getParserForType() {
+  public com.google.protobuf.Parser<SubAgent> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest
-      getDefaultInstanceForType() {
+  public com.google.cloud.dialogflow.v2beta1.SubAgent getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

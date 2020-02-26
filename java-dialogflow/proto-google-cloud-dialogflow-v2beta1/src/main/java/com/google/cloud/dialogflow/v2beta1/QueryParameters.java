@@ -42,6 +42,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     contexts_ = java.util.Collections.emptyList();
     sessionEntityTypes_ = java.util.Collections.emptyList();
     knowledgeBaseNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    subAgents_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -167,13 +168,25 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
               knowledgeBaseNames_.add(s);
               break;
             }
-          case 114:
+          case 106:
             {
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                subAgents_ =
+                    new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.SubAgent>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              subAgents_.add(
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.SubAgent.parser(), extensionRegistry));
+              break;
+            }
+          case 114:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 webhookHeaders_ =
                     com.google.protobuf.MapField.newMapField(
                         WebhookHeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000010;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> webhookHeaders__ =
                   input.readMessage(
@@ -206,6 +219,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         knowledgeBaseNames_ = knowledgeBaseNames_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        subAgents_ = java.util.Collections.unmodifiableList(subAgents_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -244,7 +260,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The time zone of this conversational query from the
+   * The time zone of this conversational query from the
    * [time zone database](https://www.iana.org/time-zones), e.g.,
    * America/New_York, Europe/Paris. If not provided, the time zone specified in
    * agent settings is used.
@@ -269,7 +285,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The time zone of this conversational query from the
+   * The time zone of this conversational query from the
    * [time zone database](https://www.iana.org/time-zones), e.g.,
    * America/New_York, Europe/Paris. If not provided, the time zone specified in
    * agent settings is used.
@@ -297,7 +313,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The geo location of this conversational query.
+   * The geo location of this conversational query.
    * </pre>
    *
    * <code>.google.type.LatLng geo_location = 2;</code>
@@ -311,7 +327,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The geo location of this conversational query.
+   * The geo location of this conversational query.
    * </pre>
    *
    * <code>.google.type.LatLng geo_location = 2;</code>
@@ -325,7 +341,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The geo location of this conversational query.
+   * The geo location of this conversational query.
    * </pre>
    *
    * <code>.google.type.LatLng geo_location = 2;</code>
@@ -340,7 +356,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
@@ -353,7 +369,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
@@ -367,7 +383,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
@@ -380,7 +396,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
@@ -393,7 +409,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
@@ -409,7 +425,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Specifies whether to delete all contexts in the current session
+   * Specifies whether to delete all contexts in the current session
    * before the new ones are activated.
    * </pre>
    *
@@ -427,7 +443,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
@@ -443,7 +459,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
@@ -459,7 +475,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
@@ -474,7 +490,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
@@ -489,7 +505,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
@@ -508,7 +524,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. This field can be used to pass custom data into the webhook
+   * This field can be used to pass custom data into the webhook
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
@@ -523,7 +539,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. This field can be used to pass custom data into the webhook
+   * This field can be used to pass custom data into the webhook
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
@@ -538,7 +554,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. This field can be used to pass custom data into the webhook
+   * This field can be used to pass custom data into the webhook
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
@@ -554,7 +570,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
    * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
@@ -570,7 +586,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
    * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
@@ -586,7 +602,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
    * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
@@ -603,7 +619,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
    * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
@@ -624,7 +640,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Configures the type of sentiment analysis to perform. If not
+   * Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
    * Note: Sentiment Analysis is only currently available for Enterprise Edition
    * agents.
@@ -643,7 +659,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Configures the type of sentiment analysis to perform. If not
+   * Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
    * Note: Sentiment Analysis is only currently available for Enterprise Edition
    * agents.
@@ -665,7 +681,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Configures the type of sentiment analysis to perform. If not
+   * Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
    * Note: Sentiment Analysis is only currently available for Enterprise Edition
    * agents.
@@ -678,6 +694,85 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfigOrBuilder
       getSentimentAnalysisRequestConfigOrBuilder() {
     return getSentimentAnalysisRequestConfig();
+  }
+
+  public static final int SUB_AGENTS_FIELD_NUMBER = 13;
+  private java.util.List<com.google.cloud.dialogflow.v2beta1.SubAgent> subAgents_;
+  /**
+   *
+   *
+   * <pre>
+   * For mega agent query, directly specify which sub agents to query.
+   * If any specified sub agent is not linked to the mega agent, an error will
+   * be returned. If empty, Dialogflow will decide which sub agents to query.
+   * If specified for a non-mega-agent query, will be silently ignored.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+   */
+  public java.util.List<com.google.cloud.dialogflow.v2beta1.SubAgent> getSubAgentsList() {
+    return subAgents_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For mega agent query, directly specify which sub agents to query.
+   * If any specified sub agent is not linked to the mega agent, an error will
+   * be returned. If empty, Dialogflow will decide which sub agents to query.
+   * If specified for a non-mega-agent query, will be silently ignored.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+   */
+  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SubAgentOrBuilder>
+      getSubAgentsOrBuilderList() {
+    return subAgents_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For mega agent query, directly specify which sub agents to query.
+   * If any specified sub agent is not linked to the mega agent, an error will
+   * be returned. If empty, Dialogflow will decide which sub agents to query.
+   * If specified for a non-mega-agent query, will be silently ignored.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+   */
+  public int getSubAgentsCount() {
+    return subAgents_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For mega agent query, directly specify which sub agents to query.
+   * If any specified sub agent is not linked to the mega agent, an error will
+   * be returned. If empty, Dialogflow will decide which sub agents to query.
+   * If specified for a non-mega-agent query, will be silently ignored.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.SubAgent getSubAgents(int index) {
+    return subAgents_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For mega agent query, directly specify which sub agents to query.
+   * If any specified sub agent is not linked to the mega agent, an error will
+   * be returned. If empty, Dialogflow will decide which sub agents to query.
+   * If specified for a non-mega-agent query, will be silently ignored.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.SubAgentOrBuilder getSubAgentsOrBuilder(int index) {
+    return subAgents_.get(index);
   }
 
   public static final int WEBHOOK_HEADERS_FIELD_NUMBER = 14;
@@ -711,7 +806,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. This field can be used to pass HTTP headers for a webhook
+   * This field can be used to pass HTTP headers for a webhook
    * call. These headers will be sent to webhook alone with the headers that
    * have been configured through Dialogflow web console. The headers defined
    * within this field will overwrite the headers configured through Dialogflow
@@ -738,7 +833,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. This field can be used to pass HTTP headers for a webhook
+   * This field can be used to pass HTTP headers for a webhook
    * call. These headers will be sent to webhook alone with the headers that
    * have been configured through Dialogflow web console. The headers defined
    * within this field will overwrite the headers configured through Dialogflow
@@ -757,7 +852,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. This field can be used to pass HTTP headers for a webhook
+   * This field can be used to pass HTTP headers for a webhook
    * call. These headers will be sent to webhook alone with the headers that
    * have been configured through Dialogflow web console. The headers defined
    * within this field will overwrite the headers configured through Dialogflow
@@ -781,7 +876,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. This field can be used to pass HTTP headers for a webhook
+   * This field can be used to pass HTTP headers for a webhook
    * call. These headers will be sent to webhook alone with the headers that
    * have been configured through Dialogflow web console. The headers defined
    * within this field will overwrite the headers configured through Dialogflow
@@ -842,6 +937,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < knowledgeBaseNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, knowledgeBaseNames_.getRaw(i));
     }
+    for (int i = 0; i < subAgents_.size(); i++) {
+      output.writeMessage(13, subAgents_.get(i));
+    }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetWebhookHeaders(), WebhookHeadersDefaultEntryHolder.defaultEntry, 14);
     unknownFields.writeTo(output);
@@ -884,6 +982,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       size += dataSize;
       size += 1 * getKnowledgeBaseNamesList().size();
+    }
+    for (int i = 0; i < subAgents_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, subAgents_.get(i));
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetWebhookHeaders().getMap().entrySet()) {
@@ -930,6 +1031,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (!getSentimentAnalysisRequestConfig().equals(other.getSentimentAnalysisRequestConfig()))
         return false;
     }
+    if (!getSubAgentsList().equals(other.getSubAgentsList())) return false;
     if (!internalGetWebhookHeaders().equals(other.internalGetWebhookHeaders())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -969,6 +1071,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (hasSentimentAnalysisRequestConfig()) {
       hash = (37 * hash) + SENTIMENT_ANALYSIS_REQUEST_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSentimentAnalysisRequestConfig().hashCode();
+    }
+    if (getSubAgentsCount() > 0) {
+      hash = (37 * hash) + SUB_AGENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getSubAgentsList().hashCode();
     }
     if (!internalGetWebhookHeaders().getMap().isEmpty()) {
       hash = (37 * hash) + WEBHOOK_HEADERS_FIELD_NUMBER;
@@ -1136,6 +1242,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getContextsFieldBuilder();
         getSessionEntityTypesFieldBuilder();
+        getSubAgentsFieldBuilder();
       }
     }
 
@@ -1177,6 +1284,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       } else {
         sentimentAnalysisRequestConfig_ = null;
         sentimentAnalysisRequestConfigBuilder_ = null;
+      }
+      if (subAgentsBuilder_ == null) {
+        subAgents_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        subAgentsBuilder_.clear();
       }
       internalGetMutableWebhookHeaders().clear();
       return this;
@@ -1246,6 +1359,15 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         result.sentimentAnalysisRequestConfig_ = sentimentAnalysisRequestConfig_;
       } else {
         result.sentimentAnalysisRequestConfig_ = sentimentAnalysisRequestConfigBuilder_.build();
+      }
+      if (subAgentsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          subAgents_ = java.util.Collections.unmodifiableList(subAgents_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.subAgents_ = subAgents_;
+      } else {
+        result.subAgents_ = subAgentsBuilder_.build();
       }
       result.webhookHeaders_ = internalGetWebhookHeaders();
       result.webhookHeaders_.makeImmutable();
@@ -1379,6 +1501,33 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (other.hasSentimentAnalysisRequestConfig()) {
         mergeSentimentAnalysisRequestConfig(other.getSentimentAnalysisRequestConfig());
       }
+      if (subAgentsBuilder_ == null) {
+        if (!other.subAgents_.isEmpty()) {
+          if (subAgents_.isEmpty()) {
+            subAgents_ = other.subAgents_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureSubAgentsIsMutable();
+            subAgents_.addAll(other.subAgents_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.subAgents_.isEmpty()) {
+          if (subAgentsBuilder_.isEmpty()) {
+            subAgentsBuilder_.dispose();
+            subAgentsBuilder_ = null;
+            subAgents_ = other.subAgents_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            subAgentsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSubAgentsFieldBuilder()
+                    : null;
+          } else {
+            subAgentsBuilder_.addAllMessages(other.subAgents_);
+          }
+        }
+      }
       internalGetMutableWebhookHeaders().mergeFrom(other.internalGetWebhookHeaders());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1417,7 +1566,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time zone of this conversational query from the
+     * The time zone of this conversational query from the
      * [time zone database](https://www.iana.org/time-zones), e.g.,
      * America/New_York, Europe/Paris. If not provided, the time zone specified in
      * agent settings is used.
@@ -1442,7 +1591,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time zone of this conversational query from the
+     * The time zone of this conversational query from the
      * [time zone database](https://www.iana.org/time-zones), e.g.,
      * America/New_York, Europe/Paris. If not provided, the time zone specified in
      * agent settings is used.
@@ -1467,7 +1616,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time zone of this conversational query from the
+     * The time zone of this conversational query from the
      * [time zone database](https://www.iana.org/time-zones), e.g.,
      * America/New_York, Europe/Paris. If not provided, the time zone specified in
      * agent settings is used.
@@ -1491,7 +1640,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time zone of this conversational query from the
+     * The time zone of this conversational query from the
      * [time zone database](https://www.iana.org/time-zones), e.g.,
      * America/New_York, Europe/Paris. If not provided, the time zone specified in
      * agent settings is used.
@@ -1511,7 +1660,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time zone of this conversational query from the
+     * The time zone of this conversational query from the
      * [time zone database](https://www.iana.org/time-zones), e.g.,
      * America/New_York, Europe/Paris. If not provided, the time zone specified in
      * agent settings is used.
@@ -1541,7 +1690,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The geo location of this conversational query.
+     * The geo location of this conversational query.
      * </pre>
      *
      * <code>.google.type.LatLng geo_location = 2;</code>
@@ -1555,7 +1704,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The geo location of this conversational query.
+     * The geo location of this conversational query.
      * </pre>
      *
      * <code>.google.type.LatLng geo_location = 2;</code>
@@ -1573,7 +1722,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The geo location of this conversational query.
+     * The geo location of this conversational query.
      * </pre>
      *
      * <code>.google.type.LatLng geo_location = 2;</code>
@@ -1595,7 +1744,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The geo location of this conversational query.
+     * The geo location of this conversational query.
      * </pre>
      *
      * <code>.google.type.LatLng geo_location = 2;</code>
@@ -1614,7 +1763,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The geo location of this conversational query.
+     * The geo location of this conversational query.
      * </pre>
      *
      * <code>.google.type.LatLng geo_location = 2;</code>
@@ -1638,7 +1787,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The geo location of this conversational query.
+     * The geo location of this conversational query.
      * </pre>
      *
      * <code>.google.type.LatLng geo_location = 2;</code>
@@ -1658,7 +1807,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The geo location of this conversational query.
+     * The geo location of this conversational query.
      * </pre>
      *
      * <code>.google.type.LatLng geo_location = 2;</code>
@@ -1672,7 +1821,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The geo location of this conversational query.
+     * The geo location of this conversational query.
      * </pre>
      *
      * <code>.google.type.LatLng geo_location = 2;</code>
@@ -1688,7 +1837,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The geo location of this conversational query.
+     * The geo location of this conversational query.
      * </pre>
      *
      * <code>.google.type.LatLng geo_location = 2;</code>
@@ -1728,7 +1877,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -1745,7 +1894,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -1762,7 +1911,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -1779,7 +1928,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -1802,7 +1951,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -1823,7 +1972,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -1846,7 +1995,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -1869,7 +2018,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -1890,7 +2039,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -1911,7 +2060,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -1932,7 +2081,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -1952,7 +2101,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -1972,7 +2121,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -1985,7 +2134,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -2002,7 +2151,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -2020,7 +2169,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -2034,7 +2183,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -2048,7 +2197,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of contexts to be activated before this query is
+     * The collection of contexts to be activated before this query is
      * executed.
      * </pre>
      *
@@ -2081,7 +2230,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Specifies whether to delete all contexts in the current session
+     * Specifies whether to delete all contexts in the current session
      * before the new ones are activated.
      * </pre>
      *
@@ -2096,7 +2245,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Specifies whether to delete all contexts in the current session
+     * Specifies whether to delete all contexts in the current session
      * before the new ones are activated.
      * </pre>
      *
@@ -2115,7 +2264,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Specifies whether to delete all contexts in the current session
+     * Specifies whether to delete all contexts in the current session
      * before the new ones are activated.
      * </pre>
      *
@@ -2152,7 +2301,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2172,7 +2321,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2191,7 +2340,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2210,7 +2359,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2236,7 +2385,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2259,7 +2408,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2285,7 +2434,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2311,7 +2460,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2334,7 +2483,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2357,7 +2506,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2381,7 +2530,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2403,7 +2552,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2425,7 +2574,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2441,7 +2590,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2461,7 +2610,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2481,7 +2630,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2498,7 +2647,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2516,7 +2665,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Additional session entity types to replace or extend developer
+     * Additional session entity types to replace or extend developer
      * entity types with. The entity synonyms apply to all languages and persist
      * for the session of this query.
      * </pre>
@@ -2559,7 +2708,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass custom data into the webhook
+     * This field can be used to pass custom data into the webhook
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
@@ -2574,7 +2723,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass custom data into the webhook
+     * This field can be used to pass custom data into the webhook
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
@@ -2593,7 +2742,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass custom data into the webhook
+     * This field can be used to pass custom data into the webhook
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
@@ -2616,7 +2765,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass custom data into the webhook
+     * This field can be used to pass custom data into the webhook
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
@@ -2636,7 +2785,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass custom data into the webhook
+     * This field can be used to pass custom data into the webhook
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
@@ -2661,7 +2810,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass custom data into the webhook
+     * This field can be used to pass custom data into the webhook
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
@@ -2682,7 +2831,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass custom data into the webhook
+     * This field can be used to pass custom data into the webhook
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
@@ -2697,7 +2846,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass custom data into the webhook
+     * This field can be used to pass custom data into the webhook
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
@@ -2714,7 +2863,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass custom data into the webhook
+     * This field can be used to pass custom data into the webhook
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
@@ -2750,7 +2899,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
@@ -2766,7 +2915,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
@@ -2782,7 +2931,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
@@ -2799,7 +2948,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
@@ -2816,7 +2965,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
@@ -2840,7 +2989,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
@@ -2863,7 +3012,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
@@ -2883,7 +3032,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
@@ -2902,7 +3051,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
@@ -2934,7 +3083,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Configures the type of sentiment analysis to perform. If not
+     * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
      * Note: Sentiment Analysis is only currently available for Enterprise Edition
      * agents.
@@ -2954,7 +3103,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Configures the type of sentiment analysis to perform. If not
+     * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
      * Note: Sentiment Analysis is only currently available for Enterprise Edition
      * agents.
@@ -2981,7 +3130,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Configures the type of sentiment analysis to perform. If not
+     * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
      * Note: Sentiment Analysis is only currently available for Enterprise Edition
      * agents.
@@ -3009,7 +3158,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Configures the type of sentiment analysis to perform. If not
+     * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
      * Note: Sentiment Analysis is only currently available for Enterprise Edition
      * agents.
@@ -3035,7 +3184,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Configures the type of sentiment analysis to perform. If not
+     * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
      * Note: Sentiment Analysis is only currently available for Enterprise Edition
      * agents.
@@ -3068,7 +3217,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Configures the type of sentiment analysis to perform. If not
+     * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
      * Note: Sentiment Analysis is only currently available for Enterprise Edition
      * agents.
@@ -3093,7 +3242,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Configures the type of sentiment analysis to perform. If not
+     * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
      * Note: Sentiment Analysis is only currently available for Enterprise Edition
      * agents.
@@ -3113,7 +3262,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Configures the type of sentiment analysis to perform. If not
+     * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
      * Note: Sentiment Analysis is only currently available for Enterprise Edition
      * agents.
@@ -3138,7 +3287,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Configures the type of sentiment analysis to perform. If not
+     * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
      * Note: Sentiment Analysis is only currently available for Enterprise Edition
      * agents.
@@ -3163,6 +3312,411 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         sentimentAnalysisRequestConfig_ = null;
       }
       return sentimentAnalysisRequestConfigBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.v2beta1.SubAgent> subAgents_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSubAgentsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        subAgents_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.SubAgent>(subAgents_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SubAgent,
+            com.google.cloud.dialogflow.v2beta1.SubAgent.Builder,
+            com.google.cloud.dialogflow.v2beta1.SubAgentOrBuilder>
+        subAgentsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.SubAgent> getSubAgentsList() {
+      if (subAgentsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(subAgents_);
+      } else {
+        return subAgentsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public int getSubAgentsCount() {
+      if (subAgentsBuilder_ == null) {
+        return subAgents_.size();
+      } else {
+        return subAgentsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SubAgent getSubAgents(int index) {
+      if (subAgentsBuilder_ == null) {
+        return subAgents_.get(index);
+      } else {
+        return subAgentsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public Builder setSubAgents(int index, com.google.cloud.dialogflow.v2beta1.SubAgent value) {
+      if (subAgentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSubAgentsIsMutable();
+        subAgents_.set(index, value);
+        onChanged();
+      } else {
+        subAgentsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public Builder setSubAgents(
+        int index, com.google.cloud.dialogflow.v2beta1.SubAgent.Builder builderForValue) {
+      if (subAgentsBuilder_ == null) {
+        ensureSubAgentsIsMutable();
+        subAgents_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        subAgentsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public Builder addSubAgents(com.google.cloud.dialogflow.v2beta1.SubAgent value) {
+      if (subAgentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSubAgentsIsMutable();
+        subAgents_.add(value);
+        onChanged();
+      } else {
+        subAgentsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public Builder addSubAgents(int index, com.google.cloud.dialogflow.v2beta1.SubAgent value) {
+      if (subAgentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSubAgentsIsMutable();
+        subAgents_.add(index, value);
+        onChanged();
+      } else {
+        subAgentsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public Builder addSubAgents(
+        com.google.cloud.dialogflow.v2beta1.SubAgent.Builder builderForValue) {
+      if (subAgentsBuilder_ == null) {
+        ensureSubAgentsIsMutable();
+        subAgents_.add(builderForValue.build());
+        onChanged();
+      } else {
+        subAgentsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public Builder addSubAgents(
+        int index, com.google.cloud.dialogflow.v2beta1.SubAgent.Builder builderForValue) {
+      if (subAgentsBuilder_ == null) {
+        ensureSubAgentsIsMutable();
+        subAgents_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        subAgentsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public Builder addAllSubAgents(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.SubAgent> values) {
+      if (subAgentsBuilder_ == null) {
+        ensureSubAgentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subAgents_);
+        onChanged();
+      } else {
+        subAgentsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public Builder clearSubAgents() {
+      if (subAgentsBuilder_ == null) {
+        subAgents_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        subAgentsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public Builder removeSubAgents(int index) {
+      if (subAgentsBuilder_ == null) {
+        ensureSubAgentsIsMutable();
+        subAgents_.remove(index);
+        onChanged();
+      } else {
+        subAgentsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SubAgent.Builder getSubAgentsBuilder(int index) {
+      return getSubAgentsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SubAgentOrBuilder getSubAgentsOrBuilder(int index) {
+      if (subAgentsBuilder_ == null) {
+        return subAgents_.get(index);
+      } else {
+        return subAgentsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SubAgentOrBuilder>
+        getSubAgentsOrBuilderList() {
+      if (subAgentsBuilder_ != null) {
+        return subAgentsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(subAgents_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SubAgent.Builder addSubAgentsBuilder() {
+      return getSubAgentsFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2beta1.SubAgent.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SubAgent.Builder addSubAgentsBuilder(int index) {
+      return getSubAgentsFieldBuilder()
+          .addBuilder(index, com.google.cloud.dialogflow.v2beta1.SubAgent.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For mega agent query, directly specify which sub agents to query.
+     * If any specified sub agent is not linked to the mega agent, an error will
+     * be returned. If empty, Dialogflow will decide which sub agents to query.
+     * If specified for a non-mega-agent query, will be silently ignored.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.SubAgent.Builder>
+        getSubAgentsBuilderList() {
+      return getSubAgentsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SubAgent,
+            com.google.cloud.dialogflow.v2beta1.SubAgent.Builder,
+            com.google.cloud.dialogflow.v2beta1.SubAgentOrBuilder>
+        getSubAgentsFieldBuilder() {
+      if (subAgentsBuilder_ == null) {
+        subAgentsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.SubAgent,
+                com.google.cloud.dialogflow.v2beta1.SubAgent.Builder,
+                com.google.cloud.dialogflow.v2beta1.SubAgentOrBuilder>(
+                subAgents_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        subAgents_ = null;
+      }
+      return subAgentsBuilder_;
     }
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> webhookHeaders_;
@@ -3197,7 +3751,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass HTTP headers for a webhook
+     * This field can be used to pass HTTP headers for a webhook
      * call. These headers will be sent to webhook alone with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow
@@ -3224,7 +3778,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass HTTP headers for a webhook
+     * This field can be used to pass HTTP headers for a webhook
      * call. These headers will be sent to webhook alone with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow
@@ -3243,7 +3797,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass HTTP headers for a webhook
+     * This field can be used to pass HTTP headers for a webhook
      * call. These headers will be sent to webhook alone with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow
@@ -3267,7 +3821,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass HTTP headers for a webhook
+     * This field can be used to pass HTTP headers for a webhook
      * call. These headers will be sent to webhook alone with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow
@@ -3298,7 +3852,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass HTTP headers for a webhook
+     * This field can be used to pass HTTP headers for a webhook
      * call. These headers will be sent to webhook alone with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow
@@ -3326,7 +3880,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass HTTP headers for a webhook
+     * This field can be used to pass HTTP headers for a webhook
      * call. These headers will be sent to webhook alone with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow
@@ -3352,7 +3906,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. This field can be used to pass HTTP headers for a webhook
+     * This field can be used to pass HTTP headers for a webhook
      * call. These headers will be sent to webhook alone with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow

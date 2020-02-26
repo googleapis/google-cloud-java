@@ -68,7 +68,7 @@ public interface DetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The parameters of this query.
+   * The parameters of this query.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -80,7 +80,7 @@ public interface DetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The parameters of this query.
+   * The parameters of this query.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -92,7 +92,7 @@ public interface DetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The parameters of this query.
+   * The parameters of this query.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
@@ -150,7 +150,7 @@ public interface DetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Instructs the speech synthesizer how to generate the output
+   * Instructs the speech synthesizer how to generate the output
    * audio. If this field is not set and agent-level speech synthesizer is not
    * configured, no output audio is generated.
    * </pre>
@@ -164,7 +164,7 @@ public interface DetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Instructs the speech synthesizer how to generate the output
+   * Instructs the speech synthesizer how to generate the output
    * audio. If this field is not set and agent-level speech synthesizer is not
    * configured, no output audio is generated.
    * </pre>
@@ -178,7 +178,7 @@ public interface DetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Instructs the speech synthesizer how to generate the output
+   * Instructs the speech synthesizer how to generate the output
    * audio. If this field is not set and agent-level speech synthesizer is not
    * configured, no output audio is generated.
    * </pre>
@@ -191,7 +191,54 @@ public interface DetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The natural language speech audio to be processed. This field
+   * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.DetectIntentRequest.output_audio_config] indicating which settings in this
+   * request-level config should override speech synthesizer settings defined at
+   * agent-level.
+   * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.DetectIntentRequest.output_audio_config] replaces the agent-level
+   * config in its entirety.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+   *
+   * @return Whether the outputAudioConfigMask field is set.
+   */
+  boolean hasOutputAudioConfigMask();
+  /**
+   *
+   *
+   * <pre>
+   * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.DetectIntentRequest.output_audio_config] indicating which settings in this
+   * request-level config should override speech synthesizer settings defined at
+   * agent-level.
+   * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.DetectIntentRequest.output_audio_config] replaces the agent-level
+   * config in its entirety.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+   *
+   * @return The outputAudioConfigMask.
+   */
+  com.google.protobuf.FieldMask getOutputAudioConfigMask();
+  /**
+   *
+   *
+   * <pre>
+   * Mask for [output_audio_config][google.cloud.dialogflow.v2beta1.DetectIntentRequest.output_audio_config] indicating which settings in this
+   * request-level config should override speech synthesizer settings defined at
+   * agent-level.
+   * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2beta1.DetectIntentRequest.output_audio_config] replaces the agent-level
+   * config in its entirety.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getOutputAudioConfigMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The natural language speech audio to be processed. This field
    * should be populated iff `query_input` is set to an input audio config.
    * A single request can contain up to 1 minute of speech audio data.
    * </pre>

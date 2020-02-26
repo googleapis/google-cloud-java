@@ -27,7 +27,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The time zone of this conversational query from the
+   * The time zone of this conversational query from the
    * [time zone database](https://www.iana.org/time-zones), e.g.,
    * America/New_York, Europe/Paris. If not provided, the time zone specified in
    * agent settings is used.
@@ -42,7 +42,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The time zone of this conversational query from the
+   * The time zone of this conversational query from the
    * [time zone database](https://www.iana.org/time-zones), e.g.,
    * America/New_York, Europe/Paris. If not provided, the time zone specified in
    * agent settings is used.
@@ -58,7 +58,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The geo location of this conversational query.
+   * The geo location of this conversational query.
    * </pre>
    *
    * <code>.google.type.LatLng geo_location = 2;</code>
@@ -70,7 +70,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The geo location of this conversational query.
+   * The geo location of this conversational query.
    * </pre>
    *
    * <code>.google.type.LatLng geo_location = 2;</code>
@@ -82,7 +82,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The geo location of this conversational query.
+   * The geo location of this conversational query.
    * </pre>
    *
    * <code>.google.type.LatLng geo_location = 2;</code>
@@ -93,7 +93,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
@@ -104,7 +104,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
@@ -115,7 +115,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
@@ -126,7 +126,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
@@ -138,7 +138,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
@@ -150,7 +150,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies whether to delete all contexts in the current session
+   * Specifies whether to delete all contexts in the current session
    * before the new ones are activated.
    * </pre>
    *
@@ -164,7 +164,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
@@ -177,7 +177,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
@@ -190,7 +190,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
@@ -203,7 +203,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
@@ -217,7 +217,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
@@ -232,7 +232,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass custom data into the webhook
+   * This field can be used to pass custom data into the webhook
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
@@ -245,7 +245,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass custom data into the webhook
+   * This field can be used to pass custom data into the webhook
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
@@ -258,7 +258,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass custom data into the webhook
+   * This field can be used to pass custom data into the webhook
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
@@ -270,7 +270,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
    * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
@@ -284,7 +284,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
    * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
@@ -298,7 +298,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
    * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
@@ -313,7 +313,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
    * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
@@ -329,7 +329,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Configures the type of sentiment analysis to perform. If not
+   * Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
    * Note: Sentiment Analysis is only currently available for Enterprise Edition
    * agents.
@@ -346,7 +346,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Configures the type of sentiment analysis to perform. If not
+   * Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
    * Note: Sentiment Analysis is only currently available for Enterprise Edition
    * agents.
@@ -364,7 +364,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Configures the type of sentiment analysis to perform. If not
+   * Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
    * Note: Sentiment Analysis is only currently available for Enterprise Edition
    * agents.
@@ -381,7 +381,74 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass HTTP headers for a webhook
+   * For mega agent query, directly specify which sub agents to query.
+   * If any specified sub agent is not linked to the mega agent, an error will
+   * be returned. If empty, Dialogflow will decide which sub agents to query.
+   * If specified for a non-mega-agent query, will be silently ignored.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2beta1.SubAgent> getSubAgentsList();
+  /**
+   *
+   *
+   * <pre>
+   * For mega agent query, directly specify which sub agents to query.
+   * If any specified sub agent is not linked to the mega agent, an error will
+   * be returned. If empty, Dialogflow will decide which sub agents to query.
+   * If specified for a non-mega-agent query, will be silently ignored.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SubAgent getSubAgents(int index);
+  /**
+   *
+   *
+   * <pre>
+   * For mega agent query, directly specify which sub agents to query.
+   * If any specified sub agent is not linked to the mega agent, an error will
+   * be returned. If empty, Dialogflow will decide which sub agents to query.
+   * If specified for a non-mega-agent query, will be silently ignored.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+   */
+  int getSubAgentsCount();
+  /**
+   *
+   *
+   * <pre>
+   * For mega agent query, directly specify which sub agents to query.
+   * If any specified sub agent is not linked to the mega agent, an error will
+   * be returned. If empty, Dialogflow will decide which sub agents to query.
+   * If specified for a non-mega-agent query, will be silently ignored.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SubAgentOrBuilder>
+      getSubAgentsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * For mega agent query, directly specify which sub agents to query.
+   * If any specified sub agent is not linked to the mega agent, an error will
+   * be returned. If empty, Dialogflow will decide which sub agents to query.
+   * If specified for a non-mega-agent query, will be silently ignored.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SubAgentOrBuilder getSubAgentsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
    * call. These headers will be sent to webhook alone with the headers that
    * have been configured through Dialogflow web console. The headers defined
    * within this field will overwrite the headers configured through Dialogflow
@@ -398,7 +465,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass HTTP headers for a webhook
+   * This field can be used to pass HTTP headers for a webhook
    * call. These headers will be sent to webhook alone with the headers that
    * have been configured through Dialogflow web console. The headers defined
    * within this field will overwrite the headers configured through Dialogflow
@@ -418,7 +485,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass HTTP headers for a webhook
+   * This field can be used to pass HTTP headers for a webhook
    * call. These headers will be sent to webhook alone with the headers that
    * have been configured through Dialogflow web console. The headers defined
    * within this field will overwrite the headers configured through Dialogflow
@@ -435,7 +502,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass HTTP headers for a webhook
+   * This field can be used to pass HTTP headers for a webhook
    * call. These headers will be sent to webhook alone with the headers that
    * have been configured through Dialogflow web console. The headers defined
    * within this field will overwrite the headers configured through Dialogflow
@@ -452,7 +519,7 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass HTTP headers for a webhook
+   * This field can be used to pass HTTP headers for a webhook
    * call. These headers will be sent to webhook alone with the headers that
    * have been configured through Dialogflow web console. The headers defined
    * within this field will overwrite the headers configured through Dialogflow

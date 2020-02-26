@@ -31,7 +31,7 @@ public interface GetValidationResultRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The parent.
    */
@@ -44,7 +44,7 @@ public interface GetValidationResultRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for parent.
    */
@@ -61,7 +61,7 @@ public interface GetValidationResultRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The languageCode.
    */
@@ -77,7 +77,7 @@ public interface GetValidationResultRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for languageCode.
    */

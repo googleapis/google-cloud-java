@@ -114,7 +114,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Instructs the service to perform sentiment analysis on
+   * Instructs the service to perform sentiment analysis on
    * `query_text`. If not provided, sentiment analysis is not performed on
    * `query_text`.
    * </pre>
@@ -458,7 +458,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Instructs the service to perform sentiment analysis on
+     * Instructs the service to perform sentiment analysis on
      * `query_text`. If not provided, sentiment analysis is not performed on
      * `query_text`.
      * </pre>
@@ -474,7 +474,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Instructs the service to perform sentiment analysis on
+     * Instructs the service to perform sentiment analysis on
      * `query_text`. If not provided, sentiment analysis is not performed on
      * `query_text`.
      * </pre>
@@ -494,7 +494,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Instructs the service to perform sentiment analysis on
+     * Instructs the service to perform sentiment analysis on
      * `query_text`. If not provided, sentiment analysis is not performed on
      * `query_text`.
      * </pre>

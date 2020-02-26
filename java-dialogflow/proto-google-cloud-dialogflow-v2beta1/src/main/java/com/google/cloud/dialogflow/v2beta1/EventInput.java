@@ -191,7 +191,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The collection of parameters associated with the event.
+   * The collection of parameters associated with the event.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -205,7 +205,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The collection of parameters associated with the event.
+   * The collection of parameters associated with the event.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -219,7 +219,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The collection of parameters associated with the event.
+   * The collection of parameters associated with the event.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -761,7 +761,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -775,7 +775,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -793,7 +793,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -815,7 +815,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -834,7 +834,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -858,7 +858,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -878,7 +878,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -892,7 +892,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -908,7 +908,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>

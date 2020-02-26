@@ -44,6 +44,10 @@ public final class AgentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_DeleteAgentRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_SubAgent_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_SubAgent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2beta1_SearchAgentsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_SearchAgentsRequest_fieldAccessorTable;
@@ -118,76 +122,78 @@ public final class AgentProto {
           + "t\0225\n\005agent\030\001 \001(\0132&.google.cloud.dialogfl"
           + "ow.v2beta1.Agent\022/\n\013update_mask\030\002 \001(\0132\032."
           + "google.protobuf.FieldMask\"$\n\022DeleteAgent"
-          + "Request\022\016\n\006parent\030\001 \001(\t\"L\n\023SearchAgentsR"
-          + "equest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001("
-          + "\005\022\022\n\npage_token\030\003 \001(\t\"g\n\024SearchAgentsRes"
-          + "ponse\0226\n\006agents\030\001 \003(\0132&.google.cloud.dia"
-          + "logflow.v2beta1.Agent\022\027\n\017next_page_token"
-          + "\030\002 \001(\t\"#\n\021TrainAgentRequest\022\016\n\006parent\030\001 "
-          + "\001(\t\"7\n\022ExportAgentRequest\022\016\n\006parent\030\001 \001("
-          + "\t\022\021\n\tagent_uri\030\002 \001(\t\"L\n\023ExportAgentRespo"
-          + "nse\022\023\n\tagent_uri\030\001 \001(\tH\000\022\027\n\ragent_conten"
-          + "t\030\002 \001(\014H\000B\007\n\005agent\"[\n\022ImportAgentRequest"
-          + "\022\016\n\006parent\030\001 \001(\t\022\023\n\tagent_uri\030\002 \001(\tH\000\022\027\n"
-          + "\ragent_content\030\003 \001(\014H\000B\007\n\005agent\"\\\n\023Resto"
-          + "reAgentRequest\022\016\n\006parent\030\001 \001(\t\022\023\n\tagent_"
-          + "uri\030\002 \001(\tH\000\022\027\n\ragent_content\030\003 \001(\014H\000B\007\n\005"
-          + "agent\"C\n\032GetValidationResultRequest\022\016\n\006p"
-          + "arent\030\001 \001(\t\022\025\n\rlanguage_code\030\003 \001(\t2\257\017\n\006A"
-          + "gents\022\302\001\n\010GetAgent\0220.google.cloud.dialog"
-          + "flow.v2beta1.GetAgentRequest\032&.google.cl"
-          + "oud.dialogflow.v2beta1.Agent\"\\\202\323\344\223\002V\022\"/v"
-          + "2beta1/{parent=projects/*}/agentZ0\022./v2b"
-          + "eta1/{parent=projects/*/locations/*}/age"
-          + "nt\022\334\001\n\010SetAgent\0220.google.cloud.dialogflo"
-          + "w.v2beta1.SetAgentRequest\032&.google.cloud"
-          + ".dialogflow.v2beta1.Agent\"v\202\323\344\223\002p\"(/v2be"
-          + "ta1/{agent.parent=projects/*}/agent:\005age"
-          + "ntZ=\"4/v2beta1/{agent.parent=projects/*/"
-          + "locations/*}/agent:\005agent\022\270\001\n\013DeleteAgen"
-          + "t\0223.google.cloud.dialogflow.v2beta1.Dele"
-          + "teAgentRequest\032\026.google.protobuf.Empty\"\\"
-          + "\202\323\344\223\002V*\"/v2beta1/{parent=projects/*}/age"
-          + "ntZ0*./v2beta1/{parent=projects/*/locati"
-          + "ons/*}/agent\022\256\001\n\014SearchAgents\0224.google.c"
-          + "loud.dialogflow.v2beta1.SearchAgentsRequ"
-          + "est\0325.google.cloud.dialogflow.v2beta1.Se"
-          + "archAgentsResponse\"1\202\323\344\223\002+\022)/v2beta1/{pa"
-          + "rent=projects/*}/agent:search\022\317\001\n\nTrainA"
-          + "gent\0222.google.cloud.dialogflow.v2beta1.T"
-          + "rainAgentRequest\032\035.google.longrunning.Op"
-          + "eration\"n\202\323\344\223\002h\"(/v2beta1/{parent=projec"
-          + "ts/*}/agent:train:\001*Z9\"4/v2beta1/{parent"
-          + "=projects/*/locations/*}/agent:train:\001*\022"
-          + "\323\001\n\013ExportAgent\0223.google.cloud.dialogflo"
-          + "w.v2beta1.ExportAgentRequest\032\035.google.lo"
-          + "ngrunning.Operation\"p\202\323\344\223\002j\")/v2beta1/{p"
-          + "arent=projects/*}/agent:export:\001*Z:\"5/v2"
-          + "beta1/{parent=projects/*/locations/*}/ag"
-          + "ent:export:\001*\022\323\001\n\013ImportAgent\0223.google.c"
-          + "loud.dialogflow.v2beta1.ImportAgentReque"
-          + "st\032\035.google.longrunning.Operation\"p\202\323\344\223\002"
-          + "j\")/v2beta1/{parent=projects/*}/agent:im"
-          + "port:\001*Z:\"5/v2beta1/{parent=projects/*/l"
-          + "ocations/*}/agent:import:\001*\022\327\001\n\014RestoreA"
-          + "gent\0224.google.cloud.dialogflow.v2beta1.R"
-          + "estoreAgentRequest\032\035.google.longrunning."
-          + "Operation\"r\202\323\344\223\002l\"*/v2beta1/{parent=proj"
-          + "ects/*}/agent:restore:\001*Z;\"6/v2beta1/{pa"
-          + "rent=projects/*/locations/*}/agent:resto"
-          + "re:\001*\022\302\001\n\023GetValidationResult\022;.google.c"
-          + "loud.dialogflow.v2beta1.GetValidationRes"
-          + "ultRequest\0321.google.cloud.dialogflow.v2b"
-          + "eta1.ValidationResult\";\202\323\344\223\0025\0223/v2beta1/"
-          + "{parent=projects/*}/agent/validationResu"
-          + "lt\032x\312A\031dialogflow.googleapis.com\322AYhttps"
-          + "://www.googleapis.com/auth/cloud-platfor"
-          + "m,https://www.googleapis.com/auth/dialog"
-          + "flowB\250\001\n#com.google.cloud.dialogflow.v2b"
-          + "eta1B\nAgentProtoP\001ZIgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/dialogflow/v2bet"
-          + "a1;dialogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dia"
-          + "logflow.V2beta1b\006proto3"
+          + "Request\022\016\n\006parent\030\001 \001(\t\"0\n\010SubAgent\022\017\n\007p"
+          + "roject\030\001 \001(\t\022\023\n\013environment\030\002 \001(\t\"L\n\023Sea"
+          + "rchAgentsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage"
+          + "_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"g\n\024Searc"
+          + "hAgentsResponse\0226\n\006agents\030\001 \003(\0132&.google"
+          + ".cloud.dialogflow.v2beta1.Agent\022\027\n\017next_"
+          + "page_token\030\002 \001(\t\"#\n\021TrainAgentRequest\022\016\n"
+          + "\006parent\030\001 \001(\t\"7\n\022ExportAgentRequest\022\016\n\006p"
+          + "arent\030\001 \001(\t\022\021\n\tagent_uri\030\002 \001(\t\"L\n\023Export"
+          + "AgentResponse\022\023\n\tagent_uri\030\001 \001(\tH\000\022\027\n\rag"
+          + "ent_content\030\002 \001(\014H\000B\007\n\005agent\"[\n\022ImportAg"
+          + "entRequest\022\016\n\006parent\030\001 \001(\t\022\023\n\tagent_uri\030"
+          + "\002 \001(\tH\000\022\027\n\ragent_content\030\003 \001(\014H\000B\007\n\005agen"
+          + "t\"\\\n\023RestoreAgentRequest\022\016\n\006parent\030\001 \001(\t"
+          + "\022\023\n\tagent_uri\030\002 \001(\tH\000\022\027\n\ragent_content\030\003"
+          + " \001(\014H\000B\007\n\005agent\"M\n\032GetValidationResultRe"
+          + "quest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\032\n\rlanguage_c"
+          + "ode\030\003 \001(\tB\003\340A\0012\257\017\n\006Agents\022\302\001\n\010GetAgent\0220"
+          + ".google.cloud.dialogflow.v2beta1.GetAgen"
+          + "tRequest\032&.google.cloud.dialogflow.v2bet"
+          + "a1.Agent\"\\\202\323\344\223\002V\022\"/v2beta1/{parent=proje"
+          + "cts/*}/agentZ0\022./v2beta1/{parent=project"
+          + "s/*/locations/*}/agent\022\334\001\n\010SetAgent\0220.go"
+          + "ogle.cloud.dialogflow.v2beta1.SetAgentRe"
+          + "quest\032&.google.cloud.dialogflow.v2beta1."
+          + "Agent\"v\202\323\344\223\002p\"(/v2beta1/{agent.parent=pr"
+          + "ojects/*}/agent:\005agentZ=\"4/v2beta1/{agen"
+          + "t.parent=projects/*/locations/*}/agent:\005"
+          + "agent\022\270\001\n\013DeleteAgent\0223.google.cloud.dia"
+          + "logflow.v2beta1.DeleteAgentRequest\032\026.goo"
+          + "gle.protobuf.Empty\"\\\202\323\344\223\002V*\"/v2beta1/{pa"
+          + "rent=projects/*}/agentZ0*./v2beta1/{pare"
+          + "nt=projects/*/locations/*}/agent\022\256\001\n\014Sea"
+          + "rchAgents\0224.google.cloud.dialogflow.v2be"
+          + "ta1.SearchAgentsRequest\0325.google.cloud.d"
+          + "ialogflow.v2beta1.SearchAgentsResponse\"1"
+          + "\202\323\344\223\002+\022)/v2beta1/{parent=projects/*}/age"
+          + "nt:search\022\317\001\n\nTrainAgent\0222.google.cloud."
+          + "dialogflow.v2beta1.TrainAgentRequest\032\035.g"
+          + "oogle.longrunning.Operation\"n\202\323\344\223\002h\"(/v2"
+          + "beta1/{parent=projects/*}/agent:train:\001*"
+          + "Z9\"4/v2beta1/{parent=projects/*/location"
+          + "s/*}/agent:train:\001*\022\323\001\n\013ExportAgent\0223.go"
+          + "ogle.cloud.dialogflow.v2beta1.ExportAgen"
+          + "tRequest\032\035.google.longrunning.Operation\""
+          + "p\202\323\344\223\002j\")/v2beta1/{parent=projects/*}/ag"
+          + "ent:export:\001*Z:\"5/v2beta1/{parent=projec"
+          + "ts/*/locations/*}/agent:export:\001*\022\323\001\n\013Im"
+          + "portAgent\0223.google.cloud.dialogflow.v2be"
+          + "ta1.ImportAgentRequest\032\035.google.longrunn"
+          + "ing.Operation\"p\202\323\344\223\002j\")/v2beta1/{parent="
+          + "projects/*}/agent:import:\001*Z:\"5/v2beta1/"
+          + "{parent=projects/*/locations/*}/agent:im"
+          + "port:\001*\022\327\001\n\014RestoreAgent\0224.google.cloud."
+          + "dialogflow.v2beta1.RestoreAgentRequest\032\035"
+          + ".google.longrunning.Operation\"r\202\323\344\223\002l\"*/"
+          + "v2beta1/{parent=projects/*}/agent:restor"
+          + "e:\001*Z;\"6/v2beta1/{parent=projects/*/loca"
+          + "tions/*}/agent:restore:\001*\022\302\001\n\023GetValidat"
+          + "ionResult\022;.google.cloud.dialogflow.v2be"
+          + "ta1.GetValidationResultRequest\0321.google."
+          + "cloud.dialogflow.v2beta1.ValidationResul"
+          + "t\";\202\323\344\223\0025\0223/v2beta1/{parent=projects/*}/"
+          + "agent/validationResult\032x\312A\031dialogflow.go"
+          + "ogleapis.com\322AYhttps://www.googleapis.co"
+          + "m/auth/cloud-platform,https://www.google"
+          + "apis.com/auth/dialogflowB\250\001\n#com.google."
+          + "cloud.dialogflow.v2beta1B\nAgentProtoP\001ZI"
+          + "google.golang.org/genproto/googleapis/cl"
+          + "oud/dialogflow/v2beta1;dialogflow\370\001\001\242\002\002D"
+          + "F\252\002\037Google.Cloud.Dialogflow.V2beta1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -245,8 +251,16 @@ public final class AgentProto {
             new java.lang.String[] {
               "Parent",
             });
-    internal_static_google_cloud_dialogflow_v2beta1_SearchAgentsRequest_descriptor =
+    internal_static_google_cloud_dialogflow_v2beta1_SubAgent_descriptor =
         getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_dialogflow_v2beta1_SubAgent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_SubAgent_descriptor,
+            new java.lang.String[] {
+              "Project", "Environment",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_SearchAgentsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_dialogflow_v2beta1_SearchAgentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SearchAgentsRequest_descriptor,
@@ -254,7 +268,7 @@ public final class AgentProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_dialogflow_v2beta1_SearchAgentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_dialogflow_v2beta1_SearchAgentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SearchAgentsResponse_descriptor,
@@ -262,7 +276,7 @@ public final class AgentProto {
               "Agents", "NextPageToken",
             });
     internal_static_google_cloud_dialogflow_v2beta1_TrainAgentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_dialogflow_v2beta1_TrainAgentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_TrainAgentRequest_descriptor,
@@ -270,7 +284,7 @@ public final class AgentProto {
               "Parent",
             });
     internal_static_google_cloud_dialogflow_v2beta1_ExportAgentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_dialogflow_v2beta1_ExportAgentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_ExportAgentRequest_descriptor,
@@ -278,7 +292,7 @@ public final class AgentProto {
               "Parent", "AgentUri",
             });
     internal_static_google_cloud_dialogflow_v2beta1_ExportAgentResponse_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_dialogflow_v2beta1_ExportAgentResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_ExportAgentResponse_descriptor,
@@ -286,7 +300,7 @@ public final class AgentProto {
               "AgentUri", "AgentContent", "Agent",
             });
     internal_static_google_cloud_dialogflow_v2beta1_ImportAgentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_dialogflow_v2beta1_ImportAgentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_ImportAgentRequest_descriptor,
@@ -294,7 +308,7 @@ public final class AgentProto {
               "Parent", "AgentUri", "AgentContent", "Agent",
             });
     internal_static_google_cloud_dialogflow_v2beta1_RestoreAgentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_dialogflow_v2beta1_RestoreAgentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_RestoreAgentRequest_descriptor,
@@ -302,7 +316,7 @@ public final class AgentProto {
               "Parent", "AgentUri", "AgentContent", "Agent",
             });
     internal_static_google_cloud_dialogflow_v2beta1_GetValidationResultRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_dialogflow_v2beta1_GetValidationResultRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_GetValidationResultRequest_descriptor,
@@ -312,6 +326,7 @@ public final class AgentProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
