@@ -50,9 +50,11 @@ public final class InsertAllRequest implements Serializable {
 
   /**
    * A Google Big Query row to be inserted into a table. Each {@code RowToInsert} has an associated
-   * id used by BigQuery to detect duplicate insertion requests on a best-effort basis. Please
-   * notice that data for fields of type {@link LegacySQLTypeName#BYTES} must be provided as a
-   * base64 encoded string.
+   * id used by BigQuery to detect duplicate insertion requests on a best-effort basis.
+   *
+   * <p>To ensure proper serialization of numeric data, it is recommended to supply values using a
+   * string-typed representation. Additionally, data for fields of {@link LegacySQLTypeName#BYTES}
+   * must be provided as a base64 encoded string.
    *
    * <p>Example usage of creating a row to insert:
    *
@@ -65,6 +67,7 @@ public final class InsertAllRequest implements Serializable {
    * rowContent.put("booleanFieldName", true);
    * rowContent.put("bytesFieldName", "DQ4KDQ==");
    * rowContent.put("recordFieldName", recordContent);
+   * rowContent.put("numericFieldName", "1298930929292.129593272");
    * RowToInsert row = new RowToInsert("rowId", rowContent);
    * }</pre>
    *
@@ -124,8 +127,11 @@ public final class InsertAllRequest implements Serializable {
     }
 
     /**
-     * Creates a row to be inserted with associated id. Please notice that data for fields of type
-     * {@link LegacySQLTypeName#BYTES} must be provided as a base64 encoded string.
+     * Creates a row to be inserted with associated id.
+     *
+     * <p>To ensure proper serialization of numeric data, supply values using a string-typed
+     * representation. Additionally, data for fields of {@link LegacySQLTypeName#BYTES} must be
+     * provided as a base64 encoded string.
      *
      * @param id id of the row, used to identify duplicates
      * @param content the actual content of the row
@@ -135,8 +141,11 @@ public final class InsertAllRequest implements Serializable {
     }
 
     /**
-     * Creates a row to be inserted without associated id. Please notice that data for fields of
-     * type {@link LegacySQLTypeName#BYTES} must be provided as a base64 encoded string.
+     * Creates a row to be inserted without associated id.
+     *
+     * <p>To ensure proper serialization of numeric data, supply values using a string-typed
+     * representation. Additionally, data for fields of type {@link LegacySQLTypeName#BYTES} must be
+     * provided as a base64 encoded string.
      *
      * @param content the actual content of the row
      */
@@ -178,8 +187,11 @@ public final class InsertAllRequest implements Serializable {
     }
 
     /**
-     * Adds a row to be inserted with associated id. Please notice that data for fields of type
-     * {@link LegacySQLTypeName#BYTES} must be provided as a base64 encoded string.
+     * Adds a row to be inserted with associated id.
+     *
+     * <p>To ensure proper serialization of numeric data, supply values using a string-typed
+     * representation. Additionally, data for fields of {@link LegacySQLTypeName#BYTES} must be
+     * provided as a base64 encoded string.
      *
      * <p>Example usage of adding a row with associated id:
      *
@@ -193,6 +205,7 @@ public final class InsertAllRequest implements Serializable {
      * rowContent.put("booleanFieldName", true);
      * rowContent.put("bytesFieldName", "DQ4KDQ==");
      * rowContent.put("recordFieldName", recordContent);
+     * rowContent.put("numericFieldName", "1298930929292.129593272");
      * builder.addRow("rowId", rowContent);
      * }</pre>
      */
@@ -202,8 +215,11 @@ public final class InsertAllRequest implements Serializable {
     }
 
     /**
-     * Adds a row to be inserted without an associated id. Please notice that data for fields of
-     * type {@link LegacySQLTypeName#BYTES} must be provided as a base64 encoded string.
+     * Adds a row to be inserted without an associated id.
+     *
+     * <p>To ensure proper serialization of numeric data, it is recommended to supply values using a
+     * string-typed representation. Additionally, data for fields of type {@link
+     * LegacySQLTypeName#BYTES} must be provided as a base64 encoded string.
      *
      * <p>Example usage of adding a row without an associated id:
      *
@@ -217,6 +233,7 @@ public final class InsertAllRequest implements Serializable {
      * rowContent.put("booleanFieldName", true);
      * rowContent.put("bytesFieldName", "DQ4KDQ==");
      * rowContent.put("recordFieldName", recordContent);
+     * rowContent.put("numericFieldName", "1298930929292.129593272");
      * builder.addRow(rowContent);
      * }</pre>
      */
