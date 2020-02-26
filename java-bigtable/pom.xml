@@ -162,7 +162,7 @@
             <dependency>
               <groupId>com.google.cloud</groupId>
               <artifactId>google-cloud-conformance-tests</artifactId>
-              <version>0.0.5</version>
+              <version>0.0.6</version>
               <exclusions>
                 <!--
                 * The protos for bigtable are already included in the classpath
