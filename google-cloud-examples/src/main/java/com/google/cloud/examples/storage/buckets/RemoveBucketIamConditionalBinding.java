@@ -8,6 +8,7 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class RemoveBucketIamConditionalBinding {
@@ -31,10 +32,12 @@ public class RemoveBucketIamConditionalBinding {
         conditionBuilder.setDescription("Description");
         conditionBuilder.setExpression(
                 "resource.name.startsWith(\"projects/_/buckets/bucket-name/objects/prefix-a-\")");
-        for (int index = 0; index < bindings.size(); ++index) {
-            Binding binding = bindings.get(index);
+
+        Iterator iterator = bindings.iterator();
+        while (iterator.hasNext()) {
+            Binding binding = (Binding)iterator.next();
             if (binding.getRole().equals(role) && binding.getCondition().equals(conditionBuilder.build())) {
-                bindings.remove(index);
+                iterator.remove();
                 break;
             }
         }
@@ -43,15 +46,7 @@ public class RemoveBucketIamConditionalBinding {
                 storage.setIamPolicy(
                         bucketName, originalPolicy.toBuilder().setBindings(bindings).setVersion(3).build());
 
-        bindings = new ArrayList(updatedPolicy.getBindingsList());
-        boolean found = false;
-        for (Binding binding : bindings) {
-            if (binding.getRole().equals(role) && binding.getCondition().equals(conditionBuilder.build())) {
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
+        if(bindings.size() > updatedPolicy.getBindingsList().size())
             System.out.println("Conditional Binding was removed.");
         }
     }
