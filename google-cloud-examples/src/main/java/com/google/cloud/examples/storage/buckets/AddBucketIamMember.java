@@ -34,6 +34,7 @@ public class AddBucketIamMember {
     // String bucketName = "your-unique-bucket-name";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+
     Policy originalPolicy =
         storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(3));
 

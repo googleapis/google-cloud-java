@@ -17,6 +17,7 @@
 package com.google.cloud.benchwrapper;
 
 import io.grpc.stub.StreamObserver;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
@@ -32,10 +33,18 @@ class StorageBenchWrapperImpl extends StorageBenchWrapperImplBase {
   private Storage client;
 
   public StorageBenchWrapperImpl(String storageEmulatorHost) {
-    client = StorageOptions.newBuilder()
+    if (storageEmulatorHost == null || storageEmulatorHost.isEmpty()){
+      System.out.println("Initializing client against live service...");
+      client = StorageOptions.newBuilder()
+          .build()
+          .getService();
+    } else {
+      System.out.println("Initializing client against emulated service...");
+      client = StorageOptions.newBuilder()
         .setHost("http://" + storageEmulatorHost)
         .build()
         .getService();
+    }
   }
 
   public void write(ObjectWrite request, StreamObserver<EmptyResponse> responseObserver) {
@@ -48,19 +57,9 @@ class StorageBenchWrapperImpl extends StorageBenchWrapperImplBase {
   public void read(ObjectRead request, StreamObserver<EmptyResponse> responseObserver) {
     System.out.println("read has been called");
 
-    Blob blob = client.get(BlobId.of(request.getBucketName(), request.getObjectName()));
-
-    try (ReadChannel reader = blob.reader()) {
-      ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
-      while (reader.read(bytes) > 0) {
-        bytes.flip();
-        // do nothing with bytes
-        bytes.clear();
-      }
-    } catch (Exception e) {
-      e.printStackTrace();
-      System.exit(1);
-    }
+    byte[] fileContents = client.readAllBytes(
+      BlobId.of(request.getBucketName(), request.getObjectName())
+    );
 
     EmptyResponse reply = EmptyResponse.newBuilder().build();
     responseObserver.onNext(reply);

@@ -13,37 +13,6 @@ Please use the [compatibility checker](https://github.com/googleapis/google-clou
 - There are classpath conflicts with `netty`.
 - Or, you are seeing any of the conflicts specified in [gRPC Troubleshooting guide](https://github.com/grpc/grpc-java/blob/master/SECURITY.md#troubleshooting).
 
-If you are using `google-cloud-java` packages prior to version 0.35.0, then consider upgrading to gRPC 1.9.0 or newer and use `grpc-netty-shaded` dependency, for example:
-
-```
-<properties>
-  <grpc.version>1.9.0</grpc.version>
-</properties>
-
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-core</artifactId>
-      <version>${grpc.version}</version>
-    </dependency>
-    <!-- grpc-netty-shaded version must be the same as other gRPC dependencies, such as grpc-core -->
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-netty-shaded</artifactId>
-      <version>${grpc.version}</version>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-```
-
-The `grpc-netty-shaded` dependency avoids conflicts with other `netty` dependencies that may also be in the classpath.
-
-If you are using `google-cloud-java` version 0.35.0 or above, then it already uses `grpc-netty-shaded`.
-If you are still running into `ALPN` related problems, please see
-[gRPC Troubleshooting guide](https://github.com/grpc/grpc-java/blob/master/SECURITY.md#troubleshooting)
-for other causes.
-
 ## ClassNotFoundException, NoSuchMethodError, NoClassDefFoundError
 
 These errors are usually caused by having multiple versions or conflicting versions of the same dependency in the classpath.
@@ -96,7 +65,7 @@ in your pom.xml:
           <dependency>
             <groupId>com.google.cloud.tools</groupId>
             <artifactId>linkage-checker-enforcer-rules</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.3</version>
           </dependency>
         </dependencies>
         <executions>
@@ -130,7 +99,7 @@ There are different strategies to resolve conflicts, but you must understand the
   least hackish approach but it is a lot of work that can require multiple releases
    of multiple libraries to sync everything up. 
 - If you can't modify and push new versions of your dependencies, import
-  `com.google.cloud:libraries-bom:3.4.0` (or a more recent version) and use that to
+  `com.google.cloud:libraries-bom:4.0.0` (or a more recent version) and use that to
   select consistent dependency versions. This is the easiest route. 
   For example, this is how you can depend on consistent versions of Guava and 
   `com.google.cloud:google-cloud-storage` without explicitly setting the version of either one:
@@ -142,7 +111,7 @@ There are different strategies to resolve conflicts, but you must understand the
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>3.4.0</version>
+        <version>4.1.1</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>

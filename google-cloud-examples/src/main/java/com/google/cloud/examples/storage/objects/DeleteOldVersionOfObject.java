@@ -15,7 +15,7 @@
  */
 package com.google.cloud.examples.storage.objects;
 
-// [START storage_delete_file]
+// [START storage_delete_file_archived_generation]
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
@@ -47,4 +47,4 @@ public class DeleteOldVersionOfObject {
             + bucketName);
   }
 }
-// [END storage_delete_file]
+// [END storage_delete_file_archived_generation]

@@ -35,8 +35,6 @@ public class RemoveBucketIamMember {
 
     Policy originalPolicy = storage.getIamPolicy(bucketName);
 
-    // See the StorageRoles documentation for other roles:
-    // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/storage/StorageRoles.html
     String role = "roles/storage.objectViewer";
 
     String member = "group:example@google.com";

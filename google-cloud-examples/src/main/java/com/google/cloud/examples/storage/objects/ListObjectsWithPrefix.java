@@ -48,7 +48,7 @@ public class ListObjectsWithPrefix {
      *
      * <p>a/1.txt a/b/2.txt a/b/3.txt
      *
-     * <p>However, if you specify prefix = "/a/" and do use
+     * <p>However, if you specify prefix = "a/" and do use
      * Storage.BlobListOption.currentDirectory(), you'll get back:
      *
      * <p>a/1.txt a/b/
