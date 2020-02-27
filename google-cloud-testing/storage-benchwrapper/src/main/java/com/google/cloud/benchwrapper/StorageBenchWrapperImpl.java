@@ -57,8 +57,9 @@ class StorageBenchWrapperImpl extends StorageBenchWrapperImplBase {
   public void read(ObjectRead request, StreamObserver<EmptyResponse> responseObserver) {
     System.out.println("read has been called");
 
-    Blob blob = client.get(BlobId.of(request.getBucketName(), request.getObjectName()));
-    byte[] fileContent = blob.getContent();
+    byte[] fileContents = client.readAllBytes(
+      BlobId.of(request.getBucketName(), request.getObjectName())
+    );
 
     EmptyResponse reply = EmptyResponse.newBuilder().build();
     responseObserver.onNext(reply);
