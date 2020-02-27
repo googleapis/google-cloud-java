@@ -20,7 +20,6 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-
 import java.nio.file.Path;
 
 public class DownloadRequesterPaysObject {
@@ -42,7 +41,8 @@ public class DownloadRequesterPaysObject {
     Blob blob = storage.get(BlobId.of(bucketName, objectName));
     blob.downloadTo(destFilePath, Blob.BlobSourceOption.userProject(projectId));
 
-    System.out.println("Object " + objectName + " downloaded to " + destFilePath + " and billed to " + projectId);
+    System.out.println(
+        "Object " + objectName + " downloaded to " + destFilePath + " and billed to " + projectId);
   }
 }
 // [START storage_download_file_requester_pays]

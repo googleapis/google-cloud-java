@@ -20,7 +20,6 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
-
 import java.util.Date;
 import java.util.Map;
 
@@ -40,7 +39,8 @@ public class GetObjectMetadata {
 
     // Select all fields
     // Fields can be selected individually e.g. Storage.BlobField.CACHE_CONTROL
-    Blob blob = storage.get(bucketName, blobName, Storage.BlobGetOption.fields(Storage.BlobField.values()));
+    Blob blob =
+        storage.get(bucketName, blobName, Storage.BlobGetOption.fields(Storage.BlobField.values()));
 
     // Print blob metadata
     System.out.println("Bucket: " + blob.getBucket());

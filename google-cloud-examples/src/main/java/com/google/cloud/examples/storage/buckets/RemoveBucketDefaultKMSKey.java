@@ -21,18 +21,18 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
 public class RemoveBucketDefaultKMSKey {
-    public static void removeBucketDefaultKmsKey(String projectId, String bucketName) {
-        // The ID of your GCP project
-        // String projectId = "your-project-id";
+  public static void removeBucketDefaultKmsKey(String projectId, String bucketName) {
+    // The ID of your GCP project
+    // String projectId = "your-project-id";
 
-        // The ID of your GCS bucket
-        // String bucketName = "your-unique-bucket-name";
+    // The ID of your GCS bucket
+    // String bucketName = "your-unique-bucket-name";
 
-        Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-        Bucket bucket = storage.get(bucketName);
-        bucket.toBuilder().setDefaultKmsKeyName(null).build().update();
+    Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+    Bucket bucket = storage.get(bucketName);
+    bucket.toBuilder().setDefaultKmsKeyName(null).build().update();
 
-        System.out.println("Default KMS key was removed from " + bucketName);
-    }
+    System.out.println("Default KMS key was removed from " + bucketName);
+  }
 }
 // [END storage_bucket_delete_default_kms_key]

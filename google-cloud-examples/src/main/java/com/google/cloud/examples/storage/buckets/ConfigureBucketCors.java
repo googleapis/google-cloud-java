@@ -24,7 +24,11 @@ import com.google.cloud.storage.StorageOptions;
 import com.google.common.collect.ImmutableList;
 
 public class ConfigureBucketCors {
-  public static void configureBucketCors(String projectId, String bucketName, String origin, String responseHeader,
+  public static void configureBucketCors(
+      String projectId,
+      String bucketName,
+      String origin,
+      String responseHeader,
       Integer maxAgeSeconds) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
@@ -38,7 +42,8 @@ public class ConfigureBucketCors {
     // The response header to share across origins
     // String responseHeader = "Content-Type";
 
-    // The maximum amount of time the browser can make requests before it must repeat preflighted requests
+    // The maximum amount of time the browser can make requests before it must repeat preflighted
+    // requests
     // Integer maxAgeSeconds = 3600;
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();

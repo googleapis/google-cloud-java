@@ -16,8 +16,12 @@
 
 package com.google.cloud.examples.storage.snippets;
 
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+
 import com.google.cloud.Identity;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.examples.storage.buckets.AddBucketIamConditionalBinding;
 import com.google.cloud.examples.storage.buckets.AddBucketIamMember;
 import com.google.cloud.examples.storage.buckets.AddBucketLabel;
 import com.google.cloud.examples.storage.buckets.ChangeDefaultStorageClass;
@@ -34,6 +38,7 @@ import com.google.cloud.examples.storage.buckets.ListBucketIamMembers;
 import com.google.cloud.examples.storage.buckets.ListBuckets;
 import com.google.cloud.examples.storage.buckets.MakeBucketPublic;
 import com.google.cloud.examples.storage.buckets.RemoveBucketDefaultKMSKey;
+import com.google.cloud.examples.storage.buckets.RemoveBucketIamConditionalBinding;
 import com.google.cloud.examples.storage.buckets.RemoveBucketIamMember;
 import com.google.cloud.examples.storage.buckets.RemoveBucketLabel;
 import com.google.cloud.examples.storage.buckets.SetBucketWebsiteInfo;
@@ -51,7 +56,6 @@ import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.nio.file.Files;
@@ -62,7 +66,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -70,9 +73,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
-
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertFalse;
 
 public class ITBucketSnippets {
 
@@ -173,7 +173,7 @@ public class ITBucketSnippets {
   public void testCreateBucketWithStorageClassAndLocation() {
     String newBucket = RemoteStorageHelper.generateBucketName();
     CreateBucketWithStorageClassAndLocation.createBucketWithStorageClassAndLocation(
-            PROJECT_ID, newBucket);
+        PROJECT_ID, newBucket);
     try {
       Bucket remoteBucket = storage.get(newBucket);
       assertNotNull(remoteBucket);
@@ -273,9 +273,16 @@ public class ITBucketSnippets {
 
   @Test
   public void testAddListRemoveBucketIamMembers() {
-    int originalSize = storage.getIamPolicy(BUCKET).getBindings().size();
+    storage.update(
+        BucketInfo.newBuilder(BUCKET)
+            .setIamConfiguration(
+                BucketInfo.IamConfiguration.newBuilder()
+                    .setIsUniformBucketLevelAccessEnabled(true)
+                    .build())
+            .build());
+    int originalSize = storage.getIamPolicy(BUCKET).getBindingsList().size();
     AddBucketIamMember.addBucketIamMember(PROJECT_ID, BUCKET);
-    assertEquals(originalSize + 1, storage.getIamPolicy(BUCKET).getBindings().size());
+    assertEquals(originalSize + 1, storage.getIamPolicy(BUCKET).getBindingsList().size());
     PrintStream standardOut = System.out;
     final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
     System.setOut(new PrintStream(snippetOutputCapture));
@@ -284,14 +291,29 @@ public class ITBucketSnippets {
     System.setOut(standardOut);
     assertTrue(snippetOutput.contains("example@google.com"));
     RemoveBucketIamMember.removeBucketIamMember(PROJECT_ID, BUCKET);
-    assertEquals(originalSize, storage.getIamPolicy(BUCKET).getBindings().size());
+    assertEquals(originalSize, storage.getIamPolicy(BUCKET).getBindingsList().size());
+    AddBucketIamConditionalBinding.addBucketIamConditionalBinding(PROJECT_ID, BUCKET);
+    assertEquals(originalSize + 1, storage.getIamPolicy(BUCKET).getBindingsList().size());
+    RemoveBucketIamConditionalBinding.removeBucketIamConditionalBinding(PROJECT_ID, BUCKET);
+    assertEquals(originalSize, storage.getIamPolicy(BUCKET).getBindingsList().size());
+    storage.update(
+        BucketInfo.newBuilder(BUCKET)
+            .setIamConfiguration(
+                BucketInfo.IamConfiguration.newBuilder()
+                    .setIsUniformBucketLevelAccessEnabled(false)
+                    .build())
+            .build());
   }
 
   @Test
   public void testMakeBucketPublic() {
     MakeBucketPublic.makeBucketPublic(PROJECT_ID, BUCKET);
     assertTrue(
-            storage.getIamPolicy(BUCKET).getBindings().get(StorageRoles.objectViewer()).contains(Identity.allUsers()));
+        storage
+            .getIamPolicy(BUCKET)
+            .getBindings()
+            .get(StorageRoles.objectViewer())
+            .contains(Identity.allUsers()));
   }
 
   @Test
@@ -327,7 +349,8 @@ public class ITBucketSnippets {
   @Test
   public void testConfigureBucketCors() {
     System.out.println(PROJECT_ID);
-    ConfigureBucketCors.configureBucketCors(PROJECT_ID, BUCKET, "http://example.appspot.com", "Content-Type", 3600);
+    ConfigureBucketCors.configureBucketCors(
+        PROJECT_ID, BUCKET, "http://example.appspot.com", "Content-Type", 3600);
     Cors cors = storage.get(BUCKET).getCors().get(0);
     assertTrue(cors.getOrigins().get(0).toString().contains("example.appspot.com"));
     assertTrue(cors.getResponseHeaders().contains("Content-Type"));
@@ -335,22 +358,22 @@ public class ITBucketSnippets {
     assertTrue(cors.getMethods().get(0).toString().equalsIgnoreCase("GET"));
   }
 
-    @Test
-    public void testRequesterPays() throws Exception {
-        EnableRequesterPays.enableRequesterPays(PROJECT_ID, BUCKET);
-        Bucket bucket = storage.get(BUCKET);
-        assertTrue(bucket.requesterPays());
-        String projectId = ServiceOptions.getDefaultProjectId();
-        String blobName = "test-create-empty-blob-requester-pays";
-        byte[] content = {0xD, 0xE, 0xA, 0xD};
-        Blob remoteBlob =
-                bucket.create(blobName, content, Bucket.BlobTargetOption.userProject(projectId));
-        assertNotNull(remoteBlob);
-        DownloadRequesterPaysObject.downloadRequesterPaysObject(
-                projectId, BUCKET, blobName, Paths.get(blobName));
-        byte[] readBytes = Files.readAllBytes(Paths.get(blobName));
-        assertArrayEquals(content, readBytes);
-        DisableRequesterPays.disableRequesterPays(PROJECT_ID, BUCKET);
-        assertFalse(storage.get(BUCKET).requesterPays());
-    }
+  @Test
+  public void testRequesterPays() throws Exception {
+    EnableRequesterPays.enableRequesterPays(PROJECT_ID, BUCKET);
+    Bucket bucket = storage.get(BUCKET);
+    assertTrue(bucket.requesterPays());
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String blobName = "test-create-empty-blob-requester-pays";
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    Blob remoteBlob =
+        bucket.create(blobName, content, Bucket.BlobTargetOption.userProject(projectId));
+    assertNotNull(remoteBlob);
+    DownloadRequesterPaysObject.downloadRequesterPaysObject(
+        projectId, BUCKET, blobName, Paths.get(blobName));
+    byte[] readBytes = Files.readAllBytes(Paths.get(blobName));
+    assertArrayEquals(content, readBytes);
+    DisableRequesterPays.disableRequesterPays(PROJECT_ID, BUCKET);
+    assertFalse(storage.get(BUCKET).requesterPays());
+  }
 }

@@ -20,33 +20,33 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-
 import java.nio.file.Path;
 
 public class DownloadPublicObject {
-    public static void downloadPublicObject(String bucketName, String publicObjectName, Path destFilePath) {
-        // The name of the bucket to access
-        // String bucketName = "my-bucket";
+  public static void downloadPublicObject(
+      String bucketName, String publicObjectName, Path destFilePath) {
+    // The name of the bucket to access
+    // String bucketName = "my-bucket";
 
-        // The name of the remote public file to download
-        // String publicObjectName = "publicfile.txt";
+    // The name of the remote public file to download
+    // String publicObjectName = "publicfile.txt";
 
-        // The path to which the file should be downloaded
-        // Path destFilePath = Paths.get("/local/path/to/file.txt");
+    // The path to which the file should be downloaded
+    // Path destFilePath = Paths.get("/local/path/to/file.txt");
 
-        // Instantiate an anonymous Google Cloud Storage client, which can only access public files
-        Storage storage = StorageOptions.getUnauthenticatedInstance().getService();
+    // Instantiate an anonymous Google Cloud Storage client, which can only access public files
+    Storage storage = StorageOptions.getUnauthenticatedInstance().getService();
 
-        Blob blob = storage.get(BlobId.of(bucketName, publicObjectName));
-        blob.downloadTo(destFilePath);
+    Blob blob = storage.get(BlobId.of(bucketName, publicObjectName));
+    blob.downloadTo(destFilePath);
 
-        System.out.println(
-                "Downloaded public object "
-                        + publicObjectName
-                        + " from bucket name "
-                        + bucketName
-                        + " to "
-                        + destFilePath);
-    }
+    System.out.println(
+        "Downloaded public object "
+            + publicObjectName
+            + " from bucket name "
+            + bucketName
+            + " to "
+            + destFilePath);
+  }
 }
 // [END storage_download_public_file]

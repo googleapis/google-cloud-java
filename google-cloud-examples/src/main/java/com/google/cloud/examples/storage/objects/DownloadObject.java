@@ -20,11 +20,11 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-
 import java.nio.file.Path;
 
 public class DownloadObject {
-  public static void downloadObject(String projectId, String bucketName, String objectName, Path destFilePath) {
+  public static void downloadObject(
+      String projectId, String bucketName, String objectName, Path destFilePath) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 

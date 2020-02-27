@@ -17,7 +17,6 @@ package com.google.cloud.examples.storage.objects;
 
 // [START storage_generate_encryption_key]
 import com.google.common.io.BaseEncoding;
-
 import java.util.Random;
 
 public class GenerateEncryptionKey {

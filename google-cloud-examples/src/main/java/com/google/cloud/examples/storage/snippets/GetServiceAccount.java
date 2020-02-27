@@ -21,13 +21,14 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
 public class GetServiceAccount {
-    public static void getServiceAccount(String projectId) {
-        // The ID of your GCP project
-        // String projectId = "your-project-id";
+  public static void getServiceAccount(String projectId) {
+    // The ID of your GCP project
+    // String projectId = "your-project-id";
 
-        Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-        ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
-        System.out.println("The GCS service account for project " + projectId + " is: " + serviceAccount.getEmail());
-    }
+    Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+    ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
+    System.out.println(
+        "The GCS service account for project " + projectId + " is: " + serviceAccount.getEmail());
+  }
 }
 // [END storage_get_service_account]

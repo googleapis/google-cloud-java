@@ -19,12 +19,12 @@ package com.google.cloud.examples.storage.buckets;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class AddBucketLabel {
-  public static void addBucketLabel(String projectId, String bucketName, String labelKey, String labelValue) {
+  public static void addBucketLabel(
+      String projectId, String bucketName, String labelKey, String labelValue) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
