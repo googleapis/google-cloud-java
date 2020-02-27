@@ -17,8 +17,7 @@
 // sample-metadata:
 //   title:
 //   description: Perform batch file annotation
-//   usage: gradle run -PmainClass=com.google.cloud.examples.vision.v1.VisionBatchAnnotateFilesGcs
-// [--args='[--storage_uri "gs://cloud-samples-data/vision/document_understanding/kafka.pdf"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.vision.v1.VisionBatchAnnotateFilesGcs [--args='[--storage_uri "gs://cloud-samples-data/vision/document_understanding/kafka.pdf"]']
 
 package com.google.cloud.examples.vision.v1;
 

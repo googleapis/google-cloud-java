@@ -17,8 +17,7 @@
 // sample-metadata:
 //   title:
 //   description: Perform batch file annotation
-//   usage: gradle run -PmainClass=com.google.cloud.examples.vision.v1.VisionBatchAnnotateFiles
-// [--args='[--file_path "resources/kafka.pdf"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.vision.v1.VisionBatchAnnotateFiles [--args='[--file_path "resources/kafka.pdf"]']
 
 package com.google.cloud.examples.vision.v1;
 
@@ -95,8 +94,7 @@ public class VisionBatchAnnotateFiles {
       Feature featuresElement = Feature.newBuilder().setType(type).build();
       List<Feature> features = Arrays.asList(featuresElement);
 
-      // The service can process up to 5 pages per document file. Here we specify the first, second,
-      // and
+      // The service can process up to 5 pages per document file. Here we specify the first, second, and
       // last page of the document to be processed.
       int pagesElement = 1;
       int pagesElement2 = 2;

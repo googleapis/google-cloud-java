@@ -13,15 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",
-// "vision_async_batch_annotate_images")
+// DO NOT EDIT! This is a generated sample ("LongRunningRequestAsync",  "vision_async_batch_annotate_images")
 // sample-metadata:
 //   title: Async Batch Image Annotation
 //   description: Perform async batch image annotation
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.vision.v1.VisionAsyncBatchAnnotateImages
-// [--args='[--input_image_uri "gs://cloud-samples-data/vision/label/wakeupcat.jpg"] [--output_uri
-// "gs://your-bucket/prefix/"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.vision.v1.VisionAsyncBatchAnnotateImages [--args='[--input_image_uri "gs://cloud-samples-data/vision/label/wakeupcat.jpg"] [--output_uri "gs://your-bucket/prefix/"]']
 
 package com.google.cloud.examples.vision.v1;
 
