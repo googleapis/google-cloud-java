@@ -21,10 +21,7 @@ import static org.junit.Assert.assertFalse;
 
 import com.google.cloud.Identity;
 import com.google.cloud.ServiceOptions;
-<<<<<<< HEAD
 import com.google.cloud.examples.storage.buckets.AddBucketIamConditionalBinding;
-=======
->>>>>>> master
 import com.google.cloud.examples.storage.buckets.AddBucketIamMember;
 import com.google.cloud.examples.storage.buckets.AddBucketLabel;
 import com.google.cloud.examples.storage.buckets.ChangeDefaultStorageClass;
@@ -41,10 +38,7 @@ import com.google.cloud.examples.storage.buckets.ListBucketIamMembers;
 import com.google.cloud.examples.storage.buckets.ListBuckets;
 import com.google.cloud.examples.storage.buckets.MakeBucketPublic;
 import com.google.cloud.examples.storage.buckets.RemoveBucketDefaultKMSKey;
-<<<<<<< HEAD
 import com.google.cloud.examples.storage.buckets.RemoveBucketIamConditionalBinding;
-=======
->>>>>>> master
 import com.google.cloud.examples.storage.buckets.RemoveBucketIamMember;
 import com.google.cloud.examples.storage.buckets.RemoveBucketLabel;
 import com.google.cloud.examples.storage.buckets.SetBucketWebsiteInfo;
