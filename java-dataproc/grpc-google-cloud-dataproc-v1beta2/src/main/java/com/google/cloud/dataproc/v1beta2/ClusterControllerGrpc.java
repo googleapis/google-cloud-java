@@ -486,7 +486,7 @@ public final class ClusterControllerGrpc {
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains
-     * [Empty](google.protobuf.Empty).
+     * [Empty][google.protobuf.Empty].
      * </pre>
      */
     public void diagnoseCluster(
@@ -660,7 +660,7 @@ public final class ClusterControllerGrpc {
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains
-     * [Empty](google.protobuf.Empty).
+     * [Empty][google.protobuf.Empty].
      * </pre>
      */
     public void diagnoseCluster(
@@ -779,7 +779,7 @@ public final class ClusterControllerGrpc {
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains
-     * [Empty](google.protobuf.Empty).
+     * [Empty][google.protobuf.Empty].
      * </pre>
      */
     public com.google.longrunning.Operation diagnoseCluster(
@@ -896,7 +896,7 @@ public final class ClusterControllerGrpc {
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains
-     * [Empty](google.protobuf.Empty).
+     * [Empty][google.protobuf.Empty].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

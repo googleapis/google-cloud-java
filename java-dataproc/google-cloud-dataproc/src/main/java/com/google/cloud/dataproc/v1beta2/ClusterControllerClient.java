@@ -847,7 +847,7 @@ public class ClusterControllerClient implements BackgroundResource {
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    * After the operation completes, [Operation.response][google.longrunning.Operation.response]
-   * contains [Empty](google.protobuf.Empty).
+   * contains [Empty][google.protobuf.Empty].
    *
    * <p>Sample code:
    *
@@ -885,7 +885,7 @@ public class ClusterControllerClient implements BackgroundResource {
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    * After the operation completes, [Operation.response][google.longrunning.Operation.response]
-   * contains [Empty](google.protobuf.Empty).
+   * contains [Empty][google.protobuf.Empty].
    *
    * <p>Sample code:
    *
@@ -919,7 +919,7 @@ public class ClusterControllerClient implements BackgroundResource {
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    * After the operation completes, [Operation.response][google.longrunning.Operation.response]
-   * contains [Empty](google.protobuf.Empty).
+   * contains [Empty][google.protobuf.Empty].
    *
    * <p>Sample code:
    *
@@ -951,7 +951,7 @@ public class ClusterControllerClient implements BackgroundResource {
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    * After the operation completes, [Operation.response][google.longrunning.Operation.response]
-   * contains [Empty](google.protobuf.Empty).
+   * contains [Empty][google.protobuf.Empty].
    *
    * <p>Sample code:
    *
