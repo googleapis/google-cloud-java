@@ -46,7 +46,7 @@ public class RemoveBucketIamConditionalBinding {
                 storage.setIamPolicy(
                         bucketName, originalPolicy.toBuilder().setBindings(bindings).setVersion(3).build());
 
-        if(bindings.size() > updatedPolicy.getBindingsList().size())
+        if(bindings.size() > updatedPolicy.getBindingsList().size()) {
             System.out.println("Conditional Binding was removed.");
         }
     }
