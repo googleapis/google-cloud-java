@@ -125,7 +125,7 @@ public class PolicyTest {
       assertEquals("Null identities are not permitted.", ex.getMessage());
     }
     try {
-      Policy.newBuilder().setBindings(null);
+      Policy.newBuilder().setBindings((Map<Role, Set<Identity>>) null);
       fail("Null bindings map should cause exception.");
     } catch (NullPointerException ex) {
       assertEquals("The provided map of bindings cannot be null.", ex.getMessage());
