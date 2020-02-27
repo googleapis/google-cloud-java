@@ -15,7 +15,7 @@
  */
 package com.google.cloud.examples.storage.buckets;
 
-// [START storaoe_add_bucket_iam_member]
+// [START storage_add_bucket_iam_member]
 import com.google.cloud.Binding;
 import com.google.cloud.Policy;
 import com.google.cloud.storage.Storage;

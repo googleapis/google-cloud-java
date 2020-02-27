@@ -1,5 +1,6 @@
 package com.google.cloud.examples.storage.buckets;
 
+// [START storage_add_bucket_conditional_iam_binding]
 import com.google.cloud.Binding;
 import com.google.cloud.Condition;
 import com.google.cloud.Policy;
@@ -9,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-// [START storage_add_bucket_conditional_iam_binding]
 public class AddBucketIamConditionalBinding {
   /** Example of adding a conditional binding to the Bucket-level IAM */
   public static void addBucketIamConditionalBinding(String projectId, String bucketName) {

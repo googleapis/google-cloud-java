@@ -1,5 +1,6 @@
 package com.google.cloud.examples.storage.buckets;
 
+// [START storage_remove_bucket_conditional_iam_binding]
 import com.google.cloud.Binding;
 import com.google.cloud.Condition;
 import com.google.cloud.Policy;
@@ -23,8 +24,6 @@ public class RemoveBucketIamConditionalBinding {
                 storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(3));
 
         String role = "roles/storage.objectViewer";
-
-        String member = "group:example@google.com";
 
         List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
         Condition.Builder conditionBuilder = Condition.newBuilder();
@@ -57,3 +56,4 @@ public class RemoveBucketIamConditionalBinding {
         }
     }
 }
+// [END storage_remove_bucket_conditional_iam_binding]
