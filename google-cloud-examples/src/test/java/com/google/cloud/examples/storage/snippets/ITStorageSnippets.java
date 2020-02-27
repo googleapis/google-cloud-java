@@ -25,8 +25,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.api.gax.paging.Page;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
@@ -34,12 +32,9 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
-import com.google.cloud.storage.Bucket.BlobTargetOption;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -47,11 +42,6 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.net.URL;
 import java.net.URLConnection;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
@@ -78,7 +68,7 @@ public class ITStorageSnippets {
   private static final Long RETENTION_PERIOD = 5L; // 5 seconds
   private static Storage storage;
   private static StorageSnippets storageSnippets;
-  private static List<String> bucketsToCleanUp;
+  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
 
   @Rule public ExpectedException thrown = ExpectedException.none();
 
@@ -106,86 +96,6 @@ public class ITStorageSnippets {
         log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
     }
-  }
-
-  @Test
-  public void testCreateBucketWithStorageClassAndLocation()
-      throws ExecutionException, InterruptedException {
-    String tempBucket = RemoteStorageHelper.generateBucketName();
-
-    Bucket bucket = storageSnippets.createBucketWithStorageClassAndLocation(tempBucket);
-
-    assertNotNull(bucket);
-  }
-
-  @Test
-  public void testBlob() throws InterruptedException {
-    String blobName = "directory/test-blob";
-    Blob blob = storageSnippets.createBlob(BUCKET, blobName);
-    assertNotNull(blob);
-    blob = storageSnippets.getBlobFromId(BUCKET, blobName);
-    assertNotNull(blob);
-    blob = storageSnippets.updateBlob(BUCKET, blobName);
-    assertNotNull(blob);
-    blob = storageSnippets.updateBlobWithMetageneration(BUCKET, blobName);
-    assertNotNull(blob);
-    Blob copiedBlob = storageSnippets.copyBlob(BUCKET, blobName, "directory/copy-blob");
-    assertNotNull(copiedBlob);
-    Page<Blob> blobs = storageSnippets.listBlobsWithDirectoryAndPrefix(BUCKET, "directory/");
-    while (Iterators.size(blobs.iterateAll().iterator()) < 2) {
-      Thread.sleep(500);
-      blobs = storageSnippets.listBlobsWithDirectoryAndPrefix(BUCKET, "directory/");
-    }
-    Set<String> blobNames = new HashSet<>();
-    Iterator<Blob> blobIterator = blobs.iterateAll().iterator();
-    while (blobIterator.hasNext()) {
-      blobNames.add(blobIterator.next().getName());
-    }
-    assertTrue(blobNames.contains(blobName));
-    assertTrue(blobNames.contains("directory/copy-blob"));
-    try {
-      storageSnippets.getBlobFromStringsWithMetageneration(BUCKET, blobName, -1);
-      fail("Expected StorageException to be thrown");
-    } catch (StorageException ex) {
-      // expected
-    }
-    assertTrue(storageSnippets.deleteBlob(BUCKET, blobName));
-    copiedBlob.delete();
-  }
-
-  @Test
-  public void testCreateUpdateEncryptedBlob() throws InterruptedException {
-    // Note: DO NOT put your encryption key in your code, like it is here. Store it somewhere safe,
-    // and read it in when you need it. This key is just here to make the code easier to read.
-    String encryptionKey1 = "0mMWhFvQOdS4AmxRpo8SJxXn5MjFhbz7DkKBUdUIef8=";
-    String blobName = "encrypted-blob";
-
-    Blob blob = storageSnippets.createEncryptedBlob(BUCKET, blobName, encryptionKey1);
-
-    assertNotNull(blob);
-    assertEquals("text/plain", blob.getContentType());
-    byte[] encryptedContent = storageSnippets.readEncryptedBlob(BUCKET, blobName, encryptionKey1);
-    assertEquals("Hello, World!", new String(encryptedContent));
-    blob = storageSnippets.getBlobFromId(BUCKET, blobName);
-    assertEquals("text/plain", blob.getContentType());
-
-    String encryptionKey2 = "wnxMO0w+dmxribu7rICJ+Q2ES9TLpFRIDy3/L7HN5ZA=";
-
-    blob =
-        storageSnippets.rotateBlobEncryptionKey(BUCKET, blobName, encryptionKey1, encryptionKey2);
-
-    assertNotNull(blob);
-    encryptedContent = storageSnippets.readEncryptedBlob(BUCKET, blobName, encryptionKey2);
-    assertEquals("Hello, World!", new String(encryptedContent));
-    blob = storageSnippets.getBlobFromId(BUCKET, blobName);
-    assertEquals("text/plain", blob.getContentType());
-  }
-
-  @Test
-  public void testCreateKMSEncryptedBlob() {
-    String blobName = "kms-encrypted-blob";
-    Blob blob = storageSnippets.createKmsEncrpytedBlob(BUCKET, blobName, KMS_KEY_NAME);
-    assertNotNull(blob);
   }
 
   @Test
@@ -238,19 +148,6 @@ public class ITStorageSnippets {
   public void testGetBucketWithMetageneration() {
     thrown.expect(StorageException.class);
     storageSnippets.getBucketWithMetageneration(BUCKET, -1);
-  }
-
-  @Test
-  public void testListBucketsWithSizeAndPrefix() throws InterruptedException {
-    Page<Bucket> buckets = storageSnippets.listBucketsWithSizeAndPrefix(BUCKET);
-    while (Iterators.size(buckets.iterateAll().iterator()) < 1) {
-      Thread.sleep(500);
-      buckets = storageSnippets.listBucketsWithSizeAndPrefix(BUCKET);
-    }
-    Iterator<Bucket> bucketIterator = buckets.iterateAll().iterator();
-    while (bucketIterator.hasNext()) {
-      assertTrue(bucketIterator.next().getName().startsWith(BUCKET));
-    }
   }
 
   @Test
@@ -402,11 +299,6 @@ public class ITStorageSnippets {
     assertNotNull(userAcl);
     assertEquals(USER_EMAIL, ((User) userAcl.getEntity()).getEmail());
 
-    acls =
-        Sets.newHashSet(
-            storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
-    assertTrue(acls.contains(updatedAcl));
-
     assertNotNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     assertTrue(storageSnippets.deleteBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
@@ -442,122 +334,6 @@ public class ITStorageSnippets {
     String snippetOutput = snippetOutputCapture.toString();
     System.setOut(System.out);
     assertTrue(snippetOutput.contains("Buckets:"));
-  }
-
-  @Test
-  public void testBlobDownload() throws Exception {
-    String blobName = "test-create-empty-blob";
-    BlobId blobId = BlobId.of(BUCKET, blobName);
-    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
-    Blob remoteBlob = storage.create(blobInfo, BLOB_BYTE_CONTENT);
-    assertNotNull(remoteBlob);
-    storageSnippets.downloadFile(BUCKET, blobName, Paths.get(blobName));
-    byte[] readBytes = Files.readAllBytes(Paths.get(blobName));
-    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
-  }
-
-  @Test
-  public void testGetBucketMetadata() {
-    Bucket bucket =
-        storage.get(BUCKET, Storage.BucketGetOption.fields(Storage.BucketField.values()));
-    bucket = bucket.toBuilder().setLabels(ImmutableMap.of("k", "v")).build().update();
-    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(snippetOutputCapture));
-    storageSnippets.getBucketMetadata(BUCKET);
-    String snippetOutput = snippetOutputCapture.toString();
-    System.setOut(System.out);
-    System.out.println(snippetOutput);
-    assertTrue(snippetOutput.contains(("BucketName: " + bucket.getName())));
-    assertTrue(
-        snippetOutput.contains(("DefaultEventBasedHold: " + bucket.getDefaultEventBasedHold())));
-    assertTrue(snippetOutput.contains(("DefaultKmsKeyName: " + bucket.getDefaultKmsKeyName())));
-    assertTrue(snippetOutput.contains(("Id: " + bucket.getGeneratedId())));
-    assertTrue(snippetOutput.contains(("IndexPage: " + bucket.getIndexPage())));
-    assertTrue(snippetOutput.contains(("Location: " + bucket.getLocation())));
-    assertTrue(snippetOutput.contains(("LocationType: " + bucket.getLocationType())));
-    assertTrue(snippetOutput.contains(("Metageneration: " + bucket.getMetageneration())));
-    assertTrue(snippetOutput.contains(("NotFoundPage: " + bucket.getNotFoundPage())));
-    assertTrue(
-        snippetOutput.contains(("RetentionEffectiveTime: " + bucket.getRetentionEffectiveTime())));
-    assertTrue(snippetOutput.contains(("RetentionPeriod: " + bucket.getRetentionPeriod())));
-    assertTrue(
-        snippetOutput.contains(("RetentionPolicyIsLocked: " + bucket.retentionPolicyIsLocked())));
-    assertTrue(snippetOutput.contains(("RequesterPays: " + bucket.requesterPays())));
-    assertTrue(snippetOutput.contains(("SelfLink: " + bucket.getSelfLink())));
-    assertTrue(snippetOutput.contains(("StorageClass: " + bucket.getStorageClass().name())));
-    assertTrue(snippetOutput.contains(("TimeCreated: " + bucket.getCreateTime())));
-    assertTrue(snippetOutput.contains(("VersioningEnabled: " + bucket.versioningEnabled())));
-    assertTrue(snippetOutput.contains("Labels:"));
-    assertTrue(snippetOutput.contains("k=v"));
-  }
-
-  @Test
-  public void testGetBlobMetadata() {
-    String blobName = "test-create-empty-blob";
-    BlobId blobId = BlobId.of(BUCKET, blobName);
-    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setMetadata(ImmutableMap.of("k", "v")).build();
-    Blob remoteBlob = storage.create(blobInfo, BLOB_BYTE_CONTENT);
-    assertNotNull(remoteBlob);
-    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(snippetOutputCapture));
-    storageSnippets.getBlobMetadata(BUCKET, blobName);
-    String snippetOutput = snippetOutputCapture.toString();
-    System.setOut(System.out);
-    assertTrue(snippetOutput.contains("Bucket: " + remoteBlob.getBucket()));
-    assertTrue(snippetOutput.contains("Bucket: " + remoteBlob.getBucket()));
-    assertTrue(snippetOutput.contains("CacheControl: " + remoteBlob.getCacheControl()));
-    assertTrue(snippetOutput.contains("ComponentCount: " + remoteBlob.getComponentCount()));
-    assertTrue(snippetOutput.contains("ContentDisposition: " + remoteBlob.getContentDisposition()));
-    assertTrue(snippetOutput.contains("ContentEncoding: " + remoteBlob.getContentEncoding()));
-    assertTrue(snippetOutput.contains("ContentLanguage: " + remoteBlob.getContentLanguage()));
-    assertTrue(snippetOutput.contains("ContentType: " + remoteBlob.getContentType()));
-    assertTrue(snippetOutput.contains("Crc32c: " + remoteBlob.getCrc32c()));
-    assertTrue(snippetOutput.contains("Crc32cHexString: " + remoteBlob.getCrc32cToHexString()));
-    assertTrue(snippetOutput.contains("ETag: " + remoteBlob.getEtag()));
-    assertTrue(snippetOutput.contains("Generation: " + remoteBlob.getGeneration()));
-    assertTrue(snippetOutput.contains("Id: " + remoteBlob.getBlobId()));
-    assertTrue(snippetOutput.contains("KmsKeyName: " + remoteBlob.getKmsKeyName()));
-    assertTrue(snippetOutput.contains("Md5Hash: " + remoteBlob.getMd5()));
-    assertTrue(snippetOutput.contains("Md5HexString: " + remoteBlob.getMd5ToHexString()));
-    assertTrue(snippetOutput.contains("MediaLink: " + remoteBlob.getMediaLink()));
-    assertTrue(snippetOutput.contains("Metageneration: " + remoteBlob.getMetageneration()));
-    assertTrue(snippetOutput.contains("Name: " + remoteBlob.getName()));
-    assertTrue(snippetOutput.contains("Size: " + remoteBlob.getSize()));
-    assertTrue(snippetOutput.contains("StorageClass: " + remoteBlob.getStorageClass()));
-    assertTrue(snippetOutput.contains("TimeCreated: " + new Date(remoteBlob.getCreateTime())));
-    assertTrue(
-        snippetOutput.contains("Last Metadata Update: " + new Date(remoteBlob.getUpdateTime())));
-    assertTrue(snippetOutput.contains("temporaryHold: disabled"));
-    assertTrue(snippetOutput.contains("eventBasedHold: disabled"));
-    assertTrue(snippetOutput.contains("User metadata:"));
-    assertTrue(snippetOutput.contains("k=v"));
-  }
-
-  @Test
-  public void testRequesterPays() throws Exception {
-    Bucket bucket = storageSnippets.enableRequesterPays(BUCKET);
-    assertTrue(bucket.requesterPays());
-    bucket = storageSnippets.getRequesterPaysStatus(BUCKET);
-    assertTrue(bucket.requesterPays());
-    String projectId = ServiceOptions.getDefaultProjectId();
-    String blobName = "test-create-empty-blob-requester-pays";
-    Blob remoteBlob =
-        bucket.create(blobName, BLOB_BYTE_CONTENT, BlobTargetOption.userProject(projectId));
-    assertNotNull(remoteBlob);
-    storageSnippets.downloadFileUsingRequesterPays(
-        projectId, BUCKET, blobName, Paths.get(blobName));
-    byte[] readBytes = Files.readAllBytes(Paths.get(blobName));
-    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
-    bucket = storageSnippets.disableRequesterPays(BUCKET);
-    assertFalse(bucket.requesterPays());
-  }
-
-  @Test
-  public void testDefaultKMSKey() {
-    Bucket bucket = storageSnippets.setDefaultKmsKey(BUCKET, KMS_KEY_NAME);
-    assertEquals(KMS_KEY_NAME, bucket.getDefaultKmsKeyName());
-    // Remove default key
-    storageSnippets.setDefaultKmsKey(BUCKET, null);
   }
 
   @Test
@@ -616,5 +392,33 @@ public class ITStorageSnippets {
     assertNotNull(bucket.getIamConfiguration().getUniformBucketLevelAccessLockedTime());
     bucket = storageSnippets.disableUniformBucketLevelAccess(tempBucket);
     assertFalse(bucket.getIamConfiguration().isUniformBucketLevelAccessEnabled());
+  }
+
+  @Test
+  public void testGetServiceAccount() {
+    PrintStream systemOut = System.out;
+    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(snippetOutputCapture));
+    GetServiceAccount.getServiceAccount(PROJECT_ID);
+    String snippetOutput = snippetOutputCapture.toString();
+    System.setOut(systemOut);
+
+    assertTrue(snippetOutput.contains("service"));
+    assertTrue(snippetOutput.contains("@gs-project-accounts.iam.gserviceaccount.com"));
+  }
+
+  @Test
+  public void testDefaultKMSKey() {
+    Bucket bucket = storageSnippets.setDefaultKmsKey(BUCKET, KMS_KEY_NAME);
+    assertEquals(KMS_KEY_NAME, bucket.getDefaultKmsKeyName());
+    // Remove default key
+    storageSnippets.setDefaultKmsKey(BUCKET, null);
+  }
+
+  @Test
+  public void testCreateKMSEncryptedBlob() {
+    String blobName = "kms-encrypted-blob";
+    Blob blob = storageSnippets.createKmsEncrpytedBlob(BUCKET, blobName, KMS_KEY_NAME);
+    assertNotNull(blob);
   }
 }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,25 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.examples.storage.objects;
+package com.google.cloud.examples.storage.buckets;
 
-// [START storage_make_public]
-import com.google.cloud.storage.Acl;
-import com.google.cloud.storage.BlobId;
+// [START storage_enable_requester_pays]
+import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
-public class MakeObjectPublic {
-  public static void makeObjectPublic(String projectId, String bucketName, String objectName) {
+public class EnableRequesterPays {
+  public static void enableRequesterPays(String projectId, String bucketName) {
+    // The ID of your GCP project
     // String projectId = "your-project-id";
-    // String bucketName = "your-bucket-name";
-    // String objectName = "your-object-name";
-    Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-    BlobId blobId = BlobId.of(bucketName, objectName);
-    storage.createAcl(blobId, Acl.of(Acl.User.ofAllUsers(), Acl.Role.READER));
 
-    System.out.println(
-        "Object " + objectName + " in bucket " + bucketName + " was made publicly readable");
+    // The ID of your GCS bucket
+    // String bucketName = "your-unique-bucket-name";
+
+    Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+    Bucket bucket = storage.get(bucketName);
+    bucket.toBuilder().setRequesterPays(true).build().update();
+
+    System.out.println("Requester pays enabled for bucket " + bucketName);
   }
 }
-// [END storage_make_public]
+// [END storage_enable_requester_pays]

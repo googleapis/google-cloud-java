@@ -45,12 +45,10 @@ import com.google.cloud.storage.HmacKey.HmacKeyState;
 import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobGetOption;
-import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobTargetOption;
 import com.google.cloud.storage.Storage.BucketField;
 import com.google.cloud.storage.Storage.BucketGetOption;
-import com.google.cloud.storage.Storage.BucketListOption;
 import com.google.cloud.storage.Storage.BucketSourceOption;
 import com.google.cloud.storage.Storage.ComposeRequest;
 import com.google.cloud.storage.Storage.CopyRequest;
@@ -58,7 +56,6 @@ import com.google.cloud.storage.Storage.ListHmacKeysOption;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.StorageBatch;
 import com.google.cloud.storage.StorageBatchResult;
-import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import java.io.ByteArrayInputStream;
@@ -67,12 +64,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
-import java.nio.file.Path;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /** This class contains a number of snippets for the {@link Storage} interface. */
@@ -91,23 +85,6 @@ public class StorageSnippets {
     // [START createBucket]
     Bucket bucket = storage.create(BucketInfo.of(bucketName));
     // [END createBucket]
-    return bucket;
-  }
-
-  /** Example of creating a bucket with storage class and location. */
-  // [TARGET create(BucketInfo, BucketTargetOption...)]
-  // [VARIABLE "my_unique_bucket"]
-  public Bucket createBucketWithStorageClassAndLocation(String bucketName) {
-    // [START createBucketWithStorageClassAndLocation]
-    Bucket bucket =
-        storage.create(
-            BucketInfo.newBuilder(bucketName)
-                // See here for possible values: http://g.co/cloud/storage/docs/storage-classes
-                .setStorageClass(StorageClass.COLDLINE)
-                // Possible values: http://g.co/cloud/storage/docs/bucket-locations#location-mr
-                .setLocation("asia")
-                .build());
-    // [END createBucketWithStorageClassAndLocation]
     return bucket;
   }
 
@@ -165,42 +142,6 @@ public class StorageSnippets {
     return blob;
   }
 
-  /** Example of uploading an encrypted blob. */
-  // [TARGET create(BlobInfo, InputStream, BlobWriteOption...)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  // [VARIABLE "my_encryption_key"]
-  public Blob createEncryptedBlob(String bucketName, String blobName, String encryptionKey) {
-    // [START storageUploadEncryptedFile]
-    byte[] data = "Hello, World!".getBytes(UTF_8);
-
-    BlobId blobId = BlobId.of(bucketName, blobName);
-    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
-    Blob blob = storage.create(blobInfo, data, BlobTargetOption.encryptionKey(encryptionKey));
-    // [END storageUploadEncryptedFile]
-    return blob;
-  }
-
-  /** Example of uploading a blob encrypted service side with a Cloud KMS key. */
-  public Blob createKmsEncrpytedBlob(String bucketName, String blobName, String kmsKeyName) {
-    // [START storage_upload_with_kms_key]
-    byte[] data = "Hello, World!".getBytes(UTF_8);
-
-    // The name of the existing bucket to set a default KMS key for, e.g. "my-bucket"
-    // String bucketName = "my-bucket"
-
-    // The name of the KMS-key to use as a default
-    // Key names are provided in the following format:
-    // 'projects/<PROJECT>/locations/<LOCATION>/keyRings/<RING_NAME>/cryptoKeys/<KEY_NAME>'
-    // String kmsKeyName = ""
-
-    BlobId blobId = BlobId.of(bucketName, blobName);
-    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
-    Blob blob = storage.create(blobInfo, data, BlobTargetOption.kmsKeyName(kmsKeyName));
-    // [END storage_upload_with_kms_key]
-    return blob;
-  }
-
   /**
    * Example of getting information on a bucket, only if its metageneration matches a value,
    * otherwise a {@link StorageException} is thrown.
@@ -245,6 +186,50 @@ public class StorageSnippets {
     return blob;
   }
 
+  /** Example of uploading a blob encrypted service side with a Cloud KMS key. */
+  public Blob createKmsEncrpytedBlob(String bucketName, String blobName, String kmsKeyName) {
+    // [START storage_upload_with_kms_key]
+    byte[] data = "Hello, World!".getBytes(UTF_8);
+
+    // The name of the existing bucket to set a default KMS key for, e.g. "my-bucket"
+    // String bucketName = "my-bucket"
+
+    // The name of the KMS-key to use as a default
+    // Key names are provided in the following format:
+    // 'projects/<PROJECT>/locations/<LOCATION>/keyRings/<RING_NAME>/cryptoKeys/<KEY_NAME>'
+    // String kmsKeyName = ""
+
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
+    Blob blob = storage.create(blobInfo, data, BlobTargetOption.kmsKeyName(kmsKeyName));
+    // [END storage_upload_with_kms_key]
+    return blob;
+  }
+
+  /** Example of setting a default KMS key on a bucket. */
+  public Bucket setDefaultKmsKey(String bucketName, String kmsKeyName) throws StorageException {
+    // [START storage_set_bucket_default_kms_key]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of the existing bucket to set a default KMS key for, e.g. "my-bucket"
+    // String bucketName = "my-bucket"
+
+    // The name of the KMS-key to use as a default
+    // Key names are provided in the following format:
+    // 'projects/<PROJECT>/locations/<LOCATION>/keyRings/<RING_NAME>/cryptoKeys/<KEY_NAME>'
+    // String kmsKeyName = ""
+
+    BucketInfo bucketInfo =
+        BucketInfo.newBuilder(bucketName).setDefaultKmsKeyName(kmsKeyName).build();
+
+    Bucket bucket = storage.update(bucketInfo);
+
+    System.out.println("Default KMS Key Name: " + bucket.getDefaultKmsKeyName());
+    // [END storage_set_bucket_default_kms_key]
+    return bucket;
+  }
+
   /**
    * Example of getting information on a blob, only if its metageneration matches a value, otherwise
    * a {@link StorageException} is thrown.
@@ -262,38 +247,6 @@ public class StorageSnippets {
     return blob;
   }
 
-  /** Example of listing buckets, specifying the page size and a name prefix. */
-  // [TARGET list(BucketListOption...)]
-  // [VARIABLE "bucket_"]
-  public Page<Bucket> listBucketsWithSizeAndPrefix(String prefix) {
-    // [START listBucketsWithSizeAndPrefix]
-    // Include a prefix of bucket-name to reduce search space.
-    // For more information read https://cloud.google.com/storage/docs/json_api/v1/buckets/list
-    Page<Bucket> buckets =
-        storage.list(BucketListOption.pageSize(100), BucketListOption.prefix(prefix));
-    for (Bucket bucket : buckets.iterateAll()) {
-      // do something with the bucket
-    }
-    // [END listBucketsWithSizeAndPrefix]
-    return buckets;
-  }
-
-  /** Example of listing blobs in a provided directory. */
-  // [TARGET list(String, BlobListOption...)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_directory/"]
-  public Page<Blob> listBlobsWithDirectoryAndPrefix(String bucketName, String directory) {
-    // [START listBlobsWithDirectoryAndPrefix]
-    Page<Blob> blobs =
-        storage.list(
-            bucketName, BlobListOption.currentDirectory(), BlobListOption.prefix(directory));
-    for (Blob blob : blobs.iterateAll()) {
-      // do something with the blob
-    }
-    // [END listBlobsWithDirectoryAndPrefix]
-    return blobs;
-  }
-
   /** Example of updating bucket information. */
   // [TARGET update(BucketInfo, BucketTargetOption...)]
   // [VARIABLE "my_unique_bucket"]
@@ -303,21 +256,6 @@ public class StorageSnippets {
     Bucket bucket = storage.update(bucketInfo);
     // [END updateBucket]
     return bucket;
-  }
-
-  /** Example of replacing blob's metadata. */
-  // [TARGET update(BlobInfo)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  public Blob updateBlob(String bucketName, String blobName) {
-    // [START updateBlob]
-    Map<String, String> newMetadata = new HashMap<>();
-    newMetadata.put("key", "value");
-    storage.update(BlobInfo.newBuilder(bucketName, blobName).setMetadata(null).build());
-    Blob blob =
-        storage.update(BlobInfo.newBuilder(bucketName, blobName).setMetadata(newMetadata).build());
-    // [END updateBlob]
-    return blob;
   }
 
   /**
@@ -400,23 +338,6 @@ public class StorageSnippets {
     return deleted;
   }
 
-  /** Example of deleting a blob. */
-  // [TARGET delete(BlobId)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  public boolean deleteBlob(String bucketName, String blobName) {
-    // [START deleteBlob]
-    BlobId blobId = BlobId.of(bucketName, blobName);
-    boolean deleted = storage.delete(blobId);
-    if (deleted) {
-      // the blob was deleted
-    } else {
-      // the blob was not found
-    }
-    // [END deleteBlob]
-    return deleted;
-  }
-
   /** Example of composing two blobs. */
   // [TARGET compose(ComposeRequest)]
   // [VARIABLE "my_unique_bucket"]
@@ -439,23 +360,6 @@ public class StorageSnippets {
     return blob;
   }
 
-  /** Example of copying a blob. */
-  // [TARGET copy(CopyRequest)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  // [VARIABLE "copy_blob_name"]
-  public Blob copyBlob(String bucketName, String blobName, String copyBlobName) {
-    // [START copyBlob]
-    CopyRequest request =
-        CopyRequest.newBuilder()
-            .setSource(BlobId.of(bucketName, blobName))
-            .setTarget(BlobId.of(bucketName, copyBlobName))
-            .build();
-    Blob blob = storage.copy(request).getResult();
-    // [END copyBlob]
-    return blob;
-  }
-
   /** Example of copying a blob in chunks. */
   // [TARGET copy(CopyRequest)]
   // [VARIABLE "my_unique_bucket"]
@@ -474,27 +378,6 @@ public class StorageSnippets {
     }
     Blob blob = copyWriter.getResult();
     // [END copyBlobInChunks]
-    return blob;
-  }
-
-  /** Example of rotating the encryption key of a blob. */
-  // [TARGET copy(CopyRequest)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  // [VARIABLE "old_encryption_key"]
-  // [VARIABLE "new_encryption_key"]
-  public Blob rotateBlobEncryptionKey(
-      String bucketName, String blobName, String oldEncryptionKey, String newEncryptionKey) {
-    // [START storageRotateEncryptionKey]
-    BlobId blobId = BlobId.of(bucketName, blobName);
-    CopyRequest request =
-        CopyRequest.newBuilder()
-            .setSource(blobId)
-            .setSourceOptions(BlobSourceOption.decryptionKey(oldEncryptionKey))
-            .setTarget(blobId, BlobTargetOption.encryptionKey(newEncryptionKey))
-            .build();
-    Blob blob = storage.copy(request).getResult();
-    // [END storageRotateEncryptionKey]
     return blob;
   }
 
@@ -529,19 +412,6 @@ public class StorageSnippets {
     BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
     byte[] content = storage.readAllBytes(blobId);
     // [END readBlobFromId]
-    return content;
-  }
-
-  /** Example of reading all bytes of an encrypted blob. */
-  // [TARGET readAllBytes(BlobId, BlobSourceOption...)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  // [VARIABLE "my_encryption_key"]
-  public byte[] readEncryptedBlob(String bucketName, String blobName, String decryptionKey) {
-    // [START readEncryptedBlob]
-    byte[] content =
-        storage.readAllBytes(bucketName, blobName, BlobSourceOption.decryptionKey(decryptionKey));
-    // [END readEncryptedBlob]
     return content;
   }
 
@@ -986,42 +856,6 @@ public class StorageSnippets {
     // [END storage_list_buckets]
   }
 
-  /** Example of enabling Requester pays on a bucket. */
-  public Bucket enableRequesterPays(String bucketName) throws StorageException {
-    // [START enable_requester_pays]
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // The name of the existing bucket to enable requester-paying for, e.g. "my-bucket"
-    // String bucketName = "my-bucket"
-    BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName).setRequesterPays(true).build();
-
-    // Update the bucket, throws StorageException on failure
-    Bucket bucket = storage.update(bucketInfo);
-
-    System.out.println("Requester pay status for " + bucketName + ": " + bucket.requesterPays());
-    // [END enable_requester_pays]
-    return bucket;
-  }
-
-  /** Example of disabling Requester pays on a bucket. */
-  public Bucket disableRequesterPays(String bucketName) {
-    // [START disable_requester_pays]
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // The name of the bucket to disable requester-paying for, e.g. "my-bucket"
-    // String bucketName = "my-bucket"
-    BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName).setRequesterPays(false).build();
-
-    // Update the bucket, throws StorageException on failure
-    Bucket bucket = storage.update(bucketInfo);
-
-    System.out.println("Requester pays status for " + bucketName + ": " + bucket.requesterPays());
-    // [END disable_requester_pays]
-    return bucket;
-  }
-
   /** Example of retrieving Requester pays status on a bucket. */
   public Bucket getRequesterPaysStatus(String bucketName) throws StorageException {
     // [START get_requester_pays_status]
@@ -1036,176 +870,6 @@ public class StorageSnippets {
     System.out.println("Requester pays status : " + bucket.requesterPays());
     // [END get_requester_pays_status]
     return bucket;
-  }
-
-  /** Example of downloading a file. */
-  public void downloadFile(String bucketName, String srcFilename, Path destFilePath)
-      throws IOException {
-    // [START storage_download_file]
-    // The name of the bucket to access
-    // String bucketName = "my-bucket";
-
-    // The name of the remote file to download
-    // String srcFilename = "file.txt";
-
-    // The path to which the file should be downloaded
-    // Path destFilePath = Paths.get("/local/path/to/file.txt");
-
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // Get specific file from specified bucket
-    Blob blob = storage.get(BlobId.of(bucketName, srcFilename));
-
-    // Download file to specified path
-    blob.downloadTo(destFilePath);
-    // [END storage_download_file]
-  }
-
-  /** Example of downloading a file using Requester pay. */
-  public void downloadFileUsingRequesterPays(
-      String projectId, String bucketName, String srcFilename, Path destFilePath)
-      throws IOException {
-    // [START storage_download_file_requester_pays]
-    // The project ID to bill
-    // String projectId = "my-billable-project-id";
-
-    // The name of the bucket to access
-    // String bucketName = "my-bucket";
-
-    // The name of the remote file to download
-    // String srcFilename = "file.txt";
-
-    // The path to which the file should be downloaded
-    // Path destFilePath = Paths.get("/local/path/to/file.txt");
-
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // Get specific file from specified bucket
-    Blob blob = storage.get(BlobId.of(bucketName, srcFilename));
-
-    // Download file to specified path
-    blob.downloadTo(destFilePath, Blob.BlobSourceOption.userProject(projectId));
-    // [END storage_download_file_requester_pays]
-  }
-
-  /** Example of setting a default KMS key on a bucket. */
-  public Bucket setDefaultKmsKey(String bucketName, String kmsKeyName) throws StorageException {
-    // [START storage_set_bucket_default_kms_key]
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // The name of the existing bucket to set a default KMS key for, e.g. "my-bucket"
-    // String bucketName = "my-bucket"
-
-    // The name of the KMS-key to use as a default
-    // Key names are provided in the following format:
-    // 'projects/<PROJECT>/locations/<LOCATION>/keyRings/<RING_NAME>/cryptoKeys/<KEY_NAME>'
-    // String kmsKeyName = ""
-
-    BucketInfo bucketInfo =
-        BucketInfo.newBuilder(bucketName).setDefaultKmsKeyName(kmsKeyName).build();
-
-    Bucket bucket = storage.update(bucketInfo);
-
-    System.out.println("Default KMS Key Name: " + bucket.getDefaultKmsKeyName());
-    // [END storage_set_bucket_default_kms_key]
-    return bucket;
-  }
-
-  /** Example of displaying Bucket metadata */
-  public void getBucketMetadata(String bucketName) throws StorageException {
-    // [START storage_get_bucket_metadata]
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // The name of a bucket, e.g. "my-bucket"
-    // String bucketName = "my-bucket";
-
-    // Select all fields
-    // Fields can be selected individually e.g. Storage.BucketField.NAME
-    Bucket bucket = storage.get(bucketName, BucketGetOption.fields(Storage.BucketField.values()));
-
-    // Print bucket metadata
-    System.out.println("BucketName: " + bucket.getName());
-    System.out.println("DefaultEventBasedHold: " + bucket.getDefaultEventBasedHold());
-    System.out.println("DefaultKmsKeyName: " + bucket.getDefaultKmsKeyName());
-    System.out.println("Id: " + bucket.getGeneratedId());
-    System.out.println("IndexPage: " + bucket.getIndexPage());
-    System.out.println("Location: " + bucket.getLocation());
-    System.out.println("LocationType: " + bucket.getLocationType());
-    System.out.println("Metageneration: " + bucket.getMetageneration());
-    System.out.println("NotFoundPage: " + bucket.getNotFoundPage());
-    System.out.println("RetentionEffectiveTime: " + bucket.getRetentionEffectiveTime());
-    System.out.println("RetentionPeriod: " + bucket.getRetentionPeriod());
-    System.out.println("RetentionPolicyIsLocked: " + bucket.retentionPolicyIsLocked());
-    System.out.println("RequesterPays: " + bucket.requesterPays());
-    System.out.println("SelfLink: " + bucket.getSelfLink());
-    System.out.println("StorageClass: " + bucket.getStorageClass().name());
-    System.out.println("TimeCreated: " + bucket.getCreateTime());
-    System.out.println("VersioningEnabled: " + bucket.versioningEnabled());
-    if (bucket.getLabels() != null) {
-      System.out.println("\n\n\nLabels:");
-      for (Map.Entry<String, String> label : bucket.getLabels().entrySet()) {
-        System.out.println(label.getKey() + "=" + label.getValue());
-      }
-    }
-    // [END storage_get_bucket_metadata]
-  }
-  /** Example of displaying Blob metadata */
-  public void getBlobMetadata(String bucketName, String blobName) throws StorageException {
-    // [START storage_get_metadata]
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // The name of a bucket, e.g. "my-bucket"
-    // String bucketName = "my-bucket";
-
-    // The name of a blob, e.g. "my-blob"
-    // String blobName = "my-blob";
-
-    // Select all fields
-    // Fields can be selected individually e.g. Storage.BlobField.CACHE_CONTROL
-    Blob blob = storage.get(bucketName, blobName, BlobGetOption.fields(Storage.BlobField.values()));
-
-    // Print blob metadata
-    System.out.println("Bucket: " + blob.getBucket());
-    System.out.println("CacheControl: " + blob.getCacheControl());
-    System.out.println("ComponentCount: " + blob.getComponentCount());
-    System.out.println("ContentDisposition: " + blob.getContentDisposition());
-    System.out.println("ContentEncoding: " + blob.getContentEncoding());
-    System.out.println("ContentLanguage: " + blob.getContentLanguage());
-    System.out.println("ContentType: " + blob.getContentType());
-    System.out.println("Crc32c: " + blob.getCrc32c());
-    System.out.println("Crc32cHexString: " + blob.getCrc32cToHexString());
-    System.out.println("ETag: " + blob.getEtag());
-    System.out.println("Generation: " + blob.getGeneration());
-    System.out.println("Id: " + blob.getBlobId());
-    System.out.println("KmsKeyName: " + blob.getKmsKeyName());
-    System.out.println("Md5Hash: " + blob.getMd5());
-    System.out.println("Md5HexString: " + blob.getMd5ToHexString());
-    System.out.println("MediaLink: " + blob.getMediaLink());
-    System.out.println("Metageneration: " + blob.getMetageneration());
-    System.out.println("Name: " + blob.getName());
-    System.out.println("Size: " + blob.getSize());
-    System.out.println("StorageClass: " + blob.getStorageClass());
-    System.out.println("TimeCreated: " + new Date(blob.getCreateTime()));
-    System.out.println("Last Metadata Update: " + new Date(blob.getUpdateTime()));
-    Boolean temporaryHoldIsEnabled = (blob.getTemporaryHold() != null && blob.getTemporaryHold());
-    System.out.println("temporaryHold: " + (temporaryHoldIsEnabled ? "enabled" : "disabled"));
-    Boolean eventBasedHoldIsEnabled =
-        (blob.getEventBasedHold() != null && blob.getEventBasedHold());
-    System.out.println("eventBasedHold: " + (eventBasedHoldIsEnabled ? "enabled" : "disabled"));
-    if (blob.getRetentionExpirationTime() != null) {
-      System.out.println("retentionExpirationTime: " + new Date(blob.getRetentionExpirationTime()));
-    }
-    if (blob.getMetadata() != null) {
-      System.out.println("\n\n\nUser metadata:");
-      for (Map.Entry<String, String> userMetadata : blob.getMetadata().entrySet()) {
-        System.out.println(userMetadata.getKey() + "=" + userMetadata.getValue());
-      }
-    }
-    // [END storage_get_metadata]
   }
 
   /** Example of setting a retention policy on a bucket */
