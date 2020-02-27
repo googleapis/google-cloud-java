@@ -5,7 +5,7 @@
   "client_documentation": "https://googleapis.dev/java/google-cloud-os-login/latest/",
   "api_description": "manages OS login configuration for Directory API users.",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559755",
-  "release_level": "beta",
+  "release_level": "ga",
   "language": "java",
   "transport": "grpc",
   "repo": "googleapis/java-os-login",
