@@ -36,6 +36,9 @@ public class TableInfoTest {
   private static final Long CREATION_TIME = 10L;
   private static final Long EXPIRATION_TIME = 100L;
   private static final Long LAST_MODIFIED_TIME = 20L;
+  private static final Boolean REQUIRE_PARTITION_FILTER = true;
+  private static final EncryptionConfiguration ENCRYPTION_CONFIGURATION =
+      EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
 
   private static final Field FIELD_SCHEMA1 =
       Field.newBuilder("StringField", LegacySQLTypeName.STRING)
@@ -91,6 +94,7 @@ public class TableInfoTest {
       TableInfo.newBuilder(TABLE_ID, TABLE_DEFINITION)
           .setCreationTime(CREATION_TIME)
           .setDescription(DESCRIPTION)
+          .setEncryptionConfiguration(ENCRYPTION_CONFIGURATION)
           .setEtag(ETAG)
           .setExpirationTime(EXPIRATION_TIME)
           .setFriendlyName(FRIENDLY_NAME)
@@ -101,6 +105,7 @@ public class TableInfoTest {
           .setNumRows(BigInteger.valueOf(NUM_ROWS))
           .setSelfLink(SELF_LINK)
           .setLabels(Collections.singletonMap("a", "b"))
+          .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
           .build();
   private static final TableInfo VIEW_INFO =
       TableInfo.newBuilder(TABLE_ID, VIEW_DEFINITION)
@@ -151,6 +156,7 @@ public class TableInfoTest {
     assertEquals(TABLE_ID, TABLE_INFO.getTableId());
     assertEquals(CREATION_TIME, TABLE_INFO.getCreationTime());
     assertEquals(DESCRIPTION, TABLE_INFO.getDescription());
+    assertEquals(ENCRYPTION_CONFIGURATION, TABLE_INFO.getEncryptionConfiguration());
     assertEquals(ETAG, TABLE_INFO.getEtag());
     assertEquals(EXPIRATION_TIME, TABLE_INFO.getExpirationTime());
     assertEquals(FRIENDLY_NAME, TABLE_INFO.getFriendlyName());
@@ -161,6 +167,7 @@ public class TableInfoTest {
     assertEquals(NUM_BYTES, TABLE_INFO.getNumBytes());
     assertEquals(NUM_LONG_TERM_BYTES, TABLE_INFO.getNumLongTermBytes());
     assertEquals(BigInteger.valueOf(NUM_ROWS), TABLE_INFO.getNumRows());
+    assertEquals(REQUIRE_PARTITION_FILTER, TABLE_INFO.getRequirePartitionFilter());
 
     assertEquals(TABLE_ID, VIEW_INFO.getTableId());
     assertEquals(VIEW_DEFINITION, VIEW_INFO.getDefinition());
@@ -192,33 +199,39 @@ public class TableInfoTest {
     assertEquals(TABLE_ID, tableInfo.getTableId());
     assertNull(tableInfo.getCreationTime());
     assertNull(tableInfo.getDescription());
+    assertNull(tableInfo.getEncryptionConfiguration());
     assertNull(tableInfo.getEtag());
     assertNull(tableInfo.getExpirationTime());
     assertNull(tableInfo.getFriendlyName());
     assertNull(tableInfo.getGeneratedId());
     assertNull(tableInfo.getLastModifiedTime());
+    assertNull(tableInfo.getRequirePartitionFilter());
     assertEquals(TABLE_DEFINITION, tableInfo.getDefinition());
     assertNull(tableInfo.getSelfLink());
     tableInfo = TableInfo.of(TABLE_ID, VIEW_DEFINITION);
     assertEquals(TABLE_ID, tableInfo.getTableId());
     assertNull(tableInfo.getCreationTime());
     assertNull(tableInfo.getDescription());
+    assertNull(tableInfo.getEncryptionConfiguration());
     assertNull(tableInfo.getEtag());
     assertNull(tableInfo.getExpirationTime());
     assertNull(tableInfo.getFriendlyName());
     assertNull(tableInfo.getGeneratedId());
     assertNull(tableInfo.getLastModifiedTime());
+    assertNull(tableInfo.getRequirePartitionFilter());
     assertEquals(VIEW_DEFINITION, tableInfo.getDefinition());
     assertNull(tableInfo.getSelfLink());
     tableInfo = TableInfo.of(TABLE_ID, EXTERNAL_TABLE_DEFINITION);
     assertEquals(TABLE_ID, tableInfo.getTableId());
     assertNull(tableInfo.getCreationTime());
     assertNull(tableInfo.getDescription());
+    assertNull(tableInfo.getEncryptionConfiguration());
     assertNull(tableInfo.getEtag());
     assertNull(tableInfo.getExpirationTime());
     assertNull(tableInfo.getFriendlyName());
     assertNull(tableInfo.getGeneratedId());
     assertNull(tableInfo.getLastModifiedTime());
+    assertNull(tableInfo.getRequirePartitionFilter());
     assertEquals(EXTERNAL_TABLE_DEFINITION, tableInfo.getDefinition());
     assertNull(tableInfo.getSelfLink());
   }
@@ -250,6 +263,7 @@ public class TableInfoTest {
     assertEquals(expected.getDefinition(), value.getDefinition());
     assertEquals(expected.getCreationTime(), value.getCreationTime());
     assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getEncryptionConfiguration(), value.getEncryptionConfiguration());
     assertEquals(expected.getEtag(), value.getEtag());
     assertEquals(expected.getExpirationTime(), value.getExpirationTime());
     assertEquals(expected.getFriendlyName(), value.getFriendlyName());
@@ -260,6 +274,8 @@ public class TableInfoTest {
     assertEquals(expected.getNumRows(), value.getNumRows());
     assertEquals(expected.getSelfLink(), value.getSelfLink());
     assertEquals(expected.getLabels(), value.getLabels());
+    assertEquals(expected.getRequirePartitionFilter(), value.getRequirePartitionFilter());
+    assertEquals(expected.toString(), value.toString());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

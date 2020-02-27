@@ -151,6 +151,12 @@ public class Table extends TableInfo {
     }
 
     @Override
+    public Builder setRequirePartitionFilter(Boolean requirePartitionFilter) {
+      infoBuilder.setRequirePartitionFilter(requirePartitionFilter);
+      return this;
+    }
+
+    @Override
     public Table build() {
       return new Table(bigquery, infoBuilder);
     }

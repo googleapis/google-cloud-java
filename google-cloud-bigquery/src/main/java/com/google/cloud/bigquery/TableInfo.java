@@ -71,6 +71,7 @@ public class TableInfo implements Serializable {
   private final TableDefinition definition;
   private final EncryptionConfiguration encryptionConfiguration;
   private final Labels labels;
+  private final Boolean requirePartitionFilter;
 
   /** A builder for {@code TableInfo} objects. */
   public abstract static class Builder {
@@ -130,6 +131,10 @@ public class TableInfo implements Serializable {
     public abstract TableInfo build();
 
     public abstract Builder setEncryptionConfiguration(EncryptionConfiguration configuration);
+
+    public Builder setRequirePartitionFilter(Boolean requirePartitionFilter) {
+      return this;
+    }
   }
 
   static class BuilderImpl extends Builder {
@@ -149,6 +154,7 @@ public class TableInfo implements Serializable {
     private TableDefinition definition;
     private EncryptionConfiguration encryptionConfiguration;
     private Labels labels = Labels.ZERO;
+    private Boolean requirePartitionFilter;
 
     BuilderImpl() {}
 
@@ -168,6 +174,7 @@ public class TableInfo implements Serializable {
       this.definition = tableInfo.definition;
       this.encryptionConfiguration = tableInfo.encryptionConfiguration;
       this.labels = tableInfo.labels;
+      this.requirePartitionFilter = tableInfo.requirePartitionFilter;
     }
 
     BuilderImpl(Table tablePb) {
@@ -191,6 +198,7 @@ public class TableInfo implements Serializable {
             new EncryptionConfiguration.Builder(tablePb.getEncryptionConfiguration()).build();
       }
       this.labels = Labels.fromPb(tablePb.getLabels());
+      this.requirePartitionFilter = tablePb.getRequirePartitionFilter();
     }
 
     @Override
@@ -284,6 +292,12 @@ public class TableInfo implements Serializable {
     }
 
     @Override
+    public Builder setRequirePartitionFilter(Boolean requirePartitionFilter) {
+      this.requirePartitionFilter = requirePartitionFilter;
+      return this;
+    }
+
+    @Override
     public TableInfo build() {
       return new TableInfo(this);
     }
@@ -305,6 +319,7 @@ public class TableInfo implements Serializable {
     this.definition = builder.definition;
     this.encryptionConfiguration = builder.encryptionConfiguration;
     labels = builder.labels;
+    this.requirePartitionFilter = builder.requirePartitionFilter;
   }
 
   /** Returns the hash of the table resource. */
@@ -399,6 +414,14 @@ public class TableInfo implements Serializable {
     return labels.userMap();
   }
 
+  /**
+   * Returns true if a partition filter (that can be used for partition elimination) is required for
+   * queries over this table.
+   */
+  public Boolean getRequirePartitionFilter() {
+    return requirePartitionFilter;
+  }
+
   /** Returns a builder for the table object. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
@@ -422,6 +445,7 @@ public class TableInfo implements Serializable {
         .add("definition", definition)
         .add("encryptionConfiguration", encryptionConfiguration)
         .add("labels", labels)
+        .add("requirePartitionFilter", requirePartitionFilter)
         .toString();
   }
 
@@ -482,6 +506,7 @@ public class TableInfo implements Serializable {
       tablePb.setEncryptionConfiguration(encryptionConfiguration.toPb());
     }
     tablePb.setLabels(labels.toPb());
+    tablePb.setRequirePartitionFilter(requirePartitionFilter);
     return tablePb;
   }
 
