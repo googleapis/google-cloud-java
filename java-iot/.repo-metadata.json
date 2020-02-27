@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/iot",
   "client_documentation": "https://googleapis.dev/java/google-cloud-iot/latest/",
   "issue_tracker": "https://issuetracker.google.com/issues?q=status:open%20componentid:310170",
-  "release_level": "beta",
+  "release_level": "ga",
   "language": "java",
   "repo": "googleapis/java-iot",
   "repo_short": "java-iot",
