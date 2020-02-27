@@ -218,14 +218,14 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the subscription. It must have the format
+   * @param name Required. The name of the subscription. It must have the format
    *     `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must start with a
    *     letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores
    *     (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3
-   *     and 255 characters in length, and it must not start with `"goog"`
-   * @param topic The name of the topic from which this subscription is receiving messages. Format
-   *     is `projects/{project}/topics/{topic}`. The value of this field will be `_deleted-topic_`
-   *     if the topic has been deleted.
+   *     and 255 characters in length, and it must not start with `"goog"`.
+   * @param topic Required. The name of the topic from which this subscription is receiving
+   *     messages. Format is `projects/{project}/topics/{topic}`. The value of this field will be
+   *     `_deleted-topic_` if the topic has been deleted.
    * @param pushConfig If push delivery is used with this subscription, this field is used to
    *     configure it. An empty `pushConfig` signifies that the subscriber will pull and ack
    *     messages using API methods.
@@ -286,14 +286,14 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the subscription. It must have the format
+   * @param name Required. The name of the subscription. It must have the format
    *     `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must start with a
    *     letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores
    *     (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3
-   *     and 255 characters in length, and it must not start with `"goog"`
-   * @param topic The name of the topic from which this subscription is receiving messages. Format
-   *     is `projects/{project}/topics/{topic}`. The value of this field will be `_deleted-topic_`
-   *     if the topic has been deleted.
+   *     and 255 characters in length, and it must not start with `"goog"`.
+   * @param topic Required. The name of the topic from which this subscription is receiving
+   *     messages. Format is `projects/{project}/topics/{topic}`. The value of this field will be
+   *     `_deleted-topic_` if the topic has been deleted.
    * @param pushConfig If push delivery is used with this subscription, this field is used to
    *     configure it. An empty `pushConfig` signifies that the subscriber will pull and ack
    *     messages using API methods.
@@ -406,7 +406,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param subscription The name of the subscription to get. Format is
+   * @param subscription Required. The name of the subscription to get. Format is
    *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -431,7 +431,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param subscription The name of the subscription to get. Format is
+   * @param subscription Required. The name of the subscription to get. Format is
    *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -566,7 +566,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the project in which to list subscriptions. Format is
+   * @param project Required. The name of the project in which to list subscriptions. Format is
    *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -593,7 +593,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the project in which to list subscriptions. Format is
+   * @param project Required. The name of the project in which to list subscriptions. Format is
    *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -701,7 +701,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param subscription The subscription to delete. Format is
+   * @param subscription Required. The subscription to delete. Format is
    *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -729,7 +729,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param subscription The subscription to delete. Format is
+   * @param subscription Required. The subscription to delete. Format is
    *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -808,16 +808,16 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param subscription The name of the subscription. Format is
+   * @param subscription Required. The name of the subscription. Format is
    *     `projects/{project}/subscriptions/{sub}`.
-   * @param ackIds List of acknowledgment IDs.
-   * @param ackDeadlineSeconds The new ack deadline with respect to the time this request was sent
-   *     to the Pub/Sub system. For example, if the value is 10, the new ack deadline will expire 10
-   *     seconds after the `ModifyAckDeadline` call was made. Specifying zero might immediately make
-   *     the message available for delivery to another subscriber client. This typically results in
-   *     an increase in the rate of message redeliveries (that is, duplicates). The minimum deadline
-   *     you can specify is 0 seconds. The maximum deadline you can specify is 600 seconds (10
-   *     minutes).
+   * @param ackIds Required. List of acknowledgment IDs.
+   * @param ackDeadlineSeconds Required. The new ack deadline with respect to the time this request
+   *     was sent to the Pub/Sub system. For example, if the value is 10, the new ack deadline will
+   *     expire 10 seconds after the `ModifyAckDeadline` call was made. Specifying zero might
+   *     immediately make the message available for delivery to another subscriber client. This
+   *     typically results in an increase in the rate of message redeliveries (that is, duplicates).
+   *     The minimum deadline you can specify is 0 seconds. The maximum deadline you can specify is
+   *     600 seconds (10 minutes).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final void modifyAckDeadline(
@@ -849,16 +849,16 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param subscription The name of the subscription. Format is
+   * @param subscription Required. The name of the subscription. Format is
    *     `projects/{project}/subscriptions/{sub}`.
-   * @param ackIds List of acknowledgment IDs.
-   * @param ackDeadlineSeconds The new ack deadline with respect to the time this request was sent
-   *     to the Pub/Sub system. For example, if the value is 10, the new ack deadline will expire 10
-   *     seconds after the `ModifyAckDeadline` call was made. Specifying zero might immediately make
-   *     the message available for delivery to another subscriber client. This typically results in
-   *     an increase in the rate of message redeliveries (that is, duplicates). The minimum deadline
-   *     you can specify is 0 seconds. The maximum deadline you can specify is 600 seconds (10
-   *     minutes).
+   * @param ackIds Required. List of acknowledgment IDs.
+   * @param ackDeadlineSeconds Required. The new ack deadline with respect to the time this request
+   *     was sent to the Pub/Sub system. For example, if the value is 10, the new ack deadline will
+   *     expire 10 seconds after the `ModifyAckDeadline` call was made. Specifying zero might
+   *     immediately make the message available for delivery to another subscriber client. This
+   *     typically results in an increase in the rate of message redeliveries (that is, duplicates).
+   *     The minimum deadline you can specify is 0 seconds. The maximum deadline you can specify is
+   *     600 seconds (10 minutes).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final void modifyAckDeadline(
@@ -950,10 +950,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param subscription The subscription whose message is being acknowledged. Format is
+   * @param subscription Required. The subscription whose message is being acknowledged. Format is
    *     `projects/{project}/subscriptions/{sub}`.
-   * @param ackIds The acknowledgment ID for the messages being acknowledged that was returned by
-   *     the Pub/Sub system in the `Pull` response. Must not be empty.
+   * @param ackIds Required. The acknowledgment ID for the messages being acknowledged that was
+   *     returned by the Pub/Sub system in the `Pull` response. Must not be empty.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final void acknowledge(
@@ -984,10 +984,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param subscription The subscription whose message is being acknowledged. Format is
+   * @param subscription Required. The subscription whose message is being acknowledged. Format is
    *     `projects/{project}/subscriptions/{sub}`.
-   * @param ackIds The acknowledgment ID for the messages being acknowledged that was returned by
-   *     the Pub/Sub system in the `Pull` response. Must not be empty.
+   * @param ackIds Required. The acknowledgment ID for the messages being acknowledged that was
+   *     returned by the Pub/Sub system in the `Pull` response. Must not be empty.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final void acknowledge(String subscription, List<String> ackIds) {
@@ -1069,14 +1069,14 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param subscription The subscription from which messages should be pulled. Format is
+   * @param subscription Required. The subscription from which messages should be pulled. Format is
    *     `projects/{project}/subscriptions/{sub}`.
    * @param returnImmediately If this field set to true, the system will respond immediately even if
    *     it there are no messages available to return in the `Pull` response. Otherwise, the system
    *     may wait (for a bounded amount of time) until at least one message is available, rather
    *     than returning no messages.
-   * @param maxMessages The maximum number of messages to return for this request. Must be a
-   *     positive integer. The Pub/Sub system may return fewer than the number specified.
+   * @param maxMessages Required. The maximum number of messages to return for this request. Must be
+   *     a positive integer. The Pub/Sub system may return fewer than the number specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final PullResponse pull(
@@ -1106,14 +1106,14 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param subscription The subscription from which messages should be pulled. Format is
+   * @param subscription Required. The subscription from which messages should be pulled. Format is
    *     `projects/{project}/subscriptions/{sub}`.
    * @param returnImmediately If this field set to true, the system will respond immediately even if
    *     it there are no messages available to return in the `Pull` response. Otherwise, the system
    *     may wait (for a bounded amount of time) until at least one message is available, rather
    *     than returning no messages.
-   * @param maxMessages The maximum number of messages to return for this request. Must be a
-   *     positive integer. The Pub/Sub system may return fewer than the number specified.
+   * @param maxMessages Required. The maximum number of messages to return for this request. Must be
+   *     a positive integer. The Pub/Sub system may return fewer than the number specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final PullResponse pull(
@@ -1231,9 +1231,9 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param subscription The name of the subscription. Format is
+   * @param subscription Required. The name of the subscription. Format is
    *     `projects/{project}/subscriptions/{sub}`.
-   * @param pushConfig The push configuration for future deliveries.
+   * @param pushConfig Required. The push configuration for future deliveries.
    *     <p>An empty `pushConfig` indicates that the Pub/Sub system should stop pushing messages
    *     from the given subscription and allow messages to be pulled and acknowledged - effectively
    *     pausing the subscription if `Pull` or `StreamingPull` is not called.
@@ -1267,9 +1267,9 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param subscription The name of the subscription. Format is
+   * @param subscription Required. The name of the subscription. Format is
    *     `projects/{project}/subscriptions/{sub}`.
-   * @param pushConfig The push configuration for future deliveries.
+   * @param pushConfig Required. The push configuration for future deliveries.
    *     <p>An empty `pushConfig` indicates that the Pub/Sub system should stop pushing messages
    *     from the given subscription and allow messages to be pulled and acknowledged - effectively
    *     pausing the subscription if `Pull` or `StreamingPull` is not called.
@@ -1361,7 +1361,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the project in which to list snapshots. Format is
+   * @param project Required. The name of the project in which to list snapshots. Format is
    *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1391,7 +1391,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the project in which to list snapshots. Format is
+   * @param project Required. The name of the project in which to list snapshots. Format is
    *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1516,17 +1516,18 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name User-provided name for this snapshot. If the name is not provided in the request,
-   *     the server will assign a random name for this snapshot on the same project as the
+   * @param name Required. User-provided name for this snapshot. If the name is not provided in the
+   *     request, the server will assign a random name for this snapshot on the same project as the
    *     subscription. Note that for REST API requests, you must specify a name. See the &lt;a
    *     href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
    *     rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
-   * @param subscription The subscription whose backlog the snapshot retains. Specifically, the
-   *     created snapshot is guaranteed to retain: (a) The existing backlog on the subscription.
-   *     More precisely, this is defined as the messages in the subscription's backlog that are
-   *     unacknowledged upon the successful completion of the `CreateSnapshot` request; as well as:
-   *     (b) Any messages published to the subscription's topic following the successful completion
-   *     of the CreateSnapshot request. Format is `projects/{project}/subscriptions/{sub}`.
+   * @param subscription Required. The subscription whose backlog the snapshot retains.
+   *     Specifically, the created snapshot is guaranteed to retain: (a) The existing backlog on the
+   *     subscription. More precisely, this is defined as the messages in the subscription's backlog
+   *     that are unacknowledged upon the successful completion of the `CreateSnapshot` request; as
+   *     well as: (b) Any messages published to the subscription's topic following the successful
+   *     completion of the CreateSnapshot request. Format is
+   *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Snapshot createSnapshot(
@@ -1565,17 +1566,18 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name User-provided name for this snapshot. If the name is not provided in the request,
-   *     the server will assign a random name for this snapshot on the same project as the
+   * @param name Required. User-provided name for this snapshot. If the name is not provided in the
+   *     request, the server will assign a random name for this snapshot on the same project as the
    *     subscription. Note that for REST API requests, you must specify a name. See the &lt;a
    *     href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
    *     rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
-   * @param subscription The subscription whose backlog the snapshot retains. Specifically, the
-   *     created snapshot is guaranteed to retain: (a) The existing backlog on the subscription.
-   *     More precisely, this is defined as the messages in the subscription's backlog that are
-   *     unacknowledged upon the successful completion of the `CreateSnapshot` request; as well as:
-   *     (b) Any messages published to the subscription's topic following the successful completion
-   *     of the CreateSnapshot request. Format is `projects/{project}/subscriptions/{sub}`.
+   * @param subscription Required. The subscription whose backlog the snapshot retains.
+   *     Specifically, the created snapshot is guaranteed to retain: (a) The existing backlog on the
+   *     subscription. More precisely, this is defined as the messages in the subscription's backlog
+   *     that are unacknowledged upon the successful completion of the `CreateSnapshot` request; as
+   *     well as: (b) Any messages published to the subscription's topic following the successful
+   *     completion of the CreateSnapshot request. Format is
+   *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Snapshot createSnapshot(String name, String subscription) {
@@ -1752,7 +1754,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param snapshot The name of the snapshot to delete. Format is
+   * @param snapshot Required. The name of the snapshot to delete. Format is
    *     `projects/{project}/snapshots/{snap}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1784,7 +1786,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param snapshot The name of the snapshot to delete. Format is
+   * @param snapshot Required. The name of the snapshot to delete. Format is
    *     `projects/{project}/snapshots/{snap}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1912,6 +1914,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -1939,6 +1943,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -1963,6 +1969,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
    *
    * <p>Sample code:
    *

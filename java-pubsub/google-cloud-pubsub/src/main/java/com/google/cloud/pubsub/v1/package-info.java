@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud Pub/Sub API.
+ * A client to Cloud Pub/Sub API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

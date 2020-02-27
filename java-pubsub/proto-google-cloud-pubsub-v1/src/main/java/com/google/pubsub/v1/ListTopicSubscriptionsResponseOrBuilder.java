@@ -30,7 +30,7 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    * The names of the subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated string subscriptions = 1;</code>
+   * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return A list containing the subscriptions.
    */
@@ -42,7 +42,7 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    * The names of the subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated string subscriptions = 1;</code>
+   * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The count of subscriptions.
    */
@@ -54,7 +54,7 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    * The names of the subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated string subscriptions = 1;</code>
+   * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @param index The index of the element to return.
    * @return The subscriptions at the given index.
@@ -67,7 +67,7 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    * The names of the subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated string subscriptions = 1;</code>
+   * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the subscriptions at the given index.

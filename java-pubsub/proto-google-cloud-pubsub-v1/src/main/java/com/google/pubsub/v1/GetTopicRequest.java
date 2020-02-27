@@ -117,11 +117,13 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name of the topic to get.
+   * Required. The name of the topic to get.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>
+   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The topic.
    */
@@ -140,11 +142,13 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name of the topic to get.
+   * Required. The name of the topic to get.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>
+   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for topic.
    */
@@ -478,11 +482,13 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the topic to get.
+     * Required. The name of the topic to get.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The topic.
      */
@@ -501,11 +507,13 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the topic to get.
+     * Required. The name of the topic to get.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for topic.
      */
@@ -524,11 +532,13 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the topic to get.
+     * Required. The name of the topic to get.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The topic to set.
      * @return This builder for chaining.
@@ -546,11 +556,13 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the topic to get.
+     * Required. The name of the topic to get.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -564,11 +576,13 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the topic to get.
+     * Required. The name of the topic to get.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for topic to set.
      * @return This builder for chaining.

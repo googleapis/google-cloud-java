@@ -27,7 +27,7 @@ public interface CreateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * User-provided name for this snapshot. If the name is not provided in the
+   * Required. User-provided name for this snapshot. If the name is not provided in the
    * request, the server will assign a random name for this snapshot on the same
    * project as the subscription. Note that for REST API requests, you must
    * specify a name.  See the &lt;a
@@ -35,7 +35,9 @@ public interface CreateSnapshotRequestOrBuilder
    * name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -44,7 +46,7 @@ public interface CreateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * User-provided name for this snapshot. If the name is not provided in the
+   * Required. User-provided name for this snapshot. If the name is not provided in the
    * request, the server will assign a random name for this snapshot on the same
    * project as the subscription. Note that for REST API requests, you must
    * specify a name.  See the &lt;a
@@ -52,7 +54,9 @@ public interface CreateSnapshotRequestOrBuilder
    * name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -62,7 +66,7 @@ public interface CreateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * The subscription whose backlog the snapshot retains.
+   * Required. The subscription whose backlog the snapshot retains.
    * Specifically, the created snapshot is guaranteed to retain:
    *  (a) The existing backlog on the subscription. More precisely, this is
    *      defined as the messages in the subscription's backlog that are
@@ -73,7 +77,9 @@ public interface CreateSnapshotRequestOrBuilder
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 2;</code>
+   * <code>
+   * string subscription = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The subscription.
    */
@@ -82,7 +88,7 @@ public interface CreateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * The subscription whose backlog the snapshot retains.
+   * Required. The subscription whose backlog the snapshot retains.
    * Specifically, the created snapshot is guaranteed to retain:
    *  (a) The existing backlog on the subscription. More precisely, this is
    *      defined as the messages in the subscription's backlog that are
@@ -93,7 +99,9 @@ public interface CreateSnapshotRequestOrBuilder
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 2;</code>
+   * <code>
+   * string subscription = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for subscription.
    */

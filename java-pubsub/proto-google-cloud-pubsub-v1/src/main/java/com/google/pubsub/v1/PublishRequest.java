@@ -133,11 +133,13 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The messages in the request will be published on this topic.
+   * Required. The messages in the request will be published on this topic.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>
+   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The topic.
    */
@@ -156,11 +158,13 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The messages in the request will be published on this topic.
+   * Required. The messages in the request will be published on this topic.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>
+   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for topic.
    */
@@ -182,10 +186,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>
+   * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.pubsub.v1.PubsubMessage> getMessagesList() {
     return messages_;
@@ -194,10 +200,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>
+   * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.pubsub.v1.PubsubMessageOrBuilder>
       getMessagesOrBuilderList() {
@@ -207,10 +215,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>
+   * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getMessagesCount() {
     return messages_.size();
@@ -219,10 +229,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>
+   * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.pubsub.v1.PubsubMessage getMessages(int index) {
     return messages_.get(index);
@@ -231,10 +243,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>
+   * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.pubsub.v1.PubsubMessageOrBuilder getMessagesOrBuilder(int index) {
     return messages_.get(index);
@@ -616,11 +630,13 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages in the request will be published on this topic.
+     * Required. The messages in the request will be published on this topic.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The topic.
      */
@@ -639,11 +655,13 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages in the request will be published on this topic.
+     * Required. The messages in the request will be published on this topic.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for topic.
      */
@@ -662,11 +680,13 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages in the request will be published on this topic.
+     * Required. The messages in the request will be published on this topic.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The topic to set.
      * @return This builder for chaining.
@@ -684,11 +704,13 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages in the request will be published on this topic.
+     * Required. The messages in the request will be published on this topic.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -702,11 +724,13 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages in the request will be published on this topic.
+     * Required. The messages in the request will be published on this topic.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for topic to set.
      * @return This builder for chaining.
@@ -742,10 +766,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.pubsub.v1.PubsubMessage> getMessagesList() {
       if (messagesBuilder_ == null) {
@@ -758,10 +784,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getMessagesCount() {
       if (messagesBuilder_ == null) {
@@ -774,10 +802,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.pubsub.v1.PubsubMessage getMessages(int index) {
       if (messagesBuilder_ == null) {
@@ -790,10 +820,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setMessages(int index, com.google.pubsub.v1.PubsubMessage value) {
       if (messagesBuilder_ == null) {
@@ -812,10 +844,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setMessages(
         int index, com.google.pubsub.v1.PubsubMessage.Builder builderForValue) {
@@ -832,10 +866,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addMessages(com.google.pubsub.v1.PubsubMessage value) {
       if (messagesBuilder_ == null) {
@@ -854,10 +890,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addMessages(int index, com.google.pubsub.v1.PubsubMessage value) {
       if (messagesBuilder_ == null) {
@@ -876,10 +914,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addMessages(com.google.pubsub.v1.PubsubMessage.Builder builderForValue) {
       if (messagesBuilder_ == null) {
@@ -895,10 +935,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addMessages(
         int index, com.google.pubsub.v1.PubsubMessage.Builder builderForValue) {
@@ -915,10 +957,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllMessages(
         java.lang.Iterable<? extends com.google.pubsub.v1.PubsubMessage> values) {
@@ -935,10 +979,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearMessages() {
       if (messagesBuilder_ == null) {
@@ -954,10 +1000,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeMessages(int index) {
       if (messagesBuilder_ == null) {
@@ -973,10 +1021,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.pubsub.v1.PubsubMessage.Builder getMessagesBuilder(int index) {
       return getMessagesFieldBuilder().getBuilder(index);
@@ -985,10 +1035,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.pubsub.v1.PubsubMessageOrBuilder getMessagesOrBuilder(int index) {
       if (messagesBuilder_ == null) {
@@ -1001,10 +1053,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.pubsub.v1.PubsubMessageOrBuilder>
         getMessagesOrBuilderList() {
@@ -1018,10 +1072,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.pubsub.v1.PubsubMessage.Builder addMessagesBuilder() {
       return getMessagesFieldBuilder()
@@ -1031,10 +1087,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.pubsub.v1.PubsubMessage.Builder addMessagesBuilder(int index) {
       return getMessagesFieldBuilder()
@@ -1044,10 +1102,12 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>
+     * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.pubsub.v1.PubsubMessage.Builder> getMessagesBuilderList() {
       return getMessagesFieldBuilder().getBuilderList();

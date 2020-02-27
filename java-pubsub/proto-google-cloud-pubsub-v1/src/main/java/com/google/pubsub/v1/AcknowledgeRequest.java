@@ -132,11 +132,13 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The subscription whose message is being acknowledged.
+   * Required. The subscription whose message is being acknowledged.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The subscription.
    */
@@ -155,11 +157,13 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The subscription whose message is being acknowledged.
+   * Required. The subscription whose message is being acknowledged.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for subscription.
    */
@@ -181,11 +185,11 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return A list containing the ackIds.
    */
@@ -196,11 +200,11 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The count of ackIds.
    */
@@ -211,11 +215,11 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the element to return.
    * @return The ackIds at the given index.
@@ -227,11 +231,11 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the ackIds at the given index.
@@ -596,11 +600,13 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The subscription whose message is being acknowledged.
+     * Required. The subscription whose message is being acknowledged.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The subscription.
      */
@@ -619,11 +625,13 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The subscription whose message is being acknowledged.
+     * Required. The subscription whose message is being acknowledged.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for subscription.
      */
@@ -642,11 +650,13 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The subscription whose message is being acknowledged.
+     * Required. The subscription whose message is being acknowledged.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The subscription to set.
      * @return This builder for chaining.
@@ -664,11 +674,13 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The subscription whose message is being acknowledged.
+     * Required. The subscription whose message is being acknowledged.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -682,11 +694,13 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The subscription whose message is being acknowledged.
+     * Required. The subscription whose message is being acknowledged.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for subscription to set.
      * @return This builder for chaining.
@@ -715,11 +729,11 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return A list containing the ackIds.
      */
@@ -730,11 +744,11 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The count of ackIds.
      */
@@ -745,11 +759,11 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param index The index of the element to return.
      * @return The ackIds at the given index.
@@ -761,11 +775,11 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the ackIds at the given index.
@@ -777,11 +791,11 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param index The index to set the value at.
      * @param value The ackIds to set.
@@ -800,11 +814,11 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The ackIds to add.
      * @return This builder for chaining.
@@ -822,11 +836,11 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param values The ackIds to add.
      * @return This builder for chaining.
@@ -841,11 +855,11 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -859,11 +873,11 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes of the ackIds to add.
      * @return This builder for chaining.

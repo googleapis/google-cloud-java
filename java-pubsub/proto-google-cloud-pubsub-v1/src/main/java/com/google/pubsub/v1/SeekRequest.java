@@ -184,10 +184,12 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The subscription to affect.
+   * Required. The subscription to affect.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The subscription.
    */
@@ -206,10 +208,12 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The subscription to affect.
+   * Required. The subscription to affect.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for subscription.
    */
@@ -313,7 +317,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string snapshot = 3;</code>
+   * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The snapshot.
    */
@@ -342,7 +346,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string snapshot = 3;</code>
+   * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for snapshot.
    */
@@ -763,10 +767,12 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The subscription to affect.
+     * Required. The subscription to affect.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The subscription.
      */
@@ -785,10 +791,12 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The subscription to affect.
+     * Required. The subscription to affect.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for subscription.
      */
@@ -807,10 +815,12 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The subscription to affect.
+     * Required. The subscription to affect.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The subscription to set.
      * @return This builder for chaining.
@@ -828,10 +838,12 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The subscription to affect.
+     * Required. The subscription to affect.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -845,10 +857,12 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The subscription to affect.
+     * Required. The subscription to affect.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for subscription to set.
      * @return This builder for chaining.
@@ -1164,7 +1178,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 3;</code>
+     * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The snapshot.
      */
@@ -1193,7 +1207,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 3;</code>
+     * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for snapshot.
      */
@@ -1222,7 +1236,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 3;</code>
+     * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The snapshot to set.
      * @return This builder for chaining.
@@ -1245,7 +1259,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 3;</code>
+     * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1266,7 +1280,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 3;</code>
+     * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for snapshot to set.
      * @return This builder for chaining.

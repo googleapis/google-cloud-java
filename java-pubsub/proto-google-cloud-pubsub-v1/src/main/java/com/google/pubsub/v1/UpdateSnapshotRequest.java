@@ -138,10 +138,10 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The updated snapshot object.
+   * Required. The updated snapshot object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+   * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the snapshot field is set.
    */
@@ -152,10 +152,10 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The updated snapshot object.
+   * Required. The updated snapshot object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+   * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The snapshot.
    */
@@ -166,10 +166,10 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The updated snapshot object.
+   * Required. The updated snapshot object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+   * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.pubsub.v1.SnapshotOrBuilder getSnapshotOrBuilder() {
     return getSnapshot();
@@ -181,11 +181,12 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Indicates which fields in the provided snapshot to update.
+   * Required. Indicates which fields in the provided snapshot to update.
    * Must be specified and non-empty.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -196,11 +197,12 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Indicates which fields in the provided snapshot to update.
+   * Required. Indicates which fields in the provided snapshot to update.
    * Must be specified and non-empty.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -211,11 +213,12 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Indicates which fields in the provided snapshot to update.
+   * Required. Indicates which fields in the provided snapshot to update.
    * Must be specified and non-empty.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -587,10 +590,11 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The updated snapshot object.
+     * Required. The updated snapshot object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+     * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the snapshot field is set.
      */
@@ -601,10 +605,11 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The updated snapshot object.
+     * Required. The updated snapshot object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+     * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The snapshot.
      */
@@ -619,10 +624,11 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The updated snapshot object.
+     * Required. The updated snapshot object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+     * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSnapshot(com.google.pubsub.v1.Snapshot value) {
       if (snapshotBuilder_ == null) {
@@ -641,10 +647,11 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The updated snapshot object.
+     * Required. The updated snapshot object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+     * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSnapshot(com.google.pubsub.v1.Snapshot.Builder builderForValue) {
       if (snapshotBuilder_ == null) {
@@ -660,10 +667,11 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The updated snapshot object.
+     * Required. The updated snapshot object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+     * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeSnapshot(com.google.pubsub.v1.Snapshot value) {
       if (snapshotBuilder_ == null) {
@@ -684,10 +692,11 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The updated snapshot object.
+     * Required. The updated snapshot object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+     * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearSnapshot() {
       if (snapshotBuilder_ == null) {
@@ -704,10 +713,11 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The updated snapshot object.
+     * Required. The updated snapshot object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+     * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.pubsub.v1.Snapshot.Builder getSnapshotBuilder() {
 
@@ -718,10 +728,11 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The updated snapshot object.
+     * Required. The updated snapshot object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+     * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.pubsub.v1.SnapshotOrBuilder getSnapshotOrBuilder() {
       if (snapshotBuilder_ != null) {
@@ -734,10 +745,11 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The updated snapshot object.
+     * Required. The updated snapshot object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+     * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.Snapshot,
@@ -766,11 +778,12 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Indicates which fields in the provided snapshot to update.
+     * Required. Indicates which fields in the provided snapshot to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -781,11 +794,12 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Indicates which fields in the provided snapshot to update.
+     * Required. Indicates which fields in the provided snapshot to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -802,11 +816,12 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Indicates which fields in the provided snapshot to update.
+     * Required. Indicates which fields in the provided snapshot to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -825,11 +840,12 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Indicates which fields in the provided snapshot to update.
+     * Required. Indicates which fields in the provided snapshot to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -845,11 +861,12 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Indicates which fields in the provided snapshot to update.
+     * Required. Indicates which fields in the provided snapshot to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -870,11 +887,12 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Indicates which fields in the provided snapshot to update.
+     * Required. Indicates which fields in the provided snapshot to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -891,11 +909,12 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Indicates which fields in the provided snapshot to update.
+     * Required. Indicates which fields in the provided snapshot to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -906,11 +925,12 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Indicates which fields in the provided snapshot to update.
+     * Required. Indicates which fields in the provided snapshot to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -925,11 +945,12 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Indicates which fields in the provided snapshot to update.
+     * Required. Indicates which fields in the provided snapshot to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

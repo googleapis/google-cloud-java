@@ -27,10 +27,12 @@ public interface UpdateSubscriptionRequestOrBuilder
    *
    *
    * <pre>
-   * The updated subscription object.
+   * Required. The updated subscription object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+   * <code>
+   * .google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the subscription field is set.
    */
@@ -39,10 +41,12 @@ public interface UpdateSubscriptionRequestOrBuilder
    *
    *
    * <pre>
-   * The updated subscription object.
+   * Required. The updated subscription object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+   * <code>
+   * .google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The subscription.
    */
@@ -51,10 +55,12 @@ public interface UpdateSubscriptionRequestOrBuilder
    *
    *
    * <pre>
-   * The updated subscription object.
+   * Required. The updated subscription object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+   * <code>
+   * .google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.pubsub.v1.SubscriptionOrBuilder getSubscriptionOrBuilder();
 
@@ -62,11 +68,12 @@ public interface UpdateSubscriptionRequestOrBuilder
    *
    *
    * <pre>
-   * Indicates which fields in the provided subscription to update.
+   * Required. Indicates which fields in the provided subscription to update.
    * Must be specified and non-empty.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -75,11 +82,12 @@ public interface UpdateSubscriptionRequestOrBuilder
    *
    *
    * <pre>
-   * Indicates which fields in the provided subscription to update.
+   * Required. Indicates which fields in the provided subscription to update.
    * Must be specified and non-empty.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -88,11 +96,12 @@ public interface UpdateSubscriptionRequestOrBuilder
    *
    *
    * <pre>
-   * Indicates which fields in the provided subscription to update.
+   * Required. Indicates which fields in the provided subscription to update.
    * Must be specified and non-empty.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

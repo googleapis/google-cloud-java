@@ -132,11 +132,13 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The name of the subscription.
+   * Required. The name of the subscription.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The subscription.
    */
@@ -155,11 +157,13 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The name of the subscription.
+   * Required. The name of the subscription.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for subscription.
    */
@@ -181,14 +185,15 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The push configuration for future deliveries.
+   * Required. The push configuration for future deliveries.
    * An empty `pushConfig` indicates that the Pub/Sub system should
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing
    * the subscription if `Pull` or `StreamingPull` is not called.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+   * <code>.google.pubsub.v1.PushConfig push_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the pushConfig field is set.
    */
@@ -199,14 +204,15 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The push configuration for future deliveries.
+   * Required. The push configuration for future deliveries.
    * An empty `pushConfig` indicates that the Pub/Sub system should
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing
    * the subscription if `Pull` or `StreamingPull` is not called.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+   * <code>.google.pubsub.v1.PushConfig push_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The pushConfig.
    */
@@ -217,14 +223,15 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The push configuration for future deliveries.
+   * Required. The push configuration for future deliveries.
    * An empty `pushConfig` indicates that the Pub/Sub system should
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing
    * the subscription if `Pull` or `StreamingPull` is not called.
    * </pre>
    *
-   * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+   * <code>.google.pubsub.v1.PushConfig push_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.pubsub.v1.PushConfigOrBuilder getPushConfigOrBuilder() {
     return getPushConfig();
@@ -579,11 +586,13 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the subscription.
+     * Required. The name of the subscription.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The subscription.
      */
@@ -602,11 +611,13 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the subscription.
+     * Required. The name of the subscription.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for subscription.
      */
@@ -625,11 +636,13 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the subscription.
+     * Required. The name of the subscription.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The subscription to set.
      * @return This builder for chaining.
@@ -647,11 +660,13 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the subscription.
+     * Required. The name of the subscription.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -665,11 +680,13 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the subscription.
+     * Required. The name of the subscription.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for subscription to set.
      * @return This builder for chaining.
@@ -695,14 +712,15 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The push configuration for future deliveries.
+     * Required. The push configuration for future deliveries.
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
      * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+     * <code>.google.pubsub.v1.PushConfig push_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the pushConfig field is set.
      */
@@ -713,14 +731,15 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The push configuration for future deliveries.
+     * Required. The push configuration for future deliveries.
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
      * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+     * <code>.google.pubsub.v1.PushConfig push_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The pushConfig.
      */
@@ -737,14 +756,15 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The push configuration for future deliveries.
+     * Required. The push configuration for future deliveries.
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
      * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+     * <code>.google.pubsub.v1.PushConfig push_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setPushConfig(com.google.pubsub.v1.PushConfig value) {
       if (pushConfigBuilder_ == null) {
@@ -763,14 +783,15 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The push configuration for future deliveries.
+     * Required. The push configuration for future deliveries.
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
      * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+     * <code>.google.pubsub.v1.PushConfig push_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setPushConfig(com.google.pubsub.v1.PushConfig.Builder builderForValue) {
       if (pushConfigBuilder_ == null) {
@@ -786,14 +807,15 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The push configuration for future deliveries.
+     * Required. The push configuration for future deliveries.
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
      * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+     * <code>.google.pubsub.v1.PushConfig push_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergePushConfig(com.google.pubsub.v1.PushConfig value) {
       if (pushConfigBuilder_ == null) {
@@ -816,14 +838,15 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The push configuration for future deliveries.
+     * Required. The push configuration for future deliveries.
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
      * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+     * <code>.google.pubsub.v1.PushConfig push_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearPushConfig() {
       if (pushConfigBuilder_ == null) {
@@ -840,14 +863,15 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The push configuration for future deliveries.
+     * Required. The push configuration for future deliveries.
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
      * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+     * <code>.google.pubsub.v1.PushConfig push_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.pubsub.v1.PushConfig.Builder getPushConfigBuilder() {
 
@@ -858,14 +882,15 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The push configuration for future deliveries.
+     * Required. The push configuration for future deliveries.
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
      * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+     * <code>.google.pubsub.v1.PushConfig push_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.pubsub.v1.PushConfigOrBuilder getPushConfigOrBuilder() {
       if (pushConfigBuilder_ != null) {
@@ -880,14 +905,15 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The push configuration for future deliveries.
+     * Required. The push configuration for future deliveries.
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
      * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
-     * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+     * <code>.google.pubsub.v1.PushConfig push_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.PushConfig,

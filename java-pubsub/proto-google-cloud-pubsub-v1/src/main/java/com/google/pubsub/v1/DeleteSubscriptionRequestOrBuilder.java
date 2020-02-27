@@ -27,11 +27,13 @@ public interface DeleteSubscriptionRequestOrBuilder
    *
    *
    * <pre>
-   * The subscription to delete.
+   * Required. The subscription to delete.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The subscription.
    */
@@ -40,11 +42,13 @@ public interface DeleteSubscriptionRequestOrBuilder
    *
    *
    * <pre>
-   * The subscription to delete.
+   * Required. The subscription to delete.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for subscription.
    */

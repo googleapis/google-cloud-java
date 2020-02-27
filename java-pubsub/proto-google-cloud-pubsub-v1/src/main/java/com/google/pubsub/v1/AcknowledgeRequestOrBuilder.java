@@ -27,11 +27,13 @@ public interface AcknowledgeRequestOrBuilder
    *
    *
    * <pre>
-   * The subscription whose message is being acknowledged.
+   * Required. The subscription whose message is being acknowledged.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The subscription.
    */
@@ -40,11 +42,13 @@ public interface AcknowledgeRequestOrBuilder
    *
    *
    * <pre>
-   * The subscription whose message is being acknowledged.
+   * Required. The subscription whose message is being acknowledged.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for subscription.
    */
@@ -54,11 +58,11 @@ public interface AcknowledgeRequestOrBuilder
    *
    *
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return A list containing the ackIds.
    */
@@ -67,11 +71,11 @@ public interface AcknowledgeRequestOrBuilder
    *
    *
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The count of ackIds.
    */
@@ -80,11 +84,11 @@ public interface AcknowledgeRequestOrBuilder
    *
    *
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the element to return.
    * @return The ackIds at the given index.
@@ -94,11 +98,11 @@ public interface AcknowledgeRequestOrBuilder
    *
    *
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the ackIds at the given index.

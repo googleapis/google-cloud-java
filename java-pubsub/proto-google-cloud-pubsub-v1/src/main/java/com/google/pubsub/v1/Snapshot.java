@@ -218,7 +218,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * The name of the topic from which this snapshot is retaining messages.
    * </pre>
    *
-   * <code>string topic = 2;</code>
+   * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The topic.
    */
@@ -240,7 +240,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * The name of the topic from which this snapshot is retaining messages.
    * </pre>
    *
-   * <code>string topic = 2;</code>
+   * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for topic.
    */
@@ -940,7 +940,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The name of the topic from which this snapshot is retaining messages.
      * </pre>
      *
-     * <code>string topic = 2;</code>
+     * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The topic.
      */
@@ -962,7 +962,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The name of the topic from which this snapshot is retaining messages.
      * </pre>
      *
-     * <code>string topic = 2;</code>
+     * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for topic.
      */
@@ -984,7 +984,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The name of the topic from which this snapshot is retaining messages.
      * </pre>
      *
-     * <code>string topic = 2;</code>
+     * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The topic to set.
      * @return This builder for chaining.
@@ -1005,7 +1005,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The name of the topic from which this snapshot is retaining messages.
      * </pre>
      *
-     * <code>string topic = 2;</code>
+     * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1022,7 +1022,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The name of the topic from which this snapshot is retaining messages.
      * </pre>
      *
-     * <code>string topic = 2;</code>
+     * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for topic to set.
      * @return This builder for chaining.

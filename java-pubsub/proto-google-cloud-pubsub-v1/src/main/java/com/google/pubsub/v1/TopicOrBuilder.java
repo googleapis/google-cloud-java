@@ -27,7 +27,7 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * The name of the topic. It must have the format
+   * Required. The name of the topic. It must have the format
    * `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
    * and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
    * underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
@@ -35,7 +35,7 @@ public interface TopicOrBuilder
    * must not start with `"goog"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The name.
    */
@@ -44,7 +44,7 @@ public interface TopicOrBuilder
    *
    *
    * <pre>
-   * The name of the topic. It must have the format
+   * Required. The name of the topic. It must have the format
    * `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
    * and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
    * underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
@@ -52,7 +52,7 @@ public interface TopicOrBuilder
    * must not start with `"goog"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for name.
    */

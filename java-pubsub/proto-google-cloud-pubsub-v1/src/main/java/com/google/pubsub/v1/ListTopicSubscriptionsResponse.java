@@ -136,7 +136,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
    * The names of the subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated string subscriptions = 1;</code>
+   * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return A list containing the subscriptions.
    */
@@ -150,7 +150,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
    * The names of the subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated string subscriptions = 1;</code>
+   * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The count of subscriptions.
    */
@@ -164,7 +164,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
    * The names of the subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated string subscriptions = 1;</code>
+   * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @param index The index of the element to return.
    * @return The subscriptions at the given index.
@@ -179,7 +179,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
    * The names of the subscriptions that match the request.
    * </pre>
    *
-   * <code>repeated string subscriptions = 1;</code>
+   * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the subscriptions at the given index.
@@ -609,7 +609,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
      * The names of the subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated string subscriptions = 1;</code>
+     * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return A list containing the subscriptions.
      */
@@ -623,7 +623,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
      * The names of the subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated string subscriptions = 1;</code>
+     * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The count of subscriptions.
      */
@@ -637,7 +637,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
      * The names of the subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated string subscriptions = 1;</code>
+     * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param index The index of the element to return.
      * @return The subscriptions at the given index.
@@ -652,7 +652,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
      * The names of the subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated string subscriptions = 1;</code>
+     * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the subscriptions at the given index.
@@ -667,7 +667,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
      * The names of the subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated string subscriptions = 1;</code>
+     * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param index The index to set the value at.
      * @param value The subscriptions to set.
@@ -689,7 +689,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
      * The names of the subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated string subscriptions = 1;</code>
+     * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The subscriptions to add.
      * @return This builder for chaining.
@@ -710,7 +710,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
      * The names of the subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated string subscriptions = 1;</code>
+     * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param values The subscriptions to add.
      * @return This builder for chaining.
@@ -728,7 +728,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
      * The names of the subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated string subscriptions = 1;</code>
+     * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -745,7 +745,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
      * The names of the subscriptions that match the request.
      * </pre>
      *
-     * <code>repeated string subscriptions = 1;</code>
+     * <code>repeated string subscriptions = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes of the subscriptions to add.
      * @return This builder for chaining.

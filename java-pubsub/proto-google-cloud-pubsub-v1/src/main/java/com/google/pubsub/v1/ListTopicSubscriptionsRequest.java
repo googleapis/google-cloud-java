@@ -130,11 +130,13 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The name of the topic that subscriptions are attached to.
+   * Required. The name of the topic that subscriptions are attached to.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>
+   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The topic.
    */
@@ -153,11 +155,13 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The name of the topic that subscriptions are attached to.
+   * Required. The name of the topic that subscriptions are attached to.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>
+   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for topic.
    */
@@ -595,11 +599,13 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The name of the topic that subscriptions are attached to.
+     * Required. The name of the topic that subscriptions are attached to.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The topic.
      */
@@ -618,11 +624,13 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The name of the topic that subscriptions are attached to.
+     * Required. The name of the topic that subscriptions are attached to.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for topic.
      */
@@ -641,11 +649,13 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The name of the topic that subscriptions are attached to.
+     * Required. The name of the topic that subscriptions are attached to.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The topic to set.
      * @return This builder for chaining.
@@ -663,11 +673,13 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The name of the topic that subscriptions are attached to.
+     * Required. The name of the topic that subscriptions are attached to.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -681,11 +693,13 @@ public final class ListTopicSubscriptionsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The name of the topic that subscriptions are attached to.
+     * Required. The name of the topic that subscriptions are attached to.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for topic to set.
      * @return This builder for chaining.

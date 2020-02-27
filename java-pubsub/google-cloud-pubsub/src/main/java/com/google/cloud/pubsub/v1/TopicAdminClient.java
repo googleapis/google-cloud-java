@@ -190,7 +190,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the topic. It must have the format
+   * @param name Required. The name of the topic. It must have the format
    *     `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only
    *     letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`),
    *     tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in
@@ -217,7 +217,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the topic. It must have the format
+   * @param name Required. The name of the topic. It must have the format
    *     `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only
    *     letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`),
    *     tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in
@@ -345,9 +345,9 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param topic The messages in the request will be published on this topic. Format is
+   * @param topic Required. The messages in the request will be published on this topic. Format is
    *     `projects/{project}/topics/{topic}`.
-   * @param messages The messages to publish.
+   * @param messages Required. The messages to publish.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final PublishResponse publish(
@@ -378,9 +378,9 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param topic The messages in the request will be published on this topic. Format is
+   * @param topic Required. The messages in the request will be published on this topic. Format is
    *     `projects/{project}/topics/{topic}`.
-   * @param messages The messages to publish.
+   * @param messages Required. The messages to publish.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final PublishResponse publish(String topic, List<PubsubMessage> messages) {
@@ -459,7 +459,8 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param topic The name of the topic to get. Format is `projects/{project}/topics/{topic}`.
+   * @param topic Required. The name of the topic to get. Format is
+   *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Topic getTopic(ProjectTopicName topic) {
@@ -481,7 +482,8 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param topic The name of the topic to get. Format is `projects/{project}/topics/{topic}`.
+   * @param topic Required. The name of the topic to get. Format is
+   *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Topic getTopic(String topic) {
@@ -549,7 +551,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the project in which to list topics. Format is
+   * @param project Required. The name of the project in which to list topics. Format is
    *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -576,7 +578,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the project in which to list topics. Format is
+   * @param project Required. The name of the project in which to list topics. Format is
    *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -680,7 +682,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param topic The name of the topic that subscriptions are attached to. Format is
+   * @param topic Required. The name of the topic that subscriptions are attached to. Format is
    *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -707,7 +709,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param topic The name of the topic that subscriptions are attached to. Format is
+   * @param topic Required. The name of the topic that subscriptions are attached to. Format is
    *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -816,7 +818,8 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param topic Name of the topic to delete. Format is `projects/{project}/topics/{topic}`.
+   * @param topic Required. Name of the topic to delete. Format is
+   *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTopic(ProjectTopicName topic) {
@@ -841,7 +844,8 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param topic Name of the topic to delete. Format is `projects/{project}/topics/{topic}`.
+   * @param topic Required. Name of the topic to delete. Format is
+   *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTopic(String topic) {
@@ -904,6 +908,8 @@ public class TopicAdminClient implements BackgroundResource {
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -931,6 +937,8 @@ public class TopicAdminClient implements BackgroundResource {
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -955,6 +963,8 @@ public class TopicAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
    *
    * <p>Sample code:
    *

@@ -27,13 +27,15 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * The subscription for which to initialize the new stream. This must be
+   * Required. The subscription for which to initialize the new stream. This must be
    * provided in the first request on the stream, and must not be set in
    * subsequent requests from client to server.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The subscription.
    */
@@ -42,13 +44,15 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * The subscription for which to initialize the new stream. This must be
+   * Required. The subscription for which to initialize the new stream. This must be
    * provided in the first request on the stream, and must not be set in
    * subsequent requests from client to server.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for subscription.
    */
@@ -260,13 +264,13 @@ public interface StreamingPullRequestOrBuilder
    *
    *
    * <pre>
-   * The ack deadline to use for the stream. This must be provided in the
+   * Required. The ack deadline to use for the stream. This must be provided in the
    * first request on the stream, but it can also be updated on subsequent
    * requests from client to server. The minimum deadline you can specify is 10
    * seconds. The maximum deadline you can specify is 600 seconds (10 minutes).
    * </pre>
    *
-   * <code>int32 stream_ack_deadline_seconds = 5;</code>
+   * <code>int32 stream_ack_deadline_seconds = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The streamAckDeadlineSeconds.
    */

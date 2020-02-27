@@ -137,10 +137,10 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The updated topic object.
+   * Required. The updated topic object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Topic topic = 1;</code>
+   * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the topic field is set.
    */
@@ -151,10 +151,10 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The updated topic object.
+   * Required. The updated topic object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Topic topic = 1;</code>
+   * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The topic.
    */
@@ -165,10 +165,10 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The updated topic object.
+   * Required. The updated topic object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Topic topic = 1;</code>
+   * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.pubsub.v1.TopicOrBuilder getTopicOrBuilder() {
     return getTopic();
@@ -180,14 +180,15 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Indicates which fields in the provided topic to update. Must be specified
+   * Required. Indicates which fields in the provided topic to update. Must be specified
    * and non-empty. Note that if `update_mask` contains
    * "message_storage_policy" then the new value will be determined based on the
    * policy configured at the project or organization level. The
    * `message_storage_policy` must not be set in the `topic` provided above.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -198,14 +199,15 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Indicates which fields in the provided topic to update. Must be specified
+   * Required. Indicates which fields in the provided topic to update. Must be specified
    * and non-empty. Note that if `update_mask` contains
    * "message_storage_policy" then the new value will be determined based on the
    * policy configured at the project or organization level. The
    * `message_storage_policy` must not be set in the `topic` provided above.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -216,14 +218,15 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Indicates which fields in the provided topic to update. Must be specified
+   * Required. Indicates which fields in the provided topic to update. Must be specified
    * and non-empty. Note that if `update_mask` contains
    * "message_storage_policy" then the new value will be determined based on the
    * policy configured at the project or organization level. The
    * `message_storage_policy` must not be set in the `topic` provided above.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -594,10 +597,10 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The updated topic object.
+     * Required. The updated topic object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Topic topic = 1;</code>
+     * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return Whether the topic field is set.
      */
@@ -608,10 +611,10 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The updated topic object.
+     * Required. The updated topic object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Topic topic = 1;</code>
+     * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The topic.
      */
@@ -626,10 +629,10 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The updated topic object.
+     * Required. The updated topic object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Topic topic = 1;</code>
+     * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTopic(com.google.pubsub.v1.Topic value) {
       if (topicBuilder_ == null) {
@@ -648,10 +651,10 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The updated topic object.
+     * Required. The updated topic object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Topic topic = 1;</code>
+     * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTopic(com.google.pubsub.v1.Topic.Builder builderForValue) {
       if (topicBuilder_ == null) {
@@ -667,10 +670,10 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The updated topic object.
+     * Required. The updated topic object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Topic topic = 1;</code>
+     * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeTopic(com.google.pubsub.v1.Topic value) {
       if (topicBuilder_ == null) {
@@ -690,10 +693,10 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The updated topic object.
+     * Required. The updated topic object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Topic topic = 1;</code>
+     * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTopic() {
       if (topicBuilder_ == null) {
@@ -710,10 +713,10 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The updated topic object.
+     * Required. The updated topic object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Topic topic = 1;</code>
+     * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.pubsub.v1.Topic.Builder getTopicBuilder() {
 
@@ -724,10 +727,10 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The updated topic object.
+     * Required. The updated topic object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Topic topic = 1;</code>
+     * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.pubsub.v1.TopicOrBuilder getTopicOrBuilder() {
       if (topicBuilder_ != null) {
@@ -740,10 +743,10 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The updated topic object.
+     * Required. The updated topic object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Topic topic = 1;</code>
+     * <code>.google.pubsub.v1.Topic topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.Topic,
@@ -771,14 +774,15 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates which fields in the provided topic to update. Must be specified
+     * Required. Indicates which fields in the provided topic to update. Must be specified
      * and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -789,14 +793,15 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates which fields in the provided topic to update. Must be specified
+     * Required. Indicates which fields in the provided topic to update. Must be specified
      * and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -813,14 +818,15 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates which fields in the provided topic to update. Must be specified
+     * Required. Indicates which fields in the provided topic to update. Must be specified
      * and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -839,14 +845,15 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates which fields in the provided topic to update. Must be specified
+     * Required. Indicates which fields in the provided topic to update. Must be specified
      * and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -862,14 +869,15 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates which fields in the provided topic to update. Must be specified
+     * Required. Indicates which fields in the provided topic to update. Must be specified
      * and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -890,14 +898,15 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates which fields in the provided topic to update. Must be specified
+     * Required. Indicates which fields in the provided topic to update. Must be specified
      * and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -914,14 +923,15 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates which fields in the provided topic to update. Must be specified
+     * Required. Indicates which fields in the provided topic to update. Must be specified
      * and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -932,14 +942,15 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates which fields in the provided topic to update. Must be specified
+     * Required. Indicates which fields in the provided topic to update. Must be specified
      * and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -954,14 +965,15 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates which fields in the provided topic to update. Must be specified
+     * Required. Indicates which fields in the provided topic to update. Must be specified
      * and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

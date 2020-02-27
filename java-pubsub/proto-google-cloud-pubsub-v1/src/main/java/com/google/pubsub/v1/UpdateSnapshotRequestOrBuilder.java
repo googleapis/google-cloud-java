@@ -27,10 +27,10 @@ public interface UpdateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * The updated snapshot object.
+   * Required. The updated snapshot object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+   * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the snapshot field is set.
    */
@@ -39,10 +39,10 @@ public interface UpdateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * The updated snapshot object.
+   * Required. The updated snapshot object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+   * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The snapshot.
    */
@@ -51,10 +51,10 @@ public interface UpdateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * The updated snapshot object.
+   * Required. The updated snapshot object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+   * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.pubsub.v1.SnapshotOrBuilder getSnapshotOrBuilder();
 
@@ -62,11 +62,12 @@ public interface UpdateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * Indicates which fields in the provided snapshot to update.
+   * Required. Indicates which fields in the provided snapshot to update.
    * Must be specified and non-empty.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -75,11 +76,12 @@ public interface UpdateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * Indicates which fields in the provided snapshot to update.
+   * Required. Indicates which fields in the provided snapshot to update.
    * Must be specified and non-empty.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -88,11 +90,12 @@ public interface UpdateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * Indicates which fields in the provided snapshot to update.
+   * Required. Indicates which fields in the provided snapshot to update.
    * Must be specified and non-empty.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

@@ -27,10 +27,12 @@ public interface SeekRequestOrBuilder
    *
    *
    * <pre>
-   * The subscription to affect.
+   * Required. The subscription to affect.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The subscription.
    */
@@ -39,10 +41,12 @@ public interface SeekRequestOrBuilder
    *
    *
    * <pre>
-   * The subscription to affect.
+   * Required. The subscription to affect.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for subscription.
    */
@@ -122,7 +126,7 @@ public interface SeekRequestOrBuilder
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string snapshot = 3;</code>
+   * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The snapshot.
    */
@@ -136,7 +140,7 @@ public interface SeekRequestOrBuilder
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string snapshot = 3;</code>
+   * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for snapshot.
    */

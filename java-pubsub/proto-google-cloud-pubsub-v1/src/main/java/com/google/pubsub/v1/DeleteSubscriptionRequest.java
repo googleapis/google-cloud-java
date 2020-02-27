@@ -117,11 +117,13 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The subscription to delete.
+   * Required. The subscription to delete.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The subscription.
    */
@@ -140,11 +142,13 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The subscription to delete.
+   * Required. The subscription to delete.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for subscription.
    */
@@ -481,11 +485,13 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscription to delete.
+     * Required. The subscription to delete.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The subscription.
      */
@@ -504,11 +510,13 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscription to delete.
+     * Required. The subscription to delete.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for subscription.
      */
@@ -527,11 +535,13 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscription to delete.
+     * Required. The subscription to delete.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The subscription to set.
      * @return This builder for chaining.
@@ -549,11 +559,13 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscription to delete.
+     * Required. The subscription to delete.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -567,11 +579,13 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The subscription to delete.
+     * Required. The subscription to delete.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for subscription to set.
      * @return This builder for chaining.

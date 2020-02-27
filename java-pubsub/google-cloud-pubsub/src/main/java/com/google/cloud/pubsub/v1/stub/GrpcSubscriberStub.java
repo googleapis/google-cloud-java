@@ -64,7 +64,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for Google Cloud Pub/Sub API.
+ * gRPC stub implementation for Cloud Pub/Sub API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */

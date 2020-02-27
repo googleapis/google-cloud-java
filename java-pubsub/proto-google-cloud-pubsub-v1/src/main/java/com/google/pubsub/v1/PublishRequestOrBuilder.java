@@ -27,11 +27,13 @@ public interface PublishRequestOrBuilder
    *
    *
    * <pre>
-   * The messages in the request will be published on this topic.
+   * Required. The messages in the request will be published on this topic.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>
+   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The topic.
    */
@@ -40,11 +42,13 @@ public interface PublishRequestOrBuilder
    *
    *
    * <pre>
-   * The messages in the request will be published on this topic.
+   * Required. The messages in the request will be published on this topic.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>
+   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for topic.
    */
@@ -54,50 +58,60 @@ public interface PublishRequestOrBuilder
    *
    *
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>
+   * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.pubsub.v1.PubsubMessage> getMessagesList();
   /**
    *
    *
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>
+   * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.pubsub.v1.PubsubMessage getMessages(int index);
   /**
    *
    *
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>
+   * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getMessagesCount();
   /**
    *
    *
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>
+   * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.pubsub.v1.PubsubMessageOrBuilder> getMessagesOrBuilderList();
   /**
    *
    *
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>
+   * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.pubsub.v1.PubsubMessageOrBuilder getMessagesOrBuilder(int index);
 }
