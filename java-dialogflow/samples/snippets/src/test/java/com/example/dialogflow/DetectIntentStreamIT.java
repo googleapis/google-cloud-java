@@ -16,14 +16,12 @@
 
 package com.example.dialogflow;
 
-import static org.junit.Assert.assertThat;
+import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
 
-import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -58,14 +56,11 @@ public class DetectIntentStreamIT {
   @Test
   public void testStreamingDetectIntentCallable() {
     DetectIntentStream.detectIntentStream(
-        PROJECT_ID, audioFilePath, SESSION_ID);
+            PROJECT_ID, audioFilePath, SESSION_ID);
 
     String output = bout.toString();
 
-    assertThat(output, CoreMatchers.containsString(
-        "Intent Display Name: room.reservation"));
-
-    assertThat(output, CoreMatchers.containsString(
-        "book"));
+    assertThat(output).contains("Intent Display Name: room.reservation");
+    assertThat(output).contains("book");
   }
 }

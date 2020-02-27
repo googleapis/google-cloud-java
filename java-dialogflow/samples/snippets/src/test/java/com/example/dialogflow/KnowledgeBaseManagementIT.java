@@ -19,21 +19,18 @@ package com.example.dialogflow;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
-import com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest;
 import com.google.cloud.dialogflow.v2beta1.Document;
 import com.google.cloud.dialogflow.v2beta1.DocumentName;
-import com.google.cloud.dialogflow.v2beta1.DocumentsClient;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBaseName;
-import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
-import com.google.cloud.dialogflow.v2beta1.ProjectName;
 import com.google.common.collect.ImmutableList;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import org.junit.After;
 import org.junit.Before;
@@ -51,66 +48,40 @@ public class KnowledgeBaseManagementIT {
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String TEST_KNOWLEDGE_BASE_ID = "MTA4MzE0ODY5NTczMTQzNzU2ODA";
   private static String TEST_DOCUMENT_ID = "MTUwNjk0ODg1NTU4NzkzMDExMg";
-  private static String SESSION_ID = "fake_session_for_testing";
+  private static String SESSION_ID = UUID.randomUUID().toString();
   private static String LANGUAGE_CODE = "en-US";
-  private static String KNOWLEDGE_BASE_NAME = "fake_knowledge_base_name";
-  private static String DOCUMENT_BASE_NAME = "fake_document_name";
+  private static String KNOWLEDGE_BASE_NAME = UUID.randomUUID().toString();
+  private static String DOCUMENT_BASE_NAME = UUID.randomUUID().toString();
 
   private static List<String> TEXTS = ImmutableList
-      .of("How do I sign up?", "Is my data redundant?", "Where can I find pricing information?",
-          "Where is my data stored?", "What are my support options?",
-          "How can I maximize the availability of my data?");
+          .of("How do I sign up?", "Is my data redundant?", "Where can I find pricing information?",
+                  "Where is my data stored?", "What are my support options?",
+                  "How can I maximize the availability of my data?");
 
   @Before
   public void setUp() {
     System.setOut(new PrintStream(new ByteArrayOutputStream()));
   }
 
-  // If any knowledge base/documents remain after test complete, delete them.
   @After
-  public void tearDown() throws Exception {
-    try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-      try (DocumentsClient documentsClient = DocumentsClient.create()) {
-        ProjectName projectName = ProjectName.of(PROJECT_ID);
-        for (KnowledgeBase knowledgeBase :
-            knowledgeBasesClient.listKnowledgeBases(projectName).iterateAll()) {
-          // DO NOT DELETE THE TEST KNOWLEDGE BASE
-          if (!knowledgeBase.getName().contains(TEST_KNOWLEDGE_BASE_ID)) {
-            // Delete any documents in the knowledge base.
-            for (Document document : documentsClient.listDocuments(
-                    knowledgeBase.getName()).iterateAll()) {
-              // DO NOT DELETE THE TEST DOCUMENT
-              if (!document.getName().contains(TEST_DOCUMENT_ID)) {
-                documentsClient.deleteDocumentCallable().call(
-                        DeleteDocumentRequest.newBuilder().setName(document.getName()).build());
-              }
-            }
-            knowledgeBasesClient.deleteKnowledgeBase(knowledgeBase.getName());
-          }
-        }
-      }
-    }
+  public void tearDown() {
     System.setOut(null);
   }
 
   @Test
   public void testKnowledgeBase() throws Exception {
-    // Check the knowledge base does not yet exist
-    List<KnowledgeBase> knowledgeBases = KnowledgeBaseManagement.listKnowledgeBases(PROJECT_ID);
-    assertEquals(1, knowledgeBases.size());
-
     // Create a Knowledge Base
     KnowledgeBase knowledgeBase =
-        KnowledgeBaseManagement.createKnowledgeBase(PROJECT_ID, KNOWLEDGE_BASE_NAME);
-    assertEquals(knowledgeBase.getDisplayName(), KNOWLEDGE_BASE_NAME);
+            KnowledgeBaseManagement.createKnowledgeBase(PROJECT_ID, KNOWLEDGE_BASE_NAME);
+    assertThat(knowledgeBase.getDisplayName()).contains(KNOWLEDGE_BASE_NAME);
 
     // Get KnowledgeBase
     knowledgeBase = KnowledgeBaseManagement.getKnowledgeBase(knowledgeBase.getName());
-    assertEquals(knowledgeBase.getDisplayName(), KNOWLEDGE_BASE_NAME);
+    assertThat(knowledgeBase.getDisplayName()).contains(KNOWLEDGE_BASE_NAME);
 
     // List Knowledge Bases
-    knowledgeBases = KnowledgeBaseManagement.listKnowledgeBases(PROJECT_ID);
-    assertEquals(2, knowledgeBases.size());
+    List<KnowledgeBase> knowledgeBases = KnowledgeBaseManagement.listKnowledgeBases(PROJECT_ID);
+    assertThat(knowledgeBases.size()).isAtLeast(2);
 
     int found = 0;
     for (KnowledgeBase knowledgeBase1 : knowledgeBases) {
@@ -118,47 +89,42 @@ public class KnowledgeBaseManagementIT {
         found += 1;
       }
     }
-    assertEquals(1, found);
+    assertThat(found).isEqualTo(1);
 
     // Delete the Knowledge Base
     KnowledgeBaseManagement.deleteKnowledgeBase(knowledgeBase.getName());
-
-    // List Knowledge Bases (ensure delete success)
-    knowledgeBases = KnowledgeBaseManagement.listKnowledgeBases(PROJECT_ID);
-    assertEquals(1, knowledgeBases.size());
   }
 
   @Test
   public void testDocumentManagement() throws Exception {
     // Create a Knowledge Base
     KnowledgeBase knowledgeBase =
-        KnowledgeBaseManagement.createKnowledgeBase(PROJECT_ID, KNOWLEDGE_BASE_NAME);
+            KnowledgeBaseManagement.createKnowledgeBase(PROJECT_ID, KNOWLEDGE_BASE_NAME);
     String knowledgeBaseName = knowledgeBase.getName();
 
     // Create a Document
     Document document = DocumentManagement.createDocument(
-        knowledgeBaseName,
-        DOCUMENT_BASE_NAME,
-        "text/html",
-        "FAQ",
-        "https://cloud.google.com/storage/docs/faq");
-    assertEquals(DOCUMENT_BASE_NAME, document.getDisplayName());
+            knowledgeBaseName,
+            DOCUMENT_BASE_NAME,
+            "text/html",
+            "FAQ",
+            "https://cloud.google.com/storage/docs/faq");
+    assertThat(document.getDisplayName()).contains(DOCUMENT_BASE_NAME);
 
     // List the Documents
     List<Document> documents = DocumentManagement.listDocuments(knowledgeBaseName);
-    assertEquals(1, documents.size());
-    assertEquals(DOCUMENT_BASE_NAME, documents.get(0).getDisplayName());
+    assertThat(documents.size()).isEqualTo(1);
+    assertThat(documents.get(0).getDisplayName()).contains(DOCUMENT_BASE_NAME);
 
     // Get the Document
     document = DocumentManagement.getDocument(document.getName());
-    assertEquals(DOCUMENT_BASE_NAME, document.getDisplayName());
+    assertThat(document.getDisplayName()).contains(DOCUMENT_BASE_NAME);
 
     // Delete the Document
     DocumentManagement.deleteDocument(document.getName());
 
-    // List the Document
-    documents = DocumentManagement.listDocuments(knowledgeBaseName);
-    assertEquals(0, documents.size());
+    // Delete the Knowledge Base
+    KnowledgeBaseManagement.deleteKnowledgeBase(knowledgeBase.getName());
   }
 
   @Test
