@@ -66,9 +66,9 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("anger: POSSIBLE");
-    assertThat(got).contains("joy: POSSIBLE");
-    assertThat(got).contains("surprise: LIKELY");
+    assertThat(got).contains("anger:");
+    assertThat(got).contains("joy:");
+    assertThat(got).contains("surprise:");
   }
 
   @Test
@@ -79,9 +79,9 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("anger: POSSIBLE");
-    assertThat(got).contains("joy: POSSIBLE");
-    assertThat(got).contains("surprise: LIKELY");
+    assertThat(got).contains("anger:");
+    assertThat(got).contains("joy:");
+    assertThat(got).contains("surprise:");
   }
 
   @Test
@@ -192,8 +192,8 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("adult: VERY_UNLIKELY");
-    assertThat(got).contains("racy: UNLIKELY");
+    assertThat(got).contains("adult:");
+    assertThat(got).contains("racy:");
   }
 
   @Test
@@ -204,8 +204,8 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("adult: VERY_UNLIKELY");
-    assertThat(got).contains("racy: UNLIKELY");
+    assertThat(got).contains("adult:");
+    assertThat(got).contains("racy:");
   }
 
   @Test
