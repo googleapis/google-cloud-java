@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.93.0](https://www.github.com/googleapis/java-core/compare/v1.92.6...v1.93.0) (2020-02-27)
+
+
+### Features
+
+* support conditional policies ([#110](https://www.github.com/googleapis/java-core/issues/110)) ([61e2d19](https://www.github.com/googleapis/java-core/commit/61e2d19bb4400978681aa018a8dc200214203830))
+
+
+### Bug Fixes
+
+* fix conversion for pre-epoch timestamps ([#160](https://www.github.com/googleapis/java-core/issues/160)) ([1f8b6b4](https://www.github.com/googleapis/java-core/commit/1f8b6b4835aaa702ec94bbbde89ed90f519c935a))
+
+
+### Dependencies
+
+* update dependency com.google.api:gax-bom to v1.54.0 ([#168](https://www.github.com/googleapis/java-core/issues/168)) ([5b52f9e](https://www.github.com/googleapis/java-core/commit/5b52f9e8d8cdc82b56114d3d1e857d137ae7ca98))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([#166](https://www.github.com/googleapis/java-core/issues/166)) ([28c9859](https://www.github.com/googleapis/java-core/commit/28c98595c9ee96760a063085bd85024177bd6dd2))
+
 ### [1.92.5](https://www.github.com/googleapis/java-core/compare/v1.92.4...v1.92.5) (2020-02-10)
 
 
