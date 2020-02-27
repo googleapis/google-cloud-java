@@ -19,13 +19,8 @@ package com.google.pubsub.v1;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
-/**
- * AUTO-GENERATED DOCUMENTATION AND CLASS
- *
- * @deprecated This resource name class will be removed in the next major version.
- */
+/** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-@Deprecated
 public class DeletedTopic extends TopicName {
 
   private static final String FIXED_VALUE = "_deleted-topic_";
