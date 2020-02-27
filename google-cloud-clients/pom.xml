@@ -153,18 +153,6 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-clients</site.installationModule>
   </properties>
-  <!-- All non-test dependency versions should be added to google-cloud-bom/pom.xml -->
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core-bom</artifactId>
-        <version>1.92.3-SNAPSHOT</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <pluginRepositories>
     <pluginRepository>
