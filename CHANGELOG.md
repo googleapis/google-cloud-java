@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.108.0](https://www.github.com/googleapis/java-bigquery/compare/v1.107.0...v1.108.0) (2020-02-28)
+
+
+### Features
+
+* expose requirepartitionfilter field in table ([#158](https://www.github.com/googleapis/java-bigquery/issues/158)) ([3e51ea0](https://www.github.com/googleapis/java-bigquery/commit/3e51ea02bb9a40c4d20b31a5435954c4d087f26d))
+* re-generated  to pick up changes in the API or client library generator. ([#188](https://www.github.com/googleapis/java-bigquery/issues/188)) ([2720b12](https://www.github.com/googleapis/java-bigquery/commit/2720b12f536ad363d9884b5082b7e238183a95e9))
+
+
+### Dependencies
+
+* update core dependencies ([#196](https://www.github.com/googleapis/java-bigquery/issues/196)) ([0c5bb7f](https://www.github.com/googleapis/java-bigquery/commit/0c5bb7feb6d24ffb2c87ab433c52aaf4b0aa1b91))
+
 ## [1.107.0](https://www.github.com/googleapis/java-bigquery/compare/v1.106.0...v1.107.0) (2020-02-19)
 
 
