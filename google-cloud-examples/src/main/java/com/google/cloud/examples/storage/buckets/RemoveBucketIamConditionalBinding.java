@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class RemoveBucketIamConditionalBinding {
-    /** Example of adding a conditional binding to the Bucket-level IAM */
+    /** Example of removing a conditional binding to the Bucket-level IAM */
     public static void removeBucketIamConditionalBinding(String projectId, String bucketName) {
         // The ID of your GCP project
         // String projectId = "your-project-id";
