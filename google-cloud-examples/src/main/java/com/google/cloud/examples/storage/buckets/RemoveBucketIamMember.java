@@ -32,18 +32,21 @@ public class RemoveBucketIamMember {
     // String bucketName = "your-unique-bucket-name";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+
     int policyVersion = 3;
     Policy originalPolicy = storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
 
     String role = "roles/storage.objectViewer";
-
     String member = "group:example@google.com";
+
     List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
     for (int index = 0; index < bindings.size(); index++) {
       Binding binding = bindings.get(index);
-      if (binding.getRole().equals(role)
-          && binding.getMembers().contains(member)
-          && binding.getCondition() == null) {
+      boolean foundRole = binding.getRole().equals(role);
+      boolean foundMember = binding.getMembers().contains(member);
+      boolean bindingIsNotConditional = (binding.getCondition() == null);
+
+      if (foundRole && foundMember && bindingIsNotConditional) {
         bindings.set(index, binding.toBuilder().removeMembers(member).build());
         break;
       }

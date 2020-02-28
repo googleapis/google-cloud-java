@@ -19,8 +19,9 @@ public class AddBucketIamConditionalBinding {
     // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
 
-    int policyVersion = 3;
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+
+    int policyVersion = 3;
     Policy originalPolicy =
         storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
 
@@ -43,10 +44,13 @@ public class AddBucketIamConditionalBinding {
     Policy updatedPolicy =
         storage.setIamPolicy(
             bucketName, originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
+
     for (Binding binding : updatedPolicy.getBindingsList()) {
-      if (binding.getRole().equals(role)
-          && binding.getMembers().contains(member)
-          && conditionBuilder.build().equals(binding.getCondition())) {
+      boolean foundRole = binding.getRole().equals(role);
+      boolean foundMember = binding.getMembers().contains(member);
+      boolean conditionsEqual = conditionBuilder.build().equals(binding.getCondition());
+
+      if (foundRole && foundMember && conditionsEqual) {
         System.out.printf(
             "Added conditional binding with role %s to %s\n", member, role, bucketName);
       }

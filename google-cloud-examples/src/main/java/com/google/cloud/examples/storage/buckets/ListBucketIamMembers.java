@@ -30,14 +30,17 @@ public class ListBucketIamMembers {
     // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
 
-    int policyVersion = 3;
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+
+    int policyVersion = 3;
     Policy policy = storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
-    List<Binding> policyBindings = policy.getBindingsList();
 
     for (Binding binding : policy.getBindingsList()) {
       System.out.printf("Role: %s Identities: %s\n", binding.getRole(), binding.getMembers());
-      if (binding.getCondition() != null) {
+
+      // Print condition if one is set
+      boolean bindingIsConditional = binding.getCondition() != null;
+      if (bindingIsConditional) {
         System.out.printf("Condition Title: %s\n", binding.getCondition().getTitle());
         System.out.printf("Condition Description: %s\n", binding.getCondition().getDescription());
         System.out.printf("Condition Expression: %s\n", binding.getCondition().getExpression());

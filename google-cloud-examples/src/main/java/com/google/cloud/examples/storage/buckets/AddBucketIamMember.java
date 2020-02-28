@@ -35,24 +35,26 @@ public class AddBucketIamMember {
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
 
+    int policyVersion = 3;
     Policy originalPolicy =
-        storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(3));
+        storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
 
     String role = "roles/storage.objectViewer";
-
     String member = "group:example@google.com";
 
     List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
     bindings.add(Binding.newBuilder().setRole(role).setMembers(Arrays.asList(member)).build());
 
-    int policyVersion = 3;
     Policy updatedPolicy =
         storage.setIamPolicy(
             bucketName, originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
+
     for (Binding binding : updatedPolicy.getBindingsList()) {
-      if (binding.getRole().equals(role)
-          && binding.getMembers().contains(member)
-          && binding.getCondition() == null) {
+      boolean foundRole = binding.getRole().equals(role);
+      boolean foundMember = binding.getMembers().contains(member);
+      boolean bindingIsNotConditional = (binding.getCondition() == null);
+
+      if (foundRole && foundMember && bindingIsNotConditional) {
         System.out.printf("Added %s with role %s to %s\n", member, role, bucketName);
       }
     }
