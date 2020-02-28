@@ -8,7 +8,7 @@
   "language": "java",
   "repo": "googleapis/java-monitoring-dashboards",
   "repo_short": "java-monitoring-dashboards",
-  "distribution_name": "com.google.cloud:google-cloud-monitoring-dashboards",
+  "distribution_name": "com.google.cloud:google-cloud-monitoring-dashboard",
   "api_id": "monitoring.googleapis.com",
   "transport": "grpc",
   "requires_billing": true

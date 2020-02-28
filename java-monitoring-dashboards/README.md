@@ -29,30 +29,30 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-monitoring-dashboards</artifactId>
+    <artifactId>google-cloud-monitoring-dashboard</artifactId>
   </dependency>
 </dependencies>
 ```
 
-[//]: # ({x-version-update-start:google-cloud-monitoring-dashboards:released})
+[//]: # ({x-version-update-start:google-cloud-monitoring-dashboard:released})
 
 If you are using Maven without BOM, add this to your dependencies:
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-monitoring-dashboards</artifactId>
-  <version>0.0.0</version>
+  <artifactId>google-cloud-monitoring-dashboard</artifactId>
+  <version>0.1.1</version>
 </dependency>
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-monitoring-dashboards:0.0.0'
+compile 'com.google.cloud:google-cloud-monitoring-dashboard:0.1.1'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-monitoring-dashboards" % "0.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-monitoring-dashboard" % "0.1.1"
 ```
 [//]: # ({x-version-update-end})
 
@@ -72,8 +72,8 @@ You will need to [enable billing][enable-billing] to use Google Google Cloud Mon
 
 ### Installation and setup
 
-You'll need to obtain the `google-cloud-monitoring-dashboards` library.  See the [Quickstart](#quickstart) section
-to add `google-cloud-monitoring-dashboards` as a dependency in your code.
+You'll need to obtain the `google-cloud-monitoring-dashboard` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-monitoring-dashboard` as a dependency in your code.
 
 ## About Google Cloud Monitoring Dashboards
 
@@ -147,8 +147,8 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-monitoring-dashboards/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-monitoring-dashboards/java11.html
 [stability-image]: https://img.shields.io/badge/stability-beta-yellow
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-monitoring-dashboards.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-monitoring-dashboards&core=gav
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-monitoring-dashboard.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-monitoring-dashboard&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
