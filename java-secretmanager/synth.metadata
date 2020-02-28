@@ -1,12 +1,13 @@
 {
-  "updateTime": "2020-02-27T20:32:17.148506Z",
+  "updateTime": "2020-02-28T20:18:02.323954Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1a2b05cc3541a5f7714529c665aecc3ea042c646",
-        "internalRef": "297570622"
+        "sha": "e9e90a787703ec5d388902e2cb796aaed3a385b4",
+        "internalRef": "297671458",
+        "log": "e9e90a787703ec5d388902e2cb796aaed3a385b4\nDialogflow weekly v2/v2beta1 library update:\n  - adding get validation result\n  - adding field mask override control for output audio config\nImportant updates are also posted at:\nhttps://cloud.google.com/dialogflow/docs/release-notes\n\nPiperOrigin-RevId: 297671458\n\n"
       }
     },
     {
