@@ -18,6 +18,8 @@ import synthtool as s
 import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
+AUTOSYNTH_MULTIPLE_COMMITS = True
+
 gapic = gcp.GAPICGenerator()
 
 service = 'asset'
