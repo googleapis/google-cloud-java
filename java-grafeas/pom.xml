@@ -60,7 +60,7 @@
   </licenses>
   <properties>
     <site.installationModule>grafeas</site.installationModule>
-    <grpc.version>1.27.0</grpc.version>
+    <grpc.version>1.27.1</grpc.version>
     <api-client.version>1.30.8</api-client.version>
     <google.core.version>1.92.5</google.core.version>
     <gax.version>1.53.1</gax.version>
