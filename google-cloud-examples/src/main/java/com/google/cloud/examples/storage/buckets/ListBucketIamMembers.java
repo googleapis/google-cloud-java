@@ -36,8 +36,9 @@ public class ListBucketIamMembers {
         storage.getIamPolicy(
             bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
 
+    // Print binding information
     for (Binding binding : policy.getBindingsList()) {
-      System.out.printf("Role: %s Identities: %s\n", binding.getRole(), binding.getMembers());
+      System.out.printf("Role: %s Members: %s\n", binding.getRole(), binding.getMembers());
 
       // Print condition if one is set
       boolean bindingIsConditional = binding.getCondition() != null;
