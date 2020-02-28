@@ -80,8 +80,18 @@
     <dependencies>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-secretmanager-v1</artifactId>
+        <version>0.2.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-secretmanager-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-secretmanager-v1beta1</artifactId>
         <version>0.2.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-secretmanager-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-secretmanager-v1</artifactId>
+        <version>0.2.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-secretmanager-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -188,7 +198,9 @@
   </build>
 
   <modules>
+    <module>proto-google-cloud-secretmanager-v1</module>
     <module>proto-google-cloud-secretmanager-v1beta1</module>
+    <module>grpc-google-cloud-secretmanager-v1</module>
     <module>grpc-google-cloud-secretmanager-v1beta1</module>
     <module>google-cloud-secretmanager</module>
     <module>google-cloud-secretmanager-bom</module>

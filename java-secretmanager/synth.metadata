@@ -1,13 +1,12 @@
 {
-  "updateTime": "2020-02-24T23:04:24.174951Z",
+  "updateTime": "2020-02-27T20:32:17.148506Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1e47e676cddbbd8d93f19ba0665af15b5532417e",
-        "internalRef": "296901854",
-        "log": "1e47e676cddbbd8d93f19ba0665af15b5532417e\nFix: Restore a method signature for UpdateCluster\n\nPiperOrigin-RevId: 296901854\n\n"
+        "sha": "1a2b05cc3541a5f7714529c665aecc3ea042c646",
+        "internalRef": "297570622"
       }
     },
     {
@@ -19,6 +18,15 @@
     }
   ],
   "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "secretmanager",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    },
     {
       "client": {
         "source": "googleapis",

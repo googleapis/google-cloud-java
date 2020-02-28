@@ -14,7 +14,6 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
 import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
@@ -22,6 +21,13 @@ gapic = gcp.GAPICBazel()
 
 service = 'secretmanager'
 versions = ['v1beta1']
+
+java.bazel_library(
+    service=service,
+    version='v1',
+    package_pattern='com.google.cloud.{service}.{version}',
+    gapic=gapic,
+)
 
 for version in versions:
   library = java.bazel_library(
