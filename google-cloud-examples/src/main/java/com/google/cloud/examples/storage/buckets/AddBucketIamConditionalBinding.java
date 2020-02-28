@@ -53,16 +53,8 @@ public class AddBucketIamConditionalBinding {
             bucketName,
             originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
 
-    for (Binding binding : updatedPolicy.getBindingsList()) {
-      boolean foundRole = binding.getRole().equals(role);
-      boolean foundMember = binding.getMembers().contains(member);
-      boolean conditionsEqual = conditionBuilder.build().equals(binding.getCondition());
-
-      if (foundRole && foundMember && conditionsEqual) {
-        System.out.printf(
+    System.out.printf(
             "Added conditional binding with role %s to %s\n", member, role, bucketName);
-      }
-    }
   }
 }
 // [END storage_add_bucket_conditional_iam_binding]

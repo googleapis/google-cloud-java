@@ -59,21 +59,7 @@ public class RemoveBucketIamMember {
             bucketName,
             originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
 
-    boolean bindingExists = false;
-    for (Binding binding : updatedPolicy.getBindingsList()) {
-      boolean foundRole = binding.getRole().equals(role);
-      boolean bindingIsNotConditional = (binding.getCondition() == null);
-
-      if (foundRole && bindingIsNotConditional) {
-        bindingExists = true;
-        if (!binding.getMembers().contains(member)) {
-          System.out.printf("Removed %s with role %s from %s\n", member, role, bucketName);
-        }
-      }
-    }
-    if (!bindingExists) {
-      System.out.printf("Removed %s with role %s from %s\n", member, role, bucketName);
-    }
+    System.out.printf("Removed %s with role %s from %s\n", member, role, bucketName);
   }
 }
 // [END storage_remove_bucket_iam_member]

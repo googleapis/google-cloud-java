@@ -56,15 +56,7 @@ public class AddBucketIamMember {
             bucketName,
             originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
 
-    for (Binding binding : updatedPolicy.getBindingsList()) {
-      boolean foundRole = binding.getRole().equals(role);
-      boolean foundMember = binding.getMembers().contains(member);
-      boolean bindingIsNotConditional = (binding.getCondition() == null);
-
-      if (foundRole && foundMember && bindingIsNotConditional) {
-        System.out.printf("Added %s with role %s to %s\n", member, role, bucketName);
-      }
-    }
+    System.out.printf("Added %s with role %s to %s\n", member, role, bucketName);
   }
 }
 // [END storage_add_bucket_iam_member]
