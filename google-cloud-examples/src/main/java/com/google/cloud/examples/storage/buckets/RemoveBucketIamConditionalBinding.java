@@ -23,11 +23,15 @@ public class RemoveBucketIamConditionalBinding {
 
     int policyVersion = 3;
     Policy originalPolicy =
-        storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
+        storage.getIamPolicy(
+            bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
 
     String role = "roles/storage.objectViewer";
 
+    // Get policy bindings list as a mutable ArrayList.
     List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
+
+    // Create a condition to compare against
     Condition.Builder conditionBuilder = Condition.newBuilder();
     conditionBuilder.setTitle("Title");
     conditionBuilder.setDescription("Description");
@@ -40,15 +44,18 @@ public class RemoveBucketIamConditionalBinding {
       boolean foundRole = binding.getRole().equals(role);
       boolean conditionsEqual = conditionBuilder.build().equals(binding.getCondition());
 
+      // Remove condition when the role and condition are equal
       if (foundRole && conditionsEqual) {
         iterator.remove();
         break;
       }
     }
 
+    // Update policy
     Policy updatedPolicy =
         storage.setIamPolicy(
-            bucketName, originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
+            bucketName,
+            originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
 
     System.out.println("Conditional Binding was removed.");
   }

@@ -37,17 +37,24 @@ public class AddBucketIamMember {
 
     int policyVersion = 3;
     Policy originalPolicy =
-        storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
+        storage.getIamPolicy(
+            bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
 
     String role = "roles/storage.objectViewer";
     String member = "group:example@google.com";
 
+    // Get policy bindings list as a mutable ArrayList.
     List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
-    bindings.add(Binding.newBuilder().setRole(role).setMembers(Arrays.asList(member)).build());
+
+    // Create a new binding using role and member
+    Binding newBinding =
+        Binding.newBuilder().setRole(role).setMembers(Arrays.asList(member)).build();
+    bindings.add(newBinding);
 
     Policy updatedPolicy =
         storage.setIamPolicy(
-            bucketName, originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
+            bucketName,
+            originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
 
     for (Binding binding : updatedPolicy.getBindingsList()) {
       boolean foundRole = binding.getRole().equals(role);

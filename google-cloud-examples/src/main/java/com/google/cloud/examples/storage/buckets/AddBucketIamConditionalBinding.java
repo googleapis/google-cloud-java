@@ -23,17 +23,23 @@ public class AddBucketIamConditionalBinding {
 
     int policyVersion = 3;
     Policy originalPolicy =
-        storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
+        storage.getIamPolicy(
+            bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
 
     String role = "roles/storage.objectViewer";
     String member = "group:example@google.com";
 
+    // Get policy bindings list as a mutable ArrayList.
     List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
+
+    // Create a condition
     Condition.Builder conditionBuilder = Condition.newBuilder();
     conditionBuilder.setTitle("Title");
     conditionBuilder.setDescription("Description");
     conditionBuilder.setExpression(
         "resource.name.startsWith(\"projects/_/buckets/bucket-name/objects/prefix-a-\")");
+
+    // Add condition to a binding
     bindings.add(
         Binding.newBuilder()
             .setRole(role)
@@ -41,9 +47,11 @@ public class AddBucketIamConditionalBinding {
             .setCondition(conditionBuilder.build())
             .build());
 
+    // Update policy with new conditional binding
     Policy updatedPolicy =
         storage.setIamPolicy(
-            bucketName, originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
+            bucketName,
+            originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
 
     for (Binding binding : updatedPolicy.getBindingsList()) {
       boolean foundRole = binding.getRole().equals(role);

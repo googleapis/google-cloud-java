@@ -34,7 +34,9 @@ public class RemoveBucketIamMember {
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
 
     int policyVersion = 3;
-    Policy originalPolicy = storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
+    Policy originalPolicy =
+        storage.getIamPolicy(
+            bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
 
     String role = "roles/storage.objectViewer";
     String member = "group:example@google.com";
@@ -53,11 +55,16 @@ public class RemoveBucketIamMember {
     }
 
     Policy updatedPolicy =
-        storage.setIamPolicy(bucketName, originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
+        storage.setIamPolicy(
+            bucketName,
+            originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
 
     boolean bindingExists = false;
     for (Binding binding : updatedPolicy.getBindingsList()) {
-      if (binding.getRole().equals(role) && null == binding.getCondition()) {
+      boolean foundRole = binding.getRole().equals(role);
+      boolean bindingIsNotConditional = (binding.getCondition() == null);
+
+      if (foundRole && bindingIsNotConditional) {
         bindingExists = true;
         if (!binding.getMembers().contains(member)) {
           System.out.printf("Removed %s with role %s from %s\n", member, role, bucketName);

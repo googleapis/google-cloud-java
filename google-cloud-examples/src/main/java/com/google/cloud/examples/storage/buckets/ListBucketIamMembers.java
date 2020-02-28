@@ -20,7 +20,6 @@ import com.google.cloud.Binding;
 import com.google.cloud.Policy;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import java.util.List;
 
 public class ListBucketIamMembers {
   public static void listBucketIamMembers(String projectId, String bucketName) {
@@ -33,7 +32,9 @@ public class ListBucketIamMembers {
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
 
     int policyVersion = 3;
-    Policy policy = storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
+    Policy policy =
+        storage.getIamPolicy(
+            bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
 
     for (Binding binding : policy.getBindingsList()) {
       System.out.printf("Role: %s Identities: %s\n", binding.getRole(), binding.getMembers());
