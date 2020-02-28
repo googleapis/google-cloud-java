@@ -31,6 +31,8 @@ public class RemoveBucketIamMember {
     // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
 
+    // For more information please read:
+    // https://cloud.google.com/storage/docs/access-control/iam
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
 
     int policyVersion = 3;
@@ -41,7 +43,10 @@ public class RemoveBucketIamMember {
     String role = "roles/storage.objectViewer";
     String member = "group:example@google.com";
 
+    // Get policy bindings list as a mutable ArrayList.
     List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
+
+    // Remove member from binding
     for (int index = 0; index < bindings.size(); index++) {
       Binding binding = bindings.get(index);
       boolean foundRole = binding.getRole().equals(role);
@@ -54,6 +59,7 @@ public class RemoveBucketIamMember {
       }
     }
 
+    // Update policy to remove member
     Policy updatedPolicy =
         storage.setIamPolicy(
             bucketName,

@@ -33,6 +33,8 @@ public class AddBucketIamMember {
     // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
 
+    // For more information please read:
+    // https://cloud.google.com/storage/docs/access-control/iam
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
 
     int policyVersion = 3;
@@ -51,6 +53,7 @@ public class AddBucketIamMember {
         Binding.newBuilder().setRole(role).setMembers(Arrays.asList(member)).build();
     bindings.add(newBinding);
 
+    // Update policy to add member
     Policy updatedPolicy =
         storage.setIamPolicy(
             bucketName,
