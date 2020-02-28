@@ -19,9 +19,10 @@ public class RemoveBucketIamConditionalBinding {
     // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
 
+    int policyVersion = 3;
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Policy originalPolicy =
-        storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(3));
+        storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
 
     String role = "roles/storage.objectViewer";
 
@@ -44,9 +45,9 @@ public class RemoveBucketIamConditionalBinding {
 
     Policy updatedPolicy =
         storage.setIamPolicy(
-            bucketName, originalPolicy.toBuilder().setBindings(bindings).setVersion(3).build());
+            bucketName, originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
 
-    if (bindings.size() > updatedPolicy.getBindingsList().size()) {
+    if (bindings.size() == updatedPolicy.getBindingsList().size()) {
       System.out.println("Conditional Binding was removed.");
     }
   }

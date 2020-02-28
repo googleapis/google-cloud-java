@@ -45,13 +45,14 @@ public class AddBucketIamMember {
     List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
     bindings.add(Binding.newBuilder().setRole(role).setMembers(Arrays.asList(member)).build());
 
+    int policyVersion = 3;
     Policy updatedPolicy =
         storage.setIamPolicy(
-            bucketName, originalPolicy.toBuilder().setBindings(bindings).setVersion(3).build());
+            bucketName, originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
     for (Binding binding : updatedPolicy.getBindingsList()) {
       if (binding.getRole().equals(role)
           && binding.getMembers().contains(member)
-          && null == binding.getCondition()) {
+          && binding.getCondition() == null) {
         System.out.printf("Added %s with role %s to %s\n", member, role, bucketName);
       }
     }

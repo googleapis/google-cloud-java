@@ -32,8 +32,8 @@ public class RemoveBucketIamMember {
     // String bucketName = "your-unique-bucket-name";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-
-    Policy originalPolicy = storage.getIamPolicy(bucketName);
+    int policyVersion = 3;
+    Policy originalPolicy = storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
 
     String role = "roles/storage.objectViewer";
 
@@ -50,7 +50,7 @@ public class RemoveBucketIamMember {
     }
 
     Policy updatedPolicy =
-        storage.setIamPolicy(bucketName, originalPolicy.toBuilder().setBindings(bindings).build());
+        storage.setIamPolicy(bucketName, originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
 
     boolean bindingExists = false;
     for (Binding binding : updatedPolicy.getBindingsList()) {
