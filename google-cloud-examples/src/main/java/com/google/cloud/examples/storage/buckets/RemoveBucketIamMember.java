@@ -39,11 +39,11 @@ public class RemoveBucketIamMember {
 
     String member = "group:example@google.com";
     List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
-    for (int index = 0; index < bindings.size(); ++index) {
+    for (int index = 0; index < bindings.size(); index++) {
       Binding binding = bindings.get(index);
       if (binding.getRole().equals(role)
           && binding.getMembers().contains(member)
-          && null == binding.getCondition()) {
+          && binding.getCondition() == null) {
         bindings.set(index, binding.toBuilder().removeMembers(member).build());
         break;
       }
