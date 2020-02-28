@@ -31,7 +31,7 @@ public class AddBucketIamConditionalBinding {
     String role = "roles/storage.objectViewer";
     String member = "group:example@google.com";
 
-    // Get policy bindings list as a mutable ArrayList.
+    // getBindingsList() returns an ImmutableList and copying over to an ArrayList so it's mutable.
     List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
 
     // Create a condition
@@ -55,8 +55,7 @@ public class AddBucketIamConditionalBinding {
             bucketName,
             originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
 
-    System.out.printf(
-            "Added conditional binding with role %s to %s\n", member, role, bucketName);
+    System.out.printf("Added conditional binding with role %s to %s\n", member, role, bucketName);
   }
 }
 // [END storage_add_bucket_conditional_iam_binding]

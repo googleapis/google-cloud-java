@@ -43,7 +43,7 @@ public class RemoveBucketIamMember {
     String role = "roles/storage.objectViewer";
     String member = "group:example@google.com";
 
-    // Get policy bindings list as a mutable ArrayList.
+    // getBindingsList() returns an ImmutableList and copying over to an ArrayList so it's mutable.
     List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
 
     // Remove member from binding
