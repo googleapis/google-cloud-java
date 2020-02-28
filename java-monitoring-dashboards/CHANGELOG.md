@@ -1,5 +1,20 @@
 # Changelog
 
+### [0.1.2](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v0.1.1...v0.1.2) (2020-02-28)
+
+
+### Dependencies
+
+* update core dependencies to v1.54.0 ([#42](https://www.github.com/googleapis/java-monitoring-dashboards/issues/42)) ([f9fb524](https://www.github.com/googleapis/java-monitoring-dashboards/commit/f9fb5240b00cf9037ba06823d35f92acd8cdaec3))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([439637c](https://www.github.com/googleapis/java-monitoring-dashboards/commit/439637cb08ff7f2a6118217a87c73c251c939bf1))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([fe4bfb4](https://www.github.com/googleapis/java-monitoring-dashboards/commit/fe4bfb4325df6cc09a0df0bd2a58249378869dac))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([3df8e21](https://www.github.com/googleapis/java-monitoring-dashboards/commit/3df8e21b718c8a44e61f9beaf4fd5bb5365573fb))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([c374c6b](https://www.github.com/googleapis/java-monitoring-dashboards/commit/c374c6bf5c2e6933814d362c8be0173e0963da9a))
+
 ### [0.1.1](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v0.1.0...v0.1.1) (2020-02-04)
 
 
