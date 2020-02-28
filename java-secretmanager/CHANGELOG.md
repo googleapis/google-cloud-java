@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-secretmanager/compare/v0.2.1...v0.3.0) (2020-02-28)
+
+
+### Features
+
+* generate v1 client ([#54](https://www.github.com/googleapis/java-secretmanager/issues/54)) ([afddd08](https://www.github.com/googleapis/java-secretmanager/commit/afddd08358730f8a06b98e7a4629fbbd479ab02b))
+
+
+### Dependencies
+
+* update core dependencies to v1.54.0 ([#53](https://www.github.com/googleapis/java-secretmanager/issues/53)) ([a3a096b](https://www.github.com/googleapis/java-secretmanager/commit/a3a096b956a2d8e892c90fb5c745e6b3df652a05))
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([df0376e](https://www.github.com/googleapis/java-secretmanager/commit/df0376e18a39b77d0bf57cf31dd00a3c6d81e462))
+* update dependency com.google.cloud:google-cloud-core to v1.93.0 ([#55](https://www.github.com/googleapis/java-secretmanager/issues/55)) ([6972589](https://www.github.com/googleapis/java-secretmanager/commit/6972589781a5a91ffacb2b2379f8ad913d7a0d58))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([e71dcd4](https://www.github.com/googleapis/java-secretmanager/commit/e71dcd4e9cf6bc622e31be37f416b31dcb972c42))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([c811dba](https://www.github.com/googleapis/java-secretmanager/commit/c811dba55ff7ba7fa48600e9d716a3a1a1e0b269))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([0281cf0](https://www.github.com/googleapis/java-secretmanager/commit/0281cf07f31a6c03c4970aa489f74980c4dfc11c))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([2411dc6](https://www.github.com/googleapis/java-secretmanager/commit/2411dc61cc7b75cdec2549de95baf9786e833103))
+
 ### [0.2.1](https://www.github.com/googleapis/java-secretmanager/compare/v0.2.0...v0.2.1) (2020-02-04)
 
 
