@@ -164,7 +164,7 @@
     <opencensus.version>0.24.0</opencensus.version>
     <mockito.version>1.10.19</mockito.version>
     <javax.annotations.version>1.3.2</javax.annotations.version>
-    <truth.version>1.0</truth.version>
+    <truth.version>1.0.1</truth.version>
   </properties>
 
   <dependencyManagement>
