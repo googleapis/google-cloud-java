@@ -21,23 +21,16 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest;
-import com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse;
 import com.google.cloud.asset.v1p2beta1.CreateFeedRequest;
 import com.google.cloud.asset.v1p2beta1.DeleteFeedRequest;
-import com.google.cloud.asset.v1p2beta1.ExportAssetsRequest;
-import com.google.cloud.asset.v1p2beta1.ExportAssetsResponse;
 import com.google.cloud.asset.v1p2beta1.Feed;
 import com.google.cloud.asset.v1p2beta1.GetFeedRequest;
 import com.google.cloud.asset.v1p2beta1.ListFeedsRequest;
 import com.google.cloud.asset.v1p2beta1.ListFeedsResponse;
 import com.google.cloud.asset.v1p2beta1.UpdateFeedRequest;
 import com.google.common.collect.ImmutableMap;
-import com.google.longrunning.Operation;
-import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -56,24 +49,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcAssetServiceStub extends AssetServiceStub {
 
-  private static final MethodDescriptor<ExportAssetsRequest, Operation>
-      exportAssetsMethodDescriptor =
-          MethodDescriptor.<ExportAssetsRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.asset.v1p2beta1.AssetService/ExportAssets")
-              .setRequestMarshaller(ProtoUtils.marshaller(ExportAssetsRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
-      batchGetAssetsHistoryMethodDescriptor =
-          MethodDescriptor.<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.asset.v1p2beta1.AssetService/BatchGetAssetsHistory")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(BatchGetAssetsHistoryRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(BatchGetAssetsHistoryResponse.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<CreateFeedRequest, Feed> createFeedMethodDescriptor =
       MethodDescriptor.<CreateFeedRequest, Feed>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -112,13 +87,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .build();
 
   private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
-  private final UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable;
-  private final OperationCallable<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
-      exportAssetsOperationCallable;
-  private final UnaryCallable<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
-      batchGetAssetsHistoryCallable;
   private final UnaryCallable<CreateFeedRequest, Feed> createFeedCallable;
   private final UnaryCallable<GetFeedRequest, Feed> getFeedCallable;
   private final UnaryCallable<ListFeedsRequest, ListFeedsResponse> listFeedsCallable;
@@ -163,36 +132,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
-    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<ExportAssetsRequest, Operation> exportAssetsTransportSettings =
-        GrpcCallSettings.<ExportAssetsRequest, Operation>newBuilder()
-            .setMethodDescriptor(exportAssetsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<ExportAssetsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExportAssetsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
-        batchGetAssetsHistoryTransportSettings =
-            GrpcCallSettings
-                .<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>newBuilder()
-                .setMethodDescriptor(batchGetAssetsHistoryMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<BatchGetAssetsHistoryRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchGetAssetsHistoryRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<CreateFeedRequest, Feed> createFeedTransportSettings =
         GrpcCallSettings.<CreateFeedRequest, Feed>newBuilder()
             .setMethodDescriptor(createFeedMethodDescriptor)
@@ -259,20 +199,6 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                 })
             .build();
 
-    this.exportAssetsCallable =
-        callableFactory.createUnaryCallable(
-            exportAssetsTransportSettings, settings.exportAssetsSettings(), clientContext);
-    this.exportAssetsOperationCallable =
-        callableFactory.createOperationCallable(
-            exportAssetsTransportSettings,
-            settings.exportAssetsOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.batchGetAssetsHistoryCallable =
-        callableFactory.createUnaryCallable(
-            batchGetAssetsHistoryTransportSettings,
-            settings.batchGetAssetsHistorySettings(),
-            clientContext);
     this.createFeedCallable =
         callableFactory.createUnaryCallable(
             createFeedTransportSettings, settings.createFeedSettings(), clientContext);
@@ -290,26 +216,6 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             deleteFeedTransportSettings, settings.deleteFeedSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public GrpcOperationsStub getOperationsStub() {
-    return operationsStub;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
-      exportAssetsOperationCallable() {
-    return exportAssetsOperationCallable;
-  }
-
-  public UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable() {
-    return exportAssetsCallable;
-  }
-
-  public UnaryCallable<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
-      batchGetAssetsHistoryCallable() {
-    return batchGetAssetsHistoryCallable;
   }
 
   public UnaryCallable<CreateFeedRequest, Feed> createFeedCallable() {

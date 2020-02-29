@@ -17,7 +17,6 @@ package com.google.cloud.asset.v1p2beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.asset.v1p2beta1.AssetServiceGrpc.AssetServiceImplBase;
-import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
@@ -56,37 +55,6 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
   public void reset() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
-  }
-
-  @Override
-  public void exportAssets(
-      ExportAssetsRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext((Operation) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void batchGetAssetsHistory(
-      BatchGetAssetsHistoryRequest request,
-      StreamObserver<BatchGetAssetsHistoryResponse> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof BatchGetAssetsHistoryResponse) {
-      requests.add(request);
-      responseObserver.onNext((BatchGetAssetsHistoryResponse) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
   }
 
   @Override

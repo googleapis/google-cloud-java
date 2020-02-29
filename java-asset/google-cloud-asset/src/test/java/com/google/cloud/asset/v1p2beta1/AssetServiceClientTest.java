@@ -77,46 +77,6 @@ public class AssetServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void batchGetAssetsHistoryTest() {
-    BatchGetAssetsHistoryResponse expectedResponse =
-        BatchGetAssetsHistoryResponse.newBuilder().build();
-    mockAssetService.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-
-    BatchGetAssetsHistoryResponse actualResponse = client.batchGetAssetsHistory(parent);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    BatchGetAssetsHistoryRequest actualRequest =
-        (BatchGetAssetsHistoryRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void batchGetAssetsHistoryExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAssetService.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-
-      client.batchGetAssetsHistory(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createFeedTest() {
     String name = "name3373707";
     Feed expectedResponse = Feed.newBuilder().setName(name).build();

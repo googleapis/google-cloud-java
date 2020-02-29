@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- TODO: remove after 0.119 is released -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1p1beta1/AssetServiceClient</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1p1beta1/AssetServiceSettings*</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1p1beta1/stub/AssetServiceStub*</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1p1beta1/stub/GrpcAssetServiceStub*</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1p2beta1/AssetServiceClient</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1p2beta1/AssetServiceSettings*</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1p2beta1/stub/AssetServiceStub*</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1p2beta1/stub/GrpcAssetServiceStub*</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/asset/v1p1beta1/AssetServiceClient$SearchIam*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/asset/v1p1beta1/AssetServiceClient$SearchResources*</className>
+  </difference>
+</differences>

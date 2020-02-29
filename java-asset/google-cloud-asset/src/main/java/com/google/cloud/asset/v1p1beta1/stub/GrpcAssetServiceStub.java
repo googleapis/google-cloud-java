@@ -17,8 +17,6 @@ package com.google.cloud.asset.v1p1beta1.stub;
 
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllResourcesPagedResponse;
-import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchIamPoliciesPagedResponse;
-import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchResourcesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -32,10 +30,6 @@ import com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest;
 import com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse;
 import com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest;
 import com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse;
-import com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest;
-import com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse;
-import com.google.cloud.asset.v1p1beta1.SearchResourcesRequest;
-import com.google.cloud.asset.v1p1beta1.SearchResourcesResponse;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -54,26 +48,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcAssetServiceStub extends AssetServiceStub {
 
-  private static final MethodDescriptor<SearchResourcesRequest, SearchResourcesResponse>
-      searchResourcesMethodDescriptor =
-          MethodDescriptor.<SearchResourcesRequest, SearchResourcesResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.asset.v1p1beta1.AssetService/SearchResources")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(SearchResourcesRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(SearchResourcesResponse.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<SearchIamPoliciesRequest, SearchIamPoliciesResponse>
-      searchIamPoliciesMethodDescriptor =
-          MethodDescriptor.<SearchIamPoliciesRequest, SearchIamPoliciesResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.asset.v1p1beta1.AssetService/SearchIamPolicies")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(SearchIamPoliciesRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(SearchIamPoliciesResponse.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<SearchAllResourcesRequest, SearchAllResourcesResponse>
       searchAllResourcesMethodDescriptor =
           MethodDescriptor.<SearchAllResourcesRequest, SearchAllResourcesResponse>newBuilder()
@@ -97,14 +71,6 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<SearchResourcesRequest, SearchResourcesResponse>
-      searchResourcesCallable;
-  private final UnaryCallable<SearchResourcesRequest, SearchResourcesPagedResponse>
-      searchResourcesPagedCallable;
-  private final UnaryCallable<SearchIamPoliciesRequest, SearchIamPoliciesResponse>
-      searchIamPoliciesCallable;
-  private final UnaryCallable<SearchIamPoliciesRequest, SearchIamPoliciesPagedResponse>
-      searchIamPoliciesPagedCallable;
   private final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesResponse>
       searchAllResourcesCallable;
   private final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>
@@ -153,16 +119,6 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<SearchResourcesRequest, SearchResourcesResponse>
-        searchResourcesTransportSettings =
-            GrpcCallSettings.<SearchResourcesRequest, SearchResourcesResponse>newBuilder()
-                .setMethodDescriptor(searchResourcesMethodDescriptor)
-                .build();
-    GrpcCallSettings<SearchIamPoliciesRequest, SearchIamPoliciesResponse>
-        searchIamPoliciesTransportSettings =
-            GrpcCallSettings.<SearchIamPoliciesRequest, SearchIamPoliciesResponse>newBuilder()
-                .setMethodDescriptor(searchIamPoliciesMethodDescriptor)
-                .build();
     GrpcCallSettings<SearchAllResourcesRequest, SearchAllResourcesResponse>
         searchAllResourcesTransportSettings =
             GrpcCallSettings.<SearchAllResourcesRequest, SearchAllResourcesResponse>newBuilder()
@@ -192,22 +148,6 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                     })
                 .build();
 
-    this.searchResourcesCallable =
-        callableFactory.createUnaryCallable(
-            searchResourcesTransportSettings, settings.searchResourcesSettings(), clientContext);
-    this.searchResourcesPagedCallable =
-        callableFactory.createPagedCallable(
-            searchResourcesTransportSettings, settings.searchResourcesSettings(), clientContext);
-    this.searchIamPoliciesCallable =
-        callableFactory.createUnaryCallable(
-            searchIamPoliciesTransportSettings,
-            settings.searchIamPoliciesSettings(),
-            clientContext);
-    this.searchIamPoliciesPagedCallable =
-        callableFactory.createPagedCallable(
-            searchIamPoliciesTransportSettings,
-            settings.searchIamPoliciesSettings(),
-            clientContext);
     this.searchAllResourcesCallable =
         callableFactory.createUnaryCallable(
             searchAllResourcesTransportSettings,
@@ -230,25 +170,6 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  public UnaryCallable<SearchResourcesRequest, SearchResourcesPagedResponse>
-      searchResourcesPagedCallable() {
-    return searchResourcesPagedCallable;
-  }
-
-  public UnaryCallable<SearchResourcesRequest, SearchResourcesResponse> searchResourcesCallable() {
-    return searchResourcesCallable;
-  }
-
-  public UnaryCallable<SearchIamPoliciesRequest, SearchIamPoliciesPagedResponse>
-      searchIamPoliciesPagedCallable() {
-    return searchIamPoliciesPagedCallable;
-  }
-
-  public UnaryCallable<SearchIamPoliciesRequest, SearchIamPoliciesResponse>
-      searchIamPoliciesCallable() {
-    return searchIamPoliciesCallable;
   }
 
   public UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>

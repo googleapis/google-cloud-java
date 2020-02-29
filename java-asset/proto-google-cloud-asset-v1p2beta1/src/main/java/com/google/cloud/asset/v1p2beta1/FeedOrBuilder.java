@@ -35,7 +35,7 @@ public interface FeedOrBuilder
    * project/folder/organization.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The name.
    */
@@ -52,7 +52,7 @@ public interface FeedOrBuilder
    * project/folder/organization.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for name.
    */
@@ -247,7 +247,9 @@ public interface FeedOrBuilder
    * published to.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the feedOutputConfig field is set.
    */
@@ -260,7 +262,9 @@ public interface FeedOrBuilder
    * published to.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The feedOutputConfig.
    */
@@ -273,7 +277,9 @@ public interface FeedOrBuilder
    * published to.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.asset.v1p2beta1.FeedOutputConfigOrBuilder getFeedOutputConfigOrBuilder();
 }

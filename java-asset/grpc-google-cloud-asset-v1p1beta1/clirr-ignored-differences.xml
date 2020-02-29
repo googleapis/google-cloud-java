@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- TODO: remove after 0.119 is released -->
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/asset/v1p1beta1/AssetServiceGrpc</className>
+    <field>METHOD_SEARCH_IAM_POLICIES</field>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/asset/v1p1beta1/AssetServiceGrpc</className>
+    <field>METHOD_SEARCH_RESOURCES</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1p1beta1/AssetServiceGrpc*</className>
+    <method>*</method>
+  </difference>
+</differences>

@@ -53,8 +53,12 @@ import javax.annotation.Generated;
  * <code>
  * AssetServiceSettings.Builder assetServiceSettingsBuilder =
  *     AssetServiceSettings.newBuilder();
- * assetServiceSettingsBuilder.batchGetAssetsHistorySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * assetServiceSettingsBuilder
+ *     .batchGetAssetsHistorySettings()
+ *     .setRetrySettings(
+ *         assetServiceSettingsBuilder.batchGetAssetsHistorySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AssetServiceSettings assetServiceSettings = assetServiceSettingsBuilder.build();
  * </code>
  * </pre>

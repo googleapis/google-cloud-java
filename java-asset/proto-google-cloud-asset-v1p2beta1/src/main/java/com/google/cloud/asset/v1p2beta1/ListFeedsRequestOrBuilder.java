@@ -32,7 +32,7 @@ public interface ListFeedsRequestOrBuilder
    * "folders/12345")", or a project ID (such as "projects/my-project-id").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The parent.
    */
@@ -46,7 +46,7 @@ public interface ListFeedsRequestOrBuilder
    * "folders/12345")", or a project ID (such as "projects/my-project-id").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for parent.
    */

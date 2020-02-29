@@ -40,124 +40,6 @@ public final class AssetServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSearchResourcesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p1beta1.SearchResourcesRequest,
-          com.google.cloud.asset.v1p1beta1.SearchResourcesResponse>
-      METHOD_SEARCH_RESOURCES = getSearchResourcesMethodHelper();
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p1beta1.SearchResourcesRequest,
-          com.google.cloud.asset.v1p1beta1.SearchResourcesResponse>
-      getSearchResourcesMethod;
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p1beta1.SearchResourcesRequest,
-          com.google.cloud.asset.v1p1beta1.SearchResourcesResponse>
-      getSearchResourcesMethod() {
-    return getSearchResourcesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p1beta1.SearchResourcesRequest,
-          com.google.cloud.asset.v1p1beta1.SearchResourcesResponse>
-      getSearchResourcesMethodHelper() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.asset.v1p1beta1.SearchResourcesRequest,
-            com.google.cloud.asset.v1p1beta1.SearchResourcesResponse>
-        getSearchResourcesMethod;
-    if ((getSearchResourcesMethod = AssetServiceGrpc.getSearchResourcesMethod) == null) {
-      synchronized (AssetServiceGrpc.class) {
-        if ((getSearchResourcesMethod = AssetServiceGrpc.getSearchResourcesMethod) == null) {
-          AssetServiceGrpc.getSearchResourcesMethod =
-              getSearchResourcesMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.asset.v1p1beta1.SearchResourcesRequest,
-                          com.google.cloud.asset.v1p1beta1.SearchResourcesResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.asset.v1p1beta1.AssetService", "SearchResources"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.asset.v1p1beta1.SearchResourcesRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.asset.v1p1beta1.SearchResourcesResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AssetServiceMethodDescriptorSupplier("SearchResources"))
-                      .build();
-        }
-      }
-    }
-    return getSearchResourcesMethod;
-  }
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSearchIamPoliciesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest,
-          com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse>
-      METHOD_SEARCH_IAM_POLICIES = getSearchIamPoliciesMethodHelper();
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest,
-          com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse>
-      getSearchIamPoliciesMethod;
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest,
-          com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse>
-      getSearchIamPoliciesMethod() {
-    return getSearchIamPoliciesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest,
-          com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse>
-      getSearchIamPoliciesMethodHelper() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest,
-            com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse>
-        getSearchIamPoliciesMethod;
-    if ((getSearchIamPoliciesMethod = AssetServiceGrpc.getSearchIamPoliciesMethod) == null) {
-      synchronized (AssetServiceGrpc.class) {
-        if ((getSearchIamPoliciesMethod = AssetServiceGrpc.getSearchIamPoliciesMethod) == null) {
-          AssetServiceGrpc.getSearchIamPoliciesMethod =
-              getSearchIamPoliciesMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest,
-                          com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.asset.v1p1beta1.AssetService", "SearchIamPolicies"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AssetServiceMethodDescriptorSupplier("SearchIamPolicies"))
-                      .build();
-        }
-      }
-    }
-    return getSearchIamPoliciesMethod;
-  }
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getSearchAllResourcesMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest,
@@ -306,34 +188,6 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches resources which are accessible with .get permission.
-     * </pre>
-     */
-    public void searchResources(
-        com.google.cloud.asset.v1p1beta1.SearchResourcesRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p1beta1.SearchResourcesResponse>
-            responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchResourcesMethodHelper(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Searches IAM policies which are accessible with .getIamPolicy permission.
-     * </pre>
-     */
-    public void searchIamPolicies(
-        com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse>
-            responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchIamPoliciesMethodHelper(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Searches all the resources under a given accessible CRM scope
      * (project/folder/organization). This RPC gives callers
      * especially admins the ability to search all the resources under a scope,
@@ -372,20 +226,6 @@ public final class AssetServiceGrpc {
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getSearchResourcesMethodHelper(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.asset.v1p1beta1.SearchResourcesRequest,
-                      com.google.cloud.asset.v1p1beta1.SearchResourcesResponse>(
-                      this, METHODID_SEARCH_RESOURCES)))
-          .addMethod(
-              getSearchIamPoliciesMethodHelper(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest,
-                      com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse>(
-                      this, METHODID_SEARCH_IAM_POLICIES)))
-          .addMethod(
               getSearchAllResourcesMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -422,40 +262,6 @@ public final class AssetServiceGrpc {
     @java.lang.Override
     protected AssetServiceStub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new AssetServiceStub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Searches resources which are accessible with .get permission.
-     * </pre>
-     */
-    public void searchResources(
-        com.google.cloud.asset.v1p1beta1.SearchResourcesRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p1beta1.SearchResourcesResponse>
-            responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSearchResourcesMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Searches IAM policies which are accessible with .getIamPolicy permission.
-     * </pre>
-     */
-    public void searchIamPolicies(
-        com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse>
-            responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSearchIamPoliciesMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
     }
 
     /**
@@ -530,32 +336,6 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches resources which are accessible with .get permission.
-     * </pre>
-     */
-    public com.google.cloud.asset.v1p1beta1.SearchResourcesResponse searchResources(
-        com.google.cloud.asset.v1p1beta1.SearchResourcesRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getSearchResourcesMethodHelper(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Searches IAM policies which are accessible with .getIamPolicy permission.
-     * </pre>
-     */
-    public com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse searchIamPolicies(
-        com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getSearchIamPoliciesMethodHelper(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Searches all the resources under a given accessible CRM scope
      * (project/folder/organization). This RPC gives callers
      * especially admins the ability to search all the resources under a scope,
@@ -616,34 +396,6 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches resources which are accessible with .get permission.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.asset.v1p1beta1.SearchResourcesResponse>
-        searchResources(com.google.cloud.asset.v1p1beta1.SearchResourcesRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSearchResourcesMethodHelper(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Searches IAM policies which are accessible with .getIamPolicy permission.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse>
-        searchIamPolicies(com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSearchIamPoliciesMethodHelper(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Searches all the resources under a given accessible CRM scope
      * (project/folder/organization). This RPC gives callers
      * especially admins the ability to search all the resources under a scope,
@@ -679,10 +431,8 @@ public final class AssetServiceGrpc {
     }
   }
 
-  private static final int METHODID_SEARCH_RESOURCES = 0;
-  private static final int METHODID_SEARCH_IAM_POLICIES = 1;
-  private static final int METHODID_SEARCH_ALL_RESOURCES = 2;
-  private static final int METHODID_SEARCH_ALL_IAM_POLICIES = 3;
+  private static final int METHODID_SEARCH_ALL_RESOURCES = 0;
+  private static final int METHODID_SEARCH_ALL_IAM_POLICIES = 1;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -701,20 +451,6 @@ public final class AssetServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_SEARCH_RESOURCES:
-          serviceImpl.searchResources(
-              (com.google.cloud.asset.v1p1beta1.SearchResourcesRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.asset.v1p1beta1.SearchResourcesResponse>)
-                  responseObserver);
-          break;
-        case METHODID_SEARCH_IAM_POLICIES:
-          serviceImpl.searchIamPolicies(
-              (com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse>)
-                  responseObserver);
-          break;
         case METHODID_SEARCH_ALL_RESOURCES:
           serviceImpl.searchAllResources(
               (com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest) request,
@@ -793,8 +529,6 @@ public final class AssetServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new AssetServiceFileDescriptorSupplier())
-                      .addMethod(getSearchResourcesMethodHelper())
-                      .addMethod(getSearchIamPoliciesMethodHelper())
                       .addMethod(getSearchAllResourcesMethodHelper())
                       .addMethod(getSearchAllIamPoliciesMethodHelper())
                       .build();

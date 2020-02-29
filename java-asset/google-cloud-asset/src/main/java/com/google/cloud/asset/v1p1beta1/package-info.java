@@ -31,7 +31,7 @@
  *   String scope = "";
  *   String query = "";
  *   List&lt;String&gt; assetTypes = new ArrayList&lt;&gt;();
- *   SearchResourcesPagedResponse response = assetServiceClient.searchResources(scope, query, assetTypes);
+ *   SearchAllResourcesPagedResponse response = assetServiceClient.searchAllResources(scope, query, assetTypes);
  * }
  * </code>
  * </pre>

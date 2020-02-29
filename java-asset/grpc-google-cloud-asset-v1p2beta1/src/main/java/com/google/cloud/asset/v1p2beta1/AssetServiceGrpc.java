@@ -40,119 +40,6 @@ public final class AssetServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getExportAssetsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p2beta1.ExportAssetsRequest, com.google.longrunning.Operation>
-      METHOD_EXPORT_ASSETS = getExportAssetsMethodHelper();
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p2beta1.ExportAssetsRequest, com.google.longrunning.Operation>
-      getExportAssetsMethod;
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p2beta1.ExportAssetsRequest, com.google.longrunning.Operation>
-      getExportAssetsMethod() {
-    return getExportAssetsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p2beta1.ExportAssetsRequest, com.google.longrunning.Operation>
-      getExportAssetsMethodHelper() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.asset.v1p2beta1.ExportAssetsRequest, com.google.longrunning.Operation>
-        getExportAssetsMethod;
-    if ((getExportAssetsMethod = AssetServiceGrpc.getExportAssetsMethod) == null) {
-      synchronized (AssetServiceGrpc.class) {
-        if ((getExportAssetsMethod = AssetServiceGrpc.getExportAssetsMethod) == null) {
-          AssetServiceGrpc.getExportAssetsMethod =
-              getExportAssetsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.asset.v1p2beta1.ExportAssetsRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.asset.v1p2beta1.AssetService", "ExportAssets"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.asset.v1p2beta1.ExportAssetsRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(new AssetServiceMethodDescriptorSupplier("ExportAssets"))
-                      .build();
-        }
-      }
-    }
-    return getExportAssetsMethod;
-  }
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchGetAssetsHistoryMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest,
-          com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse>
-      METHOD_BATCH_GET_ASSETS_HISTORY = getBatchGetAssetsHistoryMethodHelper();
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest,
-          com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse>
-      getBatchGetAssetsHistoryMethod;
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest,
-          com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse>
-      getBatchGetAssetsHistoryMethod() {
-    return getBatchGetAssetsHistoryMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest,
-          com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse>
-      getBatchGetAssetsHistoryMethodHelper() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest,
-            com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse>
-        getBatchGetAssetsHistoryMethod;
-    if ((getBatchGetAssetsHistoryMethod = AssetServiceGrpc.getBatchGetAssetsHistoryMethod)
-        == null) {
-      synchronized (AssetServiceGrpc.class) {
-        if ((getBatchGetAssetsHistoryMethod = AssetServiceGrpc.getBatchGetAssetsHistoryMethod)
-            == null) {
-          AssetServiceGrpc.getBatchGetAssetsHistoryMethod =
-              getBatchGetAssetsHistoryMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest,
-                          com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.asset.v1p2beta1.AssetService", "BatchGetAssetsHistory"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AssetServiceMethodDescriptorSupplier("BatchGetAssetsHistory"))
-                      .build();
-        }
-      }
-    }
-    return getBatchGetAssetsHistoryMethod;
-  }
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getCreateFeedMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.asset.v1p2beta1.CreateFeedRequest, com.google.cloud.asset.v1p2beta1.Feed>
@@ -449,40 +336,6 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Exports assets with time and resource types to a given Cloud Storage
-     * location. The output format is newline-delimited JSON.
-     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API allowing you
-     * to keep track of the export.
-     * </pre>
-     */
-    public void exportAssets(
-        com.google.cloud.asset.v1p2beta1.ExportAssetsRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportAssetsMethodHelper(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Batch gets the update history of assets that overlap a time window.
-     * For RESOURCE content, this API outputs history with asset in both
-     * non-delete or deleted status.
-     * For IAM_POLICY content, this API outputs history when the asset and its
-     * attached IAM POLICY both exist. This can create gaps in the output history.
-     * </pre>
-     */
-    public void batchGetAssetsHistory(
-        com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse>
-            responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchGetAssetsHistoryMethodHelper(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a feed in a parent project/folder/organization to listen to its
      * asset updates.
      * </pre>
@@ -550,19 +403,6 @@ public final class AssetServiceGrpc {
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getExportAssetsMethodHelper(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.asset.v1p2beta1.ExportAssetsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_ASSETS)))
-          .addMethod(
-              getBatchGetAssetsHistoryMethodHelper(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest,
-                      com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse>(
-                      this, METHODID_BATCH_GET_ASSETS_HISTORY)))
-          .addMethod(
               getCreateFeedMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -616,46 +456,6 @@ public final class AssetServiceGrpc {
     @java.lang.Override
     protected AssetServiceStub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new AssetServiceStub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Exports assets with time and resource types to a given Cloud Storage
-     * location. The output format is newline-delimited JSON.
-     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API allowing you
-     * to keep track of the export.
-     * </pre>
-     */
-    public void exportAssets(
-        com.google.cloud.asset.v1p2beta1.ExportAssetsRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getExportAssetsMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Batch gets the update history of assets that overlap a time window.
-     * For RESOURCE content, this API outputs history with asset in both
-     * non-delete or deleted status.
-     * For IAM_POLICY content, this API outputs history when the asset and its
-     * attached IAM POLICY both exist. This can create gaps in the output history.
-     * </pre>
-     */
-    public void batchGetAssetsHistory(
-        com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse>
-            responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getBatchGetAssetsHistoryMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
     }
 
     /**
@@ -768,39 +568,6 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Exports assets with time and resource types to a given Cloud Storage
-     * location. The output format is newline-delimited JSON.
-     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API allowing you
-     * to keep track of the export.
-     * </pre>
-     */
-    public com.google.longrunning.Operation exportAssets(
-        com.google.cloud.asset.v1p2beta1.ExportAssetsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getExportAssetsMethodHelper(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Batch gets the update history of assets that overlap a time window.
-     * For RESOURCE content, this API outputs history with asset in both
-     * non-delete or deleted status.
-     * For IAM_POLICY content, this API outputs history when the asset and its
-     * attached IAM POLICY both exist. This can create gaps in the output history.
-     * </pre>
-     */
-    public com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse batchGetAssetsHistory(
-        com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getBatchGetAssetsHistoryMethodHelper(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a feed in a parent project/folder/organization to listen to its
      * asset updates.
      * </pre>
@@ -889,41 +656,6 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Exports assets with time and resource types to a given Cloud Storage
-     * location. The output format is newline-delimited JSON.
-     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API allowing you
-     * to keep track of the export.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        exportAssets(com.google.cloud.asset.v1p2beta1.ExportAssetsRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getExportAssetsMethodHelper(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Batch gets the update history of assets that overlap a time window.
-     * For RESOURCE content, this API outputs history with asset in both
-     * non-delete or deleted status.
-     * For IAM_POLICY content, this API outputs history when the asset and its
-     * attached IAM POLICY both exist. This can create gaps in the output history.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse>
-        batchGetAssetsHistory(
-            com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getBatchGetAssetsHistoryMethodHelper(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a feed in a parent project/folder/organization to listen to its
      * asset updates.
      * </pre>
@@ -988,13 +720,11 @@ public final class AssetServiceGrpc {
     }
   }
 
-  private static final int METHODID_EXPORT_ASSETS = 0;
-  private static final int METHODID_BATCH_GET_ASSETS_HISTORY = 1;
-  private static final int METHODID_CREATE_FEED = 2;
-  private static final int METHODID_GET_FEED = 3;
-  private static final int METHODID_LIST_FEEDS = 4;
-  private static final int METHODID_UPDATE_FEED = 5;
-  private static final int METHODID_DELETE_FEED = 6;
+  private static final int METHODID_CREATE_FEED = 0;
+  private static final int METHODID_GET_FEED = 1;
+  private static final int METHODID_LIST_FEEDS = 2;
+  private static final int METHODID_UPDATE_FEED = 3;
+  private static final int METHODID_DELETE_FEED = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1013,18 +743,6 @@ public final class AssetServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_EXPORT_ASSETS:
-          serviceImpl.exportAssets(
-              (com.google.cloud.asset.v1p2beta1.ExportAssetsRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_BATCH_GET_ASSETS_HISTORY:
-          serviceImpl.batchGetAssetsHistory(
-              (com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.asset.v1p2beta1.BatchGetAssetsHistoryResponse>)
-                  responseObserver);
-          break;
         case METHODID_CREATE_FEED:
           serviceImpl.createFeed(
               (com.google.cloud.asset.v1p2beta1.CreateFeedRequest) request,
@@ -1118,8 +836,6 @@ public final class AssetServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new AssetServiceFileDescriptorSupplier())
-                      .addMethod(getExportAssetsMethodHelper())
-                      .addMethod(getBatchGetAssetsHistoryMethodHelper())
                       .addMethod(getCreateFeedMethodHelper())
                       .addMethod(getGetFeedMethodHelper())
                       .addMethod(getListFeedsMethodHelper())

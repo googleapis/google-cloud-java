@@ -17,8 +17,6 @@ package com.google.cloud.asset.v1p1beta1.stub;
 
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllResourcesPagedResponse;
-import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchIamPoliciesPagedResponse;
-import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchResourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -47,10 +45,6 @@ import com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest;
 import com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse;
 import com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest;
 import com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse;
-import com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest;
-import com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse;
-import com.google.cloud.asset.v1p1beta1.SearchResourcesRequest;
-import com.google.cloud.asset.v1p1beta1.SearchResourcesResponse;
 import com.google.cloud.asset.v1p1beta1.StandardResourceMetadata;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -76,14 +70,18 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of searchResources to 30 seconds:
+ * <p>For example, to set the total timeout of searchAllResources to 30 seconds:
  *
  * <pre>
  * <code>
  * AssetServiceStubSettings.Builder assetServiceSettingsBuilder =
  *     AssetServiceStubSettings.newBuilder();
- * assetServiceSettingsBuilder.searchResourcesSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * assetServiceSettingsBuilder
+ *     .searchAllResourcesSettings()
+ *     .setRetrySettings(
+ *         assetServiceSettingsBuilder.searchAllResourcesSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AssetServiceStubSettings assetServiceSettings = assetServiceSettingsBuilder.build();
  * </code>
  * </pre>
@@ -96,12 +94,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final PagedCallSettings<
-          SearchResourcesRequest, SearchResourcesResponse, SearchResourcesPagedResponse>
-      searchResourcesSettings;
-  private final PagedCallSettings<
-          SearchIamPoliciesRequest, SearchIamPoliciesResponse, SearchIamPoliciesPagedResponse>
-      searchIamPoliciesSettings;
-  private final PagedCallSettings<
           SearchAllResourcesRequest, SearchAllResourcesResponse, SearchAllResourcesPagedResponse>
       searchAllResourcesSettings;
   private final PagedCallSettings<
@@ -109,20 +101,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           SearchAllIamPoliciesResponse,
           SearchAllIamPoliciesPagedResponse>
       searchAllIamPoliciesSettings;
-
-  /** Returns the object with the settings used for calls to searchResources. */
-  public PagedCallSettings<
-          SearchResourcesRequest, SearchResourcesResponse, SearchResourcesPagedResponse>
-      searchResourcesSettings() {
-    return searchResourcesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to searchIamPolicies. */
-  public PagedCallSettings<
-          SearchIamPoliciesRequest, SearchIamPoliciesResponse, SearchIamPoliciesPagedResponse>
-      searchIamPoliciesSettings() {
-    return searchIamPoliciesSettings;
-  }
 
   /** Returns the object with the settings used for calls to searchAllResources. */
   public PagedCallSettings<
@@ -209,93 +187,9 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
   protected AssetServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    searchResourcesSettings = settingsBuilder.searchResourcesSettings().build();
-    searchIamPoliciesSettings = settingsBuilder.searchIamPoliciesSettings().build();
     searchAllResourcesSettings = settingsBuilder.searchAllResourcesSettings().build();
     searchAllIamPoliciesSettings = settingsBuilder.searchAllIamPoliciesSettings().build();
   }
-
-  private static final PagedListDescriptor<
-          SearchResourcesRequest, SearchResourcesResponse, StandardResourceMetadata>
-      SEARCH_RESOURCES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              SearchResourcesRequest, SearchResourcesResponse, StandardResourceMetadata>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public SearchResourcesRequest injectToken(
-                SearchResourcesRequest payload, String token) {
-              return SearchResourcesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public SearchResourcesRequest injectPageSize(
-                SearchResourcesRequest payload, int pageSize) {
-              return SearchResourcesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(SearchResourcesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(SearchResourcesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<StandardResourceMetadata> extractResources(
-                SearchResourcesResponse payload) {
-              return payload.getResultsList() != null
-                  ? payload.getResultsList()
-                  : ImmutableList.<StandardResourceMetadata>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          SearchIamPoliciesRequest, SearchIamPoliciesResponse, IamPolicySearchResult>
-      SEARCH_IAM_POLICIES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              SearchIamPoliciesRequest, SearchIamPoliciesResponse, IamPolicySearchResult>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public SearchIamPoliciesRequest injectToken(
-                SearchIamPoliciesRequest payload, String token) {
-              return SearchIamPoliciesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public SearchIamPoliciesRequest injectPageSize(
-                SearchIamPoliciesRequest payload, int pageSize) {
-              return SearchIamPoliciesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(SearchIamPoliciesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(SearchIamPoliciesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<IamPolicySearchResult> extractResources(
-                SearchIamPoliciesResponse payload) {
-              return payload.getResultsList() != null
-                  ? payload.getResultsList()
-                  : ImmutableList.<IamPolicySearchResult>of();
-            }
-          };
 
   private static final PagedListDescriptor<
           SearchAllResourcesRequest, SearchAllResourcesResponse, StandardResourceMetadata>
@@ -380,47 +274,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           };
 
   private static final PagedListResponseFactory<
-          SearchResourcesRequest, SearchResourcesResponse, SearchResourcesPagedResponse>
-      SEARCH_RESOURCES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              SearchResourcesRequest, SearchResourcesResponse, SearchResourcesPagedResponse>() {
-            @Override
-            public ApiFuture<SearchResourcesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<SearchResourcesRequest, SearchResourcesResponse> callable,
-                SearchResourcesRequest request,
-                ApiCallContext context,
-                ApiFuture<SearchResourcesResponse> futureResponse) {
-              PageContext<SearchResourcesRequest, SearchResourcesResponse, StandardResourceMetadata>
-                  pageContext =
-                      PageContext.create(
-                          callable, SEARCH_RESOURCES_PAGE_STR_DESC, request, context);
-              return SearchResourcesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          SearchIamPoliciesRequest, SearchIamPoliciesResponse, SearchIamPoliciesPagedResponse>
-      SEARCH_IAM_POLICIES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              SearchIamPoliciesRequest,
-              SearchIamPoliciesResponse,
-              SearchIamPoliciesPagedResponse>() {
-            @Override
-            public ApiFuture<SearchIamPoliciesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<SearchIamPoliciesRequest, SearchIamPoliciesResponse> callable,
-                SearchIamPoliciesRequest request,
-                ApiCallContext context,
-                ApiFuture<SearchIamPoliciesResponse> futureResponse) {
-              PageContext<
-                      SearchIamPoliciesRequest, SearchIamPoliciesResponse, IamPolicySearchResult>
-                  pageContext =
-                      PageContext.create(
-                          callable, SEARCH_IAM_POLICIES_PAGE_STR_DESC, request, context);
-              return SearchIamPoliciesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
           SearchAllResourcesRequest, SearchAllResourcesResponse, SearchAllResourcesPagedResponse>
       SEARCH_ALL_RESOURCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -475,12 +328,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            SearchResourcesRequest, SearchResourcesResponse, SearchResourcesPagedResponse>
-        searchResourcesSettings;
-    private final PagedCallSettings.Builder<
-            SearchIamPoliciesRequest, SearchIamPoliciesResponse, SearchIamPoliciesPagedResponse>
-        searchIamPoliciesSettings;
-    private final PagedCallSettings.Builder<
             SearchAllResourcesRequest, SearchAllResourcesResponse, SearchAllResourcesPagedResponse>
         searchAllResourcesSettings;
     private final PagedCallSettings.Builder<
@@ -530,10 +377,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      searchResourcesSettings = PagedCallSettings.newBuilder(SEARCH_RESOURCES_PAGE_STR_FACT);
-
-      searchIamPoliciesSettings = PagedCallSettings.newBuilder(SEARCH_IAM_POLICIES_PAGE_STR_FACT);
-
       searchAllResourcesSettings = PagedCallSettings.newBuilder(SEARCH_ALL_RESOURCES_PAGE_STR_FACT);
 
       searchAllIamPoliciesSettings =
@@ -541,10 +384,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              searchResourcesSettings,
-              searchIamPoliciesSettings,
-              searchAllResourcesSettings,
-              searchAllIamPoliciesSettings);
+              searchAllResourcesSettings, searchAllIamPoliciesSettings);
 
       initDefaults(this);
     }
@@ -559,16 +399,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     }
 
     private static Builder initDefaults(Builder builder) {
-
-      builder
-          .searchResourcesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .searchIamPoliciesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .searchAllResourcesSettings()
@@ -586,17 +416,12 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     protected Builder(AssetServiceStubSettings settings) {
       super(settings);
 
-      searchResourcesSettings = settings.searchResourcesSettings.toBuilder();
-      searchIamPoliciesSettings = settings.searchIamPoliciesSettings.toBuilder();
       searchAllResourcesSettings = settings.searchAllResourcesSettings.toBuilder();
       searchAllIamPoliciesSettings = settings.searchAllIamPoliciesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              searchResourcesSettings,
-              searchIamPoliciesSettings,
-              searchAllResourcesSettings,
-              searchAllIamPoliciesSettings);
+              searchAllResourcesSettings, searchAllIamPoliciesSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -613,20 +438,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to searchResources. */
-    public PagedCallSettings.Builder<
-            SearchResourcesRequest, SearchResourcesResponse, SearchResourcesPagedResponse>
-        searchResourcesSettings() {
-      return searchResourcesSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to searchIamPolicies. */
-    public PagedCallSettings.Builder<
-            SearchIamPoliciesRequest, SearchIamPoliciesResponse, SearchIamPoliciesPagedResponse>
-        searchIamPoliciesSettings() {
-      return searchIamPoliciesSettings;
     }
 
     /** Returns the builder for the settings used for calls to searchAllResources. */

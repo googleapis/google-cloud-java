@@ -17,8 +17,6 @@ package com.google.cloud.asset.v1p1beta1;
 
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllResourcesPagedResponse;
-import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchIamPoliciesPagedResponse;
-import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchResourcesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -79,112 +77,6 @@ public class AssetServiceClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void searchResourcesTest() {
-    String nextPageToken = "";
-    StandardResourceMetadata resultsElement = StandardResourceMetadata.newBuilder().build();
-    List<StandardResourceMetadata> results = Arrays.asList(resultsElement);
-    SearchResourcesResponse expectedResponse =
-        SearchResourcesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllResults(results)
-            .build();
-    mockAssetService.addResponse(expectedResponse);
-
-    String scope = "scope109264468";
-    String query = "query107944136";
-    List<String> assetTypes = new ArrayList<>();
-
-    SearchResourcesPagedResponse pagedListResponse =
-        client.searchResources(scope, query, assetTypes);
-
-    List<StandardResourceMetadata> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getResultsList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    SearchResourcesRequest actualRequest = (SearchResourcesRequest) actualRequests.get(0);
-
-    Assert.assertEquals(scope, actualRequest.getScope());
-    Assert.assertEquals(query, actualRequest.getQuery());
-    Assert.assertEquals(assetTypes, actualRequest.getAssetTypesList());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void searchResourcesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAssetService.addException(exception);
-
-    try {
-      String scope = "scope109264468";
-      String query = "query107944136";
-      List<String> assetTypes = new ArrayList<>();
-
-      client.searchResources(scope, query, assetTypes);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void searchIamPoliciesTest() {
-    String nextPageToken = "";
-    IamPolicySearchResult resultsElement = IamPolicySearchResult.newBuilder().build();
-    List<IamPolicySearchResult> results = Arrays.asList(resultsElement);
-    SearchIamPoliciesResponse expectedResponse =
-        SearchIamPoliciesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllResults(results)
-            .build();
-    mockAssetService.addResponse(expectedResponse);
-
-    String scope = "scope109264468";
-    String query = "query107944136";
-
-    SearchIamPoliciesPagedResponse pagedListResponse = client.searchIamPolicies(scope, query);
-
-    List<IamPolicySearchResult> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getResultsList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    SearchIamPoliciesRequest actualRequest = (SearchIamPoliciesRequest) actualRequests.get(0);
-
-    Assert.assertEquals(scope, actualRequest.getScope());
-    Assert.assertEquals(query, actualRequest.getQuery());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void searchIamPoliciesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAssetService.addException(exception);
-
-    try {
-      String scope = "scope109264468";
-      String query = "query107944136";
-
-      client.searchIamPolicies(scope, query);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
   }
 
   @Test

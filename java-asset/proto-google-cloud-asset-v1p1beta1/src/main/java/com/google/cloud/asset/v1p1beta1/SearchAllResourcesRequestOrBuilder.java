@@ -140,9 +140,10 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The page size for search result pagination. Returned results may be fewer
-   * than requested. The value of this field is capped at 2000.  If set to the
-   * zero value, server will pick an appropriate default.
+   * Optional. The page size for search result pagination. Page size is capped at 500 even
+   * if a larger value is given. If set to zero, server will pick an appropriate
+   * default. Returned results may be fewer than requested. When this happens,
+   * there could be more results as long as `next_page_token` is returned.
    * </pre>
    *
    * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -148,7 +148,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    * "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The parent.
    */
@@ -174,7 +174,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    * "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for parent.
    */
@@ -200,7 +200,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    * be unique under a specific parent project/folder/organization.
    * </pre>
    *
-   * <code>string feed_id = 2;</code>
+   * <code>string feed_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The feedId.
    */
@@ -223,7 +223,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    * be unique under a specific parent project/folder/organization.
    * </pre>
    *
-   * <code>string feed_id = 2;</code>
+   * <code>string feed_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for feedId.
    */
@@ -245,14 +245,15 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The feed details. The field `name` must be empty and it will be generated
+   * Required. The feed details. The field `name` must be empty and it will be generated
    * in the format of:
    * projects/project_number/feeds/feed_id
    * folders/folder_number/feeds/feed_id
    * organizations/organization_number/feeds/feed_id
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the feed field is set.
    */
@@ -263,14 +264,15 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The feed details. The field `name` must be empty and it will be generated
+   * Required. The feed details. The field `name` must be empty and it will be generated
    * in the format of:
    * projects/project_number/feeds/feed_id
    * folders/folder_number/feeds/feed_id
    * organizations/organization_number/feeds/feed_id
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The feed.
    */
@@ -281,14 +283,15 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The feed details. The field `name` must be empty and it will be generated
+   * Required. The feed details. The field `name` must be empty and it will be generated
    * in the format of:
    * projects/project_number/feeds/feed_id
    * folders/folder_number/feeds/feed_id
    * organizations/organization_number/feeds/feed_id
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.asset.v1p2beta1.FeedOrBuilder getFeedOrBuilder() {
     return getFeed();
@@ -668,7 +671,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The parent.
      */
@@ -694,7 +697,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for parent.
      */
@@ -720,7 +723,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -745,7 +748,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -766,7 +769,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -791,7 +794,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * be unique under a specific parent project/folder/organization.
      * </pre>
      *
-     * <code>string feed_id = 2;</code>
+     * <code>string feed_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The feedId.
      */
@@ -814,7 +817,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * be unique under a specific parent project/folder/organization.
      * </pre>
      *
-     * <code>string feed_id = 2;</code>
+     * <code>string feed_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for feedId.
      */
@@ -837,7 +840,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * be unique under a specific parent project/folder/organization.
      * </pre>
      *
-     * <code>string feed_id = 2;</code>
+     * <code>string feed_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The feedId to set.
      * @return This builder for chaining.
@@ -859,7 +862,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * be unique under a specific parent project/folder/organization.
      * </pre>
      *
-     * <code>string feed_id = 2;</code>
+     * <code>string feed_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -877,7 +880,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * be unique under a specific parent project/folder/organization.
      * </pre>
      *
-     * <code>string feed_id = 2;</code>
+     * <code>string feed_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for feedId to set.
      * @return This builder for chaining.
@@ -903,14 +906,15 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The feed details. The field `name` must be empty and it will be generated
+     * Required. The feed details. The field `name` must be empty and it will be generated
      * in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the feed field is set.
      */
@@ -921,14 +925,15 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The feed details. The field `name` must be empty and it will be generated
+     * Required. The feed details. The field `name` must be empty and it will be generated
      * in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The feed.
      */
@@ -943,14 +948,15 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The feed details. The field `name` must be empty and it will be generated
+     * Required. The feed details. The field `name` must be empty and it will be generated
      * in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFeed(com.google.cloud.asset.v1p2beta1.Feed value) {
       if (feedBuilder_ == null) {
@@ -969,14 +975,15 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The feed details. The field `name` must be empty and it will be generated
+     * Required. The feed details. The field `name` must be empty and it will be generated
      * in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFeed(com.google.cloud.asset.v1p2beta1.Feed.Builder builderForValue) {
       if (feedBuilder_ == null) {
@@ -992,14 +999,15 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The feed details. The field `name` must be empty and it will be generated
+     * Required. The feed details. The field `name` must be empty and it will be generated
      * in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeFeed(com.google.cloud.asset.v1p2beta1.Feed value) {
       if (feedBuilder_ == null) {
@@ -1022,14 +1030,15 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The feed details. The field `name` must be empty and it will be generated
+     * Required. The feed details. The field `name` must be empty and it will be generated
      * in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearFeed() {
       if (feedBuilder_ == null) {
@@ -1046,14 +1055,15 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The feed details. The field `name` must be empty and it will be generated
+     * Required. The feed details. The field `name` must be empty and it will be generated
      * in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.asset.v1p2beta1.Feed.Builder getFeedBuilder() {
 
@@ -1064,14 +1074,15 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The feed details. The field `name` must be empty and it will be generated
+     * Required. The feed details. The field `name` must be empty and it will be generated
      * in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.asset.v1p2beta1.FeedOrBuilder getFeedOrBuilder() {
       if (feedBuilder_ != null) {
@@ -1084,14 +1095,15 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The feed details. The field `name` must be empty and it will be generated
+     * Required. The feed details. The field `name` must be empty and it will be generated
      * in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1p2beta1.Feed,

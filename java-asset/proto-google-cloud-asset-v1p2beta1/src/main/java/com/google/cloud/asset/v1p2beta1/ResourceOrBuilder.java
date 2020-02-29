@@ -221,42 +221,4 @@ public interface ResourceOrBuilder
    * <code>.google.protobuf.Struct data = 6;</code>
    */
   com.google.protobuf.StructOrBuilder getDataOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * The actual metadata content for the resource, only visible for internal
-   * users.
-   * </pre>
-   *
-   * <code>.google.protobuf.Any internal_data = 7;</code>
-   *
-   * @return Whether the internalData field is set.
-   */
-  boolean hasInternalData();
-  /**
-   *
-   *
-   * <pre>
-   * The actual metadata content for the resource, only visible for internal
-   * users.
-   * </pre>
-   *
-   * <code>.google.protobuf.Any internal_data = 7;</code>
-   *
-   * @return The internalData.
-   */
-  com.google.protobuf.Any getInternalData();
-  /**
-   *
-   *
-   * <pre>
-   * The actual metadata content for the resource, only visible for internal
-   * users.
-   * </pre>
-   *
-   * <code>.google.protobuf.Any internal_data = 7;</code>
-   */
-  com.google.protobuf.AnyOrBuilder getInternalDataOrBuilder();
 }

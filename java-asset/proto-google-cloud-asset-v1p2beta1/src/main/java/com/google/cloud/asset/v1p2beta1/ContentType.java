@@ -58,28 +58,6 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IAM_POLICY = 2;</code>
    */
   IAM_POLICY(2),
-  /**
-   *
-   *
-   * <pre>
-   * The IAM policy name for the IAM policy set on a resource.
-   * </pre>
-   *
-   * <code>IAM_POLICY_NAME = 3;</code>
-   */
-  IAM_POLICY_NAME(3),
-  /** <code>ORG_POLICY = 4;</code> */
-  ORG_POLICY(4),
-  /**
-   *
-   *
-   * <pre>
-   * The Cloud Access context mananger Policy set on an asset.
-   * </pre>
-   *
-   * <code>ACCESS_POLICY = 5;</code>
-   */
-  ACCESS_POLICY(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -113,28 +91,6 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IAM_POLICY = 2;</code>
    */
   public static final int IAM_POLICY_VALUE = 2;
-  /**
-   *
-   *
-   * <pre>
-   * The IAM policy name for the IAM policy set on a resource.
-   * </pre>
-   *
-   * <code>IAM_POLICY_NAME = 3;</code>
-   */
-  public static final int IAM_POLICY_NAME_VALUE = 3;
-  /** <code>ORG_POLICY = 4;</code> */
-  public static final int ORG_POLICY_VALUE = 4;
-  /**
-   *
-   *
-   * <pre>
-   * The Cloud Access context mananger Policy set on an asset.
-   * </pre>
-   *
-   * <code>ACCESS_POLICY = 5;</code>
-   */
-  public static final int ACCESS_POLICY_VALUE = 5;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -166,12 +122,6 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
         return RESOURCE;
       case 2:
         return IAM_POLICY;
-      case 3:
-        return IAM_POLICY_NAME;
-      case 4:
-        return ORG_POLICY;
-      case 5:
-        return ACCESS_POLICY;
       default:
         return null;
     }

@@ -27,13 +27,15 @@ public interface GetFeedRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the Feed and it must be in the format of:
+   * Required. The name of the Feed and it must be in the format of:
    * projects/project_number/feeds/feed_id
    * folders/folder_number/feeds/feed_id
    * organizations/organization_number/feeds/feed_id
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -42,13 +44,15 @@ public interface GetFeedRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the Feed and it must be in the format of:
+   * Required. The name of the Feed and it must be in the format of:
    * projects/project_number/feeds/feed_id
    * folders/folder_number/feeds/feed_id
    * organizations/organization_number/feeds/feed_id
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

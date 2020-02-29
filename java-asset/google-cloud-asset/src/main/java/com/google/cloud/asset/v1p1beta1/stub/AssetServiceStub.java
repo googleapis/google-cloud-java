@@ -17,8 +17,6 @@ package com.google.cloud.asset.v1p1beta1.stub;
 
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllResourcesPagedResponse;
-import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchIamPoliciesPagedResponse;
-import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchResourcesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -27,10 +25,6 @@ import com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest;
 import com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse;
 import com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest;
 import com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse;
-import com.google.cloud.asset.v1p1beta1.SearchIamPoliciesRequest;
-import com.google.cloud.asset.v1p1beta1.SearchIamPoliciesResponse;
-import com.google.cloud.asset.v1p1beta1.SearchResourcesRequest;
-import com.google.cloud.asset.v1p1beta1.SearchResourcesResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -42,25 +36,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class AssetServiceStub implements BackgroundResource {
-
-  public UnaryCallable<SearchResourcesRequest, SearchResourcesPagedResponse>
-      searchResourcesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: searchResourcesPagedCallable()");
-  }
-
-  public UnaryCallable<SearchResourcesRequest, SearchResourcesResponse> searchResourcesCallable() {
-    throw new UnsupportedOperationException("Not implemented: searchResourcesCallable()");
-  }
-
-  public UnaryCallable<SearchIamPoliciesRequest, SearchIamPoliciesPagedResponse>
-      searchIamPoliciesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: searchIamPoliciesPagedCallable()");
-  }
-
-  public UnaryCallable<SearchIamPoliciesRequest, SearchIamPoliciesResponse>
-      searchIamPoliciesCallable() {
-    throw new UnsupportedOperationException("Not implemented: searchIamPoliciesCallable()");
-  }
 
   public UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>
       searchAllResourcesPagedCallable() {

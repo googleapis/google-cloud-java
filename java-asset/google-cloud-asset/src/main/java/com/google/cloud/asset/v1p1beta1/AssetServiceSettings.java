@@ -17,8 +17,6 @@ package com.google.cloud.asset.v1p1beta1;
 
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllResourcesPagedResponse;
-import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchIamPoliciesPagedResponse;
-import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchResourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -51,14 +49,18 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of searchResources to 30 seconds:
+ * <p>For example, to set the total timeout of searchAllResources to 30 seconds:
  *
  * <pre>
  * <code>
  * AssetServiceSettings.Builder assetServiceSettingsBuilder =
  *     AssetServiceSettings.newBuilder();
- * assetServiceSettingsBuilder.searchResourcesSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * assetServiceSettingsBuilder
+ *     .searchAllResourcesSettings()
+ *     .setRetrySettings(
+ *         assetServiceSettingsBuilder.searchAllResourcesSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AssetServiceSettings assetServiceSettings = assetServiceSettingsBuilder.build();
  * </code>
  * </pre>
@@ -66,20 +68,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
-  /** Returns the object with the settings used for calls to searchResources. */
-  public PagedCallSettings<
-          SearchResourcesRequest, SearchResourcesResponse, SearchResourcesPagedResponse>
-      searchResourcesSettings() {
-    return ((AssetServiceStubSettings) getStubSettings()).searchResourcesSettings();
-  }
-
-  /** Returns the object with the settings used for calls to searchIamPolicies. */
-  public PagedCallSettings<
-          SearchIamPoliciesRequest, SearchIamPoliciesResponse, SearchIamPoliciesPagedResponse>
-      searchIamPoliciesSettings() {
-    return ((AssetServiceStubSettings) getStubSettings()).searchIamPoliciesSettings();
-  }
-
   /** Returns the object with the settings used for calls to searchAllResources. */
   public PagedCallSettings<
           SearchAllResourcesRequest, SearchAllResourcesResponse, SearchAllResourcesPagedResponse>
@@ -191,20 +179,6 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
-    }
-
-    /** Returns the builder for the settings used for calls to searchResources. */
-    public PagedCallSettings.Builder<
-            SearchResourcesRequest, SearchResourcesResponse, SearchResourcesPagedResponse>
-        searchResourcesSettings() {
-      return getStubSettingsBuilder().searchResourcesSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to searchIamPolicies. */
-    public PagedCallSettings.Builder<
-            SearchIamPoliciesRequest, SearchIamPoliciesResponse, SearchIamPoliciesPagedResponse>
-        searchIamPoliciesSettings() {
-      return getStubSettingsBuilder().searchIamPoliciesSettings();
     }
 
     /** Returns the builder for the settings used for calls to searchAllResources. */

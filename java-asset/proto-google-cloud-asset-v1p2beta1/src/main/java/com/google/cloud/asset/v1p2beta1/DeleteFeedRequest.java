@@ -18,15 +18,7 @@
 
 package com.google.cloud.asset.v1p2beta1;
 
-/**
- *
- *
- * <pre>
- * Delete asset feed request.
- * </pre>
- *
- * Protobuf type {@code google.cloud.asset.v1p2beta1.DeleteFeedRequest}
- */
+/** Protobuf type {@code google.cloud.asset.v1p2beta1.DeleteFeedRequest} */
 public final class DeleteFeedRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1p2beta1.DeleteFeedRequest)
@@ -117,13 +109,15 @@ public final class DeleteFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The name of the feed and it must be in the format of:
+   * Required. The name of the feed and it must be in the format of:
    * projects/project_number/feeds/feed_id
    * folders/folder_number/feeds/feed_id
    * organizations/organization_number/feeds/feed_id
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -142,13 +136,15 @@ public final class DeleteFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The name of the feed and it must be in the format of:
+   * Required. The name of the feed and it must be in the format of:
    * projects/project_number/feeds/feed_id
    * folders/folder_number/feeds/feed_id
    * organizations/organization_number/feeds/feed_id
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -323,15 +319,7 @@ public final class DeleteFeedRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   *
-   *
-   * <pre>
-   * Delete asset feed request.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.asset.v1p2beta1.DeleteFeedRequest}
-   */
+  /** Protobuf type {@code google.cloud.asset.v1p2beta1.DeleteFeedRequest} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.asset.v1p2beta1.DeleteFeedRequest)
@@ -487,13 +475,15 @@ public final class DeleteFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the feed and it must be in the format of:
+     * Required. The name of the feed and it must be in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -512,13 +502,15 @@ public final class DeleteFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the feed and it must be in the format of:
+     * Required. The name of the feed and it must be in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -537,13 +529,15 @@ public final class DeleteFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the feed and it must be in the format of:
+     * Required. The name of the feed and it must be in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -561,13 +555,15 @@ public final class DeleteFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the feed and it must be in the format of:
+     * Required. The name of the feed and it must be in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -581,13 +577,15 @@ public final class DeleteFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the feed and it must be in the format of:
+     * Required. The name of the feed and it must be in the format of:
      * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

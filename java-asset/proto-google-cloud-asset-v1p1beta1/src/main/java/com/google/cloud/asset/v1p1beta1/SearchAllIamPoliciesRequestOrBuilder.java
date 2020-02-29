@@ -91,9 +91,10 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The page size for search result pagination. Returned results may be fewer
-   * than requested. The maximum is 2000. If set to the zero value, the server
-   * will pick an appropriate default.
+   * Optional. The page size for search result pagination. Page size is capped at 500 even
+   * if a larger value is given. If set to zero, server will pick an appropriate
+   * default. Returned results may be fewer than requested. When this happens,
+   * there could be more results as long as `next_page_token` is returned.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

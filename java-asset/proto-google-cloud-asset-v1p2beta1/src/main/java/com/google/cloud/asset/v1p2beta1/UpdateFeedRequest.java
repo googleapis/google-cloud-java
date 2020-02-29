@@ -139,14 +139,15 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The new values of feed details. It must match an existing feed and the
+   * Required. The new values of feed details. It must match an existing feed and the
    * field `name` must be in the format of:
    * projects/project_number/feeds/feed_id or
    * folders/folder_number/feeds/feed_id or
    * organizations/organization_number/feeds/feed_id.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the feed field is set.
    */
@@ -157,14 +158,15 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The new values of feed details. It must match an existing feed and the
+   * Required. The new values of feed details. It must match an existing feed and the
    * field `name` must be in the format of:
    * projects/project_number/feeds/feed_id or
    * folders/folder_number/feeds/feed_id or
    * organizations/organization_number/feeds/feed_id.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The feed.
    */
@@ -175,14 +177,15 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The new values of feed details. It must match an existing feed and the
+   * Required. The new values of feed details. It must match an existing feed and the
    * field `name` must be in the format of:
    * projects/project_number/feeds/feed_id or
    * folders/folder_number/feeds/feed_id or
    * organizations/organization_number/feeds/feed_id.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.asset.v1p2beta1.FeedOrBuilder getFeedOrBuilder() {
     return getFeed();
@@ -194,12 +197,13 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Only updates the `feed` fields indicated by this mask.
+   * Required. Only updates the `feed` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
    * are immutable or only set by the server.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -210,12 +214,13 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Only updates the `feed` fields indicated by this mask.
+   * Required. Only updates the `feed` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
    * are immutable or only set by the server.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -226,12 +231,13 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Only updates the `feed` fields indicated by this mask.
+   * Required. Only updates the `feed` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
    * are immutable or only set by the server.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -605,14 +611,15 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The new values of feed details. It must match an existing feed and the
+     * Required. The new values of feed details. It must match an existing feed and the
      * field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the feed field is set.
      */
@@ -623,14 +630,15 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The new values of feed details. It must match an existing feed and the
+     * Required. The new values of feed details. It must match an existing feed and the
      * field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The feed.
      */
@@ -645,14 +653,15 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The new values of feed details. It must match an existing feed and the
+     * Required. The new values of feed details. It must match an existing feed and the
      * field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFeed(com.google.cloud.asset.v1p2beta1.Feed value) {
       if (feedBuilder_ == null) {
@@ -671,14 +680,15 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The new values of feed details. It must match an existing feed and the
+     * Required. The new values of feed details. It must match an existing feed and the
      * field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFeed(com.google.cloud.asset.v1p2beta1.Feed.Builder builderForValue) {
       if (feedBuilder_ == null) {
@@ -694,14 +704,15 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The new values of feed details. It must match an existing feed and the
+     * Required. The new values of feed details. It must match an existing feed and the
      * field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeFeed(com.google.cloud.asset.v1p2beta1.Feed value) {
       if (feedBuilder_ == null) {
@@ -724,14 +735,15 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The new values of feed details. It must match an existing feed and the
+     * Required. The new values of feed details. It must match an existing feed and the
      * field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearFeed() {
       if (feedBuilder_ == null) {
@@ -748,14 +760,15 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The new values of feed details. It must match an existing feed and the
+     * Required. The new values of feed details. It must match an existing feed and the
      * field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.asset.v1p2beta1.Feed.Builder getFeedBuilder() {
 
@@ -766,14 +779,15 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The new values of feed details. It must match an existing feed and the
+     * Required. The new values of feed details. It must match an existing feed and the
      * field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.asset.v1p2beta1.FeedOrBuilder getFeedOrBuilder() {
       if (feedBuilder_ != null) {
@@ -786,14 +800,15 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The new values of feed details. It must match an existing feed and the
+     * Required. The new values of feed details. It must match an existing feed and the
      * field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+     * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1p2beta1.Feed,
@@ -822,12 +837,13 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Only updates the `feed` fields indicated by this mask.
+     * Required. Only updates the `feed` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -838,12 +854,13 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Only updates the `feed` fields indicated by this mask.
+     * Required. Only updates the `feed` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -860,12 +877,13 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Only updates the `feed` fields indicated by this mask.
+     * Required. Only updates the `feed` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -884,12 +902,13 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Only updates the `feed` fields indicated by this mask.
+     * Required. Only updates the `feed` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -905,12 +924,13 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Only updates the `feed` fields indicated by this mask.
+     * Required. Only updates the `feed` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -931,12 +951,13 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Only updates the `feed` fields indicated by this mask.
+     * Required. Only updates the `feed` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -953,12 +974,13 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Only updates the `feed` fields indicated by this mask.
+     * Required. Only updates the `feed` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -969,12 +991,13 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Only updates the `feed` fields indicated by this mask.
+     * Required. Only updates the `feed` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -989,12 +1012,13 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Only updates the `feed` fields indicated by this mask.
+     * Required. Only updates the `feed` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

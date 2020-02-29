@@ -23,11 +23,9 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.asset.v1p2beta1.stub.AssetServiceStubSettings;
-import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -48,14 +46,18 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of batchGetAssetsHistory to 30 seconds:
+ * <p>For example, to set the total timeout of createFeed to 30 seconds:
  *
  * <pre>
  * <code>
  * AssetServiceSettings.Builder assetServiceSettingsBuilder =
  *     AssetServiceSettings.newBuilder();
- * assetServiceSettingsBuilder.batchGetAssetsHistorySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * assetServiceSettingsBuilder
+ *     .createFeedSettings()
+ *     .setRetrySettings(
+ *         assetServiceSettingsBuilder.createFeedSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AssetServiceSettings assetServiceSettings = assetServiceSettingsBuilder.build();
  * </code>
  * </pre>
@@ -63,25 +65,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
-  /** Returns the object with the settings used for calls to exportAssets. */
-  public UnaryCallSettings<ExportAssetsRequest, Operation> exportAssetsSettings() {
-    return ((AssetServiceStubSettings) getStubSettings()).exportAssetsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to exportAssets. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
-      exportAssetsOperationSettings() {
-    return ((AssetServiceStubSettings) getStubSettings()).exportAssetsOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to batchGetAssetsHistory. */
-  public UnaryCallSettings<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
-      batchGetAssetsHistorySettings() {
-    return ((AssetServiceStubSettings) getStubSettings()).batchGetAssetsHistorySettings();
-  }
-
   /** Returns the object with the settings used for calls to createFeed. */
   public UnaryCallSettings<CreateFeedRequest, Feed> createFeedSettings() {
     return ((AssetServiceStubSettings) getStubSettings()).createFeedSettings();
@@ -202,26 +185,6 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
-    }
-
-    /** Returns the builder for the settings used for calls to exportAssets. */
-    public UnaryCallSettings.Builder<ExportAssetsRequest, Operation> exportAssetsSettings() {
-      return getStubSettingsBuilder().exportAssetsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to exportAssets. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
-        exportAssetsOperationSettings() {
-      return getStubSettingsBuilder().exportAssetsOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to batchGetAssetsHistory. */
-    public UnaryCallSettings.Builder<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
-        batchGetAssetsHistorySettings() {
-      return getStubSettingsBuilder().batchGetAssetsHistorySettings();
     }
 
     /** Returns the builder for the settings used for calls to createFeed. */

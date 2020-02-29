@@ -123,21 +123,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case 58:
-            {
-              com.google.protobuf.Any.Builder subBuilder = null;
-              if (internalData_ != null) {
-                subBuilder = internalData_.toBuilder();
-              }
-              internalData_ =
-                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(internalData_);
-                internalData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -489,52 +474,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     return getData();
   }
 
-  public static final int INTERNAL_DATA_FIELD_NUMBER = 7;
-  private com.google.protobuf.Any internalData_;
-  /**
-   *
-   *
-   * <pre>
-   * The actual metadata content for the resource, only visible for internal
-   * users.
-   * </pre>
-   *
-   * <code>.google.protobuf.Any internal_data = 7;</code>
-   *
-   * @return Whether the internalData field is set.
-   */
-  public boolean hasInternalData() {
-    return internalData_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The actual metadata content for the resource, only visible for internal
-   * users.
-   * </pre>
-   *
-   * <code>.google.protobuf.Any internal_data = 7;</code>
-   *
-   * @return The internalData.
-   */
-  public com.google.protobuf.Any getInternalData() {
-    return internalData_ == null ? com.google.protobuf.Any.getDefaultInstance() : internalData_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The actual metadata content for the resource, only visible for internal
-   * users.
-   * </pre>
-   *
-   * <code>.google.protobuf.Any internal_data = 7;</code>
-   */
-  public com.google.protobuf.AnyOrBuilder getInternalDataOrBuilder() {
-    return getInternalData();
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -567,9 +506,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     if (data_ != null) {
       output.writeMessage(6, getData());
     }
-    if (internalData_ != null) {
-      output.writeMessage(7, getInternalData());
-    }
     unknownFields.writeTo(output);
   }
 
@@ -597,9 +533,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     if (data_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getData());
     }
-    if (internalData_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getInternalData());
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -625,10 +558,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     if (hasData()) {
       if (!getData().equals(other.getData())) return false;
     }
-    if (hasInternalData() != other.hasInternalData()) return false;
-    if (hasInternalData()) {
-      if (!getInternalData().equals(other.getInternalData())) return false;
-    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -653,10 +582,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     if (hasData()) {
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
-    }
-    if (hasInternalData()) {
-      hash = (37 * hash) + INTERNAL_DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getInternalData().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -819,12 +744,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         data_ = null;
         dataBuilder_ = null;
       }
-      if (internalDataBuilder_ == null) {
-        internalData_ = null;
-      } else {
-        internalData_ = null;
-        internalDataBuilder_ = null;
-      }
       return this;
     }
 
@@ -861,11 +780,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         result.data_ = data_;
       } else {
         result.data_ = dataBuilder_.build();
-      }
-      if (internalDataBuilder_ == null) {
-        result.internalData_ = internalData_;
-      } else {
-        result.internalData_ = internalDataBuilder_.build();
       }
       onBuilt();
       return result;
@@ -938,9 +852,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasData()) {
         mergeData(other.getData());
-      }
-      if (other.hasInternalData()) {
-        mergeInternalData(other.getInternalData());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1775,194 +1686,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         data_ = null;
       }
       return dataBuilder_;
-    }
-
-    private com.google.protobuf.Any internalData_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Any,
-            com.google.protobuf.Any.Builder,
-            com.google.protobuf.AnyOrBuilder>
-        internalDataBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The actual metadata content for the resource, only visible for internal
-     * users.
-     * </pre>
-     *
-     * <code>.google.protobuf.Any internal_data = 7;</code>
-     *
-     * @return Whether the internalData field is set.
-     */
-    public boolean hasInternalData() {
-      return internalDataBuilder_ != null || internalData_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The actual metadata content for the resource, only visible for internal
-     * users.
-     * </pre>
-     *
-     * <code>.google.protobuf.Any internal_data = 7;</code>
-     *
-     * @return The internalData.
-     */
-    public com.google.protobuf.Any getInternalData() {
-      if (internalDataBuilder_ == null) {
-        return internalData_ == null ? com.google.protobuf.Any.getDefaultInstance() : internalData_;
-      } else {
-        return internalDataBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The actual metadata content for the resource, only visible for internal
-     * users.
-     * </pre>
-     *
-     * <code>.google.protobuf.Any internal_data = 7;</code>
-     */
-    public Builder setInternalData(com.google.protobuf.Any value) {
-      if (internalDataBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        internalData_ = value;
-        onChanged();
-      } else {
-        internalDataBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The actual metadata content for the resource, only visible for internal
-     * users.
-     * </pre>
-     *
-     * <code>.google.protobuf.Any internal_data = 7;</code>
-     */
-    public Builder setInternalData(com.google.protobuf.Any.Builder builderForValue) {
-      if (internalDataBuilder_ == null) {
-        internalData_ = builderForValue.build();
-        onChanged();
-      } else {
-        internalDataBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The actual metadata content for the resource, only visible for internal
-     * users.
-     * </pre>
-     *
-     * <code>.google.protobuf.Any internal_data = 7;</code>
-     */
-    public Builder mergeInternalData(com.google.protobuf.Any value) {
-      if (internalDataBuilder_ == null) {
-        if (internalData_ != null) {
-          internalData_ =
-              com.google.protobuf.Any.newBuilder(internalData_).mergeFrom(value).buildPartial();
-        } else {
-          internalData_ = value;
-        }
-        onChanged();
-      } else {
-        internalDataBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The actual metadata content for the resource, only visible for internal
-     * users.
-     * </pre>
-     *
-     * <code>.google.protobuf.Any internal_data = 7;</code>
-     */
-    public Builder clearInternalData() {
-      if (internalDataBuilder_ == null) {
-        internalData_ = null;
-        onChanged();
-      } else {
-        internalData_ = null;
-        internalDataBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The actual metadata content for the resource, only visible for internal
-     * users.
-     * </pre>
-     *
-     * <code>.google.protobuf.Any internal_data = 7;</code>
-     */
-    public com.google.protobuf.Any.Builder getInternalDataBuilder() {
-
-      onChanged();
-      return getInternalDataFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The actual metadata content for the resource, only visible for internal
-     * users.
-     * </pre>
-     *
-     * <code>.google.protobuf.Any internal_data = 7;</code>
-     */
-    public com.google.protobuf.AnyOrBuilder getInternalDataOrBuilder() {
-      if (internalDataBuilder_ != null) {
-        return internalDataBuilder_.getMessageOrBuilder();
-      } else {
-        return internalData_ == null ? com.google.protobuf.Any.getDefaultInstance() : internalData_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The actual metadata content for the resource, only visible for internal
-     * users.
-     * </pre>
-     *
-     * <code>.google.protobuf.Any internal_data = 7;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Any,
-            com.google.protobuf.Any.Builder,
-            com.google.protobuf.AnyOrBuilder>
-        getInternalDataFieldBuilder() {
-      if (internalDataBuilder_ == null) {
-        internalDataBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Any,
-                com.google.protobuf.Any.Builder,
-                com.google.protobuf.AnyOrBuilder>(
-                getInternalData(), getParentForChildren(), isClean());
-        internalData_ = null;
-      }
-      return internalDataBuilder_;
     }
 
     @java.lang.Override

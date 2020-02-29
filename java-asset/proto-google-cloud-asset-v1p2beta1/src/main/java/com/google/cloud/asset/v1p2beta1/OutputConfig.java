@@ -86,26 +86,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
               destinationCase_ = 1;
               break;
             }
-          case 18:
-            {
-              com.google.cloud.asset.v1p2beta1.BigQueryDestination.Builder subBuilder = null;
-              if (destinationCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.asset.v1p2beta1.BigQueryDestination) destination_)
-                        .toBuilder();
-              }
-              destination_ =
-                  input.readMessage(
-                      com.google.cloud.asset.v1p2beta1.BigQueryDestination.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.asset.v1p2beta1.BigQueryDestination) destination_);
-                destination_ = subBuilder.buildPartial();
-              }
-              destinationCase_ = 2;
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -148,7 +128,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GCS_DESTINATION(1),
-    BIGQUERY_DESTINATION(2),
     DESTINATION_NOT_SET(0);
     private final int value;
 
@@ -169,8 +148,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 1:
           return GCS_DESTINATION;
-        case 2:
-          return BIGQUERY_DESTINATION;
         case 0:
           return DESTINATION_NOT_SET;
         default:
@@ -235,64 +212,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.asset.v1p2beta1.GcsDestination.getDefaultInstance();
   }
 
-  public static final int BIGQUERY_DESTINATION_FIELD_NUMBER = 2;
-  /**
-   *
-   *
-   * <pre>
-   * Destination on Bigquery. The output table stores the fields in asset
-   * proto as columns in BigQuery. The resource/iam_policy field is converted
-   * to a record with each field to a column, except metadata to a single JSON
-   * string.
-   * </pre>
-   *
-   * <code>.google.cloud.asset.v1p2beta1.BigQueryDestination bigquery_destination = 2;</code>
-   *
-   * @return Whether the bigqueryDestination field is set.
-   */
-  public boolean hasBigqueryDestination() {
-    return destinationCase_ == 2;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Destination on Bigquery. The output table stores the fields in asset
-   * proto as columns in BigQuery. The resource/iam_policy field is converted
-   * to a record with each field to a column, except metadata to a single JSON
-   * string.
-   * </pre>
-   *
-   * <code>.google.cloud.asset.v1p2beta1.BigQueryDestination bigquery_destination = 2;</code>
-   *
-   * @return The bigqueryDestination.
-   */
-  public com.google.cloud.asset.v1p2beta1.BigQueryDestination getBigqueryDestination() {
-    if (destinationCase_ == 2) {
-      return (com.google.cloud.asset.v1p2beta1.BigQueryDestination) destination_;
-    }
-    return com.google.cloud.asset.v1p2beta1.BigQueryDestination.getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Destination on Bigquery. The output table stores the fields in asset
-   * proto as columns in BigQuery. The resource/iam_policy field is converted
-   * to a record with each field to a column, except metadata to a single JSON
-   * string.
-   * </pre>
-   *
-   * <code>.google.cloud.asset.v1p2beta1.BigQueryDestination bigquery_destination = 2;</code>
-   */
-  public com.google.cloud.asset.v1p2beta1.BigQueryDestinationOrBuilder
-      getBigqueryDestinationOrBuilder() {
-    if (destinationCase_ == 2) {
-      return (com.google.cloud.asset.v1p2beta1.BigQueryDestination) destination_;
-    }
-    return com.google.cloud.asset.v1p2beta1.BigQueryDestination.getDefaultInstance();
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -310,9 +229,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     if (destinationCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.asset.v1p2beta1.GcsDestination) destination_);
     }
-    if (destinationCase_ == 2) {
-      output.writeMessage(2, (com.google.cloud.asset.v1p2beta1.BigQueryDestination) destination_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -326,11 +242,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.cloud.asset.v1p2beta1.GcsDestination) destination_);
-    }
-    if (destinationCase_ == 2) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              2, (com.google.cloud.asset.v1p2beta1.BigQueryDestination) destination_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -353,9 +264,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       case 1:
         if (!getGcsDestination().equals(other.getGcsDestination())) return false;
         break;
-      case 2:
-        if (!getBigqueryDestination().equals(other.getBigqueryDestination())) return false;
-        break;
       case 0:
       default:
     }
@@ -374,10 +282,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       case 1:
         hash = (37 * hash) + GCS_DESTINATION_FIELD_NUMBER;
         hash = (53 * hash) + getGcsDestination().hashCode();
-        break;
-      case 2:
-        hash = (37 * hash) + BIGQUERY_DESTINATION_FIELD_NUMBER;
-        hash = (53 * hash) + getBigqueryDestination().hashCode();
         break;
       case 0:
       default:
@@ -563,13 +467,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
           result.destination_ = gcsDestinationBuilder_.build();
         }
       }
-      if (destinationCase_ == 2) {
-        if (bigqueryDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = bigqueryDestinationBuilder_.build();
-        }
-      }
       result.destinationCase_ = destinationCase_;
       onBuilt();
       return result;
@@ -624,11 +521,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
         case GCS_DESTINATION:
           {
             mergeGcsDestination(other.getGcsDestination());
-            break;
-          }
-        case BIGQUERY_DESTINATION:
-          {
-            mergeBigqueryDestination(other.getBigqueryDestination());
             break;
           }
         case DESTINATION_NOT_SET:
@@ -884,244 +776,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return gcsDestinationBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.asset.v1p2beta1.BigQueryDestination,
-            com.google.cloud.asset.v1p2beta1.BigQueryDestination.Builder,
-            com.google.cloud.asset.v1p2beta1.BigQueryDestinationOrBuilder>
-        bigqueryDestinationBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Destination on Bigquery. The output table stores the fields in asset
-     * proto as columns in BigQuery. The resource/iam_policy field is converted
-     * to a record with each field to a column, except metadata to a single JSON
-     * string.
-     * </pre>
-     *
-     * <code>.google.cloud.asset.v1p2beta1.BigQueryDestination bigquery_destination = 2;</code>
-     *
-     * @return Whether the bigqueryDestination field is set.
-     */
-    public boolean hasBigqueryDestination() {
-      return destinationCase_ == 2;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Destination on Bigquery. The output table stores the fields in asset
-     * proto as columns in BigQuery. The resource/iam_policy field is converted
-     * to a record with each field to a column, except metadata to a single JSON
-     * string.
-     * </pre>
-     *
-     * <code>.google.cloud.asset.v1p2beta1.BigQueryDestination bigquery_destination = 2;</code>
-     *
-     * @return The bigqueryDestination.
-     */
-    public com.google.cloud.asset.v1p2beta1.BigQueryDestination getBigqueryDestination() {
-      if (bigqueryDestinationBuilder_ == null) {
-        if (destinationCase_ == 2) {
-          return (com.google.cloud.asset.v1p2beta1.BigQueryDestination) destination_;
-        }
-        return com.google.cloud.asset.v1p2beta1.BigQueryDestination.getDefaultInstance();
-      } else {
-        if (destinationCase_ == 2) {
-          return bigqueryDestinationBuilder_.getMessage();
-        }
-        return com.google.cloud.asset.v1p2beta1.BigQueryDestination.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Destination on Bigquery. The output table stores the fields in asset
-     * proto as columns in BigQuery. The resource/iam_policy field is converted
-     * to a record with each field to a column, except metadata to a single JSON
-     * string.
-     * </pre>
-     *
-     * <code>.google.cloud.asset.v1p2beta1.BigQueryDestination bigquery_destination = 2;</code>
-     */
-    public Builder setBigqueryDestination(
-        com.google.cloud.asset.v1p2beta1.BigQueryDestination value) {
-      if (bigqueryDestinationBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        destination_ = value;
-        onChanged();
-      } else {
-        bigqueryDestinationBuilder_.setMessage(value);
-      }
-      destinationCase_ = 2;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Destination on Bigquery. The output table stores the fields in asset
-     * proto as columns in BigQuery. The resource/iam_policy field is converted
-     * to a record with each field to a column, except metadata to a single JSON
-     * string.
-     * </pre>
-     *
-     * <code>.google.cloud.asset.v1p2beta1.BigQueryDestination bigquery_destination = 2;</code>
-     */
-    public Builder setBigqueryDestination(
-        com.google.cloud.asset.v1p2beta1.BigQueryDestination.Builder builderForValue) {
-      if (bigqueryDestinationBuilder_ == null) {
-        destination_ = builderForValue.build();
-        onChanged();
-      } else {
-        bigqueryDestinationBuilder_.setMessage(builderForValue.build());
-      }
-      destinationCase_ = 2;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Destination on Bigquery. The output table stores the fields in asset
-     * proto as columns in BigQuery. The resource/iam_policy field is converted
-     * to a record with each field to a column, except metadata to a single JSON
-     * string.
-     * </pre>
-     *
-     * <code>.google.cloud.asset.v1p2beta1.BigQueryDestination bigquery_destination = 2;</code>
-     */
-    public Builder mergeBigqueryDestination(
-        com.google.cloud.asset.v1p2beta1.BigQueryDestination value) {
-      if (bigqueryDestinationBuilder_ == null) {
-        if (destinationCase_ == 2
-            && destination_
-                != com.google.cloud.asset.v1p2beta1.BigQueryDestination.getDefaultInstance()) {
-          destination_ =
-              com.google.cloud.asset.v1p2beta1.BigQueryDestination.newBuilder(
-                      (com.google.cloud.asset.v1p2beta1.BigQueryDestination) destination_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          destination_ = value;
-        }
-        onChanged();
-      } else {
-        if (destinationCase_ == 2) {
-          bigqueryDestinationBuilder_.mergeFrom(value);
-        }
-        bigqueryDestinationBuilder_.setMessage(value);
-      }
-      destinationCase_ = 2;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Destination on Bigquery. The output table stores the fields in asset
-     * proto as columns in BigQuery. The resource/iam_policy field is converted
-     * to a record with each field to a column, except metadata to a single JSON
-     * string.
-     * </pre>
-     *
-     * <code>.google.cloud.asset.v1p2beta1.BigQueryDestination bigquery_destination = 2;</code>
-     */
-    public Builder clearBigqueryDestination() {
-      if (bigqueryDestinationBuilder_ == null) {
-        if (destinationCase_ == 2) {
-          destinationCase_ = 0;
-          destination_ = null;
-          onChanged();
-        }
-      } else {
-        if (destinationCase_ == 2) {
-          destinationCase_ = 0;
-          destination_ = null;
-        }
-        bigqueryDestinationBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Destination on Bigquery. The output table stores the fields in asset
-     * proto as columns in BigQuery. The resource/iam_policy field is converted
-     * to a record with each field to a column, except metadata to a single JSON
-     * string.
-     * </pre>
-     *
-     * <code>.google.cloud.asset.v1p2beta1.BigQueryDestination bigquery_destination = 2;</code>
-     */
-    public com.google.cloud.asset.v1p2beta1.BigQueryDestination.Builder
-        getBigqueryDestinationBuilder() {
-      return getBigqueryDestinationFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Destination on Bigquery. The output table stores the fields in asset
-     * proto as columns in BigQuery. The resource/iam_policy field is converted
-     * to a record with each field to a column, except metadata to a single JSON
-     * string.
-     * </pre>
-     *
-     * <code>.google.cloud.asset.v1p2beta1.BigQueryDestination bigquery_destination = 2;</code>
-     */
-    public com.google.cloud.asset.v1p2beta1.BigQueryDestinationOrBuilder
-        getBigqueryDestinationOrBuilder() {
-      if ((destinationCase_ == 2) && (bigqueryDestinationBuilder_ != null)) {
-        return bigqueryDestinationBuilder_.getMessageOrBuilder();
-      } else {
-        if (destinationCase_ == 2) {
-          return (com.google.cloud.asset.v1p2beta1.BigQueryDestination) destination_;
-        }
-        return com.google.cloud.asset.v1p2beta1.BigQueryDestination.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Destination on Bigquery. The output table stores the fields in asset
-     * proto as columns in BigQuery. The resource/iam_policy field is converted
-     * to a record with each field to a column, except metadata to a single JSON
-     * string.
-     * </pre>
-     *
-     * <code>.google.cloud.asset.v1p2beta1.BigQueryDestination bigquery_destination = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.asset.v1p2beta1.BigQueryDestination,
-            com.google.cloud.asset.v1p2beta1.BigQueryDestination.Builder,
-            com.google.cloud.asset.v1p2beta1.BigQueryDestinationOrBuilder>
-        getBigqueryDestinationFieldBuilder() {
-      if (bigqueryDestinationBuilder_ == null) {
-        if (!(destinationCase_ == 2)) {
-          destination_ = com.google.cloud.asset.v1p2beta1.BigQueryDestination.getDefaultInstance();
-        }
-        bigqueryDestinationBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.asset.v1p2beta1.BigQueryDestination,
-                com.google.cloud.asset.v1p2beta1.BigQueryDestination.Builder,
-                com.google.cloud.asset.v1p2beta1.BigQueryDestinationOrBuilder>(
-                (com.google.cloud.asset.v1p2beta1.BigQueryDestination) destination_,
-                getParentForChildren(),
-                isClean());
-        destination_ = null;
-      }
-      destinationCase_ = 2;
-      onChanged();
-      ;
-      return bigqueryDestinationBuilder_;
     }
 
     @java.lang.Override

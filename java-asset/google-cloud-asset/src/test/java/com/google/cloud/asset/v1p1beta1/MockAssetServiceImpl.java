@@ -57,37 +57,6 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
   }
 
   @Override
-  public void searchResources(
-      SearchResourcesRequest request, StreamObserver<SearchResourcesResponse> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof SearchResourcesResponse) {
-      requests.add(request);
-      responseObserver.onNext((SearchResourcesResponse) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void searchIamPolicies(
-      SearchIamPoliciesRequest request,
-      StreamObserver<SearchIamPoliciesResponse> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof SearchIamPoliciesResponse) {
-      requests.add(request);
-      responseObserver.onNext((SearchIamPoliciesResponse) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
   public void searchAllResources(
       SearchAllResourcesRequest request,
       StreamObserver<SearchAllResourcesResponse> responseObserver) {

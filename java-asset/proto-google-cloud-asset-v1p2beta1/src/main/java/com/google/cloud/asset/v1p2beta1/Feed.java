@@ -183,7 +183,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * project/folder/organization.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The name.
    */
@@ -210,7 +210,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * project/folder/organization.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for name.
    */
@@ -446,7 +446,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * published to.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the feedOutputConfig field is set.
    */
@@ -461,7 +463,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * published to.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The feedOutputConfig.
    */
@@ -478,7 +482,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * published to.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.asset.v1p2beta1.FeedOutputConfigOrBuilder getFeedOutputConfigOrBuilder() {
     return getFeedOutputConfig();
@@ -929,7 +935,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * project/folder/organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The name.
      */
@@ -956,7 +962,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * project/folder/organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for name.
      */
@@ -983,7 +989,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * project/folder/organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1009,7 +1015,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * project/folder/organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1031,7 +1037,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * project/folder/organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1607,7 +1613,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * published to.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the feedOutputConfig field is set.
      */
@@ -1622,7 +1630,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * published to.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The feedOutputConfig.
      */
@@ -1643,7 +1653,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * published to.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFeedOutputConfig(com.google.cloud.asset.v1p2beta1.FeedOutputConfig value) {
       if (feedOutputConfigBuilder_ == null) {
@@ -1666,7 +1678,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * published to.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFeedOutputConfig(
         com.google.cloud.asset.v1p2beta1.FeedOutputConfig.Builder builderForValue) {
@@ -1687,7 +1701,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * published to.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeFeedOutputConfig(com.google.cloud.asset.v1p2beta1.FeedOutputConfig value) {
       if (feedOutputConfigBuilder_ == null) {
@@ -1714,7 +1730,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * published to.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearFeedOutputConfig() {
       if (feedOutputConfigBuilder_ == null) {
@@ -1735,7 +1753,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * published to.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.asset.v1p2beta1.FeedOutputConfig.Builder getFeedOutputConfigBuilder() {
 
@@ -1750,7 +1770,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * published to.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.asset.v1p2beta1.FeedOutputConfigOrBuilder
         getFeedOutputConfigOrBuilder() {
@@ -1770,7 +1792,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * published to.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1p2beta1.FeedOutputConfig,

@@ -11,4 +11,14 @@
     <className>com/google/cloud/asset/v1p1beta1/*OrBuilder</className>
     <method>boolean contains*(*)</method>
   </difference>
+
+  <!-- TODO: remove after 0.119 is released -->
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/asset/v1p1beta1/SearchIamPolicies*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/asset/v1p1beta1/SearchResources*</className>
+  </difference>
 </differences>

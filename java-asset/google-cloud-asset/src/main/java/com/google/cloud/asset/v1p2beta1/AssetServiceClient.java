@@ -17,14 +17,10 @@ package com.google.cloud.asset.v1p2beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.longrunning.OperationFuture;
-import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.asset.v1p2beta1.stub.AssetServiceStub;
 import com.google.cloud.asset.v1p2beta1.stub.AssetServiceStubSettings;
-import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -41,7 +37,7 @@ import javax.annotation.Generated;
  * <code>
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
  *   String parent = "";
- *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(parent);
+ *   Feed response = assetServiceClient.createFeed(parent);
  * }
  * </code>
  * </pre>
@@ -101,7 +97,6 @@ import javax.annotation.Generated;
 public class AssetServiceClient implements BackgroundResource {
   private final AssetServiceSettings settings;
   private final AssetServiceStub stub;
-  private final OperationsClient operationsClient;
 
   private static final PathTemplate FEED_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/feeds/{feed}");
@@ -168,14 +163,12 @@ public class AssetServiceClient implements BackgroundResource {
   protected AssetServiceClient(AssetServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((AssetServiceStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AssetServiceClient(AssetServiceStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final AssetServiceSettings getSettings() {
@@ -185,191 +178,6 @@ public class AssetServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AssetServiceStub getStub() {
     return stub;
-  }
-
-  /**
-   * Returns the OperationsClient that can be used to query the status of a long-running operation
-   * returned by another API method call.
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationsClient getOperationsClient() {
-    return operationsClient;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports assets with time and resource types to a given Cloud Storage location. The output
-   * format is newline-delimited JSON. This API implements the
-   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
-   * the export.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   ExportAssetsResponse response = assetServiceClient.exportAssetsAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ExportAssetsResponse, ExportAssetsRequest> exportAssetsAsync(
-      ExportAssetsRequest request) {
-    return exportAssetsOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports assets with time and resource types to a given Cloud Storage location. The output
-   * format is newline-delimited JSON. This API implements the
-   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
-   * the export.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   OperationFuture&lt;ExportAssetsResponse, ExportAssetsRequest&gt; future = assetServiceClient.exportAssetsOperationCallable().futureCall(request);
-   *   // Do something
-   *   ExportAssetsResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
-      exportAssetsOperationCallable() {
-    return stub.exportAssetsOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports assets with time and resource types to a given Cloud Storage location. The output
-   * format is newline-delimited JSON. This API implements the
-   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
-   * the export.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = assetServiceClient.exportAssetsCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable() {
-    return stub.exportAssetsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Batch gets the update history of assets that overlap a time window. For RESOURCE content, this
-   * API outputs history with asset in both non-delete or deleted status. For IAM_POLICY content,
-   * this API outputs history when the asset and its attached IAM POLICY both exist. This can create
-   * gaps in the output history.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(parent);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The relative name of the root asset. It can only be an organization
-   *     number (such as "organizations/123"), a project ID (such as "projects/my-project-id")", or
-   *     a project number (such as "projects/12345").
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BatchGetAssetsHistoryResponse batchGetAssetsHistory(String parent) {
-    BatchGetAssetsHistoryRequest request =
-        BatchGetAssetsHistoryRequest.newBuilder().setParent(parent).build();
-    return batchGetAssetsHistory(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Batch gets the update history of assets that overlap a time window. For RESOURCE content, this
-   * API outputs history with asset in both non-delete or deleted status. For IAM_POLICY content,
-   * this API outputs history when the asset and its attached IAM POLICY both exist. This can create
-   * gaps in the output history.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   List&lt;String&gt; assetNames = new ArrayList&lt;&gt;();
-   *   ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
-   *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
-   *     .setParent(parent)
-   *     .addAllAssetNames(assetNames)
-   *     .setContentType(contentType)
-   *     .build();
-   *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BatchGetAssetsHistoryResponse batchGetAssetsHistory(
-      BatchGetAssetsHistoryRequest request) {
-    return batchGetAssetsHistoryCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Batch gets the update history of assets that overlap a time window. For RESOURCE content, this
-   * API outputs history with asset in both non-delete or deleted status. For IAM_POLICY content,
-   * this API outputs history when the asset and its attached IAM POLICY both exist. This can create
-   * gaps in the output history.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   List&lt;String&gt; assetNames = new ArrayList&lt;&gt;();
-   *   ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
-   *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
-   *     .setParent(parent)
-   *     .addAllAssetNames(assetNames)
-   *     .setContentType(contentType)
-   *     .build();
-   *   ApiFuture&lt;BatchGetAssetsHistoryResponse&gt; future = assetServiceClient.batchGetAssetsHistoryCallable().futureCall(request);
-   *   // Do something
-   *   BatchGetAssetsHistoryResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
-      batchGetAssetsHistoryCallable() {
-    return stub.batchGetAssetsHistoryCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -462,7 +270,7 @@ public class AssetServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the Feed and it must be in the format of:
+   * @param name Required. The name of the Feed and it must be in the format of:
    *     projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id
    *     organizations/organization_number/feeds/feed_id
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -599,8 +407,8 @@ public class AssetServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param feed The new values of feed details. It must match an existing feed and the field `name`
-   *     must be in the format of: projects/project_number/feeds/feed_id or
+   * @param feed Required. The new values of feed details. It must match an existing feed and the
+   *     field `name` must be in the format of: projects/project_number/feeds/feed_id or
    *     folders/folder_number/feeds/feed_id or organizations/organization_number/feeds/feed_id.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -671,7 +479,7 @@ public class AssetServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the feed and it must be in the format of:
+   * @param name Required. The name of the feed and it must be in the format of:
    *     projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id
    *     organizations/organization_number/feeds/feed_id
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

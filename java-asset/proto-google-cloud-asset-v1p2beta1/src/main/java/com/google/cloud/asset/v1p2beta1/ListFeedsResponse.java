@@ -18,15 +18,7 @@
 
 package com.google.cloud.asset.v1p2beta1;
 
-/**
- *
- *
- * <pre>
- * List asset feeds response.
- * </pre>
- *
- * Protobuf type {@code google.cloud.asset.v1p2beta1.ListFeedsResponse}
- */
+/** Protobuf type {@code google.cloud.asset.v1p2beta1.ListFeedsResponse} */
 public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1p2beta1.ListFeedsResponse)
@@ -344,15 +336,7 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   *
-   *
-   * <pre>
-   * List asset feeds response.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.asset.v1p2beta1.ListFeedsResponse}
-   */
+  /** Protobuf type {@code google.cloud.asset.v1p2beta1.ListFeedsResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.asset.v1p2beta1.ListFeedsResponse)

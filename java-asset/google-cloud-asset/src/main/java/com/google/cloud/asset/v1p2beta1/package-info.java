@@ -29,7 +29,7 @@
  * <code>
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
  *   String parent = "";
- *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(parent);
+ *   Feed response = assetServiceClient.createFeed(parent);
  * }
  * </code>
  * </pre>

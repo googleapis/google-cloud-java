@@ -77,8 +77,12 @@ import org.threeten.bp.Duration;
  * <code>
  * AssetServiceStubSettings.Builder assetServiceSettingsBuilder =
  *     AssetServiceStubSettings.newBuilder();
- * assetServiceSettingsBuilder.createFeedSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * assetServiceSettingsBuilder
+ *     .createFeedSettings()
+ *     .setRetrySettings(
+ *         assetServiceSettingsBuilder.createFeedSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AssetServiceStubSettings assetServiceSettings = assetServiceSettingsBuilder.build();
  * </code>
  * </pre>

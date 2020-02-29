@@ -41,7 +41,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   private Asset() {
     name_ = "";
     assetType_ = "";
-    iamPolicyName_ = com.google.protobuf.ByteString.EMPTY;
     ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -117,11 +116,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
                 iamPolicy_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 42:
-            {
-              iamPolicyName_ = input.readBytes();
               break;
             }
           case 50:
@@ -364,25 +358,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     return getIamPolicy();
   }
 
-  public static final int IAM_POLICY_NAME_FIELD_NUMBER = 5;
-  private com.google.protobuf.ByteString iamPolicyName_;
-  /**
-   *
-   *
-   * <pre>
-   * Cloud IAM policy name of the Cloud IAM policy set on a cloud resource. For
-   * each resource, there must be at most one Cloud IAM policy name associated
-   * with it.
-   * </pre>
-   *
-   * <code>bytes iam_policy_name = 5;</code>
-   *
-   * @return The iamPolicyName.
-   */
-  public com.google.protobuf.ByteString getIamPolicyName() {
-    return iamPolicyName_;
-  }
-
   public static final int ANCESTORS_FIELD_NUMBER = 6;
   private com.google.protobuf.LazyStringList ancestors_;
   /**
@@ -391,8 +366,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
    * represented as a list of relative resource names. Ancestry path starts with
-   * the closest CRM ancestor and ending at a visible root. If the asset is a
-   * CRM project/ folder/organization, this starts from the asset itself.
+   * the closest CRM ancestor and ends at root. If the asset is a CRM
+   * project/folder/organization, this starts from the asset itself.
    * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
    * </pre>
    *
@@ -409,8 +384,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
    * represented as a list of relative resource names. Ancestry path starts with
-   * the closest CRM ancestor and ending at a visible root. If the asset is a
-   * CRM project/ folder/organization, this starts from the asset itself.
+   * the closest CRM ancestor and ends at root. If the asset is a CRM
+   * project/folder/organization, this starts from the asset itself.
    * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
    * </pre>
    *
@@ -427,8 +402,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
    * represented as a list of relative resource names. Ancestry path starts with
-   * the closest CRM ancestor and ending at a visible root. If the asset is a
-   * CRM project/ folder/organization, this starts from the asset itself.
+   * the closest CRM ancestor and ends at root. If the asset is a CRM
+   * project/folder/organization, this starts from the asset itself.
    * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
    * </pre>
    *
@@ -446,8 +421,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
    * represented as a list of relative resource names. Ancestry path starts with
-   * the closest CRM ancestor and ending at a visible root. If the asset is a
-   * CRM project/ folder/organization, this starts from the asset itself.
+   * the closest CRM ancestor and ends at root. If the asset is a CRM
+   * project/folder/organization, this starts from the asset itself.
    * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
    * </pre>
    *
@@ -486,9 +461,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (iamPolicy_ != null) {
       output.writeMessage(4, getIamPolicy());
     }
-    if (!iamPolicyName_.isEmpty()) {
-      output.writeBytes(5, iamPolicyName_);
-    }
     for (int i = 0; i < ancestors_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, ancestors_.getRaw(i));
     }
@@ -512,9 +484,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
     if (iamPolicy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getIamPolicy());
-    }
-    if (!iamPolicyName_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream.computeBytesSize(5, iamPolicyName_);
     }
     {
       int dataSize = 0;
@@ -549,7 +518,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (hasIamPolicy()) {
       if (!getIamPolicy().equals(other.getIamPolicy())) return false;
     }
-    if (!getIamPolicyName().equals(other.getIamPolicyName())) return false;
     if (!getAncestorsList().equals(other.getAncestorsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -574,8 +542,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + IAM_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getIamPolicy().hashCode();
     }
-    hash = (37 * hash) + IAM_POLICY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getIamPolicyName().hashCode();
     if (getAncestorsCount() > 0) {
       hash = (37 * hash) + ANCESTORS_FIELD_NUMBER;
       hash = (53 * hash) + getAncestorsList().hashCode();
@@ -742,8 +708,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         iamPolicy_ = null;
         iamPolicyBuilder_ = null;
       }
-      iamPolicyName_ = com.google.protobuf.ByteString.EMPTY;
-
       ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -786,7 +750,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.iamPolicy_ = iamPolicyBuilder_.build();
       }
-      result.iamPolicyName_ = iamPolicyName_;
       if (((bitField0_ & 0x00000001) != 0)) {
         ancestors_ = ancestors_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -854,9 +817,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasIamPolicy()) {
         mergeIamPolicy(other.getIamPolicy());
-      }
-      if (other.getIamPolicyName() != com.google.protobuf.ByteString.EMPTY) {
-        setIamPolicyName(other.getIamPolicyName());
       }
       if (!other.ancestors_.isEmpty()) {
         if (ancestors_.isEmpty()) {
@@ -1504,66 +1464,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return iamPolicyBuilder_;
     }
 
-    private com.google.protobuf.ByteString iamPolicyName_ = com.google.protobuf.ByteString.EMPTY;
-    /**
-     *
-     *
-     * <pre>
-     * Cloud IAM policy name of the Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy name associated
-     * with it.
-     * </pre>
-     *
-     * <code>bytes iam_policy_name = 5;</code>
-     *
-     * @return The iamPolicyName.
-     */
-    public com.google.protobuf.ByteString getIamPolicyName() {
-      return iamPolicyName_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Cloud IAM policy name of the Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy name associated
-     * with it.
-     * </pre>
-     *
-     * <code>bytes iam_policy_name = 5;</code>
-     *
-     * @param value The iamPolicyName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIamPolicyName(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      iamPolicyName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Cloud IAM policy name of the Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy name associated
-     * with it.
-     * </pre>
-     *
-     * <code>bytes iam_policy_name = 5;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearIamPolicyName() {
-
-      iamPolicyName_ = getDefaultInstance().getIamPolicyName();
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.LazyStringList ancestors_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
@@ -1579,8 +1479,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
      * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ending at a visible root. If the asset is a
-     * CRM project/ folder/organization, this starts from the asset itself.
+     * the closest CRM ancestor and ends at root. If the asset is a CRM
+     * project/folder/organization, this starts from the asset itself.
      * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
      * </pre>
      *
@@ -1597,8 +1497,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
      * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ending at a visible root. If the asset is a
-     * CRM project/ folder/organization, this starts from the asset itself.
+     * the closest CRM ancestor and ends at root. If the asset is a CRM
+     * project/folder/organization, this starts from the asset itself.
      * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
      * </pre>
      *
@@ -1615,8 +1515,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
      * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ending at a visible root. If the asset is a
-     * CRM project/ folder/organization, this starts from the asset itself.
+     * the closest CRM ancestor and ends at root. If the asset is a CRM
+     * project/folder/organization, this starts from the asset itself.
      * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
      * </pre>
      *
@@ -1634,8 +1534,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
      * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ending at a visible root. If the asset is a
-     * CRM project/ folder/organization, this starts from the asset itself.
+     * the closest CRM ancestor and ends at root. If the asset is a CRM
+     * project/folder/organization, this starts from the asset itself.
      * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
      * </pre>
      *
@@ -1653,8 +1553,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
      * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ending at a visible root. If the asset is a
-     * CRM project/ folder/organization, this starts from the asset itself.
+     * the closest CRM ancestor and ends at root. If the asset is a CRM
+     * project/folder/organization, this starts from the asset itself.
      * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
      * </pre>
      *
@@ -1679,8 +1579,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
      * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ending at a visible root. If the asset is a
-     * CRM project/ folder/organization, this starts from the asset itself.
+     * the closest CRM ancestor and ends at root. If the asset is a CRM
+     * project/folder/organization, this starts from the asset itself.
      * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
      * </pre>
      *
@@ -1704,8 +1604,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
      * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ending at a visible root. If the asset is a
-     * CRM project/ folder/organization, this starts from the asset itself.
+     * the closest CRM ancestor and ends at root. If the asset is a CRM
+     * project/folder/organization, this starts from the asset itself.
      * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
      * </pre>
      *
@@ -1726,8 +1626,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
      * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ending at a visible root. If the asset is a
-     * CRM project/ folder/organization, this starts from the asset itself.
+     * the closest CRM ancestor and ends at root. If the asset is a CRM
+     * project/folder/organization, this starts from the asset itself.
      * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
      * </pre>
      *
@@ -1747,8 +1647,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
      * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ending at a visible root. If the asset is a
-     * CRM project/ folder/organization, this starts from the asset itself.
+     * the closest CRM ancestor and ends at root. If the asset is a CRM
+     * project/folder/organization, this starts from the asset itself.
      * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
      * </pre>
      *

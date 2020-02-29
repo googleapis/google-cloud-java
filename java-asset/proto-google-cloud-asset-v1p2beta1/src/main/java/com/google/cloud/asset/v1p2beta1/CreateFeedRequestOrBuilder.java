@@ -34,7 +34,7 @@ public interface CreateFeedRequestOrBuilder
    * "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The parent.
    */
@@ -50,7 +50,7 @@ public interface CreateFeedRequestOrBuilder
    * "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for parent.
    */
@@ -64,7 +64,7 @@ public interface CreateFeedRequestOrBuilder
    * be unique under a specific parent project/folder/organization.
    * </pre>
    *
-   * <code>string feed_id = 2;</code>
+   * <code>string feed_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The feedId.
    */
@@ -77,7 +77,7 @@ public interface CreateFeedRequestOrBuilder
    * be unique under a specific parent project/folder/organization.
    * </pre>
    *
-   * <code>string feed_id = 2;</code>
+   * <code>string feed_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for feedId.
    */
@@ -87,14 +87,15 @@ public interface CreateFeedRequestOrBuilder
    *
    *
    * <pre>
-   * The feed details. The field `name` must be empty and it will be generated
+   * Required. The feed details. The field `name` must be empty and it will be generated
    * in the format of:
    * projects/project_number/feeds/feed_id
    * folders/folder_number/feeds/feed_id
    * organizations/organization_number/feeds/feed_id
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the feed field is set.
    */
@@ -103,14 +104,15 @@ public interface CreateFeedRequestOrBuilder
    *
    *
    * <pre>
-   * The feed details. The field `name` must be empty and it will be generated
+   * Required. The feed details. The field `name` must be empty and it will be generated
    * in the format of:
    * projects/project_number/feeds/feed_id
    * folders/folder_number/feeds/feed_id
    * organizations/organization_number/feeds/feed_id
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The feed.
    */
@@ -119,14 +121,15 @@ public interface CreateFeedRequestOrBuilder
    *
    *
    * <pre>
-   * The feed details. The field `name` must be empty and it will be generated
+   * Required. The feed details. The field `name` must be empty and it will be generated
    * in the format of:
    * projects/project_number/feeds/feed_id
    * folders/folder_number/feeds/feed_id
    * organizations/organization_number/feeds/feed_id
    * </pre>
    *
-   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+   * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.asset.v1p2beta1.FeedOrBuilder getFeedOrBuilder();
 }

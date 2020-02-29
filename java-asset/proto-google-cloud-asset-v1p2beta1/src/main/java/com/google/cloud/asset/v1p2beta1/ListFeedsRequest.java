@@ -122,7 +122,7 @@ public final class ListFeedsRequest extends com.google.protobuf.GeneratedMessage
    * "folders/12345")", or a project ID (such as "projects/my-project-id").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The parent.
    */
@@ -146,7 +146,7 @@ public final class ListFeedsRequest extends com.google.protobuf.GeneratedMessage
    * "folders/12345")", or a project ID (such as "projects/my-project-id").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for parent.
    */
@@ -490,7 +490,7 @@ public final class ListFeedsRequest extends com.google.protobuf.GeneratedMessage
      * "folders/12345")", or a project ID (such as "projects/my-project-id").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The parent.
      */
@@ -514,7 +514,7 @@ public final class ListFeedsRequest extends com.google.protobuf.GeneratedMessage
      * "folders/12345")", or a project ID (such as "projects/my-project-id").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for parent.
      */
@@ -538,7 +538,7 @@ public final class ListFeedsRequest extends com.google.protobuf.GeneratedMessage
      * "folders/12345")", or a project ID (such as "projects/my-project-id").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -561,7 +561,7 @@ public final class ListFeedsRequest extends com.google.protobuf.GeneratedMessage
      * "folders/12345")", or a project ID (such as "projects/my-project-id").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -580,7 +580,7 @@ public final class ListFeedsRequest extends com.google.protobuf.GeneratedMessage
      * "folders/12345")", or a project ID (such as "projects/my-project-id").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

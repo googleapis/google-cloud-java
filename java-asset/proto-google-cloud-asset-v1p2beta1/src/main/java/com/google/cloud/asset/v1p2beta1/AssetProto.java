@@ -63,22 +63,20 @@ public final class AssetProto {
           + "set\030\003 \001(\0132#.google.cloud.asset.v1p2beta1"
           + ".Asset\"j\n\nTimeWindow\022.\n\nstart_time\030\001 \001(\013"
           + "2\032.google.protobuf.Timestamp\022,\n\010end_time"
-          + "\030\002 \001(\0132\032.google.protobuf.Timestamp\"\272\001\n\005A"
+          + "\030\002 \001(\0132\032.google.protobuf.Timestamp\"\241\001\n\005A"
           + "sset\022\014\n\004name\030\001 \001(\t\022\022\n\nasset_type\030\002 \001(\t\0228"
           + "\n\010resource\030\003 \001(\0132&.google.cloud.asset.v1"
           + "p2beta1.Resource\022)\n\niam_policy\030\004 \001(\0132\025.g"
-          + "oogle.iam.v1.Policy\022\027\n\017iam_policy_name\030\005"
-          + " \001(\014\022\021\n\tancestors\030\006 \003(\t\"\315\001\n\010Resource\022\017\n\007"
-          + "version\030\001 \001(\t\022\036\n\026discovery_document_uri\030"
-          + "\002 \001(\t\022\026\n\016discovery_name\030\003 \001(\t\022\024\n\014resourc"
-          + "e_url\030\004 \001(\t\022\016\n\006parent\030\005 \001(\t\022%\n\004data\030\006 \001("
-          + "\0132\027.google.protobuf.Struct\022+\n\rinternal_d"
-          + "ata\030\007 \001(\0132\024.google.protobuf.AnyB\264\001\n com."
-          + "google.cloud.asset.v1p2beta1B\nAssetProto"
-          + "P\001ZAgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/asset/v1p2beta1;asset\370\001\001\252\002\034Googl"
-          + "e.Cloud.Asset.v1p2beta1\312\002\034Google\\Cloud\\A"
-          + "sset\\v1p2beta1b\006proto3"
+          + "oogle.iam.v1.Policy\022\021\n\tancestors\030\006 \003(\t\"\240"
+          + "\001\n\010Resource\022\017\n\007version\030\001 \001(\t\022\036\n\026discover"
+          + "y_document_uri\030\002 \001(\t\022\026\n\016discovery_name\030\003"
+          + " \001(\t\022\024\n\014resource_url\030\004 \001(\t\022\016\n\006parent\030\005 \001"
+          + "(\t\022%\n\004data\030\006 \001(\0132\027.google.protobuf.Struc"
+          + "tB\264\001\n com.google.cloud.asset.v1p2beta1B\n"
+          + "AssetProtoP\001ZAgoogle.golang.org/genproto"
+          + "/googleapis/cloud/asset/v1p2beta1;asset\370"
+          + "\001\001\252\002\034Google.Cloud.Asset.v1p2beta1\312\002\034Goog"
+          + "le\\Cloud\\Asset\\v1p2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -112,7 +110,7 @@ public final class AssetProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_asset_v1p2beta1_Asset_descriptor,
             new java.lang.String[] {
-              "Name", "AssetType", "Resource", "IamPolicy", "IamPolicyName", "Ancestors",
+              "Name", "AssetType", "Resource", "IamPolicy", "Ancestors",
             });
     internal_static_google_cloud_asset_v1p2beta1_Resource_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -120,13 +118,7 @@ public final class AssetProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_asset_v1p2beta1_Resource_descriptor,
             new java.lang.String[] {
-              "Version",
-              "DiscoveryDocumentUri",
-              "DiscoveryName",
-              "ResourceUrl",
-              "Parent",
-              "Data",
-              "InternalData",
+              "Version", "DiscoveryDocumentUri", "DiscoveryName", "ResourceUrl", "Parent", "Data",
             });
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.iam.v1.PolicyProto.getDescriptor();
