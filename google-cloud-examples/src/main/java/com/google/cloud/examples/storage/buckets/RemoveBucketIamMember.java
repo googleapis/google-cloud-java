@@ -46,7 +46,7 @@ public class RemoveBucketIamMember {
     // getBindingsList() returns an ImmutableList and copying over to an ArrayList so it's mutable.
     List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
 
-    // Remove member from binding
+    // Remove role-member binding without a condition.
     for (int index = 0; index < bindings.size(); index++) {
       Binding binding = bindings.get(index);
       boolean foundRole = binding.getRole().equals(role);
@@ -60,10 +60,9 @@ public class RemoveBucketIamMember {
     }
 
     // Update policy to remove member
-    Policy updatedPolicy =
-        storage.setIamPolicy(
-            bucketName,
-            originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
+    Policy.Builder updatedPolicyBuilder = originalPolicy.toBuilder();
+    updatedPolicyBuilder.setBindings(bindings).setVersion(policyVersion);
+    Policy updatedPolicy = storage.setIamPolicy(bucketName, updatedPolicyBuilder.build());
 
     System.out.printf("Removed %s with role %s from %s\n", member, role, bucketName);
   }

@@ -35,27 +35,31 @@ public class AddBucketIamConditionalBinding {
     List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
 
     // Create a condition
+    String conditionTitle = "Title";
+    String conditionDescription = "Description";
+    String conditionExpression =
+        "resource.name.startsWith(\"projects/_/buckets/bucket-name/objects/prefix-a-\")";
     Condition.Builder conditionBuilder = Condition.newBuilder();
-    conditionBuilder.setTitle("Title");
-    conditionBuilder.setDescription("Description");
-    conditionBuilder.setExpression(
-        "resource.name.startsWith(\"projects/_/buckets/bucket-name/objects/prefix-a-\")");
+    conditionBuilder.setTitle(conditionTitle);
+    conditionBuilder.setDescription(conditionDescription);
+    conditionBuilder.setExpression(conditionExpression);
 
     // Add condition to a binding
-    bindings.add(
+    Binding.Builder newBindingBuilder =
         Binding.newBuilder()
             .setRole(role)
             .setMembers(Arrays.asList(member))
-            .setCondition(conditionBuilder.build())
-            .build());
+            .setCondition(conditionBuilder.build());
+    bindings.add(newBindingBuilder.build());
 
     // Update policy with new conditional binding
-    Policy updatedPolicy =
-        storage.setIamPolicy(
-            bucketName,
-            originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
+    Policy.Builder updatedPolicyBuilder = originalPolicy.toBuilder();
+    updatedPolicyBuilder.setBindings(bindings).setVersion(policyVersion);
+    Policy updatedPolicy = storage.setIamPolicy(bucketName, updatedPolicyBuilder.build());
 
-    System.out.printf("Added conditional binding with role %s to %s\n", member, role, bucketName);
+    System.out.printf(
+        "Added %s with role %s to %s with condition %s %s %s\n",
+        member, role, bucketName, conditionTitle, conditionDescription, conditionExpression);
   }
 }
 // [END storage_add_bucket_conditional_iam_binding]

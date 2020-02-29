@@ -54,10 +54,9 @@ public class RemoveBucketIamConditionalBinding {
     }
 
     // Update policy to remove conditional binding
-    Policy updatedPolicy =
-        storage.setIamPolicy(
-            bucketName,
-            originalPolicy.toBuilder().setBindings(bindings).setVersion(policyVersion).build());
+    Policy.Builder updatedPolicyBuilder = originalPolicy.toBuilder();
+    updatedPolicyBuilder.setBindings(bindings).setVersion(policyVersion);
+    Policy updatedPolicy = storage.setIamPolicy(bucketName, updatedPolicyBuilder.build());
 
     System.out.println("Conditional Binding was removed.");
   }
