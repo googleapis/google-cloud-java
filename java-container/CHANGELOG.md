@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-container/compare/v0.119.1...v1.0.0) (2020-02-27)
+
+
+### Features
+
+* promote to GA ([#77](https://www.github.com/googleapis/java-container/issues/77)) ([e3c268d](https://www.github.com/googleapis/java-container/commit/e3c268d80506403ce754fbda9cbd4009975a4e2f))
+
+
+### Bug Fixes
+
+* **regen:** make deprecated fields optional ([#64](https://www.github.com/googleapis/java-container/issues/64)) ([92d3d87](https://www.github.com/googleapis/java-container/commit/92d3d87fcb308c409175650726c32fd962863266))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([24627f1](https://www.github.com/googleapis/java-container/commit/24627f181cf3d38857fb47b05a8898b5b29b7e5c))
+* update dependency com.google.protobuf:protobuf-bom to v3.11.4 ([e5f3ab9](https://www.github.com/googleapis/java-container/commit/e5f3ab9c112cf9f2d05fa3a70eeaf58246e0166c))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([42c9bac](https://www.github.com/googleapis/java-container/commit/42c9bac676770edfd402230a2af3905a2a806ca1))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([f3fe5b4](https://www.github.com/googleapis/java-container/commit/f3fe5b48d9aec62bdf57431dca41e333f252791f))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([584d428](https://www.github.com/googleapis/java-container/commit/584d428034a5dc509e04806a0e0353c7ac717e05))
+
 ### [0.119.1](https://www.github.com/googleapis/java-container/compare/v0.119.0...v0.119.1) (2020-02-04)
 
 
