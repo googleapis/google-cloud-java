@@ -26,12 +26,14 @@ import com.google.cloud.dialogflow.v2.DeleteAgentRequest;
 import com.google.cloud.dialogflow.v2.ExportAgentRequest;
 import com.google.cloud.dialogflow.v2.ExportAgentResponse;
 import com.google.cloud.dialogflow.v2.GetAgentRequest;
+import com.google.cloud.dialogflow.v2.GetValidationResultRequest;
 import com.google.cloud.dialogflow.v2.ImportAgentRequest;
 import com.google.cloud.dialogflow.v2.RestoreAgentRequest;
 import com.google.cloud.dialogflow.v2.SearchAgentsRequest;
 import com.google.cloud.dialogflow.v2.SearchAgentsResponse;
 import com.google.cloud.dialogflow.v2.SetAgentRequest;
 import com.google.cloud.dialogflow.v2.TrainAgentRequest;
+import com.google.cloud.dialogflow.v2.ValidationResult;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -108,6 +110,10 @@ public abstract class AgentsStub implements BackgroundResource {
 
   public UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreAgentCallable()");
+  }
+
+  public UnaryCallable<GetValidationResultRequest, ValidationResult> getValidationResultCallable() {
+    throw new UnsupportedOperationException("Not implemented: getValidationResultCallable()");
   }
 
   @Override

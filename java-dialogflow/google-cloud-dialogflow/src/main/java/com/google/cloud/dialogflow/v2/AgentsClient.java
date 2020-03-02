@@ -1036,6 +1036,48 @@ public class AgentsClient implements BackgroundResource {
     return stub.restoreAgentCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets agent validation result. Agent validation is performed during training time and is updated
+   * automatically when training is completed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   GetValidationResultRequest request = GetValidationResultRequest.newBuilder().build();
+   *   ValidationResult response = agentsClient.getValidationResult(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ValidationResult getValidationResult(GetValidationResultRequest request) {
+    return getValidationResultCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets agent validation result. Agent validation is performed during training time and is updated
+   * automatically when training is completed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   GetValidationResultRequest request = GetValidationResultRequest.newBuilder().build();
+   *   ApiFuture&lt;ValidationResult&gt; future = agentsClient.getValidationResultCallable().futureCall(request);
+   *   // Do something
+   *   ValidationResult response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetValidationResultRequest, ValidationResult>
+      getValidationResultCallable() {
+    return stub.getValidationResultCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

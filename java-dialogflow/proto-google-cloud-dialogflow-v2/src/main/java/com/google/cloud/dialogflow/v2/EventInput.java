@@ -191,10 +191,10 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The collection of parameters associated with the event.
+   * The collection of parameters associated with the event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.protobuf.Struct parameters = 2;</code>
    *
    * @return Whether the parameters field is set.
    */
@@ -205,10 +205,10 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The collection of parameters associated with the event.
+   * The collection of parameters associated with the event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.protobuf.Struct parameters = 2;</code>
    *
    * @return The parameters.
    */
@@ -219,10 +219,10 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The collection of parameters associated with the event.
+   * The collection of parameters associated with the event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.protobuf.Struct parameters = 2;</code>
    */
   public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
     return getParameters();
@@ -761,11 +761,10 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.Struct parameters = 2;</code>
      *
      * @return Whether the parameters field is set.
      */
@@ -776,11 +775,10 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.Struct parameters = 2;</code>
      *
      * @return The parameters.
      */
@@ -795,11 +793,10 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.Struct parameters = 2;</code>
      */
     public Builder setParameters(com.google.protobuf.Struct value) {
       if (parametersBuilder_ == null) {
@@ -818,11 +815,10 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.Struct parameters = 2;</code>
      */
     public Builder setParameters(com.google.protobuf.Struct.Builder builderForValue) {
       if (parametersBuilder_ == null) {
@@ -838,11 +834,10 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.Struct parameters = 2;</code>
      */
     public Builder mergeParameters(com.google.protobuf.Struct value) {
       if (parametersBuilder_ == null) {
@@ -863,11 +858,10 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.Struct parameters = 2;</code>
      */
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
@@ -884,11 +878,10 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.Struct parameters = 2;</code>
      */
     public com.google.protobuf.Struct.Builder getParametersBuilder() {
 
@@ -899,11 +892,10 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.Struct parameters = 2;</code>
      */
     public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
       if (parametersBuilder_ != null) {
@@ -916,11 +908,10 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of parameters associated with the event.
+     * The collection of parameters associated with the event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.Struct parameters = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct,

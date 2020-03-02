@@ -489,4 +489,41 @@ public class AgentsClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getValidationResultTest() {
+    ValidationResult expectedResponse = ValidationResult.newBuilder().build();
+    mockAgents.addResponse(expectedResponse);
+
+    GetValidationResultRequest request = GetValidationResultRequest.newBuilder().build();
+
+    ValidationResult actualResponse = client.getValidationResult(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetValidationResultRequest actualRequest = (GetValidationResultRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getValidationResultExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAgents.addException(exception);
+
+    try {
+      GetValidationResultRequest request = GetValidationResultRequest.newBuilder().build();
+
+      client.getValidationResult(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
 }

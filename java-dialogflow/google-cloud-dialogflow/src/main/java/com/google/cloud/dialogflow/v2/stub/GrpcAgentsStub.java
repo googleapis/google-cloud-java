@@ -31,12 +31,14 @@ import com.google.cloud.dialogflow.v2.DeleteAgentRequest;
 import com.google.cloud.dialogflow.v2.ExportAgentRequest;
 import com.google.cloud.dialogflow.v2.ExportAgentResponse;
 import com.google.cloud.dialogflow.v2.GetAgentRequest;
+import com.google.cloud.dialogflow.v2.GetValidationResultRequest;
 import com.google.cloud.dialogflow.v2.ImportAgentRequest;
 import com.google.cloud.dialogflow.v2.RestoreAgentRequest;
 import com.google.cloud.dialogflow.v2.SearchAgentsRequest;
 import com.google.cloud.dialogflow.v2.SearchAgentsResponse;
 import com.google.cloud.dialogflow.v2.SetAgentRequest;
 import com.google.cloud.dialogflow.v2.TrainAgentRequest;
+import com.google.cloud.dialogflow.v2.ValidationResult;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -118,6 +120,15 @@ public class GrpcAgentsStub extends AgentsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(RestoreAgentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<GetValidationResultRequest, ValidationResult>
+      getValidationResultMethodDescriptor =
+          MethodDescriptor.<GetValidationResultRequest, ValidationResult>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2.Agents/GetValidationResult")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetValidationResultRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ValidationResult.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -137,6 +148,8 @@ public class GrpcAgentsStub extends AgentsStub {
   private final OperationCallable<ImportAgentRequest, Empty, Struct> importAgentOperationCallable;
   private final UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable;
   private final OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable;
+  private final UnaryCallable<GetValidationResultRequest, ValidationResult>
+      getValidationResultCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -279,6 +292,20 @@ public class GrpcAgentsStub extends AgentsStub {
                   }
                 })
             .build();
+    GrpcCallSettings<GetValidationResultRequest, ValidationResult>
+        getValidationResultTransportSettings =
+            GrpcCallSettings.<GetValidationResultRequest, ValidationResult>newBuilder()
+                .setMethodDescriptor(getValidationResultMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetValidationResultRequest>() {
+                      @Override
+                      public Map<String, String> extract(GetValidationResultRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.setAgentCallable =
         callableFactory.createUnaryCallable(
@@ -331,6 +358,11 @@ public class GrpcAgentsStub extends AgentsStub {
             settings.restoreAgentOperationSettings(),
             clientContext,
             this.operationsStub);
+    this.getValidationResultCallable =
+        callableFactory.createUnaryCallable(
+            getValidationResultTransportSettings,
+            settings.getValidationResultSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -395,6 +427,10 @@ public class GrpcAgentsStub extends AgentsStub {
 
   public UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
     return restoreAgentCallable;
+  }
+
+  public UnaryCallable<GetValidationResultRequest, ValidationResult> getValidationResultCallable() {
+    return getValidationResultCallable;
   }
 
   @Override

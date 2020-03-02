@@ -30,7 +30,9 @@ public interface OutputAudioConfigOrBuilder
    * Required. Audio encoding of the synthesized audio content.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.OutputAudioEncoding audio_encoding = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.OutputAudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for audioEncoding.
    */
@@ -42,7 +44,9 @@ public interface OutputAudioConfigOrBuilder
    * Required. Audio encoding of the synthesized audio content.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.OutputAudioEncoding audio_encoding = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.OutputAudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The audioEncoding.
    */
@@ -52,7 +56,7 @@ public interface OutputAudioConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The synthesis sample rate (in hertz) for this audio. If not
+   * The synthesis sample rate (in hertz) for this audio. If not
    * provided, then the synthesizer will use the default sample rate based on
    * the audio encoding. If this is different from the voice's natural sample
    * rate, then the synthesizer will honor this request by converting to the
@@ -69,7 +73,7 @@ public interface OutputAudioConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration of how speech should be synthesized.
+   * Configuration of how speech should be synthesized.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
@@ -81,7 +85,7 @@ public interface OutputAudioConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration of how speech should be synthesized.
+   * Configuration of how speech should be synthesized.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
@@ -93,7 +97,7 @@ public interface OutputAudioConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration of how speech should be synthesized.
+   * Configuration of how speech should be synthesized.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>

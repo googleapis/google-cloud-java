@@ -27,13 +27,13 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The time zone of this conversational query from the
+   * The time zone of this conversational query from the
    * [time zone database](https://www.iana.org/time-zones), e.g.,
    * America/New_York, Europe/Paris. If not provided, the time zone specified in
    * agent settings is used.
    * </pre>
    *
-   * <code>string time_zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string time_zone = 1;</code>
    *
    * @return The timeZone.
    */
@@ -42,13 +42,13 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The time zone of this conversational query from the
+   * The time zone of this conversational query from the
    * [time zone database](https://www.iana.org/time-zones), e.g.,
    * America/New_York, Europe/Paris. If not provided, the time zone specified in
    * agent settings is used.
    * </pre>
    *
-   * <code>string time_zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string time_zone = 1;</code>
    *
    * @return The bytes for timeZone.
    */
@@ -58,10 +58,10 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The geo location of this conversational query.
+   * The geo location of this conversational query.
    * </pre>
    *
-   * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.type.LatLng geo_location = 2;</code>
    *
    * @return Whether the geoLocation field is set.
    */
@@ -70,10 +70,10 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The geo location of this conversational query.
+   * The geo location of this conversational query.
    * </pre>
    *
-   * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.type.LatLng geo_location = 2;</code>
    *
    * @return The geoLocation.
    */
@@ -82,10 +82,10 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The geo location of this conversational query.
+   * The geo location of this conversational query.
    * </pre>
    *
-   * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.type.LatLng geo_location = 2;</code>
    */
   com.google.type.LatLngOrBuilder getGeoLocationOrBuilder();
 
@@ -93,52 +93,44 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Context> getContextsList();
   /**
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
    */
   com.google.cloud.dialogflow.v2.Context getContexts(int index);
   /**
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
    */
   int getContextsCount();
   /**
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
       getContextsOrBuilderList();
@@ -146,13 +138,11 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of contexts to be activated before this query is
+   * The collection of contexts to be activated before this query is
    * executed.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
    */
   com.google.cloud.dialogflow.v2.ContextOrBuilder getContextsOrBuilder(int index);
 
@@ -160,11 +150,11 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies whether to delete all contexts in the current session
+   * Specifies whether to delete all contexts in the current session
    * before the new ones are activated.
    * </pre>
    *
-   * <code>bool reset_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool reset_contexts = 4;</code>
    *
    * @return The resetContexts.
    */
@@ -174,56 +164,48 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.SessionEntityType> getSessionEntityTypesList();
   /**
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
    */
   com.google.cloud.dialogflow.v2.SessionEntityType getSessionEntityTypes(int index);
   /**
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
    */
   int getSessionEntityTypesCount();
   /**
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder>
       getSessionEntityTypesOrBuilderList();
@@ -231,14 +213,12 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional session entity types to replace or extend developer
+   * Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
    * for the session of this query.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
    */
   com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder getSessionEntityTypesOrBuilder(
       int index);
@@ -247,11 +227,11 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass custom data into the webhook
+   * This field can be used to pass custom data into the webhook
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
-   * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.protobuf.Struct payload = 6;</code>
    *
    * @return Whether the payload field is set.
    */
@@ -260,11 +240,11 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass custom data into the webhook
+   * This field can be used to pass custom data into the webhook
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
-   * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.protobuf.Struct payload = 6;</code>
    *
    * @return The payload.
    */
@@ -273,11 +253,11 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass custom data into the webhook
+   * This field can be used to pass custom data into the webhook
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
-   * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.protobuf.Struct payload = 6;</code>
    */
   com.google.protobuf.StructOrBuilder getPayloadOrBuilder();
 
@@ -285,12 +265,12 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Configures the type of sentiment analysis to perform. If not
+   * Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
    * </code>
    *
    * @return Whether the sentimentAnalysisRequestConfig field is set.
@@ -300,12 +280,12 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Configures the type of sentiment analysis to perform. If not
+   * Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
    * </code>
    *
    * @return The sentimentAnalysisRequestConfig.
@@ -315,12 +295,12 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Configures the type of sentiment analysis to perform. If not
+   * Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
    * </code>
    */
   com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder

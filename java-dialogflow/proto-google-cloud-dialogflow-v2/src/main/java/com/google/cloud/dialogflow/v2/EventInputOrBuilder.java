@@ -52,10 +52,10 @@ public interface EventInputOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of parameters associated with the event.
+   * The collection of parameters associated with the event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.protobuf.Struct parameters = 2;</code>
    *
    * @return Whether the parameters field is set.
    */
@@ -64,10 +64,10 @@ public interface EventInputOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of parameters associated with the event.
+   * The collection of parameters associated with the event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.protobuf.Struct parameters = 2;</code>
    *
    * @return The parameters.
    */
@@ -76,10 +76,10 @@ public interface EventInputOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of parameters associated with the event.
+   * The collection of parameters associated with the event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.protobuf.Struct parameters = 2;</code>
    */
   com.google.protobuf.StructOrBuilder getParametersOrBuilder();
 

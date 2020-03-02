@@ -114,12 +114,12 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Instructs the service to perform sentiment analysis on
+   * Instructs the service to perform sentiment analysis on
    * `query_text`. If not provided, sentiment analysis is not performed on
    * `query_text`.
    * </pre>
    *
-   * <code>bool analyze_query_text_sentiment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool analyze_query_text_sentiment = 1;</code>
    *
    * @return The analyzeQueryTextSentiment.
    */
@@ -453,12 +453,12 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Instructs the service to perform sentiment analysis on
+     * Instructs the service to perform sentiment analysis on
      * `query_text`. If not provided, sentiment analysis is not performed on
      * `query_text`.
      * </pre>
      *
-     * <code>bool analyze_query_text_sentiment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool analyze_query_text_sentiment = 1;</code>
      *
      * @return The analyzeQueryTextSentiment.
      */
@@ -469,12 +469,12 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Instructs the service to perform sentiment analysis on
+     * Instructs the service to perform sentiment analysis on
      * `query_text`. If not provided, sentiment analysis is not performed on
      * `query_text`.
      * </pre>
      *
-     * <code>bool analyze_query_text_sentiment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool analyze_query_text_sentiment = 1;</code>
      *
      * @param value The analyzeQueryTextSentiment to set.
      * @return This builder for chaining.
@@ -489,12 +489,12 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Instructs the service to perform sentiment analysis on
+     * Instructs the service to perform sentiment analysis on
      * `query_text`. If not provided, sentiment analysis is not performed on
      * `query_text`.
      * </pre>
      *
-     * <code>bool analyze_query_text_sentiment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool analyze_query_text_sentiment = 1;</code>
      *
      * @return This builder for chaining.
      */

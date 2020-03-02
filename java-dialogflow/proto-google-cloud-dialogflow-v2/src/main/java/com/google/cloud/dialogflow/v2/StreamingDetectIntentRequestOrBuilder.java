@@ -62,12 +62,10 @@ public interface StreamingDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The parameters of this query.
+   * The parameters of this query.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
    *
    * @return Whether the queryParams field is set.
    */
@@ -76,12 +74,10 @@ public interface StreamingDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The parameters of this query.
+   * The parameters of this query.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
    *
    * @return The queryParams.
    */
@@ -90,12 +86,10 @@ public interface StreamingDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The parameters of this query.
+   * The parameters of this query.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
    */
   com.google.cloud.dialogflow.v2.QueryParametersOrBuilder getQueryParamsOrBuilder();
 
@@ -156,7 +150,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2.InputAudioConfig.single_utterance] instead.
+   * Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2.InputAudioConfig.single_utterance] instead.
    * If `false` (default), recognition does not cease until
    * the client closes the stream. If `true`, the recognizer will detect a
    * single spoken utterance in input audio. Recognition ceases when it detects
@@ -166,8 +160,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * This setting is ignored when `query_input` is a piece of text or an event.
    * </pre>
    *
-   * <code>bool single_utterance = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>bool single_utterance = 4 [deprecated = true];</code>
    *
    * @return The singleUtterance.
    */
@@ -178,14 +171,12 @@ public interface StreamingDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Instructs the speech synthesizer how to generate the output
+   * Instructs the speech synthesizer how to generate the output
    * audio. If this field is not set and agent-level speech synthesizer is not
    * configured, no output audio is generated.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5;</code>
    *
    * @return Whether the outputAudioConfig field is set.
    */
@@ -194,14 +185,12 @@ public interface StreamingDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Instructs the speech synthesizer how to generate the output
+   * Instructs the speech synthesizer how to generate the output
    * audio. If this field is not set and agent-level speech synthesizer is not
    * configured, no output audio is generated.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5;</code>
    *
    * @return The outputAudioConfig.
    */
@@ -210,14 +199,12 @@ public interface StreamingDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Instructs the speech synthesizer how to generate the output
+   * Instructs the speech synthesizer how to generate the output
    * audio. If this field is not set and agent-level speech synthesizer is not
    * configured, no output audio is generated.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5;</code>
    */
   com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder();
 
@@ -225,12 +212,59 @@ public interface StreamingDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The input audio content to be recognized. Must be sent if
+   * Mask for [output_audio_config][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+   * request-level config should override speech synthesizer settings defined at
+   * agent-level.
+   * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+   * config in its entirety.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+   *
+   * @return Whether the outputAudioConfigMask field is set.
+   */
+  boolean hasOutputAudioConfigMask();
+  /**
+   *
+   *
+   * <pre>
+   * Mask for [output_audio_config][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+   * request-level config should override speech synthesizer settings defined at
+   * agent-level.
+   * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+   * config in its entirety.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+   *
+   * @return The outputAudioConfigMask.
+   */
+  com.google.protobuf.FieldMask getOutputAudioConfigMask();
+  /**
+   *
+   *
+   * <pre>
+   * Mask for [output_audio_config][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.output_audio_config] indicating which settings in this
+   * request-level config should override speech synthesizer settings defined at
+   * agent-level.
+   * If unspecified or empty, [output_audio_config][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.output_audio_config] replaces the agent-level
+   * config in its entirety.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getOutputAudioConfigMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The input audio content to be recognized. Must be sent if
    * `query_input` was set to a streaming input audio config. The complete audio
    * over all streaming messages must not exceed 1 minute.
    * </pre>
    *
-   * <code>bytes input_audio = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bytes input_audio = 6;</code>
    *
    * @return The inputAudio.
    */
