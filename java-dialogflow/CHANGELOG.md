@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-dialogflow/compare/v0.120.2...v1.0.0) (2020-03-02)
+
+
+### Features
+
+* add GetValidationResult to AgentClient, outputAudioConfigMask to DetectIntentResult ([#101](https://www.github.com/googleapis/java-dialogflow/issues/101)) ([fca7bfa](https://www.github.com/googleapis/java-dialogflow/commit/fca7bfa0d325b725f43898bd8b92ce4f24a695c0))
+* add outputAudioConfigMask to DetectIntentRequest, StreamingDetectIntentRequest ([#96](https://www.github.com/googleapis/java-dialogflow/issues/96)) ([ec1de1e](https://www.github.com/googleapis/java-dialogflow/commit/ec1de1e3296fb20f39513d50f5450c500685c4b5))
+* promote to GA ([#99](https://www.github.com/googleapis/java-dialogflow/issues/99)) ([fa0cbd9](https://www.github.com/googleapis/java-dialogflow/commit/fa0cbd9fa01c8f9994b3040ed8c2299ce78bb6db))
+
+
+### Dependencies
+
+* update core dependencies to v1.54.0 ([#98](https://www.github.com/googleapis/java-dialogflow/issues/98)) ([f547971](https://www.github.com/googleapis/java-dialogflow/commit/f54797100df036814096e13a177c2226d7d9fca8))
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([8deecea](https://www.github.com/googleapis/java-dialogflow/commit/8deecea5d5ca5c4f078c2b07c757d063d55456c6))
+* update dependency com.google.cloud:google-cloud-core to v1.93.0 ([#100](https://www.github.com/googleapis/java-dialogflow/issues/100)) ([a650f81](https://www.github.com/googleapis/java-dialogflow/commit/a650f81566165665054bdbc9f425f1013350508e))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([e58bdcd](https://www.github.com/googleapis/java-dialogflow/commit/e58bdcd735c7f0d97b3d76ad1c8b2c763f3fe6b8))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([e2e32e2](https://www.github.com/googleapis/java-dialogflow/commit/e2e32e21b4e49fa02642b2ba1cf45a4b91e72c4b))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([c4afe07](https://www.github.com/googleapis/java-dialogflow/commit/c4afe07302949f610c6e894d772cd8f296d8533b))
+
+
+### Documentation
+
+* **regen:** remove unnecessary example parameters ([#82](https://www.github.com/googleapis/java-dialogflow/issues/82)) ([974e961](https://www.github.com/googleapis/java-dialogflow/commit/974e961ae8c64c67570d4f6d6603dfe86e1ba080))
+* **regen:** update sample code to set total timeout, add API client header test ([3e02b2f](https://www.github.com/googleapis/java-dialogflow/commit/3e02b2f8309a7318f4f04b8845a91e92e166e3f6))
+
 ### [0.120.2](https://www.github.com/googleapis/java-dialogflow/compare/v0.120.1...v0.120.2) (2020-02-06)
 
 
