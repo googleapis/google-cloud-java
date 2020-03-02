@@ -1,5 +1,22 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/googleapis/java-trace/compare/v1.0.1...v1.0.2) (2020-03-02)
+
+
+### Dependencies
+
+* update core dependencies to v1.54.0 ([#110](https://www.github.com/googleapis/java-trace/issues/110)) ([7485b40](https://www.github.com/googleapis/java-trace/commit/7485b40476866002944eb14346ad5dba127b9941))
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([80d83bc](https://www.github.com/googleapis/java-trace/commit/80d83bc3bd38b2b4c22aac0bccedbd60ef37cc5f))
+* update dependency com.google.cloud:google-cloud-core to v1.93.0 ([#112](https://www.github.com/googleapis/java-trace/issues/112)) ([28fb855](https://www.github.com/googleapis/java-trace/commit/28fb8559620b1469a10383f543314e286314c49a))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([fe9aac2](https://www.github.com/googleapis/java-trace/commit/fe9aac214bf44252f0cb60c4a932646898f92144))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([d855598](https://www.github.com/googleapis/java-trace/commit/d8555980581840ee2e454373657ac7a5f113ea7d))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([915e871](https://www.github.com/googleapis/java-trace/commit/915e87167a306264e9a6ae1090d0b1cdbb4665e2))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([91e5ee7](https://www.github.com/googleapis/java-trace/commit/91e5ee7eeb589350dced13627d42f3d25c539297))
+
 ### [1.0.1](https://www.github.com/googleapis/java-trace/compare/v1.0.0...v1.0.1) (2020-02-04)
 
 
