@@ -23,13 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * AUTO-GENERATED DOCUMENTATION AND CLASS
- *
- * @deprecated This resource name class will be removed in the next major version.
- */
+/** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-@Deprecated
 public class KeyRingName extends KeyName {
 
   private static final PathTemplate PATH_TEMPLATE =
