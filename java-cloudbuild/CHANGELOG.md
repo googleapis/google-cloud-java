@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/googleapis/java-cloudbuild/compare/v1.0.1...v1.0.2) (2020-02-28)
+
+
+### Dependencies
+
+* update core dependencies to v1.54.0 ([#85](https://www.github.com/googleapis/java-cloudbuild/issues/85)) ([e0de8c7](https://www.github.com/googleapis/java-cloudbuild/commit/e0de8c7d8255172c1e17bca9c4e4ed91f88354de))
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.92.5 ([4ef605c](https://www.github.com/googleapis/java-cloudbuild/commit/4ef605cd3a3a9526f08ffe5ee0475599575b7440))
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.93.0 ([#86](https://www.github.com/googleapis/java-cloudbuild/issues/86)) ([92cdf90](https://www.github.com/googleapis/java-cloudbuild/commit/92cdf9051e50d028eb4f9212339e5978a74328db))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([371e768](https://www.github.com/googleapis/java-cloudbuild/commit/371e768acfadbf0adcfaced5660e19bf07c4ec8e))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([195a990](https://www.github.com/googleapis/java-cloudbuild/commit/195a990978d62b17d9fa48a45b65c45ff3b75913))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([e8e9df4](https://www.github.com/googleapis/java-cloudbuild/commit/e8e9df41f0499050d94fdc6ca7c1ab6498c0e62e))
+
 ### [1.0.1](https://www.github.com/googleapis/java-cloudbuild/compare/v1.0.0...v1.0.1) (2020-02-04)
 
 
