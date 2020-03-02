@@ -42,17 +42,17 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-asset</artifactId>
-  <version>0.118.0-beta</version>
+  <version>0.119.0-beta</version>
 </dependency>
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-asset:0.118.0-beta'
+compile 'com.google.cloud:google-cloud-asset:0.119.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-asset" % "0.118.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-asset" % "0.119.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
