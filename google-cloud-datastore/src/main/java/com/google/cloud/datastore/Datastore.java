@@ -169,6 +169,23 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   List<Key> allocateId(IncompleteKey... keys);
 
   /**
+   * Reserve one or more keys, preventing them from being automatically allocated by Datastore.
+   *
+   * <p>Example of reserving multiple ids in a single batch.
+   *
+   * <pre>{@code
+   * KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
+   * Key key1 = keyFactory.newKey(10);
+   * Key key2 = keyFactory.newKey("name");
+   * List<Key> keys = datastore.reserveIds(key1, key2);
+   *
+   * }</pre>
+   *
+   * @throws DatastoreException upon failure
+   */
+  List<Key> reserveIds(Key... keys);
+
+  /**
    * {@inheritDoc}
    *
    * <p>If an entity for {@code entity.getKey()} does not exist, {@code entity} is inserted.

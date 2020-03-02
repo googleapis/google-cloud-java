@@ -598,6 +598,15 @@ public class ITDatastoreTest {
   }
 
   @Test
+  public void testReserveIds() {
+    KeyFactory keyFactory = DATASTORE.newKeyFactory().setKind("MyKind");
+    Key key1 = keyFactory.newKey(10);
+    Key key2 = keyFactory.newKey("name");
+    List<Key> keyList = DATASTORE.reserveIds(key1, key2);
+    assertEquals(2, keyList.size());
+  }
+
+  @Test
   public void testAllocateIdArray() {
     KeyFactory keyFactory = DATASTORE.newKeyFactory().setKind(KIND1);
     IncompleteKey incompleteKey1 = keyFactory.newKey();

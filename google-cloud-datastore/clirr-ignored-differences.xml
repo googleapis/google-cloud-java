@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://mojo.codehaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+    <difference>
+        <className>com/google/cloud/datastore/Datastore</className>
+        <method>java.util.List reserveIds(com.google.cloud.datastore.Key[])</method>
+        <differenceType>7012</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/spi/v1/DatastoreRpc</className>
+        <method>com.google.datastore.v1.ReserveIdsResponse reserveIds(com.google.datastore.v1.ReserveIdsRequest)</method>
+        <differenceType>7012</differenceType>
+    </difference>
+</differences>

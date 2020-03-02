@@ -26,6 +26,8 @@ import com.google.datastore.v1.CommitRequest;
 import com.google.datastore.v1.CommitResponse;
 import com.google.datastore.v1.LookupRequest;
 import com.google.datastore.v1.LookupResponse;
+import com.google.datastore.v1.ReserveIdsRequest;
+import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackRequest;
 import com.google.datastore.v1.RollbackResponse;
 import com.google.datastore.v1.RunQueryRequest;
@@ -62,6 +64,13 @@ public interface DatastoreRpc extends ServiceRpc {
    * @throws DatastoreException upon failure
    */
   LookupResponse lookup(LookupRequest request);
+
+  /**
+   * Sends a reserveIds request.
+   *
+   * @throws DatastoreException upon failure
+   */
+  ReserveIdsResponse reserveIds(ReserveIdsRequest request);
 
   /**
    * Sends a rollback request.

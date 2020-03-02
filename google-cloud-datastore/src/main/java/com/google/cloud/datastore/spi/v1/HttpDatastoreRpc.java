@@ -30,6 +30,8 @@ import com.google.datastore.v1.CommitRequest;
 import com.google.datastore.v1.CommitResponse;
 import com.google.datastore.v1.LookupRequest;
 import com.google.datastore.v1.LookupResponse;
+import com.google.datastore.v1.ReserveIdsRequest;
+import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackRequest;
 import com.google.datastore.v1.RollbackResponse;
 import com.google.datastore.v1.RunQueryRequest;
@@ -159,6 +161,15 @@ public class HttpDatastoreRpc implements DatastoreRpc {
   public LookupResponse lookup(LookupRequest request) {
     try {
       return client.lookup(request);
+    } catch (com.google.datastore.v1.client.DatastoreException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public ReserveIdsResponse reserveIds(ReserveIdsRequest request) {
+    try {
+      return client.reserveIds(request);
     } catch (com.google.datastore.v1.client.DatastoreException ex) {
       throw translate(ex);
     }
