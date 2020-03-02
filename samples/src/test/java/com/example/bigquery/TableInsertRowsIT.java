@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,12 +24,13 @@ import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.Schema;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CreateTableIT {
+public class TableInsertRowsIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -59,15 +60,19 @@ public class CreateTableIT {
   }
 
   @Test
-  public void testCreateTable() {
-    String tableName = "MY_TABLE_NAME";
+  public void testTableInsertRows() {
+    String tableName = "InsertRowsTestTable_" + UUID.randomUUID().toString().replace('-', '_');
     Schema schema =
         Schema.of(
-            Field.of("stringField", LegacySQLTypeName.STRING),
-            Field.of("booleanField", LegacySQLTypeName.BOOLEAN));
+            Field.of("booleanField", LegacySQLTypeName.BOOLEAN),
+            Field.of("numericField", LegacySQLTypeName.NUMERIC));
+
+    // Create table in dataset for testing
     CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
 
-    assertThat(bout.toString()).contains("Table created successfully");
+    // Testing
+    TableInsertRows.tableInsertRows(BIGQUERY_DATASET_NAME, tableName);
+    assertThat(bout.toString()).contains("Rows successfully inserted into table");
 
     // Clean up
     DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
