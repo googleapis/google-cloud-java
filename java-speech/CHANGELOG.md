@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.22.4](https://www.github.com/googleapis/java-speech/compare/v1.22.3...v1.22.4) (2020-02-20)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.92.5 ([a10f997](https://www.github.com/googleapis/java-speech/commit/a10f997dc5cdbc9c7f03254e46fda57b06cdb99a))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([186be5d](https://www.github.com/googleapis/java-speech/commit/186be5d8cf027ad1c68e55ab714f61c225b41a21))
+
 ### [1.22.3](https://www.github.com/googleapis/java-speech/compare/v1.22.2...v1.22.3) (2020-02-04)
 
 
