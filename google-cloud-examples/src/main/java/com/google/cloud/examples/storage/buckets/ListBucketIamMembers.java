@@ -33,10 +33,8 @@ public class ListBucketIamMembers {
     // https://cloud.google.com/storage/docs/access-control/iam
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
 
-    int policyVersion = 3;
     Policy policy =
-        storage.getIamPolicy(
-            bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
+        storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(3));
 
     // Print binding information
     for (Binding binding : policy.getBindingsList()) {

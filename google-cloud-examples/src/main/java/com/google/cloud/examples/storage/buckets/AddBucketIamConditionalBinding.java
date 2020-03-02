@@ -23,10 +23,8 @@ public class AddBucketIamConditionalBinding {
     // https://cloud.google.com/storage/docs/access-control/iam
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
 
-    int policyVersion = 3;
     Policy originalPolicy =
-        storage.getIamPolicy(
-            bucketName, Storage.BucketSourceOption.requestedPolicyVersion(policyVersion));
+        storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(3));
 
     String role = "roles/storage.objectViewer";
     String member = "group:example@google.com";
@@ -54,7 +52,7 @@ public class AddBucketIamConditionalBinding {
 
     // Update policy with new conditional binding
     Policy.Builder updatedPolicyBuilder = originalPolicy.toBuilder();
-    updatedPolicyBuilder.setBindings(bindings).setVersion(policyVersion);
+    updatedPolicyBuilder.setBindings(bindings).setVersion(3);
     Policy updatedPolicy = storage.setIamPolicy(bucketName, updatedPolicyBuilder.build());
 
     System.out.printf(
