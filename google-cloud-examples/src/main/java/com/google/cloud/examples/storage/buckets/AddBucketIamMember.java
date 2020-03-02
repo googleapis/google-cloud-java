@@ -16,12 +16,13 @@
 package com.google.cloud.examples.storage.buckets;
 
 // [START storage_add_bucket_iam_member]
-import com.google.cloud.Identity;
+import com.google.cloud.Binding;
 import com.google.cloud.Policy;
-import com.google.cloud.Role;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import com.google.cloud.storage.StorageRoles;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class AddBucketIamMember {
   /** Example of adding a member to the Bucket-level IAM */
@@ -32,24 +33,30 @@ public class AddBucketIamMember {
     // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
 
+    // For more information please read:
+    // https://cloud.google.com/storage/docs/access-control/iam
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-    Policy originalPolicy = storage.getIamPolicy(bucketName);
 
-    // See the StorageRoles documentation for other valid roles:
-    // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/storage/StorageRoles.html
-    Role role = StorageRoles.objectViewer();
+    Policy originalPolicy =
+        storage.getIamPolicy(bucketName, Storage.BucketSourceOption.requestedPolicyVersion(3));
 
-    // See the Identity documentation for other identities:
-    // https://googleapis.dev/java/google-cloud-core/latest/com/google/cloud/Identity.html
-    Identity identity = Identity.group("example@google.com");
+    String role = "roles/storage.objectViewer";
+    String member = "group:example@google.com";
 
-    Policy updatedPolicy =
-        storage.setIamPolicy(
-            bucketName, originalPolicy.toBuilder().addIdentity(role, identity).build());
+    // getBindingsList() returns an ImmutableList and copying over to an ArrayList so it's mutable.
+    List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
 
-    if (updatedPolicy.getBindings().get(role).contains(identity)) {
-      System.out.printf("Added %s with role %s to %s\n", identity, role, bucketName);
-    }
+    // Create a new binding using role and member
+    Binding.Builder newMemberBindingBuilder = Binding.newBuilder();
+    newMemberBindingBuilder.setRole(role).setMembers(Arrays.asList(member));
+    bindings.add(newMemberBindingBuilder.build());
+
+    // Update policy to add member
+    Policy.Builder updatedPolicyBuilder = originalPolicy.toBuilder();
+    updatedPolicyBuilder.setBindings(bindings).setVersion(3);
+    Policy updatedPolicy = storage.setIamPolicy(bucketName, updatedPolicyBuilder.build());
+
+    System.out.printf("Added %s with role %s to %s\n", member, role, bucketName);
   }
 }
 // [END storage_add_bucket_iam_member]

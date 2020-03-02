@@ -21,6 +21,7 @@ import static org.junit.Assert.assertFalse;
 
 import com.google.cloud.Identity;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.examples.storage.buckets.AddBucketIamConditionalBinding;
 import com.google.cloud.examples.storage.buckets.AddBucketIamMember;
 import com.google.cloud.examples.storage.buckets.AddBucketLabel;
 import com.google.cloud.examples.storage.buckets.ChangeDefaultStorageClass;
@@ -37,6 +38,7 @@ import com.google.cloud.examples.storage.buckets.ListBucketIamMembers;
 import com.google.cloud.examples.storage.buckets.ListBuckets;
 import com.google.cloud.examples.storage.buckets.MakeBucketPublic;
 import com.google.cloud.examples.storage.buckets.RemoveBucketDefaultKMSKey;
+import com.google.cloud.examples.storage.buckets.RemoveBucketIamConditionalBinding;
 import com.google.cloud.examples.storage.buckets.RemoveBucketIamMember;
 import com.google.cloud.examples.storage.buckets.RemoveBucketLabel;
 import com.google.cloud.examples.storage.buckets.SetBucketWebsiteInfo;
@@ -271,9 +273,16 @@ public class ITBucketSnippets {
 
   @Test
   public void testAddListRemoveBucketIamMembers() {
-    int originalSize = storage.getIamPolicy(BUCKET).getBindings().size();
+    storage.update(
+        BucketInfo.newBuilder(BUCKET)
+            .setIamConfiguration(
+                BucketInfo.IamConfiguration.newBuilder()
+                    .setIsUniformBucketLevelAccessEnabled(true)
+                    .build())
+            .build());
+    int originalSize = storage.getIamPolicy(BUCKET).getBindingsList().size();
     AddBucketIamMember.addBucketIamMember(PROJECT_ID, BUCKET);
-    assertEquals(originalSize + 1, storage.getIamPolicy(BUCKET).getBindings().size());
+    assertEquals(originalSize + 1, storage.getIamPolicy(BUCKET).getBindingsList().size());
     PrintStream standardOut = System.out;
     final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
     System.setOut(new PrintStream(snippetOutputCapture));
@@ -282,7 +291,18 @@ public class ITBucketSnippets {
     System.setOut(standardOut);
     assertTrue(snippetOutput.contains("example@google.com"));
     RemoveBucketIamMember.removeBucketIamMember(PROJECT_ID, BUCKET);
-    assertEquals(originalSize, storage.getIamPolicy(BUCKET).getBindings().size());
+    assertEquals(originalSize, storage.getIamPolicy(BUCKET).getBindingsList().size());
+    AddBucketIamConditionalBinding.addBucketIamConditionalBinding(PROJECT_ID, BUCKET);
+    assertEquals(originalSize + 1, storage.getIamPolicy(BUCKET).getBindingsList().size());
+    RemoveBucketIamConditionalBinding.removeBucketIamConditionalBinding(PROJECT_ID, BUCKET);
+    assertEquals(originalSize, storage.getIamPolicy(BUCKET).getBindingsList().size());
+    storage.update(
+        BucketInfo.newBuilder(BUCKET)
+            .setIamConfiguration(
+                BucketInfo.IamConfiguration.newBuilder()
+                    .setIsUniformBucketLevelAccessEnabled(false)
+                    .build())
+            .build());
   }
 
   @Test
