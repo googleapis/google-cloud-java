@@ -51,7 +51,7 @@ public class RemoveBucketIamMember {
       Binding binding = bindings.get(index);
       boolean foundRole = binding.getRole().equals(role);
       boolean foundMember = binding.getMembers().contains(member);
-      boolean bindingIsNotConditional = (binding.getCondition() == null);
+      boolean bindingIsNotConditional = binding.getCondition() == null;
 
       if (foundRole && foundMember && bindingIsNotConditional) {
         bindings.set(index, binding.toBuilder().removeMembers(member).build());
