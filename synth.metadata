@@ -1,20 +1,20 @@
 {
-  "updateTime": "2020-02-26T22:53:14.971442Z",
+  "updateTime": "2020-02-29T09:42:45.087168Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.45.1",
-        "dockerImage": "googleapis/artman@sha256:36956ca6a4dc70a59de5d5d0fd35061b050bb56884516f0898f46d8220f25738"
+        "version": "0.47.0",
+        "dockerImage": "googleapis/artman@sha256:b3e50d6b8de03920b9f065bbc3d210e2ca93a043446f1fa16cdf567393c09678"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "f077632ba7fee588922d9e8717ee272039be126d",
-        "internalRef": "297405063",
-        "log": "f077632ba7fee588922d9e8717ee272039be126d\nfirestore: add update_transform\n\nPiperOrigin-RevId: 297405063\n\n"
+        "sha": "83c6f84035ee0f80eaa44d8b688a010461cc4080",
+        "internalRef": "297918498",
+        "log": "83c6f84035ee0f80eaa44d8b688a010461cc4080\nUpdate google/api/auth.proto to make AuthProvider to have JwtLocation\n\nPiperOrigin-RevId: 297918498\n\ne9e90a787703ec5d388902e2cb796aaed3a385b4\nDialogflow weekly v2/v2beta1 library update:\n  - adding get validation result\n  - adding field mask override control for output audio config\nImportant updates are also posted at:\nhttps://cloud.google.com/dialogflow/docs/release-notes\n\nPiperOrigin-RevId: 297671458\n\n1a2b05cc3541a5f7714529c665aecc3ea042c646\nAdding .yaml and .json config files.\n\nPiperOrigin-RevId: 297570622\n\ndfe1cf7be44dee31d78f78e485d8c95430981d6e\nPublish `QueryOptions` proto.\n\nIntroduced a `query_options` input in `ExecuteSqlRequest`.\n\nPiperOrigin-RevId: 297497710\n\ndafc905f71e5d46f500b41ed715aad585be062c3\npubsub: revert pull init_rpc_timeout & max_rpc_timeout back to 25 seconds and reset multiplier to 1.0\n\nPiperOrigin-RevId: 297486523\n\n"
       }
     },
     {
