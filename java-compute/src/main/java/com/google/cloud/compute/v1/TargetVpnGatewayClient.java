@@ -514,8 +514,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    * @param region Name of the region for this request.
    * @param targetVpnGatewayResource Represents a Target VPN Gateway resource.
    *     <p>The target VPN gateway resource represents a Classic Cloud VPN gateway. For more
-   *     information, read the the Cloud VPN Overview. (== resource_for beta.targetVpnGateways ==)
-   *     (== resource_for v1.targetVpnGateways ==)
+   *     information, read the the Cloud VPN Overview. (== resource_for
+   *     {$api_version}.targetVpnGateways ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -547,8 +547,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    * @param region Name of the region for this request.
    * @param targetVpnGatewayResource Represents a Target VPN Gateway resource.
    *     <p>The target VPN gateway resource represents a Classic Cloud VPN gateway. For more
-   *     information, read the the Cloud VPN Overview. (== resource_for beta.targetVpnGateways ==)
-   *     (== resource_for v1.targetVpnGateways ==)
+   *     information, read the the Cloud VPN Overview. (== resource_for
+   *     {$api_version}.targetVpnGateways ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

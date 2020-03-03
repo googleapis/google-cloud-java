@@ -145,7 +145,7 @@ public final class InsertRegionCommitmentHttpRequest implements ApiMessage {
    * <p>Creating a commitment resource means that you are purchasing a committed use contract with
    * an explicit start and end time. You can create commitments based on vCPUs and memory usage and
    * receive discounted rates. For full details, read Signing Up for Committed Use Discounts. (==
-   * resource_for beta.regionCommitments ==) (== resource_for v1.regionCommitments ==)
+   * resource_for {$api_version}.regionCommitments ==)
    */
   public Commitment getCommitmentResource() {
     return commitmentResource;
@@ -316,7 +316,7 @@ public final class InsertRegionCommitmentHttpRequest implements ApiMessage {
      * <p>Creating a commitment resource means that you are purchasing a committed use contract with
      * an explicit start and end time. You can create commitments based on vCPUs and memory usage
      * and receive discounted rates. For full details, read Signing Up for Committed Use Discounts.
-     * (== resource_for beta.regionCommitments ==) (== resource_for v1.regionCommitments ==)
+     * (== resource_for {$api_version}.regionCommitments ==)
      */
     public Commitment getCommitmentResource() {
       return commitmentResource;
@@ -328,7 +328,7 @@ public final class InsertRegionCommitmentHttpRequest implements ApiMessage {
      * <p>Creating a commitment resource means that you are purchasing a committed use contract with
      * an explicit start and end time. You can create commitments based on vCPUs and memory usage
      * and receive discounted rates. For full details, read Signing Up for Committed Use Discounts.
-     * (== resource_for beta.regionCommitments ==) (== resource_for v1.regionCommitments ==)
+     * (== resource_for {$api_version}.regionCommitments ==)
      */
     public Builder setCommitmentResource(Commitment commitmentResource) {
       this.commitmentResource = commitmentResource;

@@ -502,7 +502,7 @@ public class VpnTunnelClient implements BackgroundResource {
    * @param region Name of the region for this request.
    * @param vpnTunnelResource Represents a Cloud VPN Tunnel resource.
    *     <p>For more information about VPN, read the the Cloud VPN Overview. (== resource_for
-   *     beta.vpnTunnels ==) (== resource_for v1.vpnTunnels ==)
+   *     {$api_version}.vpnTunnels ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -533,7 +533,7 @@ public class VpnTunnelClient implements BackgroundResource {
    * @param region Name of the region for this request.
    * @param vpnTunnelResource Represents a Cloud VPN Tunnel resource.
    *     <p>For more information about VPN, read the the Cloud VPN Overview. (== resource_for
-   *     beta.vpnTunnels ==) (== resource_for v1.vpnTunnels ==)
+   *     {$api_version}.vpnTunnels ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

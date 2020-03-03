@@ -464,7 +464,7 @@ public class InterconnectClient implements BackgroundResource {
    * @param interconnectResource Represents an Interconnect resource.
    *     <p>An Interconnect resource is a dedicated connection between the GCP network and your
    *     on-premises network. For more information, read the Dedicated Interconnect Overview. (==
-   *     resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
+   *     resource_for {$api_version}.interconnects ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -496,7 +496,7 @@ public class InterconnectClient implements BackgroundResource {
    * @param interconnectResource Represents an Interconnect resource.
    *     <p>An Interconnect resource is a dedicated connection between the GCP network and your
    *     on-premises network. For more information, read the Dedicated Interconnect Overview. (==
-   *     resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
+   *     resource_for {$api_version}.interconnects ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -719,7 +719,7 @@ public class InterconnectClient implements BackgroundResource {
    * @param interconnectResource Represents an Interconnect resource.
    *     <p>An Interconnect resource is a dedicated connection between the GCP network and your
    *     on-premises network. For more information, read the Dedicated Interconnect Overview. (==
-   *     resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
+   *     resource_for {$api_version}.interconnects ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -760,7 +760,7 @@ public class InterconnectClient implements BackgroundResource {
    * @param interconnectResource Represents an Interconnect resource.
    *     <p>An Interconnect resource is a dedicated connection between the GCP network and your
    *     on-premises network. For more information, read the Dedicated Interconnect Overview. (==
-   *     resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
+   *     resource_for {$api_version}.interconnects ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

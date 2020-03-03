@@ -92,6 +92,12 @@ public class GlobalOperationSettings extends ClientSettings<GlobalOperationSetti
     return ((GlobalOperationStubSettings) getStubSettings()).listGlobalOperationsSettings();
   }
 
+  /** Returns the object with the settings used for calls to waitGlobalOperation. */
+  public UnaryCallSettings<WaitGlobalOperationHttpRequest, Operation>
+      waitGlobalOperationSettings() {
+    return ((GlobalOperationStubSettings) getStubSettings()).waitGlobalOperationSettings();
+  }
+
   public static final GlobalOperationSettings create(GlobalOperationStubSettings stub)
       throws IOException {
     return new GlobalOperationSettings.Builder(stub.toBuilder()).build();
@@ -220,6 +226,12 @@ public class GlobalOperationSettings extends ClientSettings<GlobalOperationSetti
             ListGlobalOperationsHttpRequest, OperationList, ListGlobalOperationsPagedResponse>
         listGlobalOperationsSettings() {
       return getStubSettingsBuilder().listGlobalOperationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to waitGlobalOperation. */
+    public UnaryCallSettings.Builder<WaitGlobalOperationHttpRequest, Operation>
+        waitGlobalOperationSettings() {
+      return getStubSettingsBuilder().waitGlobalOperationSettings();
     }
 
     @Override

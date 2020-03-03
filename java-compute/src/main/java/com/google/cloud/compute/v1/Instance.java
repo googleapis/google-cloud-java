@@ -30,8 +30,7 @@ import javax.annotation.Nullable;
  * Represents an Instance resource.
  *
  * <p>An instance is a virtual machine that is hosted on Google Cloud Platform. For more
- * information, read Virtual Machine Instances. (== resource_for beta.instances ==) (== resource_for
- * v1.instances ==)
+ * information, read Virtual Machine Instances. (== resource_for {$api_version}.instances ==)
  */
 public final class Instance implements ApiMessage {
   private final Boolean canIpForward;

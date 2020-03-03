@@ -381,12 +381,19 @@ public class RegionUrlMapClient implements BackgroundResource {
    *     idempotency.
    * @param region Name of the region scoping this request.
    * @param urlMapResource Represents a URL Map resource.
-   *     <p>A URL map resource is a component of certain types of load balancers. This resource
-   *     defines mappings from host names and URL paths to either a backend service or a backend
-   *     bucket.
-   *     <p>To use this resource, the backend service must have a loadBalancingScheme of either
-   *     EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
-   *     Concepts.
+   *     <p>Google Compute Engine has two URL Map resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
+   *     Director.
+   *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
+   *     regionUrlMaps are used by internal HTTP(S) load balancers.
+   *     <p>This resource defines mappings from host names and URL paths to either a backend service
+   *     or a backend bucket.
+   *     <p>To use the global urlMaps resource, the backend service must have a loadBalancingScheme
+   *     of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend
+   *     service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL
+   *     Map Concepts.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -420,12 +427,19 @@ public class RegionUrlMapClient implements BackgroundResource {
    *     idempotency.
    * @param region Name of the region scoping this request.
    * @param urlMapResource Represents a URL Map resource.
-   *     <p>A URL map resource is a component of certain types of load balancers. This resource
-   *     defines mappings from host names and URL paths to either a backend service or a backend
-   *     bucket.
-   *     <p>To use this resource, the backend service must have a loadBalancingScheme of either
-   *     EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
-   *     Concepts.
+   *     <p>Google Compute Engine has two URL Map resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
+   *     Director.
+   *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
+   *     regionUrlMaps are used by internal HTTP(S) load balancers.
+   *     <p>This resource defines mappings from host names and URL paths to either a backend service
+   *     or a backend bucket.
+   *     <p>To use the global urlMaps resource, the backend service must have a loadBalancingScheme
+   *     of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend
+   *     service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL
+   *     Map Concepts.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -659,12 +673,19 @@ public class RegionUrlMapClient implements BackgroundResource {
    * @param requestId begin_interface: MixerMutationRequestBuilder Request ID to support
    *     idempotency.
    * @param urlMapResource Represents a URL Map resource.
-   *     <p>A URL map resource is a component of certain types of load balancers. This resource
-   *     defines mappings from host names and URL paths to either a backend service or a backend
-   *     bucket.
-   *     <p>To use this resource, the backend service must have a loadBalancingScheme of either
-   *     EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
-   *     Concepts.
+   *     <p>Google Compute Engine has two URL Map resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
+   *     Director.
+   *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
+   *     regionUrlMaps are used by internal HTTP(S) load balancers.
+   *     <p>This resource defines mappings from host names and URL paths to either a backend service
+   *     or a backend bucket.
+   *     <p>To use the global urlMaps resource, the backend service must have a loadBalancingScheme
+   *     of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend
+   *     service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL
+   *     Map Concepts.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -708,12 +729,19 @@ public class RegionUrlMapClient implements BackgroundResource {
    * @param requestId begin_interface: MixerMutationRequestBuilder Request ID to support
    *     idempotency.
    * @param urlMapResource Represents a URL Map resource.
-   *     <p>A URL map resource is a component of certain types of load balancers. This resource
-   *     defines mappings from host names and URL paths to either a backend service or a backend
-   *     bucket.
-   *     <p>To use this resource, the backend service must have a loadBalancingScheme of either
-   *     EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
-   *     Concepts.
+   *     <p>Google Compute Engine has two URL Map resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
+   *     Director.
+   *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
+   *     regionUrlMaps are used by internal HTTP(S) load balancers.
+   *     <p>This resource defines mappings from host names and URL paths to either a backend service
+   *     or a backend bucket.
+   *     <p>To use the global urlMaps resource, the backend service must have a loadBalancingScheme
+   *     of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend
+   *     service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL
+   *     Map Concepts.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -814,12 +842,19 @@ public class RegionUrlMapClient implements BackgroundResource {
    * @param requestId begin_interface: MixerMutationRequestBuilder Request ID to support
    *     idempotency.
    * @param urlMapResource Represents a URL Map resource.
-   *     <p>A URL map resource is a component of certain types of load balancers. This resource
-   *     defines mappings from host names and URL paths to either a backend service or a backend
-   *     bucket.
-   *     <p>To use this resource, the backend service must have a loadBalancingScheme of either
-   *     EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
-   *     Concepts.
+   *     <p>Google Compute Engine has two URL Map resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
+   *     Director.
+   *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
+   *     regionUrlMaps are used by internal HTTP(S) load balancers.
+   *     <p>This resource defines mappings from host names and URL paths to either a backend service
+   *     or a backend bucket.
+   *     <p>To use the global urlMaps resource, the backend service must have a loadBalancingScheme
+   *     of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend
+   *     service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL
+   *     Map Concepts.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -862,12 +897,19 @@ public class RegionUrlMapClient implements BackgroundResource {
    * @param requestId begin_interface: MixerMutationRequestBuilder Request ID to support
    *     idempotency.
    * @param urlMapResource Represents a URL Map resource.
-   *     <p>A URL map resource is a component of certain types of load balancers. This resource
-   *     defines mappings from host names and URL paths to either a backend service or a backend
-   *     bucket.
-   *     <p>To use this resource, the backend service must have a loadBalancingScheme of either
-   *     EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
-   *     Concepts.
+   *     <p>Google Compute Engine has two URL Map resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
+   *     Director.
+   *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
+   *     regionUrlMaps are used by internal HTTP(S) load balancers.
+   *     <p>This resource defines mappings from host names and URL paths to either a backend service
+   *     or a backend bucket.
+   *     <p>To use the global urlMaps resource, the backend service must have a loadBalancingScheme
+   *     of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend
+   *     service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL
+   *     Map Concepts.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

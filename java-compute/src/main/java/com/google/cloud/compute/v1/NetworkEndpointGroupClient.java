@@ -774,8 +774,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    *     comply with RFC1035.
    * @param networkEndpointGroupResource Represents a collection of network endpoints.
    *     <p>For more information read Setting up network endpoint groups in load balancing. (==
-   *     resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==)
-   *     Next ID: 21
+   *     resource_for {$api_version}.networkEndpointGroups ==) Next ID: 21
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -808,8 +807,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    *     comply with RFC1035.
    * @param networkEndpointGroupResource Represents a collection of network endpoints.
    *     <p>For more information read Setting up network endpoint groups in load balancing. (==
-   *     resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==)
-   *     Next ID: 21
+   *     resource_for {$api_version}.networkEndpointGroups ==) Next ID: 21
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

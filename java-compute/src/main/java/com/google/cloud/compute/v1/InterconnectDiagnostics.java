@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Diagnostics information about interconnect, contains detailed and current technical information
- * about Google?s side of the connection.
+ * about Google's side of the connection.
  */
 public final class InterconnectDiagnostics implements ApiMessage {
   private final List<InterconnectDiagnosticsARPEntry> arpCaches;

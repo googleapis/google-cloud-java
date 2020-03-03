@@ -510,25 +510,29 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
+   *   Boolean validateOnly = false;
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
-   *   Operation response = interconnectAttachmentClient.insertInterconnectAttachment(region, interconnectAttachmentResource);
+   *   Operation response = interconnectAttachmentClient.insertInterconnectAttachment(validateOnly, region, interconnectAttachmentResource);
    * }
    * </code></pre>
    *
+   * @param validateOnly If true, the request will not be committed.
    * @param region Name of the region for this request.
    * @param interconnectAttachmentResource Represents an Interconnect Attachment (VLAN) resource.
    *     <p>You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud
    *     networks to your on-premises networks through an Interconnect. For more information, read
-   *     Creating VLAN Attachments. (== resource_for beta.interconnectAttachments ==) (==
-   *     resource_for v1.interconnectAttachments ==)
+   *     Creating VLAN Attachments. (== resource_for {$api_version}.interconnectAttachments ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation insertInterconnectAttachment(
-      ProjectRegionName region, InterconnectAttachment interconnectAttachmentResource) {
+      Boolean validateOnly,
+      ProjectRegionName region,
+      InterconnectAttachment interconnectAttachmentResource) {
     InsertInterconnectAttachmentHttpRequest request =
         InsertInterconnectAttachmentHttpRequest.newBuilder()
+            .setValidateOnly(validateOnly)
             .setRegion(region == null ? null : region.toString())
             .setInterconnectAttachmentResource(interconnectAttachmentResource)
             .build();
@@ -544,25 +548,27 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
+   *   Boolean validateOnly = false;
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
-   *   Operation response = interconnectAttachmentClient.insertInterconnectAttachment(region.toString(), interconnectAttachmentResource);
+   *   Operation response = interconnectAttachmentClient.insertInterconnectAttachment(validateOnly, region.toString(), interconnectAttachmentResource);
    * }
    * </code></pre>
    *
+   * @param validateOnly If true, the request will not be committed.
    * @param region Name of the region for this request.
    * @param interconnectAttachmentResource Represents an Interconnect Attachment (VLAN) resource.
    *     <p>You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud
    *     networks to your on-premises networks through an Interconnect. For more information, read
-   *     Creating VLAN Attachments. (== resource_for beta.interconnectAttachments ==) (==
-   *     resource_for v1.interconnectAttachments ==)
+   *     Creating VLAN Attachments. (== resource_for {$api_version}.interconnectAttachments ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation insertInterconnectAttachment(
-      String region, InterconnectAttachment interconnectAttachmentResource) {
+      Boolean validateOnly, String region, InterconnectAttachment interconnectAttachmentResource) {
     InsertInterconnectAttachmentHttpRequest request =
         InsertInterconnectAttachmentHttpRequest.newBuilder()
+            .setValidateOnly(validateOnly)
             .setRegion(region)
             .setInterconnectAttachmentResource(interconnectAttachmentResource)
             .build();
@@ -578,9 +584,11 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
+   *   Boolean validateOnly = false;
    *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   InsertInterconnectAttachmentHttpRequest request = InsertInterconnectAttachmentHttpRequest.newBuilder()
+   *     .setValidateOnly(validateOnly)
    *     .setRegion(formattedRegion)
    *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
    *     .build();
@@ -606,9 +614,11 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
+   *   Boolean validateOnly = false;
    *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   InsertInterconnectAttachmentHttpRequest request = InsertInterconnectAttachmentHttpRequest.newBuilder()
+   *     .setValidateOnly(validateOnly)
    *     .setRegion(formattedRegion)
    *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
    *     .build();
@@ -784,8 +794,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * @param interconnectAttachmentResource Represents an Interconnect Attachment (VLAN) resource.
    *     <p>You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud
    *     networks to your on-premises networks through an Interconnect. For more information, read
-   *     Creating VLAN Attachments. (== resource_for beta.interconnectAttachments ==) (==
-   *     resource_for v1.interconnectAttachments ==)
+   *     Creating VLAN Attachments. (== resource_for {$api_version}.interconnectAttachments ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -827,8 +836,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * @param interconnectAttachmentResource Represents an Interconnect Attachment (VLAN) resource.
    *     <p>You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud
    *     networks to your on-premises networks through an Interconnect. For more information, read
-   *     Creating VLAN Attachments. (== resource_for beta.interconnectAttachments ==) (==
-   *     resource_for v1.interconnectAttachments ==)
+   *     Creating VLAN Attachments. (== resource_for {$api_version}.interconnectAttachments ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

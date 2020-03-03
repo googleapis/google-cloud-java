@@ -153,8 +153,7 @@ public final class InsertNetworkHttpRequest implements ApiMessage {
    * Represents a VPC Network resource.
    *
    * <p>Networks connect resources to each other and to the internet. For more information, read
-   * Virtual Private Cloud (VPC) Network. (== resource_for v1.networks ==) (== resource_for
-   * beta.networks ==)
+   * Virtual Private Cloud (VPC) Network. (== resource_for {$api_version}.networks ==)
    */
   public Network getNetworkResource() {
     return networkResource;
@@ -335,8 +334,7 @@ public final class InsertNetworkHttpRequest implements ApiMessage {
      * Represents a VPC Network resource.
      *
      * <p>Networks connect resources to each other and to the internet. For more information, read
-     * Virtual Private Cloud (VPC) Network. (== resource_for v1.networks ==) (== resource_for
-     * beta.networks ==)
+     * Virtual Private Cloud (VPC) Network. (== resource_for {$api_version}.networks ==)
      */
     public Network getNetworkResource() {
       return networkResource;
@@ -346,8 +344,7 @@ public final class InsertNetworkHttpRequest implements ApiMessage {
      * Represents a VPC Network resource.
      *
      * <p>Networks connect resources to each other and to the internet. For more information, read
-     * Virtual Private Cloud (VPC) Network. (== resource_for v1.networks ==) (== resource_for
-     * beta.networks ==)
+     * Virtual Private Cloud (VPC) Network. (== resource_for {$api_version}.networks ==)
      */
     public Builder setNetworkResource(Network networkResource) {
       this.networkResource = networkResource;

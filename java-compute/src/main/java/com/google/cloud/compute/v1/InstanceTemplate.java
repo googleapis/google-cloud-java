@@ -28,8 +28,7 @@ import javax.annotation.Nullable;
  * Represents an Instance Template resource.
  *
  * <p>You can use instance templates to create VM instances and managed instance groups. For more
- * information, read Instance Templates. (== resource_for beta.instanceTemplates ==) (==
- * resource_for v1.instanceTemplates ==)
+ * information, read Instance Templates. (== resource_for {$api_version}.instanceTemplates ==)
  */
 public final class InstanceTemplate implements ApiMessage {
   private final String creationTimestamp;

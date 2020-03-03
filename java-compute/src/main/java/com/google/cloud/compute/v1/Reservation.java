@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Represents a reservation resource. A reservation ensures that capacity is held in a specific zone
  * even if the reserved VMs are not running. For more information, read Reserving zonal resources.
- * (== resource_for beta.reservations ==) (== resource_for v1.reservations ==)
+ * (== resource_for {$api_version}.reservations ==)
  */
 public final class Reservation implements ApiMessage {
   private final String commitment;

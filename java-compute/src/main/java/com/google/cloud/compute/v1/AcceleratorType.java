@@ -29,8 +29,7 @@ import javax.annotation.Nullable;
  *
  * <p>Google Cloud Platform provides graphics processing units (accelerators) that you can add to VM
  * instances to improve or accelerate performance when working with intensive workloads. For more
- * information, read GPUs on Compute Engine. (== resource_for beta.acceleratorTypes ==) (==
- * resource_for v1.acceleratorTypes ==)
+ * information, read GPUs on Compute Engine. (== resource_for {$api_version}.acceleratorTypes ==)
  */
 public final class AcceleratorType implements ApiMessage {
   private final String creationTimestamp;

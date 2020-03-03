@@ -37,6 +37,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
 import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.ProjectZoneOperationName;
+import com.google.cloud.compute.v1.WaitZoneOperationHttpRequest;
 import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -107,6 +108,26 @@ public class HttpJsonZoneOperationStub extends ZoneOperationStub {
                       .build())
               .build();
 
+  @InternalApi
+  public static final ApiMethodDescriptor<WaitZoneOperationHttpRequest, Operation>
+      waitZoneOperationMethodDescriptor =
+          ApiMethodDescriptor.<WaitZoneOperationHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.zoneOperations.wait")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<WaitZoneOperationHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/zones/{zone}/operations/{operation}/wait"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneOperationName.newFactory())
+                      .setResourceNameField("operation")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<DeleteZoneOperationHttpRequest, Void> deleteZoneOperationCallable;
@@ -115,6 +136,7 @@ public class HttpJsonZoneOperationStub extends ZoneOperationStub {
       listZoneOperationsCallable;
   private final UnaryCallable<ListZoneOperationsHttpRequest, ListZoneOperationsPagedResponse>
       listZoneOperationsPagedCallable;
+  private final UnaryCallable<WaitZoneOperationHttpRequest, Operation> waitZoneOperationCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
 
@@ -171,6 +193,11 @@ public class HttpJsonZoneOperationStub extends ZoneOperationStub {
             HttpJsonCallSettings.<ListZoneOperationsHttpRequest, OperationList>newBuilder()
                 .setMethodDescriptor(listZoneOperationsMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<WaitZoneOperationHttpRequest, Operation>
+        waitZoneOperationTransportSettings =
+            HttpJsonCallSettings.<WaitZoneOperationHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(waitZoneOperationMethodDescriptor)
+                .build();
 
     this.deleteZoneOperationCallable =
         callableFactory.createUnaryCallable(
@@ -189,6 +216,11 @@ public class HttpJsonZoneOperationStub extends ZoneOperationStub {
         callableFactory.createPagedCallable(
             listZoneOperationsTransportSettings,
             settings.listZoneOperationsSettings(),
+            clientContext);
+    this.waitZoneOperationCallable =
+        callableFactory.createUnaryCallable(
+            waitZoneOperationTransportSettings,
+            settings.waitZoneOperationSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -213,6 +245,11 @@ public class HttpJsonZoneOperationStub extends ZoneOperationStub {
   @BetaApi
   public UnaryCallable<ListZoneOperationsHttpRequest, OperationList> listZoneOperationsCallable() {
     return listZoneOperationsCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<WaitZoneOperationHttpRequest, Operation> waitZoneOperationCallable() {
+    return waitZoneOperationCallable;
   }
 
   @Override

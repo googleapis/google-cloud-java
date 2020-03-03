@@ -77,7 +77,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties implem
     return null;
   }
 
-  /** Indication to perform a ?guest aware? snapshot. */
+  /** Indication to perform a 'guest aware' snapshot. */
   public Boolean getGuestFlush() {
     return guestFlush;
   }
@@ -146,12 +146,12 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties implem
       this.storageLocations = source.storageLocations;
     }
 
-    /** Indication to perform a ?guest aware? snapshot. */
+    /** Indication to perform a 'guest aware' snapshot. */
     public Boolean getGuestFlush() {
       return guestFlush;
     }
 
-    /** Indication to perform a ?guest aware? snapshot. */
+    /** Indication to perform a 'guest aware' snapshot. */
     public Builder setGuestFlush(Boolean guestFlush) {
       this.guestFlush = guestFlush;
       return this;

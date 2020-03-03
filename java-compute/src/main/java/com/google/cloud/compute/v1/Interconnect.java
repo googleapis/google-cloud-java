@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  *
  * <p>An Interconnect resource is a dedicated connection between the GCP network and your
  * on-premises network. For more information, read the Dedicated Interconnect Overview. (==
- * resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
+ * resource_for {$api_version}.interconnects ==)
  */
 public final class Interconnect implements ApiMessage {
   private final Boolean adminEnabled;

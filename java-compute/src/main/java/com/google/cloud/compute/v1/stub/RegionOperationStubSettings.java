@@ -44,6 +44,7 @@ import com.google.cloud.compute.v1.GetRegionOperationHttpRequest;
 import com.google.cloud.compute.v1.ListRegionOperationsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
+import com.google.cloud.compute.v1.WaitRegionOperationHttpRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -102,6 +103,8 @@ public class RegionOperationStubSettings extends StubSettings<RegionOperationStu
   private final PagedCallSettings<
           ListRegionOperationsHttpRequest, OperationList, ListRegionOperationsPagedResponse>
       listRegionOperationsSettings;
+  private final UnaryCallSettings<WaitRegionOperationHttpRequest, Operation>
+      waitRegionOperationSettings;
 
   /** Returns the object with the settings used for calls to deleteRegionOperation. */
   public UnaryCallSettings<DeleteRegionOperationHttpRequest, Void> deleteRegionOperationSettings() {
@@ -118,6 +121,12 @@ public class RegionOperationStubSettings extends StubSettings<RegionOperationStu
           ListRegionOperationsHttpRequest, OperationList, ListRegionOperationsPagedResponse>
       listRegionOperationsSettings() {
     return listRegionOperationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to waitRegionOperation. */
+  public UnaryCallSettings<WaitRegionOperationHttpRequest, Operation>
+      waitRegionOperationSettings() {
+    return waitRegionOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -198,6 +207,7 @@ public class RegionOperationStubSettings extends StubSettings<RegionOperationStu
     deleteRegionOperationSettings = settingsBuilder.deleteRegionOperationSettings().build();
     getRegionOperationSettings = settingsBuilder.getRegionOperationSettings().build();
     listRegionOperationsSettings = settingsBuilder.listRegionOperationsSettings().build();
+    waitRegionOperationSettings = settingsBuilder.waitRegionOperationSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -272,6 +282,8 @@ public class RegionOperationStubSettings extends StubSettings<RegionOperationStu
     private final PagedCallSettings.Builder<
             ListRegionOperationsHttpRequest, OperationList, ListRegionOperationsPagedResponse>
         listRegionOperationsSettings;
+    private final UnaryCallSettings.Builder<WaitRegionOperationHttpRequest, Operation>
+        waitRegionOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -321,11 +333,14 @@ public class RegionOperationStubSettings extends StubSettings<RegionOperationStu
       listRegionOperationsSettings =
           PagedCallSettings.newBuilder(LIST_REGION_OPERATIONS_PAGE_STR_FACT);
 
+      waitRegionOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteRegionOperationSettings,
               getRegionOperationSettings,
-              listRegionOperationsSettings);
+              listRegionOperationsSettings,
+              waitRegionOperationSettings);
 
       initDefaults(this);
     }
@@ -356,6 +371,11 @@ public class RegionOperationStubSettings extends StubSettings<RegionOperationStu
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .waitRegionOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -365,12 +385,14 @@ public class RegionOperationStubSettings extends StubSettings<RegionOperationStu
       deleteRegionOperationSettings = settings.deleteRegionOperationSettings.toBuilder();
       getRegionOperationSettings = settings.getRegionOperationSettings.toBuilder();
       listRegionOperationsSettings = settings.listRegionOperationsSettings.toBuilder();
+      waitRegionOperationSettings = settings.waitRegionOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteRegionOperationSettings,
               getRegionOperationSettings,
-              listRegionOperationsSettings);
+              listRegionOperationsSettings,
+              waitRegionOperationSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -406,6 +428,12 @@ public class RegionOperationStubSettings extends StubSettings<RegionOperationStu
             ListRegionOperationsHttpRequest, OperationList, ListRegionOperationsPagedResponse>
         listRegionOperationsSettings() {
       return listRegionOperationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to waitRegionOperation. */
+    public UnaryCallSettings.Builder<WaitRegionOperationHttpRequest, Operation>
+        waitRegionOperationSettings() {
+      return waitRegionOperationSettings;
     }
 
     @Override

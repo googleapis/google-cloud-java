@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -29,6 +30,7 @@ public final class ManagedInstance implements ApiMessage {
   private final String currentAction;
   private final String id;
   private final String instance;
+  private final List<ManagedInstanceInstanceHealth> instanceHealth;
   private final String instanceStatus;
   private final ManagedInstanceLastAttempt lastAttempt;
   private final ManagedInstanceVersion version;
@@ -37,6 +39,7 @@ public final class ManagedInstance implements ApiMessage {
     this.currentAction = null;
     this.id = null;
     this.instance = null;
+    this.instanceHealth = null;
     this.instanceStatus = null;
     this.lastAttempt = null;
     this.version = null;
@@ -46,12 +49,14 @@ public final class ManagedInstance implements ApiMessage {
       String currentAction,
       String id,
       String instance,
+      List<ManagedInstanceInstanceHealth> instanceHealth,
       String instanceStatus,
       ManagedInstanceLastAttempt lastAttempt,
       ManagedInstanceVersion version) {
     this.currentAction = currentAction;
     this.id = id;
     this.instance = instance;
+    this.instanceHealth = instanceHealth;
     this.instanceStatus = instanceStatus;
     this.lastAttempt = lastAttempt;
     this.version = version;
@@ -67,6 +72,9 @@ public final class ManagedInstance implements ApiMessage {
     }
     if ("instance".equals(fieldName)) {
       return instance;
+    }
+    if ("instanceHealth".equals(fieldName)) {
+      return instanceHealth;
     }
     if ("instanceStatus".equals(fieldName)) {
       return instanceStatus;
@@ -135,6 +143,11 @@ public final class ManagedInstance implements ApiMessage {
     return instance;
   }
 
+  /** [Output Only] Health state of the instance per health-check. */
+  public List<ManagedInstanceInstanceHealth> getInstanceHealthList() {
+    return instanceHealth;
+  }
+
   /**
    * [Output Only] The status of the instance. This field is empty when the instance does not exist.
    */
@@ -178,6 +191,7 @@ public final class ManagedInstance implements ApiMessage {
     private String currentAction;
     private String id;
     private String instance;
+    private List<ManagedInstanceInstanceHealth> instanceHealth;
     private String instanceStatus;
     private ManagedInstanceLastAttempt lastAttempt;
     private ManagedInstanceVersion version;
@@ -195,6 +209,9 @@ public final class ManagedInstance implements ApiMessage {
       if (other.getInstance() != null) {
         this.instance = other.instance;
       }
+      if (other.getInstanceHealthList() != null) {
+        this.instanceHealth = other.instanceHealth;
+      }
       if (other.getInstanceStatus() != null) {
         this.instanceStatus = other.instanceStatus;
       }
@@ -211,6 +228,7 @@ public final class ManagedInstance implements ApiMessage {
       this.currentAction = source.currentAction;
       this.id = source.id;
       this.instance = source.instance;
+      this.instanceHealth = source.instanceHealth;
       this.instanceStatus = source.instanceStatus;
       this.lastAttempt = source.lastAttempt;
       this.version = source.version;
@@ -293,6 +311,29 @@ public final class ManagedInstance implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Health state of the instance per health-check. */
+    public List<ManagedInstanceInstanceHealth> getInstanceHealthList() {
+      return instanceHealth;
+    }
+
+    /** [Output Only] Health state of the instance per health-check. */
+    public Builder addAllInstanceHealth(List<ManagedInstanceInstanceHealth> instanceHealth) {
+      if (this.instanceHealth == null) {
+        this.instanceHealth = new LinkedList<>();
+      }
+      this.instanceHealth.addAll(instanceHealth);
+      return this;
+    }
+
+    /** [Output Only] Health state of the instance per health-check. */
+    public Builder addInstanceHealth(ManagedInstanceInstanceHealth instanceHealth) {
+      if (this.instanceHealth == null) {
+        this.instanceHealth = new LinkedList<>();
+      }
+      this.instanceHealth.add(instanceHealth);
+      return this;
+    }
+
     /**
      * [Output Only] The status of the instance. This field is empty when the instance does not
      * exist.
@@ -334,7 +375,8 @@ public final class ManagedInstance implements ApiMessage {
 
     public ManagedInstance build() {
 
-      return new ManagedInstance(currentAction, id, instance, instanceStatus, lastAttempt, version);
+      return new ManagedInstance(
+          currentAction, id, instance, instanceHealth, instanceStatus, lastAttempt, version);
     }
 
     public Builder clone() {
@@ -342,6 +384,7 @@ public final class ManagedInstance implements ApiMessage {
       newBuilder.setCurrentAction(this.currentAction);
       newBuilder.setId(this.id);
       newBuilder.setInstance(this.instance);
+      newBuilder.addAllInstanceHealth(this.instanceHealth);
       newBuilder.setInstanceStatus(this.instanceStatus);
       newBuilder.setLastAttempt(this.lastAttempt);
       newBuilder.setVersion(this.version);
@@ -360,6 +403,9 @@ public final class ManagedInstance implements ApiMessage {
         + ", "
         + "instance="
         + instance
+        + ", "
+        + "instanceHealth="
+        + instanceHealth
         + ", "
         + "instanceStatus="
         + instanceStatus
@@ -382,6 +428,7 @@ public final class ManagedInstance implements ApiMessage {
       return Objects.equals(this.currentAction, that.getCurrentAction())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.instance, that.getInstance())
+          && Objects.equals(this.instanceHealth, that.getInstanceHealthList())
           && Objects.equals(this.instanceStatus, that.getInstanceStatus())
           && Objects.equals(this.lastAttempt, that.getLastAttempt())
           && Objects.equals(this.version, that.getVersion());
@@ -391,6 +438,7 @@ public final class ManagedInstance implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(currentAction, id, instance, instanceStatus, lastAttempt, version);
+    return Objects.hash(
+        currentAction, id, instance, instanceHealth, instanceStatus, lastAttempt, version);
   }
 }

@@ -743,10 +743,12 @@ public class SubnetworkClientTest {
 
     ProjectRegionSubnetworkName subnetwork =
         ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+    Integer drainTimeoutSeconds = 1431448922;
     Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
     List<String> fieldMask = new ArrayList<>();
 
-    Operation actualResponse = client.patchSubnetwork(subnetwork, subnetworkResource, fieldMask);
+    Operation actualResponse =
+        client.patchSubnetwork(subnetwork, drainTimeoutSeconds, subnetworkResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -775,10 +777,11 @@ public class SubnetworkClientTest {
     try {
       ProjectRegionSubnetworkName subnetwork =
           ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+      Integer drainTimeoutSeconds = 1431448922;
       Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
       List<String> fieldMask = new ArrayList<>();
 
-      client.patchSubnetwork(subnetwork, subnetworkResource, fieldMask);
+      client.patchSubnetwork(subnetwork, drainTimeoutSeconds, subnetworkResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

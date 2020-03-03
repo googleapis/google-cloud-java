@@ -32,6 +32,7 @@ public final class AttachedDisk implements ApiMessage {
   private final Boolean boot;
   private final String deviceName;
   private final CustomerEncryptionKey diskEncryptionKey;
+  private final String diskSizeGb;
   private final List<GuestOsFeature> guestOsFeatures;
   private final Integer index;
   private final AttachedDiskInitializeParams initializeParams;
@@ -50,6 +51,7 @@ public final class AttachedDisk implements ApiMessage {
     this.boot = null;
     this.deviceName = null;
     this.diskEncryptionKey = null;
+    this.diskSizeGb = null;
     this.guestOsFeatures = null;
     this.index = null;
     this.initializeParams = null;
@@ -66,6 +68,7 @@ public final class AttachedDisk implements ApiMessage {
       Boolean boot,
       String deviceName,
       CustomerEncryptionKey diskEncryptionKey,
+      String diskSizeGb,
       List<GuestOsFeature> guestOsFeatures,
       Integer index,
       AttachedDiskInitializeParams initializeParams,
@@ -79,6 +82,7 @@ public final class AttachedDisk implements ApiMessage {
     this.boot = boot;
     this.deviceName = deviceName;
     this.diskEncryptionKey = diskEncryptionKey;
+    this.diskSizeGb = diskSizeGb;
     this.guestOsFeatures = guestOsFeatures;
     this.index = index;
     this.initializeParams = initializeParams;
@@ -103,6 +107,9 @@ public final class AttachedDisk implements ApiMessage {
     }
     if ("diskEncryptionKey".equals(fieldName)) {
       return diskEncryptionKey;
+    }
+    if ("diskSizeGb".equals(fieldName)) {
+      return diskSizeGb;
     }
     if ("guestOsFeatures".equals(fieldName)) {
       return guestOsFeatures;
@@ -202,6 +209,11 @@ public final class AttachedDisk implements ApiMessage {
    */
   public CustomerEncryptionKey getDiskEncryptionKey() {
     return diskEncryptionKey;
+  }
+
+  /** The size of the disk in GB. */
+  public String getDiskSizeGb() {
+    return diskSizeGb;
   }
 
   /**
@@ -310,6 +322,7 @@ public final class AttachedDisk implements ApiMessage {
     private Boolean boot;
     private String deviceName;
     private CustomerEncryptionKey diskEncryptionKey;
+    private String diskSizeGb;
     private List<GuestOsFeature> guestOsFeatures;
     private Integer index;
     private AttachedDiskInitializeParams initializeParams;
@@ -335,6 +348,9 @@ public final class AttachedDisk implements ApiMessage {
       }
       if (other.getDiskEncryptionKey() != null) {
         this.diskEncryptionKey = other.diskEncryptionKey;
+      }
+      if (other.getDiskSizeGb() != null) {
+        this.diskSizeGb = other.diskSizeGb;
       }
       if (other.getGuestOsFeaturesList() != null) {
         this.guestOsFeatures = other.guestOsFeatures;
@@ -371,6 +387,7 @@ public final class AttachedDisk implements ApiMessage {
       this.boot = source.boot;
       this.deviceName = source.deviceName;
       this.diskEncryptionKey = source.diskEncryptionKey;
+      this.diskSizeGb = source.diskSizeGb;
       this.guestOsFeatures = source.guestOsFeatures;
       this.index = source.index;
       this.initializeParams = source.initializeParams;
@@ -487,6 +504,17 @@ public final class AttachedDisk implements ApiMessage {
      */
     public Builder setDiskEncryptionKey(CustomerEncryptionKey diskEncryptionKey) {
       this.diskEncryptionKey = diskEncryptionKey;
+      return this;
+    }
+
+    /** The size of the disk in GB. */
+    public String getDiskSizeGb() {
+      return diskSizeGb;
+    }
+
+    /** The size of the disk in GB. */
+    public Builder setDiskSizeGb(String diskSizeGb) {
+      this.diskSizeGb = diskSizeGb;
       return this;
     }
 
@@ -691,6 +719,7 @@ public final class AttachedDisk implements ApiMessage {
           boot,
           deviceName,
           diskEncryptionKey,
+          diskSizeGb,
           guestOsFeatures,
           index,
           initializeParams,
@@ -708,6 +737,7 @@ public final class AttachedDisk implements ApiMessage {
       newBuilder.setBoot(this.boot);
       newBuilder.setDeviceName(this.deviceName);
       newBuilder.setDiskEncryptionKey(this.diskEncryptionKey);
+      newBuilder.setDiskSizeGb(this.diskSizeGb);
       newBuilder.addAllGuestOsFeatures(this.guestOsFeatures);
       newBuilder.setIndex(this.index);
       newBuilder.setInitializeParams(this.initializeParams);
@@ -735,6 +765,9 @@ public final class AttachedDisk implements ApiMessage {
         + ", "
         + "diskEncryptionKey="
         + diskEncryptionKey
+        + ", "
+        + "diskSizeGb="
+        + diskSizeGb
         + ", "
         + "guestOsFeatures="
         + guestOsFeatures
@@ -776,6 +809,7 @@ public final class AttachedDisk implements ApiMessage {
           && Objects.equals(this.boot, that.getBoot())
           && Objects.equals(this.deviceName, that.getDeviceName())
           && Objects.equals(this.diskEncryptionKey, that.getDiskEncryptionKey())
+          && Objects.equals(this.diskSizeGb, that.getDiskSizeGb())
           && Objects.equals(this.guestOsFeatures, that.getGuestOsFeaturesList())
           && Objects.equals(this.index, that.getIndex())
           && Objects.equals(this.initializeParams, that.getInitializeParams())
@@ -796,6 +830,7 @@ public final class AttachedDisk implements ApiMessage {
         boot,
         deviceName,
         diskEncryptionKey,
+        diskSizeGb,
         guestOsFeatures,
         index,
         initializeParams,

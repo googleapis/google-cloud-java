@@ -30,8 +30,7 @@ import javax.annotation.Nullable;
  * Represents a VPC Network resource.
  *
  * <p>Networks connect resources to each other and to the internet. For more information, read
- * Virtual Private Cloud (VPC) Network. (== resource_for v1.networks ==) (== resource_for
- * beta.networks ==)
+ * Virtual Private Cloud (VPC) Network. (== resource_for {$api_version}.networks ==)
  */
 public final class Network implements ApiMessage {
   private final Boolean autoCreateSubnetworks;

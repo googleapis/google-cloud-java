@@ -503,14 +503,16 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * @param region Name of the region scoping this request.
    * @param forwardingRuleResource Represents a Forwarding Rule resource.
+   *     <p>Forwarding rule resources in GCP can be either regional or global in scope:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/forwardingRules)
    *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
    *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
    *     instances and Cloud VPN Classic gateways (targetVpnGateway).
    *     <p>For more information, read Forwarding rule concepts and Using protocol forwarding.
-   *     <p>(== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
-   *     resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==)
-   *     (== resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules
-   *     ==)
+   *     <p>(== resource_for {$api_version}.forwardingRules ==) (== resource_for
+   *     {$api_version}.globalForwardingRules ==) (== resource_for
+   *     {$api_version}.regionForwardingRules ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -541,14 +543,16 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * @param region Name of the region scoping this request.
    * @param forwardingRuleResource Represents a Forwarding Rule resource.
+   *     <p>Forwarding rule resources in GCP can be either regional or global in scope:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/forwardingRules)
    *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
    *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
    *     instances and Cloud VPN Classic gateways (targetVpnGateway).
    *     <p>For more information, read Forwarding rule concepts and Using protocol forwarding.
-   *     <p>(== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
-   *     resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==)
-   *     (== resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules
-   *     ==)
+   *     <p>(== resource_for {$api_version}.forwardingRules ==) (== resource_for
+   *     {$api_version}.globalForwardingRules ==) (== resource_for
+   *     {$api_version}.regionForwardingRules ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -752,6 +756,162 @@ public class ForwardingRuleClient implements BackgroundResource {
   public final UnaryCallable<ListForwardingRulesHttpRequest, ForwardingRuleList>
       listForwardingRulesCallable() {
     return stub.listForwardingRulesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified forwarding rule with the data included in the request. This method
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules. Currently,
+   * you can only patch the network_tier field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = forwardingRuleClient.patchForwardingRule(forwardingRule, forwardingRuleResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param forwardingRule Name of the ForwardingRule resource to patch.
+   * @param forwardingRuleResource Represents a Forwarding Rule resource.
+   *     <p>Forwarding rule resources in GCP can be either regional or global in scope:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+   *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
+   *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
+   *     instances and Cloud VPN Classic gateways (targetVpnGateway).
+   *     <p>For more information, read Forwarding rule concepts and Using protocol forwarding.
+   *     <p>(== resource_for {$api_version}.forwardingRules ==) (== resource_for
+   *     {$api_version}.globalForwardingRules ==) (== resource_for
+   *     {$api_version}.regionForwardingRules ==)
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchForwardingRule(
+      ProjectRegionForwardingRuleName forwardingRule,
+      ForwardingRule forwardingRuleResource,
+      List<String> fieldMask) {
+    PatchForwardingRuleHttpRequest request =
+        PatchForwardingRuleHttpRequest.newBuilder()
+            .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
+            .setForwardingRuleResource(forwardingRuleResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return patchForwardingRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified forwarding rule with the data included in the request. This method
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules. Currently,
+   * you can only patch the network_tier field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = forwardingRuleClient.patchForwardingRule(forwardingRule.toString(), forwardingRuleResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param forwardingRule Name of the ForwardingRule resource to patch.
+   * @param forwardingRuleResource Represents a Forwarding Rule resource.
+   *     <p>Forwarding rule resources in GCP can be either regional or global in scope:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+   *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
+   *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
+   *     instances and Cloud VPN Classic gateways (targetVpnGateway).
+   *     <p>For more information, read Forwarding rule concepts and Using protocol forwarding.
+   *     <p>(== resource_for {$api_version}.forwardingRules ==) (== resource_for
+   *     {$api_version}.globalForwardingRules ==) (== resource_for
+   *     {$api_version}.regionForwardingRules ==)
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchForwardingRule(
+      String forwardingRule, ForwardingRule forwardingRuleResource, List<String> fieldMask) {
+    PatchForwardingRuleHttpRequest request =
+        PatchForwardingRuleHttpRequest.newBuilder()
+            .setForwardingRule(forwardingRule)
+            .setForwardingRuleResource(forwardingRuleResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return patchForwardingRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified forwarding rule with the data included in the request. This method
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules. Currently,
+   * you can only patch the network_tier field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
+   *   String formattedForwardingRule = ProjectRegionForwardingRuleName.format("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   PatchForwardingRuleHttpRequest request = PatchForwardingRuleHttpRequest.newBuilder()
+   *     .setForwardingRule(formattedForwardingRule)
+   *     .setForwardingRuleResource(forwardingRuleResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   Operation response = forwardingRuleClient.patchForwardingRule(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchForwardingRule(PatchForwardingRuleHttpRequest request) {
+    return patchForwardingRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified forwarding rule with the data included in the request. This method
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules. Currently,
+   * you can only patch the network_tier field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
+   *   String formattedForwardingRule = ProjectRegionForwardingRuleName.format("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   PatchForwardingRuleHttpRequest request = PatchForwardingRuleHttpRequest.newBuilder()
+   *     .setForwardingRule(formattedForwardingRule)
+   *     .setForwardingRuleResource(forwardingRuleResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = forwardingRuleClient.patchForwardingRuleCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<PatchForwardingRuleHttpRequest, Operation>
+      patchForwardingRuleCallable() {
+    return stub.patchForwardingRuleCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

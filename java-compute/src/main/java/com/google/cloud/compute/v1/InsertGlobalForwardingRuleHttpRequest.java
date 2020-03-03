@@ -147,15 +147,20 @@ public final class InsertGlobalForwardingRuleHttpRequest implements ApiMessage {
   /**
    * Represents a Forwarding Rule resource.
    *
+   * <p>Forwarding rule resources in GCP can be either regional or global in scope:
+   *
+   * <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
+   * [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+   *
    * <p>A forwarding rule and its corresponding IP address represent the frontend configuration of a
    * Google Cloud Platform load balancer. Forwarding rules can also reference target instances and
    * Cloud VPN Classic gateways (targetVpnGateway).
    *
    * <p>For more information, read Forwarding rule concepts and Using protocol forwarding.
    *
-   * <p>(== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
-   * resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (==
-   * resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
+   * <p>(== resource_for {$api_version}.forwardingRules ==) (== resource_for
+   * {$api_version}.globalForwardingRules ==) (== resource_for {$api_version}.regionForwardingRules
+   * ==)
    */
   public ForwardingRule getForwardingRuleResource() {
     return forwardingRuleResource;
@@ -329,15 +334,20 @@ public final class InsertGlobalForwardingRuleHttpRequest implements ApiMessage {
     /**
      * Represents a Forwarding Rule resource.
      *
+     * <p>Forwarding rule resources in GCP can be either regional or global in scope:
+     *
+     * <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
+     * [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+     *
      * <p>A forwarding rule and its corresponding IP address represent the frontend configuration of
      * a Google Cloud Platform load balancer. Forwarding rules can also reference target instances
      * and Cloud VPN Classic gateways (targetVpnGateway).
      *
      * <p>For more information, read Forwarding rule concepts and Using protocol forwarding.
      *
-     * <p>(== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
-     * resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (==
-     * resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
+     * <p>(== resource_for {$api_version}.forwardingRules ==) (== resource_for
+     * {$api_version}.globalForwardingRules ==) (== resource_for
+     * {$api_version}.regionForwardingRules ==)
      */
     public ForwardingRule getForwardingRuleResource() {
       return forwardingRuleResource;
@@ -346,15 +356,20 @@ public final class InsertGlobalForwardingRuleHttpRequest implements ApiMessage {
     /**
      * Represents a Forwarding Rule resource.
      *
+     * <p>Forwarding rule resources in GCP can be either regional or global in scope:
+     *
+     * <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
+     * [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+     *
      * <p>A forwarding rule and its corresponding IP address represent the frontend configuration of
      * a Google Cloud Platform load balancer. Forwarding rules can also reference target instances
      * and Cloud VPN Classic gateways (targetVpnGateway).
      *
      * <p>For more information, read Forwarding rule concepts and Using protocol forwarding.
      *
-     * <p>(== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
-     * resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (==
-     * resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
+     * <p>(== resource_for {$api_version}.forwardingRules ==) (== resource_for
+     * {$api_version}.globalForwardingRules ==) (== resource_for
+     * {$api_version}.regionForwardingRules ==)
      */
     public Builder setForwardingRuleResource(ForwardingRule forwardingRuleResource) {
       this.forwardingRuleResource = forwardingRuleResource;

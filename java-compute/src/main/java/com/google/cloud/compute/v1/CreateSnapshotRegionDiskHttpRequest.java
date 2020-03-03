@@ -191,8 +191,7 @@ public final class CreateSnapshotRegionDiskHttpRequest implements ApiMessage {
    * Represents a Persistent Disk Snapshot resource.
    *
    * <p>You can use snapshots to back up data on a regular interval. For more information, read
-   * Creating persistent disk snapshots. (== resource_for beta.snapshots ==) (== resource_for
-   * v1.snapshots ==)
+   * Creating persistent disk snapshots. (== resource_for {$api_version}.snapshots ==)
    */
   public Snapshot getSnapshotResource() {
     return snapshotResource;
@@ -417,8 +416,7 @@ public final class CreateSnapshotRegionDiskHttpRequest implements ApiMessage {
      * Represents a Persistent Disk Snapshot resource.
      *
      * <p>You can use snapshots to back up data on a regular interval. For more information, read
-     * Creating persistent disk snapshots. (== resource_for beta.snapshots ==) (== resource_for
-     * v1.snapshots ==)
+     * Creating persistent disk snapshots. (== resource_for {$api_version}.snapshots ==)
      */
     public Snapshot getSnapshotResource() {
       return snapshotResource;
@@ -428,8 +426,7 @@ public final class CreateSnapshotRegionDiskHttpRequest implements ApiMessage {
      * Represents a Persistent Disk Snapshot resource.
      *
      * <p>You can use snapshots to back up data on a regular interval. For more information, read
-     * Creating persistent disk snapshots. (== resource_for beta.snapshots ==) (== resource_for
-     * v1.snapshots ==)
+     * Creating persistent disk snapshots. (== resource_for {$api_version}.snapshots ==)
      */
     public Builder setSnapshotResource(Snapshot snapshotResource) {
       this.snapshotResource = snapshotResource;

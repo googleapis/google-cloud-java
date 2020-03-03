@@ -156,8 +156,7 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
    *
    * <p>You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud networks
    * to your on-premises networks through an Interconnect. For more information, read Creating VLAN
-   * Attachments. (== resource_for beta.interconnectAttachments ==) (== resource_for
-   * v1.interconnectAttachments ==)
+   * Attachments. (== resource_for {$api_version}.interconnectAttachments ==)
    */
   public InterconnectAttachment getInterconnectAttachmentResource() {
     return interconnectAttachmentResource;
@@ -343,8 +342,7 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
      *
      * <p>You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud
      * networks to your on-premises networks through an Interconnect. For more information, read
-     * Creating VLAN Attachments. (== resource_for beta.interconnectAttachments ==) (== resource_for
-     * v1.interconnectAttachments ==)
+     * Creating VLAN Attachments. (== resource_for {$api_version}.interconnectAttachments ==)
      */
     public InterconnectAttachment getInterconnectAttachmentResource() {
       return interconnectAttachmentResource;
@@ -355,8 +353,7 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
      *
      * <p>You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud
      * networks to your on-premises networks through an Interconnect. For more information, read
-     * Creating VLAN Attachments. (== resource_for beta.interconnectAttachments ==) (== resource_for
-     * v1.interconnectAttachments ==)
+     * Creating VLAN Attachments. (== resource_for {$api_version}.interconnectAttachments ==)
      */
     public Builder setInterconnectAttachmentResource(
         InterconnectAttachment interconnectAttachmentResource) {

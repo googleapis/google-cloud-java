@@ -118,8 +118,9 @@ public final class HttpRedirectAction implements ApiMessage {
 
   /**
    * The path that will be used in the redirect response instead of the one that was supplied in the
-   * request. Only one of pathRedirect or prefixRedirect must be specified. The value must be
-   * between 1 and 1024 characters.
+   * request. pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or
+   * neither. If neither is supplied, the path of the original request will be used for the
+   * redirect. The value must be between 1 and 1024 characters.
    */
   public String getPathRedirect() {
     return pathRedirect;
@@ -127,7 +128,10 @@ public final class HttpRedirectAction implements ApiMessage {
 
   /**
    * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the
-   * remaining portion of the URL before redirecting the request.
+   * remaining portion of the URL before redirecting the request. prefixRedirect cannot be supplied
+   * together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of
+   * the original request will be used for the redirect. The value must be between 1 and 1024
+   * characters.
    */
   public String getPrefixRedirect() {
     return prefixRedirect;
@@ -257,8 +261,9 @@ public final class HttpRedirectAction implements ApiMessage {
 
     /**
      * The path that will be used in the redirect response instead of the one that was supplied in
-     * the request. Only one of pathRedirect or prefixRedirect must be specified. The value must be
-     * between 1 and 1024 characters.
+     * the request. pathRedirect cannot be supplied together with prefixRedirect. Supply one alone
+     * or neither. If neither is supplied, the path of the original request will be used for the
+     * redirect. The value must be between 1 and 1024 characters.
      */
     public String getPathRedirect() {
       return pathRedirect;
@@ -266,8 +271,9 @@ public final class HttpRedirectAction implements ApiMessage {
 
     /**
      * The path that will be used in the redirect response instead of the one that was supplied in
-     * the request. Only one of pathRedirect or prefixRedirect must be specified. The value must be
-     * between 1 and 1024 characters.
+     * the request. pathRedirect cannot be supplied together with prefixRedirect. Supply one alone
+     * or neither. If neither is supplied, the path of the original request will be used for the
+     * redirect. The value must be between 1 and 1024 characters.
      */
     public Builder setPathRedirect(String pathRedirect) {
       this.pathRedirect = pathRedirect;
@@ -276,7 +282,10 @@ public final class HttpRedirectAction implements ApiMessage {
 
     /**
      * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the
-     * remaining portion of the URL before redirecting the request.
+     * remaining portion of the URL before redirecting the request. prefixRedirect cannot be
+     * supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the
+     * path of the original request will be used for the redirect. The value must be between 1 and
+     * 1024 characters.
      */
     public String getPrefixRedirect() {
       return prefixRedirect;
@@ -284,7 +293,10 @@ public final class HttpRedirectAction implements ApiMessage {
 
     /**
      * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the
-     * remaining portion of the URL before redirecting the request.
+     * remaining portion of the URL before redirecting the request. prefixRedirect cannot be
+     * supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the
+     * path of the original request will be used for the redirect. The value must be between 1 and
+     * 1024 characters.
      */
     public Builder setPrefixRedirect(String prefixRedirect) {
       this.prefixRedirect = prefixRedirect;

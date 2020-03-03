@@ -160,8 +160,8 @@ public final class InsertInstanceGroupHttpRequest implements ApiMessage {
    *
    * <p>For more information, read Instance groups.
    *
-   * <p>(== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (==
-   * resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
+   * <p>(== resource_for {$api_version}.instanceGroups ==) (== resource_for
+   * {$api_version}.regionInstanceGroups ==)
    */
   public InstanceGroup getInstanceGroupResource() {
     return instanceGroupResource;
@@ -348,8 +348,8 @@ public final class InsertInstanceGroupHttpRequest implements ApiMessage {
      *
      * <p>For more information, read Instance groups.
      *
-     * <p>(== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (==
-     * resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
+     * <p>(== resource_for {$api_version}.instanceGroups ==) (== resource_for
+     * {$api_version}.regionInstanceGroups ==)
      */
     public InstanceGroup getInstanceGroupResource() {
       return instanceGroupResource;
@@ -371,8 +371,8 @@ public final class InsertInstanceGroupHttpRequest implements ApiMessage {
      *
      * <p>For more information, read Instance groups.
      *
-     * <p>(== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (==
-     * resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
+     * <p>(== resource_for {$api_version}.instanceGroups ==) (== resource_for
+     * {$api_version}.regionInstanceGroups ==)
      */
     public Builder setInstanceGroupResource(InstanceGroup instanceGroupResource) {
       this.instanceGroupResource = instanceGroupResource;

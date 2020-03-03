@@ -125,7 +125,7 @@ public final class SecurityPolicyRule implements ApiMessage {
 
   /**
    * A match condition that incoming traffic is evaluated against. If it evaluates to true, the
-   * corresponding ?action? is enforced.
+   * corresponding 'action' is enforced.
    */
   public SecurityPolicyRuleMatcher getMatch() {
     return match;
@@ -260,7 +260,7 @@ public final class SecurityPolicyRule implements ApiMessage {
 
     /**
      * A match condition that incoming traffic is evaluated against. If it evaluates to true, the
-     * corresponding ?action? is enforced.
+     * corresponding 'action' is enforced.
      */
     public SecurityPolicyRuleMatcher getMatch() {
       return match;
@@ -268,7 +268,7 @@ public final class SecurityPolicyRule implements ApiMessage {
 
     /**
      * A match condition that incoming traffic is evaluated against. If it evaluates to true, the
-     * corresponding ?action? is enforced.
+     * corresponding 'action' is enforced.
      */
     public Builder setMatch(SecurityPolicyRuleMatcher match) {
       this.match = match;

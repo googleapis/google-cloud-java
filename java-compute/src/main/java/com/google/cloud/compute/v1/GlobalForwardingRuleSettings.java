@@ -94,6 +94,13 @@ public class GlobalForwardingRuleSettings extends ClientSettings<GlobalForwardin
         .listGlobalForwardingRulesSettings();
   }
 
+  /** Returns the object with the settings used for calls to patchGlobalForwardingRule. */
+  public UnaryCallSettings<PatchGlobalForwardingRuleHttpRequest, Operation>
+      patchGlobalForwardingRuleSettings() {
+    return ((GlobalForwardingRuleStubSettings) getStubSettings())
+        .patchGlobalForwardingRuleSettings();
+  }
+
   /** Returns the object with the settings used for calls to setTargetGlobalForwardingRule. */
   public UnaryCallSettings<SetTargetGlobalForwardingRuleHttpRequest, Operation>
       setTargetGlobalForwardingRuleSettings() {
@@ -229,6 +236,12 @@ public class GlobalForwardingRuleSettings extends ClientSettings<GlobalForwardin
             ListGlobalForwardingRulesPagedResponse>
         listGlobalForwardingRulesSettings() {
       return getStubSettingsBuilder().listGlobalForwardingRulesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchGlobalForwardingRule. */
+    public UnaryCallSettings.Builder<PatchGlobalForwardingRuleHttpRequest, Operation>
+        patchGlobalForwardingRuleSettings() {
+      return getStubSettingsBuilder().patchGlobalForwardingRuleSettings();
     }
 
     /** Returns the builder for the settings used for calls to setTargetGlobalForwardingRule. */

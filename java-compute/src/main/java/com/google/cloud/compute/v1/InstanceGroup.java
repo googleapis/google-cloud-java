@@ -41,8 +41,8 @@ import javax.annotation.Nullable;
  *
  * <p>For more information, read Instance groups.
  *
- * <p>(== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (==
- * resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
+ * <p>(== resource_for {$api_version}.instanceGroups ==) (== resource_for
+ * {$api_version}.regionInstanceGroups ==)
  */
 public final class InstanceGroup implements ApiMessage {
   private final String creationTimestamp;

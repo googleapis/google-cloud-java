@@ -159,9 +159,8 @@ public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
    * <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
    *
    * <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
-   * resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
-   * resource_for beta.regionInstanceGroupManagers ==) (== resource_for
-   * v1.regionInstanceGroupManagers ==)
+   * resource_for {$api_version}.instanceGroupManagers ==) (== resource_for
+   * {$api_version}.regionInstanceGroupManagers ==)
    */
   public InstanceGroupManager getInstanceGroupManagerResource() {
     return instanceGroupManagerResource;
@@ -341,9 +340,8 @@ public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
      * <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
      *
      * <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
-     * resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
-     * resource_for beta.regionInstanceGroupManagers ==) (== resource_for
-     * v1.regionInstanceGroupManagers ==)
+     * resource_for {$api_version}.instanceGroupManagers ==) (== resource_for
+     * {$api_version}.regionInstanceGroupManagers ==)
      */
     public InstanceGroupManager getInstanceGroupManagerResource() {
       return instanceGroupManagerResource;
@@ -358,9 +356,8 @@ public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
      * <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
      *
      * <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
-     * resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
-     * resource_for beta.regionInstanceGroupManagers ==) (== resource_for
-     * v1.regionInstanceGroupManagers ==)
+     * resource_for {$api_version}.instanceGroupManagers ==) (== resource_for
+     * {$api_version}.regionInstanceGroupManagers ==)
      */
     public Builder setInstanceGroupManagerResource(
         InstanceGroupManager instanceGroupManagerResource) {

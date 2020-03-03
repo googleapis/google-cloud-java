@@ -29,8 +29,8 @@ import javax.annotation.Nullable;
  *
  * <p>You can use a target instance to handle traffic for one or more forwarding rules, which is
  * ideal for forwarding protocol traffic that is managed by a single source. For example, ESP, AH,
- * TCP, or UDP. For more information, read Target instances. (== resource_for beta.targetInstances
- * ==) (== resource_for v1.targetInstances ==)
+ * TCP, or UDP. For more information, read Target instances. (== resource_for
+ * {$api_version}.targetInstances ==)
  */
 public final class TargetInstance implements ApiMessage {
   private final String creationTimestamp;

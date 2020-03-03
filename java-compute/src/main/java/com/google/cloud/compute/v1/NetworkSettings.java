@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedResponse;
+import static com.google.cloud.compute.v1.NetworkClient.ListPeeringRoutesNetworksPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -88,6 +89,15 @@ public class NetworkSettings extends ClientSettings<NetworkSettings> {
   public PagedCallSettings<ListNetworksHttpRequest, NetworkList, ListNetworksPagedResponse>
       listNetworksSettings() {
     return ((NetworkStubSettings) getStubSettings()).listNetworksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPeeringRoutesNetworks. */
+  public PagedCallSettings<
+          ListPeeringRoutesNetworksHttpRequest,
+          ExchangedPeeringRoutesList,
+          ListPeeringRoutesNetworksPagedResponse>
+      listPeeringRoutesNetworksSettings() {
+    return ((NetworkStubSettings) getStubSettings()).listPeeringRoutesNetworksSettings();
   }
 
   /** Returns the object with the settings used for calls to patchNetwork. */
@@ -240,6 +250,15 @@ public class NetworkSettings extends ClientSettings<NetworkSettings> {
             ListNetworksHttpRequest, NetworkList, ListNetworksPagedResponse>
         listNetworksSettings() {
       return getStubSettingsBuilder().listNetworksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPeeringRoutesNetworks. */
+    public PagedCallSettings.Builder<
+            ListPeeringRoutesNetworksHttpRequest,
+            ExchangedPeeringRoutesList,
+            ListPeeringRoutesNetworksPagedResponse>
+        listPeeringRoutesNetworksSettings() {
+      return getStubSettingsBuilder().listPeeringRoutesNetworksSettings();
     }
 
     /** Returns the builder for the settings used for calls to patchNetwork. */

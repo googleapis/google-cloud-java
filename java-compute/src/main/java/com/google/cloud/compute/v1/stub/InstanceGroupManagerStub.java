@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AbandonInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListInstanceGroupManagersHttpRequest;
+import com.google.cloud.compute.v1.CreateInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceGroupManagerHttpRequest;
@@ -73,6 +74,13 @@ public abstract class InstanceGroupManagerStub implements BackgroundResource {
       aggregatedListInstanceGroupManagersCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: aggregatedListInstanceGroupManagersCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<CreateInstancesInstanceGroupManagerHttpRequest, Operation>
+      createInstancesInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createInstancesInstanceGroupManagerCallable()");
   }
 
   @BetaApi

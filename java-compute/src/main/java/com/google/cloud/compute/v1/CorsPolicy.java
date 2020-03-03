@@ -166,8 +166,8 @@ public final class CorsPolicy implements ApiMessage {
   }
 
   /**
-   * Specifies how long the results of a preflight request can be cached. This translates to the
-   * content for the Access-Control-Max-Age header.
+   * Specifies how long results of a preflight request can be cached in seconds. This translates to
+   * the Access-Control-Max-Age header.
    */
   public Integer getMaxAge() {
     return maxAge;
@@ -420,16 +420,16 @@ public final class CorsPolicy implements ApiMessage {
     }
 
     /**
-     * Specifies how long the results of a preflight request can be cached. This translates to the
-     * content for the Access-Control-Max-Age header.
+     * Specifies how long results of a preflight request can be cached in seconds. This translates
+     * to the Access-Control-Max-Age header.
      */
     public Integer getMaxAge() {
       return maxAge;
     }
 
     /**
-     * Specifies how long the results of a preflight request can be cached. This translates to the
-     * content for the Access-Control-Max-Age header.
+     * Specifies how long results of a preflight request can be cached in seconds. This translates
+     * to the Access-Control-Max-Age header.
      */
     public Builder setMaxAge(Integer maxAge) {
       this.maxAge = maxAge;

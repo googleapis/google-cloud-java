@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedResponse;
+import static com.google.cloud.compute.v1.NetworkClient.ListPeeringRoutesNetworksPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -41,9 +42,12 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddPeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.DeleteNetworkHttpRequest;
+import com.google.cloud.compute.v1.ExchangedPeeringRoute;
+import com.google.cloud.compute.v1.ExchangedPeeringRoutesList;
 import com.google.cloud.compute.v1.GetNetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertNetworkHttpRequest;
 import com.google.cloud.compute.v1.ListNetworksHttpRequest;
+import com.google.cloud.compute.v1.ListPeeringRoutesNetworksHttpRequest;
 import com.google.cloud.compute.v1.Network;
 import com.google.cloud.compute.v1.NetworkList;
 import com.google.cloud.compute.v1.Operation;
@@ -109,6 +113,11 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
   private final UnaryCallSettings<InsertNetworkHttpRequest, Operation> insertNetworkSettings;
   private final PagedCallSettings<ListNetworksHttpRequest, NetworkList, ListNetworksPagedResponse>
       listNetworksSettings;
+  private final PagedCallSettings<
+          ListPeeringRoutesNetworksHttpRequest,
+          ExchangedPeeringRoutesList,
+          ListPeeringRoutesNetworksPagedResponse>
+      listPeeringRoutesNetworksSettings;
   private final UnaryCallSettings<PatchNetworkHttpRequest, Operation> patchNetworkSettings;
   private final UnaryCallSettings<RemovePeeringNetworkHttpRequest, Operation>
       removePeeringNetworkSettings;
@@ -141,6 +150,15 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
   public PagedCallSettings<ListNetworksHttpRequest, NetworkList, ListNetworksPagedResponse>
       listNetworksSettings() {
     return listNetworksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listPeeringRoutesNetworks. */
+  public PagedCallSettings<
+          ListPeeringRoutesNetworksHttpRequest,
+          ExchangedPeeringRoutesList,
+          ListPeeringRoutesNetworksPagedResponse>
+      listPeeringRoutesNetworksSettings() {
+    return listPeeringRoutesNetworksSettings;
   }
 
   /** Returns the object with the settings used for calls to patchNetwork. */
@@ -245,6 +263,7 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
     getNetworkSettings = settingsBuilder.getNetworkSettings().build();
     insertNetworkSettings = settingsBuilder.insertNetworkSettings().build();
     listNetworksSettings = settingsBuilder.listNetworksSettings().build();
+    listPeeringRoutesNetworksSettings = settingsBuilder.listPeeringRoutesNetworksSettings().build();
     patchNetworkSettings = settingsBuilder.patchNetworkSettings().build();
     removePeeringNetworkSettings = settingsBuilder.removePeeringNetworkSettings().build();
     switchToCustomModeNetworkSettings = settingsBuilder.switchToCustomModeNetworkSettings().build();
@@ -289,6 +308,53 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<
+          ListPeeringRoutesNetworksHttpRequest, ExchangedPeeringRoutesList, ExchangedPeeringRoute>
+      LIST_PEERING_ROUTES_NETWORKS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListPeeringRoutesNetworksHttpRequest,
+              ExchangedPeeringRoutesList,
+              ExchangedPeeringRoute>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPeeringRoutesNetworksHttpRequest injectToken(
+                ListPeeringRoutesNetworksHttpRequest payload, String token) {
+              return ListPeeringRoutesNetworksHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListPeeringRoutesNetworksHttpRequest injectPageSize(
+                ListPeeringRoutesNetworksHttpRequest payload, int pageSize) {
+              return ListPeeringRoutesNetworksHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPeeringRoutesNetworksHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(ExchangedPeeringRoutesList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ExchangedPeeringRoute> extractResources(
+                ExchangedPeeringRoutesList payload) {
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<ExchangedPeeringRoute>of();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListNetworksHttpRequest, NetworkList, ListNetworksPagedResponse>
       LIST_NETWORKS_PAGE_STR_FACT =
@@ -306,6 +372,34 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListPeeringRoutesNetworksHttpRequest,
+          ExchangedPeeringRoutesList,
+          ListPeeringRoutesNetworksPagedResponse>
+      LIST_PEERING_ROUTES_NETWORKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPeeringRoutesNetworksHttpRequest,
+              ExchangedPeeringRoutesList,
+              ListPeeringRoutesNetworksPagedResponse>() {
+            @Override
+            public ApiFuture<ListPeeringRoutesNetworksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPeeringRoutesNetworksHttpRequest, ExchangedPeeringRoutesList>
+                    callable,
+                ListPeeringRoutesNetworksHttpRequest request,
+                ApiCallContext context,
+                ApiFuture<ExchangedPeeringRoutesList> futureResponse) {
+              PageContext<
+                      ListPeeringRoutesNetworksHttpRequest,
+                      ExchangedPeeringRoutesList,
+                      ExchangedPeeringRoute>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PEERING_ROUTES_NETWORKS_PAGE_STR_DESC, request, context);
+              return ListPeeringRoutesNetworksPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
   /** Builder for NetworkStubSettings. */
   public static class Builder extends StubSettings.Builder<NetworkStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
@@ -320,6 +414,11 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
     private final PagedCallSettings.Builder<
             ListNetworksHttpRequest, NetworkList, ListNetworksPagedResponse>
         listNetworksSettings;
+    private final PagedCallSettings.Builder<
+            ListPeeringRoutesNetworksHttpRequest,
+            ExchangedPeeringRoutesList,
+            ListPeeringRoutesNetworksPagedResponse>
+        listPeeringRoutesNetworksSettings;
     private final UnaryCallSettings.Builder<PatchNetworkHttpRequest, Operation>
         patchNetworkSettings;
     private final UnaryCallSettings.Builder<RemovePeeringNetworkHttpRequest, Operation>
@@ -380,6 +479,9 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
 
       listNetworksSettings = PagedCallSettings.newBuilder(LIST_NETWORKS_PAGE_STR_FACT);
 
+      listPeeringRoutesNetworksSettings =
+          PagedCallSettings.newBuilder(LIST_PEERING_ROUTES_NETWORKS_PAGE_STR_FACT);
+
       patchNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       removePeeringNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -395,6 +497,7 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
               getNetworkSettings,
               insertNetworkSettings,
               listNetworksSettings,
+              listPeeringRoutesNetworksSettings,
               patchNetworkSettings,
               removePeeringNetworkSettings,
               switchToCustomModeNetworkSettings,
@@ -440,6 +543,11 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .listPeeringRoutesNetworksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .patchNetworkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -470,6 +578,7 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
       getNetworkSettings = settings.getNetworkSettings.toBuilder();
       insertNetworkSettings = settings.insertNetworkSettings.toBuilder();
       listNetworksSettings = settings.listNetworksSettings.toBuilder();
+      listPeeringRoutesNetworksSettings = settings.listPeeringRoutesNetworksSettings.toBuilder();
       patchNetworkSettings = settings.patchNetworkSettings.toBuilder();
       removePeeringNetworkSettings = settings.removePeeringNetworkSettings.toBuilder();
       switchToCustomModeNetworkSettings = settings.switchToCustomModeNetworkSettings.toBuilder();
@@ -482,6 +591,7 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
               getNetworkSettings,
               insertNetworkSettings,
               listNetworksSettings,
+              listPeeringRoutesNetworksSettings,
               patchNetworkSettings,
               removePeeringNetworkSettings,
               switchToCustomModeNetworkSettings,
@@ -530,6 +640,15 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
             ListNetworksHttpRequest, NetworkList, ListNetworksPagedResponse>
         listNetworksSettings() {
       return listNetworksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listPeeringRoutesNetworks. */
+    public PagedCallSettings.Builder<
+            ListPeeringRoutesNetworksHttpRequest,
+            ExchangedPeeringRoutesList,
+            ListPeeringRoutesNetworksPagedResponse>
+        listPeeringRoutesNetworksSettings() {
+      return listPeeringRoutesNetworksSettings;
     }
 
     /** Returns the builder for the settings used for calls to patchNetwork. */

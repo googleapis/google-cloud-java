@@ -79,7 +79,7 @@ public final class ExternalVpnGatewayInterface implements ApiMessage {
 
   /**
    * IP address of the interface in the external VPN gateway. Only IPv4 is supported. This IP
-   * address can be either from your on-premise gateway or another Cloud provider?s VPN gateway, it
+   * address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it
    * cannot be an IP address from Google Compute Engine.
    */
   public String getIpAddress() {
@@ -151,7 +151,7 @@ public final class ExternalVpnGatewayInterface implements ApiMessage {
 
     /**
      * IP address of the interface in the external VPN gateway. Only IPv4 is supported. This IP
-     * address can be either from your on-premise gateway or another Cloud provider?s VPN gateway,
+     * address can be either from your on-premise gateway or another Cloud provider's VPN gateway,
      * it cannot be an IP address from Google Compute Engine.
      */
     public String getIpAddress() {
@@ -160,7 +160,7 @@ public final class ExternalVpnGatewayInterface implements ApiMessage {
 
     /**
      * IP address of the interface in the external VPN gateway. Only IPv4 is supported. This IP
-     * address can be either from your on-premise gateway or another Cloud provider?s VPN gateway,
+     * address can be either from your on-premise gateway or another Cloud provider's VPN gateway,
      * it cannot be an IP address from Google Compute Engine.
      */
     public Builder setIpAddress(String ipAddress) {

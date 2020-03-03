@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  *
  * <p>A zone is a deployment area. These deployment areas are subsets of a region. For example the
  * zone us-east1-a is located in the us-east1 region. For more information, read Regions and Zones.
- * (== resource_for beta.zones ==) (== resource_for v1.zones ==)
+ * (== resource_for {$api_version}.zones ==)
  */
 public final class Zone implements ApiMessage {
   private final List<String> availableCpuPlatforms;

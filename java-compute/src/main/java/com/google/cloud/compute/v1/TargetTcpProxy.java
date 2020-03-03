@@ -29,8 +29,8 @@ import javax.annotation.Nullable;
  *
  * <p>A target TCP proxy is a component of a TCP Proxy load balancer. Global forwarding rules
  * reference target TCP proxy, and the target proxy then references an external backend service. For
- * more information, read TCP Proxy Load Balancing Concepts. (== resource_for beta.targetTcpProxies
- * ==) (== resource_for v1.targetTcpProxies ==)
+ * more information, read TCP Proxy Load Balancing Concepts. (== resource_for
+ * {$api_version}.targetTcpProxies ==)
  */
 public final class TargetTcpProxy implements ApiMessage {
   private final String creationTimestamp;

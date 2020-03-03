@@ -606,8 +606,8 @@ public class NodeTemplateClient implements BackgroundResource {
    * @param region The name of the region for this request.
    * @param nodeTemplateResource Represent a sole-tenant Node Template resource.
    *     <p>You can use a template to define properties for nodes in a node group. For more
-   *     information, read Creating node groups and instances. (== resource_for beta.nodeTemplates
-   *     ==) (== resource_for v1.nodeTemplates ==)
+   *     information, read Creating node groups and instances. (== resource_for
+   *     {$api_version}.nodeTemplates ==) (== NextID: 18 ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -639,8 +639,8 @@ public class NodeTemplateClient implements BackgroundResource {
    * @param region The name of the region for this request.
    * @param nodeTemplateResource Represent a sole-tenant Node Template resource.
    *     <p>You can use a template to define properties for nodes in a node group. For more
-   *     information, read Creating node groups and instances. (== resource_for beta.nodeTemplates
-   *     ==) (== resource_for v1.nodeTemplates ==)
+   *     information, read Creating node groups and instances. (== resource_for
+   *     {$api_version}.nodeTemplates ==) (== NextID: 18 ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

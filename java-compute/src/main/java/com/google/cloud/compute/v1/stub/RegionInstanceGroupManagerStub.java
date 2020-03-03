@@ -21,6 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AbandonInstancesRegionInstanceGroupManagerHttpRequest;
+import com.google.cloud.compute.v1.CreateInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.GetRegionInstanceGroupManagerHttpRequest;
@@ -53,6 +54,13 @@ public abstract class RegionInstanceGroupManagerStub implements BackgroundResour
       abandonInstancesRegionInstanceGroupManagerCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: abandonInstancesRegionInstanceGroupManagerCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      createInstancesRegionInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createInstancesRegionInstanceGroupManagerCallable()");
   }
 
   @BetaApi

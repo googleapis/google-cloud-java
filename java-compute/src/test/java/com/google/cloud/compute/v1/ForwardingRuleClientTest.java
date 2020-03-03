@@ -22,6 +22,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonForwardingRuleStub.delete
 import static com.google.cloud.compute.v1.stub.HttpJsonForwardingRuleStub.getForwardingRuleMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonForwardingRuleStub.insertForwardingRuleMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonForwardingRuleStub.listForwardingRulesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonForwardingRuleStub.patchForwardingRuleMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonForwardingRuleStub.setTargetForwardingRuleMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -38,6 +39,7 @@ import com.google.cloud.compute.v1.stub.ForwardingRuleStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -59,6 +61,7 @@ public class ForwardingRuleClientTest {
               getForwardingRuleMethodDescriptor,
               insertForwardingRuleMethodDescriptor,
               listForwardingRulesMethodDescriptor,
+              patchForwardingRuleMethodDescriptor,
               setTargetForwardingRuleMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, ForwardingRuleStubSettings.getDefaultEndpoint());
@@ -248,12 +251,15 @@ public class ForwardingRuleClientTest {
     String iPAddress = "iPAddress-551149873";
     String iPProtocol = "iPProtocol323774237";
     Boolean allPorts = true;
+    Boolean allowGlobalAccess = true;
     ProjectGlobalBackendServiceName backendService =
         ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
+    String fingerprint = "fingerprint-1375934236";
     String id = "id3355";
     String ipVersion = "ipVersion-1315653184";
+    Boolean isMirroringCollector = true;
     String kind = "kind3292052";
     String loadBalancingScheme = "loadBalancingScheme1974502980";
     String name = "name3373707";
@@ -272,11 +278,14 @@ public class ForwardingRuleClientTest {
             .setIPAddress(iPAddress)
             .setIPProtocol(iPProtocol)
             .setAllPorts(allPorts)
+            .setAllowGlobalAccess(allowGlobalAccess)
             .setBackendService(backendService.toString())
             .setCreationTimestamp(creationTimestamp)
             .setDescription(description)
+            .setFingerprint(fingerprint)
             .setId(id)
             .setIpVersion(ipVersion)
+            .setIsMirroringCollector(isMirroringCollector)
             .setKind(kind)
             .setLoadBalancingScheme(loadBalancingScheme)
             .setName(name)
@@ -476,6 +485,101 @@ public class ForwardingRuleClientTest {
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
       client.listForwardingRules(region);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void patchForwardingRuleTest() {
+    String clientOperationId = "clientOperationId-239630617";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
+    String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId(clientOperationId)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
+            .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectRegionForwardingRuleName forwardingRule =
+        ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+    ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
+
+    Operation actualResponse =
+        client.patchForwardingRule(forwardingRule, forwardingRuleResource, fieldMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void patchForwardingRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectRegionForwardingRuleName forwardingRule =
+          ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+      ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
+
+      client.patchForwardingRule(forwardingRule, forwardingRuleResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -16,15 +16,18 @@
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedResponse;
+import static com.google.cloud.compute.v1.NetworkClient.ListPeeringRoutesNetworksPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddPeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.DeleteNetworkHttpRequest;
+import com.google.cloud.compute.v1.ExchangedPeeringRoutesList;
 import com.google.cloud.compute.v1.GetNetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertNetworkHttpRequest;
 import com.google.cloud.compute.v1.ListNetworksHttpRequest;
+import com.google.cloud.compute.v1.ListPeeringRoutesNetworksHttpRequest;
 import com.google.cloud.compute.v1.Network;
 import com.google.cloud.compute.v1.NetworkList;
 import com.google.cloud.compute.v1.Operation;
@@ -73,6 +76,19 @@ public abstract class NetworkStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<ListNetworksHttpRequest, NetworkList> listNetworksCallable() {
     throw new UnsupportedOperationException("Not implemented: listNetworksCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<ListPeeringRoutesNetworksHttpRequest, ListPeeringRoutesNetworksPagedResponse>
+      listPeeringRoutesNetworksPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listPeeringRoutesNetworksPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<ListPeeringRoutesNetworksHttpRequest, ExchangedPeeringRoutesList>
+      listPeeringRoutesNetworksCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPeeringRoutesNetworksCallable()");
   }
 
   @BetaApi

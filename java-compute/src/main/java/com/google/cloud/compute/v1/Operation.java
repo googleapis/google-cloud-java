@@ -28,6 +28,12 @@ import javax.annotation.Nullable;
 /**
  * Represents an Operation resource.
  *
+ * <p>Google Compute Engine has three Operation resources:
+ *
+ * <p>&#42; [Global](/compute/docs/reference/rest/latest/globalOperations) &#42;
+ * [Regional](/compute/docs/reference/rest/latest/regionOperations) &#42;
+ * [Zonal](/compute/docs/reference/rest/latest/zoneOperations)
+ *
  * <p>You can use an operation resource to manage asynchronous API requests. For more information,
  * read Handling API responses.
  *
@@ -36,9 +42,8 @@ import javax.annotation.Nullable;
  * use the zonalOperations resource.
  *
  * <p>For more information, read Global, Regional, and Zonal Resources. (== resource_for
- * v1.globalOperations ==) (== resource_for beta.globalOperations ==) (== resource_for
- * v1.regionOperations ==) (== resource_for beta.regionOperations ==) (== resource_for
- * v1.zoneOperations ==) (== resource_for beta.zoneOperations ==)
+ * {$api_version}.globalOperations ==) (== resource_for {$api_version}.regionOperations ==) (==
+ * resource_for {$api_version}.zoneOperations ==)
  */
 public final class Operation implements ApiMessage {
   private final String clientOperationId;

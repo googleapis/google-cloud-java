@@ -46,6 +46,7 @@ import com.google.cloud.compute.v1.GetGlobalForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.InsertGlobalForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.ListGlobalForwardingRulesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchGlobalForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.SetTargetGlobalForwardingRuleHttpRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -110,6 +111,8 @@ public class GlobalForwardingRuleStubSettings
           ForwardingRuleList,
           ListGlobalForwardingRulesPagedResponse>
       listGlobalForwardingRulesSettings;
+  private final UnaryCallSettings<PatchGlobalForwardingRuleHttpRequest, Operation>
+      patchGlobalForwardingRuleSettings;
   private final UnaryCallSettings<SetTargetGlobalForwardingRuleHttpRequest, Operation>
       setTargetGlobalForwardingRuleSettings;
 
@@ -138,6 +141,12 @@ public class GlobalForwardingRuleStubSettings
           ListGlobalForwardingRulesPagedResponse>
       listGlobalForwardingRulesSettings() {
     return listGlobalForwardingRulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchGlobalForwardingRule. */
+  public UnaryCallSettings<PatchGlobalForwardingRuleHttpRequest, Operation>
+      patchGlobalForwardingRuleSettings() {
+    return patchGlobalForwardingRuleSettings;
   }
 
   /** Returns the object with the settings used for calls to setTargetGlobalForwardingRule. */
@@ -227,6 +236,7 @@ public class GlobalForwardingRuleStubSettings
     insertGlobalForwardingRuleSettings =
         settingsBuilder.insertGlobalForwardingRuleSettings().build();
     listGlobalForwardingRulesSettings = settingsBuilder.listGlobalForwardingRulesSettings().build();
+    patchGlobalForwardingRuleSettings = settingsBuilder.patchGlobalForwardingRuleSettings().build();
     setTargetGlobalForwardingRuleSettings =
         settingsBuilder.setTargetGlobalForwardingRuleSettings().build();
   }
@@ -315,6 +325,8 @@ public class GlobalForwardingRuleStubSettings
             ForwardingRuleList,
             ListGlobalForwardingRulesPagedResponse>
         listGlobalForwardingRulesSettings;
+    private final UnaryCallSettings.Builder<PatchGlobalForwardingRuleHttpRequest, Operation>
+        patchGlobalForwardingRuleSettings;
     private final UnaryCallSettings.Builder<SetTargetGlobalForwardingRuleHttpRequest, Operation>
         setTargetGlobalForwardingRuleSettings;
 
@@ -368,6 +380,8 @@ public class GlobalForwardingRuleStubSettings
       listGlobalForwardingRulesSettings =
           PagedCallSettings.newBuilder(LIST_GLOBAL_FORWARDING_RULES_PAGE_STR_FACT);
 
+      patchGlobalForwardingRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setTargetGlobalForwardingRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -376,6 +390,7 @@ public class GlobalForwardingRuleStubSettings
               getGlobalForwardingRuleSettings,
               insertGlobalForwardingRuleSettings,
               listGlobalForwardingRulesSettings,
+              patchGlobalForwardingRuleSettings,
               setTargetGlobalForwardingRuleSettings);
 
       initDefaults(this);
@@ -413,6 +428,11 @@ public class GlobalForwardingRuleStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .patchGlobalForwardingRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .setTargetGlobalForwardingRuleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -427,6 +447,7 @@ public class GlobalForwardingRuleStubSettings
       getGlobalForwardingRuleSettings = settings.getGlobalForwardingRuleSettings.toBuilder();
       insertGlobalForwardingRuleSettings = settings.insertGlobalForwardingRuleSettings.toBuilder();
       listGlobalForwardingRulesSettings = settings.listGlobalForwardingRulesSettings.toBuilder();
+      patchGlobalForwardingRuleSettings = settings.patchGlobalForwardingRuleSettings.toBuilder();
       setTargetGlobalForwardingRuleSettings =
           settings.setTargetGlobalForwardingRuleSettings.toBuilder();
 
@@ -436,6 +457,7 @@ public class GlobalForwardingRuleStubSettings
               getGlobalForwardingRuleSettings,
               insertGlobalForwardingRuleSettings,
               listGlobalForwardingRulesSettings,
+              patchGlobalForwardingRuleSettings,
               setTargetGlobalForwardingRuleSettings);
     }
 
@@ -480,6 +502,12 @@ public class GlobalForwardingRuleStubSettings
             ListGlobalForwardingRulesPagedResponse>
         listGlobalForwardingRulesSettings() {
       return listGlobalForwardingRulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchGlobalForwardingRule. */
+    public UnaryCallSettings.Builder<PatchGlobalForwardingRuleHttpRequest, Operation>
+        patchGlobalForwardingRuleSettings() {
+      return patchGlobalForwardingRuleSettings;
     }
 
     /** Returns the builder for the settings used for calls to setTargetGlobalForwardingRule. */

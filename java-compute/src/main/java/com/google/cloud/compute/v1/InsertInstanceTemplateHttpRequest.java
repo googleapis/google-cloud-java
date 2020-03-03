@@ -150,8 +150,7 @@ public final class InsertInstanceTemplateHttpRequest implements ApiMessage {
    * Represents an Instance Template resource.
    *
    * <p>You can use instance templates to create VM instances and managed instance groups. For more
-   * information, read Instance Templates. (== resource_for beta.instanceTemplates ==) (==
-   * resource_for v1.instanceTemplates ==)
+   * information, read Instance Templates. (== resource_for {$api_version}.instanceTemplates ==)
    */
   public InstanceTemplate getInstanceTemplateResource() {
     return instanceTemplateResource;
@@ -326,8 +325,8 @@ public final class InsertInstanceTemplateHttpRequest implements ApiMessage {
      * Represents an Instance Template resource.
      *
      * <p>You can use instance templates to create VM instances and managed instance groups. For
-     * more information, read Instance Templates. (== resource_for beta.instanceTemplates ==) (==
-     * resource_for v1.instanceTemplates ==)
+     * more information, read Instance Templates. (== resource_for {$api_version}.instanceTemplates
+     * ==)
      */
     public InstanceTemplate getInstanceTemplateResource() {
       return instanceTemplateResource;
@@ -337,8 +336,8 @@ public final class InsertInstanceTemplateHttpRequest implements ApiMessage {
      * Represents an Instance Template resource.
      *
      * <p>You can use instance templates to create VM instances and managed instance groups. For
-     * more information, read Instance Templates. (== resource_for beta.instanceTemplates ==) (==
-     * resource_for v1.instanceTemplates ==)
+     * more information, read Instance Templates. (== resource_for {$api_version}.instanceTemplates
+     * ==)
      */
     public Builder setInstanceTemplateResource(InstanceTemplate instanceTemplateResource) {
       this.instanceTemplateResource = instanceTemplateResource;

@@ -81,6 +81,11 @@ public class ZoneOperationSettings extends ClientSettings<ZoneOperationSettings>
     return ((ZoneOperationStubSettings) getStubSettings()).listZoneOperationsSettings();
   }
 
+  /** Returns the object with the settings used for calls to waitZoneOperation. */
+  public UnaryCallSettings<WaitZoneOperationHttpRequest, Operation> waitZoneOperationSettings() {
+    return ((ZoneOperationStubSettings) getStubSettings()).waitZoneOperationSettings();
+  }
+
   public static final ZoneOperationSettings create(ZoneOperationStubSettings stub)
       throws IOException {
     return new ZoneOperationSettings.Builder(stub.toBuilder()).build();
@@ -200,6 +205,12 @@ public class ZoneOperationSettings extends ClientSettings<ZoneOperationSettings>
             ListZoneOperationsHttpRequest, OperationList, ListZoneOperationsPagedResponse>
         listZoneOperationsSettings() {
       return getStubSettingsBuilder().listZoneOperationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to waitZoneOperation. */
+    public UnaryCallSettings.Builder<WaitZoneOperationHttpRequest, Operation>
+        waitZoneOperationSettings() {
+      return getStubSettingsBuilder().waitZoneOperationSettings();
     }
 
     @Override

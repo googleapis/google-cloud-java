@@ -76,6 +76,16 @@ public class RegionInstanceGroupManagerSettings
         .abandonInstancesRegionInstanceGroupManagerSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * createInstancesRegionInstanceGroupManager.
+   */
+  public UnaryCallSettings<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      createInstancesRegionInstanceGroupManagerSettings() {
+    return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
+        .createInstancesRegionInstanceGroupManagerSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteRegionInstanceGroupManager. */
   public UnaryCallSettings<DeleteRegionInstanceGroupManagerHttpRequest, Operation>
       deleteRegionInstanceGroupManagerSettings() {
@@ -284,6 +294,16 @@ public class RegionInstanceGroupManagerSettings
             AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
         abandonInstancesRegionInstanceGroupManagerSettings() {
       return getStubSettingsBuilder().abandonInstancesRegionInstanceGroupManagerSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * createInstancesRegionInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+        createInstancesRegionInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().createInstancesRegionInstanceGroupManagerSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteRegionInstanceGroupManager. */

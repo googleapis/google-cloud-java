@@ -190,11 +190,20 @@ public final class InsertRegionTargetHttpProxyHttpRequest implements ApiMessage 
   /**
    * Represents a Target HTTP Proxy resource.
    *
-   * <p>A target HTTP proxy is a component of GCP HTTP load balancers. Forwarding rules reference a
-   * target HTTP proxy, and the target proxy then references a URL map. For more information, read
-   * Using Target Proxies and Forwarding rule concepts. (== resource_for beta.targetHttpProxies ==)
-   * (== resource_for v1.targetHttpProxies ==) (== resource_for beta.regionTargetHttpProxies ==) (==
-   * resource_for v1.regionTargetHttpProxies ==)
+   * <p>Google Compute Engine has two Target HTTP Proxy resources:
+   *
+   * <p>&#42; [Global](/compute/docs/reference/rest/latest/targetHttpProxies) &#42;
+   * [Regional](/compute/docs/reference/rest/latest/regionTargetHttpProxies)
+   *
+   * <p>A target HTTP proxy is a component of GCP HTTP load balancers.
+   *
+   * <p>&#42; targetHttpProxies are used by external HTTP load balancers and Traffic Director. &#42;
+   * regionTargetHttpProxies are used by internal HTTP load balancers.
+   *
+   * <p>Forwarding rules reference a target HTTP proxy, and the target proxy then references a URL
+   * map. For more information, read Using Target Proxies and Forwarding rule concepts. (==
+   * resource_for {$api_version}.targetHttpProxies ==) (== resource_for
+   * {$api_version}.regionTargetHttpProxies ==)
    */
   public TargetHttpProxy getTargetHttpProxyResource() {
     return targetHttpProxyResource;
@@ -416,11 +425,20 @@ public final class InsertRegionTargetHttpProxyHttpRequest implements ApiMessage 
     /**
      * Represents a Target HTTP Proxy resource.
      *
-     * <p>A target HTTP proxy is a component of GCP HTTP load balancers. Forwarding rules reference
-     * a target HTTP proxy, and the target proxy then references a URL map. For more information,
-     * read Using Target Proxies and Forwarding rule concepts. (== resource_for
-     * beta.targetHttpProxies ==) (== resource_for v1.targetHttpProxies ==) (== resource_for
-     * beta.regionTargetHttpProxies ==) (== resource_for v1.regionTargetHttpProxies ==)
+     * <p>Google Compute Engine has two Target HTTP Proxy resources:
+     *
+     * <p>&#42; [Global](/compute/docs/reference/rest/latest/targetHttpProxies) &#42;
+     * [Regional](/compute/docs/reference/rest/latest/regionTargetHttpProxies)
+     *
+     * <p>A target HTTP proxy is a component of GCP HTTP load balancers.
+     *
+     * <p>&#42; targetHttpProxies are used by external HTTP load balancers and Traffic Director.
+     * &#42; regionTargetHttpProxies are used by internal HTTP load balancers.
+     *
+     * <p>Forwarding rules reference a target HTTP proxy, and the target proxy then references a URL
+     * map. For more information, read Using Target Proxies and Forwarding rule concepts. (==
+     * resource_for {$api_version}.targetHttpProxies ==) (== resource_for
+     * {$api_version}.regionTargetHttpProxies ==)
      */
     public TargetHttpProxy getTargetHttpProxyResource() {
       return targetHttpProxyResource;
@@ -429,11 +447,20 @@ public final class InsertRegionTargetHttpProxyHttpRequest implements ApiMessage 
     /**
      * Represents a Target HTTP Proxy resource.
      *
-     * <p>A target HTTP proxy is a component of GCP HTTP load balancers. Forwarding rules reference
-     * a target HTTP proxy, and the target proxy then references a URL map. For more information,
-     * read Using Target Proxies and Forwarding rule concepts. (== resource_for
-     * beta.targetHttpProxies ==) (== resource_for v1.targetHttpProxies ==) (== resource_for
-     * beta.regionTargetHttpProxies ==) (== resource_for v1.regionTargetHttpProxies ==)
+     * <p>Google Compute Engine has two Target HTTP Proxy resources:
+     *
+     * <p>&#42; [Global](/compute/docs/reference/rest/latest/targetHttpProxies) &#42;
+     * [Regional](/compute/docs/reference/rest/latest/regionTargetHttpProxies)
+     *
+     * <p>A target HTTP proxy is a component of GCP HTTP load balancers.
+     *
+     * <p>&#42; targetHttpProxies are used by external HTTP load balancers and Traffic Director.
+     * &#42; regionTargetHttpProxies are used by internal HTTP load balancers.
+     *
+     * <p>Forwarding rules reference a target HTTP proxy, and the target proxy then references a URL
+     * map. For more information, read Using Target Proxies and Forwarding rule concepts. (==
+     * resource_for {$api_version}.targetHttpProxies ==) (== resource_for
+     * {$api_version}.regionTargetHttpProxies ==)
      */
     public Builder setTargetHttpProxyResource(TargetHttpProxy targetHttpProxyResource) {
       this.targetHttpProxyResource = targetHttpProxyResource;

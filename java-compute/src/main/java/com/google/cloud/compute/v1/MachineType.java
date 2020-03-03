@@ -29,8 +29,8 @@ import javax.annotation.Nullable;
  * Represents a Machine Type resource.
  *
  * <p>You can use specific machine types for your VM instances based on performance and pricing
- * requirements. For more information, read Machine Types. (== resource_for v1.machineTypes ==) (==
- * resource_for beta.machineTypes ==)
+ * requirements. For more information, read Machine Types. (== resource_for
+ * {$api_version}.machineTypes ==)
  */
 public final class MachineType implements ApiMessage {
   private final String creationTimestamp;

@@ -29,8 +29,7 @@ import javax.annotation.Nullable;
  * Represents a Project resource.
  *
  * <p>A project is used to organize resources in a Google Cloud Platform environment. For more
- * information, read about the Resource Hierarchy. (== resource_for v1.projects ==) (== resource_for
- * beta.projects ==)
+ * information, read about the Resource Hierarchy. (== resource_for {$api_version}.projects ==)
  */
 public final class Project implements ApiMessage {
   private final Metadata commonInstanceMetadata;

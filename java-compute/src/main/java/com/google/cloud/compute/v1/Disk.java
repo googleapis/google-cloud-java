@@ -29,6 +29,11 @@ import javax.annotation.Nullable;
 /**
  * Represents a Persistent Disk resource.
  *
+ * <p>Google Compute Engine has two Disk resources:
+ *
+ * <p>&#42; [Global](/compute/docs/reference/rest/latest/disks) &#42;
+ * [Regional](/compute/docs/reference/rest/latest/regionDisks)
+ *
  * <p>Persistent disks are required for running your VM instances. Create both boot and non-boot
  * (data) persistent disks. For more information, read Persistent Disks. For more storage options,
  * read Storage options.
@@ -37,8 +42,8 @@ import javax.annotation.Nullable;
  * persistent disks.
  *
  * <p>The regionDisks resource represents a regional persistent disk. For more information, read
- * Regional resources. (== resource_for beta.disks ==) (== resource_for v1.disks ==) (==
- * resource_for v1.regionDisks ==) (== resource_for beta.regionDisks ==)
+ * Regional resources. (== resource_for {$api_version}.disks ==) (== resource_for
+ * {$api_version}.regionDisks ==)
  */
 public final class Disk implements ApiMessage {
   private final String creationTimestamp;

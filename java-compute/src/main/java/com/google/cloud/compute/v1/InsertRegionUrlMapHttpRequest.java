@@ -178,11 +178,23 @@ public final class InsertRegionUrlMapHttpRequest implements ApiMessage {
   /**
    * Represents a URL Map resource.
    *
-   * <p>A URL map resource is a component of certain types of load balancers. This resource defines
-   * mappings from host names and URL paths to either a backend service or a backend bucket.
+   * <p>Google Compute Engine has two URL Map resources:
    *
-   * <p>To use this resource, the backend service must have a loadBalancingScheme of either
-   * EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
+   * <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
+   * [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *
+   * <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
+   * Director.
+   *
+   * <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
+   * regionUrlMaps are used by internal HTTP(S) load balancers.
+   *
+   * <p>This resource defines mappings from host names and URL paths to either a backend service or
+   * a backend bucket.
+   *
+   * <p>To use the global urlMaps resource, the backend service must have a loadBalancingScheme of
+   * either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend
+   * service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL Map
    * Concepts.
    */
   public UrlMap getUrlMapResource() {
@@ -381,13 +393,24 @@ public final class InsertRegionUrlMapHttpRequest implements ApiMessage {
     /**
      * Represents a URL Map resource.
      *
-     * <p>A URL map resource is a component of certain types of load balancers. This resource
-     * defines mappings from host names and URL paths to either a backend service or a backend
-     * bucket.
+     * <p>Google Compute Engine has two URL Map resources:
      *
-     * <p>To use this resource, the backend service must have a loadBalancingScheme of either
-     * EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
-     * Concepts.
+     * <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
+     * [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+     *
+     * <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
+     * Director.
+     *
+     * <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
+     * regionUrlMaps are used by internal HTTP(S) load balancers.
+     *
+     * <p>This resource defines mappings from host names and URL paths to either a backend service
+     * or a backend bucket.
+     *
+     * <p>To use the global urlMaps resource, the backend service must have a loadBalancingScheme of
+     * either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend
+     * service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL
+     * Map Concepts.
      */
     public UrlMap getUrlMapResource() {
       return urlMapResource;
@@ -396,13 +419,24 @@ public final class InsertRegionUrlMapHttpRequest implements ApiMessage {
     /**
      * Represents a URL Map resource.
      *
-     * <p>A URL map resource is a component of certain types of load balancers. This resource
-     * defines mappings from host names and URL paths to either a backend service or a backend
-     * bucket.
+     * <p>Google Compute Engine has two URL Map resources:
      *
-     * <p>To use this resource, the backend service must have a loadBalancingScheme of either
-     * EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
-     * Concepts.
+     * <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
+     * [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+     *
+     * <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
+     * Director.
+     *
+     * <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
+     * regionUrlMaps are used by internal HTTP(S) load balancers.
+     *
+     * <p>This resource defines mappings from host names and URL paths to either a backend service
+     * or a backend bucket.
+     *
+     * <p>To use the global urlMaps resource, the backend service must have a loadBalancingScheme of
+     * either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend
+     * service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL
+     * Map Concepts.
      */
     public Builder setUrlMapResource(UrlMap urlMapResource) {
       this.urlMapResource = urlMapResource;

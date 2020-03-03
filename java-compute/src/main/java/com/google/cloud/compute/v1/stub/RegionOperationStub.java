@@ -25,6 +25,7 @@ import com.google.cloud.compute.v1.GetRegionOperationHttpRequest;
 import com.google.cloud.compute.v1.ListRegionOperationsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
+import com.google.cloud.compute.v1.WaitRegionOperationHttpRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -57,6 +58,11 @@ public abstract class RegionOperationStub implements BackgroundResource {
   public UnaryCallable<ListRegionOperationsHttpRequest, OperationList>
       listRegionOperationsCallable() {
     throw new UnsupportedOperationException("Not implemented: listRegionOperationsCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<WaitRegionOperationHttpRequest, Operation> waitRegionOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: waitRegionOperationCallable()");
   }
 
   @Override

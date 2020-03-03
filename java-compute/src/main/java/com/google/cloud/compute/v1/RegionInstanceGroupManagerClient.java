@@ -325,6 +325,144 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Creates instances with per-instance configs in this regional managed instance group. Instances
+   * are created using the current instance template. The create instances operation is marked DONE
+   * if the createInstances request is successful. The underlying actions take additional time. You
+   * must separately verify the status of the creating or actions with the listmanagedinstances
+   * method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagersCreateInstancesRequest regionInstanceGroupManagersCreateInstancesRequestResource = RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
+   *   Operation response = regionInstanceGroupManagerClient.createInstancesRegionInstanceGroupManager(instanceGroupManager, regionInstanceGroupManagersCreateInstancesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group. It should conform to
+   *     RFC1035.
+   * @param regionInstanceGroupManagersCreateInstancesRequestResource
+   *     RegionInstanceGroupManagers.createInstances
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation createInstancesRegionInstanceGroupManager(
+      ProjectRegionInstanceGroupManagerName instanceGroupManager,
+      RegionInstanceGroupManagersCreateInstancesRequest
+          regionInstanceGroupManagersCreateInstancesRequestResource) {
+    CreateInstancesRegionInstanceGroupManagerHttpRequest request =
+        CreateInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .setRegionInstanceGroupManagersCreateInstancesRequestResource(
+                regionInstanceGroupManagersCreateInstancesRequestResource)
+            .build();
+    return createInstancesRegionInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates instances with per-instance configs in this regional managed instance group. Instances
+   * are created using the current instance template. The create instances operation is marked DONE
+   * if the createInstances request is successful. The underlying actions take additional time. You
+   * must separately verify the status of the creating or actions with the listmanagedinstances
+   * method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagersCreateInstancesRequest regionInstanceGroupManagersCreateInstancesRequestResource = RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
+   *   Operation response = regionInstanceGroupManagerClient.createInstancesRegionInstanceGroupManager(instanceGroupManager.toString(), regionInstanceGroupManagersCreateInstancesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group. It should conform to
+   *     RFC1035.
+   * @param regionInstanceGroupManagersCreateInstancesRequestResource
+   *     RegionInstanceGroupManagers.createInstances
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation createInstancesRegionInstanceGroupManager(
+      String instanceGroupManager,
+      RegionInstanceGroupManagersCreateInstancesRequest
+          regionInstanceGroupManagersCreateInstancesRequestResource) {
+    CreateInstancesRegionInstanceGroupManagerHttpRequest request =
+        CreateInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(instanceGroupManager)
+            .setRegionInstanceGroupManagersCreateInstancesRequestResource(
+                regionInstanceGroupManagersCreateInstancesRequestResource)
+            .build();
+    return createInstancesRegionInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates instances with per-instance configs in this regional managed instance group. Instances
+   * are created using the current instance template. The create instances operation is marked DONE
+   * if the createInstances request is successful. The underlying actions take additional time. You
+   * must separately verify the status of the creating or actions with the listmanagedinstances
+   * method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagersCreateInstancesRequest regionInstanceGroupManagersCreateInstancesRequestResource = RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
+   *   CreateInstancesRegionInstanceGroupManagerHttpRequest request = CreateInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .setRegionInstanceGroupManagersCreateInstancesRequestResource(regionInstanceGroupManagersCreateInstancesRequestResource)
+   *     .build();
+   *   Operation response = regionInstanceGroupManagerClient.createInstancesRegionInstanceGroupManager(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation createInstancesRegionInstanceGroupManager(
+      CreateInstancesRegionInstanceGroupManagerHttpRequest request) {
+    return createInstancesRegionInstanceGroupManagerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates instances with per-instance configs in this regional managed instance group. Instances
+   * are created using the current instance template. The create instances operation is marked DONE
+   * if the createInstances request is successful. The underlying actions take additional time. You
+   * must separately verify the status of the creating or actions with the listmanagedinstances
+   * method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagersCreateInstancesRequest regionInstanceGroupManagersCreateInstancesRequestResource = RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
+   *   CreateInstancesRegionInstanceGroupManagerHttpRequest request = CreateInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .setRegionInstanceGroupManagersCreateInstancesRequestResource(regionInstanceGroupManagersCreateInstancesRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagerClient.createInstancesRegionInstanceGroupManagerCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      createInstancesRegionInstanceGroupManagerCallable() {
+    return stub.createInstancesRegionInstanceGroupManagerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Deletes the specified managed instance group and all of the instances in that group.
    *
    * <p>Sample code:
@@ -713,9 +851,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *     entity. For more information, read Instance groups.
    *     <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
    *     <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
-   *     resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==)
-   *     (== resource_for beta.regionInstanceGroupManagers ==) (== resource_for
-   *     v1.regionInstanceGroupManagers ==)
+   *     resource_for {$api_version}.instanceGroupManagers ==) (== resource_for
+   *     {$api_version}.regionInstanceGroupManagers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -755,9 +892,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *     entity. For more information, read Instance groups.
    *     <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
    *     <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
-   *     resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==)
-   *     (== resource_for beta.regionInstanceGroupManagers ==) (== resource_for
-   *     v1.regionInstanceGroupManagers ==)
+   *     resource_for {$api_version}.instanceGroupManagers ==) (== resource_for
+   *     {$api_version}.regionInstanceGroupManagers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1113,9 +1249,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *     entity. For more information, read Instance groups.
    *     <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
    *     <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
-   *     resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==)
-   *     (== resource_for beta.regionInstanceGroupManagers ==) (== resource_for
-   *     v1.regionInstanceGroupManagers ==)
+   *     resource_for {$api_version}.instanceGroupManagers ==) (== resource_for
+   *     {$api_version}.regionInstanceGroupManagers ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1162,9 +1297,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *     entity. For more information, read Instance groups.
    *     <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
    *     <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
-   *     resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==)
-   *     (== resource_for beta.regionInstanceGroupManagers ==) (== resource_for
-   *     v1.regionInstanceGroupManagers ==)
+   *     resource_for {$api_version}.instanceGroupManagers ==) (== resource_for
+   *     {$api_version}.regionInstanceGroupManagers ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

@@ -28,6 +28,7 @@ import com.google.cloud.compute.v1.ListGlobalOperationsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationAggregatedList;
 import com.google.cloud.compute.v1.OperationList;
+import com.google.cloud.compute.v1.WaitGlobalOperationHttpRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -75,6 +76,11 @@ public abstract class GlobalOperationStub implements BackgroundResource {
   public UnaryCallable<ListGlobalOperationsHttpRequest, OperationList>
       listGlobalOperationsCallable() {
     throw new UnsupportedOperationException("Not implemented: listGlobalOperationsCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<WaitGlobalOperationHttpRequest, Operation> waitGlobalOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: waitGlobalOperationCallable()");
   }
 
   @Override

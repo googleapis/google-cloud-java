@@ -37,6 +37,7 @@ import com.google.cloud.compute.v1.GetGlobalForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.InsertGlobalForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.ListGlobalForwardingRulesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchGlobalForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.ProjectGlobalForwardingRuleName;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.SetTargetGlobalForwardingRuleHttpRequest;
@@ -134,6 +135,26 @@ public class HttpJsonGlobalForwardingRuleStub extends GlobalForwardingRuleStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<PatchGlobalForwardingRuleHttpRequest, Operation>
+      patchGlobalForwardingRuleMethodDescriptor =
+          ApiMethodDescriptor.<PatchGlobalForwardingRuleHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.globalForwardingRules.patch")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<PatchGlobalForwardingRuleHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/global/forwardingRules/{forwardingRule}"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectGlobalForwardingRuleName.newFactory())
+                      .setResourceNameField("forwardingRule")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<SetTargetGlobalForwardingRuleHttpRequest, Operation>
       setTargetGlobalForwardingRuleMethodDescriptor =
           ApiMethodDescriptor.<SetTargetGlobalForwardingRuleHttpRequest, Operation>newBuilder()
@@ -168,6 +189,8 @@ public class HttpJsonGlobalForwardingRuleStub extends GlobalForwardingRuleStub {
   private final UnaryCallable<
           ListGlobalForwardingRulesHttpRequest, ListGlobalForwardingRulesPagedResponse>
       listGlobalForwardingRulesPagedCallable;
+  private final UnaryCallable<PatchGlobalForwardingRuleHttpRequest, Operation>
+      patchGlobalForwardingRuleCallable;
   private final UnaryCallable<SetTargetGlobalForwardingRuleHttpRequest, Operation>
       setTargetGlobalForwardingRuleCallable;
 
@@ -233,6 +256,11 @@ public class HttpJsonGlobalForwardingRuleStub extends GlobalForwardingRuleStub {
                 .<ListGlobalForwardingRulesHttpRequest, ForwardingRuleList>newBuilder()
                 .setMethodDescriptor(listGlobalForwardingRulesMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<PatchGlobalForwardingRuleHttpRequest, Operation>
+        patchGlobalForwardingRuleTransportSettings =
+            HttpJsonCallSettings.<PatchGlobalForwardingRuleHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(patchGlobalForwardingRuleMethodDescriptor)
+                .build();
     HttpJsonCallSettings<SetTargetGlobalForwardingRuleHttpRequest, Operation>
         setTargetGlobalForwardingRuleTransportSettings =
             HttpJsonCallSettings.<SetTargetGlobalForwardingRuleHttpRequest, Operation>newBuilder()
@@ -263,6 +291,11 @@ public class HttpJsonGlobalForwardingRuleStub extends GlobalForwardingRuleStub {
         callableFactory.createPagedCallable(
             listGlobalForwardingRulesTransportSettings,
             settings.listGlobalForwardingRulesSettings(),
+            clientContext);
+    this.patchGlobalForwardingRuleCallable =
+        callableFactory.createUnaryCallable(
+            patchGlobalForwardingRuleTransportSettings,
+            settings.patchGlobalForwardingRuleSettings(),
             clientContext);
     this.setTargetGlobalForwardingRuleCallable =
         callableFactory.createUnaryCallable(
@@ -301,6 +334,12 @@ public class HttpJsonGlobalForwardingRuleStub extends GlobalForwardingRuleStub {
   public UnaryCallable<ListGlobalForwardingRulesHttpRequest, ForwardingRuleList>
       listGlobalForwardingRulesCallable() {
     return listGlobalForwardingRulesCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchGlobalForwardingRuleHttpRequest, Operation>
+      patchGlobalForwardingRuleCallable() {
+    return patchGlobalForwardingRuleCallable;
   }
 
   @BetaApi

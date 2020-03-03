@@ -104,9 +104,9 @@ public final class Binding implements ApiMessage {
    * `admins{@literal @}example.com`.
    *
    * <p>&#42; `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier)
-   * representing a user that has been recently deleted. For
-   * example,`alice{@literal @}example.com?uid=123456789012345678901`. If the user is recovered,
-   * this value reverts to `user:{emailid}` and the recovered user retains the role in the binding.
+   * representing a user that has been recently deleted. For example,
+   * `alice{@literal @}example.com?uid=123456789012345678901`. If the user is recovered, this value
+   * reverts to `user:{emailid}` and the recovered user retains the role in the binding.
    *
    * <p>&#42; `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique
    * identifier) representing a service account that has been recently deleted. For example,
@@ -222,10 +222,9 @@ public final class Binding implements ApiMessage {
      * `admins{@literal @}example.com`.
      *
      * <p>&#42; `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier)
-     * representing a user that has been recently deleted. For
-     * example,`alice{@literal @}example.com?uid=123456789012345678901`. If the user is recovered,
-     * this value reverts to `user:{emailid}` and the recovered user retains the role in the
-     * binding.
+     * representing a user that has been recently deleted. For example,
+     * `alice{@literal @}example.com?uid=123456789012345678901`. If the user is recovered, this
+     * value reverts to `user:{emailid}` and the recovered user retains the role in the binding.
      *
      * <p>&#42; `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique
      * identifier) representing a service account that has been recently deleted. For example,
@@ -265,10 +264,9 @@ public final class Binding implements ApiMessage {
      * `admins{@literal @}example.com`.
      *
      * <p>&#42; `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier)
-     * representing a user that has been recently deleted. For
-     * example,`alice{@literal @}example.com?uid=123456789012345678901`. If the user is recovered,
-     * this value reverts to `user:{emailid}` and the recovered user retains the role in the
-     * binding.
+     * representing a user that has been recently deleted. For example,
+     * `alice{@literal @}example.com?uid=123456789012345678901`. If the user is recovered, this
+     * value reverts to `user:{emailid}` and the recovered user retains the role in the binding.
      *
      * <p>&#42; `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique
      * identifier) representing a service account that has been recently deleted. For example,
@@ -312,10 +310,9 @@ public final class Binding implements ApiMessage {
      * `admins{@literal @}example.com`.
      *
      * <p>&#42; `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier)
-     * representing a user that has been recently deleted. For
-     * example,`alice{@literal @}example.com?uid=123456789012345678901`. If the user is recovered,
-     * this value reverts to `user:{emailid}` and the recovered user retains the role in the
-     * binding.
+     * representing a user that has been recently deleted. For example,
+     * `alice{@literal @}example.com?uid=123456789012345678901`. If the user is recovered, this
+     * value reverts to `user:{emailid}` and the recovered user retains the role in the binding.
      *
      * <p>&#42; `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique
      * identifier) representing a service account that has been recently deleted. For example,

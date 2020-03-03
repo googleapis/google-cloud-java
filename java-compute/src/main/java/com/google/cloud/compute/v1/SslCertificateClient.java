@@ -512,11 +512,16 @@ public class SslCertificateClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param sslCertificateResource Represents an SSL Certificate resource.
+   *     <p>Google Compute Engine has two SSL Certificate resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/sslCertificates) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionSslCertificates)
+   *     <p>- sslCertificates are used by: - external HTTPS load balancers - SSL proxy load
+   *     balancers
+   *     <p>- regionSslCertificates are used by: - internal HTTPS load balancers
    *     <p>This SSL certificate resource also contains a private key. You can use SSL keys and
    *     certificates to secure connections to a load balancer. For more information, read Creating
-   *     and Using SSL Certificates. (== resource_for beta.sslCertificates ==) (== resource_for
-   *     v1.sslCertificates ==) (== resource_for beta.regionSslCertificates ==) (== resource_for
-   *     v1.regionSslCertificates ==) Next ID: 17
+   *     and Using SSL Certificates. (== resource_for {$api_version}.sslCertificates ==) (==
+   *     resource_for {$api_version}.regionSslCertificates ==) Next ID: 17
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -547,11 +552,16 @@ public class SslCertificateClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param sslCertificateResource Represents an SSL Certificate resource.
+   *     <p>Google Compute Engine has two SSL Certificate resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/sslCertificates) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionSslCertificates)
+   *     <p>- sslCertificates are used by: - external HTTPS load balancers - SSL proxy load
+   *     balancers
+   *     <p>- regionSslCertificates are used by: - internal HTTPS load balancers
    *     <p>This SSL certificate resource also contains a private key. You can use SSL keys and
    *     certificates to secure connections to a load balancer. For more information, read Creating
-   *     and Using SSL Certificates. (== resource_for beta.sslCertificates ==) (== resource_for
-   *     v1.sslCertificates ==) (== resource_for beta.regionSslCertificates ==) (== resource_for
-   *     v1.regionSslCertificates ==) Next ID: 17
+   *     and Using SSL Certificates. (== resource_for {$api_version}.sslCertificates ==) (==
+   *     resource_for {$api_version}.regionSslCertificates ==) Next ID: 17
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

@@ -28,6 +28,11 @@ import javax.annotation.Nullable;
 /**
  * Represents an Autoscaler resource.
  *
+ * <p>Google Compute Engine has two Autoscaler resources:
+ *
+ * <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
+ * [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
+ *
  * <p>Use autoscalers to automatically add or delete instances from a managed instance group
  * according to your defined autoscaling policy. For more information, read Autoscaling Groups of
  * Instances.
@@ -35,8 +40,7 @@ import javax.annotation.Nullable;
  * <p>For zonal managed instance groups resource, use the autoscaler resource.
  *
  * <p>For regional managed instance groups, use the regionAutoscalers resource. (== resource_for
- * beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for beta.regionAutoscalers
- * ==) (== resource_for v1.regionAutoscalers ==)
+ * {$api_version}.autoscalers ==) (== resource_for {$api_version}.regionAutoscalers ==)
  */
 public final class Autoscaler implements ApiMessage {
   private final AutoscalingPolicy autoscalingPolicy;

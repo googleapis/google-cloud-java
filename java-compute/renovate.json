@@ -22,7 +22,8 @@
         "^com.google.api:gax",
         "^com.google.auth:",
         "^com.google.cloud:google-cloud-core",
-        "^io.grpc:"
+        "^io.grpc:",
+        "^com.google.guava:"
       ],
       "groupName": "core dependencies"
     },
@@ -58,6 +59,12 @@
         "^com.google.cloud:google-cloud-"
       ],
       "ignoreUnstable": false
+    },
+    {
+      "packagePatterns": [
+        "^com.fasterxml.jackson.core"
+      ],
+      "groupName": "jackson dependencies"
     }
   ],
   "semanticCommits": true

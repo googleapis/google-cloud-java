@@ -142,9 +142,14 @@ public final class InsertBackendServiceHttpRequest implements ApiMessage {
    * <p>A backend service contains configuration values for Google Cloud Platform load balancing
    * services.
    *
+   * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
+   *
+   * <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
+   * [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   *
    * <p>For more information, read Backend Services.
    *
-   * <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
+   * <p>(== resource_for {$api_version}.backendService ==)
    */
   public BackendService getBackendServiceResource() {
     return backendServiceResource;
@@ -309,9 +314,14 @@ public final class InsertBackendServiceHttpRequest implements ApiMessage {
      * <p>A backend service contains configuration values for Google Cloud Platform load balancing
      * services.
      *
+     * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
+     *
+     * <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
+     * [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+     *
      * <p>For more information, read Backend Services.
      *
-     * <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
+     * <p>(== resource_for {$api_version}.backendService ==)
      */
     public BackendService getBackendServiceResource() {
       return backendServiceResource;
@@ -323,9 +333,14 @@ public final class InsertBackendServiceHttpRequest implements ApiMessage {
      * <p>A backend service contains configuration values for Google Cloud Platform load balancing
      * services.
      *
+     * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
+     *
+     * <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
+     * [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+     *
      * <p>For more information, read Backend Services.
      *
-     * <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
+     * <p>(== resource_for {$api_version}.backendService ==)
      */
     public Builder setBackendServiceResource(BackendService backendServiceResource) {
       this.backendServiceResource = backendServiceResource;

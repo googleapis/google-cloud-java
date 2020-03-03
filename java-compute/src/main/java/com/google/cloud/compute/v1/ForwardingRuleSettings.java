@@ -99,6 +99,12 @@ public class ForwardingRuleSettings extends ClientSettings<ForwardingRuleSetting
     return ((ForwardingRuleStubSettings) getStubSettings()).listForwardingRulesSettings();
   }
 
+  /** Returns the object with the settings used for calls to patchForwardingRule. */
+  public UnaryCallSettings<PatchForwardingRuleHttpRequest, Operation>
+      patchForwardingRuleSettings() {
+    return ((ForwardingRuleStubSettings) getStubSettings()).patchForwardingRuleSettings();
+  }
+
   /** Returns the object with the settings used for calls to setTargetForwardingRule. */
   public UnaryCallSettings<SetTargetForwardingRuleHttpRequest, Operation>
       setTargetForwardingRuleSettings() {
@@ -239,6 +245,12 @@ public class ForwardingRuleSettings extends ClientSettings<ForwardingRuleSetting
             ListForwardingRulesHttpRequest, ForwardingRuleList, ListForwardingRulesPagedResponse>
         listForwardingRulesSettings() {
       return getStubSettingsBuilder().listForwardingRulesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchForwardingRule. */
+    public UnaryCallSettings.Builder<PatchForwardingRuleHttpRequest, Operation>
+        patchForwardingRuleSettings() {
+      return getStubSettingsBuilder().patchForwardingRuleSettings();
     }
 
     /** Returns the builder for the settings used for calls to setTargetForwardingRule. */

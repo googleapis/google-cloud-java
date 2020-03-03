@@ -192,8 +192,8 @@ public final class InsertTargetPoolHttpRequest implements ApiMessage {
    *
    * <p>Target pools are used for network TCP/UDP load balancing. A target pool references member
    * instances, an associated legacy HttpHealthCheck resource, and, optionally, a backup target
-   * pool. For more information, read Using target pools. (== resource_for beta.targetPools ==) (==
-   * resource_for v1.targetPools ==)
+   * pool. For more information, read Using target pools. (== resource_for
+   * {$api_version}.targetPools ==)
    */
   public TargetPool getTargetPoolResource() {
     return targetPoolResource;
@@ -417,8 +417,8 @@ public final class InsertTargetPoolHttpRequest implements ApiMessage {
      *
      * <p>Target pools are used for network TCP/UDP load balancing. A target pool references member
      * instances, an associated legacy HttpHealthCheck resource, and, optionally, a backup target
-     * pool. For more information, read Using target pools. (== resource_for beta.targetPools ==)
-     * (== resource_for v1.targetPools ==)
+     * pool. For more information, read Using target pools. (== resource_for
+     * {$api_version}.targetPools ==)
      */
     public TargetPool getTargetPoolResource() {
       return targetPoolResource;
@@ -429,8 +429,8 @@ public final class InsertTargetPoolHttpRequest implements ApiMessage {
      *
      * <p>Target pools are used for network TCP/UDP load balancing. A target pool references member
      * instances, an associated legacy HttpHealthCheck resource, and, optionally, a backup target
-     * pool. For more information, read Using target pools. (== resource_for beta.targetPools ==)
-     * (== resource_for v1.targetPools ==)
+     * pool. For more information, read Using target pools. (== resource_for
+     * {$api_version}.targetPools ==)
      */
     public Builder setTargetPoolResource(TargetPool targetPoolResource) {
       this.targetPoolResource = targetPoolResource;

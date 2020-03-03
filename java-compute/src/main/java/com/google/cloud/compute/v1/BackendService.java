@@ -31,9 +31,14 @@ import javax.annotation.Nullable;
  * <p>A backend service contains configuration values for Google Cloud Platform load balancing
  * services.
  *
+ * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
+ *
+ * <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
+ * [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+ *
  * <p>For more information, read Backend Services.
  *
- * <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
+ * <p>(== resource_for {$api_version}.backendService ==)
  */
 public final class BackendService implements ApiMessage {
   private final Integer affinityCookieTtlSec;
@@ -344,9 +349,10 @@ public final class BackendService implements ApiMessage {
 
   /**
    * The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this
-   * BackendService. Currently at most one health check can be specified, and a health check is
-   * required for Compute Engine backend services. A health check must not be specified for App
-   * Engine backend and Cloud Function backend.
+   * BackendService. Currently at most one health check can be specified. Health check is optional
+   * for Compute Engine backend services if there is no backend. A health check must not be
+   * specified when adding Internet Network Endpoint Group or Serverless Network Endpoint Group as
+   * backends. In all other cases, a health check is required for Compute Engine backend services.
    *
    * <p>For internal load balancing, a URL to a HealthCheck resource must be specified instead.
    */
@@ -890,9 +896,10 @@ public final class BackendService implements ApiMessage {
 
     /**
      * The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this
-     * BackendService. Currently at most one health check can be specified, and a health check is
-     * required for Compute Engine backend services. A health check must not be specified for App
-     * Engine backend and Cloud Function backend.
+     * BackendService. Currently at most one health check can be specified. Health check is optional
+     * for Compute Engine backend services if there is no backend. A health check must not be
+     * specified when adding Internet Network Endpoint Group or Serverless Network Endpoint Group as
+     * backends. In all other cases, a health check is required for Compute Engine backend services.
      *
      * <p>For internal load balancing, a URL to a HealthCheck resource must be specified instead.
      */
@@ -902,9 +909,10 @@ public final class BackendService implements ApiMessage {
 
     /**
      * The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this
-     * BackendService. Currently at most one health check can be specified, and a health check is
-     * required for Compute Engine backend services. A health check must not be specified for App
-     * Engine backend and Cloud Function backend.
+     * BackendService. Currently at most one health check can be specified. Health check is optional
+     * for Compute Engine backend services if there is no backend. A health check must not be
+     * specified when adding Internet Network Endpoint Group or Serverless Network Endpoint Group as
+     * backends. In all other cases, a health check is required for Compute Engine backend services.
      *
      * <p>For internal load balancing, a URL to a HealthCheck resource must be specified instead.
      */
@@ -918,9 +926,10 @@ public final class BackendService implements ApiMessage {
 
     /**
      * The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this
-     * BackendService. Currently at most one health check can be specified, and a health check is
-     * required for Compute Engine backend services. A health check must not be specified for App
-     * Engine backend and Cloud Function backend.
+     * BackendService. Currently at most one health check can be specified. Health check is optional
+     * for Compute Engine backend services if there is no backend. A health check must not be
+     * specified when adding Internet Network Endpoint Group or Serverless Network Endpoint Group as
+     * backends. In all other cases, a health check is required for Compute Engine backend services.
      *
      * <p>For internal load balancing, a URL to a HealthCheck resource must be specified instead.
      */

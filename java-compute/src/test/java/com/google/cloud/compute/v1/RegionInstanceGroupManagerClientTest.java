@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionInstanceGroupManagerStub.abandonInstancesRegionInstanceGroupManagerMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonRegionInstanceGroupManagerStub.createInstancesRegionInstanceGroupManagerMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionInstanceGroupManagerStub.deleteInstancesRegionInstanceGroupManagerMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionInstanceGroupManagerStub.deleteRegionInstanceGroupManagerMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionInstanceGroupManagerStub.getRegionInstanceGroupManagerMethodDescriptor;
@@ -59,6 +60,7 @@ public class RegionInstanceGroupManagerClientTest {
       ImmutableList.copyOf(
           Lists.<ApiMethodDescriptor>newArrayList(
               abandonInstancesRegionInstanceGroupManagerMethodDescriptor,
+              createInstancesRegionInstanceGroupManagerMethodDescriptor,
               deleteRegionInstanceGroupManagerMethodDescriptor,
               deleteInstancesRegionInstanceGroupManagerMethodDescriptor,
               getRegionInstanceGroupManagerMethodDescriptor,
@@ -195,6 +197,107 @@ public class RegionInstanceGroupManagerClientTest {
 
       client.abandonInstancesRegionInstanceGroupManager(
           instanceGroupManager, regionInstanceGroupManagersAbandonInstancesRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createInstancesRegionInstanceGroupManagerTest() {
+    String clientOperationId = "clientOperationId-239630617";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
+    String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId(clientOperationId)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
+            .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectRegionInstanceGroupManagerName instanceGroupManager =
+        ProjectRegionInstanceGroupManagerName.of(
+            "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+    RegionInstanceGroupManagersCreateInstancesRequest
+        regionInstanceGroupManagersCreateInstancesRequestResource =
+            RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.createInstancesRegionInstanceGroupManager(
+            instanceGroupManager, regionInstanceGroupManagersCreateInstancesRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createInstancesRegionInstanceGroupManagerExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectRegionInstanceGroupManagerName instanceGroupManager =
+          ProjectRegionInstanceGroupManagerName.of(
+              "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+      RegionInstanceGroupManagersCreateInstancesRequest
+          regionInstanceGroupManagersCreateInstancesRequestResource =
+              RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
+
+      client.createInstancesRegionInstanceGroupManager(
+          instanceGroupManager, regionInstanceGroupManagersCreateInstancesRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

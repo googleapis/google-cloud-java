@@ -183,6 +183,7 @@ public class SnapshotClientTest {
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
     String diskSizeGb = "diskSizeGb-757478089";
+    String downloadBytes = "downloadBytes971924980";
     String id = "id3355";
     String kind = "kind3292052";
     String labelFingerprint = "labelFingerprint714995737";
@@ -199,6 +200,7 @@ public class SnapshotClientTest {
             .setCreationTimestamp(creationTimestamp)
             .setDescription(description)
             .setDiskSizeGb(diskSizeGb)
+            .setDownloadBytes(downloadBytes)
             .setId(id)
             .setKind(kind)
             .setLabelFingerprint(labelFingerprint)

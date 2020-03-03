@@ -48,6 +48,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationAggregatedList;
 import com.google.cloud.compute.v1.OperationList;
 import com.google.cloud.compute.v1.OperationsScopedList;
+import com.google.cloud.compute.v1.WaitGlobalOperationHttpRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -111,6 +112,8 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
   private final PagedCallSettings<
           ListGlobalOperationsHttpRequest, OperationList, ListGlobalOperationsPagedResponse>
       listGlobalOperationsSettings;
+  private final UnaryCallSettings<WaitGlobalOperationHttpRequest, Operation>
+      waitGlobalOperationSettings;
 
   /** Returns the object with the settings used for calls to aggregatedListGlobalOperations. */
   public PagedCallSettings<
@@ -136,6 +139,12 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
           ListGlobalOperationsHttpRequest, OperationList, ListGlobalOperationsPagedResponse>
       listGlobalOperationsSettings() {
     return listGlobalOperationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to waitGlobalOperation. */
+  public UnaryCallSettings<WaitGlobalOperationHttpRequest, Operation>
+      waitGlobalOperationSettings() {
+    return waitGlobalOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -218,6 +227,7 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
     deleteGlobalOperationSettings = settingsBuilder.deleteGlobalOperationSettings().build();
     getGlobalOperationSettings = settingsBuilder.getGlobalOperationSettings().build();
     listGlobalOperationsSettings = settingsBuilder.listGlobalOperationsSettings().build();
+    waitGlobalOperationSettings = settingsBuilder.waitGlobalOperationSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -375,6 +385,8 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
     private final PagedCallSettings.Builder<
             ListGlobalOperationsHttpRequest, OperationList, ListGlobalOperationsPagedResponse>
         listGlobalOperationsSettings;
+    private final UnaryCallSettings.Builder<WaitGlobalOperationHttpRequest, Operation>
+        waitGlobalOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -427,12 +439,15 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
       listGlobalOperationsSettings =
           PagedCallSettings.newBuilder(LIST_GLOBAL_OPERATIONS_PAGE_STR_FACT);
 
+      waitGlobalOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListGlobalOperationsSettings,
               deleteGlobalOperationSettings,
               getGlobalOperationSettings,
-              listGlobalOperationsSettings);
+              listGlobalOperationsSettings,
+              waitGlobalOperationSettings);
 
       initDefaults(this);
     }
@@ -468,6 +483,11 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .waitGlobalOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -479,13 +499,15 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
       deleteGlobalOperationSettings = settings.deleteGlobalOperationSettings.toBuilder();
       getGlobalOperationSettings = settings.getGlobalOperationSettings.toBuilder();
       listGlobalOperationsSettings = settings.listGlobalOperationsSettings.toBuilder();
+      waitGlobalOperationSettings = settings.waitGlobalOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListGlobalOperationsSettings,
               deleteGlobalOperationSettings,
               getGlobalOperationSettings,
-              listGlobalOperationsSettings);
+              listGlobalOperationsSettings,
+              waitGlobalOperationSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -530,6 +552,12 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
             ListGlobalOperationsHttpRequest, OperationList, ListGlobalOperationsPagedResponse>
         listGlobalOperationsSettings() {
       return listGlobalOperationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to waitGlobalOperation. */
+    public UnaryCallSettings.Builder<WaitGlobalOperationHttpRequest, Operation>
+        waitGlobalOperationSettings() {
+      return waitGlobalOperationSettings;
     }
 
     @Override

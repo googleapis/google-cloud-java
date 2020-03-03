@@ -714,8 +714,8 @@ public class SubnetworkClient implements BackgroundResource {
    * @param subnetworkResource Represents a Subnetwork resource.
    *     <p>A subnetwork (also known as a subnet) is a logical partition of a Virtual Private Cloud
    *     network with one primary IP range and zero or more secondary IP ranges. For more
-   *     information, read Virtual Private Cloud (VPC) Network. (== resource_for beta.subnetworks
-   *     ==) (== resource_for v1.subnetworks ==)
+   *     information, read Virtual Private Cloud (VPC) Network. (== resource_for
+   *     {$api_version}.subnetworks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -746,8 +746,8 @@ public class SubnetworkClient implements BackgroundResource {
    * @param subnetworkResource Represents a Subnetwork resource.
    *     <p>A subnetwork (also known as a subnet) is a logical partition of a Virtual Private Cloud
    *     network with one primary IP range and zero or more secondary IP ranges. For more
-   *     information, read Virtual Private Cloud (VPC) Network. (== resource_for beta.subnetworks
-   *     ==) (== resource_for v1.subnetworks ==)
+   *     information, read Virtual Private Cloud (VPC) Network. (== resource_for
+   *     {$api_version}.subnetworks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1106,18 +1106,26 @@ public class SubnetworkClient implements BackgroundResource {
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+   *   Integer drainTimeoutSeconds = 0;
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
-   *   Operation response = subnetworkClient.patchSubnetwork(subnetwork, subnetworkResource, fieldMask);
+   *   Operation response = subnetworkClient.patchSubnetwork(subnetwork, drainTimeoutSeconds, subnetworkResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param subnetwork Name of the Subnetwork resource to patch.
+   * @param drainTimeoutSeconds The drain timeout specifies the upper bound in seconds on the amount
+   *     of time allowed to drain connections from the current ACTIVE subnetwork to the current
+   *     BACKUP subnetwork. The drain timeout is only applicable when the following conditions are
+   *     true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the
+   *     subnetwork being patched has role = BACKUP - the patch request is setting the role to
+   *     ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks
+   *     will be swapped.
    * @param subnetworkResource Represents a Subnetwork resource.
    *     <p>A subnetwork (also known as a subnet) is a logical partition of a Virtual Private Cloud
    *     network with one primary IP range and zero or more secondary IP ranges. For more
-   *     information, read Virtual Private Cloud (VPC) Network. (== resource_for beta.subnetworks
-   *     ==) (== resource_for v1.subnetworks ==)
+   *     information, read Virtual Private Cloud (VPC) Network. (== resource_for
+   *     {$api_version}.subnetworks ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1127,11 +1135,13 @@ public class SubnetworkClient implements BackgroundResource {
   @BetaApi
   public final Operation patchSubnetwork(
       ProjectRegionSubnetworkName subnetwork,
+      Integer drainTimeoutSeconds,
       Subnetwork subnetworkResource,
       List<String> fieldMask) {
     PatchSubnetworkHttpRequest request =
         PatchSubnetworkHttpRequest.newBuilder()
             .setSubnetwork(subnetwork == null ? null : subnetwork.toString())
+            .setDrainTimeoutSeconds(drainTimeoutSeconds)
             .setSubnetworkResource(subnetworkResource)
             .addAllFieldMask(fieldMask)
             .build();
@@ -1149,18 +1159,26 @@ public class SubnetworkClient implements BackgroundResource {
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+   *   Integer drainTimeoutSeconds = 0;
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
-   *   Operation response = subnetworkClient.patchSubnetwork(subnetwork.toString(), subnetworkResource, fieldMask);
+   *   Operation response = subnetworkClient.patchSubnetwork(subnetwork.toString(), drainTimeoutSeconds, subnetworkResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param subnetwork Name of the Subnetwork resource to patch.
+   * @param drainTimeoutSeconds The drain timeout specifies the upper bound in seconds on the amount
+   *     of time allowed to drain connections from the current ACTIVE subnetwork to the current
+   *     BACKUP subnetwork. The drain timeout is only applicable when the following conditions are
+   *     true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the
+   *     subnetwork being patched has role = BACKUP - the patch request is setting the role to
+   *     ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks
+   *     will be swapped.
    * @param subnetworkResource Represents a Subnetwork resource.
    *     <p>A subnetwork (also known as a subnet) is a logical partition of a Virtual Private Cloud
    *     network with one primary IP range and zero or more secondary IP ranges. For more
-   *     information, read Virtual Private Cloud (VPC) Network. (== resource_for beta.subnetworks
-   *     ==) (== resource_for v1.subnetworks ==)
+   *     information, read Virtual Private Cloud (VPC) Network. (== resource_for
+   *     {$api_version}.subnetworks ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1169,10 +1187,14 @@ public class SubnetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation patchSubnetwork(
-      String subnetwork, Subnetwork subnetworkResource, List<String> fieldMask) {
+      String subnetwork,
+      Integer drainTimeoutSeconds,
+      Subnetwork subnetworkResource,
+      List<String> fieldMask) {
     PatchSubnetworkHttpRequest request =
         PatchSubnetworkHttpRequest.newBuilder()
             .setSubnetwork(subnetwork)
+            .setDrainTimeoutSeconds(drainTimeoutSeconds)
             .setSubnetworkResource(subnetworkResource)
             .addAllFieldMask(fieldMask)
             .build();
@@ -1190,10 +1212,12 @@ public class SubnetworkClient implements BackgroundResource {
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
    *   String formattedSubnetwork = ProjectRegionSubnetworkName.format("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+   *   Integer drainTimeoutSeconds = 0;
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchSubnetworkHttpRequest request = PatchSubnetworkHttpRequest.newBuilder()
    *     .setSubnetwork(formattedSubnetwork)
+   *     .setDrainTimeoutSeconds(drainTimeoutSeconds)
    *     .setSubnetworkResource(subnetworkResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -1220,10 +1244,12 @@ public class SubnetworkClient implements BackgroundResource {
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
    *   String formattedSubnetwork = ProjectRegionSubnetworkName.format("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+   *   Integer drainTimeoutSeconds = 0;
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchSubnetworkHttpRequest request = PatchSubnetworkHttpRequest.newBuilder()
    *     .setSubnetwork(formattedSubnetwork)
+   *     .setDrainTimeoutSeconds(drainTimeoutSeconds)
    *     .setSubnetworkResource(subnetworkResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();

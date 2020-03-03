@@ -27,6 +27,7 @@ import com.google.cloud.compute.v1.GetGlobalForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.InsertGlobalForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.ListGlobalForwardingRulesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchGlobalForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.SetTargetGlobalForwardingRuleHttpRequest;
 import javax.annotation.Generated;
 
@@ -71,6 +72,12 @@ public abstract class GlobalForwardingRuleStub implements BackgroundResource {
   public UnaryCallable<ListGlobalForwardingRulesHttpRequest, ForwardingRuleList>
       listGlobalForwardingRulesCallable() {
     throw new UnsupportedOperationException("Not implemented: listGlobalForwardingRulesCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchGlobalForwardingRuleHttpRequest, Operation>
+      patchGlobalForwardingRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchGlobalForwardingRuleCallable()");
   }
 
   @BetaApi

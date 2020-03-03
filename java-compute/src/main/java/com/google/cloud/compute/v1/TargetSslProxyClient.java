@@ -369,7 +369,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    *     <p>A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules
    *     reference a target SSL proxy, and the target proxy then references an external backend
    *     service. For more information, read Using Target Proxies. (== resource_for
-   *     beta.targetSslProxies ==) (== resource_for v1.targetSslProxies ==)
+   *     {$api_version}.targetSslProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -403,7 +403,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    *     <p>A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules
    *     reference a target SSL proxy, and the target proxy then references an external backend
    *     service. For more information, read Using Target Proxies. (== resource_for
-   *     beta.targetSslProxies ==) (== resource_for v1.targetSslProxies ==)
+   *     {$api_version}.targetSslProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

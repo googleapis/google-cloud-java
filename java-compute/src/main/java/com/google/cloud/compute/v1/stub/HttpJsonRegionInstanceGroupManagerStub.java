@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AbandonInstancesRegionInstanceGroupManagerHttpRequest;
+import com.google.cloud.compute.v1.CreateInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.GetRegionInstanceGroupManagerHttpRequest;
@@ -76,6 +77,30 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/abandonInstances"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
+                      .setResourceNameField("instanceGroupManager")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      createInstancesRegionInstanceGroupManagerMethodDescriptor =
+          ApiMethodDescriptor
+              .<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.regionInstanceGroupManagers.createInstances")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<CreateInstancesRegionInstanceGroupManagerHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/createInstances"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
                       .setResourceNameField("instanceGroupManager")
@@ -352,6 +377,8 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
 
   private final UnaryCallable<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
       abandonInstancesRegionInstanceGroupManagerCallable;
+  private final UnaryCallable<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      createInstancesRegionInstanceGroupManagerCallable;
   private final UnaryCallable<DeleteRegionInstanceGroupManagerHttpRequest, Operation>
       deleteRegionInstanceGroupManagerCallable;
   private final UnaryCallable<DeleteInstancesRegionInstanceGroupManagerHttpRequest, Operation>
@@ -431,6 +458,12 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                 .<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(abandonInstancesRegionInstanceGroupManagerMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+        createInstancesRegionInstanceGroupManagerTransportSettings =
+            HttpJsonCallSettings
+                .<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(createInstancesRegionInstanceGroupManagerMethodDescriptor)
+                .build();
     HttpJsonCallSettings<DeleteRegionInstanceGroupManagerHttpRequest, Operation>
         deleteRegionInstanceGroupManagerTransportSettings =
             HttpJsonCallSettings
@@ -508,6 +541,11 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
             abandonInstancesRegionInstanceGroupManagerTransportSettings,
             settings.abandonInstancesRegionInstanceGroupManagerSettings(),
             clientContext);
+    this.createInstancesRegionInstanceGroupManagerCallable =
+        callableFactory.createUnaryCallable(
+            createInstancesRegionInstanceGroupManagerTransportSettings,
+            settings.createInstancesRegionInstanceGroupManagerSettings(),
+            clientContext);
     this.deleteRegionInstanceGroupManagerCallable =
         callableFactory.createUnaryCallable(
             deleteRegionInstanceGroupManagerTransportSettings,
@@ -576,6 +614,12 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
   public UnaryCallable<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
       abandonInstancesRegionInstanceGroupManagerCallable() {
     return abandonInstancesRegionInstanceGroupManagerCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      createInstancesRegionInstanceGroupManagerCallable() {
+    return createInstancesRegionInstanceGroupManagerCallable;
   }
 
   @BetaApi

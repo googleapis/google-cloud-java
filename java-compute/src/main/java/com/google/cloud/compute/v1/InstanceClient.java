@@ -1438,8 +1438,7 @@ public class InstanceClient implements BackgroundResource {
    * @param zone The name of the zone for this request.
    * @param instanceResource Represents an Instance resource.
    *     <p>An instance is a virtual machine that is hosted on Google Cloud Platform. For more
-   *     information, read Virtual Machine Instances. (== resource_for beta.instances ==) (==
-   *     resource_for v1.instances ==)
+   *     information, read Virtual Machine Instances. (== resource_for {$api_version}.instances ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1469,8 +1468,7 @@ public class InstanceClient implements BackgroundResource {
    * @param zone The name of the zone for this request.
    * @param instanceResource Represents an Instance resource.
    *     <p>An instance is a virtual machine that is hosted on Google Cloud Platform. For more
-   *     information, read Virtual Machine Instances. (== resource_for beta.instances ==) (==
-   *     resource_for v1.instances ==)
+   *     information, read Virtual Machine Instances. (== resource_for {$api_version}.instances ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

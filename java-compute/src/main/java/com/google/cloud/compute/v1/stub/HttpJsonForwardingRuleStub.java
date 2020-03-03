@@ -40,6 +40,7 @@ import com.google.cloud.compute.v1.GetForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.InsertForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.ListForwardingRulesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectRegionForwardingRuleName;
 import com.google.cloud.compute.v1.ProjectRegionName;
@@ -165,6 +166,27 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<PatchForwardingRuleHttpRequest, Operation>
+      patchForwardingRuleMethodDescriptor =
+          ApiMethodDescriptor.<PatchForwardingRuleHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.forwardingRules.patch")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<PatchForwardingRuleHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/forwardingRules/{forwardingRule}"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectRegionForwardingRuleName.newFactory())
+                      .setResourceNameField("forwardingRule")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<SetTargetForwardingRuleHttpRequest, Operation>
       setTargetForwardingRuleMethodDescriptor =
           ApiMethodDescriptor.<SetTargetForwardingRuleHttpRequest, Operation>newBuilder()
@@ -203,6 +225,8 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
       listForwardingRulesCallable;
   private final UnaryCallable<ListForwardingRulesHttpRequest, ListForwardingRulesPagedResponse>
       listForwardingRulesPagedCallable;
+  private final UnaryCallable<PatchForwardingRuleHttpRequest, Operation>
+      patchForwardingRuleCallable;
   private final UnaryCallable<SetTargetForwardingRuleHttpRequest, Operation>
       setTargetForwardingRuleCallable;
 
@@ -274,6 +298,11 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
             HttpJsonCallSettings.<ListForwardingRulesHttpRequest, ForwardingRuleList>newBuilder()
                 .setMethodDescriptor(listForwardingRulesMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<PatchForwardingRuleHttpRequest, Operation>
+        patchForwardingRuleTransportSettings =
+            HttpJsonCallSettings.<PatchForwardingRuleHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(patchForwardingRuleMethodDescriptor)
+                .build();
     HttpJsonCallSettings<SetTargetForwardingRuleHttpRequest, Operation>
         setTargetForwardingRuleTransportSettings =
             HttpJsonCallSettings.<SetTargetForwardingRuleHttpRequest, Operation>newBuilder()
@@ -314,6 +343,11 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
         callableFactory.createPagedCallable(
             listForwardingRulesTransportSettings,
             settings.listForwardingRulesSettings(),
+            clientContext);
+    this.patchForwardingRuleCallable =
+        callableFactory.createUnaryCallable(
+            patchForwardingRuleTransportSettings,
+            settings.patchForwardingRuleSettings(),
             clientContext);
     this.setTargetForwardingRuleCallable =
         callableFactory.createUnaryCallable(
@@ -362,6 +396,11 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
   public UnaryCallable<ListForwardingRulesHttpRequest, ForwardingRuleList>
       listForwardingRulesCallable() {
     return listForwardingRulesCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchForwardingRuleHttpRequest, Operation> patchForwardingRuleCallable() {
+    return patchForwardingRuleCallable;
   }
 
   @BetaApi

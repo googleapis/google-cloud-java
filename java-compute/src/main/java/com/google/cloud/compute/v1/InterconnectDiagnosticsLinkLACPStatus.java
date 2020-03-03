@@ -74,12 +74,12 @@ public final class InterconnectDiagnosticsLinkLACPStatus implements ApiMessage {
     return null;
   }
 
-  /** System ID of the port on Google?s side of the LACP exchange. */
+  /** System ID of the port on Google's side of the LACP exchange. */
   public String getGoogleSystemId() {
     return googleSystemId;
   }
 
-  /** System ID of the port on the neighbor?s side of the LACP exchange. */
+  /** System ID of the port on the neighbor's side of the LACP exchange. */
   public String getNeighborSystemId() {
     return neighborSystemId;
   }
@@ -142,23 +142,23 @@ public final class InterconnectDiagnosticsLinkLACPStatus implements ApiMessage {
       this.state = source.state;
     }
 
-    /** System ID of the port on Google?s side of the LACP exchange. */
+    /** System ID of the port on Google's side of the LACP exchange. */
     public String getGoogleSystemId() {
       return googleSystemId;
     }
 
-    /** System ID of the port on Google?s side of the LACP exchange. */
+    /** System ID of the port on Google's side of the LACP exchange. */
     public Builder setGoogleSystemId(String googleSystemId) {
       this.googleSystemId = googleSystemId;
       return this;
     }
 
-    /** System ID of the port on the neighbor?s side of the LACP exchange. */
+    /** System ID of the port on the neighbor's side of the LACP exchange. */
     public String getNeighborSystemId() {
       return neighborSystemId;
     }
 
-    /** System ID of the port on the neighbor?s side of the LACP exchange. */
+    /** System ID of the port on the neighbor's side of the LACP exchange. */
     public Builder setNeighborSystemId(String neighborSystemId) {
       this.neighborSystemId = neighborSystemId;
       return this;

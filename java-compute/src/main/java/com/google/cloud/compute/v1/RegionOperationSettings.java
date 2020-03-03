@@ -81,6 +81,12 @@ public class RegionOperationSettings extends ClientSettings<RegionOperationSetti
     return ((RegionOperationStubSettings) getStubSettings()).listRegionOperationsSettings();
   }
 
+  /** Returns the object with the settings used for calls to waitRegionOperation. */
+  public UnaryCallSettings<WaitRegionOperationHttpRequest, Operation>
+      waitRegionOperationSettings() {
+    return ((RegionOperationStubSettings) getStubSettings()).waitRegionOperationSettings();
+  }
+
   public static final RegionOperationSettings create(RegionOperationStubSettings stub)
       throws IOException {
     return new RegionOperationSettings.Builder(stub.toBuilder()).build();
@@ -200,6 +206,12 @@ public class RegionOperationSettings extends ClientSettings<RegionOperationSetti
             ListRegionOperationsHttpRequest, OperationList, ListRegionOperationsPagedResponse>
         listRegionOperationsSettings() {
       return getStubSettingsBuilder().listRegionOperationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to waitRegionOperation. */
+    public UnaryCallSettings.Builder<WaitRegionOperationHttpRequest, Operation>
+        waitRegionOperationSettings() {
+      return getStubSettingsBuilder().waitRegionOperationSettings();
     }
 
     @Override

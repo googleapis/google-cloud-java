@@ -25,6 +25,7 @@ import com.google.cloud.compute.v1.GetZoneOperationHttpRequest;
 import com.google.cloud.compute.v1.ListZoneOperationsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
+import com.google.cloud.compute.v1.WaitZoneOperationHttpRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -56,6 +57,11 @@ public abstract class ZoneOperationStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<ListZoneOperationsHttpRequest, OperationList> listZoneOperationsCallable() {
     throw new UnsupportedOperationException("Not implemented: listZoneOperationsCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<WaitZoneOperationHttpRequest, Operation> waitZoneOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: waitZoneOperationCallable()");
   }
 
   @Override

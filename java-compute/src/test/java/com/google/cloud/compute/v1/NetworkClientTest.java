@@ -16,11 +16,13 @@
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedResponse;
+import static com.google.cloud.compute.v1.NetworkClient.ListPeeringRoutesNetworksPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.addPeeringNetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.deleteNetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.getNetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.insertNetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.listNetworksMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.listPeeringRoutesNetworksMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.patchNetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.removePeeringNetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.switchToCustomModeNetworkMethodDescriptor;
@@ -60,6 +62,7 @@ public class NetworkClientTest {
               getNetworkMethodDescriptor,
               insertNetworkMethodDescriptor,
               listNetworksMethodDescriptor,
+              listPeeringRoutesNetworksMethodDescriptor,
               patchNetworkMethodDescriptor,
               removePeeringNetworkMethodDescriptor,
               switchToCustomModeNetworkMethodDescriptor,
@@ -481,6 +484,73 @@ public class NetworkClientTest {
       ProjectName project = ProjectName.of("[PROJECT]");
 
       client.listNetworks(project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listPeeringRoutesNetworksTest() {
+    String id = "id3355";
+    String kind = "kind3292052";
+    String nextPageToken = "";
+    String selfLink = "selfLink-1691268851";
+    ExchangedPeeringRoute itemsElement = ExchangedPeeringRoute.newBuilder().build();
+    List<ExchangedPeeringRoute> items = Arrays.asList(itemsElement);
+    ExchangedPeeringRoutesList expectedResponse =
+        ExchangedPeeringRoutesList.newBuilder()
+            .setId(id)
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setSelfLink(selfLink)
+            .addAllItems(items)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String peeringName = "peeringName-1897912278";
+    String region = "region-934795532";
+    String direction = "direction-962590849";
+    ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+
+    ListPeeringRoutesNetworksPagedResponse pagedListResponse =
+        client.listPeeringRoutesNetworks(peeringName, region, direction, network);
+
+    List<ExchangedPeeringRoute> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listPeeringRoutesNetworksExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String peeringName = "peeringName-1897912278";
+      String region = "region-934795532";
+      String direction = "direction-962590849";
+      ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+
+      client.listPeeringRoutesNetworks(peeringName, region, direction, network);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

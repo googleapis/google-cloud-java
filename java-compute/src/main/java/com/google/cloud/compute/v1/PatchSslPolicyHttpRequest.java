@@ -199,7 +199,7 @@ public final class PatchSslPolicyHttpRequest implements ApiMessage {
    *
    * <p>Only external backend services used by HTTP or HTTPS load balancers can reference a Security
    * Policy. For more information, read read Cloud Armor Security Policy Concepts. (== resource_for
-   * beta.sslPolicies ==) (== resource_for v1.sslPolicies ==)
+   * {$api_version}.sslPolicies ==)
    */
   public SslPolicy getSslPolicyResource() {
     return sslPolicyResource;
@@ -468,7 +468,7 @@ public final class PatchSslPolicyHttpRequest implements ApiMessage {
      *
      * <p>Only external backend services used by HTTP or HTTPS load balancers can reference a
      * Security Policy. For more information, read read Cloud Armor Security Policy Concepts. (==
-     * resource_for beta.sslPolicies ==) (== resource_for v1.sslPolicies ==)
+     * resource_for {$api_version}.sslPolicies ==)
      */
     public SslPolicy getSslPolicyResource() {
       return sslPolicyResource;
@@ -479,7 +479,7 @@ public final class PatchSslPolicyHttpRequest implements ApiMessage {
      *
      * <p>Only external backend services used by HTTP or HTTPS load balancers can reference a
      * Security Policy. For more information, read read Cloud Armor Security Policy Concepts. (==
-     * resource_for beta.sslPolicies ==) (== resource_for v1.sslPolicies ==)
+     * resource_for {$api_version}.sslPolicies ==)
      */
     public Builder setSslPolicyResource(SslPolicy sslPolicyResource) {
       this.sslPolicyResource = sslPolicyResource;

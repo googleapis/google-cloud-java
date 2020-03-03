@@ -137,6 +137,11 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
   /**
    * Represents an Autoscaler resource.
    *
+   * <p>Google Compute Engine has two Autoscaler resources:
+   *
+   * <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
+   * [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
+   *
    * <p>Use autoscalers to automatically add or delete instances from a managed instance group
    * according to your defined autoscaling policy. For more information, read Autoscaling Groups of
    * Instances.
@@ -144,8 +149,7 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
    * <p>For zonal managed instance groups resource, use the autoscaler resource.
    *
    * <p>For regional managed instance groups, use the regionAutoscalers resource. (== resource_for
-   * beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
-   * beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   * {$api_version}.autoscalers ==) (== resource_for {$api_version}.regionAutoscalers ==)
    */
   public Autoscaler getAutoscalerResource() {
     return autoscalerResource;
@@ -307,6 +311,11 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
     /**
      * Represents an Autoscaler resource.
      *
+     * <p>Google Compute Engine has two Autoscaler resources:
+     *
+     * <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
+     * [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
+     *
      * <p>Use autoscalers to automatically add or delete instances from a managed instance group
      * according to your defined autoscaling policy. For more information, read Autoscaling Groups
      * of Instances.
@@ -314,8 +323,7 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
      * <p>For zonal managed instance groups resource, use the autoscaler resource.
      *
      * <p>For regional managed instance groups, use the regionAutoscalers resource. (== resource_for
-     * beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
-     * beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+     * {$api_version}.autoscalers ==) (== resource_for {$api_version}.regionAutoscalers ==)
      */
     public Autoscaler getAutoscalerResource() {
       return autoscalerResource;
@@ -324,6 +332,11 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
     /**
      * Represents an Autoscaler resource.
      *
+     * <p>Google Compute Engine has two Autoscaler resources:
+     *
+     * <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
+     * [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
+     *
      * <p>Use autoscalers to automatically add or delete instances from a managed instance group
      * according to your defined autoscaling policy. For more information, read Autoscaling Groups
      * of Instances.
@@ -331,8 +344,7 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
      * <p>For zonal managed instance groups resource, use the autoscaler resource.
      *
      * <p>For regional managed instance groups, use the regionAutoscalers resource. (== resource_for
-     * beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
-     * beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+     * {$api_version}.autoscalers ==) (== resource_for {$api_version}.regionAutoscalers ==)
      */
     public Builder setAutoscalerResource(Autoscaler autoscalerResource) {
       this.autoscalerResource = autoscalerResource;

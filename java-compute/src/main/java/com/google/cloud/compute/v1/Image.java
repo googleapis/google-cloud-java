@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  * Represents an Image resource.
  *
  * <p>You can use images to create boot disks for your VM instances. For more information, read
- * Images. (== resource_for beta.images ==) (== resource_for v1.images ==)
+ * Images. (== resource_for {$api_version}.images ==)
  */
 public final class Image implements ApiMessage {
   private final String archiveSizeBytes;

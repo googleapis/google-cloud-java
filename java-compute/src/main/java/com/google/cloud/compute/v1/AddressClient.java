@@ -494,19 +494,21 @@ public class AddressClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region for this request.
-   * @param addressResource Represents an IP Address resource.
-   *     <p>An address resource represents a regional internal IP address. Regional internal IP
-   *     addresses are RFC 1918 addresses that come from either a primary or secondary IP range of a
-   *     subnet in a VPC network. Regional external IP addresses can be assigned to GCP VM
-   *     instances, Cloud VPN gateways, regional external forwarding rules for network load
-   *     balancers (in either Standard or Premium Tier), and regional external forwarding rules for
-   *     HTTP(S), SSL Proxy, and TCP Proxy load balancers in Standard Tier. For more information,
-   *     read IP addresses.
-   *     <p>A globalAddresses resource represent a global external IP address. Global external IP
-   *     addresses are IPv4 or IPv6 addresses. They can only be assigned to global forwarding rules
-   *     for HTTP(S), SSL Proxy, or TCP Proxy load balancers in Premium Tier. For more information,
-   *     read Global resources. (== resource_for beta.addresses ==) (== resource_for v1.addresses
-   *     ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
+   * @param addressResource Use global external addresses for GFE-based external HTTP(S) load
+   *     balancers in Premium Tier.
+   *     <p>Use global internal addresses for reserved peering network range.
+   *     <p>Use regional external addresses for the following resources:
+   *     <p>- External IP addresses for VM instances - Regional external forwarding rules - Cloud
+   *     NAT external IP addresses - GFE based LBs in Standard Tier - Network LBs in Premium or
+   *     Standard Tier - Cloud VPN gateways (both Classic and HA)
+   *     <p>Use regional internal IP addresses for subnet IP ranges (primary and secondary). This
+   *     includes:
+   *     <p>- Internal IP addresses for VM instances - Alias IP ranges of VM instances (/32 only) -
+   *     Regional internal forwarding rules - Internal TCP/UDP load balancer addresses - Internal
+   *     HTTP(S) load balancer addresses - Cloud DNS inbound forwarding IP addresses
+   *     <p>For more information, read reserved IP address.
+   *     <p>(== resource_for {$api_version}.addresses ==) (== resource_for
+   *     {$api_version}.globalAddresses ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -534,19 +536,21 @@ public class AddressClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region for this request.
-   * @param addressResource Represents an IP Address resource.
-   *     <p>An address resource represents a regional internal IP address. Regional internal IP
-   *     addresses are RFC 1918 addresses that come from either a primary or secondary IP range of a
-   *     subnet in a VPC network. Regional external IP addresses can be assigned to GCP VM
-   *     instances, Cloud VPN gateways, regional external forwarding rules for network load
-   *     balancers (in either Standard or Premium Tier), and regional external forwarding rules for
-   *     HTTP(S), SSL Proxy, and TCP Proxy load balancers in Standard Tier. For more information,
-   *     read IP addresses.
-   *     <p>A globalAddresses resource represent a global external IP address. Global external IP
-   *     addresses are IPv4 or IPv6 addresses. They can only be assigned to global forwarding rules
-   *     for HTTP(S), SSL Proxy, or TCP Proxy load balancers in Premium Tier. For more information,
-   *     read Global resources. (== resource_for beta.addresses ==) (== resource_for v1.addresses
-   *     ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
+   * @param addressResource Use global external addresses for GFE-based external HTTP(S) load
+   *     balancers in Premium Tier.
+   *     <p>Use global internal addresses for reserved peering network range.
+   *     <p>Use regional external addresses for the following resources:
+   *     <p>- External IP addresses for VM instances - Regional external forwarding rules - Cloud
+   *     NAT external IP addresses - GFE based LBs in Standard Tier - Network LBs in Premium or
+   *     Standard Tier - Cloud VPN gateways (both Classic and HA)
+   *     <p>Use regional internal IP addresses for subnet IP ranges (primary and secondary). This
+   *     includes:
+   *     <p>- Internal IP addresses for VM instances - Alias IP ranges of VM instances (/32 only) -
+   *     Regional internal forwarding rules - Internal TCP/UDP load balancer addresses - Internal
+   *     HTTP(S) load balancer addresses - Cloud DNS inbound forwarding IP addresses
+   *     <p>For more information, read reserved IP address.
+   *     <p>(== resource_for {$api_version}.addresses ==) (== resource_for
+   *     {$api_version}.globalAddresses ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

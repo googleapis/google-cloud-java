@@ -192,7 +192,7 @@ public final class InsertSecurityPolicyHttpRequest implements ApiMessage {
    *
    * <p>Only external backend services that use load balancers can reference a Security Policy. For
    * more information, read Cloud Armor Security Policy Concepts. (== resource_for
-   * v1.securityPolicies ==) (== resource_for beta.securityPolicies ==)
+   * {$api_version}.securityPolicies ==)
    */
   public SecurityPolicy getSecurityPolicyResource() {
     return securityPolicyResource;
@@ -416,7 +416,7 @@ public final class InsertSecurityPolicyHttpRequest implements ApiMessage {
      *
      * <p>Only external backend services that use load balancers can reference a Security Policy.
      * For more information, read Cloud Armor Security Policy Concepts. (== resource_for
-     * v1.securityPolicies ==) (== resource_for beta.securityPolicies ==)
+     * {$api_version}.securityPolicies ==)
      */
     public SecurityPolicy getSecurityPolicyResource() {
       return securityPolicyResource;
@@ -427,7 +427,7 @@ public final class InsertSecurityPolicyHttpRequest implements ApiMessage {
      *
      * <p>Only external backend services that use load balancers can reference a Security Policy.
      * For more information, read Cloud Armor Security Policy Concepts. (== resource_for
-     * v1.securityPolicies ==) (== resource_for beta.securityPolicies ==)
+     * {$api_version}.securityPolicies ==)
      */
     public Builder setSecurityPolicyResource(SecurityPolicy securityPolicyResource) {
       this.securityPolicyResource = securityPolicyResource;

@@ -510,7 +510,7 @@ public class TargetInstanceClient implements BackgroundResource {
    *     <p>You can use a target instance to handle traffic for one or more forwarding rules, which
    *     is ideal for forwarding protocol traffic that is managed by a single source. For example,
    *     ESP, AH, TCP, or UDP. For more information, read Target instances. (== resource_for
-   *     beta.targetInstances ==) (== resource_for v1.targetInstances ==)
+   *     {$api_version}.targetInstances ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -544,7 +544,7 @@ public class TargetInstanceClient implements BackgroundResource {
    *     <p>You can use a target instance to handle traffic for one or more forwarding rules, which
    *     is ideal for forwarding protocol traffic that is managed by a single source. For example,
    *     ESP, AH, TCP, or UDP. For more information, read Target instances. (== resource_for
-   *     beta.targetInstances ==) (== resource_for v1.targetInstances ==)
+   *     {$api_version}.targetInstances ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

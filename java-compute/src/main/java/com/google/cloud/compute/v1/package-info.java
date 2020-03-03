@@ -509,6 +509,21 @@
  * </code>
  * </pre>
  *
+ * ===================== PacketMirroringClient =====================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for PacketMirroringClient:
+ *
+ * <pre>
+ * <code>
+ * try (PacketMirroringClient packetMirroringClient = PacketMirroringClient.create()) {
+ *   ProjectRegionPacketMirroringName packetMirroring = ProjectRegionPacketMirroringName.of("[PROJECT]", "[REGION]", "[PACKET_MIRRORING]");
+ *   Operation response = packetMirroringClient.deletePacketMirroring(packetMirroring);
+ * }
+ * </code>
+ * </pre>
+ *
  * ============= ProjectClient =============
  *
  * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.

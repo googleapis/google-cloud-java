@@ -29,8 +29,7 @@ import javax.annotation.Nullable;
  * Represents a Target VPN Gateway resource.
  *
  * <p>The target VPN gateway resource represents a Classic Cloud VPN gateway. For more information,
- * read the the Cloud VPN Overview. (== resource_for beta.targetVpnGateways ==) (== resource_for
- * v1.targetVpnGateways ==)
+ * read the the Cloud VPN Overview. (== resource_for {$api_version}.targetVpnGateways ==)
  */
 public final class TargetVpnGateway implements ApiMessage {
   private final String creationTimestamp;

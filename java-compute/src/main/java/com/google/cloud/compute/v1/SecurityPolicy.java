@@ -29,8 +29,8 @@ import javax.annotation.Nullable;
  * Represents a Cloud Armor Security Policy resource.
  *
  * <p>Only external backend services that use load balancers can reference a Security Policy. For
- * more information, read Cloud Armor Security Policy Concepts. (== resource_for v1.securityPolicies
- * ==) (== resource_for beta.securityPolicies ==)
+ * more information, read Cloud Armor Security Policy Concepts. (== resource_for
+ * {$api_version}.securityPolicies ==)
  */
 public final class SecurityPolicy implements ApiMessage {
   private final String creationTimestamp;

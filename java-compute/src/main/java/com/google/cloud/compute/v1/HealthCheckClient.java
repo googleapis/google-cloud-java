@@ -507,8 +507,12 @@ public class HealthCheckClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param healthCheckResource Represents a Health Check resource.
-   *     <p>Health checks are used for most GCP load balancers and managed instance group
-   *     auto-healing. For more information, read Health Check Concepts.
+   *     <p>Google Compute Engine has two Health Check resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+   *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
+   *     balancers and managed instance group auto-healing use global health checks. For more
+   *     information, read Health Check Concepts.
    *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
    *     or httpsHealthChecks.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -539,8 +543,12 @@ public class HealthCheckClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param healthCheckResource Represents a Health Check resource.
-   *     <p>Health checks are used for most GCP load balancers and managed instance group
-   *     auto-healing. For more information, read Health Check Concepts.
+   *     <p>Google Compute Engine has two Health Check resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+   *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
+   *     balancers and managed instance group auto-healing use global health checks. For more
+   *     information, read Health Check Concepts.
    *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
    *     or httpsHealthChecks.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -761,8 +769,12 @@ public class HealthCheckClient implements BackgroundResource {
    *
    * @param healthCheck Name of the HealthCheck resource to patch.
    * @param healthCheckResource Represents a Health Check resource.
-   *     <p>Health checks are used for most GCP load balancers and managed instance group
-   *     auto-healing. For more information, read Health Check Concepts.
+   *     <p>Google Compute Engine has two Health Check resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+   *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
+   *     balancers and managed instance group auto-healing use global health checks. For more
+   *     information, read Health Check Concepts.
    *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
    *     or httpsHealthChecks.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
@@ -803,8 +815,12 @@ public class HealthCheckClient implements BackgroundResource {
    *
    * @param healthCheck Name of the HealthCheck resource to patch.
    * @param healthCheckResource Represents a Health Check resource.
-   *     <p>Health checks are used for most GCP load balancers and managed instance group
-   *     auto-healing. For more information, read Health Check Concepts.
+   *     <p>Google Compute Engine has two Health Check resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+   *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
+   *     balancers and managed instance group auto-healing use global health checks. For more
+   *     information, read Health Check Concepts.
    *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
    *     or httpsHealthChecks.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
@@ -899,8 +915,12 @@ public class HealthCheckClient implements BackgroundResource {
    *
    * @param healthCheck Name of the HealthCheck resource to update.
    * @param healthCheckResource Represents a Health Check resource.
-   *     <p>Health checks are used for most GCP load balancers and managed instance group
-   *     auto-healing. For more information, read Health Check Concepts.
+   *     <p>Google Compute Engine has two Health Check resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+   *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
+   *     balancers and managed instance group auto-healing use global health checks. For more
+   *     information, read Health Check Concepts.
    *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
    *     or httpsHealthChecks.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
@@ -940,8 +960,12 @@ public class HealthCheckClient implements BackgroundResource {
    *
    * @param healthCheck Name of the HealthCheck resource to update.
    * @param healthCheckResource Represents a Health Check resource.
-   *     <p>Health checks are used for most GCP load balancers and managed instance group
-   *     auto-healing. For more information, read Health Check Concepts.
+   *     <p>Google Compute Engine has two Health Check resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+   *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
+   *     balancers and managed instance group auto-healing use global health checks. For more
+   *     information, read Health Check Concepts.
    *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
    *     or httpsHealthChecks.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the

@@ -501,13 +501,16 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * @param zone Name of the zone for this request.
    * @param autoscalerResource Represents an Autoscaler resource.
+   *     <p>Google Compute Engine has two Autoscaler resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
    *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
    *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
    *     of Instances.
    *     <p>For zonal managed instance groups resource, use the autoscaler resource.
    *     <p>For regional managed instance groups, use the regionAutoscalers resource. (==
-   *     resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
-   *     beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   *     resource_for {$api_version}.autoscalers ==) (== resource_for
+   *     {$api_version}.regionAutoscalers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -536,13 +539,16 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * @param zone Name of the zone for this request.
    * @param autoscalerResource Represents an Autoscaler resource.
+   *     <p>Google Compute Engine has two Autoscaler resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
    *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
    *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
    *     of Instances.
    *     <p>For zonal managed instance groups resource, use the autoscaler resource.
    *     <p>For regional managed instance groups, use the regionAutoscalers resource. (==
-   *     resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
-   *     beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   *     resource_for {$api_version}.autoscalers ==) (== resource_for
+   *     {$api_version}.regionAutoscalers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -762,13 +768,16 @@ public class AutoscalerClient implements BackgroundResource {
    * @param autoscaler Name of the autoscaler to patch.
    * @param zone Name of the zone for this request.
    * @param autoscalerResource Represents an Autoscaler resource.
+   *     <p>Google Compute Engine has two Autoscaler resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
    *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
    *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
    *     of Instances.
    *     <p>For zonal managed instance groups resource, use the autoscaler resource.
    *     <p>For regional managed instance groups, use the regionAutoscalers resource. (==
-   *     resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
-   *     beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   *     resource_for {$api_version}.autoscalers ==) (== resource_for
+   *     {$api_version}.regionAutoscalers ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -811,13 +820,16 @@ public class AutoscalerClient implements BackgroundResource {
    * @param autoscaler Name of the autoscaler to patch.
    * @param zone Name of the zone for this request.
    * @param autoscalerResource Represents an Autoscaler resource.
+   *     <p>Google Compute Engine has two Autoscaler resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
    *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
    *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
    *     of Instances.
    *     <p>For zonal managed instance groups resource, use the autoscaler resource.
    *     <p>For regional managed instance groups, use the regionAutoscalers resource. (==
-   *     resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
-   *     beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   *     resource_for {$api_version}.autoscalers ==) (== resource_for
+   *     {$api_version}.regionAutoscalers ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -917,13 +929,16 @@ public class AutoscalerClient implements BackgroundResource {
    * @param autoscaler Name of the autoscaler to update.
    * @param zone Name of the zone for this request.
    * @param autoscalerResource Represents an Autoscaler resource.
+   *     <p>Google Compute Engine has two Autoscaler resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
    *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
    *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
    *     of Instances.
    *     <p>For zonal managed instance groups resource, use the autoscaler resource.
    *     <p>For regional managed instance groups, use the regionAutoscalers resource. (==
-   *     resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
-   *     beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   *     resource_for {$api_version}.autoscalers ==) (== resource_for
+   *     {$api_version}.regionAutoscalers ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -965,13 +980,16 @@ public class AutoscalerClient implements BackgroundResource {
    * @param autoscaler Name of the autoscaler to update.
    * @param zone Name of the zone for this request.
    * @param autoscalerResource Represents an Autoscaler resource.
+   *     <p>Google Compute Engine has two Autoscaler resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
    *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
    *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
    *     of Instances.
    *     <p>For zonal managed instance groups resource, use the autoscaler resource.
    *     <p>For regional managed instance groups, use the regionAutoscalers resource. (==
-   *     resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
-   *     beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   *     resource_for {$api_version}.autoscalers ==) (== resource_for
+   *     {$api_version}.regionAutoscalers ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

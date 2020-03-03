@@ -44,6 +44,7 @@ import com.google.cloud.compute.v1.GetZoneOperationHttpRequest;
 import com.google.cloud.compute.v1.ListZoneOperationsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
+import com.google.cloud.compute.v1.WaitZoneOperationHttpRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -100,6 +101,8 @@ public class ZoneOperationStubSettings extends StubSettings<ZoneOperationStubSet
   private final PagedCallSettings<
           ListZoneOperationsHttpRequest, OperationList, ListZoneOperationsPagedResponse>
       listZoneOperationsSettings;
+  private final UnaryCallSettings<WaitZoneOperationHttpRequest, Operation>
+      waitZoneOperationSettings;
 
   /** Returns the object with the settings used for calls to deleteZoneOperation. */
   public UnaryCallSettings<DeleteZoneOperationHttpRequest, Void> deleteZoneOperationSettings() {
@@ -116,6 +119,11 @@ public class ZoneOperationStubSettings extends StubSettings<ZoneOperationStubSet
           ListZoneOperationsHttpRequest, OperationList, ListZoneOperationsPagedResponse>
       listZoneOperationsSettings() {
     return listZoneOperationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to waitZoneOperation. */
+  public UnaryCallSettings<WaitZoneOperationHttpRequest, Operation> waitZoneOperationSettings() {
+    return waitZoneOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -196,6 +204,7 @@ public class ZoneOperationStubSettings extends StubSettings<ZoneOperationStubSet
     deleteZoneOperationSettings = settingsBuilder.deleteZoneOperationSettings().build();
     getZoneOperationSettings = settingsBuilder.getZoneOperationSettings().build();
     listZoneOperationsSettings = settingsBuilder.listZoneOperationsSettings().build();
+    waitZoneOperationSettings = settingsBuilder.waitZoneOperationSettings().build();
   }
 
   private static final PagedListDescriptor<ListZoneOperationsHttpRequest, OperationList, Operation>
@@ -267,6 +276,8 @@ public class ZoneOperationStubSettings extends StubSettings<ZoneOperationStubSet
     private final PagedCallSettings.Builder<
             ListZoneOperationsHttpRequest, OperationList, ListZoneOperationsPagedResponse>
         listZoneOperationsSettings;
+    private final UnaryCallSettings.Builder<WaitZoneOperationHttpRequest, Operation>
+        waitZoneOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -315,9 +326,14 @@ public class ZoneOperationStubSettings extends StubSettings<ZoneOperationStubSet
 
       listZoneOperationsSettings = PagedCallSettings.newBuilder(LIST_ZONE_OPERATIONS_PAGE_STR_FACT);
 
+      waitZoneOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteZoneOperationSettings, getZoneOperationSettings, listZoneOperationsSettings);
+              deleteZoneOperationSettings,
+              getZoneOperationSettings,
+              listZoneOperationsSettings,
+              waitZoneOperationSettings);
 
       initDefaults(this);
     }
@@ -348,6 +364,11 @@ public class ZoneOperationStubSettings extends StubSettings<ZoneOperationStubSet
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .waitZoneOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -357,10 +378,14 @@ public class ZoneOperationStubSettings extends StubSettings<ZoneOperationStubSet
       deleteZoneOperationSettings = settings.deleteZoneOperationSettings.toBuilder();
       getZoneOperationSettings = settings.getZoneOperationSettings.toBuilder();
       listZoneOperationsSettings = settings.listZoneOperationsSettings.toBuilder();
+      waitZoneOperationSettings = settings.waitZoneOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteZoneOperationSettings, getZoneOperationSettings, listZoneOperationsSettings);
+              deleteZoneOperationSettings,
+              getZoneOperationSettings,
+              listZoneOperationsSettings,
+              waitZoneOperationSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -396,6 +421,12 @@ public class ZoneOperationStubSettings extends StubSettings<ZoneOperationStubSet
             ListZoneOperationsHttpRequest, OperationList, ListZoneOperationsPagedResponse>
         listZoneOperationsSettings() {
       return listZoneOperationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to waitZoneOperation. */
+    public UnaryCallSettings.Builder<WaitZoneOperationHttpRequest, Operation>
+        waitZoneOperationSettings() {
+      return waitZoneOperationSettings;
     }
 
     @Override

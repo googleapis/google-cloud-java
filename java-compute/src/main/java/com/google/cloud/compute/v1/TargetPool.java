@@ -30,8 +30,7 @@ import javax.annotation.Nullable;
  *
  * <p>Target pools are used for network TCP/UDP load balancing. A target pool references member
  * instances, an associated legacy HttpHealthCheck resource, and, optionally, a backup target pool.
- * For more information, read Using target pools. (== resource_for beta.targetPools ==) (==
- * resource_for v1.targetPools ==)
+ * For more information, read Using target pools. (== resource_for {$api_version}.targetPools ==)
  */
 public final class TargetPool implements ApiMessage {
   private final String backupPool;

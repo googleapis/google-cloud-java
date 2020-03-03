@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
  * Represents a Cloud VPN Tunnel resource.
  *
  * <p>For more information about VPN, read the the Cloud VPN Overview. (== resource_for
- * beta.vpnTunnels ==) (== resource_for v1.vpnTunnels ==)
+ * {$api_version}.vpnTunnels ==)
  */
 public final class VpnTunnel implements ApiMessage {
   private final String creationTimestamp;

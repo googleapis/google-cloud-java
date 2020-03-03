@@ -30,8 +30,7 @@ import javax.annotation.Nullable;
  *
  * <p>You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud networks to
  * your on-premises networks through an Interconnect. For more information, read Creating VLAN
- * Attachments. (== resource_for beta.interconnectAttachments ==) (== resource_for
- * v1.interconnectAttachments ==)
+ * Attachments. (== resource_for {$api_version}.interconnectAttachments ==)
  */
 public final class InterconnectAttachment implements ApiMessage {
   private final Boolean adminEnabled;
@@ -255,7 +254,7 @@ public final class InterconnectAttachment implements ApiMessage {
    * and customerRouterIpAddress for this attachment. All prefixes must be within link-local address
    * space (169.254.0.0/16) and must be /29 or shorter (/28, /27, etc). Google will attempt to
    * select an unused /29 from the supplied candidate prefix(es). The request will fail if all
-   * possible /29s are in use on Google?s edge. If not supplied, Google will randomly select an
+   * possible /29s are in use on Google's edge. If not supplied, Google will randomly select an
    * unused /29 from all of link-local space.
    */
   public List<String> getCandidateSubnetsList() {
@@ -642,7 +641,7 @@ public final class InterconnectAttachment implements ApiMessage {
      * cloudRouterIpAddress and customerRouterIpAddress for this attachment. All prefixes must be
      * within link-local address space (169.254.0.0/16) and must be /29 or shorter (/28, /27, etc).
      * Google will attempt to select an unused /29 from the supplied candidate prefix(es). The
-     * request will fail if all possible /29s are in use on Google?s edge. If not supplied, Google
+     * request will fail if all possible /29s are in use on Google's edge. If not supplied, Google
      * will randomly select an unused /29 from all of link-local space.
      */
     public List<String> getCandidateSubnetsList() {
@@ -654,7 +653,7 @@ public final class InterconnectAttachment implements ApiMessage {
      * cloudRouterIpAddress and customerRouterIpAddress for this attachment. All prefixes must be
      * within link-local address space (169.254.0.0/16) and must be /29 or shorter (/28, /27, etc).
      * Google will attempt to select an unused /29 from the supplied candidate prefix(es). The
-     * request will fail if all possible /29s are in use on Google?s edge. If not supplied, Google
+     * request will fail if all possible /29s are in use on Google's edge. If not supplied, Google
      * will randomly select an unused /29 from all of link-local space.
      */
     public Builder addAllCandidateSubnets(List<String> candidateSubnets) {
@@ -670,7 +669,7 @@ public final class InterconnectAttachment implements ApiMessage {
      * cloudRouterIpAddress and customerRouterIpAddress for this attachment. All prefixes must be
      * within link-local address space (169.254.0.0/16) and must be /29 or shorter (/28, /27, etc).
      * Google will attempt to select an unused /29 from the supplied candidate prefix(es). The
-     * request will fail if all possible /29s are in use on Google?s edge. If not supplied, Google
+     * request will fail if all possible /29s are in use on Google's edge. If not supplied, Google
      * will randomly select an unused /29 from all of link-local space.
      */
     public Builder addCandidateSubnets(String candidateSubnets) {

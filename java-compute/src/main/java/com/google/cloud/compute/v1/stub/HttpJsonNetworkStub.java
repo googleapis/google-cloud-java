@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedResponse;
+import static com.google.cloud.compute.v1.NetworkClient.ListPeeringRoutesNetworksPagedResponse;
 
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
@@ -32,9 +33,11 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddPeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.DeleteNetworkHttpRequest;
+import com.google.cloud.compute.v1.ExchangedPeeringRoutesList;
 import com.google.cloud.compute.v1.GetNetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertNetworkHttpRequest;
 import com.google.cloud.compute.v1.ListNetworksHttpRequest;
+import com.google.cloud.compute.v1.ListPeeringRoutesNetworksHttpRequest;
 import com.google.cloud.compute.v1.Network;
 import com.google.cloud.compute.v1.NetworkList;
 import com.google.cloud.compute.v1.Operation;
@@ -156,6 +159,37 @@ public class HttpJsonNetworkStub extends NetworkStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<
+          ListPeeringRoutesNetworksHttpRequest, ExchangedPeeringRoutesList>
+      listPeeringRoutesNetworksMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListPeeringRoutesNetworksHttpRequest, ExchangedPeeringRoutesList>newBuilder()
+              .setFullMethodName("compute.networks.listPeeringRoutes")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<ListPeeringRoutesNetworksHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/networks/{network}/listPeeringRoutes"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet(
+                              "direction",
+                              "filter",
+                              "maxResults",
+                              "orderBy",
+                              "pageToken",
+                              "peeringName",
+                              "region"))
+                      .setResourceNameFactory(ProjectGlobalNetworkName.newFactory())
+                      .setResourceNameField("network")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<ExchangedPeeringRoutesList>newBuilder()
+                      .setResponseInstance(ExchangedPeeringRoutesList.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<PatchNetworkHttpRequest, Operation>
       patchNetworkMethodDescriptor =
           ApiMethodDescriptor.<PatchNetworkHttpRequest, Operation>newBuilder()
@@ -244,6 +278,11 @@ public class HttpJsonNetworkStub extends NetworkStub {
   private final UnaryCallable<ListNetworksHttpRequest, NetworkList> listNetworksCallable;
   private final UnaryCallable<ListNetworksHttpRequest, ListNetworksPagedResponse>
       listNetworksPagedCallable;
+  private final UnaryCallable<ListPeeringRoutesNetworksHttpRequest, ExchangedPeeringRoutesList>
+      listPeeringRoutesNetworksCallable;
+  private final UnaryCallable<
+          ListPeeringRoutesNetworksHttpRequest, ListPeeringRoutesNetworksPagedResponse>
+      listPeeringRoutesNetworksPagedCallable;
   private final UnaryCallable<PatchNetworkHttpRequest, Operation> patchNetworkCallable;
   private final UnaryCallable<RemovePeeringNetworkHttpRequest, Operation>
       removePeeringNetworkCallable;
@@ -311,6 +350,12 @@ public class HttpJsonNetworkStub extends NetworkStub {
         HttpJsonCallSettings.<ListNetworksHttpRequest, NetworkList>newBuilder()
             .setMethodDescriptor(listNetworksMethodDescriptor)
             .build();
+    HttpJsonCallSettings<ListPeeringRoutesNetworksHttpRequest, ExchangedPeeringRoutesList>
+        listPeeringRoutesNetworksTransportSettings =
+            HttpJsonCallSettings
+                .<ListPeeringRoutesNetworksHttpRequest, ExchangedPeeringRoutesList>newBuilder()
+                .setMethodDescriptor(listPeeringRoutesNetworksMethodDescriptor)
+                .build();
     HttpJsonCallSettings<PatchNetworkHttpRequest, Operation> patchNetworkTransportSettings =
         HttpJsonCallSettings.<PatchNetworkHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(patchNetworkMethodDescriptor)
@@ -351,6 +396,16 @@ public class HttpJsonNetworkStub extends NetworkStub {
     this.listNetworksPagedCallable =
         callableFactory.createPagedCallable(
             listNetworksTransportSettings, settings.listNetworksSettings(), clientContext);
+    this.listPeeringRoutesNetworksCallable =
+        callableFactory.createUnaryCallable(
+            listPeeringRoutesNetworksTransportSettings,
+            settings.listPeeringRoutesNetworksSettings(),
+            clientContext);
+    this.listPeeringRoutesNetworksPagedCallable =
+        callableFactory.createPagedCallable(
+            listPeeringRoutesNetworksTransportSettings,
+            settings.listPeeringRoutesNetworksSettings(),
+            clientContext);
     this.patchNetworkCallable =
         callableFactory.createUnaryCallable(
             patchNetworkTransportSettings, settings.patchNetworkSettings(), clientContext);
@@ -402,6 +457,18 @@ public class HttpJsonNetworkStub extends NetworkStub {
   @BetaApi
   public UnaryCallable<ListNetworksHttpRequest, NetworkList> listNetworksCallable() {
     return listNetworksCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<ListPeeringRoutesNetworksHttpRequest, ListPeeringRoutesNetworksPagedResponse>
+      listPeeringRoutesNetworksPagedCallable() {
+    return listPeeringRoutesNetworksPagedCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<ListPeeringRoutesNetworksHttpRequest, ExchangedPeeringRoutesList>
+      listPeeringRoutesNetworksCallable() {
+    return listPeeringRoutesNetworksCallable;
   }
 
   @BetaApi

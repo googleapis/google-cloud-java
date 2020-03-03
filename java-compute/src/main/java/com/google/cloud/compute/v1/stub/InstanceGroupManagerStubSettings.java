@@ -42,6 +42,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AbandonInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListInstanceGroupManagersHttpRequest;
+import com.google.cloud.compute.v1.CreateInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceGroupManagerHttpRequest;
@@ -118,6 +119,8 @@ public class InstanceGroupManagerStubSettings
           InstanceGroupManagerAggregatedList,
           AggregatedListInstanceGroupManagersPagedResponse>
       aggregatedListInstanceGroupManagersSettings;
+  private final UnaryCallSettings<CreateInstancesInstanceGroupManagerHttpRequest, Operation>
+      createInstancesInstanceGroupManagerSettings;
   private final UnaryCallSettings<DeleteInstanceGroupManagerHttpRequest, Operation>
       deleteInstanceGroupManagerSettings;
   private final UnaryCallSettings<DeleteInstancesInstanceGroupManagerHttpRequest, Operation>
@@ -161,6 +164,12 @@ public class InstanceGroupManagerStubSettings
           AggregatedListInstanceGroupManagersPagedResponse>
       aggregatedListInstanceGroupManagersSettings() {
     return aggregatedListInstanceGroupManagersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createInstancesInstanceGroupManager. */
+  public UnaryCallSettings<CreateInstancesInstanceGroupManagerHttpRequest, Operation>
+      createInstancesInstanceGroupManagerSettings() {
+    return createInstancesInstanceGroupManagerSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteInstanceGroupManager. */
@@ -320,6 +329,8 @@ public class InstanceGroupManagerStubSettings
         settingsBuilder.abandonInstancesInstanceGroupManagerSettings().build();
     aggregatedListInstanceGroupManagersSettings =
         settingsBuilder.aggregatedListInstanceGroupManagersSettings().build();
+    createInstancesInstanceGroupManagerSettings =
+        settingsBuilder.createInstancesInstanceGroupManagerSettings().build();
     deleteInstanceGroupManagerSettings =
         settingsBuilder.deleteInstanceGroupManagerSettings().build();
     deleteInstancesInstanceGroupManagerSettings =
@@ -512,6 +523,9 @@ public class InstanceGroupManagerStubSettings
             InstanceGroupManagerAggregatedList,
             AggregatedListInstanceGroupManagersPagedResponse>
         aggregatedListInstanceGroupManagersSettings;
+    private final UnaryCallSettings.Builder<
+            CreateInstancesInstanceGroupManagerHttpRequest, Operation>
+        createInstancesInstanceGroupManagerSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceGroupManagerHttpRequest, Operation>
         deleteInstanceGroupManagerSettings;
     private final UnaryCallSettings.Builder<
@@ -592,6 +606,8 @@ public class InstanceGroupManagerStubSettings
       aggregatedListInstanceGroupManagersSettings =
           PagedCallSettings.newBuilder(AGGREGATED_LIST_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT);
 
+      createInstancesInstanceGroupManagerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       deleteInstanceGroupManagerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       deleteInstancesInstanceGroupManagerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -622,6 +638,7 @@ public class InstanceGroupManagerStubSettings
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               abandonInstancesInstanceGroupManagerSettings,
               aggregatedListInstanceGroupManagersSettings,
+              createInstancesInstanceGroupManagerSettings,
               deleteInstanceGroupManagerSettings,
               deleteInstancesInstanceGroupManagerSettings,
               getInstanceGroupManagerSettings,
@@ -656,6 +673,11 @@ public class InstanceGroupManagerStubSettings
       builder
           .aggregatedListInstanceGroupManagersSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createInstancesInstanceGroupManagerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -723,6 +745,8 @@ public class InstanceGroupManagerStubSettings
           settings.abandonInstancesInstanceGroupManagerSettings.toBuilder();
       aggregatedListInstanceGroupManagersSettings =
           settings.aggregatedListInstanceGroupManagersSettings.toBuilder();
+      createInstancesInstanceGroupManagerSettings =
+          settings.createInstancesInstanceGroupManagerSettings.toBuilder();
       deleteInstanceGroupManagerSettings = settings.deleteInstanceGroupManagerSettings.toBuilder();
       deleteInstancesInstanceGroupManagerSettings =
           settings.deleteInstancesInstanceGroupManagerSettings.toBuilder();
@@ -744,6 +768,7 @@ public class InstanceGroupManagerStubSettings
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               abandonInstancesInstanceGroupManagerSettings,
               aggregatedListInstanceGroupManagersSettings,
+              createInstancesInstanceGroupManagerSettings,
               deleteInstanceGroupManagerSettings,
               deleteInstancesInstanceGroupManagerSettings,
               getInstanceGroupManagerSettings,
@@ -790,6 +815,14 @@ public class InstanceGroupManagerStubSettings
             AggregatedListInstanceGroupManagersPagedResponse>
         aggregatedListInstanceGroupManagersSettings() {
       return aggregatedListInstanceGroupManagersSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createInstancesInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<CreateInstancesInstanceGroupManagerHttpRequest, Operation>
+        createInstancesInstanceGroupManagerSettings() {
+      return createInstancesInstanceGroupManagerSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteInstanceGroupManager. */

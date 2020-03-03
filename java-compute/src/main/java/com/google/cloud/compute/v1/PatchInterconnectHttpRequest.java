@@ -167,7 +167,7 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
    *
    * <p>An Interconnect resource is a dedicated connection between the GCP network and your
    * on-premises network. For more information, read the Dedicated Interconnect Overview. (==
-   * resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
+   * resource_for {$api_version}.interconnects ==)
    */
   public Interconnect getInterconnectResource() {
     return interconnectResource;
@@ -400,7 +400,7 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
      *
      * <p>An Interconnect resource is a dedicated connection between the GCP network and your
      * on-premises network. For more information, read the Dedicated Interconnect Overview. (==
-     * resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
+     * resource_for {$api_version}.interconnects ==)
      */
     public Interconnect getInterconnectResource() {
       return interconnectResource;
@@ -411,7 +411,7 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
      *
      * <p>An Interconnect resource is a dedicated connection between the GCP network and your
      * on-premises network. For more information, read the Dedicated Interconnect Overview. (==
-     * resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
+     * resource_for {$api_version}.interconnects ==)
      */
     public Builder setInterconnectResource(Interconnect interconnectResource) {
       this.interconnectResource = interconnectResource;

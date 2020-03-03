@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- TODO: remove after 0.118.0-alpha is released -->
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/compute/v1/InterconnectAttachmentClient</className>
+    <method>com.google.cloud.compute.v1.Operation insertInterconnectAttachment(com.google.cloud.compute.v1.ProjectRegionName, com.google.cloud.compute.v1.InterconnectAttachment)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/compute/v1/InterconnectAttachmentClient</className>
+    <method>com.google.cloud.compute.v1.Operation insertInterconnectAttachment(java.lang.String, com.google.cloud.compute.v1.InterconnectAttachment)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/compute/v1/SubnetworkClient</className>
+    <method>com.google.cloud.compute.v1.Operation patchSubnetwork(com.google.cloud.compute.v1.ProjectRegionSubnetworkName, com.google.cloud.compute.v1.Subnetwork, java.util.List)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/compute/v1/SubnetworkClient</className>
+    <method>com.google.cloud.compute.v1.Operation patchSubnetwork(java.lang.String, com.google.cloud.compute.v1.Subnetwork, java.util.List)</method>
+  </difference>
+</differences>

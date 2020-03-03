@@ -468,8 +468,7 @@ public class NetworkClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param networkResource Represents a VPC Network resource.
    *     <p>Networks connect resources to each other and to the internet. For more information, read
-   *     Virtual Private Cloud (VPC) Network. (== resource_for v1.networks ==) (== resource_for
-   *     beta.networks ==)
+   *     Virtual Private Cloud (VPC) Network. (== resource_for {$api_version}.networks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -499,8 +498,7 @@ public class NetworkClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param networkResource Represents a VPC Network resource.
    *     <p>Networks connect resources to each other and to the internet. For more information, read
-   *     Virtual Private Cloud (VPC) Network. (== resource_for v1.networks ==) (== resource_for
-   *     beta.networks ==)
+   *     Virtual Private Cloud (VPC) Network. (== resource_for {$api_version}.networks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -702,6 +700,187 @@ public class NetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Lists the peering routes exchanged over peering connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NetworkClient networkClient = NetworkClient.create()) {
+   *   String peeringName = "";
+   *   String region = "";
+   *   String direction = "";
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   for (ExchangedPeeringRoute element : networkClient.listPeeringRoutesNetworks(peeringName, region, direction, network).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param peeringName The response will show routes exchanged over the given peering connection.
+   * @param region The region of the request. The response will include all subnet routes, static
+   *     routes and dynamic routes in the region.
+   * @param direction The direction of the exchanged routes.
+   * @param network Name of the network for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListPeeringRoutesNetworksPagedResponse listPeeringRoutesNetworks(
+      String peeringName, String region, String direction, ProjectGlobalNetworkName network) {
+    ListPeeringRoutesNetworksHttpRequest request =
+        ListPeeringRoutesNetworksHttpRequest.newBuilder()
+            .setPeeringName(peeringName)
+            .setRegion(region)
+            .setDirection(direction)
+            .setNetwork(network == null ? null : network.toString())
+            .build();
+    return listPeeringRoutesNetworks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the peering routes exchanged over peering connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NetworkClient networkClient = NetworkClient.create()) {
+   *   String peeringName = "";
+   *   String region = "";
+   *   String direction = "";
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   for (ExchangedPeeringRoute element : networkClient.listPeeringRoutesNetworks(peeringName, region, direction, network.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param peeringName The response will show routes exchanged over the given peering connection.
+   * @param region The region of the request. The response will include all subnet routes, static
+   *     routes and dynamic routes in the region.
+   * @param direction The direction of the exchanged routes.
+   * @param network Name of the network for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListPeeringRoutesNetworksPagedResponse listPeeringRoutesNetworks(
+      String peeringName, String region, String direction, String network) {
+    ListPeeringRoutesNetworksHttpRequest request =
+        ListPeeringRoutesNetworksHttpRequest.newBuilder()
+            .setPeeringName(peeringName)
+            .setRegion(region)
+            .setDirection(direction)
+            .setNetwork(network)
+            .build();
+    return listPeeringRoutesNetworks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the peering routes exchanged over peering connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NetworkClient networkClient = NetworkClient.create()) {
+   *   String peeringName = "";
+   *   String region = "";
+   *   String direction = "";
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
+   *   ListPeeringRoutesNetworksHttpRequest request = ListPeeringRoutesNetworksHttpRequest.newBuilder()
+   *     .setPeeringName(peeringName)
+   *     .setRegion(region)
+   *     .setDirection(direction)
+   *     .setNetwork(formattedNetwork)
+   *     .build();
+   *   for (ExchangedPeeringRoute element : networkClient.listPeeringRoutesNetworks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListPeeringRoutesNetworksPagedResponse listPeeringRoutesNetworks(
+      ListPeeringRoutesNetworksHttpRequest request) {
+    return listPeeringRoutesNetworksPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the peering routes exchanged over peering connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NetworkClient networkClient = NetworkClient.create()) {
+   *   String peeringName = "";
+   *   String region = "";
+   *   String direction = "";
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
+   *   ListPeeringRoutesNetworksHttpRequest request = ListPeeringRoutesNetworksHttpRequest.newBuilder()
+   *     .setPeeringName(peeringName)
+   *     .setRegion(region)
+   *     .setDirection(direction)
+   *     .setNetwork(formattedNetwork)
+   *     .build();
+   *   ApiFuture&lt;ListPeeringRoutesNetworksPagedResponse&gt; future = networkClient.listPeeringRoutesNetworksPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (ExchangedPeeringRoute element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          ListPeeringRoutesNetworksHttpRequest, ListPeeringRoutesNetworksPagedResponse>
+      listPeeringRoutesNetworksPagedCallable() {
+    return stub.listPeeringRoutesNetworksPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the peering routes exchanged over peering connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NetworkClient networkClient = NetworkClient.create()) {
+   *   String peeringName = "";
+   *   String region = "";
+   *   String direction = "";
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
+   *   ListPeeringRoutesNetworksHttpRequest request = ListPeeringRoutesNetworksHttpRequest.newBuilder()
+   *     .setPeeringName(peeringName)
+   *     .setRegion(region)
+   *     .setDirection(direction)
+   *     .setNetwork(formattedNetwork)
+   *     .build();
+   *   while (true) {
+   *     ExchangedPeeringRoutesList response = networkClient.listPeeringRoutesNetworksCallable().call(request);
+   *     for (ExchangedPeeringRoute element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<ListPeeringRoutesNetworksHttpRequest, ExchangedPeeringRoutesList>
+      listPeeringRoutesNetworksCallable() {
+    return stub.listPeeringRoutesNetworksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Patches the specified network with the data included in the request. Only the following fields
    * can be modified: routingConfig.routingMode.
    *
@@ -719,8 +898,7 @@ public class NetworkClient implements BackgroundResource {
    * @param network Name of the network to update.
    * @param networkResource Represents a VPC Network resource.
    *     <p>Networks connect resources to each other and to the internet. For more information, read
-   *     Virtual Private Cloud (VPC) Network. (== resource_for v1.networks ==) (== resource_for
-   *     beta.networks ==)
+   *     Virtual Private Cloud (VPC) Network. (== resource_for {$api_version}.networks ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -758,8 +936,7 @@ public class NetworkClient implements BackgroundResource {
    * @param network Name of the network to update.
    * @param networkResource Represents a VPC Network resource.
    *     <p>Networks connect resources to each other and to the internet. For more information, read
-   *     Virtual Private Cloud (VPC) Network. (== resource_for v1.networks ==) (== resource_for
-   *     beta.networks ==)
+   *     Virtual Private Cloud (VPC) Network. (== resource_for {$api_version}.networks ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1285,6 +1462,108 @@ public class NetworkClient implements BackgroundResource {
     protected ListNetworksFixedSizeCollection createCollection(
         List<ListNetworksPage> pages, int collectionSize) {
       return new ListNetworksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListPeeringRoutesNetworksPagedResponse
+      extends AbstractPagedListResponse<
+          ListPeeringRoutesNetworksHttpRequest,
+          ExchangedPeeringRoutesList,
+          ExchangedPeeringRoute,
+          ListPeeringRoutesNetworksPage,
+          ListPeeringRoutesNetworksFixedSizeCollection> {
+
+    public static ApiFuture<ListPeeringRoutesNetworksPagedResponse> createAsync(
+        PageContext<
+                ListPeeringRoutesNetworksHttpRequest,
+                ExchangedPeeringRoutesList,
+                ExchangedPeeringRoute>
+            context,
+        ApiFuture<ExchangedPeeringRoutesList> futureResponse) {
+      ApiFuture<ListPeeringRoutesNetworksPage> futurePage =
+          ListPeeringRoutesNetworksPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListPeeringRoutesNetworksPage, ListPeeringRoutesNetworksPagedResponse>() {
+            @Override
+            public ListPeeringRoutesNetworksPagedResponse apply(
+                ListPeeringRoutesNetworksPage input) {
+              return new ListPeeringRoutesNetworksPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPeeringRoutesNetworksPagedResponse(ListPeeringRoutesNetworksPage page) {
+      super(page, ListPeeringRoutesNetworksFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListPeeringRoutesNetworksPage
+      extends AbstractPage<
+          ListPeeringRoutesNetworksHttpRequest,
+          ExchangedPeeringRoutesList,
+          ExchangedPeeringRoute,
+          ListPeeringRoutesNetworksPage> {
+
+    private ListPeeringRoutesNetworksPage(
+        PageContext<
+                ListPeeringRoutesNetworksHttpRequest,
+                ExchangedPeeringRoutesList,
+                ExchangedPeeringRoute>
+            context,
+        ExchangedPeeringRoutesList response) {
+      super(context, response);
+    }
+
+    private static ListPeeringRoutesNetworksPage createEmptyPage() {
+      return new ListPeeringRoutesNetworksPage(null, null);
+    }
+
+    @Override
+    protected ListPeeringRoutesNetworksPage createPage(
+        PageContext<
+                ListPeeringRoutesNetworksHttpRequest,
+                ExchangedPeeringRoutesList,
+                ExchangedPeeringRoute>
+            context,
+        ExchangedPeeringRoutesList response) {
+      return new ListPeeringRoutesNetworksPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPeeringRoutesNetworksPage> createPageAsync(
+        PageContext<
+                ListPeeringRoutesNetworksHttpRequest,
+                ExchangedPeeringRoutesList,
+                ExchangedPeeringRoute>
+            context,
+        ApiFuture<ExchangedPeeringRoutesList> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPeeringRoutesNetworksFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPeeringRoutesNetworksHttpRequest,
+          ExchangedPeeringRoutesList,
+          ExchangedPeeringRoute,
+          ListPeeringRoutesNetworksPage,
+          ListPeeringRoutesNetworksFixedSizeCollection> {
+
+    private ListPeeringRoutesNetworksFixedSizeCollection(
+        List<ListPeeringRoutesNetworksPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPeeringRoutesNetworksFixedSizeCollection createEmptyCollection() {
+      return new ListPeeringRoutesNetworksFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPeeringRoutesNetworksFixedSizeCollection createCollection(
+        List<ListPeeringRoutesNetworksPage> pages, int collectionSize) {
+      return new ListPeeringRoutesNetworksFixedSizeCollection(pages, collectionSize);
     }
   }
 }

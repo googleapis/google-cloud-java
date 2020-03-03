@@ -30,14 +30,14 @@ import javax.annotation.Nullable;
  * Represents a Persistent Disk Snapshot resource.
  *
  * <p>You can use snapshots to back up data on a regular interval. For more information, read
- * Creating persistent disk snapshots. (== resource_for beta.snapshots ==) (== resource_for
- * v1.snapshots ==)
+ * Creating persistent disk snapshots. (== resource_for {$api_version}.snapshots ==)
  */
 public final class Snapshot implements ApiMessage {
   private final Boolean autoCreated;
   private final String creationTimestamp;
   private final String description;
   private final String diskSizeGb;
+  private final String downloadBytes;
   private final String id;
   private final String kind;
   private final String labelFingerprint;
@@ -60,6 +60,7 @@ public final class Snapshot implements ApiMessage {
     this.creationTimestamp = null;
     this.description = null;
     this.diskSizeGb = null;
+    this.downloadBytes = null;
     this.id = null;
     this.kind = null;
     this.labelFingerprint = null;
@@ -83,6 +84,7 @@ public final class Snapshot implements ApiMessage {
       String creationTimestamp,
       String description,
       String diskSizeGb,
+      String downloadBytes,
       String id,
       String kind,
       String labelFingerprint,
@@ -103,6 +105,7 @@ public final class Snapshot implements ApiMessage {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.diskSizeGb = diskSizeGb;
+    this.downloadBytes = downloadBytes;
     this.id = id;
     this.kind = kind;
     this.labelFingerprint = labelFingerprint;
@@ -134,6 +137,9 @@ public final class Snapshot implements ApiMessage {
     }
     if ("diskSizeGb".equals(fieldName)) {
       return diskSizeGb;
+    }
+    if ("downloadBytes".equals(fieldName)) {
+      return downloadBytes;
     }
     if ("id".equals(fieldName)) {
       return id;
@@ -227,6 +233,11 @@ public final class Snapshot implements ApiMessage {
   /** [Output Only] Size of the source disk, specified in GB. */
   public String getDiskSizeGb() {
     return diskSizeGb;
+  }
+
+  /** [Output Only] Number of bytes downloaded to restore a snapshot to a disk. */
+  public String getDownloadBytes() {
+    return downloadBytes;
   }
 
   /**
@@ -390,6 +401,7 @@ public final class Snapshot implements ApiMessage {
     private String creationTimestamp;
     private String description;
     private String diskSizeGb;
+    private String downloadBytes;
     private String id;
     private String kind;
     private String labelFingerprint;
@@ -422,6 +434,9 @@ public final class Snapshot implements ApiMessage {
       }
       if (other.getDiskSizeGb() != null) {
         this.diskSizeGb = other.diskSizeGb;
+      }
+      if (other.getDownloadBytes() != null) {
+        this.downloadBytes = other.downloadBytes;
       }
       if (other.getId() != null) {
         this.id = other.id;
@@ -479,6 +494,7 @@ public final class Snapshot implements ApiMessage {
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
       this.diskSizeGb = source.diskSizeGb;
+      this.downloadBytes = source.downloadBytes;
       this.id = source.id;
       this.kind = source.kind;
       this.labelFingerprint = source.labelFingerprint;
@@ -548,6 +564,17 @@ public final class Snapshot implements ApiMessage {
     /** [Output Only] Size of the source disk, specified in GB. */
     public Builder setDiskSizeGb(String diskSizeGb) {
       this.diskSizeGb = diskSizeGb;
+      return this;
+    }
+
+    /** [Output Only] Number of bytes downloaded to restore a snapshot to a disk. */
+    public String getDownloadBytes() {
+      return downloadBytes;
+    }
+
+    /** [Output Only] Number of bytes downloaded to restore a snapshot to a disk. */
+    public Builder setDownloadBytes(String downloadBytes) {
+      this.downloadBytes = downloadBytes;
       return this;
     }
 
@@ -885,6 +912,7 @@ public final class Snapshot implements ApiMessage {
           creationTimestamp,
           description,
           diskSizeGb,
+          downloadBytes,
           id,
           kind,
           labelFingerprint,
@@ -909,6 +937,7 @@ public final class Snapshot implements ApiMessage {
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDescription(this.description);
       newBuilder.setDiskSizeGb(this.diskSizeGb);
+      newBuilder.setDownloadBytes(this.downloadBytes);
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
       newBuilder.setLabelFingerprint(this.labelFingerprint);
@@ -943,6 +972,9 @@ public final class Snapshot implements ApiMessage {
         + ", "
         + "diskSizeGb="
         + diskSizeGb
+        + ", "
+        + "downloadBytes="
+        + downloadBytes
         + ", "
         + "id="
         + id
@@ -1005,6 +1037,7 @@ public final class Snapshot implements ApiMessage {
           && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.diskSizeGb, that.getDiskSizeGb())
+          && Objects.equals(this.downloadBytes, that.getDownloadBytes())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.labelFingerprint, that.getLabelFingerprint())
@@ -1032,6 +1065,7 @@ public final class Snapshot implements ApiMessage {
         creationTimestamp,
         description,
         diskSizeGb,
+        downloadBytes,
         id,
         kind,
         labelFingerprint,

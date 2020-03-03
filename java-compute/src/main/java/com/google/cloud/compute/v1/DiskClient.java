@@ -426,8 +426,7 @@ public class DiskClient implements BackgroundResource {
    *     instances using the Volume Shadow Copy Service (VSS).
    * @param snapshotResource Represents a Persistent Disk Snapshot resource.
    *     <p>You can use snapshots to back up data on a regular interval. For more information, read
-   *     Creating persistent disk snapshots. (== resource_for beta.snapshots ==) (== resource_for
-   *     v1.snapshots ==)
+   *     Creating persistent disk snapshots. (== resource_for {$api_version}.snapshots ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -463,8 +462,7 @@ public class DiskClient implements BackgroundResource {
    *     instances using the Volume Shadow Copy Service (VSS).
    * @param snapshotResource Represents a Persistent Disk Snapshot resource.
    *     <p>You can use snapshots to back up data on a regular interval. For more information, read
-   *     Creating persistent disk snapshots. (== resource_for beta.snapshots ==) (== resource_for
-   *     v1.snapshots ==)
+   *     Creating persistent disk snapshots. (== resource_for {$api_version}.snapshots ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -849,14 +847,17 @@ public class DiskClient implements BackgroundResource {
    *
    * @param zone The name of the zone for this request.
    * @param diskResource Represents a Persistent Disk resource.
+   *     <p>Google Compute Engine has two Disk resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/disks) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionDisks)
    *     <p>Persistent disks are required for running your VM instances. Create both boot and
    *     non-boot (data) persistent disks. For more information, read Persistent Disks. For more
    *     storage options, read Storage options.
    *     <p>The disks resource represents a zonal persistent disk. For more information, read Zonal
    *     persistent disks.
    *     <p>The regionDisks resource represents a regional persistent disk. For more information,
-   *     read Regional resources. (== resource_for beta.disks ==) (== resource_for v1.disks ==) (==
-   *     resource_for v1.regionDisks ==) (== resource_for beta.regionDisks ==)
+   *     read Regional resources. (== resource_for {$api_version}.disks ==) (== resource_for
+   *     {$api_version}.regionDisks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -888,14 +889,17 @@ public class DiskClient implements BackgroundResource {
    *
    * @param zone The name of the zone for this request.
    * @param diskResource Represents a Persistent Disk resource.
+   *     <p>Google Compute Engine has two Disk resources:
+   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/disks) &#42;
+   *     [Regional](/compute/docs/reference/rest/latest/regionDisks)
    *     <p>Persistent disks are required for running your VM instances. Create both boot and
    *     non-boot (data) persistent disks. For more information, read Persistent Disks. For more
    *     storage options, read Storage options.
    *     <p>The disks resource represents a zonal persistent disk. For more information, read Zonal
    *     persistent disks.
    *     <p>The regionDisks resource represents a regional persistent disk. For more information,
-   *     read Regional resources. (== resource_for beta.disks ==) (== resource_for v1.disks ==) (==
-   *     resource_for v1.regionDisks ==) (== resource_for beta.regionDisks ==)
+   *     read Regional resources. (== resource_for {$api_version}.disks ==) (== resource_for
+   *     {$api_version}.regionDisks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

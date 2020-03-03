@@ -37,6 +37,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
 import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.ProjectRegionOperationName;
+import com.google.cloud.compute.v1.WaitRegionOperationHttpRequest;
 import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -107,6 +108,27 @@ public class HttpJsonRegionOperationStub extends RegionOperationStub {
                       .build())
               .build();
 
+  @InternalApi
+  public static final ApiMethodDescriptor<WaitRegionOperationHttpRequest, Operation>
+      waitRegionOperationMethodDescriptor =
+          ApiMethodDescriptor.<WaitRegionOperationHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.regionOperations.wait")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<WaitRegionOperationHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/operations/{operation}/wait"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectRegionOperationName.newFactory())
+                      .setResourceNameField("operation")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<DeleteRegionOperationHttpRequest, Void> deleteRegionOperationCallable;
@@ -115,6 +137,8 @@ public class HttpJsonRegionOperationStub extends RegionOperationStub {
       listRegionOperationsCallable;
   private final UnaryCallable<ListRegionOperationsHttpRequest, ListRegionOperationsPagedResponse>
       listRegionOperationsPagedCallable;
+  private final UnaryCallable<WaitRegionOperationHttpRequest, Operation>
+      waitRegionOperationCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
 
@@ -172,6 +196,11 @@ public class HttpJsonRegionOperationStub extends RegionOperationStub {
             HttpJsonCallSettings.<ListRegionOperationsHttpRequest, OperationList>newBuilder()
                 .setMethodDescriptor(listRegionOperationsMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<WaitRegionOperationHttpRequest, Operation>
+        waitRegionOperationTransportSettings =
+            HttpJsonCallSettings.<WaitRegionOperationHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(waitRegionOperationMethodDescriptor)
+                .build();
 
     this.deleteRegionOperationCallable =
         callableFactory.createUnaryCallable(
@@ -192,6 +221,11 @@ public class HttpJsonRegionOperationStub extends RegionOperationStub {
         callableFactory.createPagedCallable(
             listRegionOperationsTransportSettings,
             settings.listRegionOperationsSettings(),
+            clientContext);
+    this.waitRegionOperationCallable =
+        callableFactory.createUnaryCallable(
+            waitRegionOperationTransportSettings,
+            settings.waitRegionOperationSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -217,6 +251,11 @@ public class HttpJsonRegionOperationStub extends RegionOperationStub {
   public UnaryCallable<ListRegionOperationsHttpRequest, OperationList>
       listRegionOperationsCallable() {
     return listRegionOperationsCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<WaitRegionOperationHttpRequest, Operation> waitRegionOperationCallable() {
+    return waitRegionOperationCallable;
   }
 
   @Override

@@ -50,6 +50,7 @@ import com.google.cloud.compute.v1.GetForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.InsertForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.ListForwardingRulesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.SetTargetForwardingRuleHttpRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -116,6 +117,8 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
   private final PagedCallSettings<
           ListForwardingRulesHttpRequest, ForwardingRuleList, ListForwardingRulesPagedResponse>
       listForwardingRulesSettings;
+  private final UnaryCallSettings<PatchForwardingRuleHttpRequest, Operation>
+      patchForwardingRuleSettings;
   private final UnaryCallSettings<SetTargetForwardingRuleHttpRequest, Operation>
       setTargetForwardingRuleSettings;
 
@@ -151,6 +154,12 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
           ListForwardingRulesHttpRequest, ForwardingRuleList, ListForwardingRulesPagedResponse>
       listForwardingRulesSettings() {
     return listForwardingRulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchForwardingRule. */
+  public UnaryCallSettings<PatchForwardingRuleHttpRequest, Operation>
+      patchForwardingRuleSettings() {
+    return patchForwardingRuleSettings;
   }
 
   /** Returns the object with the settings used for calls to setTargetForwardingRule. */
@@ -240,6 +249,7 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
     getForwardingRuleSettings = settingsBuilder.getForwardingRuleSettings().build();
     insertForwardingRuleSettings = settingsBuilder.insertForwardingRuleSettings().build();
     listForwardingRulesSettings = settingsBuilder.listForwardingRulesSettings().build();
+    patchForwardingRuleSettings = settingsBuilder.patchForwardingRuleSettings().build();
     setTargetForwardingRuleSettings = settingsBuilder.setTargetForwardingRuleSettings().build();
   }
 
@@ -405,6 +415,8 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
     private final PagedCallSettings.Builder<
             ListForwardingRulesHttpRequest, ForwardingRuleList, ListForwardingRulesPagedResponse>
         listForwardingRulesSettings;
+    private final UnaryCallSettings.Builder<PatchForwardingRuleHttpRequest, Operation>
+        patchForwardingRuleSettings;
     private final UnaryCallSettings.Builder<SetTargetForwardingRuleHttpRequest, Operation>
         setTargetForwardingRuleSettings;
 
@@ -461,6 +473,8 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
       listForwardingRulesSettings =
           PagedCallSettings.newBuilder(LIST_FORWARDING_RULES_PAGE_STR_FACT);
 
+      patchForwardingRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setTargetForwardingRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -470,6 +484,7 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
               getForwardingRuleSettings,
               insertForwardingRuleSettings,
               listForwardingRulesSettings,
+              patchForwardingRuleSettings,
               setTargetForwardingRuleSettings);
 
       initDefaults(this);
@@ -512,6 +527,11 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .patchForwardingRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .setTargetForwardingRuleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -528,6 +548,7 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
       getForwardingRuleSettings = settings.getForwardingRuleSettings.toBuilder();
       insertForwardingRuleSettings = settings.insertForwardingRuleSettings.toBuilder();
       listForwardingRulesSettings = settings.listForwardingRulesSettings.toBuilder();
+      patchForwardingRuleSettings = settings.patchForwardingRuleSettings.toBuilder();
       setTargetForwardingRuleSettings = settings.setTargetForwardingRuleSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -537,6 +558,7 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
               getForwardingRuleSettings,
               insertForwardingRuleSettings,
               listForwardingRulesSettings,
+              patchForwardingRuleSettings,
               setTargetForwardingRuleSettings);
     }
 
@@ -588,6 +610,12 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
             ListForwardingRulesHttpRequest, ForwardingRuleList, ListForwardingRulesPagedResponse>
         listForwardingRulesSettings() {
       return listForwardingRulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchForwardingRule. */
+    public UnaryCallSettings.Builder<PatchForwardingRuleHttpRequest, Operation>
+        patchForwardingRuleSettings() {
+      return patchForwardingRuleSettings;
     }
 
     /** Returns the builder for the settings used for calls to setTargetForwardingRule. */

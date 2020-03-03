@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  *
  * <p>Only external backend services used by HTTP or HTTPS load balancers can reference a Security
  * Policy. For more information, read read Cloud Armor Security Policy Concepts. (== resource_for
- * beta.sslPolicies ==) (== resource_for v1.sslPolicies ==)
+ * {$api_version}.sslPolicies ==)
  */
 public final class SslPolicy implements ApiMessage {
   private final String creationTimestamp;

@@ -84,6 +84,13 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
         .aggregatedListInstanceGroupManagersSettings();
   }
 
+  /** Returns the object with the settings used for calls to createInstancesInstanceGroupManager. */
+  public UnaryCallSettings<CreateInstancesInstanceGroupManagerHttpRequest, Operation>
+      createInstancesInstanceGroupManagerSettings() {
+    return ((InstanceGroupManagerStubSettings) getStubSettings())
+        .createInstancesInstanceGroupManagerSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteInstanceGroupManager. */
   public UnaryCallSettings<DeleteInstanceGroupManagerHttpRequest, Operation>
       deleteInstanceGroupManagerSettings() {
@@ -292,6 +299,14 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
             AggregatedListInstanceGroupManagersPagedResponse>
         aggregatedListInstanceGroupManagersSettings() {
       return getStubSettingsBuilder().aggregatedListInstanceGroupManagersSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createInstancesInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<CreateInstancesInstanceGroupManagerHttpRequest, Operation>
+        createInstancesInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().createInstancesInstanceGroupManagerSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteInstanceGroupManager. */

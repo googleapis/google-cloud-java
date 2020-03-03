@@ -414,8 +414,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    *     <p>Creating a commitment resource means that you are purchasing a committed use contract
    *     with an explicit start and end time. You can create commitments based on vCPUs and memory
    *     usage and receive discounted rates. For full details, read Signing Up for Committed Use
-   *     Discounts. (== resource_for beta.regionCommitments ==) (== resource_for
-   *     v1.regionCommitments ==)
+   *     Discounts. (== resource_for {$api_version}.regionCommitments ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -448,8 +447,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    *     <p>Creating a commitment resource means that you are purchasing a committed use contract
    *     with an explicit start and end time. You can create commitments based on vCPUs and memory
    *     usage and receive discounted rates. For full details, read Signing Up for Committed Use
-   *     Discounts. (== resource_for beta.regionCommitments ==) (== resource_for
-   *     v1.regionCommitments ==)
+   *     Discounts. (== resource_for {$api_version}.regionCommitments ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

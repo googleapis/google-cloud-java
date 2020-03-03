@@ -40,6 +40,7 @@ import com.google.cloud.compute.v1.OperationAggregatedList;
 import com.google.cloud.compute.v1.OperationList;
 import com.google.cloud.compute.v1.ProjectGlobalOperationName;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.WaitGlobalOperationHttpRequest;
 import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -133,6 +134,26 @@ public class HttpJsonGlobalOperationStub extends GlobalOperationStub {
                       .build())
               .build();
 
+  @InternalApi
+  public static final ApiMethodDescriptor<WaitGlobalOperationHttpRequest, Operation>
+      waitGlobalOperationMethodDescriptor =
+          ApiMethodDescriptor.<WaitGlobalOperationHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.globalOperations.wait")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<WaitGlobalOperationHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/global/operations/{operation}/wait"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectGlobalOperationName.newFactory())
+                      .setResourceNameField("operation")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList>
@@ -146,6 +167,8 @@ public class HttpJsonGlobalOperationStub extends GlobalOperationStub {
       listGlobalOperationsCallable;
   private final UnaryCallable<ListGlobalOperationsHttpRequest, ListGlobalOperationsPagedResponse>
       listGlobalOperationsPagedCallable;
+  private final UnaryCallable<WaitGlobalOperationHttpRequest, Operation>
+      waitGlobalOperationCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
 
@@ -209,6 +232,11 @@ public class HttpJsonGlobalOperationStub extends GlobalOperationStub {
             HttpJsonCallSettings.<ListGlobalOperationsHttpRequest, OperationList>newBuilder()
                 .setMethodDescriptor(listGlobalOperationsMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<WaitGlobalOperationHttpRequest, Operation>
+        waitGlobalOperationTransportSettings =
+            HttpJsonCallSettings.<WaitGlobalOperationHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(waitGlobalOperationMethodDescriptor)
+                .build();
 
     this.aggregatedListGlobalOperationsCallable =
         callableFactory.createUnaryCallable(
@@ -239,6 +267,11 @@ public class HttpJsonGlobalOperationStub extends GlobalOperationStub {
         callableFactory.createPagedCallable(
             listGlobalOperationsTransportSettings,
             settings.listGlobalOperationsSettings(),
+            clientContext);
+    this.waitGlobalOperationCallable =
+        callableFactory.createUnaryCallable(
+            waitGlobalOperationTransportSettings,
+            settings.waitGlobalOperationSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -277,6 +310,11 @@ public class HttpJsonGlobalOperationStub extends GlobalOperationStub {
   public UnaryCallable<ListGlobalOperationsHttpRequest, OperationList>
       listGlobalOperationsCallable() {
     return listGlobalOperationsCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<WaitGlobalOperationHttpRequest, Operation> waitGlobalOperationCallable() {
+    return waitGlobalOperationCallable;
   }
 
   @Override

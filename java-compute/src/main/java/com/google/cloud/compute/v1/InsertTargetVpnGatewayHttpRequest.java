@@ -191,8 +191,8 @@ public final class InsertTargetVpnGatewayHttpRequest implements ApiMessage {
    * Represents a Target VPN Gateway resource.
    *
    * <p>The target VPN gateway resource represents a Classic Cloud VPN gateway. For more
-   * information, read the the Cloud VPN Overview. (== resource_for beta.targetVpnGateways ==) (==
-   * resource_for v1.targetVpnGateways ==)
+   * information, read the the Cloud VPN Overview. (== resource_for {$api_version}.targetVpnGateways
+   * ==)
    */
   public TargetVpnGateway getTargetVpnGatewayResource() {
     return targetVpnGatewayResource;
@@ -415,8 +415,8 @@ public final class InsertTargetVpnGatewayHttpRequest implements ApiMessage {
      * Represents a Target VPN Gateway resource.
      *
      * <p>The target VPN gateway resource represents a Classic Cloud VPN gateway. For more
-     * information, read the the Cloud VPN Overview. (== resource_for beta.targetVpnGateways ==) (==
-     * resource_for v1.targetVpnGateways ==)
+     * information, read the the Cloud VPN Overview. (== resource_for
+     * {$api_version}.targetVpnGateways ==)
      */
     public TargetVpnGateway getTargetVpnGatewayResource() {
       return targetVpnGatewayResource;
@@ -426,8 +426,8 @@ public final class InsertTargetVpnGatewayHttpRequest implements ApiMessage {
      * Represents a Target VPN Gateway resource.
      *
      * <p>The target VPN gateway resource represents a Classic Cloud VPN gateway. For more
-     * information, read the the Cloud VPN Overview. (== resource_for beta.targetVpnGateways ==) (==
-     * resource_for v1.targetVpnGateways ==)
+     * information, read the the Cloud VPN Overview. (== resource_for
+     * {$api_version}.targetVpnGateways ==)
      */
     public Builder setTargetVpnGatewayResource(TargetVpnGateway targetVpnGatewayResource) {
       this.targetVpnGatewayResource = targetVpnGatewayResource;

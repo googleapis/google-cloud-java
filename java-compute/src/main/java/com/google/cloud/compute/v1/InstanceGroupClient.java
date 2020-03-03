@@ -640,8 +640,8 @@ public class InstanceGroupClient implements BackgroundResource {
    *     heterogeneous instances or if you need to manage the instances yourself. You cannot create
    *     regional unmanaged instance groups.
    *     <p>For more information, read Instance groups.
-   *     <p>(== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (==
-   *     resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
+   *     <p>(== resource_for {$api_version}.instanceGroups ==) (== resource_for
+   *     {$api_version}.regionInstanceGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -680,8 +680,8 @@ public class InstanceGroupClient implements BackgroundResource {
    *     heterogeneous instances or if you need to manage the instances yourself. You cannot create
    *     regional unmanaged instance groups.
    *     <p>For more information, read Instance groups.
-   *     <p>(== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (==
-   *     resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
+   *     <p>(== resource_for {$api_version}.instanceGroups ==) (== resource_for
+   *     {$api_version}.regionInstanceGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

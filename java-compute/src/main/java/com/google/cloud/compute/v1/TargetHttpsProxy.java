@@ -28,11 +28,20 @@ import javax.annotation.Nullable;
 /**
  * Represents a Target HTTPS Proxy resource.
  *
- * <p>A target HTTPS proxy is a component of GCP HTTPS load balancers. Forwarding rules reference a
- * target HTTPS proxy, and the target proxy then references a URL map. For more information, read
- * Using Target Proxies and Forwarding rule concepts. (== resource_for beta.targetHttpsProxies ==)
- * (== resource_for v1.targetHttpsProxies ==) (== resource_for beta.regionTargetHttpsProxies ==) (==
- * resource_for v1.regionTargetHttpsProxies ==)
+ * <p>Google Compute Engine has two Target HTTPS Proxy resources:
+ *
+ * <p>&#42; [Global](/compute/docs/reference/rest/latest/targetHttpsProxies) &#42;
+ * [Regional](/compute/docs/reference/rest/latest/regionTargetHttpsProxies)
+ *
+ * <p>A target HTTPS proxy is a component of GCP HTTPS load balancers.
+ *
+ * <p>&#42; targetHttpsProxies are used by external HTTPS load balancers. &#42;
+ * regionTargetHttpsProxies are used by internal HTTPS load balancers.
+ *
+ * <p>Forwarding rules reference a target HTTPS proxy, and the target proxy then references a URL
+ * map. For more information, read Using Target Proxies and Forwarding rule concepts. (==
+ * resource_for {$api_version}.targetHttpsProxies ==) (== resource_for
+ * {$api_version}.regionTargetHttpsProxies ==)
  */
 public final class TargetHttpsProxy implements ApiMessage {
   private final String creationTimestamp;

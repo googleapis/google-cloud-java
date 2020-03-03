@@ -27,6 +27,11 @@ import javax.annotation.Nullable;
 /**
  * Represents a Disk Type resource.
  *
+ * <p>Google Compute Engine has two Disk Type resources:
+ *
+ * <p>&#42; [Global](/compute/docs/reference/rest/latest/diskTypes) &#42;
+ * [Regional](/compute/docs/reference/rest/latest/regionDiskTypes)
+ *
  * <p>You can choose from a variety of disk types based on your needs. For more information, read
  * Storage options.
  *
@@ -34,9 +39,8 @@ import javax.annotation.Nullable;
  * information, read Zonal persistent disks.
  *
  * <p>The regionDiskTypes resource represents disk types for a regional persistent disk. For more
- * information, read Regional persistent disks. (== resource_for beta.diskTypes ==) (== resource_for
- * v1.diskTypes ==) (== resource_for v1.regionDiskTypes ==) (== resource_for beta.regionDiskTypes
- * ==)
+ * information, read Regional persistent disks. (== resource_for {$api_version}.diskTypes ==) (==
+ * resource_for {$api_version}.regionDiskTypes ==)
  */
 public final class DiskType implements ApiMessage {
   private final String creationTimestamp;

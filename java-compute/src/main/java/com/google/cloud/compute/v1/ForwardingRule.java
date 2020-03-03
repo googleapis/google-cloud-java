@@ -29,21 +29,28 @@ import javax.annotation.Nullable;
 /**
  * Represents a Forwarding Rule resource.
  *
+ * <p>Forwarding rule resources in GCP can be either regional or global in scope:
+ *
+ * <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
+ * [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+ *
  * <p>A forwarding rule and its corresponding IP address represent the frontend configuration of a
  * Google Cloud Platform load balancer. Forwarding rules can also reference target instances and
  * Cloud VPN Classic gateways (targetVpnGateway).
  *
  * <p>For more information, read Forwarding rule concepts and Using protocol forwarding.
  *
- * <p>(== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
- * resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (==
- * resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
+ * <p>(== resource_for {$api_version}.forwardingRules ==) (== resource_for
+ * {$api_version}.globalForwardingRules ==) (== resource_for {$api_version}.regionForwardingRules
+ * ==)
  */
 public final class ForwardingRule implements ApiMessage {
   private final Boolean allPorts;
+  private final Boolean allowGlobalAccess;
   private final String backendService;
   private final String creationTimestamp;
   private final String description;
+  private final String fingerprint;
 
   @SerializedName("IPAddress")
   private final String iPAddress;
@@ -53,6 +60,7 @@ public final class ForwardingRule implements ApiMessage {
 
   private final String id;
   private final String ipVersion;
+  private final Boolean isMirroringCollector;
   private final String kind;
   private final String loadBalancingScheme;
   private final List<MetadataFilter> metadataFilters;
@@ -70,13 +78,16 @@ public final class ForwardingRule implements ApiMessage {
 
   private ForwardingRule() {
     this.allPorts = null;
+    this.allowGlobalAccess = null;
     this.backendService = null;
     this.creationTimestamp = null;
     this.description = null;
+    this.fingerprint = null;
     this.iPAddress = null;
     this.iPProtocol = null;
     this.id = null;
     this.ipVersion = null;
+    this.isMirroringCollector = null;
     this.kind = null;
     this.loadBalancingScheme = null;
     this.metadataFilters = null;
@@ -95,13 +106,16 @@ public final class ForwardingRule implements ApiMessage {
 
   private ForwardingRule(
       Boolean allPorts,
+      Boolean allowGlobalAccess,
       String backendService,
       String creationTimestamp,
       String description,
+      String fingerprint,
       String iPAddress,
       String iPProtocol,
       String id,
       String ipVersion,
+      Boolean isMirroringCollector,
       String kind,
       String loadBalancingScheme,
       List<MetadataFilter> metadataFilters,
@@ -117,13 +131,16 @@ public final class ForwardingRule implements ApiMessage {
       String subnetwork,
       String target) {
     this.allPorts = allPorts;
+    this.allowGlobalAccess = allowGlobalAccess;
     this.backendService = backendService;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
+    this.fingerprint = fingerprint;
     this.iPAddress = iPAddress;
     this.iPProtocol = iPProtocol;
     this.id = id;
     this.ipVersion = ipVersion;
+    this.isMirroringCollector = isMirroringCollector;
     this.kind = kind;
     this.loadBalancingScheme = loadBalancingScheme;
     this.metadataFilters = metadataFilters;
@@ -145,6 +162,9 @@ public final class ForwardingRule implements ApiMessage {
     if ("allPorts".equals(fieldName)) {
       return allPorts;
     }
+    if ("allowGlobalAccess".equals(fieldName)) {
+      return allowGlobalAccess;
+    }
     if ("backendService".equals(fieldName)) {
       return backendService;
     }
@@ -153,6 +173,9 @@ public final class ForwardingRule implements ApiMessage {
     }
     if ("description".equals(fieldName)) {
       return description;
+    }
+    if ("fingerprint".equals(fieldName)) {
+      return fingerprint;
     }
     if ("iPAddress".equals(fieldName)) {
       return iPAddress;
@@ -165,6 +188,9 @@ public final class ForwardingRule implements ApiMessage {
     }
     if ("ipVersion".equals(fieldName)) {
       return ipVersion;
+    }
+    if ("isMirroringCollector".equals(fieldName)) {
+      return isMirroringCollector;
     }
     if ("kind".equals(fieldName)) {
       return kind;
@@ -243,6 +269,16 @@ public final class ForwardingRule implements ApiMessage {
   }
 
   /**
+   * This field is used along with the backend_service field for internal load balancing or with the
+   * target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB
+   * from all regions. Otherwise only allows access from clients in the same region as the internal
+   * load balancer.
+   */
+  public Boolean getAllowGlobalAccess() {
+    return allowGlobalAccess;
+  }
+
+  /**
    * This field is only used for INTERNAL load balancing.
    *
    * <p>For internal load balancing, this field identifies the BackendService resource to receive
@@ -262,6 +298,18 @@ public final class ForwardingRule implements ApiMessage {
    */
   public String getDescription() {
     return description;
+  }
+
+  /**
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used
+   * in optimistic locking. This field will be ignored when inserting a ForwardingRule. Include the
+   * fingerprint in patch request to ensure that you do not overwrite changes that were applied from
+   * another concurrent request.
+   *
+   * <p>To see the latest fingerprint, make a get() request to retrieve a ForwardingRule.
+   */
+  public String getFingerprint() {
+    return fingerprint;
   }
 
   /**
@@ -316,6 +364,16 @@ public final class ForwardingRule implements ApiMessage {
   }
 
   /**
+   * Indicates whether or not this load balancer can be used as a collector for packet mirroring. To
+   * prevent mirroring loops, instances behind this load balancer will not have their traffic
+   * mirrored even if a PacketMirroring rule applies to them. This can only be set to true for load
+   * balancers that have their loadBalancingScheme set to INTERNAL.
+   */
+  public Boolean getIsMirroringCollector() {
+    return isMirroringCollector;
+  }
+
+  /**
    * [Output Only] Type of the resource. Always compute#forwardingRule for Forwarding Rule
    * resources.
    */
@@ -324,16 +382,13 @@ public final class ForwardingRule implements ApiMessage {
   }
 
   /**
-   * Specifies the forwarding rule type. EXTERNAL is used for: - Classic Cloud VPN gateways -
-   * Protocol forwarding to VMs from an external IP address - The following load balancers: HTTP(S),
-   * SSL Proxy, TCP Proxy, and Network TCP/UDP.
+   * Specifies the forwarding rule type.
    *
-   * <p>INTERNAL is used for: - Protocol forwarding to VMs from an internal IP address - Internal
-   * TCP/UDP load balancers
-   *
-   * <p>INTERNAL_MANAGED is used for: - Internal HTTP(S) load balancers
-   *
-   * <p>INTERNAL_SELF_MANAGED is used for: - Traffic Director
+   * <p>- EXTERNAL is used for: - Classic Cloud VPN gateways - Protocol forwarding to VMs from an
+   * external IP address - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network
+   * TCP/UDP - INTERNAL is used for: - Protocol forwarding to VMs from an internal IP address -
+   * Internal TCP/UDP load balancers - INTERNAL_MANAGED is used for: - Internal HTTP(S) load
+   * balancers - &gt;INTERNAL_SELF_MANAGED is used for: - Traffic Director
    *
    * <p>For more information about forwarding rules, refer to Forwarding rule concepts.
    */
@@ -486,8 +541,8 @@ public final class ForwardingRule implements ApiMessage {
    * The URL of the target resource to receive the matched traffic. For regional forwarding rules,
    * this target must live in the same region as the forwarding rule. For global forwarding rules,
    * this target must be a global load balancing resource. The forwarded traffic must be of a type
-   * appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only HTTP and HTTPS
-   * targets are valid.
+   * appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only
+   * targetHttpProxy is valid, not targetHttpsProxy.
    */
   public String getTarget() {
     return target;
@@ -517,13 +572,16 @@ public final class ForwardingRule implements ApiMessage {
 
   public static class Builder {
     private Boolean allPorts;
+    private Boolean allowGlobalAccess;
     private String backendService;
     private String creationTimestamp;
     private String description;
+    private String fingerprint;
     private String iPAddress;
     private String iPProtocol;
     private String id;
     private String ipVersion;
+    private Boolean isMirroringCollector;
     private String kind;
     private String loadBalancingScheme;
     private List<MetadataFilter> metadataFilters;
@@ -546,6 +604,9 @@ public final class ForwardingRule implements ApiMessage {
       if (other.getAllPorts() != null) {
         this.allPorts = other.allPorts;
       }
+      if (other.getAllowGlobalAccess() != null) {
+        this.allowGlobalAccess = other.allowGlobalAccess;
+      }
       if (other.getBackendService() != null) {
         this.backendService = other.backendService;
       }
@@ -554,6 +615,9 @@ public final class ForwardingRule implements ApiMessage {
       }
       if (other.getDescription() != null) {
         this.description = other.description;
+      }
+      if (other.getFingerprint() != null) {
+        this.fingerprint = other.fingerprint;
       }
       if (other.getIPAddress() != null) {
         this.iPAddress = other.iPAddress;
@@ -566,6 +630,9 @@ public final class ForwardingRule implements ApiMessage {
       }
       if (other.getIpVersion() != null) {
         this.ipVersion = other.ipVersion;
+      }
+      if (other.getIsMirroringCollector() != null) {
+        this.isMirroringCollector = other.isMirroringCollector;
       }
       if (other.getKind() != null) {
         this.kind = other.kind;
@@ -614,13 +681,16 @@ public final class ForwardingRule implements ApiMessage {
 
     Builder(ForwardingRule source) {
       this.allPorts = source.allPorts;
+      this.allowGlobalAccess = source.allowGlobalAccess;
       this.backendService = source.backendService;
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
+      this.fingerprint = source.fingerprint;
       this.iPAddress = source.iPAddress;
       this.iPProtocol = source.iPProtocol;
       this.id = source.id;
       this.ipVersion = source.ipVersion;
+      this.isMirroringCollector = source.isMirroringCollector;
       this.kind = source.kind;
       this.loadBalancingScheme = source.loadBalancingScheme;
       this.metadataFilters = source.metadataFilters;
@@ -661,6 +731,27 @@ public final class ForwardingRule implements ApiMessage {
      */
     public Builder setAllPorts(Boolean allPorts) {
       this.allPorts = allPorts;
+      return this;
+    }
+
+    /**
+     * This field is used along with the backend_service field for internal load balancing or with
+     * the target field for internal TargetInstance. If the field is set to TRUE, clients can access
+     * ILB from all regions. Otherwise only allows access from clients in the same region as the
+     * internal load balancer.
+     */
+    public Boolean getAllowGlobalAccess() {
+      return allowGlobalAccess;
+    }
+
+    /**
+     * This field is used along with the backend_service field for internal load balancing or with
+     * the target field for internal TargetInstance. If the field is set to TRUE, clients can access
+     * ILB from all regions. Otherwise only allows access from clients in the same region as the
+     * internal load balancer.
+     */
+    public Builder setAllowGlobalAccess(Boolean allowGlobalAccess) {
+      this.allowGlobalAccess = allowGlobalAccess;
       return this;
     }
 
@@ -708,6 +799,31 @@ public final class ForwardingRule implements ApiMessage {
      */
     public Builder setDescription(String description) {
       this.description = description;
+      return this;
+    }
+
+    /**
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is
+     * used in optimistic locking. This field will be ignored when inserting a ForwardingRule.
+     * Include the fingerprint in patch request to ensure that you do not overwrite changes that
+     * were applied from another concurrent request.
+     *
+     * <p>To see the latest fingerprint, make a get() request to retrieve a ForwardingRule.
+     */
+    public String getFingerprint() {
+      return fingerprint;
+    }
+
+    /**
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is
+     * used in optimistic locking. This field will be ignored when inserting a ForwardingRule.
+     * Include the fingerprint in patch request to ensure that you do not overwrite changes that
+     * were applied from another concurrent request.
+     *
+     * <p>To see the latest fingerprint, make a get() request to retrieve a ForwardingRule.
+     */
+    public Builder setFingerprint(String fingerprint) {
+      this.fingerprint = fingerprint;
       return this;
     }
 
@@ -822,6 +938,27 @@ public final class ForwardingRule implements ApiMessage {
     }
 
     /**
+     * Indicates whether or not this load balancer can be used as a collector for packet mirroring.
+     * To prevent mirroring loops, instances behind this load balancer will not have their traffic
+     * mirrored even if a PacketMirroring rule applies to them. This can only be set to true for
+     * load balancers that have their loadBalancingScheme set to INTERNAL.
+     */
+    public Boolean getIsMirroringCollector() {
+      return isMirroringCollector;
+    }
+
+    /**
+     * Indicates whether or not this load balancer can be used as a collector for packet mirroring.
+     * To prevent mirroring loops, instances behind this load balancer will not have their traffic
+     * mirrored even if a PacketMirroring rule applies to them. This can only be set to true for
+     * load balancers that have their loadBalancingScheme set to INTERNAL.
+     */
+    public Builder setIsMirroringCollector(Boolean isMirroringCollector) {
+      this.isMirroringCollector = isMirroringCollector;
+      return this;
+    }
+
+    /**
      * [Output Only] Type of the resource. Always compute#forwardingRule for Forwarding Rule
      * resources.
      */
@@ -839,16 +976,13 @@ public final class ForwardingRule implements ApiMessage {
     }
 
     /**
-     * Specifies the forwarding rule type. EXTERNAL is used for: - Classic Cloud VPN gateways -
-     * Protocol forwarding to VMs from an external IP address - The following load balancers:
-     * HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP.
+     * Specifies the forwarding rule type.
      *
-     * <p>INTERNAL is used for: - Protocol forwarding to VMs from an internal IP address - Internal
-     * TCP/UDP load balancers
-     *
-     * <p>INTERNAL_MANAGED is used for: - Internal HTTP(S) load balancers
-     *
-     * <p>INTERNAL_SELF_MANAGED is used for: - Traffic Director
+     * <p>- EXTERNAL is used for: - Classic Cloud VPN gateways - Protocol forwarding to VMs from an
+     * external IP address - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and
+     * Network TCP/UDP - INTERNAL is used for: - Protocol forwarding to VMs from an internal IP
+     * address - Internal TCP/UDP load balancers - INTERNAL_MANAGED is used for: - Internal HTTP(S)
+     * load balancers - &gt;INTERNAL_SELF_MANAGED is used for: - Traffic Director
      *
      * <p>For more information about forwarding rules, refer to Forwarding rule concepts.
      */
@@ -857,16 +991,13 @@ public final class ForwardingRule implements ApiMessage {
     }
 
     /**
-     * Specifies the forwarding rule type. EXTERNAL is used for: - Classic Cloud VPN gateways -
-     * Protocol forwarding to VMs from an external IP address - The following load balancers:
-     * HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP.
+     * Specifies the forwarding rule type.
      *
-     * <p>INTERNAL is used for: - Protocol forwarding to VMs from an internal IP address - Internal
-     * TCP/UDP load balancers
-     *
-     * <p>INTERNAL_MANAGED is used for: - Internal HTTP(S) load balancers
-     *
-     * <p>INTERNAL_SELF_MANAGED is used for: - Traffic Director
+     * <p>- EXTERNAL is used for: - Classic Cloud VPN gateways - Protocol forwarding to VMs from an
+     * external IP address - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and
+     * Network TCP/UDP - INTERNAL is used for: - Protocol forwarding to VMs from an internal IP
+     * address - Internal TCP/UDP load balancers - INTERNAL_MANAGED is used for: - Internal HTTP(S)
+     * load balancers - &gt;INTERNAL_SELF_MANAGED is used for: - Traffic Director
      *
      * <p>For more information about forwarding rules, refer to Forwarding rule concepts.
      */
@@ -1222,8 +1353,8 @@ public final class ForwardingRule implements ApiMessage {
      * The URL of the target resource to receive the matched traffic. For regional forwarding rules,
      * this target must live in the same region as the forwarding rule. For global forwarding rules,
      * this target must be a global load balancing resource. The forwarded traffic must be of a type
-     * appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only HTTP and
-     * HTTPS targets are valid.
+     * appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only
+     * targetHttpProxy is valid, not targetHttpsProxy.
      */
     public String getTarget() {
       return target;
@@ -1233,8 +1364,8 @@ public final class ForwardingRule implements ApiMessage {
      * The URL of the target resource to receive the matched traffic. For regional forwarding rules,
      * this target must live in the same region as the forwarding rule. For global forwarding rules,
      * this target must be a global load balancing resource. The forwarded traffic must be of a type
-     * appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only HTTP and
-     * HTTPS targets are valid.
+     * appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only
+     * targetHttpProxy is valid, not targetHttpsProxy.
      */
     public Builder setTarget(String target) {
       this.target = target;
@@ -1245,13 +1376,16 @@ public final class ForwardingRule implements ApiMessage {
 
       return new ForwardingRule(
           allPorts,
+          allowGlobalAccess,
           backendService,
           creationTimestamp,
           description,
+          fingerprint,
           iPAddress,
           iPProtocol,
           id,
           ipVersion,
+          isMirroringCollector,
           kind,
           loadBalancingScheme,
           metadataFilters,
@@ -1271,13 +1405,16 @@ public final class ForwardingRule implements ApiMessage {
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setAllPorts(this.allPorts);
+      newBuilder.setAllowGlobalAccess(this.allowGlobalAccess);
       newBuilder.setBackendService(this.backendService);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDescription(this.description);
+      newBuilder.setFingerprint(this.fingerprint);
       newBuilder.setIPAddress(this.iPAddress);
       newBuilder.setIPProtocol(this.iPProtocol);
       newBuilder.setId(this.id);
       newBuilder.setIpVersion(this.ipVersion);
+      newBuilder.setIsMirroringCollector(this.isMirroringCollector);
       newBuilder.setKind(this.kind);
       newBuilder.setLoadBalancingScheme(this.loadBalancingScheme);
       newBuilder.addAllMetadataFilters(this.metadataFilters);
@@ -1302,6 +1439,9 @@ public final class ForwardingRule implements ApiMessage {
         + "allPorts="
         + allPorts
         + ", "
+        + "allowGlobalAccess="
+        + allowGlobalAccess
+        + ", "
         + "backendService="
         + backendService
         + ", "
@@ -1310,6 +1450,9 @@ public final class ForwardingRule implements ApiMessage {
         + ", "
         + "description="
         + description
+        + ", "
+        + "fingerprint="
+        + fingerprint
         + ", "
         + "iPAddress="
         + iPAddress
@@ -1322,6 +1465,9 @@ public final class ForwardingRule implements ApiMessage {
         + ", "
         + "ipVersion="
         + ipVersion
+        + ", "
+        + "isMirroringCollector="
+        + isMirroringCollector
         + ", "
         + "kind="
         + kind
@@ -1375,13 +1521,16 @@ public final class ForwardingRule implements ApiMessage {
     if (o instanceof ForwardingRule) {
       ForwardingRule that = (ForwardingRule) o;
       return Objects.equals(this.allPorts, that.getAllPorts())
+          && Objects.equals(this.allowGlobalAccess, that.getAllowGlobalAccess())
           && Objects.equals(this.backendService, that.getBackendService())
           && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.fingerprint, that.getFingerprint())
           && Objects.equals(this.iPAddress, that.getIPAddress())
           && Objects.equals(this.iPProtocol, that.getIPProtocol())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.ipVersion, that.getIpVersion())
+          && Objects.equals(this.isMirroringCollector, that.getIsMirroringCollector())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.loadBalancingScheme, that.getLoadBalancingScheme())
           && Objects.equals(this.metadataFilters, that.getMetadataFiltersList())
@@ -1404,13 +1553,16 @@ public final class ForwardingRule implements ApiMessage {
   public int hashCode() {
     return Objects.hash(
         allPorts,
+        allowGlobalAccess,
         backendService,
         creationTimestamp,
         description,
+        fingerprint,
         iPAddress,
         iPProtocol,
         id,
         ipVersion,
+        isMirroringCollector,
         kind,
         loadBalancingScheme,
         metadataFilters,

@@ -167,8 +167,7 @@ public final class InsertNodeGroupHttpRequest implements ApiMessage {
    * <p>A sole-tenant node is a physical server that is dedicated to hosting VM instances only for
    * your specific project. Use sole-tenant nodes to keep your instances physically separated from
    * instances in other projects, or to group your instances together on the same host hardware. For
-   * more information, read Sole-tenant nodes. (== resource_for beta.nodeGroups ==) (== resource_for
-   * v1.nodeGroups ==)
+   * more information, read Sole-tenant nodes. (== resource_for {$api_version}.nodeGroups ==)
    */
   public NodeGroup getNodeGroupResource() {
     return nodeGroupResource;
@@ -367,8 +366,7 @@ public final class InsertNodeGroupHttpRequest implements ApiMessage {
      * <p>A sole-tenant node is a physical server that is dedicated to hosting VM instances only for
      * your specific project. Use sole-tenant nodes to keep your instances physically separated from
      * instances in other projects, or to group your instances together on the same host hardware.
-     * For more information, read Sole-tenant nodes. (== resource_for beta.nodeGroups ==) (==
-     * resource_for v1.nodeGroups ==)
+     * For more information, read Sole-tenant nodes. (== resource_for {$api_version}.nodeGroups ==)
      */
     public NodeGroup getNodeGroupResource() {
       return nodeGroupResource;
@@ -380,8 +378,7 @@ public final class InsertNodeGroupHttpRequest implements ApiMessage {
      * <p>A sole-tenant node is a physical server that is dedicated to hosting VM instances only for
      * your specific project. Use sole-tenant nodes to keep your instances physically separated from
      * instances in other projects, or to group your instances together on the same host hardware.
-     * For more information, read Sole-tenant nodes. (== resource_for beta.nodeGroups ==) (==
-     * resource_for v1.nodeGroups ==)
+     * For more information, read Sole-tenant nodes. (== resource_for {$api_version}.nodeGroups ==)
      */
     public Builder setNodeGroupResource(NodeGroup nodeGroupResource) {
       this.nodeGroupResource = nodeGroupResource;

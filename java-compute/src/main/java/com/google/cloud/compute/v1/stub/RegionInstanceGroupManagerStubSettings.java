@@ -40,6 +40,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AbandonInstancesRegionInstanceGroupManagerHttpRequest;
+import com.google.cloud.compute.v1.CreateInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.GetRegionInstanceGroupManagerHttpRequest;
@@ -110,6 +111,8 @@ public class RegionInstanceGroupManagerStubSettings
 
   private final UnaryCallSettings<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
       abandonInstancesRegionInstanceGroupManagerSettings;
+  private final UnaryCallSettings<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      createInstancesRegionInstanceGroupManagerSettings;
   private final UnaryCallSettings<DeleteRegionInstanceGroupManagerHttpRequest, Operation>
       deleteRegionInstanceGroupManagerSettings;
   private final UnaryCallSettings<DeleteInstancesRegionInstanceGroupManagerHttpRequest, Operation>
@@ -146,6 +149,15 @@ public class RegionInstanceGroupManagerStubSettings
   public UnaryCallSettings<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
       abandonInstancesRegionInstanceGroupManagerSettings() {
     return abandonInstancesRegionInstanceGroupManagerSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * createInstancesRegionInstanceGroupManager.
+   */
+  public UnaryCallSettings<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      createInstancesRegionInstanceGroupManagerSettings() {
+    return createInstancesRegionInstanceGroupManagerSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteRegionInstanceGroupManager. */
@@ -311,6 +323,8 @@ public class RegionInstanceGroupManagerStubSettings
 
     abandonInstancesRegionInstanceGroupManagerSettings =
         settingsBuilder.abandonInstancesRegionInstanceGroupManagerSettings().build();
+    createInstancesRegionInstanceGroupManagerSettings =
+        settingsBuilder.createInstancesRegionInstanceGroupManagerSettings().build();
     deleteRegionInstanceGroupManagerSettings =
         settingsBuilder.deleteRegionInstanceGroupManagerSettings().build();
     deleteInstancesRegionInstanceGroupManagerSettings =
@@ -424,6 +438,9 @@ public class RegionInstanceGroupManagerStubSettings
     private final UnaryCallSettings.Builder<
             AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
         abandonInstancesRegionInstanceGroupManagerSettings;
+    private final UnaryCallSettings.Builder<
+            CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+        createInstancesRegionInstanceGroupManagerSettings;
     private final UnaryCallSettings.Builder<DeleteRegionInstanceGroupManagerHttpRequest, Operation>
         deleteRegionInstanceGroupManagerSettings;
     private final UnaryCallSettings.Builder<
@@ -501,6 +518,9 @@ public class RegionInstanceGroupManagerStubSettings
       abandonInstancesRegionInstanceGroupManagerSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      createInstancesRegionInstanceGroupManagerSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       deleteRegionInstanceGroupManagerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       deleteInstancesRegionInstanceGroupManagerSettings =
@@ -532,6 +552,7 @@ public class RegionInstanceGroupManagerStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               abandonInstancesRegionInstanceGroupManagerSettings,
+              createInstancesRegionInstanceGroupManagerSettings,
               deleteRegionInstanceGroupManagerSettings,
               deleteInstancesRegionInstanceGroupManagerSettings,
               getRegionInstanceGroupManagerSettings,
@@ -560,6 +581,11 @@ public class RegionInstanceGroupManagerStubSettings
 
       builder
           .abandonInstancesRegionInstanceGroupManagerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createInstancesRegionInstanceGroupManagerSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -626,6 +652,8 @@ public class RegionInstanceGroupManagerStubSettings
 
       abandonInstancesRegionInstanceGroupManagerSettings =
           settings.abandonInstancesRegionInstanceGroupManagerSettings.toBuilder();
+      createInstancesRegionInstanceGroupManagerSettings =
+          settings.createInstancesRegionInstanceGroupManagerSettings.toBuilder();
       deleteRegionInstanceGroupManagerSettings =
           settings.deleteRegionInstanceGroupManagerSettings.toBuilder();
       deleteInstancesRegionInstanceGroupManagerSettings =
@@ -652,6 +680,7 @@ public class RegionInstanceGroupManagerStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               abandonInstancesRegionInstanceGroupManagerSettings,
+              createInstancesRegionInstanceGroupManagerSettings,
               deleteRegionInstanceGroupManagerSettings,
               deleteInstancesRegionInstanceGroupManagerSettings,
               getRegionInstanceGroupManagerSettings,
@@ -689,6 +718,16 @@ public class RegionInstanceGroupManagerStubSettings
             AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
         abandonInstancesRegionInstanceGroupManagerSettings() {
       return abandonInstancesRegionInstanceGroupManagerSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * createInstancesRegionInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+        createInstancesRegionInstanceGroupManagerSettings() {
+      return createInstancesRegionInstanceGroupManagerSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteRegionInstanceGroupManager. */

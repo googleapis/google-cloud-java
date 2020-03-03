@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
  * Represents a Region resource.
  *
  * <p>A region is a geographical area where a resource is located. For more information, read
- * Regions and Zones. (== resource_for beta.regions ==) (== resource_for v1.regions ==)
+ * Regions and Zones. (== resource_for {$api_version}.regions ==)
  */
 public final class Region implements ApiMessage {
   private final String creationTimestamp;

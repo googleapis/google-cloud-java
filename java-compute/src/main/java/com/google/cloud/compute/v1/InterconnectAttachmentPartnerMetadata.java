@@ -81,7 +81,7 @@ public final class InterconnectAttachmentPartnerMetadata implements ApiMessage {
 
   /**
    * Plain text name of the Interconnect this attachment is connected to, as displayed in the
-   * Partner?s portal. For instance "Chicago 1". This value may be validated to match approved
+   * Partner's portal. For instance "Chicago 1". This value may be validated to match approved
    * Partner values.
    */
   public String getInterconnectName() {
@@ -97,7 +97,7 @@ public final class InterconnectAttachmentPartnerMetadata implements ApiMessage {
   }
 
   /**
-   * URL of the Partner?s portal for this Attachment. Partners may customise this to be a deep link
+   * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link
    * to the specific resource on the Partner portal. This value may be validated to match approved
    * Partner values.
    */
@@ -156,7 +156,7 @@ public final class InterconnectAttachmentPartnerMetadata implements ApiMessage {
 
     /**
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the
-     * Partner?s portal. For instance "Chicago 1". This value may be validated to match approved
+     * Partner's portal. For instance "Chicago 1". This value may be validated to match approved
      * Partner values.
      */
     public String getInterconnectName() {
@@ -165,7 +165,7 @@ public final class InterconnectAttachmentPartnerMetadata implements ApiMessage {
 
     /**
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the
-     * Partner?s portal. For instance "Chicago 1". This value may be validated to match approved
+     * Partner's portal. For instance "Chicago 1". This value may be validated to match approved
      * Partner values.
      */
     public Builder setInterconnectName(String interconnectName) {
@@ -191,7 +191,7 @@ public final class InterconnectAttachmentPartnerMetadata implements ApiMessage {
     }
 
     /**
-     * URL of the Partner?s portal for this Attachment. Partners may customise this to be a deep
+     * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep
      * link to the specific resource on the Partner portal. This value may be validated to match
      * approved Partner values.
      */
@@ -200,7 +200,7 @@ public final class InterconnectAttachmentPartnerMetadata implements ApiMessage {
     }
 
     /**
-     * URL of the Partner?s portal for this Attachment. Partners may customise this to be a deep
+     * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep
      * link to the specific resource on the Partner portal. This value may be validated to match
      * approved Partner values.
      */

@@ -393,12 +393,13 @@ public class InterconnectAttachmentClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean validateOnly = false;
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     InterconnectAttachment interconnectAttachmentResource =
         InterconnectAttachment.newBuilder().build();
 
     Operation actualResponse =
-        client.insertInterconnectAttachment(region, interconnectAttachmentResource);
+        client.insertInterconnectAttachment(validateOnly, region, interconnectAttachmentResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -425,11 +426,12 @@ public class InterconnectAttachmentClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean validateOnly = false;
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       InterconnectAttachment interconnectAttachmentResource =
           InterconnectAttachment.newBuilder().build();
 
-      client.insertInterconnectAttachment(region, interconnectAttachmentResource);
+      client.insertInterconnectAttachment(validateOnly, region, interconnectAttachmentResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

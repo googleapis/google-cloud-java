@@ -193,7 +193,7 @@ public final class InsertTargetTcpProxyHttpRequest implements ApiMessage {
    * <p>A target TCP proxy is a component of a TCP Proxy load balancer. Global forwarding rules
    * reference target TCP proxy, and the target proxy then references an external backend service.
    * For more information, read TCP Proxy Load Balancing Concepts. (== resource_for
-   * beta.targetTcpProxies ==) (== resource_for v1.targetTcpProxies ==)
+   * {$api_version}.targetTcpProxies ==)
    */
   public TargetTcpProxy getTargetTcpProxyResource() {
     return targetTcpProxyResource;
@@ -418,7 +418,7 @@ public final class InsertTargetTcpProxyHttpRequest implements ApiMessage {
      * <p>A target TCP proxy is a component of a TCP Proxy load balancer. Global forwarding rules
      * reference target TCP proxy, and the target proxy then references an external backend service.
      * For more information, read TCP Proxy Load Balancing Concepts. (== resource_for
-     * beta.targetTcpProxies ==) (== resource_for v1.targetTcpProxies ==)
+     * {$api_version}.targetTcpProxies ==)
      */
     public TargetTcpProxy getTargetTcpProxyResource() {
       return targetTcpProxyResource;
@@ -430,7 +430,7 @@ public final class InsertTargetTcpProxyHttpRequest implements ApiMessage {
      * <p>A target TCP proxy is a component of a TCP Proxy load balancer. Global forwarding rules
      * reference target TCP proxy, and the target proxy then references an external backend service.
      * For more information, read TCP Proxy Load Balancing Concepts. (== resource_for
-     * beta.targetTcpProxies ==) (== resource_for v1.targetTcpProxies ==)
+     * {$api_version}.targetTcpProxies ==)
      */
     public Builder setTargetTcpProxyResource(TargetTcpProxy targetTcpProxyResource) {
       this.targetTcpProxyResource = targetTcpProxyResource;
