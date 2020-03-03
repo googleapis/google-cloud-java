@@ -27,10 +27,12 @@ public interface PredictRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the model requested to serve the prediction.
+   * Required. Name of the model requested to serve the prediction.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -39,10 +41,12 @@ public interface PredictRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the model requested to serve the prediction.
+   * Required. Name of the model requested to serve the prediction.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -56,7 +60,9 @@ public interface PredictRequestOrBuilder
    * problem type that the model was trained to solve.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ExamplePayload payload = 2;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ExamplePayload payload = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the payload field is set.
    */
@@ -69,7 +75,9 @@ public interface PredictRequestOrBuilder
    * problem type that the model was trained to solve.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ExamplePayload payload = 2;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ExamplePayload payload = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The payload.
    */
@@ -82,7 +90,9 @@ public interface PredictRequestOrBuilder
    * problem type that the model was trained to solve.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ExamplePayload payload = 2;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ExamplePayload payload = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.automl.v1beta1.ExamplePayloadOrBuilder getPayloadOrBuilder();
 
@@ -104,10 +114,8 @@ public interface PredictRequestOrBuilder
    *        boxes will be returned in the response. Default is 100, the
    *        requested value may be limited by server.
    * *  For Tables:
-   *    `feature_importance` - (boolean) Whether
-   * [feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
-   *        should be populated in the returned
-   * [TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation].
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotation.
    *        The default is false.
    * </pre>
    *
@@ -132,10 +140,8 @@ public interface PredictRequestOrBuilder
    *        boxes will be returned in the response. Default is 100, the
    *        requested value may be limited by server.
    * *  For Tables:
-   *    `feature_importance` - (boolean) Whether
-   * [feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
-   *        should be populated in the returned
-   * [TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation].
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotation.
    *        The default is false.
    * </pre>
    *
@@ -163,10 +169,8 @@ public interface PredictRequestOrBuilder
    *        boxes will be returned in the response. Default is 100, the
    *        requested value may be limited by server.
    * *  For Tables:
-   *    `feature_importance` - (boolean) Whether
-   * [feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
-   *        should be populated in the returned
-   * [TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation].
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotation.
    *        The default is false.
    * </pre>
    *
@@ -191,10 +195,8 @@ public interface PredictRequestOrBuilder
    *        boxes will be returned in the response. Default is 100, the
    *        requested value may be limited by server.
    * *  For Tables:
-   *    `feature_importance` - (boolean) Whether
-   * [feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
-   *        should be populated in the returned
-   * [TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation].
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotation.
    *        The default is false.
    * </pre>
    *
@@ -219,10 +221,8 @@ public interface PredictRequestOrBuilder
    *        boxes will be returned in the response. Default is 100, the
    *        requested value may be limited by server.
    * *  For Tables:
-   *    `feature_importance` - (boolean) Whether
-   * [feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
-   *        should be populated in the returned
-   * [TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation].
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotation.
    *        The default is false.
    * </pre>
    *

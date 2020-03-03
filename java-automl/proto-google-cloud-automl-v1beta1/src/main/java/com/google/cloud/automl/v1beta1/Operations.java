@@ -93,79 +93,85 @@ public final class Operations {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/automl/v1beta1/operations"
-          + ".proto\022\033google.cloud.automl.v1beta1\032\034goo"
-          + "gle/api/annotations.proto\032$google/cloud/"
-          + "automl/v1beta1/io.proto\032\037google/protobuf"
-          + "/timestamp.proto\032\027google/rpc/status.prot"
-          + "o\"\213\010\n\021OperationMetadata\022N\n\016delete_detail"
-          + "s\030\010 \001(\01324.google.cloud.automl.v1beta1.De"
-          + "leteOperationMetadataH\000\022Y\n\024deploy_model_"
-          + "details\030\030 \001(\01329.google.cloud.automl.v1be"
-          + "ta1.DeployModelOperationMetadataH\000\022]\n\026un"
-          + "deploy_model_details\030\031 \001(\0132;.google.clou"
-          + "d.automl.v1beta1.UndeployModelOperationM"
-          + "etadataH\000\022Y\n\024create_model_details\030\n \001(\0132"
-          + "9.google.cloud.automl.v1beta1.CreateMode"
-          + "lOperationMetadataH\000\022W\n\023import_data_deta"
-          + "ils\030\017 \001(\01328.google.cloud.automl.v1beta1."
-          + "ImportDataOperationMetadataH\000\022[\n\025batch_p"
-          + "redict_details\030\020 \001(\0132:.google.cloud.auto"
-          + "ml.v1beta1.BatchPredictOperationMetadata"
-          + "H\000\022W\n\023export_data_details\030\025 \001(\01328.google"
-          + ".cloud.automl.v1beta1.ExportDataOperatio"
-          + "nMetadataH\000\022Y\n\024export_model_details\030\026 \001("
-          + "\01329.google.cloud.automl.v1beta1.ExportMo"
-          + "delOperationMetadataH\000\022r\n!export_evaluat"
-          + "ed_examples_details\030\032 \001(\0132E.google.cloud"
-          + ".automl.v1beta1.ExportEvaluatedExamplesO"
-          + "perationMetadataH\000\022\030\n\020progress_percent\030\r"
-          + " \001(\005\022,\n\020partial_failures\030\002 \003(\0132\022.google."
-          + "rpc.Status\022/\n\013create_time\030\003 \001(\0132\032.google"
-          + ".protobuf.Timestamp\022/\n\013update_time\030\004 \001(\013"
-          + "2\032.google.protobuf.TimestampB\t\n\007details\""
-          + "\031\n\027DeleteOperationMetadata\"\036\n\034DeployMode"
-          + "lOperationMetadata\" \n\036UndeployModelOpera"
-          + "tionMetadata\"\036\n\034CreateModelOperationMeta"
-          + "data\"\035\n\033ImportDataOperationMetadata\"\357\001\n\033"
-          + "ExportDataOperationMetadata\022b\n\013output_in"
-          + "fo\030\001 \001(\0132M.google.cloud.automl.v1beta1.E"
-          + "xportDataOperationMetadata.ExportDataOut"
-          + "putInfo\032l\n\024ExportDataOutputInfo\022\036\n\024gcs_o"
-          + "utput_directory\030\001 \001(\tH\000\022!\n\027bigquery_outp"
-          + "ut_dataset\030\002 \001(\tH\000B\021\n\017output_location\"\303\002"
-          + "\n\035BatchPredictOperationMetadata\022J\n\014input"
-          + "_config\030\001 \001(\01324.google.cloud.automl.v1be"
-          + "ta1.BatchPredictInputConfig\022f\n\013output_in"
-          + "fo\030\002 \001(\0132Q.google.cloud.automl.v1beta1.B"
-          + "atchPredictOperationMetadata.BatchPredic"
-          + "tOutputInfo\032n\n\026BatchPredictOutputInfo\022\036\n"
-          + "\024gcs_output_directory\030\001 \001(\tH\000\022!\n\027bigquer"
-          + "y_output_dataset\030\002 \001(\tH\000B\021\n\017output_locat"
-          + "ion\"\273\001\n\034ExportModelOperationMetadata\022d\n\013"
-          + "output_info\030\002 \001(\0132O.google.cloud.automl."
-          + "v1beta1.ExportModelOperationMetadata.Exp"
-          + "ortModelOutputInfo\0325\n\025ExportModelOutputI"
-          + "nfo\022\034\n\024gcs_output_directory\030\001 \001(\t\"\356\001\n(Ex"
-          + "portEvaluatedExamplesOperationMetadata\022|"
-          + "\n\013output_info\030\002 \001(\0132g.google.cloud.autom"
-          + "l.v1beta1.ExportEvaluatedExamplesOperati"
-          + "onMetadata.ExportEvaluatedExamplesOutput"
-          + "Info\032D\n!ExportEvaluatedExamplesOutputInf"
-          + "o\022\037\n\027bigquery_output_dataset\030\002 \001(\tB\245\001\n\037c"
-          + "om.google.cloud.automl.v1beta1P\001ZAgoogle"
-          + ".golang.org/genproto/googleapis/cloud/au"
-          + "toml/v1beta1;automl\312\002\033Google\\Cloud\\AutoM"
-          + "l\\V1beta1\352\002\036Google::Cloud::AutoML::V1bet"
-          + "a1b\006proto3"
+          + ".proto\022\033google.cloud.automl.v1beta1\032$goo"
+          + "gle/cloud/automl/v1beta1/io.proto\032\'googl"
+          + "e/cloud/automl/v1beta1/model.proto\0322goog"
+          + "le/cloud/automl/v1beta1/model_evaluation"
+          + ".proto\032\033google/protobuf/empty.proto\032\037goo"
+          + "gle/protobuf/timestamp.proto\032\027google/rpc"
+          + "/status.proto\032\034google/api/annotations.pr"
+          + "oto\"\213\010\n\021OperationMetadata\022N\n\016delete_deta"
+          + "ils\030\010 \001(\01324.google.cloud.automl.v1beta1."
+          + "DeleteOperationMetadataH\000\022Y\n\024deploy_mode"
+          + "l_details\030\030 \001(\01329.google.cloud.automl.v1"
+          + "beta1.DeployModelOperationMetadataH\000\022]\n\026"
+          + "undeploy_model_details\030\031 \001(\0132;.google.cl"
+          + "oud.automl.v1beta1.UndeployModelOperatio"
+          + "nMetadataH\000\022Y\n\024create_model_details\030\n \001("
+          + "\01329.google.cloud.automl.v1beta1.CreateMo"
+          + "delOperationMetadataH\000\022W\n\023import_data_de"
+          + "tails\030\017 \001(\01328.google.cloud.automl.v1beta"
+          + "1.ImportDataOperationMetadataH\000\022[\n\025batch"
+          + "_predict_details\030\020 \001(\0132:.google.cloud.au"
+          + "toml.v1beta1.BatchPredictOperationMetada"
+          + "taH\000\022W\n\023export_data_details\030\025 \001(\01328.goog"
+          + "le.cloud.automl.v1beta1.ExportDataOperat"
+          + "ionMetadataH\000\022Y\n\024export_model_details\030\026 "
+          + "\001(\01329.google.cloud.automl.v1beta1.Export"
+          + "ModelOperationMetadataH\000\022r\n!export_evalu"
+          + "ated_examples_details\030\032 \001(\0132E.google.clo"
+          + "ud.automl.v1beta1.ExportEvaluatedExample"
+          + "sOperationMetadataH\000\022\030\n\020progress_percent"
+          + "\030\r \001(\005\022,\n\020partial_failures\030\002 \003(\0132\022.googl"
+          + "e.rpc.Status\022/\n\013create_time\030\003 \001(\0132\032.goog"
+          + "le.protobuf.Timestamp\022/\n\013update_time\030\004 \001"
+          + "(\0132\032.google.protobuf.TimestampB\t\n\007detail"
+          + "s\"\031\n\027DeleteOperationMetadata\"\036\n\034DeployMo"
+          + "delOperationMetadata\" \n\036UndeployModelOpe"
+          + "rationMetadata\"\036\n\034CreateModelOperationMe"
+          + "tadata\"\035\n\033ImportDataOperationMetadata\"\357\001"
+          + "\n\033ExportDataOperationMetadata\022b\n\013output_"
+          + "info\030\001 \001(\0132M.google.cloud.automl.v1beta1"
+          + ".ExportDataOperationMetadata.ExportDataO"
+          + "utputInfo\032l\n\024ExportDataOutputInfo\022\036\n\024gcs"
+          + "_output_directory\030\001 \001(\tH\000\022!\n\027bigquery_ou"
+          + "tput_dataset\030\002 \001(\tH\000B\021\n\017output_location\""
+          + "\303\002\n\035BatchPredictOperationMetadata\022J\n\014inp"
+          + "ut_config\030\001 \001(\01324.google.cloud.automl.v1"
+          + "beta1.BatchPredictInputConfig\022f\n\013output_"
+          + "info\030\002 \001(\0132Q.google.cloud.automl.v1beta1"
+          + ".BatchPredictOperationMetadata.BatchPred"
+          + "ictOutputInfo\032n\n\026BatchPredictOutputInfo\022"
+          + "\036\n\024gcs_output_directory\030\001 \001(\tH\000\022!\n\027bigqu"
+          + "ery_output_dataset\030\002 \001(\tH\000B\021\n\017output_loc"
+          + "ation\"\273\001\n\034ExportModelOperationMetadata\022d"
+          + "\n\013output_info\030\002 \001(\0132O.google.cloud.autom"
+          + "l.v1beta1.ExportModelOperationMetadata.E"
+          + "xportModelOutputInfo\0325\n\025ExportModelOutpu"
+          + "tInfo\022\034\n\024gcs_output_directory\030\001 \001(\t\"\356\001\n("
+          + "ExportEvaluatedExamplesOperationMetadata"
+          + "\022|\n\013output_info\030\002 \001(\0132g.google.cloud.aut"
+          + "oml.v1beta1.ExportEvaluatedExamplesOpera"
+          + "tionMetadata.ExportEvaluatedExamplesOutp"
+          + "utInfo\032D\n!ExportEvaluatedExamplesOutputI"
+          + "nfo\022\037\n\027bigquery_output_dataset\030\002 \001(\tB\245\001\n"
+          + "\037com.google.cloud.automl.v1beta1P\001ZAgoog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "automl/v1beta1;automl\312\002\033Google\\Cloud\\Aut"
+          + "oMl\\V1beta1\352\002\036Google::Cloud::AutoML::V1b"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.automl.v1beta1.Io.getDescriptor(),
+              com.google.cloud.automl.v1beta1.ModelOuterClass.getDescriptor(),
+              com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1beta1_OperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -290,10 +296,13 @@ public final class Operations {
             new java.lang.String[] {
               "BigqueryOutputDataset",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.Io.getDescriptor();
+    com.google.cloud.automl.v1beta1.ModelOuterClass.getDescriptor();
+    com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

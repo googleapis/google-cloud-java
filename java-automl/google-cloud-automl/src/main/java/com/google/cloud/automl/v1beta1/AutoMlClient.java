@@ -196,8 +196,8 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The resource name of the project to create the dataset for.
-   * @param dataset The dataset to create.
+   * @param parent Required. The resource name of the project to create the dataset for.
+   * @param dataset Required. The dataset to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset createDataset(LocationName parent, Dataset dataset) {
@@ -223,8 +223,8 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The resource name of the project to create the dataset for.
-   * @param dataset The dataset to create.
+   * @param parent Required. The resource name of the project to create the dataset for.
+   * @param dataset Required. The dataset to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset createDataset(String parent, Dataset dataset) {
@@ -295,7 +295,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param dataset The dataset which replaces the resource on the server.
+   * @param dataset Required. The dataset which replaces the resource on the server.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset updateDataset(Dataset dataset) {
@@ -361,7 +361,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the dataset to retrieve.
+   * @param name Required. The resource name of the dataset to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset getDataset(DatasetName name) {
@@ -383,7 +383,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the dataset to retrieve.
+   * @param name Required. The resource name of the dataset to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset getDataset(String name) {
@@ -451,7 +451,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The resource name of the project from which to list datasets.
+   * @param parent Required. The resource name of the project from which to list datasets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDatasetsPagedResponse listDatasets(LocationName parent) {
@@ -477,7 +477,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The resource name of the project from which to list datasets.
+   * @param parent Required. The resource name of the project from which to list datasets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDatasetsPagedResponse listDatasets(String parent) {
@@ -581,7 +581,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the dataset to delete.
+   * @param name Required. The resource name of the dataset to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -607,7 +607,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the dataset to delete.
+   * @param name Required. The resource name of the dataset to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1015,8 +1015,8 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the parent project where the model is being created.
-   * @param model The model to create.
+   * @param parent Required. Resource name of the parent project where the model is being created.
+   * @param model Required. The model to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1047,8 +1047,8 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the parent project where the model is being created.
-   * @param model The model to create.
+   * @param parent Required. Resource name of the parent project where the model is being created.
+   * @param model Required. The model to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1157,7 +1157,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the model.
+   * @param name Required. Resource name of the model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Model getModel(ModelName name) {
@@ -1179,7 +1179,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the model.
+   * @param name Required. Resource name of the model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Model getModel(String name) {
@@ -1247,7 +1247,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the project, from which to list the models.
+   * @param parent Required. Resource name of the project, from which to list the models.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListModelsPagedResponse listModels(LocationName parent) {
@@ -1271,7 +1271,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the project, from which to list the models.
+   * @param parent Required. Resource name of the project, from which to list the models.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListModelsPagedResponse listModels(String parent) {
@@ -1374,7 +1374,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the model being deleted.
+   * @param name Required. Resource name of the model being deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1400,7 +1400,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the model being deleted.
+   * @param name Required. Resource name of the model being deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1496,8 +1496,8 @@ public class AutoMlClient implements BackgroundResource {
    * <p>[node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number])
    * will reset the deployment state without pausing the model's availability.
    *
-   * <p>Only applicable for Text Classification, Image Object Detection and Tables; all other
-   * domains manage deployment automatically.
+   * <p>Only applicable for Text Classification, Image Object Detection , Tables, and Image
+   * Segmentation; all other domains manage deployment automatically.
    *
    * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
    * when it completes.
@@ -1511,7 +1511,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the model to deploy.
+   * @param name Required. Resource name of the model to deploy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1530,8 +1530,8 @@ public class AutoMlClient implements BackgroundResource {
    * <p>[node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number])
    * will reset the deployment state without pausing the model's availability.
    *
-   * <p>Only applicable for Text Classification, Image Object Detection and Tables; all other
-   * domains manage deployment automatically.
+   * <p>Only applicable for Text Classification, Image Object Detection , Tables, and Image
+   * Segmentation; all other domains manage deployment automatically.
    *
    * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
    * when it completes.
@@ -1545,7 +1545,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the model to deploy.
+   * @param name Required. Resource name of the model to deploy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1563,8 +1563,8 @@ public class AutoMlClient implements BackgroundResource {
    * <p>[node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number])
    * will reset the deployment state without pausing the model's availability.
    *
-   * <p>Only applicable for Text Classification, Image Object Detection and Tables; all other
-   * domains manage deployment automatically.
+   * <p>Only applicable for Text Classification, Image Object Detection , Tables, and Image
+   * Segmentation; all other domains manage deployment automatically.
    *
    * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
    * when it completes.
@@ -1599,8 +1599,8 @@ public class AutoMlClient implements BackgroundResource {
    * <p>[node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number])
    * will reset the deployment state without pausing the model's availability.
    *
-   * <p>Only applicable for Text Classification, Image Object Detection and Tables; all other
-   * domains manage deployment automatically.
+   * <p>Only applicable for Text Classification, Image Object Detection , Tables, and Image
+   * Segmentation; all other domains manage deployment automatically.
    *
    * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
    * when it completes.
@@ -1633,8 +1633,8 @@ public class AutoMlClient implements BackgroundResource {
    * <p>[node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number])
    * will reset the deployment state without pausing the model's availability.
    *
-   * <p>Only applicable for Text Classification, Image Object Detection and Tables; all other
-   * domains manage deployment automatically.
+   * <p>Only applicable for Text Classification, Image Object Detection , Tables, and Image
+   * Segmentation; all other domains manage deployment automatically.
    *
    * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
    * when it completes.
@@ -1676,7 +1676,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the model to undeploy.
+   * @param name Required. Resource name of the model to undeploy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1706,7 +1706,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the model to undeploy.
+   * @param name Required. Resource name of the model to undeploy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1819,7 +1819,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name for the model evaluation.
+   * @param name Required. Resource name for the model evaluation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelEvaluation getModelEvaluation(ModelEvaluationName name) {
@@ -1843,7 +1843,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name for the model evaluation.
+   * @param name Required. Resource name for the model evaluation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelEvaluation getModelEvaluation(String name) {
@@ -2118,8 +2118,9 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the model to list the model evaluations for. If modelId is set
-   *     as "-", this will list model evaluations from across all models of the parent location.
+   * @param parent Required. Resource name of the model to list the model evaluations for. If
+   *     modelId is set as "-", this will list model evaluations from across all models of the
+   *     parent location.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListModelEvaluationsPagedResponse listModelEvaluations(ModelName parent) {
@@ -2145,8 +2146,9 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the model to list the model evaluations for. If modelId is set
-   *     as "-", this will list model evaluations from across all models of the parent location.
+   * @param parent Required. Resource name of the model to list the model evaluations for. If
+   *     modelId is set as "-", this will list model evaluations from across all models of the
+   *     parent location.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListModelEvaluationsPagedResponse listModelEvaluations(String parent) {
@@ -2251,7 +2253,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the annotation spec to retrieve.
+   * @param name Required. The resource name of the annotation spec to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotationSpec getAnnotationSpec(AnnotationSpecName name) {
@@ -2275,7 +2277,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the annotation spec to retrieve.
+   * @param name Required. The resource name of the annotation spec to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotationSpec getAnnotationSpec(String name) {
@@ -2341,7 +2343,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the table spec to retrieve.
+   * @param name Required. The resource name of the table spec to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TableSpec getTableSpec(TableSpecName name) {
@@ -2363,7 +2365,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the table spec to retrieve.
+   * @param name Required. The resource name of the table spec to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TableSpec getTableSpec(String name) {
@@ -2431,7 +2433,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The resource name of the dataset to list table specs from.
+   * @param parent Required. The resource name of the dataset to list table specs from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTableSpecsPagedResponse listTableSpecs(DatasetName parent) {
@@ -2457,7 +2459,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The resource name of the dataset to list table specs from.
+   * @param parent Required. The resource name of the dataset to list table specs from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTableSpecsPagedResponse listTableSpecs(String parent) {
@@ -2560,7 +2562,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param tableSpec The table spec which replaces the resource on the server.
+   * @param tableSpec Required. The table spec which replaces the resource on the server.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TableSpec updateTableSpec(TableSpec tableSpec) {
@@ -2627,7 +2629,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the column spec to retrieve.
+   * @param name Required. The resource name of the column spec to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ColumnSpec getColumnSpec(ColumnSpecName name) {
@@ -2649,7 +2651,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the column spec to retrieve.
+   * @param name Required. The resource name of the column spec to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ColumnSpec getColumnSpec(String name) {
@@ -2717,7 +2719,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The resource name of the table spec to list column specs from.
+   * @param parent Required. The resource name of the table spec to list column specs from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListColumnSpecsPagedResponse listColumnSpecs(TableSpecName parent) {
@@ -2743,7 +2745,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The resource name of the table spec to list column specs from.
+   * @param parent Required. The resource name of the table spec to list column specs from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListColumnSpecsPagedResponse listColumnSpecs(String parent) {
@@ -2846,7 +2848,7 @@ public class AutoMlClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param columnSpec The column spec which replaces the resource on the server.
+   * @param columnSpec Required. The column spec which replaces the resource on the server.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ColumnSpec updateColumnSpec(ColumnSpec columnSpec) {

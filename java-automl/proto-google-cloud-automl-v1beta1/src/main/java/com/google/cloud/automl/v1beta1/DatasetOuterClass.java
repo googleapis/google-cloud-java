@@ -41,52 +41,56 @@ public final class DatasetOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/automl/v1beta1/dataset.pr"
-          + "oto\022\033google.cloud.automl.v1beta1\032\'google"
-          + "/cloud/automl/v1beta1/image.proto\032(googl"
-          + "e/cloud/automl/v1beta1/tables.proto\032&goo"
-          + "gle/cloud/automl/v1beta1/text.proto\032-goo"
-          + "gle/cloud/automl/v1beta1/translation.pro"
-          + "to\032\'google/cloud/automl/v1beta1/video.pr"
-          + "oto\032\037google/protobuf/timestamp.proto\032\034go"
-          + "ogle/api/annotations.proto\"\356\010\n\007Dataset\022_"
-          + "\n\034translation_dataset_metadata\030\027 \001(\01327.g"
-          + "oogle.cloud.automl.v1beta1.TranslationDa"
-          + "tasetMetadataH\000\022p\n%image_classification_"
-          + "dataset_metadata\030\030 \001(\0132?.google.cloud.au"
-          + "toml.v1beta1.ImageClassificationDatasetM"
-          + "etadataH\000\022n\n$text_classification_dataset"
-          + "_metadata\030\031 \001(\0132>.google.cloud.automl.v1"
-          + "beta1.TextClassificationDatasetMetadataH"
-          + "\000\022s\n\'image_object_detection_dataset_meta"
-          + "data\030\032 \001(\0132@.google.cloud.automl.v1beta1"
-          + ".ImageObjectDetectionDatasetMetadataH\000\022p"
-          + "\n%video_classification_dataset_metadata\030"
-          + "\037 \001(\0132?.google.cloud.automl.v1beta1.Vide"
-          + "oClassificationDatasetMetadataH\000\022q\n&vide"
-          + "o_object_tracking_dataset_metadata\030\035 \001(\013"
-          + "2?.google.cloud.automl.v1beta1.VideoObje"
-          + "ctTrackingDatasetMetadataH\000\022f\n text_extr"
-          + "action_dataset_metadata\030\034 \001(\0132:.google.c"
-          + "loud.automl.v1beta1.TextExtractionDatase"
-          + "tMetadataH\000\022d\n\037text_sentiment_dataset_me"
-          + "tadata\030\036 \001(\01329.google.cloud.automl.v1bet"
-          + "a1.TextSentimentDatasetMetadataH\000\022U\n\027tab"
-          + "les_dataset_metadata\030! \001(\01322.google.clou"
-          + "d.automl.v1beta1.TablesDatasetMetadataH\000"
-          + "\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\023\n\013"
-          + "description\030\003 \001(\t\022\025\n\rexample_count\030\025 \001(\005"
-          + "\022/\n\013create_time\030\016 \001(\0132\032.google.protobuf."
-          + "Timestamp\022\014\n\004etag\030\021 \001(\tB\022\n\020dataset_metad"
-          + "ataB\245\001\n\037com.google.cloud.automl.v1beta1P"
-          + "\001ZAgoogle.golang.org/genproto/googleapis"
-          + "/cloud/automl/v1beta1;automl\312\002\033Google\\Cl"
-          + "oud\\AutoMl\\V1beta1\352\002\036Google::Cloud::Auto"
-          + "ML::V1beta1b\006proto3"
+          + "oto\022\033google.cloud.automl.v1beta1\032\031google"
+          + "/api/resource.proto\032\'google/cloud/automl"
+          + "/v1beta1/image.proto\032(google/cloud/autom"
+          + "l/v1beta1/tables.proto\032&google/cloud/aut"
+          + "oml/v1beta1/text.proto\032-google/cloud/aut"
+          + "oml/v1beta1/translation.proto\032\'google/cl"
+          + "oud/automl/v1beta1/video.proto\032\037google/p"
+          + "rotobuf/timestamp.proto\032\034google/api/anno"
+          + "tations.proto\"\316\t\n\007Dataset\022_\n\034translation"
+          + "_dataset_metadata\030\027 \001(\01327.google.cloud.a"
+          + "utoml.v1beta1.TranslationDatasetMetadata"
+          + "H\000\022p\n%image_classification_dataset_metad"
+          + "ata\030\030 \001(\0132?.google.cloud.automl.v1beta1."
+          + "ImageClassificationDatasetMetadataH\000\022n\n$"
+          + "text_classification_dataset_metadata\030\031 \001"
+          + "(\0132>.google.cloud.automl.v1beta1.TextCla"
+          + "ssificationDatasetMetadataH\000\022s\n\'image_ob"
+          + "ject_detection_dataset_metadata\030\032 \001(\0132@."
+          + "google.cloud.automl.v1beta1.ImageObjectD"
+          + "etectionDatasetMetadataH\000\022p\n%video_class"
+          + "ification_dataset_metadata\030\037 \001(\0132?.googl"
+          + "e.cloud.automl.v1beta1.VideoClassificati"
+          + "onDatasetMetadataH\000\022q\n&video_object_trac"
+          + "king_dataset_metadata\030\035 \001(\0132?.google.clo"
+          + "ud.automl.v1beta1.VideoObjectTrackingDat"
+          + "asetMetadataH\000\022f\n text_extraction_datase"
+          + "t_metadata\030\034 \001(\0132:.google.cloud.automl.v"
+          + "1beta1.TextExtractionDatasetMetadataH\000\022d"
+          + "\n\037text_sentiment_dataset_metadata\030\036 \001(\0132"
+          + "9.google.cloud.automl.v1beta1.TextSentim"
+          + "entDatasetMetadataH\000\022U\n\027tables_dataset_m"
+          + "etadata\030! \001(\01322.google.cloud.automl.v1be"
+          + "ta1.TablesDatasetMetadataH\000\022\014\n\004name\030\001 \001("
+          + "\t\022\024\n\014display_name\030\002 \001(\t\022\023\n\013description\030\003"
+          + " \001(\t\022\025\n\rexample_count\030\025 \001(\005\022/\n\013create_ti"
+          + "me\030\016 \001(\0132\032.google.protobuf.Timestamp\022\014\n\004"
+          + "etag\030\021 \001(\t:^\352A[\n\035automl.googleapis.com/D"
+          + "ataset\022:projects/{project}/locations/{lo"
+          + "cation}/datasets/{dataset}B\022\n\020dataset_me"
+          + "tadataB\245\001\n\037com.google.cloud.automl.v1bet"
+          + "a1P\001ZAgoogle.golang.org/genproto/googlea"
+          + "pis/cloud/automl/v1beta1;automl\312\002\033Google"
+          + "\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::A"
+          + "utoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.automl.v1beta1.ImageProto.getDescriptor(),
               com.google.cloud.automl.v1beta1.Tables.getDescriptor(),
               com.google.cloud.automl.v1beta1.TextProto.getDescriptor(),
@@ -118,6 +122,12 @@ public final class DatasetOuterClass {
               "Etag",
               "DatasetMetadata",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.automl.v1beta1.ImageProto.getDescriptor();
     com.google.cloud.automl.v1beta1.Tables.getDescriptor();
     com.google.cloud.automl.v1beta1.TextProto.getDescriptor();

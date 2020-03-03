@@ -53,28 +53,30 @@ public final class TranslationProto {
   static {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/automl/v1beta1/translatio"
-          + "n.proto\022\033google.cloud.automl.v1beta1\032,go"
-          + "ogle/cloud/automl/v1beta1/data_items.pro"
-          + "to\032\034google/api/annotations.proto\"X\n\032Tran"
-          + "slationDatasetMetadata\022\034\n\024source_languag"
-          + "e_code\030\001 \001(\t\022\034\n\024target_language_code\030\002 \001"
-          + "(\t\"K\n\034TranslationEvaluationMetrics\022\022\n\nbl"
-          + "eu_score\030\001 \001(\001\022\027\n\017base_bleu_score\030\002 \001(\001\""
-          + "j\n\030TranslationModelMetadata\022\022\n\nbase_mode"
-          + "l\030\001 \001(\t\022\034\n\024source_language_code\030\002 \001(\t\022\034\n"
-          + "\024target_language_code\030\003 \001(\t\"]\n\025Translati"
-          + "onAnnotation\022D\n\022translated_content\030\001 \001(\013"
-          + "2(.google.cloud.automl.v1beta1.TextSnipp"
-          + "etB\267\001\n\037com.google.cloud.automl.v1beta1B\020"
-          + "TranslationProtoP\001ZAgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/automl/v1beta1;a"
-          + "utoml\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Go"
-          + "ogle::Cloud::AutoML::V1beta1b\006proto3"
+          + "n.proto\022\033google.cloud.automl.v1beta1\032\037go"
+          + "ogle/api/field_behavior.proto\032,google/cl"
+          + "oud/automl/v1beta1/data_items.proto\032\034goo"
+          + "gle/api/annotations.proto\"b\n\032Translation"
+          + "DatasetMetadata\022!\n\024source_language_code\030"
+          + "\001 \001(\tB\003\340A\002\022!\n\024target_language_code\030\002 \001(\t"
+          + "B\003\340A\002\"K\n\034TranslationEvaluationMetrics\022\022\n"
+          + "\nbleu_score\030\001 \001(\001\022\027\n\017base_bleu_score\030\002 \001"
+          + "(\001\"j\n\030TranslationModelMetadata\022\022\n\nbase_m"
+          + "odel\030\001 \001(\t\022\034\n\024source_language_code\030\002 \001(\t"
+          + "\022\034\n\024target_language_code\030\003 \001(\t\"]\n\025Transl"
+          + "ationAnnotation\022D\n\022translated_content\030\001 "
+          + "\001(\0132(.google.cloud.automl.v1beta1.TextSn"
+          + "ippetB\267\001\n\037com.google.cloud.automl.v1beta"
+          + "1B\020TranslationProtoP\001ZAgoogle.golang.org"
+          + "/genproto/googleapis/cloud/automl/v1beta"
+          + "1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002"
+          + "\036Google::Cloud::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.automl.v1beta1.DataItems.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
             });
@@ -110,6 +112,12 @@ public final class TranslationProto {
             new java.lang.String[] {
               "TranslatedContent",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.automl.v1beta1.DataItems.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
   }

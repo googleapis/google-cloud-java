@@ -140,7 +140,9 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
    * be exported.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -163,7 +165,9 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
    * be exported.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -188,7 +192,8 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
    * Required. The desired output location and configuration.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+   * <code>
+   * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the outputConfig field is set.
@@ -203,7 +208,8 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
    * Required. The desired output location and configuration.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+   * <code>
+   * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The outputConfig.
@@ -220,7 +226,8 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
    * Required. The desired output location and configuration.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+   * <code>
+   * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfigOrBuilder
@@ -587,7 +594,9 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * be exported.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -610,7 +619,9 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * be exported.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -633,7 +644,9 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * be exported.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -655,7 +668,9 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * be exported.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -673,7 +688,9 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * be exported.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -702,7 +719,8 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the outputConfig field is set.
@@ -717,7 +735,8 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The outputConfig.
@@ -739,7 +758,8 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setOutputConfig(
@@ -763,7 +783,8 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setOutputConfig(
@@ -785,7 +806,8 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeOutputConfig(
@@ -814,7 +836,8 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearOutputConfig() {
@@ -835,7 +858,8 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig.Builder
@@ -851,7 +875,8 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfigOrBuilder
@@ -872,7 +897,8 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

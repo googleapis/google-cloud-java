@@ -27,10 +27,12 @@ public interface ListTableSpecsRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the dataset to list table specs from.
+   * Required. The resource name of the dataset to list table specs from.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -39,10 +41,12 @@ public interface ListTableSpecsRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the dataset to list table specs from.
+   * Required. The resource name of the dataset to list table specs from.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

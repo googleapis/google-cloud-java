@@ -138,12 +138,14 @@ public final class ListModelEvaluationsRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Resource name of the model to list the model evaluations for.
+   * Required. Resource name of the model to list the model evaluations for.
    * If modelId is set as "-", this will list model evaluations from across all
    * models of the parent location.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -162,12 +164,14 @@ public final class ListModelEvaluationsRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Resource name of the model to list the model evaluations for.
+   * Required. Resource name of the model to list the model evaluations for.
    * If modelId is set as "-", this will list model evaluations from across all
    * models of the parent location.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -685,12 +689,14 @@ public final class ListModelEvaluationsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Resource name of the model to list the model evaluations for.
+     * Required. Resource name of the model to list the model evaluations for.
      * If modelId is set as "-", this will list model evaluations from across all
      * models of the parent location.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -709,12 +715,14 @@ public final class ListModelEvaluationsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Resource name of the model to list the model evaluations for.
+     * Required. Resource name of the model to list the model evaluations for.
      * If modelId is set as "-", this will list model evaluations from across all
      * models of the parent location.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -733,12 +741,14 @@ public final class ListModelEvaluationsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Resource name of the model to list the model evaluations for.
+     * Required. Resource name of the model to list the model evaluations for.
      * If modelId is set as "-", this will list model evaluations from across all
      * models of the parent location.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -756,12 +766,14 @@ public final class ListModelEvaluationsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Resource name of the model to list the model evaluations for.
+     * Required. Resource name of the model to list the model evaluations for.
      * If modelId is set as "-", this will list model evaluations from across all
      * models of the parent location.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -775,12 +787,14 @@ public final class ListModelEvaluationsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Resource name of the model to list the model evaluations for.
+     * Required. Resource name of the model to list the model evaluations for.
      * If modelId is set as "-", this will list model evaluations from across all
      * models of the parent location.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

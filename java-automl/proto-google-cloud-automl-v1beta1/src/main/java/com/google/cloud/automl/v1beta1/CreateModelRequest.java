@@ -133,10 +133,12 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource name of the parent project where the model is being created.
+   * Required. Resource name of the parent project where the model is being created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -155,10 +157,12 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource name of the parent project where the model is being created.
+   * Required. Resource name of the parent project where the model is being created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -180,10 +184,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The model to create.
+   * Required. The model to create.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.Model model = 4;</code>
+   * <code>.google.cloud.automl.v1beta1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the model field is set.
    */
@@ -194,10 +199,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The model to create.
+   * Required. The model to create.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.Model model = 4;</code>
+   * <code>.google.cloud.automl.v1beta1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The model.
    */
@@ -208,10 +214,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The model to create.
+   * Required. The model to create.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.Model model = 4;</code>
+   * <code>.google.cloud.automl.v1beta1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.automl.v1beta1.ModelOrBuilder getModelOrBuilder() {
     return getModel();
@@ -568,10 +575,12 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource name of the parent project where the model is being created.
+     * Required. Resource name of the parent project where the model is being created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -590,10 +599,12 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource name of the parent project where the model is being created.
+     * Required. Resource name of the parent project where the model is being created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -612,10 +623,12 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource name of the parent project where the model is being created.
+     * Required. Resource name of the parent project where the model is being created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -633,10 +646,12 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource name of the parent project where the model is being created.
+     * Required. Resource name of the parent project where the model is being created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -650,10 +665,12 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource name of the parent project where the model is being created.
+     * Required. Resource name of the parent project where the model is being created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -679,10 +696,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model to create.
+     * Required. The model to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.Model model = 4;</code>
+     * <code>.google.cloud.automl.v1beta1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the model field is set.
      */
@@ -693,10 +711,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model to create.
+     * Required. The model to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.Model model = 4;</code>
+     * <code>.google.cloud.automl.v1beta1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The model.
      */
@@ -711,10 +730,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model to create.
+     * Required. The model to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.Model model = 4;</code>
+     * <code>.google.cloud.automl.v1beta1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setModel(com.google.cloud.automl.v1beta1.Model value) {
       if (modelBuilder_ == null) {
@@ -733,10 +753,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model to create.
+     * Required. The model to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.Model model = 4;</code>
+     * <code>.google.cloud.automl.v1beta1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setModel(com.google.cloud.automl.v1beta1.Model.Builder builderForValue) {
       if (modelBuilder_ == null) {
@@ -752,10 +773,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model to create.
+     * Required. The model to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.Model model = 4;</code>
+     * <code>.google.cloud.automl.v1beta1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeModel(com.google.cloud.automl.v1beta1.Model value) {
       if (modelBuilder_ == null) {
@@ -778,10 +800,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model to create.
+     * Required. The model to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.Model model = 4;</code>
+     * <code>.google.cloud.automl.v1beta1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearModel() {
       if (modelBuilder_ == null) {
@@ -798,10 +821,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model to create.
+     * Required. The model to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.Model model = 4;</code>
+     * <code>.google.cloud.automl.v1beta1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1beta1.Model.Builder getModelBuilder() {
 
@@ -812,10 +836,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model to create.
+     * Required. The model to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.Model model = 4;</code>
+     * <code>.google.cloud.automl.v1beta1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1beta1.ModelOrBuilder getModelOrBuilder() {
       if (modelBuilder_ != null) {
@@ -828,10 +853,11 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model to create.
+     * Required. The model to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.Model model = 4;</code>
+     * <code>.google.cloud.automl.v1beta1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.Model,

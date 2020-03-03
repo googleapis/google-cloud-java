@@ -193,7 +193,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Name of the model requested to serve the prediction.
+   * @param name Required. Name of the model requested to serve the prediction.
    * @param payload Required. Payload to perform a prediction on. The payload must match the problem
    *     type that the model was trained to solve.
    * @param params Additional domain-specific parameters, any string must be up to 25000 characters
@@ -206,12 +206,9 @@ public class PredictionServiceClient implements BackgroundResource {
    *     on the image, it will only produce bounding boxes which have at least this confidence
    *     score. Value in 0 to 1 range, default is 0.5. `max_bounding_box_count` - (int64) No more
    *     than this number of bounding boxes will be returned in the response. Default is 100, the
-   *     requested value may be limited by server. &#42; For Tables: `feature_importance` -
-   *     (boolean) Whether
-   *     <p>[feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
-   *     should be populated in the returned
-   *     <p>[TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation]. The default is
-   *     false.
+   *     requested value may be limited by server. &#42; For Tables:
+   *     feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance should
+   *     be populated in the returned TablesAnnotation. The default is false.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PredictResponse predict(
@@ -250,7 +247,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Name of the model requested to serve the prediction.
+   * @param name Required. Name of the model requested to serve the prediction.
    * @param payload Required. Payload to perform a prediction on. The payload must match the problem
    *     type that the model was trained to solve.
    * @param params Additional domain-specific parameters, any string must be up to 25000 characters
@@ -263,12 +260,9 @@ public class PredictionServiceClient implements BackgroundResource {
    *     on the image, it will only produce bounding boxes which have at least this confidence
    *     score. Value in 0 to 1 range, default is 0.5. `max_bounding_box_count` - (int64) No more
    *     than this number of bounding boxes will be returned in the response. Default is 100, the
-   *     requested value may be limited by server. &#42; For Tables: `feature_importance` -
-   *     (boolean) Whether
-   *     <p>[feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
-   *     should be populated in the returned
-   *     <p>[TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation]. The default is
-   *     false.
+   *     requested value may be limited by server. &#42; For Tables:
+   *     feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance should
+   *     be populated in the returned TablesAnnotation. The default is false.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PredictResponse predict(
@@ -371,12 +365,12 @@ public class PredictionServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Name of the model requested to serve the batch prediction.
+   * @param name Required. Name of the model requested to serve the batch prediction.
    * @param inputConfig Required. The input configuration for batch prediction.
    * @param outputConfig Required. The Configuration specifying where output predictions should be
    *     written.
-   * @param params Additional domain-specific parameters for the predictions, any string must be up
-   *     to 25000 characters long.
+   * @param params Required. Additional domain-specific parameters for the predictions, any string
+   *     must be up to 25000 characters long.
    *     <p>&#42; For Text Classification:
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for a text snippet, it will only produce results that have at least this confidence score.
@@ -391,31 +385,36 @@ public class PredictionServiceClient implements BackgroundResource {
    *     default is 0.5. `max_bounding_box_count` - (int64) No more than this number of bounding
    *     boxes will be produced per image. Default is 100, the requested value may be limited by
    *     server.
-   *     <p>&#42; For Video Classification : `score_threshold` - (float) A value from 0.0 to 1.0.
-   *     When the model makes predictions for a video, it will only produce results that have at
-   *     least this confidence score. The default is 0.5. `segment_classification` - (boolean) Set
-   *     to true to request segment-level classification. AutoML Video Intelligence returns labels
-   *     and their confidence scores for the entire segment of the video that user specified in the
-   *     request configuration. The default is "true". `shot_classification` - (boolean) Set to true
-   *     to request shot-level classification. AutoML Video Intelligence determines the boundaries
-   *     for each camera shot in the entire segment of the video that user specified in the request
-   *     configuration. AutoML Video Intelligence then returns labels and their confidence scores
-   *     for each detected shot, along with the start and end time of the shot. WARNING: Model
-   *     evaluation is not done for this classification type, the quality of it depends on training
-   *     data, but there are no metrics provided to describe that quality. The default is "false".
+   *     <p>&#42; For Video Classification :
+   *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
+   *     for a video, it will only produce results that have at least this confidence score. The
+   *     default is 0.5. `segment_classification` - (boolean) Set to true to request segment-level
+   *     classification. AutoML Video Intelligence returns labels and their confidence scores for
+   *     the entire segment of the video that user specified in the request configuration. The
+   *     default is "true". `shot_classification` - (boolean) Set to true to request shot-level
+   *     classification. AutoML Video Intelligence determines the boundaries for each camera shot in
+   *     the entire segment of the video that user specified in the request configuration. AutoML
+   *     Video Intelligence then returns labels and their confidence scores for each detected shot,
+   *     along with the start and end time of the shot. WARNING: Model evaluation is not done for
+   *     this classification type, the quality of it depends on training data, but there are no
+   *     metrics provided to describe that quality. The default is "false".
    *     `1s_interval_classification` - (boolean) Set to true to request classification for a video
    *     at one-second intervals. AutoML Video Intelligence returns labels and their confidence
    *     scores for each second of the entire segment of the video that user specified in the
    *     request configuration. WARNING: Model evaluation is not done for this classification type,
    *     the quality of it depends on training data, but there are no metrics provided to describe
    *     that quality. The default is "false".
-   *     <p>&#42; For Video Object Tracking: `score_threshold` - (float) When Model detects objects
-   *     on video frames, it will only produce bounding boxes which have at least this confidence
-   *     score. Value in 0 to 1 range, default is 0.5. `max_bounding_box_count` - (int64) No more
-   *     than this number of bounding boxes will be returned per frame. Default is 100, the
-   *     requested value may be limited by server. `min_bounding_box_size` - (float) Only bounding
-   *     boxes with shortest edge at least that long as a relative value of video frame size will be
-   *     returned. Value in 0 to 1 range. Default is 0.
+   *     <p>&#42; For Tables:
+   *     <p>feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *     should be populated in the returned TablesAnnotations. The default is false.
+   *     <p>&#42; For Video Object Tracking:
+   *     <p>`score_threshold` - (float) When Model detects objects on video frames, it will only
+   *     produce bounding boxes which have at least this confidence score. Value in 0 to 1 range,
+   *     default is 0.5. `max_bounding_box_count` - (int64) No more than this number of bounding
+   *     boxes will be returned per frame. Default is 100, the requested value may be limited by
+   *     server. `min_bounding_box_size` - (float) Only bounding boxes with shortest edge at least
+   *     that long as a relative value of video frame size will be returned. Value in 0 to 1 range.
+   *     Default is 0.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -459,12 +458,12 @@ public class PredictionServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Name of the model requested to serve the batch prediction.
+   * @param name Required. Name of the model requested to serve the batch prediction.
    * @param inputConfig Required. The input configuration for batch prediction.
    * @param outputConfig Required. The Configuration specifying where output predictions should be
    *     written.
-   * @param params Additional domain-specific parameters for the predictions, any string must be up
-   *     to 25000 characters long.
+   * @param params Required. Additional domain-specific parameters for the predictions, any string
+   *     must be up to 25000 characters long.
    *     <p>&#42; For Text Classification:
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for a text snippet, it will only produce results that have at least this confidence score.
@@ -479,31 +478,36 @@ public class PredictionServiceClient implements BackgroundResource {
    *     default is 0.5. `max_bounding_box_count` - (int64) No more than this number of bounding
    *     boxes will be produced per image. Default is 100, the requested value may be limited by
    *     server.
-   *     <p>&#42; For Video Classification : `score_threshold` - (float) A value from 0.0 to 1.0.
-   *     When the model makes predictions for a video, it will only produce results that have at
-   *     least this confidence score. The default is 0.5. `segment_classification` - (boolean) Set
-   *     to true to request segment-level classification. AutoML Video Intelligence returns labels
-   *     and their confidence scores for the entire segment of the video that user specified in the
-   *     request configuration. The default is "true". `shot_classification` - (boolean) Set to true
-   *     to request shot-level classification. AutoML Video Intelligence determines the boundaries
-   *     for each camera shot in the entire segment of the video that user specified in the request
-   *     configuration. AutoML Video Intelligence then returns labels and their confidence scores
-   *     for each detected shot, along with the start and end time of the shot. WARNING: Model
-   *     evaluation is not done for this classification type, the quality of it depends on training
-   *     data, but there are no metrics provided to describe that quality. The default is "false".
+   *     <p>&#42; For Video Classification :
+   *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
+   *     for a video, it will only produce results that have at least this confidence score. The
+   *     default is 0.5. `segment_classification` - (boolean) Set to true to request segment-level
+   *     classification. AutoML Video Intelligence returns labels and their confidence scores for
+   *     the entire segment of the video that user specified in the request configuration. The
+   *     default is "true". `shot_classification` - (boolean) Set to true to request shot-level
+   *     classification. AutoML Video Intelligence determines the boundaries for each camera shot in
+   *     the entire segment of the video that user specified in the request configuration. AutoML
+   *     Video Intelligence then returns labels and their confidence scores for each detected shot,
+   *     along with the start and end time of the shot. WARNING: Model evaluation is not done for
+   *     this classification type, the quality of it depends on training data, but there are no
+   *     metrics provided to describe that quality. The default is "false".
    *     `1s_interval_classification` - (boolean) Set to true to request classification for a video
    *     at one-second intervals. AutoML Video Intelligence returns labels and their confidence
    *     scores for each second of the entire segment of the video that user specified in the
    *     request configuration. WARNING: Model evaluation is not done for this classification type,
    *     the quality of it depends on training data, but there are no metrics provided to describe
    *     that quality. The default is "false".
-   *     <p>&#42; For Video Object Tracking: `score_threshold` - (float) When Model detects objects
-   *     on video frames, it will only produce bounding boxes which have at least this confidence
-   *     score. Value in 0 to 1 range, default is 0.5. `max_bounding_box_count` - (int64) No more
-   *     than this number of bounding boxes will be returned per frame. Default is 100, the
-   *     requested value may be limited by server. `min_bounding_box_size` - (float) Only bounding
-   *     boxes with shortest edge at least that long as a relative value of video frame size will be
-   *     returned. Value in 0 to 1 range. Default is 0.
+   *     <p>&#42; For Tables:
+   *     <p>feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *     should be populated in the returned TablesAnnotations. The default is false.
+   *     <p>&#42; For Video Object Tracking:
+   *     <p>`score_threshold` - (float) When Model detects objects on video frames, it will only
+   *     produce bounding boxes which have at least this confidence score. Value in 0 to 1 range,
+   *     default is 0.5. `max_bounding_box_count` - (int64) No more than this number of bounding
+   *     boxes will be returned per frame. Default is 100, the requested value may be limited by
+   *     server. `min_bounding_box_size` - (float) Only bounding boxes with shortest edge at least
+   *     that long as a relative value of video frame size will be returned. Value in 0 to 1 range.
+   *     Default is 0.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(

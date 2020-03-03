@@ -128,7 +128,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    * Required. The BCP-47 language code of the source language.
    * </pre>
    *
-   * <code>string source_language_code = 1;</code>
+   * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The sourceLanguageCode.
    */
@@ -150,7 +150,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    * Required. The BCP-47 language code of the source language.
    * </pre>
    *
-   * <code>string source_language_code = 1;</code>
+   * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for sourceLanguageCode.
    */
@@ -175,7 +175,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    * Required. The BCP-47 language code of the target language.
    * </pre>
    *
-   * <code>string target_language_code = 2;</code>
+   * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetLanguageCode.
    */
@@ -197,7 +197,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    * Required. The BCP-47 language code of the target language.
    * </pre>
    *
-   * <code>string target_language_code = 2;</code>
+   * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetLanguageCode.
    */
@@ -556,7 +556,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the source language.
      * </pre>
      *
-     * <code>string source_language_code = 1;</code>
+     * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The sourceLanguageCode.
      */
@@ -578,7 +578,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the source language.
      * </pre>
      *
-     * <code>string source_language_code = 1;</code>
+     * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for sourceLanguageCode.
      */
@@ -600,7 +600,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the source language.
      * </pre>
      *
-     * <code>string source_language_code = 1;</code>
+     * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The sourceLanguageCode to set.
      * @return This builder for chaining.
@@ -621,7 +621,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the source language.
      * </pre>
      *
-     * <code>string source_language_code = 1;</code>
+     * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -638,7 +638,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the source language.
      * </pre>
      *
-     * <code>string source_language_code = 1;</code>
+     * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for sourceLanguageCode to set.
      * @return This builder for chaining.
@@ -662,7 +662,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the target language.
      * </pre>
      *
-     * <code>string target_language_code = 2;</code>
+     * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The targetLanguageCode.
      */
@@ -684,7 +684,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the target language.
      * </pre>
      *
-     * <code>string target_language_code = 2;</code>
+     * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for targetLanguageCode.
      */
@@ -706,7 +706,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the target language.
      * </pre>
      *
-     * <code>string target_language_code = 2;</code>
+     * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The targetLanguageCode to set.
      * @return This builder for chaining.
@@ -727,7 +727,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the target language.
      * </pre>
      *
-     * <code>string target_language_code = 2;</code>
+     * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -744,7 +744,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the target language.
      * </pre>
      *
-     * <code>string target_language_code = 2;</code>
+     * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for targetLanguageCode to set.
      * @return This builder for chaining.

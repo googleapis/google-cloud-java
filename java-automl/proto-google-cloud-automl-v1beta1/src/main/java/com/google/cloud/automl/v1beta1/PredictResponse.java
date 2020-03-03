@@ -22,8 +22,7 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Response message for
- * [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
+ * Response message for [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.PredictResponse}
@@ -628,8 +627,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Response message for
-   * [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
+   * Response message for [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.PredictResponse}

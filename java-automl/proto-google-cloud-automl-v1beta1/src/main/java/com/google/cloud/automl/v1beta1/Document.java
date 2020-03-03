@@ -222,9 +222,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Page number of the
-     * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-     * in the original document, starts from 1.
+     * Page number of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the original document, starts
+     * from 1.
      * </pre>
      *
      * <code>int32 page_number = 2;</code>
@@ -237,9 +236,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The position of the
-     * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-     * in the page. Contains exactly 4
+     * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+     * Contains exactly 4
      * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
      * and they are connected by edges in the order provided, which will
      * represent a rectangle parallel to the frame. The
@@ -257,9 +255,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The position of the
-     * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-     * in the page. Contains exactly 4
+     * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+     * Contains exactly 4
      * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
      * and they are connected by edges in the order provided, which will
      * represent a rectangle parallel to the frame. The
@@ -277,9 +274,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The position of the
-     * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-     * in the page. Contains exactly 4
+     * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+     * Contains exactly 4
      * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
      * and they are connected by edges in the order provided, which will
      * represent a rectangle parallel to the frame. The
@@ -296,9 +292,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the
-     * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-     * in document.
+     * The type of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in document.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Document.Layout.TextSegmentType text_segment_type = 4;
@@ -311,9 +305,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the
-     * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-     * in document.
+     * The type of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in document.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Document.Layout.TextSegmentType text_segment_type = 4;
@@ -327,9 +319,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes the layout information of a
-   * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in
-   * the document.
+   * Describes the layout information of a [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the document.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.Document.Layout}
@@ -841,9 +831,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Page number of the
-     * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-     * in the original document, starts from 1.
+     * Page number of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the original document, starts
+     * from 1.
      * </pre>
      *
      * <code>int32 page_number = 2;</code>
@@ -860,9 +849,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The position of the
-     * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-     * in the page. Contains exactly 4
+     * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+     * Contains exactly 4
      * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
      * and they are connected by edges in the order provided, which will
      * represent a rectangle parallel to the frame. The
@@ -882,9 +870,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The position of the
-     * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-     * in the page. Contains exactly 4
+     * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+     * Contains exactly 4
      * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
      * and they are connected by edges in the order provided, which will
      * represent a rectangle parallel to the frame. The
@@ -906,9 +893,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The position of the
-     * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-     * in the page. Contains exactly 4
+     * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+     * Contains exactly 4
      * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
      * and they are connected by edges in the order provided, which will
      * represent a rectangle parallel to the frame. The
@@ -929,9 +915,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the
-     * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-     * in document.
+     * The type of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in document.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Document.Layout.TextSegmentType text_segment_type = 4;
@@ -946,9 +930,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the
-     * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-     * in document.
+     * The type of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in document.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Document.Layout.TextSegmentType text_segment_type = 4;
@@ -1172,9 +1154,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describes the layout information of a
-     * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in
-     * the document.
+     * Describes the layout information of a [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the document.
      * </pre>
      *
      * Protobuf type {@code google.cloud.automl.v1beta1.Document.Layout}
@@ -1565,9 +1545,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Page number of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in the original document, starts from 1.
+       * Page number of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the original document, starts
+       * from 1.
        * </pre>
        *
        * <code>int32 page_number = 2;</code>
@@ -1581,9 +1560,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Page number of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in the original document, starts from 1.
+       * Page number of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the original document, starts
+       * from 1.
        * </pre>
        *
        * <code>int32 page_number = 2;</code>
@@ -1601,9 +1579,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Page number of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in the original document, starts from 1.
+       * Page number of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the original document, starts
+       * from 1.
        * </pre>
        *
        * <code>int32 page_number = 2;</code>
@@ -1627,9 +1604,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The position of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in the page. Contains exactly 4
+       * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+       * Contains exactly 4
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1649,9 +1625,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The position of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in the page. Contains exactly 4
+       * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+       * Contains exactly 4
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1677,9 +1652,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The position of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in the page. Contains exactly 4
+       * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+       * Contains exactly 4
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1707,9 +1681,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The position of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in the page. Contains exactly 4
+       * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+       * Contains exactly 4
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1735,9 +1708,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The position of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in the page. Contains exactly 4
+       * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+       * Contains exactly 4
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1769,9 +1741,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The position of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in the page. Contains exactly 4
+       * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+       * Contains exactly 4
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1797,9 +1768,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The position of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in the page. Contains exactly 4
+       * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+       * Contains exactly 4
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1819,9 +1789,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The position of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in the page. Contains exactly 4
+       * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+       * Contains exactly 4
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1845,9 +1814,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The position of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in the page. Contains exactly 4
+       * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
+       * Contains exactly 4
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1880,9 +1848,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in document.
+       * The type of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in document.
        * </pre>
        *
        * <code>.google.cloud.automl.v1beta1.Document.Layout.TextSegmentType text_segment_type = 4;
@@ -1897,9 +1863,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in document.
+       * The type of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in document.
        * </pre>
        *
        * <code>.google.cloud.automl.v1beta1.Document.Layout.TextSegmentType text_segment_type = 4;
@@ -1917,9 +1881,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in document.
+       * The type of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in document.
        * </pre>
        *
        * <code>.google.cloud.automl.v1beta1.Document.Layout.TextSegmentType text_segment_type = 4;
@@ -1940,9 +1902,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in document.
+       * The type of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in document.
        * </pre>
        *
        * <code>.google.cloud.automl.v1beta1.Document.Layout.TextSegmentType text_segment_type = 4;
@@ -1965,9 +1925,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the
-       * [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment]
-       * in document.
+       * The type of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in document.
        * </pre>
        *
        * <code>.google.cloud.automl.v1beta1.Document.Layout.TextSegmentType text_segment_type = 4;

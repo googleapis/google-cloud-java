@@ -182,11 +182,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The format of
-   * [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the
-   * only two allowed values are "text/html" and "text/plain". If left blank,
-   * the format is automatically determined from the type of the uploaded
-   * [content][google.cloud.automl.v1beta1.TextSnippet.content].
+   * Optional. The format of [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the only two allowed
+   * values are "text/html" and "text/plain". If left blank, the format is
+   * automatically determined from the type of the uploaded [content][google.cloud.automl.v1beta1.TextSnippet.content].
    * </pre>
    *
    * <code>string mime_type = 2;</code>
@@ -208,11 +206,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The format of
-   * [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the
-   * only two allowed values are "text/html" and "text/plain". If left blank,
-   * the format is automatically determined from the type of the uploaded
-   * [content][google.cloud.automl.v1beta1.TextSnippet.content].
+   * Optional. The format of [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the only two allowed
+   * values are "text/html" and "text/plain". If left blank, the format is
+   * automatically determined from the type of the uploaded [content][google.cloud.automl.v1beta1.TextSnippet.content].
    * </pre>
    *
    * <code>string mime_type = 2;</code>
@@ -742,11 +738,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The format of
-     * [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the
-     * only two allowed values are "text/html" and "text/plain". If left blank,
-     * the format is automatically determined from the type of the uploaded
-     * [content][google.cloud.automl.v1beta1.TextSnippet.content].
+     * Optional. The format of [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the only two allowed
+     * values are "text/html" and "text/plain". If left blank, the format is
+     * automatically determined from the type of the uploaded [content][google.cloud.automl.v1beta1.TextSnippet.content].
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -768,11 +762,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The format of
-     * [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the
-     * only two allowed values are "text/html" and "text/plain". If left blank,
-     * the format is automatically determined from the type of the uploaded
-     * [content][google.cloud.automl.v1beta1.TextSnippet.content].
+     * Optional. The format of [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the only two allowed
+     * values are "text/html" and "text/plain". If left blank, the format is
+     * automatically determined from the type of the uploaded [content][google.cloud.automl.v1beta1.TextSnippet.content].
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -794,11 +786,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The format of
-     * [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the
-     * only two allowed values are "text/html" and "text/plain". If left blank,
-     * the format is automatically determined from the type of the uploaded
-     * [content][google.cloud.automl.v1beta1.TextSnippet.content].
+     * Optional. The format of [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the only two allowed
+     * values are "text/html" and "text/plain". If left blank, the format is
+     * automatically determined from the type of the uploaded [content][google.cloud.automl.v1beta1.TextSnippet.content].
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -819,11 +809,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The format of
-     * [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the
-     * only two allowed values are "text/html" and "text/plain". If left blank,
-     * the format is automatically determined from the type of the uploaded
-     * [content][google.cloud.automl.v1beta1.TextSnippet.content].
+     * Optional. The format of [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the only two allowed
+     * values are "text/html" and "text/plain". If left blank, the format is
+     * automatically determined from the type of the uploaded [content][google.cloud.automl.v1beta1.TextSnippet.content].
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -840,11 +828,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The format of
-     * [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the
-     * only two allowed values are "text/html" and "text/plain". If left blank,
-     * the format is automatically determined from the type of the uploaded
-     * [content][google.cloud.automl.v1beta1.TextSnippet.content].
+     * Optional. The format of [content][google.cloud.automl.v1beta1.TextSnippet.content]. Currently the only two allowed
+     * values are "text/html" and "text/plain". If left blank, the format is
+     * automatically determined from the type of the uploaded [content][google.cloud.automl.v1beta1.TextSnippet.content].
      * </pre>
      *
      * <code>string mime_type = 2;</code>

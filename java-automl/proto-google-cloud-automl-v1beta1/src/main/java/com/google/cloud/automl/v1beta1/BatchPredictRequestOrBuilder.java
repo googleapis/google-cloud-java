@@ -27,10 +27,12 @@ public interface BatchPredictRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the model requested to serve the batch prediction.
+   * Required. Name of the model requested to serve the batch prediction.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -39,10 +41,12 @@ public interface BatchPredictRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the model requested to serve the batch prediction.
+   * Required. Name of the model requested to serve the batch prediction.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -55,7 +59,9 @@ public interface BatchPredictRequestOrBuilder
    * Required. The input configuration for batch prediction.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the inputConfig field is set.
    */
@@ -67,7 +73,9 @@ public interface BatchPredictRequestOrBuilder
    * Required. The input configuration for batch prediction.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The inputConfig.
    */
@@ -79,7 +87,9 @@ public interface BatchPredictRequestOrBuilder
    * Required. The input configuration for batch prediction.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.automl.v1beta1.BatchPredictInputConfigOrBuilder getInputConfigOrBuilder();
 
@@ -91,7 +101,9 @@ public interface BatchPredictRequestOrBuilder
    * be written.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the outputConfig field is set.
    */
@@ -104,7 +116,9 @@ public interface BatchPredictRequestOrBuilder
    * be written.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The outputConfig.
    */
@@ -117,7 +131,9 @@ public interface BatchPredictRequestOrBuilder
    * be written.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.automl.v1beta1.BatchPredictOutputConfigOrBuilder getOutputConfigOrBuilder();
 
@@ -125,7 +141,7 @@ public interface BatchPredictRequestOrBuilder
    *
    *
    * <pre>
-   * Additional domain-specific parameters for the predictions, any string must
+   * Required. Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
    * *  For Text Classification:
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -169,6 +185,10 @@ public interface BatchPredictRequestOrBuilder
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Tables:
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotations. The
+   *        default is false.
    * *  For Video Object Tracking:
    *    `score_threshold` - (float) When Model detects objects on video frames,
    *        it will only produce bounding boxes which have at least this
@@ -181,14 +201,14 @@ public interface BatchPredictRequestOrBuilder
    *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; params = 5;</code>
+   * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getParamsCount();
   /**
    *
    *
    * <pre>
-   * Additional domain-specific parameters for the predictions, any string must
+   * Required. Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
    * *  For Text Classification:
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -232,6 +252,10 @@ public interface BatchPredictRequestOrBuilder
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Tables:
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotations. The
+   *        default is false.
    * *  For Video Object Tracking:
    *    `score_threshold` - (float) When Model detects objects on video frames,
    *        it will only produce bounding boxes which have at least this
@@ -244,7 +268,7 @@ public interface BatchPredictRequestOrBuilder
    *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; params = 5;</code>
+   * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   boolean containsParams(java.lang.String key);
   /** Use {@link #getParamsMap()} instead. */
@@ -254,7 +278,7 @@ public interface BatchPredictRequestOrBuilder
    *
    *
    * <pre>
-   * Additional domain-specific parameters for the predictions, any string must
+   * Required. Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
    * *  For Text Classification:
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -298,6 +322,10 @@ public interface BatchPredictRequestOrBuilder
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Tables:
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotations. The
+   *        default is false.
    * *  For Video Object Tracking:
    *    `score_threshold` - (float) When Model detects objects on video frames,
    *        it will only produce bounding boxes which have at least this
@@ -310,14 +338,14 @@ public interface BatchPredictRequestOrBuilder
    *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; params = 5;</code>
+   * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParamsMap();
   /**
    *
    *
    * <pre>
-   * Additional domain-specific parameters for the predictions, any string must
+   * Required. Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
    * *  For Text Classification:
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -361,6 +389,10 @@ public interface BatchPredictRequestOrBuilder
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Tables:
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotations. The
+   *        default is false.
    * *  For Video Object Tracking:
    *    `score_threshold` - (float) When Model detects objects on video frames,
    *        it will only produce bounding boxes which have at least this
@@ -373,14 +405,14 @@ public interface BatchPredictRequestOrBuilder
    *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; params = 5;</code>
+   * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
    *
    *
    * <pre>
-   * Additional domain-specific parameters for the predictions, any string must
+   * Required. Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
    * *  For Text Classification:
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -424,6 +456,10 @@ public interface BatchPredictRequestOrBuilder
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Tables:
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotations. The
+   *        default is false.
    * *  For Video Object Tracking:
    *    `score_threshold` - (float) When Model detects objects on video frames,
    *        it will only produce bounding boxes which have at least this
@@ -436,7 +472,7 @@ public interface BatchPredictRequestOrBuilder
    *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; params = 5;</code>
+   * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getParamsOrThrow(java.lang.String key);
 }

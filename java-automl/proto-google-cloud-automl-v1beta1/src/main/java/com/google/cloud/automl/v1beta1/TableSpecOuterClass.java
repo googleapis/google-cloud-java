@@ -41,24 +41,28 @@ public final class TableSpecOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/automl/v1beta1/table_spec"
-          + ".proto\022\033google.cloud.automl.v1beta1\032$goo"
-          + "gle/cloud/automl/v1beta1/io.proto\032\034googl"
-          + "e/api/annotations.proto\"\307\001\n\tTableSpec\022\014\n"
-          + "\004name\030\001 \001(\t\022\033\n\023time_column_spec_id\030\002 \001(\t"
-          + "\022\021\n\trow_count\030\003 \001(\003\022\027\n\017valid_row_count\030\004"
-          + " \001(\003\022\024\n\014column_count\030\007 \001(\003\022?\n\rinput_conf"
-          + "igs\030\005 \003(\0132(.google.cloud.automl.v1beta1."
-          + "InputConfig\022\014\n\004etag\030\006 \001(\tB\245\001\n\037com.google"
-          + ".cloud.automl.v1beta1P\001ZAgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/automl/v1be"
-          + "ta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta1"
-          + "\352\002\036Google::Cloud::AutoML::V1beta1b\006proto"
-          + "3"
+          + ".proto\022\033google.cloud.automl.v1beta1\032\031goo"
+          + "gle/api/resource.proto\032$google/cloud/aut"
+          + "oml/v1beta1/io.proto\032\034google/api/annotat"
+          + "ions.proto\"\301\002\n\tTableSpec\022\014\n\004name\030\001 \001(\t\022\033"
+          + "\n\023time_column_spec_id\030\002 \001(\t\022\021\n\trow_count"
+          + "\030\003 \001(\003\022\027\n\017valid_row_count\030\004 \001(\003\022\024\n\014colum"
+          + "n_count\030\007 \001(\003\022?\n\rinput_configs\030\005 \003(\0132(.g"
+          + "oogle.cloud.automl.v1beta1.InputConfig\022\014"
+          + "\n\004etag\030\006 \001(\t:x\352Au\n\037automl.googleapis.com"
+          + "/TableSpec\022Rprojects/{project}/locations"
+          + "/{location}/datasets/{dataset}/tableSpec"
+          + "s/{table_spec}B\245\001\n\037com.google.cloud.auto"
+          + "ml.v1beta1P\001ZAgoogle.golang.org/genproto"
+          + "/googleapis/cloud/automl/v1beta1;automl\312"
+          + "\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google::"
+          + "Cloud::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.automl.v1beta1.Io.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
             });
@@ -76,6 +80,12 @@ public final class TableSpecOuterClass {
               "InputConfigs",
               "Etag",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.automl.v1beta1.Io.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
   }

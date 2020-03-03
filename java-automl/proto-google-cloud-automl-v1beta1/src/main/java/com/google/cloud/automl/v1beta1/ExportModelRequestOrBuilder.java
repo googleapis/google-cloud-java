@@ -30,7 +30,9 @@ public interface ExportModelRequestOrBuilder
    * Required. The resource name of the model to export.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -42,7 +44,9 @@ public interface ExportModelRequestOrBuilder
    * Required. The resource name of the model to export.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -55,7 +59,9 @@ public interface ExportModelRequestOrBuilder
    * Required. The desired output location and configuration.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ModelExportOutputConfig output_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the outputConfig field is set.
    */
@@ -67,7 +73,9 @@ public interface ExportModelRequestOrBuilder
    * Required. The desired output location and configuration.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ModelExportOutputConfig output_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The outputConfig.
    */
@@ -79,7 +87,9 @@ public interface ExportModelRequestOrBuilder
    * Required. The desired output location and configuration.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ModelExportOutputConfig output_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.automl.v1beta1.ModelExportOutputConfigOrBuilder getOutputConfigOrBuilder();
 }

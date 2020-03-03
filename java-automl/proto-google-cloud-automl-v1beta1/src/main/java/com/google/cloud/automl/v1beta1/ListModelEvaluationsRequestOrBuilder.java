@@ -27,12 +27,14 @@ public interface ListModelEvaluationsRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the model to list the model evaluations for.
+   * Required. Resource name of the model to list the model evaluations for.
    * If modelId is set as "-", this will list model evaluations from across all
    * models of the parent location.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -41,12 +43,14 @@ public interface ListModelEvaluationsRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the model to list the model evaluations for.
+   * Required. Resource name of the model to list the model evaluations for.
    * If modelId is set as "-", this will list model evaluations from across all
    * models of the parent location.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

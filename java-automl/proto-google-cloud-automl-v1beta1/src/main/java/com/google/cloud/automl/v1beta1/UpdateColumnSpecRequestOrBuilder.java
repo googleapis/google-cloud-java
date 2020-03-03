@@ -27,10 +27,12 @@ public interface UpdateColumnSpecRequestOrBuilder
    *
    *
    * <pre>
-   * The column spec which replaces the resource on the server.
+   * Required. The column spec which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the columnSpec field is set.
    */
@@ -39,10 +41,12 @@ public interface UpdateColumnSpecRequestOrBuilder
    *
    *
    * <pre>
-   * The column spec which replaces the resource on the server.
+   * Required. The column spec which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The columnSpec.
    */
@@ -51,10 +55,12 @@ public interface UpdateColumnSpecRequestOrBuilder
    *
    *
    * <pre>
-   * The column spec which replaces the resource on the server.
+   * Required. The column spec which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.automl.v1beta1.ColumnSpecOrBuilder getColumnSpecOrBuilder();
 

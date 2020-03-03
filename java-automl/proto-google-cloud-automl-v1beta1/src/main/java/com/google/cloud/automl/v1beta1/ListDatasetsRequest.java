@@ -138,10 +138,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The resource name of the project from which to list datasets.
+   * Required. The resource name of the project from which to list datasets.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -160,10 +162,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The resource name of the project from which to list datasets.
+   * Required. The resource name of the project from which to list datasets.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -675,10 +679,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the project from which to list datasets.
+     * Required. The resource name of the project from which to list datasets.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -697,10 +703,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the project from which to list datasets.
+     * Required. The resource name of the project from which to list datasets.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -719,10 +727,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the project from which to list datasets.
+     * Required. The resource name of the project from which to list datasets.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -740,10 +750,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the project from which to list datasets.
+     * Required. The resource name of the project from which to list datasets.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -757,10 +769,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the project from which to list datasets.
+     * Required. The resource name of the project from which to list datasets.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

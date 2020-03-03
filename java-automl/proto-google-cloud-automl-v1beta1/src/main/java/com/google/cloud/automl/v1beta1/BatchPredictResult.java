@@ -24,8 +24,7 @@ package com.google.cloud.automl.v1beta1;
  * <pre>
  * Result of the Batch Predict. This message is returned in
  * [response][google.longrunning.Operation.response] of the operation returned
- * by the
- * [PredictionService.BatchPredict][google.cloud.automl.v1beta1.PredictionService.BatchPredict].
+ * by the [PredictionService.BatchPredict][google.cloud.automl.v1beta1.PredictionService.BatchPredict].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.BatchPredictResult}
@@ -423,8 +422,7 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Result of the Batch Predict. This message is returned in
    * [response][google.longrunning.Operation.response] of the operation returned
-   * by the
-   * [PredictionService.BatchPredict][google.cloud.automl.v1beta1.PredictionService.BatchPredict].
+   * by the [PredictionService.BatchPredict][google.cloud.automl.v1beta1.PredictionService.BatchPredict].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.BatchPredictResult}

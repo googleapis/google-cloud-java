@@ -27,10 +27,12 @@ public interface UpdateTableSpecRequestOrBuilder
    *
    *
    * <pre>
-   * The table spec which replaces the resource on the server.
+   * Required. The table spec which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the tableSpec field is set.
    */
@@ -39,10 +41,12 @@ public interface UpdateTableSpecRequestOrBuilder
    *
    *
    * <pre>
-   * The table spec which replaces the resource on the server.
+   * Required. The table spec which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The tableSpec.
    */
@@ -51,10 +55,12 @@ public interface UpdateTableSpecRequestOrBuilder
    *
    *
    * <pre>
-   * The table spec which replaces the resource on the server.
+   * Required. The table spec which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.automl.v1beta1.TableSpecOrBuilder getTableSpecOrBuilder();
 

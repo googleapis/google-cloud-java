@@ -120,6 +120,11 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
 
               break;
             }
+          case 45:
+            {
+              baselineScore_ = input.readFloat();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -397,6 +402,29 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
     return tablesModelColumnInfo_.get(index);
   }
 
+  public static final int BASELINE_SCORE_FIELD_NUMBER = 5;
+  private float baselineScore_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Stores the prediction score for the baseline example, which
+   * is defined as the example with all values set to their baseline values.
+   * This is used as part of the Sampled Shapley explanation of the model's
+   * prediction. This field is populated only when feature importance is
+   * requested. For regression models, this holds the baseline prediction for
+   * the baseline example. For classification models, this holds the baseline
+   * prediction for the baseline example for the argmax class.
+   * </pre>
+   *
+   * <code>float baseline_score = 5;</code>
+   *
+   * @return The baselineScore.
+   */
+  public float getBaselineScore() {
+    return baselineScore_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -423,6 +451,9 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
     if (predictionInterval_ != null) {
       output.writeMessage(4, getPredictionInterval());
     }
+    if (baselineScore_ != 0F) {
+      output.writeFloat(5, baselineScore_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -445,6 +476,9 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
     }
     if (predictionInterval_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPredictionInterval());
+    }
+    if (baselineScore_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, baselineScore_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -473,6 +507,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       if (!getValue().equals(other.getValue())) return false;
     }
     if (!getTablesModelColumnInfoList().equals(other.getTablesModelColumnInfoList())) return false;
+    if (java.lang.Float.floatToIntBits(getBaselineScore())
+        != java.lang.Float.floatToIntBits(other.getBaselineScore())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -498,6 +534,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + TABLES_MODEL_COLUMN_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getTablesModelColumnInfoList().hashCode();
     }
+    hash = (37 * hash) + BASELINE_SCORE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getBaselineScore());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -665,6 +703,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       } else {
         tablesModelColumnInfoBuilder_.clear();
       }
+      baselineScore_ = 0F;
+
       return this;
     }
 
@@ -713,6 +753,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       } else {
         result.tablesModelColumnInfo_ = tablesModelColumnInfoBuilder_.build();
       }
+      result.baselineScore_ = baselineScore_;
       onBuilt();
       return result;
     }
@@ -798,6 +839,9 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
             tablesModelColumnInfoBuilder_.addAllMessages(other.tablesModelColumnInfo_);
           }
         }
+      }
+      if (other.getBaselineScore() != 0F) {
+        setBaselineScore(other.getBaselineScore());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1854,6 +1898,75 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         tablesModelColumnInfo_ = null;
       }
       return tablesModelColumnInfoBuilder_;
+    }
+
+    private float baselineScore_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Stores the prediction score for the baseline example, which
+     * is defined as the example with all values set to their baseline values.
+     * This is used as part of the Sampled Shapley explanation of the model's
+     * prediction. This field is populated only when feature importance is
+     * requested. For regression models, this holds the baseline prediction for
+     * the baseline example. For classification models, this holds the baseline
+     * prediction for the baseline example for the argmax class.
+     * </pre>
+     *
+     * <code>float baseline_score = 5;</code>
+     *
+     * @return The baselineScore.
+     */
+    public float getBaselineScore() {
+      return baselineScore_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Stores the prediction score for the baseline example, which
+     * is defined as the example with all values set to their baseline values.
+     * This is used as part of the Sampled Shapley explanation of the model's
+     * prediction. This field is populated only when feature importance is
+     * requested. For regression models, this holds the baseline prediction for
+     * the baseline example. For classification models, this holds the baseline
+     * prediction for the baseline example for the argmax class.
+     * </pre>
+     *
+     * <code>float baseline_score = 5;</code>
+     *
+     * @param value The baselineScore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBaselineScore(float value) {
+
+      baselineScore_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Stores the prediction score for the baseline example, which
+     * is defined as the example with all values set to their baseline values.
+     * This is used as part of the Sampled Shapley explanation of the model's
+     * prediction. This field is populated only when feature importance is
+     * requested. For regression models, this holds the baseline prediction for
+     * the baseline example. For classification models, this holds the baseline
+     * prediction for the baseline example for the argmax class.
+     * </pre>
+     *
+     * <code>float baseline_score = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBaselineScore() {
+
+      baselineScore_ = 0F;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

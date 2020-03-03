@@ -227,4 +227,23 @@ public interface TablesAnnotationOrBuilder
    */
   com.google.cloud.automl.v1beta1.TablesModelColumnInfoOrBuilder getTablesModelColumnInfoOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Stores the prediction score for the baseline example, which
+   * is defined as the example with all values set to their baseline values.
+   * This is used as part of the Sampled Shapley explanation of the model's
+   * prediction. This field is populated only when feature importance is
+   * requested. For regression models, this holds the baseline prediction for
+   * the baseline example. For classification models, this holds the baseline
+   * prediction for the baseline example for the argmax class.
+   * </pre>
+   *
+   * <code>float baseline_score = 5;</code>
+   *
+   * @return The baselineScore.
+   */
+  float getBaselineScore();
 }

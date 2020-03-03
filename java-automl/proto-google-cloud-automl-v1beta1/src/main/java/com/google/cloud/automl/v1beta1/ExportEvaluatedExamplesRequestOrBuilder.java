@@ -31,7 +31,9 @@ public interface ExportEvaluatedExamplesRequestOrBuilder
    * be exported.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -44,7 +46,9 @@ public interface ExportEvaluatedExamplesRequestOrBuilder
    * be exported.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -57,7 +61,8 @@ public interface ExportEvaluatedExamplesRequestOrBuilder
    * Required. The desired output location and configuration.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+   * <code>
+   * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the outputConfig field is set.
@@ -70,7 +75,8 @@ public interface ExportEvaluatedExamplesRequestOrBuilder
    * Required. The desired output location and configuration.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+   * <code>
+   * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The outputConfig.
@@ -83,7 +89,8 @@ public interface ExportEvaluatedExamplesRequestOrBuilder
    * Required. The desired output location and configuration.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
+   * <code>
+   * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfigOrBuilder

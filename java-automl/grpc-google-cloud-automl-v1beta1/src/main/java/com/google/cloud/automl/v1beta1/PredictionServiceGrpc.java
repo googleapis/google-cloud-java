@@ -213,14 +213,12 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform a batch prediction. Unlike the online
-     * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
+     * Perform a batch prediction. Unlike the online [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
      * prediction result won't be immediately available in the response. Instead,
      * a long running operation object is returned. User can poll the operation
      * result via [GetOperation][google.longrunning.Operations.GetOperation]
-     * method. Once the operation is done,
-     * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is
-     * returned in the [response][google.longrunning.Operation.response] field.
+     * method. Once the operation is done, [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in
+     * the [response][google.longrunning.Operation.response] field.
      * Available for following ML problems:
      * * Image Classification
      * * Image Object Detection
@@ -317,14 +315,12 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform a batch prediction. Unlike the online
-     * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
+     * Perform a batch prediction. Unlike the online [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
      * prediction result won't be immediately available in the response. Instead,
      * a long running operation object is returned. User can poll the operation
      * result via [GetOperation][google.longrunning.Operations.GetOperation]
-     * method. Once the operation is done,
-     * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is
-     * returned in the [response][google.longrunning.Operation.response] field.
+     * method. Once the operation is done, [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in
+     * the [response][google.longrunning.Operation.response] field.
      * Available for following ML problems:
      * * Image Classification
      * * Image Object Detection
@@ -402,14 +398,12 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform a batch prediction. Unlike the online
-     * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
+     * Perform a batch prediction. Unlike the online [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
      * prediction result won't be immediately available in the response. Instead,
      * a long running operation object is returned. User can poll the operation
      * result via [GetOperation][google.longrunning.Operations.GetOperation]
-     * method. Once the operation is done,
-     * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is
-     * returned in the [response][google.longrunning.Operation.response] field.
+     * method. Once the operation is done, [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in
+     * the [response][google.longrunning.Operation.response] field.
      * Available for following ML problems:
      * * Image Classification
      * * Image Object Detection
@@ -485,14 +479,12 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform a batch prediction. Unlike the online
-     * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
+     * Perform a batch prediction. Unlike the online [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
      * prediction result won't be immediately available in the response. Instead,
      * a long running operation object is returned. User can poll the operation
      * result via [GetOperation][google.longrunning.Operations.GetOperation]
-     * method. Once the operation is done,
-     * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is
-     * returned in the [response][google.longrunning.Operation.response] field.
+     * method. Once the operation is done, [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in
+     * the [response][google.longrunning.Operation.response] field.
      * Available for following ML problems:
      * * Image Classification
      * * Image Object Detection

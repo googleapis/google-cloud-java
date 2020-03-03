@@ -27,10 +27,12 @@ public interface ListDatasetsRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the project from which to list datasets.
+   * Required. The resource name of the project from which to list datasets.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -39,10 +41,12 @@ public interface ListDatasetsRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the project from which to list datasets.
+   * Required. The resource name of the project from which to list datasets.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

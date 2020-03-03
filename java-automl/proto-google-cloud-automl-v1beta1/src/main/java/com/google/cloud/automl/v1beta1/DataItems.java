@@ -65,68 +65,70 @@ public final class DataItems {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/automl/v1beta1/data_items"
-          + ".proto\022\033google.cloud.automl.v1beta1\032\034goo"
-          + "gle/api/annotations.proto\032*google/cloud/"
-          + "automl/v1beta1/geometry.proto\032$google/cl"
-          + "oud/automl/v1beta1/io.proto\032.google/clou"
-          + "d/automl/v1beta1/text_segment.proto\032\031goo"
-          + "gle/protobuf/any.proto\032\036google/protobuf/"
-          + "duration.proto\032\034google/protobuf/struct.p"
-          + "roto\"\177\n\005Image\022\025\n\013image_bytes\030\001 \001(\014H\000\022@\n\014"
-          + "input_config\030\006 \001(\0132(.google.cloud.automl"
-          + ".v1beta1.InputConfigH\000\022\025\n\rthumbnail_uri\030"
-          + "\004 \001(\tB\006\n\004data\"F\n\013TextSnippet\022\017\n\007content\030"
-          + "\001 \001(\t\022\021\n\tmime_type\030\002 \001(\t\022\023\n\013content_uri\030"
-          + "\004 \001(\t\"\357\001\n\022DocumentDimensions\022S\n\004unit\030\001 \001"
-          + "(\0162E.google.cloud.automl.v1beta1.Documen"
-          + "tDimensions.DocumentDimensionUnit\022\r\n\005wid"
-          + "th\030\002 \001(\002\022\016\n\006height\030\003 \001(\002\"e\n\025DocumentDime"
-          + "nsionUnit\022\'\n#DOCUMENT_DIMENSION_UNIT_UNS"
-          + "PECIFIED\020\000\022\010\n\004INCH\020\001\022\016\n\nCENTIMETER\020\002\022\t\n\005"
-          + "POINT\020\003\"\371\005\n\010Document\022F\n\014input_config\030\001 \001"
-          + "(\01320.google.cloud.automl.v1beta1.Documen"
-          + "tInputConfig\022?\n\rdocument_text\030\002 \001(\0132(.go"
-          + "ogle.cloud.automl.v1beta1.TextSnippet\022<\n"
-          + "\006layout\030\003 \003(\0132,.google.cloud.automl.v1be"
-          + "ta1.Document.Layout\022L\n\023document_dimensio"
-          + "ns\030\004 \001(\0132/.google.cloud.automl.v1beta1.D"
-          + "ocumentDimensions\022\022\n\npage_count\030\005 \001(\005\032\303\003"
-          + "\n\006Layout\022>\n\014text_segment\030\001 \001(\0132(.google."
-          + "cloud.automl.v1beta1.TextSegment\022\023\n\013page"
-          + "_number\030\002 \001(\005\022@\n\rbounding_poly\030\003 \001(\0132).g"
-          + "oogle.cloud.automl.v1beta1.BoundingPoly\022"
-          + "W\n\021text_segment_type\030\004 \001(\0162<.google.clou"
-          + "d.automl.v1beta1.Document.Layout.TextSeg"
-          + "mentType\"\310\001\n\017TextSegmentType\022!\n\035TEXT_SEG"
-          + "MENT_TYPE_UNSPECIFIED\020\000\022\t\n\005TOKEN\020\001\022\r\n\tPA"
-          + "RAGRAPH\020\002\022\016\n\nFORM_FIELD\020\003\022\023\n\017FORM_FIELD_"
-          + "NAME\020\004\022\027\n\023FORM_FIELD_CONTENTS\020\005\022\t\n\005TABLE"
-          + "\020\006\022\020\n\014TABLE_HEADER\020\007\022\r\n\tTABLE_ROW\020\010\022\016\n\nT"
-          + "ABLE_CELL\020\t\"F\n\003Row\022\027\n\017column_spec_ids\030\002 "
-          + "\003(\t\022&\n\006values\030\003 \003(\0132\026.google.protobuf.Va"
-          + "lue\"\376\001\n\016ExamplePayload\0223\n\005image\030\001 \001(\0132\"."
-          + "google.cloud.automl.v1beta1.ImageH\000\022@\n\014t"
-          + "ext_snippet\030\002 \001(\0132(.google.cloud.automl."
-          + "v1beta1.TextSnippetH\000\0229\n\010document\030\004 \001(\0132"
-          + "%.google.cloud.automl.v1beta1.DocumentH\000"
-          + "\022/\n\003row\030\003 \001(\0132 .google.cloud.automl.v1be"
-          + "ta1.RowH\000B\t\n\007payloadB\245\001\n\037com.google.clou"
-          + "d.automl.v1beta1P\001ZAgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/automl/v1beta1;a"
-          + "utoml\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Go"
-          + "ogle::Cloud::AutoML::V1beta1b\006proto3"
+          + ".proto\022\033google.cloud.automl.v1beta1\032*goo"
+          + "gle/cloud/automl/v1beta1/geometry.proto\032"
+          + "$google/cloud/automl/v1beta1/io.proto\032*g"
+          + "oogle/cloud/automl/v1beta1/temporal.prot"
+          + "o\032.google/cloud/automl/v1beta1/text_segm"
+          + "ent.proto\032\031google/protobuf/any.proto\032\036go"
+          + "ogle/protobuf/duration.proto\032\034google/pro"
+          + "tobuf/struct.proto\032\034google/api/annotatio"
+          + "ns.proto\"\177\n\005Image\022\025\n\013image_bytes\030\001 \001(\014H\000"
+          + "\022@\n\014input_config\030\006 \001(\0132(.google.cloud.au"
+          + "toml.v1beta1.InputConfigH\000\022\025\n\rthumbnail_"
+          + "uri\030\004 \001(\tB\006\n\004data\"F\n\013TextSnippet\022\017\n\007cont"
+          + "ent\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\t\022\023\n\013content_"
+          + "uri\030\004 \001(\t\"\357\001\n\022DocumentDimensions\022S\n\004unit"
+          + "\030\001 \001(\0162E.google.cloud.automl.v1beta1.Doc"
+          + "umentDimensions.DocumentDimensionUnit\022\r\n"
+          + "\005width\030\002 \001(\002\022\016\n\006height\030\003 \001(\002\"e\n\025Document"
+          + "DimensionUnit\022\'\n#DOCUMENT_DIMENSION_UNIT"
+          + "_UNSPECIFIED\020\000\022\010\n\004INCH\020\001\022\016\n\nCENTIMETER\020\002"
+          + "\022\t\n\005POINT\020\003\"\371\005\n\010Document\022F\n\014input_config"
+          + "\030\001 \001(\01320.google.cloud.automl.v1beta1.Doc"
+          + "umentInputConfig\022?\n\rdocument_text\030\002 \001(\0132"
+          + "(.google.cloud.automl.v1beta1.TextSnippe"
+          + "t\022<\n\006layout\030\003 \003(\0132,.google.cloud.automl."
+          + "v1beta1.Document.Layout\022L\n\023document_dime"
+          + "nsions\030\004 \001(\0132/.google.cloud.automl.v1bet"
+          + "a1.DocumentDimensions\022\022\n\npage_count\030\005 \001("
+          + "\005\032\303\003\n\006Layout\022>\n\014text_segment\030\001 \001(\0132(.goo"
+          + "gle.cloud.automl.v1beta1.TextSegment\022\023\n\013"
+          + "page_number\030\002 \001(\005\022@\n\rbounding_poly\030\003 \001(\013"
+          + "2).google.cloud.automl.v1beta1.BoundingP"
+          + "oly\022W\n\021text_segment_type\030\004 \001(\0162<.google."
+          + "cloud.automl.v1beta1.Document.Layout.Tex"
+          + "tSegmentType\"\310\001\n\017TextSegmentType\022!\n\035TEXT"
+          + "_SEGMENT_TYPE_UNSPECIFIED\020\000\022\t\n\005TOKEN\020\001\022\r"
+          + "\n\tPARAGRAPH\020\002\022\016\n\nFORM_FIELD\020\003\022\023\n\017FORM_FI"
+          + "ELD_NAME\020\004\022\027\n\023FORM_FIELD_CONTENTS\020\005\022\t\n\005T"
+          + "ABLE\020\006\022\020\n\014TABLE_HEADER\020\007\022\r\n\tTABLE_ROW\020\010\022"
+          + "\016\n\nTABLE_CELL\020\t\"F\n\003Row\022\027\n\017column_spec_id"
+          + "s\030\002 \003(\t\022&\n\006values\030\003 \003(\0132\026.google.protobu"
+          + "f.Value\"\376\001\n\016ExamplePayload\0223\n\005image\030\001 \001("
+          + "\0132\".google.cloud.automl.v1beta1.ImageH\000\022"
+          + "@\n\014text_snippet\030\002 \001(\0132(.google.cloud.aut"
+          + "oml.v1beta1.TextSnippetH\000\0229\n\010document\030\004 "
+          + "\001(\0132%.google.cloud.automl.v1beta1.Docume"
+          + "ntH\000\022/\n\003row\030\003 \001(\0132 .google.cloud.automl."
+          + "v1beta1.RowH\000B\t\n\007payloadB\245\001\n\037com.google."
+          + "cloud.automl.v1beta1P\001ZAgoogle.golang.or"
+          + "g/genproto/googleapis/cloud/automl/v1bet"
+          + "a1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352"
+          + "\002\036Google::Cloud::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.automl.v1beta1.Geometry.getDescriptor(),
               com.google.cloud.automl.v1beta1.Io.getDescriptor(),
+              com.google.cloud.automl.v1beta1.Temporal.getDescriptor(),
               com.google.cloud.automl.v1beta1.TextSegmentProto.getDescriptor(),
               com.google.protobuf.AnyProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1beta1_Image_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -184,13 +186,14 @@ public final class DataItems {
             new java.lang.String[] {
               "Image", "TextSnippet", "Document", "Row", "Payload",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.Geometry.getDescriptor();
     com.google.cloud.automl.v1beta1.Io.getDescriptor();
+    com.google.cloud.automl.v1beta1.Temporal.getDescriptor();
     com.google.cloud.automl.v1beta1.TextSegmentProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

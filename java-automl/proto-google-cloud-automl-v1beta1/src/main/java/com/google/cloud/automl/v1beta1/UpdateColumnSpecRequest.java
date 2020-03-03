@@ -139,10 +139,12 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The column spec which replaces the resource on the server.
+   * Required. The column spec which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the columnSpec field is set.
    */
@@ -153,10 +155,12 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The column spec which replaces the resource on the server.
+   * Required. The column spec which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The columnSpec.
    */
@@ -169,10 +173,12 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The column spec which replaces the resource on the server.
+   * Required. The column spec which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.automl.v1beta1.ColumnSpecOrBuilder getColumnSpecOrBuilder() {
     return getColumnSpec();
@@ -590,10 +596,12 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The column spec which replaces the resource on the server.
+     * Required. The column spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the columnSpec field is set.
      */
@@ -604,10 +612,12 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The column spec which replaces the resource on the server.
+     * Required. The column spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The columnSpec.
      */
@@ -624,10 +634,12 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The column spec which replaces the resource on the server.
+     * Required. The column spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setColumnSpec(com.google.cloud.automl.v1beta1.ColumnSpec value) {
       if (columnSpecBuilder_ == null) {
@@ -646,10 +658,12 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The column spec which replaces the resource on the server.
+     * Required. The column spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setColumnSpec(
         com.google.cloud.automl.v1beta1.ColumnSpec.Builder builderForValue) {
@@ -666,10 +680,12 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The column spec which replaces the resource on the server.
+     * Required. The column spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeColumnSpec(com.google.cloud.automl.v1beta1.ColumnSpec value) {
       if (columnSpecBuilder_ == null) {
@@ -692,10 +708,12 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The column spec which replaces the resource on the server.
+     * Required. The column spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearColumnSpec() {
       if (columnSpecBuilder_ == null) {
@@ -712,10 +730,12 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The column spec which replaces the resource on the server.
+     * Required. The column spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1beta1.ColumnSpec.Builder getColumnSpecBuilder() {
 
@@ -726,10 +746,12 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The column spec which replaces the resource on the server.
+     * Required. The column spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1beta1.ColumnSpecOrBuilder getColumnSpecOrBuilder() {
       if (columnSpecBuilder_ != null) {
@@ -744,10 +766,12 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The column spec which replaces the resource on the server.
+     * Required. The column spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ColumnSpec column_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.ColumnSpec,

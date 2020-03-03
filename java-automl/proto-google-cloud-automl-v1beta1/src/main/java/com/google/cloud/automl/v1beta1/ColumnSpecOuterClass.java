@@ -45,30 +45,35 @@ public final class ColumnSpecOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/automl/v1beta1/column_spe"
-          + "c.proto\022\033google.cloud.automl.v1beta1\032,go"
-          + "ogle/cloud/automl/v1beta1/data_stats.pro"
-          + "to\032,google/cloud/automl/v1beta1/data_typ"
-          + "es.proto\032\034google/api/annotations.proto\"\204"
-          + "\003\n\nColumnSpec\022\014\n\004name\030\001 \001(\t\0228\n\tdata_type"
-          + "\030\002 \001(\0132%.google.cloud.automl.v1beta1.Dat"
-          + "aType\022\024\n\014display_name\030\003 \001(\t\022:\n\ndata_stat"
-          + "s\030\004 \001(\0132&.google.cloud.automl.v1beta1.Da"
-          + "taStats\022X\n\026top_correlated_columns\030\005 \003(\0132"
-          + "8.google.cloud.automl.v1beta1.ColumnSpec"
-          + ".CorrelatedColumn\022\014\n\004etag\030\006 \001(\t\032t\n\020Corre"
-          + "latedColumn\022\026\n\016column_spec_id\030\001 \001(\t\022H\n\021c"
-          + "orrelation_stats\030\002 \001(\0132-.google.cloud.au"
-          + "toml.v1beta1.CorrelationStatsB\245\001\n\037com.go"
-          + "ogle.cloud.automl.v1beta1P\001ZAgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/automl/"
-          + "v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1b"
-          + "eta1\352\002\036Google::Cloud::AutoML::V1beta1b\006p"
-          + "roto3"
+          + "c.proto\022\033google.cloud.automl.v1beta1\032\031go"
+          + "ogle/api/resource.proto\032,google/cloud/au"
+          + "toml/v1beta1/data_stats.proto\032,google/cl"
+          + "oud/automl/v1beta1/data_types.proto\032\034goo"
+          + "gle/api/annotations.proto\"\233\004\n\nColumnSpec"
+          + "\022\014\n\004name\030\001 \001(\t\0228\n\tdata_type\030\002 \001(\0132%.goog"
+          + "le.cloud.automl.v1beta1.DataType\022\024\n\014disp"
+          + "lay_name\030\003 \001(\t\022:\n\ndata_stats\030\004 \001(\0132&.goo"
+          + "gle.cloud.automl.v1beta1.DataStats\022X\n\026to"
+          + "p_correlated_columns\030\005 \003(\01328.google.clou"
+          + "d.automl.v1beta1.ColumnSpec.CorrelatedCo"
+          + "lumn\022\014\n\004etag\030\006 \001(\t\032t\n\020CorrelatedColumn\022\026"
+          + "\n\016column_spec_id\030\001 \001(\t\022H\n\021correlation_st"
+          + "ats\030\002 \001(\0132-.google.cloud.automl.v1beta1."
+          + "CorrelationStats:\224\001\352A\220\001\n automl.googleap"
+          + "is.com/ColumnSpec\022lprojects/{project}/lo"
+          + "cations/{location}/datasets/{dataset}/ta"
+          + "bleSpecs/{table_spec}/columnSpecs/{colum"
+          + "n_spec}B\245\001\n\037com.google.cloud.automl.v1be"
+          + "ta1P\001ZAgoogle.golang.org/genproto/google"
+          + "apis/cloud/automl/v1beta1;automl\312\002\033Googl"
+          + "e\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::"
+          + "AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.automl.v1beta1.DataStatsOuterClass.getDescriptor(),
               com.google.cloud.automl.v1beta1.DataTypes.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
@@ -89,6 +94,12 @@ public final class ColumnSpecOuterClass {
             new java.lang.String[] {
               "ColumnSpecId", "CorrelationStats",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.automl.v1beta1.DataStatsOuterClass.getDescriptor();
     com.google.cloud.automl.v1beta1.DataTypes.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

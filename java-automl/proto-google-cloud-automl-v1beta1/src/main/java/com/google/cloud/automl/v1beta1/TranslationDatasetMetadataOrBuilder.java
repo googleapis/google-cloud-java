@@ -30,7 +30,7 @@ public interface TranslationDatasetMetadataOrBuilder
    * Required. The BCP-47 language code of the source language.
    * </pre>
    *
-   * <code>string source_language_code = 1;</code>
+   * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The sourceLanguageCode.
    */
@@ -42,7 +42,7 @@ public interface TranslationDatasetMetadataOrBuilder
    * Required. The BCP-47 language code of the source language.
    * </pre>
    *
-   * <code>string source_language_code = 1;</code>
+   * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for sourceLanguageCode.
    */
@@ -55,7 +55,7 @@ public interface TranslationDatasetMetadataOrBuilder
    * Required. The BCP-47 language code of the target language.
    * </pre>
    *
-   * <code>string target_language_code = 2;</code>
+   * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetLanguageCode.
    */
@@ -67,7 +67,7 @@ public interface TranslationDatasetMetadataOrBuilder
    * Required. The BCP-47 language code of the target language.
    * </pre>
    *
-   * <code>string target_language_code = 2;</code>
+   * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetLanguageCode.
    */

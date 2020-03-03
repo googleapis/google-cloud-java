@@ -139,10 +139,12 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The table spec which replaces the resource on the server.
+   * Required. The table spec which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the tableSpec field is set.
    */
@@ -153,10 +155,12 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The table spec which replaces the resource on the server.
+   * Required. The table spec which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The tableSpec.
    */
@@ -169,10 +173,12 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The table spec which replaces the resource on the server.
+   * Required. The table spec which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.automl.v1beta1.TableSpecOrBuilder getTableSpecOrBuilder() {
     return getTableSpec();
@@ -590,10 +596,12 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The table spec which replaces the resource on the server.
+     * Required. The table spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the tableSpec field is set.
      */
@@ -604,10 +612,12 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The table spec which replaces the resource on the server.
+     * Required. The table spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The tableSpec.
      */
@@ -624,10 +634,12 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The table spec which replaces the resource on the server.
+     * Required. The table spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTableSpec(com.google.cloud.automl.v1beta1.TableSpec value) {
       if (tableSpecBuilder_ == null) {
@@ -646,10 +658,12 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The table spec which replaces the resource on the server.
+     * Required. The table spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTableSpec(com.google.cloud.automl.v1beta1.TableSpec.Builder builderForValue) {
       if (tableSpecBuilder_ == null) {
@@ -665,10 +679,12 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The table spec which replaces the resource on the server.
+     * Required. The table spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTableSpec(com.google.cloud.automl.v1beta1.TableSpec value) {
       if (tableSpecBuilder_ == null) {
@@ -691,10 +707,12 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The table spec which replaces the resource on the server.
+     * Required. The table spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTableSpec() {
       if (tableSpecBuilder_ == null) {
@@ -711,10 +729,12 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The table spec which replaces the resource on the server.
+     * Required. The table spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1beta1.TableSpec.Builder getTableSpecBuilder() {
 
@@ -725,10 +745,12 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The table spec which replaces the resource on the server.
+     * Required. The table spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1beta1.TableSpecOrBuilder getTableSpecOrBuilder() {
       if (tableSpecBuilder_ != null) {
@@ -743,10 +765,12 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The table spec which replaces the resource on the server.
+     * Required. The table spec which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.TableSpec,

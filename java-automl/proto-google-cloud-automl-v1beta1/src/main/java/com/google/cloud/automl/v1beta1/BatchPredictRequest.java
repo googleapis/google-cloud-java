@@ -22,8 +22,7 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Request message for
- * [PredictionService.BatchPredict][google.cloud.automl.v1beta1.PredictionService.BatchPredict].
+ * Request message for [PredictionService.BatchPredict][google.cloud.automl.v1beta1.PredictionService.BatchPredict].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.BatchPredictRequest}
@@ -177,10 +176,12 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Name of the model requested to serve the batch prediction.
+   * Required. Name of the model requested to serve the batch prediction.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -199,10 +200,12 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Name of the model requested to serve the batch prediction.
+   * Required. Name of the model requested to serve the batch prediction.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -227,7 +230,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * Required. The input configuration for batch prediction.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the inputConfig field is set.
    */
@@ -241,7 +246,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * Required. The input configuration for batch prediction.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The inputConfig.
    */
@@ -257,7 +264,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * Required. The input configuration for batch prediction.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.automl.v1beta1.BatchPredictInputConfigOrBuilder
       getInputConfigOrBuilder() {
@@ -274,7 +283,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * be written.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the outputConfig field is set.
    */
@@ -289,7 +300,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * be written.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The outputConfig.
    */
@@ -306,7 +319,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * be written.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.automl.v1beta1.BatchPredictOutputConfigOrBuilder
       getOutputConfigOrBuilder() {
@@ -342,7 +357,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Additional domain-specific parameters for the predictions, any string must
+   * Required. Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
    * *  For Text Classification:
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -386,6 +401,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Tables:
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotations. The
+   *        default is false.
    * *  For Video Object Tracking:
    *    `score_threshold` - (float) When Model detects objects on video frames,
    *        it will only produce bounding boxes which have at least this
@@ -398,7 +417,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; params = 5;</code>
+   * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public boolean containsParams(java.lang.String key) {
     if (key == null) {
@@ -415,7 +434,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Additional domain-specific parameters for the predictions, any string must
+   * Required. Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
    * *  For Text Classification:
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -459,6 +478,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Tables:
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotations. The
+   *        default is false.
    * *  For Video Object Tracking:
    *    `score_threshold` - (float) When Model detects objects on video frames,
    *        it will only produce bounding boxes which have at least this
@@ -471,7 +494,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; params = 5;</code>
+   * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
     return internalGetParams().getMap();
@@ -480,7 +503,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Additional domain-specific parameters for the predictions, any string must
+   * Required. Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
    * *  For Text Classification:
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -524,6 +547,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Tables:
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotations. The
+   *        default is false.
    * *  For Video Object Tracking:
    *    `score_threshold` - (float) When Model detects objects on video frames,
    *        it will only produce bounding boxes which have at least this
@@ -536,7 +563,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; params = 5;</code>
+   * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -549,7 +576,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Additional domain-specific parameters for the predictions, any string must
+   * Required. Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
    * *  For Text Classification:
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -593,6 +620,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Tables:
+   *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+   *        should be populated in the returned TablesAnnotations. The
+   *        default is false.
    * *  For Video Object Tracking:
    *    `score_threshold` - (float) When Model detects objects on video frames,
    *        it will only produce bounding boxes which have at least this
@@ -605,7 +636,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; params = 5;</code>
+   * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getParamsOrThrow(java.lang.String key) {
     if (key == null) {
@@ -826,8 +857,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for
-   * [PredictionService.BatchPredict][google.cloud.automl.v1beta1.PredictionService.BatchPredict].
+   * Request message for [PredictionService.BatchPredict][google.cloud.automl.v1beta1.PredictionService.BatchPredict].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.BatchPredictRequest}
@@ -1042,10 +1072,12 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the model requested to serve the batch prediction.
+     * Required. Name of the model requested to serve the batch prediction.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -1064,10 +1096,12 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the model requested to serve the batch prediction.
+     * Required. Name of the model requested to serve the batch prediction.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -1086,10 +1120,12 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the model requested to serve the batch prediction.
+     * Required. Name of the model requested to serve the batch prediction.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1107,10 +1143,12 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the model requested to serve the batch prediction.
+     * Required. Name of the model requested to serve the batch prediction.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1124,10 +1162,12 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the model requested to serve the batch prediction.
+     * Required. Name of the model requested to serve the batch prediction.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1156,7 +1196,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * Required. The input configuration for batch prediction.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the inputConfig field is set.
      */
@@ -1170,7 +1212,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * Required. The input configuration for batch prediction.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The inputConfig.
      */
@@ -1190,7 +1234,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * Required. The input configuration for batch prediction.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInputConfig(com.google.cloud.automl.v1beta1.BatchPredictInputConfig value) {
       if (inputConfigBuilder_ == null) {
@@ -1212,7 +1258,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * Required. The input configuration for batch prediction.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInputConfig(
         com.google.cloud.automl.v1beta1.BatchPredictInputConfig.Builder builderForValue) {
@@ -1232,7 +1280,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * Required. The input configuration for batch prediction.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeInputConfig(com.google.cloud.automl.v1beta1.BatchPredictInputConfig value) {
       if (inputConfigBuilder_ == null) {
@@ -1258,7 +1308,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * Required. The input configuration for batch prediction.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearInputConfig() {
       if (inputConfigBuilder_ == null) {
@@ -1278,7 +1330,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * Required. The input configuration for batch prediction.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1beta1.BatchPredictInputConfig.Builder getInputConfigBuilder() {
 
@@ -1292,7 +1346,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * Required. The input configuration for batch prediction.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1beta1.BatchPredictInputConfigOrBuilder
         getInputConfigOrBuilder() {
@@ -1311,7 +1367,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * Required. The input configuration for batch prediction.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.BatchPredictInputConfig,
@@ -1344,7 +1402,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * be written.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the outputConfig field is set.
      */
@@ -1359,7 +1419,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * be written.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The outputConfig.
      */
@@ -1380,7 +1442,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * be written.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(com.google.cloud.automl.v1beta1.BatchPredictOutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -1403,7 +1467,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * be written.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(
         com.google.cloud.automl.v1beta1.BatchPredictOutputConfig.Builder builderForValue) {
@@ -1424,7 +1490,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * be written.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeOutputConfig(
         com.google.cloud.automl.v1beta1.BatchPredictOutputConfig value) {
@@ -1452,7 +1520,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * be written.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -1473,7 +1543,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * be written.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1beta1.BatchPredictOutputConfig.Builder
         getOutputConfigBuilder() {
@@ -1489,7 +1561,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * be written.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1beta1.BatchPredictOutputConfigOrBuilder
         getOutputConfigOrBuilder() {
@@ -1509,7 +1583,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * be written.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.BatchPredictOutputConfig,
@@ -1557,7 +1633,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Additional domain-specific parameters for the predictions, any string must
+     * Required. Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
      * *  For Text Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -1601,6 +1677,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *        type, the quality of it depends on training data, but there are no
      *        metrics provided to describe that quality. The default is
      *        "false".
+     * *  For Tables:
+     *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+     *        should be populated in the returned TablesAnnotations. The
+     *        default is false.
      * *  For Video Object Tracking:
      *    `score_threshold` - (float) When Model detects objects on video frames,
      *        it will only produce bounding boxes which have at least this
@@ -1613,7 +1693,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *      returned. Value in 0 to 1 range. Default is 0.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; params = 5;</code>
+     * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public boolean containsParams(java.lang.String key) {
       if (key == null) {
@@ -1630,7 +1710,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Additional domain-specific parameters for the predictions, any string must
+     * Required. Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
      * *  For Text Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -1674,6 +1754,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *        type, the quality of it depends on training data, but there are no
      *        metrics provided to describe that quality. The default is
      *        "false".
+     * *  For Tables:
+     *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+     *        should be populated in the returned TablesAnnotations. The
+     *        default is false.
      * *  For Video Object Tracking:
      *    `score_threshold` - (float) When Model detects objects on video frames,
      *        it will only produce bounding boxes which have at least this
@@ -1686,7 +1770,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *      returned. Value in 0 to 1 range. Default is 0.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; params = 5;</code>
+     * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
       return internalGetParams().getMap();
@@ -1695,7 +1779,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Additional domain-specific parameters for the predictions, any string must
+     * Required. Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
      * *  For Text Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -1739,6 +1823,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *        type, the quality of it depends on training data, but there are no
      *        metrics provided to describe that quality. The default is
      *        "false".
+     * *  For Tables:
+     *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+     *        should be populated in the returned TablesAnnotations. The
+     *        default is false.
      * *  For Video Object Tracking:
      *    `score_threshold` - (float) When Model detects objects on video frames,
      *        it will only produce bounding boxes which have at least this
@@ -1751,7 +1839,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *      returned. Value in 0 to 1 range. Default is 0.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; params = 5;</code>
+     * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getParamsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -1765,7 +1853,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Additional domain-specific parameters for the predictions, any string must
+     * Required. Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
      * *  For Text Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -1809,6 +1897,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *        type, the quality of it depends on training data, but there are no
      *        metrics provided to describe that quality. The default is
      *        "false".
+     * *  For Tables:
+     *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+     *        should be populated in the returned TablesAnnotations. The
+     *        default is false.
      * *  For Video Object Tracking:
      *    `score_threshold` - (float) When Model detects objects on video frames,
      *        it will only produce bounding boxes which have at least this
@@ -1821,7 +1913,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *      returned. Value in 0 to 1 range. Default is 0.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; params = 5;</code>
+     * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getParamsOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1842,7 +1934,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Additional domain-specific parameters for the predictions, any string must
+     * Required. Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
      * *  For Text Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -1886,6 +1978,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *        type, the quality of it depends on training data, but there are no
      *        metrics provided to describe that quality. The default is
      *        "false".
+     * *  For Tables:
+     *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+     *        should be populated in the returned TablesAnnotations. The
+     *        default is false.
      * *  For Video Object Tracking:
      *    `score_threshold` - (float) When Model detects objects on video frames,
      *        it will only produce bounding boxes which have at least this
@@ -1898,7 +1994,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *      returned. Value in 0 to 1 range. Default is 0.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; params = 5;</code>
+     * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder removeParams(java.lang.String key) {
       if (key == null) {
@@ -1916,7 +2012,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Additional domain-specific parameters for the predictions, any string must
+     * Required. Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
      * *  For Text Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -1960,6 +2056,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *        type, the quality of it depends on training data, but there are no
      *        metrics provided to describe that quality. The default is
      *        "false".
+     * *  For Tables:
+     *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+     *        should be populated in the returned TablesAnnotations. The
+     *        default is false.
      * *  For Video Object Tracking:
      *    `score_threshold` - (float) When Model detects objects on video frames,
      *        it will only produce bounding boxes which have at least this
@@ -1972,7 +2072,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *      returned. Value in 0 to 1 range. Default is 0.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; params = 5;</code>
+     * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder putParams(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1988,7 +2088,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Additional domain-specific parameters for the predictions, any string must
+     * Required. Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
      * *  For Text Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
@@ -2032,6 +2132,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *        type, the quality of it depends on training data, but there are no
      *        metrics provided to describe that quality. The default is
      *        "false".
+     * *  For Tables:
+     *    feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
+     *        should be populated in the returned TablesAnnotations. The
+     *        default is false.
      * *  For Video Object Tracking:
      *    `score_threshold` - (float) When Model detects objects on video frames,
      *        it will only produce bounding boxes which have at least this
@@ -2044,7 +2148,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *      returned. Value in 0 to 1 range. Default is 0.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; params = 5;</code>
+     * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder putAllParams(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableParams().getMutableMap().putAll(values);
