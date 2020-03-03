@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.1.1](https://www.github.com/googleapis/java-accessapproval/compare/v0.1.0...v0.1.1) (2020-03-03)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([2117861](https://www.github.com/googleapis/java-accessapproval/commit/21178611b7958ae82f419c06fe887f88981bbbde))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([43c1b41](https://www.github.com/googleapis/java-accessapproval/commit/43c1b4108fdbb6b8e7bdfb5a1390daa2076783b7))
+
 ## 0.1.0 (2020-02-18)
 
 
