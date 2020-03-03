@@ -162,7 +162,7 @@
   <dependency>
     <groupId>com.google.apis</groupId>
     <artifactId>google-api-services-compute</artifactId>
-    <version>v1-rev20190905-1.30.3</version>
+    <version>v1-rev20200114-1.30.8</version>
   </dependency>
   <dependency>
     <groupId>com.google.guava</groupId>
