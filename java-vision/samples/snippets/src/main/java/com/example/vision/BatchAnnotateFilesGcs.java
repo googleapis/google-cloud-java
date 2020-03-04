@@ -16,7 +16,7 @@
 
 package com.example.vision;
 
-// [START vision_batch_annotate_files]
+// [START vision_batch_annotate_files_gcs]
 import com.google.cloud.vision.v1.AnnotateFileRequest;
 import com.google.cloud.vision.v1.AnnotateImageResponse;
 import com.google.cloud.vision.v1.BatchAnnotateFilesRequest;
@@ -107,4 +107,4 @@ public class BatchAnnotateFilesGcs {
     }
   }
 }
-// [END vision_batch_annotate_files]
+// [END vision_batch_annotate_files_gcs]
