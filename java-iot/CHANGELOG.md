@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-iot/compare/v0.117.1...v1.0.0) (2020-03-03)
+
+
+### Features
+
+* promote to GA ([#78](https://www.github.com/googleapis/java-iot/issues/78)) ([5573219](https://www.github.com/googleapis/java-iot/commit/55732197b5aba712be602fb962edab8fe1a2894d))
+
+
+### Dependencies
+
+* update core dependencies to v1.54.0 ([#79](https://www.github.com/googleapis/java-iot/issues/79)) ([5f41e9f](https://www.github.com/googleapis/java-iot/commit/5f41e9f499eabb9d271b0773ae5a10f3c2413a39))
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([c326f85](https://www.github.com/googleapis/java-iot/commit/c326f8535da3aeed6d6b55d7dca5f734ec28ce84))
+* update dependency com.google.cloud:google-cloud-core to v1.93.0 ([#81](https://www.github.com/googleapis/java-iot/issues/81)) ([fc699d3](https://www.github.com/googleapis/java-iot/commit/fc699d3bf454937c8a551cf2be79ad879169a1f4))
+* update dependency com.google.cloud:google-cloud-core to v1.93.1 ([#83](https://www.github.com/googleapis/java-iot/issues/83)) ([397933a](https://www.github.com/googleapis/java-iot/commit/397933ab7fa9cb8bd61e1718fa2e07f5ae706170))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([e85d455](https://www.github.com/googleapis/java-iot/commit/e85d455b308c9ddb7dfdaafbdc99899ba4862d57))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([ae3471e](https://www.github.com/googleapis/java-iot/commit/ae3471eb7ccbbe9a6b83a084ca9987c038c42314))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([ff82b00](https://www.github.com/googleapis/java-iot/commit/ff82b0011b061e432f76e56de34ac29798719bf6))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([bbbc09f](https://www.github.com/googleapis/java-iot/commit/bbbc09f9472a308a84f16dd6317fe39eae8797c8))
+
 ### [0.117.1](https://www.github.com/googleapis/java-iot/compare/v0.117.0...v0.117.1) (2020-02-04)
 
 
