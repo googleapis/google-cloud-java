@@ -84,8 +84,12 @@ import org.threeten.bp.Duration;
  * <code>
  * PacketMirroringStubSettings.Builder packetMirroringSettingsBuilder =
  *     PacketMirroringStubSettings.newBuilder();
- * packetMirroringSettingsBuilder.deletePacketMirroringSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * packetMirroringSettingsBuilder
+ *     .deletePacketMirroringSettings()
+ *     .setRetrySettings(
+ *         packetMirroringSettingsBuilder.deletePacketMirroringSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * PacketMirroringStubSettings packetMirroringSettings = packetMirroringSettingsBuilder.build();
  * </code>
  * </pre>

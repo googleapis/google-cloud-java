@@ -81,8 +81,12 @@ import org.threeten.bp.Duration;
  * <code>
  * BackendBucketStubSettings.Builder backendBucketSettingsBuilder =
  *     BackendBucketStubSettings.newBuilder();
- * backendBucketSettingsBuilder.addSignedUrlKeyBackendBucketSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * backendBucketSettingsBuilder
+ *     .addSignedUrlKeyBackendBucketSettings()
+ *     .setRetrySettings(
+ *         backendBucketSettingsBuilder.addSignedUrlKeyBackendBucketSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * BackendBucketStubSettings backendBucketSettings = backendBucketSettingsBuilder.build();
  * </code>
  * </pre>

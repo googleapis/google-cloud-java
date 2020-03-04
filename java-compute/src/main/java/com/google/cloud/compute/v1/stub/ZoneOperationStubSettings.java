@@ -76,8 +76,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ZoneOperationStubSettings.Builder zoneOperationSettingsBuilder =
  *     ZoneOperationStubSettings.newBuilder();
- * zoneOperationSettingsBuilder.deleteZoneOperationSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * zoneOperationSettingsBuilder
+ *     .deleteZoneOperationSettings()
+ *     .setRetrySettings(
+ *         zoneOperationSettingsBuilder.deleteZoneOperationSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ZoneOperationStubSettings zoneOperationSettings = zoneOperationSettingsBuilder.build();
  * </code>
  * </pre>

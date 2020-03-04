@@ -79,8 +79,12 @@ import org.threeten.bp.Duration;
  * <code>
  * GlobalForwardingRuleStubSettings.Builder globalForwardingRuleSettingsBuilder =
  *     GlobalForwardingRuleStubSettings.newBuilder();
- * globalForwardingRuleSettingsBuilder.deleteGlobalForwardingRuleSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * globalForwardingRuleSettingsBuilder
+ *     .deleteGlobalForwardingRuleSettings()
+ *     .setRetrySettings(
+ *         globalForwardingRuleSettingsBuilder.deleteGlobalForwardingRuleSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * GlobalForwardingRuleStubSettings globalForwardingRuleSettings = globalForwardingRuleSettingsBuilder.build();
  * </code>
  * </pre>

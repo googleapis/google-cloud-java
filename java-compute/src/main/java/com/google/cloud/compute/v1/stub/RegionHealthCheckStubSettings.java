@@ -79,8 +79,12 @@ import org.threeten.bp.Duration;
  * <code>
  * RegionHealthCheckStubSettings.Builder regionHealthCheckSettingsBuilder =
  *     RegionHealthCheckStubSettings.newBuilder();
- * regionHealthCheckSettingsBuilder.deleteRegionHealthCheckSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionHealthCheckSettingsBuilder
+ *     .deleteRegionHealthCheckSettings()
+ *     .setRetrySettings(
+ *         regionHealthCheckSettingsBuilder.deleteRegionHealthCheckSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionHealthCheckStubSettings regionHealthCheckSettings = regionHealthCheckSettingsBuilder.build();
  * </code>
  * </pre>

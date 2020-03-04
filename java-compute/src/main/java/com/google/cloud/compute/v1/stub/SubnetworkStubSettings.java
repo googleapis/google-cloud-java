@@ -93,8 +93,12 @@ import org.threeten.bp.Duration;
  * <code>
  * SubnetworkStubSettings.Builder subnetworkSettingsBuilder =
  *     SubnetworkStubSettings.newBuilder();
- * subnetworkSettingsBuilder.deleteSubnetworkSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * subnetworkSettingsBuilder
+ *     .deleteSubnetworkSettings()
+ *     .setRetrySettings(
+ *         subnetworkSettingsBuilder.deleteSubnetworkSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SubnetworkStubSettings subnetworkSettings = subnetworkSettingsBuilder.build();
  * </code>
  * </pre>

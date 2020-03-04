@@ -78,8 +78,12 @@ import org.threeten.bp.Duration;
  * <code>
  * MachineTypeStubSettings.Builder machineTypeSettingsBuilder =
  *     MachineTypeStubSettings.newBuilder();
- * machineTypeSettingsBuilder.getMachineTypeSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * machineTypeSettingsBuilder
+ *     .getMachineTypeSettings()
+ *     .setRetrySettings(
+ *         machineTypeSettingsBuilder.getMachineTypeSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * MachineTypeStubSettings machineTypeSettings = machineTypeSettingsBuilder.build();
  * </code>
  * </pre>

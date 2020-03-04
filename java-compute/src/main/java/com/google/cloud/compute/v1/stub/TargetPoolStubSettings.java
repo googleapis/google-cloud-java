@@ -88,8 +88,12 @@ import org.threeten.bp.Duration;
  * <code>
  * TargetPoolStubSettings.Builder targetPoolSettingsBuilder =
  *     TargetPoolStubSettings.newBuilder();
- * targetPoolSettingsBuilder.addHealthCheckTargetPoolSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * targetPoolSettingsBuilder
+ *     .addHealthCheckTargetPoolSettings()
+ *     .setRetrySettings(
+ *         targetPoolSettingsBuilder.addHealthCheckTargetPoolSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TargetPoolStubSettings targetPoolSettings = targetPoolSettingsBuilder.build();
  * </code>
  * </pre>

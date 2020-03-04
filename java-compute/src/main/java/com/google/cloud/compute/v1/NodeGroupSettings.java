@@ -57,8 +57,12 @@ import javax.annotation.Generated;
  * <code>
  * NodeGroupSettings.Builder nodeGroupSettingsBuilder =
  *     NodeGroupSettings.newBuilder();
- * nodeGroupSettingsBuilder.addNodesNodeGroupSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * nodeGroupSettingsBuilder
+ *     .addNodesNodeGroupSettings()
+ *     .setRetrySettings(
+ *         nodeGroupSettingsBuilder.addNodesNodeGroupSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * NodeGroupSettings nodeGroupSettings = nodeGroupSettingsBuilder.build();
  * </code>
  * </pre>

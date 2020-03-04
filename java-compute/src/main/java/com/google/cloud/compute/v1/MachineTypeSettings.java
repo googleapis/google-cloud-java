@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * MachineTypeSettings.Builder machineTypeSettingsBuilder =
  *     MachineTypeSettings.newBuilder();
- * machineTypeSettingsBuilder.getMachineTypeSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * machineTypeSettingsBuilder
+ *     .getMachineTypeSettings()
+ *     .setRetrySettings(
+ *         machineTypeSettingsBuilder.getMachineTypeSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * MachineTypeSettings machineTypeSettings = machineTypeSettingsBuilder.build();
  * </code>
  * </pre>

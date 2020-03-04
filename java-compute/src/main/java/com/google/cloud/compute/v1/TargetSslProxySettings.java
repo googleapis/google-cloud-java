@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * TargetSslProxySettings.Builder targetSslProxySettingsBuilder =
  *     TargetSslProxySettings.newBuilder();
- * targetSslProxySettingsBuilder.deleteTargetSslProxySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * targetSslProxySettingsBuilder
+ *     .deleteTargetSslProxySettings()
+ *     .setRetrySettings(
+ *         targetSslProxySettingsBuilder.deleteTargetSslProxySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TargetSslProxySettings targetSslProxySettings = targetSslProxySettingsBuilder.build();
  * </code>
  * </pre>

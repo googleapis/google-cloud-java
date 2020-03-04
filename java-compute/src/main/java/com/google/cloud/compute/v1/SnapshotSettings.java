@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * SnapshotSettings.Builder snapshotSettingsBuilder =
  *     SnapshotSettings.newBuilder();
- * snapshotSettingsBuilder.deleteSnapshotSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * snapshotSettingsBuilder
+ *     .deleteSnapshotSettings()
+ *     .setRetrySettings(
+ *         snapshotSettingsBuilder.deleteSnapshotSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SnapshotSettings snapshotSettings = snapshotSettingsBuilder.build();
  * </code>
  * </pre>

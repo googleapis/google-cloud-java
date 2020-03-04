@@ -52,8 +52,12 @@ import javax.annotation.Generated;
  * <code>
  * LicenseCodeSettings.Builder licenseCodeSettingsBuilder =
  *     LicenseCodeSettings.newBuilder();
- * licenseCodeSettingsBuilder.getLicenseCodeSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * licenseCodeSettingsBuilder
+ *     .getLicenseCodeSettings()
+ *     .setRetrySettings(
+ *         licenseCodeSettingsBuilder.getLicenseCodeSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * LicenseCodeSettings licenseCodeSettings = licenseCodeSettingsBuilder.build();
  * </code>
  * </pre>

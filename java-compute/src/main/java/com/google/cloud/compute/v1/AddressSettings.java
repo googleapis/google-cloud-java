@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * AddressSettings.Builder addressSettingsBuilder =
  *     AddressSettings.newBuilder();
- * addressSettingsBuilder.deleteAddressSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * addressSettingsBuilder
+ *     .deleteAddressSettings()
+ *     .setRetrySettings(
+ *         addressSettingsBuilder.deleteAddressSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AddressSettings addressSettings = addressSettingsBuilder.build();
  * </code>
  * </pre>

@@ -78,8 +78,12 @@ import org.threeten.bp.Duration;
  * <code>
  * DiskTypeStubSettings.Builder diskTypeSettingsBuilder =
  *     DiskTypeStubSettings.newBuilder();
- * diskTypeSettingsBuilder.getDiskTypeSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * diskTypeSettingsBuilder
+ *     .getDiskTypeSettings()
+ *     .setRetrySettings(
+ *         diskTypeSettingsBuilder.getDiskTypeSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DiskTypeStubSettings diskTypeSettings = diskTypeSettingsBuilder.build();
  * </code>
  * </pre>

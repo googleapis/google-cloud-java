@@ -84,8 +84,12 @@ import org.threeten.bp.Duration;
  * <code>
  * RegionDiskStubSettings.Builder regionDiskSettingsBuilder =
  *     RegionDiskStubSettings.newBuilder();
- * regionDiskSettingsBuilder.addResourcePoliciesRegionDiskSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionDiskSettingsBuilder
+ *     .addResourcePoliciesRegionDiskSettings()
+ *     .setRetrySettings(
+ *         regionDiskSettingsBuilder.addResourcePoliciesRegionDiskSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionDiskStubSettings regionDiskSettings = regionDiskSettingsBuilder.build();
  * </code>
  * </pre>

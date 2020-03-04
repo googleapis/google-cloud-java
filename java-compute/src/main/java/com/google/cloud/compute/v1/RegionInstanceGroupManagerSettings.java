@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * RegionInstanceGroupManagerSettings.Builder regionInstanceGroupManagerSettingsBuilder =
  *     RegionInstanceGroupManagerSettings.newBuilder();
- * regionInstanceGroupManagerSettingsBuilder.abandonInstancesRegionInstanceGroupManagerSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionInstanceGroupManagerSettingsBuilder
+ *     .abandonInstancesRegionInstanceGroupManagerSettings()
+ *     .setRetrySettings(
+ *         regionInstanceGroupManagerSettingsBuilder.abandonInstancesRegionInstanceGroupManagerSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionInstanceGroupManagerSettings regionInstanceGroupManagerSettings = regionInstanceGroupManagerSettingsBuilder.build();
  * </code>
  * </pre>

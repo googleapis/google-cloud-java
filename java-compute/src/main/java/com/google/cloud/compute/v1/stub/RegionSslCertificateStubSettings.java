@@ -77,8 +77,12 @@ import org.threeten.bp.Duration;
  * <code>
  * RegionSslCertificateStubSettings.Builder regionSslCertificateSettingsBuilder =
  *     RegionSslCertificateStubSettings.newBuilder();
- * regionSslCertificateSettingsBuilder.deleteRegionSslCertificateSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionSslCertificateSettingsBuilder
+ *     .deleteRegionSslCertificateSettings()
+ *     .setRetrySettings(
+ *         regionSslCertificateSettingsBuilder.deleteRegionSslCertificateSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionSslCertificateStubSettings regionSslCertificateSettings = regionSslCertificateSettingsBuilder.build();
  * </code>
  * </pre>

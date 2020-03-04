@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * RegionAutoscalerSettings.Builder regionAutoscalerSettingsBuilder =
  *     RegionAutoscalerSettings.newBuilder();
- * regionAutoscalerSettingsBuilder.deleteRegionAutoscalerSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionAutoscalerSettingsBuilder
+ *     .deleteRegionAutoscalerSettings()
+ *     .setRetrySettings(
+ *         regionAutoscalerSettingsBuilder.deleteRegionAutoscalerSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionAutoscalerSettings regionAutoscalerSettings = regionAutoscalerSettingsBuilder.build();
  * </code>
  * </pre>

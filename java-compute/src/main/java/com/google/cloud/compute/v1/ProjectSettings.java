@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * ProjectSettings.Builder projectSettingsBuilder =
  *     ProjectSettings.newBuilder();
- * projectSettingsBuilder.disableXpnHostProjectSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * projectSettingsBuilder
+ *     .disableXpnHostProjectSettings()
+ *     .setRetrySettings(
+ *         projectSettingsBuilder.disableXpnHostProjectSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ProjectSettings projectSettings = projectSettingsBuilder.build();
  * </code>
  * </pre>

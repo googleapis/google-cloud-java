@@ -120,8 +120,12 @@ import org.threeten.bp.Duration;
  * <code>
  * InstanceStubSettings.Builder instanceSettingsBuilder =
  *     InstanceStubSettings.newBuilder();
- * instanceSettingsBuilder.addAccessConfigInstanceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * instanceSettingsBuilder
+ *     .addAccessConfigInstanceSettings()
+ *     .setRetrySettings(
+ *         instanceSettingsBuilder.addAccessConfigInstanceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * InstanceStubSettings instanceSettings = instanceSettingsBuilder.build();
  * </code>
  * </pre>

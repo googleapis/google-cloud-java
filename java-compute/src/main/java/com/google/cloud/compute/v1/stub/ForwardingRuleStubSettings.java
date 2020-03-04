@@ -83,8 +83,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ForwardingRuleStubSettings.Builder forwardingRuleSettingsBuilder =
  *     ForwardingRuleStubSettings.newBuilder();
- * forwardingRuleSettingsBuilder.deleteForwardingRuleSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * forwardingRuleSettingsBuilder
+ *     .deleteForwardingRuleSettings()
+ *     .setRetrySettings(
+ *         forwardingRuleSettingsBuilder.deleteForwardingRuleSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ForwardingRuleStubSettings forwardingRuleSettings = forwardingRuleSettingsBuilder.build();
  * </code>
  * </pre>

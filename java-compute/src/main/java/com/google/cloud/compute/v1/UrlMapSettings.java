@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * UrlMapSettings.Builder urlMapSettingsBuilder =
  *     UrlMapSettings.newBuilder();
- * urlMapSettingsBuilder.deleteUrlMapSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * urlMapSettingsBuilder
+ *     .deleteUrlMapSettings()
+ *     .setRetrySettings(
+ *         urlMapSettingsBuilder.deleteUrlMapSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * UrlMapSettings urlMapSettings = urlMapSettingsBuilder.build();
  * </code>
  * </pre>

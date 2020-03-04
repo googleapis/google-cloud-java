@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * TargetVpnGatewaySettings.Builder targetVpnGatewaySettingsBuilder =
  *     TargetVpnGatewaySettings.newBuilder();
- * targetVpnGatewaySettingsBuilder.deleteTargetVpnGatewaySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * targetVpnGatewaySettingsBuilder
+ *     .deleteTargetVpnGatewaySettings()
+ *     .setRetrySettings(
+ *         targetVpnGatewaySettingsBuilder.deleteTargetVpnGatewaySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TargetVpnGatewaySettings targetVpnGatewaySettings = targetVpnGatewaySettingsBuilder.build();
  * </code>
  * </pre>

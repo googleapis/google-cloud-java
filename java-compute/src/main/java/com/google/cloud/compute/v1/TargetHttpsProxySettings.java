@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * TargetHttpsProxySettings.Builder targetHttpsProxySettingsBuilder =
  *     TargetHttpsProxySettings.newBuilder();
- * targetHttpsProxySettingsBuilder.deleteTargetHttpsProxySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * targetHttpsProxySettingsBuilder
+ *     .deleteTargetHttpsProxySettings()
+ *     .setRetrySettings(
+ *         targetHttpsProxySettingsBuilder.deleteTargetHttpsProxySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TargetHttpsProxySettings targetHttpsProxySettings = targetHttpsProxySettingsBuilder.build();
  * </code>
  * </pre>

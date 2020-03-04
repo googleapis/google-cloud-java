@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * RegionCommitmentSettings.Builder regionCommitmentSettingsBuilder =
  *     RegionCommitmentSettings.newBuilder();
- * regionCommitmentSettingsBuilder.getRegionCommitmentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionCommitmentSettingsBuilder
+ *     .getRegionCommitmentSettings()
+ *     .setRetrySettings(
+ *         regionCommitmentSettingsBuilder.getRegionCommitmentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionCommitmentSettings regionCommitmentSettings = regionCommitmentSettingsBuilder.build();
  * </code>
  * </pre>

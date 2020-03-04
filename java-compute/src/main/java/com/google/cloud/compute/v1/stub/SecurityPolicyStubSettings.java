@@ -83,8 +83,12 @@ import org.threeten.bp.Duration;
  * <code>
  * SecurityPolicyStubSettings.Builder securityPolicySettingsBuilder =
  *     SecurityPolicyStubSettings.newBuilder();
- * securityPolicySettingsBuilder.addRuleSecurityPolicySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * securityPolicySettingsBuilder
+ *     .addRuleSecurityPolicySettings()
+ *     .setRetrySettings(
+ *         securityPolicySettingsBuilder.addRuleSecurityPolicySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SecurityPolicyStubSettings securityPolicySettings = securityPolicySettingsBuilder.build();
  * </code>
  * </pre>

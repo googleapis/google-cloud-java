@@ -82,8 +82,12 @@ import org.threeten.bp.Duration;
  * <code>
  * InstanceTemplateStubSettings.Builder instanceTemplateSettingsBuilder =
  *     InstanceTemplateStubSettings.newBuilder();
- * instanceTemplateSettingsBuilder.deleteInstanceTemplateSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * instanceTemplateSettingsBuilder
+ *     .deleteInstanceTemplateSettings()
+ *     .setRetrySettings(
+ *         instanceTemplateSettingsBuilder.deleteInstanceTemplateSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * InstanceTemplateStubSettings instanceTemplateSettings = instanceTemplateSettingsBuilder.build();
  * </code>
  * </pre>

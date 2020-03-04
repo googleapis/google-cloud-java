@@ -80,8 +80,12 @@ import org.threeten.bp.Duration;
  * <code>
  * GlobalOperationStubSettings.Builder globalOperationSettingsBuilder =
  *     GlobalOperationStubSettings.newBuilder();
- * globalOperationSettingsBuilder.deleteGlobalOperationSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * globalOperationSettingsBuilder
+ *     .deleteGlobalOperationSettings()
+ *     .setRetrySettings(
+ *         globalOperationSettingsBuilder.deleteGlobalOperationSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * GlobalOperationStubSettings globalOperationSettings = globalOperationSettingsBuilder.build();
  * </code>
  * </pre>

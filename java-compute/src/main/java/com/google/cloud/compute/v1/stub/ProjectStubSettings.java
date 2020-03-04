@@ -89,8 +89,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ProjectStubSettings.Builder projectSettingsBuilder =
  *     ProjectStubSettings.newBuilder();
- * projectSettingsBuilder.disableXpnHostProjectSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * projectSettingsBuilder
+ *     .disableXpnHostProjectSettings()
+ *     .setRetrySettings(
+ *         projectSettingsBuilder.disableXpnHostProjectSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ProjectStubSettings projectSettings = projectSettingsBuilder.build();
  * </code>
  * </pre>

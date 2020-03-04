@@ -80,8 +80,12 @@ import org.threeten.bp.Duration;
  * <code>
  * RegionCommitmentStubSettings.Builder regionCommitmentSettingsBuilder =
  *     RegionCommitmentStubSettings.newBuilder();
- * regionCommitmentSettingsBuilder.getRegionCommitmentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionCommitmentSettingsBuilder
+ *     .getRegionCommitmentSettings()
+ *     .setRetrySettings(
+ *         regionCommitmentSettingsBuilder.getRegionCommitmentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionCommitmentStubSettings regionCommitmentSettings = regionCommitmentSettingsBuilder.build();
  * </code>
  * </pre>

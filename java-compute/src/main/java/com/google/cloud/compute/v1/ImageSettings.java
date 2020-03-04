@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * ImageSettings.Builder imageSettingsBuilder =
  *     ImageSettings.newBuilder();
- * imageSettingsBuilder.deleteImageSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * imageSettingsBuilder
+ *     .deleteImageSettings()
+ *     .setRetrySettings(
+ *         imageSettingsBuilder.deleteImageSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ImageSettings imageSettings = imageSettingsBuilder.build();
  * </code>
  * </pre>

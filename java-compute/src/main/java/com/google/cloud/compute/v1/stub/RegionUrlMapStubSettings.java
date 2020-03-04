@@ -81,8 +81,12 @@ import org.threeten.bp.Duration;
  * <code>
  * RegionUrlMapStubSettings.Builder regionUrlMapSettingsBuilder =
  *     RegionUrlMapStubSettings.newBuilder();
- * regionUrlMapSettingsBuilder.deleteRegionUrlMapSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionUrlMapSettingsBuilder
+ *     .deleteRegionUrlMapSettings()
+ *     .setRetrySettings(
+ *         regionUrlMapSettingsBuilder.deleteRegionUrlMapSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionUrlMapStubSettings regionUrlMapSettings = regionUrlMapSettingsBuilder.build();
  * </code>
  * </pre>

@@ -83,8 +83,12 @@ import org.threeten.bp.Duration;
  * <code>
  * AutoscalerStubSettings.Builder autoscalerSettingsBuilder =
  *     AutoscalerStubSettings.newBuilder();
- * autoscalerSettingsBuilder.deleteAutoscalerSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * autoscalerSettingsBuilder
+ *     .deleteAutoscalerSettings()
+ *     .setRetrySettings(
+ *         autoscalerSettingsBuilder.deleteAutoscalerSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AutoscalerStubSettings autoscalerSettings = autoscalerSettingsBuilder.build();
  * </code>
  * </pre>

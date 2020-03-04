@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * NetworkSettings.Builder networkSettingsBuilder =
  *     NetworkSettings.newBuilder();
- * networkSettingsBuilder.addPeeringNetworkSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * networkSettingsBuilder
+ *     .addPeeringNetworkSettings()
+ *     .setRetrySettings(
+ *         networkSettingsBuilder.addPeeringNetworkSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * NetworkSettings networkSettings = networkSettingsBuilder.build();
  * </code>
  * </pre>

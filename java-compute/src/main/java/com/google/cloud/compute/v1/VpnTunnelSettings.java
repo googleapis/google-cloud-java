@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * VpnTunnelSettings.Builder vpnTunnelSettingsBuilder =
  *     VpnTunnelSettings.newBuilder();
- * vpnTunnelSettingsBuilder.deleteVpnTunnelSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * vpnTunnelSettingsBuilder
+ *     .deleteVpnTunnelSettings()
+ *     .setRetrySettings(
+ *         vpnTunnelSettingsBuilder.deleteVpnTunnelSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * VpnTunnelSettings vpnTunnelSettings = vpnTunnelSettingsBuilder.build();
  * </code>
  * </pre>

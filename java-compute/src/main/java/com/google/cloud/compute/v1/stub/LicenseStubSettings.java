@@ -82,8 +82,12 @@ import org.threeten.bp.Duration;
  * <code>
  * LicenseStubSettings.Builder licenseSettingsBuilder =
  *     LicenseStubSettings.newBuilder();
- * licenseSettingsBuilder.deleteLicenseSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * licenseSettingsBuilder
+ *     .deleteLicenseSettings()
+ *     .setRetrySettings(
+ *         licenseSettingsBuilder.deleteLicenseSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * LicenseStubSettings licenseSettings = licenseSettingsBuilder.build();
  * </code>
  * </pre>

@@ -88,8 +88,12 @@ import org.threeten.bp.Duration;
  * <code>
  * InstanceGroupStubSettings.Builder instanceGroupSettingsBuilder =
  *     InstanceGroupStubSettings.newBuilder();
- * instanceGroupSettingsBuilder.addInstancesInstanceGroupSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * instanceGroupSettingsBuilder
+ *     .addInstancesInstanceGroupSettings()
+ *     .setRetrySettings(
+ *         instanceGroupSettingsBuilder.addInstancesInstanceGroupSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * InstanceGroupStubSettings instanceGroupSettings = instanceGroupSettingsBuilder.build();
  * </code>
  * </pre>

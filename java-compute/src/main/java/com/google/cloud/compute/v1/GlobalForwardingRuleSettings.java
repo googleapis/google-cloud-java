@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * GlobalForwardingRuleSettings.Builder globalForwardingRuleSettingsBuilder =
  *     GlobalForwardingRuleSettings.newBuilder();
- * globalForwardingRuleSettingsBuilder.deleteGlobalForwardingRuleSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * globalForwardingRuleSettingsBuilder
+ *     .deleteGlobalForwardingRuleSettings()
+ *     .setRetrySettings(
+ *         globalForwardingRuleSettingsBuilder.deleteGlobalForwardingRuleSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * GlobalForwardingRuleSettings globalForwardingRuleSettings = globalForwardingRuleSettingsBuilder.build();
  * </code>
  * </pre>

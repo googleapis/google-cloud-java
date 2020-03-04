@@ -86,8 +86,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ResourcePolicyStubSettings.Builder resourcePolicySettingsBuilder =
  *     ResourcePolicyStubSettings.newBuilder();
- * resourcePolicySettingsBuilder.deleteResourcePolicySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * resourcePolicySettingsBuilder
+ *     .deleteResourcePolicySettings()
+ *     .setRetrySettings(
+ *         resourcePolicySettingsBuilder.deleteResourcePolicySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ResourcePolicyStubSettings resourcePolicySettings = resourcePolicySettingsBuilder.build();
  * </code>
  * </pre>

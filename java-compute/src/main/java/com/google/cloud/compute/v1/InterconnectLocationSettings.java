@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * InterconnectLocationSettings.Builder interconnectLocationSettingsBuilder =
  *     InterconnectLocationSettings.newBuilder();
- * interconnectLocationSettingsBuilder.getInterconnectLocationSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * interconnectLocationSettingsBuilder
+ *     .getInterconnectLocationSettings()
+ *     .setRetrySettings(
+ *         interconnectLocationSettingsBuilder.getInterconnectLocationSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * InterconnectLocationSettings interconnectLocationSettings = interconnectLocationSettingsBuilder.build();
  * </code>
  * </pre>

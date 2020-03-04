@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * BackendBucketSettings.Builder backendBucketSettingsBuilder =
  *     BackendBucketSettings.newBuilder();
- * backendBucketSettingsBuilder.addSignedUrlKeyBackendBucketSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * backendBucketSettingsBuilder
+ *     .addSignedUrlKeyBackendBucketSettings()
+ *     .setRetrySettings(
+ *         backendBucketSettingsBuilder.addSignedUrlKeyBackendBucketSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * BackendBucketSettings backendBucketSettings = backendBucketSettingsBuilder.build();
  * </code>
  * </pre>

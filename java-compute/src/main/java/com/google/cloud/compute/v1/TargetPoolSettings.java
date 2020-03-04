@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * TargetPoolSettings.Builder targetPoolSettingsBuilder =
  *     TargetPoolSettings.newBuilder();
- * targetPoolSettingsBuilder.addHealthCheckTargetPoolSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * targetPoolSettingsBuilder
+ *     .addHealthCheckTargetPoolSettings()
+ *     .setRetrySettings(
+ *         targetPoolSettingsBuilder.addHealthCheckTargetPoolSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TargetPoolSettings targetPoolSettings = targetPoolSettingsBuilder.build();
  * </code>
  * </pre>

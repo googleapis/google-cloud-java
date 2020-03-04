@@ -58,8 +58,12 @@ import javax.annotation.Generated;
  * <code>
  * NetworkEndpointGroupSettings.Builder networkEndpointGroupSettingsBuilder =
  *     NetworkEndpointGroupSettings.newBuilder();
- * networkEndpointGroupSettingsBuilder.attachNetworkEndpointsNetworkEndpointGroupSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * networkEndpointGroupSettingsBuilder
+ *     .attachNetworkEndpointsNetworkEndpointGroupSettings()
+ *     .setRetrySettings(
+ *         networkEndpointGroupSettingsBuilder.attachNetworkEndpointsNetworkEndpointGroupSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * NetworkEndpointGroupSettings networkEndpointGroupSettings = networkEndpointGroupSettingsBuilder.build();
  * </code>
  * </pre>

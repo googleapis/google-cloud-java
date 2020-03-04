@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * InterconnectAttachmentSettings.Builder interconnectAttachmentSettingsBuilder =
  *     InterconnectAttachmentSettings.newBuilder();
- * interconnectAttachmentSettingsBuilder.deleteInterconnectAttachmentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * interconnectAttachmentSettingsBuilder
+ *     .deleteInterconnectAttachmentSettings()
+ *     .setRetrySettings(
+ *         interconnectAttachmentSettingsBuilder.deleteInterconnectAttachmentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * InterconnectAttachmentSettings interconnectAttachmentSettings = interconnectAttachmentSettingsBuilder.build();
  * </code>
  * </pre>

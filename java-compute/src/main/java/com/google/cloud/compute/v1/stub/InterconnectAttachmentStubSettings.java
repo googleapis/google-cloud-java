@@ -82,8 +82,12 @@ import org.threeten.bp.Duration;
  * <code>
  * InterconnectAttachmentStubSettings.Builder interconnectAttachmentSettingsBuilder =
  *     InterconnectAttachmentStubSettings.newBuilder();
- * interconnectAttachmentSettingsBuilder.deleteInterconnectAttachmentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * interconnectAttachmentSettingsBuilder
+ *     .deleteInterconnectAttachmentSettings()
+ *     .setRetrySettings(
+ *         interconnectAttachmentSettingsBuilder.deleteInterconnectAttachmentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * InterconnectAttachmentStubSettings interconnectAttachmentSettings = interconnectAttachmentSettingsBuilder.build();
  * </code>
  * </pre>

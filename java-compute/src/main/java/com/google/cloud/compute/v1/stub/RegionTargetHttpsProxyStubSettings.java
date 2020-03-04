@@ -79,8 +79,12 @@ import org.threeten.bp.Duration;
  * <code>
  * RegionTargetHttpsProxyStubSettings.Builder regionTargetHttpsProxySettingsBuilder =
  *     RegionTargetHttpsProxyStubSettings.newBuilder();
- * regionTargetHttpsProxySettingsBuilder.deleteRegionTargetHttpsProxySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionTargetHttpsProxySettingsBuilder
+ *     .deleteRegionTargetHttpsProxySettings()
+ *     .setRetrySettings(
+ *         regionTargetHttpsProxySettingsBuilder.deleteRegionTargetHttpsProxySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionTargetHttpsProxyStubSettings regionTargetHttpsProxySettings = regionTargetHttpsProxySettingsBuilder.build();
  * </code>
  * </pre>

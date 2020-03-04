@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * FirewallSettings.Builder firewallSettingsBuilder =
  *     FirewallSettings.newBuilder();
- * firewallSettingsBuilder.deleteFirewallSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * firewallSettingsBuilder
+ *     .deleteFirewallSettings()
+ *     .setRetrySettings(
+ *         firewallSettingsBuilder.deleteFirewallSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * FirewallSettings firewallSettings = firewallSettingsBuilder.build();
  * </code>
  * </pre>

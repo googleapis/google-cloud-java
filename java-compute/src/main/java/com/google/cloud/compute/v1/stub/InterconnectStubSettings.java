@@ -80,8 +80,12 @@ import org.threeten.bp.Duration;
  * <code>
  * InterconnectStubSettings.Builder interconnectSettingsBuilder =
  *     InterconnectStubSettings.newBuilder();
- * interconnectSettingsBuilder.deleteInterconnectSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * interconnectSettingsBuilder
+ *     .deleteInterconnectSettings()
+ *     .setRetrySettings(
+ *         interconnectSettingsBuilder.deleteInterconnectSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * InterconnectStubSettings interconnectSettings = interconnectSettingsBuilder.build();
  * </code>
  * </pre>

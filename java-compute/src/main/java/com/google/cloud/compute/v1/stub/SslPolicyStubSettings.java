@@ -80,8 +80,12 @@ import org.threeten.bp.Duration;
  * <code>
  * SslPolicyStubSettings.Builder sslPolicySettingsBuilder =
  *     SslPolicyStubSettings.newBuilder();
- * sslPolicySettingsBuilder.deleteSslPolicySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * sslPolicySettingsBuilder
+ *     .deleteSslPolicySettings()
+ *     .setRetrySettings(
+ *         sslPolicySettingsBuilder.deleteSslPolicySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SslPolicyStubSettings sslPolicySettings = sslPolicySettingsBuilder.build();
  * </code>
  * </pre>

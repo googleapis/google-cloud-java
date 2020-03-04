@@ -193,6 +193,7 @@ public class RegionBackendServiceClientTest {
     String loadBalancingScheme = "loadBalancingScheme1974502980";
     String localityLbPolicy = "localityLbPolicy-2016052161";
     String name = "name3373707";
+    ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     Integer port = 3446913;
     String portName = "portName1115276169";
     String protocol = "protocol-989163880";
@@ -214,6 +215,7 @@ public class RegionBackendServiceClientTest {
             .setLoadBalancingScheme(loadBalancingScheme)
             .setLocalityLbPolicy(localityLbPolicy)
             .setName(name)
+            .setNetwork(network.toString())
             .setPort(port)
             .setPortName(portName)
             .setProtocol(protocol)

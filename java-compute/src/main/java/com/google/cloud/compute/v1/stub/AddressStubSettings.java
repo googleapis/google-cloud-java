@@ -81,8 +81,12 @@ import org.threeten.bp.Duration;
  * <code>
  * AddressStubSettings.Builder addressSettingsBuilder =
  *     AddressStubSettings.newBuilder();
- * addressSettingsBuilder.deleteAddressSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * addressSettingsBuilder
+ *     .deleteAddressSettings()
+ *     .setRetrySettings(
+ *         addressSettingsBuilder.deleteAddressSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AddressStubSettings addressSettings = addressSettingsBuilder.build();
  * </code>
  * </pre>

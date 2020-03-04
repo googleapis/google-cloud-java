@@ -81,8 +81,12 @@ import org.threeten.bp.Duration;
  * <code>
  * TargetInstanceStubSettings.Builder targetInstanceSettingsBuilder =
  *     TargetInstanceStubSettings.newBuilder();
- * targetInstanceSettingsBuilder.deleteTargetInstanceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * targetInstanceSettingsBuilder
+ *     .deleteTargetInstanceSettings()
+ *     .setRetrySettings(
+ *         targetInstanceSettingsBuilder.deleteTargetInstanceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TargetInstanceStubSettings targetInstanceSettings = targetInstanceSettingsBuilder.build();
  * </code>
  * </pre>

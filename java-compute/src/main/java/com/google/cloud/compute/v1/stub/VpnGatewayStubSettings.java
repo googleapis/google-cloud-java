@@ -86,8 +86,12 @@ import org.threeten.bp.Duration;
  * <code>
  * VpnGatewayStubSettings.Builder vpnGatewaySettingsBuilder =
  *     VpnGatewayStubSettings.newBuilder();
- * vpnGatewaySettingsBuilder.deleteVpnGatewaySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * vpnGatewaySettingsBuilder
+ *     .deleteVpnGatewaySettings()
+ *     .setRetrySettings(
+ *         vpnGatewaySettingsBuilder.deleteVpnGatewaySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * VpnGatewayStubSettings vpnGatewaySettings = vpnGatewaySettingsBuilder.build();
  * </code>
  * </pre>

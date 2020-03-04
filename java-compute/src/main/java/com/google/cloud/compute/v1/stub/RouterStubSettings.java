@@ -91,8 +91,12 @@ import org.threeten.bp.Duration;
  * <code>
  * RouterStubSettings.Builder routerSettingsBuilder =
  *     RouterStubSettings.newBuilder();
- * routerSettingsBuilder.deleteRouterSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * routerSettingsBuilder
+ *     .deleteRouterSettings()
+ *     .setRetrySettings(
+ *         routerSettingsBuilder.deleteRouterSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RouterStubSettings routerSettings = routerSettingsBuilder.build();
  * </code>
  * </pre>

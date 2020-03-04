@@ -25,10 +25,32 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * Represents an expression text. Example:
+ * Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like
+ * expression language. The syntax and semantics of CEL are documented at
+ * https://github.com/google/cel-spec.
  *
- * <p>title: "User account presence" description: "Determines whether the request has a user
- * account" expression: "size(request.user) &gt; 0"
+ * <p>Example (Comparison):
+ *
+ * <p>title: "Summary size limit" description: "Determines if a summary is less than 100 chars"
+ * expression: "document.summary.size() &lt; 100"
+ *
+ * <p>Example (Equality):
+ *
+ * <p>title: "Requestor is owner" description: "Determines if requestor is the document owner"
+ * expression: "document.owner == request.auth.claims.email"
+ *
+ * <p>Example (Logic):
+ *
+ * <p>title: "Public documents" description: "Determine whether the document should be publicly
+ * visible" expression: "document.type != 'private' &amp;&amp; document.type != 'internal'"
+ *
+ * <p>Example (Data Manipulation):
+ *
+ * <p>title: "Notification string" description: "Create a notification string with a timestamp."
+ * expression: "'New message received at ' + string(document.create_time)"
+ *
+ * <p>The exact variables and functions that may be referenced within an expression are determined
+ * by the service that evaluates it. See the service documentation for additional information.
  */
 public final class Expr implements ApiMessage {
   private final String description;
@@ -86,25 +108,20 @@ public final class Expr implements ApiMessage {
   }
 
   /**
-   * An optional description of the expression. This is a longer text which describes the
-   * expression, e.g. when hovered over it in a UI.
+   * Optional. Description of the expression. This is a longer text which describes the expression,
+   * e.g. when hovered over it in a UI.
    */
   public String getDescription() {
     return description;
   }
 
-  /**
-   * Textual representation of an expression in Common Expression Language syntax.
-   *
-   * <p>The application context of the containing message determines which well-known feature set of
-   * CEL is supported.
-   */
+  /** Textual representation of an expression in Common Expression Language syntax. */
   public String getExpression() {
     return expression;
   }
 
   /**
-   * An optional string indicating the location of the expression for error reporting, e.g. a file
+   * Optional. String indicating the location of the expression for error reporting, e.g. a file
    * name and a position in the file.
    */
   public String getLocation() {
@@ -112,7 +129,7 @@ public final class Expr implements ApiMessage {
   }
 
   /**
-   * An optional title for the expression, i.e. a short string describing its purpose. This can be
+   * Optional. Title for the expression, i.e. a short string describing its purpose. This can be
    * used e.g. in UIs which allow to enter the expression.
    */
   public String getTitle() {
@@ -174,7 +191,7 @@ public final class Expr implements ApiMessage {
     }
 
     /**
-     * An optional description of the expression. This is a longer text which describes the
+     * Optional. Description of the expression. This is a longer text which describes the
      * expression, e.g. when hovered over it in a UI.
      */
     public String getDescription() {
@@ -182,7 +199,7 @@ public final class Expr implements ApiMessage {
     }
 
     /**
-     * An optional description of the expression. This is a longer text which describes the
+     * Optional. Description of the expression. This is a longer text which describes the
      * expression, e.g. when hovered over it in a UI.
      */
     public Builder setDescription(String description) {
@@ -190,29 +207,19 @@ public final class Expr implements ApiMessage {
       return this;
     }
 
-    /**
-     * Textual representation of an expression in Common Expression Language syntax.
-     *
-     * <p>The application context of the containing message determines which well-known feature set
-     * of CEL is supported.
-     */
+    /** Textual representation of an expression in Common Expression Language syntax. */
     public String getExpression() {
       return expression;
     }
 
-    /**
-     * Textual representation of an expression in Common Expression Language syntax.
-     *
-     * <p>The application context of the containing message determines which well-known feature set
-     * of CEL is supported.
-     */
+    /** Textual representation of an expression in Common Expression Language syntax. */
     public Builder setExpression(String expression) {
       this.expression = expression;
       return this;
     }
 
     /**
-     * An optional string indicating the location of the expression for error reporting, e.g. a file
+     * Optional. String indicating the location of the expression for error reporting, e.g. a file
      * name and a position in the file.
      */
     public String getLocation() {
@@ -220,7 +227,7 @@ public final class Expr implements ApiMessage {
     }
 
     /**
-     * An optional string indicating the location of the expression for error reporting, e.g. a file
+     * Optional. String indicating the location of the expression for error reporting, e.g. a file
      * name and a position in the file.
      */
     public Builder setLocation(String location) {
@@ -229,7 +236,7 @@ public final class Expr implements ApiMessage {
     }
 
     /**
-     * An optional title for the expression, i.e. a short string describing its purpose. This can be
+     * Optional. Title for the expression, i.e. a short string describing its purpose. This can be
      * used e.g. in UIs which allow to enter the expression.
      */
     public String getTitle() {
@@ -237,7 +244,7 @@ public final class Expr implements ApiMessage {
     }
 
     /**
-     * An optional title for the expression, i.e. a short string describing its purpose. This can be
+     * Optional. Title for the expression, i.e. a short string describing its purpose. This can be
      * used e.g. in UIs which allow to enter the expression.
      */
     public Builder setTitle(String title) {

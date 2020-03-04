@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * SslCertificateSettings.Builder sslCertificateSettingsBuilder =
  *     SslCertificateSettings.newBuilder();
- * sslCertificateSettingsBuilder.deleteSslCertificateSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * sslCertificateSettingsBuilder
+ *     .deleteSslCertificateSettings()
+ *     .setRetrySettings(
+ *         sslCertificateSettingsBuilder.deleteSslCertificateSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SslCertificateSettings sslCertificateSettings = sslCertificateSettingsBuilder.build();
  * </code>
  * </pre>

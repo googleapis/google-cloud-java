@@ -338,8 +338,9 @@ public final class InstanceGroupManager implements ApiMessage {
   }
 
   /**
-   * The target number of running instances for this managed instance group. Deleting or abandoning
-   * instances reduces this number. Resizing the group changes this number.
+   * The target number of running instances for this managed instance group. You can reduce this
+   * number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing
+   * the group also changes this number.
    */
   public Integer getTargetSize() {
     return targetSize;
@@ -820,16 +821,18 @@ public final class InstanceGroupManager implements ApiMessage {
     }
 
     /**
-     * The target number of running instances for this managed instance group. Deleting or
-     * abandoning instances reduces this number. Resizing the group changes this number.
+     * The target number of running instances for this managed instance group. You can reduce this
+     * number by using the instanceGroupManager deleteInstances or abandonInstances methods.
+     * Resizing the group also changes this number.
      */
     public Integer getTargetSize() {
       return targetSize;
     }
 
     /**
-     * The target number of running instances for this managed instance group. Deleting or
-     * abandoning instances reduces this number. Resizing the group changes this number.
+     * The target number of running instances for this managed instance group. You can reduce this
+     * number by using the instanceGroupManager deleteInstances or abandonInstances methods.
+     * Resizing the group also changes this number.
      */
     public Builder setTargetSize(Integer targetSize) {
       this.targetSize = targetSize;

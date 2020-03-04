@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * RegionBackendServiceSettings.Builder regionBackendServiceSettingsBuilder =
  *     RegionBackendServiceSettings.newBuilder();
- * regionBackendServiceSettingsBuilder.deleteRegionBackendServiceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionBackendServiceSettingsBuilder
+ *     .deleteRegionBackendServiceSettings()
+ *     .setRetrySettings(
+ *         regionBackendServiceSettingsBuilder.deleteRegionBackendServiceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionBackendServiceSettings regionBackendServiceSettings = regionBackendServiceSettingsBuilder.build();
  * </code>
  * </pre>

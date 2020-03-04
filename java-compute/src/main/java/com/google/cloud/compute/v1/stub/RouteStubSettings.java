@@ -77,8 +77,12 @@ import org.threeten.bp.Duration;
  * <code>
  * RouteStubSettings.Builder routeSettingsBuilder =
  *     RouteStubSettings.newBuilder();
- * routeSettingsBuilder.deleteRouteSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * routeSettingsBuilder
+ *     .deleteRouteSettings()
+ *     .setRetrySettings(
+ *         routeSettingsBuilder.deleteRouteSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RouteStubSettings routeSettings = routeSettingsBuilder.build();
  * </code>
  * </pre>

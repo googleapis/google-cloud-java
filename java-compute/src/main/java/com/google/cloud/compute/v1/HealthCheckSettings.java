@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * HealthCheckSettings.Builder healthCheckSettingsBuilder =
  *     HealthCheckSettings.newBuilder();
- * healthCheckSettingsBuilder.deleteHealthCheckSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * healthCheckSettingsBuilder
+ *     .deleteHealthCheckSettings()
+ *     .setRetrySettings(
+ *         healthCheckSettingsBuilder.deleteHealthCheckSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * HealthCheckSettings healthCheckSettings = healthCheckSettingsBuilder.build();
  * </code>
  * </pre>

@@ -85,8 +85,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ImageStubSettings.Builder imageSettingsBuilder =
  *     ImageStubSettings.newBuilder();
- * imageSettingsBuilder.deleteImageSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * imageSettingsBuilder
+ *     .deleteImageSettings()
+ *     .setRetrySettings(
+ *         imageSettingsBuilder.deleteImageSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ImageStubSettings imageSettings = imageSettingsBuilder.build();
  * </code>
  * </pre>

@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * RegionHealthCheckSettings.Builder regionHealthCheckSettingsBuilder =
  *     RegionHealthCheckSettings.newBuilder();
- * regionHealthCheckSettingsBuilder.deleteRegionHealthCheckSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionHealthCheckSettingsBuilder
+ *     .deleteRegionHealthCheckSettings()
+ *     .setRetrySettings(
+ *         regionHealthCheckSettingsBuilder.deleteRegionHealthCheckSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionHealthCheckSettings regionHealthCheckSettings = regionHealthCheckSettingsBuilder.build();
  * </code>
  * </pre>

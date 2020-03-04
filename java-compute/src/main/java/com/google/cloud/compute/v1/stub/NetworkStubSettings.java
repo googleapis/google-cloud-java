@@ -86,8 +86,12 @@ import org.threeten.bp.Duration;
  * <code>
  * NetworkStubSettings.Builder networkSettingsBuilder =
  *     NetworkStubSettings.newBuilder();
- * networkSettingsBuilder.addPeeringNetworkSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * networkSettingsBuilder
+ *     .addPeeringNetworkSettings()
+ *     .setRetrySettings(
+ *         networkSettingsBuilder.addPeeringNetworkSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * NetworkStubSettings networkSettings = networkSettingsBuilder.build();
  * </code>
  * </pre>

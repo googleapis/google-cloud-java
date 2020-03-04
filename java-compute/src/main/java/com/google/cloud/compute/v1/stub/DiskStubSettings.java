@@ -91,8 +91,12 @@ import org.threeten.bp.Duration;
  * <code>
  * DiskStubSettings.Builder diskSettingsBuilder =
  *     DiskStubSettings.newBuilder();
- * diskSettingsBuilder.addResourcePoliciesDiskSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * diskSettingsBuilder
+ *     .addResourcePoliciesDiskSettings()
+ *     .setRetrySettings(
+ *         diskSettingsBuilder.addResourcePoliciesDiskSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DiskStubSettings diskSettings = diskSettingsBuilder.build();
  * </code>
  * </pre>

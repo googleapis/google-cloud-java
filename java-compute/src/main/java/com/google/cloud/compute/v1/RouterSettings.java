@@ -57,8 +57,12 @@ import javax.annotation.Generated;
  * <code>
  * RouterSettings.Builder routerSettingsBuilder =
  *     RouterSettings.newBuilder();
- * routerSettingsBuilder.deleteRouterSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * routerSettingsBuilder
+ *     .deleteRouterSettings()
+ *     .setRetrySettings(
+ *         routerSettingsBuilder.deleteRouterSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RouterSettings routerSettings = routerSettingsBuilder.build();
  * </code>
  * </pre>

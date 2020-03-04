@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * RegionSettings.Builder regionSettingsBuilder =
  *     RegionSettings.newBuilder();
- * regionSettingsBuilder.getRegionSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionSettingsBuilder
+ *     .getRegionSettings()
+ *     .setRetrySettings(
+ *         regionSettingsBuilder.getRegionSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionSettings regionSettings = regionSettingsBuilder.build();
  * </code>
  * </pre>

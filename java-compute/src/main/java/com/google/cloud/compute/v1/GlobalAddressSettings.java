@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * GlobalAddressSettings.Builder globalAddressSettingsBuilder =
  *     GlobalAddressSettings.newBuilder();
- * globalAddressSettingsBuilder.deleteGlobalAddressSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * globalAddressSettingsBuilder
+ *     .deleteGlobalAddressSettings()
+ *     .setRetrySettings(
+ *         globalAddressSettingsBuilder.deleteGlobalAddressSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * GlobalAddressSettings globalAddressSettings = globalAddressSettingsBuilder.build();
  * </code>
  * </pre>

@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * BackendServiceSettings.Builder backendServiceSettingsBuilder =
  *     BackendServiceSettings.newBuilder();
- * backendServiceSettingsBuilder.addSignedUrlKeyBackendServiceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * backendServiceSettingsBuilder
+ *     .addSignedUrlKeyBackendServiceSettings()
+ *     .setRetrySettings(
+ *         backendServiceSettingsBuilder.addSignedUrlKeyBackendServiceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * BackendServiceSettings backendServiceSettings = backendServiceSettingsBuilder.build();
  * </code>
  * </pre>

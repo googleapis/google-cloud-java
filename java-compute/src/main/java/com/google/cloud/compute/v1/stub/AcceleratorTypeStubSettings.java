@@ -78,8 +78,12 @@ import org.threeten.bp.Duration;
  * <code>
  * AcceleratorTypeStubSettings.Builder acceleratorTypeSettingsBuilder =
  *     AcceleratorTypeStubSettings.newBuilder();
- * acceleratorTypeSettingsBuilder.getAcceleratorTypeSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * acceleratorTypeSettingsBuilder
+ *     .getAcceleratorTypeSettings()
+ *     .setRetrySettings(
+ *         acceleratorTypeSettingsBuilder.getAcceleratorTypeSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AcceleratorTypeStubSettings acceleratorTypeSettings = acceleratorTypeSettingsBuilder.build();
  * </code>
  * </pre>

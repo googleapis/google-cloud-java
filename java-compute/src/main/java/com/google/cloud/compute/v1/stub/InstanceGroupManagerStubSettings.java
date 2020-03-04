@@ -91,8 +91,12 @@ import org.threeten.bp.Duration;
  * <code>
  * InstanceGroupManagerStubSettings.Builder instanceGroupManagerSettingsBuilder =
  *     InstanceGroupManagerStubSettings.newBuilder();
- * instanceGroupManagerSettingsBuilder.abandonInstancesInstanceGroupManagerSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * instanceGroupManagerSettingsBuilder
+ *     .abandonInstancesInstanceGroupManagerSettings()
+ *     .setRetrySettings(
+ *         instanceGroupManagerSettingsBuilder.abandonInstancesInstanceGroupManagerSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * InstanceGroupManagerStubSettings instanceGroupManagerSettings = instanceGroupManagerSettingsBuilder.build();
  * </code>
  * </pre>

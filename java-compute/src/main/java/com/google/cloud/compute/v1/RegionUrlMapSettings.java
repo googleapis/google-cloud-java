@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * RegionUrlMapSettings.Builder regionUrlMapSettingsBuilder =
  *     RegionUrlMapSettings.newBuilder();
- * regionUrlMapSettingsBuilder.deleteRegionUrlMapSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionUrlMapSettingsBuilder
+ *     .deleteRegionUrlMapSettings()
+ *     .setRetrySettings(
+ *         regionUrlMapSettingsBuilder.deleteRegionUrlMapSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionUrlMapSettings regionUrlMapSettings = regionUrlMapSettingsBuilder.build();
  * </code>
  * </pre>

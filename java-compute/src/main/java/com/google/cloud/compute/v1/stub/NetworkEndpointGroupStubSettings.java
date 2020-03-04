@@ -90,8 +90,12 @@ import org.threeten.bp.Duration;
  * <code>
  * NetworkEndpointGroupStubSettings.Builder networkEndpointGroupSettingsBuilder =
  *     NetworkEndpointGroupStubSettings.newBuilder();
- * networkEndpointGroupSettingsBuilder.attachNetworkEndpointsNetworkEndpointGroupSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * networkEndpointGroupSettingsBuilder
+ *     .attachNetworkEndpointsNetworkEndpointGroupSettings()
+ *     .setRetrySettings(
+ *         networkEndpointGroupSettingsBuilder.attachNetworkEndpointsNetworkEndpointGroupSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * NetworkEndpointGroupStubSettings networkEndpointGroupSettings = networkEndpointGroupSettingsBuilder.build();
  * </code>
  * </pre>

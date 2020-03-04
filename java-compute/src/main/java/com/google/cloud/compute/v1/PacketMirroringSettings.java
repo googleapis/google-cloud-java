@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * PacketMirroringSettings.Builder packetMirroringSettingsBuilder =
  *     PacketMirroringSettings.newBuilder();
- * packetMirroringSettingsBuilder.deletePacketMirroringSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * packetMirroringSettingsBuilder
+ *     .deletePacketMirroringSettings()
+ *     .setRetrySettings(
+ *         packetMirroringSettingsBuilder.deletePacketMirroringSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * PacketMirroringSettings packetMirroringSettings = packetMirroringSettingsBuilder.build();
  * </code>
  * </pre>

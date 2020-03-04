@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * NodeTemplateSettings.Builder nodeTemplateSettingsBuilder =
  *     NodeTemplateSettings.newBuilder();
- * nodeTemplateSettingsBuilder.deleteNodeTemplateSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * nodeTemplateSettingsBuilder
+ *     .deleteNodeTemplateSettings()
+ *     .setRetrySettings(
+ *         nodeTemplateSettingsBuilder.deleteNodeTemplateSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * NodeTemplateSettings nodeTemplateSettings = nodeTemplateSettingsBuilder.build();
  * </code>
  * </pre>

@@ -173,7 +173,8 @@ public final class HttpRouteRuleMatch implements ApiMessage {
    * expression specified in regexMatch after removing any query parameters and anchor supplied with
    * the original URL. For regular expression grammar please see
    * en.cppreference.com/w/cpp/regex/ecmascript Only one of prefixMatch, fullPathMatch or regexMatch
-   * must be specified.
+   * must be specified. Note that regexMatch only applies to Loadbalancers that have their
+   * loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    */
   public String getRegexMatch() {
     return regexMatch;
@@ -431,7 +432,8 @@ public final class HttpRouteRuleMatch implements ApiMessage {
      * expression specified in regexMatch after removing any query parameters and anchor supplied
      * with the original URL. For regular expression grammar please see
      * en.cppreference.com/w/cpp/regex/ecmascript Only one of prefixMatch, fullPathMatch or
-     * regexMatch must be specified.
+     * regexMatch must be specified. Note that regexMatch only applies to Loadbalancers that have
+     * their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      */
     public String getRegexMatch() {
       return regexMatch;
@@ -442,7 +444,8 @@ public final class HttpRouteRuleMatch implements ApiMessage {
      * expression specified in regexMatch after removing any query parameters and anchor supplied
      * with the original URL. For regular expression grammar please see
      * en.cppreference.com/w/cpp/regex/ecmascript Only one of prefixMatch, fullPathMatch or
-     * regexMatch must be specified.
+     * regexMatch must be specified. Note that regexMatch only applies to Loadbalancers that have
+     * their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      */
     public Builder setRegexMatch(String regexMatch) {
       this.regexMatch = regexMatch;

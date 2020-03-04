@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * RegionDiskSettings.Builder regionDiskSettingsBuilder =
  *     RegionDiskSettings.newBuilder();
- * regionDiskSettingsBuilder.addResourcePoliciesRegionDiskSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionDiskSettingsBuilder
+ *     .addResourcePoliciesRegionDiskSettings()
+ *     .setRetrySettings(
+ *         regionDiskSettingsBuilder.addResourcePoliciesRegionDiskSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionDiskSettings regionDiskSettings = regionDiskSettingsBuilder.build();
  * </code>
  * </pre>

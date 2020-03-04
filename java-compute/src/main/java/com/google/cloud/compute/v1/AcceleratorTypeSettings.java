@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * AcceleratorTypeSettings.Builder acceleratorTypeSettingsBuilder =
  *     AcceleratorTypeSettings.newBuilder();
- * acceleratorTypeSettingsBuilder.getAcceleratorTypeSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * acceleratorTypeSettingsBuilder
+ *     .getAcceleratorTypeSettings()
+ *     .setRetrySettings(
+ *         acceleratorTypeSettingsBuilder.getAcceleratorTypeSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AcceleratorTypeSettings acceleratorTypeSettings = acceleratorTypeSettingsBuilder.build();
  * </code>
  * </pre>

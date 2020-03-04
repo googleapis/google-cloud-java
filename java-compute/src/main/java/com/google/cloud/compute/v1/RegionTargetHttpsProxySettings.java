@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * RegionTargetHttpsProxySettings.Builder regionTargetHttpsProxySettingsBuilder =
  *     RegionTargetHttpsProxySettings.newBuilder();
- * regionTargetHttpsProxySettingsBuilder.deleteRegionTargetHttpsProxySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionTargetHttpsProxySettingsBuilder
+ *     .deleteRegionTargetHttpsProxySettings()
+ *     .setRetrySettings(
+ *         regionTargetHttpsProxySettingsBuilder.deleteRegionTargetHttpsProxySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionTargetHttpsProxySettings regionTargetHttpsProxySettings = regionTargetHttpsProxySettingsBuilder.build();
  * </code>
  * </pre>

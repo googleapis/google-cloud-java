@@ -74,8 +74,12 @@ import org.threeten.bp.Duration;
  * <code>
  * InterconnectLocationStubSettings.Builder interconnectLocationSettingsBuilder =
  *     InterconnectLocationStubSettings.newBuilder();
- * interconnectLocationSettingsBuilder.getInterconnectLocationSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * interconnectLocationSettingsBuilder
+ *     .getInterconnectLocationSettings()
+ *     .setRetrySettings(
+ *         interconnectLocationSettingsBuilder.getInterconnectLocationSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * InterconnectLocationStubSettings interconnectLocationSettings = interconnectLocationSettingsBuilder.build();
  * </code>
  * </pre>

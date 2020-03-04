@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * SslPolicySettings.Builder sslPolicySettingsBuilder =
  *     SslPolicySettings.newBuilder();
- * sslPolicySettingsBuilder.deleteSslPolicySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * sslPolicySettingsBuilder
+ *     .deleteSslPolicySettings()
+ *     .setRetrySettings(
+ *         sslPolicySettingsBuilder.deleteSslPolicySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SslPolicySettings sslPolicySettings = sslPolicySettingsBuilder.build();
  * </code>
  * </pre>

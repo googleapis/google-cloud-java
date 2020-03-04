@@ -81,8 +81,12 @@ import org.threeten.bp.Duration;
  * <code>
  * VpnTunnelStubSettings.Builder vpnTunnelSettingsBuilder =
  *     VpnTunnelStubSettings.newBuilder();
- * vpnTunnelSettingsBuilder.deleteVpnTunnelSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * vpnTunnelSettingsBuilder
+ *     .deleteVpnTunnelSettings()
+ *     .setRetrySettings(
+ *         vpnTunnelSettingsBuilder.deleteVpnTunnelSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * VpnTunnelStubSettings vpnTunnelSettings = vpnTunnelSettingsBuilder.build();
  * </code>
  * </pre>

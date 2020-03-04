@@ -83,8 +83,12 @@ import org.threeten.bp.Duration;
  * <code>
  * HealthCheckStubSettings.Builder healthCheckSettingsBuilder =
  *     HealthCheckStubSettings.newBuilder();
- * healthCheckSettingsBuilder.deleteHealthCheckSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * healthCheckSettingsBuilder
+ *     .deleteHealthCheckSettings()
+ *     .setRetrySettings(
+ *         healthCheckSettingsBuilder.deleteHealthCheckSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * HealthCheckStubSettings healthCheckSettings = healthCheckSettingsBuilder.build();
  * </code>
  * </pre>

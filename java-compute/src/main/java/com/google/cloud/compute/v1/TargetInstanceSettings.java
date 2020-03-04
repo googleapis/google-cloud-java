@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * TargetInstanceSettings.Builder targetInstanceSettingsBuilder =
  *     TargetInstanceSettings.newBuilder();
- * targetInstanceSettingsBuilder.deleteTargetInstanceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * targetInstanceSettingsBuilder
+ *     .deleteTargetInstanceSettings()
+ *     .setRetrySettings(
+ *         targetInstanceSettingsBuilder.deleteTargetInstanceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TargetInstanceSettings targetInstanceSettings = targetInstanceSettingsBuilder.build();
  * </code>
  * </pre>

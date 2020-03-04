@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * ReservationSettings.Builder reservationSettingsBuilder =
  *     ReservationSettings.newBuilder();
- * reservationSettingsBuilder.deleteReservationSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * reservationSettingsBuilder
+ *     .deleteReservationSettings()
+ *     .setRetrySettings(
+ *         reservationSettingsBuilder.deleteReservationSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ReservationSettings reservationSettings = reservationSettingsBuilder.build();
  * </code>
  * </pre>

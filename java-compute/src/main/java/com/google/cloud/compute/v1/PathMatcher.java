@@ -191,8 +191,7 @@ public final class PathMatcher implements ApiMessage {
   /**
    * The list of HTTP route rules. Use this list instead of pathRules when advanced route matching
    * and routing actions are desired. routeRules are evaluated in order of priority, from the lowest
-   * to highest number. Within a given pathMatcher, only one of pathRules or routeRules must be set.
-   * routeRules are not supported in UrlMaps intended for External Load balancers.
+   * to highest number. Within a given pathMatcher, you can set only one of pathRules or routeRules.
    */
   public List<HttpRouteRule> getRouteRulesList() {
     return routeRules;
@@ -447,8 +446,8 @@ public final class PathMatcher implements ApiMessage {
     /**
      * The list of HTTP route rules. Use this list instead of pathRules when advanced route matching
      * and routing actions are desired. routeRules are evaluated in order of priority, from the
-     * lowest to highest number. Within a given pathMatcher, only one of pathRules or routeRules
-     * must be set. routeRules are not supported in UrlMaps intended for External Load balancers.
+     * lowest to highest number. Within a given pathMatcher, you can set only one of pathRules or
+     * routeRules.
      */
     public List<HttpRouteRule> getRouteRulesList() {
       return routeRules;
@@ -457,8 +456,8 @@ public final class PathMatcher implements ApiMessage {
     /**
      * The list of HTTP route rules. Use this list instead of pathRules when advanced route matching
      * and routing actions are desired. routeRules are evaluated in order of priority, from the
-     * lowest to highest number. Within a given pathMatcher, only one of pathRules or routeRules
-     * must be set. routeRules are not supported in UrlMaps intended for External Load balancers.
+     * lowest to highest number. Within a given pathMatcher, you can set only one of pathRules or
+     * routeRules.
      */
     public Builder addAllRouteRules(List<HttpRouteRule> routeRules) {
       if (this.routeRules == null) {
@@ -471,8 +470,8 @@ public final class PathMatcher implements ApiMessage {
     /**
      * The list of HTTP route rules. Use this list instead of pathRules when advanced route matching
      * and routing actions are desired. routeRules are evaluated in order of priority, from the
-     * lowest to highest number. Within a given pathMatcher, only one of pathRules or routeRules
-     * must be set. routeRules are not supported in UrlMaps intended for External Load balancers.
+     * lowest to highest number. Within a given pathMatcher, you can set only one of pathRules or
+     * routeRules.
      */
     public Builder addRouteRules(HttpRouteRule routeRules) {
       if (this.routeRules == null) {

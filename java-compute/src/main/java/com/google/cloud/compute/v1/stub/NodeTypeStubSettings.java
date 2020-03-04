@@ -78,8 +78,12 @@ import org.threeten.bp.Duration;
  * <code>
  * NodeTypeStubSettings.Builder nodeTypeSettingsBuilder =
  *     NodeTypeStubSettings.newBuilder();
- * nodeTypeSettingsBuilder.getNodeTypeSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * nodeTypeSettingsBuilder
+ *     .getNodeTypeSettings()
+ *     .setRetrySettings(
+ *         nodeTypeSettingsBuilder.getNodeTypeSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * NodeTypeStubSettings nodeTypeSettings = nodeTypeSettingsBuilder.build();
  * </code>
  * </pre>

@@ -30,15 +30,19 @@ import javax.annotation.Nullable;
  */
 public final class SecurityPolicyRuleMatcher implements ApiMessage {
   private final SecurityPolicyRuleMatcherConfig config;
+  private final Expr expr;
   private final String versionedExpr;
 
   private SecurityPolicyRuleMatcher() {
     this.config = null;
+    this.expr = null;
     this.versionedExpr = null;
   }
 
-  private SecurityPolicyRuleMatcher(SecurityPolicyRuleMatcherConfig config, String versionedExpr) {
+  private SecurityPolicyRuleMatcher(
+      SecurityPolicyRuleMatcherConfig config, Expr expr, String versionedExpr) {
     this.config = config;
+    this.expr = expr;
     this.versionedExpr = versionedExpr;
   }
 
@@ -46,6 +50,9 @@ public final class SecurityPolicyRuleMatcher implements ApiMessage {
   public Object getFieldValue(String fieldName) {
     if ("config".equals(fieldName)) {
       return config;
+    }
+    if ("expr".equals(fieldName)) {
+      return expr;
     }
     if ("versionedExpr".equals(fieldName)) {
       return versionedExpr;
@@ -81,6 +88,14 @@ public final class SecurityPolicyRuleMatcher implements ApiMessage {
   }
 
   /**
+   * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as
+   * origin.ip, source.region_code and contents in the request header.
+   */
+  public Expr getExpr() {
+    return expr;
+  }
+
+  /**
    * Preconfigured versioned expression. If this field is specified, config must also be specified.
    * Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must
    * specify the corresponding src_ip_range field in config.
@@ -113,6 +128,7 @@ public final class SecurityPolicyRuleMatcher implements ApiMessage {
 
   public static class Builder {
     private SecurityPolicyRuleMatcherConfig config;
+    private Expr expr;
     private String versionedExpr;
 
     Builder() {}
@@ -122,6 +138,9 @@ public final class SecurityPolicyRuleMatcher implements ApiMessage {
       if (other.getConfig() != null) {
         this.config = other.config;
       }
+      if (other.getExpr() != null) {
+        this.expr = other.expr;
+      }
       if (other.getVersionedExpr() != null) {
         this.versionedExpr = other.versionedExpr;
       }
@@ -130,6 +149,7 @@ public final class SecurityPolicyRuleMatcher implements ApiMessage {
 
     Builder(SecurityPolicyRuleMatcher source) {
       this.config = source.config;
+      this.expr = source.expr;
       this.versionedExpr = source.versionedExpr;
     }
 
@@ -149,6 +169,23 @@ public final class SecurityPolicyRuleMatcher implements ApiMessage {
      */
     public Builder setConfig(SecurityPolicyRuleMatcherConfig config) {
       this.config = config;
+      return this;
+    }
+
+    /**
+     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as
+     * origin.ip, source.region_code and contents in the request header.
+     */
+    public Expr getExpr() {
+      return expr;
+    }
+
+    /**
+     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as
+     * origin.ip, source.region_code and contents in the request header.
+     */
+    public Builder setExpr(Expr expr) {
+      this.expr = expr;
       return this;
     }
 
@@ -173,12 +210,13 @@ public final class SecurityPolicyRuleMatcher implements ApiMessage {
 
     public SecurityPolicyRuleMatcher build() {
 
-      return new SecurityPolicyRuleMatcher(config, versionedExpr);
+      return new SecurityPolicyRuleMatcher(config, expr, versionedExpr);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setConfig(this.config);
+      newBuilder.setExpr(this.expr);
       newBuilder.setVersionedExpr(this.versionedExpr);
       return newBuilder;
     }
@@ -189,6 +227,9 @@ public final class SecurityPolicyRuleMatcher implements ApiMessage {
     return "SecurityPolicyRuleMatcher{"
         + "config="
         + config
+        + ", "
+        + "expr="
+        + expr
         + ", "
         + "versionedExpr="
         + versionedExpr
@@ -203,6 +244,7 @@ public final class SecurityPolicyRuleMatcher implements ApiMessage {
     if (o instanceof SecurityPolicyRuleMatcher) {
       SecurityPolicyRuleMatcher that = (SecurityPolicyRuleMatcher) o;
       return Objects.equals(this.config, that.getConfig())
+          && Objects.equals(this.expr, that.getExpr())
           && Objects.equals(this.versionedExpr, that.getVersionedExpr());
     }
     return false;
@@ -210,6 +252,6 @@ public final class SecurityPolicyRuleMatcher implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, versionedExpr);
+    return Objects.hash(config, expr, versionedExpr);
   }
 }

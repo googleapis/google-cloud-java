@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * AutoscalerSettings.Builder autoscalerSettingsBuilder =
  *     AutoscalerSettings.newBuilder();
- * autoscalerSettingsBuilder.deleteAutoscalerSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * autoscalerSettingsBuilder
+ *     .deleteAutoscalerSettings()
+ *     .setRetrySettings(
+ *         autoscalerSettingsBuilder.deleteAutoscalerSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AutoscalerSettings autoscalerSettings = autoscalerSettingsBuilder.build();
  * </code>
  * </pre>

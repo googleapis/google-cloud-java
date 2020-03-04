@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * HttpsHealthCheckSettings.Builder httpsHealthCheckSettingsBuilder =
  *     HttpsHealthCheckSettings.newBuilder();
- * httpsHealthCheckSettingsBuilder.deleteHttpsHealthCheckSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * httpsHealthCheckSettingsBuilder
+ *     .deleteHttpsHealthCheckSettings()
+ *     .setRetrySettings(
+ *         httpsHealthCheckSettingsBuilder.deleteHttpsHealthCheckSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * HttpsHealthCheckSettings httpsHealthCheckSettings = httpsHealthCheckSettingsBuilder.build();
  * </code>
  * </pre>

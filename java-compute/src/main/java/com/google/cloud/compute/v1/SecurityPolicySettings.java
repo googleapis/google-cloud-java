@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * SecurityPolicySettings.Builder securityPolicySettingsBuilder =
  *     SecurityPolicySettings.newBuilder();
- * securityPolicySettingsBuilder.addRuleSecurityPolicySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * securityPolicySettingsBuilder
+ *     .addRuleSecurityPolicySettings()
+ *     .setRetrySettings(
+ *         securityPolicySettingsBuilder.addRuleSecurityPolicySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SecurityPolicySettings securityPolicySettings = securityPolicySettingsBuilder.build();
  * </code>
  * </pre>

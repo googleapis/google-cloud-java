@@ -87,8 +87,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ReservationStubSettings.Builder reservationSettingsBuilder =
  *     ReservationStubSettings.newBuilder();
- * reservationSettingsBuilder.deleteReservationSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * reservationSettingsBuilder
+ *     .deleteReservationSettings()
+ *     .setRetrySettings(
+ *         reservationSettingsBuilder.deleteReservationSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ReservationStubSettings reservationSettings = reservationSettingsBuilder.build();
  * </code>
  * </pre>

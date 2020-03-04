@@ -57,8 +57,12 @@ import javax.annotation.Generated;
  * <code>
  * InstanceGroupSettings.Builder instanceGroupSettingsBuilder =
  *     InstanceGroupSettings.newBuilder();
- * instanceGroupSettingsBuilder.addInstancesInstanceGroupSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * instanceGroupSettingsBuilder
+ *     .addInstancesInstanceGroupSettings()
+ *     .setRetrySettings(
+ *         instanceGroupSettingsBuilder.addInstancesInstanceGroupSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * InstanceGroupSettings instanceGroupSettings = instanceGroupSettingsBuilder.build();
  * </code>
  * </pre>

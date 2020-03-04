@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * TargetTcpProxySettings.Builder targetTcpProxySettingsBuilder =
  *     TargetTcpProxySettings.newBuilder();
- * targetTcpProxySettingsBuilder.deleteTargetTcpProxySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * targetTcpProxySettingsBuilder
+ *     .deleteTargetTcpProxySettings()
+ *     .setRetrySettings(
+ *         targetTcpProxySettingsBuilder.deleteTargetTcpProxySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TargetTcpProxySettings targetTcpProxySettings = targetTcpProxySettingsBuilder.build();
  * </code>
  * </pre>

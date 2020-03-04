@@ -110,7 +110,8 @@ public final class HttpQueryParameterMatch implements ApiMessage {
    * The queryParameterMatch matches if the value of the parameter matches the regular expression
    * specified by regexMatch. For the regular expression grammar, please see
    * en.cppreference.com/w/cpp/regex/ecmascript Only one of presentMatch, exactMatch or regexMatch
-   * must be set.
+   * must be set. Note that regexMatch only applies when the loadBalancingScheme is set to
+   * INTERNAL_SELF_MANAGED.
    */
   public String getRegexMatch() {
     return regexMatch;
@@ -227,7 +228,8 @@ public final class HttpQueryParameterMatch implements ApiMessage {
      * The queryParameterMatch matches if the value of the parameter matches the regular expression
      * specified by regexMatch. For the regular expression grammar, please see
      * en.cppreference.com/w/cpp/regex/ecmascript Only one of presentMatch, exactMatch or regexMatch
-     * must be set.
+     * must be set. Note that regexMatch only applies when the loadBalancingScheme is set to
+     * INTERNAL_SELF_MANAGED.
      */
     public String getRegexMatch() {
       return regexMatch;
@@ -237,7 +239,8 @@ public final class HttpQueryParameterMatch implements ApiMessage {
      * The queryParameterMatch matches if the value of the parameter matches the regular expression
      * specified by regexMatch. For the regular expression grammar, please see
      * en.cppreference.com/w/cpp/regex/ecmascript Only one of presentMatch, exactMatch or regexMatch
-     * must be set.
+     * must be set. Note that regexMatch only applies when the loadBalancingScheme is set to
+     * INTERNAL_SELF_MANAGED.
      */
     public Builder setRegexMatch(String regexMatch) {
       this.regexMatch = regexMatch;

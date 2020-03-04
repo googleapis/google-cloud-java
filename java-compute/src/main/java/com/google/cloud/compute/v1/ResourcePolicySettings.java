@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * ResourcePolicySettings.Builder resourcePolicySettingsBuilder =
  *     ResourcePolicySettings.newBuilder();
- * resourcePolicySettingsBuilder.deleteResourcePolicySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * resourcePolicySettingsBuilder
+ *     .deleteResourcePolicySettings()
+ *     .setRetrySettings(
+ *         resourcePolicySettingsBuilder.deleteResourcePolicySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ResourcePolicySettings resourcePolicySettings = resourcePolicySettingsBuilder.build();
  * </code>
  * </pre>

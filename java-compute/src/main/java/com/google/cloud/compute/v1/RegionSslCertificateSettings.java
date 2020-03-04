@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * RegionSslCertificateSettings.Builder regionSslCertificateSettingsBuilder =
  *     RegionSslCertificateSettings.newBuilder();
- * regionSslCertificateSettingsBuilder.deleteRegionSslCertificateSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * regionSslCertificateSettingsBuilder
+ *     .deleteRegionSslCertificateSettings()
+ *     .setRetrySettings(
+ *         regionSslCertificateSettingsBuilder.deleteRegionSslCertificateSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RegionSslCertificateSettings regionSslCertificateSettings = regionSslCertificateSettingsBuilder.build();
  * </code>
  * </pre>

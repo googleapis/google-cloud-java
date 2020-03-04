@@ -58,7 +58,9 @@ public final class BackendService implements ApiMessage {
   private final String kind;
   private final String loadBalancingScheme;
   private final String localityLbPolicy;
+  private final BackendServiceLogConfig logConfig;
   private final String name;
+  private final String network;
   private final OutlierDetection outlierDetection;
   private final Integer port;
   private final String portName;
@@ -87,7 +89,9 @@ public final class BackendService implements ApiMessage {
     this.kind = null;
     this.loadBalancingScheme = null;
     this.localityLbPolicy = null;
+    this.logConfig = null;
     this.name = null;
+    this.network = null;
     this.outlierDetection = null;
     this.port = null;
     this.portName = null;
@@ -117,7 +121,9 @@ public final class BackendService implements ApiMessage {
       String kind,
       String loadBalancingScheme,
       String localityLbPolicy,
+      BackendServiceLogConfig logConfig,
       String name,
+      String network,
       OutlierDetection outlierDetection,
       Integer port,
       String portName,
@@ -144,7 +150,9 @@ public final class BackendService implements ApiMessage {
     this.kind = kind;
     this.loadBalancingScheme = loadBalancingScheme;
     this.localityLbPolicy = localityLbPolicy;
+    this.logConfig = logConfig;
     this.name = name;
+    this.network = network;
     this.outlierDetection = outlierDetection;
     this.port = port;
     this.portName = portName;
@@ -209,8 +217,14 @@ public final class BackendService implements ApiMessage {
     if ("localityLbPolicy".equals(fieldName)) {
       return localityLbPolicy;
     }
+    if ("logConfig".equals(fieldName)) {
+      return logConfig;
+    }
     if ("name".equals(fieldName)) {
       return name;
+    }
+    if ("network".equals(fieldName)) {
+      return network;
     }
     if ("outlierDetection".equals(fieldName)) {
       return outlierDetection;
@@ -414,6 +428,14 @@ public final class BackendService implements ApiMessage {
   }
 
   /**
+   * This field denotes the logging options for the load balancer traffic served by this backend
+   * service. If logging is enabled, logs will be exported to Stackdriver.
+   */
+  public BackendServiceLogConfig getLogConfig() {
+    return logConfig;
+  }
+
+  /**
    * Name of the resource. Provided by the client when the resource is created. The name must be
    * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
    * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
@@ -422,6 +444,14 @@ public final class BackendService implements ApiMessage {
    */
   public String getName() {
     return name;
+  }
+
+  /**
+   * The URL of the network to which this backend service belongs. This field can only be spcified
+   * when the load balancing scheme is set to INTERNAL.
+   */
+  public String getNetwork() {
+    return network;
   }
 
   /**
@@ -556,7 +586,9 @@ public final class BackendService implements ApiMessage {
     private String kind;
     private String loadBalancingScheme;
     private String localityLbPolicy;
+    private BackendServiceLogConfig logConfig;
     private String name;
+    private String network;
     private OutlierDetection outlierDetection;
     private Integer port;
     private String portName;
@@ -622,8 +654,14 @@ public final class BackendService implements ApiMessage {
       if (other.getLocalityLbPolicy() != null) {
         this.localityLbPolicy = other.localityLbPolicy;
       }
+      if (other.getLogConfig() != null) {
+        this.logConfig = other.logConfig;
+      }
       if (other.getName() != null) {
         this.name = other.name;
+      }
+      if (other.getNetwork() != null) {
+        this.network = other.network;
       }
       if (other.getOutlierDetection() != null) {
         this.outlierDetection = other.outlierDetection;
@@ -673,7 +711,9 @@ public final class BackendService implements ApiMessage {
       this.kind = source.kind;
       this.loadBalancingScheme = source.loadBalancingScheme;
       this.localityLbPolicy = source.localityLbPolicy;
+      this.logConfig = source.logConfig;
       this.name = source.name;
+      this.network = source.network;
       this.outlierDetection = source.outlierDetection;
       this.port = source.port;
       this.portName = source.portName;
@@ -1055,6 +1095,23 @@ public final class BackendService implements ApiMessage {
     }
 
     /**
+     * This field denotes the logging options for the load balancer traffic served by this backend
+     * service. If logging is enabled, logs will be exported to Stackdriver.
+     */
+    public BackendServiceLogConfig getLogConfig() {
+      return logConfig;
+    }
+
+    /**
+     * This field denotes the logging options for the load balancer traffic served by this backend
+     * service. If logging is enabled, logs will be exported to Stackdriver.
+     */
+    public Builder setLogConfig(BackendServiceLogConfig logConfig) {
+      this.logConfig = logConfig;
+      return this;
+    }
+
+    /**
      * Name of the resource. Provided by the client when the resource is created. The name must be
      * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
      * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
@@ -1074,6 +1131,23 @@ public final class BackendService implements ApiMessage {
      */
     public Builder setName(String name) {
       this.name = name;
+      return this;
+    }
+
+    /**
+     * The URL of the network to which this backend service belongs. This field can only be spcified
+     * when the load balancing scheme is set to INTERNAL.
+     */
+    public String getNetwork() {
+      return network;
+    }
+
+    /**
+     * The URL of the network to which this backend service belongs. This field can only be spcified
+     * when the load balancing scheme is set to INTERNAL.
+     */
+    public Builder setNetwork(String network) {
+      this.network = network;
       return this;
     }
 
@@ -1292,7 +1366,9 @@ public final class BackendService implements ApiMessage {
           kind,
           loadBalancingScheme,
           localityLbPolicy,
+          logConfig,
           name,
+          network,
           outlierDetection,
           port,
           portName,
@@ -1323,7 +1399,9 @@ public final class BackendService implements ApiMessage {
       newBuilder.setKind(this.kind);
       newBuilder.setLoadBalancingScheme(this.loadBalancingScheme);
       newBuilder.setLocalityLbPolicy(this.localityLbPolicy);
+      newBuilder.setLogConfig(this.logConfig);
       newBuilder.setName(this.name);
+      newBuilder.setNetwork(this.network);
       newBuilder.setOutlierDetection(this.outlierDetection);
       newBuilder.setPort(this.port);
       newBuilder.setPortName(this.portName);
@@ -1391,8 +1469,14 @@ public final class BackendService implements ApiMessage {
         + "localityLbPolicy="
         + localityLbPolicy
         + ", "
+        + "logConfig="
+        + logConfig
+        + ", "
         + "name="
         + name
+        + ", "
+        + "network="
+        + network
         + ", "
         + "outlierDetection="
         + outlierDetection
@@ -1447,7 +1531,9 @@ public final class BackendService implements ApiMessage {
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.loadBalancingScheme, that.getLoadBalancingScheme())
           && Objects.equals(this.localityLbPolicy, that.getLocalityLbPolicy())
+          && Objects.equals(this.logConfig, that.getLogConfig())
           && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.outlierDetection, that.getOutlierDetection())
           && Objects.equals(this.port, that.getPort())
           && Objects.equals(this.portName, that.getPortName())
@@ -1481,7 +1567,9 @@ public final class BackendService implements ApiMessage {
         kind,
         loadBalancingScheme,
         localityLbPolicy,
+        logConfig,
         name,
+        network,
         outlierDetection,
         port,
         portName,

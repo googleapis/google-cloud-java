@@ -57,8 +57,12 @@ import javax.annotation.Generated;
  * <code>
  * SubnetworkSettings.Builder subnetworkSettingsBuilder =
  *     SubnetworkSettings.newBuilder();
- * subnetworkSettingsBuilder.deleteSubnetworkSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * subnetworkSettingsBuilder
+ *     .deleteSubnetworkSettings()
+ *     .setRetrySettings(
+ *         subnetworkSettingsBuilder.deleteSubnetworkSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SubnetworkSettings subnetworkSettings = subnetworkSettingsBuilder.build();
  * </code>
  * </pre>

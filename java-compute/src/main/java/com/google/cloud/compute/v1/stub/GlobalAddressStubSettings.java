@@ -77,8 +77,12 @@ import org.threeten.bp.Duration;
  * <code>
  * GlobalAddressStubSettings.Builder globalAddressSettingsBuilder =
  *     GlobalAddressStubSettings.newBuilder();
- * globalAddressSettingsBuilder.deleteGlobalAddressSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * globalAddressSettingsBuilder
+ *     .deleteGlobalAddressSettings()
+ *     .setRetrySettings(
+ *         globalAddressSettingsBuilder.deleteGlobalAddressSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * GlobalAddressStubSettings globalAddressSettings = globalAddressSettingsBuilder.build();
  * </code>
  * </pre>

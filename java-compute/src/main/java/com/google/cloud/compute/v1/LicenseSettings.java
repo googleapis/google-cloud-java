@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * LicenseSettings.Builder licenseSettingsBuilder =
  *     LicenseSettings.newBuilder();
- * licenseSettingsBuilder.deleteLicenseSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * licenseSettingsBuilder
+ *     .deleteLicenseSettings()
+ *     .setRetrySettings(
+ *         licenseSettingsBuilder.deleteLicenseSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * LicenseSettings licenseSettings = licenseSettingsBuilder.build();
  * </code>
  * </pre>
