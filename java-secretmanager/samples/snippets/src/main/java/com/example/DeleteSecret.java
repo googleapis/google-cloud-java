@@ -17,9 +17,9 @@
 package com.example;
 
 // [START secretmanager_delete_secret]
-import com.google.cloud.secretmanager.v1beta1.DeleteSecretRequest;
-import com.google.cloud.secretmanager.v1beta1.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1beta1.SecretName;
+import com.google.cloud.secretmanager.v1.DeleteSecretRequest;
+import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
+import com.google.cloud.secretmanager.v1.SecretName;
 import java.io.IOException;
 
 public class DeleteSecret {

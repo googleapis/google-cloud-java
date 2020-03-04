@@ -18,9 +18,9 @@ package com.example;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.secretmanager.v1beta1.DeleteSecretRequest;
-import com.google.cloud.secretmanager.v1beta1.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1beta1.SecretName;
+import com.google.cloud.secretmanager.v1.DeleteSecretRequest;
+import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
+import com.google.cloud.secretmanager.v1.SecretName;
 import com.google.common.base.Strings;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

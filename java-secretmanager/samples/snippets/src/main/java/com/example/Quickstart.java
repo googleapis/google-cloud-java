@@ -17,16 +17,16 @@
 package com.example;
 
 // [START secretmanager_quickstart]
-import com.google.cloud.secretmanager.v1beta1.AccessSecretVersionRequest;
-import com.google.cloud.secretmanager.v1beta1.AccessSecretVersionResponse;
-import com.google.cloud.secretmanager.v1beta1.AddSecretVersionRequest;
-import com.google.cloud.secretmanager.v1beta1.CreateSecretRequest;
-import com.google.cloud.secretmanager.v1beta1.ProjectName;
-import com.google.cloud.secretmanager.v1beta1.Replication;
-import com.google.cloud.secretmanager.v1beta1.Secret;
-import com.google.cloud.secretmanager.v1beta1.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1beta1.SecretPayload;
-import com.google.cloud.secretmanager.v1beta1.SecretVersion;
+import com.google.cloud.secretmanager.v1.AccessSecretVersionRequest;
+import com.google.cloud.secretmanager.v1.AccessSecretVersionResponse;
+import com.google.cloud.secretmanager.v1.AddSecretVersionRequest;
+import com.google.cloud.secretmanager.v1.CreateSecretRequest;
+import com.google.cloud.secretmanager.v1.ProjectName;
+import com.google.cloud.secretmanager.v1.Replication;
+import com.google.cloud.secretmanager.v1.Secret;
+import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
+import com.google.cloud.secretmanager.v1.SecretPayload;
+import com.google.cloud.secretmanager.v1.SecretVersion;
 import com.google.protobuf.ByteString;
 
 public class Quickstart {

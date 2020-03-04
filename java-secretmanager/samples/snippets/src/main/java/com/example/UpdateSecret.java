@@ -17,10 +17,10 @@
 package com.example;
 
 // [START secretmanager_update_secret]
-import com.google.cloud.secretmanager.v1beta1.Secret;
-import com.google.cloud.secretmanager.v1beta1.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1beta1.SecretName;
-import com.google.cloud.secretmanager.v1beta1.UpdateSecretRequest;
+import com.google.cloud.secretmanager.v1.Secret;
+import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
+import com.google.cloud.secretmanager.v1.SecretName;
+import com.google.cloud.secretmanager.v1.UpdateSecretRequest;
 import com.google.protobuf.util.FieldMaskUtil;
 import java.io.IOException;
 

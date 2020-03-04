@@ -17,10 +17,10 @@
 package com.example;
 
 // [START secretmanager_enable_secret_version]
-import com.google.cloud.secretmanager.v1beta1.EnableSecretVersionRequest;
-import com.google.cloud.secretmanager.v1beta1.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1beta1.SecretVersion;
-import com.google.cloud.secretmanager.v1beta1.SecretVersionName;
+import com.google.cloud.secretmanager.v1.EnableSecretVersionRequest;
+import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
+import com.google.cloud.secretmanager.v1.SecretVersion;
+import com.google.cloud.secretmanager.v1.SecretVersionName;
 import java.io.IOException;
 
 public class EnableSecretVersion {
