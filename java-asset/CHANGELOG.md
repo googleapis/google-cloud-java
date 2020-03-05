@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-asset/compare/v0.119.0...v1.0.0) (2020-03-05)
+
+
+### Features
+
+* promote to GA ([#93](https://www.github.com/googleapis/java-asset/issues/93)) ([db29db6](https://www.github.com/googleapis/java-asset/commit/db29db664e61334807ed4a51b3a2ee1990145376))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.93.1 ([#94](https://www.github.com/googleapis/java-asset/issues/94)) ([7cc0506](https://www.github.com/googleapis/java-asset/commit/7cc05061b196faa7aa07cef164463d3b4b3522b3))
+
 ## [0.119.0](https://www.github.com/googleapis/java-asset/compare/v0.118.0...v0.119.0) (2020-02-29)
 
 
