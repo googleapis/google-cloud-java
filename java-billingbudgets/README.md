@@ -42,17 +42,17 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-billingbudgets</artifactId>
-  <version>0.2.1</version>
+  <version>0.2.2</version>
 </dependency>
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-billingbudgets:0.2.1'
+compile 'com.google.cloud:google-cloud-billingbudgets:0.2.2'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-billingbudgets" % "0.2.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-billingbudgets" % "0.2.2"
 ```
 [//]: # ({x-version-update-end})
 

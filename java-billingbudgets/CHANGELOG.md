@@ -1,5 +1,20 @@
 # Changelog
 
+### [0.2.2](https://www.github.com/googleapis/java-billingbudgets/compare/v0.2.1...v0.2.2) (2020-03-03)
+
+
+### Dependencies
+
+* update core dependencies ([#85](https://www.github.com/googleapis/java-billingbudgets/issues/85)) ([1f96e75](https://www.github.com/googleapis/java-billingbudgets/commit/1f96e75bba041d3b8b8240be9543ddc5568328eb))
+* update core dependencies to v1.92.5 ([#73](https://www.github.com/googleapis/java-billingbudgets/issues/73)) ([62c339a](https://www.github.com/googleapis/java-billingbudgets/commit/62c339a8c3a57ed881807e6331208d79e90faa9d))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([7cc2781](https://www.github.com/googleapis/java-billingbudgets/commit/7cc2781b889f2a926f8e20a0791414e5d8727231))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([42748f7](https://www.github.com/googleapis/java-billingbudgets/commit/42748f7481f478abc37b7cbaaebce8bf848542af))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([288299f](https://www.github.com/googleapis/java-billingbudgets/commit/288299f7414e6910095d2d62871cd6ea1e9bbb69))
+
 ### [0.2.1](https://www.github.com/googleapis/java-billingbudgets/compare/v0.2.0...v0.2.1) (2020-02-04)
 
 
