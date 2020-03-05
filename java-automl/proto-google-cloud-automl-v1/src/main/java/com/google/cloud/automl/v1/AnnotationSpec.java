@@ -181,10 +181,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The name of the annotation spec to show in the interface. The name can be
+   * Required. The name of the annotation spec to show in the interface. The name can be
    * up to 32 characters long and must match the regexp `[a-zA-Z0-9_]+`.
-   * (_), and ASCII digits 0-9.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -206,10 +204,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The name of the annotation spec to show in the interface. The name can be
+   * Required. The name of the annotation spec to show in the interface. The name can be
    * up to 32 characters long and must match the regexp `[a-zA-Z0-9_]+`.
-   * (_), and ASCII digits 0-9.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -714,10 +710,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The name of the annotation spec to show in the interface. The name can be
+     * Required. The name of the annotation spec to show in the interface. The name can be
      * up to 32 characters long and must match the regexp `[a-zA-Z0-9_]+`.
-     * (_), and ASCII digits 0-9.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -739,10 +733,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The name of the annotation spec to show in the interface. The name can be
+     * Required. The name of the annotation spec to show in the interface. The name can be
      * up to 32 characters long and must match the regexp `[a-zA-Z0-9_]+`.
-     * (_), and ASCII digits 0-9.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -764,10 +756,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The name of the annotation spec to show in the interface. The name can be
+     * Required. The name of the annotation spec to show in the interface. The name can be
      * up to 32 characters long and must match the regexp `[a-zA-Z0-9_]+`.
-     * (_), and ASCII digits 0-9.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -788,10 +778,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The name of the annotation spec to show in the interface. The name can be
+     * Required. The name of the annotation spec to show in the interface. The name can be
      * up to 32 characters long and must match the regexp `[a-zA-Z0-9_]+`.
-     * (_), and ASCII digits 0-9.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -808,10 +796,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The name of the annotation spec to show in the interface. The name can be
+     * Required. The name of the annotation spec to show in the interface. The name can be
      * up to 32 characters long and must match the regexp `[a-zA-Z0-9_]+`.
-     * (_), and ASCII digits 0-9.
      * </pre>
      *
      * <code>string display_name = 2;</code>

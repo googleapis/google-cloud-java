@@ -28,9 +28,12 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * *  For Image Object Detection:
-   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-   *      image could have been returned.
+   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes returned per image.
+   * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 1;</code>
@@ -41,9 +44,12 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * *  For Image Object Detection:
-   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-   *      image could have been returned.
+   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes returned per image.
+   * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 1;</code>
@@ -57,9 +63,12 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * *  For Image Object Detection:
-   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-   *      image could have been returned.
+   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes returned per image.
+   * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 1;</code>
@@ -70,9 +79,12 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * *  For Image Object Detection:
-   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-   *      image could have been returned.
+   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes returned per image.
+   * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 1;</code>
@@ -83,9 +95,12 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * *  For Image Object Detection:
-   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-   *      image could have been returned.
+   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes returned per image.
+   * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 1;</code>

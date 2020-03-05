@@ -187,7 +187,7 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    *
    * <pre>
    * Output only. Inferred from the dataset.
-   * The source languge (The BCP-47 language code) that is used for training.
+   * The source language (The BCP-47 language code) that is used for training.
    * </pre>
    *
    * <code>string source_language_code = 2;</code>
@@ -210,7 +210,7 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    *
    * <pre>
    * Output only. Inferred from the dataset.
-   * The source languge (The BCP-47 language code) that is used for training.
+   * The source language (The BCP-47 language code) that is used for training.
    * </pre>
    *
    * <code>string source_language_code = 2;</code>
@@ -235,8 +235,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. The target languge (The BCP-47 language code) that is used for
-   * training.
+   * Output only. The target language (The BCP-47 language code) that is used
+   * for training.
    * </pre>
    *
    * <code>string target_language_code = 3;</code>
@@ -258,8 +258,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. The target languge (The BCP-47 language code) that is used for
-   * training.
+   * Output only. The target language (The BCP-47 language code) that is used
+   * for training.
    * </pre>
    *
    * <code>string target_language_code = 3;</code>
@@ -755,7 +755,7 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. Inferred from the dataset.
-     * The source languge (The BCP-47 language code) that is used for training.
+     * The source language (The BCP-47 language code) that is used for training.
      * </pre>
      *
      * <code>string source_language_code = 2;</code>
@@ -778,7 +778,7 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. Inferred from the dataset.
-     * The source languge (The BCP-47 language code) that is used for training.
+     * The source language (The BCP-47 language code) that is used for training.
      * </pre>
      *
      * <code>string source_language_code = 2;</code>
@@ -801,7 +801,7 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. Inferred from the dataset.
-     * The source languge (The BCP-47 language code) that is used for training.
+     * The source language (The BCP-47 language code) that is used for training.
      * </pre>
      *
      * <code>string source_language_code = 2;</code>
@@ -823,7 +823,7 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. Inferred from the dataset.
-     * The source languge (The BCP-47 language code) that is used for training.
+     * The source language (The BCP-47 language code) that is used for training.
      * </pre>
      *
      * <code>string source_language_code = 2;</code>
@@ -841,7 +841,7 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. Inferred from the dataset.
-     * The source languge (The BCP-47 language code) that is used for training.
+     * The source language (The BCP-47 language code) that is used for training.
      * </pre>
      *
      * <code>string source_language_code = 2;</code>
@@ -865,8 +865,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The target languge (The BCP-47 language code) that is used for
-     * training.
+     * Output only. The target language (The BCP-47 language code) that is used
+     * for training.
      * </pre>
      *
      * <code>string target_language_code = 3;</code>
@@ -888,8 +888,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The target languge (The BCP-47 language code) that is used for
-     * training.
+     * Output only. The target language (The BCP-47 language code) that is used
+     * for training.
      * </pre>
      *
      * <code>string target_language_code = 3;</code>
@@ -911,8 +911,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The target languge (The BCP-47 language code) that is used for
-     * training.
+     * Output only. The target language (The BCP-47 language code) that is used
+     * for training.
      * </pre>
      *
      * <code>string target_language_code = 3;</code>
@@ -933,8 +933,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The target languge (The BCP-47 language code) that is used for
-     * training.
+     * Output only. The target language (The BCP-47 language code) that is used
+     * for training.
      * </pre>
      *
      * <code>string target_language_code = 3;</code>
@@ -951,8 +951,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The target languge (The BCP-47 language code) that is used for
-     * training.
+     * Output only. The target language (The BCP-47 language code) that is used
+     * for training.
      * </pre>
      *
      * <code>string target_language_code = 3;</code>

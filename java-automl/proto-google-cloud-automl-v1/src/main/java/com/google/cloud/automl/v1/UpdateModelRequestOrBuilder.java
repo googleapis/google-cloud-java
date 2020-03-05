@@ -27,10 +27,10 @@ public interface UpdateModelRequestOrBuilder
    *
    *
    * <pre>
-   * The model which replaces the resource on the server.
+   * Required. The model which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Model model = 1;</code>
+   * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the model field is set.
    */
@@ -39,10 +39,10 @@ public interface UpdateModelRequestOrBuilder
    *
    *
    * <pre>
-   * The model which replaces the resource on the server.
+   * Required. The model which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Model model = 1;</code>
+   * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The model.
    */
@@ -51,10 +51,10 @@ public interface UpdateModelRequestOrBuilder
    *
    *
    * <pre>
-   * The model which replaces the resource on the server.
+   * Required. The model which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Model model = 1;</code>
+   * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.automl.v1.ModelOrBuilder getModelOrBuilder();
 
@@ -65,7 +65,8 @@ public interface UpdateModelRequestOrBuilder
    * Required. The update mask applies to the resource.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -77,7 +78,8 @@ public interface UpdateModelRequestOrBuilder
    * Required. The update mask applies to the resource.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -89,7 +91,8 @@ public interface UpdateModelRequestOrBuilder
    * Required. The update mask applies to the resource.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

@@ -176,21 +176,45 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform an online prediction. The prediction result will be directly
+     * Perform an online prediction. The prediction result is directly
      * returned in the response.
-     * Available for following ML problems, and their expected request payloads:
-     * * Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes
-     *                          up to 30MB.
-     * * Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes
-     *                            up to 30MB.
-     * * Text Classification - TextSnippet, content up to 60,000 characters,
-     *                         UTF-8 encoded.
-     * * Text Extraction - TextSnippet, content up to 30,000 characters,
-     *                     UTF-8 NFC encoded.
-     * * Translation - TextSnippet, content up to 25,000 characters, UTF-8
-     *                 encoded.
-     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8
-     *                     encoded.
+     * Available for following ML scenarios, and their expected request payloads:
+     * &lt;table&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Vision Classification&lt;/td&gt;
+     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Vision Object Detection&lt;/td&gt;
+     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Natural Language Classification&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Natural Language Entity Extraction&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document
+     *  in .PDF, .TIF or .TIFF format with size upto 20MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Natural Language Sentiment Analysis&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Translation&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 25,000 characters, UTF-8 encoded.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Tables&lt;/td&gt;
+     * &lt;td&gt;A row with column values matching
+     *   the columns of the model, up to 5MB. Not available for FORECASTING
+     *   `prediction_type`.
+     * &lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;/table&gt;
      * </pre>
      */
     public void predict(
@@ -203,18 +227,20 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform a batch prediction. Unlike the online
-     * [Predict][google.cloud.automl.v1.PredictionService.Predict], batch
+     * Perform a batch prediction. Unlike the online [Predict][google.cloud.automl.v1.PredictionService.Predict], batch
      * prediction result won't be immediately available in the response. Instead,
      * a long running operation object is returned. User can poll the operation
      * result via [GetOperation][google.longrunning.Operations.GetOperation]
-     * method. Once the operation is done,
-     * [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned
-     * in the [response][google.longrunning.Operation.response] field. Available
-     * for following ML problems:
-     * * Image Classification
-     * * Image Object Detection
-     * * Text Extraction
+     * method. Once the operation is done, [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned in
+     * the [response][google.longrunning.Operation.response] field.
+     * Available for following ML scenarios:
+     * * AutoML Vision Classification
+     * * AutoML Vision Object Detection
+     * * AutoML Video Intelligence Classification
+     * * AutoML Video Intelligence Object Tracking * AutoML Natural Language Classification
+     * * AutoML Natural Language Entity Extraction
+     * * AutoML Natural Language Sentiment Analysis
+     * * AutoML Tables
      * </pre>
      */
     public void batchPredict(
@@ -271,21 +297,45 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform an online prediction. The prediction result will be directly
+     * Perform an online prediction. The prediction result is directly
      * returned in the response.
-     * Available for following ML problems, and their expected request payloads:
-     * * Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes
-     *                          up to 30MB.
-     * * Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes
-     *                            up to 30MB.
-     * * Text Classification - TextSnippet, content up to 60,000 characters,
-     *                         UTF-8 encoded.
-     * * Text Extraction - TextSnippet, content up to 30,000 characters,
-     *                     UTF-8 NFC encoded.
-     * * Translation - TextSnippet, content up to 25,000 characters, UTF-8
-     *                 encoded.
-     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8
-     *                     encoded.
+     * Available for following ML scenarios, and their expected request payloads:
+     * &lt;table&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Vision Classification&lt;/td&gt;
+     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Vision Object Detection&lt;/td&gt;
+     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Natural Language Classification&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Natural Language Entity Extraction&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document
+     *  in .PDF, .TIF or .TIFF format with size upto 20MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Natural Language Sentiment Analysis&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Translation&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 25,000 characters, UTF-8 encoded.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Tables&lt;/td&gt;
+     * &lt;td&gt;A row with column values matching
+     *   the columns of the model, up to 5MB. Not available for FORECASTING
+     *   `prediction_type`.
+     * &lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;/table&gt;
      * </pre>
      */
     public void predict(
@@ -301,18 +351,20 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform a batch prediction. Unlike the online
-     * [Predict][google.cloud.automl.v1.PredictionService.Predict], batch
+     * Perform a batch prediction. Unlike the online [Predict][google.cloud.automl.v1.PredictionService.Predict], batch
      * prediction result won't be immediately available in the response. Instead,
      * a long running operation object is returned. User can poll the operation
      * result via [GetOperation][google.longrunning.Operations.GetOperation]
-     * method. Once the operation is done,
-     * [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned
-     * in the [response][google.longrunning.Operation.response] field. Available
-     * for following ML problems:
-     * * Image Classification
-     * * Image Object Detection
-     * * Text Extraction
+     * method. Once the operation is done, [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned in
+     * the [response][google.longrunning.Operation.response] field.
+     * Available for following ML scenarios:
+     * * AutoML Vision Classification
+     * * AutoML Vision Object Detection
+     * * AutoML Video Intelligence Classification
+     * * AutoML Video Intelligence Object Tracking * AutoML Natural Language Classification
+     * * AutoML Natural Language Entity Extraction
+     * * AutoML Natural Language Sentiment Analysis
+     * * AutoML Tables
      * </pre>
      */
     public void batchPredict(
@@ -355,21 +407,45 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform an online prediction. The prediction result will be directly
+     * Perform an online prediction. The prediction result is directly
      * returned in the response.
-     * Available for following ML problems, and their expected request payloads:
-     * * Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes
-     *                          up to 30MB.
-     * * Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes
-     *                            up to 30MB.
-     * * Text Classification - TextSnippet, content up to 60,000 characters,
-     *                         UTF-8 encoded.
-     * * Text Extraction - TextSnippet, content up to 30,000 characters,
-     *                     UTF-8 NFC encoded.
-     * * Translation - TextSnippet, content up to 25,000 characters, UTF-8
-     *                 encoded.
-     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8
-     *                     encoded.
+     * Available for following ML scenarios, and their expected request payloads:
+     * &lt;table&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Vision Classification&lt;/td&gt;
+     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Vision Object Detection&lt;/td&gt;
+     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Natural Language Classification&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Natural Language Entity Extraction&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document
+     *  in .PDF, .TIF or .TIFF format with size upto 20MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Natural Language Sentiment Analysis&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Translation&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 25,000 characters, UTF-8 encoded.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Tables&lt;/td&gt;
+     * &lt;td&gt;A row with column values matching
+     *   the columns of the model, up to 5MB. Not available for FORECASTING
+     *   `prediction_type`.
+     * &lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;/table&gt;
      * </pre>
      */
     public com.google.cloud.automl.v1.PredictResponse predict(
@@ -381,18 +457,20 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform a batch prediction. Unlike the online
-     * [Predict][google.cloud.automl.v1.PredictionService.Predict], batch
+     * Perform a batch prediction. Unlike the online [Predict][google.cloud.automl.v1.PredictionService.Predict], batch
      * prediction result won't be immediately available in the response. Instead,
      * a long running operation object is returned. User can poll the operation
      * result via [GetOperation][google.longrunning.Operations.GetOperation]
-     * method. Once the operation is done,
-     * [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned
-     * in the [response][google.longrunning.Operation.response] field. Available
-     * for following ML problems:
-     * * Image Classification
-     * * Image Object Detection
-     * * Text Extraction
+     * method. Once the operation is done, [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned in
+     * the [response][google.longrunning.Operation.response] field.
+     * Available for following ML scenarios:
+     * * AutoML Vision Classification
+     * * AutoML Vision Object Detection
+     * * AutoML Video Intelligence Classification
+     * * AutoML Video Intelligence Object Tracking * AutoML Natural Language Classification
+     * * AutoML Natural Language Entity Extraction
+     * * AutoML Natural Language Sentiment Analysis
+     * * AutoML Tables
      * </pre>
      */
     public com.google.longrunning.Operation batchPredict(
@@ -431,21 +509,45 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform an online prediction. The prediction result will be directly
+     * Perform an online prediction. The prediction result is directly
      * returned in the response.
-     * Available for following ML problems, and their expected request payloads:
-     * * Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes
-     *                          up to 30MB.
-     * * Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes
-     *                            up to 30MB.
-     * * Text Classification - TextSnippet, content up to 60,000 characters,
-     *                         UTF-8 encoded.
-     * * Text Extraction - TextSnippet, content up to 30,000 characters,
-     *                     UTF-8 NFC encoded.
-     * * Translation - TextSnippet, content up to 25,000 characters, UTF-8
-     *                 encoded.
-     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8
-     *                     encoded.
+     * Available for following ML scenarios, and their expected request payloads:
+     * &lt;table&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Vision Classification&lt;/td&gt;
+     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Vision Object Detection&lt;/td&gt;
+     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Natural Language Classification&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Natural Language Entity Extraction&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document
+     *  in .PDF, .TIF or .TIFF format with size upto 20MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Natural Language Sentiment Analysis&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Translation&lt;/td&gt;
+     * &lt;td&gt;A TextSnippet up to 25,000 characters, UTF-8 encoded.&lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;tr&gt;
+     * &lt;td&gt;AutoML Tables&lt;/td&gt;
+     * &lt;td&gt;A row with column values matching
+     *   the columns of the model, up to 5MB. Not available for FORECASTING
+     *   `prediction_type`.
+     * &lt;/td&gt;
+     * &lt;/tr&gt;
+     * &lt;/table&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -459,18 +561,20 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform a batch prediction. Unlike the online
-     * [Predict][google.cloud.automl.v1.PredictionService.Predict], batch
+     * Perform a batch prediction. Unlike the online [Predict][google.cloud.automl.v1.PredictionService.Predict], batch
      * prediction result won't be immediately available in the response. Instead,
      * a long running operation object is returned. User can poll the operation
      * result via [GetOperation][google.longrunning.Operations.GetOperation]
-     * method. Once the operation is done,
-     * [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned
-     * in the [response][google.longrunning.Operation.response] field. Available
-     * for following ML problems:
-     * * Image Classification
-     * * Image Object Detection
-     * * Text Extraction
+     * method. Once the operation is done, [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned in
+     * the [response][google.longrunning.Operation.response] field.
+     * Available for following ML scenarios:
+     * * AutoML Vision Classification
+     * * AutoML Vision Object Detection
+     * * AutoML Video Intelligence Classification
+     * * AutoML Video Intelligence Object Tracking * AutoML Natural Language Classification
+     * * AutoML Natural Language Entity Extraction
+     * * AutoML Natural Language Sentiment Analysis
+     * * AutoML Tables
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

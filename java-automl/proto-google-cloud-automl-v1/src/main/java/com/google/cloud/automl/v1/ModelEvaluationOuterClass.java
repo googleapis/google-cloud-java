@@ -41,15 +41,15 @@ public final class ModelEvaluationOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/automl/v1/model_evaluatio"
-          + "n.proto\022\026google.cloud.automl.v1\032\034google/"
-          + "api/annotations.proto\032\031google/api/resour"
-          + "ce.proto\032+google/cloud/automl/v1/classif"
-          + "ication.proto\032&google/cloud/automl/v1/de"
-          + "tection.proto\032,google/cloud/automl/v1/te"
-          + "xt_extraction.proto\032+google/cloud/automl"
-          + "/v1/text_sentiment.proto\032(google/cloud/a"
-          + "utoml/v1/translation.proto\032\037google/proto"
-          + "buf/timestamp.proto\"\264\005\n\017ModelEvaluation\022"
+          + "n.proto\022\026google.cloud.automl.v1\032\031google/"
+          + "api/resource.proto\032+google/cloud/automl/"
+          + "v1/classification.proto\032&google/cloud/au"
+          + "toml/v1/detection.proto\032,google/cloud/au"
+          + "toml/v1/text_extraction.proto\032+google/cl"
+          + "oud/automl/v1/text_sentiment.proto\032(goog"
+          + "le/cloud/automl/v1/translation.proto\032\037go"
+          + "ogle/protobuf/timestamp.proto\032\034google/ap"
+          + "i/annotations.proto\"\276\006\n\017ModelEvaluation\022"
           + "d\n!classification_evaluation_metrics\030\010 \001"
           + "(\01327.google.cloud.automl.v1.Classificati"
           + "onEvaluationMetricsH\000\022^\n\036translation_eva"
@@ -66,18 +66,20 @@ public final class ModelEvaluationOuterClass {
           + "\004name\030\001 \001(\t\022\032\n\022annotation_spec_id\030\002 \001(\t\022"
           + "\024\n\014display_name\030\017 \001(\t\022/\n\013create_time\030\005 \001"
           + "(\0132\032.google.protobuf.Timestamp\022\037\n\027evalua"
-          + "ted_example_count\030\006 \001(\005B\t\n\007metricsB\252\001\n\032c"
-          + "om.google.cloud.automl.v1P\001Z<google.gola"
-          + "ng.org/genproto/googleapis/cloud/automl/"
-          + "v1;automl\252\002\026Google.Cloud.AutoML.V1\312\002\026Goo"
-          + "gle\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud::Aut"
-          + "oML::V1b\006proto3"
+          + "ted_example_count\030\006 \001(\005:\207\001\352A\203\001\n%automl.g"
+          + "oogleapis.com/ModelEvaluation\022Zprojects/"
+          + "{project}/locations/{location}/models/{m"
+          + "odel}/modelEvaluations/{model_evaluation"
+          + "}B\t\n\007metricsB\252\001\n\032com.google.cloud.automl"
+          + ".v1P\001Z<google.golang.org/genproto/google"
+          + "apis/cloud/automl/v1;automl\252\002\026Google.Clo"
+          + "ud.AutoML.V1\312\002\026Google\\Cloud\\AutoMl\\V1\352\002\031"
+          + "Google::Cloud::AutoML::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.automl.v1.ClassificationProto.getDescriptor(),
               com.google.cloud.automl.v1.Detection.getDescriptor(),
@@ -85,6 +87,7 @@ public final class ModelEvaluationOuterClass {
               com.google.cloud.automl.v1.TextSentimentProto.getDescriptor(),
               com.google.cloud.automl.v1.TranslationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1_ModelEvaluation_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -104,7 +107,11 @@ public final class ModelEvaluationOuterClass {
               "EvaluatedExampleCount",
               "Metrics",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.automl.v1.ClassificationProto.getDescriptor();
     com.google.cloud.automl.v1.Detection.getDescriptor();
@@ -112,6 +119,7 @@ public final class ModelEvaluationOuterClass {
     com.google.cloud.automl.v1.TextSentimentProto.getDescriptor();
     com.google.cloud.automl.v1.TranslationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

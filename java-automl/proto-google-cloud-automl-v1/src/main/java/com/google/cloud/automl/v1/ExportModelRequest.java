@@ -22,9 +22,9 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for
- * [AutoMl.ExportModel][google.cloud.automl.v1.AutoMl.ExportModel]. Models need
- * to be enabled for exporting, otherwise an error code will be returned.
+ * Request message for [AutoMl.ExportModel][google.cloud.automl.v1.AutoMl.ExportModel].
+ * Models need to be enabled for exporting, otherwise an error code will be
+ * returned.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.ExportModelRequest}
@@ -139,7 +139,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
    * Required. The resource name of the model to export.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -161,7 +163,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
    * Required. The resource name of the model to export.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -186,7 +190,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
    * Required. The desired output location and configuration.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the outputConfig field is set.
    */
@@ -200,7 +206,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
    * Required. The desired output location and configuration.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The outputConfig.
    */
@@ -216,7 +224,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
    * Required. The desired output location and configuration.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.automl.v1.ModelExportOutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
@@ -399,9 +409,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for
-   * [AutoMl.ExportModel][google.cloud.automl.v1.AutoMl.ExportModel]. Models need
-   * to be enabled for exporting, otherwise an error code will be returned.
+   * Request message for [AutoMl.ExportModel][google.cloud.automl.v1.AutoMl.ExportModel].
+   * Models need to be enabled for exporting, otherwise an error code will be
+   * returned.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.ExportModelRequest}
@@ -576,7 +586,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The resource name of the model to export.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -598,7 +610,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The resource name of the model to export.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -620,7 +634,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The resource name of the model to export.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -641,7 +657,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The resource name of the model to export.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -658,7 +676,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The resource name of the model to export.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -687,7 +707,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the outputConfig field is set.
      */
@@ -701,7 +723,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The outputConfig.
      */
@@ -721,7 +745,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(com.google.cloud.automl.v1.ModelExportOutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -743,7 +769,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(
         com.google.cloud.automl.v1.ModelExportOutputConfig.Builder builderForValue) {
@@ -763,7 +791,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeOutputConfig(com.google.cloud.automl.v1.ModelExportOutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -789,7 +819,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -809,7 +841,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1.ModelExportOutputConfig.Builder getOutputConfigBuilder() {
 
@@ -823,7 +857,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1.ModelExportOutputConfigOrBuilder getOutputConfigOrBuilder() {
       if (outputConfigBuilder_ != null) {
@@ -841,7 +877,9 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The desired output location and configuration.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.ModelExportOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1.ModelExportOutputConfig,

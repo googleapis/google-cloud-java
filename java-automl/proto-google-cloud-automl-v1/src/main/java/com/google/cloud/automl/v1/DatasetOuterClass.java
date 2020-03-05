@@ -50,7 +50,7 @@ public final class DatasetOuterClass {
           + "proto\032!google/cloud/automl/v1/text.proto"
           + "\032(google/cloud/automl/v1/translation.pro"
           + "to\032\037google/protobuf/timestamp.proto\032\034goo"
-          + "gle/api/annotations.proto\"\200\007\n\007Dataset\022Z\n"
+          + "gle/api/annotations.proto\"\340\007\n\007Dataset\022Z\n"
           + "\034translation_dataset_metadata\030\027 \001(\01322.go"
           + "ogle.cloud.automl.v1.TranslationDatasetM"
           + "etadataH\000\022k\n%image_classification_datase"
@@ -72,12 +72,15 @@ public final class DatasetOuterClass {
           + "gle.protobuf.Timestamp\022\014\n\004etag\030\021 \001(\t\022;\n\006"
           + "labels\030\' \003(\0132+.google.cloud.automl.v1.Da"
           + "taset.LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key\030"
-          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\022\n\020dataset_meta"
-          + "dataB\252\001\n\032com.google.cloud.automl.v1P\001Z<g"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/automl/v1;automl\252\002\026Google.Cloud.AutoM"
-          + "L.V1\312\002\026Google\\Cloud\\AutoMl\\V1\352\002\031Google::"
-          + "Cloud::AutoML::V1b\006proto3"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:^\352A[\n\035automl.go"
+          + "ogleapis.com/Dataset\022:projects/{project}"
+          + "/locations/{location}/datasets/{dataset}"
+          + "B\022\n\020dataset_metadataB\252\001\n\032com.google.clou"
+          + "d.automl.v1P\001Z<google.golang.org/genprot"
+          + "o/googleapis/cloud/automl/v1;automl\252\002\026Go"
+          + "ogle.Cloud.AutoML.V1\312\002\026Google\\Cloud\\Auto"
+          + "Ml\\V1\352\002\031Google::Cloud::AutoML::V1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -119,6 +122,11 @@ public final class DatasetOuterClass {
             new java.lang.String[] {
               "Key", "Value",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.automl.v1.ImageProto.getDescriptor();
     com.google.cloud.automl.v1.TextProto.getDescriptor();

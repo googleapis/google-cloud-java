@@ -22,8 +22,7 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Response message for
- * [PredictionService.Predict][google.cloud.automl.v1.PredictionService.Predict].
+ * Response message for [PredictionService.Predict][google.cloud.automl.v1.PredictionService.Predict].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.PredictResponse}
@@ -169,7 +168,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Prediction result.
-   * Translation and Text Sentiment will return precisely one payload.
+   * AutoML Translation and AutoML Natural Language Sentiment Analysis
+   * return precisely one payload.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -182,7 +182,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Prediction result.
-   * Translation and Text Sentiment will return precisely one payload.
+   * AutoML Translation and AutoML Natural Language Sentiment Analysis
+   * return precisely one payload.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -196,7 +197,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Prediction result.
-   * Translation and Text Sentiment will return precisely one payload.
+   * AutoML Translation and AutoML Natural Language Sentiment Analysis
+   * return precisely one payload.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -209,7 +211,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Prediction result.
-   * Translation and Text Sentiment will return precisely one payload.
+   * AutoML Translation and AutoML Natural Language Sentiment Analysis
+   * return precisely one payload.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -222,7 +225,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Prediction result.
-   * Translation and Text Sentiment will return precisely one payload.
+   * AutoML Translation and AutoML Natural Language Sentiment Analysis
+   * return precisely one payload.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -239,15 +243,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The preprocessed example that AutoML actually makes prediction on.
    * Empty if AutoML does not preprocess the input example.
-   * * For Text Extraction:
-   *   If the input is a .pdf file, the OCR'ed text will be provided in
-   *   [document_text][google.cloud.automl.v1.Document.document_text].
-   * * For Text Classification:
-   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-   *   [document_text][google.cloud.automl.v1.Document.document_text].
-   * * For Text Sentiment:
-   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * For AutoML Natural Language (Classification, Entity Extraction, and
+   * Sentiment Analysis), if the input is a document, the recognized text is
+   * returned in the
+   * [document_text][google.cloud.automl.v1.Document.document_text]
+   * property.
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
@@ -263,15 +263,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The preprocessed example that AutoML actually makes prediction on.
    * Empty if AutoML does not preprocess the input example.
-   * * For Text Extraction:
-   *   If the input is a .pdf file, the OCR'ed text will be provided in
-   *   [document_text][google.cloud.automl.v1.Document.document_text].
-   * * For Text Classification:
-   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-   *   [document_text][google.cloud.automl.v1.Document.document_text].
-   * * For Text Sentiment:
-   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * For AutoML Natural Language (Classification, Entity Extraction, and
+   * Sentiment Analysis), if the input is a document, the recognized text is
+   * returned in the
+   * [document_text][google.cloud.automl.v1.Document.document_text]
+   * property.
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
@@ -289,15 +285,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The preprocessed example that AutoML actually makes prediction on.
    * Empty if AutoML does not preprocess the input example.
-   * * For Text Extraction:
-   *   If the input is a .pdf file, the OCR'ed text will be provided in
-   *   [document_text][google.cloud.automl.v1.Document.document_text].
-   * * For Text Classification:
-   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-   *   [document_text][google.cloud.automl.v1.Document.document_text].
-   * * For Text Sentiment:
-   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * For AutoML Natural Language (Classification, Entity Extraction, and
+   * Sentiment Analysis), if the input is a document, the recognized text is
+   * returned in the
+   * [document_text][google.cloud.automl.v1.Document.document_text]
+   * property.
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
@@ -336,18 +328,19 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * * For Image Object Detection:
-   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-   *      image could have been returned.
-   * * For Text Sentiment:
-   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
-   *      -1 maps to least positive sentiment, while 1 maps to the most positive
-   *      one and the higher the score, the more positive the sentiment in the
-   *      document is. Yet these values are relative to the training data, so
-   *      e.g. if all data was positive then -1 will be also positive (though
-   *      the least).
-   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
-   *      from the previous Natural Language Sentiment Analysis API.
+   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes to return per image.
+   * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+   * `sentiment_score`
+   * : (float, deprecated) A value between -1 and 1,
+   *   -1 maps to least positive sentiment, while 1 maps to the most positive
+   *   one and the higher the score, the more positive the sentiment in the
+   *   document is. Yet these values are relative to the training data, so
+   *   e.g. if all data was positive then -1 is also positive (though
+   *   the least).
+   *   `sentiment_score` is not the same as "score" and "magnitude"
+   *   from Sentiment Analysis in the Natural Language API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -368,18 +361,19 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * * For Image Object Detection:
-   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-   *      image could have been returned.
-   * * For Text Sentiment:
-   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
-   *      -1 maps to least positive sentiment, while 1 maps to the most positive
-   *      one and the higher the score, the more positive the sentiment in the
-   *      document is. Yet these values are relative to the training data, so
-   *      e.g. if all data was positive then -1 will be also positive (though
-   *      the least).
-   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
-   *      from the previous Natural Language Sentiment Analysis API.
+   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes to return per image.
+   * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+   * `sentiment_score`
+   * : (float, deprecated) A value between -1 and 1,
+   *   -1 maps to least positive sentiment, while 1 maps to the most positive
+   *   one and the higher the score, the more positive the sentiment in the
+   *   document is. Yet these values are relative to the training data, so
+   *   e.g. if all data was positive then -1 is also positive (though
+   *   the least).
+   *   `sentiment_score` is not the same as "score" and "magnitude"
+   *   from Sentiment Analysis in the Natural Language API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -392,18 +386,19 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * * For Image Object Detection:
-   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-   *      image could have been returned.
-   * * For Text Sentiment:
-   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
-   *      -1 maps to least positive sentiment, while 1 maps to the most positive
-   *      one and the higher the score, the more positive the sentiment in the
-   *      document is. Yet these values are relative to the training data, so
-   *      e.g. if all data was positive then -1 will be also positive (though
-   *      the least).
-   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
-   *      from the previous Natural Language Sentiment Analysis API.
+   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes to return per image.
+   * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+   * `sentiment_score`
+   * : (float, deprecated) A value between -1 and 1,
+   *   -1 maps to least positive sentiment, while 1 maps to the most positive
+   *   one and the higher the score, the more positive the sentiment in the
+   *   document is. Yet these values are relative to the training data, so
+   *   e.g. if all data was positive then -1 is also positive (though
+   *   the least).
+   *   `sentiment_score` is not the same as "score" and "magnitude"
+   *   from Sentiment Analysis in the Natural Language API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -421,18 +416,19 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * * For Image Object Detection:
-   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-   *      image could have been returned.
-   * * For Text Sentiment:
-   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
-   *      -1 maps to least positive sentiment, while 1 maps to the most positive
-   *      one and the higher the score, the more positive the sentiment in the
-   *      document is. Yet these values are relative to the training data, so
-   *      e.g. if all data was positive then -1 will be also positive (though
-   *      the least).
-   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
-   *      from the previous Natural Language Sentiment Analysis API.
+   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * `max_bounding_box_count`
+   * : (int64) The maximum number of bounding boxes to return per image.
+   * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+   * `sentiment_score`
+   * : (float, deprecated) A value between -1 and 1,
+   *   -1 maps to least positive sentiment, while 1 maps to the most positive
+   *   one and the higher the score, the more positive the sentiment in the
+   *   document is. Yet these values are relative to the training data, so
+   *   e.g. if all data was positive then -1 is also positive (though
+   *   the least).
+   *   `sentiment_score` is not the same as "score" and "magnitude"
+   *   from Sentiment Analysis in the Natural Language API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -644,8 +640,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Response message for
-   * [PredictionService.Predict][google.cloud.automl.v1.PredictionService.Predict].
+   * Response message for [PredictionService.Predict][google.cloud.automl.v1.PredictionService.Predict].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.PredictResponse}
@@ -897,7 +892,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -914,7 +910,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -931,7 +928,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -948,7 +946,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -971,7 +970,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -992,7 +992,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -1015,7 +1016,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -1038,7 +1040,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -1059,7 +1062,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -1080,7 +1084,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -1101,7 +1106,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -1121,7 +1127,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -1141,7 +1148,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -1154,7 +1162,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -1171,7 +1180,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -1189,7 +1199,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -1203,7 +1214,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -1217,7 +1229,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
-     * Translation and Text Sentiment will return precisely one payload.
+     * AutoML Translation and AutoML Natural Language Sentiment Analysis
+     * return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
@@ -1256,15 +1269,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The preprocessed example that AutoML actually makes prediction on.
      * Empty if AutoML does not preprocess the input example.
-     * * For Text Extraction:
-     *   If the input is a .pdf file, the OCR'ed text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Classification:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Sentiment:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * For AutoML Natural Language (Classification, Entity Extraction, and
+     * Sentiment Analysis), if the input is a document, the recognized text is
+     * returned in the
+     * [document_text][google.cloud.automl.v1.Document.document_text]
+     * property.
      * </pre>
      *
      * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
@@ -1280,15 +1289,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The preprocessed example that AutoML actually makes prediction on.
      * Empty if AutoML does not preprocess the input example.
-     * * For Text Extraction:
-     *   If the input is a .pdf file, the OCR'ed text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Classification:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Sentiment:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * For AutoML Natural Language (Classification, Entity Extraction, and
+     * Sentiment Analysis), if the input is a document, the recognized text is
+     * returned in the
+     * [document_text][google.cloud.automl.v1.Document.document_text]
+     * property.
      * </pre>
      *
      * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
@@ -1310,15 +1315,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The preprocessed example that AutoML actually makes prediction on.
      * Empty if AutoML does not preprocess the input example.
-     * * For Text Extraction:
-     *   If the input is a .pdf file, the OCR'ed text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Classification:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Sentiment:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * For AutoML Natural Language (Classification, Entity Extraction, and
+     * Sentiment Analysis), if the input is a document, the recognized text is
+     * returned in the
+     * [document_text][google.cloud.automl.v1.Document.document_text]
+     * property.
      * </pre>
      *
      * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
@@ -1342,15 +1343,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The preprocessed example that AutoML actually makes prediction on.
      * Empty if AutoML does not preprocess the input example.
-     * * For Text Extraction:
-     *   If the input is a .pdf file, the OCR'ed text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Classification:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Sentiment:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * For AutoML Natural Language (Classification, Entity Extraction, and
+     * Sentiment Analysis), if the input is a document, the recognized text is
+     * returned in the
+     * [document_text][google.cloud.automl.v1.Document.document_text]
+     * property.
      * </pre>
      *
      * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
@@ -1372,15 +1369,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The preprocessed example that AutoML actually makes prediction on.
      * Empty if AutoML does not preprocess the input example.
-     * * For Text Extraction:
-     *   If the input is a .pdf file, the OCR'ed text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Classification:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Sentiment:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * For AutoML Natural Language (Classification, Entity Extraction, and
+     * Sentiment Analysis), if the input is a document, the recognized text is
+     * returned in the
+     * [document_text][google.cloud.automl.v1.Document.document_text]
+     * property.
      * </pre>
      *
      * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
@@ -1408,15 +1401,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The preprocessed example that AutoML actually makes prediction on.
      * Empty if AutoML does not preprocess the input example.
-     * * For Text Extraction:
-     *   If the input is a .pdf file, the OCR'ed text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Classification:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Sentiment:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * For AutoML Natural Language (Classification, Entity Extraction, and
+     * Sentiment Analysis), if the input is a document, the recognized text is
+     * returned in the
+     * [document_text][google.cloud.automl.v1.Document.document_text]
+     * property.
      * </pre>
      *
      * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
@@ -1438,15 +1427,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The preprocessed example that AutoML actually makes prediction on.
      * Empty if AutoML does not preprocess the input example.
-     * * For Text Extraction:
-     *   If the input is a .pdf file, the OCR'ed text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Classification:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Sentiment:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * For AutoML Natural Language (Classification, Entity Extraction, and
+     * Sentiment Analysis), if the input is a document, the recognized text is
+     * returned in the
+     * [document_text][google.cloud.automl.v1.Document.document_text]
+     * property.
      * </pre>
      *
      * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
@@ -1462,15 +1447,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The preprocessed example that AutoML actually makes prediction on.
      * Empty if AutoML does not preprocess the input example.
-     * * For Text Extraction:
-     *   If the input is a .pdf file, the OCR'ed text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Classification:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Sentiment:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * For AutoML Natural Language (Classification, Entity Extraction, and
+     * Sentiment Analysis), if the input is a document, the recognized text is
+     * returned in the
+     * [document_text][google.cloud.automl.v1.Document.document_text]
+     * property.
      * </pre>
      *
      * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
@@ -1490,15 +1471,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The preprocessed example that AutoML actually makes prediction on.
      * Empty if AutoML does not preprocess the input example.
-     * * For Text Extraction:
-     *   If the input is a .pdf file, the OCR'ed text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Classification:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
-     * * For Text Sentiment:
-     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
-     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * For AutoML Natural Language (Classification, Entity Extraction, and
+     * Sentiment Analysis), if the input is a document, the recognized text is
+     * returned in the
+     * [document_text][google.cloud.automl.v1.Document.document_text]
+     * property.
      * </pre>
      *
      * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
@@ -1551,18 +1528,19 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * * For Image Object Detection:
-     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-     *      image could have been returned.
-     * * For Text Sentiment:
-     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
-     *      -1 maps to least positive sentiment, while 1 maps to the most positive
-     *      one and the higher the score, the more positive the sentiment in the
-     *      document is. Yet these values are relative to the training data, so
-     *      e.g. if all data was positive then -1 will be also positive (though
-     *      the least).
-     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
-     *      from the previous Natural Language Sentiment Analysis API.
+     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * `max_bounding_box_count`
+     * : (int64) The maximum number of bounding boxes to return per image.
+     * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+     * `sentiment_score`
+     * : (float, deprecated) A value between -1 and 1,
+     *   -1 maps to least positive sentiment, while 1 maps to the most positive
+     *   one and the higher the score, the more positive the sentiment in the
+     *   document is. Yet these values are relative to the training data, so
+     *   e.g. if all data was positive then -1 is also positive (though
+     *   the least).
+     *   `sentiment_score` is not the same as "score" and "magnitude"
+     *   from Sentiment Analysis in the Natural Language API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1583,18 +1561,19 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * * For Image Object Detection:
-     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-     *      image could have been returned.
-     * * For Text Sentiment:
-     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
-     *      -1 maps to least positive sentiment, while 1 maps to the most positive
-     *      one and the higher the score, the more positive the sentiment in the
-     *      document is. Yet these values are relative to the training data, so
-     *      e.g. if all data was positive then -1 will be also positive (though
-     *      the least).
-     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
-     *      from the previous Natural Language Sentiment Analysis API.
+     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * `max_bounding_box_count`
+     * : (int64) The maximum number of bounding boxes to return per image.
+     * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+     * `sentiment_score`
+     * : (float, deprecated) A value between -1 and 1,
+     *   -1 maps to least positive sentiment, while 1 maps to the most positive
+     *   one and the higher the score, the more positive the sentiment in the
+     *   document is. Yet these values are relative to the training data, so
+     *   e.g. if all data was positive then -1 is also positive (though
+     *   the least).
+     *   `sentiment_score` is not the same as "score" and "magnitude"
+     *   from Sentiment Analysis in the Natural Language API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1607,18 +1586,19 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * * For Image Object Detection:
-     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-     *      image could have been returned.
-     * * For Text Sentiment:
-     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
-     *      -1 maps to least positive sentiment, while 1 maps to the most positive
-     *      one and the higher the score, the more positive the sentiment in the
-     *      document is. Yet these values are relative to the training data, so
-     *      e.g. if all data was positive then -1 will be also positive (though
-     *      the least).
-     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
-     *      from the previous Natural Language Sentiment Analysis API.
+     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * `max_bounding_box_count`
+     * : (int64) The maximum number of bounding boxes to return per image.
+     * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+     * `sentiment_score`
+     * : (float, deprecated) A value between -1 and 1,
+     *   -1 maps to least positive sentiment, while 1 maps to the most positive
+     *   one and the higher the score, the more positive the sentiment in the
+     *   document is. Yet these values are relative to the training data, so
+     *   e.g. if all data was positive then -1 is also positive (though
+     *   the least).
+     *   `sentiment_score` is not the same as "score" and "magnitude"
+     *   from Sentiment Analysis in the Natural Language API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1636,18 +1616,19 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * * For Image Object Detection:
-     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-     *      image could have been returned.
-     * * For Text Sentiment:
-     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
-     *      -1 maps to least positive sentiment, while 1 maps to the most positive
-     *      one and the higher the score, the more positive the sentiment in the
-     *      document is. Yet these values are relative to the training data, so
-     *      e.g. if all data was positive then -1 will be also positive (though
-     *      the least).
-     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
-     *      from the previous Natural Language Sentiment Analysis API.
+     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * `max_bounding_box_count`
+     * : (int64) The maximum number of bounding boxes to return per image.
+     * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+     * `sentiment_score`
+     * : (float, deprecated) A value between -1 and 1,
+     *   -1 maps to least positive sentiment, while 1 maps to the most positive
+     *   one and the higher the score, the more positive the sentiment in the
+     *   document is. Yet these values are relative to the training data, so
+     *   e.g. if all data was positive then -1 is also positive (though
+     *   the least).
+     *   `sentiment_score` is not the same as "score" and "magnitude"
+     *   from Sentiment Analysis in the Natural Language API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1672,18 +1653,19 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * * For Image Object Detection:
-     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-     *      image could have been returned.
-     * * For Text Sentiment:
-     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
-     *      -1 maps to least positive sentiment, while 1 maps to the most positive
-     *      one and the higher the score, the more positive the sentiment in the
-     *      document is. Yet these values are relative to the training data, so
-     *      e.g. if all data was positive then -1 will be also positive (though
-     *      the least).
-     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
-     *      from the previous Natural Language Sentiment Analysis API.
+     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * `max_bounding_box_count`
+     * : (int64) The maximum number of bounding boxes to return per image.
+     * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+     * `sentiment_score`
+     * : (float, deprecated) A value between -1 and 1,
+     *   -1 maps to least positive sentiment, while 1 maps to the most positive
+     *   one and the higher the score, the more positive the sentiment in the
+     *   document is. Yet these values are relative to the training data, so
+     *   e.g. if all data was positive then -1 is also positive (though
+     *   the least).
+     *   `sentiment_score` is not the same as "score" and "magnitude"
+     *   from Sentiment Analysis in the Natural Language API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1705,18 +1687,19 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * * For Image Object Detection:
-     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-     *      image could have been returned.
-     * * For Text Sentiment:
-     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
-     *      -1 maps to least positive sentiment, while 1 maps to the most positive
-     *      one and the higher the score, the more positive the sentiment in the
-     *      document is. Yet these values are relative to the training data, so
-     *      e.g. if all data was positive then -1 will be also positive (though
-     *      the least).
-     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
-     *      from the previous Natural Language Sentiment Analysis API.
+     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * `max_bounding_box_count`
+     * : (int64) The maximum number of bounding boxes to return per image.
+     * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+     * `sentiment_score`
+     * : (float, deprecated) A value between -1 and 1,
+     *   -1 maps to least positive sentiment, while 1 maps to the most positive
+     *   one and the higher the score, the more positive the sentiment in the
+     *   document is. Yet these values are relative to the training data, so
+     *   e.g. if all data was positive then -1 is also positive (though
+     *   the least).
+     *   `sentiment_score` is not the same as "score" and "magnitude"
+     *   from Sentiment Analysis in the Natural Language API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1736,18 +1719,19 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * * For Image Object Detection:
-     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
-     *      image could have been returned.
-     * * For Text Sentiment:
-     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
-     *      -1 maps to least positive sentiment, while 1 maps to the most positive
-     *      one and the higher the score, the more positive the sentiment in the
-     *      document is. Yet these values are relative to the training data, so
-     *      e.g. if all data was positive then -1 will be also positive (though
-     *      the least).
-     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
-     *      from the previous Natural Language Sentiment Analysis API.
+     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * `max_bounding_box_count`
+     * : (int64) The maximum number of bounding boxes to return per image.
+     * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+     * `sentiment_score`
+     * : (float, deprecated) A value between -1 and 1,
+     *   -1 maps to least positive sentiment, while 1 maps to the most positive
+     *   one and the higher the score, the more positive the sentiment in the
+     *   document is. Yet these values are relative to the training data, so
+     *   e.g. if all data was positive then -1 is also positive (though
+     *   the least).
+     *   `sentiment_score` is not the same as "score" and "magnitude"
+     *   from Sentiment Analysis in the Natural Language API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>

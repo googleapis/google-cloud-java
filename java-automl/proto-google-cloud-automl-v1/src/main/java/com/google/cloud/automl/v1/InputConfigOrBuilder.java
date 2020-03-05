@@ -28,9 +28,8 @@ public interface InputConfigOrBuilder
    *
    * <pre>
    * The Google Cloud Storage location for the input content.
-   * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
-   * `gcs_source` points to a CSV file with a structure described in
-   * [InputConfig][google.cloud.automl.v1.InputConfig].
+   * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
+   * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
    * </pre>
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -43,9 +42,8 @@ public interface InputConfigOrBuilder
    *
    * <pre>
    * The Google Cloud Storage location for the input content.
-   * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
-   * `gcs_source` points to a CSV file with a structure described in
-   * [InputConfig][google.cloud.automl.v1.InputConfig].
+   * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
+   * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
    * </pre>
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -58,9 +56,8 @@ public interface InputConfigOrBuilder
    *
    * <pre>
    * The Google Cloud Storage location for the input content.
-   * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
-   * `gcs_source` points to a CSV file with a structure described in
-   * [InputConfig][google.cloud.automl.v1.InputConfig].
+   * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
+   * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
    * </pre>
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -74,6 +71,12 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   * `schema_inference_version`
+   * : (integer) This value must be supplied.
+   *   The version of the
+   *   algorithm to use for the initial inference of the
+   *   column data types of the imported table. Allowed values: "1".
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
@@ -86,6 +89,12 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   * `schema_inference_version`
+   * : (integer) This value must be supplied.
+   *   The version of the
+   *   algorithm to use for the initial inference of the
+   *   column data types of the imported table. Allowed values: "1".
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
@@ -101,6 +110,12 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   * `schema_inference_version`
+   * : (integer) This value must be supplied.
+   *   The version of the
+   *   algorithm to use for the initial inference of the
+   *   column data types of the imported table. Allowed values: "1".
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
@@ -113,6 +128,12 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   * `schema_inference_version`
+   * : (integer) This value must be supplied.
+   *   The version of the
+   *   algorithm to use for the initial inference of the
+   *   column data types of the imported table. Allowed values: "1".
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
@@ -125,6 +146,12 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   * `schema_inference_version`
+   * : (integer) This value must be supplied.
+   *   The version of the
+   *   algorithm to use for the initial inference of the
+   *   column data types of the imported table. Allowed values: "1".
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 2;</code>

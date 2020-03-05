@@ -22,8 +22,7 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for
- * [AutoMl.ExportData][google.cloud.automl.v1.AutoMl.ExportData].
+ * Request message for [AutoMl.ExportData][google.cloud.automl.v1.AutoMl.ExportData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.ExportDataRequest}
@@ -137,7 +136,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * Required. The resource name of the dataset.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -159,7 +160,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * Required. The resource name of the dataset.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -184,7 +187,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * Required. The desired output location.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.OutputConfig output_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the outputConfig field is set.
    */
@@ -198,7 +203,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * Required. The desired output location.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.OutputConfig output_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The outputConfig.
    */
@@ -214,7 +221,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * Required. The desired output location.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.OutputConfig output_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.automl.v1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
@@ -397,8 +406,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for
-   * [AutoMl.ExportData][google.cloud.automl.v1.AutoMl.ExportData].
+   * Request message for [AutoMl.ExportData][google.cloud.automl.v1.AutoMl.ExportData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.ExportDataRequest}
@@ -573,7 +581,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The resource name of the dataset.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -595,7 +605,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The resource name of the dataset.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -617,7 +629,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The resource name of the dataset.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -638,7 +652,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The resource name of the dataset.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -655,7 +671,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The resource name of the dataset.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -684,7 +702,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The desired output location.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the outputConfig field is set.
      */
@@ -698,7 +718,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The desired output location.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The outputConfig.
      */
@@ -718,7 +740,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The desired output location.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(com.google.cloud.automl.v1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -740,7 +764,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The desired output location.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(
         com.google.cloud.automl.v1.OutputConfig.Builder builderForValue) {
@@ -760,7 +786,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The desired output location.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeOutputConfig(com.google.cloud.automl.v1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -786,7 +814,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The desired output location.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -806,7 +836,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The desired output location.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1.OutputConfig.Builder getOutputConfigBuilder() {
 
@@ -820,7 +852,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The desired output location.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
       if (outputConfigBuilder_ != null) {
@@ -838,7 +872,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. The desired output location.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.automl.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1.OutputConfig,

@@ -27,10 +27,12 @@ public interface ListModelsRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the project, from which to list the models.
+   * Required. Resource name of the project, from which to list the models.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -39,10 +41,12 @@ public interface ListModelsRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the project, from which to list the models.
+   * Required. Resource name of the project, from which to list the models.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -54,7 +58,7 @@ public interface ListModelsRequestOrBuilder
    * <pre>
    * An expression for filtering the results of the request.
    *   * `model_metadata` - for existence of the case (e.g.
-   *             image_classification_model_metadata:*).
+   *             video_classification_model_metadata:*).
    *   * `dataset_id` - for = or !=. Some examples of using the filter are:
    *   * `image_classification_model_metadata:*` --&gt; The model has
    *                                        image_classification_model_metadata.
@@ -72,7 +76,7 @@ public interface ListModelsRequestOrBuilder
    * <pre>
    * An expression for filtering the results of the request.
    *   * `model_metadata` - for existence of the case (e.g.
-   *             image_classification_model_metadata:*).
+   *             video_classification_model_metadata:*).
    *   * `dataset_id` - for = or !=. Some examples of using the filter are:
    *   * `image_classification_model_metadata:*` --&gt; The model has
    *                                        image_classification_model_metadata.
@@ -104,8 +108,7 @@ public interface ListModelsRequestOrBuilder
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token]
-   * of the previous
+   * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token] of the previous
    * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels] call.
    * </pre>
    *
@@ -120,8 +123,7 @@ public interface ListModelsRequestOrBuilder
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token]
-   * of the previous
+   * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token] of the previous
    * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels] call.
    * </pre>
    *

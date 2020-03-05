@@ -27,10 +27,12 @@ public interface CreateDatasetRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the project to create the dataset for.
+   * Required. The resource name of the project to create the dataset for.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -39,10 +41,12 @@ public interface CreateDatasetRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the project to create the dataset for.
+   * Required. The resource name of the project to create the dataset for.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -52,10 +56,11 @@ public interface CreateDatasetRequestOrBuilder
    *
    *
    * <pre>
-   * The dataset to create.
+   * Required. The dataset to create.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+   * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the dataset field is set.
    */
@@ -64,10 +69,11 @@ public interface CreateDatasetRequestOrBuilder
    *
    *
    * <pre>
-   * The dataset to create.
+   * Required. The dataset to create.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+   * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The dataset.
    */
@@ -76,10 +82,11 @@ public interface CreateDatasetRequestOrBuilder
    *
    *
    * <pre>
-   * The dataset to create.
+   * Required. The dataset to create.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+   * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.automl.v1.DatasetOrBuilder getDatasetOrBuilder();
 }

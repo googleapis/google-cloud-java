@@ -31,7 +31,9 @@ public interface ImportDataRequestOrBuilder
    * annotations and examples will be added.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -44,7 +46,9 @@ public interface ImportDataRequestOrBuilder
    * annotations and examples will be added.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -58,7 +62,9 @@ public interface ImportDataRequestOrBuilder
    * if any.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.InputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the inputConfig field is set.
    */
@@ -71,7 +77,9 @@ public interface ImportDataRequestOrBuilder
    * if any.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.InputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The inputConfig.
    */
@@ -84,7 +92,9 @@ public interface ImportDataRequestOrBuilder
    * if any.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.InputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.automl.v1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.automl.v1.InputConfigOrBuilder getInputConfigOrBuilder();
 }

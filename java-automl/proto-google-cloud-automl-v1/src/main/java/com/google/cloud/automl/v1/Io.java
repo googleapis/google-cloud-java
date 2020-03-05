@@ -77,8 +77,8 @@ public final class Io {
   static {
     java.lang.String[] descriptorData = {
       "\n\037google/cloud/automl/v1/io.proto\022\026googl"
-          + "e.cloud.automl.v1\032\034google/api/annotation"
-          + "s.proto\032\037google/api/field_behavior.proto"
+          + "e.cloud.automl.v1\032\037google/api/field_beha"
+          + "vior.proto\032\034google/api/annotations.proto"
           + "\"\300\001\n\013InputConfig\0227\n\ngcs_source\030\001 \001(\0132!.g"
           + "oogle.cloud.automl.v1.GcsSourceH\000\022?\n\006par"
           + "ams\030\002 \003(\0132/.google.cloud.automl.v1.Input"
@@ -112,8 +112,8 @@ public final class Io {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1_InputConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -202,8 +202,8 @@ public final class Io {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

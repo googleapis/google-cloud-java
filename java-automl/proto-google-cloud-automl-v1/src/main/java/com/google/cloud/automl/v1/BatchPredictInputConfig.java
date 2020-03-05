@@ -30,25 +30,77 @@ package com.google.cloud.automl.v1;
  * The formats are represented in EBNF with commas being literal and with
  * non-terminal symbols defined near the end of this comment. The formats
  * are:
+ * &lt;h4&gt;AutoML Vision&lt;/h4&gt;
+ * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+ * One or more CSV files where each line is a single column:
+ *     GCS_FILE_PATH
+ * The Google Cloud Storage location of an image of up to
+ * 30MB in size. Supported extensions: .JPEG, .GIF, .PNG.
+ * This path is treated as the ID in the batch predict output.
+ * Sample rows:
+ *     gs://folder/image1.jpeg
+ *     gs://folder/image2.gif
+ *     gs://folder/image3.png
+ * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Detection&lt;/h5&gt;
+ * One or more CSV files where each line is a single column:
+ *     GCS_FILE_PATH
+ * The Google Cloud Storage location of an image of up to
+ * 30MB in size. Supported extensions: .JPEG, .GIF, .PNG.
+ * This path is treated as the ID in the batch predict output.
+ * Sample rows:
+ *     gs://folder/image1.jpeg
+ *     gs://folder/image2.gif
+ *     gs://folder/image3.png
+ *   &lt;/section&gt;
+ * &lt;/div&gt;
+ * &lt;h4&gt;AutoML Video Intelligence&lt;/h4&gt;
+ * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+ * One or more CSV files where each line is a single column:
+ *     GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END
+ * `GCS_FILE_PATH` is the Google Cloud Storage location of video up to 50GB in
+ * size and up to 3h in duration duration.
+ * Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
+ * `TIME_SEGMENT_START` and `TIME_SEGMENT_END` must be within the
+ * length of the video, and the end time must be after the start time.
+ * Sample rows:
+ *     gs://folder/video1.mp4,10,40
+ *     gs://folder/video1.mp4,20,60
+ *     gs://folder/vid2.mov,0,inf
+ * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Tracking&lt;/h5&gt;
+ * One or more CSV files where each line is a single column:
+ *     GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END
+ * `GCS_FILE_PATH` is the Google Cloud Storage location of video up to 50GB in
+ * size and up to 3h in duration duration.
+ * Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
+ * `TIME_SEGMENT_START` and `TIME_SEGMENT_END` must be within the
+ * length of the video, and the end time must be after the start time.
+ * Sample rows:
+ *     gs://folder/video1.mp4,10,40
+ *     gs://folder/video1.mp4,20,60
+ *     gs://folder/vid2.mov,0,inf
+ *   &lt;/section&gt;
+ * &lt;/div&gt;
  * &lt;h4&gt;AutoML Natural Language&lt;/h4&gt;
  * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
  * One or more CSV files where each line is a single column:
  *     GCS_FILE_PATH
  * `GCS_FILE_PATH` is the Google Cloud Storage location of a text file.
- * Supported file extensions: .TXT, .PDF
+ * Supported file extensions: .TXT, .PDF, .TIF, .TIFF
  * Text files can be no larger than 10MB in size.
  * Sample rows:
  *     gs://folder/text1.txt
  *     gs://folder/text2.pdf
+ *     gs://folder/text3.tif
  * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Sentiment Analysis&lt;/h5&gt;
  * One or more CSV files where each line is a single column:
  *     GCS_FILE_PATH
  * `GCS_FILE_PATH` is the Google Cloud Storage location of a text file.
- * Supported file extensions: .TXT, .PDF
+ * Supported file extensions: .TXT, .PDF, .TIF, .TIFF
  * Text files can be no larger than 128kB in size.
  * Sample rows:
  *     gs://folder/text1.txt
  *     gs://folder/text2.pdf
+ *     gs://folder/text3.tif
  * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Entity Extraction&lt;/h5&gt;
  * One or more JSONL (JSON Lines) files that either provide inline text or
  * documents. You can only use one format, either inline text or documents,
@@ -60,9 +112,9 @@ package com.google.cloud.automl.v1;
  * text snippet content must have 30,000 characters or less, and also
  * be UTF-8 NFC encoded (ASCII already is). The IDs provided should be
  * unique.
- * Each document JSONL file contains, per line, a proto that wraps a
- * Document proto with `input_config` set. Only PDF documents are
- * currently supported, and each PDF document cannot exceed 2MB in size.
+ * Each document JSONL file contains, per line, a proto that wraps a Document
+ * proto with `input_config` set. Each document cannot exceed 2MB in size.
+ * Supported document extensions: .PDF, .TIF, .TIFF
  * Each JSONL file must not exceed 100MB in size, and no more than 20
  * JSONL files may be passed.
  * Sample inline JSONL file (Shown with artificial line
@@ -105,17 +157,71 @@ package com.google.cloud.automl.v1;
  *      {
  *        "document": {
  *          "input_config": {
- *            "gcs_source": { "input_uris": [ "gs://folder/document2.pdf" ]
+ *            "gcs_source": { "input_uris": [ "gs://folder/document2.tif" ]
  *            }
  *          }
  *        }
  *      }
  *   &lt;/section&gt;
  * &lt;/div&gt;
+ * &lt;h4&gt;AutoML Tables&lt;/h4&gt;&lt;div class="ui-datasection-main"&gt;&lt;section
+ * class="selected"&gt;
+ * See [Preparing your training
+ * data](https://cloud.google.com/automl-tables/docs/predict-batch) for more
+ * information.
+ * You can use either
+ * [gcs_source][google.cloud.automl.v1.BatchPredictInputConfig.gcs_source]
+ * or
+ * [bigquery_source][BatchPredictInputConfig.bigquery_source].
+ * **For gcs_source:**
+ * CSV file(s), each by itself 10GB or smaller and total size must be
+ * 100GB or smaller, where first file must have a header containing
+ * column names. If the first row of a subsequent file is the same as
+ * the header, then it is also treated as a header. All other rows
+ * contain values for the corresponding columns.
+ * The column names must contain the model's
+ * [input_feature_column_specs'][google.cloud.automl.v1.TablesModelMetadata.input_feature_column_specs]
+ * [display_name-s][google.cloud.automl.v1.ColumnSpec.display_name]
+ * (order doesn't matter). The columns corresponding to the model's
+ * input feature column specs must contain values compatible with the
+ * column spec's data types. Prediction on all the rows, i.e. the CSV
+ * lines, will be attempted.
+ * Sample rows from a CSV file:
+ * &lt;pre&gt;
+ * "First Name","Last Name","Dob","Addresses"
+ * "John","Doe","1968-01-22","[{"status":"current","address":"123_First_Avenue","city":"Seattle","state":"WA","zip":"11111","numberOfYears":"1"},{"status":"previous","address":"456_Main_Street","city":"Portland","state":"OR","zip":"22222","numberOfYears":"5"}]"
+ * "Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
+ * &lt;/pre&gt;
+ * **For bigquery_source:**
+ * The URI of a BigQuery table. The user data size of the BigQuery
+ * table must be 100GB or smaller.
+ * The column names must contain the model's
+ * [input_feature_column_specs'][google.cloud.automl.v1.TablesModelMetadata.input_feature_column_specs]
+ * [display_name-s][google.cloud.automl.v1.ColumnSpec.display_name]
+ * (order doesn't matter). The columns corresponding to the model's
+ * input feature column specs must contain values compatible with the
+ * column spec's data types. Prediction on all the rows of the table
+ * will be attempted.
+ *   &lt;/section&gt;
+ * &lt;/div&gt;
  * **Input field definitions:**
  * `GCS_FILE_PATH`
  * : The path to a file on Google Cloud Storage. For example,
  *   "gs://folder/video.avi".
+ * `TIME_SEGMENT_START`
+ * : (`TIME_OFFSET`)
+ *   Expresses a beginning, inclusive, of a time segment
+ *   within an example that has a time dimension
+ *   (e.g. video).
+ * `TIME_SEGMENT_END`
+ * : (`TIME_OFFSET`)
+ *   Expresses an end, exclusive, of a time segment within
+ *   n example that has a time dimension (e.g. video).
+ * `TIME_OFFSET`
+ * : A number of seconds as measured from the start of an
+ *   example (e.g. video). Fractions are allowed, up to a
+ *   microsecond precision. "inf" is allowed, and it means the end
+ *   of the example.
  *  **Errors:**
  *  If any of the provided CSV files can't be parsed or if more than certain
  *  percent of CSV rows cannot be processed then the operation fails and
@@ -501,25 +607,77 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    * The formats are represented in EBNF with commas being literal and with
    * non-terminal symbols defined near the end of this comment. The formats
    * are:
+   * &lt;h4&gt;AutoML Vision&lt;/h4&gt;
+   * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+   * One or more CSV files where each line is a single column:
+   *     GCS_FILE_PATH
+   * The Google Cloud Storage location of an image of up to
+   * 30MB in size. Supported extensions: .JPEG, .GIF, .PNG.
+   * This path is treated as the ID in the batch predict output.
+   * Sample rows:
+   *     gs://folder/image1.jpeg
+   *     gs://folder/image2.gif
+   *     gs://folder/image3.png
+   * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Detection&lt;/h5&gt;
+   * One or more CSV files where each line is a single column:
+   *     GCS_FILE_PATH
+   * The Google Cloud Storage location of an image of up to
+   * 30MB in size. Supported extensions: .JPEG, .GIF, .PNG.
+   * This path is treated as the ID in the batch predict output.
+   * Sample rows:
+   *     gs://folder/image1.jpeg
+   *     gs://folder/image2.gif
+   *     gs://folder/image3.png
+   *   &lt;/section&gt;
+   * &lt;/div&gt;
+   * &lt;h4&gt;AutoML Video Intelligence&lt;/h4&gt;
+   * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+   * One or more CSV files where each line is a single column:
+   *     GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END
+   * `GCS_FILE_PATH` is the Google Cloud Storage location of video up to 50GB in
+   * size and up to 3h in duration duration.
+   * Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
+   * `TIME_SEGMENT_START` and `TIME_SEGMENT_END` must be within the
+   * length of the video, and the end time must be after the start time.
+   * Sample rows:
+   *     gs://folder/video1.mp4,10,40
+   *     gs://folder/video1.mp4,20,60
+   *     gs://folder/vid2.mov,0,inf
+   * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Tracking&lt;/h5&gt;
+   * One or more CSV files where each line is a single column:
+   *     GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END
+   * `GCS_FILE_PATH` is the Google Cloud Storage location of video up to 50GB in
+   * size and up to 3h in duration duration.
+   * Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
+   * `TIME_SEGMENT_START` and `TIME_SEGMENT_END` must be within the
+   * length of the video, and the end time must be after the start time.
+   * Sample rows:
+   *     gs://folder/video1.mp4,10,40
+   *     gs://folder/video1.mp4,20,60
+   *     gs://folder/vid2.mov,0,inf
+   *   &lt;/section&gt;
+   * &lt;/div&gt;
    * &lt;h4&gt;AutoML Natural Language&lt;/h4&gt;
    * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
    * One or more CSV files where each line is a single column:
    *     GCS_FILE_PATH
    * `GCS_FILE_PATH` is the Google Cloud Storage location of a text file.
-   * Supported file extensions: .TXT, .PDF
+   * Supported file extensions: .TXT, .PDF, .TIF, .TIFF
    * Text files can be no larger than 10MB in size.
    * Sample rows:
    *     gs://folder/text1.txt
    *     gs://folder/text2.pdf
+   *     gs://folder/text3.tif
    * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Sentiment Analysis&lt;/h5&gt;
    * One or more CSV files where each line is a single column:
    *     GCS_FILE_PATH
    * `GCS_FILE_PATH` is the Google Cloud Storage location of a text file.
-   * Supported file extensions: .TXT, .PDF
+   * Supported file extensions: .TXT, .PDF, .TIF, .TIFF
    * Text files can be no larger than 128kB in size.
    * Sample rows:
    *     gs://folder/text1.txt
    *     gs://folder/text2.pdf
+   *     gs://folder/text3.tif
    * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Entity Extraction&lt;/h5&gt;
    * One or more JSONL (JSON Lines) files that either provide inline text or
    * documents. You can only use one format, either inline text or documents,
@@ -531,9 +689,9 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    * text snippet content must have 30,000 characters or less, and also
    * be UTF-8 NFC encoded (ASCII already is). The IDs provided should be
    * unique.
-   * Each document JSONL file contains, per line, a proto that wraps a
-   * Document proto with `input_config` set. Only PDF documents are
-   * currently supported, and each PDF document cannot exceed 2MB in size.
+   * Each document JSONL file contains, per line, a proto that wraps a Document
+   * proto with `input_config` set. Each document cannot exceed 2MB in size.
+   * Supported document extensions: .PDF, .TIF, .TIFF
    * Each JSONL file must not exceed 100MB in size, and no more than 20
    * JSONL files may be passed.
    * Sample inline JSONL file (Shown with artificial line
@@ -576,17 +734,71 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *      {
    *        "document": {
    *          "input_config": {
-   *            "gcs_source": { "input_uris": [ "gs://folder/document2.pdf" ]
+   *            "gcs_source": { "input_uris": [ "gs://folder/document2.tif" ]
    *            }
    *          }
    *        }
    *      }
    *   &lt;/section&gt;
    * &lt;/div&gt;
+   * &lt;h4&gt;AutoML Tables&lt;/h4&gt;&lt;div class="ui-datasection-main"&gt;&lt;section
+   * class="selected"&gt;
+   * See [Preparing your training
+   * data](https://cloud.google.com/automl-tables/docs/predict-batch) for more
+   * information.
+   * You can use either
+   * [gcs_source][google.cloud.automl.v1.BatchPredictInputConfig.gcs_source]
+   * or
+   * [bigquery_source][BatchPredictInputConfig.bigquery_source].
+   * **For gcs_source:**
+   * CSV file(s), each by itself 10GB or smaller and total size must be
+   * 100GB or smaller, where first file must have a header containing
+   * column names. If the first row of a subsequent file is the same as
+   * the header, then it is also treated as a header. All other rows
+   * contain values for the corresponding columns.
+   * The column names must contain the model's
+   * [input_feature_column_specs'][google.cloud.automl.v1.TablesModelMetadata.input_feature_column_specs]
+   * [display_name-s][google.cloud.automl.v1.ColumnSpec.display_name]
+   * (order doesn't matter). The columns corresponding to the model's
+   * input feature column specs must contain values compatible with the
+   * column spec's data types. Prediction on all the rows, i.e. the CSV
+   * lines, will be attempted.
+   * Sample rows from a CSV file:
+   * &lt;pre&gt;
+   * "First Name","Last Name","Dob","Addresses"
+   * "John","Doe","1968-01-22","[{"status":"current","address":"123_First_Avenue","city":"Seattle","state":"WA","zip":"11111","numberOfYears":"1"},{"status":"previous","address":"456_Main_Street","city":"Portland","state":"OR","zip":"22222","numberOfYears":"5"}]"
+   * "Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
+   * &lt;/pre&gt;
+   * **For bigquery_source:**
+   * The URI of a BigQuery table. The user data size of the BigQuery
+   * table must be 100GB or smaller.
+   * The column names must contain the model's
+   * [input_feature_column_specs'][google.cloud.automl.v1.TablesModelMetadata.input_feature_column_specs]
+   * [display_name-s][google.cloud.automl.v1.ColumnSpec.display_name]
+   * (order doesn't matter). The columns corresponding to the model's
+   * input feature column specs must contain values compatible with the
+   * column spec's data types. Prediction on all the rows of the table
+   * will be attempted.
+   *   &lt;/section&gt;
+   * &lt;/div&gt;
    * **Input field definitions:**
    * `GCS_FILE_PATH`
    * : The path to a file on Google Cloud Storage. For example,
    *   "gs://folder/video.avi".
+   * `TIME_SEGMENT_START`
+   * : (`TIME_OFFSET`)
+   *   Expresses a beginning, inclusive, of a time segment
+   *   within an example that has a time dimension
+   *   (e.g. video).
+   * `TIME_SEGMENT_END`
+   * : (`TIME_OFFSET`)
+   *   Expresses an end, exclusive, of a time segment within
+   *   n example that has a time dimension (e.g. video).
+   * `TIME_OFFSET`
+   * : A number of seconds as measured from the start of an
+   *   example (e.g. video). Fractions are allowed, up to a
+   *   microsecond precision. "inf" is allowed, and it means the end
+   *   of the example.
    *  **Errors:**
    *  If any of the provided CSV files can't be parsed or if more than certain
    *  percent of CSV rows cannot be processed then the operation fails and

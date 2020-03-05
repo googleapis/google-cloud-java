@@ -1091,6 +1091,13 @@ public final class AutoMlGrpc {
      *
      * <pre>
      * Imports data into a dataset.
+     * For Tables this method can only be called on an empty Dataset.
+     * For Tables:
+     * *   A
+     * [schema_inference_version][google.cloud.automl.v1.InputConfig.params]
+     *     parameter must be explicitly set.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
      * </pre>
      */
     public void importData(
@@ -1208,10 +1215,10 @@ public final class AutoMlGrpc {
      * Deploys a model. If a model is already deployed, deploying it with the
      * same parameters has no effect. Deploying with different parametrs
      * (as e.g. changing
-     * [node_number][google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
      *  will reset the deployment state without pausing the model's availability.
-     * Only applicable for Text Classification, Image Object Detection; all other
-     * domains manage deployment automatically.
+     * Only applicable for Text Classification, Image Object Detection , Tables, and Image Segmentation; all other domains manage
+     * deployment automatically.
      * Returns an empty response in the
      * [response][google.longrunning.Operation.response] field when it completes.
      * </pre>
@@ -1227,7 +1234,7 @@ public final class AutoMlGrpc {
      *
      * <pre>
      * Undeploys a model. If the model is not deployed this method has no effect.
-     * Only applicable for Text Classification, Image Object Detection;
+     * Only applicable for Text Classification, Image Object Detection and Tables;
      * all other domains manage deployment automatically.
      * Returns an empty response in the
      * [response][google.longrunning.Operation.response] field when it completes.
@@ -1523,6 +1530,13 @@ public final class AutoMlGrpc {
      *
      * <pre>
      * Imports data into a dataset.
+     * For Tables this method can only be called on an empty Dataset.
+     * For Tables:
+     * *   A
+     * [schema_inference_version][google.cloud.automl.v1.InputConfig.params]
+     *     parameter must be explicitly set.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
      * </pre>
      */
     public void importData(
@@ -1664,10 +1678,10 @@ public final class AutoMlGrpc {
      * Deploys a model. If a model is already deployed, deploying it with the
      * same parameters has no effect. Deploying with different parametrs
      * (as e.g. changing
-     * [node_number][google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
      *  will reset the deployment state without pausing the model's availability.
-     * Only applicable for Text Classification, Image Object Detection; all other
-     * domains manage deployment automatically.
+     * Only applicable for Text Classification, Image Object Detection , Tables, and Image Segmentation; all other domains manage
+     * deployment automatically.
      * Returns an empty response in the
      * [response][google.longrunning.Operation.response] field when it completes.
      * </pre>
@@ -1686,7 +1700,7 @@ public final class AutoMlGrpc {
      *
      * <pre>
      * Undeploys a model. If the model is not deployed this method has no effect.
-     * Only applicable for Text Classification, Image Object Detection;
+     * Only applicable for Text Classification, Image Object Detection and Tables;
      * all other domains manage deployment automatically.
      * Returns an empty response in the
      * [response][google.longrunning.Operation.response] field when it completes.
@@ -1861,6 +1875,13 @@ public final class AutoMlGrpc {
      *
      * <pre>
      * Imports data into a dataset.
+     * For Tables this method can only be called on an empty Dataset.
+     * For Tables:
+     * *   A
+     * [schema_inference_version][google.cloud.automl.v1.InputConfig.params]
+     *     parameter must be explicitly set.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
      * </pre>
      */
     public com.google.longrunning.Operation importData(
@@ -1976,10 +1997,10 @@ public final class AutoMlGrpc {
      * Deploys a model. If a model is already deployed, deploying it with the
      * same parameters has no effect. Deploying with different parametrs
      * (as e.g. changing
-     * [node_number][google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
      *  will reset the deployment state without pausing the model's availability.
-     * Only applicable for Text Classification, Image Object Detection; all other
-     * domains manage deployment automatically.
+     * Only applicable for Text Classification, Image Object Detection , Tables, and Image Segmentation; all other domains manage
+     * deployment automatically.
      * Returns an empty response in the
      * [response][google.longrunning.Operation.response] field when it completes.
      * </pre>
@@ -1995,7 +2016,7 @@ public final class AutoMlGrpc {
      *
      * <pre>
      * Undeploys a model. If the model is not deployed this method has no effect.
-     * Only applicable for Text Classification, Image Object Detection;
+     * Only applicable for Text Classification, Image Object Detection and Tables;
      * all other domains manage deployment automatically.
      * Returns an empty response in the
      * [response][google.longrunning.Operation.response] field when it completes.
@@ -2157,6 +2178,13 @@ public final class AutoMlGrpc {
      *
      * <pre>
      * Imports data into a dataset.
+     * For Tables this method can only be called on an empty Dataset.
+     * For Tables:
+     * *   A
+     * [schema_inference_version][google.cloud.automl.v1.InputConfig.params]
+     *     parameter must be explicitly set.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2275,10 +2303,10 @@ public final class AutoMlGrpc {
      * Deploys a model. If a model is already deployed, deploying it with the
      * same parameters has no effect. Deploying with different parametrs
      * (as e.g. changing
-     * [node_number][google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
      *  will reset the deployment state without pausing the model's availability.
-     * Only applicable for Text Classification, Image Object Detection; all other
-     * domains manage deployment automatically.
+     * Only applicable for Text Classification, Image Object Detection , Tables, and Image Segmentation; all other domains manage
+     * deployment automatically.
      * Returns an empty response in the
      * [response][google.longrunning.Operation.response] field when it completes.
      * </pre>
@@ -2294,7 +2322,7 @@ public final class AutoMlGrpc {
      *
      * <pre>
      * Undeploys a model. If the model is not deployed this method has no effect.
-     * Only applicable for Text Classification, Image Object Detection;
+     * Only applicable for Text Classification, Image Object Detection and Tables;
      * all other domains manage deployment automatically.
      * Returns an empty response in the
      * [response][google.longrunning.Operation.response] field when it completes.

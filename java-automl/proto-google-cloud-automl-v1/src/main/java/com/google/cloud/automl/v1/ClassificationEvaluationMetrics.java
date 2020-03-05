@@ -23,6 +23,8 @@ package com.google.cloud.automl.v1;
  *
  * <pre>
  * Model evaluation metrics for classification problems.
+ * Note: For Video Classification this metrics only describe quality of the
+ * Video Classification predictions of "segment_classification" type.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.ClassificationEvaluationMetrics}
@@ -309,10 +311,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. The harmonic mean of
-     * [recall_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
-     * and
-     * [precision_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+     * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
      * </pre>
      *
      * <code>float f1_score_at1 = 7;</code>
@@ -703,10 +702,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. The harmonic mean of
-     * [recall_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
-     * and
-     * [precision_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+     * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
      * </pre>
      *
      * <code>float f1_score_at1 = 7;</code>
@@ -1836,10 +1832,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Output only. The harmonic mean of
-       * [recall_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
-       * and
-       * [precision_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+       * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
@@ -1853,10 +1846,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Output only. The harmonic mean of
-       * [recall_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
-       * and
-       * [precision_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+       * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
@@ -1874,10 +1864,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Output only. The harmonic mean of
-       * [recall_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
-       * and
-       * [precision_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+       * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
@@ -2174,6 +2161,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. IDs of the annotation specs used in the confusion matrix.
+     * For Tables CLASSIFICATION
+     * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+     * only list of [annotation_spec_display_name-s][] is populated.
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 1;</code>
@@ -2186,6 +2176,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. IDs of the annotation specs used in the confusion matrix.
+     * For Tables CLASSIFICATION
+     * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+     * only list of [annotation_spec_display_name-s][] is populated.
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 1;</code>
@@ -2198,6 +2191,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. IDs of the annotation specs used in the confusion matrix.
+     * For Tables CLASSIFICATION
+     * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+     * only list of [annotation_spec_display_name-s][] is populated.
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 1;</code>
@@ -2211,6 +2207,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. IDs of the annotation specs used in the confusion matrix.
+     * For Tables CLASSIFICATION
+     * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+     * only list of [annotation_spec_display_name-s][] is populated.
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 1;</code>
@@ -2225,7 +2224,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. Display name of the annotation specs used in the confusion
-     * matrix, as they were at the moment of the evaluation.
+     * matrix, as they were at the moment of the evaluation. For Tables
+     * CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+     * distinct values of the target column at the moment of the model
+     * evaluation are populated here.
      * </pre>
      *
      * <code>repeated string display_name = 3;</code>
@@ -2238,7 +2241,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. Display name of the annotation specs used in the confusion
-     * matrix, as they were at the moment of the evaluation.
+     * matrix, as they were at the moment of the evaluation. For Tables
+     * CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+     * distinct values of the target column at the moment of the model
+     * evaluation are populated here.
      * </pre>
      *
      * <code>repeated string display_name = 3;</code>
@@ -2251,7 +2258,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. Display name of the annotation specs used in the confusion
-     * matrix, as they were at the moment of the evaluation.
+     * matrix, as they were at the moment of the evaluation. For Tables
+     * CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+     * distinct values of the target column at the moment of the model
+     * evaluation are populated here.
      * </pre>
      *
      * <code>repeated string display_name = 3;</code>
@@ -2265,7 +2276,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. Display name of the annotation specs used in the confusion
-     * matrix, as they were at the moment of the evaluation.
+     * matrix, as they were at the moment of the evaluation. For Tables
+     * CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+     * distinct values of the target column at the moment of the model
+     * evaluation are populated here.
      * </pre>
      *
      * <code>repeated string display_name = 3;</code>
@@ -2510,9 +2525,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        * Output only. Value of the specific cell in the confusion matrix.
        * The number of values each row has (i.e. the length of the row) is equal
        * to the length of the `annotation_spec_id` field or, if that one is not
-       * populated, length of the
-       * [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
-       * field.
+       * populated, length of the [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
        * </pre>
        *
        * <code>repeated int32 example_count = 1;</code>
@@ -2527,9 +2540,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        * Output only. Value of the specific cell in the confusion matrix.
        * The number of values each row has (i.e. the length of the row) is equal
        * to the length of the `annotation_spec_id` field or, if that one is not
-       * populated, length of the
-       * [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
-       * field.
+       * populated, length of the [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
        * </pre>
        *
        * <code>repeated int32 example_count = 1;</code>
@@ -2544,9 +2555,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        * Output only. Value of the specific cell in the confusion matrix.
        * The number of values each row has (i.e. the length of the row) is equal
        * to the length of the `annotation_spec_id` field or, if that one is not
-       * populated, length of the
-       * [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
-       * field.
+       * populated, length of the [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
        * </pre>
        *
        * <code>repeated int32 example_count = 1;</code>
@@ -2682,9 +2691,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        * Output only. Value of the specific cell in the confusion matrix.
        * The number of values each row has (i.e. the length of the row) is equal
        * to the length of the `annotation_spec_id` field or, if that one is not
-       * populated, length of the
-       * [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
-       * field.
+       * populated, length of the [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
        * </pre>
        *
        * <code>repeated int32 example_count = 1;</code>
@@ -2701,9 +2708,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        * Output only. Value of the specific cell in the confusion matrix.
        * The number of values each row has (i.e. the length of the row) is equal
        * to the length of the `annotation_spec_id` field or, if that one is not
-       * populated, length of the
-       * [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
-       * field.
+       * populated, length of the [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
        * </pre>
        *
        * <code>repeated int32 example_count = 1;</code>
@@ -2720,9 +2725,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        * Output only. Value of the specific cell in the confusion matrix.
        * The number of values each row has (i.e. the length of the row) is equal
        * to the length of the `annotation_spec_id` field or, if that one is not
-       * populated, length of the
-       * [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
-       * field.
+       * populated, length of the [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
        * </pre>
        *
        * <code>repeated int32 example_count = 1;</code>
@@ -3134,9 +3137,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
          * to the length of the `annotation_spec_id` field or, if that one is not
-         * populated, length of the
-         * [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
-         * field.
+         * populated, length of the [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -3155,9 +3156,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
          * to the length of the `annotation_spec_id` field or, if that one is not
-         * populated, length of the
-         * [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
-         * field.
+         * populated, length of the [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -3174,9 +3173,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
          * to the length of the `annotation_spec_id` field or, if that one is not
-         * populated, length of the
-         * [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
-         * field.
+         * populated, length of the [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -3194,9 +3191,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
          * to the length of the `annotation_spec_id` field or, if that one is not
-         * populated, length of the
-         * [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
-         * field.
+         * populated, length of the [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -3218,9 +3213,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
          * to the length of the `annotation_spec_id` field or, if that one is not
-         * populated, length of the
-         * [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
-         * field.
+         * populated, length of the [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -3241,9 +3234,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
          * to the length of the `annotation_spec_id` field or, if that one is not
-         * populated, length of the
-         * [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
-         * field.
+         * populated, length of the [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -3264,9 +3255,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
          * to the length of the `annotation_spec_id` field or, if that one is not
-         * populated, length of the
-         * [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
-         * field.
+         * populated, length of the [display_name][google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -3344,6 +3333,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. IDs of the annotation specs used in the confusion matrix.
+     * For Tables CLASSIFICATION
+     * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+     * only list of [annotation_spec_display_name-s][] is populated.
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 1;</code>
@@ -3358,6 +3350,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. IDs of the annotation specs used in the confusion matrix.
+     * For Tables CLASSIFICATION
+     * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+     * only list of [annotation_spec_display_name-s][] is populated.
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 1;</code>
@@ -3372,6 +3367,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. IDs of the annotation specs used in the confusion matrix.
+     * For Tables CLASSIFICATION
+     * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+     * only list of [annotation_spec_display_name-s][] is populated.
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 1;</code>
@@ -3387,6 +3385,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. IDs of the annotation specs used in the confusion matrix.
+     * For Tables CLASSIFICATION
+     * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+     * only list of [annotation_spec_display_name-s][] is populated.
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 1;</code>
@@ -3405,7 +3406,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. Display name of the annotation specs used in the confusion
-     * matrix, as they were at the moment of the evaluation.
+     * matrix, as they were at the moment of the evaluation. For Tables
+     * CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+     * distinct values of the target column at the moment of the model
+     * evaluation are populated here.
      * </pre>
      *
      * <code>repeated string display_name = 3;</code>
@@ -3420,7 +3425,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. Display name of the annotation specs used in the confusion
-     * matrix, as they were at the moment of the evaluation.
+     * matrix, as they were at the moment of the evaluation. For Tables
+     * CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+     * distinct values of the target column at the moment of the model
+     * evaluation are populated here.
      * </pre>
      *
      * <code>repeated string display_name = 3;</code>
@@ -3435,7 +3444,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. Display name of the annotation specs used in the confusion
-     * matrix, as they were at the moment of the evaluation.
+     * matrix, as they were at the moment of the evaluation. For Tables
+     * CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+     * distinct values of the target column at the moment of the model
+     * evaluation are populated here.
      * </pre>
      *
      * <code>repeated string display_name = 3;</code>
@@ -3451,7 +3464,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * <pre>
      * Output only. Display name of the annotation specs used in the confusion
-     * matrix, as they were at the moment of the evaluation.
+     * matrix, as they were at the moment of the evaluation. For Tables
+     * CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+     * distinct values of the target column at the moment of the model
+     * evaluation are populated here.
      * </pre>
      *
      * <code>repeated string display_name = 3;</code>
@@ -4030,6 +4047,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -4044,6 +4064,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -4058,6 +4081,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -4073,6 +4099,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -4088,6 +4117,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -4110,6 +4142,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -4131,6 +4166,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -4149,6 +4187,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -4166,6 +4207,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -4198,7 +4242,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. Display name of the annotation specs used in the confusion
-       * matrix, as they were at the moment of the evaluation.
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
@@ -4213,7 +4261,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. Display name of the annotation specs used in the confusion
-       * matrix, as they were at the moment of the evaluation.
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
@@ -4228,7 +4280,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. Display name of the annotation specs used in the confusion
-       * matrix, as they were at the moment of the evaluation.
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
@@ -4244,7 +4300,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. Display name of the annotation specs used in the confusion
-       * matrix, as they were at the moment of the evaluation.
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
@@ -4260,7 +4320,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. Display name of the annotation specs used in the confusion
-       * matrix, as they were at the moment of the evaluation.
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
@@ -4283,7 +4347,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. Display name of the annotation specs used in the confusion
-       * matrix, as they were at the moment of the evaluation.
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
@@ -4305,7 +4373,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. Display name of the annotation specs used in the confusion
-       * matrix, as they were at the moment of the evaluation.
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
@@ -4324,7 +4396,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. Display name of the annotation specs used in the confusion
-       * matrix, as they were at the moment of the evaluation.
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
@@ -4342,7 +4418,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * <pre>
        * Output only. Display name of the annotation specs used in the confusion
-       * matrix, as they were at the moment of the evaluation.
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1p1beta.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
@@ -5437,6 +5517,8 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
    *
    * <pre>
    * Model evaluation metrics for classification problems.
+   * Note: For Video Classification this metrics only describe quality of the
+   * Video Classification predictions of "segment_classification" type.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.ClassificationEvaluationMetrics}

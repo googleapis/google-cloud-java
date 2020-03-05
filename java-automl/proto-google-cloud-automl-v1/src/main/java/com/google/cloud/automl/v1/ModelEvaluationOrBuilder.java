@@ -27,7 +27,10 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Model evaluation metrics for image, text classification.
+   * Model evaluation metrics for image, text, video and tables
+   * classification.
+   * Tables problem is considered a classification when the target column
+   * is CATEGORY DataType.
    * </pre>
    *
    * <code>
@@ -41,7 +44,10 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Model evaluation metrics for image, text classification.
+   * Model evaluation metrics for image, text, video and tables
+   * classification.
+   * Tables problem is considered a classification when the target column
+   * is CATEGORY DataType.
    * </pre>
    *
    * <code>
@@ -55,7 +61,10 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Model evaluation metrics for image, text classification.
+   * Model evaluation metrics for image, text, video and tables
+   * classification.
+   * Tables problem is considered a classification when the target column
+   * is CATEGORY DataType.
    * </pre>
    *
    * <code>
@@ -264,8 +273,14 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. The ID of the annotation spec that the model evaluation
-   * applies to. The The ID is empty for the overall model evaluation.
+   * Output only. The ID of the annotation spec that the model evaluation applies to. The
+   * The ID is empty for the overall model evaluation.
+   * For Tables annotation specs in the dataset do not exist and this ID is
+   * always not set, but for CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+   * the
+   * [display_name][google.cloud.automl.v1.ModelEvaluation.display_name]
+   * field is used.
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
@@ -277,8 +292,14 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. The ID of the annotation spec that the model evaluation
-   * applies to. The The ID is empty for the overall model evaluation.
+   * Output only. The ID of the annotation spec that the model evaluation applies to. The
+   * The ID is empty for the overall model evaluation.
+   * For Tables annotation specs in the dataset do not exist and this ID is
+   * always not set, but for CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+   * the
+   * [display_name][google.cloud.automl.v1.ModelEvaluation.display_name]
+   * field is used.
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
@@ -296,7 +317,11 @@ public interface ModelEvaluationOrBuilder
    * at the moment when the model was trained. Because this field returns a
    * value at model training time, for different models trained from the same
    * dataset, the values may differ, since display names could had been changed
-   * between the two model's trainings.
+   * between the two model's trainings. For Tables CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+   * distinct values of the target column at the moment of the model evaluation
+   * are populated here.
+   * The display_name is empty for the overall model evaluation.
    * </pre>
    *
    * <code>string display_name = 15;</code>
@@ -313,7 +338,11 @@ public interface ModelEvaluationOrBuilder
    * at the moment when the model was trained. Because this field returns a
    * value at model training time, for different models trained from the same
    * dataset, the values may differ, since display names could had been changed
-   * between the two model's trainings.
+   * between the two model's trainings. For Tables CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+   * distinct values of the target column at the moment of the model evaluation
+   * are populated here.
+   * The display_name is empty for the overall model evaluation.
    * </pre>
    *
    * <code>string display_name = 15;</code>

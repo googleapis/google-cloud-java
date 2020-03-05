@@ -22,8 +22,7 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for
- * [AutoMl.GetDataset][google.cloud.automl.v1.AutoMl.GetDataset].
+ * Request message for [AutoMl.GetDataset][google.cloud.automl.v1.AutoMl.GetDataset].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.GetDatasetRequest}
@@ -118,10 +117,12 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The resource name of the dataset to retrieve.
+   * Required. The resource name of the dataset to retrieve.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -140,10 +141,12 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The resource name of the dataset to retrieve.
+   * Required. The resource name of the dataset to retrieve.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -322,8 +325,7 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for
-   * [AutoMl.GetDataset][google.cloud.automl.v1.AutoMl.GetDataset].
+   * Request message for [AutoMl.GetDataset][google.cloud.automl.v1.AutoMl.GetDataset].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.GetDatasetRequest}
@@ -481,10 +483,12 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the dataset to retrieve.
+     * Required. The resource name of the dataset to retrieve.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -503,10 +507,12 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the dataset to retrieve.
+     * Required. The resource name of the dataset to retrieve.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -525,10 +531,12 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the dataset to retrieve.
+     * Required. The resource name of the dataset to retrieve.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -546,10 +554,12 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the dataset to retrieve.
+     * Required. The resource name of the dataset to retrieve.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -563,10 +573,12 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the dataset to retrieve.
+     * Required. The resource name of the dataset to retrieve.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

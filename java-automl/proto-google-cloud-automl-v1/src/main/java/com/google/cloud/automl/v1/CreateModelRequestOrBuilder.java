@@ -27,10 +27,12 @@ public interface CreateModelRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the parent project where the model is being created.
+   * Required. Resource name of the parent project where the model is being created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -39,10 +41,12 @@ public interface CreateModelRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the parent project where the model is being created.
+   * Required. Resource name of the parent project where the model is being created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -52,10 +56,10 @@ public interface CreateModelRequestOrBuilder
    *
    *
    * <pre>
-   * The model to create.
+   * Required. The model to create.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Model model = 4;</code>
+   * <code>.google.cloud.automl.v1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the model field is set.
    */
@@ -64,10 +68,10 @@ public interface CreateModelRequestOrBuilder
    *
    *
    * <pre>
-   * The model to create.
+   * Required. The model to create.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Model model = 4;</code>
+   * <code>.google.cloud.automl.v1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The model.
    */
@@ -76,10 +80,10 @@ public interface CreateModelRequestOrBuilder
    *
    *
    * <pre>
-   * The model to create.
+   * Required. The model to create.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Model model = 4;</code>
+   * <code>.google.cloud.automl.v1.Model model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.automl.v1.ModelOrBuilder getModelOrBuilder();
 }

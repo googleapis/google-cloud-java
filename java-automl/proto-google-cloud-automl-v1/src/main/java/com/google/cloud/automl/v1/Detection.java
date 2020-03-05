@@ -53,9 +53,9 @@ public final class Detection {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/automl/v1/detection.proto"
-          + "\022\026google.cloud.automl.v1\032\034google/api/ann"
-          + "otations.proto\032%google/cloud/automl/v1/g"
-          + "eometry.proto\032\036google/protobuf/duration."
+          + "\022\026google.cloud.automl.v1\032%google/cloud/a"
+          + "utoml/v1/geometry.proto\032\036google/protobuf"
+          + "/duration.proto\032\034google/api/annotations."
           + "proto\"k\n\036ImageObjectDetectionAnnotation\022"
           + ":\n\014bounding_box\030\001 \001(\0132$.google.cloud.aut"
           + "oml.v1.BoundingPoly\022\r\n\005score\030\002 \001(\002\"\251\002\n\027B"
@@ -82,9 +82,9 @@ public final class Detection {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.automl.v1.Geometry.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1_ImageObjectDetectionAnnotation_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -122,9 +122,9 @@ public final class Detection {
               "BoundingBoxMetricsEntries",
               "BoundingBoxMeanAveragePrecision",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1.Geometry.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

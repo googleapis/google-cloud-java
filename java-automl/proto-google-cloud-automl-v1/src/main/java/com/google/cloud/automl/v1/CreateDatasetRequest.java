@@ -22,8 +22,7 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for
- * [AutoMl.CreateDataset][google.cloud.automl.v1.AutoMl.CreateDataset].
+ * Request message for [AutoMl.CreateDataset][google.cloud.automl.v1.AutoMl.CreateDataset].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.CreateDatasetRequest}
@@ -133,10 +132,12 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The resource name of the project to create the dataset for.
+   * Required. The resource name of the project to create the dataset for.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -155,10 +156,12 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The resource name of the project to create the dataset for.
+   * Required. The resource name of the project to create the dataset for.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -180,10 +183,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The dataset to create.
+   * Required. The dataset to create.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+   * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the dataset field is set.
    */
@@ -194,10 +198,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The dataset to create.
+   * Required. The dataset to create.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+   * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The dataset.
    */
@@ -208,10 +213,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The dataset to create.
+   * Required. The dataset to create.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+   * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.automl.v1.DatasetOrBuilder getDatasetOrBuilder() {
     return getDataset();
@@ -394,8 +400,7 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for
-   * [AutoMl.CreateDataset][google.cloud.automl.v1.AutoMl.CreateDataset].
+   * Request message for [AutoMl.CreateDataset][google.cloud.automl.v1.AutoMl.CreateDataset].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.CreateDatasetRequest}
@@ -568,10 +573,12 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The resource name of the project to create the dataset for.
+     * Required. The resource name of the project to create the dataset for.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -590,10 +597,12 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The resource name of the project to create the dataset for.
+     * Required. The resource name of the project to create the dataset for.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -612,10 +621,12 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The resource name of the project to create the dataset for.
+     * Required. The resource name of the project to create the dataset for.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -633,10 +644,12 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The resource name of the project to create the dataset for.
+     * Required. The resource name of the project to create the dataset for.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -650,10 +663,12 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The resource name of the project to create the dataset for.
+     * Required. The resource name of the project to create the dataset for.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -679,10 +694,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset to create.
+     * Required. The dataset to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the dataset field is set.
      */
@@ -693,10 +709,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset to create.
+     * Required. The dataset to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The dataset.
      */
@@ -713,10 +730,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset to create.
+     * Required. The dataset to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDataset(com.google.cloud.automl.v1.Dataset value) {
       if (datasetBuilder_ == null) {
@@ -735,10 +753,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset to create.
+     * Required. The dataset to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDataset(com.google.cloud.automl.v1.Dataset.Builder builderForValue) {
       if (datasetBuilder_ == null) {
@@ -754,10 +773,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset to create.
+     * Required. The dataset to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDataset(com.google.cloud.automl.v1.Dataset value) {
       if (datasetBuilder_ == null) {
@@ -780,10 +800,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset to create.
+     * Required. The dataset to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDataset() {
       if (datasetBuilder_ == null) {
@@ -800,10 +821,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset to create.
+     * Required. The dataset to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1.Dataset.Builder getDatasetBuilder() {
 
@@ -814,10 +836,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset to create.
+     * Required. The dataset to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1.DatasetOrBuilder getDatasetOrBuilder() {
       if (datasetBuilder_ != null) {
@@ -832,10 +855,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset to create.
+     * Required. The dataset to create.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 2;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1.Dataset,

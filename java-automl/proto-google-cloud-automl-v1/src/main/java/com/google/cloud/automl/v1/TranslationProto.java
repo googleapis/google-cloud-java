@@ -53,10 +53,10 @@ public final class TranslationProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/automl/v1/translation.pro"
-          + "to\022\026google.cloud.automl.v1\032\034google/api/a"
-          + "nnotations.proto\032\037google/api/field_behav"
-          + "ior.proto\032\'google/cloud/automl/v1/data_i"
-          + "tems.proto\"b\n\032TranslationDatasetMetadata"
+          + "to\022\026google.cloud.automl.v1\032\037google/api/f"
+          + "ield_behavior.proto\032\'google/cloud/automl"
+          + "/v1/data_items.proto\032\034google/api/annotat"
+          + "ions.proto\"b\n\032TranslationDatasetMetadata"
           + "\022!\n\024source_language_code\030\001 \001(\tB\003\340A\002\022!\n\024t"
           + "arget_language_code\030\002 \001(\tB\003\340A\002\"K\n\034Transl"
           + "ationEvaluationMetrics\022\022\n\nbleu_score\030\001 \001"
@@ -76,9 +76,9 @@ public final class TranslationProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.automl.v1.DataItems.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1_TranslationDatasetMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -117,9 +117,9 @@ public final class TranslationProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.automl.v1.DataItems.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

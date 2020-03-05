@@ -22,8 +22,7 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for
- * [AutoMl.UpdateModel][google.cloud.automl.v1.AutoMl.UpdateModel]
+ * Request message for [AutoMl.UpdateModel][google.cloud.automl.v1.AutoMl.UpdateModel]
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.UpdateModelRequest}
@@ -139,10 +138,10 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The model which replaces the resource on the server.
+   * Required. The model which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Model model = 1;</code>
+   * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the model field is set.
    */
@@ -153,10 +152,10 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The model which replaces the resource on the server.
+   * Required. The model which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Model model = 1;</code>
+   * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The model.
    */
@@ -167,10 +166,10 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The model which replaces the resource on the server.
+   * Required. The model which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Model model = 1;</code>
+   * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.automl.v1.ModelOrBuilder getModelOrBuilder() {
     return getModel();
@@ -185,7 +184,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    * Required. The update mask applies to the resource.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -199,7 +199,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    * Required. The update mask applies to the resource.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -213,7 +214,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    * Required. The update mask applies to the resource.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -401,8 +403,7 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for
-   * [AutoMl.UpdateModel][google.cloud.automl.v1.AutoMl.UpdateModel]
+   * Request message for [AutoMl.UpdateModel][google.cloud.automl.v1.AutoMl.UpdateModel]
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.UpdateModelRequest}
@@ -586,10 +587,11 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model which replaces the resource on the server.
+     * Required. The model which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Model model = 1;</code>
+     * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the model field is set.
      */
@@ -600,10 +602,11 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model which replaces the resource on the server.
+     * Required. The model which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Model model = 1;</code>
+     * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The model.
      */
@@ -618,10 +621,11 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model which replaces the resource on the server.
+     * Required. The model which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Model model = 1;</code>
+     * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setModel(com.google.cloud.automl.v1.Model value) {
       if (modelBuilder_ == null) {
@@ -640,10 +644,11 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model which replaces the resource on the server.
+     * Required. The model which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Model model = 1;</code>
+     * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setModel(com.google.cloud.automl.v1.Model.Builder builderForValue) {
       if (modelBuilder_ == null) {
@@ -659,10 +664,11 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model which replaces the resource on the server.
+     * Required. The model which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Model model = 1;</code>
+     * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeModel(com.google.cloud.automl.v1.Model value) {
       if (modelBuilder_ == null) {
@@ -683,10 +689,11 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model which replaces the resource on the server.
+     * Required. The model which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Model model = 1;</code>
+     * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearModel() {
       if (modelBuilder_ == null) {
@@ -703,10 +710,11 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model which replaces the resource on the server.
+     * Required. The model which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Model model = 1;</code>
+     * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1.Model.Builder getModelBuilder() {
 
@@ -717,10 +725,11 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model which replaces the resource on the server.
+     * Required. The model which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Model model = 1;</code>
+     * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1.ModelOrBuilder getModelOrBuilder() {
       if (modelBuilder_ != null) {
@@ -733,10 +742,11 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The model which replaces the resource on the server.
+     * Required. The model which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Model model = 1;</code>
+     * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1.Model,
@@ -768,7 +778,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -782,7 +793,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -802,7 +814,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -824,7 +837,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -843,7 +857,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -867,7 +882,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -887,7 +903,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -901,7 +918,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -919,7 +937,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

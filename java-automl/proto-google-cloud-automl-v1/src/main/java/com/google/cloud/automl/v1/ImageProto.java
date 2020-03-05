@@ -61,11 +61,11 @@ public final class ImageProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\"google/cloud/automl/v1/image.proto\022\026go"
-          + "ogle.cloud.automl.v1\032\034google/api/annotat"
-          + "ions.proto\032\031google/api/resource.proto\032,g"
-          + "oogle/cloud/automl/v1/annotation_spec.pr"
-          + "oto\032+google/cloud/automl/v1/classificati"
-          + "on.proto\032\037google/protobuf/timestamp.prot"
+          + "ogle.cloud.automl.v1\032\031google/api/resourc"
+          + "e.proto\032,google/cloud/automl/v1/annotati"
+          + "on_spec.proto\032+google/cloud/automl/v1/cl"
+          + "assification.proto\032\037google/protobuf/time"
+          + "stamp.proto\032\034google/api/annotations.prot"
           + "o\"m\n\"ImageClassificationDatasetMetadata\022"
           + "G\n\023classification_type\030\001 \001(\0162*.google.cl"
           + "oud.automl.v1.ClassificationType\"%\n#Imag"
@@ -94,11 +94,11 @@ public final class ImageProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.automl.v1.AnnotationSpecOuterClass.getDescriptor(),
               com.google.cloud.automl.v1.ClassificationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1_ImageClassificationDatasetMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -157,11 +157,11 @@ public final class ImageProto {
             new java.lang.String[] {
               "NodeCount",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.automl.v1.AnnotationSpecOuterClass.getDescriptor();
     com.google.cloud.automl.v1.ClassificationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

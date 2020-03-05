@@ -22,8 +22,7 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for
- * [AutoMl.UpdateDataset][google.cloud.automl.v1.AutoMl.UpdateDataset]
+ * Request message for [AutoMl.UpdateDataset][google.cloud.automl.v1.AutoMl.UpdateDataset]
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.UpdateDatasetRequest}
@@ -139,10 +138,11 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The dataset which replaces the resource on the server.
+   * Required. The dataset which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Dataset dataset = 1;</code>
+   * <code>.google.cloud.automl.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the dataset field is set.
    */
@@ -153,10 +153,11 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The dataset which replaces the resource on the server.
+   * Required. The dataset which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Dataset dataset = 1;</code>
+   * <code>.google.cloud.automl.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The dataset.
    */
@@ -167,10 +168,11 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The dataset which replaces the resource on the server.
+   * Required. The dataset which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.Dataset dataset = 1;</code>
+   * <code>.google.cloud.automl.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.automl.v1.DatasetOrBuilder getDatasetOrBuilder() {
     return getDataset();
@@ -185,7 +187,8 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    * Required. The update mask applies to the resource.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -199,7 +202,8 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    * Required. The update mask applies to the resource.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -213,7 +217,8 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    * Required. The update mask applies to the resource.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -401,8 +406,7 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for
-   * [AutoMl.UpdateDataset][google.cloud.automl.v1.AutoMl.UpdateDataset]
+   * Request message for [AutoMl.UpdateDataset][google.cloud.automl.v1.AutoMl.UpdateDataset]
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.UpdateDatasetRequest}
@@ -587,10 +591,11 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset which replaces the resource on the server.
+     * Required. The dataset which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 1;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the dataset field is set.
      */
@@ -601,10 +606,11 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset which replaces the resource on the server.
+     * Required. The dataset which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 1;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The dataset.
      */
@@ -621,10 +627,11 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset which replaces the resource on the server.
+     * Required. The dataset which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 1;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDataset(com.google.cloud.automl.v1.Dataset value) {
       if (datasetBuilder_ == null) {
@@ -643,10 +650,11 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset which replaces the resource on the server.
+     * Required. The dataset which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 1;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDataset(com.google.cloud.automl.v1.Dataset.Builder builderForValue) {
       if (datasetBuilder_ == null) {
@@ -662,10 +670,11 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset which replaces the resource on the server.
+     * Required. The dataset which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 1;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDataset(com.google.cloud.automl.v1.Dataset value) {
       if (datasetBuilder_ == null) {
@@ -688,10 +697,11 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset which replaces the resource on the server.
+     * Required. The dataset which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 1;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDataset() {
       if (datasetBuilder_ == null) {
@@ -708,10 +718,11 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset which replaces the resource on the server.
+     * Required. The dataset which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 1;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1.Dataset.Builder getDatasetBuilder() {
 
@@ -722,10 +733,11 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset which replaces the resource on the server.
+     * Required. The dataset which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 1;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.automl.v1.DatasetOrBuilder getDatasetOrBuilder() {
       if (datasetBuilder_ != null) {
@@ -740,10 +752,11 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dataset which replaces the resource on the server.
+     * Required. The dataset which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.Dataset dataset = 1;</code>
+     * <code>.google.cloud.automl.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1.Dataset,
@@ -775,7 +788,8 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -789,7 +803,8 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -809,7 +824,8 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -831,7 +847,8 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -850,7 +867,8 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -874,7 +892,8 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -894,7 +913,8 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -908,7 +928,8 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -926,7 +947,8 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

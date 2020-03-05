@@ -45,9 +45,9 @@ public final class TextSentimentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/automl/v1/text_sentiment."
-          + "proto\022\026google.cloud.automl.v1\032\034google/ap"
-          + "i/annotations.proto\032+google/cloud/automl"
-          + "/v1/classification.proto\",\n\027TextSentimen"
+          + "proto\022\026google.cloud.automl.v1\032+google/cl"
+          + "oud/automl/v1/classification.proto\032\034goog"
+          + "le/api/annotations.proto\",\n\027TextSentimen"
           + "tAnnotation\022\021\n\tsentiment\030\001 \001(\005\"\240\002\n\036TextS"
           + "entimentEvaluationMetrics\022\021\n\tprecision\030\001"
           + " \001(\002\022\016\n\006recall\030\002 \001(\002\022\020\n\010f1_score\030\003 \001(\002\022\033"
@@ -67,8 +67,8 @@ public final class TextSentimentProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.automl.v1.ClassificationProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1_TextSentimentAnnotation_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -93,8 +93,8 @@ public final class TextSentimentProto {
               "QuadraticKappa",
               "ConfusionMatrix",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1.ClassificationProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

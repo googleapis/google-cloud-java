@@ -22,8 +22,7 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for
- * [AutoMl.UndeployModel][google.cloud.automl.v1.AutoMl.UndeployModel].
+ * Request message for [AutoMl.UndeployModel][google.cloud.automl.v1.AutoMl.UndeployModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.UndeployModelRequest}
@@ -118,10 +117,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Resource name of the model to undeploy.
+   * Required. Resource name of the model to undeploy.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -140,10 +141,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Resource name of the model to undeploy.
+   * Required. Resource name of the model to undeploy.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -322,8 +325,7 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for
-   * [AutoMl.UndeployModel][google.cloud.automl.v1.AutoMl.UndeployModel].
+   * Request message for [AutoMl.UndeployModel][google.cloud.automl.v1.AutoMl.UndeployModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.UndeployModelRequest}
@@ -482,10 +484,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the model to undeploy.
+     * Required. Resource name of the model to undeploy.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -504,10 +508,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the model to undeploy.
+     * Required. Resource name of the model to undeploy.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -526,10 +532,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the model to undeploy.
+     * Required. Resource name of the model to undeploy.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -547,10 +555,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the model to undeploy.
+     * Required. Resource name of the model to undeploy.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -564,10 +574,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the model to undeploy.
+     * Required. Resource name of the model to undeploy.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

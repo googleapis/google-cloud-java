@@ -61,13 +61,13 @@ public final class DataItems {
   static {
     java.lang.String[] descriptorData = {
       "\n\'google/cloud/automl/v1/data_items.prot"
-          + "o\022\026google.cloud.automl.v1\032\034google/api/an"
-          + "notations.proto\032%google/cloud/automl/v1/"
-          + "geometry.proto\032\037google/cloud/automl/v1/i"
-          + "o.proto\032)google/cloud/automl/v1/text_seg"
-          + "ment.proto\032\031google/protobuf/any.proto\032\036g"
-          + "oogle/protobuf/duration.proto\032\034google/pr"
-          + "otobuf/struct.proto\"=\n\005Image\022\025\n\013image_by"
+          + "o\022\026google.cloud.automl.v1\032%google/cloud/"
+          + "automl/v1/geometry.proto\032\037google/cloud/a"
+          + "utoml/v1/io.proto\032)google/cloud/automl/v"
+          + "1/text_segment.proto\032\031google/protobuf/an"
+          + "y.proto\032\036google/protobuf/duration.proto\032"
+          + "\034google/protobuf/struct.proto\032\034google/ap"
+          + "i/annotations.proto\"=\n\005Image\022\025\n\013image_by"
           + "tes\030\001 \001(\014H\000\022\025\n\rthumbnail_uri\030\004 \001(\tB\006\n\004da"
           + "ta\"F\n\013TextSnippet\022\017\n\007content\030\001 \001(\t\022\021\n\tmi"
           + "me_type\030\002 \001(\t\022\023\n\013content_uri\030\004 \001(\t\"\352\001\n\022D"
@@ -110,13 +110,13 @@ public final class DataItems {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.automl.v1.Geometry.getDescriptor(),
               com.google.cloud.automl.v1.Io.getDescriptor(),
               com.google.cloud.automl.v1.TextSegmentProto.getDescriptor(),
               com.google.protobuf.AnyProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1_Image_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -166,13 +166,13 @@ public final class DataItems {
             new java.lang.String[] {
               "Image", "TextSnippet", "Document", "Payload",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1.Geometry.getDescriptor();
     com.google.cloud.automl.v1.Io.getDescriptor();
     com.google.cloud.automl.v1.TextSegmentProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

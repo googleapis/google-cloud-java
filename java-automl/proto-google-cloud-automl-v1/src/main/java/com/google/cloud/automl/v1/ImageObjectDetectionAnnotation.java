@@ -175,8 +175,8 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Output only. The confidence that this annotation is positive for the parent
-   * example, value in [0, 1], higher means higher positivity confidence.
+   * Output only. The confidence that this annotation is positive for the parent example,
+   * value in [0, 1], higher means higher positivity confidence.
    * </pre>
    *
    * <code>float score = 2;</code>
@@ -724,8 +724,8 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. The confidence that this annotation is positive for the parent
-     * example, value in [0, 1], higher means higher positivity confidence.
+     * Output only. The confidence that this annotation is positive for the parent example,
+     * value in [0, 1], higher means higher positivity confidence.
      * </pre>
      *
      * <code>float score = 2;</code>
@@ -739,8 +739,8 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. The confidence that this annotation is positive for the parent
-     * example, value in [0, 1], higher means higher positivity confidence.
+     * Output only. The confidence that this annotation is positive for the parent example,
+     * value in [0, 1], higher means higher positivity confidence.
      * </pre>
      *
      * <code>float score = 2;</code>
@@ -758,8 +758,8 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. The confidence that this annotation is positive for the parent
-     * example, value in [0, 1], higher means higher positivity confidence.
+     * Output only. The confidence that this annotation is positive for the parent example,
+     * value in [0, 1], higher means higher positivity confidence.
      * </pre>
      *
      * <code>float score = 2;</code>

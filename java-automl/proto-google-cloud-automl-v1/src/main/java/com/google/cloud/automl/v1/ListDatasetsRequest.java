@@ -22,8 +22,7 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for
- * [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets].
+ * Request message for [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.ListDatasetsRequest}
@@ -139,10 +138,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The resource name of the project from which to list datasets.
+   * Required. The resource name of the project from which to list datasets.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -161,10 +162,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The resource name of the project from which to list datasets.
+   * Required. The resource name of the project from which to list datasets.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -188,8 +191,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * An expression for filtering the results of the request.
    *   * `dataset_metadata` - for existence of the case (e.g.
-   *             image_classification_dataset_metadata:*). Some examples of
-   *             using the filter are:
+   *             image_classification_dataset_metadata:*). Some examples of using the filter are:
    *   * `translation_dataset_metadata:*` --&gt; The dataset has
    *                                          translation_dataset_metadata.
    * </pre>
@@ -215,8 +217,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * An expression for filtering the results of the request.
    *   * `dataset_metadata` - for existence of the case (e.g.
-   *             image_classification_dataset_metadata:*). Some examples of
-   *             using the filter are:
+   *             image_classification_dataset_metadata:*). Some examples of using the filter are:
    *   * `translation_dataset_metadata:*` --&gt; The dataset has
    *                                          translation_dataset_metadata.
    * </pre>
@@ -263,8 +264,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token]
-   * of the previous
+   * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token] of the previous
    * [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets] call.
    * </pre>
    *
@@ -289,8 +289,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token]
-   * of the previous
+   * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token] of the previous
    * [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets] call.
    * </pre>
    *
@@ -500,8 +499,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for
-   * [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets].
+   * Request message for [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.ListDatasetsRequest}
@@ -679,10 +677,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the project from which to list datasets.
+     * Required. The resource name of the project from which to list datasets.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -701,10 +701,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the project from which to list datasets.
+     * Required. The resource name of the project from which to list datasets.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -723,10 +725,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the project from which to list datasets.
+     * Required. The resource name of the project from which to list datasets.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -744,10 +748,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the project from which to list datasets.
+     * Required. The resource name of the project from which to list datasets.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -761,10 +767,12 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the project from which to list datasets.
+     * Required. The resource name of the project from which to list datasets.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -787,8 +795,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * An expression for filtering the results of the request.
      *   * `dataset_metadata` - for existence of the case (e.g.
-     *             image_classification_dataset_metadata:*). Some examples of
-     *             using the filter are:
+     *             image_classification_dataset_metadata:*). Some examples of using the filter are:
      *   * `translation_dataset_metadata:*` --&gt; The dataset has
      *                                          translation_dataset_metadata.
      * </pre>
@@ -814,8 +821,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * An expression for filtering the results of the request.
      *   * `dataset_metadata` - for existence of the case (e.g.
-     *             image_classification_dataset_metadata:*). Some examples of
-     *             using the filter are:
+     *             image_classification_dataset_metadata:*). Some examples of using the filter are:
      *   * `translation_dataset_metadata:*` --&gt; The dataset has
      *                                          translation_dataset_metadata.
      * </pre>
@@ -841,8 +847,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * An expression for filtering the results of the request.
      *   * `dataset_metadata` - for existence of the case (e.g.
-     *             image_classification_dataset_metadata:*). Some examples of
-     *             using the filter are:
+     *             image_classification_dataset_metadata:*). Some examples of using the filter are:
      *   * `translation_dataset_metadata:*` --&gt; The dataset has
      *                                          translation_dataset_metadata.
      * </pre>
@@ -867,8 +872,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * An expression for filtering the results of the request.
      *   * `dataset_metadata` - for existence of the case (e.g.
-     *             image_classification_dataset_metadata:*). Some examples of
-     *             using the filter are:
+     *             image_classification_dataset_metadata:*). Some examples of using the filter are:
      *   * `translation_dataset_metadata:*` --&gt; The dataset has
      *                                          translation_dataset_metadata.
      * </pre>
@@ -889,8 +893,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * An expression for filtering the results of the request.
      *   * `dataset_metadata` - for existence of the case (e.g.
-     *             image_classification_dataset_metadata:*). Some examples of
-     *             using the filter are:
+     *             image_classification_dataset_metadata:*). Some examples of using the filter are:
      *   * `translation_dataset_metadata:*` --&gt; The dataset has
      *                                          translation_dataset_metadata.
      * </pre>
@@ -972,8 +975,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token]
-     * of the previous
+     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token] of the previous
      * [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets] call.
      * </pre>
      *
@@ -998,8 +1000,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token]
-     * of the previous
+     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token] of the previous
      * [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets] call.
      * </pre>
      *
@@ -1024,8 +1025,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token]
-     * of the previous
+     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token] of the previous
      * [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets] call.
      * </pre>
      *
@@ -1049,8 +1049,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token]
-     * of the previous
+     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token] of the previous
      * [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets] call.
      * </pre>
      *
@@ -1070,8 +1069,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token]
-     * of the previous
+     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token] of the previous
      * [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets] call.
      * </pre>
      *
