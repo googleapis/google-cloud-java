@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-automl/compare/v1.0.1...v1.1.0) (2020-03-05)
+
+
+### Features
+
+* **v1beta1:** add baselineScore to TablesAnnotation ([#116](https://www.github.com/googleapis/java-automl/issues/116)) ([f152796](https://www.github.com/googleapis/java-automl/commit/f152796d61385867b1ae0bcd6057699a30a0e773))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([5c08375](https://www.github.com/googleapis/java-automl/commit/5c08375d8dd705f24ffeba2d416019ef8a833c30))
+* **v1:** regenerate proto documentation ([#119](https://www.github.com/googleapis/java-automl/issues/119)) ([372d464](https://www.github.com/googleapis/java-automl/commit/372d46466526fa407d1e2f8264180c9e978a9dbd))
+
+
+### Dependencies
+
+* update core libraries ([#115](https://www.github.com/googleapis/java-automl/issues/115)) ([dc35ddc](https://www.github.com/googleapis/java-automl/commit/dc35ddc1704af7b9a1c58d2906019f81f68ccd13))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([29ef420](https://www.github.com/googleapis/java-automl/commit/29ef420a51e60d66552ff0c775e56b4b2f0bfea2))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([4b61784](https://www.github.com/googleapis/java-automl/commit/4b61784255fa0c6e33569752ba25c2bc93eafb33))
+
 ### [1.0.1](https://www.github.com/googleapis/java-automl/compare/v1.0.0...v1.0.1) (2020-02-04)
 
 
