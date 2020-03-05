@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.124.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.123.0...v0.124.0) (2020-03-05)
+
+
+### Features
+
+* re-implement resource name helper classes ([#59](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/59)) ([d1cc550](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/d1cc550975d3bcef558e559f3cb0cbffa6d883c2))
+
+
+### Dependencies
+
+* update core dependencies ([#63](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/63)) ([dd0d481](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/dd0d481f0dca29b0195d514232decafc2c5178d9))
+
 ## [0.123.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.122.0...v0.123.0) (2020-02-17)
 
 
