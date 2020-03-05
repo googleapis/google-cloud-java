@@ -8,8 +8,25 @@
     <method>* get*(*)</method>
   </difference>
   <difference>
-    <differenceType>7012</differenceType>
-    <className>com/google/cloud/bigquery/datatransfer/v1/*OrBuilder</className>
-    <method>boolean has*(*)</method>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/bigquery/datatransfer/v1/ParentNames</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/bigquery/datatransfer/v1/UntypedParentName</className>
+  </difference>
+    <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/bigquery/datatransfer/v1/ParentName</className>
+  </difference>
+  <difference>
+    <differenceType>5001</differenceType>
+    <className>com/google/cloud/bigquery/datatransfer/v1/ProjectName</className>
+    <to>com/google/cloud/bigquery/datatransfer/v1/ParentName</to>
+  </difference>
+  <difference>
+    <differenceType>5001</differenceType>
+    <className>com/google/cloud/bigquery/datatransfer/v1/LocationName</className>
+    <to>com/google/cloud/bigquery/datatransfer/v1/ParentName</to>
   </difference>
 </differences>

@@ -147,7 +147,7 @@ public class LocationTransferConfigName extends TransferConfigName {
   }
 
   /** Builder for LocationTransferConfigName. */
-  public static class Builder {
+  public static class Builder extends TransferConfigName.Builder {
 
     private String project;
     private String location;

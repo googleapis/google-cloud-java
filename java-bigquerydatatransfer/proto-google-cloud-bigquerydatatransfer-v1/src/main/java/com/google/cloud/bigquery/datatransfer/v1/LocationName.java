@@ -17,20 +17,16 @@
 package com.google.cloud.bigquery.datatransfer.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * AUTO-GENERATED DOCUMENTATION AND CLASS
- *
- * @deprecated This resource name class will be removed in the next major version.
- */
+/** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-@Deprecated
-public class LocationName extends ParentName {
+public class LocationName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}");

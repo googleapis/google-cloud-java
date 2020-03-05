@@ -128,7 +128,7 @@ public class ProjectTransferConfigName extends TransferConfigName {
   }
 
   /** Builder for ProjectTransferConfigName. */
-  public static class Builder {
+  public static class Builder extends TransferConfigName.Builder {
 
     private String project;
     private String transferConfig;
