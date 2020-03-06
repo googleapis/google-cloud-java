@@ -1067,8 +1067,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * SQL text filtering statement, similar to a WHERE clause in a query.
-     * Currently, only a single predicate that is a comparison between a column
-     * and a constant value is supported. Aggregates are not supported.
+     * Aggregates are not supported.
      * Examples: "int_field &gt; 5"
      *           "date_field = CAST('2014-9-27' as DATE)"
      *           "nullable_field is not NULL"
@@ -1086,8 +1085,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * SQL text filtering statement, similar to a WHERE clause in a query.
-     * Currently, only a single predicate that is a comparison between a column
-     * and a constant value is supported. Aggregates are not supported.
+     * Aggregates are not supported.
      * Examples: "int_field &gt; 5"
      *           "date_field = CAST('2014-9-27' as DATE)"
      *           "nullable_field is not NULL"
@@ -1289,8 +1287,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * SQL text filtering statement, similar to a WHERE clause in a query.
-     * Currently, only a single predicate that is a comparison between a column
-     * and a constant value is supported. Aggregates are not supported.
+     * Aggregates are not supported.
      * Examples: "int_field &gt; 5"
      *           "date_field = CAST('2014-9-27' as DATE)"
      *           "nullable_field is not NULL"
@@ -1318,8 +1315,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * SQL text filtering statement, similar to a WHERE clause in a query.
-     * Currently, only a single predicate that is a comparison between a column
-     * and a constant value is supported. Aggregates are not supported.
+     * Aggregates are not supported.
      * Examples: "int_field &gt; 5"
      *           "date_field = CAST('2014-9-27' as DATE)"
      *           "nullable_field is not NULL"
@@ -1910,8 +1906,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * SQL text filtering statement, similar to a WHERE clause in a query.
-       * Currently, only a single predicate that is a comparison between a column
-       * and a constant value is supported. Aggregates are not supported.
+       * Aggregates are not supported.
        * Examples: "int_field &gt; 5"
        *           "date_field = CAST('2014-9-27' as DATE)"
        *           "nullable_field is not NULL"
@@ -1939,8 +1934,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * SQL text filtering statement, similar to a WHERE clause in a query.
-       * Currently, only a single predicate that is a comparison between a column
-       * and a constant value is supported. Aggregates are not supported.
+       * Aggregates are not supported.
        * Examples: "int_field &gt; 5"
        *           "date_field = CAST('2014-9-27' as DATE)"
        *           "nullable_field is not NULL"
@@ -1968,8 +1962,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * SQL text filtering statement, similar to a WHERE clause in a query.
-       * Currently, only a single predicate that is a comparison between a column
-       * and a constant value is supported. Aggregates are not supported.
+       * Aggregates are not supported.
        * Examples: "int_field &gt; 5"
        *           "date_field = CAST('2014-9-27' as DATE)"
        *           "nullable_field is not NULL"
@@ -1996,8 +1989,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * SQL text filtering statement, similar to a WHERE clause in a query.
-       * Currently, only a single predicate that is a comparison between a column
-       * and a constant value is supported. Aggregates are not supported.
+       * Aggregates are not supported.
        * Examples: "int_field &gt; 5"
        *           "date_field = CAST('2014-9-27' as DATE)"
        *           "nullable_field is not NULL"
@@ -2020,8 +2012,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * SQL text filtering statement, similar to a WHERE clause in a query.
-       * Currently, only a single predicate that is a comparison between a column
-       * and a constant value is supported. Aggregates are not supported.
+       * Aggregates are not supported.
        * Examples: "int_field &gt; 5"
        *           "date_field = CAST('2014-9-27' as DATE)"
        *           "nullable_field is not NULL"
