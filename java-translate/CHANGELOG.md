@@ -1,5 +1,25 @@
 # Changelog
 
+### [1.94.4](https://www.github.com/googleapis/java-translate/compare/v1.94.3...v1.94.4) (2020-03-06)
+
+
+### Dependencies
+
+* update core dependencies ([#100](https://www.github.com/googleapis/java-translate/issues/100)) ([fdb06de](https://www.github.com/googleapis/java-translate/commit/fdb06de1b06208c15e5a6fb82ac6462350d6822c))
+* update core dependencies to v1.92.5 ([#87](https://www.github.com/googleapis/java-translate/issues/87)) ([8281291](https://www.github.com/googleapis/java-translate/commit/8281291cf265852843d2b80ffe0ac3b37978e9fe))
+* update core dependencies to v1.93.1 ([#102](https://www.github.com/googleapis/java-translate/issues/102)) ([800ebcf](https://www.github.com/googleapis/java-translate/commit/800ebcf527c67f98d4afab4c325266166bc9feac))
+* update dependency com.google.apis:google-api-services-translate to v2-rev20170525-1.30.8 ([#89](https://www.github.com/googleapis/java-translate/issues/89)) ([7279d77](https://www.github.com/googleapis/java-translate/commit/7279d777abc25a4d9977bbbc8a34e5aea1926afe))
+* update dependency com.google.apis:google-api-services-translate to v2-rev20170525-1.30.9 ([#103](https://www.github.com/googleapis/java-translate/issues/103)) ([583ca43](https://www.github.com/googleapis/java-translate/commit/583ca43c4394b9548761eeda15063b4065b15f0c))
+* update dependency com.google.http-client:google-http-client-bom to v1.34.2 ([6d5d6fb](https://www.github.com/googleapis/java-translate/commit/6d5d6fb023775f37ec1e061f1dd946a1503c2b18))
+* update dependency com.google.protobuf:protobuf-bom to v3.11.4 ([2ea6cf9](https://www.github.com/googleapis/java-translate/commit/2ea6cf903430db2d51d89d47555cfba76173562d))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([ad74651](https://www.github.com/googleapis/java-translate/commit/ad746518e292d14004e67863916a0e1691dca1eb))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([db15663](https://www.github.com/googleapis/java-translate/commit/db156637e95efd75d5a997178e7f4eda2d396d1d))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([c1fcecb](https://www.github.com/googleapis/java-translate/commit/c1fcecb0902cf90cb7070a2412d41f12da6d0e90))
+
 ### [1.94.3](https://www.github.com/googleapis/java-translate/compare/v1.94.2...v1.94.3) (2020-02-03)
 
 
