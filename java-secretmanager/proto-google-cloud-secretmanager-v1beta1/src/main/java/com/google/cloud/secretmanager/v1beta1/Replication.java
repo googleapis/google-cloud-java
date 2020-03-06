@@ -2412,7 +2412,10 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   private int replicationCase_ = 0;
   private java.lang.Object replication_;
 
-  public enum ReplicationCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ReplicationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     AUTOMATIC(1),
     USER_MANAGED(2),
     REPLICATION_NOT_SET(0);
