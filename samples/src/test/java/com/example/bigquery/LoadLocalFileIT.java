@@ -19,15 +19,21 @@ package com.example.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.LegacySQLTypeName;
+import com.google.cloud.bigquery.Schema;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class LoadPartitionedTableIT {
+public class LoadLocalFileIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -57,16 +63,22 @@ public class LoadPartitionedTableIT {
   }
 
   @Test
-  public void loadPartitionedTable() throws Exception {
-    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states-by-date-no-header.csv";
+  public void loadLocalFile() throws IOException, InterruptedException {
+    String tableName = "LoadLocalFileTestTable_" + UUID.randomUUID().toString().replace('-', '_');
+    Schema schema =
+        Schema.of(
+            Field.of("Name", LegacySQLTypeName.STRING),
+            Field.of("Age", LegacySQLTypeName.NUMERIC),
+            Field.of("Weight", LegacySQLTypeName.NUMERIC),
+            Field.of("IsMagic", LegacySQLTypeName.BOOLEAN));
 
-    String tableName =
-        "LOAD_PARTITIONED_TABLE_TEST_" + UUID.randomUUID().toString().replace('-', '_');
+    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
 
-    LoadPartitionedTable.loadPartitionedTable(BIGQUERY_DATASET_NAME, tableName, sourceUri);
+    Path csvPath = FileSystems.getDefault().getPath("src/test/resources", "bigquery_noheader.csv");
 
-    assertThat(bout.toString())
-        .contains("Data successfully loaded into time partitioned table during load job");
+    LoadLocalFile.loadLocalFile(BIGQUERY_DATASET_NAME, tableName, csvPath);
+
+    assertThat(bout.toString()).contains("Successfully loaded");
 
     // Clean up
     DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
