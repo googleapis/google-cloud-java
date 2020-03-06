@@ -14,23 +14,22 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
 import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
-gapic = gcp.GAPICGenerator()
+AUTOSYNTH_MULTIPLE_COMMITS = True
 
-service = 'video-intelligence'
+gapic = gcp.GAPICBazel()
+
+service = 'videointelligence'
 versions = ['v1', 'v1beta2', 'v1p1beta1', 'v1p2beta1', 'v1p3beta1']
-config_pattern = '/google/cloud/videointelligence/artman_videointelligence_{version}.yaml'
 
 for version in versions:
-  java.gapic_library(
+  java.bazel_library(
     service=service,
     version=version,
-    config_pattern=config_pattern,
-    package_pattern='com.google.cloud.videointelligence.{version}',
     gapic=gapic,
+    destination_name="video-intelligence"
   )
 
 java.common_templates()
