@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.22.5](https://www.github.com/googleapis/java-speech/compare/v1.22.4...v1.22.5) (2020-03-05)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.93.1 ([#110](https://www.github.com/googleapis/java-speech/issues/110)) ([d78ca42](https://www.github.com/googleapis/java-speech/commit/d78ca4299fc42e4c8e6fb4b95658a6d950f278ea))
+
 ### [1.22.4](https://www.github.com/googleapis/java-speech/compare/v1.22.3...v1.22.4) (2020-02-20)
 
 
