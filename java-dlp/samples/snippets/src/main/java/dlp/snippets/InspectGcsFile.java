@@ -17,7 +17,7 @@
 package dlp.snippets;
 
 // [START dlp_inspect_gcs]
-
+import com.google.api.core.SettableApiFuture;
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
@@ -52,14 +52,14 @@ public class InspectGcsFile {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String gcsUri = "gs://" + "your-bucket-name" + "/path/to/your/file.txt";
-    String pubSubTopicId = "your-pubsub-topic-id";
-    String pubSubSubscriptionId = "your-pubsub-subscription-id";
-    inspectGcsFile(projectId, gcsUri, pubSubTopicId, pubSubSubscriptionId);
+    String topicId = "your-pubsub-topic-id";
+    String subscriptionId = "your-pubsub-subscription-id";
+    inspectGcsFile(projectId, gcsUri, topicId, subscriptionId);
   }
 
   // Inspects a file in a Google Cloud Storage Bucket.
   public static void inspectGcsFile(
-      String projectId, String gcsUri, String pubSubTopicId, String pubSubSubscriptionName)
+      String projectId, String gcsUri, String topicId, String subscriptionId)
       throws ExecutionException, InterruptedException, IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
@@ -84,7 +84,7 @@ public class InspectGcsFile {
           InspectConfig.newBuilder().addAllInfoTypes(infoTypes).setIncludeQuote(true).build();
 
       // Specify the action that is triggered when the job completes.
-      String pubSubTopic = String.format("projects/%s/topics/%s", projectId, pubSubTopicId);
+      String pubSubTopic = String.format("projects/%s/topics/%s", projectId, topicId);
       Action.PublishToPubSub publishToPubSub =
           Action.PublishToPubSub.newBuilder().setTopic(pubSubTopic).build();
       Action action = Action.newBuilder().setPubSub(publishToPubSub).build();
@@ -105,36 +105,32 @@ public class InspectGcsFile {
               .build();
 
       // Use the client to send the request.
-      final DlpJob job = dlp.createDlpJob(createDlpJobRequest);
-      System.out.println("Job created: " + job.getName());
+      final DlpJob dlpJob = dlp.createDlpJob(createDlpJobRequest);
+      System.out.println("Job created: " + dlpJob.getName());
 
-      // Set up a Pub/Sub subscriber to listen for the job completion status
-      SettableFuture<Void> jobDone = SettableFuture.create();
+      // Set up a Pub/Sub subscriber to listen on the job completion status
+      final SettableApiFuture<Boolean> done = SettableApiFuture.create();
+
       ProjectSubscriptionName subscriptionName =
-          ProjectSubscriptionName.of(projectId, pubSubSubscriptionName);
-      MessageReceiver handleMessage =
+          ProjectSubscriptionName.of(projectId, subscriptionId);
+
+      MessageReceiver messageHandler =
           (PubsubMessage pubsubMessage, AckReplyConsumer ackReplyConsumer) -> {
-            String messageAttribute = pubsubMessage.getAttributesMap().get("DlpJobName");
-            if (job.getName().equals(messageAttribute)) {
-              jobDone.set(null);
-              ackReplyConsumer.ack();
-            } else {
-              ackReplyConsumer.nack();
-            }
+            handleMessage(dlpJob, done, pubsubMessage, ackReplyConsumer);
           };
-      Subscriber subscriber = Subscriber.newBuilder(subscriptionName, handleMessage).build();
-      subscriber.startAsync(); // Let the subscriber listen to messages
+      Subscriber subscriber = Subscriber.newBuilder(subscriptionName, messageHandler).build();
+      subscriber.startAsync();
 
       // Wait for the original job to complete
       try {
-        jobDone.get(10, TimeUnit.MINUTES);
+        done.get(15, TimeUnit.MINUTES);
       } catch (TimeoutException e) {
-        System.out.println("Job was not completed after 10 minutes.");
+        System.out.println("Job was not completed after 15 minutes.");
         return;
       }
 
       // Get the latest state of the job from the service
-      GetDlpJobRequest request = GetDlpJobRequest.newBuilder().setName(job.getName()).build();
+      GetDlpJobRequest request = GetDlpJobRequest.newBuilder().setName(dlpJob.getName()).build();
       DlpJob completedJob = dlp.getDlpJob(request);
 
       // Parse the response and process results.
@@ -145,6 +141,21 @@ public class InspectGcsFile {
         System.out.print("\tInfo type: " + infoTypeStat.getInfoType().getName());
         System.out.println("\tCount: " + infoTypeStat.getCount());
       }
+    }
+  }
+
+  // handleMessage injects the job and settableFuture into the message reciever interface
+  private static void handleMessage(
+      DlpJob job,
+      SettableApiFuture<Boolean> done,
+      PubsubMessage pubsubMessage,
+      AckReplyConsumer ackReplyConsumer) {
+    String messageAttribute = pubsubMessage.getAttributesMap().get("DlpJobName");
+    if (job.getName().equals(messageAttribute)) {
+      done.set(true);
+      ackReplyConsumer.ack();
+    } else {
+      ackReplyConsumer.nack();
     }
   }
 }
