@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.125.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.124.0...v0.125.0) (2020-03-06)
+
+
+### Features
+
+* re-generated  to pick up changes in the API or client library generator. ([#67](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/67)) ([e262ed6](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/e262ed6993cb88bf77851539451e9bc212fdc43d))
+
 ## [0.124.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.123.0...v0.124.0) (2020-03-05)
 
 
