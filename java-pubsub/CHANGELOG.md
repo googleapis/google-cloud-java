@@ -1,5 +1,29 @@
 # Changelog
 
+### [1.103.1](https://www.github.com/googleapis/java-pubsub/compare/v1.103.0...v1.103.1) (2020-03-03)
+
+
+### Bug Fixes
+
+* add a default value for max outstanding request bytes flow control setting ([#96](https://www.github.com/googleapis/java-pubsub/issues/96)) ([4a6046c](https://www.github.com/googleapis/java-pubsub/commit/4a6046c2b03ad1d7e08d6e6dc0d1817cbffc5283))
+* remove deprecated tag that was added prematurely ([#97](https://www.github.com/googleapis/java-pubsub/issues/97)) ([fbb87ef](https://www.github.com/googleapis/java-pubsub/commit/fbb87ef0d493fc9e375e860b52dd6a9b99e3cf00))
+
+
+### Dependencies
+
+* update core dependencies ([#100](https://www.github.com/googleapis/java-pubsub/issues/100)) ([8323b31](https://www.github.com/googleapis/java-pubsub/commit/8323b31b9349065f1798120b6ffdaff3372f8552))
+* update dependency com.google.cloud:google-cloud-core to v1.93.1 ([#102](https://www.github.com/googleapis/java-pubsub/issues/102)) ([33b12df](https://www.github.com/googleapis/java-pubsub/commit/33b12df2e8c54ac404aeabd97ef71404611f3e3b))
+* update dependency com.google.http-client:google-http-client-bom to v1.34.2 ([19fde3a](https://www.github.com/googleapis/java-pubsub/commit/19fde3ab100c4910c4d998fbf0e5380ad7732f90))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([e49a861](https://www.github.com/googleapis/java-pubsub/commit/e49a8615147779d9dab07661e7586395ffa26d1f))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([013b0c3](https://www.github.com/googleapis/java-pubsub/commit/013b0c3e4ee09926efc88f43dde6d6265fb41171))
+* update dependency org.easymock:easymock to v4 ([#39](https://www.github.com/googleapis/java-pubsub/issues/39)) ([f803bee](https://www.github.com/googleapis/java-pubsub/commit/f803bee1292fb6e1961dabb25dca17c7c2bd5a04))
+* update opencensus.version to v0.25.0 ([#85](https://www.github.com/googleapis/java-pubsub/issues/85)) ([aeca5d4](https://www.github.com/googleapis/java-pubsub/commit/aeca5d413ae46dc9153c4db0135e594a426a7375))
+
+
+### Documentation
+
+* **regen:** switch to proto annotations ([#90](https://www.github.com/googleapis/java-pubsub/issues/90)) ([63c147a](https://www.github.com/googleapis/java-pubsub/commit/63c147a9250c7b07cb9c8cc7b086a68e0631a37d))
+
 ## [1.103.0](https://www.github.com/googleapis/java-pubsub/compare/v1.102.1...v1.103.0) (2020-02-20)
 
 
