@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.117.5](https://www.github.com/googleapis/java-dns/compare/v0.117.4...v0.117.5) (2020-03-09)
+
+
+### Dependencies
+
+* update core dependencies ([#77](https://www.github.com/googleapis/java-dns/issues/77)) ([728e621](https://www.github.com/googleapis/java-dns/commit/728e621f48963e24ec207d4f183f978911d18d6e))
+* update core dependencies to v1.92.5 ([#67](https://www.github.com/googleapis/java-dns/issues/67)) ([e24352c](https://www.github.com/googleapis/java-dns/commit/e24352c4f6e278060a8c519d49b62cf926da7b8b))
+* update core dependencies to v1.93.1 ([#79](https://www.github.com/googleapis/java-dns/issues/79)) ([34d5b80](https://www.github.com/googleapis/java-dns/commit/34d5b80e17fcf7199fcfbfa6bfd6282c2669d3bf))
+* update dependency com.google.api-client:google-api-client-bom to v1.30.9 ([#78](https://www.github.com/googleapis/java-dns/issues/78)) ([be62767](https://www.github.com/googleapis/java-dns/commit/be62767359b5c1bdb7653ff67ff7722787c95aa6))
+* update dependency com.google.apis:google-api-services-dns to v1-rev20191205-1.30.8 ([#70](https://www.github.com/googleapis/java-dns/issues/70)) ([48095c8](https://www.github.com/googleapis/java-dns/commit/48095c877ba1e69446797e648710de68a069e6de))
+* update dependency com.google.apis:google-api-services-dns to v1-rev20191205-1.30.9 ([#80](https://www.github.com/googleapis/java-dns/issues/80)) ([05cc1df](https://www.github.com/googleapis/java-dns/commit/05cc1dff78cab80fc0ff84d9e64c0bcd67c35fc4))
+* update dependency com.google.http-client:google-http-client-bom to v1.34.2 ([cc62e72](https://www.github.com/googleapis/java-dns/commit/cc62e72fe39e692333f7279816f3084e7a341114))
+
 ### [0.117.4](https://www.github.com/googleapis/java-dns/compare/v0.117.3...v0.117.4) (2020-02-04)
 
 
