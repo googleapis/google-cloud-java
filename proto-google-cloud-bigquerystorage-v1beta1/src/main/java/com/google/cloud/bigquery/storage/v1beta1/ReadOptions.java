@@ -816,7 +816,8 @@ public final class ReadOptions {
        *
        * <code>repeated string selected_fields = 1;</code>
        *
-       * @param value The bytes of the selectedFields to add.
+       * @param index The index of the value to return.
+       * @return The bytes of the selectedFields at the given index.
        */
       public com.google.protobuf.ByteString getSelectedFieldsBytes(int index) {
         return selectedFields_.getByteString(index);

@@ -183,7 +183,10 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   private int rowsCase_ = 0;
   private java.lang.Object rows_;
 
-  public enum RowsCase implements com.google.protobuf.Internal.EnumLite {
+  public enum RowsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     AVRO_ROWS(3),
     ARROW_RECORD_BATCH(4),
     ROWS_NOT_SET(0);

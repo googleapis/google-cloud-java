@@ -2432,7 +2432,10 @@ public final class Storage {
     private int rowsCase_ = 0;
     private java.lang.Object rows_;
 
-    public enum RowsCase implements com.google.protobuf.Internal.EnumLite {
+    public enum RowsCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       PROTO_ROWS(4),
       ROWS_NOT_SET(0);
       private final int value;
@@ -3775,7 +3778,10 @@ public final class Storage {
     private int responseCase_ = 0;
     private java.lang.Object response_;
 
-    public enum ResponseCase implements com.google.protobuf.Internal.EnumLite {
+    public enum ResponseCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       OFFSET(1),
       ERROR(2),
       RESPONSE_NOT_SET(0);
@@ -6149,7 +6155,8 @@ public final class Storage {
        *
        * <code>repeated string write_streams = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
-       * @param value The bytes of the writeStreams to add.
+       * @param index The index of the value to return.
+       * @return The bytes of the writeStreams at the given index.
        */
       public com.google.protobuf.ByteString getWriteStreamsBytes(int index) {
         return writeStreams_.getByteString(index);

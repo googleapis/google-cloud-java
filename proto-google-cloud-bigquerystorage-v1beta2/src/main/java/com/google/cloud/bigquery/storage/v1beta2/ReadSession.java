@@ -1939,7 +1939,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>repeated string selected_fields = 1;</code>
        *
-       * @param value The bytes of the selectedFields to add.
+       * @param index The index of the value to return.
+       * @return The bytes of the selectedFields at the given index.
        */
       public com.google.protobuf.ByteString getSelectedFieldsBytes(int index) {
         return selectedFields_.getByteString(index);
@@ -2469,7 +2470,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   private int schemaCase_ = 0;
   private java.lang.Object schema_;
 
-  public enum SchemaCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SchemaCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     AVRO_SCHEMA(4),
     ARROW_SCHEMA(5),
     SCHEMA_NOT_SET(0);
