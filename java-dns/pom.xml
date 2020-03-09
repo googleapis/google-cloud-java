@@ -102,7 +102,7 @@
       <dependency>
         <groupId>com.google.api-client</groupId>
         <artifactId>google-api-client-bom</artifactId>
-        <version>1.30.8</version>
+        <version>1.30.9</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
