@@ -177,7 +177,10 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   private int contentCase_ = 0;
   private java.lang.Object content_;
 
-  public enum ContentCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ContentCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     XY_CHART(2),
     SCORECARD(3),
     TEXT(4),

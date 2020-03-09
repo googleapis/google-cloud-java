@@ -1213,7 +1213,10 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
   private int outputFilterCase_ = 0;
   private java.lang.Object outputFilter_;
 
-  public enum OutputFilterCase implements com.google.protobuf.Internal.EnumLite {
+  public enum OutputFilterCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PICK_TIME_SERIES_FILTER(4),
     STATISTICAL_TIME_SERIES_FILTER(5),
     OUTPUTFILTER_NOT_SET(0);

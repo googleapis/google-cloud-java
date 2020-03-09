@@ -180,7 +180,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
   private int layoutCase_ = 0;
   private java.lang.Object layout_;
 
-  public enum LayoutCase implements com.google.protobuf.Internal.EnumLite {
+  public enum LayoutCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GRID_LAYOUT(5),
     ROW_LAYOUT(8),
     COLUMN_LAYOUT(9),

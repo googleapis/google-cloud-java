@@ -2641,7 +2641,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string group_by_fields = 5;</code>
      *
-     * @param value The bytes of the groupByFields to add.
+     * @param index The index of the value to return.
+     * @return The bytes of the groupByFields at the given index.
      */
     public com.google.protobuf.ByteString getGroupByFieldsBytes(int index) {
       return groupByFields_.getByteString(index);

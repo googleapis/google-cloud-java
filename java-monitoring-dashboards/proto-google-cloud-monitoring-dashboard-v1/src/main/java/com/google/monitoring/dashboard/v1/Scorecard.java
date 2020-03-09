@@ -1859,7 +1859,10 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
   private int dataViewCase_ = 0;
   private java.lang.Object dataView_;
 
-  public enum DataViewCase implements com.google.protobuf.Internal.EnumLite {
+  public enum DataViewCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GAUGE_VIEW(4),
     SPARK_CHART_VIEW(5),
     DATAVIEW_NOT_SET(0);

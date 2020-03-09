@@ -153,7 +153,10 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
-  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TIME_SERIES_FILTER(1),
     TIME_SERIES_FILTER_RATIO(2),
     SOURCE_NOT_SET(0);
