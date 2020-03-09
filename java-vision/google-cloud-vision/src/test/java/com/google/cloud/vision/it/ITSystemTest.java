@@ -215,8 +215,8 @@ public class ITSystemTest {
         getResponsesList("face_no_surprise.jpg", Type.FACE_DETECTION, false);
     for (AnnotateImageResponse res : responses) {
       for (FaceAnnotation annotation : res.getFaceAnnotationsList()) {
-        assertEquals(Likelihood.POSSIBLE, annotation.getAngerLikelihood());
-        assertEquals(Likelihood.POSSIBLE, annotation.getJoyLikelihood());
+        assertEquals(Likelihood.LIKELY, annotation.getAngerLikelihood());
+        assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
         assertEquals(Likelihood.LIKELY, annotation.getSurpriseLikelihood());
       }
     }
@@ -228,8 +228,8 @@ public class ITSystemTest {
         getResponsesList("face/face_no_surprise.jpg", Type.FACE_DETECTION, true);
     for (AnnotateImageResponse res : responses) {
       for (FaceAnnotation annotation : res.getFaceAnnotationsList()) {
-        assertEquals(Likelihood.POSSIBLE, annotation.getAngerLikelihood());
-        assertEquals(Likelihood.POSSIBLE, annotation.getJoyLikelihood());
+        assertEquals(Likelihood.LIKELY, annotation.getAngerLikelihood());
+        assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
         assertEquals(Likelihood.LIKELY, annotation.getSurpriseLikelihood());
       }
     }
@@ -390,7 +390,7 @@ public class ITSystemTest {
     for (AnnotateImageResponse res : responses) {
       SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
       assertEquals(Likelihood.VERY_UNLIKELY, annotation.getAdult());
-      assertEquals(Likelihood.UNLIKELY, annotation.getRacy());
+      assertEquals(Likelihood.VERY_UNLIKELY, annotation.getRacy());
     }
   }
 
@@ -401,7 +401,7 @@ public class ITSystemTest {
     for (AnnotateImageResponse res : responses) {
       SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
       assertEquals(Likelihood.VERY_UNLIKELY, annotation.getAdult());
-      assertEquals(Likelihood.UNLIKELY, annotation.getRacy());
+      assertEquals(Likelihood.VERY_UNLIKELY, annotation.getRacy());
     }
   }
 
