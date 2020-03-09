@@ -28,7 +28,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/videointelligence/v1p3beta1/video_intelligence.proto")
 public final class StreamingVideoIntelligenceServiceGrpc {
 
@@ -38,30 +38,22 @@ public final class StreamingVideoIntelligenceServiceGrpc {
       "google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getStreamingAnnotateVideoMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest,
-          com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse>
-      METHOD_STREAMING_ANNOTATE_VIDEO = getStreamingAnnotateVideoMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest,
           com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse>
       getStreamingAnnotateVideoMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamingAnnotateVideo",
+      requestType =
+          com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest.class,
+      responseType =
+          com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest,
           com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse>
       getStreamingAnnotateVideoMethod() {
-    return getStreamingAnnotateVideoMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest,
-          com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse>
-      getStreamingAnnotateVideoMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest,
             com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse>
@@ -82,9 +74,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceService",
-                              "StreamingAnnotateVideo"))
+                          generateFullMethodName(SERVICE_NAME, "StreamingAnnotateVideo"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -147,15 +137,14 @@ public final class StreamingVideoIntelligenceServiceGrpc {
             io.grpc.stub.StreamObserver<
                     com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse>
                 responseObserver) {
-      return asyncUnimplementedStreamingCall(
-          getStreamingAnnotateVideoMethodHelper(), responseObserver);
+      return asyncUnimplementedStreamingCall(getStreamingAnnotateVideoMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getStreamingAnnotateVideoMethodHelper(),
+              getStreamingAnnotateVideoMethod(),
               asyncBidiStreamingCall(
                   new MethodHandlers<
                       com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest,
@@ -205,7 +194,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
                     com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse>
                 responseObserver) {
       return asyncBidiStreamingCall(
-          getChannel().newCall(getStreamingAnnotateVideoMethodHelper(), getCallOptions()),
+          getChannel().newCall(getStreamingAnnotateVideoMethod(), getCallOptions()),
           responseObserver);
     }
   }
@@ -352,7 +341,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(
                           new StreamingVideoIntelligenceServiceFileDescriptorSupplier())
-                      .addMethod(getStreamingAnnotateVideoMethodHelper())
+                      .addMethod(getStreamingAnnotateVideoMethod())
                       .build();
         }
       }
