@@ -1,5 +1,25 @@
 # Changelog
 
+### [1.99.2](https://www.github.com/googleapis/java-vision/compare/v1.99.1...v1.99.2) (2020-03-09)
+
+
+### Dependencies
+
+* update core dependencies ([5a14054](https://www.github.com/googleapis/java-vision/commit/5a14054c2ca762b2e618888d72ca307e79f9a373))
+* update core dependencies ([#43](https://www.github.com/googleapis/java-vision/issues/43)) ([8f1b53b](https://www.github.com/googleapis/java-vision/commit/8f1b53bc492cf5904e50c8b42824b0972e0a4fa9))
+* update core dependencies ([#52](https://www.github.com/googleapis/java-vision/issues/52)) ([7ca9859](https://www.github.com/googleapis/java-vision/commit/7ca9859f3f3ba4eb64b9983265436e2ee7cc01c1))
+* update core libraries ([#72](https://www.github.com/googleapis/java-vision/issues/72)) ([17eba7d](https://www.github.com/googleapis/java-vision/commit/17eba7d95f898f0ea82e3bab153db914263747f4))
+* update dependency com.google.cloud:google-cloud-core to v1.93.1 ([#73](https://www.github.com/googleapis/java-vision/issues/73)) ([877c18f](https://www.github.com/googleapis/java-vision/commit/877c18f7e89dce10bc12dbe2645d1586e9e7d79a))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#36](https://www.github.com/googleapis/java-vision/issues/36)) ([077a270](https://www.github.com/googleapis/java-vision/commit/077a270bcae5f44bcbe55c176919e2b14f11a907))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#54](https://www.github.com/googleapis/java-vision/issues/54)) ([24cc931](https://www.github.com/googleapis/java-vision/commit/24cc93193be3f586f8998292db68da214f7c47b8))
+* update dependency org.threeten:threetenbp to v1.4.1 ([812b893](https://www.github.com/googleapis/java-vision/commit/812b893666753e73f24ef0d2c33916df19cc5bf3))
+
+
+### Documentation
+
+* **regen:** regenerate v1p1beta1, v1p2beta1, v1p3beta1, v1p4beta1 clients with annotations ([#53](https://www.github.com/googleapis/java-vision/issues/53)) ([02e28c8](https://www.github.com/googleapis/java-vision/commit/02e28c84fc1930ffceb1a344c6d0bf9fd64b604a))
+* **regen:** update sample code to set total timeout, add API client header test ([#56](https://www.github.com/googleapis/java-vision/issues/56)) ([8d4bff0](https://www.github.com/googleapis/java-vision/commit/8d4bff08005dd3e8a49bc4b5892373584ce46ab6))
+
 ### [1.99.1](https://www.github.com/googleapis/java-vision/compare/v1.99.0...v1.99.1) (2020-01-03)
 
 
