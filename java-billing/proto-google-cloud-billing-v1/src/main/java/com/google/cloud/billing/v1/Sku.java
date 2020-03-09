@@ -1620,7 +1620,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string service_regions = 5;</code>
      *
-     * @param value The bytes of the serviceRegions to add.
+     * @param index The index of the value to return.
+     * @return The bytes of the serviceRegions at the given index.
      */
     public com.google.protobuf.ByteString getServiceRegionsBytes(int index) {
       return serviceRegions_.getByteString(index);
