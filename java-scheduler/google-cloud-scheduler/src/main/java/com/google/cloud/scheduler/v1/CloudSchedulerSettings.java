@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * CloudSchedulerSettings.Builder cloudSchedulerSettingsBuilder =
  *     CloudSchedulerSettings.newBuilder();
- * cloudSchedulerSettingsBuilder.getJobSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * cloudSchedulerSettingsBuilder
+ *     .getJobSettings()
+ *     .setRetrySettings(
+ *         cloudSchedulerSettingsBuilder.getJobSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * CloudSchedulerSettings cloudSchedulerSettings = cloudSchedulerSettingsBuilder.build();
  * </code>
  * </pre>
