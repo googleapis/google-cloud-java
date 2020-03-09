@@ -18,18 +18,16 @@ import synthtool as s
 import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
-gapic = gcp.GAPICGenerator()
+gapic = gcp.GAPICBazel()
 
 service = 'scheduler'
 versions = ['v1beta1', 'v1']
 config_pattern = '/google/cloud/scheduler/artman_cloudscheduler_{version}.yaml'
 
 for version in versions:
-  java.gapic_library(
+  java.bazel_library(
     service=service,
     version=version,
-    config_pattern=config_pattern,
-    package_pattern='com.google.cloud.{service}.{version}',
     gapic=gapic,
   )
 
