@@ -1039,7 +1039,8 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <code>repeated string notification_emails = 2;</code>
      *
-     * @param value The bytes of the notificationEmails to add.
+     * @param index The index of the value to return.
+     * @return The bytes of the notificationEmails at the given index.
      */
     public com.google.protobuf.ByteString getNotificationEmailsBytes(int index) {
       return notificationEmails_.getByteString(index);

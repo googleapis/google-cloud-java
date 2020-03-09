@@ -240,7 +240,10 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   private int decisionCase_ = 0;
   private java.lang.Object decision_;
 
-  public enum DecisionCase implements com.google.protobuf.Internal.EnumLite {
+  public enum DecisionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     APPROVE(7),
     DISMISS(8),
     DECISION_NOT_SET(0);
