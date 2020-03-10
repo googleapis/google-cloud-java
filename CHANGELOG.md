@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.126.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.125.0...v0.126.0) (2020-03-09)
+
+
+### Features
+
+* re-generated  to pick up changes in the API or client library generator. ([#85](https://www.github.com/googleapis/java-bigquerystorage/issues/85)) ([e3f4087](https://www.github.com/googleapis/java-bigquerystorage/commit/e3f40879dfda7c2dac1cf16b23605912174e2601))
+* re-generated  to pick up changes in the API or client library generator. ([#95](https://www.github.com/googleapis/java-bigquerystorage/issues/95)) ([7e760a4](https://www.github.com/googleapis/java-bigquerystorage/commit/7e760a4d2782ec1674b0d3da72ba2eeed4d101a1))
+* re-generated  to pick up changes in the API or client library generator. ([#97](https://www.github.com/googleapis/java-bigquerystorage/issues/97)) ([c1f1854](https://www.github.com/googleapis/java-bigquerystorage/commit/c1f1854bbe4362449b0afd427e88ab9414cd8fac))
+
+
+### Dependencies
+
+* update core dependencies ([#89](https://www.github.com/googleapis/java-bigquerystorage/issues/89)) ([bdf1385](https://www.github.com/googleapis/java-bigquerystorage/commit/bdf13853a8abd791c4a376284a5afeed1d2afbd8))
+* update dependency com.fasterxml.jackson.core:jackson-core to v2.10.3 ([#92](https://www.github.com/googleapis/java-bigquerystorage/issues/92)) ([551d024](https://www.github.com/googleapis/java-bigquerystorage/commit/551d02482c8694d32e465acccbf8de6ae515d3c8))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.107.0 ([#82](https://www.github.com/googleapis/java-bigquerystorage/issues/82)) ([96e55ee](https://www.github.com/googleapis/java-bigquerystorage/commit/96e55ee322a9fcb0b05f3a942eefc48e5f1233d0))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.108.0 ([#91](https://www.github.com/googleapis/java-bigquerystorage/issues/91)) ([aa7b8b8](https://www.github.com/googleapis/java-bigquerystorage/commit/aa7b8b84236261b1c88367851cbffe3126d81a50))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.108.1 ([#96](https://www.github.com/googleapis/java-bigquerystorage/issues/96)) ([11b4418](https://www.github.com/googleapis/java-bigquerystorage/commit/11b44186007dd7eb15f3daf5d559c705003e8709))
+* update dependency com.google.cloud:google-cloud-core to v1.93.1 ([#93](https://www.github.com/googleapis/java-bigquerystorage/issues/93)) ([aa10c59](https://www.github.com/googleapis/java-bigquerystorage/commit/aa10c59ea155eec8de8433dbb8ef924327bf60a2))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([#88](https://www.github.com/googleapis/java-bigquerystorage/issues/88)) ([cdba693](https://www.github.com/googleapis/java-bigquerystorage/commit/cdba693add40b7571a43b4b0c5ca8a772e0333c5))
+
 ## [0.125.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.124.0...v0.125.0) (2020-02-18)
 
 
