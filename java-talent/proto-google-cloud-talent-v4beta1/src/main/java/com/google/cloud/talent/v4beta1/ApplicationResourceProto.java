@@ -41,58 +41,58 @@ public final class ApplicationResourceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/talent/v4beta1/applicatio"
-          + "n.proto\022\033google.cloud.talent.v4beta1\032\037go"
-          + "ogle/api/field_behavior.proto\032\031google/ap"
-          + "i/resource.proto\032(google/cloud/talent/v4"
-          + "beta1/common.proto\032\037google/protobuf/time"
-          + "stamp.proto\032\036google/protobuf/wrappers.pr"
-          + "oto\032\026google/type/date.proto\032\034google/api/"
-          + "annotations.proto\"\231\t\n\013Application\022\014\n\004nam"
+          + "n.proto\022\033google.cloud.talent.v4beta1\032\034go"
+          + "ogle/api/annotations.proto\032\037google/api/f"
+          + "ield_behavior.proto\032\031google/api/resource"
+          + ".proto\032(google/cloud/talent/v4beta1/comm"
+          + "on.proto\032\037google/protobuf/timestamp.prot"
+          + "o\032\036google/protobuf/wrappers.proto\032\026googl"
+          + "e/type/date.proto\"\234\t\n\013Application\022\014\n\004nam"
           + "e\030\001 \001(\t\022\030\n\013external_id\030\037 \001(\tB\003\340A\002\022\024\n\007pro"
-          + "file\030\002 \001(\tB\003\340A\003\022)\n\003job\030\004 \001(\tB\034\372A\031\n\027jobs."
-          + "googleapis.com/Job\0221\n\007company\030\005 \001(\tB \372A\035"
-          + "\n\033jobs.googleapis.com/Company\022+\n\020applica"
-          + "tion_date\030\007 \001(\0132\021.google.type.Date\022M\n\005st"
-          + "age\030\013 \001(\01629.google.cloud.talent.v4beta1."
-          + "Application.ApplicationStageB\003\340A\002\022H\n\005sta"
-          + "te\030\r \001(\01629.google.cloud.talent.v4beta1.A"
-          + "pplication.ApplicationState\022:\n\ninterview"
-          + "s\030\020 \003(\0132&.google.cloud.talent.v4beta1.In"
-          + "terview\022,\n\010referral\030\022 \001(\0132\032.google.proto"
-          + "buf.BoolValue\0224\n\013create_time\030\023 \001(\0132\032.goo"
-          + "gle.protobuf.TimestampB\003\340A\002\022/\n\013update_ti"
-          + "me\030\024 \001(\0132\032.google.protobuf.Timestamp\022\025\n\r"
-          + "outcome_notes\030\025 \001(\t\0225\n\007outcome\030\026 \001(\0162$.g"
-          + "oogle.cloud.talent.v4beta1.Outcome\0221\n\010is"
-          + "_match\030\034 \001(\0132\032.google.protobuf.BoolValue"
-          + "B\003\340A\003\022\036\n\021job_title_snippet\030\035 \001(\tB\003\340A\003\"\220\001"
-          + "\n\020ApplicationState\022!\n\035APPLICATION_STATE_"
-          + "UNSPECIFIED\020\000\022\017\n\013IN_PROGRESS\020\001\022\026\n\022CANDID"
-          + "ATE_WITHDREW\020\002\022\025\n\021EMPLOYER_WITHDREW\020\003\022\r\n"
-          + "\tCOMPLETED\020\004\022\n\n\006CLOSED\020\005\"\251\001\n\020Application"
-          + "Stage\022!\n\035APPLICATION_STAGE_UNSPECIFIED\020\000"
-          + "\022\007\n\003NEW\020\001\022\n\n\006SCREEN\020\002\022\031\n\025HIRING_MANAGER_"
-          + "REVIEW\020\003\022\r\n\tINTERVIEW\020\004\022\022\n\016OFFER_EXTENDE"
-          + "D\020\005\022\022\n\016OFFER_ACCEPTED\020\006\022\013\n\007STARTED\020\007:w\352A"
-          + "t\n\037jobs.googleapis.com/Application\022Qproj"
-          + "ects/{project}/tenants/{tenant}/profiles"
-          + "/{profile}/applications/{application}B\206\001"
-          + "\n\037com.google.cloud.talent.v4beta1B\030Appli"
-          + "cationResourceProtoP\001ZAgoogle.golang.org"
-          + "/genproto/googleapis/cloud/talent/v4beta"
-          + "1;talent\242\002\003CTSb\006proto3"
+          + "file\030\002 \001(\tB\003\340A\003\022,\n\003job\030\004 \001(\tB\037\372A\031\n\027jobs."
+          + "googleapis.com/Job\340A\002\0221\n\007company\030\005 \001(\tB "
+          + "\372A\035\n\033jobs.googleapis.com/Company\022+\n\020appl"
+          + "ication_date\030\007 \001(\0132\021.google.type.Date\022M\n"
+          + "\005stage\030\013 \001(\01629.google.cloud.talent.v4bet"
+          + "a1.Application.ApplicationStageB\003\340A\002\022H\n\005"
+          + "state\030\r \001(\01629.google.cloud.talent.v4beta"
+          + "1.Application.ApplicationState\022:\n\ninterv"
+          + "iews\030\020 \003(\0132&.google.cloud.talent.v4beta1"
+          + ".Interview\022,\n\010referral\030\022 \001(\0132\032.google.pr"
+          + "otobuf.BoolValue\0224\n\013create_time\030\023 \001(\0132\032."
+          + "google.protobuf.TimestampB\003\340A\002\022/\n\013update"
+          + "_time\030\024 \001(\0132\032.google.protobuf.Timestamp\022"
+          + "\025\n\routcome_notes\030\025 \001(\t\0225\n\007outcome\030\026 \001(\0162"
+          + "$.google.cloud.talent.v4beta1.Outcome\0221\n"
+          + "\010is_match\030\034 \001(\0132\032.google.protobuf.BoolVa"
+          + "lueB\003\340A\003\022\036\n\021job_title_snippet\030\035 \001(\tB\003\340A\003"
+          + "\"\220\001\n\020ApplicationState\022!\n\035APPLICATION_STA"
+          + "TE_UNSPECIFIED\020\000\022\017\n\013IN_PROGRESS\020\001\022\026\n\022CAN"
+          + "DIDATE_WITHDREW\020\002\022\025\n\021EMPLOYER_WITHDREW\020\003"
+          + "\022\r\n\tCOMPLETED\020\004\022\n\n\006CLOSED\020\005\"\251\001\n\020Applicat"
+          + "ionStage\022!\n\035APPLICATION_STAGE_UNSPECIFIE"
+          + "D\020\000\022\007\n\003NEW\020\001\022\n\n\006SCREEN\020\002\022\031\n\025HIRING_MANAG"
+          + "ER_REVIEW\020\003\022\r\n\tINTERVIEW\020\004\022\022\n\016OFFER_EXTE"
+          + "NDED\020\005\022\022\n\016OFFER_ACCEPTED\020\006\022\013\n\007STARTED\020\007:"
+          + "w\352At\n\037jobs.googleapis.com/Application\022Qp"
+          + "rojects/{project}/tenants/{tenant}/profi"
+          + "les/{profile}/applications/{application}"
+          + "B\206\001\n\037com.google.cloud.talent.v4beta1B\030Ap"
+          + "plicationResourceProtoP\001ZAgoogle.golang."
+          + "org/genproto/googleapis/cloud/talent/v4b"
+          + "eta1;talent\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.protobuf.WrappersProto.getDescriptor(),
               com.google.type.DateProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_talent_v4beta1_Application_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -124,13 +124,13 @@ public final class ApplicationResourceProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
     com.google.type.DateProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -347,11 +347,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Suggest job titles for jobs autocomplete.
-     * For
-     * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
+     * For [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE] type, only open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes] are returned.
      * </pre>
      *
      * <code>JOB_TITLE = 1;</code>
@@ -362,11 +359,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Suggest company names for jobs autocomplete.
-     * For
-     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-     * type, only companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
+     * For [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME] type,
+     * only companies having open jobs with the same [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes] are
+     * returned.
      * </pre>
      *
      * <code>COMPANY_NAME = 2;</code>
@@ -377,13 +372,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Suggest both job titles and company names for jobs autocomplete.
-     * For
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * or companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
+     * For [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED] type, only open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes] or companies having open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes] are returned.
      * </pre>
      *
      * <code>COMBINED = 3;</code>
@@ -407,11 +398,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Suggest job titles for jobs autocomplete.
-     * For
-     * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
+     * For [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE] type, only open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes] are returned.
      * </pre>
      *
      * <code>JOB_TITLE = 1;</code>
@@ -422,11 +410,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Suggest company names for jobs autocomplete.
-     * For
-     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-     * type, only companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
+     * For [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME] type,
+     * only companies having open jobs with the same [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes] are
+     * returned.
      * </pre>
      *
      * <code>COMPANY_NAME = 2;</code>
@@ -437,13 +423,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Suggest both job titles and company names for jobs autocomplete.
-     * For
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * or companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
+     * For [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED] type, only open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes] or companies having open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes] are returned.
      * </pre>
      *
      * <code>COMBINED = 3;</code>

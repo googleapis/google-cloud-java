@@ -53,12 +53,10 @@ public final class TenantResourceProto {
           + "E_TYPE_UNSPECIFIED\020\000\022\016\n\nAGGREGATED\020\001\022\014\n\010"
           + "ISOLATED\020\002:D\352AA\n\032jobs.googleapis.com/Ten"
           + "ant\022#projects/{project}/tenants/{tenant}"
-          + "B\342\001\n\037com.google.cloud.talent.v4beta1B\023Te"
+          + "B\201\001\n\037com.google.cloud.talent.v4beta1B\023Te"
           + "nantResourceProtoP\001ZAgoogle.golang.org/g"
           + "enproto/googleapis/cloud/talent/v4beta1;"
-          + "talent\242\002\003CTS\352A^\n#jobs.googleapis.com/Ten"
-          + "antOrProject\022#projects/{project}/tenants"
-          + "/{tenant}\022\022projects/{project}b\006proto3"
+          + "talent\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -81,7 +79,6 @@ public final class TenantResourceProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
-    registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();

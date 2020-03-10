@@ -633,10 +633,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Controls over how job documents get ranked on top of existing
-     * relevance score (determined by API algorithm). A combination of the
-     * ranking expression and relevance score is used to determine job's final
-     * ranking position.
+     * Required. Controls over how job documents get ranked on top of existing relevance
+     * score (determined by API algorithm). A combination of the ranking
+     * expression and relevance score is used to determine job's final ranking
+     * position.
      * The syntax for this expression is a subset of Google SQL syntax.
      * Supported operators are: +, -, *, /, where the left and right side of
      * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
@@ -660,10 +660,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Controls over how job documents get ranked on top of existing
-     * relevance score (determined by API algorithm). A combination of the
-     * ranking expression and relevance score is used to determine job's final
-     * ranking position.
+     * Required. Controls over how job documents get ranked on top of existing relevance
+     * score (determined by API algorithm). A combination of the ranking
+     * expression and relevance score is used to determine job's final ranking
+     * position.
      * The syntax for this expression is a subset of Google SQL syntax.
      * Supported operators are: +, -, *, /, where the left and right side of
      * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
@@ -1111,10 +1111,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Controls over how job documents get ranked on top of existing
-     * relevance score (determined by API algorithm). A combination of the
-     * ranking expression and relevance score is used to determine job's final
-     * ranking position.
+     * Required. Controls over how job documents get ranked on top of existing relevance
+     * score (determined by API algorithm). A combination of the ranking
+     * expression and relevance score is used to determine job's final ranking
+     * position.
      * The syntax for this expression is a subset of Google SQL syntax.
      * Supported operators are: +, -, *, /, where the left and right side of
      * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
@@ -1148,10 +1148,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Controls over how job documents get ranked on top of existing
-     * relevance score (determined by API algorithm). A combination of the
-     * ranking expression and relevance score is used to determine job's final
-     * ranking position.
+     * Required. Controls over how job documents get ranked on top of existing relevance
+     * score (determined by API algorithm). A combination of the ranking
+     * expression and relevance score is used to determine job's final ranking
+     * position.
      * The syntax for this expression is a subset of Google SQL syntax.
      * Supported operators are: +, -, *, /, where the left and right side of
      * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
@@ -1659,10 +1659,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Controls over how job documents get ranked on top of existing
-       * relevance score (determined by API algorithm). A combination of the
-       * ranking expression and relevance score is used to determine job's final
-       * ranking position.
+       * Required. Controls over how job documents get ranked on top of existing relevance
+       * score (determined by API algorithm). A combination of the ranking
+       * expression and relevance score is used to determine job's final ranking
+       * position.
        * The syntax for this expression is a subset of Google SQL syntax.
        * Supported operators are: +, -, *, /, where the left and right side of
        * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
@@ -1696,10 +1696,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Controls over how job documents get ranked on top of existing
-       * relevance score (determined by API algorithm). A combination of the
-       * ranking expression and relevance score is used to determine job's final
-       * ranking position.
+       * Required. Controls over how job documents get ranked on top of existing relevance
+       * score (determined by API algorithm). A combination of the ranking
+       * expression and relevance score is used to determine job's final ranking
+       * position.
        * The syntax for this expression is a subset of Google SQL syntax.
        * Supported operators are: +, -, *, /, where the left and right side of
        * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
@@ -1733,10 +1733,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Controls over how job documents get ranked on top of existing
-       * relevance score (determined by API algorithm). A combination of the
-       * ranking expression and relevance score is used to determine job's final
-       * ranking position.
+       * Required. Controls over how job documents get ranked on top of existing relevance
+       * score (determined by API algorithm). A combination of the ranking
+       * expression and relevance score is used to determine job's final ranking
+       * position.
        * The syntax for this expression is a subset of Google SQL syntax.
        * Supported operators are: +, -, *, /, where the left and right side of
        * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
@@ -1769,10 +1769,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Controls over how job documents get ranked on top of existing
-       * relevance score (determined by API algorithm). A combination of the
-       * ranking expression and relevance score is used to determine job's final
-       * ranking position.
+       * Required. Controls over how job documents get ranked on top of existing relevance
+       * score (determined by API algorithm). A combination of the ranking
+       * expression and relevance score is used to determine job's final ranking
+       * position.
        * The syntax for this expression is a subset of Google SQL syntax.
        * Supported operators are: +, -, *, /, where the left and right side of
        * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
@@ -1801,10 +1801,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Controls over how job documents get ranked on top of existing
-       * relevance score (determined by API algorithm). A combination of the
-       * ranking expression and relevance score is used to determine job's final
-       * ranking position.
+       * Required. Controls over how job documents get ranked on top of existing relevance
+       * score (determined by API algorithm). A combination of the ranking
+       * expression and relevance score is used to determine job's final ranking
+       * position.
        * The syntax for this expression is a subset of Google SQL syntax.
        * Supported operators are: +, -, *, /, where the left and right side of
        * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
@@ -2630,7 +2630,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * An integer that specifies the current offset (that is, starting result
    * location, amongst the jobs deemed by the API as relevant) in search
    * results. This field is only considered if [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is unset.
-   * The maximum allowed value is 5000. Otherwise an error is thrown.
    * The maximum allowed value is 5000. Otherwise an error is thrown.
    * For example, 0 means to  return results starting from the first matching
    * job, and 10 means to return from the 11th job. This can be used for
@@ -6253,7 +6252,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * location, amongst the jobs deemed by the API as relevant) in search
      * results. This field is only considered if [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is unset.
      * The maximum allowed value is 5000. Otherwise an error is thrown.
-     * The maximum allowed value is 5000. Otherwise an error is thrown.
      * For example, 0 means to  return results starting from the first matching
      * job, and 10 means to return from the 11th job. This can be used for
      * pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -6274,7 +6272,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * An integer that specifies the current offset (that is, starting result
      * location, amongst the jobs deemed by the API as relevant) in search
      * results. This field is only considered if [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is unset.
-     * The maximum allowed value is 5000. Otherwise an error is thrown.
      * The maximum allowed value is 5000. Otherwise an error is thrown.
      * For example, 0 means to  return results starting from the first matching
      * job, and 10 means to return from the 11th job. This can be used for
@@ -6300,7 +6297,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * An integer that specifies the current offset (that is, starting result
      * location, amongst the jobs deemed by the API as relevant) in search
      * results. This field is only considered if [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is unset.
-     * The maximum allowed value is 5000. Otherwise an error is thrown.
      * The maximum allowed value is 5000. Otherwise an error is thrown.
      * For example, 0 means to  return results starting from the first matching
      * job, and 10 means to return from the 11th job. This can be used for

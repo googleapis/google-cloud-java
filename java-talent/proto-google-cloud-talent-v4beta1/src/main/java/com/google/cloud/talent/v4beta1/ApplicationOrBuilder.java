@@ -120,14 +120,15 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * One of either a job or a company is required.
-   * Resource name of the job which the candidate applied for.
+   * Required. Resource name of the job which the candidate applied for.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
    * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string job = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The job.
    */
@@ -136,14 +137,15 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * One of either a job or a company is required.
-   * Resource name of the job which the candidate applied for.
+   * Required. Resource name of the job which the candidate applied for.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
    * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string job = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for job.
    */
@@ -153,7 +155,6 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * One of either a job or a company is required.
    * Resource name of the company which the candidate applied for.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
@@ -169,7 +170,6 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * One of either a job or a company is required.
    * Resource name of the company which the candidate applied for.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
@@ -221,8 +221,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Required. What is the most recent stage of the application (that is, new, screen,
-   * send cv, hired, finished work)?  This field is intentionally not
+   * Required. What is the most recent stage of the application (that is, new,
+   * screen, send cv, hired, finished work)?  This field is intentionally not
    * comprehensive of every possible status, but instead, represents statuses
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
@@ -238,8 +238,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Required. What is the most recent stage of the application (that is, new, screen,
-   * send cv, hired, finished work)?  This field is intentionally not
+   * Required. What is the most recent stage of the application (that is, new,
+   * screen, send cv, hired, finished work)?  This field is intentionally not
    * comprehensive of every possible status, but instead, represents statuses
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
