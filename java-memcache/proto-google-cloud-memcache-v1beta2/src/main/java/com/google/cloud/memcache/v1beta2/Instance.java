@@ -6149,7 +6149,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string zones = 5;</code>
      *
-     * @param value The bytes of the zones to add.
+     * @param index The index of the value to return.
+     * @return The bytes of the zones at the given index.
      */
     public com.google.protobuf.ByteString getZonesBytes(int index) {
       return zones_.getByteString(index);

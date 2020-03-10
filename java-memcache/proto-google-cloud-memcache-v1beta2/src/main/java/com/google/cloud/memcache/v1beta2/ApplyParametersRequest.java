@@ -816,7 +816,8 @@ public final class ApplyParametersRequest extends com.google.protobuf.GeneratedM
      *
      * <code>repeated string node_ids = 2;</code>
      *
-     * @param value The bytes of the nodeIds to add.
+     * @param index The index of the value to return.
+     * @return The bytes of the nodeIds at the given index.
      */
     public com.google.protobuf.ByteString getNodeIdsBytes(int index) {
       return nodeIds_.getByteString(index);

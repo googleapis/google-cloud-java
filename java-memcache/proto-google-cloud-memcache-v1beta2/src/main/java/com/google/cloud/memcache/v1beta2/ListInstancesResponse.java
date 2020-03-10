@@ -1317,7 +1317,8 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated string unreachable = 3;</code>
      *
-     * @param value The bytes of the unreachable to add.
+     * @param index The index of the value to return.
+     * @return The bytes of the unreachable at the given index.
      */
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
