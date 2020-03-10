@@ -1,0 +1,31 @@
+{
+  "updateTime": "2020-03-04T18:20:24.783601Z",
+  "sources": [
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "fd5b3b8238d783b04692a113ffe07c0363f5de0f",
+        "internalRef": "298847934"
+      }
+    },
+    {
+      "template": {
+        "name": "java_library",
+        "origin": "synthtool.gcp",
+        "version": "2020.2.4"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "memcache",
+        "apiVersion": "v1beta2",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ]
+}

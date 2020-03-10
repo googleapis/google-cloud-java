@@ -1,0 +1,14 @@
+{
+  "name": "memcache",
+  "name_pretty": "Cloud Memcache",
+  "product_documentation": "https://cloud.google.com/memorystore/",
+  "api_description": "is a fully-managed in-memory data store service for Memcache.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-memcache/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-memcache",
+  "repo_short": "java-memcache",
+  "distribution_name": "com.google.cloud:google-cloud-memcache",
+  "api_id": "memcache.googleapis.com"
+}
