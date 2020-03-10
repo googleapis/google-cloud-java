@@ -796,6 +796,71 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1.LogoRecognitionAnnotation>
+      getLogoRecognitionAnnotationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1.LogoRecognitionAnnotation getLogoRecognitionAnnotations(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  int getLogoRecognitionAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.videointelligence.v1.LogoRecognitionAnnotationOrBuilder>
+      getLogoRecognitionAnnotationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1.LogoRecognitionAnnotationOrBuilder
+      getLogoRecognitionAnnotationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
    * some videos may succeed and some may fail.
    * </pre>

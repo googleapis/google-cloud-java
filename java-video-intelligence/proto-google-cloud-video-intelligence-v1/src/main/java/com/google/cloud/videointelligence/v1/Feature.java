@@ -108,6 +108,16 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OBJECT_TRACKING = 9;</code>
    */
   OBJECT_TRACKING(9),
+  /**
+   *
+   *
+   * <pre>
+   * Logo detection, tracking, and recognition.
+   * </pre>
+   *
+   * <code>LOGO_RECOGNITION = 12;</code>
+   */
+  LOGO_RECOGNITION(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -191,6 +201,16 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OBJECT_TRACKING = 9;</code>
    */
   public static final int OBJECT_TRACKING_VALUE = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Logo detection, tracking, and recognition.
+   * </pre>
+   *
+   * <code>LOGO_RECOGNITION = 12;</code>
+   */
+  public static final int LOGO_RECOGNITION_VALUE = 12;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -232,6 +252,8 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
         return TEXT_DETECTION;
       case 9:
         return OBJECT_TRACKING;
+      case 12:
+        return LOGO_RECOGNITION;
       default:
         return null;
     }

@@ -104,6 +104,22 @@ public final class VideoIntelligenceServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_videointelligence_v1_FaceAnnotation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_videointelligence_v1_TimestampedObject_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_videointelligence_v1_TimestampedObject_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_videointelligence_v1_Track_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_videointelligence_v1_Track_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_videointelligence_v1_DetectedAttribute_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_videointelligence_v1_DetectedAttribute_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_videointelligence_v1_DetectedLandmark_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_videointelligence_v1_DetectedLandmark_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_videointelligence_v1_VideoAnnotationResults_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_videointelligence_v1_VideoAnnotationResults_fieldAccessorTable;
@@ -167,6 +183,10 @@ public final class VideoIntelligenceServiceProto {
       internal_static_google_cloud_videointelligence_v1_ObjectTrackingAnnotation_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_videointelligence_v1_ObjectTrackingAnnotation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_videointelligence_v1_LogoRecognitionAnnotation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_videointelligence_v1_LogoRecognitionAnnotation_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -255,121 +275,148 @@ public final class VideoIntelligenceServiceProto {
           + "Annotation\022\021\n\tthumbnail\030\001 \001(\014\022@\n\010segment"
           + "s\030\002 \003(\0132..google.cloud.videointelligence"
           + ".v1.FaceSegment\022<\n\006frames\030\003 \003(\0132,.google"
-          + ".cloud.videointelligence.v1.FaceFrame\"\275\010"
-          + "\n\026VideoAnnotationResults\022\021\n\tinput_uri\030\001 "
-          + "\001(\t\022@\n\007segment\030\n \001(\0132/.google.cloud.vide"
-          + "ointelligence.v1.VideoSegment\022U\n\031segment"
-          + "_label_annotations\030\002 \003(\01322.google.cloud."
-          + "videointelligence.v1.LabelAnnotation\022^\n\""
-          + "segment_presence_label_annotations\030\027 \003(\013"
-          + "22.google.cloud.videointelligence.v1.Lab"
-          + "elAnnotation\022R\n\026shot_label_annotations\030\003"
-          + " \003(\01322.google.cloud.videointelligence.v1"
-          + ".LabelAnnotation\022[\n\037shot_presence_label_"
-          + "annotations\030\030 \003(\01322.google.cloud.videoin"
-          + "telligence.v1.LabelAnnotation\022S\n\027frame_l"
-          + "abel_annotations\030\004 \003(\01322.google.cloud.vi"
-          + "deointelligence.v1.LabelAnnotation\022K\n\020fa"
-          + "ce_annotations\030\005 \003(\01321.google.cloud.vide"
-          + "ointelligence.v1.FaceAnnotation\022I\n\020shot_"
-          + "annotations\030\006 \003(\0132/.google.cloud.videoin"
-          + "telligence.v1.VideoSegment\022Y\n\023explicit_a"
-          + "nnotation\030\007 \001(\0132<.google.cloud.videointe"
-          + "lligence.v1.ExplicitContentAnnotation\022U\n"
-          + "\025speech_transcriptions\030\013 \003(\01326.google.cl"
-          + "oud.videointelligence.v1.SpeechTranscrip"
-          + "tion\022K\n\020text_annotations\030\014 \003(\01321.google."
-          + "cloud.videointelligence.v1.TextAnnotatio"
-          + "n\022W\n\022object_annotations\030\016 \003(\0132;.google.c"
-          + "loud.videointelligence.v1.ObjectTracking"
-          + "Annotation\022!\n\005error\030\t \001(\0132\022.google.rpc.S"
-          + "tatus\"n\n\025AnnotateVideoResponse\022U\n\022annota"
-          + "tion_results\030\001 \003(\01329.google.cloud.videoi"
-          + "ntelligence.v1.VideoAnnotationResults\"\246\002"
-          + "\n\027VideoAnnotationProgress\022\021\n\tinput_uri\030\001"
-          + " \001(\t\022\030\n\020progress_percent\030\002 \001(\005\022.\n\nstart_"
-          + "time\030\003 \001(\0132\032.google.protobuf.Timestamp\022/"
-          + "\n\013update_time\030\004 \001(\0132\032.google.protobuf.Ti"
-          + "mestamp\022;\n\007feature\030\005 \001(\0162*.google.cloud."
-          + "videointelligence.v1.Feature\022@\n\007segment\030"
-          + "\006 \001(\0132/.google.cloud.videointelligence.v"
-          + "1.VideoSegment\"p\n\025AnnotateVideoProgress\022"
-          + "W\n\023annotation_progress\030\001 \003(\0132:.google.cl"
-          + "oud.videointelligence.v1.VideoAnnotation"
-          + "Progress\"\201\003\n\031SpeechTranscriptionConfig\022\032"
-          + "\n\rlanguage_code\030\001 \001(\tB\003\340A\002\022\035\n\020max_altern"
-          + "atives\030\002 \001(\005B\003\340A\001\022\035\n\020filter_profanity\030\003 "
-          + "\001(\010B\003\340A\001\022N\n\017speech_contexts\030\004 \003(\01320.goog"
-          + "le.cloud.videointelligence.v1.SpeechCont"
-          + "extB\003\340A\001\022)\n\034enable_automatic_punctuation"
-          + "\030\005 \001(\010B\003\340A\001\022\031\n\014audio_tracks\030\006 \003(\005B\003\340A\001\022\'"
-          + "\n\032enable_speaker_diarization\030\007 \001(\010B\003\340A\001\022"
-          + "&\n\031diarization_speaker_count\030\010 \001(\005B\003\340A\001\022"
-          + "#\n\026enable_word_confidence\030\t \001(\010B\003\340A\001\"%\n\r"
-          + "SpeechContext\022\024\n\007phrases\030\001 \003(\tB\003\340A\001\"\210\001\n\023"
-          + "SpeechTranscription\022U\n\014alternatives\030\001 \003("
-          + "\0132?.google.cloud.videointelligence.v1.Sp"
-          + "eechRecognitionAlternative\022\032\n\rlanguage_c"
-          + "ode\030\002 \001(\tB\003\340A\003\"\214\001\n\034SpeechRecognitionAlte"
-          + "rnative\022\022\n\ntranscript\030\001 \001(\t\022\027\n\nconfidenc"
-          + "e\030\002 \001(\002B\003\340A\003\022?\n\005words\030\003 \003(\0132+.google.clo"
-          + "ud.videointelligence.v1.WordInfoB\003\340A\003\"\247\001"
-          + "\n\010WordInfo\022-\n\nstart_time\030\001 \001(\0132\031.google."
-          + "protobuf.Duration\022+\n\010end_time\030\002 \001(\0132\031.go"
-          + "ogle.protobuf.Duration\022\014\n\004word\030\003 \001(\t\022\027\n\n"
-          + "confidence\030\004 \001(\002B\003\340A\003\022\030\n\013speaker_tag\030\005 \001"
-          + "(\005B\003\340A\003\"(\n\020NormalizedVertex\022\t\n\001x\030\001 \001(\002\022\t"
-          + "\n\001y\030\002 \001(\002\"_\n\026NormalizedBoundingPoly\022E\n\010v"
-          + "ertices\030\001 \003(\01323.google.cloud.videointell"
-          + "igence.v1.NormalizedVertex\"\241\001\n\013TextSegme"
-          + "nt\022@\n\007segment\030\001 \001(\0132/.google.cloud.video"
-          + "intelligence.v1.VideoSegment\022\022\n\nconfiden"
-          + "ce\030\002 \001(\002\022<\n\006frames\030\003 \003(\0132,.google.cloud."
-          + "videointelligence.v1.TextFrame\"\224\001\n\tTextF"
-          + "rame\022W\n\024rotated_bounding_box\030\001 \001(\01329.goo"
-          + "gle.cloud.videointelligence.v1.Normalize"
-          + "dBoundingPoly\022.\n\013time_offset\030\002 \001(\0132\031.goo"
-          + "gle.protobuf.Duration\"`\n\016TextAnnotation\022"
-          + "\014\n\004text\030\001 \001(\t\022@\n\010segments\030\002 \003(\0132..google"
-          + ".cloud.videointelligence.v1.TextSegment\""
-          + "\240\001\n\023ObjectTrackingFrame\022Y\n\027normalized_bo"
-          + "unding_box\030\001 \001(\01328.google.cloud.videoint"
-          + "elligence.v1.NormalizedBoundingBox\022.\n\013ti"
-          + "me_offset\030\002 \001(\0132\031.google.protobuf.Durati"
-          + "on\"\227\002\n\030ObjectTrackingAnnotation\022B\n\007segme"
-          + "nt\030\003 \001(\0132/.google.cloud.videointelligenc"
-          + "e.v1.VideoSegmentH\000\022\022\n\010track_id\030\005 \001(\003H\000\022"
-          + "9\n\006entity\030\001 \001(\0132).google.cloud.videointe"
-          + "lligence.v1.Entity\022\022\n\nconfidence\030\004 \001(\002\022F"
-          + "\n\006frames\030\002 \003(\01326.google.cloud.videointel"
-          + "ligence.v1.ObjectTrackingFrameB\014\n\ntrack_"
-          + "info*\311\001\n\007Feature\022\027\n\023FEATURE_UNSPECIFIED\020"
-          + "\000\022\023\n\017LABEL_DETECTION\020\001\022\031\n\025SHOT_CHANGE_DE"
-          + "TECTION\020\002\022\036\n\032EXPLICIT_CONTENT_DETECTION\020"
-          + "\003\022\022\n\016FACE_DETECTION\020\004\022\030\n\024SPEECH_TRANSCRI"
-          + "PTION\020\006\022\022\n\016TEXT_DETECTION\020\007\022\023\n\017OBJECT_TR"
-          + "ACKING\020\t*r\n\022LabelDetectionMode\022$\n LABEL_"
-          + "DETECTION_MODE_UNSPECIFIED\020\000\022\r\n\tSHOT_MOD"
-          + "E\020\001\022\016\n\nFRAME_MODE\020\002\022\027\n\023SHOT_AND_FRAME_MO"
-          + "DE\020\003*t\n\nLikelihood\022\032\n\026LIKELIHOOD_UNSPECI"
-          + "FIED\020\000\022\021\n\rVERY_UNLIKELY\020\001\022\014\n\010UNLIKELY\020\002\022"
-          + "\014\n\010POSSIBLE\020\003\022\n\n\006LIKELY\020\004\022\017\n\013VERY_LIKELY"
-          + "\020\0052\300\002\n\030VideoIntelligenceService\022\315\001\n\rAnno"
-          + "tateVideo\0227.google.cloud.videointelligen"
-          + "ce.v1.AnnotateVideoRequest\032\035.google.long"
-          + "running.Operation\"d\202\323\344\223\002\030\"\023/v1/videos:an"
-          + "notate:\001*\332A\022input_uri,features\312A.\n\025Annot"
-          + "ateVideoResponse\022\025AnnotateVideoProgress\032"
-          + "T\312A videointelligence.googleapis.com\322A.h"
-          + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\213\002\n%com.google.cloud.videointellig"
-          + "ence.v1B\035VideoIntelligenceServiceProtoP\001"
-          + "ZRgoogle.golang.org/genproto/googleapis/"
-          + "cloud/videointelligence/v1;videointellig"
-          + "ence\252\002!Google.Cloud.VideoIntelligence.V1"
-          + "\312\002!Google\\Cloud\\VideoIntelligence\\V1\352\002$G"
-          + "oogle::Cloud::VideoIntelligence::V1b\006pro"
-          + "to3"
+          + ".cloud.videointelligence.v1.FaceFrame\"\272\002"
+          + "\n\021TimestampedObject\022Y\n\027normalized_boundi"
+          + "ng_box\030\001 \001(\01328.google.cloud.videointelli"
+          + "gence.v1.NormalizedBoundingBox\022.\n\013time_o"
+          + "ffset\030\002 \001(\0132\031.google.protobuf.Duration\022M"
+          + "\n\nattributes\030\003 \003(\01324.google.cloud.videoi"
+          + "ntelligence.v1.DetectedAttributeB\003\340A\001\022K\n"
+          + "\tlandmarks\030\004 \003(\01323.google.cloud.videoint"
+          + "elligence.v1.DetectedLandmarkB\003\340A\001\"\204\002\n\005T"
+          + "rack\022@\n\007segment\030\001 \001(\0132/.google.cloud.vid"
+          + "eointelligence.v1.VideoSegment\022Q\n\023timest"
+          + "amped_objects\030\002 \003(\01324.google.cloud.video"
+          + "intelligence.v1.TimestampedObject\022M\n\natt"
+          + "ributes\030\003 \003(\01324.google.cloud.videointell"
+          + "igence.v1.DetectedAttributeB\003\340A\001\022\027\n\nconf"
+          + "idence\030\004 \001(\002B\003\340A\001\"D\n\021DetectedAttribute\022\014"
+          + "\n\004name\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002\022\r\n\005valu"
+          + "e\030\003 \001(\t\"x\n\020DetectedLandmark\022\014\n\004name\030\001 \001("
+          + "\t\022B\n\005point\030\002 \001(\01323.google.cloud.videoint"
+          + "elligence.v1.NormalizedVertex\022\022\n\nconfide"
+          + "nce\030\003 \001(\002\"\241\t\n\026VideoAnnotationResults\022\021\n\t"
+          + "input_uri\030\001 \001(\t\022@\n\007segment\030\n \001(\0132/.googl"
+          + "e.cloud.videointelligence.v1.VideoSegmen"
+          + "t\022U\n\031segment_label_annotations\030\002 \003(\01322.g"
+          + "oogle.cloud.videointelligence.v1.LabelAn"
+          + "notation\022^\n\"segment_presence_label_annot"
+          + "ations\030\027 \003(\01322.google.cloud.videointelli"
+          + "gence.v1.LabelAnnotation\022R\n\026shot_label_a"
+          + "nnotations\030\003 \003(\01322.google.cloud.videoint"
+          + "elligence.v1.LabelAnnotation\022[\n\037shot_pre"
+          + "sence_label_annotations\030\030 \003(\01322.google.c"
+          + "loud.videointelligence.v1.LabelAnnotatio"
+          + "n\022S\n\027frame_label_annotations\030\004 \003(\01322.goo"
+          + "gle.cloud.videointelligence.v1.LabelAnno"
+          + "tation\022K\n\020face_annotations\030\005 \003(\01321.googl"
+          + "e.cloud.videointelligence.v1.FaceAnnotat"
+          + "ion\022I\n\020shot_annotations\030\006 \003(\0132/.google.c"
+          + "loud.videointelligence.v1.VideoSegment\022Y"
+          + "\n\023explicit_annotation\030\007 \001(\0132<.google.clo"
+          + "ud.videointelligence.v1.ExplicitContentA"
+          + "nnotation\022U\n\025speech_transcriptions\030\013 \003(\013"
+          + "26.google.cloud.videointelligence.v1.Spe"
+          + "echTranscription\022K\n\020text_annotations\030\014 \003"
+          + "(\01321.google.cloud.videointelligence.v1.T"
+          + "extAnnotation\022W\n\022object_annotations\030\016 \003("
+          + "\0132;.google.cloud.videointelligence.v1.Ob"
+          + "jectTrackingAnnotation\022b\n\034logo_recogniti"
+          + "on_annotations\030\023 \003(\0132<.google.cloud.vide"
+          + "ointelligence.v1.LogoRecognitionAnnotati"
+          + "on\022!\n\005error\030\t \001(\0132\022.google.rpc.Status\"n\n"
+          + "\025AnnotateVideoResponse\022U\n\022annotation_res"
+          + "ults\030\001 \003(\01329.google.cloud.videointellige"
+          + "nce.v1.VideoAnnotationResults\"\246\002\n\027VideoA"
+          + "nnotationProgress\022\021\n\tinput_uri\030\001 \001(\t\022\030\n\020"
+          + "progress_percent\030\002 \001(\005\022.\n\nstart_time\030\003 \001"
+          + "(\0132\032.google.protobuf.Timestamp\022/\n\013update"
+          + "_time\030\004 \001(\0132\032.google.protobuf.Timestamp\022"
+          + ";\n\007feature\030\005 \001(\0162*.google.cloud.videoint"
+          + "elligence.v1.Feature\022@\n\007segment\030\006 \001(\0132/."
+          + "google.cloud.videointelligence.v1.VideoS"
+          + "egment\"p\n\025AnnotateVideoProgress\022W\n\023annot"
+          + "ation_progress\030\001 \003(\0132:.google.cloud.vide"
+          + "ointelligence.v1.VideoAnnotationProgress"
+          + "\"\201\003\n\031SpeechTranscriptionConfig\022\032\n\rlangua"
+          + "ge_code\030\001 \001(\tB\003\340A\002\022\035\n\020max_alternatives\030\002"
+          + " \001(\005B\003\340A\001\022\035\n\020filter_profanity\030\003 \001(\010B\003\340A\001"
+          + "\022N\n\017speech_contexts\030\004 \003(\01320.google.cloud"
+          + ".videointelligence.v1.SpeechContextB\003\340A\001"
+          + "\022)\n\034enable_automatic_punctuation\030\005 \001(\010B\003"
+          + "\340A\001\022\031\n\014audio_tracks\030\006 \003(\005B\003\340A\001\022\'\n\032enable"
+          + "_speaker_diarization\030\007 \001(\010B\003\340A\001\022&\n\031diari"
+          + "zation_speaker_count\030\010 \001(\005B\003\340A\001\022#\n\026enabl"
+          + "e_word_confidence\030\t \001(\010B\003\340A\001\"%\n\rSpeechCo"
+          + "ntext\022\024\n\007phrases\030\001 \003(\tB\003\340A\001\"\210\001\n\023SpeechTr"
+          + "anscription\022U\n\014alternatives\030\001 \003(\0132?.goog"
+          + "le.cloud.videointelligence.v1.SpeechReco"
+          + "gnitionAlternative\022\032\n\rlanguage_code\030\002 \001("
+          + "\tB\003\340A\003\"\214\001\n\034SpeechRecognitionAlternative\022"
+          + "\022\n\ntranscript\030\001 \001(\t\022\027\n\nconfidence\030\002 \001(\002B"
+          + "\003\340A\003\022?\n\005words\030\003 \003(\0132+.google.cloud.video"
+          + "intelligence.v1.WordInfoB\003\340A\003\"\247\001\n\010WordIn"
+          + "fo\022-\n\nstart_time\030\001 \001(\0132\031.google.protobuf"
+          + ".Duration\022+\n\010end_time\030\002 \001(\0132\031.google.pro"
+          + "tobuf.Duration\022\014\n\004word\030\003 \001(\t\022\027\n\nconfiden"
+          + "ce\030\004 \001(\002B\003\340A\003\022\030\n\013speaker_tag\030\005 \001(\005B\003\340A\003\""
+          + "(\n\020NormalizedVertex\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001("
+          + "\002\"_\n\026NormalizedBoundingPoly\022E\n\010vertices\030"
+          + "\001 \003(\01323.google.cloud.videointelligence.v"
+          + "1.NormalizedVertex\"\241\001\n\013TextSegment\022@\n\007se"
+          + "gment\030\001 \001(\0132/.google.cloud.videointellig"
+          + "ence.v1.VideoSegment\022\022\n\nconfidence\030\002 \001(\002"
+          + "\022<\n\006frames\030\003 \003(\0132,.google.cloud.videoint"
+          + "elligence.v1.TextFrame\"\224\001\n\tTextFrame\022W\n\024"
+          + "rotated_bounding_box\030\001 \001(\01329.google.clou"
+          + "d.videointelligence.v1.NormalizedBoundin"
+          + "gPoly\022.\n\013time_offset\030\002 \001(\0132\031.google.prot"
+          + "obuf.Duration\"`\n\016TextAnnotation\022\014\n\004text\030"
+          + "\001 \001(\t\022@\n\010segments\030\002 \003(\0132..google.cloud.v"
+          + "ideointelligence.v1.TextSegment\"\240\001\n\023Obje"
+          + "ctTrackingFrame\022Y\n\027normalized_bounding_b"
+          + "ox\030\001 \001(\01328.google.cloud.videointelligenc"
+          + "e.v1.NormalizedBoundingBox\022.\n\013time_offse"
+          + "t\030\002 \001(\0132\031.google.protobuf.Duration\"\227\002\n\030O"
+          + "bjectTrackingAnnotation\022B\n\007segment\030\003 \001(\013"
+          + "2/.google.cloud.videointelligence.v1.Vid"
+          + "eoSegmentH\000\022\022\n\010track_id\030\005 \001(\003H\000\0229\n\006entit"
+          + "y\030\001 \001(\0132).google.cloud.videointelligence"
+          + ".v1.Entity\022\022\n\nconfidence\030\004 \001(\002\022F\n\006frames"
+          + "\030\002 \003(\01326.google.cloud.videointelligence."
+          + "v1.ObjectTrackingFrameB\014\n\ntrack_info\"\323\001\n"
+          + "\031LogoRecognitionAnnotation\0229\n\006entity\030\001 \001"
+          + "(\0132).google.cloud.videointelligence.v1.E"
+          + "ntity\0228\n\006tracks\030\002 \003(\0132(.google.cloud.vid"
+          + "eointelligence.v1.Track\022A\n\010segments\030\003 \003("
+          + "\0132/.google.cloud.videointelligence.v1.Vi"
+          + "deoSegment*\337\001\n\007Feature\022\027\n\023FEATURE_UNSPEC"
+          + "IFIED\020\000\022\023\n\017LABEL_DETECTION\020\001\022\031\n\025SHOT_CHA"
+          + "NGE_DETECTION\020\002\022\036\n\032EXPLICIT_CONTENT_DETE"
+          + "CTION\020\003\022\022\n\016FACE_DETECTION\020\004\022\030\n\024SPEECH_TR"
+          + "ANSCRIPTION\020\006\022\022\n\016TEXT_DETECTION\020\007\022\023\n\017OBJ"
+          + "ECT_TRACKING\020\t\022\024\n\020LOGO_RECOGNITION\020\014*r\n\022"
+          + "LabelDetectionMode\022$\n LABEL_DETECTION_MO"
+          + "DE_UNSPECIFIED\020\000\022\r\n\tSHOT_MODE\020\001\022\016\n\nFRAME"
+          + "_MODE\020\002\022\027\n\023SHOT_AND_FRAME_MODE\020\003*t\n\nLike"
+          + "lihood\022\032\n\026LIKELIHOOD_UNSPECIFIED\020\000\022\021\n\rVE"
+          + "RY_UNLIKELY\020\001\022\014\n\010UNLIKELY\020\002\022\014\n\010POSSIBLE\020"
+          + "\003\022\n\n\006LIKELY\020\004\022\017\n\013VERY_LIKELY\020\0052\300\002\n\030Video"
+          + "IntelligenceService\022\315\001\n\rAnnotateVideo\0227."
+          + "google.cloud.videointelligence.v1.Annota"
+          + "teVideoRequest\032\035.google.longrunning.Oper"
+          + "ation\"d\202\323\344\223\002\030\"\023/v1/videos:annotate:\001*\332A\022"
+          + "input_uri,features\312A.\n\025AnnotateVideoResp"
+          + "onse\022\025AnnotateVideoProgress\032T\312A videoint"
+          + "elligence.googleapis.com\322A.https://www.g"
+          + "oogleapis.com/auth/cloud-platformB\213\002\n%co"
+          + "m.google.cloud.videointelligence.v1B\035Vid"
+          + "eoIntelligenceServiceProtoP\001ZRgoogle.gol"
+          + "ang.org/genproto/googleapis/cloud/videoi"
+          + "ntelligence/v1;videointelligence\252\002!Googl"
+          + "e.Cloud.VideoIntelligence.V1\312\002!Google\\Cl"
+          + "oud\\VideoIntelligence\\V1\352\002$Google::Cloud"
+          + "::VideoIntelligence::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -546,8 +593,40 @@ public final class VideoIntelligenceServiceProto {
             new java.lang.String[] {
               "Thumbnail", "Segments", "Frames",
             });
-    internal_static_google_cloud_videointelligence_v1_VideoAnnotationResults_descriptor =
+    internal_static_google_cloud_videointelligence_v1_TimestampedObject_descriptor =
         getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_videointelligence_v1_TimestampedObject_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_videointelligence_v1_TimestampedObject_descriptor,
+            new java.lang.String[] {
+              "NormalizedBoundingBox", "TimeOffset", "Attributes", "Landmarks",
+            });
+    internal_static_google_cloud_videointelligence_v1_Track_descriptor =
+        getDescriptor().getMessageTypes().get(20);
+    internal_static_google_cloud_videointelligence_v1_Track_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_videointelligence_v1_Track_descriptor,
+            new java.lang.String[] {
+              "Segment", "TimestampedObjects", "Attributes", "Confidence",
+            });
+    internal_static_google_cloud_videointelligence_v1_DetectedAttribute_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_videointelligence_v1_DetectedAttribute_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_videointelligence_v1_DetectedAttribute_descriptor,
+            new java.lang.String[] {
+              "Name", "Confidence", "Value",
+            });
+    internal_static_google_cloud_videointelligence_v1_DetectedLandmark_descriptor =
+        getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_videointelligence_v1_DetectedLandmark_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_videointelligence_v1_DetectedLandmark_descriptor,
+            new java.lang.String[] {
+              "Name", "Point", "Confidence",
+            });
+    internal_static_google_cloud_videointelligence_v1_VideoAnnotationResults_descriptor =
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_videointelligence_v1_VideoAnnotationResults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_VideoAnnotationResults_descriptor,
@@ -565,10 +644,11 @@ public final class VideoIntelligenceServiceProto {
               "SpeechTranscriptions",
               "TextAnnotations",
               "ObjectAnnotations",
+              "LogoRecognitionAnnotations",
               "Error",
             });
     internal_static_google_cloud_videointelligence_v1_AnnotateVideoResponse_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_videointelligence_v1_AnnotateVideoResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_AnnotateVideoResponse_descriptor,
@@ -576,7 +656,7 @@ public final class VideoIntelligenceServiceProto {
               "AnnotationResults",
             });
     internal_static_google_cloud_videointelligence_v1_VideoAnnotationProgress_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_videointelligence_v1_VideoAnnotationProgress_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_VideoAnnotationProgress_descriptor,
@@ -584,7 +664,7 @@ public final class VideoIntelligenceServiceProto {
               "InputUri", "ProgressPercent", "StartTime", "UpdateTime", "Feature", "Segment",
             });
     internal_static_google_cloud_videointelligence_v1_AnnotateVideoProgress_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_videointelligence_v1_AnnotateVideoProgress_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_AnnotateVideoProgress_descriptor,
@@ -592,7 +672,7 @@ public final class VideoIntelligenceServiceProto {
               "AnnotationProgress",
             });
     internal_static_google_cloud_videointelligence_v1_SpeechTranscriptionConfig_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_videointelligence_v1_SpeechTranscriptionConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_SpeechTranscriptionConfig_descriptor,
@@ -608,7 +688,7 @@ public final class VideoIntelligenceServiceProto {
               "EnableWordConfidence",
             });
     internal_static_google_cloud_videointelligence_v1_SpeechContext_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_videointelligence_v1_SpeechContext_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_SpeechContext_descriptor,
@@ -616,7 +696,7 @@ public final class VideoIntelligenceServiceProto {
               "Phrases",
             });
     internal_static_google_cloud_videointelligence_v1_SpeechTranscription_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_videointelligence_v1_SpeechTranscription_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_SpeechTranscription_descriptor,
@@ -624,7 +704,7 @@ public final class VideoIntelligenceServiceProto {
               "Alternatives", "LanguageCode",
             });
     internal_static_google_cloud_videointelligence_v1_SpeechRecognitionAlternative_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_videointelligence_v1_SpeechRecognitionAlternative_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_SpeechRecognitionAlternative_descriptor,
@@ -632,7 +712,7 @@ public final class VideoIntelligenceServiceProto {
               "Transcript", "Confidence", "Words",
             });
     internal_static_google_cloud_videointelligence_v1_WordInfo_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_videointelligence_v1_WordInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_WordInfo_descriptor,
@@ -640,7 +720,7 @@ public final class VideoIntelligenceServiceProto {
               "StartTime", "EndTime", "Word", "Confidence", "SpeakerTag",
             });
     internal_static_google_cloud_videointelligence_v1_NormalizedVertex_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_videointelligence_v1_NormalizedVertex_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_NormalizedVertex_descriptor,
@@ -648,7 +728,7 @@ public final class VideoIntelligenceServiceProto {
               "X", "Y",
             });
     internal_static_google_cloud_videointelligence_v1_NormalizedBoundingPoly_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_videointelligence_v1_NormalizedBoundingPoly_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_NormalizedBoundingPoly_descriptor,
@@ -656,7 +736,7 @@ public final class VideoIntelligenceServiceProto {
               "Vertices",
             });
     internal_static_google_cloud_videointelligence_v1_TextSegment_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_videointelligence_v1_TextSegment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_TextSegment_descriptor,
@@ -664,7 +744,7 @@ public final class VideoIntelligenceServiceProto {
               "Segment", "Confidence", "Frames",
             });
     internal_static_google_cloud_videointelligence_v1_TextFrame_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_videointelligence_v1_TextFrame_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_TextFrame_descriptor,
@@ -672,7 +752,7 @@ public final class VideoIntelligenceServiceProto {
               "RotatedBoundingBox", "TimeOffset",
             });
     internal_static_google_cloud_videointelligence_v1_TextAnnotation_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_videointelligence_v1_TextAnnotation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_TextAnnotation_descriptor,
@@ -680,7 +760,7 @@ public final class VideoIntelligenceServiceProto {
               "Text", "Segments",
             });
     internal_static_google_cloud_videointelligence_v1_ObjectTrackingFrame_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_videointelligence_v1_ObjectTrackingFrame_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_ObjectTrackingFrame_descriptor,
@@ -688,12 +768,20 @@ public final class VideoIntelligenceServiceProto {
               "NormalizedBoundingBox", "TimeOffset",
             });
     internal_static_google_cloud_videointelligence_v1_ObjectTrackingAnnotation_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_videointelligence_v1_ObjectTrackingAnnotation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_videointelligence_v1_ObjectTrackingAnnotation_descriptor,
             new java.lang.String[] {
               "Segment", "TrackId", "Entity", "Confidence", "Frames", "TrackInfo",
+            });
+    internal_static_google_cloud_videointelligence_v1_LogoRecognitionAnnotation_descriptor =
+        getDescriptor().getMessageTypes().get(39);
+    internal_static_google_cloud_videointelligence_v1_LogoRecognitionAnnotation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_videointelligence_v1_LogoRecognitionAnnotation_descriptor,
+            new java.lang.String[] {
+              "Entity", "Tracks", "Segments",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
