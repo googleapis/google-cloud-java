@@ -1,5 +1,21 @@
 # Changelog
 
+### [1.99.3](https://www.github.com/googleapis/java-language/compare/v1.99.2...v1.99.3) (2020-03-10)
+
+
+### Dependencies
+
+* update core dependencies to v1.54.0 ([#68](https://www.github.com/googleapis/java-language/issues/68)) ([83bfbb0](https://www.github.com/googleapis/java-language/commit/83bfbb052520ffd0fa3c7f939ee069b062de993d))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([37b8732](https://www.github.com/googleapis/java-language/commit/37b87329ba932bb3134ebf4ad96c79eab2a88265))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([4a30ea4](https://www.github.com/googleapis/java-language/commit/4a30ea4e3d93007f26a51b3986a5215d2f6855a5))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([0a7eaa6](https://www.github.com/googleapis/java-language/commit/0a7eaa6019cfcf368dcc939d969ce622a01cd5cd))
+* update java-core ([#69](https://www.github.com/googleapis/java-language/issues/69)) ([ecc1822](https://www.github.com/googleapis/java-language/commit/ecc18229fd4229db26895740fc5f046fcd09605c))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([4f9cc95](https://www.github.com/googleapis/java-language/commit/4f9cc95c1148920987d1f52bdc0207f08ec05a33))
+
 ### [1.99.2](https://www.github.com/googleapis/java-language/compare/v1.99.1...v1.99.2) (2020-02-04)
 
 
