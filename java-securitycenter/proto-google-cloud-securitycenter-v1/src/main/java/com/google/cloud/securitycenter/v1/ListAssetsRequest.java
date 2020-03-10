@@ -614,9 +614,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-   * response.
-   * An empty field mask will list all fields.
+   * Optional. A field mask to specify the ListAssetsResult fields to be listed
+   * in the response. An empty field mask will list all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -631,9 +630,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-   * response.
-   * An empty field mask will list all fields.
+   * Optional. A field mask to specify the ListAssetsResult fields to be listed
+   * in the response. An empty field mask will list all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -648,9 +646,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-   * response.
-   * An empty field mask will list all fields.
+   * Optional. A field mask to specify the ListAssetsResult fields to be listed
+   * in the response. An empty field mask will list all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -2404,9 +2401,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-     * response.
-     * An empty field mask will list all fields.
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed
+     * in the response. An empty field mask will list all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -2421,9 +2417,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-     * response.
-     * An empty field mask will list all fields.
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed
+     * in the response. An empty field mask will list all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -2442,9 +2437,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-     * response.
-     * An empty field mask will list all fields.
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed
+     * in the response. An empty field mask will list all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -2467,9 +2461,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-     * response.
-     * An empty field mask will list all fields.
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed
+     * in the response. An empty field mask will list all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -2489,9 +2482,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-     * response.
-     * An empty field mask will list all fields.
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed
+     * in the response. An empty field mask will list all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -2516,9 +2508,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-     * response.
-     * An empty field mask will list all fields.
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed
+     * in the response. An empty field mask will list all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -2539,9 +2530,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-     * response.
-     * An empty field mask will list all fields.
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed
+     * in the response. An empty field mask will list all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -2556,9 +2546,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-     * response.
-     * An empty field mask will list all fields.
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed
+     * in the response. An empty field mask will list all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -2575,9 +2564,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-     * response.
-     * An empty field mask will list all fields.
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed
+     * in the response. An empty field mask will list all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];

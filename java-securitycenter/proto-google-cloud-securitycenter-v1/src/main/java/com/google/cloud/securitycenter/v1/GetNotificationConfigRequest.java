@@ -22,30 +22,29 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Request message for getting organization settings.
+ * Request message for getting a notification config.
  * </pre>
  *
- * Protobuf type {@code google.cloud.securitycenter.v1.GetOrganizationSettingsRequest}
+ * Protobuf type {@code google.cloud.securitycenter.v1.GetNotificationConfigRequest}
  */
-public final class GetOrganizationSettingsRequest extends com.google.protobuf.GeneratedMessageV3
+public final class GetNotificationConfigRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.GetOrganizationSettingsRequest)
-    GetOrganizationSettingsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.GetNotificationConfigRequest)
+    GetNotificationConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetOrganizationSettingsRequest.newBuilder() to construct.
-  private GetOrganizationSettingsRequest(
-      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetNotificationConfigRequest.newBuilder() to construct.
+  private GetNotificationConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetOrganizationSettingsRequest() {
+  private GetNotificationConfigRequest() {
     name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetOrganizationSettingsRequest();
+    return new GetNotificationConfigRequest();
   }
 
   @java.lang.Override
@@ -53,7 +52,7 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
     return this.unknownFields;
   }
 
-  private GetOrganizationSettingsRequest(
+  private GetNotificationConfigRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -99,17 +98,17 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
-        .internal_static_google_cloud_securitycenter_v1_GetOrganizationSettingsRequest_descriptor;
+        .internal_static_google_cloud_securitycenter_v1_GetNotificationConfigRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
-        .internal_static_google_cloud_securitycenter_v1_GetOrganizationSettingsRequest_fieldAccessorTable
+        .internal_static_google_cloud_securitycenter_v1_GetNotificationConfigRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.class,
-            com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.Builder.class);
+            com.google.cloud.securitycenter.v1.GetNotificationConfigRequest.class,
+            com.google.cloud.securitycenter.v1.GetNotificationConfigRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -118,8 +117,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Name of the organization to get organization settings for. Its
-   * format is "organizations/[organization_id]/organizationSettings".
+   * Required. Name of the notification config to get. Its format is
+   * "organizations/[organization_id]/notificationConfigs/[config_id]".
    * </pre>
    *
    * <code>
@@ -143,8 +142,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Name of the organization to get organization settings for. Its
-   * format is "organizations/[organization_id]/organizationSettings".
+   * Required. Name of the notification config to get. Its format is
+   * "organizations/[organization_id]/notificationConfigs/[config_id]".
    * </pre>
    *
    * <code>
@@ -204,11 +203,11 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest)) {
+    if (!(obj instanceof com.google.cloud.securitycenter.v1.GetNotificationConfigRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest other =
-        (com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest) obj;
+    com.google.cloud.securitycenter.v1.GetNotificationConfigRequest other =
+        (com.google.cloud.securitycenter.v1.GetNotificationConfigRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -229,72 +228,71 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
     return hash;
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetNotificationConfigRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetNotificationConfigRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetNotificationConfigRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetNotificationConfigRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetNotificationConfigRequest parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetNotificationConfigRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetNotificationConfigRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetNotificationConfigRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest
-      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.securitycenter.v1.GetNotificationConfigRequest parseDelimitedFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest
-      parseDelimitedFrom(
-          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+  public static com.google.cloud.securitycenter.v1.GetNotificationConfigRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetNotificationConfigRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetNotificationConfigRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -312,7 +310,7 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
   }
 
   public static Builder newBuilder(
-      com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest prototype) {
+      com.google.cloud.securitycenter.v1.GetNotificationConfigRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -330,32 +328,31 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request message for getting organization settings.
+   * Request message for getting a notification config.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.securitycenter.v1.GetOrganizationSettingsRequest}
+   * Protobuf type {@code google.cloud.securitycenter.v1.GetNotificationConfigRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.GetOrganizationSettingsRequest)
-      com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.GetNotificationConfigRequest)
+      com.google.cloud.securitycenter.v1.GetNotificationConfigRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_GetOrganizationSettingsRequest_descriptor;
+          .internal_static_google_cloud_securitycenter_v1_GetNotificationConfigRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_GetOrganizationSettingsRequest_fieldAccessorTable
+          .internal_static_google_cloud_securitycenter_v1_GetNotificationConfigRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.class,
-              com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.Builder.class);
+              com.google.cloud.securitycenter.v1.GetNotificationConfigRequest.class,
+              com.google.cloud.securitycenter.v1.GetNotificationConfigRequest.Builder.class);
     }
 
-    // Construct using
-    // com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.newBuilder()
+    // Construct using com.google.cloud.securitycenter.v1.GetNotificationConfigRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -380,18 +377,18 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_GetOrganizationSettingsRequest_descriptor;
+          .internal_static_google_cloud_securitycenter_v1_GetNotificationConfigRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest
+    public com.google.cloud.securitycenter.v1.GetNotificationConfigRequest
         getDefaultInstanceForType() {
-      return com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.getDefaultInstance();
+      return com.google.cloud.securitycenter.v1.GetNotificationConfigRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest build() {
-      com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest result = buildPartial();
+    public com.google.cloud.securitycenter.v1.GetNotificationConfigRequest build() {
+      com.google.cloud.securitycenter.v1.GetNotificationConfigRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -399,9 +396,9 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest buildPartial() {
-      com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest result =
-          new com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest(this);
+    public com.google.cloud.securitycenter.v1.GetNotificationConfigRequest buildPartial() {
+      com.google.cloud.securitycenter.v1.GetNotificationConfigRequest result =
+          new com.google.cloud.securitycenter.v1.GetNotificationConfigRequest(this);
       result.name_ = name_;
       onBuilt();
       return result;
@@ -442,8 +439,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest) {
-        return mergeFrom((com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest) other);
+      if (other instanceof com.google.cloud.securitycenter.v1.GetNotificationConfigRequest) {
+        return mergeFrom((com.google.cloud.securitycenter.v1.GetNotificationConfigRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -451,9 +448,9 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
     }
 
     public Builder mergeFrom(
-        com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest other) {
+        com.google.cloud.securitycenter.v1.GetNotificationConfigRequest other) {
       if (other
-          == com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.getDefaultInstance())
+          == com.google.cloud.securitycenter.v1.GetNotificationConfigRequest.getDefaultInstance())
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
@@ -474,12 +471,12 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parsedMessage = null;
+      com.google.cloud.securitycenter.v1.GetNotificationConfigRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest)
+            (com.google.cloud.securitycenter.v1.GetNotificationConfigRequest)
                 e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
@@ -495,8 +492,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the notification config to get. Its format is
+     * "organizations/[organization_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -520,8 +517,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the notification config to get. Its format is
+     * "organizations/[organization_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -545,8 +542,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the notification config to get. Its format is
+     * "organizations/[organization_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -569,8 +566,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the notification config to get. Its format is
+     * "organizations/[organization_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -589,8 +586,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the notification config to get. Its format is
+     * "organizations/[organization_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -622,44 +619,44 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.GetOrganizationSettingsRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.GetNotificationConfigRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.GetOrganizationSettingsRequest)
-  private static final com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest
+  // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.GetNotificationConfigRequest)
+  private static final com.google.cloud.securitycenter.v1.GetNotificationConfigRequest
       DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.GetNotificationConfigRequest();
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest
+  public static com.google.cloud.securitycenter.v1.GetNotificationConfigRequest
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetOrganizationSettingsRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetOrganizationSettingsRequest>() {
+  private static final com.google.protobuf.Parser<GetNotificationConfigRequest> PARSER =
+      new com.google.protobuf.AbstractParser<GetNotificationConfigRequest>() {
         @java.lang.Override
-        public GetOrganizationSettingsRequest parsePartialFrom(
+        public GetNotificationConfigRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetOrganizationSettingsRequest(input, extensionRegistry);
+          return new GetNotificationConfigRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<GetOrganizationSettingsRequest> parser() {
+  public static com.google.protobuf.Parser<GetNotificationConfigRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetOrganizationSettingsRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetNotificationConfigRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest
+  public com.google.cloud.securitycenter.v1.GetNotificationConfigRequest
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

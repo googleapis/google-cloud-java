@@ -19,6 +19,7 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -48,8 +49,11 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
+import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
+import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.Finding;
+import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
 import com.google.cloud.securitycenter.v1.GetSourceRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsRequest;
@@ -61,8 +65,11 @@ import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
+import com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest;
+import com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
+import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
@@ -70,6 +77,7 @@ import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.Source;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
+import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest;
 import com.google.cloud.securitycenter.v1.UpdateSourceRequest;
@@ -138,6 +146,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       testIamPermissionsSettings;
   private final UnaryCallSettings<CreateSourceRequest, Source> createSourceSettings;
   private final UnaryCallSettings<CreateFindingRequest, Finding> createFindingSettings;
+  private final UnaryCallSettings<CreateNotificationConfigRequest, NotificationConfig>
+      createNotificationConfigSettings;
+  private final UnaryCallSettings<DeleteNotificationConfigRequest, Empty>
+      deleteNotificationConfigSettings;
+  private final UnaryCallSettings<GetNotificationConfigRequest, NotificationConfig>
+      getNotificationConfigSettings;
   private final UnaryCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsSettings;
   private final UnaryCallSettings<GetSourceRequest, Source> getSourceSettings;
@@ -146,6 +160,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private final PagedCallSettings<
           ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
       listFindingsSettings;
+  private final PagedCallSettings<
+          ListNotificationConfigsRequest,
+          ListNotificationConfigsResponse,
+          ListNotificationConfigsPagedResponse>
+      listNotificationConfigsSettings;
   private final PagedCallSettings<ListSourcesRequest, ListSourcesResponse, ListSourcesPagedResponse>
       listSourcesSettings;
   private final UnaryCallSettings<RunAssetDiscoveryRequest, Operation> runAssetDiscoverySettings;
@@ -154,6 +173,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private final UnaryCallSettings<SetFindingStateRequest, Finding> setFindingStateSettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<UpdateFindingRequest, Finding> updateFindingSettings;
+  private final UnaryCallSettings<UpdateNotificationConfigRequest, NotificationConfig>
+      updateNotificationConfigSettings;
   private final UnaryCallSettings<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsSettings;
   private final UnaryCallSettings<UpdateSourceRequest, Source> updateSourceSettings;
@@ -193,6 +214,24 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return createFindingSettings;
   }
 
+  /** Returns the object with the settings used for calls to createNotificationConfig. */
+  public UnaryCallSettings<CreateNotificationConfigRequest, NotificationConfig>
+      createNotificationConfigSettings() {
+    return createNotificationConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteNotificationConfig. */
+  public UnaryCallSettings<DeleteNotificationConfigRequest, Empty>
+      deleteNotificationConfigSettings() {
+    return deleteNotificationConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getNotificationConfig. */
+  public UnaryCallSettings<GetNotificationConfigRequest, NotificationConfig>
+      getNotificationConfigSettings() {
+    return getNotificationConfigSettings;
+  }
+
   /** Returns the object with the settings used for calls to getOrganizationSettings. */
   public UnaryCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsSettings() {
@@ -214,6 +253,15 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   public PagedCallSettings<ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
       listFindingsSettings() {
     return listFindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listNotificationConfigs. */
+  public PagedCallSettings<
+          ListNotificationConfigsRequest,
+          ListNotificationConfigsResponse,
+          ListNotificationConfigsPagedResponse>
+      listNotificationConfigsSettings() {
+    return listNotificationConfigsSettings;
   }
 
   /** Returns the object with the settings used for calls to listSources. */
@@ -247,6 +295,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   /** Returns the object with the settings used for calls to updateFinding. */
   public UnaryCallSettings<UpdateFindingRequest, Finding> updateFindingSettings() {
     return updateFindingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateNotificationConfig. */
+  public UnaryCallSettings<UpdateNotificationConfigRequest, NotificationConfig>
+      updateNotificationConfigSettings() {
+    return updateNotificationConfigSettings;
   }
 
   /** Returns the object with the settings used for calls to updateOrganizationSettings. */
@@ -341,10 +395,14 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     createSourceSettings = settingsBuilder.createSourceSettings().build();
     createFindingSettings = settingsBuilder.createFindingSettings().build();
+    createNotificationConfigSettings = settingsBuilder.createNotificationConfigSettings().build();
+    deleteNotificationConfigSettings = settingsBuilder.deleteNotificationConfigSettings().build();
+    getNotificationConfigSettings = settingsBuilder.getNotificationConfigSettings().build();
     getOrganizationSettingsSettings = settingsBuilder.getOrganizationSettingsSettings().build();
     getSourceSettings = settingsBuilder.getSourceSettings().build();
     listAssetsSettings = settingsBuilder.listAssetsSettings().build();
     listFindingsSettings = settingsBuilder.listFindingsSettings().build();
+    listNotificationConfigsSettings = settingsBuilder.listNotificationConfigsSettings().build();
     listSourcesSettings = settingsBuilder.listSourcesSettings().build();
     runAssetDiscoverySettings = settingsBuilder.runAssetDiscoverySettings().build();
     runAssetDiscoveryOperationSettings =
@@ -352,6 +410,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     setFindingStateSettings = settingsBuilder.setFindingStateSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     updateFindingSettings = settingsBuilder.updateFindingSettings().build();
+    updateNotificationConfigSettings = settingsBuilder.updateNotificationConfigSettings().build();
     updateOrganizationSettingsSettings =
         settingsBuilder.updateOrganizationSettingsSettings().build();
     updateSourceSettings = settingsBuilder.updateSourceSettings().build();
@@ -510,6 +569,51 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             }
           };
 
+  private static final PagedListDescriptor<
+          ListNotificationConfigsRequest, ListNotificationConfigsResponse, NotificationConfig>
+      LIST_NOTIFICATION_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListNotificationConfigsRequest,
+              ListNotificationConfigsResponse,
+              NotificationConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListNotificationConfigsRequest injectToken(
+                ListNotificationConfigsRequest payload, String token) {
+              return ListNotificationConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListNotificationConfigsRequest injectPageSize(
+                ListNotificationConfigsRequest payload, int pageSize) {
+              return ListNotificationConfigsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListNotificationConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListNotificationConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<NotificationConfig> extractResources(
+                ListNotificationConfigsResponse payload) {
+              return payload.getNotificationConfigsList() != null
+                  ? payload.getNotificationConfigsList()
+                  : ImmutableList.<NotificationConfig>of();
+            }
+          };
+
   private static final PagedListDescriptor<ListSourcesRequest, ListSourcesResponse, Source>
       LIST_SOURCES_PAGE_STR_DESC =
           new PagedListDescriptor<ListSourcesRequest, ListSourcesResponse, Source>() {
@@ -621,6 +725,33 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           };
 
   private static final PagedListResponseFactory<
+          ListNotificationConfigsRequest,
+          ListNotificationConfigsResponse,
+          ListNotificationConfigsPagedResponse>
+      LIST_NOTIFICATION_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListNotificationConfigsRequest,
+              ListNotificationConfigsResponse,
+              ListNotificationConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListNotificationConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
+                    callable,
+                ListNotificationConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListNotificationConfigsResponse> futureResponse) {
+              PageContext<
+                      ListNotificationConfigsRequest,
+                      ListNotificationConfigsResponse,
+                      NotificationConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_NOTIFICATION_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListNotificationConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListSourcesRequest, ListSourcesResponse, ListSourcesPagedResponse>
       LIST_SOURCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -652,6 +783,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
         testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<CreateSourceRequest, Source> createSourceSettings;
     private final UnaryCallSettings.Builder<CreateFindingRequest, Finding> createFindingSettings;
+    private final UnaryCallSettings.Builder<CreateNotificationConfigRequest, NotificationConfig>
+        createNotificationConfigSettings;
+    private final UnaryCallSettings.Builder<DeleteNotificationConfigRequest, Empty>
+        deleteNotificationConfigSettings;
+    private final UnaryCallSettings.Builder<GetNotificationConfigRequest, NotificationConfig>
+        getNotificationConfigSettings;
     private final UnaryCallSettings.Builder<GetOrganizationSettingsRequest, OrganizationSettings>
         getOrganizationSettingsSettings;
     private final UnaryCallSettings.Builder<GetSourceRequest, Source> getSourceSettings;
@@ -661,6 +798,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     private final PagedCallSettings.Builder<
             ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
         listFindingsSettings;
+    private final PagedCallSettings.Builder<
+            ListNotificationConfigsRequest,
+            ListNotificationConfigsResponse,
+            ListNotificationConfigsPagedResponse>
+        listNotificationConfigsSettings;
     private final PagedCallSettings.Builder<
             ListSourcesRequest, ListSourcesResponse, ListSourcesPagedResponse>
         listSourcesSettings;
@@ -673,6 +815,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
         setFindingStateSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<UpdateFindingRequest, Finding> updateFindingSettings;
+    private final UnaryCallSettings.Builder<UpdateNotificationConfigRequest, NotificationConfig>
+        updateNotificationConfigSettings;
     private final UnaryCallSettings.Builder<UpdateOrganizationSettingsRequest, OrganizationSettings>
         updateOrganizationSettingsSettings;
     private final UnaryCallSettings.Builder<UpdateSourceRequest, Source> updateSourceSettings;
@@ -732,6 +876,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
       createFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      createNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       getOrganizationSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -739,6 +889,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       listAssetsSettings = PagedCallSettings.newBuilder(LIST_ASSETS_PAGE_STR_FACT);
 
       listFindingsSettings = PagedCallSettings.newBuilder(LIST_FINDINGS_PAGE_STR_FACT);
+
+      listNotificationConfigsSettings =
+          PagedCallSettings.newBuilder(LIST_NOTIFICATION_CONFIGS_PAGE_STR_FACT);
 
       listSourcesSettings = PagedCallSettings.newBuilder(LIST_SOURCES_PAGE_STR_FACT);
 
@@ -751,6 +904,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateOrganizationSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -766,15 +921,20 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               testIamPermissionsSettings,
               createSourceSettings,
               createFindingSettings,
+              createNotificationConfigSettings,
+              deleteNotificationConfigSettings,
+              getNotificationConfigSettings,
               getOrganizationSettingsSettings,
               getSourceSettings,
               listAssetsSettings,
               listFindingsSettings,
+              listNotificationConfigsSettings,
               listSourcesSettings,
               runAssetDiscoverySettings,
               setFindingStateSettings,
               setIamPolicySettings,
               updateFindingSettings,
+              updateNotificationConfigSettings,
               updateOrganizationSettingsSettings,
               updateSourceSettings,
               updateSecurityMarksSettings);
@@ -824,6 +984,21 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .createNotificationConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteNotificationConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getNotificationConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .getOrganizationSettingsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -840,6 +1015,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
       builder
           .listFindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listNotificationConfigsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -865,6 +1045,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
       builder
           .updateFindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateNotificationConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -919,16 +1104,21 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       createSourceSettings = settings.createSourceSettings.toBuilder();
       createFindingSettings = settings.createFindingSettings.toBuilder();
+      createNotificationConfigSettings = settings.createNotificationConfigSettings.toBuilder();
+      deleteNotificationConfigSettings = settings.deleteNotificationConfigSettings.toBuilder();
+      getNotificationConfigSettings = settings.getNotificationConfigSettings.toBuilder();
       getOrganizationSettingsSettings = settings.getOrganizationSettingsSettings.toBuilder();
       getSourceSettings = settings.getSourceSettings.toBuilder();
       listAssetsSettings = settings.listAssetsSettings.toBuilder();
       listFindingsSettings = settings.listFindingsSettings.toBuilder();
+      listNotificationConfigsSettings = settings.listNotificationConfigsSettings.toBuilder();
       listSourcesSettings = settings.listSourcesSettings.toBuilder();
       runAssetDiscoverySettings = settings.runAssetDiscoverySettings.toBuilder();
       runAssetDiscoveryOperationSettings = settings.runAssetDiscoveryOperationSettings.toBuilder();
       setFindingStateSettings = settings.setFindingStateSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       updateFindingSettings = settings.updateFindingSettings.toBuilder();
+      updateNotificationConfigSettings = settings.updateNotificationConfigSettings.toBuilder();
       updateOrganizationSettingsSettings = settings.updateOrganizationSettingsSettings.toBuilder();
       updateSourceSettings = settings.updateSourceSettings.toBuilder();
       updateSecurityMarksSettings = settings.updateSecurityMarksSettings.toBuilder();
@@ -941,15 +1131,20 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               testIamPermissionsSettings,
               createSourceSettings,
               createFindingSettings,
+              createNotificationConfigSettings,
+              deleteNotificationConfigSettings,
+              getNotificationConfigSettings,
               getOrganizationSettingsSettings,
               getSourceSettings,
               listAssetsSettings,
               listFindingsSettings,
+              listNotificationConfigsSettings,
               listSourcesSettings,
               runAssetDiscoverySettings,
               setFindingStateSettings,
               setIamPolicySettings,
               updateFindingSettings,
+              updateNotificationConfigSettings,
               updateOrganizationSettingsSettings,
               updateSourceSettings,
               updateSecurityMarksSettings);
@@ -1006,6 +1201,24 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       return createFindingSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createNotificationConfig. */
+    public UnaryCallSettings.Builder<CreateNotificationConfigRequest, NotificationConfig>
+        createNotificationConfigSettings() {
+      return createNotificationConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNotificationConfig. */
+    public UnaryCallSettings.Builder<DeleteNotificationConfigRequest, Empty>
+        deleteNotificationConfigSettings() {
+      return deleteNotificationConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getNotificationConfig. */
+    public UnaryCallSettings.Builder<GetNotificationConfigRequest, NotificationConfig>
+        getNotificationConfigSettings() {
+      return getNotificationConfigSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getOrganizationSettings. */
     public UnaryCallSettings.Builder<GetOrganizationSettingsRequest, OrganizationSettings>
         getOrganizationSettingsSettings() {
@@ -1028,6 +1241,15 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
         listFindingsSettings() {
       return listFindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listNotificationConfigs. */
+    public PagedCallSettings.Builder<
+            ListNotificationConfigsRequest,
+            ListNotificationConfigsResponse,
+            ListNotificationConfigsPagedResponse>
+        listNotificationConfigsSettings() {
+      return listNotificationConfigsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listSources. */
@@ -1064,6 +1286,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     /** Returns the builder for the settings used for calls to updateFinding. */
     public UnaryCallSettings.Builder<UpdateFindingRequest, Finding> updateFindingSettings() {
       return updateFindingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateNotificationConfig. */
+    public UnaryCallSettings.Builder<UpdateNotificationConfigRequest, NotificationConfig>
+        updateNotificationConfigSettings() {
+      return updateNotificationConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateOrganizationSettings. */

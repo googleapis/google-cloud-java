@@ -261,12 +261,18 @@ public interface ListFindingsRequestOrBuilder
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
    * Possible "state_change" values when compare_duration is specified:
-   * * "CHANGED":   indicates that the finding was present at the start of
-   *                  compare_duration, but changed its state at read_time.
-   * * "UNCHANGED": indicates that the finding was present at the start of
-   *                  compare_duration and did not change state at read_time.
-   * * "ADDED":     indicates that the finding was not present at the start
-   *                  of compare_duration, but was present at read_time.
+   * * "CHANGED":   indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration, but changed its
+   *                  state at read_time.
+   * * "UNCHANGED": indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration and did not change
+   *                  state at read_time.
+   * * "ADDED":     indicates that the finding did not match the given filter or
+   *                  was not present at the start of compare_duration, but was
+   *                  present at read_time.
+   * * "REMOVED":   indicates that the finding was present and matched the
+   *                  filter at the start of compare_duration, but did not match
+   *                  the filter at read_time.
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED", which will be the state_change set for all findings present at
    * read_time.
@@ -292,12 +298,18 @@ public interface ListFindingsRequestOrBuilder
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
    * Possible "state_change" values when compare_duration is specified:
-   * * "CHANGED":   indicates that the finding was present at the start of
-   *                  compare_duration, but changed its state at read_time.
-   * * "UNCHANGED": indicates that the finding was present at the start of
-   *                  compare_duration and did not change state at read_time.
-   * * "ADDED":     indicates that the finding was not present at the start
-   *                  of compare_duration, but was present at read_time.
+   * * "CHANGED":   indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration, but changed its
+   *                  state at read_time.
+   * * "UNCHANGED": indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration and did not change
+   *                  state at read_time.
+   * * "ADDED":     indicates that the finding did not match the given filter or
+   *                  was not present at the start of compare_duration, but was
+   *                  present at read_time.
+   * * "REMOVED":   indicates that the finding was present and matched the
+   *                  filter at the start of compare_duration, but did not match
+   *                  the filter at read_time.
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED", which will be the state_change set for all findings present at
    * read_time.
@@ -323,12 +335,18 @@ public interface ListFindingsRequestOrBuilder
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
    * Possible "state_change" values when compare_duration is specified:
-   * * "CHANGED":   indicates that the finding was present at the start of
-   *                  compare_duration, but changed its state at read_time.
-   * * "UNCHANGED": indicates that the finding was present at the start of
-   *                  compare_duration and did not change state at read_time.
-   * * "ADDED":     indicates that the finding was not present at the start
-   *                  of compare_duration, but was present at read_time.
+   * * "CHANGED":   indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration, but changed its
+   *                  state at read_time.
+   * * "UNCHANGED": indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration and did not change
+   *                  state at read_time.
+   * * "ADDED":     indicates that the finding did not match the given filter or
+   *                  was not present at the start of compare_duration, but was
+   *                  present at read_time.
+   * * "REMOVED":   indicates that the finding was present and matched the
+   *                  filter at the start of compare_duration, but did not match
+   *                  the filter at read_time.
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED", which will be the state_change set for all findings present at
    * read_time.
@@ -342,8 +360,8 @@ public interface ListFindingsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A field mask to specify the Finding fields to be listed in the response.
-   * An empty field mask will list all fields.
+   * Optional. A field mask to specify the Finding fields to be listed in the
+   * response. An empty field mask will list all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -356,8 +374,8 @@ public interface ListFindingsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A field mask to specify the Finding fields to be listed in the response.
-   * An empty field mask will list all fields.
+   * Optional. A field mask to specify the Finding fields to be listed in the
+   * response. An empty field mask will list all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -370,8 +388,8 @@ public interface ListFindingsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A field mask to specify the Finding fields to be listed in the response.
-   * An empty field mask will list all fields.
+   * Optional. A field mask to specify the Finding fields to be listed in the
+   * response. An empty field mask will list all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];

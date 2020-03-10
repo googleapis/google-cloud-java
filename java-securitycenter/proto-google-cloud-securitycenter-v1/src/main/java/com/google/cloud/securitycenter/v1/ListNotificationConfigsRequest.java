@@ -22,22 +22,23 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Request message for listing sources.
+ * Request message for listing notification configs.
  * </pre>
  *
- * Protobuf type {@code google.cloud.securitycenter.v1.ListSourcesRequest}
+ * Protobuf type {@code google.cloud.securitycenter.v1.ListNotificationConfigsRequest}
  */
-public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessageV3
+public final class ListNotificationConfigsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.ListSourcesRequest)
-    ListSourcesRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.ListNotificationConfigsRequest)
+    ListNotificationConfigsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ListSourcesRequest.newBuilder() to construct.
-  private ListSourcesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListNotificationConfigsRequest.newBuilder() to construct.
+  private ListNotificationConfigsRequest(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ListSourcesRequest() {
+  private ListNotificationConfigsRequest() {
     parent_ = "";
     pageToken_ = "";
   }
@@ -45,7 +46,7 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ListSourcesRequest();
+    return new ListNotificationConfigsRequest();
   }
 
   @java.lang.Override
@@ -53,7 +54,7 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private ListSourcesRequest(
+  private ListNotificationConfigsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -85,7 +86,7 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
               pageToken_ = s;
               break;
             }
-          case 56:
+          case 24:
             {
               pageSize_ = input.readInt32();
               break;
@@ -111,17 +112,17 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
-        .internal_static_google_cloud_securitycenter_v1_ListSourcesRequest_descriptor;
+        .internal_static_google_cloud_securitycenter_v1_ListNotificationConfigsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
-        .internal_static_google_cloud_securitycenter_v1_ListSourcesRequest_fieldAccessorTable
+        .internal_static_google_cloud_securitycenter_v1_ListNotificationConfigsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.securitycenter.v1.ListSourcesRequest.class,
-            com.google.cloud.securitycenter.v1.ListSourcesRequest.Builder.class);
+            com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest.class,
+            com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -130,8 +131,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Resource name of the parent of sources to list. Its format should
-   * be "organizations/[organization_id]".
+   * Required. Name of the organization to list notification configs.
+   * Its format is "organizations/[organization_id]".
    * </pre>
    *
    * <code>
@@ -155,8 +156,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Resource name of the parent of sources to list. Its format should
-   * be "organizations/[organization_id]".
+   * Required. Name of the organization to list notification configs.
+   * Its format is "organizations/[organization_id]".
    * </pre>
    *
    * <code>
@@ -183,8 +184,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The value returned by the last `ListSourcesResponse`; indicates
-   * that this is a continuation of a prior `ListSources` call, and
+   * The value returned by the last `ListNotificationConfigsResponse`; indicates
+   * that this is a continuation of a prior `ListNotificationConfigs` call, and
    * that the system should return the next page of data.
    * </pre>
    *
@@ -207,8 +208,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The value returned by the last `ListSourcesResponse`; indicates
-   * that this is a continuation of a prior `ListSources` call, and
+   * The value returned by the last `ListNotificationConfigsResponse`; indicates
+   * that this is a continuation of a prior `ListNotificationConfigs` call, and
    * that the system should return the next page of data.
    * </pre>
    *
@@ -228,7 +229,7 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int PAGE_SIZE_FIELD_NUMBER = 7;
+  public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_;
   /**
    *
@@ -238,7 +239,7 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
    * 10, minimum is 1, maximum is 1000.
    * </pre>
    *
-   * <code>int32 page_size = 7;</code>
+   * <code>int32 page_size = 3;</code>
    *
    * @return The pageSize.
    */
@@ -267,7 +268,7 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pageToken_);
     }
     if (pageSize_ != 0) {
-      output.writeInt32(7, pageSize_);
+      output.writeInt32(3, pageSize_);
     }
     unknownFields.writeTo(output);
   }
@@ -285,7 +286,7 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pageToken_);
     }
     if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, pageSize_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -297,11 +298,11 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.securitycenter.v1.ListSourcesRequest)) {
+    if (!(obj instanceof com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.securitycenter.v1.ListSourcesRequest other =
-        (com.google.cloud.securitycenter.v1.ListSourcesRequest) obj;
+    com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest other =
+        (com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
@@ -328,71 +329,72 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
     return hash;
   }
 
-  public static com.google.cloud.securitycenter.v1.ListSourcesRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.ListSourcesRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.ListSourcesRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.ListSourcesRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.ListSourcesRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.ListSourcesRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.ListSourcesRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.ListSourcesRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.ListSourcesRequest parseDelimitedFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.ListSourcesRequest parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
+  public static com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.ListSourcesRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.ListSourcesRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -410,7 +412,7 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static Builder newBuilder(
-      com.google.cloud.securitycenter.v1.ListSourcesRequest prototype) {
+      com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -428,31 +430,32 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for listing sources.
+   * Request message for listing notification configs.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.securitycenter.v1.ListSourcesRequest}
+   * Protobuf type {@code google.cloud.securitycenter.v1.ListNotificationConfigsRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.ListSourcesRequest)
-      com.google.cloud.securitycenter.v1.ListSourcesRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.ListNotificationConfigsRequest)
+      com.google.cloud.securitycenter.v1.ListNotificationConfigsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_ListSourcesRequest_descriptor;
+          .internal_static_google_cloud_securitycenter_v1_ListNotificationConfigsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_ListSourcesRequest_fieldAccessorTable
+          .internal_static_google_cloud_securitycenter_v1_ListNotificationConfigsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1.ListSourcesRequest.class,
-              com.google.cloud.securitycenter.v1.ListSourcesRequest.Builder.class);
+              com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest.class,
+              com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.securitycenter.v1.ListSourcesRequest.newBuilder()
+    // Construct using
+    // com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -481,17 +484,18 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_ListSourcesRequest_descriptor;
+          .internal_static_google_cloud_securitycenter_v1_ListNotificationConfigsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.ListSourcesRequest getDefaultInstanceForType() {
-      return com.google.cloud.securitycenter.v1.ListSourcesRequest.getDefaultInstance();
+    public com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest
+        getDefaultInstanceForType() {
+      return com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.ListSourcesRequest build() {
-      com.google.cloud.securitycenter.v1.ListSourcesRequest result = buildPartial();
+    public com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest build() {
+      com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -499,9 +503,9 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.ListSourcesRequest buildPartial() {
-      com.google.cloud.securitycenter.v1.ListSourcesRequest result =
-          new com.google.cloud.securitycenter.v1.ListSourcesRequest(this);
+    public com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest buildPartial() {
+      com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest result =
+          new com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest(this);
       result.parent_ = parent_;
       result.pageToken_ = pageToken_;
       result.pageSize_ = pageSize_;
@@ -544,16 +548,18 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.securitycenter.v1.ListSourcesRequest) {
-        return mergeFrom((com.google.cloud.securitycenter.v1.ListSourcesRequest) other);
+      if (other instanceof com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest) {
+        return mergeFrom((com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.securitycenter.v1.ListSourcesRequest other) {
-      if (other == com.google.cloud.securitycenter.v1.ListSourcesRequest.getDefaultInstance())
+    public Builder mergeFrom(
+        com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest other) {
+      if (other
+          == com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest.getDefaultInstance())
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
@@ -581,12 +587,13 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.securitycenter.v1.ListSourcesRequest parsedMessage = null;
+      com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.securitycenter.v1.ListSourcesRequest) e.getUnfinishedMessage();
+            (com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -601,8 +608,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should
-     * be "organizations/[organization_id]".
+     * Required. Name of the organization to list notification configs.
+     * Its format is "organizations/[organization_id]".
      * </pre>
      *
      * <code>
@@ -626,8 +633,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should
-     * be "organizations/[organization_id]".
+     * Required. Name of the organization to list notification configs.
+     * Its format is "organizations/[organization_id]".
      * </pre>
      *
      * <code>
@@ -651,8 +658,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should
-     * be "organizations/[organization_id]".
+     * Required. Name of the organization to list notification configs.
+     * Its format is "organizations/[organization_id]".
      * </pre>
      *
      * <code>
@@ -675,8 +682,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should
-     * be "organizations/[organization_id]".
+     * Required. Name of the organization to list notification configs.
+     * Its format is "organizations/[organization_id]".
      * </pre>
      *
      * <code>
@@ -695,8 +702,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should
-     * be "organizations/[organization_id]".
+     * Required. Name of the organization to list notification configs.
+     * Its format is "organizations/[organization_id]".
      * </pre>
      *
      * <code>
@@ -722,8 +729,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The value returned by the last `ListSourcesResponse`; indicates
-     * that this is a continuation of a prior `ListSources` call, and
+     * The value returned by the last `ListNotificationConfigsResponse`; indicates
+     * that this is a continuation of a prior `ListNotificationConfigs` call, and
      * that the system should return the next page of data.
      * </pre>
      *
@@ -746,8 +753,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The value returned by the last `ListSourcesResponse`; indicates
-     * that this is a continuation of a prior `ListSources` call, and
+     * The value returned by the last `ListNotificationConfigsResponse`; indicates
+     * that this is a continuation of a prior `ListNotificationConfigs` call, and
      * that the system should return the next page of data.
      * </pre>
      *
@@ -770,8 +777,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The value returned by the last `ListSourcesResponse`; indicates
-     * that this is a continuation of a prior `ListSources` call, and
+     * The value returned by the last `ListNotificationConfigsResponse`; indicates
+     * that this is a continuation of a prior `ListNotificationConfigs` call, and
      * that the system should return the next page of data.
      * </pre>
      *
@@ -793,8 +800,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The value returned by the last `ListSourcesResponse`; indicates
-     * that this is a continuation of a prior `ListSources` call, and
+     * The value returned by the last `ListNotificationConfigsResponse`; indicates
+     * that this is a continuation of a prior `ListNotificationConfigs` call, and
      * that the system should return the next page of data.
      * </pre>
      *
@@ -812,8 +819,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The value returned by the last `ListSourcesResponse`; indicates
-     * that this is a continuation of a prior `ListSources` call, and
+     * The value returned by the last `ListNotificationConfigsResponse`; indicates
+     * that this is a continuation of a prior `ListNotificationConfigs` call, and
      * that the system should return the next page of data.
      * </pre>
      *
@@ -842,7 +849,7 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      * 10, minimum is 1, maximum is 1000.
      * </pre>
      *
-     * <code>int32 page_size = 7;</code>
+     * <code>int32 page_size = 3;</code>
      *
      * @return The pageSize.
      */
@@ -857,7 +864,7 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      * 10, minimum is 1, maximum is 1000.
      * </pre>
      *
-     * <code>int32 page_size = 7;</code>
+     * <code>int32 page_size = 3;</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -876,7 +883,7 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      * 10, minimum is 1, maximum is 1000.
      * </pre>
      *
-     * <code>int32 page_size = 7;</code>
+     * <code>int32 page_size = 3;</code>
      *
      * @return This builder for chaining.
      */
@@ -898,42 +905,45 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.ListSourcesRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.ListNotificationConfigsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.ListSourcesRequest)
-  private static final com.google.cloud.securitycenter.v1.ListSourcesRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.ListNotificationConfigsRequest)
+  private static final com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest
+      DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.ListSourcesRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest();
   }
 
-  public static com.google.cloud.securitycenter.v1.ListSourcesRequest getDefaultInstance() {
+  public static com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListSourcesRequest> PARSER =
-      new com.google.protobuf.AbstractParser<ListSourcesRequest>() {
+  private static final com.google.protobuf.Parser<ListNotificationConfigsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListNotificationConfigsRequest>() {
         @java.lang.Override
-        public ListSourcesRequest parsePartialFrom(
+        public ListNotificationConfigsRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListSourcesRequest(input, extensionRegistry);
+          return new ListNotificationConfigsRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<ListSourcesRequest> parser() {
+  public static com.google.protobuf.Parser<ListNotificationConfigsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListSourcesRequest> getParserForType() {
+  public com.google.protobuf.Parser<ListNotificationConfigsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.securitycenter.v1.ListSourcesRequest getDefaultInstanceForType() {
+  public com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

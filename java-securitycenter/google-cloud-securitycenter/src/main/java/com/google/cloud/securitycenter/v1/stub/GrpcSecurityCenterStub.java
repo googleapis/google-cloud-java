@@ -19,6 +19,7 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -31,8 +32,11 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
+import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
+import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.Finding;
+import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
 import com.google.cloud.securitycenter.v1.GetSourceRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsRequest;
@@ -43,8 +47,11 @@ import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
+import com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest;
+import com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
+import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
@@ -52,6 +59,7 @@ import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.Source;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
+import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest;
 import com.google.cloud.securitycenter.v1.UpdateSourceRequest;
@@ -133,6 +141,36 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(CreateFindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<CreateNotificationConfigRequest, NotificationConfig>
+      createNotificationConfigMethodDescriptor =
+          MethodDescriptor.<CreateNotificationConfigRequest, NotificationConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/CreateNotificationConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateNotificationConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteNotificationConfigRequest, Empty>
+      deleteNotificationConfigMethodDescriptor =
+          MethodDescriptor.<DeleteNotificationConfigRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/DeleteNotificationConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteNotificationConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetNotificationConfigRequest, NotificationConfig>
+      getNotificationConfigMethodDescriptor =
+          MethodDescriptor.<GetNotificationConfigRequest, NotificationConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/GetNotificationConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetNotificationConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsMethodDescriptor =
           MethodDescriptor.<GetOrganizationSettingsRequest, OrganizationSettings>newBuilder()
@@ -167,6 +205,19 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFindingsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<
+          ListNotificationConfigsRequest, ListNotificationConfigsResponse>
+      listNotificationConfigsMethodDescriptor =
+          MethodDescriptor
+              .<ListNotificationConfigsRequest, ListNotificationConfigsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListNotificationConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListNotificationConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListNotificationConfigsResponse.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<ListSourcesRequest, ListSourcesResponse>
       listSourcesMethodDescriptor =
@@ -211,6 +262,16 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(UpdateFindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<UpdateNotificationConfigRequest, NotificationConfig>
+      updateNotificationConfigMethodDescriptor =
+          MethodDescriptor.<UpdateNotificationConfigRequest, NotificationConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/UpdateNotificationConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateNotificationConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsMethodDescriptor =
           MethodDescriptor.<UpdateOrganizationSettingsRequest, OrganizationSettings>newBuilder()
@@ -254,6 +315,12 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
       testIamPermissionsCallable;
   private final UnaryCallable<CreateSourceRequest, Source> createSourceCallable;
   private final UnaryCallable<CreateFindingRequest, Finding> createFindingCallable;
+  private final UnaryCallable<CreateNotificationConfigRequest, NotificationConfig>
+      createNotificationConfigCallable;
+  private final UnaryCallable<DeleteNotificationConfigRequest, Empty>
+      deleteNotificationConfigCallable;
+  private final UnaryCallable<GetNotificationConfigRequest, NotificationConfig>
+      getNotificationConfigCallable;
   private final UnaryCallable<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsCallable;
   private final UnaryCallable<GetSourceRequest, Source> getSourceCallable;
@@ -262,6 +329,10 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable;
   private final UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse>
       listFindingsPagedCallable;
+  private final UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
+      listNotificationConfigsCallable;
+  private final UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsPagedResponse>
+      listNotificationConfigsPagedCallable;
   private final UnaryCallable<ListSourcesRequest, ListSourcesResponse> listSourcesCallable;
   private final UnaryCallable<ListSourcesRequest, ListSourcesPagedResponse>
       listSourcesPagedCallable;
@@ -271,6 +342,8 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<SetFindingStateRequest, Finding> setFindingStateCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable;
+  private final UnaryCallable<UpdateNotificationConfigRequest, NotificationConfig>
+      updateNotificationConfigCallable;
   private final UnaryCallable<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsCallable;
   private final UnaryCallable<UpdateSourceRequest, Source> updateSourceCallable;
@@ -398,6 +471,48 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   }
                 })
             .build();
+    GrpcCallSettings<CreateNotificationConfigRequest, NotificationConfig>
+        createNotificationConfigTransportSettings =
+            GrpcCallSettings.<CreateNotificationConfigRequest, NotificationConfig>newBuilder()
+                .setMethodDescriptor(createNotificationConfigMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<CreateNotificationConfigRequest>() {
+                      @Override
+                      public Map<String, String> extract(CreateNotificationConfigRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<DeleteNotificationConfigRequest, Empty>
+        deleteNotificationConfigTransportSettings =
+            GrpcCallSettings.<DeleteNotificationConfigRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteNotificationConfigMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<DeleteNotificationConfigRequest>() {
+                      @Override
+                      public Map<String, String> extract(DeleteNotificationConfigRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<GetNotificationConfigRequest, NotificationConfig>
+        getNotificationConfigTransportSettings =
+            GrpcCallSettings.<GetNotificationConfigRequest, NotificationConfig>newBuilder()
+                .setMethodDescriptor(getNotificationConfigMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetNotificationConfigRequest>() {
+                      @Override
+                      public Map<String, String> extract(GetNotificationConfigRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
         getOrganizationSettingsTransportSettings =
             GrpcCallSettings.<GetOrganizationSettingsRequest, OrganizationSettings>newBuilder()
@@ -451,6 +566,21 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   }
                 })
             .build();
+    GrpcCallSettings<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
+        listNotificationConfigsTransportSettings =
+            GrpcCallSettings
+                .<ListNotificationConfigsRequest, ListNotificationConfigsResponse>newBuilder()
+                .setMethodDescriptor(listNotificationConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListNotificationConfigsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListNotificationConfigsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<ListSourcesRequest, ListSourcesResponse> listSourcesTransportSettings =
         GrpcCallSettings.<ListSourcesRequest, ListSourcesResponse>newBuilder()
             .setMethodDescriptor(listSourcesMethodDescriptor)
@@ -516,6 +646,22 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   }
                 })
             .build();
+    GrpcCallSettings<UpdateNotificationConfigRequest, NotificationConfig>
+        updateNotificationConfigTransportSettings =
+            GrpcCallSettings.<UpdateNotificationConfigRequest, NotificationConfig>newBuilder()
+                .setMethodDescriptor(updateNotificationConfigMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<UpdateNotificationConfigRequest>() {
+                      @Override
+                      public Map<String, String> extract(UpdateNotificationConfigRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put(
+                            "notification_config.name",
+                            String.valueOf(request.getNotificationConfig().getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<UpdateOrganizationSettingsRequest, OrganizationSettings>
         updateOrganizationSettingsTransportSettings =
             GrpcCallSettings.<UpdateOrganizationSettingsRequest, OrganizationSettings>newBuilder()
@@ -589,6 +735,21 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     this.createFindingCallable =
         callableFactory.createUnaryCallable(
             createFindingTransportSettings, settings.createFindingSettings(), clientContext);
+    this.createNotificationConfigCallable =
+        callableFactory.createUnaryCallable(
+            createNotificationConfigTransportSettings,
+            settings.createNotificationConfigSettings(),
+            clientContext);
+    this.deleteNotificationConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteNotificationConfigTransportSettings,
+            settings.deleteNotificationConfigSettings(),
+            clientContext);
+    this.getNotificationConfigCallable =
+        callableFactory.createUnaryCallable(
+            getNotificationConfigTransportSettings,
+            settings.getNotificationConfigSettings(),
+            clientContext);
     this.getOrganizationSettingsCallable =
         callableFactory.createUnaryCallable(
             getOrganizationSettingsTransportSettings,
@@ -609,6 +770,16 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     this.listFindingsPagedCallable =
         callableFactory.createPagedCallable(
             listFindingsTransportSettings, settings.listFindingsSettings(), clientContext);
+    this.listNotificationConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listNotificationConfigsTransportSettings,
+            settings.listNotificationConfigsSettings(),
+            clientContext);
+    this.listNotificationConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listNotificationConfigsTransportSettings,
+            settings.listNotificationConfigsSettings(),
+            clientContext);
     this.listSourcesCallable =
         callableFactory.createUnaryCallable(
             listSourcesTransportSettings, settings.listSourcesSettings(), clientContext);
@@ -635,6 +806,11 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     this.updateFindingCallable =
         callableFactory.createUnaryCallable(
             updateFindingTransportSettings, settings.updateFindingSettings(), clientContext);
+    this.updateNotificationConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateNotificationConfigTransportSettings,
+            settings.updateNotificationConfigSettings(),
+            clientContext);
     this.updateOrganizationSettingsCallable =
         callableFactory.createUnaryCallable(
             updateOrganizationSettingsTransportSettings,
@@ -691,6 +867,20 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     return createFindingCallable;
   }
 
+  public UnaryCallable<CreateNotificationConfigRequest, NotificationConfig>
+      createNotificationConfigCallable() {
+    return createNotificationConfigCallable;
+  }
+
+  public UnaryCallable<DeleteNotificationConfigRequest, Empty> deleteNotificationConfigCallable() {
+    return deleteNotificationConfigCallable;
+  }
+
+  public UnaryCallable<GetNotificationConfigRequest, NotificationConfig>
+      getNotificationConfigCallable() {
+    return getNotificationConfigCallable;
+  }
+
   public UnaryCallable<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsCallable() {
     return getOrganizationSettingsCallable;
@@ -714,6 +904,16 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
 
   public UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
     return listFindingsCallable;
+  }
+
+  public UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsPagedResponse>
+      listNotificationConfigsPagedCallable() {
+    return listNotificationConfigsPagedCallable;
+  }
+
+  public UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
+      listNotificationConfigsCallable() {
+    return listNotificationConfigsCallable;
   }
 
   public UnaryCallable<ListSourcesRequest, ListSourcesPagedResponse> listSourcesPagedCallable() {
@@ -744,6 +944,11 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
 
   public UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable() {
     return updateFindingCallable;
+  }
+
+  public UnaryCallable<UpdateNotificationConfigRequest, NotificationConfig>
+      updateNotificationConfigCallable() {
+    return updateNotificationConfigCallable;
   }
 
   public UnaryCallable<UpdateOrganizationSettingsRequest, OrganizationSettings>

@@ -27,8 +27,8 @@ public interface ListSourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the parent of sources to list. Its format should be
-   * "organizations/[organization_id]".
+   * Required. Resource name of the parent of sources to list. Its format should
+   * be "organizations/[organization_id]".
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListSourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the parent of sources to list. Its format should be
-   * "organizations/[organization_id]".
+   * Required. Resource name of the parent of sources to list. Its format should
+   * be "organizations/[organization_id]".
    * </pre>
    *
    * <code>

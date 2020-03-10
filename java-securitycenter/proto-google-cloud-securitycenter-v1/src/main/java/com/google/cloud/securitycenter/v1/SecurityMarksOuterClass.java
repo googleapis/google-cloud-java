@@ -46,8 +46,8 @@ public final class SecurityMarksOuterClass {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/securitycenter/v1/securit"
           + "y_marks.proto\022\036google.cloud.securitycent"
-          + "er.v1\032\031google/api/resource.proto\032\034google"
-          + "/api/annotations.proto\"\323\002\n\rSecurityMarks"
+          + "er.v1\032\034google/api/annotations.proto\032\031goo"
+          + "gle/api/resource.proto\"\323\002\n\rSecurityMarks"
           + "\022\014\n\004name\030\001 \001(\t\022G\n\005marks\030\002 \003(\01328.google.c"
           + "loud.securitycenter.v1.SecurityMarks.Mar"
           + "ksEntry\032,\n\nMarksEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
@@ -67,8 +67,8 @@ public final class SecurityMarksOuterClass {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.ResourceProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1_SecurityMarks_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -93,8 +93,8 @@ public final class SecurityMarksOuterClass {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.ResourceProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

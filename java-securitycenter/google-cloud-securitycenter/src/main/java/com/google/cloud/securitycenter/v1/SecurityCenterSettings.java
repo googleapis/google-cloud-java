@@ -19,6 +19,7 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -113,6 +114,24 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).createFindingSettings();
   }
 
+  /** Returns the object with the settings used for calls to createNotificationConfig. */
+  public UnaryCallSettings<CreateNotificationConfigRequest, NotificationConfig>
+      createNotificationConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).createNotificationConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNotificationConfig. */
+  public UnaryCallSettings<DeleteNotificationConfigRequest, Empty>
+      deleteNotificationConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).deleteNotificationConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getNotificationConfig. */
+  public UnaryCallSettings<GetNotificationConfigRequest, NotificationConfig>
+      getNotificationConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).getNotificationConfigSettings();
+  }
+
   /** Returns the object with the settings used for calls to getOrganizationSettings. */
   public UnaryCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsSettings() {
@@ -134,6 +153,15 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
   public PagedCallSettings<ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
       listFindingsSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).listFindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listNotificationConfigs. */
+  public PagedCallSettings<
+          ListNotificationConfigsRequest,
+          ListNotificationConfigsResponse,
+          ListNotificationConfigsPagedResponse>
+      listNotificationConfigsSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).listNotificationConfigsSettings();
   }
 
   /** Returns the object with the settings used for calls to listSources. */
@@ -168,6 +196,12 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
   /** Returns the object with the settings used for calls to updateFinding. */
   public UnaryCallSettings<UpdateFindingRequest, Finding> updateFindingSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).updateFindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateNotificationConfig. */
+  public UnaryCallSettings<UpdateNotificationConfigRequest, NotificationConfig>
+      updateNotificationConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).updateNotificationConfigSettings();
   }
 
   /** Returns the object with the settings used for calls to updateOrganizationSettings. */
@@ -319,6 +353,24 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return getStubSettingsBuilder().createFindingSettings();
     }
 
+    /** Returns the builder for the settings used for calls to createNotificationConfig. */
+    public UnaryCallSettings.Builder<CreateNotificationConfigRequest, NotificationConfig>
+        createNotificationConfigSettings() {
+      return getStubSettingsBuilder().createNotificationConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNotificationConfig. */
+    public UnaryCallSettings.Builder<DeleteNotificationConfigRequest, Empty>
+        deleteNotificationConfigSettings() {
+      return getStubSettingsBuilder().deleteNotificationConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNotificationConfig. */
+    public UnaryCallSettings.Builder<GetNotificationConfigRequest, NotificationConfig>
+        getNotificationConfigSettings() {
+      return getStubSettingsBuilder().getNotificationConfigSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getOrganizationSettings. */
     public UnaryCallSettings.Builder<GetOrganizationSettingsRequest, OrganizationSettings>
         getOrganizationSettingsSettings() {
@@ -341,6 +393,15 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
             ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
         listFindingsSettings() {
       return getStubSettingsBuilder().listFindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listNotificationConfigs. */
+    public PagedCallSettings.Builder<
+            ListNotificationConfigsRequest,
+            ListNotificationConfigsResponse,
+            ListNotificationConfigsPagedResponse>
+        listNotificationConfigsSettings() {
+      return getStubSettingsBuilder().listNotificationConfigsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listSources. */
@@ -377,6 +438,12 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     /** Returns the builder for the settings used for calls to updateFinding. */
     public UnaryCallSettings.Builder<UpdateFindingRequest, Finding> updateFindingSettings() {
       return getStubSettingsBuilder().updateFindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateNotificationConfig. */
+    public UnaryCallSettings.Builder<UpdateNotificationConfigRequest, NotificationConfig>
+        updateNotificationConfigSettings() {
+      return getStubSettingsBuilder().updateNotificationConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateOrganizationSettings. */

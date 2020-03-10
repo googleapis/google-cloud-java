@@ -19,6 +19,7 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -26,8 +27,11 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
+import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
+import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.Finding;
+import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
 import com.google.cloud.securitycenter.v1.GetSourceRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsRequest;
@@ -38,8 +42,11 @@ import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
+import com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest;
+import com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
+import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
@@ -47,6 +54,7 @@ import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.Source;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
+import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest;
 import com.google.cloud.securitycenter.v1.UpdateSourceRequest;
@@ -109,6 +117,20 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createFindingCallable()");
   }
 
+  public UnaryCallable<CreateNotificationConfigRequest, NotificationConfig>
+      createNotificationConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: createNotificationConfigCallable()");
+  }
+
+  public UnaryCallable<DeleteNotificationConfigRequest, Empty> deleteNotificationConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteNotificationConfigCallable()");
+  }
+
+  public UnaryCallable<GetNotificationConfigRequest, NotificationConfig>
+      getNotificationConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNotificationConfigCallable()");
+  }
+
   public UnaryCallable<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsCallable() {
     throw new UnsupportedOperationException("Not implemented: getOrganizationSettingsCallable()");
@@ -132,6 +154,17 @@ public abstract class SecurityCenterStub implements BackgroundResource {
 
   public UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
     throw new UnsupportedOperationException("Not implemented: listFindingsCallable()");
+  }
+
+  public UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsPagedResponse>
+      listNotificationConfigsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listNotificationConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
+      listNotificationConfigsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNotificationConfigsCallable()");
   }
 
   public UnaryCallable<ListSourcesRequest, ListSourcesPagedResponse> listSourcesPagedCallable() {
@@ -163,6 +196,11 @@ public abstract class SecurityCenterStub implements BackgroundResource {
 
   public UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable() {
     throw new UnsupportedOperationException("Not implemented: updateFindingCallable()");
+  }
+
+  public UnaryCallable<UpdateNotificationConfigRequest, NotificationConfig>
+      updateNotificationConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateNotificationConfigCallable()");
   }
 
   public UnaryCallable<UpdateOrganizationSettingsRequest, OrganizationSettings>

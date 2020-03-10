@@ -24,6 +24,7 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -92,11 +93,57 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   @Override
+  public void createNotificationConfig(
+      CreateNotificationConfigRequest request,
+      StreamObserver<NotificationConfig> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof NotificationConfig) {
+      requests.add(request);
+      responseObserver.onNext((NotificationConfig) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void deleteNotificationConfig(
+      DeleteNotificationConfigRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext((Policy) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getNotificationConfig(
+      GetNotificationConfigRequest request, StreamObserver<NotificationConfig> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof NotificationConfig) {
+      requests.add(request);
+      responseObserver.onNext((NotificationConfig) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
@@ -196,6 +243,22 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   @Override
+  public void listNotificationConfigs(
+      ListNotificationConfigsRequest request,
+      StreamObserver<ListNotificationConfigsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListNotificationConfigsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListNotificationConfigsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void listSources(
       ListSourcesRequest request, StreamObserver<ListSourcesResponse> responseObserver) {
     Object response = responses.remove();
@@ -277,6 +340,22 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     if (response instanceof Finding) {
       requests.add(request);
       responseObserver.onNext((Finding) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateNotificationConfig(
+      UpdateNotificationConfigRequest request,
+      StreamObserver<NotificationConfig> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof NotificationConfig) {
+      requests.add(request);
+      responseObserver.onNext((NotificationConfig) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

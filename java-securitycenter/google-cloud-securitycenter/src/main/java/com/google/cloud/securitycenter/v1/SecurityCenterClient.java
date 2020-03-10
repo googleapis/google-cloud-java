@@ -39,6 +39,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.List;
@@ -869,6 +870,379 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Creates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   String configId = "";
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   NotificationConfig response = securityCenterClient.createNotificationConfig(parent, configId, notificationConfig);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Resource name of the new notification config's parent. Its format is
+   *     "organizations/[organization_id]".
+   * @param configId Required. Unique identifier provided by the client within the parent scope. It
+   *     must be between 1 and 128 characters, and contains alphanumeric characters, underscores or
+   *     hyphens only.
+   * @param notificationConfig Required. The notification config being created. The name and the
+   *     service account will be ignored as they are both output only fields on this resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig createNotificationConfig(
+      OrganizationName parent, String configId, NotificationConfig notificationConfig) {
+    CreateNotificationConfigRequest request =
+        CreateNotificationConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConfigId(configId)
+            .setNotificationConfig(notificationConfig)
+            .build();
+    return createNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   String configId = "";
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   NotificationConfig response = securityCenterClient.createNotificationConfig(parent.toString(), configId, notificationConfig);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Resource name of the new notification config's parent. Its format is
+   *     "organizations/[organization_id]".
+   * @param configId Required. Unique identifier provided by the client within the parent scope. It
+   *     must be between 1 and 128 characters, and contains alphanumeric characters, underscores or
+   *     hyphens only.
+   * @param notificationConfig Required. The notification config being created. The name and the
+   *     service account will be ignored as they are both output only fields on this resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig createNotificationConfig(
+      String parent, String configId, NotificationConfig notificationConfig) {
+    CreateNotificationConfigRequest request =
+        CreateNotificationConfigRequest.newBuilder()
+            .setParent(parent)
+            .setConfigId(configId)
+            .setNotificationConfig(notificationConfig)
+            .build();
+    return createNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   NotificationConfig response = securityCenterClient.createNotificationConfig(parent, notificationConfig);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Resource name of the new notification config's parent. Its format is
+   *     "organizations/[organization_id]".
+   * @param notificationConfig Required. The notification config being created. The name and the
+   *     service account will be ignored as they are both output only fields on this resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig createNotificationConfig(
+      OrganizationName parent, NotificationConfig notificationConfig) {
+    CreateNotificationConfigRequest request =
+        CreateNotificationConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setNotificationConfig(notificationConfig)
+            .build();
+    return createNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   NotificationConfig response = securityCenterClient.createNotificationConfig(parent.toString(), notificationConfig);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Resource name of the new notification config's parent. Its format is
+   *     "organizations/[organization_id]".
+   * @param notificationConfig Required. The notification config being created. The name and the
+   *     service account will be ignored as they are both output only fields on this resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig createNotificationConfig(
+      String parent, NotificationConfig notificationConfig) {
+    CreateNotificationConfigRequest request =
+        CreateNotificationConfigRequest.newBuilder()
+            .setParent(parent)
+            .setNotificationConfig(notificationConfig)
+            .build();
+    return createNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   String configId = "";
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   CreateNotificationConfigRequest request = CreateNotificationConfigRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setConfigId(configId)
+   *     .setNotificationConfig(notificationConfig)
+   *     .build();
+   *   NotificationConfig response = securityCenterClient.createNotificationConfig(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig createNotificationConfig(
+      CreateNotificationConfigRequest request) {
+    return createNotificationConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   String configId = "";
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   CreateNotificationConfigRequest request = CreateNotificationConfigRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setConfigId(configId)
+   *     .setNotificationConfig(notificationConfig)
+   *     .build();
+   *   ApiFuture&lt;NotificationConfig&gt; future = securityCenterClient.createNotificationConfigCallable().futureCall(request);
+   *   // Do something
+   *   NotificationConfig response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateNotificationConfigRequest, NotificationConfig>
+      createNotificationConfigCallable() {
+    return stub.createNotificationConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+   *   securityCenterClient.deleteNotificationConfig(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the notification config to delete. Its format is
+   *     "organizations/[organization_id]/notificationConfigs/[config_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteNotificationConfig(NotificationConfigName name) {
+    DeleteNotificationConfigRequest request =
+        DeleteNotificationConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+   *   securityCenterClient.deleteNotificationConfig(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the notification config to delete. Its format is
+   *     "organizations/[organization_id]/notificationConfigs/[config_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteNotificationConfig(String name) {
+    DeleteNotificationConfigRequest request =
+        DeleteNotificationConfigRequest.newBuilder().setName(name).build();
+    deleteNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+   *   DeleteNotificationConfigRequest request = DeleteNotificationConfigRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   securityCenterClient.deleteNotificationConfig(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteNotificationConfig(DeleteNotificationConfigRequest request) {
+    deleteNotificationConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+   *   DeleteNotificationConfigRequest request = DeleteNotificationConfigRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = securityCenterClient.deleteNotificationConfigCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteNotificationConfigRequest, Empty>
+      deleteNotificationConfigCallable() {
+    return stub.deleteNotificationConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+   *   NotificationConfig response = securityCenterClient.getNotificationConfig(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the notification config to get. Its format is
+   *     "organizations/[organization_id]/notificationConfigs/[config_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig getNotificationConfig(NotificationConfigName name) {
+    GetNotificationConfigRequest request =
+        GetNotificationConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+   *   NotificationConfig response = securityCenterClient.getNotificationConfig(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the notification config to get. Its format is
+   *     "organizations/[organization_id]/notificationConfigs/[config_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig getNotificationConfig(String name) {
+    GetNotificationConfigRequest request =
+        GetNotificationConfigRequest.newBuilder().setName(name).build();
+    return getNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+   *   GetNotificationConfigRequest request = GetNotificationConfigRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   NotificationConfig response = securityCenterClient.getNotificationConfig(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig getNotificationConfig(GetNotificationConfigRequest request) {
+    return getNotificationConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+   *   GetNotificationConfigRequest request = GetNotificationConfigRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;NotificationConfig&gt; future = securityCenterClient.getNotificationConfigCallable().futureCall(request);
+   *   // Do something
+   *   NotificationConfig response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetNotificationConfigRequest, NotificationConfig>
+      getNotificationConfigCallable() {
+    return stub.getNotificationConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Gets the settings for an organization.
    *
    * <p>Sample code:
@@ -1220,6 +1594,142 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
     return stub.listFindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists notification configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (NotificationConfig element : securityCenterClient.listNotificationConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Name of the organization to list notification configs. Its format is
+   *     "organizations/[organization_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNotificationConfigsPagedResponse listNotificationConfigs(
+      OrganizationName parent) {
+    ListNotificationConfigsRequest request =
+        ListNotificationConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listNotificationConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists notification configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (NotificationConfig element : securityCenterClient.listNotificationConfigs(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Name of the organization to list notification configs. Its format is
+   *     "organizations/[organization_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNotificationConfigsPagedResponse listNotificationConfigs(String parent) {
+    ListNotificationConfigsRequest request =
+        ListNotificationConfigsRequest.newBuilder().setParent(parent).build();
+    return listNotificationConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists notification configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   ListNotificationConfigsRequest request = ListNotificationConfigsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (NotificationConfig element : securityCenterClient.listNotificationConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNotificationConfigsPagedResponse listNotificationConfigs(
+      ListNotificationConfigsRequest request) {
+    return listNotificationConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists notification configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   ListNotificationConfigsRequest request = ListNotificationConfigsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListNotificationConfigsPagedResponse&gt; future = securityCenterClient.listNotificationConfigsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (NotificationConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsPagedResponse>
+      listNotificationConfigsPagedCallable() {
+    return stub.listNotificationConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists notification configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   ListNotificationConfigsRequest request = ListNotificationConfigsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListNotificationConfigsResponse response = securityCenterClient.listNotificationConfigsCallable().call(request);
+   *     for (NotificationConfig element : response.getNotificationConfigsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
+      listNotificationConfigsCallable() {
+    return stub.listNotificationConfigsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1788,6 +2298,106 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable() {
     return stub.updateFindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   NotificationConfig response = securityCenterClient.updateNotificationConfig(notificationConfig);
+   * }
+   * </code></pre>
+   *
+   * @param notificationConfig Required. The notification config to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig updateNotificationConfig(NotificationConfig notificationConfig) {
+    UpdateNotificationConfigRequest request =
+        UpdateNotificationConfigRequest.newBuilder()
+            .setNotificationConfig(notificationConfig)
+            .build();
+    return updateNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   NotificationConfig response = securityCenterClient.updateNotificationConfig(notificationConfig, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param notificationConfig Required. The notification config to update.
+   * @param updateMask The FieldMask to use when updating the notification config.
+   *     <p>If empty all mutable fields will be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig updateNotificationConfig(
+      NotificationConfig notificationConfig, FieldMask updateMask) {
+    UpdateNotificationConfigRequest request =
+        UpdateNotificationConfigRequest.newBuilder()
+            .setNotificationConfig(notificationConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   UpdateNotificationConfigRequest request = UpdateNotificationConfigRequest.newBuilder()
+   *     .setNotificationConfig(notificationConfig)
+   *     .build();
+   *   NotificationConfig response = securityCenterClient.updateNotificationConfig(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig updateNotificationConfig(
+      UpdateNotificationConfigRequest request) {
+    return updateNotificationConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   UpdateNotificationConfigRequest request = UpdateNotificationConfigRequest.newBuilder()
+   *     .setNotificationConfig(notificationConfig)
+   *     .build();
+   *   ApiFuture&lt;NotificationConfig&gt; future = securityCenterClient.updateNotificationConfigCallable().futureCall(request);
+   *   // Do something
+   *   NotificationConfig response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateNotificationConfigRequest, NotificationConfig>
+      updateNotificationConfigCallable() {
+    return stub.updateNotificationConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -2364,6 +2974,99 @@ public class SecurityCenterClient implements BackgroundResource {
     protected ListFindingsFixedSizeCollection createCollection(
         List<ListFindingsPage> pages, int collectionSize) {
       return new ListFindingsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListNotificationConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListNotificationConfigsRequest,
+          ListNotificationConfigsResponse,
+          NotificationConfig,
+          ListNotificationConfigsPage,
+          ListNotificationConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListNotificationConfigsPagedResponse> createAsync(
+        PageContext<
+                ListNotificationConfigsRequest, ListNotificationConfigsResponse, NotificationConfig>
+            context,
+        ApiFuture<ListNotificationConfigsResponse> futureResponse) {
+      ApiFuture<ListNotificationConfigsPage> futurePage =
+          ListNotificationConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListNotificationConfigsPage, ListNotificationConfigsPagedResponse>() {
+            @Override
+            public ListNotificationConfigsPagedResponse apply(ListNotificationConfigsPage input) {
+              return new ListNotificationConfigsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListNotificationConfigsPagedResponse(ListNotificationConfigsPage page) {
+      super(page, ListNotificationConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListNotificationConfigsPage
+      extends AbstractPage<
+          ListNotificationConfigsRequest,
+          ListNotificationConfigsResponse,
+          NotificationConfig,
+          ListNotificationConfigsPage> {
+
+    private ListNotificationConfigsPage(
+        PageContext<
+                ListNotificationConfigsRequest, ListNotificationConfigsResponse, NotificationConfig>
+            context,
+        ListNotificationConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListNotificationConfigsPage createEmptyPage() {
+      return new ListNotificationConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListNotificationConfigsPage createPage(
+        PageContext<
+                ListNotificationConfigsRequest, ListNotificationConfigsResponse, NotificationConfig>
+            context,
+        ListNotificationConfigsResponse response) {
+      return new ListNotificationConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListNotificationConfigsPage> createPageAsync(
+        PageContext<
+                ListNotificationConfigsRequest, ListNotificationConfigsResponse, NotificationConfig>
+            context,
+        ApiFuture<ListNotificationConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListNotificationConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListNotificationConfigsRequest,
+          ListNotificationConfigsResponse,
+          NotificationConfig,
+          ListNotificationConfigsPage,
+          ListNotificationConfigsFixedSizeCollection> {
+
+    private ListNotificationConfigsFixedSizeCollection(
+        List<ListNotificationConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListNotificationConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListNotificationConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListNotificationConfigsFixedSizeCollection createCollection(
+        List<ListNotificationConfigsPage> pages, int collectionSize) {
+      return new ListNotificationConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 

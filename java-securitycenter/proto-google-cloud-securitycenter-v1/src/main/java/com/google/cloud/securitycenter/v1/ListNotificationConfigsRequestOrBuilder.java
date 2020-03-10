@@ -18,17 +18,17 @@
 
 package com.google.cloud.securitycenter.v1;
 
-public interface CreateSourceRequestOrBuilder
+public interface ListNotificationConfigsRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1.CreateSourceRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1.ListNotificationConfigsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. Resource name of the new source's parent. Its format should be
-   * "organizations/[organization_id]".
+   * Required. Name of the organization to list notification configs.
+   * Its format is "organizations/[organization_id]".
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateSourceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the new source's parent. Its format should be
-   * "organizations/[organization_id]".
+   * Required. Name of the organization to list notification configs.
+   * Its format is "organizations/[organization_id]".
    * </pre>
    *
    * <code>
@@ -58,43 +58,42 @@ public interface CreateSourceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * The value returned by the last `ListNotificationConfigsResponse`; indicates
+   * that this is a continuation of a prior `ListNotificationConfigs` call, and
+   * that the system should return the next page of data.
    * </pre>
    *
-   * <code>
-   * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string page_token = 2;</code>
    *
-   * @return Whether the source field is set.
+   * @return The pageToken.
    */
-  boolean hasSource();
+  java.lang.String getPageToken();
   /**
    *
    *
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * The value returned by the last `ListNotificationConfigsResponse`; indicates
+   * that this is a continuation of a prior `ListNotificationConfigs` call, and
+   * that the system should return the next page of data.
    * </pre>
    *
-   * <code>
-   * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string page_token = 2;</code>
    *
-   * @return The source.
+   * @return The bytes for pageToken.
    */
-  com.google.cloud.securitycenter.v1.Source getSource();
+  com.google.protobuf.ByteString getPageTokenBytes();
+
   /**
    *
    *
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * The maximum number of results to return in a single response. Default is
+   * 10, minimum is 1, maximum is 1000.
    * </pre>
    *
-   * <code>
-   * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>int32 page_size = 3;</code>
+   *
+   * @return The pageSize.
    */
-  com.google.cloud.securitycenter.v1.SourceOrBuilder getSourceOrBuilder();
+  int getPageSize();
 }

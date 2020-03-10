@@ -156,6 +156,131 @@ public final class SecurityCenterGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateNotificationConfigMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest,
+          com.google.cloud.securitycenter.v1.NotificationConfig>
+      METHOD_CREATE_NOTIFICATION_CONFIG = getCreateNotificationConfigMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest,
+          com.google.cloud.securitycenter.v1.NotificationConfig>
+      getCreateNotificationConfigMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest,
+          com.google.cloud.securitycenter.v1.NotificationConfig>
+      getCreateNotificationConfigMethod() {
+    return getCreateNotificationConfigMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest,
+          com.google.cloud.securitycenter.v1.NotificationConfig>
+      getCreateNotificationConfigMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest,
+            com.google.cloud.securitycenter.v1.NotificationConfig>
+        getCreateNotificationConfigMethod;
+    if ((getCreateNotificationConfigMethod = SecurityCenterGrpc.getCreateNotificationConfigMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getCreateNotificationConfigMethod =
+                SecurityCenterGrpc.getCreateNotificationConfigMethod)
+            == null) {
+          SecurityCenterGrpc.getCreateNotificationConfigMethod =
+              getCreateNotificationConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest,
+                          com.google.cloud.securitycenter.v1.NotificationConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.securitycenter.v1.SecurityCenter",
+                              "CreateNotificationConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.NotificationConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier("CreateNotificationConfig"))
+                      .build();
+        }
+      }
+    }
+    return getCreateNotificationConfigMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getDeleteNotificationConfigMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest,
+          com.google.protobuf.Empty>
+      METHOD_DELETE_NOTIFICATION_CONFIG = getDeleteNotificationConfigMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest,
+          com.google.protobuf.Empty>
+      getDeleteNotificationConfigMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest,
+          com.google.protobuf.Empty>
+      getDeleteNotificationConfigMethod() {
+    return getDeleteNotificationConfigMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest,
+          com.google.protobuf.Empty>
+      getDeleteNotificationConfigMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest,
+            com.google.protobuf.Empty>
+        getDeleteNotificationConfigMethod;
+    if ((getDeleteNotificationConfigMethod = SecurityCenterGrpc.getDeleteNotificationConfigMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getDeleteNotificationConfigMethod =
+                SecurityCenterGrpc.getDeleteNotificationConfigMethod)
+            == null) {
+          SecurityCenterGrpc.getDeleteNotificationConfigMethod =
+              getDeleteNotificationConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.securitycenter.v1.SecurityCenter",
+                              "DeleteNotificationConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier("DeleteNotificationConfig"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteNotificationConfigMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getGetIamPolicyMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
@@ -202,6 +327,68 @@ public final class SecurityCenterGrpc {
       }
     }
     return getGetIamPolicyMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetNotificationConfigMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.GetNotificationConfigRequest,
+          com.google.cloud.securitycenter.v1.NotificationConfig>
+      METHOD_GET_NOTIFICATION_CONFIG = getGetNotificationConfigMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.GetNotificationConfigRequest,
+          com.google.cloud.securitycenter.v1.NotificationConfig>
+      getGetNotificationConfigMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.GetNotificationConfigRequest,
+          com.google.cloud.securitycenter.v1.NotificationConfig>
+      getGetNotificationConfigMethod() {
+    return getGetNotificationConfigMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.GetNotificationConfigRequest,
+          com.google.cloud.securitycenter.v1.NotificationConfig>
+      getGetNotificationConfigMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.GetNotificationConfigRequest,
+            com.google.cloud.securitycenter.v1.NotificationConfig>
+        getGetNotificationConfigMethod;
+    if ((getGetNotificationConfigMethod = SecurityCenterGrpc.getGetNotificationConfigMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getGetNotificationConfigMethod = SecurityCenterGrpc.getGetNotificationConfigMethod)
+            == null) {
+          SecurityCenterGrpc.getGetNotificationConfigMethod =
+              getGetNotificationConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1.GetNotificationConfigRequest,
+                          com.google.cloud.securitycenter.v1.NotificationConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.securitycenter.v1.SecurityCenter",
+                              "GetNotificationConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.GetNotificationConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.NotificationConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier("GetNotificationConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetNotificationConfigMethod;
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
@@ -559,6 +746,68 @@ public final class SecurityCenterGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getListNotificationConfigsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest,
+          com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>
+      METHOD_LIST_NOTIFICATION_CONFIGS = getListNotificationConfigsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest,
+          com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>
+      getListNotificationConfigsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest,
+          com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>
+      getListNotificationConfigsMethod() {
+    return getListNotificationConfigsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest,
+          com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>
+      getListNotificationConfigsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest,
+            com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>
+        getListNotificationConfigsMethod;
+    if ((getListNotificationConfigsMethod = SecurityCenterGrpc.getListNotificationConfigsMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getListNotificationConfigsMethod = SecurityCenterGrpc.getListNotificationConfigsMethod)
+            == null) {
+          SecurityCenterGrpc.getListNotificationConfigsMethod =
+              getListNotificationConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest,
+                          com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.securitycenter.v1.SecurityCenter",
+                              "ListNotificationConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier("ListNotificationConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getListNotificationConfigsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getListSourcesMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.securitycenter.v1.ListSourcesRequest,
@@ -896,6 +1145,69 @@ public final class SecurityCenterGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUpdateNotificationConfigMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest,
+          com.google.cloud.securitycenter.v1.NotificationConfig>
+      METHOD_UPDATE_NOTIFICATION_CONFIG = getUpdateNotificationConfigMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest,
+          com.google.cloud.securitycenter.v1.NotificationConfig>
+      getUpdateNotificationConfigMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest,
+          com.google.cloud.securitycenter.v1.NotificationConfig>
+      getUpdateNotificationConfigMethod() {
+    return getUpdateNotificationConfigMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest,
+          com.google.cloud.securitycenter.v1.NotificationConfig>
+      getUpdateNotificationConfigMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest,
+            com.google.cloud.securitycenter.v1.NotificationConfig>
+        getUpdateNotificationConfigMethod;
+    if ((getUpdateNotificationConfigMethod = SecurityCenterGrpc.getUpdateNotificationConfigMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getUpdateNotificationConfigMethod =
+                SecurityCenterGrpc.getUpdateNotificationConfigMethod)
+            == null) {
+          SecurityCenterGrpc.getUpdateNotificationConfigMethod =
+              getUpdateNotificationConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest,
+                          com.google.cloud.securitycenter.v1.NotificationConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.securitycenter.v1.SecurityCenter",
+                              "UpdateNotificationConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.NotificationConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier("UpdateNotificationConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateNotificationConfigMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getUpdateOrganizationSettingsMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest,
@@ -1135,6 +1447,33 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Creates a notification config.
+     * </pre>
+     */
+    public void createNotificationConfig(
+        com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.NotificationConfig>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateNotificationConfigMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a notification config.
+     * </pre>
+     */
+    public void deleteNotificationConfig(
+        com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteNotificationConfigMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the access control policy on the specified Source.
      * </pre>
      */
@@ -1142,6 +1481,20 @@ public final class SecurityCenterGrpc {
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       asyncUnimplementedUnaryCall(getGetIamPolicyMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a notification config.
+     * </pre>
+     */
+    public void getNotificationConfig(
+        com.google.cloud.securitycenter.v1.GetNotificationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.NotificationConfig>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getGetNotificationConfigMethodHelper(), responseObserver);
     }
 
     /**
@@ -1237,6 +1590,21 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Lists notification configs.
+     * </pre>
+     */
+    public void listNotificationConfigs(
+        com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListNotificationConfigsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all sources belonging to an organization.
      * </pre>
      */
@@ -1322,6 +1690,20 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Updates a notification config.
+     * </pre>
+     */
+    public void updateNotificationConfig(
+        com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.NotificationConfig>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateNotificationConfigMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates an organization's settings.
      * </pre>
      */
@@ -1375,11 +1757,31 @@ public final class SecurityCenterGrpc {
                       com.google.cloud.securitycenter.v1.CreateFindingRequest,
                       com.google.cloud.securitycenter.v1.Finding>(this, METHODID_CREATE_FINDING)))
           .addMethod(
+              getCreateNotificationConfigMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest,
+                      com.google.cloud.securitycenter.v1.NotificationConfig>(
+                      this, METHODID_CREATE_NOTIFICATION_CONFIG)))
+          .addMethod(
+              getDeleteNotificationConfigMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_NOTIFICATION_CONFIG)))
+          .addMethod(
               getGetIamPolicyMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_GET_IAM_POLICY)))
+          .addMethod(
+              getGetNotificationConfigMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.securitycenter.v1.GetNotificationConfigRequest,
+                      com.google.cloud.securitycenter.v1.NotificationConfig>(
+                      this, METHODID_GET_NOTIFICATION_CONFIG)))
           .addMethod(
               getGetOrganizationSettingsMethodHelper(),
               asyncUnaryCall(
@@ -1422,6 +1824,13 @@ public final class SecurityCenterGrpc {
                       com.google.cloud.securitycenter.v1.ListFindingsResponse>(
                       this, METHODID_LIST_FINDINGS)))
           .addMethod(
+              getListNotificationConfigsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest,
+                      com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>(
+                      this, METHODID_LIST_NOTIFICATION_CONFIGS)))
+          .addMethod(
               getListSourcesMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -1460,6 +1869,13 @@ public final class SecurityCenterGrpc {
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1.UpdateFindingRequest,
                       com.google.cloud.securitycenter.v1.Finding>(this, METHODID_UPDATE_FINDING)))
+          .addMethod(
+              getUpdateNotificationConfigMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest,
+                      com.google.cloud.securitycenter.v1.NotificationConfig>(
+                      this, METHODID_UPDATE_NOTIFICATION_CONFIG)))
           .addMethod(
               getUpdateOrganizationSettingsMethodHelper(),
               asyncUnaryCall(
@@ -1543,6 +1959,39 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Creates a notification config.
+     * </pre>
+     */
+    public void createNotificationConfig(
+        com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.NotificationConfig>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateNotificationConfigMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a notification config.
+     * </pre>
+     */
+    public void deleteNotificationConfig(
+        com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteNotificationConfigMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the access control policy on the specified Source.
      * </pre>
      */
@@ -1551,6 +2000,23 @@ public final class SecurityCenterGrpc {
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a notification config.
+     * </pre>
+     */
+    public void getNotificationConfig(
+        com.google.cloud.securitycenter.v1.GetNotificationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.NotificationConfig>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetNotificationConfigMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1666,6 +2132,24 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Lists notification configs.
+     * </pre>
+     */
+    public void listNotificationConfigs(
+        com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListNotificationConfigsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all sources belonging to an organization.
      * </pre>
      */
@@ -1761,6 +2245,23 @@ public final class SecurityCenterGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.Finding> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getUpdateFindingMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a notification config.
+     * </pre>
+     */
+    public void updateNotificationConfig(
+        com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.NotificationConfig>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateNotificationConfigMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1870,12 +2371,51 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Creates a notification config.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.NotificationConfig createNotificationConfig(
+        com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateNotificationConfigMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a notification config.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteNotificationConfig(
+        com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteNotificationConfigMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the access control policy on the specified Source.
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetIamPolicyMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a notification config.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.NotificationConfig getNotificationConfig(
+        com.google.cloud.securitycenter.v1.GetNotificationConfigRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetNotificationConfigMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -1965,6 +2505,20 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Lists notification configs.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse
+        listNotificationConfigs(
+            com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListNotificationConfigsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all sources belonging to an organization.
      * </pre>
      */
@@ -2041,6 +2595,19 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1.UpdateFindingRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateFindingMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a notification config.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.NotificationConfig updateNotificationConfig(
+        com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateNotificationConfigMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -2139,6 +2706,37 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Creates a notification config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.NotificationConfig>
+        createNotificationConfig(
+            com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateNotificationConfigMethodHelper(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a notification config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteNotificationConfig(
+            com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteNotificationConfigMethodHelper(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the access control policy on the specified Source.
      * </pre>
      */
@@ -2146,6 +2744,21 @@ public final class SecurityCenterGrpc {
         getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a notification config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.NotificationConfig>
+        getNotificationConfig(
+            com.google.cloud.securitycenter.v1.GetNotificationConfigRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetNotificationConfigMethodHelper(), getCallOptions()), request);
     }
 
     /**
@@ -2244,6 +2857,22 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Lists notification configs.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>
+        listNotificationConfigs(
+            com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListNotificationConfigsMethodHelper(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all sources belonging to an organization.
      * </pre>
      */
@@ -2331,6 +2960,22 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Updates a notification config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.NotificationConfig>
+        updateNotificationConfig(
+            com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateNotificationConfigMethodHelper(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates an organization's settings.
      * </pre>
      */
@@ -2374,22 +3019,27 @@ public final class SecurityCenterGrpc {
 
   private static final int METHODID_CREATE_SOURCE = 0;
   private static final int METHODID_CREATE_FINDING = 1;
-  private static final int METHODID_GET_IAM_POLICY = 2;
-  private static final int METHODID_GET_ORGANIZATION_SETTINGS = 3;
-  private static final int METHODID_GET_SOURCE = 4;
-  private static final int METHODID_GROUP_ASSETS = 5;
-  private static final int METHODID_GROUP_FINDINGS = 6;
-  private static final int METHODID_LIST_ASSETS = 7;
-  private static final int METHODID_LIST_FINDINGS = 8;
-  private static final int METHODID_LIST_SOURCES = 9;
-  private static final int METHODID_RUN_ASSET_DISCOVERY = 10;
-  private static final int METHODID_SET_FINDING_STATE = 11;
-  private static final int METHODID_SET_IAM_POLICY = 12;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 13;
-  private static final int METHODID_UPDATE_FINDING = 14;
-  private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 15;
-  private static final int METHODID_UPDATE_SOURCE = 16;
-  private static final int METHODID_UPDATE_SECURITY_MARKS = 17;
+  private static final int METHODID_CREATE_NOTIFICATION_CONFIG = 2;
+  private static final int METHODID_DELETE_NOTIFICATION_CONFIG = 3;
+  private static final int METHODID_GET_IAM_POLICY = 4;
+  private static final int METHODID_GET_NOTIFICATION_CONFIG = 5;
+  private static final int METHODID_GET_ORGANIZATION_SETTINGS = 6;
+  private static final int METHODID_GET_SOURCE = 7;
+  private static final int METHODID_GROUP_ASSETS = 8;
+  private static final int METHODID_GROUP_FINDINGS = 9;
+  private static final int METHODID_LIST_ASSETS = 10;
+  private static final int METHODID_LIST_FINDINGS = 11;
+  private static final int METHODID_LIST_NOTIFICATION_CONFIGS = 12;
+  private static final int METHODID_LIST_SOURCES = 13;
+  private static final int METHODID_RUN_ASSET_DISCOVERY = 14;
+  private static final int METHODID_SET_FINDING_STATE = 15;
+  private static final int METHODID_SET_IAM_POLICY = 16;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 17;
+  private static final int METHODID_UPDATE_FINDING = 18;
+  private static final int METHODID_UPDATE_NOTIFICATION_CONFIG = 19;
+  private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 20;
+  private static final int METHODID_UPDATE_SOURCE = 21;
+  private static final int METHODID_UPDATE_SECURITY_MARKS = 22;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2420,10 +3070,27 @@ public final class SecurityCenterGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.Finding>)
                   responseObserver);
           break;
+        case METHODID_CREATE_NOTIFICATION_CONFIG:
+          serviceImpl.createNotificationConfig(
+              (com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.NotificationConfig>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_NOTIFICATION_CONFIG:
+          serviceImpl.deleteNotificationConfig(
+              (com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         case METHODID_GET_IAM_POLICY:
           serviceImpl.getIamPolicy(
               (com.google.iam.v1.GetIamPolicyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_GET_NOTIFICATION_CONFIG:
+          serviceImpl.getNotificationConfig(
+              (com.google.cloud.securitycenter.v1.GetNotificationConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.NotificationConfig>)
+                  responseObserver);
           break;
         case METHODID_GET_ORGANIZATION_SETTINGS:
           serviceImpl.getOrganizationSettings(
@@ -2462,6 +3129,13 @@ public final class SecurityCenterGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ListFindingsResponse>)
                   responseObserver);
           break;
+        case METHODID_LIST_NOTIFICATION_CONFIGS:
+          serviceImpl.listNotificationConfigs(
+              (com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>)
+                  responseObserver);
+          break;
         case METHODID_LIST_SOURCES:
           serviceImpl.listSources(
               (com.google.cloud.securitycenter.v1.ListSourcesRequest) request,
@@ -2494,6 +3168,12 @@ public final class SecurityCenterGrpc {
           serviceImpl.updateFinding(
               (com.google.cloud.securitycenter.v1.UpdateFindingRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.Finding>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_NOTIFICATION_CONFIG:
+          serviceImpl.updateNotificationConfig(
+              (com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.NotificationConfig>)
                   responseObserver);
           break;
         case METHODID_UPDATE_ORGANIZATION_SETTINGS:
@@ -2580,19 +3260,24 @@ public final class SecurityCenterGrpc {
                       .setSchemaDescriptor(new SecurityCenterFileDescriptorSupplier())
                       .addMethod(getCreateSourceMethodHelper())
                       .addMethod(getCreateFindingMethodHelper())
+                      .addMethod(getCreateNotificationConfigMethodHelper())
+                      .addMethod(getDeleteNotificationConfigMethodHelper())
                       .addMethod(getGetIamPolicyMethodHelper())
+                      .addMethod(getGetNotificationConfigMethodHelper())
                       .addMethod(getGetOrganizationSettingsMethodHelper())
                       .addMethod(getGetSourceMethodHelper())
                       .addMethod(getGroupAssetsMethodHelper())
                       .addMethod(getGroupFindingsMethodHelper())
                       .addMethod(getListAssetsMethodHelper())
                       .addMethod(getListFindingsMethodHelper())
+                      .addMethod(getListNotificationConfigsMethodHelper())
                       .addMethod(getListSourcesMethodHelper())
                       .addMethod(getRunAssetDiscoveryMethodHelper())
                       .addMethod(getSetFindingStateMethodHelper())
                       .addMethod(getSetIamPolicyMethodHelper())
                       .addMethod(getTestIamPermissionsMethodHelper())
                       .addMethod(getUpdateFindingMethodHelper())
+                      .addMethod(getUpdateNotificationConfigMethodHelper())
                       .addMethod(getUpdateOrganizationSettingsMethodHelper())
                       .addMethod(getUpdateSourceMethodHelper())
                       .addMethod(getUpdateSecurityMarksMethodHelper())

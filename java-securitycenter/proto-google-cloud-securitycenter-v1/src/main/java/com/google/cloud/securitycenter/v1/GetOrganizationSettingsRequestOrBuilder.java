@@ -27,8 +27,8 @@ public interface GetOrganizationSettingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the organization to get organization settings for. Its format is
-   * "organizations/[organization_id]/organizationSettings".
+   * Required. Name of the organization to get organization settings for. Its
+   * format is "organizations/[organization_id]/organizationSettings".
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface GetOrganizationSettingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the organization to get organization settings for. Its format is
-   * "organizations/[organization_id]/organizationSettings".
+   * Required. Name of the organization to get organization settings for. Its
+   * format is "organizations/[organization_id]/organizationSettings".
    * </pre>
    *
    * <code>

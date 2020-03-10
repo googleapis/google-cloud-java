@@ -22,30 +22,30 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Request message for getting organization settings.
+ * Request message for deleting a notification config.
  * </pre>
  *
- * Protobuf type {@code google.cloud.securitycenter.v1.GetOrganizationSettingsRequest}
+ * Protobuf type {@code google.cloud.securitycenter.v1.DeleteNotificationConfigRequest}
  */
-public final class GetOrganizationSettingsRequest extends com.google.protobuf.GeneratedMessageV3
+public final class DeleteNotificationConfigRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.GetOrganizationSettingsRequest)
-    GetOrganizationSettingsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.DeleteNotificationConfigRequest)
+    DeleteNotificationConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetOrganizationSettingsRequest.newBuilder() to construct.
-  private GetOrganizationSettingsRequest(
+  // Use DeleteNotificationConfigRequest.newBuilder() to construct.
+  private DeleteNotificationConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetOrganizationSettingsRequest() {
+  private DeleteNotificationConfigRequest() {
     name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetOrganizationSettingsRequest();
+    return new DeleteNotificationConfigRequest();
   }
 
   @java.lang.Override
@@ -53,7 +53,7 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
     return this.unknownFields;
   }
 
-  private GetOrganizationSettingsRequest(
+  private DeleteNotificationConfigRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -99,17 +99,17 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
-        .internal_static_google_cloud_securitycenter_v1_GetOrganizationSettingsRequest_descriptor;
+        .internal_static_google_cloud_securitycenter_v1_DeleteNotificationConfigRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
-        .internal_static_google_cloud_securitycenter_v1_GetOrganizationSettingsRequest_fieldAccessorTable
+        .internal_static_google_cloud_securitycenter_v1_DeleteNotificationConfigRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.class,
-            com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.Builder.class);
+            com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest.class,
+            com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -118,8 +118,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Name of the organization to get organization settings for. Its
-   * format is "organizations/[organization_id]/organizationSettings".
+   * Required. Name of the notification config to delete. Its format is
+   * "organizations/[organization_id]/notificationConfigs/[config_id]".
    * </pre>
    *
    * <code>
@@ -143,8 +143,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Name of the organization to get organization settings for. Its
-   * format is "organizations/[organization_id]/organizationSettings".
+   * Required. Name of the notification config to delete. Its format is
+   * "organizations/[organization_id]/notificationConfigs/[config_id]".
    * </pre>
    *
    * <code>
@@ -204,11 +204,11 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest)) {
+    if (!(obj instanceof com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest other =
-        (com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest) obj;
+    com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest other =
+        (com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -229,59 +229,59 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
     return hash;
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest
+  public static com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest
+  public static com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -289,12 +289,12 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -312,7 +312,7 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
   }
 
   public static Builder newBuilder(
-      com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest prototype) {
+      com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -330,32 +330,32 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request message for getting organization settings.
+   * Request message for deleting a notification config.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.securitycenter.v1.GetOrganizationSettingsRequest}
+   * Protobuf type {@code google.cloud.securitycenter.v1.DeleteNotificationConfigRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.GetOrganizationSettingsRequest)
-      com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.DeleteNotificationConfigRequest)
+      com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_GetOrganizationSettingsRequest_descriptor;
+          .internal_static_google_cloud_securitycenter_v1_DeleteNotificationConfigRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_GetOrganizationSettingsRequest_fieldAccessorTable
+          .internal_static_google_cloud_securitycenter_v1_DeleteNotificationConfigRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.class,
-              com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.Builder.class);
+              com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest.class,
+              com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest.Builder.class);
     }
 
     // Construct using
-    // com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.newBuilder()
+    // com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -380,18 +380,19 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_GetOrganizationSettingsRequest_descriptor;
+          .internal_static_google_cloud_securitycenter_v1_DeleteNotificationConfigRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest
+    public com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest
         getDefaultInstanceForType() {
-      return com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.getDefaultInstance();
+      return com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest
+          .getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest build() {
-      com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest result = buildPartial();
+    public com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest build() {
+      com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -399,9 +400,9 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest buildPartial() {
-      com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest result =
-          new com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest(this);
+    public com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest buildPartial() {
+      com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest result =
+          new com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest(this);
       result.name_ = name_;
       onBuilt();
       return result;
@@ -442,8 +443,9 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest) {
-        return mergeFrom((com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest) other);
+      if (other instanceof com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest) {
+        return mergeFrom(
+            (com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -451,10 +453,10 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
     }
 
     public Builder mergeFrom(
-        com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest other) {
+        com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest other) {
       if (other
-          == com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest.getDefaultInstance())
-        return this;
+          == com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest
+              .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -474,12 +476,12 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest parsedMessage = null;
+      com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest)
+            (com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest)
                 e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
@@ -495,8 +497,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the notification config to delete. Its format is
+     * "organizations/[organization_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -520,8 +522,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the notification config to delete. Its format is
+     * "organizations/[organization_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -545,8 +547,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the notification config to delete. Its format is
+     * "organizations/[organization_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -569,8 +571,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the notification config to delete. Its format is
+     * "organizations/[organization_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -589,8 +591,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the notification config to delete. Its format is
+     * "organizations/[organization_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -622,44 +624,44 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.GetOrganizationSettingsRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.DeleteNotificationConfigRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.GetOrganizationSettingsRequest)
-  private static final com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest
+  // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.DeleteNotificationConfigRequest)
+  private static final com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest
       DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest();
   }
 
-  public static com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest
+  public static com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetOrganizationSettingsRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetOrganizationSettingsRequest>() {
+  private static final com.google.protobuf.Parser<DeleteNotificationConfigRequest> PARSER =
+      new com.google.protobuf.AbstractParser<DeleteNotificationConfigRequest>() {
         @java.lang.Override
-        public GetOrganizationSettingsRequest parsePartialFrom(
+        public DeleteNotificationConfigRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetOrganizationSettingsRequest(input, extensionRegistry);
+          return new DeleteNotificationConfigRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<GetOrganizationSettingsRequest> parser() {
+  public static com.google.protobuf.Parser<DeleteNotificationConfigRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetOrganizationSettingsRequest> getParserForType() {
+  public com.google.protobuf.Parser<DeleteNotificationConfigRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest
+  public com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

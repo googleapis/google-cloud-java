@@ -53,12 +53,12 @@ public final class AssetOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/securitycenter/v1/asset.p"
-          + "roto\022\036google.cloud.securitycenter.v1\032\031go"
-          + "ogle/api/resource.proto\0323google/cloud/se"
-          + "curitycenter/v1/security_marks.proto\032\034go"
-          + "ogle/protobuf/struct.proto\032\037google/proto"
-          + "buf/timestamp.proto\032\034google/api/annotati"
-          + "ons.proto\"\222\007\n\005Asset\022\014\n\004name\030\001 \001(\t\022b\n\032sec"
+          + "roto\022\036google.cloud.securitycenter.v1\032\034go"
+          + "ogle/api/annotations.proto\032\031google/api/r"
+          + "esource.proto\0323google/cloud/securitycent"
+          + "er/v1/security_marks.proto\032\034google/proto"
+          + "buf/struct.proto\032\037google/protobuf/timest"
+          + "amp.proto\"\222\007\n\005Asset\022\014\n\004name\030\001 \001(\t\022b\n\032sec"
           + "urity_center_properties\030\002 \001(\0132>.google.c"
           + "loud.securitycenter.v1.Asset.SecurityCen"
           + "terProperties\022Z\n\023resource_properties\030\007 \003"
@@ -92,11 +92,11 @@ public final class AssetOuterClass {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.SecurityMarksOuterClass.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1_Asset_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -148,11 +148,11 @@ public final class AssetOuterClass {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.securitycenter.v1.SecurityMarksOuterClass.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
