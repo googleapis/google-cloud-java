@@ -260,7 +260,7 @@ public final class Policy implements Serializable {
         Binding binding = bindingsList.get(i);
         if (binding.getRole().equals(role.getValue())) {
           Binding.Builder bindingBuilder = binding.toBuilder();
-          ImmutableList.Builder<String> membersBuilder = ImmutableList.builder();
+          ImmutableSet.Builder<String> membersBuilder = ImmutableSet.builder();
           membersBuilder.addAll(binding.getMembers());
           membersBuilder.add(first.strValue());
           for (Identity identity : others) {
@@ -273,7 +273,7 @@ public final class Policy implements Serializable {
       }
       // Binding does not yet exist.
       Binding.Builder bindingBuilder = Binding.newBuilder().setRole(role.getValue());
-      ImmutableList.Builder<String> membersBuilder = ImmutableList.builder();
+      ImmutableSet.Builder<String> membersBuilder = ImmutableSet.builder();
       membersBuilder.add(first.strValue());
       for (Identity identity : others) {
         membersBuilder.add(identity.strValue());
@@ -432,8 +432,18 @@ public final class Policy implements Serializable {
       return false;
     }
     Policy other = (Policy) obj;
-    if (!bindingsList.equals(other.getBindingsList())) {
+    if (bindingsList == null && other.getBindingsList() == null) {
+      return true;
+    }
+    if ((bindingsList == null && other.getBindingsList() != null)
+        || bindingsList != null && other.getBindingsList() == null
+        || bindingsList.size() != other.getBindingsList().size()) {
       return false;
+    }
+    for (Binding binding : bindingsList) {
+      if (!other.getBindingsList().contains(binding)) {
+        return false;
+      }
     }
     return Objects.equals(etag, other.getEtag()) && version == other.getVersion();
   }

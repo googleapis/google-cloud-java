@@ -105,6 +105,36 @@ public class PolicyTest {
   }
 
   @Test
+  public void testPolicyOrderShouldNotMatter() {
+    Role role1 = Role.of("role1");
+    Identity identity1 = Identity.user("user1@example.com");
+    Role role2 = Role.of("role2");
+    Identity identity2 = Identity.user("user2@example.com");
+    Policy policy1 =
+        Policy.newBuilder().addIdentity(role1, identity1).addIdentity(role2, identity2).build();
+    Policy policy2 =
+        Policy.newBuilder().addIdentity(role2, identity2).addIdentity(role1, identity1).build();
+    assertEquals(policy1, policy2);
+  }
+
+  @Test
+  public void testPolicyMultipleAddIdentitiesShouldNotMatter() {
+    Role role1 = Role.of("role1");
+    Identity identity1 = Identity.user("user1@example.com");
+    Role role2 = Role.of("role2");
+    Identity identity2 = Identity.user("user2@example.com");
+    Policy policy1 =
+        Policy.newBuilder()
+            .addIdentity(role1, identity1)
+            .addIdentity(role2, identity2)
+            .addIdentity(role2, identity2)
+            .build();
+    Policy policy2 =
+        Policy.newBuilder().addIdentity(role2, identity2).addIdentity(role1, identity1).build();
+    assertEquals(policy1, policy2);
+  }
+
+  @Test
   public void testIllegalPolicies() {
     try {
       Policy.newBuilder().addIdentity(null, USER);
