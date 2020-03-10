@@ -75,25 +75,8 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public UnaryCallable<CreateSourceRequest, Source> createSourceCallable() {
-    throw new UnsupportedOperationException("Not implemented: createSourceCallable()");
-  }
-
-  public UnaryCallable<CreateFindingRequest, Finding> createFindingCallable() {
-    throw new UnsupportedOperationException("Not implemented: createFindingCallable()");
-  }
-
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
-  }
-
-  public UnaryCallable<GetOrganizationSettingsRequest, OrganizationSettings>
-      getOrganizationSettingsCallable() {
-    throw new UnsupportedOperationException("Not implemented: getOrganizationSettingsCallable()");
-  }
-
-  public UnaryCallable<GetSourceRequest, Source> getSourceCallable() {
-    throw new UnsupportedOperationException("Not implemented: getSourceCallable()");
   }
 
   public UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse> groupAssetsPagedCallable() {
@@ -111,6 +94,28 @@ public abstract class SecurityCenterStub implements BackgroundResource {
 
   public UnaryCallable<GroupFindingsRequest, GroupFindingsResponse> groupFindingsCallable() {
     throw new UnsupportedOperationException("Not implemented: groupFindingsCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<CreateSourceRequest, Source> createSourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSourceCallable()");
+  }
+
+  public UnaryCallable<CreateFindingRequest, Finding> createFindingCallable() {
+    throw new UnsupportedOperationException("Not implemented: createFindingCallable()");
+  }
+
+  public UnaryCallable<GetOrganizationSettingsRequest, OrganizationSettings>
+      getOrganizationSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getOrganizationSettingsCallable()");
+  }
+
+  public UnaryCallable<GetSourceRequest, Source> getSourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSourceCallable()");
   }
 
   public UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
@@ -154,11 +159,6 @@ public abstract class SecurityCenterStub implements BackgroundResource {
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
-  }
-
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   public UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable() {

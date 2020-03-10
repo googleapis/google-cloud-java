@@ -23,16 +23,16 @@ package com.google.cloud.securitycenter.v1;
  */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 @Deprecated
-public class SecuritymarksNames {
-  private SecuritymarksNames() {}
+public class SecurityMarksNames {
+  private SecurityMarksNames() {}
 
-  public static SecuritymarksName parse(String resourceNameString) {
+  public static SecurityMarksName parse(String resourceNameString) {
     if (AssetSecurityMarksName.isParsableFrom(resourceNameString)) {
       return AssetSecurityMarksName.parse(resourceNameString);
     }
     if (FindingSecurityMarksName.isParsableFrom(resourceNameString)) {
       return FindingSecurityMarksName.parse(resourceNameString);
     }
-    return UntypedSecuritymarksName.parse(resourceNameString);
+    return UntypedSecurityMarksName.parse(resourceNameString);
   }
 }

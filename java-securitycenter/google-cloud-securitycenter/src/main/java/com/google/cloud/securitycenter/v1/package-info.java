@@ -28,9 +28,8 @@
  * <pre>
  * <code>
  * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
- *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
- *   Source source = Source.newBuilder().build();
- *   Source response = securityCenterClient.createSource(parent, source);
+ *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
+ *   Policy response = securityCenterClient.getIamPolicy(resource);
  * }
  * </code>
  * </pre>

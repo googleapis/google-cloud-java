@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.securitycenter.v1p1beta1;
+package com.google.cloud.securitycenter.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;

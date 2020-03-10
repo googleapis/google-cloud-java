@@ -105,16 +105,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createSource to 30 seconds:
+ * <p>For example, to set the total timeout of getIamPolicy to 30 seconds:
  *
  * <pre>
  * <code>
  * SecurityCenterStubSettings.Builder securityCenterSettingsBuilder =
  *     SecurityCenterStubSettings.newBuilder();
  * securityCenterSettingsBuilder
- *     .createSourceSettings()
+ *     .getIamPolicySettings()
  *     .setRetrySettings(
- *         securityCenterSettingsBuilder.createSourceSettings().getRetrySettings().toBuilder()
+ *         securityCenterSettingsBuilder.getIamPolicySettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SecurityCenterStubSettings securityCenterSettings = securityCenterSettingsBuilder.build();
@@ -128,17 +128,19 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<CreateSourceRequest, Source> createSourceSettings;
-  private final UnaryCallSettings<CreateFindingRequest, Finding> createFindingSettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
-  private final UnaryCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
-      getOrganizationSettingsSettings;
-  private final UnaryCallSettings<GetSourceRequest, Source> getSourceSettings;
   private final PagedCallSettings<GroupAssetsRequest, GroupAssetsResponse, GroupAssetsPagedResponse>
       groupAssetsSettings;
   private final PagedCallSettings<
           GroupFindingsRequest, GroupFindingsResponse, GroupFindingsPagedResponse>
       groupFindingsSettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
+  private final UnaryCallSettings<CreateSourceRequest, Source> createSourceSettings;
+  private final UnaryCallSettings<CreateFindingRequest, Finding> createFindingSettings;
+  private final UnaryCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
+      getOrganizationSettingsSettings;
+  private final UnaryCallSettings<GetSourceRequest, Source> getSourceSettings;
   private final PagedCallSettings<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
       listAssetsSettings;
   private final PagedCallSettings<
@@ -151,8 +153,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       runAssetDiscoveryOperationSettings;
   private final UnaryCallSettings<SetFindingStateRequest, Finding> setFindingStateSettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
-  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateFindingRequest, Finding> updateFindingSettings;
   private final UnaryCallSettings<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsSettings;
@@ -160,30 +160,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private final UnaryCallSettings<UpdateSecurityMarksRequest, SecurityMarks>
       updateSecurityMarksSettings;
 
-  /** Returns the object with the settings used for calls to createSource. */
-  public UnaryCallSettings<CreateSourceRequest, Source> createSourceSettings() {
-    return createSourceSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createFinding. */
-  public UnaryCallSettings<CreateFindingRequest, Finding> createFindingSettings() {
-    return createFindingSettings;
-  }
-
   /** Returns the object with the settings used for calls to getIamPolicy. */
   public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
     return getIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to getOrganizationSettings. */
-  public UnaryCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
-      getOrganizationSettingsSettings() {
-    return getOrganizationSettingsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getSource. */
-  public UnaryCallSettings<GetSourceRequest, Source> getSourceSettings() {
-    return getSourceSettings;
   }
 
   /** Returns the object with the settings used for calls to groupAssets. */
@@ -196,6 +175,33 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   public PagedCallSettings<GroupFindingsRequest, GroupFindingsResponse, GroupFindingsPagedResponse>
       groupFindingsSettings() {
     return groupFindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSource. */
+  public UnaryCallSettings<CreateSourceRequest, Source> createSourceSettings() {
+    return createSourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createFinding. */
+  public UnaryCallSettings<CreateFindingRequest, Finding> createFindingSettings() {
+    return createFindingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getOrganizationSettings. */
+  public UnaryCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
+      getOrganizationSettingsSettings() {
+    return getOrganizationSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSource. */
+  public UnaryCallSettings<GetSourceRequest, Source> getSourceSettings() {
+    return getSourceSettings;
   }
 
   /** Returns the object with the settings used for calls to listAssets. */
@@ -236,12 +242,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
     return setIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return testIamPermissionsSettings;
   }
 
   /** Returns the object with the settings used for calls to updateFinding. */
@@ -335,13 +335,14 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   protected SecurityCenterStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    createSourceSettings = settingsBuilder.createSourceSettings().build();
-    createFindingSettings = settingsBuilder.createFindingSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
-    getOrganizationSettingsSettings = settingsBuilder.getOrganizationSettingsSettings().build();
-    getSourceSettings = settingsBuilder.getSourceSettings().build();
     groupAssetsSettings = settingsBuilder.groupAssetsSettings().build();
     groupFindingsSettings = settingsBuilder.groupFindingsSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    createSourceSettings = settingsBuilder.createSourceSettings().build();
+    createFindingSettings = settingsBuilder.createFindingSettings().build();
+    getOrganizationSettingsSettings = settingsBuilder.getOrganizationSettingsSettings().build();
+    getSourceSettings = settingsBuilder.getSourceSettings().build();
     listAssetsSettings = settingsBuilder.listAssetsSettings().build();
     listFindingsSettings = settingsBuilder.listFindingsSettings().build();
     listSourcesSettings = settingsBuilder.listSourcesSettings().build();
@@ -350,7 +351,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
         settingsBuilder.runAssetDiscoveryOperationSettings().build();
     setFindingStateSettings = settingsBuilder.setFindingStateSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
-    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateFindingSettings = settingsBuilder.updateFindingSettings().build();
     updateOrganizationSettingsSettings =
         settingsBuilder.updateOrganizationSettingsSettings().build();
@@ -641,18 +641,20 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   public static class Builder extends StubSettings.Builder<SecurityCenterStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<CreateSourceRequest, Source> createSourceSettings;
-    private final UnaryCallSettings.Builder<CreateFindingRequest, Finding> createFindingSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
-    private final UnaryCallSettings.Builder<GetOrganizationSettingsRequest, OrganizationSettings>
-        getOrganizationSettingsSettings;
-    private final UnaryCallSettings.Builder<GetSourceRequest, Source> getSourceSettings;
     private final PagedCallSettings.Builder<
             GroupAssetsRequest, GroupAssetsResponse, GroupAssetsPagedResponse>
         groupAssetsSettings;
     private final PagedCallSettings.Builder<
             GroupFindingsRequest, GroupFindingsResponse, GroupFindingsPagedResponse>
         groupFindingsSettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<CreateSourceRequest, Source> createSourceSettings;
+    private final UnaryCallSettings.Builder<CreateFindingRequest, Finding> createFindingSettings;
+    private final UnaryCallSettings.Builder<GetOrganizationSettingsRequest, OrganizationSettings>
+        getOrganizationSettingsSettings;
+    private final UnaryCallSettings.Builder<GetSourceRequest, Source> getSourceSettings;
     private final PagedCallSettings.Builder<
             ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
         listAssetsSettings;
@@ -670,8 +672,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     private final UnaryCallSettings.Builder<SetFindingStateRequest, Finding>
         setFindingStateSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
-    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<UpdateFindingRequest, Finding> updateFindingSettings;
     private final UnaryCallSettings.Builder<UpdateOrganizationSettingsRequest, OrganizationSettings>
         updateOrganizationSettingsSettings;
@@ -720,19 +720,21 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      createSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      createFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getOrganizationSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       groupAssetsSettings = PagedCallSettings.newBuilder(GROUP_ASSETS_PAGE_STR_FACT);
 
       groupFindingsSettings = PagedCallSettings.newBuilder(GROUP_FINDINGS_PAGE_STR_FACT);
+
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      createSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      createFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getOrganizationSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listAssetsSettings = PagedCallSettings.newBuilder(LIST_ASSETS_PAGE_STR_FACT);
 
@@ -748,8 +750,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateOrganizationSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -760,20 +760,20 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createSourceSettings,
-              createFindingSettings,
               getIamPolicySettings,
-              getOrganizationSettingsSettings,
-              getSourceSettings,
               groupAssetsSettings,
               groupFindingsSettings,
+              testIamPermissionsSettings,
+              createSourceSettings,
+              createFindingSettings,
+              getOrganizationSettingsSettings,
+              getSourceSettings,
               listAssetsSettings,
               listFindingsSettings,
               listSourcesSettings,
               runAssetDiscoverySettings,
               setFindingStateSettings,
               setIamPolicySettings,
-              testIamPermissionsSettings,
               updateFindingSettings,
               updateOrganizationSettingsSettings,
               updateSourceSettings,
@@ -794,27 +794,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .createSourceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .createFindingSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getOrganizationSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getSourceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -825,6 +805,31 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
       builder
           .groupFindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createSourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createFindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getOrganizationSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getSourceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -856,11 +861,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       builder
           .setIamPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -913,13 +913,14 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     protected Builder(SecurityCenterStubSettings settings) {
       super(settings);
 
-      createSourceSettings = settings.createSourceSettings.toBuilder();
-      createFindingSettings = settings.createFindingSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
-      getOrganizationSettingsSettings = settings.getOrganizationSettingsSettings.toBuilder();
-      getSourceSettings = settings.getSourceSettings.toBuilder();
       groupAssetsSettings = settings.groupAssetsSettings.toBuilder();
       groupFindingsSettings = settings.groupFindingsSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      createSourceSettings = settings.createSourceSettings.toBuilder();
+      createFindingSettings = settings.createFindingSettings.toBuilder();
+      getOrganizationSettingsSettings = settings.getOrganizationSettingsSettings.toBuilder();
+      getSourceSettings = settings.getSourceSettings.toBuilder();
       listAssetsSettings = settings.listAssetsSettings.toBuilder();
       listFindingsSettings = settings.listFindingsSettings.toBuilder();
       listSourcesSettings = settings.listSourcesSettings.toBuilder();
@@ -927,7 +928,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       runAssetDiscoveryOperationSettings = settings.runAssetDiscoveryOperationSettings.toBuilder();
       setFindingStateSettings = settings.setFindingStateSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
-      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateFindingSettings = settings.updateFindingSettings.toBuilder();
       updateOrganizationSettingsSettings = settings.updateOrganizationSettingsSettings.toBuilder();
       updateSourceSettings = settings.updateSourceSettings.toBuilder();
@@ -935,20 +935,20 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createSourceSettings,
-              createFindingSettings,
               getIamPolicySettings,
-              getOrganizationSettingsSettings,
-              getSourceSettings,
               groupAssetsSettings,
               groupFindingsSettings,
+              testIamPermissionsSettings,
+              createSourceSettings,
+              createFindingSettings,
+              getOrganizationSettingsSettings,
+              getSourceSettings,
               listAssetsSettings,
               listFindingsSettings,
               listSourcesSettings,
               runAssetDiscoverySettings,
               setFindingStateSettings,
               setIamPolicySettings,
-              testIamPermissionsSettings,
               updateFindingSettings,
               updateOrganizationSettingsSettings,
               updateSourceSettings,
@@ -971,30 +971,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to createSource. */
-    public UnaryCallSettings.Builder<CreateSourceRequest, Source> createSourceSettings() {
-      return createSourceSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createFinding. */
-    public UnaryCallSettings.Builder<CreateFindingRequest, Finding> createFindingSettings() {
-      return createFindingSettings;
-    }
-
     /** Returns the builder for the settings used for calls to getIamPolicy. */
     public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
       return getIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getOrganizationSettings. */
-    public UnaryCallSettings.Builder<GetOrganizationSettingsRequest, OrganizationSettings>
-        getOrganizationSettingsSettings() {
-      return getOrganizationSettingsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getSource. */
-    public UnaryCallSettings.Builder<GetSourceRequest, Source> getSourceSettings() {
-      return getSourceSettings;
     }
 
     /** Returns the builder for the settings used for calls to groupAssets. */
@@ -1009,6 +988,33 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             GroupFindingsRequest, GroupFindingsResponse, GroupFindingsPagedResponse>
         groupFindingsSettings() {
       return groupFindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSource. */
+    public UnaryCallSettings.Builder<CreateSourceRequest, Source> createSourceSettings() {
+      return createSourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createFinding. */
+    public UnaryCallSettings.Builder<CreateFindingRequest, Finding> createFindingSettings() {
+      return createFindingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getOrganizationSettings. */
+    public UnaryCallSettings.Builder<GetOrganizationSettingsRequest, OrganizationSettings>
+        getOrganizationSettingsSettings() {
+      return getOrganizationSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSource. */
+    public UnaryCallSettings.Builder<GetSourceRequest, Source> getSourceSettings() {
+      return getSourceSettings;
     }
 
     /** Returns the builder for the settings used for calls to listAssets. */
@@ -1053,12 +1059,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     /** Returns the builder for the settings used for calls to setIamPolicy. */
     public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
       return setIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return testIamPermissionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateFinding. */

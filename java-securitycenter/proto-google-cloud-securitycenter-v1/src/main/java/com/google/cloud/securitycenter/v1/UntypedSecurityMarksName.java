@@ -30,35 +30,35 @@ import java.util.Map;
  */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 @Deprecated
-public class UntypedSecuritymarksName extends SecuritymarksName {
+public class UntypedSecurityMarksName extends SecurityMarksName {
 
   private final String rawValue;
   private Map<String, String> valueMap;
 
-  private UntypedSecuritymarksName(String rawValue) {
+  private UntypedSecurityMarksName(String rawValue) {
     this.rawValue = Preconditions.checkNotNull(rawValue);
     this.valueMap = ImmutableMap.of("", rawValue);
   }
 
-  public static UntypedSecuritymarksName from(ResourceName resourceName) {
-    return new UntypedSecuritymarksName(resourceName.toString());
+  public static UntypedSecurityMarksName from(ResourceName resourceName) {
+    return new UntypedSecurityMarksName(resourceName.toString());
   }
 
-  public static UntypedSecuritymarksName parse(String formattedString) {
-    return new UntypedSecuritymarksName(formattedString);
+  public static UntypedSecurityMarksName parse(String formattedString) {
+    return new UntypedSecurityMarksName(formattedString);
   }
 
-  public static List<UntypedSecuritymarksName> parseList(List<String> formattedStrings) {
-    List<UntypedSecuritymarksName> list = new ArrayList<>(formattedStrings.size());
+  public static List<UntypedSecurityMarksName> parseList(List<String> formattedStrings) {
+    List<UntypedSecurityMarksName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<UntypedSecuritymarksName> values) {
+  public static List<String> toStringList(List<UntypedSecurityMarksName> values) {
     List<String> list = new ArrayList<String>(values.size());
-    for (UntypedSecuritymarksName value : values) {
+    for (UntypedSecurityMarksName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -92,8 +92,8 @@ public class UntypedSecuritymarksName extends SecuritymarksName {
     if (o == this) {
       return true;
     }
-    if (o instanceof UntypedSecuritymarksName) {
-      UntypedSecuritymarksName that = (UntypedSecuritymarksName) o;
+    if (o instanceof UntypedSecurityMarksName) {
+      UntypedSecurityMarksName that = (UntypedSecurityMarksName) o;
       return this.rawValue.equals(that.rawValue);
     }
     return false;

@@ -16,4 +16,13 @@
     <className>com/google/cloud/securitycenter/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>5001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/*Name</className>
+    <to>com/google/cloud/securitycenter/v1/*Name</to>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/*Name*</className>
+  </difference>
 </differences>
