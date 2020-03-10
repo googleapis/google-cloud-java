@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-video-intelligence/compare/v1.1.0...v1.2.0) (2020-03-10)
+
+
+### Features
+
+* **v1:** add LogoRecognition ([#92](https://www.github.com/googleapis/java-video-intelligence/issues/92)) ([8ced413](https://www.github.com/googleapis/java-video-intelligence/commit/8ced413b48fd5aa7cf293aced1a0adb4cbde8249))
+
+
+### Documentation
+
+* **regen:** fix relative urls in generated documentation ([#91](https://www.github.com/googleapis/java-video-intelligence/issues/91)) ([ee1bf06](https://www.github.com/googleapis/java-video-intelligence/commit/ee1bf06dc7d0465ada57e8482677eac7ab9c410a))
+* **regen:** update sample code to set total timeout, add API client header test ([4268dd9](https://www.github.com/googleapis/java-video-intelligence/commit/4268dd938859ba847ed8c31548e8869277ef75ea))
+
+
+### Dependencies
+
+* update core dependencies to v1.54.0 ([#86](https://www.github.com/googleapis/java-video-intelligence/issues/86)) ([6a66df3](https://www.github.com/googleapis/java-video-intelligence/commit/6a66df3df2bb7857addf1fdd90a6bb5e13e7b7d5))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([65d53b5](https://www.github.com/googleapis/java-video-intelligence/commit/65d53b551fa1101cca6f6c1aaccf5db5073ad699))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([81d04ff](https://www.github.com/googleapis/java-video-intelligence/commit/81d04ff1251e659b60c1598d1c2839a9d1ec6192))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([192dabf](https://www.github.com/googleapis/java-video-intelligence/commit/192dabf17db7290fb07067989541b2153aaf2a6a))
+
 ## [1.1.0](https://www.github.com/googleapis/java-video-intelligence/compare/v1.0.0...v1.1.0) (2020-02-04)
 
 
