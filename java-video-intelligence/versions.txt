@@ -1,15 +1,15 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-video-intelligence-v1p3beta1:0.84.0:0.84.0
-proto-google-cloud-video-intelligence-v1beta2:0.84.0:0.84.0
-proto-google-cloud-video-intelligence-v1p1beta1:0.84.0:0.84.0
-proto-google-cloud-video-intelligence-v1:1.2.0:1.2.0
-proto-google-cloud-video-intelligence-v1p2beta1:0.84.0:0.84.0
-grpc-google-cloud-video-intelligence-v1p1beta1:0.84.0:0.84.0
-grpc-google-cloud-video-intelligence-v1beta2:0.84.0:0.84.0
-grpc-google-cloud-video-intelligence-v1:1.2.0:1.2.0
-grpc-google-cloud-video-intelligence-v1p2beta1:0.84.0:0.84.0
-grpc-google-cloud-video-intelligence-v1p3beta1:0.84.0:0.84.0
-google-cloud-video-intelligence:1.2.0:1.2.0
-google-cloud-video-intelligence-bom:1.2.0:1.2.0
+proto-google-cloud-video-intelligence-v1p3beta1:0.84.0:0.84.1-SNAPSHOT
+proto-google-cloud-video-intelligence-v1beta2:0.84.0:0.84.1-SNAPSHOT
+proto-google-cloud-video-intelligence-v1p1beta1:0.84.0:0.84.1-SNAPSHOT
+proto-google-cloud-video-intelligence-v1:1.2.0:1.2.1-SNAPSHOT
+proto-google-cloud-video-intelligence-v1p2beta1:0.84.0:0.84.1-SNAPSHOT
+grpc-google-cloud-video-intelligence-v1p1beta1:0.84.0:0.84.1-SNAPSHOT
+grpc-google-cloud-video-intelligence-v1beta2:0.84.0:0.84.1-SNAPSHOT
+grpc-google-cloud-video-intelligence-v1:1.2.0:1.2.1-SNAPSHOT
+grpc-google-cloud-video-intelligence-v1p2beta1:0.84.0:0.84.1-SNAPSHOT
+grpc-google-cloud-video-intelligence-v1p3beta1:0.84.0:0.84.1-SNAPSHOT
+google-cloud-video-intelligence:1.2.0:1.2.1-SNAPSHOT
+google-cloud-video-intelligence-bom:1.2.0:1.2.1-SNAPSHOT
