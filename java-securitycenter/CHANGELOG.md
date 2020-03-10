@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.120.0](https://www.github.com/googleapis/java-securitycenter/compare/v0.119.0...v0.120.0) (2020-03-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* update the Iam methods to use ResourceName (#74)
+
+### Features
+
+* update the Iam methods to use ResourceName ([#74](https://www.github.com/googleapis/java-securitycenter/issues/74)) ([cc5c709](https://www.github.com/googleapis/java-securitycenter/commit/cc5c709eb35228fe8093b611ef8ede4f2bf76f7c))
+* **v1:** add Notifications API ([#78](https://www.github.com/googleapis/java-securitycenter/issues/78)) ([7909b8e](https://www.github.com/googleapis/java-securitycenter/commit/7909b8e59bbfcdf96512034298e9315e9603d2cd))
+
+
+### Dependencies
+
+* update core dependencies to v1.54.0 ([#76](https://www.github.com/googleapis/java-securitycenter/issues/76)) ([a0fdb5c](https://www.github.com/googleapis/java-securitycenter/commit/a0fdb5c96c17ceea535cf935b2e8d26052936a02))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([ad734b5](https://www.github.com/googleapis/java-securitycenter/commit/ad734b57d316e70f338069912ca1bc3599935f24))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([6a6d921](https://www.github.com/googleapis/java-securitycenter/commit/6a6d9214f86d63058360d55cf511cd29c398d77b))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([#75](https://www.github.com/googleapis/java-securitycenter/issues/75)) ([29bdbae](https://www.github.com/googleapis/java-securitycenter/commit/29bdbae5c7c7227a3364f2239dcc52d48c7b8e50))
+
 ## [0.119.0](https://www.github.com/googleapis/java-securitycenter/compare/v0.118.1...v0.119.0) (2020-02-12)
 
 
