@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.93.2](https://www.github.com/googleapis/java-core/compare/v1.93.1...v1.93.2) (2020-03-10)
+
+
+### Bug Fixes
+
+* verify correctness of map -> list equality ([#174](https://www.github.com/googleapis/java-core/issues/174)) ([f45d913](https://www.github.com/googleapis/java-core/commit/f45d9131d5d2bbb2cc4cec67ebe82054fda58f55))
+
 ### [1.93.1](https://www.github.com/googleapis/java-core/compare/v1.93.0...v1.93.1) (2020-02-28)
 
 
