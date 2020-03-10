@@ -34,7 +34,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Base stub class for Google Cloud Natural Language API.
+ * Base stub class for Cloud Natural Language API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */

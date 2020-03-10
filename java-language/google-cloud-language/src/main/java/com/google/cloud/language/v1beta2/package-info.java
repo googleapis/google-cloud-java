@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud Natural Language API.
+ * A client to Cloud Natural Language API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

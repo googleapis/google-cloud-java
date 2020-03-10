@@ -31,7 +31,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/language/v1beta2/language_service.proto")
 public final class LanguageServiceGrpc {
 
@@ -40,30 +40,20 @@ public final class LanguageServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.language.v1beta2.LanguageService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getAnalyzeSentimentMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.language.v1beta2.AnalyzeSentimentRequest,
-          com.google.cloud.language.v1beta2.AnalyzeSentimentResponse>
-      METHOD_ANALYZE_SENTIMENT = getAnalyzeSentimentMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.language.v1beta2.AnalyzeSentimentRequest,
           com.google.cloud.language.v1beta2.AnalyzeSentimentResponse>
       getAnalyzeSentimentMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnalyzeSentiment",
+      requestType = com.google.cloud.language.v1beta2.AnalyzeSentimentRequest.class,
+      responseType = com.google.cloud.language.v1beta2.AnalyzeSentimentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.language.v1beta2.AnalyzeSentimentRequest,
           com.google.cloud.language.v1beta2.AnalyzeSentimentResponse>
       getAnalyzeSentimentMethod() {
-    return getAnalyzeSentimentMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.language.v1beta2.AnalyzeSentimentRequest,
-          com.google.cloud.language.v1beta2.AnalyzeSentimentResponse>
-      getAnalyzeSentimentMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.language.v1beta2.AnalyzeSentimentRequest,
             com.google.cloud.language.v1beta2.AnalyzeSentimentResponse>
@@ -78,9 +68,7 @@ public final class LanguageServiceGrpc {
                           com.google.cloud.language.v1beta2.AnalyzeSentimentResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.language.v1beta2.LanguageService", "AnalyzeSentiment"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AnalyzeSentiment"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -99,30 +87,20 @@ public final class LanguageServiceGrpc {
     return getAnalyzeSentimentMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getAnalyzeEntitiesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest,
-          com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse>
-      METHOD_ANALYZE_ENTITIES = getAnalyzeEntitiesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest,
           com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse>
       getAnalyzeEntitiesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnalyzeEntities",
+      requestType = com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest.class,
+      responseType = com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest,
           com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse>
       getAnalyzeEntitiesMethod() {
-    return getAnalyzeEntitiesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest,
-          com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse>
-      getAnalyzeEntitiesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest,
             com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse>
@@ -137,9 +115,7 @@ public final class LanguageServiceGrpc {
                           com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.language.v1beta2.LanguageService", "AnalyzeEntities"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AnalyzeEntities"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -158,30 +134,20 @@ public final class LanguageServiceGrpc {
     return getAnalyzeEntitiesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getAnalyzeEntitySentimentMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest,
-          com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse>
-      METHOD_ANALYZE_ENTITY_SENTIMENT = getAnalyzeEntitySentimentMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest,
           com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse>
       getAnalyzeEntitySentimentMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnalyzeEntitySentiment",
+      requestType = com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest.class,
+      responseType = com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest,
           com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse>
       getAnalyzeEntitySentimentMethod() {
-    return getAnalyzeEntitySentimentMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest,
-          com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse>
-      getAnalyzeEntitySentimentMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest,
             com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse>
@@ -199,9 +165,7 @@ public final class LanguageServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.language.v1beta2.LanguageService",
-                              "AnalyzeEntitySentiment"))
+                          generateFullMethodName(SERVICE_NAME, "AnalyzeEntitySentiment"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -220,30 +184,20 @@ public final class LanguageServiceGrpc {
     return getAnalyzeEntitySentimentMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getAnalyzeSyntaxMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest,
-          com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse>
-      METHOD_ANALYZE_SYNTAX = getAnalyzeSyntaxMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest,
           com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse>
       getAnalyzeSyntaxMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnalyzeSyntax",
+      requestType = com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest.class,
+      responseType = com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest,
           com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse>
       getAnalyzeSyntaxMethod() {
-    return getAnalyzeSyntaxMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest,
-          com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse>
-      getAnalyzeSyntaxMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest,
             com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse>
@@ -258,9 +212,7 @@ public final class LanguageServiceGrpc {
                           com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.language.v1beta2.LanguageService", "AnalyzeSyntax"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AnalyzeSyntax"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -279,30 +231,20 @@ public final class LanguageServiceGrpc {
     return getAnalyzeSyntaxMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getClassifyTextMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.language.v1beta2.ClassifyTextRequest,
-          com.google.cloud.language.v1beta2.ClassifyTextResponse>
-      METHOD_CLASSIFY_TEXT = getClassifyTextMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.language.v1beta2.ClassifyTextRequest,
           com.google.cloud.language.v1beta2.ClassifyTextResponse>
       getClassifyTextMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ClassifyText",
+      requestType = com.google.cloud.language.v1beta2.ClassifyTextRequest.class,
+      responseType = com.google.cloud.language.v1beta2.ClassifyTextResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.language.v1beta2.ClassifyTextRequest,
           com.google.cloud.language.v1beta2.ClassifyTextResponse>
       getClassifyTextMethod() {
-    return getClassifyTextMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.language.v1beta2.ClassifyTextRequest,
-          com.google.cloud.language.v1beta2.ClassifyTextResponse>
-      getClassifyTextMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.language.v1beta2.ClassifyTextRequest,
             com.google.cloud.language.v1beta2.ClassifyTextResponse>
@@ -317,9 +259,7 @@ public final class LanguageServiceGrpc {
                           com.google.cloud.language.v1beta2.ClassifyTextResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.language.v1beta2.LanguageService", "ClassifyText"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ClassifyText"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -338,30 +278,20 @@ public final class LanguageServiceGrpc {
     return getClassifyTextMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getAnnotateTextMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.language.v1beta2.AnnotateTextRequest,
-          com.google.cloud.language.v1beta2.AnnotateTextResponse>
-      METHOD_ANNOTATE_TEXT = getAnnotateTextMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.language.v1beta2.AnnotateTextRequest,
           com.google.cloud.language.v1beta2.AnnotateTextResponse>
       getAnnotateTextMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnnotateText",
+      requestType = com.google.cloud.language.v1beta2.AnnotateTextRequest.class,
+      responseType = com.google.cloud.language.v1beta2.AnnotateTextResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.language.v1beta2.AnnotateTextRequest,
           com.google.cloud.language.v1beta2.AnnotateTextResponse>
       getAnnotateTextMethod() {
-    return getAnnotateTextMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.language.v1beta2.AnnotateTextRequest,
-          com.google.cloud.language.v1beta2.AnnotateTextResponse>
-      getAnnotateTextMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.language.v1beta2.AnnotateTextRequest,
             com.google.cloud.language.v1beta2.AnnotateTextResponse>
@@ -376,9 +306,7 @@ public final class LanguageServiceGrpc {
                           com.google.cloud.language.v1beta2.AnnotateTextResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.language.v1beta2.LanguageService", "AnnotateText"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AnnotateText"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -435,7 +363,7 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1beta2.AnalyzeSentimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.AnalyzeSentimentResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAnalyzeSentimentMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getAnalyzeSentimentMethod(), responseObserver);
     }
 
     /**
@@ -451,7 +379,7 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAnalyzeEntitiesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getAnalyzeEntitiesMethod(), responseObserver);
     }
 
     /**
@@ -467,7 +395,7 @@ public final class LanguageServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAnalyzeEntitySentimentMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getAnalyzeEntitySentimentMethod(), responseObserver);
     }
 
     /**
@@ -483,7 +411,7 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAnalyzeSyntaxMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getAnalyzeSyntaxMethod(), responseObserver);
     }
 
     /**
@@ -497,7 +425,7 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1beta2.ClassifyTextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.ClassifyTextResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getClassifyTextMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getClassifyTextMethod(), responseObserver);
     }
 
     /**
@@ -512,49 +440,49 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1beta2.AnnotateTextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.AnnotateTextResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAnnotateTextMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getAnnotateTextMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getAnalyzeSentimentMethodHelper(),
+              getAnalyzeSentimentMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.language.v1beta2.AnalyzeSentimentRequest,
                       com.google.cloud.language.v1beta2.AnalyzeSentimentResponse>(
                       this, METHODID_ANALYZE_SENTIMENT)))
           .addMethod(
-              getAnalyzeEntitiesMethodHelper(),
+              getAnalyzeEntitiesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest,
                       com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse>(
                       this, METHODID_ANALYZE_ENTITIES)))
           .addMethod(
-              getAnalyzeEntitySentimentMethodHelper(),
+              getAnalyzeEntitySentimentMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest,
                       com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse>(
                       this, METHODID_ANALYZE_ENTITY_SENTIMENT)))
           .addMethod(
-              getAnalyzeSyntaxMethodHelper(),
+              getAnalyzeSyntaxMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest,
                       com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse>(
                       this, METHODID_ANALYZE_SYNTAX)))
           .addMethod(
-              getClassifyTextMethodHelper(),
+              getClassifyTextMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.language.v1beta2.ClassifyTextRequest,
                       com.google.cloud.language.v1beta2.ClassifyTextResponse>(
                       this, METHODID_CLASSIFY_TEXT)))
           .addMethod(
-              getAnnotateTextMethodHelper(),
+              getAnnotateTextMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.language.v1beta2.AnnotateTextRequest,
@@ -599,7 +527,7 @@ public final class LanguageServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.AnalyzeSentimentResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getAnalyzeSentimentMethodHelper(), getCallOptions()),
+          getChannel().newCall(getAnalyzeSentimentMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -618,7 +546,7 @@ public final class LanguageServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getAnalyzeEntitiesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getAnalyzeEntitiesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -637,7 +565,7 @@ public final class LanguageServiceGrpc {
                 com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getAnalyzeEntitySentimentMethodHelper(), getCallOptions()),
+          getChannel().newCall(getAnalyzeEntitySentimentMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -656,7 +584,7 @@ public final class LanguageServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getAnalyzeSyntaxMethodHelper(), getCallOptions()),
+          getChannel().newCall(getAnalyzeSyntaxMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -673,7 +601,7 @@ public final class LanguageServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.ClassifyTextResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getClassifyTextMethodHelper(), getCallOptions()),
+          getChannel().newCall(getClassifyTextMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -691,7 +619,7 @@ public final class LanguageServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.AnnotateTextResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getAnnotateTextMethodHelper(), getCallOptions()),
+          getChannel().newCall(getAnnotateTextMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -731,7 +659,7 @@ public final class LanguageServiceGrpc {
     public com.google.cloud.language.v1beta2.AnalyzeSentimentResponse analyzeSentiment(
         com.google.cloud.language.v1beta2.AnalyzeSentimentRequest request) {
       return blockingUnaryCall(
-          getChannel(), getAnalyzeSentimentMethodHelper(), getCallOptions(), request);
+          getChannel(), getAnalyzeSentimentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -745,8 +673,7 @@ public final class LanguageServiceGrpc {
      */
     public com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse analyzeEntities(
         com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getAnalyzeEntitiesMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getAnalyzeEntitiesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -760,7 +687,7 @@ public final class LanguageServiceGrpc {
     public com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse analyzeEntitySentiment(
         com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest request) {
       return blockingUnaryCall(
-          getChannel(), getAnalyzeEntitySentimentMethodHelper(), getCallOptions(), request);
+          getChannel(), getAnalyzeEntitySentimentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -774,8 +701,7 @@ public final class LanguageServiceGrpc {
      */
     public com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse analyzeSyntax(
         com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getAnalyzeSyntaxMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getAnalyzeSyntaxMethod(), getCallOptions(), request);
     }
 
     /**
@@ -787,8 +713,7 @@ public final class LanguageServiceGrpc {
      */
     public com.google.cloud.language.v1beta2.ClassifyTextResponse classifyText(
         com.google.cloud.language.v1beta2.ClassifyTextRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getClassifyTextMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getClassifyTextMethod(), getCallOptions(), request);
     }
 
     /**
@@ -801,8 +726,7 @@ public final class LanguageServiceGrpc {
      */
     public com.google.cloud.language.v1beta2.AnnotateTextResponse annotateText(
         com.google.cloud.language.v1beta2.AnnotateTextRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getAnnotateTextMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getAnnotateTextMethod(), getCallOptions(), request);
     }
   }
 
@@ -841,7 +765,7 @@ public final class LanguageServiceGrpc {
             com.google.cloud.language.v1beta2.AnalyzeSentimentResponse>
         analyzeSentiment(com.google.cloud.language.v1beta2.AnalyzeSentimentRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getAnalyzeSentimentMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getAnalyzeSentimentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -857,7 +781,7 @@ public final class LanguageServiceGrpc {
             com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse>
         analyzeEntities(com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getAnalyzeEntitiesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getAnalyzeEntitiesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -873,7 +797,7 @@ public final class LanguageServiceGrpc {
         analyzeEntitySentiment(
             com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getAnalyzeEntitySentimentMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getAnalyzeEntitySentimentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -889,7 +813,7 @@ public final class LanguageServiceGrpc {
             com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse>
         analyzeSyntax(com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getAnalyzeSyntaxMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getAnalyzeSyntaxMethod(), getCallOptions()), request);
     }
 
     /**
@@ -903,7 +827,7 @@ public final class LanguageServiceGrpc {
             com.google.cloud.language.v1beta2.ClassifyTextResponse>
         classifyText(com.google.cloud.language.v1beta2.ClassifyTextRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getClassifyTextMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getClassifyTextMethod(), getCallOptions()), request);
     }
 
     /**
@@ -918,7 +842,7 @@ public final class LanguageServiceGrpc {
             com.google.cloud.language.v1beta2.AnnotateTextResponse>
         annotateText(com.google.cloud.language.v1beta2.AnnotateTextRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getAnnotateTextMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getAnnotateTextMethod(), getCallOptions()), request);
     }
   }
 
@@ -1049,12 +973,12 @@ public final class LanguageServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new LanguageServiceFileDescriptorSupplier())
-                      .addMethod(getAnalyzeSentimentMethodHelper())
-                      .addMethod(getAnalyzeEntitiesMethodHelper())
-                      .addMethod(getAnalyzeEntitySentimentMethodHelper())
-                      .addMethod(getAnalyzeSyntaxMethodHelper())
-                      .addMethod(getClassifyTextMethodHelper())
-                      .addMethod(getAnnotateTextMethodHelper())
+                      .addMethod(getAnalyzeSentimentMethod())
+                      .addMethod(getAnalyzeEntitiesMethod())
+                      .addMethod(getAnalyzeEntitySentimentMethod())
+                      .addMethod(getAnalyzeSyntaxMethod())
+                      .addMethod(getClassifyTextMethod())
+                      .addMethod(getAnnotateTextMethod())
                       .build();
         }
       }
