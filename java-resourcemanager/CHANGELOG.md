@@ -1,5 +1,16 @@
 # Changelog
 
+### [0.117.2](https://www.github.com/googleapis/java-resourcemanager/compare/v0.117.1...v0.117.2) (2020-03-10)
+
+
+### Dependencies
+
+* update core dependencies ([#76](https://www.github.com/googleapis/java-resourcemanager/issues/76)) ([c5a311d](https://www.github.com/googleapis/java-resourcemanager/commit/c5a311d468c2e99d542dcdb3e83d0eb631ac5373))
+* update dependency com.google.api-client:google-api-client-bom to v1.30.9 ([#87](https://www.github.com/googleapis/java-resourcemanager/issues/87)) ([8c347da](https://www.github.com/googleapis/java-resourcemanager/commit/8c347da5c796179ef1c6a0de5b4d4cf705f906b1))
+* update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20200210-1.30.9 ([#78](https://www.github.com/googleapis/java-resourcemanager/issues/78)) ([d6a96f6](https://www.github.com/googleapis/java-resourcemanager/commit/d6a96f62c88f7ae561457ce819cf09b008e396d9))
+* update dependency com.google.http-client:google-http-client-bom to v1.34.2 ([db8297b](https://www.github.com/googleapis/java-resourcemanager/commit/db8297bb29dcc4ff352416b33464f664ad44311c))
+* update dependency com.google.protobuf:protobuf-bom to v3.11.4 ([00e729f](https://www.github.com/googleapis/java-resourcemanager/commit/00e729f1e19ca55ba1328f79ddab0bb0e5286ea0))
+
 ### [0.117.1](https://www.github.com/googleapis/java-resourcemanager/compare/v0.117.0...v0.117.1) (2020-02-04)
 
 
