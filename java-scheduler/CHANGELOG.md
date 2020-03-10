@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.22.3](https://www.github.com/googleapis/java-scheduler/compare/v1.22.2...v1.22.3) (2020-03-09)
+
+
+### Dependencies
+
+* update core libraries ([#74](https://www.github.com/googleapis/java-scheduler/issues/74)) ([c19c191](https://www.github.com/googleapis/java-scheduler/commit/c19c1919af84cc3d700f2cd99e147384925bd5cc))
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([df0d394](https://www.github.com/googleapis/java-scheduler/commit/df0d394b67da569e735d2a4aa90fbf20435bbdae))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.103.0 ([#68](https://www.github.com/googleapis/java-scheduler/issues/68)) ([49d4acd](https://www.github.com/googleapis/java-scheduler/commit/49d4acd7da343af58a9dc897a54c752f926f7618))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([fc62fd7](https://www.github.com/googleapis/java-scheduler/commit/fc62fd702b6328af5fc9f31cb5e2379bfadf3bfc))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([95032d9](https://www.github.com/googleapis/java-scheduler/commit/95032d94a3075405cf50232bf00e293b9a050022))
+
 ### [1.22.2](https://www.github.com/googleapis/java-scheduler/compare/v1.22.1...v1.22.2) (2020-02-05)
 
 
