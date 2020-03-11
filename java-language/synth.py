@@ -20,12 +20,9 @@ service = 'language'
 versions = ['v1', 'v1beta2']
 
 for version in versions:
-  library = java.bazel_library(
+  java.bazel_library(
       service=service,
       version=version,
-      bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
   )
 
-java.common_templates(excludes=[
-    'README.md',
-])
+java.common_templates()
