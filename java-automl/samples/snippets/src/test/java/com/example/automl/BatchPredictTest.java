@@ -83,10 +83,10 @@ public class BatchPredictTest {
       BatchPredict.batchPredict(PROJECT_ID, MODEL_ID, inputUri, outputUri);
       String got = bout.toString();
       assertThat(got)
-          .contains("The model is either not found or not supported for prediction yet.");
+          .contains("does not exist");
     } catch (IOException | ExecutionException | InterruptedException e) {
       assertThat(e.getMessage())
-          .contains("The model is either not found or not supported for prediction yet.");
+          .contains("does not exist");
     }
   }
 }
