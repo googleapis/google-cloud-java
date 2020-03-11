@@ -1,0 +1,112 @@
+custom_content: |
+  #### Creating an authorized service object
+  To make authenticated requests to Google Cloud Compute Engine, you must create a service object with
+  credentials. You can then make API calls by calling methods on the Compute service object. The
+  simplest way to authenticate is to use [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
+  These credentials are automatically inferred from your environment, so you only need the following
+  code to create your service object:
+
+  ```java
+  import com.google.api.gax.core.FixedCredentialsProvider;
+  import com.google.auth.Credentials;
+  import com.google.auth.oauth2.GoogleCredentials;
+  import com.google.cloud.compute.v1.AddressClient;
+  import com.google.cloud.compute.v1.AddressSettings;
+
+  Credentials myCredentials = GoogleCredentials.getApplicationDefault();
+      String myEndpoint = AddressSettings.getDefaultEndpoint();
+
+      AddressSettings addressSettings =
+          AddressSettings.newBuilder()
+              .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+              .setTransportChannelProvider(
+                  AddressSettings.defaultHttpJsonTransportProviderBuilder()
+                      .setEndpoint(myEndpoint)
+                      .build())
+              .build();
+      return AddressClient.create(addressSettings);
+  ```
+
+  For other authentication options, see the [Authentication](https://github.com/googleapis/google-cloud-java#authentication)
+  page.
+
+  #### Creating a region IP address
+  An external region IP address can be associated to a Google Compute Engine instance to communicate
+  with instances in different regions or to communicate with the instance from ouside of Compute
+  Engine. In this code snippet, we will create a new external region address.
+
+  Add the following imports at the top of your file:
+
+  ```java
+  import com.google.cloud.compute.v1.InsertAddressHttpRequest;
+  import com.google.cloud.compute.v1.Operation;
+  import com.google.cloud.compute.v1.ProjectRegionAddressName;
+  ```
+
+  Then add the following code to create an address. Most Compute Engine calls return an `Operation`
+  object that can be used to wait for operation completion and to check whether operation failed or
+  succeeded:
+
+  ```java
+  ProjectRegionName region = ProjectRegionName.of(PROJECT_NAME, REGION);
+  Address address = Address.newBuilder().build();
+  InsertAddressHttpRequest request =
+      InsertAddressHttpRequest.newBuilder()
+          .setRegion(region.toString())
+          .setAddressResource(address)
+          .build();
+
+  Operation response = client.insertAddress(request);
+  if (operation.getError() == null) {
+    System.out.println("Address " + addressId + " was successfully created");
+  } else {
+    // inspect operation.getError()
+    throw new RuntimeException("Address creation failed");
+  }
+  ```
+
+  #### Creating a persistent disk
+  A persistent disk can be used as primary storage for your virtual machine instances. Persistent
+  disks can be created empty, from a disk image or from a disk snapshot. Compute Engine offers
+  [publicly-available images](https://cloud.google.com/compute/docs/operating-systems/) of certain
+  operating systems that you can use. In this code snippet, we will create a new persistent disk from
+  a publicly-available image.
+
+  Add the following imports at the top of your file:
+
+  ```java
+  import com.google.api.core.ApiFuture;
+  import com.google.cloud.compute.v1.Disk;
+  import com.google.cloud.compute.v1.DiskClient;
+  import com.google.cloud.compute.v1.InsertDiskHttpRequest;
+  import com.google.cloud.compute.v1.Operation;
+  import com.google.cloud.compute.v1.ProjectZoneName;
+  ```
+
+  Then add the following code to create a disk and wait for disk creation to terminate.
+
+  ```java
+  ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+  Disk diskResource = Disk.newBuilder().build();
+  InsertDiskHttpRequest request = InsertDiskHttpRequest.newBuilder()
+     .setZone(zone.toString())
+         .setDiskResource(diskResource)
+         .build();
+  ApiFuture<Operation> future = client.insertDiskCallable().futureCall(request);
+  Operation response;
+  try {
+    response = future.get();
+  } catch (InterruptedException | ExecutionException e) {
+    // inspect operation.getError()
+    throw new RuntimeException("Disk creation failed");
+  }
+  ```
+
+  #### Complete source code
+
+  In
+  [ComputeExample.java](https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/v1/ComputeExample.java)
+  we put together all the code shown above into one program. The program assumes that you are
+  running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
+  the code from the main method to your application's servlet class and change the print statements to
+  display on your webpage.
