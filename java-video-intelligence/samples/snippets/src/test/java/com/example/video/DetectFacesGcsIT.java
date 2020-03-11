@@ -45,6 +45,6 @@ public class DetectFacesGcsIT {
   public void testDetectFacesGcs() throws Exception {
     DetectFacesGcs.detectFacesGcs("gs://cloud-samples-data/video/googlework_short.mp4");
     String got = bout.toString();
-    assertThat(got).contains("glasses");
+    assertThat(got).contains("Attribute");
   }
 }

@@ -46,6 +46,6 @@ public class DetectPersonIT {
   public void testDetectPerson() throws Exception {
     DetectPerson.detectPerson("resources/googlework_short.mp4");
     String got = bout.toString();
-    assertThat(got).contains("Hair");
+    assertThat(got).contains("Landmark");
   }
 }

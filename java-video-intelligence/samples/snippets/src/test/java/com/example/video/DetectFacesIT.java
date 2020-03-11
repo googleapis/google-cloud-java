@@ -46,6 +46,6 @@ public class DetectFacesIT {
   public void testDetectFaces() throws Exception {
     DetectFaces.detectFaces("resources/googlework_short.mp4");
     String got = bout.toString();
-    assertThat(got).contains("glasses");
+    assertThat(got).contains("Attribute");
   }
 }

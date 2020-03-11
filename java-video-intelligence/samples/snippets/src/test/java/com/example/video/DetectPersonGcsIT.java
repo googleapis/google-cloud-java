@@ -46,6 +46,6 @@ public class DetectPersonGcsIT {
   public void testDetectPersonGcs() throws Exception {
     DetectPersonGcs.detectPersonGcs("gs://cloud-samples-data/video/googlework_short.mp4");
     String got = bout.toString();
-    assertThat(got).contains("Hair");
+    assertThat(got).contains("Landmark");
   }
 }
