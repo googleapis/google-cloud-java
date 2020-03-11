@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.33.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.32.1...v0.33.0) (2020-03-11)
+
+
+### Features
+
+* add ListEntryGroups method, add http bindings to support entry group tagging ([#85](https://www.github.com/googleapis/java-datacatalog/issues/85)) ([fd021e7](https://www.github.com/googleapis/java-datacatalog/commit/fd021e7d4ff9a092bdd7dc238fa9c46c91269ffc))
+* add listEntryGroups, listEntries to v1beta1 client ([#87](https://www.github.com/googleapis/java-datacatalog/issues/87)) ([2d98e84](https://www.github.com/googleapis/java-datacatalog/commit/2d98e8407ff95bd4f3fd7c9674dc8c245b7861c3))
+
+
+### Dependencies
+
+* update core dependencies ([#104](https://www.github.com/googleapis/java-datacatalog/issues/104)) ([b0321da](https://www.github.com/googleapis/java-datacatalog/commit/b0321da002a22edd6302c70c78cc1a1579b0a4c2))
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([1a5f492](https://www.github.com/googleapis/java-datacatalog/commit/1a5f492420c08133cbf77b13b652121af2bfdc2f))
+* update dependency com.google.cloud:google-cloud-core to v1.93.1 ([#106](https://www.github.com/googleapis/java-datacatalog/issues/106)) ([164f3a4](https://www.github.com/googleapis/java-datacatalog/commit/164f3a4d5785e772d6e509844fcfd3ab22271046))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([366fd61](https://www.github.com/googleapis/java-datacatalog/commit/366fd61c23934eee9342300179c307e47fcf7e2d))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([d78190f](https://www.github.com/googleapis/java-datacatalog/commit/d78190f61e38fe4c934bdf730bb7d34d1dfe3e00))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([a9749b3](https://www.github.com/googleapis/java-datacatalog/commit/a9749b304fda1340d659e1c551d33604773d2962))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([a078590](https://www.github.com/googleapis/java-datacatalog/commit/a078590a3e9f31157b31318188da60f772e30f52))
+
 ### [0.32.1](https://www.github.com/googleapis/java-datacatalog/compare/v0.32.0...v0.32.1) (2020-02-04)
 
 
