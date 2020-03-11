@@ -37,40 +37,27 @@ get_grafeas_code = """
 
 
 for version in versions:
-  library = gapic.java_library(
+  library = java.gapic_library(
       service=service,
       version=version,
-      config_path=config_pattern.format(version=version),
-      artman_output_name='')
+      config_pattern=config_pattern,
+  )
 
   if version == 'v1':
       # add GrafeasClient import
       s.replace(
-          library / f'gapic-google-cloud-{service}-{version}/src/**/ContainerAnalysisClient.java',
+          f'google-cloud-{service}/src/main/java/com/google/cloud/devtools/containeranalysis/{version}/ContainerAnalysisClient.java',
           'import com.google.iam.v1.TestIamPermissionsResponse;',
           'import com.google.iam.v1.TestIamPermissionsResponse;\nimport io.grafeas.v1.GrafeasClient;'
       )
 
       # add getGrafeasClient()
       s.replace(
-          library / f'gapic-google-cloud-{service}-{version}/src/**/ContainerAnalysisClient.java',
+          f'google-cloud-{service}/src/main/java/com/google/cloud/devtools/containeranalysis/{version}/ContainerAnalysisClient.java',
           r'(\s+private final ContainerAnalysisStub stub;.*)',
           f'\g<1>{get_grafeas_code}'
       )
-
-  package_name = f'com.google.{service}.{version}'
-  java.fix_proto_headers(library / f'proto-google-cloud-{service}-{version}')
-  java.fix_grpc_headers(library / f'grpc-google-cloud-{service}-{version}', package_name)
-  java.fix_grpc_headers(library / f'grpc-google-cloud-{service}-{version}', f'io.grafeas.{version}')
-
-
-  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', f'google-cloud-{service}/src')
-  s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'grpc-google-cloud-{service}-{version}/src')
-  s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'proto-google-cloud-{service}-{version}/src')
-
-  java.format_code(f'google-cloud-{service}/src')
-  java.format_code(f'grpc-google-cloud-{service}-{version}/src')
-  java.format_code(f'proto-google-cloud-{service}-{version}/src')
+      java.format_code('google-cloud-containeranalysis/src')
 
 java.common_templates()
 
