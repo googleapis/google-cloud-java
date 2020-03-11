@@ -1,5 +1,27 @@
 # Changelog
 
+### [0.119.2](https://www.github.com/googleapis/java-containeranalysis/compare/v0.119.1...v0.119.2) (2020-03-11)
+
+
+### Bug Fixes
+
+* undeprecate resource name classes until multi-pattern resources are available ([#81](https://www.github.com/googleapis/java-containeranalysis/issues/81)) ([552f4dd](https://www.github.com/googleapis/java-containeranalysis/commit/552f4dd67ea0de9c9994b3eb7d2e8cf4be5f9c8c))
+
+
+### Dependencies
+
+* update core dependencies to v1.54.0 ([#78](https://www.github.com/googleapis/java-containeranalysis/issues/78)) ([073714c](https://www.github.com/googleapis/java-containeranalysis/commit/073714c2f9d603adf1c044c5c0733ab5fb3a03c7))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([6ebbfc3](https://www.github.com/googleapis/java-containeranalysis/commit/6ebbfc37cdfdd774feee4976d55649c427a5fb94))
+* update dependency com.google.protobuf:protobuf-java-util to v3.11.4 ([#69](https://www.github.com/googleapis/java-containeranalysis/issues/69)) ([0c9c542](https://www.github.com/googleapis/java-containeranalysis/commit/0c9c542b68792ba7eff9c6bc791d1a6c62452cbb))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([d853e83](https://www.github.com/googleapis/java-containeranalysis/commit/d853e83c8b8ffc992dbb429683d38dd3076d34d2))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([113bc0c](https://www.github.com/googleapis/java-containeranalysis/commit/113bc0c54f42f8daad400e2950677ce746504d79))
+* update java-core ([#80](https://www.github.com/googleapis/java-containeranalysis/issues/80)) ([b9f172e](https://www.github.com/googleapis/java-containeranalysis/commit/b9f172ea97845c74d06c2eb039f09a7e7a9ed006))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([8966c44](https://www.github.com/googleapis/java-containeranalysis/commit/8966c449b68dbfee7935873b3b29b35b87324e02))
+
 ### [0.119.1](https://www.github.com/googleapis/java-containeranalysis/compare/v0.119.0...v0.119.1) (2020-02-04)
 
 
