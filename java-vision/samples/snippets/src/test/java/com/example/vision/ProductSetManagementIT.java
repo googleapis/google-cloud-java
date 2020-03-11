@@ -19,8 +19,9 @@ package com.example.vision;
 import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,14 +34,15 @@ import org.junit.runners.JUnit4;
 public class ProductSetManagementIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String COMPUTE_REGION = "us-west1";
-  private static final String PRODUCT_SET_ID = "fake_prodt_set_id_for_testing";
+  private static final String PRODUCT_SET_ID =
+          String.format("test_%s", UUID.randomUUID().toString());
   private static final String PRODUCT_SET_DISPLAY_NAME =
-      "fake_prodt_set_display_name_for_testing";
+          String.format("test_%s", UUID.randomUUID().toString());
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
   @Before
-  public void setUp() throws IOException {
+  public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -48,37 +50,20 @@ public class ProductSetManagementIT {
 
   @After
   public void tearDown() {
-
     System.setOut(null);
   }
 
   @Test
   public void testCreateDeleteProductSet() throws Exception {
-    // Act
-    ProductSetManagement.listProductSets(PROJECT_ID, COMPUTE_REGION);
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).doesNotContain(PRODUCT_SET_ID);
-
-    bout.reset();
-
-    // Act
     ProductSetManagement.createProductSet(
-        PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID, PRODUCT_SET_DISPLAY_NAME);
-    ProductSetManagement.listProductSets(PROJECT_ID, COMPUTE_REGION);
-
-    // Assert
-    got = bout.toString();
+            PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID, PRODUCT_SET_DISPLAY_NAME);
+    String got = bout.toString();
     assertThat(got).contains(PRODUCT_SET_ID);
 
     bout.reset();
 
-    // Act
     ProductSetManagement.deleteProductSet(PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID);
     ProductSetManagement.listProductSets(PROJECT_ID, COMPUTE_REGION);
-
-    // Assert
     got = bout.toString();
     assertThat(got).doesNotContain(PRODUCT_SET_ID);
   }
