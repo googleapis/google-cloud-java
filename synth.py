@@ -76,7 +76,7 @@ RELEASE_LEVEL_CONTENT = {
 
 def client_row(client: CloudClient) -> str:
     maven_badge = f"[![Maven](https://img.shields.io/maven-central/v/{client.group_id}/{client.artifact_id}.svg)](https://search.maven.org/search?q=g:{client.group_id}%20AND%20a:{client.artifact_id}&core=gav)"
-    return f"| {client.title} | {RELEASE_LEVEL_CONTENT[client.release_level]} | {maven_badge} |\n"
+    return f"| [{client.title}](https://github.com/{client.repo}) | {RELEASE_LEVEL_CONTENT[client.release_level]} | {maven_badge} |\n"
 
 def generate_table_contents(clients: List[CloudClient]) -> List[str]:
     content_rows = [
