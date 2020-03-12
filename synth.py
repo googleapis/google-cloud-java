@@ -36,6 +36,7 @@ class CloudClient:
         else:
             self.artifact_id = repo['distribution_name']
 
+    # For sorting, we want to sort by release level, then API pretty_name
     def __lt__(self, other):
         if self.release_level == other.release_level:
             return self.title < other.title
