@@ -26,6 +26,7 @@ class CloudClient:
 
     def __init__(self, repo: dict):
         self.repo = repo['repo']
+        # For now, strip out "Google Cloud" to standardize the titles
         self.title = repo['name_pretty'].replace("Google ", "").replace("Cloud ", "")
         self.release_level = repo['release_level']
         artifact_parts = repo['distribution_name'].split(':')
