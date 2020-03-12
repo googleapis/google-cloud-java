@@ -43,4 +43,9 @@ java.gapic_library(
     gapic=gapic,
 )
 
+java.bazel_library(
+    service=service,
+    version='v1p4beta1',
+)
+
 java.common_templates()

@@ -5,8 +5,10 @@ proto-google-cloud-asset-v1:1.0.0:1.0.0
 proto-google-cloud-asset-v1p1beta1:0.85.0:0.85.0
 proto-google-cloud-asset-v1p2beta1:0.85.0:0.85.0
 proto-google-cloud-asset-v1beta1:0.85.0:0.85.0
+proto-google-cloud-asset-v1p4beta1:0.85.0:0.85.0
 grpc-google-cloud-asset-v1:1.0.0:1.0.0
 grpc-google-cloud-asset-v1beta1:0.85.0:0.85.0
 grpc-google-cloud-asset-v1p1beta1:0.85.0:0.85.0
 grpc-google-cloud-asset-v1p2beta1:0.85.0:0.85.0
+grpc-google-cloud-asset-v1p4beta1:0.85.0:0.85.0
 google-cloud-asset:1.0.0:1.0.0
