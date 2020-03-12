@@ -1,6 +1,6 @@
 {
   "name": "talent",
-  "name_pretty": "Google Cloud Talent Solution",
+  "name_pretty": "Talent Solution",
   "product_documentation": "https://cloud.google.com/solutions/talent-solution/",
   "client_documentation": "https://googleapis.dev/java/google-cloud-talent/latest/",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559664",
