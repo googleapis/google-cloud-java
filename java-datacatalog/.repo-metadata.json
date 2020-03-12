@@ -1,6 +1,6 @@
 {
   "name": "datacatalog",
-  "name_pretty": "Google Cloud Data Catalog",
+  "name_pretty": "Data Catalog",
   "product_documentation": "https://cloud.google.com/data-catalog",
   "client_documentation": "https://googleapis.dev/java/google-cloud-datacatalog/latest/",
   "issue_tracker": "",
