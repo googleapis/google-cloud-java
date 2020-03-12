@@ -17,10 +17,10 @@
 package com.google.cloud.examples.securitycenter.snippets;
 
 // [START scc_list_notification_configs]
-import com.google.cloud.securitycenter.v1p1beta1.NotificationConfig;
-import com.google.cloud.securitycenter.v1p1beta1.OrganizationName;
-import com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient;
-import com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
+import com.google.cloud.securitycenter.v1.NotificationConfig;
+import com.google.cloud.securitycenter.v1.OrganizationName;
+import com.google.cloud.securitycenter.v1.SecurityCenterClient;
+import com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 // [END scc_list_notification_configs]

@@ -17,11 +17,10 @@
 package com.google.cloud.examples.securitycenter.snippets;
 
 // [START scc_create_notification_config]
-import com.google.cloud.securitycenter.v1p1beta1.CreateNotificationConfigRequest;
-import com.google.cloud.securitycenter.v1p1beta1.NotificationConfig;
-import com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.EventType;
-import com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.StreamingConfig;
-import com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient;
+import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.NotificationConfig;
+import com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig;
+import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import java.io.IOException;
 // [END scc_create_notification_config]
 
@@ -52,7 +51,6 @@ final class CreateNotificationConfigSnippets {
                   NotificationConfig.newBuilder()
                       .setDescription("Java notification config")
                       .setPubsubTopic(pubsubTopic)
-                      .setEventType(EventType.FINDING)
                       .setStreamingConfig(
                           StreamingConfig.newBuilder().setFilter("state = \"ACTIVE\"").build())
                       .build())

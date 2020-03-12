@@ -21,7 +21,7 @@ package com.google.cloud.examples.securitycenter.snippets;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.cloud.pubsub.v1.Subscriber;
-import com.google.cloud.securitycenter.v1p1beta1.NotificationMessage;
+import com.google.cloud.securitycenter.v1.NotificationMessage;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.util.JsonFormat;
 import com.google.pubsub.v1.ProjectSubscriptionName;

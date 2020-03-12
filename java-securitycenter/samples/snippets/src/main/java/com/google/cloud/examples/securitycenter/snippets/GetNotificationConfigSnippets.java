@@ -17,9 +17,9 @@
 package com.google.cloud.examples.securitycenter.snippets;
 
 // [START scc_get_notification_config]
-import com.google.cloud.securitycenter.v1p1beta1.NotificationConfig;
-import com.google.cloud.securitycenter.v1p1beta1.NotificationConfigName;
-import com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient;
+import com.google.cloud.securitycenter.v1.NotificationConfig;
+import com.google.cloud.securitycenter.v1.NotificationConfigName;
+import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import java.io.IOException;
 // [END scc_get_notification_config]
 
