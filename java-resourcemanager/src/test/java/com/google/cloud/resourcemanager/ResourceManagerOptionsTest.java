@@ -16,20 +16,21 @@
 
 package com.google.cloud.resourcemanager;
 
+import static org.junit.Assert.fail;
+
 import com.google.cloud.TransportOptions;
 import org.easymock.EasyMock;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class ResourceManagerOptionsTest {
 
-  @Rule public ExpectedException thrown = ExpectedException.none();
-
   @Test
   public void testInvalidTransport() {
-    thrown.expect(IllegalArgumentException.class);
-    ResourceManagerOptions.newBuilder()
-        .setTransportOptions(EasyMock.<TransportOptions>createMock(TransportOptions.class));
+    try {
+      ResourceManagerOptions.newBuilder()
+          .setTransportOptions(EasyMock.<TransportOptions>createMock(TransportOptions.class));
+      fail();
+    } catch (IllegalArgumentException expected) {
+    }
   }
 }

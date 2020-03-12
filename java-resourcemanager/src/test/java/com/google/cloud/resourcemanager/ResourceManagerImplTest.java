@@ -45,9 +45,7 @@ import org.easymock.EasyMock;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class ResourceManagerImplTest {
 
@@ -76,8 +74,6 @@ public class ResourceManagerImplTest {
           .addIdentity(Role.owner(), Identity.user("me@gmail.com"))
           .addIdentity(Role.editor(), Identity.serviceAccount("serviceaccount@gmail.com"))
           .build();
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() {
@@ -429,9 +425,12 @@ public class ResourceManagerImplTest {
                 403, "Project " + PARTIAL_PROJECT.getProjectId() + " not found."))
         .once();
     EasyMock.replay(resourceManagerRpcMock);
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("Project " + PARTIAL_PROJECT.getProjectId() + " not found.");
-    resourceManagerMock.get(PARTIAL_PROJECT.getProjectId());
+    try {
+      resourceManagerMock.get(PARTIAL_PROJECT.getProjectId());
+      fail();
+    } catch (ResourceManagerException e) {
+      assertTrue(e.getMessage().contains("Project partial-project not found"));
+    }
   }
 
   @Test
@@ -450,8 +449,11 @@ public class ResourceManagerImplTest {
     EasyMock.expect(resourceManagerRpcMock.get(PARTIAL_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS))
         .andThrow(new RuntimeException(exceptionMessage));
     EasyMock.replay(resourceManagerRpcMock);
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage(exceptionMessage);
-    resourceManagerMock.get(PARTIAL_PROJECT.getProjectId());
+    try {
+      resourceManagerMock.get(PARTIAL_PROJECT.getProjectId());
+      fail();
+    } catch (ResourceManagerException exception) {
+      assertEquals(exceptionMessage, exception.getCause().getMessage());
+    }
   }
 }
