@@ -1,6 +1,6 @@
 {
   "name": "cloudkms",
-  "name_pretty": "Google Cloud Key Management Service",
+  "name_pretty": "Cloud Key Management Service",
   "product_documentation": "https://cloud.google.com/kms",
   "client_documentation": "https://googleapis.dev/java/google-cloud-kms/latest/",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/5264932",
