@@ -1,6 +1,6 @@
 {
   "name": "datalabeling",
-  "name_pretty": "Google Cloud Data Labeling",
+  "name_pretty": "Data Labeling",
   "product_documentation": "https://cloud.google.com/ai-platform/data-labeling/docs/",
   "client_documentation": "https://googleapis.dev/java/google-cloud-datalabeling/latest/",
   "api_description": "",
