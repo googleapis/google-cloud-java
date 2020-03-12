@@ -1,6 +1,6 @@
 {
   "name": "datastore",
-  "name_pretty": "Google Cloud Datastore",
+  "name_pretty": "Cloud Datastore",
   "product_documentation": "https://cloud.google.com/datastore",
   "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/asset/v1beta1/package-summary.html",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559768",
