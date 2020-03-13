@@ -15,6 +15,7 @@
  */
 package com.google.cloud.recommender.v1beta1.stub;
 
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightsPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -39,9 +40,14 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.recommender.v1beta1.GetInsightRequest;
 import com.google.cloud.recommender.v1beta1.GetRecommendationRequest;
+import com.google.cloud.recommender.v1beta1.Insight;
+import com.google.cloud.recommender.v1beta1.ListInsightsRequest;
+import com.google.cloud.recommender.v1beta1.ListInsightsResponse;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsRequest;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsResponse;
+import com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest;
@@ -70,16 +76,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getRecommendation to 30 seconds:
+ * <p>For example, to set the total timeout of getInsight to 30 seconds:
  *
  * <pre>
  * <code>
  * RecommenderStubSettings.Builder recommenderSettingsBuilder =
  *     RecommenderStubSettings.newBuilder();
  * recommenderSettingsBuilder
- *     .getRecommendationSettings()
+ *     .getInsightSettings()
  *     .setRetrySettings(
- *         recommenderSettingsBuilder.getRecommendationSettings().getRetrySettings().toBuilder()
+ *         recommenderSettingsBuilder.getInsightSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RecommenderStubSettings recommenderSettings = recommenderSettingsBuilder.build();
@@ -94,6 +100,11 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final PagedCallSettings<
+          ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>
+      listInsightsSettings;
+  private final UnaryCallSettings<GetInsightRequest, Insight> getInsightSettings;
+  private final UnaryCallSettings<MarkInsightAcceptedRequest, Insight> markInsightAcceptedSettings;
+  private final PagedCallSettings<
           ListRecommendationsRequest, ListRecommendationsResponse, ListRecommendationsPagedResponse>
       listRecommendationsSettings;
   private final UnaryCallSettings<GetRecommendationRequest, Recommendation>
@@ -104,6 +115,22 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       markRecommendationSucceededSettings;
   private final UnaryCallSettings<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedSettings;
+
+  /** Returns the object with the settings used for calls to listInsights. */
+  public PagedCallSettings<ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>
+      listInsightsSettings() {
+    return listInsightsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getInsight. */
+  public UnaryCallSettings<GetInsightRequest, Insight> getInsightSettings() {
+    return getInsightSettings;
+  }
+
+  /** Returns the object with the settings used for calls to markInsightAccepted. */
+  public UnaryCallSettings<MarkInsightAcceptedRequest, Insight> markInsightAcceptedSettings() {
+    return markInsightAcceptedSettings;
+  }
 
   /** Returns the object with the settings used for calls to listRecommendations. */
   public PagedCallSettings<
@@ -204,6 +231,9 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
   protected RecommenderStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    listInsightsSettings = settingsBuilder.listInsightsSettings().build();
+    getInsightSettings = settingsBuilder.getInsightSettings().build();
+    markInsightAcceptedSettings = settingsBuilder.markInsightAcceptedSettings().build();
     listRecommendationsSettings = settingsBuilder.listRecommendationsSettings().build();
     getRecommendationSettings = settingsBuilder.getRecommendationSettings().build();
     markRecommendationClaimedSettings = settingsBuilder.markRecommendationClaimedSettings().build();
@@ -211,6 +241,42 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
         settingsBuilder.markRecommendationSucceededSettings().build();
     markRecommendationFailedSettings = settingsBuilder.markRecommendationFailedSettings().build();
   }
+
+  private static final PagedListDescriptor<ListInsightsRequest, ListInsightsResponse, Insight>
+      LIST_INSIGHTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListInsightsRequest, ListInsightsResponse, Insight>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListInsightsRequest injectToken(ListInsightsRequest payload, String token) {
+              return ListInsightsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListInsightsRequest injectPageSize(ListInsightsRequest payload, int pageSize) {
+              return ListInsightsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListInsightsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListInsightsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Insight> extractResources(ListInsightsResponse payload) {
+              return payload.getInsightsList() != null
+                  ? payload.getInsightsList()
+                  : ImmutableList.<Insight>of();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListRecommendationsRequest, ListRecommendationsResponse, Recommendation>
@@ -253,6 +319,23 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
           };
 
   private static final PagedListResponseFactory<
+          ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>
+      LIST_INSIGHTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>() {
+            @Override
+            public ApiFuture<ListInsightsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListInsightsRequest, ListInsightsResponse> callable,
+                ListInsightsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListInsightsResponse> futureResponse) {
+              PageContext<ListInsightsRequest, ListInsightsResponse, Insight> pageContext =
+                  PageContext.create(callable, LIST_INSIGHTS_PAGE_STR_DESC, request, context);
+              return ListInsightsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListRecommendationsRequest, ListRecommendationsResponse, ListRecommendationsPagedResponse>
       LIST_RECOMMENDATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -277,6 +360,12 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
   public static class Builder extends StubSettings.Builder<RecommenderStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final PagedCallSettings.Builder<
+            ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>
+        listInsightsSettings;
+    private final UnaryCallSettings.Builder<GetInsightRequest, Insight> getInsightSettings;
+    private final UnaryCallSettings.Builder<MarkInsightAcceptedRequest, Insight>
+        markInsightAcceptedSettings;
     private final PagedCallSettings.Builder<
             ListRecommendationsRequest,
             ListRecommendationsResponse,
@@ -332,6 +421,12 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      listInsightsSettings = PagedCallSettings.newBuilder(LIST_INSIGHTS_PAGE_STR_FACT);
+
+      getInsightSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      markInsightAcceptedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listRecommendationsSettings =
           PagedCallSettings.newBuilder(LIST_RECOMMENDATIONS_PAGE_STR_FACT);
 
@@ -345,6 +440,9 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              listInsightsSettings,
+              getInsightSettings,
+              markInsightAcceptedSettings,
               listRecommendationsSettings,
               getRecommendationSettings,
               markRecommendationClaimedSettings,
@@ -364,6 +462,21 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .listInsightsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getInsightSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .markInsightAcceptedSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listRecommendationsSettings()
@@ -396,6 +509,9 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     protected Builder(RecommenderStubSettings settings) {
       super(settings);
 
+      listInsightsSettings = settings.listInsightsSettings.toBuilder();
+      getInsightSettings = settings.getInsightSettings.toBuilder();
+      markInsightAcceptedSettings = settings.markInsightAcceptedSettings.toBuilder();
       listRecommendationsSettings = settings.listRecommendationsSettings.toBuilder();
       getRecommendationSettings = settings.getRecommendationSettings.toBuilder();
       markRecommendationClaimedSettings = settings.markRecommendationClaimedSettings.toBuilder();
@@ -405,6 +521,9 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              listInsightsSettings,
+              getInsightSettings,
+              markInsightAcceptedSettings,
               listRecommendationsSettings,
               getRecommendationSettings,
               markRecommendationClaimedSettings,
@@ -426,6 +545,24 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to listInsights. */
+    public PagedCallSettings.Builder<
+            ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>
+        listInsightsSettings() {
+      return listInsightsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getInsight. */
+    public UnaryCallSettings.Builder<GetInsightRequest, Insight> getInsightSettings() {
+      return getInsightSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to markInsightAccepted. */
+    public UnaryCallSettings.Builder<MarkInsightAcceptedRequest, Insight>
+        markInsightAcceptedSettings() {
+      return markInsightAcceptedSettings;
     }
 
     /** Returns the builder for the settings used for calls to listRecommendations. */

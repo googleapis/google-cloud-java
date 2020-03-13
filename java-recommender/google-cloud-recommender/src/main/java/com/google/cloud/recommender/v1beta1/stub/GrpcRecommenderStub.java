@@ -15,6 +15,7 @@
  */
 package com.google.cloud.recommender.v1beta1.stub;
 
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightsPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendationsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -25,9 +26,14 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.recommender.v1beta1.GetInsightRequest;
 import com.google.cloud.recommender.v1beta1.GetRecommendationRequest;
+import com.google.cloud.recommender.v1beta1.Insight;
+import com.google.cloud.recommender.v1beta1.ListInsightsRequest;
+import com.google.cloud.recommender.v1beta1.ListInsightsResponse;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsRequest;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsResponse;
+import com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest;
@@ -50,6 +56,31 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcRecommenderStub extends RecommenderStub {
 
+  private static final MethodDescriptor<ListInsightsRequest, ListInsightsResponse>
+      listInsightsMethodDescriptor =
+          MethodDescriptor.<ListInsightsRequest, ListInsightsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.recommender.v1beta1.Recommender/ListInsights")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListInsightsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListInsightsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetInsightRequest, Insight> getInsightMethodDescriptor =
+      MethodDescriptor.<GetInsightRequest, Insight>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.recommender.v1beta1.Recommender/GetInsight")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetInsightRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Insight.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<MarkInsightAcceptedRequest, Insight>
+      markInsightAcceptedMethodDescriptor =
+          MethodDescriptor.<MarkInsightAcceptedRequest, Insight>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.recommender.v1beta1.Recommender/MarkInsightAccepted")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(MarkInsightAcceptedRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Insight.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<ListRecommendationsRequest, ListRecommendationsResponse>
       listRecommendationsMethodDescriptor =
           MethodDescriptor.<ListRecommendationsRequest, ListRecommendationsResponse>newBuilder()
@@ -102,6 +133,11 @@ public class GrpcRecommenderStub extends RecommenderStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable;
+  private final UnaryCallable<ListInsightsRequest, ListInsightsPagedResponse>
+      listInsightsPagedCallable;
+  private final UnaryCallable<GetInsightRequest, Insight> getInsightCallable;
+  private final UnaryCallable<MarkInsightAcceptedRequest, Insight> markInsightAcceptedCallable;
   private final UnaryCallable<ListRecommendationsRequest, ListRecommendationsResponse>
       listRecommendationsCallable;
   private final UnaryCallable<ListRecommendationsRequest, ListRecommendationsPagedResponse>
@@ -153,6 +189,45 @@ public class GrpcRecommenderStub extends RecommenderStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<ListInsightsRequest, ListInsightsResponse> listInsightsTransportSettings =
+        GrpcCallSettings.<ListInsightsRequest, ListInsightsResponse>newBuilder()
+            .setMethodDescriptor(listInsightsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListInsightsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListInsightsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetInsightRequest, Insight> getInsightTransportSettings =
+        GrpcCallSettings.<GetInsightRequest, Insight>newBuilder()
+            .setMethodDescriptor(getInsightMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetInsightRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetInsightRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<MarkInsightAcceptedRequest, Insight> markInsightAcceptedTransportSettings =
+        GrpcCallSettings.<MarkInsightAcceptedRequest, Insight>newBuilder()
+            .setMethodDescriptor(markInsightAcceptedMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<MarkInsightAcceptedRequest>() {
+                  @Override
+                  public Map<String, String> extract(MarkInsightAcceptedRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ListRecommendationsRequest, ListRecommendationsResponse>
         listRecommendationsTransportSettings =
             GrpcCallSettings.<ListRecommendationsRequest, ListRecommendationsResponse>newBuilder()
@@ -224,6 +299,20 @@ public class GrpcRecommenderStub extends RecommenderStub {
                     })
                 .build();
 
+    this.listInsightsCallable =
+        callableFactory.createUnaryCallable(
+            listInsightsTransportSettings, settings.listInsightsSettings(), clientContext);
+    this.listInsightsPagedCallable =
+        callableFactory.createPagedCallable(
+            listInsightsTransportSettings, settings.listInsightsSettings(), clientContext);
+    this.getInsightCallable =
+        callableFactory.createUnaryCallable(
+            getInsightTransportSettings, settings.getInsightSettings(), clientContext);
+    this.markInsightAcceptedCallable =
+        callableFactory.createUnaryCallable(
+            markInsightAcceptedTransportSettings,
+            settings.markInsightAcceptedSettings(),
+            clientContext);
     this.listRecommendationsCallable =
         callableFactory.createUnaryCallable(
             listRecommendationsTransportSettings,
@@ -256,6 +345,22 @@ public class GrpcRecommenderStub extends RecommenderStub {
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<ListInsightsRequest, ListInsightsPagedResponse> listInsightsPagedCallable() {
+    return listInsightsPagedCallable;
+  }
+
+  public UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable() {
+    return listInsightsCallable;
+  }
+
+  public UnaryCallable<GetInsightRequest, Insight> getInsightCallable() {
+    return getInsightCallable;
+  }
+
+  public UnaryCallable<MarkInsightAcceptedRequest, Insight> markInsightAcceptedCallable() {
+    return markInsightAcceptedCallable;
   }
 
   public UnaryCallable<ListRecommendationsRequest, ListRecommendationsPagedResponse>

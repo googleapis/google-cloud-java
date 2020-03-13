@@ -1,6 +1,6 @@
-# Google Google Cloud Recommender Client for Java
+# Google Recommender Client for Java
 
-Java idiomatic client for [Google Cloud Recommender][product-docs].
+Java idiomatic client for [Recommender][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -64,8 +64,8 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Recommender [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Google Cloud Recommender.
+You will need a [Google Cloud Platform Console][developer-console] project with the Recommender [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Recommender.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -75,13 +75,13 @@ You will need to [enable billing][enable-billing] to use Google Google Cloud Rec
 You'll need to obtain the `google-cloud-recommender` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-recommender` as a dependency in your code.
 
-## About Google Cloud Recommender
+## About Recommender
 
 
-[Google Cloud Recommender][product-docs] delivers highly personalized product recommendations at scale.
+[Recommender][product-docs] delivers highly personalized product recommendations at scale.
 
-See the [Google Cloud Recommender client library docs][javadocs] to learn how to
-use this Google Cloud Recommender Client Library.
+See the [Recommender client library docs][javadocs] to learn how to
+use this Recommender Client Library.
 
 
 
@@ -104,7 +104,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud Recommender uses gRPC for the transport layer.
+Recommender uses gRPC for the transport layer.
 
 ## Java Versions
 

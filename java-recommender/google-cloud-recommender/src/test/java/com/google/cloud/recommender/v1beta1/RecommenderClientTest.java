@@ -15,6 +15,7 @@
  */
 package com.google.cloud.recommender.v1beta1;
 
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightsPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendationsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -77,6 +78,156 @@ public class RecommenderClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listInsightsTest() {
+    String nextPageToken = "";
+    Insight insightsElement = Insight.newBuilder().build();
+    List<Insight> insights = Arrays.asList(insightsElement);
+    ListInsightsResponse expectedResponse =
+        ListInsightsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllInsights(insights)
+            .build();
+    mockRecommender.addResponse(expectedResponse);
+
+    InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+
+    ListInsightsPagedResponse pagedListResponse = client.listInsights(parent);
+
+    List<Insight> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getInsightsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRecommender.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListInsightsRequest actualRequest = (ListInsightsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, InsightTypeName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listInsightsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockRecommender.addException(exception);
+
+    try {
+      InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+
+      client.listInsights(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getInsightTest() {
+    InsightName name2 = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+    String description = "description-1724546052";
+    String insightSubtype = "insightSubtype-1491142701";
+    String etag = "etag3123477";
+    Insight expectedResponse =
+        Insight.newBuilder()
+            .setName(name2.toString())
+            .setDescription(description)
+            .setInsightSubtype(insightSubtype)
+            .setEtag(etag)
+            .build();
+    mockRecommender.addResponse(expectedResponse);
+
+    InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+
+    Insight actualResponse = client.getInsight(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecommender.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetInsightRequest actualRequest = (GetInsightRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, InsightName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getInsightExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockRecommender.addException(exception);
+
+    try {
+      InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+
+      client.getInsight(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void markInsightAcceptedTest() {
+    InsightName name2 = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+    String description = "description-1724546052";
+    String insightSubtype = "insightSubtype-1491142701";
+    String etag2 = "etag2-1293302904";
+    Insight expectedResponse =
+        Insight.newBuilder()
+            .setName(name2.toString())
+            .setDescription(description)
+            .setInsightSubtype(insightSubtype)
+            .setEtag(etag2)
+            .build();
+    mockRecommender.addResponse(expectedResponse);
+
+    InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+    Map<String, String> stateMetadata = new HashMap<>();
+    String etag = "etag3123477";
+
+    Insight actualResponse = client.markInsightAccepted(name, stateMetadata, etag);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecommender.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MarkInsightAcceptedRequest actualRequest = (MarkInsightAcceptedRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, InsightName.parse(actualRequest.getName()));
+    Assert.assertEquals(stateMetadata, actualRequest.getStateMetadataMap());
+    Assert.assertEquals(etag, actualRequest.getEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void markInsightAcceptedExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockRecommender.addException(exception);
+
+    try {
+      InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+      Map<String, String> stateMetadata = new HashMap<>();
+      String etag = "etag3123477";
+
+      client.markInsightAccepted(name, stateMetadata, etag);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 
   @Test

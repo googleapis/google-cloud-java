@@ -47,8 +47,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
- *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
- *   Recommendation response = recommenderClient.getRecommendation(name);
+ *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+ *   Insight response = recommenderClient.getInsight(name);
  * }
  * </code>
  * </pre>
@@ -154,6 +154,372 @@ public class RecommenderClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RecommenderStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
+   * specified insight type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+   *   for (Insight element : recommenderClient.listInsights(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The container resource on which to execute the request. Acceptable
+   *     formats:
+   *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
+   *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInsightsPagedResponse listInsights(InsightTypeName parent) {
+    ListInsightsRequest request =
+        ListInsightsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listInsights(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
+   * specified insight type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+   *   for (Insight element : recommenderClient.listInsights(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The container resource on which to execute the request. Acceptable
+   *     formats:
+   *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
+   *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInsightsPagedResponse listInsights(String parent) {
+    ListInsightsRequest request = ListInsightsRequest.newBuilder().setParent(parent).build();
+    return listInsights(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
+   * specified insight type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+   *   ListInsightsRequest request = ListInsightsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (Insight element : recommenderClient.listInsights(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInsightsPagedResponse listInsights(ListInsightsRequest request) {
+    return listInsightsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
+   * specified insight type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+   *   ListInsightsRequest request = ListInsightsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListInsightsPagedResponse&gt; future = recommenderClient.listInsightsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (Insight element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListInsightsRequest, ListInsightsPagedResponse>
+      listInsightsPagedCallable() {
+    return stub.listInsightsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
+   * specified insight type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+   *   ListInsightsRequest request = ListInsightsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListInsightsResponse response = recommenderClient.listInsightsCallable().call(request);
+   *     for (Insight element : response.getInsightsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable() {
+    return stub.listInsightsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the requested insight. Requires the recommender.&#42;.get IAM permission for the specified
+   * insight type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+   *   Insight response = recommenderClient.getInsight(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the insight.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Insight getInsight(InsightName name) {
+    GetInsightRequest request =
+        GetInsightRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getInsight(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the requested insight. Requires the recommender.&#42;.get IAM permission for the specified
+   * insight type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+   *   Insight response = recommenderClient.getInsight(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the insight.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Insight getInsight(String name) {
+    GetInsightRequest request = GetInsightRequest.newBuilder().setName(name).build();
+    return getInsight(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the requested insight. Requires the recommender.&#42;.get IAM permission for the specified
+   * insight type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+   *   GetInsightRequest request = GetInsightRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   Insight response = recommenderClient.getInsight(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Insight getInsight(GetInsightRequest request) {
+    return getInsightCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the requested insight. Requires the recommender.&#42;.get IAM permission for the specified
+   * insight type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+   *   GetInsightRequest request = GetInsightRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Insight&gt; future = recommenderClient.getInsightCallable().futureCall(request);
+   *   // Do something
+   *   Insight response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetInsightRequest, Insight> getInsightCallable() {
+    return stub.getInsightCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Marks the Insight State as Accepted. Users can use this method to indicate to the Recommender
+   * API that they have applied some action based on the insight. This stops the insight content
+   * from being updated.
+   *
+   * <p>MarkInsightAccepted can be applied to insights in ACTIVE state. Requires the
+   * recommender.&#42;.update IAM permission for the specified insight.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+   *   Map&lt;String, String&gt; stateMetadata = new HashMap&lt;&gt;();
+   *   String etag = "";
+   *   Insight response = recommenderClient.markInsightAccepted(name, stateMetadata, etag);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the insight.
+   * @param stateMetadata Optional. State properties user wish to include with this state. Full
+   *     replace of the current state_metadata.
+   * @param etag Required. Fingerprint of the Insight. Provides optimistic locking.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Insight markInsightAccepted(
+      InsightName name, Map<String, String> stateMetadata, String etag) {
+    MarkInsightAcceptedRequest request =
+        MarkInsightAcceptedRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .putAllStateMetadata(stateMetadata)
+            .setEtag(etag)
+            .build();
+    return markInsightAccepted(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Marks the Insight State as Accepted. Users can use this method to indicate to the Recommender
+   * API that they have applied some action based on the insight. This stops the insight content
+   * from being updated.
+   *
+   * <p>MarkInsightAccepted can be applied to insights in ACTIVE state. Requires the
+   * recommender.&#42;.update IAM permission for the specified insight.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+   *   Map&lt;String, String&gt; stateMetadata = new HashMap&lt;&gt;();
+   *   String etag = "";
+   *   Insight response = recommenderClient.markInsightAccepted(name.toString(), stateMetadata, etag);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the insight.
+   * @param stateMetadata Optional. State properties user wish to include with this state. Full
+   *     replace of the current state_metadata.
+   * @param etag Required. Fingerprint of the Insight. Provides optimistic locking.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Insight markInsightAccepted(
+      String name, Map<String, String> stateMetadata, String etag) {
+    MarkInsightAcceptedRequest request =
+        MarkInsightAcceptedRequest.newBuilder()
+            .setName(name)
+            .putAllStateMetadata(stateMetadata)
+            .setEtag(etag)
+            .build();
+    return markInsightAccepted(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Marks the Insight State as Accepted. Users can use this method to indicate to the Recommender
+   * API that they have applied some action based on the insight. This stops the insight content
+   * from being updated.
+   *
+   * <p>MarkInsightAccepted can be applied to insights in ACTIVE state. Requires the
+   * recommender.&#42;.update IAM permission for the specified insight.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+   *   String etag = "";
+   *   MarkInsightAcceptedRequest request = MarkInsightAcceptedRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setEtag(etag)
+   *     .build();
+   *   Insight response = recommenderClient.markInsightAccepted(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Insight markInsightAccepted(MarkInsightAcceptedRequest request) {
+    return markInsightAcceptedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Marks the Insight State as Accepted. Users can use this method to indicate to the Recommender
+   * API that they have applied some action based on the insight. This stops the insight content
+   * from being updated.
+   *
+   * <p>MarkInsightAccepted can be applied to insights in ACTIVE state. Requires the
+   * recommender.&#42;.update IAM permission for the specified insight.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+   *   String etag = "";
+   *   MarkInsightAcceptedRequest request = MarkInsightAcceptedRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setEtag(etag)
+   *     .build();
+   *   ApiFuture&lt;Insight&gt; future = recommenderClient.markInsightAcceptedCallable().futureCall(request);
+   *   // Do something
+   *   Insight response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<MarkInsightAcceptedRequest, Insight> markInsightAcceptedCallable() {
+    return stub.markInsightAcceptedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -871,6 +1237,86 @@ public class RecommenderClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListInsightsPagedResponse
+      extends AbstractPagedListResponse<
+          ListInsightsRequest,
+          ListInsightsResponse,
+          Insight,
+          ListInsightsPage,
+          ListInsightsFixedSizeCollection> {
+
+    public static ApiFuture<ListInsightsPagedResponse> createAsync(
+        PageContext<ListInsightsRequest, ListInsightsResponse, Insight> context,
+        ApiFuture<ListInsightsResponse> futureResponse) {
+      ApiFuture<ListInsightsPage> futurePage =
+          ListInsightsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListInsightsPage, ListInsightsPagedResponse>() {
+            @Override
+            public ListInsightsPagedResponse apply(ListInsightsPage input) {
+              return new ListInsightsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListInsightsPagedResponse(ListInsightsPage page) {
+      super(page, ListInsightsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListInsightsPage
+      extends AbstractPage<ListInsightsRequest, ListInsightsResponse, Insight, ListInsightsPage> {
+
+    private ListInsightsPage(
+        PageContext<ListInsightsRequest, ListInsightsResponse, Insight> context,
+        ListInsightsResponse response) {
+      super(context, response);
+    }
+
+    private static ListInsightsPage createEmptyPage() {
+      return new ListInsightsPage(null, null);
+    }
+
+    @Override
+    protected ListInsightsPage createPage(
+        PageContext<ListInsightsRequest, ListInsightsResponse, Insight> context,
+        ListInsightsResponse response) {
+      return new ListInsightsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListInsightsPage> createPageAsync(
+        PageContext<ListInsightsRequest, ListInsightsResponse, Insight> context,
+        ApiFuture<ListInsightsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListInsightsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListInsightsRequest,
+          ListInsightsResponse,
+          Insight,
+          ListInsightsPage,
+          ListInsightsFixedSizeCollection> {
+
+    private ListInsightsFixedSizeCollection(List<ListInsightsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListInsightsFixedSizeCollection createEmptyCollection() {
+      return new ListInsightsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListInsightsFixedSizeCollection createCollection(
+        List<ListInsightsPage> pages, int collectionSize) {
+      return new ListInsightsFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListRecommendationsPagedResponse

@@ -32,6 +32,10 @@ public final class RecommendationOuterClass {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recommender_v1beta1_Recommendation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recommender_v1beta1_Recommendation_InsightReference_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recommender_v1beta1_Recommendation_InsightReference_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_recommender_v1beta1_RecommendationContent_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recommender_v1beta1_RecommendationContent_fieldAccessorTable;
@@ -85,7 +89,7 @@ public final class RecommendationOuterClass {
           + "r.v1beta1\032\031google/api/resource.proto\032\036go"
           + "ogle/protobuf/duration.proto\032\034google/pro"
           + "tobuf/struct.proto\032\037google/protobuf/time"
-          + "stamp.proto\032\027google/type/money.proto\"\314\004\n"
+          + "stamp.proto\032\027google/type/money.proto\"\321\005\n"
           + "\016Recommendation\022\014\n\004name\030\001 \001(\t\022\023\n\013descrip"
           + "tion\030\002 \001(\t\022\033\n\023recommender_subtype\030\014 \001(\t\022"
           + "5\n\021last_refresh_time\030\004 \001(\0132\032.google.prot"
@@ -96,58 +100,61 @@ public final class RecommendationOuterClass {
           + "\030\007 \001(\01327.google.cloud.recommender.v1beta"
           + "1.RecommendationContent\022M\n\nstate_info\030\n "
           + "\001(\01329.google.cloud.recommender.v1beta1.R"
-          + "ecommendationStateInfo\022\014\n\004etag\030\013 \001(\t:\224\001\352"
-          + "A\220\001\n)recommender.googleapis.com/Recommen"
-          + "dation\022cprojects/{project}/locations/{lo"
-          + "cation}/recommenders/{recommender}/recom"
-          + "mendations/{recommendation}\"c\n\025Recommend"
-          + "ationContent\022J\n\020operation_groups\030\002 \003(\01320"
-          + ".google.cloud.recommender.v1beta1.Operat"
-          + "ionGroup\"Q\n\016OperationGroup\022?\n\noperations"
-          + "\030\001 \003(\0132+.google.cloud.recommender.v1beta"
-          + "1.Operation\"\353\004\n\tOperation\022\016\n\006action\030\001 \001("
-          + "\t\022\025\n\rresource_type\030\002 \001(\t\022\020\n\010resource\030\003 \001"
-          + "(\t\022\014\n\004path\030\004 \001(\t\022\027\n\017source_resource\030\005 \001("
-          + "\t\022\023\n\013source_path\030\006 \001(\t\022\'\n\005value\030\007 \001(\0132\026."
-          + "google.protobuf.ValueH\000\022G\n\rvalue_matcher"
-          + "\030\n \001(\0132..google.cloud.recommender.v1beta"
-          + "1.ValueMatcherH\000\022R\n\014path_filters\030\010 \003(\0132<"
-          + ".google.cloud.recommender.v1beta1.Operat"
-          + "ion.PathFiltersEntry\022_\n\023path_value_match"
-          + "ers\030\013 \003(\0132B.google.cloud.recommender.v1b"
-          + "eta1.Operation.PathValueMatchersEntry\032J\n"
-          + "\020PathFiltersEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030"
-          + "\002 \001(\0132\026.google.protobuf.Value:\0028\001\032h\n\026Pat"
-          + "hValueMatchersEntry\022\013\n\003key\030\001 \001(\t\022=\n\005valu"
-          + "e\030\002 \001(\0132..google.cloud.recommender.v1bet"
-          + "a1.ValueMatcher:\0028\001B\014\n\npath_value\":\n\014Val"
-          + "ueMatcher\022\031\n\017matches_pattern\030\001 \001(\tH\000B\017\n\r"
-          + "match_variant\"_\n\016CostProjection\022 \n\004cost\030"
-          + "\001 \001(\0132\022.google.type.Money\022+\n\010duration\030\002 "
-          + "\001(\0132\031.google.protobuf.Duration\"\212\002\n\006Impac"
-          + "t\022C\n\010category\030\001 \001(\01621.google.cloud.recom"
-          + "mender.v1beta1.Impact.Category\022K\n\017cost_p"
-          + "rojection\030d \001(\01320.google.cloud.recommend"
-          + "er.v1beta1.CostProjectionH\000\"`\n\010Category\022"
-          + "\030\n\024CATEGORY_UNSPECIFIED\020\000\022\010\n\004COST\020\001\022\014\n\010S"
-          + "ECURITY\020\002\022\017\n\013PERFORMANCE\020\003\022\021\n\rMANAGEABIL"
-          + "ITY\020\004B\014\n\nprojection\"\350\002\n\027RecommendationSt"
-          + "ateInfo\022N\n\005state\030\001 \001(\0162?.google.cloud.re"
-          + "commender.v1beta1.RecommendationStateInf"
-          + "o.State\022d\n\016state_metadata\030\002 \003(\0132L.google"
-          + ".cloud.recommender.v1beta1.Recommendatio"
-          + "nStateInfo.StateMetadataEntry\0324\n\022StateMe"
-          + "tadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
-          + "\0028\001\"a\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006A"
-          + "CTIVE\020\001\022\013\n\007CLAIMED\020\006\022\r\n\tSUCCEEDED\020\003\022\n\n\006F"
-          + "AILED\020\004\022\r\n\tDISMISSED\020\005B\216\002\n$com.google.cl"
-          + "oud.recommender.v1beta1P\001ZKgoogle.golang"
-          + ".org/genproto/googleapis/cloud/recommend"
-          + "er/v1beta1;recommender\242\002\004CREC\252\002 Google.C"
-          + "loud.Recommender.V1Beta1\352Al\n&recommender"
-          + ".googleapis.com/Recommender\022Bprojects/{p"
-          + "roject}/locations/{location}/recommender"
-          + "s/{recommender}b\006proto3"
+          + "ecommendationStateInfo\022\014\n\004etag\030\013 \001(\t\022^\n\023"
+          + "associated_insights\030\016 \003(\0132A.google.cloud"
+          + ".recommender.v1beta1.Recommendation.Insi"
+          + "ghtReference\032#\n\020InsightReference\022\017\n\007insi"
+          + "ght\030\001 \001(\t:\224\001\352A\220\001\n)recommender.googleapis"
+          + ".com/Recommendation\022cprojects/{project}/"
+          + "locations/{location}/recommenders/{recom"
+          + "mender}/recommendations/{recommendation}"
+          + "\"c\n\025RecommendationContent\022J\n\020operation_g"
+          + "roups\030\002 \003(\01320.google.cloud.recommender.v"
+          + "1beta1.OperationGroup\"Q\n\016OperationGroup\022"
+          + "?\n\noperations\030\001 \003(\0132+.google.cloud.recom"
+          + "mender.v1beta1.Operation\"\353\004\n\tOperation\022\016"
+          + "\n\006action\030\001 \001(\t\022\025\n\rresource_type\030\002 \001(\t\022\020\n"
+          + "\010resource\030\003 \001(\t\022\014\n\004path\030\004 \001(\t\022\027\n\017source_"
+          + "resource\030\005 \001(\t\022\023\n\013source_path\030\006 \001(\t\022\'\n\005v"
+          + "alue\030\007 \001(\0132\026.google.protobuf.ValueH\000\022G\n\r"
+          + "value_matcher\030\n \001(\0132..google.cloud.recom"
+          + "mender.v1beta1.ValueMatcherH\000\022R\n\014path_fi"
+          + "lters\030\010 \003(\0132<.google.cloud.recommender.v"
+          + "1beta1.Operation.PathFiltersEntry\022_\n\023pat"
+          + "h_value_matchers\030\013 \003(\0132B.google.cloud.re"
+          + "commender.v1beta1.Operation.PathValueMat"
+          + "chersEntry\032J\n\020PathFiltersEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022%\n\005value\030\002 \001(\0132\026.google.protobuf.Val"
+          + "ue:\0028\001\032h\n\026PathValueMatchersEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022=\n\005value\030\002 \001(\0132..google.cloud.reco"
+          + "mmender.v1beta1.ValueMatcher:\0028\001B\014\n\npath"
+          + "_value\":\n\014ValueMatcher\022\031\n\017matches_patter"
+          + "n\030\001 \001(\tH\000B\017\n\rmatch_variant\"_\n\016CostProjec"
+          + "tion\022 \n\004cost\030\001 \001(\0132\022.google.type.Money\022+"
+          + "\n\010duration\030\002 \001(\0132\031.google.protobuf.Durat"
+          + "ion\"\212\002\n\006Impact\022C\n\010category\030\001 \001(\01621.googl"
+          + "e.cloud.recommender.v1beta1.Impact.Categ"
+          + "ory\022K\n\017cost_projection\030d \001(\01320.google.cl"
+          + "oud.recommender.v1beta1.CostProjectionH\000"
+          + "\"`\n\010Category\022\030\n\024CATEGORY_UNSPECIFIED\020\000\022\010"
+          + "\n\004COST\020\001\022\014\n\010SECURITY\020\002\022\017\n\013PERFORMANCE\020\003\022"
+          + "\021\n\rMANAGEABILITY\020\004B\014\n\nprojection\"\350\002\n\027Rec"
+          + "ommendationStateInfo\022N\n\005state\030\001 \001(\0162?.go"
+          + "ogle.cloud.recommender.v1beta1.Recommend"
+          + "ationStateInfo.State\022d\n\016state_metadata\030\002"
+          + " \003(\0132L.google.cloud.recommender.v1beta1."
+          + "RecommendationStateInfo.StateMetadataEnt"
+          + "ry\0324\n\022StateMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"a\n\005State\022\025\n\021STATE_UNSPE"
+          + "CIFIED\020\000\022\n\n\006ACTIVE\020\001\022\013\n\007CLAIMED\020\006\022\r\n\tSUC"
+          + "CEEDED\020\003\022\n\n\006FAILED\020\004\022\r\n\tDISMISSED\020\005B\216\002\n$"
+          + "com.google.cloud.recommender.v1beta1P\001ZK"
+          + "google.golang.org/genproto/googleapis/cl"
+          + "oud/recommender/v1beta1;recommender\242\002\004CR"
+          + "EC\252\002 Google.Cloud.Recommender.V1Beta1\352Al"
+          + "\n&recommender.googleapis.com/Recommender"
+          + "\022Bprojects/{project}/locations/{location"
+          + "}/recommenders/{recommender}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -174,6 +181,17 @@ public final class RecommendationOuterClass {
               "Content",
               "StateInfo",
               "Etag",
+              "AssociatedInsights",
+            });
+    internal_static_google_cloud_recommender_v1beta1_Recommendation_InsightReference_descriptor =
+        internal_static_google_cloud_recommender_v1beta1_Recommendation_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_recommender_v1beta1_Recommendation_InsightReference_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recommender_v1beta1_Recommendation_InsightReference_descriptor,
+            new java.lang.String[] {
+              "Insight",
             });
     internal_static_google_cloud_recommender_v1beta1_RecommendationContent_descriptor =
         getDescriptor().getMessageTypes().get(1);

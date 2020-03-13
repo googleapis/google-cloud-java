@@ -31,8 +31,8 @@
  * <pre>
  * <code>
  * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
- *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
- *   Recommendation response = recommenderClient.getRecommendation(name);
+ *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+ *   Insight response = recommenderClient.getInsight(name);
  * }
  * </code>
  * </pre>

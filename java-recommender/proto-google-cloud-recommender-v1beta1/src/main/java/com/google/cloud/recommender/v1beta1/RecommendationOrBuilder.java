@@ -348,4 +348,70 @@ public interface RecommendationOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Insights that led to this recommendation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
+   * </code>
+   */
+  java.util.List<com.google.cloud.recommender.v1beta1.Recommendation.InsightReference>
+      getAssociatedInsightsList();
+  /**
+   *
+   *
+   * <pre>
+   * Insights that led to this recommendation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
+   * </code>
+   */
+  com.google.cloud.recommender.v1beta1.Recommendation.InsightReference getAssociatedInsights(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Insights that led to this recommendation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
+   * </code>
+   */
+  int getAssociatedInsightsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Insights that led to this recommendation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.recommender.v1beta1.Recommendation.InsightReferenceOrBuilder>
+      getAssociatedInsightsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Insights that led to this recommendation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
+   * </code>
+   */
+  com.google.cloud.recommender.v1beta1.Recommendation.InsightReferenceOrBuilder
+      getAssociatedInsightsOrBuilder(int index);
 }

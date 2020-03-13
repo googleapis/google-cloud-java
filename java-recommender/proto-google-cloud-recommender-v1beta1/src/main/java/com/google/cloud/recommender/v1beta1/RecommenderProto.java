@@ -28,6 +28,26 @@ public final class RecommenderProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recommender_v1beta1_ListInsightsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recommender_v1beta1_ListInsightsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recommender_v1beta1_ListInsightsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recommender_v1beta1_ListInsightsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recommender_v1beta1_GetInsightRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recommender_v1beta1_GetInsightRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recommender_v1beta1_MarkInsightAcceptedRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recommender_v1beta1_MarkInsightAcceptedRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recommender_v1beta1_MarkInsightAcceptedRequest_StateMetadataEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recommender_v1beta1_MarkInsightAcceptedRequest_StateMetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_recommender_v1beta1_ListRecommendationsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recommender_v1beta1_ListRecommendationsRequest_fieldAccessorTable;
@@ -77,78 +97,111 @@ public final class RecommenderProto {
           + "mender.v1beta1\032\034google/api/annotations.p"
           + "roto\032\027google/api/client.proto\032\037google/ap"
           + "i/field_behavior.proto\032\031google/api/resou"
-          + "rce.proto\0325google/cloud/recommender/v1be"
-          + "ta1/recommendation.proto\"\235\001\n\032ListRecomme"
-          + "ndationsRequest\022>\n\006parent\030\001 \001(\tB.\340A\002\372A(\n"
-          + "&recommender.googleapis.com/Recommender\022"
-          + "\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 "
-          + "\001(\tB\003\340A\001\022\016\n\006filter\030\005 \001(\t\"\201\001\n\033ListRecomme"
-          + "ndationsResponse\022I\n\017recommendations\030\001 \003("
-          + "\01320.google.cloud.recommender.v1beta1.Rec"
-          + "ommendation\022\027\n\017next_page_token\030\002 \001(\t\"[\n\030"
-          + "GetRecommendationRequest\022?\n\004name\030\001 \001(\tB1"
-          + "\340A\002\372A+\n)recommender.googleapis.com/Recom"
-          + "mendation\"\233\002\n MarkRecommendationClaimedR"
-          + "equest\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)recommende"
-          + "r.googleapis.com/Recommendation\022m\n\016state"
-          + "_metadata\030\002 \003(\0132U.google.cloud.recommend"
-          + "er.v1beta1.MarkRecommendationClaimedRequ"
-          + "est.StateMetadataEntry\022\021\n\004etag\030\003 \001(\tB\003\340A"
-          + "\002\0324\n\022StateMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-          + "value\030\002 \001(\t:\0028\001\"\237\002\n\"MarkRecommendationSu"
-          + "cceededRequest\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)re"
-          + "commender.googleapis.com/Recommendation\022"
-          + "o\n\016state_metadata\030\002 \003(\0132W.google.cloud.r"
-          + "ecommender.v1beta1.MarkRecommendationSuc"
-          + "ceededRequest.StateMetadataEntry\022\021\n\004etag"
-          + "\030\003 \001(\tB\003\340A\002\0324\n\022StateMetadataEntry\022\013\n\003key"
-          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\231\002\n\037MarkRecomm"
-          + "endationFailedRequest\022?\n\004name\030\001 \001(\tB1\340A\002"
-          + "\372A+\n)recommender.googleapis.com/Recommen"
-          + "dation\022l\n\016state_metadata\030\002 \003(\0132T.google."
-          + "cloud.recommender.v1beta1.MarkRecommenda"
-          + "tionFailedRequest.StateMetadataEntry\022\021\n\004"
-          + "etag\030\003 \001(\tB\003\340A\002\0324\n\022StateMetadataEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\0012\337\n\n\013Recomm"
-          + "ender\022\363\001\n\023ListRecommendations\022<.google.c"
-          + "loud.recommender.v1beta1.ListRecommendat"
-          + "ionsRequest\032=.google.cloud.recommender.v"
-          + "1beta1.ListRecommendationsResponse\"_\202\323\344\223"
-          + "\002I\022G/v1beta1/{parent=projects/*/location"
-          + "s/*/recommenders/*}/recommendations\332A\rpa"
-          + "rent,filter\022\331\001\n\021GetRecommendation\022:.goog"
-          + "le.cloud.recommender.v1beta1.GetRecommen"
-          + "dationRequest\0320.google.cloud.recommender"
-          + ".v1beta1.Recommendation\"V\202\323\344\223\002I\022G/v1beta"
-          + "1/{name=projects/*/locations/*/recommend"
-          + "ers/*/recommendations/*}\332A\004name\022\214\002\n\031Mark"
-          + "RecommendationClaimed\022B.google.cloud.rec"
-          + "ommender.v1beta1.MarkRecommendationClaim"
-          + "edRequest\0320.google.cloud.recommender.v1b"
-          + "eta1.Recommendation\"y\202\323\344\223\002X\"S/v1beta1/{n"
+          + "rce.proto\032.google/cloud/recommender/v1be"
+          + "ta1/insight.proto\0325google/cloud/recommen"
+          + "der/v1beta1/recommendation.proto\"\233\001\n\023Lis"
+          + "tInsightsRequest\022>\n\006parent\030\001 \001(\tB.\340A\002\372A("
+          + "\n&recommender.googleapis.com/InsightType"
+          + "\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003"
+          + " \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\"l\n\024ListIn"
+          + "sightsResponse\022;\n\010insights\030\001 \003(\0132).googl"
+          + "e.cloud.recommender.v1beta1.Insight\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\"M\n\021GetInsightReques"
+          + "t\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"recommender.goo"
+          + "gleapis.com/Insight\"\215\002\n\032MarkInsightAccep"
+          + "tedRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"recomm"
+          + "ender.googleapis.com/Insight\022l\n\016state_me"
+          + "tadata\030\002 \003(\0132O.google.cloud.recommender."
+          + "v1beta1.MarkInsightAcceptedRequest.State"
+          + "MetadataEntryB\003\340A\001\022\021\n\004etag\030\003 \001(\tB\003\340A\002\0324\n"
+          + "\022StateMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
+          + "e\030\002 \001(\t:\0028\001\"\235\001\n\032ListRecommendationsReque"
+          + "st\022>\n\006parent\030\001 \001(\tB.\340A\002\372A(\n&recommender."
+          + "googleapis.com/Recommender\022\026\n\tpage_size\030"
+          + "\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\016\n\006f"
+          + "ilter\030\005 \001(\t\"\201\001\n\033ListRecommendationsRespo"
+          + "nse\022I\n\017recommendations\030\001 \003(\01320.google.cl"
+          + "oud.recommender.v1beta1.Recommendation\022\027"
+          + "\n\017next_page_token\030\002 \001(\t\"[\n\030GetRecommenda"
+          + "tionRequest\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)recom"
+          + "mender.googleapis.com/Recommendation\"\233\002\n"
+          + " MarkRecommendationClaimedRequest\022?\n\004nam"
+          + "e\030\001 \001(\tB1\340A\002\372A+\n)recommender.googleapis."
+          + "com/Recommendation\022m\n\016state_metadata\030\002 \003"
+          + "(\0132U.google.cloud.recommender.v1beta1.Ma"
+          + "rkRecommendationClaimedRequest.StateMeta"
+          + "dataEntry\022\021\n\004etag\030\003 \001(\tB\003\340A\002\0324\n\022StateMet"
+          + "adataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
+          + "8\001\"\237\002\n\"MarkRecommendationSucceededReques"
+          + "t\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)recommender.goo"
+          + "gleapis.com/Recommendation\022o\n\016state_meta"
+          + "data\030\002 \003(\0132W.google.cloud.recommender.v1"
+          + "beta1.MarkRecommendationSucceededRequest"
+          + ".StateMetadataEntry\022\021\n\004etag\030\003 \001(\tB\003\340A\002\0324"
+          + "\n\022StateMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001\"\231\002\n\037MarkRecommendationFaile"
+          + "dRequest\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)recommen"
+          + "der.googleapis.com/Recommendation\022l\n\016sta"
+          + "te_metadata\030\002 \003(\0132T.google.cloud.recomme"
+          + "nder.v1beta1.MarkRecommendationFailedReq"
+          + "uest.StateMetadataEntry\022\021\n\004etag\030\003 \001(\tB\003\340"
+          + "A\002\0324\n\022StateMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\0012\350\017\n\013Recommender\022\320\001\n\014Lis"
+          + "tInsights\0225.google.cloud.recommender.v1b"
+          + "eta1.ListInsightsRequest\0326.google.cloud."
+          + "recommender.v1beta1.ListInsightsResponse"
+          + "\"Q\202\323\344\223\002B\022@/v1beta1/{parent=projects/*/lo"
+          + "cations/*/insightTypes/*}/insights\332A\006par"
+          + "ent\022\275\001\n\nGetInsight\0223.google.cloud.recomm"
+          + "ender.v1beta1.GetInsightRequest\032).google"
+          + ".cloud.recommender.v1beta1.Insight\"O\202\323\344\223"
+          + "\002B\022@/v1beta1/{name=projects/*/locations/"
+          + "*/insightTypes/*/insights/*}\332A\004name\022\363\001\n\023"
+          + "MarkInsightAccepted\022<.google.cloud.recom"
+          + "mender.v1beta1.MarkInsightAcceptedReques"
+          + "t\032).google.cloud.recommender.v1beta1.Ins"
+          + "ight\"s\202\323\344\223\002R\"M/v1beta1/{name=projects/*/"
+          + "locations/*/insightTypes/*/insights/*}:m"
+          + "arkAccepted:\001*\332A\030name,state_metadata,eta"
+          + "g\022\363\001\n\023ListRecommendations\022<.google.cloud"
+          + ".recommender.v1beta1.ListRecommendations"
+          + "Request\032=.google.cloud.recommender.v1bet"
+          + "a1.ListRecommendationsResponse\"_\202\323\344\223\002I\022G"
+          + "/v1beta1/{parent=projects/*/locations/*/"
+          + "recommenders/*}/recommendations\332A\rparent"
+          + ",filter\022\331\001\n\021GetRecommendation\022:.google.c"
+          + "loud.recommender.v1beta1.GetRecommendati"
+          + "onRequest\0320.google.cloud.recommender.v1b"
+          + "eta1.Recommendation\"V\202\323\344\223\002I\022G/v1beta1/{n"
           + "ame=projects/*/locations/*/recommenders/"
-          + "*/recommendations/*}:markClaimed:\001*\332A\030na"
-          + "me,state_metadata,etag\022\222\002\n\033MarkRecommend"
-          + "ationSucceeded\022D.google.cloud.recommende"
-          + "r.v1beta1.MarkRecommendationSucceededReq"
-          + "uest\0320.google.cloud.recommender.v1beta1."
-          + "Recommendation\"{\202\323\344\223\002Z\"U/v1beta1/{name=p"
-          + "rojects/*/locations/*/recommenders/*/rec"
-          + "ommendations/*}:markSucceeded:\001*\332A\030name,"
-          + "state_metadata,etag\022\211\002\n\030MarkRecommendati"
-          + "onFailed\022A.google.cloud.recommender.v1be"
-          + "ta1.MarkRecommendationFailedRequest\0320.go"
-          + "ogle.cloud.recommender.v1beta1.Recommend"
-          + "ation\"x\202\323\344\223\002W\"R/v1beta1/{name=projects/*"
-          + "/locations/*/recommenders/*/recommendati"
-          + "ons/*}:markFailed:\001*\332A\030name,state_metada"
-          + "ta,etag\032N\312A\032recommender.googleapis.com\322A"
-          + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\261\001\n$com.google.cloud.recommender"
-          + ".v1beta1B\020RecommenderProtoP\001ZKgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/recomm"
-          + "ender/v1beta1;recommender\242\002\004CREC\252\002 Googl"
-          + "e.Cloud.Recommender.V1Beta1b\006proto3"
+          + "*/recommendations/*}\332A\004name\022\214\002\n\031MarkReco"
+          + "mmendationClaimed\022B.google.cloud.recomme"
+          + "nder.v1beta1.MarkRecommendationClaimedRe"
+          + "quest\0320.google.cloud.recommender.v1beta1"
+          + ".Recommendation\"y\202\323\344\223\002X\"S/v1beta1/{name="
+          + "projects/*/locations/*/recommenders/*/re"
+          + "commendations/*}:markClaimed:\001*\332A\030name,s"
+          + "tate_metadata,etag\022\222\002\n\033MarkRecommendatio"
+          + "nSucceeded\022D.google.cloud.recommender.v1"
+          + "beta1.MarkRecommendationSucceededRequest"
+          + "\0320.google.cloud.recommender.v1beta1.Reco"
+          + "mmendation\"{\202\323\344\223\002Z\"U/v1beta1/{name=proje"
+          + "cts/*/locations/*/recommenders/*/recomme"
+          + "ndations/*}:markSucceeded:\001*\332A\030name,stat"
+          + "e_metadata,etag\022\211\002\n\030MarkRecommendationFa"
+          + "iled\022A.google.cloud.recommender.v1beta1."
+          + "MarkRecommendationFailedRequest\0320.google"
+          + ".cloud.recommender.v1beta1.Recommendatio"
+          + "n\"x\202\323\344\223\002W\"R/v1beta1/{name=projects/*/loc"
+          + "ations/*/recommenders/*/recommendations/"
+          + "*}:markFailed:\001*\332A\030name,state_metadata,e"
+          + "tag\032N\312A\032recommender.googleapis.com\322A.htt"
+          + "ps://www.googleapis.com/auth/cloud-platf"
+          + "ormB\261\001\n$com.google.cloud.recommender.v1b"
+          + "eta1B\020RecommenderProtoP\001ZKgoogle.golang."
+          + "org/genproto/googleapis/cloud/recommende"
+          + "r/v1beta1;recommender\242\002\004CREC\252\002 Google.Cl"
+          + "oud.Recommender.V1Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -158,10 +211,53 @@ public final class RecommenderProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.recommender.v1beta1.InsightOuterClass.getDescriptor(),
               com.google.cloud.recommender.v1beta1.RecommendationOuterClass.getDescriptor(),
             });
-    internal_static_google_cloud_recommender_v1beta1_ListRecommendationsRequest_descriptor =
+    internal_static_google_cloud_recommender_v1beta1_ListInsightsRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_recommender_v1beta1_ListInsightsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recommender_v1beta1_ListInsightsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter",
+            });
+    internal_static_google_cloud_recommender_v1beta1_ListInsightsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_recommender_v1beta1_ListInsightsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recommender_v1beta1_ListInsightsResponse_descriptor,
+            new java.lang.String[] {
+              "Insights", "NextPageToken",
+            });
+    internal_static_google_cloud_recommender_v1beta1_GetInsightRequest_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_recommender_v1beta1_GetInsightRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recommender_v1beta1_GetInsightRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_recommender_v1beta1_MarkInsightAcceptedRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_recommender_v1beta1_MarkInsightAcceptedRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recommender_v1beta1_MarkInsightAcceptedRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "StateMetadata", "Etag",
+            });
+    internal_static_google_cloud_recommender_v1beta1_MarkInsightAcceptedRequest_StateMetadataEntry_descriptor =
+        internal_static_google_cloud_recommender_v1beta1_MarkInsightAcceptedRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_recommender_v1beta1_MarkInsightAcceptedRequest_StateMetadataEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recommender_v1beta1_MarkInsightAcceptedRequest_StateMetadataEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_recommender_v1beta1_ListRecommendationsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_recommender_v1beta1_ListRecommendationsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1beta1_ListRecommendationsRequest_descriptor,
@@ -169,7 +265,7 @@ public final class RecommenderProto {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_recommender_v1beta1_ListRecommendationsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_recommender_v1beta1_ListRecommendationsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1beta1_ListRecommendationsResponse_descriptor,
@@ -177,7 +273,7 @@ public final class RecommenderProto {
               "Recommendations", "NextPageToken",
             });
     internal_static_google_cloud_recommender_v1beta1_GetRecommendationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_recommender_v1beta1_GetRecommendationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1beta1_GetRecommendationRequest_descriptor,
@@ -185,7 +281,7 @@ public final class RecommenderProto {
               "Name",
             });
     internal_static_google_cloud_recommender_v1beta1_MarkRecommendationClaimedRequest_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_recommender_v1beta1_MarkRecommendationClaimedRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1beta1_MarkRecommendationClaimedRequest_descriptor,
@@ -203,7 +299,7 @@ public final class RecommenderProto {
               "Key", "Value",
             });
     internal_static_google_cloud_recommender_v1beta1_MarkRecommendationSucceededRequest_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_recommender_v1beta1_MarkRecommendationSucceededRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1beta1_MarkRecommendationSucceededRequest_descriptor,
@@ -221,7 +317,7 @@ public final class RecommenderProto {
               "Key", "Value",
             });
     internal_static_google_cloud_recommender_v1beta1_MarkRecommendationFailedRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_recommender_v1beta1_MarkRecommendationFailedRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1beta1_MarkRecommendationFailedRequest_descriptor,
@@ -252,6 +348,7 @@ public final class RecommenderProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.recommender.v1beta1.InsightOuterClass.getDescriptor();
     com.google.cloud.recommender.v1beta1.RecommendationOuterClass.getDescriptor();
   }
 

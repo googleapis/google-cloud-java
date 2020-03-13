@@ -43,6 +43,180 @@ public final class RecommenderGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getListInsightsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.ListInsightsRequest,
+          com.google.cloud.recommender.v1beta1.ListInsightsResponse>
+      METHOD_LIST_INSIGHTS = getListInsightsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.ListInsightsRequest,
+          com.google.cloud.recommender.v1beta1.ListInsightsResponse>
+      getListInsightsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.ListInsightsRequest,
+          com.google.cloud.recommender.v1beta1.ListInsightsResponse>
+      getListInsightsMethod() {
+    return getListInsightsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.ListInsightsRequest,
+          com.google.cloud.recommender.v1beta1.ListInsightsResponse>
+      getListInsightsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.recommender.v1beta1.ListInsightsRequest,
+            com.google.cloud.recommender.v1beta1.ListInsightsResponse>
+        getListInsightsMethod;
+    if ((getListInsightsMethod = RecommenderGrpc.getListInsightsMethod) == null) {
+      synchronized (RecommenderGrpc.class) {
+        if ((getListInsightsMethod = RecommenderGrpc.getListInsightsMethod) == null) {
+          RecommenderGrpc.getListInsightsMethod =
+              getListInsightsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.recommender.v1beta1.ListInsightsRequest,
+                          com.google.cloud.recommender.v1beta1.ListInsightsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.recommender.v1beta1.Recommender", "ListInsights"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1beta1.ListInsightsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1beta1.ListInsightsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new RecommenderMethodDescriptorSupplier("ListInsights"))
+                      .build();
+        }
+      }
+    }
+    return getListInsightsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetInsightMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.GetInsightRequest,
+          com.google.cloud.recommender.v1beta1.Insight>
+      METHOD_GET_INSIGHT = getGetInsightMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.GetInsightRequest,
+          com.google.cloud.recommender.v1beta1.Insight>
+      getGetInsightMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.GetInsightRequest,
+          com.google.cloud.recommender.v1beta1.Insight>
+      getGetInsightMethod() {
+    return getGetInsightMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.GetInsightRequest,
+          com.google.cloud.recommender.v1beta1.Insight>
+      getGetInsightMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.recommender.v1beta1.GetInsightRequest,
+            com.google.cloud.recommender.v1beta1.Insight>
+        getGetInsightMethod;
+    if ((getGetInsightMethod = RecommenderGrpc.getGetInsightMethod) == null) {
+      synchronized (RecommenderGrpc.class) {
+        if ((getGetInsightMethod = RecommenderGrpc.getGetInsightMethod) == null) {
+          RecommenderGrpc.getGetInsightMethod =
+              getGetInsightMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.recommender.v1beta1.GetInsightRequest,
+                          com.google.cloud.recommender.v1beta1.Insight>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.recommender.v1beta1.Recommender", "GetInsight"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1beta1.GetInsightRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1beta1.Insight.getDefaultInstance()))
+                      .setSchemaDescriptor(new RecommenderMethodDescriptorSupplier("GetInsight"))
+                      .build();
+        }
+      }
+    }
+    return getGetInsightMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getMarkInsightAcceptedMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest,
+          com.google.cloud.recommender.v1beta1.Insight>
+      METHOD_MARK_INSIGHT_ACCEPTED = getMarkInsightAcceptedMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest,
+          com.google.cloud.recommender.v1beta1.Insight>
+      getMarkInsightAcceptedMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest,
+          com.google.cloud.recommender.v1beta1.Insight>
+      getMarkInsightAcceptedMethod() {
+    return getMarkInsightAcceptedMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest,
+          com.google.cloud.recommender.v1beta1.Insight>
+      getMarkInsightAcceptedMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest,
+            com.google.cloud.recommender.v1beta1.Insight>
+        getMarkInsightAcceptedMethod;
+    if ((getMarkInsightAcceptedMethod = RecommenderGrpc.getMarkInsightAcceptedMethod) == null) {
+      synchronized (RecommenderGrpc.class) {
+        if ((getMarkInsightAcceptedMethod = RecommenderGrpc.getMarkInsightAcceptedMethod) == null) {
+          RecommenderGrpc.getMarkInsightAcceptedMethod =
+              getMarkInsightAcceptedMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest,
+                          com.google.cloud.recommender.v1beta1.Insight>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.recommender.v1beta1.Recommender",
+                              "MarkInsightAccepted"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1beta1.Insight.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecommenderMethodDescriptorSupplier("MarkInsightAccepted"))
+                      .build();
+        }
+      }
+    }
+    return getMarkInsightAcceptedMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getListRecommendationsMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.recommender.v1beta1.ListRecommendationsRequest,
@@ -383,6 +557,54 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
+     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
+     * permission for the specified insight type.
+     * </pre>
+     */
+    public void listInsights(
+        com.google.cloud.recommender.v1beta1.ListInsightsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.ListInsightsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListInsightsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested insight. Requires the recommender.*.get IAM permission
+     * for the specified insight type.
+     * </pre>
+     */
+    public void getInsight(
+        com.google.cloud.recommender.v1beta1.GetInsightRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getGetInsightMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks the Insight State as Accepted. Users can use this method to
+     * indicate to the Recommender API that they have applied some action based
+     * on the insight. This stops the insight content from being updated.
+     * MarkInsightAccepted can be applied to insights in ACTIVE state. Requires
+     * the recommender.*.update IAM permission for the specified insight.
+     * </pre>
+     */
+    public void markInsightAccepted(
+        com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getMarkInsightAcceptedMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists recommendations for a Cloud project. Requires the recommender.*.list
      * IAM permission for the specified recommender.
      * </pre>
@@ -479,6 +701,26 @@ public final class RecommenderGrpc {
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
+              getListInsightsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.recommender.v1beta1.ListInsightsRequest,
+                      com.google.cloud.recommender.v1beta1.ListInsightsResponse>(
+                      this, METHODID_LIST_INSIGHTS)))
+          .addMethod(
+              getGetInsightMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.recommender.v1beta1.GetInsightRequest,
+                      com.google.cloud.recommender.v1beta1.Insight>(this, METHODID_GET_INSIGHT)))
+          .addMethod(
+              getMarkInsightAcceptedMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest,
+                      com.google.cloud.recommender.v1beta1.Insight>(
+                      this, METHODID_MARK_INSIGHT_ACCEPTED)))
+          .addMethod(
               getListRecommendationsMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -539,6 +781,63 @@ public final class RecommenderGrpc {
     @java.lang.Override
     protected RecommenderStub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new RecommenderStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
+     * permission for the specified insight type.
+     * </pre>
+     */
+    public void listInsights(
+        com.google.cloud.recommender.v1beta1.ListInsightsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.ListInsightsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListInsightsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested insight. Requires the recommender.*.get IAM permission
+     * for the specified insight type.
+     * </pre>
+     */
+    public void getInsight(
+        com.google.cloud.recommender.v1beta1.GetInsightRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetInsightMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks the Insight State as Accepted. Users can use this method to
+     * indicate to the Recommender API that they have applied some action based
+     * on the insight. This stops the insight content from being updated.
+     * MarkInsightAccepted can be applied to insights in ACTIVE state. Requires
+     * the recommender.*.update IAM permission for the specified insight.
+     * </pre>
+     */
+    public void markInsightAccepted(
+        com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getMarkInsightAcceptedMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -683,6 +982,51 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
+     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
+     * permission for the specified insight type.
+     * </pre>
+     */
+    public com.google.cloud.recommender.v1beta1.ListInsightsResponse listInsights(
+        com.google.cloud.recommender.v1beta1.ListInsightsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListInsightsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested insight. Requires the recommender.*.get IAM permission
+     * for the specified insight type.
+     * </pre>
+     */
+    public com.google.cloud.recommender.v1beta1.Insight getInsight(
+        com.google.cloud.recommender.v1beta1.GetInsightRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetInsightMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks the Insight State as Accepted. Users can use this method to
+     * indicate to the Recommender API that they have applied some action based
+     * on the insight. This stops the insight content from being updated.
+     * MarkInsightAccepted can be applied to insights in ACTIVE state. Requires
+     * the recommender.*.update IAM permission for the specified insight.
+     * </pre>
+     */
+    public com.google.cloud.recommender.v1beta1.Insight markInsightAccepted(
+        com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getMarkInsightAcceptedMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists recommendations for a Cloud project. Requires the recommender.*.list
      * IAM permission for the specified recommender.
      * </pre>
@@ -800,6 +1144,55 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
+     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
+     * permission for the specified insight type.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.recommender.v1beta1.ListInsightsResponse>
+        listInsights(com.google.cloud.recommender.v1beta1.ListInsightsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListInsightsMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested insight. Requires the recommender.*.get IAM permission
+     * for the specified insight type.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.recommender.v1beta1.Insight>
+        getInsight(com.google.cloud.recommender.v1beta1.GetInsightRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetInsightMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks the Insight State as Accepted. Users can use this method to
+     * indicate to the Recommender API that they have applied some action based
+     * on the insight. This stops the insight content from being updated.
+     * MarkInsightAccepted can be applied to insights in ACTIVE state. Requires
+     * the recommender.*.update IAM permission for the specified insight.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.recommender.v1beta1.Insight>
+        markInsightAccepted(
+            com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getMarkInsightAcceptedMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists recommendations for a Cloud project. Requires the recommender.*.list
      * IAM permission for the specified recommender.
      * </pre>
@@ -899,11 +1292,14 @@ public final class RecommenderGrpc {
     }
   }
 
-  private static final int METHODID_LIST_RECOMMENDATIONS = 0;
-  private static final int METHODID_GET_RECOMMENDATION = 1;
-  private static final int METHODID_MARK_RECOMMENDATION_CLAIMED = 2;
-  private static final int METHODID_MARK_RECOMMENDATION_SUCCEEDED = 3;
-  private static final int METHODID_MARK_RECOMMENDATION_FAILED = 4;
+  private static final int METHODID_LIST_INSIGHTS = 0;
+  private static final int METHODID_GET_INSIGHT = 1;
+  private static final int METHODID_MARK_INSIGHT_ACCEPTED = 2;
+  private static final int METHODID_LIST_RECOMMENDATIONS = 3;
+  private static final int METHODID_GET_RECOMMENDATION = 4;
+  private static final int METHODID_MARK_RECOMMENDATION_CLAIMED = 5;
+  private static final int METHODID_MARK_RECOMMENDATION_SUCCEEDED = 6;
+  private static final int METHODID_MARK_RECOMMENDATION_FAILED = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -922,6 +1318,25 @@ public final class RecommenderGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_LIST_INSIGHTS:
+          serviceImpl.listInsights(
+              (com.google.cloud.recommender.v1beta1.ListInsightsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.recommender.v1beta1.ListInsightsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_INSIGHT:
+          serviceImpl.getInsight(
+              (com.google.cloud.recommender.v1beta1.GetInsightRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight>)
+                  responseObserver);
+          break;
+        case METHODID_MARK_INSIGHT_ACCEPTED:
+          serviceImpl.markInsightAccepted(
+              (com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight>)
+                  responseObserver);
+          break;
         case METHODID_LIST_RECOMMENDATIONS:
           serviceImpl.listRecommendations(
               (com.google.cloud.recommender.v1beta1.ListRecommendationsRequest) request,
@@ -1017,6 +1432,9 @@ public final class RecommenderGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new RecommenderFileDescriptorSupplier())
+                      .addMethod(getListInsightsMethodHelper())
+                      .addMethod(getGetInsightMethodHelper())
+                      .addMethod(getMarkInsightAcceptedMethodHelper())
                       .addMethod(getListRecommendationsMethodHelper())
                       .addMethod(getGetRecommendationMethodHelper())
                       .addMethod(getMarkRecommendationClaimedMethodHelper())

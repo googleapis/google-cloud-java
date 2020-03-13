@@ -15,14 +15,20 @@
  */
 package com.google.cloud.recommender.v1beta1.stub;
 
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightsPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendationsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.recommender.v1beta1.GetInsightRequest;
 import com.google.cloud.recommender.v1beta1.GetRecommendationRequest;
+import com.google.cloud.recommender.v1beta1.Insight;
+import com.google.cloud.recommender.v1beta1.ListInsightsRequest;
+import com.google.cloud.recommender.v1beta1.ListInsightsResponse;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsRequest;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsResponse;
+import com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest;
@@ -38,6 +44,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class RecommenderStub implements BackgroundResource {
+
+  public UnaryCallable<ListInsightsRequest, ListInsightsPagedResponse> listInsightsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listInsightsPagedCallable()");
+  }
+
+  public UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listInsightsCallable()");
+  }
+
+  public UnaryCallable<GetInsightRequest, Insight> getInsightCallable() {
+    throw new UnsupportedOperationException("Not implemented: getInsightCallable()");
+  }
+
+  public UnaryCallable<MarkInsightAcceptedRequest, Insight> markInsightAcceptedCallable() {
+    throw new UnsupportedOperationException("Not implemented: markInsightAcceptedCallable()");
+  }
 
   public UnaryCallable<ListRecommendationsRequest, ListRecommendationsPagedResponse>
       listRecommendationsPagedCallable() {
