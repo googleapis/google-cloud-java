@@ -1,19 +1,20 @@
 {
-  "updateTime": "2020-02-28T20:08:54.730639Z",
+  "updateTime": "2020-03-13T21:57:34.608995Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.46.0",
-        "dockerImage": "googleapis/artman@sha256:6248a21fba8f0d618c3b032669cec2618e684b66922bb70391fe08c41b05f6ee"
+        "version": "1.1.0",
+        "dockerImage": "googleapis/artman@sha256:f54b7644a1d2e7a37b23f5c0dfe9bba473e41c675002a507a244389e27487ca9"
       }
     },
     {
       "git": {
         "name": "googleapis-private",
         "remote": "https://github.com/googleapis/googleapis-private.git",
-        "sha": "93896777e78b247f3a2228bde08b1fe1cf4179a5",
-        "internalRef": "295938567"
+        "sha": "f557255ffc2382115850c7e4832b5505676ae63b",
+        "internalRef": "299734673",
+        "log": "f557255ffc2382115850c7e4832b5505676ae63b\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 299734673\n\n27f8117872914cb033c33f2351bee19d34f7b0cc\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 298524614\n\n71a4d0fafde0d09abd8ab93773eedfb4490f1e40\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 298477635\n\n"
       }
     },
     {
