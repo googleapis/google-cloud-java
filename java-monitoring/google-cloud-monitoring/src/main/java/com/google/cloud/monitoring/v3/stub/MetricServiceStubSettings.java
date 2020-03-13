@@ -521,9 +521,9 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.3)
+              .setMaxRpcTimeout(Duration.ofMillis(90000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);
