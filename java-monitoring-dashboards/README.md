@@ -1,6 +1,6 @@
-# Google Google Cloud Monitoring Dashboards Client for Java
+# Google Monitoring Dashboards Client for Java
 
-Java idiomatic client for [Google Cloud Monitoring Dashboards][product-docs].
+Java idiomatic client for [Monitoring Dashboards][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -64,8 +64,8 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Monitoring Dashboards [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Google Cloud Monitoring Dashboards.
+You will need a [Google Cloud Platform Console][developer-console] project with the Monitoring Dashboards [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Monitoring Dashboards.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -75,13 +75,13 @@ You will need to [enable billing][enable-billing] to use Google Google Cloud Mon
 You'll need to obtain the `google-cloud-monitoring-dashboard` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-monitoring-dashboard` as a dependency in your code.
 
-## About Google Cloud Monitoring Dashboards
+## About Monitoring Dashboards
 
 
-[Google Cloud Monitoring Dashboards][product-docs] are one way for you to view and analyze metric data. The Cloud Console provides predefined dashboards that require no setup or configuration. You can also define custom dashboards. With custom dashboards, you have complete control over the charts that are displayed and their configuration.
+[Monitoring Dashboards][product-docs] are one way for you to view and analyze metric data. The Cloud Console provides predefined dashboards that require no setup or configuration. You can also define custom dashboards. With custom dashboards, you have complete control over the charts that are displayed and their configuration.
 
-See the [Google Cloud Monitoring Dashboards client library docs][javadocs] to learn how to
-use this Google Cloud Monitoring Dashboards Client Library.
+See the [Monitoring Dashboards client library docs][javadocs] to learn how to
+use this Monitoring Dashboards Client Library.
 
 
 
@@ -94,7 +94,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud Monitoring Dashboards uses gRPC for the transport layer.
+Monitoring Dashboards uses gRPC for the transport layer.
 
 ## Java Versions
 
@@ -135,7 +135,7 @@ Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 [product-docs]: https://cloud.google.com/monitoring/charts/dashboards
-[javadocs]: https://googleapis.dev/java/java-monitoring-dashboards/latest
+[javadocs]: https://googleapis.dev/java/google-cloud-monitoring-dashboard/latest
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-monitoring-dashboards/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-monitoring-dashboards/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-monitoring-dashboards/java8.svg
