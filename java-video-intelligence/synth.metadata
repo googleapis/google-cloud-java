@@ -1,13 +1,12 @@
 {
-  "updateTime": "2020-03-10T10:03:09.677112Z",
+  "updateTime": "2020-03-13T22:20:33.388761Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
         "sha": "4ba9aa8a4a1413b88dca5a8fa931824ee9c284e6",
-        "internalRef": "299971671",
-        "log": "4ba9aa8a4a1413b88dca5a8fa931824ee9c284e6\nExpose logo recognition API proto for GA.\n\nPiperOrigin-RevId: 299971671\n\n"
+        "internalRef": "299971671"
       }
     },
     {
