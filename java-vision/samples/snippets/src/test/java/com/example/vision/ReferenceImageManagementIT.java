@@ -21,6 +21,8 @@ import static com.google.common.truth.Truth.assertThat;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,10 +35,12 @@ import org.junit.runners.JUnit4;
 public class ReferenceImageManagementIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String COMPUTE_REGION = "us-west1";
-  private static final String PRODUCT_DISPLAY_NAME = "fake_prduct_display_name_for_testing";
+  private static final String PRODUCT_DISPLAY_NAME =
+          String.format("test_%s", UUID.randomUUID().toString());
   private static final String PRODUCT_CATEGORY = "apparel";
-  private static final String PRODUCT_ID = "fake_prduct_id_for_testing";
-  private static final String REFERENCE_IMAGE_ID = "fake_reference_image_id_for_testing";
+  private static final String PRODUCT_ID = String.format("test_%s", UUID.randomUUID().toString());
+  private static final String REFERENCE_IMAGE_ID =
+          String.format("test_%s", UUID.randomUUID().toString());
   private static final String GCS_URI =
       "gs://java-docs-samples-testing/product-search/shoes_1.jpg";
   private ByteArrayOutputStream bout;
@@ -60,21 +64,12 @@ public class ReferenceImageManagementIT {
   @Test
   public void testCreateReferenceImage() throws Exception {
     // Act
-    ReferenceImageManagement.listReferenceImagesOfProduct(PROJECT_ID, COMPUTE_REGION, PRODUCT_ID);
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).doesNotContain(REFERENCE_IMAGE_ID);
-
-    bout.reset();
-
-    // Act
     ReferenceImageManagement.createReferenceImage(
         PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, REFERENCE_IMAGE_ID, GCS_URI);
     ReferenceImageManagement.listReferenceImagesOfProduct(PROJECT_ID, COMPUTE_REGION, PRODUCT_ID);
 
     // Assert
-    got = bout.toString();
+    String got = bout.toString();
     assertThat(got).contains(REFERENCE_IMAGE_ID);
 
     bout.reset();

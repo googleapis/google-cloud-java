@@ -36,11 +36,13 @@ public class ProductInProductSetManagementIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String COMPUTE_REGION = "us-west1";
   private static final String PRODUCT_SET_DISPLAY_NAME =
-      "fake_pdt_set_display_name_for_testing";
-  private static final String PRODUCT_SET_ID = "fake_pdt_set_id_for_testing" + UUID.randomUUID();
-  private static final String PRODUCT_DISPLAY_NAME = "fake_pdt_display_name_for_testing";
+          String.format("test_%s", UUID.randomUUID().toString());
+  private static final String PRODUCT_SET_ID =
+          String.format("test_%s", UUID.randomUUID().toString());
+  private static final String PRODUCT_DISPLAY_NAME =
+          String.format("test_%s", UUID.randomUUID().toString());
   private static final String PRODUCT_CATEGORY = "apparel";
-  private static final String PRODUCT_ID = "fake_pdt_id_for_testing";
+  private static final String PRODUCT_ID = String.format("test_%s", UUID.randomUUID().toString());
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -66,21 +68,11 @@ public class ProductInProductSetManagementIT {
   @Test
   public void testAddProductToProductSet() throws Exception {
     // Act
-    ProductInProductSetManagement.listProductsInProductSet(
-        PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID);
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).doesNotContain(PRODUCT_ID);
-
-    bout.reset();
-
-    // Act
     ProductInProductSetManagement.addProductToProductSet(
         PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_SET_ID);
 
     // Assert
-    got = bout.toString();
+    String got = bout.toString();
     assertThat(got).contains("Product added to product set.");
   }
 

@@ -18,9 +18,17 @@ package com.example.vision;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.BlobId;
+import com.google.cloud.storage.BlobInfo;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,18 +41,32 @@ import org.junit.runners.JUnit4;
 public class ImportProductSetsIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String COMPUTE_REGION = "us-west1";
-  private static final String GCS_URI =
-      "gs://cloud-samples-data/vision/product_search/product_sets.csv";
-  private static final String PRODUCT_SET_ID = "fake_product_set_id_for_testing";
-  private static final String PRODUCT_ID_1 = "fake_product_id_for_testing_1";
-  private static final String PRODUCT_ID_2 = "fake_product_id_for_testing_2";
+  private static final String PRODUCT_SET_ID =
+      String.format("test_%s", UUID.randomUUID().toString());
+  private static final String PRODUCT_ID_1 = String.format("test_%s", UUID.randomUUID().toString());
   private static final String IMAGE_URI_1 = "shoes_1.jpg";
-  private static final String IMAGE_URI_2 = "shoes_2.jpg";
+  private static final String FILEPATH =
+      String.format("vision/%s.csv", UUID.randomUUID().toString());
+  private static final String GCS_URI = String.format("gs://%s/%s", PROJECT_ID, FILEPATH);
+  private Blob blob;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
   @Before
   public void setUp() {
+    // Create the product set csv file locally and upload it to GCS
+    // This is so that there is a unique product set ID for all python version tests.
+    Storage storage = StorageOptions.newBuilder().setProjectId(PROJECT_ID).build().getService();
+    BlobId blobId = BlobId.of(PROJECT_ID, FILEPATH);
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
+    String csvContents =
+        "\"gs://cloud-samples-data/vision/product_search/shoes_1.jpg\","
+            + String.format("\"%s\",", IMAGE_URI_1)
+            + String.format("\"%s\",", PRODUCT_SET_ID)
+            + String.format("\"%s\",", PRODUCT_ID_1)
+            + "\"apparel\",,\"style=womens\",\"0.1,0.1,0.9,0.1,0.9,0.9,0.1,0.9\"";
+    blob = storage.create(blobInfo, csvContents.getBytes());
+
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -52,55 +74,22 @@ public class ImportProductSetsIT {
 
   @After
   public void tearDown() throws IOException {
-    ProductManagement.deleteProduct(PROJECT_ID,COMPUTE_REGION,PRODUCT_ID_1);
-    ProductManagement.deleteProduct(PROJECT_ID,COMPUTE_REGION,PRODUCT_ID_2);
+    ProductManagement.deleteProduct(PROJECT_ID, COMPUTE_REGION, PRODUCT_ID_1);
     ProductSetManagement.deleteProductSet(PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID);
+    Storage storage = StorageOptions.newBuilder().setProjectId(PROJECT_ID).build().getService();
+    // Delete the created blob
+    storage.delete(blob.getBlobId());
     System.setOut(null);
   }
 
   @Test
   public void testImportProductSets() throws Exception {
     // Act
-    ProductSetManagement.listProductSets(PROJECT_ID, COMPUTE_REGION);
-
-    // Assert
-    String got = bout.toString();
-    System.out.println(got);
-    assertThat(got).doesNotContain(PRODUCT_SET_ID);
-
-    // Act
-    ProductManagement.listProducts(PROJECT_ID, COMPUTE_REGION);
-
-    // Assert
-    assertThat(got).doesNotContain(PRODUCT_ID_1);
-    assertThat(got).doesNotContain(PRODUCT_ID_2);
-
-    // Act
-    ProductInProductSetManagement.listProductsInProductSet(
-        PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID);
-
-    // Assert
-    assertThat(got).doesNotContain(PRODUCT_ID_1);
-    assertThat(got).doesNotContain(PRODUCT_ID_2);
-
-    // Act
-    ReferenceImageManagement.listReferenceImagesOfProduct(PROJECT_ID, COMPUTE_REGION, PRODUCT_ID_1);
-
-    // Assert
-    assertThat(got).doesNotContain(IMAGE_URI_1);
-
-    // Act
-    ReferenceImageManagement.listReferenceImagesOfProduct(PROJECT_ID, COMPUTE_REGION, PRODUCT_ID_2);
-
-    // Assert
-    assertThat(got).doesNotContain(IMAGE_URI_2);
-
-    // Act
     ImportProductSets.importProductSets(PROJECT_ID, COMPUTE_REGION, GCS_URI);
     ProductSetManagement.listProductSets(PROJECT_ID, COMPUTE_REGION);
 
     // Assert
-    got = bout.toString();
+    String got = bout.toString();
     assertThat(got).contains(PRODUCT_SET_ID);
 
     // Act
@@ -108,7 +97,6 @@ public class ImportProductSetsIT {
 
     // Assert
     assertThat(got).contains(PRODUCT_ID_1);
-    assertThat(got).contains(PRODUCT_ID_2);
 
     // Act
     ProductInProductSetManagement.listProductsInProductSet(
@@ -116,18 +104,11 @@ public class ImportProductSetsIT {
 
     // Assert
     assertThat(got).contains(PRODUCT_ID_1);
-    assertThat(got).contains(PRODUCT_ID_2);
 
     // Act
     ReferenceImageManagement.listReferenceImagesOfProduct(PROJECT_ID, COMPUTE_REGION, PRODUCT_ID_1);
 
     // Assert
     assertThat(got).contains(IMAGE_URI_1);
-
-    // Act
-    ReferenceImageManagement.listReferenceImagesOfProduct(PROJECT_ID, COMPUTE_REGION, PRODUCT_ID_2);
-
-    // Assert
-    assertThat(got).contains(IMAGE_URI_2);
   }
 }

@@ -21,6 +21,8 @@ import static com.google.common.truth.Truth.assertThat;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,11 +35,12 @@ import org.junit.runners.JUnit4;
 public class ProductManagementIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String COMPUTE_REGION = "us-west1";
-  private static final String PRODUCT_DISPLAY_NAME = "fake_prod_display_name_for_testing";
+  private static final String PRODUCT_DISPLAY_NAME =
+          String.format("test_%s", UUID.randomUUID().toString());
   private static final String PRODUCT_CATEGORY = "homegoods";
-  private static final String PRODUCT_ID = "fake_prod_id_for_testing";
-  private static final String KEY = "fake_key_for_testing";
-  private static final String VALUE = "fake_value_for_testing";
+  private static final String PRODUCT_ID = String.format("test_%s", UUID.randomUUID().toString());
+  private static final String KEY = String.format("test_%s", UUID.randomUUID().toString());
+  private static final String VALUE = String.format("test_%s", UUID.randomUUID().toString());
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -57,21 +60,12 @@ public class ProductManagementIT {
   @Test
   public void testCreateProduct() throws Exception {
     // Act
-    ProductManagement.listProducts(PROJECT_ID, COMPUTE_REGION);
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).doesNotContain(PRODUCT_ID);
-
-    bout.reset();
-
-    // Act
     ProductManagement.createProduct(
         PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_DISPLAY_NAME, PRODUCT_CATEGORY);
     ProductManagement.listProducts(PROJECT_ID, COMPUTE_REGION);
 
     // Assert
-    got = bout.toString();
+    String got = bout.toString();
     assertThat(got).contains(PRODUCT_ID);
   }
 
