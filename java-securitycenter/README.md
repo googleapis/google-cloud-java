@@ -1,6 +1,6 @@
-# Google Google Cloud Security Command Center Client for Java
+# Google Security Command Center Client for Java
 
-Java idiomatic client for [Google Cloud Security Command Center][product-docs].
+Java idiomatic client for [Security Command Center][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -64,7 +64,7 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Security Command Center [API enabled][enable-api].
+You will need a [Google Cloud Platform Console][developer-console] project with the Security Command Center [API enabled][enable-api].
 
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
@@ -75,13 +75,13 @@ You will need a [Google Cloud Platform Console][developer-console] project with 
 You'll need to obtain the `google-cloud-securitycenter` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-securitycenter` as a dependency in your code.
 
-## About Google Cloud Security Command Center
+## About Security Command Center
 
 
-[Google Cloud Security Command Center][product-docs] makes it easier for you to prevent, detect, and respond to threats. Identify security misconfigurations in virtual machines, networks, applications, and storage buckets from a centralized dashboard. Take action on them before they can potentially result in business damage or loss. Built-in capabilities can quickly surface suspicious activity in your Stackdriver security logs or indicate compromised virtual machines. Respond to threats by following actionable recommendations or exporting logs to your SIEM for further investigation.
+[Security Command Center][product-docs] makes it easier for you to prevent, detect, and respond to threats. Identify security misconfigurations in virtual machines, networks, applications, and storage buckets from a centralized dashboard. Take action on them before they can potentially result in business damage or loss. Built-in capabilities can quickly surface suspicious activity in your Stackdriver security logs or indicate compromised virtual machines. Respond to threats by following actionable recommendations or exporting logs to your SIEM for further investigation.
 
-See the [Google Cloud Security Command Center client library docs][javadocs] to learn how to
-use this Google Cloud Security Command Center Client Library.
+See the [Security Command Center client library docs][javadocs] to learn how to
+use this Security Command Center Client Library.
 
 
 
@@ -94,7 +94,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud Security Command Center uses gRPC for the transport layer.
+Security Command Center uses gRPC for the transport layer.
 
 ## Java Versions
 
