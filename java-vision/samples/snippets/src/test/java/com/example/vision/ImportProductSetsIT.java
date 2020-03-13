@@ -55,7 +55,7 @@ public class ImportProductSetsIT {
   @Before
   public void setUp() {
     // Create the product set csv file locally and upload it to GCS
-    // This is so that there is a unique product set ID for all python version tests.
+    // This is so that there is a unique product set ID for all java version tests.
     Storage storage = StorageOptions.newBuilder().setProjectId(PROJECT_ID).build().getService();
     BlobId blobId = BlobId.of(PROJECT_ID, FILEPATH);
     BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
