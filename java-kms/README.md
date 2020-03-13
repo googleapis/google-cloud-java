@@ -1,6 +1,6 @@
-# Google Google Cloud Key Management Service Client for Java
+# Google Cloud Key Management Service Client for Java
 
-Java idiomatic client for [Google Cloud Key Management Service][product-docs].
+Java idiomatic client for [Cloud Key Management Service][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -61,8 +61,8 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Key Management Service [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Google Cloud Key Management Service.
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Key Management Service [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Cloud Key Management Service.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -72,13 +72,13 @@ You will need to [enable billing][enable-billing] to use Google Google Cloud Key
 You'll need to obtain the `google-cloud-kms` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-kms` as a dependency in your code.
 
-## About Google Cloud Key Management Service
+## About Cloud Key Management Service
 
 
-[Google Cloud Key Management Service][product-docs] a cloud-hosted key management service that lets you manage cryptographic keys for your cloud services the same way you do on-premises. You can generate, use, rotate, and destroy AES256, RSA 2048, RSA 3072, RSA 4096, EC P256, and EC P384 cryptographic keys. Cloud KMS is integrated with Cloud IAM and Cloud Audit Logging so that you can manage permissions on individual keys and monitor how these are used. Use Cloud KMS to protect secrets and other sensitive data that you need to store in Google Cloud Platform.
+[Cloud Key Management Service][product-docs] a cloud-hosted key management service that lets you manage cryptographic keys for your cloud services the same way you do on-premises. You can generate, use, rotate, and destroy AES256, RSA 2048, RSA 3072, RSA 4096, EC P256, and EC P384 cryptographic keys. Cloud KMS is integrated with Cloud IAM and Cloud Audit Logging so that you can manage permissions on individual keys and monitor how these are used. Use Cloud KMS to protect secrets and other sensitive data that you need to store in Google Cloud Platform.
 
-See the [Google Cloud Key Management Service client library docs][javadocs] to learn how to
-use this Google Cloud Key Management Service Client Library.
+See the [Cloud Key Management Service client library docs][javadocs] to learn how to
+use this Cloud Key Management Service Client Library.
 
 
 
@@ -91,7 +91,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud Key Management Service uses gRPC for the transport layer.
+Cloud Key Management Service uses gRPC for the transport layer.
 
 ## Java Versions
 
