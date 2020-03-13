@@ -1,6 +1,6 @@
-# Google Google Cloud reCAPTCHA Enterprise Client for Java
+# Google reCAPTCHA Enterprise Client for Java
 
-Java idiomatic client for [Google Cloud reCAPTCHA Enterprise][product-docs].
+Java idiomatic client for [reCAPTCHA Enterprise][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -64,7 +64,7 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud reCAPTCHA Enterprise [API enabled][enable-api].
+You will need a [Google Cloud Platform Console][developer-console] project with the reCAPTCHA Enterprise [API enabled][enable-api].
 
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
@@ -75,13 +75,13 @@ You will need a [Google Cloud Platform Console][developer-console] project with 
 You'll need to obtain the `google-cloud-recaptchaenterprise` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-recaptchaenterprise` as a dependency in your code.
 
-## About Google Cloud reCAPTCHA Enterprise
+## About reCAPTCHA Enterprise
 
 
-[Google Cloud reCAPTCHA Enterprise][product-docs] is a service that protects your site from spam and abuse.
+[reCAPTCHA Enterprise][product-docs] is a service that protects your site from spam and abuse.
 
-See the [Google Cloud reCAPTCHA Enterprise client library docs][javadocs] to learn how to
-use this Google Cloud reCAPTCHA Enterprise Client Library.
+See the [reCAPTCHA Enterprise client library docs][javadocs] to learn how to
+use this reCAPTCHA Enterprise Client Library.
 
 
 
@@ -94,7 +94,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud reCAPTCHA Enterprise uses gRPC for the transport layer.
+reCAPTCHA Enterprise uses gRPC for the transport layer.
 
 ## Java Versions
 
