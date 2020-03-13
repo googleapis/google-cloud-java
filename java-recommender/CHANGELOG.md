@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-recommender/compare/v0.3.1...v0.4.0) (2020-03-13)
+
+
+### Features
+
+* **v1beta1:** add Insights feature ([#114](https://www.github.com/googleapis/java-recommender/issues/114)) ([cebea11](https://www.github.com/googleapis/java-recommender/commit/cebea11551cd3908cd19cfc1298ecbbb87e1fc1b))
+
+
+### Dependencies
+
+* update core dependencies ([#109](https://www.github.com/googleapis/java-recommender/issues/109)) ([ad47bfb](https://www.github.com/googleapis/java-recommender/commit/ad47bfbceebabe3a3db98b4fbc3eec19864f59e2))
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.92.5 ([b019686](https://www.github.com/googleapis/java-recommender/commit/b0196860a64daa519f7e069c7b91cae5d219ebed))
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.93.1 ([#111](https://www.github.com/googleapis/java-recommender/issues/111)) ([0df153c](https://www.github.com/googleapis/java-recommender/commit/0df153caab9e824c358bc96e689b389acc7dd9f0))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([3203050](https://www.github.com/googleapis/java-recommender/commit/3203050e087349d00090ef583d1a3d5202065918))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([131ee11](https://www.github.com/googleapis/java-recommender/commit/131ee119b83e8d1eff704b1db4e5e422621de85b))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([fdd0d62](https://www.github.com/googleapis/java-recommender/commit/fdd0d623a8d2c92a5658fc956b4c66ba44aa82fa))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([aa6d005](https://www.github.com/googleapis/java-recommender/commit/aa6d005a05f636f74f8902a3d56586c80087ee32))
+
 ### [0.3.1](https://www.github.com/googleapis/java-recommender/compare/v0.3.0...v0.3.1) (2020-02-04)
 
 
