@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-asset/compare/v1.0.0...v1.1.0) (2020-03-13)
+
+
+### Features
+
+* **v1p4beta1:** add v1p4beta1 client ([#101](https://www.github.com/googleapis/java-asset/issues/101)) ([add366a](https://www.github.com/googleapis/java-asset/commit/add366a53ac2857de1e7a7093e41195c74558d84))
+
+
+### Dependencies
+
+* update core dependencies ([#97](https://www.github.com/googleapis/java-asset/issues/97)) ([fccd5e8](https://www.github.com/googleapis/java-asset/commit/fccd5e871df60b73da73005916ecdfd84a7612ee))
+
 ## [1.0.0](https://www.github.com/googleapis/java-asset/compare/v0.119.0...v1.0.0) (2020-03-05)
 
 
