@@ -1,6 +1,6 @@
-# Google Google Cloud Data Catalog Client for Java
+# Google Data Catalog Client for Java
 
-Java idiomatic client for [Google Cloud Data Catalog][product-docs].
+Java idiomatic client for [Data Catalog][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -64,8 +64,8 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Data Catalog [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Google Cloud Data Catalog.
+You will need a [Google Cloud Platform Console][developer-console] project with the Data Catalog [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Data Catalog.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -75,13 +75,13 @@ You will need to [enable billing][enable-billing] to use Google Google Cloud Dat
 You'll need to obtain the `google-cloud-datacatalog` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-datacatalog` as a dependency in your code.
 
-## About Google Cloud Data Catalog
+## About Data Catalog
 
 
-[Google Cloud Data Catalog][product-docs] is a fully managed and highly scalable data discovery and metadata management service.
+[Data Catalog][product-docs] is a fully managed and highly scalable data discovery and metadata management service.
 
-See the [Google Cloud Data Catalog client library docs][javadocs] to learn how to
-use this Google Cloud Data Catalog Client Library.
+See the [Data Catalog client library docs][javadocs] to learn how to
+use this Data Catalog Client Library.
 
 
 
@@ -107,7 +107,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud Data Catalog uses gRPC for the transport layer.
+Data Catalog uses gRPC for the transport layer.
 
 ## Java Versions
 
