@@ -1,6 +1,6 @@
-# Google Google Cloud Resource Manager API Client for Java
+# Google Resource Manager API Client for Java
 
-Java idiomatic client for [Google Cloud Resource Manager API][product-docs].
+Java idiomatic client for [Resource Manager API][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -64,7 +64,7 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Resource Manager API [API enabled][enable-api].
+You will need a [Google Cloud Platform Console][developer-console] project with the Resource Manager API [API enabled][enable-api].
 
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
@@ -75,13 +75,13 @@ You will need a [Google Cloud Platform Console][developer-console] project with 
 You'll need to obtain the `google-cloud-resourcemanager` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-resourcemanager` as a dependency in your code.
 
-## About Google Cloud Resource Manager API
+## About Resource Manager API
 
 
-[Google Cloud Resource Manager API][product-docs] enables you to programmatically manage resources by project, folder, and organization.
+[Resource Manager API][product-docs] enables you to programmatically manage resources by project, folder, and organization.
 
-See the [Google Cloud Resource Manager API client library docs][javadocs] to learn how to
-use this Google Cloud Resource Manager API Client Library.
+See the [Resource Manager API client library docs][javadocs] to learn how to
+use this Resource Manager API Client Library.
 
 
 #### Creating an authorized service object
@@ -234,7 +234,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud Resource Manager API uses HTTP/JSON for the transport layer.
+Resource Manager API uses HTTP/JSON for the transport layer.
 
 ## Java Versions
 
