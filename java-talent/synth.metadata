@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-03-11T22:05:39.263570Z",
+  "updateTime": "2020-03-13T19:58:57.587165Z",
   "sources": [
     {
       "generator": {
@@ -12,9 +12,9 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "80d2bd2c652a5e213302041b0620aff423132589",
-        "internalRef": "300393997",
-        "log": "80d2bd2c652a5e213302041b0620aff423132589\nEnable proto annotation and gapic v2 for talent API.\n\nPiperOrigin-RevId: 300393997\n\n85e454be7a353f7fe1bf2b0affb753305785b872\ndocs(google/maps/roads): remove mention of nonexported api\n\nPiperOrigin-RevId: 300367734\n\nbf839ae632e0f263a729569e44be4b38b1c85f9c\nAdding protocol buffer annotations and updated config info for v1 and v2.\n\nPiperOrigin-RevId: 300276913\n\n309b899ca18a4c604bce63882a161d44854da549\nPublish `Backup` APIs and protos.\n\nPiperOrigin-RevId: 300246038\n\neced64c3f122421350b4aca68a28e89121d20db8\nadd PHP client libraries\n\nPiperOrigin-RevId: 300193634\n\n7727af0e39df1ae9ad715895c8576d7b65cf6c6d\nfeat: use the latest gapic-generator and protoc-java-resource-name-plugin in googleapis/WORKSPACE.\n\nPiperOrigin-RevId: 300188410\n\n"
+        "sha": "047d3a8ac7f75383855df0166144f891d7af08d9",
+        "internalRef": "300773211",
+        "log": "047d3a8ac7f75383855df0166144f891d7af08d9\nfix!: google/rpc refactor ErrorInfo.type to ErrorInfo.reason and comment updates.\n\nPiperOrigin-RevId: 300773211\n\nfae4bb6d5aac52aabe5f0bb4396466c2304ea6f6\nAdding RetryPolicy to pubsub.proto\n\nPiperOrigin-RevId: 300769420\n\n7d569be2928dbd72b4e261bf9e468f23afd2b950\nAdding additional protocol buffer annotations to v3.\n\nPiperOrigin-RevId: 300718800\n\n13942d1a85a337515040a03c5108993087dc0e4f\nAdd logging protos for Recommender v1.\n\nPiperOrigin-RevId: 300689896\n\na1a573c3eecfe2c404892bfa61a32dd0c9fb22b6\nfix: change go package to use cloud.google.com/go/maps\n\nPiperOrigin-RevId: 300661825\n\nc6fbac11afa0c7ab2972d9df181493875c566f77\nfeat: publish documentai/v1beta2 protos\n\nPiperOrigin-RevId: 300656808\n\n5202a9e0d9903f49e900f20fe5c7f4e42dd6588f\nProtos for v1beta1 release of Cloud Security Center Settings API\n\nPiperOrigin-RevId: 300580858\n\n83518e18655d9d4ac044acbda063cc6ecdb63ef8\nAdds gapic.yaml file and BUILD.bazel file.\n\nPiperOrigin-RevId: 300554200\n\n836c196dc8ef8354bbfb5f30696bd3477e8db5e2\nRegenerate recommender v1beta1 gRPC ServiceConfig file for Insights methods.\n\nPiperOrigin-RevId: 300549302\n\n34a5450c591b6be3d6566f25ac31caa5211b2f3f\nIncreases the default timeout from 20s to 30s for MetricService\n\nPiperOrigin-RevId: 300474272\n\n5d8bffe87cd01ba390c32f1714230e5a95d5991d\nfeat: use the latest gapic-generator in WORKSPACE for bazel build.\n\nPiperOrigin-RevId: 300461878\n\nd631c651e3bcfac5d371e8560c27648f7b3e2364\nUpdated the GAPIC configs to include parameters for Backups APIs.\n\nPiperOrigin-RevId: 300443402\n\n678afc7055c1adea9b7b54519f3bdb228013f918\nAdding Game Servers v1beta API.\n\nPiperOrigin-RevId: 300433218\n\n"
       }
     },
     {

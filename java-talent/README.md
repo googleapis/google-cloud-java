@@ -1,6 +1,6 @@
-# Google Google Cloud Talent Solution Client for Java
+# Google Talent Solution Client for Java
 
-Java idiomatic client for [Google Cloud Talent Solution][product-docs].
+Java idiomatic client for [Talent Solution][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -64,8 +64,8 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Talent Solution [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Google Cloud Talent Solution.
+You will need a [Google Cloud Platform Console][developer-console] project with the Talent Solution [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Talent Solution.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -75,13 +75,13 @@ You will need to [enable billing][enable-billing] to use Google Google Cloud Tal
 You'll need to obtain the `google-cloud-talent` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-talent` as a dependency in your code.
 
-## About Google Cloud Talent Solution
+## About Talent Solution
 
 
-[Google Cloud Talent Solution][product-docs] allows you to transform your job search and candidate matching capabilities with Cloud Talent Solution, designed to support enterprise talent acquisition technology and evolve with your growing needs. This AI solution includes features such as Job Search and Profile Search (Beta) to provide candidates and employers with an enhanced talent acquisition experience. Learn more about Cloud Talent Solution from the product overview page.
+[Talent Solution][product-docs] allows you to transform your job search and candidate matching capabilities with Cloud Talent Solution, designed to support enterprise talent acquisition technology and evolve with your growing needs. This AI solution includes features such as Job Search and Profile Search (Beta) to provide candidates and employers with an enhanced talent acquisition experience. Learn more about Cloud Talent Solution from the product overview page.
 
-See the [Google Cloud Talent Solution client library docs][javadocs] to learn how to
-use this Google Cloud Talent Solution Client Library.
+See the [Talent Solution client library docs][javadocs] to learn how to
+use this Talent Solution Client Library.
 
 
 
@@ -124,7 +124,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud Talent Solution uses gRPC for the transport layer.
+Talent Solution uses gRPC for the transport layer.
 
 ## Java Versions
 
