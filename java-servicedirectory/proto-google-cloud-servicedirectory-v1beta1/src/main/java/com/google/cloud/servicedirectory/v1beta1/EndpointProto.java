@@ -57,11 +57,14 @@ public final class EndpointProto {
           + "servicedirectory.googleapis.com/Endpoint"
           + "\022fprojects/{project}/locations/{location"
           + "}/namespaces/{namespace}/services/{servi"
-          + "ce}/endpoints/{endpoint}B\226\001\n)com.google."
+          + "ce}/endpoints/{endpoint}B\221\002\n)com.google."
           + "cloud.servicedirectory.v1beta1B\rEndpoint"
           + "ProtoP\001ZUgoogle.golang.org/genproto/goog"
           + "leapis/cloud/servicedirectory/v1beta1;se"
-          + "rvicedirectory\370\001\001b\006proto3"
+          + "rvicedirectory\370\001\001\252\002%Google.Cloud.Service"
+          + "Directory.V1Beta1\312\002%Google\\Cloud\\Service"
+          + "Directory\\V1beta1\352\002(Google::Cloud::Servi"
+          + "ceDirectory::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -55,11 +55,14 @@ public final class NamespaceProto {
           + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:n\352Ak\n)servic"
           + "edirectory.googleapis.com/Namespace\022>pro"
           + "jects/{project}/locations/{location}/nam"
-          + "espaces/{namespace}B\227\001\n)com.google.cloud"
+          + "espaces/{namespace}B\222\002\n)com.google.cloud"
           + ".servicedirectory.v1beta1B\016NamespaceProt"
           + "oP\001ZUgoogle.golang.org/genproto/googleap"
           + "is/cloud/servicedirectory/v1beta1;servic"
-          + "edirectory\370\001\001b\006proto3"
+          + "edirectory\370\001\001\252\002%Google.Cloud.ServiceDire"
+          + "ctory.V1Beta1\312\002%Google\\Cloud\\ServiceDire"
+          + "ctory\\V1beta1\352\002(Google::Cloud::ServiceDi"
+          + "rectory::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

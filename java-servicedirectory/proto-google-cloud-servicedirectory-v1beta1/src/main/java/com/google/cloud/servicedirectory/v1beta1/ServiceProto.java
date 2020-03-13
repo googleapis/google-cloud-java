@@ -59,11 +59,14 @@ public final class ServiceProto {
           + "\'servicedirectory.googleapis.com/Service"
           + "\022Qprojects/{project}/locations/{location"
           + "}/namespaces/{namespace}/services/{servi"
-          + "ce}B\225\001\n)com.google.cloud.servicedirector"
+          + "ce}B\220\002\n)com.google.cloud.servicedirector"
           + "y.v1beta1B\014ServiceProtoP\001ZUgoogle.golang"
           + ".org/genproto/googleapis/cloud/servicedi"
-          + "rectory/v1beta1;servicedirectory\370\001\001b\006pro"
-          + "to3"
+          + "rectory/v1beta1;servicedirectory\370\001\001\252\002%Go"
+          + "ogle.Cloud.ServiceDirectory.V1Beta1\312\002%Go"
+          + "ogle\\Cloud\\ServiceDirectory\\V1beta1\352\002(Go"
+          + "ogle::Cloud::ServiceDirectory::V1beta1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

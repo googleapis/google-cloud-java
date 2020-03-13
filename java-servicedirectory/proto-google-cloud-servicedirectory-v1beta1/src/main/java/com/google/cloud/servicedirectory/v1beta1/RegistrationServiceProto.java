@@ -286,11 +286,14 @@ public final class RegistrationServiceProto {
           + "paces/*/services/*}:testIamPermissions:\001"
           + "*\032S\312A\037servicedirectory.googleapis.com\322A."
           + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\241\001\n)com.google.cloud.servicedirec"
+          + "atformB\234\002\n)com.google.cloud.servicedirec"
           + "tory.v1beta1B\030RegistrationServiceProtoP\001"
           + "ZUgoogle.golang.org/genproto/googleapis/"
           + "cloud/servicedirectory/v1beta1;servicedi"
-          + "rectory\370\001\001b\006proto3"
+          + "rectory\370\001\001\252\002%Google.Cloud.ServiceDirecto"
+          + "ry.V1Beta1\312\002%Google\\Cloud\\ServiceDirecto"
+          + "ry\\V1beta1\352\002(Google::Cloud::ServiceDirec"
+          + "tory::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
