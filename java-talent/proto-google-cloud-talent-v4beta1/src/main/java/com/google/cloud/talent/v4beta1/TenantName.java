@@ -17,6 +17,7 @@
 package com.google.cloud.talent.v4beta1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ import java.util.Map;
 
 /** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-public class TenantName extends TenantOrProjectName {
+public class TenantName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/tenants/{tenant}");

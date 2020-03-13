@@ -51,6 +51,13 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcCompanyServiceStub extends CompanyServiceStub {
 
+  private static final MethodDescriptor<DeleteCompanyRequest, Empty> deleteCompanyMethodDescriptor =
+      MethodDescriptor.<DeleteCompanyRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.talent.v4beta1.CompanyService/DeleteCompany")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteCompanyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<CreateCompanyRequest, Company>
       createCompanyMethodDescriptor =
           MethodDescriptor.<CreateCompanyRequest, Company>newBuilder()
@@ -76,13 +83,6 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   ProtoUtils.marshaller(UpdateCompanyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Company.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteCompanyRequest, Empty> deleteCompanyMethodDescriptor =
-      MethodDescriptor.<DeleteCompanyRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.talent.v4beta1.CompanyService/DeleteCompany")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteCompanyRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<ListCompaniesRequest, ListCompaniesResponse>
       listCompaniesMethodDescriptor =
           MethodDescriptor.<ListCompaniesRequest, ListCompaniesResponse>newBuilder()
@@ -96,10 +96,10 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<DeleteCompanyRequest, Empty> deleteCompanyCallable;
   private final UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable;
   private final UnaryCallable<GetCompanyRequest, Company> getCompanyCallable;
   private final UnaryCallable<UpdateCompanyRequest, Company> updateCompanyCallable;
-  private final UnaryCallable<DeleteCompanyRequest, Empty> deleteCompanyCallable;
   private final UnaryCallable<ListCompaniesRequest, ListCompaniesResponse> listCompaniesCallable;
   private final UnaryCallable<ListCompaniesRequest, ListCompaniesPagedResponse>
       listCompaniesPagedCallable;
@@ -145,6 +145,19 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<DeleteCompanyRequest, Empty> deleteCompanyTransportSettings =
+        GrpcCallSettings.<DeleteCompanyRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteCompanyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteCompanyRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteCompanyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<CreateCompanyRequest, Company> createCompanyTransportSettings =
         GrpcCallSettings.<CreateCompanyRequest, Company>newBuilder()
             .setMethodDescriptor(createCompanyMethodDescriptor)
@@ -184,19 +197,6 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteCompanyRequest, Empty> deleteCompanyTransportSettings =
-        GrpcCallSettings.<DeleteCompanyRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteCompanyMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteCompanyRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteCompanyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ListCompaniesRequest, ListCompaniesResponse> listCompaniesTransportSettings =
         GrpcCallSettings.<ListCompaniesRequest, ListCompaniesResponse>newBuilder()
             .setMethodDescriptor(listCompaniesMethodDescriptor)
@@ -211,6 +211,9 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                 })
             .build();
 
+    this.deleteCompanyCallable =
+        callableFactory.createUnaryCallable(
+            deleteCompanyTransportSettings, settings.deleteCompanySettings(), clientContext);
     this.createCompanyCallable =
         callableFactory.createUnaryCallable(
             createCompanyTransportSettings, settings.createCompanySettings(), clientContext);
@@ -220,9 +223,6 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
     this.updateCompanyCallable =
         callableFactory.createUnaryCallable(
             updateCompanyTransportSettings, settings.updateCompanySettings(), clientContext);
-    this.deleteCompanyCallable =
-        callableFactory.createUnaryCallable(
-            deleteCompanyTransportSettings, settings.deleteCompanySettings(), clientContext);
     this.listCompaniesCallable =
         callableFactory.createUnaryCallable(
             listCompaniesTransportSettings, settings.listCompaniesSettings(), clientContext);
@@ -231,6 +231,10 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
             listCompaniesTransportSettings, settings.listCompaniesSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<DeleteCompanyRequest, Empty> deleteCompanyCallable() {
+    return deleteCompanyCallable;
   }
 
   public UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable() {
@@ -243,10 +247,6 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
 
   public UnaryCallable<UpdateCompanyRequest, Company> updateCompanyCallable() {
     return updateCompanyCallable;
-  }
-
-  public UnaryCallable<DeleteCompanyRequest, Empty> deleteCompanyCallable() {
-    return deleteCompanyCallable;
   }
 
   public UnaryCallable<ListCompaniesRequest, ListCompaniesPagedResponse>

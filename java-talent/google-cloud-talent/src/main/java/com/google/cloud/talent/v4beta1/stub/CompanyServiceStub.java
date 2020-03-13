@@ -40,6 +40,10 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class CompanyServiceStub implements BackgroundResource {
 
+  public UnaryCallable<DeleteCompanyRequest, Empty> deleteCompanyCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCompanyCallable()");
+  }
+
   public UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable() {
     throw new UnsupportedOperationException("Not implemented: createCompanyCallable()");
   }
@@ -50,10 +54,6 @@ public abstract class CompanyServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateCompanyRequest, Company> updateCompanyCallable() {
     throw new UnsupportedOperationException("Not implemented: updateCompanyCallable()");
-  }
-
-  public UnaryCallable<DeleteCompanyRequest, Empty> deleteCompanyCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteCompanyCallable()");
   }
 
   public UnaryCallable<ListCompaniesRequest, ListCompaniesPagedResponse>

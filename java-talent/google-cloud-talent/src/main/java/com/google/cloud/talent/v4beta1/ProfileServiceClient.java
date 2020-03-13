@@ -45,9 +45,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
- *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
- *   Profile profile = Profile.newBuilder().build();
- *   Profile response = profileServiceClient.createProfile(parent, profile);
+ *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+ *   profileServiceClient.deleteProfile(name);
  * }
  * </code>
  * </pre>
@@ -154,6 +153,208 @@ public class ProfileServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProfileServiceStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
+   * assignments associated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+   *   profileServiceClient.deleteProfile(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the profile to be deleted.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+   *     example, "projects/foo/tenants/bar/profiles/baz".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProfile(ProfileName name) {
+    DeleteProfileRequest request =
+        DeleteProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
+   * assignments associated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+   *   profileServiceClient.deleteProfile(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the profile to be deleted.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+   *     example, "projects/foo/tenants/bar/profiles/baz".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProfile(String name) {
+    DeleteProfileRequest request = DeleteProfileRequest.newBuilder().setName(name).build();
+    deleteProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
+   * assignments associated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+   *   DeleteProfileRequest request = DeleteProfileRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   profileServiceClient.deleteProfile(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProfile(DeleteProfileRequest request) {
+    deleteProfileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
+   * assignments associated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+   *   DeleteProfileRequest request = DeleteProfileRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = profileServiceClient.deleteProfileCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable() {
+    return stub.deleteProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searches for profiles within a tenant.
+   *
+   * <p>For example, search by raw queries "software engineer in Mountain View" or search by
+   * structured filters (location filter, education filter, etc.).
+   *
+   * <p>See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more
+   * information.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
+   *   SearchProfilesRequest request = SearchProfilesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setRequestMetadata(requestMetadata)
+   *     .build();
+   *   for (SummarizedProfile element : profileServiceClient.searchProfiles(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchProfilesPagedResponse searchProfiles(SearchProfilesRequest request) {
+    return searchProfilesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searches for profiles within a tenant.
+   *
+   * <p>For example, search by raw queries "software engineer in Mountain View" or search by
+   * structured filters (location filter, education filter, etc.).
+   *
+   * <p>See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more
+   * information.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
+   *   SearchProfilesRequest request = SearchProfilesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setRequestMetadata(requestMetadata)
+   *     .build();
+   *   ApiFuture&lt;SearchProfilesPagedResponse&gt; future = profileServiceClient.searchProfilesPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (SummarizedProfile element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SearchProfilesRequest, SearchProfilesPagedResponse>
+      searchProfilesPagedCallable() {
+    return stub.searchProfilesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searches for profiles within a tenant.
+   *
+   * <p>For example, search by raw queries "software engineer in Mountain View" or search by
+   * structured filters (location filter, education filter, etc.).
+   *
+   * <p>See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more
+   * information.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
+   *   SearchProfilesRequest request = SearchProfilesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setRequestMetadata(requestMetadata)
+   *     .build();
+   *   while (true) {
+   *     SearchProfilesResponse response = profileServiceClient.searchProfilesCallable().call(request);
+   *     for (SummarizedProfile element : response.getSummarizedProfilesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SearchProfilesRequest, SearchProfilesResponse>
+      searchProfilesCallable() {
+    return stub.searchProfilesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -552,208 +753,6 @@ public class ProfileServiceClient implements BackgroundResource {
     return stub.updateProfileCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
-   * assignments associated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   profileServiceClient.deleteProfile(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the profile to be deleted.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
-   *     example, "projects/foo/tenants/bar/profiles/baz".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProfile(ProfileName name) {
-    DeleteProfileRequest request =
-        DeleteProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteProfile(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
-   * assignments associated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   profileServiceClient.deleteProfile(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the profile to be deleted.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
-   *     example, "projects/foo/tenants/bar/profiles/baz".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProfile(String name) {
-    DeleteProfileRequest request = DeleteProfileRequest.newBuilder().setName(name).build();
-    deleteProfile(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
-   * assignments associated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   DeleteProfileRequest request = DeleteProfileRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   profileServiceClient.deleteProfile(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProfile(DeleteProfileRequest request) {
-    deleteProfileCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
-   * assignments associated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   DeleteProfileRequest request = DeleteProfileRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = profileServiceClient.deleteProfileCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable() {
-    return stub.deleteProfileCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Searches for profiles within a tenant.
-   *
-   * <p>For example, search by raw queries "software engineer in Mountain View" or search by
-   * structured filters (location filter, education filter, etc.).
-   *
-   * <p>See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more
-   * information.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
-   *   SearchProfilesRequest request = SearchProfilesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setRequestMetadata(requestMetadata)
-   *     .build();
-   *   for (SummarizedProfile element : profileServiceClient.searchProfiles(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SearchProfilesPagedResponse searchProfiles(SearchProfilesRequest request) {
-    return searchProfilesPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Searches for profiles within a tenant.
-   *
-   * <p>For example, search by raw queries "software engineer in Mountain View" or search by
-   * structured filters (location filter, education filter, etc.).
-   *
-   * <p>See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more
-   * information.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
-   *   SearchProfilesRequest request = SearchProfilesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setRequestMetadata(requestMetadata)
-   *     .build();
-   *   ApiFuture&lt;SearchProfilesPagedResponse&gt; future = profileServiceClient.searchProfilesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (SummarizedProfile element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<SearchProfilesRequest, SearchProfilesPagedResponse>
-      searchProfilesPagedCallable() {
-    return stub.searchProfilesPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Searches for profiles within a tenant.
-   *
-   * <p>For example, search by raw queries "software engineer in Mountain View" or search by
-   * structured filters (location filter, education filter, etc.).
-   *
-   * <p>See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more
-   * information.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
-   *   SearchProfilesRequest request = SearchProfilesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setRequestMetadata(requestMetadata)
-   *     .build();
-   *   while (true) {
-   *     SearchProfilesResponse response = profileServiceClient.searchProfilesCallable().call(request);
-   *     for (SummarizedProfile element : response.getSummarizedProfilesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<SearchProfilesRequest, SearchProfilesResponse>
-      searchProfilesCallable() {
-    return stub.searchProfilesCallable();
-  }
-
   @Override
   public final void close() {
     stub.close();
@@ -782,86 +781,6 @@ public class ProfileServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
-  }
-
-  public static class ListProfilesPagedResponse
-      extends AbstractPagedListResponse<
-          ListProfilesRequest,
-          ListProfilesResponse,
-          Profile,
-          ListProfilesPage,
-          ListProfilesFixedSizeCollection> {
-
-    public static ApiFuture<ListProfilesPagedResponse> createAsync(
-        PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
-        ApiFuture<ListProfilesResponse> futureResponse) {
-      ApiFuture<ListProfilesPage> futurePage =
-          ListProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListProfilesPage, ListProfilesPagedResponse>() {
-            @Override
-            public ListProfilesPagedResponse apply(ListProfilesPage input) {
-              return new ListProfilesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
-    }
-
-    private ListProfilesPagedResponse(ListProfilesPage page) {
-      super(page, ListProfilesFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class ListProfilesPage
-      extends AbstractPage<ListProfilesRequest, ListProfilesResponse, Profile, ListProfilesPage> {
-
-    private ListProfilesPage(
-        PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
-        ListProfilesResponse response) {
-      super(context, response);
-    }
-
-    private static ListProfilesPage createEmptyPage() {
-      return new ListProfilesPage(null, null);
-    }
-
-    @Override
-    protected ListProfilesPage createPage(
-        PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
-        ListProfilesResponse response) {
-      return new ListProfilesPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<ListProfilesPage> createPageAsync(
-        PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
-        ApiFuture<ListProfilesResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class ListProfilesFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          ListProfilesRequest,
-          ListProfilesResponse,
-          Profile,
-          ListProfilesPage,
-          ListProfilesFixedSizeCollection> {
-
-    private ListProfilesFixedSizeCollection(List<ListProfilesPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static ListProfilesFixedSizeCollection createEmptyCollection() {
-      return new ListProfilesFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected ListProfilesFixedSizeCollection createCollection(
-        List<ListProfilesPage> pages, int collectionSize) {
-      return new ListProfilesFixedSizeCollection(pages, collectionSize);
-    }
   }
 
   public static class SearchProfilesPagedResponse
@@ -942,6 +861,86 @@ public class ProfileServiceClient implements BackgroundResource {
     protected SearchProfilesFixedSizeCollection createCollection(
         List<SearchProfilesPage> pages, int collectionSize) {
       return new SearchProfilesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListProfilesPagedResponse
+      extends AbstractPagedListResponse<
+          ListProfilesRequest,
+          ListProfilesResponse,
+          Profile,
+          ListProfilesPage,
+          ListProfilesFixedSizeCollection> {
+
+    public static ApiFuture<ListProfilesPagedResponse> createAsync(
+        PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
+        ApiFuture<ListProfilesResponse> futureResponse) {
+      ApiFuture<ListProfilesPage> futurePage =
+          ListProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListProfilesPage, ListProfilesPagedResponse>() {
+            @Override
+            public ListProfilesPagedResponse apply(ListProfilesPage input) {
+              return new ListProfilesPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListProfilesPagedResponse(ListProfilesPage page) {
+      super(page, ListProfilesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListProfilesPage
+      extends AbstractPage<ListProfilesRequest, ListProfilesResponse, Profile, ListProfilesPage> {
+
+    private ListProfilesPage(
+        PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
+        ListProfilesResponse response) {
+      super(context, response);
+    }
+
+    private static ListProfilesPage createEmptyPage() {
+      return new ListProfilesPage(null, null);
+    }
+
+    @Override
+    protected ListProfilesPage createPage(
+        PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
+        ListProfilesResponse response) {
+      return new ListProfilesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListProfilesPage> createPageAsync(
+        PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
+        ApiFuture<ListProfilesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListProfilesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListProfilesRequest,
+          ListProfilesResponse,
+          Profile,
+          ListProfilesPage,
+          ListProfilesFixedSizeCollection> {
+
+    private ListProfilesFixedSizeCollection(List<ListProfilesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListProfilesFixedSizeCollection createEmptyCollection() {
+      return new ListProfilesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListProfilesFixedSizeCollection createCollection(
+        List<ListProfilesPage> pages, int collectionSize) {
+      return new ListProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

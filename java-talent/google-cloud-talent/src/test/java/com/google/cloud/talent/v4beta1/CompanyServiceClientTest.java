@@ -42,37 +42,37 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class CompanyServiceClientTest {
+  private static MockTenantService mockTenantService;
+  private static MockProfileService mockProfileService;
+  private static MockEventService mockEventService;
   private static MockApplicationService mockApplicationService;
   private static MockCompanyService mockCompanyService;
-  private static MockCompletion mockCompletion;
-  private static MockEventService mockEventService;
   private static MockJobService mockJobService;
-  private static MockProfileService mockProfileService;
-  private static MockTenantService mockTenantService;
+  private static MockCompletion mockCompletion;
   private static MockServiceHelper serviceHelper;
   private CompanyServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
+    mockTenantService = new MockTenantService();
+    mockProfileService = new MockProfileService();
+    mockEventService = new MockEventService();
     mockApplicationService = new MockApplicationService();
     mockCompanyService = new MockCompanyService();
-    mockCompletion = new MockCompletion();
-    mockEventService = new MockEventService();
     mockJobService = new MockJobService();
-    mockProfileService = new MockProfileService();
-    mockTenantService = new MockTenantService();
+    mockCompletion = new MockCompletion();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
+                mockTenantService,
+                mockProfileService,
+                mockEventService,
                 mockApplicationService,
                 mockCompanyService,
-                mockCompletion,
-                mockEventService,
                 mockJobService,
-                mockProfileService,
-                mockTenantService));
+                mockCompletion));
     serviceHelper.start();
   }
 
@@ -100,8 +100,45 @@ public class CompanyServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteCompanyTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCompanyService.addResponse(expectedResponse);
+
+    CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+
+    client.deleteCompany(name);
+
+    List<AbstractMessage> actualRequests = mockCompanyService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCompanyRequest actualRequest = (DeleteCompanyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, CompanyName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteCompanyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockCompanyService.addException(exception);
+
+    try {
+      CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+
+      client.deleteCompany(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createCompanyTest() {
-    CompanyName name = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
+    CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
     String displayName = "displayName1615086568";
     String externalId = "externalId-1153075697";
     String headquartersAddress = "headquartersAddress-1879520036";
@@ -126,7 +163,7 @@ public class CompanyServiceClientTest {
             .build();
     mockCompanyService.addResponse(expectedResponse);
 
-    TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     Company company = Company.newBuilder().build();
 
     Company actualResponse = client.createCompany(parent, company);
@@ -136,7 +173,7 @@ public class CompanyServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateCompanyRequest actualRequest = (CreateCompanyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, TenantOrProjectNames.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(company, actualRequest.getCompany());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -151,7 +188,7 @@ public class CompanyServiceClientTest {
     mockCompanyService.addException(exception);
 
     try {
-      TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       Company company = Company.newBuilder().build();
 
       client.createCompany(parent, company);
@@ -164,7 +201,7 @@ public class CompanyServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getCompanyTest() {
-    CompanyName name2 = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
+    CompanyName name2 = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
     String displayName = "displayName1615086568";
     String externalId = "externalId-1153075697";
     String headquartersAddress = "headquartersAddress-1879520036";
@@ -189,7 +226,7 @@ public class CompanyServiceClientTest {
             .build();
     mockCompanyService.addResponse(expectedResponse);
 
-    CompanyName name = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
+    CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
 
     Company actualResponse = client.getCompany(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -198,7 +235,7 @@ public class CompanyServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetCompanyRequest actualRequest = (GetCompanyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, CompanyNames.parse(actualRequest.getName()));
+    Assert.assertEquals(name, CompanyName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -212,7 +249,7 @@ public class CompanyServiceClientTest {
     mockCompanyService.addException(exception);
 
     try {
-      CompanyName name = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
+      CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
 
       client.getCompany(name);
       Assert.fail("No exception raised");
@@ -224,7 +261,7 @@ public class CompanyServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateCompanyTest() {
-    CompanyName name = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
+    CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
     String displayName = "displayName1615086568";
     String externalId = "externalId-1153075697";
     String headquartersAddress = "headquartersAddress-1879520036";
@@ -283,43 +320,6 @@ public class CompanyServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteCompanyTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockCompanyService.addResponse(expectedResponse);
-
-    CompanyName name = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
-
-    client.deleteCompany(name);
-
-    List<AbstractMessage> actualRequests = mockCompanyService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteCompanyRequest actualRequest = (DeleteCompanyRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, CompanyNames.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteCompanyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCompanyService.addException(exception);
-
-    try {
-      CompanyName name = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
-
-      client.deleteCompany(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void listCompaniesTest() {
     String nextPageToken = "";
     Company companiesElement = Company.newBuilder().build();
@@ -331,7 +331,7 @@ public class CompanyServiceClientTest {
             .build();
     mockCompanyService.addResponse(expectedResponse);
 
-    TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
     ListCompaniesPagedResponse pagedListResponse = client.listCompanies(parent);
 
@@ -343,7 +343,7 @@ public class CompanyServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListCompaniesRequest actualRequest = (ListCompaniesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, TenantOrProjectNames.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -357,7 +357,7 @@ public class CompanyServiceClientTest {
     mockCompanyService.addException(exception);
 
     try {
-      TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
       client.listCompanies(parent);
       Assert.fail("No exception raised");

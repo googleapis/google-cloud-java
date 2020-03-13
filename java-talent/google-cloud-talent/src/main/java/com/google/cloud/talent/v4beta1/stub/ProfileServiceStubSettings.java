@@ -75,16 +75,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createProfile to 30 seconds:
+ * <p>For example, to set the total timeout of deleteProfile to 30 seconds:
  *
  * <pre>
  * <code>
  * ProfileServiceStubSettings.Builder profileServiceSettingsBuilder =
  *     ProfileServiceStubSettings.newBuilder();
  * profileServiceSettingsBuilder
- *     .createProfileSettings()
+ *     .deleteProfileSettings()
  *     .setRetrySettings(
- *         profileServiceSettingsBuilder.createProfileSettings().getRetrySettings().toBuilder()
+ *         profileServiceSettingsBuilder.deleteProfileSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProfileServiceStubSettings profileServiceSettings = profileServiceSettingsBuilder.build();
@@ -101,16 +101,28 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
           .add("https://www.googleapis.com/auth/jobs")
           .build();
 
+  private final UnaryCallSettings<DeleteProfileRequest, Empty> deleteProfileSettings;
+  private final PagedCallSettings<
+          SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
+      searchProfilesSettings;
   private final PagedCallSettings<
           ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>
       listProfilesSettings;
   private final UnaryCallSettings<CreateProfileRequest, Profile> createProfileSettings;
   private final UnaryCallSettings<GetProfileRequest, Profile> getProfileSettings;
   private final UnaryCallSettings<UpdateProfileRequest, Profile> updateProfileSettings;
-  private final UnaryCallSettings<DeleteProfileRequest, Empty> deleteProfileSettings;
-  private final PagedCallSettings<
+
+  /** Returns the object with the settings used for calls to deleteProfile. */
+  public UnaryCallSettings<DeleteProfileRequest, Empty> deleteProfileSettings() {
+    return deleteProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchProfiles. */
+  public PagedCallSettings<
           SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
-      searchProfilesSettings;
+      searchProfilesSettings() {
+    return searchProfilesSettings;
+  }
 
   /** Returns the object with the settings used for calls to listProfiles. */
   public PagedCallSettings<ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>
@@ -131,18 +143,6 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
   /** Returns the object with the settings used for calls to updateProfile. */
   public UnaryCallSettings<UpdateProfileRequest, Profile> updateProfileSettings() {
     return updateProfileSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteProfile. */
-  public UnaryCallSettings<DeleteProfileRequest, Empty> deleteProfileSettings() {
-    return deleteProfileSettings;
-  }
-
-  /** Returns the object with the settings used for calls to searchProfiles. */
-  public PagedCallSettings<
-          SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
-      searchProfilesSettings() {
-    return searchProfilesSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -214,49 +214,13 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
   protected ProfileServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteProfileSettings = settingsBuilder.deleteProfileSettings().build();
+    searchProfilesSettings = settingsBuilder.searchProfilesSettings().build();
     listProfilesSettings = settingsBuilder.listProfilesSettings().build();
     createProfileSettings = settingsBuilder.createProfileSettings().build();
     getProfileSettings = settingsBuilder.getProfileSettings().build();
     updateProfileSettings = settingsBuilder.updateProfileSettings().build();
-    deleteProfileSettings = settingsBuilder.deleteProfileSettings().build();
-    searchProfilesSettings = settingsBuilder.searchProfilesSettings().build();
   }
-
-  private static final PagedListDescriptor<ListProfilesRequest, ListProfilesResponse, Profile>
-      LIST_PROFILES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListProfilesRequest, ListProfilesResponse, Profile>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListProfilesRequest injectToken(ListProfilesRequest payload, String token) {
-              return ListProfilesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListProfilesRequest injectPageSize(ListProfilesRequest payload, int pageSize) {
-              return ListProfilesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListProfilesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListProfilesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Profile> extractResources(ListProfilesResponse payload) {
-              return payload.getProfilesList() != null
-                  ? payload.getProfilesList()
-                  : ImmutableList.<Profile>of();
-            }
-          };
 
   private static final PagedListDescriptor<
           SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile>
@@ -297,20 +261,39 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
             }
           };
 
-  private static final PagedListResponseFactory<
-          ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>
-      LIST_PROFILES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>() {
+  private static final PagedListDescriptor<ListProfilesRequest, ListProfilesResponse, Profile>
+      LIST_PROFILES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListProfilesRequest, ListProfilesResponse, Profile>() {
             @Override
-            public ApiFuture<ListProfilesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListProfilesRequest, ListProfilesResponse> callable,
-                ListProfilesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListProfilesResponse> futureResponse) {
-              PageContext<ListProfilesRequest, ListProfilesResponse, Profile> pageContext =
-                  PageContext.create(callable, LIST_PROFILES_PAGE_STR_DESC, request, context);
-              return ListProfilesPagedResponse.createAsync(pageContext, futureResponse);
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListProfilesRequest injectToken(ListProfilesRequest payload, String token) {
+              return ListProfilesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListProfilesRequest injectPageSize(ListProfilesRequest payload, int pageSize) {
+              return ListProfilesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListProfilesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListProfilesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Profile> extractResources(ListProfilesResponse payload) {
+              return payload.getProfilesList() != null
+                  ? payload.getProfilesList()
+                  : ImmutableList.<Profile>of();
             }
           };
 
@@ -332,20 +315,37 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>
+      LIST_PROFILES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>() {
+            @Override
+            public ApiFuture<ListProfilesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListProfilesRequest, ListProfilesResponse> callable,
+                ListProfilesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListProfilesResponse> futureResponse) {
+              PageContext<ListProfilesRequest, ListProfilesResponse, Profile> pageContext =
+                  PageContext.create(callable, LIST_PROFILES_PAGE_STR_DESC, request, context);
+              return ListProfilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Builder for ProfileServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<ProfileServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteProfileRequest, Empty> deleteProfileSettings;
+    private final PagedCallSettings.Builder<
+            SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
+        searchProfilesSettings;
     private final PagedCallSettings.Builder<
             ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>
         listProfilesSettings;
     private final UnaryCallSettings.Builder<CreateProfileRequest, Profile> createProfileSettings;
     private final UnaryCallSettings.Builder<GetProfileRequest, Profile> getProfileSettings;
     private final UnaryCallSettings.Builder<UpdateProfileRequest, Profile> updateProfileSettings;
-    private final UnaryCallSettings.Builder<DeleteProfileRequest, Empty> deleteProfileSettings;
-    private final PagedCallSettings.Builder<
-            SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
-        searchProfilesSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -388,6 +388,10 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      searchProfilesSettings = PagedCallSettings.newBuilder(SEARCH_PROFILES_PAGE_STR_FACT);
+
       listProfilesSettings = PagedCallSettings.newBuilder(LIST_PROFILES_PAGE_STR_FACT);
 
       createProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -396,18 +400,14 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
 
       updateProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      searchProfilesSettings = PagedCallSettings.newBuilder(SEARCH_PROFILES_PAGE_STR_FACT);
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteProfileSettings,
+              searchProfilesSettings,
               listProfilesSettings,
               createProfileSettings,
               getProfileSettings,
-              updateProfileSettings,
-              deleteProfileSettings,
-              searchProfilesSettings);
+              updateProfileSettings);
 
       initDefaults(this);
     }
@@ -422,6 +422,16 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .deleteProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .searchProfilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listProfilesSettings()
@@ -443,37 +453,27 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .deleteProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .searchProfilesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
       return builder;
     }
 
     protected Builder(ProfileServiceStubSettings settings) {
       super(settings);
 
+      deleteProfileSettings = settings.deleteProfileSettings.toBuilder();
+      searchProfilesSettings = settings.searchProfilesSettings.toBuilder();
       listProfilesSettings = settings.listProfilesSettings.toBuilder();
       createProfileSettings = settings.createProfileSettings.toBuilder();
       getProfileSettings = settings.getProfileSettings.toBuilder();
       updateProfileSettings = settings.updateProfileSettings.toBuilder();
-      deleteProfileSettings = settings.deleteProfileSettings.toBuilder();
-      searchProfilesSettings = settings.searchProfilesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteProfileSettings,
+              searchProfilesSettings,
               listProfilesSettings,
               createProfileSettings,
               getProfileSettings,
-              updateProfileSettings,
-              deleteProfileSettings,
-              searchProfilesSettings);
+              updateProfileSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -490,6 +490,18 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProfile. */
+    public UnaryCallSettings.Builder<DeleteProfileRequest, Empty> deleteProfileSettings() {
+      return deleteProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchProfiles. */
+    public PagedCallSettings.Builder<
+            SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
+        searchProfilesSettings() {
+      return searchProfilesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listProfiles. */
@@ -512,18 +524,6 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
     /** Returns the builder for the settings used for calls to updateProfile. */
     public UnaryCallSettings.Builder<UpdateProfileRequest, Profile> updateProfileSettings() {
       return updateProfileSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteProfile. */
-    public UnaryCallSettings.Builder<DeleteProfileRequest, Empty> deleteProfileSettings() {
-      return deleteProfileSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to searchProfiles. */
-    public PagedCallSettings.Builder<
-            SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
-        searchProfilesSettings() {
-      return searchProfilesSettings;
     }
 
     @Override

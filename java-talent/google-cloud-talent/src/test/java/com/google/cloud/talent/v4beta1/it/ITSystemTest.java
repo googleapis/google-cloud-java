@@ -22,7 +22,6 @@ import com.google.cloud.talent.v4beta1.ClientEvent;
 import com.google.cloud.talent.v4beta1.Company;
 import com.google.cloud.talent.v4beta1.CompanyName;
 import com.google.cloud.talent.v4beta1.CompanyServiceClient;
-import com.google.cloud.talent.v4beta1.CompanyWithTenantName;
 import com.google.cloud.talent.v4beta1.CompleteQueryRequest;
 import com.google.cloud.talent.v4beta1.CompleteQueryResponse;
 import com.google.cloud.talent.v4beta1.CompletionClient;
@@ -41,14 +40,12 @@ import com.google.cloud.talent.v4beta1.Job;
 import com.google.cloud.talent.v4beta1.JobEvent;
 import com.google.cloud.talent.v4beta1.JobName;
 import com.google.cloud.talent.v4beta1.JobServiceClient;
-import com.google.cloud.talent.v4beta1.JobWithTenantName;
 import com.google.cloud.talent.v4beta1.ListCompaniesRequest;
 import com.google.cloud.talent.v4beta1.ListJobsRequest;
 import com.google.cloud.talent.v4beta1.ListTenantsRequest;
 import com.google.cloud.talent.v4beta1.ProjectName;
 import com.google.cloud.talent.v4beta1.Tenant;
 import com.google.cloud.talent.v4beta1.TenantName;
-import com.google.cloud.talent.v4beta1.TenantOrProjectName;
 import com.google.cloud.talent.v4beta1.TenantServiceClient;
 import com.google.cloud.talent.v4beta1.UpdateCompanyRequest;
 import com.google.cloud.talent.v4beta1.UpdateJobRequest;
@@ -86,7 +83,6 @@ public class ITSystemTest {
           + "tenant-test-"
           + UUID.randomUUID().toString().substring(0, 8);
   private static final ProjectName PROJECT_NAME = ProjectName.of(PROJECT_ID);
-  private static TenantOrProjectName projectName;
   private static final String DISPLAY_NAME =
       "display-name-test-" + UUID.randomUUID().toString().substring(0, 8);
   private static final String EXTERNAL_ID = String.valueOf(Instant.now().getEpochSecond());
@@ -116,17 +112,16 @@ public class ITSystemTest {
 
     /* create company */
     companyServiceClient = CompanyServiceClient.create();
-    projectName = TenantName.of(PROJECT_ID, tenantId);
     Company createCompany =
         Company.newBuilder().setDisplayName(DISPLAY_NAME).setExternalId(EXTERNAL_ID).build();
     CreateCompanyRequest companyRequest =
         CreateCompanyRequest.newBuilder()
-            .setParent(projectName.toString())
+            .setParent(tenantName.toString())
             .setCompany(createCompany)
             .build();
     company = companyServiceClient.createCompany(companyRequest);
     companyId = getId(company.getName());
-    companyName = CompanyWithTenantName.of(PROJECT_ID, tenantId, companyId);
+    companyName = CompanyName.ofProjectTenantCompanyName(PROJECT_ID, tenantId, companyId);
 
     /* create job */
     jobServiceClient = JobServiceClient.create();
@@ -143,10 +138,10 @@ public class ITSystemTest {
             .setLanguageCode(LANGUAGE_CODE)
             .build();
     CreateJobRequest jobRequest =
-        CreateJobRequest.newBuilder().setParent(projectName.toString()).setJob(createJob).build();
+        CreateJobRequest.newBuilder().setParent(tenantName.toString()).setJob(createJob).build();
     job = jobServiceClient.createJob(jobRequest);
     jobId = getId(job.getName());
-    jobName = JobWithTenantName.of(PROJECT_ID, tenantId, jobId);
+    jobName = JobName.ofProjectTenantJobName(PROJECT_ID, tenantId, jobId);
 
     /*create event */
     eventServiceClient = EventServiceClient.create();
@@ -222,7 +217,7 @@ public class ITSystemTest {
   @Test
   public void listCompaniesTest() {
     ListCompaniesRequest request =
-        ListCompaniesRequest.newBuilder().setParent(projectName.toString()).build();
+        ListCompaniesRequest.newBuilder().setParent(tenantName.toString()).build();
     for (Company actual : companyServiceClient.listCompanies(request).iterateAll()) {
       if (company.getName().equals(actual.getName())) {
         assertEquals(company.getName(), actual.getName());
@@ -262,7 +257,7 @@ public class ITSystemTest {
   public void listJobsTest() {
     String filter = "companyName =" + "\"" + company.getName() + "\"";
     ListJobsRequest request =
-        ListJobsRequest.newBuilder().setParent(projectName.toString()).setFilter(filter).build();
+        ListJobsRequest.newBuilder().setParent(tenantName.toString()).setFilter(filter).build();
     for (Job actual : jobServiceClient.listJobs(request).iterateAll()) {
       if (job.getName().equals(actual.getName())) {
         assertEquals(job.getName(), actual.getName());
@@ -315,7 +310,7 @@ public class ITSystemTest {
             .build();
     CreateClientEventRequest request =
         CreateClientEventRequest.newBuilder()
-            .setParent(projectName.toString())
+            .setParent(tenantName.toString())
             .setClientEvent(clientEvent)
             .build();
     ClientEvent actual = eventServiceClient.createClientEvent(request);
@@ -329,7 +324,7 @@ public class ITSystemTest {
   public void completeQueryTest() {
     CompleteQueryRequest request =
         CompleteQueryRequest.newBuilder()
-            .setParent(projectName.toString())
+            .setParent(tenantName.toString())
             .setQuery("Soft")
             .setPageSize(5)
             .addAllLanguageCodes(Arrays.asList(LANGUAGE_CODE))

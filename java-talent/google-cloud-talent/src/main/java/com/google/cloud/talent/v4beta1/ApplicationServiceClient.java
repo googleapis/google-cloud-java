@@ -45,9 +45,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
- *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
- *   Application application = Application.newBuilder().build();
- *   Application response = applicationServiceClient.createApplication(parent, application);
+ *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
+ *   applicationServiceClient.deleteApplication(name);
  * }
  * </code>
  * </pre>
@@ -155,6 +154,102 @@ public class ApplicationServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ApplicationServiceStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes specified application.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
+   *   applicationServiceClient.deleteApplication(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the application to be deleted.
+   *     <p>The format is
+   *     "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+   *     For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteApplication(ApplicationName name) {
+    DeleteApplicationRequest request =
+        DeleteApplicationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteApplication(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes specified application.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
+   *   applicationServiceClient.deleteApplication(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the application to be deleted.
+   *     <p>The format is
+   *     "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+   *     For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteApplication(String name) {
+    DeleteApplicationRequest request = DeleteApplicationRequest.newBuilder().setName(name).build();
+    deleteApplication(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes specified application.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
+   *   DeleteApplicationRequest request = DeleteApplicationRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   applicationServiceClient.deleteApplication(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteApplication(DeleteApplicationRequest request) {
+    deleteApplicationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes specified application.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
+   *   DeleteApplicationRequest request = DeleteApplicationRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = applicationServiceClient.deleteApplicationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteApplicationRequest, Empty> deleteApplicationCallable() {
+    return stub.deleteApplicationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -421,102 +516,6 @@ public class ApplicationServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateApplicationRequest, Application> updateApplicationCallable() {
     return stub.updateApplicationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes specified application.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-   *   applicationServiceClient.deleteApplication(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the application to be deleted.
-   *     <p>The format is
-   *     "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
-   *     For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteApplication(ApplicationName name) {
-    DeleteApplicationRequest request =
-        DeleteApplicationRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteApplication(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes specified application.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-   *   applicationServiceClient.deleteApplication(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the application to be deleted.
-   *     <p>The format is
-   *     "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
-   *     For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteApplication(String name) {
-    DeleteApplicationRequest request = DeleteApplicationRequest.newBuilder().setName(name).build();
-    deleteApplication(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes specified application.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-   *   DeleteApplicationRequest request = DeleteApplicationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   applicationServiceClient.deleteApplication(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteApplication(DeleteApplicationRequest request) {
-    deleteApplicationCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes specified application.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
-   *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-   *   DeleteApplicationRequest request = DeleteApplicationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = applicationServiceClient.deleteApplicationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteApplicationRequest, Empty> deleteApplicationCallable() {
-    return stub.deleteApplicationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

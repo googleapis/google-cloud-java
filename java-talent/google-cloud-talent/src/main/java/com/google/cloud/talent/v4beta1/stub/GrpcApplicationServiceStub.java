@@ -51,6 +51,15 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcApplicationServiceStub extends ApplicationServiceStub {
 
+  private static final MethodDescriptor<DeleteApplicationRequest, Empty>
+      deleteApplicationMethodDescriptor =
+          MethodDescriptor.<DeleteApplicationRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.talent.v4beta1.ApplicationService/DeleteApplication")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteApplicationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<CreateApplicationRequest, Application>
       createApplicationMethodDescriptor =
           MethodDescriptor.<CreateApplicationRequest, Application>newBuilder()
@@ -78,15 +87,6 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
                   ProtoUtils.marshaller(UpdateApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Application.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteApplicationRequest, Empty>
-      deleteApplicationMethodDescriptor =
-          MethodDescriptor.<DeleteApplicationRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.talent.v4beta1.ApplicationService/DeleteApplication")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteApplicationRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ListApplicationsRequest, ListApplicationsResponse>
       listApplicationsMethodDescriptor =
           MethodDescriptor.<ListApplicationsRequest, ListApplicationsResponse>newBuilder()
@@ -100,10 +100,10 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<DeleteApplicationRequest, Empty> deleteApplicationCallable;
   private final UnaryCallable<CreateApplicationRequest, Application> createApplicationCallable;
   private final UnaryCallable<GetApplicationRequest, Application> getApplicationCallable;
   private final UnaryCallable<UpdateApplicationRequest, Application> updateApplicationCallable;
-  private final UnaryCallable<DeleteApplicationRequest, Empty> deleteApplicationCallable;
   private final UnaryCallable<ListApplicationsRequest, ListApplicationsResponse>
       listApplicationsCallable;
   private final UnaryCallable<ListApplicationsRequest, ListApplicationsPagedResponse>
@@ -150,6 +150,19 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<DeleteApplicationRequest, Empty> deleteApplicationTransportSettings =
+        GrpcCallSettings.<DeleteApplicationRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteApplicationMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteApplicationRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteApplicationRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<CreateApplicationRequest, Application> createApplicationTransportSettings =
         GrpcCallSettings.<CreateApplicationRequest, Application>newBuilder()
             .setMethodDescriptor(createApplicationMethodDescriptor)
@@ -190,19 +203,6 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteApplicationRequest, Empty> deleteApplicationTransportSettings =
-        GrpcCallSettings.<DeleteApplicationRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteApplicationMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteApplicationRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteApplicationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ListApplicationsRequest, ListApplicationsResponse>
         listApplicationsTransportSettings =
             GrpcCallSettings.<ListApplicationsRequest, ListApplicationsResponse>newBuilder()
@@ -218,6 +218,11 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
                     })
                 .build();
 
+    this.deleteApplicationCallable =
+        callableFactory.createUnaryCallable(
+            deleteApplicationTransportSettings,
+            settings.deleteApplicationSettings(),
+            clientContext);
     this.createApplicationCallable =
         callableFactory.createUnaryCallable(
             createApplicationTransportSettings,
@@ -231,11 +236,6 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
             updateApplicationTransportSettings,
             settings.updateApplicationSettings(),
             clientContext);
-    this.deleteApplicationCallable =
-        callableFactory.createUnaryCallable(
-            deleteApplicationTransportSettings,
-            settings.deleteApplicationSettings(),
-            clientContext);
     this.listApplicationsCallable =
         callableFactory.createUnaryCallable(
             listApplicationsTransportSettings, settings.listApplicationsSettings(), clientContext);
@@ -244,6 +244,10 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
             listApplicationsTransportSettings, settings.listApplicationsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<DeleteApplicationRequest, Empty> deleteApplicationCallable() {
+    return deleteApplicationCallable;
   }
 
   public UnaryCallable<CreateApplicationRequest, Application> createApplicationCallable() {
@@ -256,10 +260,6 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
 
   public UnaryCallable<UpdateApplicationRequest, Application> updateApplicationCallable() {
     return updateApplicationCallable;
-  }
-
-  public UnaryCallable<DeleteApplicationRequest, Empty> deleteApplicationCallable() {
-    return deleteApplicationCallable;
   }
 
   public UnaryCallable<ListApplicationsRequest, ListApplicationsPagedResponse>

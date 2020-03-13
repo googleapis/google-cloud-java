@@ -71,16 +71,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createCompany to 30 seconds:
+ * <p>For example, to set the total timeout of deleteCompany to 30 seconds:
  *
  * <pre>
  * <code>
  * CompanyServiceStubSettings.Builder companyServiceSettingsBuilder =
  *     CompanyServiceStubSettings.newBuilder();
  * companyServiceSettingsBuilder
- *     .createCompanySettings()
+ *     .deleteCompanySettings()
  *     .setRetrySettings(
- *         companyServiceSettingsBuilder.createCompanySettings().getRetrySettings().toBuilder()
+ *         companyServiceSettingsBuilder.deleteCompanySettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CompanyServiceStubSettings companyServiceSettings = companyServiceSettingsBuilder.build();
@@ -97,13 +97,18 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
           .add("https://www.googleapis.com/auth/jobs")
           .build();
 
+  private final UnaryCallSettings<DeleteCompanyRequest, Empty> deleteCompanySettings;
   private final UnaryCallSettings<CreateCompanyRequest, Company> createCompanySettings;
   private final UnaryCallSettings<GetCompanyRequest, Company> getCompanySettings;
   private final UnaryCallSettings<UpdateCompanyRequest, Company> updateCompanySettings;
-  private final UnaryCallSettings<DeleteCompanyRequest, Empty> deleteCompanySettings;
   private final PagedCallSettings<
           ListCompaniesRequest, ListCompaniesResponse, ListCompaniesPagedResponse>
       listCompaniesSettings;
+
+  /** Returns the object with the settings used for calls to deleteCompany. */
+  public UnaryCallSettings<DeleteCompanyRequest, Empty> deleteCompanySettings() {
+    return deleteCompanySettings;
+  }
 
   /** Returns the object with the settings used for calls to createCompany. */
   public UnaryCallSettings<CreateCompanyRequest, Company> createCompanySettings() {
@@ -118,11 +123,6 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
   /** Returns the object with the settings used for calls to updateCompany. */
   public UnaryCallSettings<UpdateCompanyRequest, Company> updateCompanySettings() {
     return updateCompanySettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteCompany. */
-  public UnaryCallSettings<DeleteCompanyRequest, Empty> deleteCompanySettings() {
-    return deleteCompanySettings;
   }
 
   /** Returns the object with the settings used for calls to listCompanies. */
@@ -200,10 +200,10 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
   protected CompanyServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteCompanySettings = settingsBuilder.deleteCompanySettings().build();
     createCompanySettings = settingsBuilder.createCompanySettings().build();
     getCompanySettings = settingsBuilder.getCompanySettings().build();
     updateCompanySettings = settingsBuilder.updateCompanySettings().build();
-    deleteCompanySettings = settingsBuilder.deleteCompanySettings().build();
     listCompaniesSettings = settingsBuilder.listCompaniesSettings().build();
   }
 
@@ -264,10 +264,10 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
   public static class Builder extends StubSettings.Builder<CompanyServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteCompanyRequest, Empty> deleteCompanySettings;
     private final UnaryCallSettings.Builder<CreateCompanyRequest, Company> createCompanySettings;
     private final UnaryCallSettings.Builder<GetCompanyRequest, Company> getCompanySettings;
     private final UnaryCallSettings.Builder<UpdateCompanyRequest, Company> updateCompanySettings;
-    private final UnaryCallSettings.Builder<DeleteCompanyRequest, Empty> deleteCompanySettings;
     private final PagedCallSettings.Builder<
             ListCompaniesRequest, ListCompaniesResponse, ListCompaniesPagedResponse>
         listCompaniesSettings;
@@ -313,22 +313,22 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteCompanySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createCompanySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getCompanySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateCompanySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteCompanySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listCompaniesSettings = PagedCallSettings.newBuilder(LIST_COMPANIES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteCompanySettings,
               createCompanySettings,
               getCompanySettings,
               updateCompanySettings,
-              deleteCompanySettings,
               listCompaniesSettings);
 
       initDefaults(this);
@@ -346,6 +346,11 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
     private static Builder initDefaults(Builder builder) {
 
       builder
+          .deleteCompanySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .createCompanySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -361,11 +366,6 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .deleteCompanySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .listCompaniesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -376,18 +376,18 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
     protected Builder(CompanyServiceStubSettings settings) {
       super(settings);
 
+      deleteCompanySettings = settings.deleteCompanySettings.toBuilder();
       createCompanySettings = settings.createCompanySettings.toBuilder();
       getCompanySettings = settings.getCompanySettings.toBuilder();
       updateCompanySettings = settings.updateCompanySettings.toBuilder();
-      deleteCompanySettings = settings.deleteCompanySettings.toBuilder();
       listCompaniesSettings = settings.listCompaniesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteCompanySettings,
               createCompanySettings,
               getCompanySettings,
               updateCompanySettings,
-              deleteCompanySettings,
               listCompaniesSettings);
     }
 
@@ -407,6 +407,11 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to deleteCompany. */
+    public UnaryCallSettings.Builder<DeleteCompanyRequest, Empty> deleteCompanySettings() {
+      return deleteCompanySettings;
+    }
+
     /** Returns the builder for the settings used for calls to createCompany. */
     public UnaryCallSettings.Builder<CreateCompanyRequest, Company> createCompanySettings() {
       return createCompanySettings;
@@ -420,11 +425,6 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
     /** Returns the builder for the settings used for calls to updateCompany. */
     public UnaryCallSettings.Builder<UpdateCompanyRequest, Company> updateCompanySettings() {
       return updateCompanySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteCompany. */
-    public UnaryCallSettings.Builder<DeleteCompanyRequest, Empty> deleteCompanySettings() {
-      return deleteCompanySettings;
     }
 
     /** Returns the builder for the settings used for calls to listCompanies. */

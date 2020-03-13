@@ -49,16 +49,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createApplication to 30 seconds:
+ * <p>For example, to set the total timeout of deleteApplication to 30 seconds:
  *
  * <pre>
  * <code>
  * ApplicationServiceSettings.Builder applicationServiceSettingsBuilder =
  *     ApplicationServiceSettings.newBuilder();
  * applicationServiceSettingsBuilder
- *     .createApplicationSettings()
+ *     .deleteApplicationSettings()
  *     .setRetrySettings(
- *         applicationServiceSettingsBuilder.createApplicationSettings().getRetrySettings().toBuilder()
+ *         applicationServiceSettingsBuilder.deleteApplicationSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ApplicationServiceSettings applicationServiceSettings = applicationServiceSettingsBuilder.build();
@@ -68,6 +68,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class ApplicationServiceSettings extends ClientSettings<ApplicationServiceSettings> {
+  /** Returns the object with the settings used for calls to deleteApplication. */
+  public UnaryCallSettings<DeleteApplicationRequest, Empty> deleteApplicationSettings() {
+    return ((ApplicationServiceStubSettings) getStubSettings()).deleteApplicationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createApplication. */
   public UnaryCallSettings<CreateApplicationRequest, Application> createApplicationSettings() {
     return ((ApplicationServiceStubSettings) getStubSettings()).createApplicationSettings();
@@ -81,11 +86,6 @@ public class ApplicationServiceSettings extends ClientSettings<ApplicationServic
   /** Returns the object with the settings used for calls to updateApplication. */
   public UnaryCallSettings<UpdateApplicationRequest, Application> updateApplicationSettings() {
     return ((ApplicationServiceStubSettings) getStubSettings()).updateApplicationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteApplication. */
-  public UnaryCallSettings<DeleteApplicationRequest, Empty> deleteApplicationSettings() {
-    return ((ApplicationServiceStubSettings) getStubSettings()).deleteApplicationSettings();
   }
 
   /** Returns the object with the settings used for calls to listApplications. */
@@ -192,6 +192,11 @@ public class ApplicationServiceSettings extends ClientSettings<ApplicationServic
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteApplication. */
+    public UnaryCallSettings.Builder<DeleteApplicationRequest, Empty> deleteApplicationSettings() {
+      return getStubSettingsBuilder().deleteApplicationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createApplication. */
     public UnaryCallSettings.Builder<CreateApplicationRequest, Application>
         createApplicationSettings() {
@@ -207,11 +212,6 @@ public class ApplicationServiceSettings extends ClientSettings<ApplicationServic
     public UnaryCallSettings.Builder<UpdateApplicationRequest, Application>
         updateApplicationSettings() {
       return getStubSettingsBuilder().updateApplicationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteApplication. */
-    public UnaryCallSettings.Builder<DeleteApplicationRequest, Empty> deleteApplicationSettings() {
-      return getStubSettingsBuilder().deleteApplicationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listApplications. */

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
+  <!--TODO: To be removed after 0.36.0-->
   <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/talent/v4beta1/*OrBuilder</className>
@@ -15,5 +16,78 @@
     <differenceType>7012</differenceType>
     <className>com/google/cloud/talent/v4beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/TenantOrProjectName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/TenantOrProjectNames</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/UntypedTenantOrProjectName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/CompanyWithTenantName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/CompanyWithoutTenantName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/CompanyOldName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/CompanyNewName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/CompanyNames</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/UntypedCompanyName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/JobWithTenantName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/JobWithoutTenantName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/JobOldName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/JobNewName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/UntypedJobName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/JobNames</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/UntypedTenantName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/*Name$Builder</className>
+  </difference>
+  <difference>
+    <differenceType>5001</differenceType>
+    <className>com/google/cloud/talent/v4beta1/*Name</className>
+    <to>com/google/cloud/talent/v4beta1/TenantOrProjectName</to>
   </difference>
 </differences>

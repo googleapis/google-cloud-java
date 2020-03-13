@@ -34,7 +34,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (CompletionClient completionClient = CompletionClient.create()) {
- *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   String query = "";
  *   int pageSize = 0;
  *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()
@@ -158,7 +158,7 @@ public class CompletionClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompletionClient completionClient = CompletionClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String query = "";
    *   int pageSize = 0;
    *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()
@@ -186,7 +186,7 @@ public class CompletionClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompletionClient completionClient = CompletionClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String query = "";
    *   int pageSize = 0;
    *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()

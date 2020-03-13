@@ -57,8 +57,22 @@ public abstract class JobServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteJobCallable()");
+  }
+
   public UnaryCallable<CreateJobRequest, Job> createJobCallable() {
     throw new UnsupportedOperationException("Not implemented: createJobCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
+      batchCreateJobsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateJobsOperationCallable()");
+  }
+
+  public UnaryCallable<BatchCreateJobsRequest, Operation> batchCreateJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateJobsCallable()");
   }
 
   public UnaryCallable<GetJobRequest, Job> getJobCallable() {
@@ -69,8 +83,18 @@ public abstract class JobServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateJobCallable()");
   }
 
-  public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteJobCallable()");
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
+      batchUpdateJobsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchUpdateJobsOperationCallable()");
+  }
+
+  public UnaryCallable<BatchUpdateJobsRequest, Operation> batchUpdateJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchUpdateJobsCallable()");
+  }
+
+  public UnaryCallable<BatchDeleteJobsRequest, Empty> batchDeleteJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeleteJobsCallable()");
   }
 
   public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
@@ -79,10 +103,6 @@ public abstract class JobServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     throw new UnsupportedOperationException("Not implemented: listJobsCallable()");
-  }
-
-  public UnaryCallable<BatchDeleteJobsRequest, Empty> batchDeleteJobsCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchDeleteJobsCallable()");
   }
 
   public UnaryCallable<SearchJobsRequest, SearchJobsPagedResponse> searchJobsPagedCallable() {
@@ -100,26 +120,6 @@ public abstract class JobServiceStub implements BackgroundResource {
 
   public UnaryCallable<SearchJobsRequest, SearchJobsResponse> searchJobsForAlertCallable() {
     throw new UnsupportedOperationException("Not implemented: searchJobsForAlertCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
-      batchCreateJobsOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchCreateJobsOperationCallable()");
-  }
-
-  public UnaryCallable<BatchCreateJobsRequest, Operation> batchCreateJobsCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchCreateJobsCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
-      batchUpdateJobsOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchUpdateJobsOperationCallable()");
-  }
-
-  public UnaryCallable<BatchUpdateJobsRequest, Operation> batchUpdateJobsCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchUpdateJobsCallable()");
   }
 
   @Override

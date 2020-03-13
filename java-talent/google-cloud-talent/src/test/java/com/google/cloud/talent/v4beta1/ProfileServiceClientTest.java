@@ -43,37 +43,37 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ProfileServiceClientTest {
+  private static MockTenantService mockTenantService;
+  private static MockProfileService mockProfileService;
+  private static MockEventService mockEventService;
   private static MockApplicationService mockApplicationService;
   private static MockCompanyService mockCompanyService;
-  private static MockCompletion mockCompletion;
-  private static MockEventService mockEventService;
   private static MockJobService mockJobService;
-  private static MockProfileService mockProfileService;
-  private static MockTenantService mockTenantService;
+  private static MockCompletion mockCompletion;
   private static MockServiceHelper serviceHelper;
   private ProfileServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
+    mockTenantService = new MockTenantService();
+    mockProfileService = new MockProfileService();
+    mockEventService = new MockEventService();
     mockApplicationService = new MockApplicationService();
     mockCompanyService = new MockCompanyService();
-    mockCompletion = new MockCompletion();
-    mockEventService = new MockEventService();
     mockJobService = new MockJobService();
-    mockProfileService = new MockProfileService();
-    mockTenantService = new MockTenantService();
+    mockCompletion = new MockCompletion();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
+                mockTenantService,
+                mockProfileService,
+                mockEventService,
                 mockApplicationService,
                 mockCompanyService,
-                mockCompletion,
-                mockEventService,
                 mockJobService,
-                mockProfileService,
-                mockTenantService));
+                mockCompletion));
     serviceHelper.start();
   }
 
@@ -97,6 +97,108 @@ public class ProfileServiceClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteProfileTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockProfileService.addResponse(expectedResponse);
+
+    ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+
+    client.deleteProfile(name);
+
+    List<AbstractMessage> actualRequests = mockProfileService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteProfileRequest actualRequest = (DeleteProfileRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ProfileName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteProfileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockProfileService.addException(exception);
+
+    try {
+      ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+
+      client.deleteProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void searchProfilesTest() {
+    long estimatedTotalSize = 1882144769L;
+    String nextPageToken = "";
+    String resultSetId = "resultSetId-770306950";
+    SummarizedProfile summarizedProfilesElement = SummarizedProfile.newBuilder().build();
+    List<SummarizedProfile> summarizedProfiles = Arrays.asList(summarizedProfilesElement);
+    SearchProfilesResponse expectedResponse =
+        SearchProfilesResponse.newBuilder()
+            .setEstimatedTotalSize(estimatedTotalSize)
+            .setNextPageToken(nextPageToken)
+            .setResultSetId(resultSetId)
+            .addAllSummarizedProfiles(summarizedProfiles)
+            .build();
+    mockProfileService.addResponse(expectedResponse);
+
+    TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+    RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
+    SearchProfilesRequest request =
+        SearchProfilesRequest.newBuilder()
+            .setParent(parent.toString())
+            .setRequestMetadata(requestMetadata)
+            .build();
+
+    SearchProfilesPagedResponse pagedListResponse = client.searchProfiles(request);
+
+    List<SummarizedProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSummarizedProfilesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockProfileService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchProfilesRequest actualRequest = (SearchProfilesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, TenantName.parse(actualRequest.getParent()));
+    Assert.assertEquals(requestMetadata, actualRequest.getRequestMetadata());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void searchProfilesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockProfileService.addException(exception);
+
+    try {
+      TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+      RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
+      SearchProfilesRequest request =
+          SearchProfilesRequest.newBuilder()
+              .setParent(parent.toString())
+              .setRequestMetadata(requestMetadata)
+              .build();
+
+      client.searchProfiles(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 
   @Test
@@ -306,108 +408,6 @@ public class ProfileServiceClientTest {
       Profile profile = Profile.newBuilder().build();
 
       client.updateProfile(profile);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteProfileTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockProfileService.addResponse(expectedResponse);
-
-    ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-
-    client.deleteProfile(name);
-
-    List<AbstractMessage> actualRequests = mockProfileService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteProfileRequest actualRequest = (DeleteProfileRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ProfileName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteProfileExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockProfileService.addException(exception);
-
-    try {
-      ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-
-      client.deleteProfile(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void searchProfilesTest() {
-    long estimatedTotalSize = 1882144769L;
-    String nextPageToken = "";
-    String resultSetId = "resultSetId-770306950";
-    SummarizedProfile summarizedProfilesElement = SummarizedProfile.newBuilder().build();
-    List<SummarizedProfile> summarizedProfiles = Arrays.asList(summarizedProfilesElement);
-    SearchProfilesResponse expectedResponse =
-        SearchProfilesResponse.newBuilder()
-            .setEstimatedTotalSize(estimatedTotalSize)
-            .setNextPageToken(nextPageToken)
-            .setResultSetId(resultSetId)
-            .addAllSummarizedProfiles(summarizedProfiles)
-            .build();
-    mockProfileService.addResponse(expectedResponse);
-
-    TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-    RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
-    SearchProfilesRequest request =
-        SearchProfilesRequest.newBuilder()
-            .setParent(parent.toString())
-            .setRequestMetadata(requestMetadata)
-            .build();
-
-    SearchProfilesPagedResponse pagedListResponse = client.searchProfiles(request);
-
-    List<SummarizedProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getSummarizedProfilesList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockProfileService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    SearchProfilesRequest actualRequest = (SearchProfilesRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, TenantName.parse(actualRequest.getParent()));
-    Assert.assertEquals(requestMetadata, actualRequest.getRequestMetadata());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void searchProfilesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockProfileService.addException(exception);
-
-    try {
-      TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-      RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
-      SearchProfilesRequest request =
-          SearchProfilesRequest.newBuilder()
-              .setParent(parent.toString())
-              .setRequestMetadata(requestMetadata)
-              .build();
-
-      client.searchProfiles(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -44,9 +44,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   Tenant tenant = Tenant.newBuilder().build();
- *   Tenant response = tenantServiceClient.createTenant(parent, tenant);
+ *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
+ *   tenantServiceClient.deleteTenant(name);
  * }
  * </code>
  * </pre>
@@ -153,6 +152,98 @@ public class TenantServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TenantServiceStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes specified tenant.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
+   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
+   *   tenantServiceClient.deleteTenant(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the tenant to be deleted.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   *     "projects/foo/tenants/bar".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTenant(TenantName name) {
+    DeleteTenantRequest request =
+        DeleteTenantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteTenant(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes specified tenant.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
+   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
+   *   tenantServiceClient.deleteTenant(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the tenant to be deleted.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   *     "projects/foo/tenants/bar".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTenant(String name) {
+    DeleteTenantRequest request = DeleteTenantRequest.newBuilder().setName(name).build();
+    deleteTenant(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes specified tenant.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
+   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
+   *   DeleteTenantRequest request = DeleteTenantRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   tenantServiceClient.deleteTenant(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTenant(DeleteTenantRequest request) {
+    deleteTenantCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes specified tenant.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
+   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
+   *   DeleteTenantRequest request = DeleteTenantRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = tenantServiceClient.deleteTenantCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteTenantRequest, Empty> deleteTenantCallable() {
+    return stub.deleteTenantCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -413,98 +504,6 @@ public class TenantServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateTenantRequest, Tenant> updateTenantCallable() {
     return stub.updateTenantCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes specified tenant.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-   *   tenantServiceClient.deleteTenant(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the tenant to be deleted.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   *     "projects/foo/tenants/bar".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteTenant(TenantName name) {
-    DeleteTenantRequest request =
-        DeleteTenantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteTenant(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes specified tenant.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-   *   tenantServiceClient.deleteTenant(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the tenant to be deleted.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   *     "projects/foo/tenants/bar".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteTenant(String name) {
-    DeleteTenantRequest request = DeleteTenantRequest.newBuilder().setName(name).build();
-    deleteTenant(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes specified tenant.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-   *   DeleteTenantRequest request = DeleteTenantRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   tenantServiceClient.deleteTenant(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteTenant(DeleteTenantRequest request) {
-    deleteTenantCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes specified tenant.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-   *   DeleteTenantRequest request = DeleteTenantRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = tenantServiceClient.deleteTenantCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteTenantRequest, Empty> deleteTenantCallable() {
-    return stub.deleteTenantCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

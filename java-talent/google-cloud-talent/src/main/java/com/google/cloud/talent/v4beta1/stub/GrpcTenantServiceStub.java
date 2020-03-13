@@ -51,6 +51,13 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcTenantServiceStub extends TenantServiceStub {
 
+  private static final MethodDescriptor<DeleteTenantRequest, Empty> deleteTenantMethodDescriptor =
+      MethodDescriptor.<DeleteTenantRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.talent.v4beta1.TenantService/DeleteTenant")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteTenantRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<CreateTenantRequest, Tenant> createTenantMethodDescriptor =
       MethodDescriptor.<CreateTenantRequest, Tenant>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -72,13 +79,6 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tenant.getDefaultInstance()))
           .build();
-  private static final MethodDescriptor<DeleteTenantRequest, Empty> deleteTenantMethodDescriptor =
-      MethodDescriptor.<DeleteTenantRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.talent.v4beta1.TenantService/DeleteTenant")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteTenantRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<ListTenantsRequest, ListTenantsResponse>
       listTenantsMethodDescriptor =
           MethodDescriptor.<ListTenantsRequest, ListTenantsResponse>newBuilder()
@@ -91,10 +91,10 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<DeleteTenantRequest, Empty> deleteTenantCallable;
   private final UnaryCallable<CreateTenantRequest, Tenant> createTenantCallable;
   private final UnaryCallable<GetTenantRequest, Tenant> getTenantCallable;
   private final UnaryCallable<UpdateTenantRequest, Tenant> updateTenantCallable;
-  private final UnaryCallable<DeleteTenantRequest, Empty> deleteTenantCallable;
   private final UnaryCallable<ListTenantsRequest, ListTenantsResponse> listTenantsCallable;
   private final UnaryCallable<ListTenantsRequest, ListTenantsPagedResponse>
       listTenantsPagedCallable;
@@ -138,6 +138,19 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<DeleteTenantRequest, Empty> deleteTenantTransportSettings =
+        GrpcCallSettings.<DeleteTenantRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTenantMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteTenantRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteTenantRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<CreateTenantRequest, Tenant> createTenantTransportSettings =
         GrpcCallSettings.<CreateTenantRequest, Tenant>newBuilder()
             .setMethodDescriptor(createTenantMethodDescriptor)
@@ -177,19 +190,6 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteTenantRequest, Empty> deleteTenantTransportSettings =
-        GrpcCallSettings.<DeleteTenantRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteTenantMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteTenantRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteTenantRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ListTenantsRequest, ListTenantsResponse> listTenantsTransportSettings =
         GrpcCallSettings.<ListTenantsRequest, ListTenantsResponse>newBuilder()
             .setMethodDescriptor(listTenantsMethodDescriptor)
@@ -204,6 +204,9 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
                 })
             .build();
 
+    this.deleteTenantCallable =
+        callableFactory.createUnaryCallable(
+            deleteTenantTransportSettings, settings.deleteTenantSettings(), clientContext);
     this.createTenantCallable =
         callableFactory.createUnaryCallable(
             createTenantTransportSettings, settings.createTenantSettings(), clientContext);
@@ -213,9 +216,6 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
     this.updateTenantCallable =
         callableFactory.createUnaryCallable(
             updateTenantTransportSettings, settings.updateTenantSettings(), clientContext);
-    this.deleteTenantCallable =
-        callableFactory.createUnaryCallable(
-            deleteTenantTransportSettings, settings.deleteTenantSettings(), clientContext);
     this.listTenantsCallable =
         callableFactory.createUnaryCallable(
             listTenantsTransportSettings, settings.listTenantsSettings(), clientContext);
@@ -224,6 +224,10 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
             listTenantsTransportSettings, settings.listTenantsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<DeleteTenantRequest, Empty> deleteTenantCallable() {
+    return deleteTenantCallable;
   }
 
   public UnaryCallable<CreateTenantRequest, Tenant> createTenantCallable() {
@@ -236,10 +240,6 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
 
   public UnaryCallable<UpdateTenantRequest, Tenant> updateTenantCallable() {
     return updateTenantCallable;
-  }
-
-  public UnaryCallable<DeleteTenantRequest, Empty> deleteTenantCallable() {
-    return deleteTenantCallable;
   }
 
   public UnaryCallable<ListTenantsRequest, ListTenantsPagedResponse> listTenantsPagedCallable() {

@@ -42,37 +42,37 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ApplicationServiceClientTest {
+  private static MockTenantService mockTenantService;
+  private static MockProfileService mockProfileService;
+  private static MockEventService mockEventService;
   private static MockApplicationService mockApplicationService;
   private static MockCompanyService mockCompanyService;
-  private static MockCompletion mockCompletion;
-  private static MockEventService mockEventService;
   private static MockJobService mockJobService;
-  private static MockProfileService mockProfileService;
-  private static MockTenantService mockTenantService;
+  private static MockCompletion mockCompletion;
   private static MockServiceHelper serviceHelper;
   private ApplicationServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
+    mockTenantService = new MockTenantService();
+    mockProfileService = new MockProfileService();
+    mockEventService = new MockEventService();
     mockApplicationService = new MockApplicationService();
     mockCompanyService = new MockCompanyService();
-    mockCompletion = new MockCompletion();
-    mockEventService = new MockEventService();
     mockJobService = new MockJobService();
-    mockProfileService = new MockProfileService();
-    mockTenantService = new MockTenantService();
+    mockCompletion = new MockCompletion();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
+                mockTenantService,
+                mockProfileService,
+                mockEventService,
                 mockApplicationService,
                 mockCompanyService,
-                mockCompletion,
-                mockEventService,
                 mockJobService,
-                mockProfileService,
-                mockTenantService));
+                mockCompletion));
     serviceHelper.start();
   }
 
@@ -100,13 +100,52 @@ public class ApplicationServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteApplicationTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockApplicationService.addResponse(expectedResponse);
+
+    ApplicationName name =
+        ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
+
+    client.deleteApplication(name);
+
+    List<AbstractMessage> actualRequests = mockApplicationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteApplicationRequest actualRequest = (DeleteApplicationRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ApplicationName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteApplicationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockApplicationService.addException(exception);
+
+    try {
+      ApplicationName name =
+          ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
+
+      client.deleteApplication(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createApplicationTest() {
     ApplicationName name =
         ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
     String externalId = "externalId-1153075697";
     String profile = "profile-309425751";
-    String job = "job105405";
-    String company = "company950484093";
+    JobName job = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+    CompanyName company = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
     String outcomeNotes = "outcomeNotes-355961964";
     String jobTitleSnippet = "jobTitleSnippet-1100512972";
     Application expectedResponse =
@@ -114,8 +153,8 @@ public class ApplicationServiceClientTest {
             .setName(name.toString())
             .setExternalId(externalId)
             .setProfile(profile)
-            .setJob(job)
-            .setCompany(company)
+            .setJob(job.toString())
+            .setCompany(company.toString())
             .setOutcomeNotes(outcomeNotes)
             .setJobTitleSnippet(jobTitleSnippet)
             .build();
@@ -163,8 +202,8 @@ public class ApplicationServiceClientTest {
         ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
     String externalId = "externalId-1153075697";
     String profile = "profile-309425751";
-    String job = "job105405";
-    String company = "company950484093";
+    JobName job = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+    CompanyName company = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
     String outcomeNotes = "outcomeNotes-355961964";
     String jobTitleSnippet = "jobTitleSnippet-1100512972";
     Application expectedResponse =
@@ -172,8 +211,8 @@ public class ApplicationServiceClientTest {
             .setName(name2.toString())
             .setExternalId(externalId)
             .setProfile(profile)
-            .setJob(job)
-            .setCompany(company)
+            .setJob(job.toString())
+            .setCompany(company.toString())
             .setOutcomeNotes(outcomeNotes)
             .setJobTitleSnippet(jobTitleSnippet)
             .build();
@@ -220,8 +259,8 @@ public class ApplicationServiceClientTest {
         ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
     String externalId = "externalId-1153075697";
     String profile = "profile-309425751";
-    String job = "job105405";
-    String company = "company950484093";
+    JobName job = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+    CompanyName company = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
     String outcomeNotes = "outcomeNotes-355961964";
     String jobTitleSnippet = "jobTitleSnippet-1100512972";
     Application expectedResponse =
@@ -229,8 +268,8 @@ public class ApplicationServiceClientTest {
             .setName(name.toString())
             .setExternalId(externalId)
             .setProfile(profile)
-            .setJob(job)
-            .setCompany(company)
+            .setJob(job.toString())
+            .setCompany(company.toString())
             .setOutcomeNotes(outcomeNotes)
             .setJobTitleSnippet(jobTitleSnippet)
             .build();
@@ -262,45 +301,6 @@ public class ApplicationServiceClientTest {
       Application application = Application.newBuilder().build();
 
       client.updateApplication(application);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteApplicationTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockApplicationService.addResponse(expectedResponse);
-
-    ApplicationName name =
-        ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-
-    client.deleteApplication(name);
-
-    List<AbstractMessage> actualRequests = mockApplicationService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteApplicationRequest actualRequest = (DeleteApplicationRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ApplicationName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteApplicationExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockApplicationService.addException(exception);
-
-    try {
-      ApplicationName name =
-          ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-
-      client.deleteApplication(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

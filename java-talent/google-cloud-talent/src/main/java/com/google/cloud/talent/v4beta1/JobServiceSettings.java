@@ -53,16 +53,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createJob to 30 seconds:
+ * <p>For example, to set the total timeout of deleteJob to 30 seconds:
  *
  * <pre>
  * <code>
  * JobServiceSettings.Builder jobServiceSettingsBuilder =
  *     JobServiceSettings.newBuilder();
  * jobServiceSettingsBuilder
- *     .createJobSettings()
+ *     .deleteJobSettings()
  *     .setRetrySettings(
- *         jobServiceSettingsBuilder.createJobSettings().getRetrySettings().toBuilder()
+ *         jobServiceSettingsBuilder.deleteJobSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * JobServiceSettings jobServiceSettings = jobServiceSettingsBuilder.build();
@@ -72,47 +72,14 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
-  /** Returns the object with the settings used for calls to createJob. */
-  public UnaryCallSettings<CreateJobRequest, Job> createJobSettings() {
-    return ((JobServiceStubSettings) getStubSettings()).createJobSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getJob. */
-  public UnaryCallSettings<GetJobRequest, Job> getJobSettings() {
-    return ((JobServiceStubSettings) getStubSettings()).getJobSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateJob. */
-  public UnaryCallSettings<UpdateJobRequest, Job> updateJobSettings() {
-    return ((JobServiceStubSettings) getStubSettings()).updateJobSettings();
-  }
-
   /** Returns the object with the settings used for calls to deleteJob. */
   public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
     return ((JobServiceStubSettings) getStubSettings()).deleteJobSettings();
   }
 
-  /** Returns the object with the settings used for calls to listJobs. */
-  public PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
-      listJobsSettings() {
-    return ((JobServiceStubSettings) getStubSettings()).listJobsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to batchDeleteJobs. */
-  public UnaryCallSettings<BatchDeleteJobsRequest, Empty> batchDeleteJobsSettings() {
-    return ((JobServiceStubSettings) getStubSettings()).batchDeleteJobsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to searchJobs. */
-  public PagedCallSettings<SearchJobsRequest, SearchJobsResponse, SearchJobsPagedResponse>
-      searchJobsSettings() {
-    return ((JobServiceStubSettings) getStubSettings()).searchJobsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to searchJobsForAlert. */
-  public PagedCallSettings<SearchJobsRequest, SearchJobsResponse, SearchJobsForAlertPagedResponse>
-      searchJobsForAlertSettings() {
-    return ((JobServiceStubSettings) getStubSettings()).searchJobsForAlertSettings();
+  /** Returns the object with the settings used for calls to createJob. */
+  public UnaryCallSettings<CreateJobRequest, Job> createJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).createJobSettings();
   }
 
   /** Returns the object with the settings used for calls to batchCreateJobs. */
@@ -128,6 +95,16 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
     return ((JobServiceStubSettings) getStubSettings()).batchCreateJobsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to getJob. */
+  public UnaryCallSettings<GetJobRequest, Job> getJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).getJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateJob. */
+  public UnaryCallSettings<UpdateJobRequest, Job> updateJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).updateJobSettings();
+  }
+
   /** Returns the object with the settings used for calls to batchUpdateJobs. */
   public UnaryCallSettings<BatchUpdateJobsRequest, Operation> batchUpdateJobsSettings() {
     return ((JobServiceStubSettings) getStubSettings()).batchUpdateJobsSettings();
@@ -139,6 +116,29 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
   public OperationCallSettings<BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
       batchUpdateJobsOperationSettings() {
     return ((JobServiceStubSettings) getStubSettings()).batchUpdateJobsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteJobs. */
+  public UnaryCallSettings<BatchDeleteJobsRequest, Empty> batchDeleteJobsSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).batchDeleteJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listJobs. */
+  public PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
+      listJobsSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).listJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchJobs. */
+  public PagedCallSettings<SearchJobsRequest, SearchJobsResponse, SearchJobsPagedResponse>
+      searchJobsSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).searchJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchJobsForAlert. */
+  public PagedCallSettings<SearchJobsRequest, SearchJobsResponse, SearchJobsForAlertPagedResponse>
+      searchJobsForAlertSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).searchJobsForAlertSettings();
   }
 
   public static final JobServiceSettings create(JobServiceStubSettings stub) throws IOException {
@@ -237,48 +237,14 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to createJob. */
-    public UnaryCallSettings.Builder<CreateJobRequest, Job> createJobSettings() {
-      return getStubSettingsBuilder().createJobSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getJob. */
-    public UnaryCallSettings.Builder<GetJobRequest, Job> getJobSettings() {
-      return getStubSettingsBuilder().getJobSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateJob. */
-    public UnaryCallSettings.Builder<UpdateJobRequest, Job> updateJobSettings() {
-      return getStubSettingsBuilder().updateJobSettings();
-    }
-
     /** Returns the builder for the settings used for calls to deleteJob. */
     public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
       return getStubSettingsBuilder().deleteJobSettings();
     }
 
-    /** Returns the builder for the settings used for calls to listJobs. */
-    public PagedCallSettings.Builder<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
-        listJobsSettings() {
-      return getStubSettingsBuilder().listJobsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to batchDeleteJobs. */
-    public UnaryCallSettings.Builder<BatchDeleteJobsRequest, Empty> batchDeleteJobsSettings() {
-      return getStubSettingsBuilder().batchDeleteJobsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to searchJobs. */
-    public PagedCallSettings.Builder<SearchJobsRequest, SearchJobsResponse, SearchJobsPagedResponse>
-        searchJobsSettings() {
-      return getStubSettingsBuilder().searchJobsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to searchJobsForAlert. */
-    public PagedCallSettings.Builder<
-            SearchJobsRequest, SearchJobsResponse, SearchJobsForAlertPagedResponse>
-        searchJobsForAlertSettings() {
-      return getStubSettingsBuilder().searchJobsForAlertSettings();
+    /** Returns the builder for the settings used for calls to createJob. */
+    public UnaryCallSettings.Builder<CreateJobRequest, Job> createJobSettings() {
+      return getStubSettingsBuilder().createJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to batchCreateJobs. */
@@ -295,6 +261,16 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
       return getStubSettingsBuilder().batchCreateJobsOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getJob. */
+    public UnaryCallSettings.Builder<GetJobRequest, Job> getJobSettings() {
+      return getStubSettingsBuilder().getJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateJob. */
+    public UnaryCallSettings.Builder<UpdateJobRequest, Job> updateJobSettings() {
+      return getStubSettingsBuilder().updateJobSettings();
+    }
+
     /** Returns the builder for the settings used for calls to batchUpdateJobs. */
     public UnaryCallSettings.Builder<BatchUpdateJobsRequest, Operation> batchUpdateJobsSettings() {
       return getStubSettingsBuilder().batchUpdateJobsSettings();
@@ -307,6 +283,30 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
             BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
         batchUpdateJobsOperationSettings() {
       return getStubSettingsBuilder().batchUpdateJobsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteJobs. */
+    public UnaryCallSettings.Builder<BatchDeleteJobsRequest, Empty> batchDeleteJobsSettings() {
+      return getStubSettingsBuilder().batchDeleteJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listJobs. */
+    public PagedCallSettings.Builder<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
+        listJobsSettings() {
+      return getStubSettingsBuilder().listJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchJobs. */
+    public PagedCallSettings.Builder<SearchJobsRequest, SearchJobsResponse, SearchJobsPagedResponse>
+        searchJobsSettings() {
+      return getStubSettingsBuilder().searchJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchJobsForAlert. */
+    public PagedCallSettings.Builder<
+            SearchJobsRequest, SearchJobsResponse, SearchJobsForAlertPagedResponse>
+        searchJobsForAlertSettings() {
+      return getStubSettingsBuilder().searchJobsForAlertSettings();
     }
 
     @Override

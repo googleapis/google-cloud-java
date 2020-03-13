@@ -49,16 +49,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createTenant to 30 seconds:
+ * <p>For example, to set the total timeout of deleteTenant to 30 seconds:
  *
  * <pre>
  * <code>
  * TenantServiceSettings.Builder tenantServiceSettingsBuilder =
  *     TenantServiceSettings.newBuilder();
  * tenantServiceSettingsBuilder
- *     .createTenantSettings()
+ *     .deleteTenantSettings()
  *     .setRetrySettings(
- *         tenantServiceSettingsBuilder.createTenantSettings().getRetrySettings().toBuilder()
+ *         tenantServiceSettingsBuilder.deleteTenantSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TenantServiceSettings tenantServiceSettings = tenantServiceSettingsBuilder.build();
@@ -68,6 +68,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class TenantServiceSettings extends ClientSettings<TenantServiceSettings> {
+  /** Returns the object with the settings used for calls to deleteTenant. */
+  public UnaryCallSettings<DeleteTenantRequest, Empty> deleteTenantSettings() {
+    return ((TenantServiceStubSettings) getStubSettings()).deleteTenantSettings();
+  }
+
   /** Returns the object with the settings used for calls to createTenant. */
   public UnaryCallSettings<CreateTenantRequest, Tenant> createTenantSettings() {
     return ((TenantServiceStubSettings) getStubSettings()).createTenantSettings();
@@ -81,11 +86,6 @@ public class TenantServiceSettings extends ClientSettings<TenantServiceSettings>
   /** Returns the object with the settings used for calls to updateTenant. */
   public UnaryCallSettings<UpdateTenantRequest, Tenant> updateTenantSettings() {
     return ((TenantServiceStubSettings) getStubSettings()).updateTenantSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteTenant. */
-  public UnaryCallSettings<DeleteTenantRequest, Empty> deleteTenantSettings() {
-    return ((TenantServiceStubSettings) getStubSettings()).deleteTenantSettings();
   }
 
   /** Returns the object with the settings used for calls to listTenants. */
@@ -191,6 +191,11 @@ public class TenantServiceSettings extends ClientSettings<TenantServiceSettings>
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteTenant. */
+    public UnaryCallSettings.Builder<DeleteTenantRequest, Empty> deleteTenantSettings() {
+      return getStubSettingsBuilder().deleteTenantSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createTenant. */
     public UnaryCallSettings.Builder<CreateTenantRequest, Tenant> createTenantSettings() {
       return getStubSettingsBuilder().createTenantSettings();
@@ -204,11 +209,6 @@ public class TenantServiceSettings extends ClientSettings<TenantServiceSettings>
     /** Returns the builder for the settings used for calls to updateTenant. */
     public UnaryCallSettings.Builder<UpdateTenantRequest, Tenant> updateTenantSettings() {
       return getStubSettingsBuilder().updateTenantSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteTenant. */
-    public UnaryCallSettings.Builder<DeleteTenantRequest, Empty> deleteTenantSettings() {
-      return getStubSettingsBuilder().deleteTenantSettings();
     }
 
     /** Returns the builder for the settings used for calls to listTenants. */

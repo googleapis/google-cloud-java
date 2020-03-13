@@ -49,16 +49,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createCompany to 30 seconds:
+ * <p>For example, to set the total timeout of deleteCompany to 30 seconds:
  *
  * <pre>
  * <code>
  * CompanyServiceSettings.Builder companyServiceSettingsBuilder =
  *     CompanyServiceSettings.newBuilder();
  * companyServiceSettingsBuilder
- *     .createCompanySettings()
+ *     .deleteCompanySettings()
  *     .setRetrySettings(
- *         companyServiceSettingsBuilder.createCompanySettings().getRetrySettings().toBuilder()
+ *         companyServiceSettingsBuilder.deleteCompanySettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CompanyServiceSettings companyServiceSettings = companyServiceSettingsBuilder.build();
@@ -68,6 +68,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class CompanyServiceSettings extends ClientSettings<CompanyServiceSettings> {
+  /** Returns the object with the settings used for calls to deleteCompany. */
+  public UnaryCallSettings<DeleteCompanyRequest, Empty> deleteCompanySettings() {
+    return ((CompanyServiceStubSettings) getStubSettings()).deleteCompanySettings();
+  }
+
   /** Returns the object with the settings used for calls to createCompany. */
   public UnaryCallSettings<CreateCompanyRequest, Company> createCompanySettings() {
     return ((CompanyServiceStubSettings) getStubSettings()).createCompanySettings();
@@ -81,11 +86,6 @@ public class CompanyServiceSettings extends ClientSettings<CompanyServiceSetting
   /** Returns the object with the settings used for calls to updateCompany. */
   public UnaryCallSettings<UpdateCompanyRequest, Company> updateCompanySettings() {
     return ((CompanyServiceStubSettings) getStubSettings()).updateCompanySettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteCompany. */
-  public UnaryCallSettings<DeleteCompanyRequest, Empty> deleteCompanySettings() {
-    return ((CompanyServiceStubSettings) getStubSettings()).deleteCompanySettings();
   }
 
   /** Returns the object with the settings used for calls to listCompanies. */
@@ -191,6 +191,11 @@ public class CompanyServiceSettings extends ClientSettings<CompanyServiceSetting
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteCompany. */
+    public UnaryCallSettings.Builder<DeleteCompanyRequest, Empty> deleteCompanySettings() {
+      return getStubSettingsBuilder().deleteCompanySettings();
+    }
+
     /** Returns the builder for the settings used for calls to createCompany. */
     public UnaryCallSettings.Builder<CreateCompanyRequest, Company> createCompanySettings() {
       return getStubSettingsBuilder().createCompanySettings();
@@ -204,11 +209,6 @@ public class CompanyServiceSettings extends ClientSettings<CompanyServiceSetting
     /** Returns the builder for the settings used for calls to updateCompany. */
     public UnaryCallSettings.Builder<UpdateCompanyRequest, Company> updateCompanySettings() {
       return getStubSettingsBuilder().updateCompanySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteCompany. */
-    public UnaryCallSettings.Builder<DeleteCompanyRequest, Empty> deleteCompanySettings() {
-      return getStubSettingsBuilder().deleteCompanySettings();
     }
 
     /** Returns the builder for the settings used for calls to listCompanies. */

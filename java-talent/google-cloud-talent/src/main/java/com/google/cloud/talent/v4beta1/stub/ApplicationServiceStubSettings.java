@@ -71,16 +71,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createApplication to 30 seconds:
+ * <p>For example, to set the total timeout of deleteApplication to 30 seconds:
  *
  * <pre>
  * <code>
  * ApplicationServiceStubSettings.Builder applicationServiceSettingsBuilder =
  *     ApplicationServiceStubSettings.newBuilder();
  * applicationServiceSettingsBuilder
- *     .createApplicationSettings()
+ *     .deleteApplicationSettings()
  *     .setRetrySettings(
- *         applicationServiceSettingsBuilder.createApplicationSettings().getRetrySettings().toBuilder()
+ *         applicationServiceSettingsBuilder.deleteApplicationSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ApplicationServiceStubSettings applicationServiceSettings = applicationServiceSettingsBuilder.build();
@@ -97,13 +97,18 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
           .add("https://www.googleapis.com/auth/jobs")
           .build();
 
+  private final UnaryCallSettings<DeleteApplicationRequest, Empty> deleteApplicationSettings;
   private final UnaryCallSettings<CreateApplicationRequest, Application> createApplicationSettings;
   private final UnaryCallSettings<GetApplicationRequest, Application> getApplicationSettings;
   private final UnaryCallSettings<UpdateApplicationRequest, Application> updateApplicationSettings;
-  private final UnaryCallSettings<DeleteApplicationRequest, Empty> deleteApplicationSettings;
   private final PagedCallSettings<
           ListApplicationsRequest, ListApplicationsResponse, ListApplicationsPagedResponse>
       listApplicationsSettings;
+
+  /** Returns the object with the settings used for calls to deleteApplication. */
+  public UnaryCallSettings<DeleteApplicationRequest, Empty> deleteApplicationSettings() {
+    return deleteApplicationSettings;
+  }
 
   /** Returns the object with the settings used for calls to createApplication. */
   public UnaryCallSettings<CreateApplicationRequest, Application> createApplicationSettings() {
@@ -118,11 +123,6 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
   /** Returns the object with the settings used for calls to updateApplication. */
   public UnaryCallSettings<UpdateApplicationRequest, Application> updateApplicationSettings() {
     return updateApplicationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteApplication. */
-  public UnaryCallSettings<DeleteApplicationRequest, Empty> deleteApplicationSettings() {
-    return deleteApplicationSettings;
   }
 
   /** Returns the object with the settings used for calls to listApplications. */
@@ -201,10 +201,10 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
   protected ApplicationServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteApplicationSettings = settingsBuilder.deleteApplicationSettings().build();
     createApplicationSettings = settingsBuilder.createApplicationSettings().build();
     getApplicationSettings = settingsBuilder.getApplicationSettings().build();
     updateApplicationSettings = settingsBuilder.updateApplicationSettings().build();
-    deleteApplicationSettings = settingsBuilder.deleteApplicationSettings().build();
     listApplicationsSettings = settingsBuilder.listApplicationsSettings().build();
   }
 
@@ -272,14 +272,14 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
       extends StubSettings.Builder<ApplicationServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteApplicationRequest, Empty>
+        deleteApplicationSettings;
     private final UnaryCallSettings.Builder<CreateApplicationRequest, Application>
         createApplicationSettings;
     private final UnaryCallSettings.Builder<GetApplicationRequest, Application>
         getApplicationSettings;
     private final UnaryCallSettings.Builder<UpdateApplicationRequest, Application>
         updateApplicationSettings;
-    private final UnaryCallSettings.Builder<DeleteApplicationRequest, Empty>
-        deleteApplicationSettings;
     private final PagedCallSettings.Builder<
             ListApplicationsRequest, ListApplicationsResponse, ListApplicationsPagedResponse>
         listApplicationsSettings;
@@ -325,22 +325,22 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listApplicationsSettings = PagedCallSettings.newBuilder(LIST_APPLICATIONS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteApplicationSettings,
               createApplicationSettings,
               getApplicationSettings,
               updateApplicationSettings,
-              deleteApplicationSettings,
               listApplicationsSettings);
 
       initDefaults(this);
@@ -358,6 +358,11 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
     private static Builder initDefaults(Builder builder) {
 
       builder
+          .deleteApplicationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .createApplicationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -373,11 +378,6 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .deleteApplicationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .listApplicationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -388,18 +388,18 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
     protected Builder(ApplicationServiceStubSettings settings) {
       super(settings);
 
+      deleteApplicationSettings = settings.deleteApplicationSettings.toBuilder();
       createApplicationSettings = settings.createApplicationSettings.toBuilder();
       getApplicationSettings = settings.getApplicationSettings.toBuilder();
       updateApplicationSettings = settings.updateApplicationSettings.toBuilder();
-      deleteApplicationSettings = settings.deleteApplicationSettings.toBuilder();
       listApplicationsSettings = settings.listApplicationsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteApplicationSettings,
               createApplicationSettings,
               getApplicationSettings,
               updateApplicationSettings,
-              deleteApplicationSettings,
               listApplicationsSettings);
     }
 
@@ -419,6 +419,11 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to deleteApplication. */
+    public UnaryCallSettings.Builder<DeleteApplicationRequest, Empty> deleteApplicationSettings() {
+      return deleteApplicationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createApplication. */
     public UnaryCallSettings.Builder<CreateApplicationRequest, Application>
         createApplicationSettings() {
@@ -434,11 +439,6 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
     public UnaryCallSettings.Builder<UpdateApplicationRequest, Application>
         updateApplicationSettings() {
       return updateApplicationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteApplication. */
-    public UnaryCallSettings.Builder<DeleteApplicationRequest, Empty> deleteApplicationSettings() {
-      return deleteApplicationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listApplications. */
