@@ -1,0 +1,48 @@
+{
+  "updateTime": "2020-03-13T21:30:04.455558Z",
+  "sources": [
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "b2e2bc62fab90e6829e62d3d189906d9b79899e4",
+        "internalRef": "300817706"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "b2e2bc62fab90e6829e62d3d189906d9b79899e4",
+        "internalRef": "300817706"
+      }
+    },
+    {
+      "template": {
+        "name": "java_library",
+        "origin": "synthtool.gcp",
+        "version": "2020.2.4"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "documentai",
+        "apiVersion": "v1beta1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "documentai",
+        "apiVersion": "v1beta2",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ]
+}
