@@ -1,6 +1,6 @@
-# Google Google Cloud Data Labeling Client for Java
+# Google Data Labeling Client for Java
 
-Java idiomatic client for [Google Cloud Data Labeling][product-docs].
+Java idiomatic client for [Data Labeling][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -64,8 +64,8 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Data Labeling [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Google Cloud Data Labeling.
+You will need a [Google Cloud Platform Console][developer-console] project with the Data Labeling [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Data Labeling.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -75,13 +75,13 @@ You will need to [enable billing][enable-billing] to use Google Google Cloud Dat
 You'll need to obtain the `google-cloud-datalabeling` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-datalabeling` as a dependency in your code.
 
-## About Google Cloud Data Labeling
+## About Data Labeling
 
 
-[Google Cloud Data Labeling][product-docs] 
+[Data Labeling][product-docs] 
 
-See the [Google Cloud Data Labeling client library docs][javadocs] to learn how to
-use this Google Cloud Data Labeling Client Library.
+See the [Data Labeling client library docs][javadocs] to learn how to
+use this Data Labeling Client Library.
 
 
 
@@ -94,7 +94,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud Data Labeling uses gRPC for the transport layer.
+Data Labeling uses gRPC for the transport layer.
 
 ## Java Versions
 
