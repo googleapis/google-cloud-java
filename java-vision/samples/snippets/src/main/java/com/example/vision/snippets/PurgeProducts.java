@@ -51,7 +51,7 @@ public class PurgeProducts {
               .build();
 
       OperationFuture response = client.purgeProductsAsync(request);
-      response.getPollingFuture().get(90, TimeUnit.SECONDS);
+      response.getPollingFuture().get(180, TimeUnit.SECONDS);
 
       System.out.println("Orphan products deleted.");
     }

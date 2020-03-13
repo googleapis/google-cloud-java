@@ -59,7 +59,7 @@ public class PurgeProductsInProductSet {
               .build();
 
       OperationFuture<Empty, BatchOperationMetadata> response = client.purgeProductsAsync(request);
-      response.getPollingFuture().get(90, TimeUnit.SECONDS);
+      response.getPollingFuture().get(180, TimeUnit.SECONDS);
 
       System.out.println("Products removed from product set.");
     }
