@@ -1,6 +1,6 @@
-# Google Google Cloud Dataproc Client for Java
+# Google Dataproc Client for Java
 
-Java idiomatic client for [Google Cloud Dataproc][product-docs].
+Java idiomatic client for [Dataproc][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -64,8 +64,8 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Dataproc [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Google Cloud Dataproc.
+You will need a [Google Cloud Platform Console][developer-console] project with the Dataproc [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Dataproc.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -75,13 +75,13 @@ You will need to [enable billing][enable-billing] to use Google Google Cloud Dat
 You'll need to obtain the `google-cloud-dataproc` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-dataproc` as a dependency in your code.
 
-## About Google Cloud Dataproc
+## About Dataproc
 
 
-[Google Cloud Dataproc][product-docs] is a faster, easier, more cost-effective way to run Apache Spark and Apache Hadoop.
+[Dataproc][product-docs] is a faster, easier, more cost-effective way to run Apache Spark and Apache Hadoop.
 
-See the [Google Cloud Dataproc client library docs][javadocs] to learn how to
-use this Google Cloud Dataproc Client Library.
+See the [Dataproc client library docs][javadocs] to learn how to
+use this Dataproc Client Library.
 
 
 
@@ -94,7 +94,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud Dataproc uses gRPC for the transport layer.
+Dataproc uses gRPC for the transport layer.
 
 ## Java Versions
 
