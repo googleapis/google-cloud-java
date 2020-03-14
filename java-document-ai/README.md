@@ -146,7 +146,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-document-ai/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-document-ai/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-document-ai/java11.html
-[stability-image]: https://img.shields.io/badge/stability-alpha-orange
+[stability-image]: https://img.shields.io/badge/stability-beta-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-document-ai.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-document-ai&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication

@@ -5,7 +5,7 @@
     "client_documentation": "https://googleapis.dev/java/google-cloud-document-ai/latest/index.html",
     "api_description": "allows developers to unlock insights from your documents with machine learning.",
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559755",
-    "release_level": "alpha",
+    "release_level": "beta",
     "language": "java",
     "repo": "googleapis/java-document-ai",
     "repo_short": "java-document-ai",
