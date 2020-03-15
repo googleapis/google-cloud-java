@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.125.1](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.125.0...v0.125.1) (2020-03-13)
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-bom to v1.28.0 ([#71](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/71)) ([25b431b](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/25b431b23d2a404b8cb41b5b4d069781c25a5e7c))
+
 ## [0.125.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.124.0...v0.125.0) (2020-03-06)
 
 
