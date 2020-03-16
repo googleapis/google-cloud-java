@@ -26,6 +26,7 @@ import java.security.cert.CertificateException;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
+import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLHandshakeException;
 
 /** Base class for all service exceptions. */
@@ -256,6 +257,8 @@ public class BaseServiceException extends RuntimeException {
     boolean exceptionIsRetryable =
         exception instanceof SocketTimeoutException
             || exception instanceof SocketException
+            || (exception instanceof SSLException
+                && exception.getMessage().contains("Connection has been shutdown: "))
             || (exception instanceof SSLHandshakeException
                 && !(exception.getCause() instanceof CertificateException))
             || "insufficient data written".equals(exception.getMessage())
