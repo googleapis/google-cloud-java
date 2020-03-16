@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.93.3](https://www.github.com/googleapis/java-core/compare/v1.93.2...v1.93.3) (2020-03-16)
+
+
+### Bug Fixes
+
+* fix Timestamp.of(java.sql.Timestamp) pre-epoch on exact second ([#179](https://www.github.com/googleapis/java-core/issues/179)) ([9bfb54c](https://www.github.com/googleapis/java-core/commit/9bfb54c5a88c906bebcf90f81ed19aeece09befd))
+* retry SSLException ([#183](https://www.github.com/googleapis/java-core/issues/183)) ([775a848](https://www.github.com/googleapis/java-core/commit/775a84877ef69d22ca7a4392edd0d3680df2256e))
+
+
+### Dependencies
+
+* revert gRPC updates ([#181](https://www.github.com/googleapis/java-core/issues/181)) ([f5ba782](https://www.github.com/googleapis/java-core/commit/f5ba782fe7078bd2e02d27d8770ad20a459c73f3))
+* update dependency io.grpc:grpc-bom to v1.28.0 ([#178](https://www.github.com/googleapis/java-core/issues/178)) ([6d5632c](https://www.github.com/googleapis/java-core/commit/6d5632c22507d1d3d36a90778291a6fa25b4788b))
+
 ### [1.93.2](https://www.github.com/googleapis/java-core/compare/v1.93.1...v1.93.2) (2020-03-10)
 
 
