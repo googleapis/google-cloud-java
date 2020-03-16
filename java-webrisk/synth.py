@@ -14,7 +14,6 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
 import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
@@ -33,5 +32,10 @@ for version in versions:
     package_pattern='com.google.webrisk.{version}',
     gapic=gapic,
   )
+
+java.bazel_library(
+  service=service,
+  version='v1',
+)
 
 java.common_templates()
