@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.33.0](https://www.github.com/googleapis/java-webrisk/compare/v0.32.1...v0.33.0) (2020-03-16)
+
+
+### Features
+
+* **v1:** add v1 client ([#84](https://www.github.com/googleapis/java-webrisk/issues/84)) ([4d88859](https://www.github.com/googleapis/java-webrisk/commit/4d888599519827c8d5a5a6199d711d70128bf61c))
+
+
+### Dependencies
+
+* update core dependencies ([#80](https://www.github.com/googleapis/java-webrisk/issues/80)) ([d80edde](https://www.github.com/googleapis/java-webrisk/commit/d80eddeb20c8ac08a3e36e3ce0b4e8af57cf72a6))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([46c6241](https://www.github.com/googleapis/java-webrisk/commit/46c6241895c810a285d60110e3eeed14d9cc3e2a))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([8dee7e8](https://www.github.com/googleapis/java-webrisk/commit/8dee7e81e10526540cb3aa3655a7b2e110513e9b))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([d998db4](https://www.github.com/googleapis/java-webrisk/commit/d998db45f56e36513bfde3338e22fd798efaa742))
+
 ### [0.32.1](https://www.github.com/googleapis/java-webrisk/compare/v0.32.0...v0.32.1) (2020-02-04)
 
 

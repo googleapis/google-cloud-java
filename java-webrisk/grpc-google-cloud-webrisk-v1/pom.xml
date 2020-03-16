@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-webrisk-parent</artifactId>
-    <version>0.32.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-webrisk:current} -->
+    <version>0.33.0</version><!-- {x-version-update:google-cloud-webrisk:current} -->
   </parent>
   <dependencies>
     <dependency>
