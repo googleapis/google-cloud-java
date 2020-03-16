@@ -109,5 +109,75 @@ public interface StoredInfoTypeConfigOrBuilder
   com.google.privacy.dlp.v2.LargeCustomDictionaryConfigOrBuilder
       getLargeCustomDictionaryOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Store dictionary-based CustomInfoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+   *
+   * @return Whether the dictionary field is set.
+   */
+  boolean hasDictionary();
+  /**
+   *
+   *
+   * <pre>
+   * Store dictionary-based CustomInfoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+   *
+   * @return The dictionary.
+   */
+  com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary();
+  /**
+   *
+   *
+   * <pre>
+   * Store dictionary-based CustomInfoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+   */
+  com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder getDictionaryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Store regular expression-based StoredInfoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+   *
+   * @return Whether the regex field is set.
+   */
+  boolean hasRegex();
+  /**
+   *
+   *
+   * <pre>
+   * Store regular expression-based StoredInfoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+   *
+   * @return The regex.
+   */
+  com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex();
+  /**
+   *
+   *
+   * <pre>
+   * Store regular expression-based StoredInfoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+   */
+  com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getRegexOrBuilder();
+
   public com.google.privacy.dlp.v2.StoredInfoTypeConfig.TypeCase getTypeCase();
 }

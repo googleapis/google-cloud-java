@@ -167,4 +167,39 @@ public interface LocationOrBuilder
    * <code>repeated .google.privacy.dlp.v2.ContentLocation content_locations = 7;</code>
    */
   com.google.privacy.dlp.v2.ContentLocationOrBuilder getContentLocationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the container where this finding occurred, if available.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+   *
+   * @return Whether the container field is set.
+   */
+  boolean hasContainer();
+  /**
+   *
+   *
+   * <pre>
+   * Information about the container where this finding occurred, if available.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+   *
+   * @return The container.
+   */
+  com.google.privacy.dlp.v2.Container getContainer();
+  /**
+   *
+   *
+   * <pre>
+   * Information about the container where this finding occurred, if available.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+   */
+  com.google.privacy.dlp.v2.ContainerOrBuilder getContainerOrBuilder();
 }

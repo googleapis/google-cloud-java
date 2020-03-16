@@ -133,6 +133,22 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 74:
+            {
+              com.google.privacy.dlp.v2.HybridOptions.Builder subBuilder = null;
+              if (typeCase_ == 9) {
+                subBuilder = ((com.google.privacy.dlp.v2.HybridOptions) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.HybridOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.HybridOptions) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 9;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1843,6 +1859,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     DATASTORE_OPTIONS(2),
     CLOUD_STORAGE_OPTIONS(3),
     BIG_QUERY_OPTIONS(4),
+    HYBRID_OPTIONS(9),
     TYPE_NOT_SET(0);
     private final int value;
 
@@ -1867,6 +1884,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
           return CLOUD_STORAGE_OPTIONS;
         case 4:
           return BIG_QUERY_OPTIONS;
+        case 9:
+          return HYBRID_OPTIONS;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -1888,7 +1907,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud Datastore options specification.
+   * Google Cloud Datastore options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -1902,7 +1921,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud Datastore options specification.
+   * Google Cloud Datastore options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -1919,7 +1938,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud Datastore options specification.
+   * Google Cloud Datastore options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -1936,7 +1955,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud Storage options specification.
+   * Google Cloud Storage options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -1950,7 +1969,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud Storage options specification.
+   * Google Cloud Storage options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -1967,7 +1986,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud Storage options specification.
+   * Google Cloud Storage options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -1984,7 +2003,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * BigQuery options specification.
+   * BigQuery options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -1998,7 +2017,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * BigQuery options specification.
+   * BigQuery options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -2015,7 +2034,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * BigQuery options specification.
+   * BigQuery options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -2025,6 +2044,63 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       return (com.google.privacy.dlp.v2.BigQueryOptions) type_;
     }
     return com.google.privacy.dlp.v2.BigQueryOptions.getDefaultInstance();
+  }
+
+  public static final int HYBRID_OPTIONS_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Hybrid inspection options.
+   * Early access feature is in a pre-release state and might change or have
+   * limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+   *
+   * @return Whether the hybridOptions field is set.
+   */
+  public boolean hasHybridOptions() {
+    return typeCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Hybrid inspection options.
+   * Early access feature is in a pre-release state and might change or have
+   * limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+   *
+   * @return The hybridOptions.
+   */
+  public com.google.privacy.dlp.v2.HybridOptions getHybridOptions() {
+    if (typeCase_ == 9) {
+      return (com.google.privacy.dlp.v2.HybridOptions) type_;
+    }
+    return com.google.privacy.dlp.v2.HybridOptions.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Hybrid inspection options.
+   * Early access feature is in a pre-release state and might change or have
+   * limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+   */
+  public com.google.privacy.dlp.v2.HybridOptionsOrBuilder getHybridOptionsOrBuilder() {
+    if (typeCase_ == 9) {
+      return (com.google.privacy.dlp.v2.HybridOptions) type_;
+    }
+    return com.google.privacy.dlp.v2.HybridOptions.getDefaultInstance();
   }
 
   public static final int TIMESPAN_CONFIG_FIELD_NUMBER = 6;
@@ -2079,6 +2155,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     if (timespanConfig_ != null) {
       output.writeMessage(6, getTimespanConfig());
     }
+    if (typeCase_ == 9) {
+      output.writeMessage(9, (com.google.privacy.dlp.v2.HybridOptions) type_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -2105,6 +2184,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (timespanConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getTimespanConfig());
+    }
+    if (typeCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.privacy.dlp.v2.HybridOptions) type_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2136,6 +2220,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       case 4:
         if (!getBigQueryOptions().equals(other.getBigQueryOptions())) return false;
         break;
+      case 9:
+        if (!getHybridOptions().equals(other.getHybridOptions())) return false;
+        break;
       case 0:
       default:
     }
@@ -2166,6 +2253,10 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       case 4:
         hash = (37 * hash) + BIG_QUERY_OPTIONS_FIELD_NUMBER;
         hash = (53 * hash) + getBigQueryOptions().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + HYBRID_OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getHybridOptions().hashCode();
         break;
       case 0:
       default:
@@ -2371,6 +2462,13 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
           result.type_ = bigQueryOptionsBuilder_.build();
         }
       }
+      if (typeCase_ == 9) {
+        if (hybridOptionsBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = hybridOptionsBuilder_.build();
+        }
+      }
       if (timespanConfigBuilder_ == null) {
         result.timespanConfig_ = timespanConfig_;
       } else {
@@ -2445,6 +2543,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             mergeBigQueryOptions(other.getBigQueryOptions());
             break;
           }
+        case HYBRID_OPTIONS:
+          {
+            mergeHybridOptions(other.getHybridOptions());
+            break;
+          }
         case TYPE_NOT_SET:
           {
             break;
@@ -2502,7 +2605,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Datastore options specification.
+     * Google Cloud Datastore options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -2516,7 +2619,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Datastore options specification.
+     * Google Cloud Datastore options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -2540,7 +2643,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Datastore options specification.
+     * Google Cloud Datastore options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -2562,7 +2665,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Datastore options specification.
+     * Google Cloud Datastore options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -2582,7 +2685,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Datastore options specification.
+     * Google Cloud Datastore options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -2613,7 +2716,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Datastore options specification.
+     * Google Cloud Datastore options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -2638,7 +2741,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Datastore options specification.
+     * Google Cloud Datastore options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -2650,7 +2753,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Datastore options specification.
+     * Google Cloud Datastore options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -2669,7 +2772,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Datastore options specification.
+     * Google Cloud Datastore options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -2708,7 +2811,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage options specification.
+     * Google Cloud Storage options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -2722,7 +2825,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage options specification.
+     * Google Cloud Storage options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -2746,7 +2849,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage options specification.
+     * Google Cloud Storage options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -2768,7 +2871,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage options specification.
+     * Google Cloud Storage options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -2788,7 +2891,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage options specification.
+     * Google Cloud Storage options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -2819,7 +2922,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage options specification.
+     * Google Cloud Storage options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -2844,7 +2947,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage options specification.
+     * Google Cloud Storage options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -2856,7 +2959,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage options specification.
+     * Google Cloud Storage options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -2876,7 +2979,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage options specification.
+     * Google Cloud Storage options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -2915,7 +3018,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BigQuery options specification.
+     * BigQuery options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -2929,7 +3032,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BigQuery options specification.
+     * BigQuery options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -2953,7 +3056,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BigQuery options specification.
+     * BigQuery options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -2975,7 +3078,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BigQuery options specification.
+     * BigQuery options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -2995,7 +3098,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BigQuery options specification.
+     * BigQuery options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -3026,7 +3129,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BigQuery options specification.
+     * BigQuery options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -3051,7 +3154,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BigQuery options specification.
+     * BigQuery options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -3063,7 +3166,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BigQuery options specification.
+     * BigQuery options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -3082,7 +3185,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BigQuery options specification.
+     * BigQuery options.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -3110,6 +3213,237 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return bigQueryOptionsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.HybridOptions,
+            com.google.privacy.dlp.v2.HybridOptions.Builder,
+            com.google.privacy.dlp.v2.HybridOptionsOrBuilder>
+        hybridOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid inspection options.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+     *
+     * @return Whether the hybridOptions field is set.
+     */
+    public boolean hasHybridOptions() {
+      return typeCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid inspection options.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+     *
+     * @return The hybridOptions.
+     */
+    public com.google.privacy.dlp.v2.HybridOptions getHybridOptions() {
+      if (hybridOptionsBuilder_ == null) {
+        if (typeCase_ == 9) {
+          return (com.google.privacy.dlp.v2.HybridOptions) type_;
+        }
+        return com.google.privacy.dlp.v2.HybridOptions.getDefaultInstance();
+      } else {
+        if (typeCase_ == 9) {
+          return hybridOptionsBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.HybridOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid inspection options.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+     */
+    public Builder setHybridOptions(com.google.privacy.dlp.v2.HybridOptions value) {
+      if (hybridOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        hybridOptionsBuilder_.setMessage(value);
+      }
+      typeCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid inspection options.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+     */
+    public Builder setHybridOptions(
+        com.google.privacy.dlp.v2.HybridOptions.Builder builderForValue) {
+      if (hybridOptionsBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        hybridOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid inspection options.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+     */
+    public Builder mergeHybridOptions(com.google.privacy.dlp.v2.HybridOptions value) {
+      if (hybridOptionsBuilder_ == null) {
+        if (typeCase_ == 9
+            && type_ != com.google.privacy.dlp.v2.HybridOptions.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.HybridOptions.newBuilder(
+                      (com.google.privacy.dlp.v2.HybridOptions) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 9) {
+          hybridOptionsBuilder_.mergeFrom(value);
+        }
+        hybridOptionsBuilder_.setMessage(value);
+      }
+      typeCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid inspection options.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+     */
+    public Builder clearHybridOptions() {
+      if (hybridOptionsBuilder_ == null) {
+        if (typeCase_ == 9) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 9) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        hybridOptionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid inspection options.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+     */
+    public com.google.privacy.dlp.v2.HybridOptions.Builder getHybridOptionsBuilder() {
+      return getHybridOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid inspection options.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+     */
+    public com.google.privacy.dlp.v2.HybridOptionsOrBuilder getHybridOptionsOrBuilder() {
+      if ((typeCase_ == 9) && (hybridOptionsBuilder_ != null)) {
+        return hybridOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 9) {
+          return (com.google.privacy.dlp.v2.HybridOptions) type_;
+        }
+        return com.google.privacy.dlp.v2.HybridOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid inspection options.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.HybridOptions,
+            com.google.privacy.dlp.v2.HybridOptions.Builder,
+            com.google.privacy.dlp.v2.HybridOptionsOrBuilder>
+        getHybridOptionsFieldBuilder() {
+      if (hybridOptionsBuilder_ == null) {
+        if (!(typeCase_ == 9)) {
+          type_ = com.google.privacy.dlp.v2.HybridOptions.getDefaultInstance();
+        }
+        hybridOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.HybridOptions,
+                com.google.privacy.dlp.v2.HybridOptions.Builder,
+                com.google.privacy.dlp.v2.HybridOptionsOrBuilder>(
+                (com.google.privacy.dlp.v2.HybridOptions) type_, getParentForChildren(), isClean());
+        type_ = null;
+      }
+      typeCase_ = 9;
+      onChanged();
+      ;
+      return hybridOptionsBuilder_;
     }
 
     private com.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespanConfig_;

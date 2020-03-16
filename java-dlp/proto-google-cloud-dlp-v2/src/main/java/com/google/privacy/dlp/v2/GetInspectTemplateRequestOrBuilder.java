@@ -27,8 +27,8 @@ public interface GetInspectTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the organization and inspectTemplate to be read, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
+   * Required. Resource name of the organization and inspectTemplate to be read,
+   * for example `organizations/433245324/inspectTemplates/432452342` or
    * projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface GetInspectTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the organization and inspectTemplate to be read, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
+   * Required. Resource name of the organization and inspectTemplate to be read,
+   * for example `organizations/433245324/inspectTemplates/432452342` or
    * projects/project-id/inspectTemplates/432452342.
    * </pre>
    *

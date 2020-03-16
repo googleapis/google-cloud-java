@@ -226,7 +226,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Max number of findings that will be returned for each item scanned.
-     * When set within `InspectDataSourceRequest`,
+     * When set within `InspectJobConfig`,
      * the maximum returned is 2000 regardless if this is set higher.
      * When set within `InspectContentRequest`, this field is ignored.
      * </pre>
@@ -1362,7 +1362,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Max number of findings that will be returned for each item scanned.
-     * When set within `InspectDataSourceRequest`,
+     * When set within `InspectJobConfig`,
      * the maximum returned is 2000 regardless if this is set higher.
      * When set within `InspectContentRequest`, this field is ignored.
      * </pre>
@@ -1878,7 +1878,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Max number of findings that will be returned for each item scanned.
-       * When set within `InspectDataSourceRequest`,
+       * When set within `InspectJobConfig`,
        * the maximum returned is 2000 regardless if this is set higher.
        * When set within `InspectContentRequest`, this field is ignored.
        * </pre>
@@ -1895,7 +1895,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Max number of findings that will be returned for each item scanned.
-       * When set within `InspectDataSourceRequest`,
+       * When set within `InspectJobConfig`,
        * the maximum returned is 2000 regardless if this is set higher.
        * When set within `InspectContentRequest`, this field is ignored.
        * </pre>
@@ -1916,7 +1916,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Max number of findings that will be returned for each item scanned.
-       * When set within `InspectDataSourceRequest`,
+       * When set within `InspectJobConfig`,
        * the maximum returned is 2000 regardless if this is set higher.
        * When set within `InspectContentRequest`, this field is ignored.
        * </pre>

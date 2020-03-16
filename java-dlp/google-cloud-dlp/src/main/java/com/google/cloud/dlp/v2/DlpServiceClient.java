@@ -43,11 +43,15 @@ import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.HybridInspectDlpJobRequest;
+import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
+import com.google.privacy.dlp.v2.HybridInspectResponse;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
@@ -1321,6 +1325,109 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Finish a running hybrid DlpJob. Triggers the finalization steps and running of any enabled
+   * actions that have not yet run. Early access feature is in a pre-release state and might change
+   * or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.of("[PROJECT]", "[DLP_JOB]");
+   *   FinishDlpJobRequest request = FinishDlpJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dlpServiceClient.finishDlpJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void finishDlpJob(FinishDlpJobRequest request) {
+    finishDlpJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finish a running hybrid DlpJob. Triggers the finalization steps and running of any enabled
+   * actions that have not yet run. Early access feature is in a pre-release state and might change
+   * or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.of("[PROJECT]", "[DLP_JOB]");
+   *   FinishDlpJobRequest request = FinishDlpJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dlpServiceClient.finishDlpJobCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
+    return stub.finishDlpJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
+   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
+   * change or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name = "";
+   *   HybridInspectDlpJobRequest request = HybridInspectDlpJobRequest.newBuilder()
+   *     .setName(name)
+   *     .build();
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectDlpJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectDlpJob(HybridInspectDlpJobRequest request) {
+    return hybridInspectDlpJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
+   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
+   * change or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name = "";
+   *   HybridInspectDlpJobRequest request = HybridInspectDlpJobRequest.newBuilder()
+   *     .setName(name)
+   *     .build();
+   *   ApiFuture&lt;HybridInspectResponse&gt; future = dlpServiceClient.hybridInspectDlpJobCallable().futureCall(request);
+   *   // Do something
+   *   HybridInspectResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
+      hybridInspectDlpJobCallable() {
+    return stub.hybridInspectDlpJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
@@ -1491,6 +1598,59 @@ public class DlpServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable() {
     return stub.deleteJobTriggerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
+   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
+   * feature is in a pre-release state and might change or have limited support. For more
+   * information, see https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name = "";
+   *   HybridInspectJobTriggerRequest request = HybridInspectJobTriggerRequest.newBuilder()
+   *     .setName(name)
+   *     .build();
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectJobTrigger(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectJobTrigger(
+      HybridInspectJobTriggerRequest request) {
+    return hybridInspectJobTriggerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
+   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
+   * feature is in a pre-release state and might change or have limited support. For more
+   * information, see https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name = "";
+   *   HybridInspectJobTriggerRequest request = HybridInspectJobTriggerRequest.newBuilder()
+   *     .setName(name)
+   *     .build();
+   *   ApiFuture&lt;HybridInspectResponse&gt; future = dlpServiceClient.hybridInspectJobTriggerCallable().futureCall(request);
+   *   // Do something
+   *   HybridInspectResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<HybridInspectJobTriggerRequest, HybridInspectResponse>
+      hybridInspectJobTriggerCallable() {
+    return stub.hybridInspectJobTriggerCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

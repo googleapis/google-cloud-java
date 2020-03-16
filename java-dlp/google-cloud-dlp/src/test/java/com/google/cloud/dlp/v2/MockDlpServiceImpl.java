@@ -32,11 +32,15 @@ import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpServiceGrpc.DlpServiceImplBase;
+import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.HybridInspectDlpJobRequest;
+import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
+import com.google.privacy.dlp.v2.HybridInspectResponse;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
@@ -364,6 +368,22 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
   }
 
   @Override
+  public void hybridInspectJobTrigger(
+      HybridInspectJobTriggerRequest request,
+      StreamObserver<HybridInspectResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof HybridInspectResponse) {
+      requests.add(request);
+      responseObserver.onNext((HybridInspectResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void getJobTrigger(
       GetJobTriggerRequest request, StreamObserver<JobTrigger> responseObserver) {
     Object response = responses.remove();
@@ -543,6 +563,35 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
   @Override
   public void deleteStoredInfoType(
       DeleteStoredInfoTypeRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void hybridInspectDlpJob(
+      HybridInspectDlpJobRequest request, StreamObserver<HybridInspectResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof HybridInspectResponse) {
+      requests.add(request);
+      responseObserver.onNext((HybridInspectResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void finishDlpJob(FinishDlpJobRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);

@@ -1322,6 +1322,50 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      * <code>repeated .google.privacy.dlp.v2.InfoTypeStats info_type_stats = 3;</code>
      */
     com.google.privacy.dlp.v2.InfoTypeStatsOrBuilder getInfoTypeStatsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Statistics related to the processing of hybrid inspect.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+     *
+     * @return Whether the hybridStats field is set.
+     */
+    boolean hasHybridStats();
+    /**
+     *
+     *
+     * <pre>
+     * Statistics related to the processing of hybrid inspect.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+     *
+     * @return The hybridStats.
+     */
+    com.google.privacy.dlp.v2.HybridInspectStatistics getHybridStats();
+    /**
+     *
+     *
+     * <pre>
+     * Statistics related to the processing of hybrid inspect.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+     */
+    com.google.privacy.dlp.v2.HybridInspectStatisticsOrBuilder getHybridStatsOrBuilder();
   }
   /**
    *
@@ -1396,6 +1440,23 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
                 infoTypeStats_.add(
                     input.readMessage(
                         com.google.privacy.dlp.v2.InfoTypeStats.parser(), extensionRegistry));
+                break;
+              }
+            case 58:
+              {
+                com.google.privacy.dlp.v2.HybridInspectStatistics.Builder subBuilder = null;
+                if (hybridStats_ != null) {
+                  subBuilder = hybridStats_.toBuilder();
+                }
+                hybridStats_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.HybridInspectStatistics.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(hybridStats_);
+                  hybridStats_ = subBuilder.buildPartial();
+                }
+
                 break;
               }
             default:
@@ -1538,6 +1599,60 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       return infoTypeStats_.get(index);
     }
 
+    public static final int HYBRID_STATS_FIELD_NUMBER = 7;
+    private com.google.privacy.dlp.v2.HybridInspectStatistics hybridStats_;
+    /**
+     *
+     *
+     * <pre>
+     * Statistics related to the processing of hybrid inspect.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+     *
+     * @return Whether the hybridStats field is set.
+     */
+    public boolean hasHybridStats() {
+      return hybridStats_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Statistics related to the processing of hybrid inspect.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+     *
+     * @return The hybridStats.
+     */
+    public com.google.privacy.dlp.v2.HybridInspectStatistics getHybridStats() {
+      return hybridStats_ == null
+          ? com.google.privacy.dlp.v2.HybridInspectStatistics.getDefaultInstance()
+          : hybridStats_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Statistics related to the processing of hybrid inspect.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+     */
+    public com.google.privacy.dlp.v2.HybridInspectStatisticsOrBuilder getHybridStatsOrBuilder() {
+      return getHybridStats();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1561,6 +1676,9 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       for (int i = 0; i < infoTypeStats_.size(); i++) {
         output.writeMessage(3, infoTypeStats_.get(i));
       }
+      if (hybridStats_ != null) {
+        output.writeMessage(7, getHybridStats());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1578,6 +1696,9 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       }
       for (int i = 0; i < infoTypeStats_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, infoTypeStats_.get(i));
+      }
+      if (hybridStats_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getHybridStats());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1598,6 +1719,10 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       if (getProcessedBytes() != other.getProcessedBytes()) return false;
       if (getTotalEstimatedBytes() != other.getTotalEstimatedBytes()) return false;
       if (!getInfoTypeStatsList().equals(other.getInfoTypeStatsList())) return false;
+      if (hasHybridStats() != other.hasHybridStats()) return false;
+      if (hasHybridStats()) {
+        if (!getHybridStats().equals(other.getHybridStats())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1616,6 +1741,10 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       if (getInfoTypeStatsCount() > 0) {
         hash = (37 * hash) + INFO_TYPE_STATS_FIELD_NUMBER;
         hash = (53 * hash) + getInfoTypeStatsList().hashCode();
+      }
+      if (hasHybridStats()) {
+        hash = (37 * hash) + HYBRID_STATS_FIELD_NUMBER;
+        hash = (53 * hash) + getHybridStats().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1777,6 +1906,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         } else {
           infoTypeStatsBuilder_.clear();
         }
+        if (hybridStatsBuilder_ == null) {
+          hybridStats_ = null;
+        } else {
+          hybridStats_ = null;
+          hybridStatsBuilder_ = null;
+        }
         return this;
       }
 
@@ -1815,6 +1950,11 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           result.infoTypeStats_ = infoTypeStats_;
         } else {
           result.infoTypeStats_ = infoTypeStatsBuilder_.build();
+        }
+        if (hybridStatsBuilder_ == null) {
+          result.hybridStats_ = hybridStats_;
+        } else {
+          result.hybridStats_ = hybridStatsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1900,6 +2040,9 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               infoTypeStatsBuilder_.addAllMessages(other.infoTypeStats_);
             }
           }
+        }
+        if (other.hasHybridStats()) {
+          mergeHybridStats(other.getHybridStats());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2405,6 +2548,219 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           infoTypeStats_ = null;
         }
         return infoTypeStatsBuilder_;
+      }
+
+      private com.google.privacy.dlp.v2.HybridInspectStatistics hybridStats_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.HybridInspectStatistics,
+              com.google.privacy.dlp.v2.HybridInspectStatistics.Builder,
+              com.google.privacy.dlp.v2.HybridInspectStatisticsOrBuilder>
+          hybridStatsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Statistics related to the processing of hybrid inspect.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+       *
+       * @return Whether the hybridStats field is set.
+       */
+      public boolean hasHybridStats() {
+        return hybridStatsBuilder_ != null || hybridStats_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Statistics related to the processing of hybrid inspect.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+       *
+       * @return The hybridStats.
+       */
+      public com.google.privacy.dlp.v2.HybridInspectStatistics getHybridStats() {
+        if (hybridStatsBuilder_ == null) {
+          return hybridStats_ == null
+              ? com.google.privacy.dlp.v2.HybridInspectStatistics.getDefaultInstance()
+              : hybridStats_;
+        } else {
+          return hybridStatsBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Statistics related to the processing of hybrid inspect.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+       */
+      public Builder setHybridStats(com.google.privacy.dlp.v2.HybridInspectStatistics value) {
+        if (hybridStatsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hybridStats_ = value;
+          onChanged();
+        } else {
+          hybridStatsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Statistics related to the processing of hybrid inspect.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+       */
+      public Builder setHybridStats(
+          com.google.privacy.dlp.v2.HybridInspectStatistics.Builder builderForValue) {
+        if (hybridStatsBuilder_ == null) {
+          hybridStats_ = builderForValue.build();
+          onChanged();
+        } else {
+          hybridStatsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Statistics related to the processing of hybrid inspect.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+       */
+      public Builder mergeHybridStats(com.google.privacy.dlp.v2.HybridInspectStatistics value) {
+        if (hybridStatsBuilder_ == null) {
+          if (hybridStats_ != null) {
+            hybridStats_ =
+                com.google.privacy.dlp.v2.HybridInspectStatistics.newBuilder(hybridStats_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            hybridStats_ = value;
+          }
+          onChanged();
+        } else {
+          hybridStatsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Statistics related to the processing of hybrid inspect.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+       */
+      public Builder clearHybridStats() {
+        if (hybridStatsBuilder_ == null) {
+          hybridStats_ = null;
+          onChanged();
+        } else {
+          hybridStats_ = null;
+          hybridStatsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Statistics related to the processing of hybrid inspect.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+       */
+      public com.google.privacy.dlp.v2.HybridInspectStatistics.Builder getHybridStatsBuilder() {
+
+        onChanged();
+        return getHybridStatsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Statistics related to the processing of hybrid inspect.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+       */
+      public com.google.privacy.dlp.v2.HybridInspectStatisticsOrBuilder getHybridStatsOrBuilder() {
+        if (hybridStatsBuilder_ != null) {
+          return hybridStatsBuilder_.getMessageOrBuilder();
+        } else {
+          return hybridStats_ == null
+              ? com.google.privacy.dlp.v2.HybridInspectStatistics.getDefaultInstance()
+              : hybridStats_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Statistics related to the processing of hybrid inspect.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.HybridInspectStatistics,
+              com.google.privacy.dlp.v2.HybridInspectStatistics.Builder,
+              com.google.privacy.dlp.v2.HybridInspectStatisticsOrBuilder>
+          getHybridStatsFieldBuilder() {
+        if (hybridStatsBuilder_ == null) {
+          hybridStatsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.HybridInspectStatistics,
+                  com.google.privacy.dlp.v2.HybridInspectStatistics.Builder,
+                  com.google.privacy.dlp.v2.HybridInspectStatisticsOrBuilder>(
+                  getHybridStats(), getParentForChildren(), isClean());
+          hybridStats_ = null;
+        }
+        return hybridStatsBuilder_;
       }
 
       @java.lang.Override

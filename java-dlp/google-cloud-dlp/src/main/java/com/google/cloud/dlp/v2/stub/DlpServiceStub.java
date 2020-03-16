@@ -39,11 +39,15 @@ import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.HybridInspectDlpJobRequest;
+import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
+import com.google.privacy.dlp.v2.HybridInspectResponse;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
@@ -186,6 +190,15 @@ public abstract class DlpServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: cancelDlpJobCallable()");
   }
 
+  public UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: finishDlpJobCallable()");
+  }
+
+  public UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
+      hybridInspectDlpJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: hybridInspectDlpJobCallable()");
+  }
+
   public UnaryCallable<ListJobTriggersRequest, ListJobTriggersPagedResponse>
       listJobTriggersPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listJobTriggersPagedCallable()");
@@ -201,6 +214,11 @@ public abstract class DlpServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteJobTriggerCallable()");
+  }
+
+  public UnaryCallable<HybridInspectJobTriggerRequest, HybridInspectResponse>
+      hybridInspectJobTriggerCallable() {
+    throw new UnsupportedOperationException("Not implemented: hybridInspectJobTriggerCallable()");
   }
 
   public UnaryCallable<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerCallable() {

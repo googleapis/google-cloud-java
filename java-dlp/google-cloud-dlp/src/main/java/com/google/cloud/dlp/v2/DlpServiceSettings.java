@@ -48,11 +48,15 @@ import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.HybridInspectDlpJobRequest;
+import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
+import com.google.privacy.dlp.v2.HybridInspectResponse;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
@@ -235,6 +239,17 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
     return ((DlpServiceStubSettings) getStubSettings()).cancelDlpJobSettings();
   }
 
+  /** Returns the object with the settings used for calls to finishDlpJob. */
+  public UnaryCallSettings<FinishDlpJobRequest, Empty> finishDlpJobSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).finishDlpJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to hybridInspectDlpJob. */
+  public UnaryCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
+      hybridInspectDlpJobSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).hybridInspectDlpJobSettings();
+  }
+
   /** Returns the object with the settings used for calls to listJobTriggers. */
   public PagedCallSettings<
           ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
@@ -250,6 +265,12 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
   /** Returns the object with the settings used for calls to deleteJobTrigger. */
   public UnaryCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings() {
     return ((DlpServiceStubSettings) getStubSettings()).deleteJobTriggerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to hybridInspectJobTrigger. */
+  public UnaryCallSettings<HybridInspectJobTriggerRequest, HybridInspectResponse>
+      hybridInspectJobTriggerSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).hybridInspectJobTriggerSettings();
   }
 
   /** Returns the object with the settings used for calls to updateJobTrigger. */
@@ -510,6 +531,17 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
       return getStubSettingsBuilder().cancelDlpJobSettings();
     }
 
+    /** Returns the builder for the settings used for calls to finishDlpJob. */
+    public UnaryCallSettings.Builder<FinishDlpJobRequest, Empty> finishDlpJobSettings() {
+      return getStubSettingsBuilder().finishDlpJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to hybridInspectDlpJob. */
+    public UnaryCallSettings.Builder<HybridInspectDlpJobRequest, HybridInspectResponse>
+        hybridInspectDlpJobSettings() {
+      return getStubSettingsBuilder().hybridInspectDlpJobSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listJobTriggers. */
     public PagedCallSettings.Builder<
             ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
@@ -525,6 +557,12 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
     /** Returns the builder for the settings used for calls to deleteJobTrigger. */
     public UnaryCallSettings.Builder<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings() {
       return getStubSettingsBuilder().deleteJobTriggerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to hybridInspectJobTrigger. */
+    public UnaryCallSettings.Builder<HybridInspectJobTriggerRequest, HybridInspectResponse>
+        hybridInspectJobTriggerSettings() {
+      return getStubSettingsBuilder().hybridInspectJobTriggerSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateJobTrigger. */

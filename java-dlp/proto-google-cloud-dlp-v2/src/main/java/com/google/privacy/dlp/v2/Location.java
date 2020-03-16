@@ -113,6 +113,22 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
                       com.google.privacy.dlp.v2.ContentLocation.parser(), extensionRegistry));
               break;
             }
+          case 66:
+            {
+              com.google.privacy.dlp.v2.Container.Builder subBuilder = null;
+              if (container_ != null) {
+                subBuilder = container_.toBuilder();
+              }
+              container_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.Container.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(container_);
+                container_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -326,6 +342,51 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     return contentLocations_.get(index);
   }
 
+  public static final int CONTAINER_FIELD_NUMBER = 8;
+  private com.google.privacy.dlp.v2.Container container_;
+  /**
+   *
+   *
+   * <pre>
+   * Information about the container where this finding occurred, if available.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+   *
+   * @return Whether the container field is set.
+   */
+  public boolean hasContainer() {
+    return container_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about the container where this finding occurred, if available.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+   *
+   * @return The container.
+   */
+  public com.google.privacy.dlp.v2.Container getContainer() {
+    return container_ == null
+        ? com.google.privacy.dlp.v2.Container.getDefaultInstance()
+        : container_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about the container where this finding occurred, if available.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+   */
+  public com.google.privacy.dlp.v2.ContainerOrBuilder getContainerOrBuilder() {
+    return getContainer();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -349,6 +410,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < contentLocations_.size(); i++) {
       output.writeMessage(7, contentLocations_.get(i));
     }
+    if (container_ != null) {
+      output.writeMessage(8, getContainer());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -366,6 +430,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < contentLocations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, contentLocations_.get(i));
+    }
+    if (container_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getContainer());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -391,6 +458,10 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       if (!getCodepointRange().equals(other.getCodepointRange())) return false;
     }
     if (!getContentLocationsList().equals(other.getContentLocationsList())) return false;
+    if (hasContainer() != other.hasContainer()) return false;
+    if (hasContainer()) {
+      if (!getContainer().equals(other.getContainer())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -413,6 +484,10 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     if (getContentLocationsCount() > 0) {
       hash = (37 * hash) + CONTENT_LOCATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getContentLocationsList().hashCode();
+    }
+    if (hasContainer()) {
+      hash = (37 * hash) + CONTAINER_FIELD_NUMBER;
+      hash = (53 * hash) + getContainer().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -578,6 +653,12 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentLocationsBuilder_.clear();
       }
+      if (containerBuilder_ == null) {
+        container_ = null;
+      } else {
+        container_ = null;
+        containerBuilder_ = null;
+      }
       return this;
     }
 
@@ -623,6 +704,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         result.contentLocations_ = contentLocations_;
       } else {
         result.contentLocations_ = contentLocationsBuilder_.build();
+      }
+      if (containerBuilder_ == null) {
+        result.container_ = container_;
+      } else {
+        result.container_ = containerBuilder_.build();
       }
       onBuilt();
       return result;
@@ -705,6 +791,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
             contentLocationsBuilder_.addAllMessages(other.contentLocations_);
           }
         }
+      }
+      if (other.hasContainer()) {
+        mergeContainer(other.getContainer());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1532,6 +1621,191 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         contentLocations_ = null;
       }
       return contentLocationsBuilder_;
+    }
+
+    private com.google.privacy.dlp.v2.Container container_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.Container,
+            com.google.privacy.dlp.v2.Container.Builder,
+            com.google.privacy.dlp.v2.ContainerOrBuilder>
+        containerBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Information about the container where this finding occurred, if available.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+     *
+     * @return Whether the container field is set.
+     */
+    public boolean hasContainer() {
+      return containerBuilder_ != null || container_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the container where this finding occurred, if available.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+     *
+     * @return The container.
+     */
+    public com.google.privacy.dlp.v2.Container getContainer() {
+      if (containerBuilder_ == null) {
+        return container_ == null
+            ? com.google.privacy.dlp.v2.Container.getDefaultInstance()
+            : container_;
+      } else {
+        return containerBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the container where this finding occurred, if available.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+     */
+    public Builder setContainer(com.google.privacy.dlp.v2.Container value) {
+      if (containerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        container_ = value;
+        onChanged();
+      } else {
+        containerBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the container where this finding occurred, if available.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+     */
+    public Builder setContainer(com.google.privacy.dlp.v2.Container.Builder builderForValue) {
+      if (containerBuilder_ == null) {
+        container_ = builderForValue.build();
+        onChanged();
+      } else {
+        containerBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the container where this finding occurred, if available.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+     */
+    public Builder mergeContainer(com.google.privacy.dlp.v2.Container value) {
+      if (containerBuilder_ == null) {
+        if (container_ != null) {
+          container_ =
+              com.google.privacy.dlp.v2.Container.newBuilder(container_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          container_ = value;
+        }
+        onChanged();
+      } else {
+        containerBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the container where this finding occurred, if available.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+     */
+    public Builder clearContainer() {
+      if (containerBuilder_ == null) {
+        container_ = null;
+        onChanged();
+      } else {
+        container_ = null;
+        containerBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the container where this finding occurred, if available.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+     */
+    public com.google.privacy.dlp.v2.Container.Builder getContainerBuilder() {
+
+      onChanged();
+      return getContainerFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the container where this finding occurred, if available.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+     */
+    public com.google.privacy.dlp.v2.ContainerOrBuilder getContainerOrBuilder() {
+      if (containerBuilder_ != null) {
+        return containerBuilder_.getMessageOrBuilder();
+      } else {
+        return container_ == null
+            ? com.google.privacy.dlp.v2.Container.getDefaultInstance()
+            : container_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the container where this finding occurred, if available.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Container container = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.Container,
+            com.google.privacy.dlp.v2.Container.Builder,
+            com.google.privacy.dlp.v2.ContainerOrBuilder>
+        getContainerFieldBuilder() {
+      if (containerBuilder_ == null) {
+        containerBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.Container,
+                com.google.privacy.dlp.v2.Container.Builder,
+                com.google.privacy.dlp.v2.ContainerOrBuilder>(
+                getContainer(), getParentForChildren(), isClean());
+        container_ = null;
+      }
+      return containerBuilder_;
     }
 
     @java.lang.Override

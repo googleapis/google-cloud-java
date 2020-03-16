@@ -27,8 +27,8 @@ public interface UpdateStoredInfoTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of organization and storedInfoType to be updated, for
-   * example `organizations/433245324/storedInfoTypes/432452342` or
+   * Required. Resource name of organization and storedInfoType to be updated,
+   * for example `organizations/433245324/storedInfoTypes/432452342` or
    * projects/project-id/storedInfoTypes/432452342.
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface UpdateStoredInfoTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of organization and storedInfoType to be updated, for
-   * example `organizations/433245324/storedInfoTypes/432452342` or
+   * Required. Resource name of organization and storedInfoType to be updated,
+   * for example `organizations/433245324/storedInfoTypes/432452342` or
    * projects/project-id/storedInfoTypes/432452342.
    * </pre>
    *

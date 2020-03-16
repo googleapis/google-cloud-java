@@ -27,7 +27,7 @@ public interface StorageConfigOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Datastore options specification.
+   * Google Cloud Datastore options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -39,7 +39,7 @@ public interface StorageConfigOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Datastore options specification.
+   * Google Cloud Datastore options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -51,7 +51,7 @@ public interface StorageConfigOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Datastore options specification.
+   * Google Cloud Datastore options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
@@ -62,7 +62,7 @@ public interface StorageConfigOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage options specification.
+   * Google Cloud Storage options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -74,7 +74,7 @@ public interface StorageConfigOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage options specification.
+   * Google Cloud Storage options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -86,7 +86,7 @@ public interface StorageConfigOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage options specification.
+   * Google Cloud Storage options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -97,7 +97,7 @@ public interface StorageConfigOrBuilder
    *
    *
    * <pre>
-   * BigQuery options specification.
+   * BigQuery options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -109,7 +109,7 @@ public interface StorageConfigOrBuilder
    *
    *
    * <pre>
-   * BigQuery options specification.
+   * BigQuery options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
@@ -121,12 +121,56 @@ public interface StorageConfigOrBuilder
    *
    *
    * <pre>
-   * BigQuery options specification.
+   * BigQuery options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
    */
   com.google.privacy.dlp.v2.BigQueryOptionsOrBuilder getBigQueryOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Hybrid inspection options.
+   * Early access feature is in a pre-release state and might change or have
+   * limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+   *
+   * @return Whether the hybridOptions field is set.
+   */
+  boolean hasHybridOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Hybrid inspection options.
+   * Early access feature is in a pre-release state and might change or have
+   * limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+   *
+   * @return The hybridOptions.
+   */
+  com.google.privacy.dlp.v2.HybridOptions getHybridOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Hybrid inspection options.
+   * Early access feature is in a pre-release state and might change or have
+   * limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
+   */
+  com.google.privacy.dlp.v2.HybridOptionsOrBuilder getHybridOptionsOrBuilder();
 
   /**
    * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>

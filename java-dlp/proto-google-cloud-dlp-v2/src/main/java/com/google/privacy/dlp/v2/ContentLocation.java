@@ -22,7 +22,8 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Findings container location data.
+ * Precise location of the finding within a document, record, image, or metadata
+ * container.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.ContentLocation}
@@ -780,7 +781,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Findings container location data.
+   * Precise location of the finding within a document, record, image, or metadata
+   * container.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.ContentLocation}

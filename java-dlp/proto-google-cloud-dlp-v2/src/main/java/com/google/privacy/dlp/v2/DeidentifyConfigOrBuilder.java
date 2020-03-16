@@ -102,5 +102,47 @@ public interface DeidentifyConfigOrBuilder
    */
   com.google.privacy.dlp.v2.RecordTransformationsOrBuilder getRecordTransformationsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Mode for handling transformation errors. If left unspecified, the default
+   * mode is `TransformationErrorHandling.ThrowError`.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+   * </code>
+   *
+   * @return Whether the transformationErrorHandling field is set.
+   */
+  boolean hasTransformationErrorHandling();
+  /**
+   *
+   *
+   * <pre>
+   * Mode for handling transformation errors. If left unspecified, the default
+   * mode is `TransformationErrorHandling.ThrowError`.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+   * </code>
+   *
+   * @return The transformationErrorHandling.
+   */
+  com.google.privacy.dlp.v2.TransformationErrorHandling getTransformationErrorHandling();
+  /**
+   *
+   *
+   * <pre>
+   * Mode for handling transformation errors. If left unspecified, the default
+   * mode is `TransformationErrorHandling.ThrowError`.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.TransformationErrorHandlingOrBuilder
+      getTransformationErrorHandlingOrBuilder();
+
   public com.google.privacy.dlp.v2.DeidentifyConfig.TransformationCase getTransformationCase();
 }

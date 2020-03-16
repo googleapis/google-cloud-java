@@ -47,11 +47,15 @@ import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpJobName;
+import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.HybridInspectDlpJobRequest;
+import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
+import com.google.privacy.dlp.v2.HybridInspectResponse;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
@@ -1071,6 +1075,88 @@ public class DlpServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void finishDlpJobTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    DlpJobName name = DlpJobName.of("[PROJECT]", "[DLP_JOB]");
+    FinishDlpJobRequest request = FinishDlpJobRequest.newBuilder().setName(name.toString()).build();
+
+    client.finishDlpJob(request);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FinishDlpJobRequest actualRequest = (FinishDlpJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DlpJobName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void finishDlpJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      DlpJobName name = DlpJobName.of("[PROJECT]", "[DLP_JOB]");
+      FinishDlpJobRequest request =
+          FinishDlpJobRequest.newBuilder().setName(name.toString()).build();
+
+      client.finishDlpJob(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void hybridInspectDlpJobTest() {
+    HybridInspectResponse expectedResponse = HybridInspectResponse.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    HybridInspectDlpJobRequest request =
+        HybridInspectDlpJobRequest.newBuilder().setName(name).build();
+
+    HybridInspectResponse actualResponse = client.hybridInspectDlpJob(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    HybridInspectDlpJobRequest actualRequest = (HybridInspectDlpJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void hybridInspectDlpJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      HybridInspectDlpJobRequest request =
+          HybridInspectDlpJobRequest.newBuilder().setName(name).build();
+
+      client.hybridInspectDlpJob(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listJobTriggersTest() {
     String nextPageToken = "";
     JobTrigger jobTriggersElement = JobTrigger.newBuilder().build();
@@ -1206,6 +1292,49 @@ public class DlpServiceClientTest {
           DeleteJobTriggerRequest.newBuilder().setName(name.toString()).build();
 
       client.deleteJobTrigger(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void hybridInspectJobTriggerTest() {
+    HybridInspectResponse expectedResponse = HybridInspectResponse.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    HybridInspectJobTriggerRequest request =
+        HybridInspectJobTriggerRequest.newBuilder().setName(name).build();
+
+    HybridInspectResponse actualResponse = client.hybridInspectJobTrigger(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    HybridInspectJobTriggerRequest actualRequest =
+        (HybridInspectJobTriggerRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void hybridInspectJobTriggerExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      HybridInspectJobTriggerRequest request =
+          HybridInspectJobTriggerRequest.newBuilder().setName(name).build();
+
+      client.hybridInspectJobTrigger(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -45,11 +45,15 @@ import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.HybridInspectDlpJobRequest;
+import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
+import com.google.privacy.dlp.v2.HybridInspectResponse;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
@@ -273,6 +277,23 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CancelDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<FinishDlpJobRequest, Empty> finishDlpJobMethodDescriptor =
+      MethodDescriptor.<FinishDlpJobRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.privacy.dlp.v2.DlpService/FinishDlpJob")
+          .setRequestMarshaller(ProtoUtils.marshaller(FinishDlpJobRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<HybridInspectDlpJobRequest, HybridInspectResponse>
+      hybridInspectDlpJobMethodDescriptor =
+          MethodDescriptor.<HybridInspectDlpJobRequest, HybridInspectResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/HybridInspectDlpJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(HybridInspectDlpJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(HybridInspectResponse.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<ListJobTriggersRequest, ListJobTriggersResponse>
       listJobTriggersMethodDescriptor =
           MethodDescriptor.<ListJobTriggersRequest, ListJobTriggersResponse>newBuilder()
@@ -300,6 +321,16 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<HybridInspectJobTriggerRequest, HybridInspectResponse>
+      hybridInspectJobTriggerMethodDescriptor =
+          MethodDescriptor.<HybridInspectJobTriggerRequest, HybridInspectResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/HybridInspectJobTrigger")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(HybridInspectJobTriggerRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(HybridInspectResponse.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<UpdateJobTriggerRequest, JobTrigger>
       updateJobTriggerMethodDescriptor =
@@ -405,12 +436,17 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   private final UnaryCallable<GetDlpJobRequest, DlpJob> getDlpJobCallable;
   private final UnaryCallable<DeleteDlpJobRequest, Empty> deleteDlpJobCallable;
   private final UnaryCallable<CancelDlpJobRequest, Empty> cancelDlpJobCallable;
+  private final UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable;
+  private final UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
+      hybridInspectDlpJobCallable;
   private final UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse>
       listJobTriggersCallable;
   private final UnaryCallable<ListJobTriggersRequest, ListJobTriggersPagedResponse>
       listJobTriggersPagedCallable;
   private final UnaryCallable<GetJobTriggerRequest, JobTrigger> getJobTriggerCallable;
   private final UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable;
+  private final UnaryCallable<HybridInspectJobTriggerRequest, HybridInspectResponse>
+      hybridInspectJobTriggerCallable;
   private final UnaryCallable<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerCallable;
   private final UnaryCallable<CreateJobTriggerRequest, JobTrigger> createJobTriggerCallable;
   private final UnaryCallable<CreateStoredInfoTypeRequest, StoredInfoType>
@@ -736,6 +772,33 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<FinishDlpJobRequest, Empty> finishDlpJobTransportSettings =
+        GrpcCallSettings.<FinishDlpJobRequest, Empty>newBuilder()
+            .setMethodDescriptor(finishDlpJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<FinishDlpJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(FinishDlpJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
+        hybridInspectDlpJobTransportSettings =
+            GrpcCallSettings.<HybridInspectDlpJobRequest, HybridInspectResponse>newBuilder()
+                .setMethodDescriptor(hybridInspectDlpJobMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<HybridInspectDlpJobRequest>() {
+                      @Override
+                      public Map<String, String> extract(HybridInspectDlpJobRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<ListJobTriggersRequest, ListJobTriggersResponse>
         listJobTriggersTransportSettings =
             GrpcCallSettings.<ListJobTriggersRequest, ListJobTriggersResponse>newBuilder()
@@ -776,6 +839,20 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<HybridInspectJobTriggerRequest, HybridInspectResponse>
+        hybridInspectJobTriggerTransportSettings =
+            GrpcCallSettings.<HybridInspectJobTriggerRequest, HybridInspectResponse>newBuilder()
+                .setMethodDescriptor(hybridInspectJobTriggerMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<HybridInspectJobTriggerRequest>() {
+                      @Override
+                      public Map<String, String> extract(HybridInspectJobTriggerRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerTransportSettings =
         GrpcCallSettings.<UpdateJobTriggerRequest, JobTrigger>newBuilder()
             .setMethodDescriptor(updateJobTriggerMethodDescriptor)
@@ -968,6 +1045,14 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     this.cancelDlpJobCallable =
         callableFactory.createUnaryCallable(
             cancelDlpJobTransportSettings, settings.cancelDlpJobSettings(), clientContext);
+    this.finishDlpJobCallable =
+        callableFactory.createUnaryCallable(
+            finishDlpJobTransportSettings, settings.finishDlpJobSettings(), clientContext);
+    this.hybridInspectDlpJobCallable =
+        callableFactory.createUnaryCallable(
+            hybridInspectDlpJobTransportSettings,
+            settings.hybridInspectDlpJobSettings(),
+            clientContext);
     this.listJobTriggersCallable =
         callableFactory.createUnaryCallable(
             listJobTriggersTransportSettings, settings.listJobTriggersSettings(), clientContext);
@@ -980,6 +1065,11 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     this.deleteJobTriggerCallable =
         callableFactory.createUnaryCallable(
             deleteJobTriggerTransportSettings, settings.deleteJobTriggerSettings(), clientContext);
+    this.hybridInspectJobTriggerCallable =
+        callableFactory.createUnaryCallable(
+            hybridInspectJobTriggerTransportSettings,
+            settings.hybridInspectJobTriggerSettings(),
+            clientContext);
     this.updateJobTriggerCallable =
         callableFactory.createUnaryCallable(
             updateJobTriggerTransportSettings, settings.updateJobTriggerSettings(), clientContext);
@@ -1123,6 +1213,15 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     return cancelDlpJobCallable;
   }
 
+  public UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
+    return finishDlpJobCallable;
+  }
+
+  public UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
+      hybridInspectDlpJobCallable() {
+    return hybridInspectDlpJobCallable;
+  }
+
   public UnaryCallable<ListJobTriggersRequest, ListJobTriggersPagedResponse>
       listJobTriggersPagedCallable() {
     return listJobTriggersPagedCallable;
@@ -1138,6 +1237,11 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
 
   public UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable() {
     return deleteJobTriggerCallable;
+  }
+
+  public UnaryCallable<HybridInspectJobTriggerRequest, HybridInspectResponse>
+      hybridInspectJobTriggerCallable() {
+    return hybridInspectJobTriggerCallable;
   }
 
   public UnaryCallable<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerCallable() {

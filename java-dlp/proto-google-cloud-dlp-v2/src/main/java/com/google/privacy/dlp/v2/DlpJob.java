@@ -235,7 +235,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Possible states of a job.
+   * Possible states of a job. New items may be added.
    * </pre>
    *
    * Protobuf enum {@code google.privacy.dlp.v2.DlpJob.JobState}
@@ -265,7 +265,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job is currently running.
+     * The job is currently running. Once a job has finished it will transition
+     * to FAILED or DONE.
      * </pre>
      *
      * <code>RUNNING = 2;</code>
@@ -301,6 +302,19 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 5;</code>
      */
     FAILED(5),
+    /**
+     *
+     *
+     * <pre>
+     * The job is currently accepting findings via hybridInspect.
+     * A hybrid job in ACTIVE state may continue to have findings added to it
+     * through calling of hybridInspect. After the job has finished no more
+     * calls to hybridInspect may be made. ACTIVE jobs can transition to DONE.
+     * </pre>
+     *
+     * <code>ACTIVE = 6;</code>
+     */
+    ACTIVE(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -328,7 +342,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job is currently running.
+     * The job is currently running. Once a job has finished it will transition
+     * to FAILED or DONE.
      * </pre>
      *
      * <code>RUNNING = 2;</code>
@@ -364,6 +379,19 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 5;</code>
      */
     public static final int FAILED_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The job is currently accepting findings via hybridInspect.
+     * A hybrid job in ACTIVE state may continue to have findings added to it
+     * through calling of hybridInspect. After the job has finished no more
+     * calls to hybridInspect may be made. ACTIVE jobs can transition to DONE.
+     * </pre>
+     *
+     * <code>ACTIVE = 6;</code>
+     */
+    public static final int ACTIVE_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -401,6 +429,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
           return CANCELED;
         case 5:
           return FAILED;
+        case 6:
+          return ACTIVE;
         default:
           return null;
       }

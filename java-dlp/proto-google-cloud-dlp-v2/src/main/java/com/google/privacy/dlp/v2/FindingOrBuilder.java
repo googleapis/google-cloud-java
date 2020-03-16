@@ -27,6 +27,35 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
+   * Resource name in format
+   * projects/{project}/locations/{location}/findings/{finding}
+   * Populated only when viewing persisted findings.
+   * </pre>
+   *
+   * <code>string name = 14;</code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * Resource name in format
+   * projects/{project}/locations/{location}/findings/{finding}
+   * Populated only when viewing persisted findings.
+   * </pre>
+   *
+   * <code>string name = 14;</code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The content that was found. Even if the content is not textual, it
    * may be converted to a textual representation here.
    * Provided if `include_quote` is true and the finding is
@@ -229,4 +258,219 @@ public interface FindingOrBuilder
    * <code>.google.privacy.dlp.v2.QuoteInfo quote_info = 7;</code>
    */
   com.google.privacy.dlp.v2.QuoteInfoOrBuilder getQuoteInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The job that stored the finding.
+   * </pre>
+   *
+   * <code>string resource_name = 8 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The resourceName.
+   */
+  java.lang.String getResourceName();
+  /**
+   *
+   *
+   * <pre>
+   * The job that stored the finding.
+   * </pre>
+   *
+   * <code>string resource_name = 8 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for resourceName.
+   */
+  com.google.protobuf.ByteString getResourceNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Job trigger name, if applicable, for this finding.
+   * (-- api-linter: core::0122::name-suffix=disabled
+   *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+   *     resource names, but this has existed as part of the bigquery schema
+   *     before this rule existed. --)
+   * </pre>
+   *
+   * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The triggerName.
+   */
+  java.lang.String getTriggerName();
+  /**
+   *
+   *
+   * <pre>
+   * Job trigger name, if applicable, for this finding.
+   * (-- api-linter: core::0122::name-suffix=disabled
+   *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+   *     resource names, but this has existed as part of the bigquery schema
+   *     before this rule existed. --)
+   * </pre>
+   *
+   * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for triggerName.
+   */
+  com.google.protobuf.ByteString getTriggerNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this `InspectFinding`.
+   * Label keys must be between 1 and 63 characters long and must conform
+   * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+   * Label values must be between 0 and 63 characters long and must conform
+   * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+   * No more than 10 labels can be associated with a given finding.
+   * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+   * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10;</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this `InspectFinding`.
+   * Label keys must be between 1 and 63 characters long and must conform
+   * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+   * Label values must be between 0 and 63 characters long and must conform
+   * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+   * No more than 10 labels can be associated with a given finding.
+   * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+   * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10;</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this `InspectFinding`.
+   * Label keys must be between 1 and 63 characters long and must conform
+   * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+   * Label values must be between 0 and 63 characters long and must conform
+   * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+   * No more than 10 labels can be associated with a given finding.
+   * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+   * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this `InspectFinding`.
+   * Label keys must be between 1 and 63 characters long and must conform
+   * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+   * Label values must be between 0 and 63 characters long and must conform
+   * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+   * No more than 10 labels can be associated with a given finding.
+   * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+   * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10;</code>
+   */
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this `InspectFinding`.
+   * Label keys must be between 1 and 63 characters long and must conform
+   * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+   * Label values must be between 0 and 63 characters long and must conform
+   * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+   * No more than 10 labels can be associated with a given finding.
+   * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+   * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10;</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Time the job started that produced this finding.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+   *
+   * @return Whether the jobCreateTime field is set.
+   */
+  boolean hasJobCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Time the job started that produced this finding.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+   *
+   * @return The jobCreateTime.
+   */
+  com.google.protobuf.Timestamp getJobCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Time the job started that produced this finding.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getJobCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The job that stored the finding.
+   * (-- api-linter: core::0122::name-suffix=disabled
+   *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+   *     resource names, but this has existed as part of the bigquery schema
+   *     before this rule existed. --)
+   * </pre>
+   *
+   * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The jobName.
+   */
+  java.lang.String getJobName();
+  /**
+   *
+   *
+   * <pre>
+   * The job that stored the finding.
+   * (-- api-linter: core::0122::name-suffix=disabled
+   *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+   *     resource names, but this has existed as part of the bigquery schema
+   *     before this rule existed. --)
+   * </pre>
+   *
+   * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for jobName.
+   */
+  com.google.protobuf.ByteString getJobNameBytes();
 }

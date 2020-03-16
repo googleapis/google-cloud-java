@@ -106,6 +106,23 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
               transformationCase_ = 2;
               break;
             }
+          case 26:
+            {
+              com.google.privacy.dlp.v2.TransformationErrorHandling.Builder subBuilder = null;
+              if (transformationErrorHandling_ != null) {
+                subBuilder = transformationErrorHandling_.toBuilder();
+              }
+              transformationErrorHandling_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.TransformationErrorHandling.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(transformationErrorHandling_);
+                transformationErrorHandling_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -294,6 +311,58 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     return com.google.privacy.dlp.v2.RecordTransformations.getDefaultInstance();
   }
 
+  public static final int TRANSFORMATION_ERROR_HANDLING_FIELD_NUMBER = 3;
+  private com.google.privacy.dlp.v2.TransformationErrorHandling transformationErrorHandling_;
+  /**
+   *
+   *
+   * <pre>
+   * Mode for handling transformation errors. If left unspecified, the default
+   * mode is `TransformationErrorHandling.ThrowError`.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+   * </code>
+   *
+   * @return Whether the transformationErrorHandling field is set.
+   */
+  public boolean hasTransformationErrorHandling() {
+    return transformationErrorHandling_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Mode for handling transformation errors. If left unspecified, the default
+   * mode is `TransformationErrorHandling.ThrowError`.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+   * </code>
+   *
+   * @return The transformationErrorHandling.
+   */
+  public com.google.privacy.dlp.v2.TransformationErrorHandling getTransformationErrorHandling() {
+    return transformationErrorHandling_ == null
+        ? com.google.privacy.dlp.v2.TransformationErrorHandling.getDefaultInstance()
+        : transformationErrorHandling_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Mode for handling transformation errors. If left unspecified, the default
+   * mode is `TransformationErrorHandling.ThrowError`.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+   * </code>
+   */
+  public com.google.privacy.dlp.v2.TransformationErrorHandlingOrBuilder
+      getTransformationErrorHandlingOrBuilder() {
+    return getTransformationErrorHandling();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -314,6 +383,9 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     if (transformationCase_ == 2) {
       output.writeMessage(2, (com.google.privacy.dlp.v2.RecordTransformations) transformation_);
     }
+    if (transformationErrorHandling_ != null) {
+      output.writeMessage(3, getTransformationErrorHandling());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -333,6 +405,11 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.privacy.dlp.v2.RecordTransformations) transformation_);
     }
+    if (transformationErrorHandling_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, getTransformationErrorHandling());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -349,6 +426,11 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     com.google.privacy.dlp.v2.DeidentifyConfig other =
         (com.google.privacy.dlp.v2.DeidentifyConfig) obj;
 
+    if (hasTransformationErrorHandling() != other.hasTransformationErrorHandling()) return false;
+    if (hasTransformationErrorHandling()) {
+      if (!getTransformationErrorHandling().equals(other.getTransformationErrorHandling()))
+        return false;
+    }
     if (!getTransformationCase().equals(other.getTransformationCase())) return false;
     switch (transformationCase_) {
       case 1:
@@ -371,6 +453,10 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasTransformationErrorHandling()) {
+      hash = (37 * hash) + TRANSFORMATION_ERROR_HANDLING_FIELD_NUMBER;
+      hash = (53 * hash) + getTransformationErrorHandling().hashCode();
+    }
     switch (transformationCase_) {
       case 1:
         hash = (37 * hash) + INFO_TYPE_TRANSFORMATIONS_FIELD_NUMBER;
@@ -528,6 +614,12 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (transformationErrorHandlingBuilder_ == null) {
+        transformationErrorHandling_ = null;
+      } else {
+        transformationErrorHandling_ = null;
+        transformationErrorHandlingBuilder_ = null;
+      }
       transformationCase_ = 0;
       transformation_ = null;
       return this;
@@ -570,6 +662,11 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         } else {
           result.transformation_ = recordTransformationsBuilder_.build();
         }
+      }
+      if (transformationErrorHandlingBuilder_ == null) {
+        result.transformationErrorHandling_ = transformationErrorHandling_;
+      } else {
+        result.transformationErrorHandling_ = transformationErrorHandlingBuilder_.build();
       }
       result.transformationCase_ = transformationCase_;
       onBuilt();
@@ -621,6 +718,9 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.DeidentifyConfig other) {
       if (other == com.google.privacy.dlp.v2.DeidentifyConfig.getDefaultInstance()) return this;
+      if (other.hasTransformationErrorHandling()) {
+        mergeTransformationErrorHandling(other.getTransformationErrorHandling());
+      }
       switch (other.getTransformationCase()) {
         case INFO_TYPE_TRANSFORMATIONS:
           {
@@ -1126,6 +1226,215 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       ;
       return recordTransformationsBuilder_;
+    }
+
+    private com.google.privacy.dlp.v2.TransformationErrorHandling transformationErrorHandling_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.TransformationErrorHandling,
+            com.google.privacy.dlp.v2.TransformationErrorHandling.Builder,
+            com.google.privacy.dlp.v2.TransformationErrorHandlingOrBuilder>
+        transformationErrorHandlingBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Mode for handling transformation errors. If left unspecified, the default
+     * mode is `TransformationErrorHandling.ThrowError`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+     * </code>
+     *
+     * @return Whether the transformationErrorHandling field is set.
+     */
+    public boolean hasTransformationErrorHandling() {
+      return transformationErrorHandlingBuilder_ != null || transformationErrorHandling_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mode for handling transformation errors. If left unspecified, the default
+     * mode is `TransformationErrorHandling.ThrowError`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+     * </code>
+     *
+     * @return The transformationErrorHandling.
+     */
+    public com.google.privacy.dlp.v2.TransformationErrorHandling getTransformationErrorHandling() {
+      if (transformationErrorHandlingBuilder_ == null) {
+        return transformationErrorHandling_ == null
+            ? com.google.privacy.dlp.v2.TransformationErrorHandling.getDefaultInstance()
+            : transformationErrorHandling_;
+      } else {
+        return transformationErrorHandlingBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mode for handling transformation errors. If left unspecified, the default
+     * mode is `TransformationErrorHandling.ThrowError`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+     * </code>
+     */
+    public Builder setTransformationErrorHandling(
+        com.google.privacy.dlp.v2.TransformationErrorHandling value) {
+      if (transformationErrorHandlingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transformationErrorHandling_ = value;
+        onChanged();
+      } else {
+        transformationErrorHandlingBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mode for handling transformation errors. If left unspecified, the default
+     * mode is `TransformationErrorHandling.ThrowError`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+     * </code>
+     */
+    public Builder setTransformationErrorHandling(
+        com.google.privacy.dlp.v2.TransformationErrorHandling.Builder builderForValue) {
+      if (transformationErrorHandlingBuilder_ == null) {
+        transformationErrorHandling_ = builderForValue.build();
+        onChanged();
+      } else {
+        transformationErrorHandlingBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mode for handling transformation errors. If left unspecified, the default
+     * mode is `TransformationErrorHandling.ThrowError`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+     * </code>
+     */
+    public Builder mergeTransformationErrorHandling(
+        com.google.privacy.dlp.v2.TransformationErrorHandling value) {
+      if (transformationErrorHandlingBuilder_ == null) {
+        if (transformationErrorHandling_ != null) {
+          transformationErrorHandling_ =
+              com.google.privacy.dlp.v2.TransformationErrorHandling.newBuilder(
+                      transformationErrorHandling_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          transformationErrorHandling_ = value;
+        }
+        onChanged();
+      } else {
+        transformationErrorHandlingBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mode for handling transformation errors. If left unspecified, the default
+     * mode is `TransformationErrorHandling.ThrowError`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+     * </code>
+     */
+    public Builder clearTransformationErrorHandling() {
+      if (transformationErrorHandlingBuilder_ == null) {
+        transformationErrorHandling_ = null;
+        onChanged();
+      } else {
+        transformationErrorHandling_ = null;
+        transformationErrorHandlingBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mode for handling transformation errors. If left unspecified, the default
+     * mode is `TransformationErrorHandling.ThrowError`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.TransformationErrorHandling.Builder
+        getTransformationErrorHandlingBuilder() {
+
+      onChanged();
+      return getTransformationErrorHandlingFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mode for handling transformation errors. If left unspecified, the default
+     * mode is `TransformationErrorHandling.ThrowError`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.TransformationErrorHandlingOrBuilder
+        getTransformationErrorHandlingOrBuilder() {
+      if (transformationErrorHandlingBuilder_ != null) {
+        return transformationErrorHandlingBuilder_.getMessageOrBuilder();
+      } else {
+        return transformationErrorHandling_ == null
+            ? com.google.privacy.dlp.v2.TransformationErrorHandling.getDefaultInstance()
+            : transformationErrorHandling_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mode for handling transformation errors. If left unspecified, the default
+     * mode is `TransformationErrorHandling.ThrowError`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.TransformationErrorHandling,
+            com.google.privacy.dlp.v2.TransformationErrorHandling.Builder,
+            com.google.privacy.dlp.v2.TransformationErrorHandlingOrBuilder>
+        getTransformationErrorHandlingFieldBuilder() {
+      if (transformationErrorHandlingBuilder_ == null) {
+        transformationErrorHandlingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.TransformationErrorHandling,
+                com.google.privacy.dlp.v2.TransformationErrorHandling.Builder,
+                com.google.privacy.dlp.v2.TransformationErrorHandlingOrBuilder>(
+                getTransformationErrorHandling(), getParentForChildren(), isClean());
+        transformationErrorHandling_ = null;
+      }
+      return transformationErrorHandlingBuilder_;
     }
 
     @java.lang.Override

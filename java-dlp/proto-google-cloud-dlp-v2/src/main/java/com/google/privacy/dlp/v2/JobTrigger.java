@@ -445,6 +445,50 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.privacy.dlp.v2.ScheduleOrBuilder getScheduleOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * For use with hybrid jobs. Jobs must be manually created and finished.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+     *
+     * @return Whether the manual field is set.
+     */
+    boolean hasManual();
+    /**
+     *
+     *
+     * <pre>
+     * For use with hybrid jobs. Jobs must be manually created and finished.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+     *
+     * @return The manual.
+     */
+    com.google.privacy.dlp.v2.Manual getManual();
+    /**
+     *
+     *
+     * <pre>
+     * For use with hybrid jobs. Jobs must be manually created and finished.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+     */
+    com.google.privacy.dlp.v2.ManualOrBuilder getManualOrBuilder();
+
     public com.google.privacy.dlp.v2.JobTrigger.Trigger.TriggerCase getTriggerCase();
   }
   /**
@@ -513,6 +557,21 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
                 triggerCase_ = 1;
                 break;
               }
+            case 18:
+              {
+                com.google.privacy.dlp.v2.Manual.Builder subBuilder = null;
+                if (triggerCase_ == 2) {
+                  subBuilder = ((com.google.privacy.dlp.v2.Manual) trigger_).toBuilder();
+                }
+                trigger_ =
+                    input.readMessage(com.google.privacy.dlp.v2.Manual.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((com.google.privacy.dlp.v2.Manual) trigger_);
+                  trigger_ = subBuilder.buildPartial();
+                }
+                triggerCase_ = 2;
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -555,6 +614,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       SCHEDULE(1),
+      MANUAL(2),
       TRIGGER_NOT_SET(0);
       private final int value;
 
@@ -575,6 +635,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         switch (value) {
           case 1:
             return SCHEDULE;
+          case 2:
+            return MANUAL;
           case 0:
             return TRIGGER_NOT_SET;
           default:
@@ -639,6 +701,63 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       return com.google.privacy.dlp.v2.Schedule.getDefaultInstance();
     }
 
+    public static final int MANUAL_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * For use with hybrid jobs. Jobs must be manually created and finished.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+     *
+     * @return Whether the manual field is set.
+     */
+    public boolean hasManual() {
+      return triggerCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For use with hybrid jobs. Jobs must be manually created and finished.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+     *
+     * @return The manual.
+     */
+    public com.google.privacy.dlp.v2.Manual getManual() {
+      if (triggerCase_ == 2) {
+        return (com.google.privacy.dlp.v2.Manual) trigger_;
+      }
+      return com.google.privacy.dlp.v2.Manual.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For use with hybrid jobs. Jobs must be manually created and finished.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+     */
+    public com.google.privacy.dlp.v2.ManualOrBuilder getManualOrBuilder() {
+      if (triggerCase_ == 2) {
+        return (com.google.privacy.dlp.v2.Manual) trigger_;
+      }
+      return com.google.privacy.dlp.v2.Manual.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -656,6 +775,9 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       if (triggerCase_ == 1) {
         output.writeMessage(1, (com.google.privacy.dlp.v2.Schedule) trigger_);
       }
+      if (triggerCase_ == 2) {
+        output.writeMessage(2, (com.google.privacy.dlp.v2.Manual) trigger_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -669,6 +791,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 1, (com.google.privacy.dlp.v2.Schedule) trigger_);
+      }
+      if (triggerCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, (com.google.privacy.dlp.v2.Manual) trigger_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -691,6 +818,9 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         case 1:
           if (!getSchedule().equals(other.getSchedule())) return false;
           break;
+        case 2:
+          if (!getManual().equals(other.getManual())) return false;
+          break;
         case 0:
         default:
       }
@@ -709,6 +839,10 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         case 1:
           hash = (37 * hash) + SCHEDULE_FIELD_NUMBER;
           hash = (53 * hash) + getSchedule().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + MANUAL_FIELD_NUMBER;
+          hash = (53 * hash) + getManual().hashCode();
           break;
         case 0:
         default:
@@ -896,6 +1030,13 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             result.trigger_ = scheduleBuilder_.build();
           }
         }
+        if (triggerCase_ == 2) {
+          if (manualBuilder_ == null) {
+            result.trigger_ = trigger_;
+          } else {
+            result.trigger_ = manualBuilder_.build();
+          }
+        }
         result.triggerCase_ = triggerCase_;
         onBuilt();
         return result;
@@ -952,6 +1093,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
           case SCHEDULE:
             {
               mergeSchedule(other.getSchedule());
+              break;
+            }
+          case MANUAL:
+            {
+              mergeManual(other.getManual());
               break;
             }
           case TRIGGER_NOT_SET:
@@ -1203,6 +1349,236 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         ;
         return scheduleBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.Manual,
+              com.google.privacy.dlp.v2.Manual.Builder,
+              com.google.privacy.dlp.v2.ManualOrBuilder>
+          manualBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * For use with hybrid jobs. Jobs must be manually created and finished.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+       *
+       * @return Whether the manual field is set.
+       */
+      public boolean hasManual() {
+        return triggerCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For use with hybrid jobs. Jobs must be manually created and finished.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+       *
+       * @return The manual.
+       */
+      public com.google.privacy.dlp.v2.Manual getManual() {
+        if (manualBuilder_ == null) {
+          if (triggerCase_ == 2) {
+            return (com.google.privacy.dlp.v2.Manual) trigger_;
+          }
+          return com.google.privacy.dlp.v2.Manual.getDefaultInstance();
+        } else {
+          if (triggerCase_ == 2) {
+            return manualBuilder_.getMessage();
+          }
+          return com.google.privacy.dlp.v2.Manual.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For use with hybrid jobs. Jobs must be manually created and finished.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+       */
+      public Builder setManual(com.google.privacy.dlp.v2.Manual value) {
+        if (manualBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          trigger_ = value;
+          onChanged();
+        } else {
+          manualBuilder_.setMessage(value);
+        }
+        triggerCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For use with hybrid jobs. Jobs must be manually created and finished.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+       */
+      public Builder setManual(com.google.privacy.dlp.v2.Manual.Builder builderForValue) {
+        if (manualBuilder_ == null) {
+          trigger_ = builderForValue.build();
+          onChanged();
+        } else {
+          manualBuilder_.setMessage(builderForValue.build());
+        }
+        triggerCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For use with hybrid jobs. Jobs must be manually created and finished.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+       */
+      public Builder mergeManual(com.google.privacy.dlp.v2.Manual value) {
+        if (manualBuilder_ == null) {
+          if (triggerCase_ == 2
+              && trigger_ != com.google.privacy.dlp.v2.Manual.getDefaultInstance()) {
+            trigger_ =
+                com.google.privacy.dlp.v2.Manual.newBuilder(
+                        (com.google.privacy.dlp.v2.Manual) trigger_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            trigger_ = value;
+          }
+          onChanged();
+        } else {
+          if (triggerCase_ == 2) {
+            manualBuilder_.mergeFrom(value);
+          }
+          manualBuilder_.setMessage(value);
+        }
+        triggerCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For use with hybrid jobs. Jobs must be manually created and finished.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+       */
+      public Builder clearManual() {
+        if (manualBuilder_ == null) {
+          if (triggerCase_ == 2) {
+            triggerCase_ = 0;
+            trigger_ = null;
+            onChanged();
+          }
+        } else {
+          if (triggerCase_ == 2) {
+            triggerCase_ = 0;
+            trigger_ = null;
+          }
+          manualBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For use with hybrid jobs. Jobs must be manually created and finished.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+       */
+      public com.google.privacy.dlp.v2.Manual.Builder getManualBuilder() {
+        return getManualFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For use with hybrid jobs. Jobs must be manually created and finished.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+       */
+      public com.google.privacy.dlp.v2.ManualOrBuilder getManualOrBuilder() {
+        if ((triggerCase_ == 2) && (manualBuilder_ != null)) {
+          return manualBuilder_.getMessageOrBuilder();
+        } else {
+          if (triggerCase_ == 2) {
+            return (com.google.privacy.dlp.v2.Manual) trigger_;
+          }
+          return com.google.privacy.dlp.v2.Manual.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For use with hybrid jobs. Jobs must be manually created and finished.
+       * Early access feature is in a pre-release state and might change or have
+       * limited support. For more information, see
+       * https://cloud.google.com/products#product-launch-stages.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.Manual,
+              com.google.privacy.dlp.v2.Manual.Builder,
+              com.google.privacy.dlp.v2.ManualOrBuilder>
+          getManualFieldBuilder() {
+        if (manualBuilder_ == null) {
+          if (!(triggerCase_ == 2)) {
+            trigger_ = com.google.privacy.dlp.v2.Manual.getDefaultInstance();
+          }
+          manualBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.Manual,
+                  com.google.privacy.dlp.v2.Manual.Builder,
+                  com.google.privacy.dlp.v2.ManualOrBuilder>(
+                  (com.google.privacy.dlp.v2.Manual) trigger_, getParentForChildren(), isClean());
+          trigger_ = null;
+        }
+        triggerCase_ = 2;
+        onChanged();
+        ;
+        return manualBuilder_;
       }
 
       @java.lang.Override
@@ -1574,8 +1950,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -1591,8 +1967,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -1609,8 +1985,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -1626,8 +2002,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -1643,8 +2019,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -3393,8 +3769,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3414,8 +3790,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3435,8 +3811,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3456,8 +3832,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3483,8 +3859,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3507,8 +3883,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3534,8 +3910,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3561,8 +3937,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3585,8 +3961,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3609,8 +3985,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3634,8 +4010,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3658,8 +4034,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3682,8 +4058,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3699,8 +4075,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3720,8 +4096,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3742,8 +4118,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3760,8 +4136,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3778,8 +4154,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>

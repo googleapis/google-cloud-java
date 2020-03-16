@@ -260,7 +260,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Values of identifying columns in the given row. Order of values matches
-   * the order of field identifiers specified in the scanning request.
+   * the order of `identifying_fields` specified in the scanning request.
    * </pre>
    *
    * <code>repeated string id_values = 5;</code>
@@ -275,7 +275,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Values of identifying columns in the given row. Order of values matches
-   * the order of field identifiers specified in the scanning request.
+   * the order of `identifying_fields` specified in the scanning request.
    * </pre>
    *
    * <code>repeated string id_values = 5;</code>
@@ -290,7 +290,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Values of identifying columns in the given row. Order of values matches
-   * the order of field identifiers specified in the scanning request.
+   * the order of `identifying_fields` specified in the scanning request.
    * </pre>
    *
    * <code>repeated string id_values = 5;</code>
@@ -306,7 +306,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Values of identifying columns in the given row. Order of values matches
-   * the order of field identifiers specified in the scanning request.
+   * the order of `identifying_fields` specified in the scanning request.
    * </pre>
    *
    * <code>repeated string id_values = 5;</code>
@@ -1020,7 +1020,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values of identifying columns in the given row. Order of values matches
-     * the order of field identifiers specified in the scanning request.
+     * the order of `identifying_fields` specified in the scanning request.
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
@@ -1035,7 +1035,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values of identifying columns in the given row. Order of values matches
-     * the order of field identifiers specified in the scanning request.
+     * the order of `identifying_fields` specified in the scanning request.
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
@@ -1050,7 +1050,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values of identifying columns in the given row. Order of values matches
-     * the order of field identifiers specified in the scanning request.
+     * the order of `identifying_fields` specified in the scanning request.
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
@@ -1066,7 +1066,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values of identifying columns in the given row. Order of values matches
-     * the order of field identifiers specified in the scanning request.
+     * the order of `identifying_fields` specified in the scanning request.
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
@@ -1082,7 +1082,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values of identifying columns in the given row. Order of values matches
-     * the order of field identifiers specified in the scanning request.
+     * the order of `identifying_fields` specified in the scanning request.
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
@@ -1105,7 +1105,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values of identifying columns in the given row. Order of values matches
-     * the order of field identifiers specified in the scanning request.
+     * the order of `identifying_fields` specified in the scanning request.
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
@@ -1127,7 +1127,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values of identifying columns in the given row. Order of values matches
-     * the order of field identifiers specified in the scanning request.
+     * the order of `identifying_fields` specified in the scanning request.
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
@@ -1146,7 +1146,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values of identifying columns in the given row. Order of values matches
-     * the order of field identifiers specified in the scanning request.
+     * the order of `identifying_fields` specified in the scanning request.
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
@@ -1164,7 +1164,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values of identifying columns in the given row. Order of values matches
-     * the order of field identifiers specified in the scanning request.
+     * the order of `identifying_fields` specified in the scanning request.
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>

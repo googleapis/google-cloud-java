@@ -132,6 +132,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Predefined schemas for storing findings.
+   * Only for use with external storage.
    * </pre>
    *
    * Protobuf enum {@code google.privacy.dlp.v2.OutputStorageConfig.OutputSchema}
@@ -487,6 +488,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * If unspecified, then all available columns will be used for a new table or
    * an (existing) table with no schema, and no changes will be made to an
    * existing table that has a schema.
+   * Only for use with external storage.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
@@ -508,6 +510,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * If unspecified, then all available columns will be used for a new table or
    * an (existing) table with no schema, and no changes will be made to an
    * existing table that has a schema.
+   * Only for use with external storage.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
@@ -1216,6 +1219,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
+     * Only for use with external storage.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
@@ -1237,6 +1241,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
+     * Only for use with external storage.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
@@ -1261,6 +1266,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
+     * Only for use with external storage.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
@@ -1287,6 +1293,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
+     * Only for use with external storage.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
@@ -1316,6 +1323,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
+     * Only for use with external storage.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>

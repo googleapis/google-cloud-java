@@ -1024,6 +1024,66 @@ public final class DlpServiceGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getHybridInspectJobTriggerMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest,
+          com.google.privacy.dlp.v2.HybridInspectResponse>
+      METHOD_HYBRID_INSPECT_JOB_TRIGGER = getHybridInspectJobTriggerMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest,
+          com.google.privacy.dlp.v2.HybridInspectResponse>
+      getHybridInspectJobTriggerMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest,
+          com.google.privacy.dlp.v2.HybridInspectResponse>
+      getHybridInspectJobTriggerMethod() {
+    return getHybridInspectJobTriggerMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest,
+          com.google.privacy.dlp.v2.HybridInspectResponse>
+      getHybridInspectJobTriggerMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest,
+            com.google.privacy.dlp.v2.HybridInspectResponse>
+        getHybridInspectJobTriggerMethod;
+    if ((getHybridInspectJobTriggerMethod = DlpServiceGrpc.getHybridInspectJobTriggerMethod)
+        == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getHybridInspectJobTriggerMethod = DlpServiceGrpc.getHybridInspectJobTriggerMethod)
+            == null) {
+          DlpServiceGrpc.getHybridInspectJobTriggerMethod =
+              getHybridInspectJobTriggerMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest,
+                          com.google.privacy.dlp.v2.HybridInspectResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.privacy.dlp.v2.DlpService", "HybridInspectJobTrigger"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.HybridInspectResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("HybridInspectJobTrigger"))
+                      .build();
+        }
+      }
+    }
+    return getHybridInspectJobTriggerMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getGetJobTriggerMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.privacy.dlp.v2.GetJobTriggerRequest, com.google.privacy.dlp.v2.JobTrigger>
@@ -1784,6 +1844,114 @@ public final class DlpServiceGrpc {
     return getDeleteStoredInfoTypeMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getHybridInspectDlpJobMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.HybridInspectDlpJobRequest,
+          com.google.privacy.dlp.v2.HybridInspectResponse>
+      METHOD_HYBRID_INSPECT_DLP_JOB = getHybridInspectDlpJobMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.HybridInspectDlpJobRequest,
+          com.google.privacy.dlp.v2.HybridInspectResponse>
+      getHybridInspectDlpJobMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.HybridInspectDlpJobRequest,
+          com.google.privacy.dlp.v2.HybridInspectResponse>
+      getHybridInspectDlpJobMethod() {
+    return getHybridInspectDlpJobMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.HybridInspectDlpJobRequest,
+          com.google.privacy.dlp.v2.HybridInspectResponse>
+      getHybridInspectDlpJobMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.HybridInspectDlpJobRequest,
+            com.google.privacy.dlp.v2.HybridInspectResponse>
+        getHybridInspectDlpJobMethod;
+    if ((getHybridInspectDlpJobMethod = DlpServiceGrpc.getHybridInspectDlpJobMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getHybridInspectDlpJobMethod = DlpServiceGrpc.getHybridInspectDlpJobMethod) == null) {
+          DlpServiceGrpc.getHybridInspectDlpJobMethod =
+              getHybridInspectDlpJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.HybridInspectDlpJobRequest,
+                          com.google.privacy.dlp.v2.HybridInspectResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.privacy.dlp.v2.DlpService", "HybridInspectDlpJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.HybridInspectDlpJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.HybridInspectResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("HybridInspectDlpJob"))
+                      .build();
+        }
+      }
+    }
+    return getHybridInspectDlpJobMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getFinishDlpJobMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.FinishDlpJobRequest, com.google.protobuf.Empty>
+      METHOD_FINISH_DLP_JOB = getFinishDlpJobMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.FinishDlpJobRequest, com.google.protobuf.Empty>
+      getFinishDlpJobMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.FinishDlpJobRequest, com.google.protobuf.Empty>
+      getFinishDlpJobMethod() {
+    return getFinishDlpJobMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.FinishDlpJobRequest, com.google.protobuf.Empty>
+      getFinishDlpJobMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.FinishDlpJobRequest, com.google.protobuf.Empty>
+        getFinishDlpJobMethod;
+    if ((getFinishDlpJobMethod = DlpServiceGrpc.getFinishDlpJobMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getFinishDlpJobMethod = DlpServiceGrpc.getFinishDlpJobMethod) == null) {
+          DlpServiceGrpc.getFinishDlpJobMethod =
+              getFinishDlpJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.FinishDlpJobRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.privacy.dlp.v2.DlpService", "FinishDlpJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.FinishDlpJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(new DlpServiceMethodDescriptorSupplier("FinishDlpJob"))
+                      .build();
+        }
+      }
+    }
+    return getFinishDlpJobMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DlpServiceStub newStub(io.grpc.Channel channel) {
     return new DlpServiceStub(channel);
@@ -2095,6 +2263,25 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Inspect hybrid content and store findings to a trigger. The inspection
+     * will be processed asynchronously. To review the findings monitor the
+     * jobs within the trigger.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     */
+    public void hybridInspectJobTrigger(
+        com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.HybridInspectResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getHybridInspectJobTriggerMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a job trigger.
      * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
@@ -2308,6 +2495,42 @@ public final class DlpServiceGrpc {
       asyncUnimplementedUnaryCall(getDeleteStoredInfoTypeMethodHelper(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Inspect hybrid content and store findings to a job.
+     * To review the findings inspect the job. Inspection will occur
+     * asynchronously.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     */
+    public void hybridInspectDlpJob(
+        com.google.privacy.dlp.v2.HybridInspectDlpJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.HybridInspectResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getHybridInspectDlpJobMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finish a running hybrid DlpJob. Triggers the finalization steps and running
+     * of any enabled actions that have not yet run.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     */
+    public void finishDlpJob(
+        com.google.privacy.dlp.v2.FinishDlpJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getFinishDlpJobMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -2426,6 +2649,13 @@ public final class DlpServiceGrpc {
                       com.google.privacy.dlp.v2.UpdateJobTriggerRequest,
                       com.google.privacy.dlp.v2.JobTrigger>(this, METHODID_UPDATE_JOB_TRIGGER)))
           .addMethod(
+              getHybridInspectJobTriggerMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest,
+                      com.google.privacy.dlp.v2.HybridInspectResponse>(
+                      this, METHODID_HYBRID_INSPECT_JOB_TRIGGER)))
+          .addMethod(
               getGetJobTriggerMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -2514,6 +2744,19 @@ public final class DlpServiceGrpc {
                   new MethodHandlers<
                       com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_STORED_INFO_TYPE)))
+          .addMethod(
+              getHybridInspectDlpJobMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.privacy.dlp.v2.HybridInspectDlpJobRequest,
+                      com.google.privacy.dlp.v2.HybridInspectResponse>(
+                      this, METHODID_HYBRID_INSPECT_DLP_JOB)))
+          .addMethod(
+              getFinishDlpJobMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.privacy.dlp.v2.FinishDlpJobRequest, com.google.protobuf.Empty>(
+                      this, METHODID_FINISH_DLP_JOB)))
           .build();
     }
   }
@@ -2875,6 +3118,28 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Inspect hybrid content and store findings to a trigger. The inspection
+     * will be processed asynchronously. To review the findings monitor the
+     * jobs within the trigger.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     */
+    public void hybridInspectJobTrigger(
+        com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.HybridInspectResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getHybridInspectJobTriggerMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a job trigger.
      * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
@@ -3126,6 +3391,48 @@ public final class DlpServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDeleteStoredInfoTypeMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Inspect hybrid content and store findings to a job.
+     * To review the findings inspect the job. Inspection will occur
+     * asynchronously.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     */
+    public void hybridInspectDlpJob(
+        com.google.privacy.dlp.v2.HybridInspectDlpJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.HybridInspectResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getHybridInspectDlpJobMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finish a running hybrid DlpJob. Triggers the finalization steps and running
+     * of any enabled actions that have not yet run.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     */
+    public void finishDlpJob(
+        com.google.privacy.dlp.v2.FinishDlpJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getFinishDlpJobMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3429,6 +3736,24 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Inspect hybrid content and store findings to a trigger. The inspection
+     * will be processed asynchronously. To review the findings monitor the
+     * jobs within the trigger.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.HybridInspectResponse hybridInspectJobTrigger(
+        com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getHybridInspectJobTriggerMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a job trigger.
      * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
@@ -3636,6 +3961,41 @@ public final class DlpServiceGrpc {
         com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteStoredInfoTypeMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Inspect hybrid content and store findings to a job.
+     * To review the findings inspect the job. Inspection will occur
+     * asynchronously.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.HybridInspectResponse hybridInspectDlpJob(
+        com.google.privacy.dlp.v2.HybridInspectDlpJobRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getHybridInspectDlpJobMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finish a running hybrid DlpJob. Triggers the finalization steps and running
+     * of any enabled actions that have not yet run.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     */
+    public com.google.protobuf.Empty finishDlpJob(
+        com.google.privacy.dlp.v2.FinishDlpJobRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getFinishDlpJobMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -3956,6 +4316,26 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Inspect hybrid content and store findings to a trigger. The inspection
+     * will be processed asynchronously. To review the findings monitor the
+     * jobs within the trigger.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.privacy.dlp.v2.HybridInspectResponse>
+        hybridInspectJobTrigger(com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getHybridInspectJobTriggerMethodHelper(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a job trigger.
      * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
@@ -4171,6 +4551,42 @@ public final class DlpServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getDeleteStoredInfoTypeMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Inspect hybrid content and store findings to a job.
+     * To review the findings inspect the job. Inspection will occur
+     * asynchronously.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.privacy.dlp.v2.HybridInspectResponse>
+        hybridInspectDlpJob(com.google.privacy.dlp.v2.HybridInspectDlpJobRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getHybridInspectDlpJobMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finish a running hybrid DlpJob. Triggers the finalization steps and running
+     * of any enabled actions that have not yet run.
+     * Early access feature is in a pre-release state and might change or have
+     * limited support. For more information, see
+     * https://cloud.google.com/products#product-launch-stages.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        finishDlpJob(com.google.privacy.dlp.v2.FinishDlpJobRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getFinishDlpJobMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_INSPECT_CONTENT = 0;
@@ -4190,20 +4606,23 @@ public final class DlpServiceGrpc {
   private static final int METHODID_DELETE_DEIDENTIFY_TEMPLATE = 14;
   private static final int METHODID_CREATE_JOB_TRIGGER = 15;
   private static final int METHODID_UPDATE_JOB_TRIGGER = 16;
-  private static final int METHODID_GET_JOB_TRIGGER = 17;
-  private static final int METHODID_LIST_JOB_TRIGGERS = 18;
-  private static final int METHODID_DELETE_JOB_TRIGGER = 19;
-  private static final int METHODID_ACTIVATE_JOB_TRIGGER = 20;
-  private static final int METHODID_CREATE_DLP_JOB = 21;
-  private static final int METHODID_LIST_DLP_JOBS = 22;
-  private static final int METHODID_GET_DLP_JOB = 23;
-  private static final int METHODID_DELETE_DLP_JOB = 24;
-  private static final int METHODID_CANCEL_DLP_JOB = 25;
-  private static final int METHODID_CREATE_STORED_INFO_TYPE = 26;
-  private static final int METHODID_UPDATE_STORED_INFO_TYPE = 27;
-  private static final int METHODID_GET_STORED_INFO_TYPE = 28;
-  private static final int METHODID_LIST_STORED_INFO_TYPES = 29;
-  private static final int METHODID_DELETE_STORED_INFO_TYPE = 30;
+  private static final int METHODID_HYBRID_INSPECT_JOB_TRIGGER = 17;
+  private static final int METHODID_GET_JOB_TRIGGER = 18;
+  private static final int METHODID_LIST_JOB_TRIGGERS = 19;
+  private static final int METHODID_DELETE_JOB_TRIGGER = 20;
+  private static final int METHODID_ACTIVATE_JOB_TRIGGER = 21;
+  private static final int METHODID_CREATE_DLP_JOB = 22;
+  private static final int METHODID_LIST_DLP_JOBS = 23;
+  private static final int METHODID_GET_DLP_JOB = 24;
+  private static final int METHODID_DELETE_DLP_JOB = 25;
+  private static final int METHODID_CANCEL_DLP_JOB = 26;
+  private static final int METHODID_CREATE_STORED_INFO_TYPE = 27;
+  private static final int METHODID_UPDATE_STORED_INFO_TYPE = 28;
+  private static final int METHODID_GET_STORED_INFO_TYPE = 29;
+  private static final int METHODID_LIST_STORED_INFO_TYPES = 30;
+  private static final int METHODID_DELETE_STORED_INFO_TYPE = 31;
+  private static final int METHODID_HYBRID_INSPECT_DLP_JOB = 32;
+  private static final int METHODID_FINISH_DLP_JOB = 33;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4321,6 +4740,12 @@ public final class DlpServiceGrpc {
               (com.google.privacy.dlp.v2.UpdateJobTriggerRequest) request,
               (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.JobTrigger>) responseObserver);
           break;
+        case METHODID_HYBRID_INSPECT_JOB_TRIGGER:
+          serviceImpl.hybridInspectJobTrigger(
+              (com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.HybridInspectResponse>)
+                  responseObserver);
+          break;
         case METHODID_GET_JOB_TRIGGER:
           serviceImpl.getJobTrigger(
               (com.google.privacy.dlp.v2.GetJobTriggerRequest) request,
@@ -4395,6 +4820,17 @@ public final class DlpServiceGrpc {
         case METHODID_DELETE_STORED_INFO_TYPE:
           serviceImpl.deleteStoredInfoType(
               (com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_HYBRID_INSPECT_DLP_JOB:
+          serviceImpl.hybridInspectDlpJob(
+              (com.google.privacy.dlp.v2.HybridInspectDlpJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.HybridInspectResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FINISH_DLP_JOB:
+          serviceImpl.finishDlpJob(
+              (com.google.privacy.dlp.v2.FinishDlpJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
@@ -4478,6 +4914,7 @@ public final class DlpServiceGrpc {
                       .addMethod(getDeleteDeidentifyTemplateMethodHelper())
                       .addMethod(getCreateJobTriggerMethodHelper())
                       .addMethod(getUpdateJobTriggerMethodHelper())
+                      .addMethod(getHybridInspectJobTriggerMethodHelper())
                       .addMethod(getGetJobTriggerMethodHelper())
                       .addMethod(getListJobTriggersMethodHelper())
                       .addMethod(getDeleteJobTriggerMethodHelper())
@@ -4492,6 +4929,8 @@ public final class DlpServiceGrpc {
                       .addMethod(getGetStoredInfoTypeMethodHelper())
                       .addMethod(getListStoredInfoTypesMethodHelper())
                       .addMethod(getDeleteStoredInfoTypeMethodHelper())
+                      .addMethod(getHybridInspectDlpJobMethodHelper())
+                      .addMethod(getFinishDlpJobMethodHelper())
                       .build();
         }
       }

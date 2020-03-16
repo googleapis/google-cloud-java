@@ -38,8 +38,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Finding() {
+    name_ = "";
     quote_ = "";
     likelihood_ = 0;
+    resourceName_ = "";
+    triggerName_ = "";
+    jobName_ = "";
   }
 
   @java.lang.Override
@@ -61,6 +65,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -146,6 +151,62 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resourceName_ = s;
+              break;
+            }
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              triggerName_ = s;
+              break;
+            }
+          case 82:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
+          case 90:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (jobCreateTime_ != null) {
+                subBuilder = jobCreateTime_.toBuilder();
+              }
+              jobCreateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(jobCreateTime_);
+                jobCreateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              jobName_ = s;
+              break;
+            }
+          case 114:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -170,6 +231,17 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_privacy_dlp_v2_Finding_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 10:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -178,6 +250,57 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.privacy.dlp.v2.Finding.class,
             com.google.privacy.dlp.v2.Finding.Builder.class);
+  }
+
+  public static final int NAME_FIELD_NUMBER = 14;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Resource name in format
+   * projects/{project}/locations/{location}/findings/{finding}
+   * Populated only when viewing persisted findings.
+   * </pre>
+   *
+   * <code>string name = 14;</code>
+   *
+   * @return The name.
+   */
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource name in format
+   * projects/{project}/locations/{location}/findings/{finding}
+   * Populated only when viewing persisted findings.
+   * </pre>
+   *
+   * <code>string name = 14;</code>
+   *
+   * @return The bytes for name.
+   */
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int QUOTE_FIELD_NUMBER = 1;
@@ -452,6 +575,329 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return getQuoteInfo();
   }
 
+  public static final int RESOURCE_NAME_FIELD_NUMBER = 8;
+  private volatile java.lang.Object resourceName_;
+  /**
+   *
+   *
+   * <pre>
+   * The job that stored the finding.
+   * </pre>
+   *
+   * <code>string resource_name = 8 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The resourceName.
+   */
+  public java.lang.String getResourceName() {
+    java.lang.Object ref = resourceName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resourceName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The job that stored the finding.
+   * </pre>
+   *
+   * <code>string resource_name = 8 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for resourceName.
+   */
+  public com.google.protobuf.ByteString getResourceNameBytes() {
+    java.lang.Object ref = resourceName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      resourceName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TRIGGER_NAME_FIELD_NUMBER = 9;
+  private volatile java.lang.Object triggerName_;
+  /**
+   *
+   *
+   * <pre>
+   * Job trigger name, if applicable, for this finding.
+   * (-- api-linter: core::0122::name-suffix=disabled
+   *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+   *     resource names, but this has existed as part of the bigquery schema
+   *     before this rule existed. --)
+   * </pre>
+   *
+   * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The triggerName.
+   */
+  public java.lang.String getTriggerName() {
+    java.lang.Object ref = triggerName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      triggerName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Job trigger name, if applicable, for this finding.
+   * (-- api-linter: core::0122::name-suffix=disabled
+   *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+   *     resource names, but this has existed as part of the bigquery schema
+   *     before this rule existed. --)
+   * </pre>
+   *
+   * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for triggerName.
+   */
+  public com.google.protobuf.ByteString getTriggerNameBytes() {
+    java.lang.Object ref = triggerName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      triggerName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LABELS_FIELD_NUMBER = 10;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.privacy.dlp.v2.DlpProto
+                .internal_static_google_privacy_dlp_v2_Finding_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this `InspectFinding`.
+   * Label keys must be between 1 and 63 characters long and must conform
+   * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+   * Label values must be between 0 and 63 characters long and must conform
+   * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+   * No more than 10 labels can be associated with a given finding.
+   * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+   * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10;</code>
+   */
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this `InspectFinding`.
+   * Label keys must be between 1 and 63 characters long and must conform
+   * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+   * Label values must be between 0 and 63 characters long and must conform
+   * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+   * No more than 10 labels can be associated with a given finding.
+   * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+   * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10;</code>
+   */
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this `InspectFinding`.
+   * Label keys must be between 1 and 63 characters long and must conform
+   * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+   * Label values must be between 0 and 63 characters long and must conform
+   * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+   * No more than 10 labels can be associated with a given finding.
+   * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+   * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10;</code>
+   */
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this `InspectFinding`.
+   * Label keys must be between 1 and 63 characters long and must conform
+   * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+   * Label values must be between 0 and 63 characters long and must conform
+   * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+   * No more than 10 labels can be associated with a given finding.
+   * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+   * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10;</code>
+   */
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int JOB_CREATE_TIME_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp jobCreateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Time the job started that produced this finding.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+   *
+   * @return Whether the jobCreateTime field is set.
+   */
+  public boolean hasJobCreateTime() {
+    return jobCreateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Time the job started that produced this finding.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+   *
+   * @return The jobCreateTime.
+   */
+  public com.google.protobuf.Timestamp getJobCreateTime() {
+    return jobCreateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : jobCreateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Time the job started that produced this finding.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getJobCreateTimeOrBuilder() {
+    return getJobCreateTime();
+  }
+
+  public static final int JOB_NAME_FIELD_NUMBER = 13;
+  private volatile java.lang.Object jobName_;
+  /**
+   *
+   *
+   * <pre>
+   * The job that stored the finding.
+   * (-- api-linter: core::0122::name-suffix=disabled
+   *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+   *     resource names, but this has existed as part of the bigquery schema
+   *     before this rule existed. --)
+   * </pre>
+   *
+   * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The jobName.
+   */
+  public java.lang.String getJobName() {
+    java.lang.Object ref = jobName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      jobName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The job that stored the finding.
+   * (-- api-linter: core::0122::name-suffix=disabled
+   *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+   *     resource names, but this has existed as part of the bigquery schema
+   *     before this rule existed. --)
+   * </pre>
+   *
+   * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for jobName.
+   */
+  public com.google.protobuf.ByteString getJobNameBytes() {
+    java.lang.Object ref = jobName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      jobName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -484,6 +930,23 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (quoteInfo_ != null) {
       output.writeMessage(7, getQuoteInfo());
     }
+    if (!getResourceNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, resourceName_);
+    }
+    if (!getTriggerNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, triggerName_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 10);
+    if (jobCreateTime_ != null) {
+      output.writeMessage(11, getJobCreateTime());
+    }
+    if (!getJobNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, jobName_);
+    }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, name_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -511,6 +974,31 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (quoteInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getQuoteInfo());
     }
+    if (!getResourceNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, resourceName_);
+    }
+    if (!getTriggerNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, triggerName_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, labels__);
+    }
+    if (jobCreateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getJobCreateTime());
+    }
+    if (!getJobNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, jobName_);
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, name_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -526,6 +1014,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.Finding other = (com.google.privacy.dlp.v2.Finding) obj;
 
+    if (!getName().equals(other.getName())) return false;
     if (!getQuote().equals(other.getQuote())) return false;
     if (hasInfoType() != other.hasInfoType()) return false;
     if (hasInfoType()) {
@@ -544,6 +1033,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasQuoteInfo()) {
       if (!getQuoteInfo().equals(other.getQuoteInfo())) return false;
     }
+    if (!getResourceName().equals(other.getResourceName())) return false;
+    if (!getTriggerName().equals(other.getTriggerName())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasJobCreateTime() != other.hasJobCreateTime()) return false;
+    if (hasJobCreateTime()) {
+      if (!getJobCreateTime().equals(other.getJobCreateTime())) return false;
+    }
+    if (!getJobName().equals(other.getJobName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -555,6 +1052,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + QUOTE_FIELD_NUMBER;
     hash = (53 * hash) + getQuote().hashCode();
     if (hasInfoType()) {
@@ -575,6 +1074,20 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + QUOTE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getQuoteInfo().hashCode();
     }
+    hash = (37 * hash) + RESOURCE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getResourceName().hashCode();
+    hash = (37 * hash) + TRIGGER_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTriggerName().hashCode();
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasJobCreateTime()) {
+      hash = (37 * hash) + JOB_CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getJobCreateTime().hashCode();
+    }
+    hash = (37 * hash) + JOB_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getJobName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -692,6 +1205,26 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_privacy_dlp_v2_Finding_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 10:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 10:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -719,6 +1252,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       quote_ = "";
 
       if (infoTypeBuilder_ == null) {
@@ -747,6 +1282,19 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         quoteInfo_ = null;
         quoteInfoBuilder_ = null;
       }
+      resourceName_ = "";
+
+      triggerName_ = "";
+
+      internalGetMutableLabels().clear();
+      if (jobCreateTimeBuilder_ == null) {
+        jobCreateTime_ = null;
+      } else {
+        jobCreateTime_ = null;
+        jobCreateTimeBuilder_ = null;
+      }
+      jobName_ = "";
+
       return this;
     }
 
@@ -773,6 +1321,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.Finding buildPartial() {
       com.google.privacy.dlp.v2.Finding result = new com.google.privacy.dlp.v2.Finding(this);
+      int from_bitField0_ = bitField0_;
+      result.name_ = name_;
       result.quote_ = quote_;
       if (infoTypeBuilder_ == null) {
         result.infoType_ = infoType_;
@@ -795,6 +1345,16 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.quoteInfo_ = quoteInfoBuilder_.build();
       }
+      result.resourceName_ = resourceName_;
+      result.triggerName_ = triggerName_;
+      result.labels_ = internalGetLabels();
+      result.labels_.makeImmutable();
+      if (jobCreateTimeBuilder_ == null) {
+        result.jobCreateTime_ = jobCreateTime_;
+      } else {
+        result.jobCreateTime_ = jobCreateTimeBuilder_.build();
+      }
+      result.jobName_ = jobName_;
       onBuilt();
       return result;
     }
@@ -844,6 +1404,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.Finding other) {
       if (other == com.google.privacy.dlp.v2.Finding.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       if (!other.getQuote().isEmpty()) {
         quote_ = other.quote_;
         onChanged();
@@ -862,6 +1426,22 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasQuoteInfo()) {
         mergeQuoteInfo(other.getQuoteInfo());
+      }
+      if (!other.getResourceName().isEmpty()) {
+        resourceName_ = other.resourceName_;
+        onChanged();
+      }
+      if (!other.getTriggerName().isEmpty()) {
+        triggerName_ = other.triggerName_;
+        onChanged();
+      }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (other.hasJobCreateTime()) {
+        mergeJobCreateTime(other.getJobCreateTime());
+      }
+      if (!other.getJobName().isEmpty()) {
+        jobName_ = other.jobName_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -889,6 +1469,124 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int bitField0_;
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Resource name in format
+     * projects/{project}/locations/{location}/findings/{finding}
+     * Populated only when viewing persisted findings.
+     * </pre>
+     *
+     * <code>string name = 14;</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name in format
+     * projects/{project}/locations/{location}/findings/{finding}
+     * Populated only when viewing persisted findings.
+     * </pre>
+     *
+     * <code>string name = 14;</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name in format
+     * projects/{project}/locations/{location}/findings/{finding}
+     * Populated only when viewing persisted findings.
+     * </pre>
+     *
+     * <code>string name = 14;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name in format
+     * projects/{project}/locations/{location}/findings/{finding}
+     * Populated only when viewing persisted findings.
+     * </pre>
+     *
+     * <code>string name = 14;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name in format
+     * projects/{project}/locations/{location}/findings/{finding}
+     * Populated only when viewing persisted findings.
+     * </pre>
+     *
+     * <code>string name = 14;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
       return this;
     }
 
@@ -1869,6 +2567,750 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         quoteInfo_ = null;
       }
       return quoteInfoBuilder_;
+    }
+
+    private java.lang.Object resourceName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The job that stored the finding.
+     * </pre>
+     *
+     * <code>string resource_name = 8 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The resourceName.
+     */
+    public java.lang.String getResourceName() {
+      java.lang.Object ref = resourceName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The job that stored the finding.
+     * </pre>
+     *
+     * <code>string resource_name = 8 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for resourceName.
+     */
+    public com.google.protobuf.ByteString getResourceNameBytes() {
+      java.lang.Object ref = resourceName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resourceName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The job that stored the finding.
+     * </pre>
+     *
+     * <code>string resource_name = 8 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The resourceName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      resourceName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The job that stored the finding.
+     * </pre>
+     *
+     * <code>string resource_name = 8 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceName() {
+
+      resourceName_ = getDefaultInstance().getResourceName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The job that stored the finding.
+     * </pre>
+     *
+     * <code>string resource_name = 8 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for resourceName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      resourceName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object triggerName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Job trigger name, if applicable, for this finding.
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+     *     resource names, but this has existed as part of the bigquery schema
+     *     before this rule existed. --)
+     * </pre>
+     *
+     * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The triggerName.
+     */
+    public java.lang.String getTriggerName() {
+      java.lang.Object ref = triggerName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        triggerName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job trigger name, if applicable, for this finding.
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+     *     resource names, but this has existed as part of the bigquery schema
+     *     before this rule existed. --)
+     * </pre>
+     *
+     * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for triggerName.
+     */
+    public com.google.protobuf.ByteString getTriggerNameBytes() {
+      java.lang.Object ref = triggerName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        triggerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job trigger name, if applicable, for this finding.
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+     *     resource names, but this has existed as part of the bigquery schema
+     *     before this rule existed. --)
+     * </pre>
+     *
+     * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The triggerName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTriggerName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      triggerName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job trigger name, if applicable, for this finding.
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+     *     resource names, but this has existed as part of the bigquery schema
+     *     before this rule existed. --)
+     * </pre>
+     *
+     * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTriggerName() {
+
+      triggerName_ = getDefaultInstance().getTriggerName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job trigger name, if applicable, for this finding.
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+     *     resource names, but this has existed as part of the bigquery schema
+     *     before this rule existed. --)
+     * </pre>
+     *
+     * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for triggerName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTriggerNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      triggerName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      onChanged();
+      ;
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this `InspectFinding`.
+     * Label keys must be between 1 and 63 characters long and must conform
+     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * Label values must be between 0 and 63 characters long and must conform
+     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * No more than 10 labels can be associated with a given finding.
+     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10;</code>
+     */
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this `InspectFinding`.
+     * Label keys must be between 1 and 63 characters long and must conform
+     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * Label values must be between 0 and 63 characters long and must conform
+     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * No more than 10 labels can be associated with a given finding.
+     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10;</code>
+     */
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this `InspectFinding`.
+     * Label keys must be between 1 and 63 characters long and must conform
+     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * Label values must be between 0 and 63 characters long and must conform
+     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * No more than 10 labels can be associated with a given finding.
+     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10;</code>
+     */
+    public java.lang.String getLabelsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this `InspectFinding`.
+     * Label keys must be between 1 and 63 characters long and must conform
+     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * Label values must be between 0 and 63 characters long and must conform
+     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * No more than 10 labels can be associated with a given finding.
+     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10;</code>
+     */
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this `InspectFinding`.
+     * Label keys must be between 1 and 63 characters long and must conform
+     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * Label values must be between 0 and 63 characters long and must conform
+     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * No more than 10 labels can be associated with a given finding.
+     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10;</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this `InspectFinding`.
+     * Label keys must be between 1 and 63 characters long and must conform
+     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * Label values must be between 0 and 63 characters long and must conform
+     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * No more than 10 labels can be associated with a given finding.
+     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10;</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this `InspectFinding`.
+     * Label keys must be between 1 and 63 characters long and must conform
+     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * Label values must be between 0 and 63 characters long and must conform
+     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * No more than 10 labels can be associated with a given finding.
+     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
+     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10;</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp jobCreateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        jobCreateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Time the job started that produced this finding.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+     *
+     * @return Whether the jobCreateTime field is set.
+     */
+    public boolean hasJobCreateTime() {
+      return jobCreateTimeBuilder_ != null || jobCreateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time the job started that produced this finding.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+     *
+     * @return The jobCreateTime.
+     */
+    public com.google.protobuf.Timestamp getJobCreateTime() {
+      if (jobCreateTimeBuilder_ == null) {
+        return jobCreateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : jobCreateTime_;
+      } else {
+        return jobCreateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time the job started that produced this finding.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+     */
+    public Builder setJobCreateTime(com.google.protobuf.Timestamp value) {
+      if (jobCreateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobCreateTime_ = value;
+        onChanged();
+      } else {
+        jobCreateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time the job started that produced this finding.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+     */
+    public Builder setJobCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (jobCreateTimeBuilder_ == null) {
+        jobCreateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        jobCreateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time the job started that produced this finding.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+     */
+    public Builder mergeJobCreateTime(com.google.protobuf.Timestamp value) {
+      if (jobCreateTimeBuilder_ == null) {
+        if (jobCreateTime_ != null) {
+          jobCreateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(jobCreateTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          jobCreateTime_ = value;
+        }
+        onChanged();
+      } else {
+        jobCreateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time the job started that produced this finding.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+     */
+    public Builder clearJobCreateTime() {
+      if (jobCreateTimeBuilder_ == null) {
+        jobCreateTime_ = null;
+        onChanged();
+      } else {
+        jobCreateTime_ = null;
+        jobCreateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time the job started that produced this finding.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getJobCreateTimeBuilder() {
+
+      onChanged();
+      return getJobCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time the job started that produced this finding.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getJobCreateTimeOrBuilder() {
+      if (jobCreateTimeBuilder_ != null) {
+        return jobCreateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return jobCreateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : jobCreateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time the job started that produced this finding.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp job_create_time = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getJobCreateTimeFieldBuilder() {
+      if (jobCreateTimeBuilder_ == null) {
+        jobCreateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getJobCreateTime(), getParentForChildren(), isClean());
+        jobCreateTime_ = null;
+      }
+      return jobCreateTimeBuilder_;
+    }
+
+    private java.lang.Object jobName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The job that stored the finding.
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+     *     resource names, but this has existed as part of the bigquery schema
+     *     before this rule existed. --)
+     * </pre>
+     *
+     * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The jobName.
+     */
+    public java.lang.String getJobName() {
+      java.lang.Object ref = jobName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The job that stored the finding.
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+     *     resource names, but this has existed as part of the bigquery schema
+     *     before this rule existed. --)
+     * </pre>
+     *
+     * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for jobName.
+     */
+    public com.google.protobuf.ByteString getJobNameBytes() {
+      java.lang.Object ref = jobName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        jobName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The job that stored the finding.
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+     *     resource names, but this has existed as part of the bigquery schema
+     *     before this rule existed. --)
+     * </pre>
+     *
+     * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The jobName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJobName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      jobName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The job that stored the finding.
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+     *     resource names, but this has existed as part of the bigquery schema
+     *     before this rule existed. --)
+     * </pre>
+     *
+     * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearJobName() {
+
+      jobName_ = getDefaultInstance().getJobName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The job that stored the finding.
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
+     *     resource names, but this has existed as part of the bigquery schema
+     *     before this rule existed. --)
+     * </pre>
+     *
+     * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for jobName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJobNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      jobName_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
