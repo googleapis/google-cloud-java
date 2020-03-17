@@ -180,8 +180,8 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Indicates which fields in the provided topic to update. Must be specified
-   * and non-empty. Note that if `update_mask` contains
+   * Required. Indicates which fields in the provided topic to update. Must be
+   * specified and non-empty. Note that if `update_mask` contains
    * "message_storage_policy" then the new value will be determined based on the
    * policy configured at the project or organization level. The
    * `message_storage_policy` must not be set in the `topic` provided above.
@@ -199,8 +199,8 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Indicates which fields in the provided topic to update. Must be specified
-   * and non-empty. Note that if `update_mask` contains
+   * Required. Indicates which fields in the provided topic to update. Must be
+   * specified and non-empty. Note that if `update_mask` contains
    * "message_storage_policy" then the new value will be determined based on the
    * policy configured at the project or organization level. The
    * `message_storage_policy` must not be set in the `topic` provided above.
@@ -218,8 +218,8 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Indicates which fields in the provided topic to update. Must be specified
-   * and non-empty. Note that if `update_mask` contains
+   * Required. Indicates which fields in the provided topic to update. Must be
+   * specified and non-empty. Note that if `update_mask` contains
    * "message_storage_policy" then the new value will be determined based on the
    * policy configured at the project or organization level. The
    * `message_storage_policy` must not be set in the `topic` provided above.
@@ -774,8 +774,8 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Indicates which fields in the provided topic to update. Must be specified
-     * and non-empty. Note that if `update_mask` contains
+     * Required. Indicates which fields in the provided topic to update. Must be
+     * specified and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
@@ -793,8 +793,8 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Indicates which fields in the provided topic to update. Must be specified
-     * and non-empty. Note that if `update_mask` contains
+     * Required. Indicates which fields in the provided topic to update. Must be
+     * specified and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
@@ -818,8 +818,8 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Indicates which fields in the provided topic to update. Must be specified
-     * and non-empty. Note that if `update_mask` contains
+     * Required. Indicates which fields in the provided topic to update. Must be
+     * specified and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
@@ -845,8 +845,8 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Indicates which fields in the provided topic to update. Must be specified
-     * and non-empty. Note that if `update_mask` contains
+     * Required. Indicates which fields in the provided topic to update. Must be
+     * specified and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
@@ -869,8 +869,8 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Indicates which fields in the provided topic to update. Must be specified
-     * and non-empty. Note that if `update_mask` contains
+     * Required. Indicates which fields in the provided topic to update. Must be
+     * specified and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
@@ -898,8 +898,8 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Indicates which fields in the provided topic to update. Must be specified
-     * and non-empty. Note that if `update_mask` contains
+     * Required. Indicates which fields in the provided topic to update. Must be
+     * specified and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
@@ -923,8 +923,8 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Indicates which fields in the provided topic to update. Must be specified
-     * and non-empty. Note that if `update_mask` contains
+     * Required. Indicates which fields in the provided topic to update. Must be
+     * specified and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
@@ -942,8 +942,8 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Indicates which fields in the provided topic to update. Must be specified
-     * and non-empty. Note that if `update_mask` contains
+     * Required. Indicates which fields in the provided topic to update. Must be
+     * specified and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.
@@ -965,8 +965,8 @@ public final class UpdateTopicRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Indicates which fields in the provided topic to update. Must be specified
-     * and non-empty. Note that if `update_mask` contains
+     * Required. Indicates which fields in the provided topic to update. Must be
+     * specified and non-empty. Note that if `update_mask` contains
      * "message_storage_policy" then the new value will be determined based on the
      * policy configured at the project or organization level. The
      * `message_storage_policy` must not be set in the `topic` provided above.

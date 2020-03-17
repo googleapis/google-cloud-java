@@ -284,10 +284,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the topic from which this subscription is receiving messages.
-   * Format is `projects/{project}/topics/{topic}`.
-   * The value of this field will be `_deleted-topic_` if the topic has been
-   * deleted.
+   * Required. The name of the topic from which this subscription is receiving
+   * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+   * field will be `_deleted-topic_` if the topic has been deleted.
    * </pre>
    *
    * <code>
@@ -311,10 +310,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the topic from which this subscription is receiving messages.
-   * Format is `projects/{project}/topics/{topic}`.
-   * The value of this field will be `_deleted-topic_` if the topic has been
-   * deleted.
+   * Required. The name of the topic from which this subscription is receiving
+   * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+   * field will be `_deleted-topic_` if the topic has been deleted.
    * </pre>
    *
    * <code>
@@ -1420,10 +1418,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the topic from which this subscription is receiving messages.
-     * Format is `projects/{project}/topics/{topic}`.
-     * The value of this field will be `_deleted-topic_` if the topic has been
-     * deleted.
+     * Required. The name of the topic from which this subscription is receiving
+     * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+     * field will be `_deleted-topic_` if the topic has been deleted.
      * </pre>
      *
      * <code>
@@ -1447,10 +1444,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the topic from which this subscription is receiving messages.
-     * Format is `projects/{project}/topics/{topic}`.
-     * The value of this field will be `_deleted-topic_` if the topic has been
-     * deleted.
+     * Required. The name of the topic from which this subscription is receiving
+     * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+     * field will be `_deleted-topic_` if the topic has been deleted.
      * </pre>
      *
      * <code>
@@ -1474,10 +1470,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the topic from which this subscription is receiving messages.
-     * Format is `projects/{project}/topics/{topic}`.
-     * The value of this field will be `_deleted-topic_` if the topic has been
-     * deleted.
+     * Required. The name of the topic from which this subscription is receiving
+     * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+     * field will be `_deleted-topic_` if the topic has been deleted.
      * </pre>
      *
      * <code>
@@ -1500,10 +1495,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the topic from which this subscription is receiving messages.
-     * Format is `projects/{project}/topics/{topic}`.
-     * The value of this field will be `_deleted-topic_` if the topic has been
-     * deleted.
+     * Required. The name of the topic from which this subscription is receiving
+     * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+     * field will be `_deleted-topic_` if the topic has been deleted.
      * </pre>
      *
      * <code>
@@ -1522,10 +1516,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the topic from which this subscription is receiving messages.
-     * Format is `projects/{project}/topics/{topic}`.
-     * The value of this field will be `_deleted-topic_` if the topic has been
-     * deleted.
+     * Required. The name of the topic from which this subscription is receiving
+     * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+     * field will be `_deleted-topic_` if the topic has been deleted.
      * </pre>
      *
      * <code>

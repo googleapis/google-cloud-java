@@ -58,24 +58,29 @@ public interface PullRequestOrBuilder
    *
    *
    * <pre>
-   * If this field set to true, the system will respond immediately even if
-   * it there are no messages available to return in the `Pull` response.
-   * Otherwise, the system may wait (for a bounded amount of time) until at
-   * least one message is available, rather than returning no messages.
+   * Optional. If this field set to true, the system will respond immediately
+   * even if it there are no messages available to return in the `Pull`
+   * response. Otherwise, the system may wait (for a bounded amount of time)
+   * until at least one message is available, rather than returning no messages.
+   * Warning: setting this field to `true` is discouraged because it adversely
+   * impacts the performance of `Pull` operations. We recommend that users do
+   * not set this field.
    * </pre>
    *
-   * <code>bool return_immediately = 2;</code>
+   * <code>bool return_immediately = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The returnImmediately.
    */
+  @java.lang.Deprecated
   boolean getReturnImmediately();
 
   /**
    *
    *
    * <pre>
-   * Required. The maximum number of messages to return for this request. Must be a
-   * positive integer. The Pub/Sub system may return fewer than the number
+   * Required. The maximum number of messages to return for this request. Must
+   * be a positive integer. The Pub/Sub system may return fewer than the number
    * specified.
    * </pre>
    *

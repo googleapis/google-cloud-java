@@ -58,8 +58,9 @@ public interface AcknowledgeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The acknowledgment ID for the messages being acknowledged that was returned
-   * by the Pub/Sub system in the `Pull` response. Must not be empty.
+   * Required. The acknowledgment ID for the messages being acknowledged that
+   * was returned by the Pub/Sub system in the `Pull` response. Must not be
+   * empty.
    * </pre>
    *
    * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -71,8 +72,9 @@ public interface AcknowledgeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The acknowledgment ID for the messages being acknowledged that was returned
-   * by the Pub/Sub system in the `Pull` response. Must not be empty.
+   * Required. The acknowledgment ID for the messages being acknowledged that
+   * was returned by the Pub/Sub system in the `Pull` response. Must not be
+   * empty.
    * </pre>
    *
    * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -84,8 +86,9 @@ public interface AcknowledgeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The acknowledgment ID for the messages being acknowledged that was returned
-   * by the Pub/Sub system in the `Pull` response. Must not be empty.
+   * Required. The acknowledgment ID for the messages being acknowledged that
+   * was returned by the Pub/Sub system in the `Pull` response. Must not be
+   * empty.
    * </pre>
    *
    * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -98,8 +101,9 @@ public interface AcknowledgeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The acknowledgment ID for the messages being acknowledged that was returned
-   * by the Pub/Sub system in the `Pull` response. Must not be empty.
+   * Required. The acknowledgment ID for the messages being acknowledged that
+   * was returned by the Pub/Sub system in the `Pull` response. Must not be
+   * empty.
    * </pre>
    *
    * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>

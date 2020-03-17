@@ -1071,10 +1071,12 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *
    * @param subscription Required. The subscription from which messages should be pulled. Format is
    *     `projects/{project}/subscriptions/{sub}`.
-   * @param returnImmediately If this field set to true, the system will respond immediately even if
-   *     it there are no messages available to return in the `Pull` response. Otherwise, the system
-   *     may wait (for a bounded amount of time) until at least one message is available, rather
-   *     than returning no messages.
+   * @param returnImmediately Optional. If this field set to true, the system will respond
+   *     immediately even if it there are no messages available to return in the `Pull` response.
+   *     Otherwise, the system may wait (for a bounded amount of time) until at least one message is
+   *     available, rather than returning no messages. Warning: setting this field to `true` is
+   *     discouraged because it adversely impacts the performance of `Pull` operations. We recommend
+   *     that users do not set this field.
    * @param maxMessages Required. The maximum number of messages to return for this request. Must be
    *     a positive integer. The Pub/Sub system may return fewer than the number specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1108,10 +1110,12 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *
    * @param subscription Required. The subscription from which messages should be pulled. Format is
    *     `projects/{project}/subscriptions/{sub}`.
-   * @param returnImmediately If this field set to true, the system will respond immediately even if
-   *     it there are no messages available to return in the `Pull` response. Otherwise, the system
-   *     may wait (for a bounded amount of time) until at least one message is available, rather
-   *     than returning no messages.
+   * @param returnImmediately Optional. If this field set to true, the system will respond
+   *     immediately even if it there are no messages available to return in the `Pull` response.
+   *     Otherwise, the system may wait (for a bounded amount of time) until at least one message is
+   *     available, rather than returning no messages. Warning: setting this field to `true` is
+   *     discouraged because it adversely impacts the performance of `Pull` operations. We recommend
+   *     that users do not set this field.
    * @param maxMessages Required. The maximum number of messages to return for this request. Must be
    *     a positive integer. The Pub/Sub system may return fewer than the number specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

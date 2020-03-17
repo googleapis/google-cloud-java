@@ -178,16 +178,21 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If this field set to true, the system will respond immediately even if
-   * it there are no messages available to return in the `Pull` response.
-   * Otherwise, the system may wait (for a bounded amount of time) until at
-   * least one message is available, rather than returning no messages.
+   * Optional. If this field set to true, the system will respond immediately
+   * even if it there are no messages available to return in the `Pull`
+   * response. Otherwise, the system may wait (for a bounded amount of time)
+   * until at least one message is available, rather than returning no messages.
+   * Warning: setting this field to `true` is discouraged because it adversely
+   * impacts the performance of `Pull` operations. We recommend that users do
+   * not set this field.
    * </pre>
    *
-   * <code>bool return_immediately = 2;</code>
+   * <code>bool return_immediately = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The returnImmediately.
    */
+  @java.lang.Deprecated
   public boolean getReturnImmediately() {
     return returnImmediately_;
   }
@@ -198,8 +203,8 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The maximum number of messages to return for this request. Must be a
-   * positive integer. The Pub/Sub system may return fewer than the number
+   * Required. The maximum number of messages to return for this request. Must
+   * be a positive integer. The Pub/Sub system may return fewer than the number
    * specified.
    * </pre>
    *
@@ -680,16 +685,22 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If this field set to true, the system will respond immediately even if
-     * it there are no messages available to return in the `Pull` response.
-     * Otherwise, the system may wait (for a bounded amount of time) until at
-     * least one message is available, rather than returning no messages.
+     * Optional. If this field set to true, the system will respond immediately
+     * even if it there are no messages available to return in the `Pull`
+     * response. Otherwise, the system may wait (for a bounded amount of time)
+     * until at least one message is available, rather than returning no messages.
+     * Warning: setting this field to `true` is discouraged because it adversely
+     * impacts the performance of `Pull` operations. We recommend that users do
+     * not set this field.
      * </pre>
      *
-     * <code>bool return_immediately = 2;</code>
+     * <code>
+     * bool return_immediately = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The returnImmediately.
      */
+    @java.lang.Deprecated
     public boolean getReturnImmediately() {
       return returnImmediately_;
     }
@@ -697,17 +708,23 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If this field set to true, the system will respond immediately even if
-     * it there are no messages available to return in the `Pull` response.
-     * Otherwise, the system may wait (for a bounded amount of time) until at
-     * least one message is available, rather than returning no messages.
+     * Optional. If this field set to true, the system will respond immediately
+     * even if it there are no messages available to return in the `Pull`
+     * response. Otherwise, the system may wait (for a bounded amount of time)
+     * until at least one message is available, rather than returning no messages.
+     * Warning: setting this field to `true` is discouraged because it adversely
+     * impacts the performance of `Pull` operations. We recommend that users do
+     * not set this field.
      * </pre>
      *
-     * <code>bool return_immediately = 2;</code>
+     * <code>
+     * bool return_immediately = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The returnImmediately to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setReturnImmediately(boolean value) {
 
       returnImmediately_ = value;
@@ -718,16 +735,22 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If this field set to true, the system will respond immediately even if
-     * it there are no messages available to return in the `Pull` response.
-     * Otherwise, the system may wait (for a bounded amount of time) until at
-     * least one message is available, rather than returning no messages.
+     * Optional. If this field set to true, the system will respond immediately
+     * even if it there are no messages available to return in the `Pull`
+     * response. Otherwise, the system may wait (for a bounded amount of time)
+     * until at least one message is available, rather than returning no messages.
+     * Warning: setting this field to `true` is discouraged because it adversely
+     * impacts the performance of `Pull` operations. We recommend that users do
+     * not set this field.
      * </pre>
      *
-     * <code>bool return_immediately = 2;</code>
+     * <code>
+     * bool return_immediately = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearReturnImmediately() {
 
       returnImmediately_ = false;
@@ -740,8 +763,8 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The maximum number of messages to return for this request. Must be a
-     * positive integer. The Pub/Sub system may return fewer than the number
+     * Required. The maximum number of messages to return for this request. Must
+     * be a positive integer. The Pub/Sub system may return fewer than the number
      * specified.
      * </pre>
      *
@@ -756,8 +779,8 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The maximum number of messages to return for this request. Must be a
-     * positive integer. The Pub/Sub system may return fewer than the number
+     * Required. The maximum number of messages to return for this request. Must
+     * be a positive integer. The Pub/Sub system may return fewer than the number
      * specified.
      * </pre>
      *
@@ -776,8 +799,8 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The maximum number of messages to return for this request. Must be a
-     * positive integer. The Pub/Sub system may return fewer than the number
+     * Required. The maximum number of messages to return for this request. Must
+     * be a positive integer. The Pub/Sub system may return fewer than the number
      * specified.
      * </pre>
      *
