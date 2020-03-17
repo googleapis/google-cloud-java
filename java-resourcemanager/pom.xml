@@ -156,7 +156,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-cloudresourcemanager</artifactId>
-      <version>v1-rev20200210-1.30.9</version>
+      <version>v1-rev20200311-1.30.9</version>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
