@@ -1,20 +1,20 @@
 {
-  "updateTime": "2020-03-13T22:00:22.056007Z",
+  "updateTime": "2020-03-17T18:41:41.204240Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "1.1.0",
-        "dockerImage": "googleapis/artman@sha256:f54b7644a1d2e7a37b23f5c0dfe9bba473e41c675002a507a244389e27487ca9"
+        "version": "1.1.1",
+        "dockerImage": "googleapis/artman@sha256:5ef340c8d9334719bc5c6981d95f4a5d2737b0a6a24f2b9a0d430e96fff85c5b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b2e2bc62fab90e6829e62d3d189906d9b79899e4",
-        "internalRef": "300817706",
-        "log": "b2e2bc62fab90e6829e62d3d189906d9b79899e4\nUpdates to GCS gRPC API spec:\n\n1. Changed GetIamPolicy and TestBucketIamPermissions to use wrapper messages around google.iam.v1 IAM requests messages, and added CommonRequestParams. This lets us support RequesterPays buckets.\n2. Added a metadata field to GetObjectMediaResponse, to support resuming an object media read safely (by extracting the generation of the object being read, and using it in the resumed read request).\n\nPiperOrigin-RevId: 300817706\n\n7fd916ce12335cc9e784bb9452a8602d00b2516c\nAdd deprecated_collections field for backward-compatiblity in PHP and monolith-generated Python and Ruby clients.\n\nGenerate TopicName class in Java which covers the functionality of both ProjectTopicName and DeletedTopicName. Introduce breaking changes to be fixed by synth.py.\n\nDelete default retry parameters.\n\nRetry codes defs can be deleted once # https://github.com/googleapis/gapic-generator/issues/3137 is fixed.\n\nPiperOrigin-RevId: 300813135\n\n047d3a8ac7f75383855df0166144f891d7af08d9\nfix!: google/rpc refactor ErrorInfo.type to ErrorInfo.reason and comment updates.\n\nPiperOrigin-RevId: 300773211\n\nfae4bb6d5aac52aabe5f0bb4396466c2304ea6f6\nAdding RetryPolicy to pubsub.proto\n\nPiperOrigin-RevId: 300769420\n\n7d569be2928dbd72b4e261bf9e468f23afd2b950\nAdding additional protocol buffer annotations to v3.\n\nPiperOrigin-RevId: 300718800\n\n13942d1a85a337515040a03c5108993087dc0e4f\nAdd logging protos for Recommender v1.\n\nPiperOrigin-RevId: 300689896\n\na1a573c3eecfe2c404892bfa61a32dd0c9fb22b6\nfix: change go package to use cloud.google.com/go/maps\n\nPiperOrigin-RevId: 300661825\n\nc6fbac11afa0c7ab2972d9df181493875c566f77\nfeat: publish documentai/v1beta2 protos\n\nPiperOrigin-RevId: 300656808\n\n"
+        "sha": "64ab9744073de81fec1b3a6a931befc8a90edf90",
+        "internalRef": "301373760",
+        "log": "64ab9744073de81fec1b3a6a931befc8a90edf90\nFix: Introduce location-based organization/folder/billing-account resources\nChore: Update copyright years\n\nPiperOrigin-RevId: 301373760\n\n23d5f09e670ebb0c1b36214acf78704e2ecfc2ac\nUpdate field_behavior annotations in V1 and V2.\n\nPiperOrigin-RevId: 301337970\n\nb2cf37e7fd62383a811aa4d54d013ecae638851d\nData Catalog V1 API\n\nPiperOrigin-RevId: 301282503\n\n1976b9981e2900c8172b7d34b4220bdb18c5db42\nCloud DLP api update. Adds missing fields to Finding and adds support for hybrid jobs.\n\nPiperOrigin-RevId: 301205325\n\nae78682c05e864d71223ce22532219813b0245ac\nfix: several sample code blocks in comments are now properly indented for markdown\n\nPiperOrigin-RevId: 301185150\n\ndcd171d04bda5b67db13049320f97eca3ace3731\nPublish Media Translation API V1Beta1\n\nPiperOrigin-RevId: 301180096\n\nff1713453b0fbc5a7544a1ef6828c26ad21a370e\nAdd protos and BUILD rules for v1 API.\n\nPiperOrigin-RevId: 301179394\n\n8386761d09819b665b6a6e1e6d6ff884bc8ff781\nfeat: chromeos/modlab publish protos and config for Chrome OS Moblab API.\n\nPiperOrigin-RevId: 300843960\n\n"
       }
     },
     {
