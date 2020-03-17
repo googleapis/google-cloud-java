@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.120.0](https://www.github.com/googleapis/java-dataproc/compare/v0.119.0...v0.120.0) (2020-03-13)
+
+
+### Features
+
+* add LifecycleConfig, ReservationAffinity, SparkRJob, PrestoJob to v1 ([ce4bd91](https://www.github.com/googleapis/java-dataproc/commit/ce4bd9177439ff9431cec1f8e56ee2c07ab75870))
+
+
+### Dependencies
+
+* update core dependencies ([#89](https://www.github.com/googleapis/java-dataproc/issues/89)) ([0698b62](https://www.github.com/googleapis/java-dataproc/commit/0698b6262729cab28e9e95dc227669fc3f239b42))
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([574c5c5](https://www.github.com/googleapis/java-dataproc/commit/574c5c55978b3930ac083c941fba4df251959084))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([86b32ba](https://www.github.com/googleapis/java-dataproc/commit/86b32baaeee93749e8e50f623ca405bd8167b32a))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([cb1e4b7](https://www.github.com/googleapis/java-dataproc/commit/cb1e4b78c58079a6cc82fef62d993cf2b2259b38))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([9d7dddc](https://www.github.com/googleapis/java-dataproc/commit/9d7dddc630a1b4c2d1b8330fdefd2297ac802019))
+* **regen:** updated docs from proto comments ([#87](https://www.github.com/googleapis/java-dataproc/issues/87)) ([b541715](https://www.github.com/googleapis/java-dataproc/commit/b5417153daf8238fcc0833d6148d2a6ec70e2b99))
+
 ## [0.119.0](https://www.github.com/googleapis/java-dataproc/compare/v0.118.1...v0.119.0) (2020-02-04)
 
 
