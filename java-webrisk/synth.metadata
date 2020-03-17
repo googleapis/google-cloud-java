@@ -1,27 +1,28 @@
 {
-  "updateTime": "2020-03-16T17:51:44.887676Z",
+  "updateTime": "2020-03-17T19:20:05.442365Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "1.1.0",
-        "dockerImage": "googleapis/artman@sha256:f54b7644a1d2e7a37b23f5c0dfe9bba473e41c675002a507a244389e27487ca9"
+        "version": "1.1.1",
+        "dockerImage": "googleapis/artman@sha256:5ef340c8d9334719bc5c6981d95f4a5d2737b0a6a24f2b9a0d430e96fff85c5b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "ae78682c05e864d71223ce22532219813b0245ac",
-        "internalRef": "301185150"
+        "sha": "64ab9744073de81fec1b3a6a931befc8a90edf90",
+        "internalRef": "301373760"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "ae78682c05e864d71223ce22532219813b0245ac",
-        "internalRef": "301185150"
+        "sha": "64ab9744073de81fec1b3a6a931befc8a90edf90",
+        "internalRef": "301373760",
+        "log": "64ab9744073de81fec1b3a6a931befc8a90edf90\nFix: Introduce location-based organization/folder/billing-account resources\nChore: Update copyright years\n\nPiperOrigin-RevId: 301373760\n\n23d5f09e670ebb0c1b36214acf78704e2ecfc2ac\nUpdate field_behavior annotations in V1 and V2.\n\nPiperOrigin-RevId: 301337970\n\nb2cf37e7fd62383a811aa4d54d013ecae638851d\nData Catalog V1 API\n\nPiperOrigin-RevId: 301282503\n\n1976b9981e2900c8172b7d34b4220bdb18c5db42\nCloud DLP api update. Adds missing fields to Finding and adds support for hybrid jobs.\n\nPiperOrigin-RevId: 301205325\n\n"
       }
     },
     {
