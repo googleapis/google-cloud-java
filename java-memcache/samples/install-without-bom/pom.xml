@@ -31,7 +31,7 @@
       <artifactId>google-cloud-memcache</artifactId>
       <version>0.1.0</version>
     </dependency>
-    <!-- [END memcache_install_with_bom] -->
+    <!-- [END memcache_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
