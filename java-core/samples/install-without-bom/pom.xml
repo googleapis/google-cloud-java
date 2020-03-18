@@ -31,7 +31,7 @@
       <artifactId>google-cloud-core</artifactId>
       <version></version>
     </dependency>
-    <!-- [END google-cloud-core_install_with_bom] -->
+    <!-- [END google-cloud-core_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
