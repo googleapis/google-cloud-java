@@ -62,9 +62,6 @@ for version in versions:
   java.format_code('google-cloud-datastore/src')
   java.format_code(f'proto-google-cloud-{service}-{version}/src')
 
-common_templates = gcp.CommonTemplates()
-templates = common_templates.java_library()
-s.copy(templates, excludes=[
-    '.gitignore',
+java.common_templates(excludes=[
     'README.md',
 ])
