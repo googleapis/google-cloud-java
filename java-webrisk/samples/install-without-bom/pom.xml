@@ -31,7 +31,7 @@
       <artifactId>google-cloud-webrisk</artifactId>
       <version>0.33.0</version>
     </dependency>
-    <!-- [END webrisk_install_with_bom] -->
+    <!-- [END webrisk_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
