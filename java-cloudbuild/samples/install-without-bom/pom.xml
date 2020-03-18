@@ -31,7 +31,7 @@
       <artifactId>google-cloud-build</artifactId>
       <version>1.0.3</version>
     </dependency>
-    <!-- [END build_install_with_bom] -->
+    <!-- [END build_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
