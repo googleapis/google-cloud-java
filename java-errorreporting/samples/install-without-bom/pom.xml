@@ -31,7 +31,7 @@
       <artifactId>google-cloud-errorreporting</artifactId>
       <version>0.119.1-beta</version>
     </dependency>
-    <!-- [END clouderrorreporting_install_with_bom] -->
+    <!-- [END clouderrorreporting_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
