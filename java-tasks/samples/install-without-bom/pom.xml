@@ -31,7 +31,7 @@
       <artifactId>google-cloud-tasks</artifactId>
       <version>1.28.2</version>
     </dependency>
-    <!-- [END cloudtasks_install_with_bom] -->
+    <!-- [END cloudtasks_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
