@@ -31,7 +31,7 @@
       <artifactId>google-cloud-shared-config</artifactId>
       <version></version>
     </dependency>
-    <!-- [END google-cloud-shared-config_install_with_bom] -->
+    <!-- [END google-cloud-shared-config_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
