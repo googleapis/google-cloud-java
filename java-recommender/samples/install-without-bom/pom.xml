@@ -31,7 +31,7 @@
       <artifactId>google-cloud-recommender</artifactId>
       <version>0.4.0</version>
     </dependency>
-    <!-- [END google-cloud-recommender_install_with_bom] -->
+    <!-- [END google-cloud-recommender_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
