@@ -31,7 +31,7 @@
       <artifactId>google-cloud-datalabeling</artifactId>
       <version>0.118.0</version>
     </dependency>
-    <!-- [END datalabeling_install_with_bom] -->
+    <!-- [END datalabeling_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
