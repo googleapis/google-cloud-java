@@ -14,22 +14,22 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
 import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
 gapic = gcp.GAPICGenerator()
 
-service = 'bigquerydatatransfer'
+service = 'bigquery-datatransfer'
+destination_name = 'bigquerydatatransfer'
 versions = ['v1']
 
 for version in versions:
-  java.gapic_library(
-      service=service,
+  java.bazel_library(
+      service='bigquery-datatransfer',
       version=version,
-      config_pattern='/google/cloud/bigquery/datatransfer/artman_bigquerydatatransfer.yaml',
-      package_pattern='com.google.cloud.bigquery.datatransfer.{version}',
-      gapic=gapic,
+      proto_path=f'google/cloud/bigquery/datatransfer/{version}',
+      bazel_target=f'//google/cloud/bigquery/datatransfer/{version}:google-cloud-bigquery-datatransfer-{version}-java',
+      destination_name='bigquerydatatransfer',
   )
 
 java.common_templates()

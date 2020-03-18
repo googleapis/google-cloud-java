@@ -29,11 +29,10 @@
     {
       "client": {
         "source": "googleapis",
-        "apiName": "bigquerydatatransfer",
+        "apiName": "bigquery-datatransfer",
         "apiVersion": "v1",
         "language": "java",
-        "generator": "gapic",
-        "config": "google/cloud/bigquery/datatransfer/artman_bigquerydatatransfer.yaml"
+        "generator": "bazel"
       }
     }
   ]
