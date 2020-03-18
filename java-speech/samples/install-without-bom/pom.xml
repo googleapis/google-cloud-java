@@ -31,7 +31,7 @@
       <artifactId>google-cloud-speech</artifactId>
       <version>1.22.5</version>
     </dependency>
-    <!-- [END google-cloud-speech_install_with_bom] -->
+    <!-- [END google-cloud-speech_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
