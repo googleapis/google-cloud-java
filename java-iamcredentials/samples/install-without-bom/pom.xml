@@ -31,7 +31,7 @@
       <artifactId>google-cloud-iamcredentials</artifactId>
       <version>1.0.0</version>
     </dependency>
-    <!-- [END iamcredentials_install_with_bom] -->
+    <!-- [END iamcredentials_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
