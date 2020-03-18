@@ -1,0 +1,31 @@
+{
+  "updateTime": "2020-03-18T21:32:40.690474Z",
+  "sources": [
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "275fbcce2c900278d487c33293a3c7e1fbcd3a34",
+        "internalRef": "301661567"
+      }
+    },
+    {
+      "template": {
+        "name": "java_library",
+        "origin": "synthtool.gcp",
+        "version": "2020.2.4"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "securitycenter-settings",
+        "apiVersion": "v1beta1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ]
+}
