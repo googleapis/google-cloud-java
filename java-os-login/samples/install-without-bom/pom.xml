@@ -31,7 +31,7 @@
       <artifactId>google-cloud-os-login</artifactId>
       <version>1.0.0</version>
     </dependency>
-    <!-- [END oslogin_install_with_bom] -->
+    <!-- [END oslogin_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
