@@ -31,7 +31,7 @@
       <artifactId>google-cloud-translate</artifactId>
       <version>1.94.4</version>
     </dependency>
-    <!-- [END translation_install_with_bom] -->
+    <!-- [END translation_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
