@@ -31,7 +31,7 @@
       <artifactId>google-cloud-websecurityscanner</artifactId>
       <version>0.116.2</version>
     </dependency>
-    <!-- [END websecurityscanner_install_with_bom] -->
+    <!-- [END websecurityscanner_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
