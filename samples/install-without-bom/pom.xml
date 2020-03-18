@@ -31,7 +31,7 @@
       <artifactId>google-cloud-logging-logback</artifactId>
       <version></version>
     </dependency>
-    <!-- [END logging-logback_install_with_bom] -->
+    <!-- [END logging-logback_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
