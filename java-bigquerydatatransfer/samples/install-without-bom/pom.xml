@@ -31,7 +31,7 @@
       <artifactId>google-cloud-bigquerydatatransfer</artifactId>
       <version>0.125.1-beta</version>
     </dependency>
-    <!-- [END bigquerydatatransfer_install_with_bom] -->
+    <!-- [END bigquerydatatransfer_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
