@@ -16,7 +16,7 @@
 
 package com.example;
 
-import com.google.cloud.kms.v1.CryptoKeyName;
+import com.google.cloud.kms.v1.CryptoKeyPathName;
 import com.google.cloud.kms.v1.DecryptResponse;
 import com.google.cloud.kms.v1.EncryptResponse;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
@@ -41,7 +41,7 @@ public class CryptFile {
     try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
       // The resource name of the cryptoKey
-      String resourceName = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
+      String resourceName = CryptoKeyPathName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
       // Encrypt the plaintext with Cloud KMS.
       EncryptResponse response = client.encrypt(resourceName, ByteString.copyFrom(plaintext));
@@ -65,7 +65,7 @@ public class CryptFile {
     try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
       // The resource name of the cryptoKey
-      String resourceName = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
+      String resourceName = CryptoKeyPathName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
       // Decrypt the ciphertext with Cloud KMS.
       DecryptResponse response = client.decrypt(resourceName, ByteString.copyFrom(ciphertext));

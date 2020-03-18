@@ -18,7 +18,7 @@ package com.example;
 
 import com.google.cloud.kms.v1.CryptoKey;
 import com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose;
-import com.google.cloud.kms.v1.CryptoKeyName;
+import com.google.cloud.kms.v1.CryptoKeyPathName;
 import com.google.cloud.kms.v1.CryptoKeyVersion;
 import com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState;
 import com.google.cloud.kms.v1.CryptoKeyVersionName;
@@ -103,7 +103,7 @@ public class Snippets {
     try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
       // The resource name of the cryptoKey
-      String cryptoKey = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
+      String cryptoKey = CryptoKeyPathName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
       CryptoKeyVersion version = CryptoKeyVersion.newBuilder().build();
 
@@ -243,7 +243,7 @@ public class Snippets {
     try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
       // The resource name of the cryptoKey version
-      String keyName = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
+      String keyName = CryptoKeyPathName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
       // Get the current IAM policy and add the new account to it.
       Policy iamPolicy = client.getIamPolicy(keyName);
@@ -302,7 +302,7 @@ public class Snippets {
     try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
       // The resource name of the cryptoKey version
-      String keyName = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
+      String keyName = CryptoKeyPathName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
       // Get the current IAM policy
       Policy iamPolicy = client.getIamPolicy(keyName);
@@ -392,7 +392,7 @@ public class Snippets {
     try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
       // The resource name of the cryptoKey version
-      String keyName = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
+      String keyName = CryptoKeyPathName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
       // Get the current IAM policy
       Policy iamPolicy = client.getIamPolicy(keyName);
@@ -531,7 +531,7 @@ public class Snippets {
     try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
       // The resource name of the CryptoKey to search.
-      String parent = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
+      String parent = CryptoKeyPathName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
       // Retrieve a paginated list of CryptoKeyVersions
       ListCryptoKeyVersionsPagedResponse response = client.listCryptoKeyVersions(parent);
@@ -557,7 +557,7 @@ public class Snippets {
     try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
       // The resource name of the CryptoKey to update.
-      String resourceName = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
+      String resourceName = CryptoKeyPathName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
       // Update the primary CryptoKey version
       CryptoKey key = client.updateCryptoKeyPrimaryVersion(resourceName, versionId);
