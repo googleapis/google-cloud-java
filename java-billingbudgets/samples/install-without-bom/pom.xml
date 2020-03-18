@@ -31,7 +31,7 @@
       <artifactId>google-cloud-billingbudgets</artifactId>
       <version>0.2.2</version>
     </dependency>
-    <!-- [END billingbudgets_install_with_bom] -->
+    <!-- [END billingbudgets_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
