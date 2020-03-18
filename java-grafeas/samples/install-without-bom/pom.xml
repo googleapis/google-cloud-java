@@ -31,7 +31,7 @@
       <artifactId>grafeas</artifactId>
       <version></version>
     </dependency>
-    <!-- [END grafeas_install_with_bom] -->
+    <!-- [END grafeas_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
