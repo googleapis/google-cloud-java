@@ -31,7 +31,7 @@
       <artifactId>google-cloud-dialogflow</artifactId>
       <version>1.0.0</version>
     </dependency>
-    <!-- [END dialogflow_install_with_bom] -->
+    <!-- [END dialogflow_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
