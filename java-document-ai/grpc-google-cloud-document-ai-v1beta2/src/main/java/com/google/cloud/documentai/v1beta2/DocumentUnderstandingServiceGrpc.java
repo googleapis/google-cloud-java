@@ -145,19 +145,43 @@ public final class DocumentUnderstandingServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static DocumentUnderstandingServiceStub newStub(io.grpc.Channel channel) {
-    return new DocumentUnderstandingServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DocumentUnderstandingServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DocumentUnderstandingServiceStub>() {
+          @java.lang.Override
+          public DocumentUnderstandingServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DocumentUnderstandingServiceStub(channel, callOptions);
+          }
+        };
+    return DocumentUnderstandingServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static DocumentUnderstandingServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new DocumentUnderstandingServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DocumentUnderstandingServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DocumentUnderstandingServiceBlockingStub>() {
+          @java.lang.Override
+          public DocumentUnderstandingServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DocumentUnderstandingServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return DocumentUnderstandingServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static DocumentUnderstandingServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new DocumentUnderstandingServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DocumentUnderstandingServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DocumentUnderstandingServiceFutureStub>() {
+          @java.lang.Override
+          public DocumentUnderstandingServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DocumentUnderstandingServiceFutureStub(channel, callOptions);
+          }
+        };
+    return DocumentUnderstandingServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -230,11 +254,7 @@ public final class DocumentUnderstandingServiceGrpc {
    * </pre>
    */
   public static final class DocumentUnderstandingServiceStub
-      extends io.grpc.stub.AbstractStub<DocumentUnderstandingServiceStub> {
-    private DocumentUnderstandingServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<DocumentUnderstandingServiceStub> {
     private DocumentUnderstandingServiceStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -291,11 +311,7 @@ public final class DocumentUnderstandingServiceGrpc {
    * </pre>
    */
   public static final class DocumentUnderstandingServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<DocumentUnderstandingServiceBlockingStub> {
-    private DocumentUnderstandingServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<DocumentUnderstandingServiceBlockingStub> {
     private DocumentUnderstandingServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -344,11 +360,7 @@ public final class DocumentUnderstandingServiceGrpc {
    * </pre>
    */
   public static final class DocumentUnderstandingServiceFutureStub
-      extends io.grpc.stub.AbstractStub<DocumentUnderstandingServiceFutureStub> {
-    private DocumentUnderstandingServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<DocumentUnderstandingServiceFutureStub> {
     private DocumentUnderstandingServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
