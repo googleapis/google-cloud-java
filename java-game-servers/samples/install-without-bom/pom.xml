@@ -31,7 +31,7 @@
       <artifactId>google-cloud-gameservices</artifactId>
       <version>0.19.0</version>
     </dependency>
-    <!-- [END gameservices_install_with_bom] -->
+    <!-- [END gameservices_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
