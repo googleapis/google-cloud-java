@@ -31,7 +31,7 @@
       <artifactId>google-cloud-recaptchaenterprise</artifactId>
       <version>0.29.1</version>
     </dependency>
-    <!-- [END recaptcha-enterprise_install_with_bom] -->
+    <!-- [END recaptcha-enterprise_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
