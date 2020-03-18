@@ -31,7 +31,7 @@
       <artifactId>google-cloud-scheduler</artifactId>
       <version>1.22.3</version>
     </dependency>
-    <!-- [END cloudscheduler_install_with_bom] -->
+    <!-- [END cloudscheduler_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
