@@ -31,7 +31,7 @@
       <artifactId>google-cloud-resourcemanager</artifactId>
       <version>0.117.2-alpha</version>
     </dependency>
-    <!-- [END cloudresourcemanager_install_with_bom] -->
+    <!-- [END cloudresourcemanager_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
