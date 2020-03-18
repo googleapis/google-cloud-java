@@ -18,6 +18,7 @@ import synthtool.languages.java as java
 
 java.common_templates(excludes=[
     'README.md',
+    'samples/*',
     '.kokoro/continuous/java8-samples.cfg',
     '.kokoro/continuous/java11-samples.cfg',
     '.kokoro/nightly/java8-samples.cfg',
