@@ -31,7 +31,7 @@
       <artifactId>google-cloud-dns</artifactId>
       <version></version>
     </dependency>
-    <!-- [END dns_install_with_bom] -->
+    <!-- [END dns_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
