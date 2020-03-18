@@ -31,7 +31,7 @@
       <artifactId>google-cloud-redis</artifactId>
       <version>1.0.0</version>
     </dependency>
-    <!-- [END redis_install_with_bom] -->
+    <!-- [END redis_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
