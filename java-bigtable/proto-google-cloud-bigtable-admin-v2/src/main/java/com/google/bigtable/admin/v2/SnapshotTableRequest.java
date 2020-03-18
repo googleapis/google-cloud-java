@@ -165,7 +165,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -189,7 +191,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -216,7 +220,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *
-   * <code>string cluster = 2;</code>
+   * <code>
+   * string cluster = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The cluster.
    */
@@ -240,7 +246,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *
-   * <code>string cluster = 2;</code>
+   * <code>
+   * string cluster = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for cluster.
    */
@@ -268,7 +276,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * </pre>
    *
-   * <code>string snapshot_id = 3;</code>
+   * <code>string snapshot_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The snapshotId.
    */
@@ -293,7 +301,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * </pre>
    *
-   * <code>string snapshot_id = 3;</code>
+   * <code>string snapshot_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for snapshotId.
    */
@@ -817,7 +825,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -841,7 +851,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -865,7 +877,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -888,7 +902,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -907,7 +923,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -933,7 +951,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
      *
-     * <code>string cluster = 2;</code>
+     * <code>
+     * string cluster = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The cluster.
      */
@@ -957,7 +977,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
      *
-     * <code>string cluster = 2;</code>
+     * <code>
+     * string cluster = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for cluster.
      */
@@ -981,7 +1003,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
      *
-     * <code>string cluster = 2;</code>
+     * <code>
+     * string cluster = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The cluster to set.
      * @return This builder for chaining.
@@ -1004,7 +1028,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
      *
-     * <code>string cluster = 2;</code>
+     * <code>
+     * string cluster = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1023,7 +1049,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
      *
-     * <code>string cluster = 2;</code>
+     * <code>
+     * string cluster = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for cluster to set.
      * @return This builder for chaining.
@@ -1050,7 +1078,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
      * </pre>
      *
-     * <code>string snapshot_id = 3;</code>
+     * <code>string snapshot_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The snapshotId.
      */
@@ -1075,7 +1103,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
      * </pre>
      *
-     * <code>string snapshot_id = 3;</code>
+     * <code>string snapshot_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for snapshotId.
      */
@@ -1100,7 +1128,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
      * </pre>
      *
-     * <code>string snapshot_id = 3;</code>
+     * <code>string snapshot_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The snapshotId to set.
      * @return This builder for chaining.
@@ -1124,7 +1152,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
      * </pre>
      *
-     * <code>string snapshot_id = 3;</code>
+     * <code>string snapshot_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1144,7 +1172,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
      * </pre>
      *
-     * <code>string snapshot_id = 3;</code>
+     * <code>string snapshot_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for snapshotId to set.
      * @return This builder for chaining.

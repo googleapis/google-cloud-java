@@ -32,7 +32,9 @@ public interface SnapshotTableRequestOrBuilder
    * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -46,7 +48,9 @@ public interface SnapshotTableRequestOrBuilder
    * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -61,7 +65,9 @@ public interface SnapshotTableRequestOrBuilder
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *
-   * <code>string cluster = 2;</code>
+   * <code>
+   * string cluster = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The cluster.
    */
@@ -75,7 +81,9 @@ public interface SnapshotTableRequestOrBuilder
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *
-   * <code>string cluster = 2;</code>
+   * <code>
+   * string cluster = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for cluster.
    */
@@ -91,7 +99,7 @@ public interface SnapshotTableRequestOrBuilder
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * </pre>
    *
-   * <code>string snapshot_id = 3;</code>
+   * <code>string snapshot_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The snapshotId.
    */
@@ -106,7 +114,7 @@ public interface SnapshotTableRequestOrBuilder
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * </pre>
    *
-   * <code>string snapshot_id = 3;</code>
+   * <code>string snapshot_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for snapshotId.
    */

@@ -56,6 +56,13 @@
     },
     {
       "packagePatterns": [
+        "^com.google.cloud:libraries-bom"
+      ],
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "deps"
+    },
+    {
+      "packagePatterns": [
         "^com.google.cloud:google-cloud-"
       ],
       "ignoreUnstable": false
