@@ -1,0 +1,14 @@
+{
+  "name": "mediatranslation",
+  "name_pretty": "Media Translation API",
+  "product_documentation": "https://cloud.google.com/",
+  "api_description": "provides enterprise quality translation from/to various media types.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-mediatranslation/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-mediatranslation",
+  "repo_short": "java-mediatranslation",
+  "distribution_name": "com.google.cloud:google-cloud-mediatranslation",
+  "api_id": "mediatranslation.googleapis.com"
+}
