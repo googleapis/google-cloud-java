@@ -422,19 +422,43 @@ public final class AccessApprovalGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static AccessApprovalStub newStub(io.grpc.Channel channel) {
-    return new AccessApprovalStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AccessApprovalStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AccessApprovalStub>() {
+          @java.lang.Override
+          public AccessApprovalStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AccessApprovalStub(channel, callOptions);
+          }
+        };
+    return AccessApprovalStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static AccessApprovalBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new AccessApprovalBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AccessApprovalBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AccessApprovalBlockingStub>() {
+          @java.lang.Override
+          public AccessApprovalBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AccessApprovalBlockingStub(channel, callOptions);
+          }
+        };
+    return AccessApprovalBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static AccessApprovalFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new AccessApprovalFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AccessApprovalFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AccessApprovalFutureStub>() {
+          @java.lang.Override
+          public AccessApprovalFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AccessApprovalFutureStub(channel, callOptions);
+          }
+        };
+    return AccessApprovalFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -676,11 +700,7 @@ public final class AccessApprovalGrpc {
    * </pre>
    */
   public static final class AccessApprovalStub
-      extends io.grpc.stub.AbstractStub<AccessApprovalStub> {
-    private AccessApprovalStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<AccessApprovalStub> {
     private AccessApprovalStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -860,11 +880,7 @@ public final class AccessApprovalGrpc {
    * </pre>
    */
   public static final class AccessApprovalBlockingStub
-      extends io.grpc.stub.AbstractStub<AccessApprovalBlockingStub> {
-    private AccessApprovalBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<AccessApprovalBlockingStub> {
     private AccessApprovalBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1018,11 +1034,7 @@ public final class AccessApprovalGrpc {
    * </pre>
    */
   public static final class AccessApprovalFutureStub
-      extends io.grpc.stub.AbstractStub<AccessApprovalFutureStub> {
-    private AccessApprovalFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<AccessApprovalFutureStub> {
     private AccessApprovalFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
