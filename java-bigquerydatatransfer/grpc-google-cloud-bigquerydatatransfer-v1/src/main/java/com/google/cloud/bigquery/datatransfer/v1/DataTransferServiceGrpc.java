@@ -727,19 +727,43 @@ public final class DataTransferServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static DataTransferServiceStub newStub(io.grpc.Channel channel) {
-    return new DataTransferServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DataTransferServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataTransferServiceStub>() {
+          @java.lang.Override
+          public DataTransferServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataTransferServiceStub(channel, callOptions);
+          }
+        };
+    return DataTransferServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static DataTransferServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new DataTransferServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DataTransferServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataTransferServiceBlockingStub>() {
+          @java.lang.Override
+          public DataTransferServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataTransferServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return DataTransferServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static DataTransferServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new DataTransferServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DataTransferServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataTransferServiceFutureStub>() {
+          @java.lang.Override
+          public DataTransferServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataTransferServiceFutureStub(channel, callOptions);
+          }
+        };
+    return DataTransferServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -1086,11 +1110,7 @@ public final class DataTransferServiceGrpc {
    * </pre>
    */
   public static final class DataTransferServiceStub
-      extends io.grpc.stub.AbstractStub<DataTransferServiceStub> {
-    private DataTransferServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<DataTransferServiceStub> {
     private DataTransferServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1373,11 +1393,7 @@ public final class DataTransferServiceGrpc {
    * </pre>
    */
   public static final class DataTransferServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<DataTransferServiceBlockingStub> {
-    private DataTransferServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<DataTransferServiceBlockingStub> {
     private DataTransferServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -1599,11 +1615,7 @@ public final class DataTransferServiceGrpc {
    * </pre>
    */
   public static final class DataTransferServiceFutureStub
-      extends io.grpc.stub.AbstractStub<DataTransferServiceFutureStub> {
-    private DataTransferServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<DataTransferServiceFutureStub> {
     private DataTransferServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
