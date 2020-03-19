@@ -137,19 +137,43 @@ public final class AssetServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static AssetServiceStub newStub(io.grpc.Channel channel) {
-    return new AssetServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AssetServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AssetServiceStub>() {
+          @java.lang.Override
+          public AssetServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AssetServiceStub(channel, callOptions);
+          }
+        };
+    return AssetServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static AssetServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new AssetServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingStub>() {
+          @java.lang.Override
+          public AssetServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AssetServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return AssetServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static AssetServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new AssetServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AssetServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AssetServiceFutureStub>() {
+          @java.lang.Override
+          public AssetServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AssetServiceFutureStub(channel, callOptions);
+          }
+        };
+    return AssetServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -219,11 +243,8 @@ public final class AssetServiceGrpc {
    * Asset service definition.
    * </pre>
    */
-  public static final class AssetServiceStub extends io.grpc.stub.AbstractStub<AssetServiceStub> {
-    private AssetServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class AssetServiceStub
+      extends io.grpc.stub.AbstractAsyncStub<AssetServiceStub> {
     private AssetServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -279,11 +300,7 @@ public final class AssetServiceGrpc {
    * </pre>
    */
   public static final class AssetServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<AssetServiceBlockingStub> {
-    private AssetServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<AssetServiceBlockingStub> {
     private AssetServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -333,11 +350,7 @@ public final class AssetServiceGrpc {
    * </pre>
    */
   public static final class AssetServiceFutureStub
-      extends io.grpc.stub.AbstractStub<AssetServiceFutureStub> {
-    private AssetServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<AssetServiceFutureStub> {
     private AssetServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
