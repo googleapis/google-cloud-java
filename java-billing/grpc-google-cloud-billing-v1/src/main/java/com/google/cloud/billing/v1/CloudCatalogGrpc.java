@@ -130,19 +130,43 @@ public final class CloudCatalogGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static CloudCatalogStub newStub(io.grpc.Channel channel) {
-    return new CloudCatalogStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudCatalogStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudCatalogStub>() {
+          @java.lang.Override
+          public CloudCatalogStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudCatalogStub(channel, callOptions);
+          }
+        };
+    return CloudCatalogStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static CloudCatalogBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new CloudCatalogBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudCatalogBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudCatalogBlockingStub>() {
+          @java.lang.Override
+          public CloudCatalogBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudCatalogBlockingStub(channel, callOptions);
+          }
+        };
+    return CloudCatalogBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static CloudCatalogFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new CloudCatalogFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudCatalogFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudCatalogFutureStub>() {
+          @java.lang.Override
+          public CloudCatalogFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudCatalogFutureStub(channel, callOptions);
+          }
+        };
+    return CloudCatalogFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -213,11 +237,8 @@ public final class CloudCatalogGrpc {
    * and SKUs.
    * </pre>
    */
-  public static final class CloudCatalogStub extends io.grpc.stub.AbstractStub<CloudCatalogStub> {
-    private CloudCatalogStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class CloudCatalogStub
+      extends io.grpc.stub.AbstractAsyncStub<CloudCatalogStub> {
     private CloudCatalogStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -270,11 +291,7 @@ public final class CloudCatalogGrpc {
    * </pre>
    */
   public static final class CloudCatalogBlockingStub
-      extends io.grpc.stub.AbstractStub<CloudCatalogBlockingStub> {
-    private CloudCatalogBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<CloudCatalogBlockingStub> {
     private CloudCatalogBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -320,11 +337,7 @@ public final class CloudCatalogGrpc {
    * </pre>
    */
   public static final class CloudCatalogFutureStub
-      extends io.grpc.stub.AbstractStub<CloudCatalogFutureStub> {
-    private CloudCatalogFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<CloudCatalogFutureStub> {
     private CloudCatalogFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }

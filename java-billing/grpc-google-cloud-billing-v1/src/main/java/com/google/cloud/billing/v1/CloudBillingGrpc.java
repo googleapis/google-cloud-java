@@ -499,19 +499,43 @@ public final class CloudBillingGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static CloudBillingStub newStub(io.grpc.Channel channel) {
-    return new CloudBillingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudBillingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudBillingStub>() {
+          @java.lang.Override
+          public CloudBillingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudBillingStub(channel, callOptions);
+          }
+        };
+    return CloudBillingStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static CloudBillingBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new CloudBillingBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudBillingBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudBillingBlockingStub>() {
+          @java.lang.Override
+          public CloudBillingBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudBillingBlockingStub(channel, callOptions);
+          }
+        };
+    return CloudBillingBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static CloudBillingFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new CloudBillingFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudBillingFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudBillingFutureStub>() {
+          @java.lang.Override
+          public CloudBillingFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudBillingFutureStub(channel, callOptions);
+          }
+        };
+    return CloudBillingFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -799,11 +823,8 @@ public final class CloudBillingGrpc {
    * Retrieves GCP Console billing accounts and associates them with projects.
    * </pre>
    */
-  public static final class CloudBillingStub extends io.grpc.stub.AbstractStub<CloudBillingStub> {
-    private CloudBillingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class CloudBillingStub
+      extends io.grpc.stub.AbstractAsyncStub<CloudBillingStub> {
     private CloudBillingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1046,11 +1067,7 @@ public final class CloudBillingGrpc {
    * </pre>
    */
   public static final class CloudBillingBlockingStub
-      extends io.grpc.stub.AbstractStub<CloudBillingBlockingStub> {
-    private CloudBillingBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<CloudBillingBlockingStub> {
     private CloudBillingBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1255,11 +1272,7 @@ public final class CloudBillingGrpc {
    * </pre>
    */
   public static final class CloudBillingFutureStub
-      extends io.grpc.stub.AbstractStub<CloudBillingFutureStub> {
-    private CloudBillingFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<CloudBillingFutureStub> {
     private CloudBillingFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
