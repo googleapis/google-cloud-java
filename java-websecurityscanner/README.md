@@ -26,12 +26,13 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     </dependency>
   </dependencies>
 </dependencyManagement>
+
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-websecurityscanner</artifactId>
   </dependency>
-</dependencies>
+
 ```
 
 [//]: # ({x-version-update-start:google-cloud-websecurityscanner:released})
@@ -44,6 +45,7 @@ If you are using Maven without BOM, add this to your dependencies:
   <artifactId>google-cloud-websecurityscanner</artifactId>
   <version>0.116.2</version>
 </dependency>
+
 ```
 
 If you are using Gradle, add this to your dependencies
