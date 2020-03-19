@@ -89,19 +89,43 @@ public final class VideoIntelligenceServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static VideoIntelligenceServiceStub newStub(io.grpc.Channel channel) {
-    return new VideoIntelligenceServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<VideoIntelligenceServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VideoIntelligenceServiceStub>() {
+          @java.lang.Override
+          public VideoIntelligenceServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VideoIntelligenceServiceStub(channel, callOptions);
+          }
+        };
+    return VideoIntelligenceServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static VideoIntelligenceServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new VideoIntelligenceServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<VideoIntelligenceServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VideoIntelligenceServiceBlockingStub>() {
+          @java.lang.Override
+          public VideoIntelligenceServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VideoIntelligenceServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return VideoIntelligenceServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static VideoIntelligenceServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new VideoIntelligenceServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<VideoIntelligenceServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VideoIntelligenceServiceFutureStub>() {
+          @java.lang.Override
+          public VideoIntelligenceServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VideoIntelligenceServiceFutureStub(channel, callOptions);
+          }
+        };
+    return VideoIntelligenceServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -150,11 +174,7 @@ public final class VideoIntelligenceServiceGrpc {
    * </pre>
    */
   public static final class VideoIntelligenceServiceStub
-      extends io.grpc.stub.AbstractStub<VideoIntelligenceServiceStub> {
-    private VideoIntelligenceServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<VideoIntelligenceServiceStub> {
     private VideoIntelligenceServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -193,11 +213,7 @@ public final class VideoIntelligenceServiceGrpc {
    * </pre>
    */
   public static final class VideoIntelligenceServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<VideoIntelligenceServiceBlockingStub> {
-    private VideoIntelligenceServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<VideoIntelligenceServiceBlockingStub> {
     private VideoIntelligenceServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -233,11 +249,7 @@ public final class VideoIntelligenceServiceGrpc {
    * </pre>
    */
   public static final class VideoIntelligenceServiceFutureStub
-      extends io.grpc.stub.AbstractStub<VideoIntelligenceServiceFutureStub> {
-    private VideoIntelligenceServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<VideoIntelligenceServiceFutureStub> {
     private VideoIntelligenceServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);

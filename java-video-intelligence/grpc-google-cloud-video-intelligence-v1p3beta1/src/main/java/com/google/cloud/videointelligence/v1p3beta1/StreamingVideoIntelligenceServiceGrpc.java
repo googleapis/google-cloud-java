@@ -96,7 +96,15 @@ public final class StreamingVideoIntelligenceServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static StreamingVideoIntelligenceServiceStub newStub(io.grpc.Channel channel) {
-    return new StreamingVideoIntelligenceServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<StreamingVideoIntelligenceServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<StreamingVideoIntelligenceServiceStub>() {
+          @java.lang.Override
+          public StreamingVideoIntelligenceServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new StreamingVideoIntelligenceServiceStub(channel, callOptions);
+          }
+        };
+    return StreamingVideoIntelligenceServiceStub.newStub(factory, channel);
   }
 
   /**
@@ -104,12 +112,28 @@ public final class StreamingVideoIntelligenceServiceGrpc {
    */
   public static StreamingVideoIntelligenceServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new StreamingVideoIntelligenceServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<StreamingVideoIntelligenceServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<StreamingVideoIntelligenceServiceBlockingStub>() {
+          @java.lang.Override
+          public StreamingVideoIntelligenceServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new StreamingVideoIntelligenceServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return StreamingVideoIntelligenceServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static StreamingVideoIntelligenceServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new StreamingVideoIntelligenceServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<StreamingVideoIntelligenceServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<StreamingVideoIntelligenceServiceFutureStub>() {
+          @java.lang.Override
+          public StreamingVideoIntelligenceServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new StreamingVideoIntelligenceServiceFutureStub(channel, callOptions);
+          }
+        };
+    return StreamingVideoIntelligenceServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -162,11 +186,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
    * </pre>
    */
   public static final class StreamingVideoIntelligenceServiceStub
-      extends io.grpc.stub.AbstractStub<StreamingVideoIntelligenceServiceStub> {
-    private StreamingVideoIntelligenceServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<StreamingVideoIntelligenceServiceStub> {
     private StreamingVideoIntelligenceServiceStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -207,11 +227,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
    * </pre>
    */
   public static final class StreamingVideoIntelligenceServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<StreamingVideoIntelligenceServiceBlockingStub> {
-    private StreamingVideoIntelligenceServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<StreamingVideoIntelligenceServiceBlockingStub> {
     private StreamingVideoIntelligenceServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -232,11 +248,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
    * </pre>
    */
   public static final class StreamingVideoIntelligenceServiceFutureStub
-      extends io.grpc.stub.AbstractStub<StreamingVideoIntelligenceServiceFutureStub> {
-    private StreamingVideoIntelligenceServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<StreamingVideoIntelligenceServiceFutureStub> {
     private StreamingVideoIntelligenceServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
