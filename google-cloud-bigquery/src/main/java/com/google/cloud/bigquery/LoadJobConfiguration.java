@@ -54,6 +54,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private final Map<String, String> labels;
   private final Long jobTimeoutMs;
   private final RangePartitioning rangePartitioning;
+  private final HivePartitioningOptions hivePartitioningOptions;
 
   public static final class Builder extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
       implements LoadConfiguration.Builder {
@@ -77,6 +78,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     private Map<String, String> labels;
     private Long jobTimeoutMs;
     private RangePartitioning rangePartitioning;
+    private HivePartitioningOptions hivePartitioningOptions;
 
     private Builder() {
       super(Type.LOAD);
@@ -103,6 +105,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.labels = loadConfiguration.labels;
       this.jobTimeoutMs = loadConfiguration.jobTimeoutMs;
       this.rangePartitioning = loadConfiguration.rangePartitioning;
+      this.hivePartitioningOptions = loadConfiguration.hivePartitioningOptions;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -185,6 +188,10 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       if (loadConfigurationPb.getRangePartitioning() != null) {
         this.rangePartitioning =
             RangePartitioning.fromPb(loadConfigurationPb.getRangePartitioning());
+      }
+      if (loadConfigurationPb.getHivePartitioningOptions() != null) {
+        this.hivePartitioningOptions =
+            HivePartitioningOptions.fromPb(loadConfigurationPb.getHivePartitioningOptions());
       }
     }
 
@@ -319,6 +326,11 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
+    public Builder setHivePartitioningOptions(HivePartitioningOptions hivePartitioningOptions) {
+      this.hivePartitioningOptions = hivePartitioningOptions;
+      return this;
+    }
+
     @Override
     public LoadJobConfiguration build() {
       return new LoadJobConfiguration(this);
@@ -345,6 +357,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.labels = builder.labels;
     this.jobTimeoutMs = builder.jobTimeoutMs;
     this.rangePartitioning = builder.rangePartitioning;
+    this.hivePartitioningOptions = builder.hivePartitioningOptions;
   }
 
   @Override
@@ -452,6 +465,10 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return rangePartitioning;
   }
 
+  public HivePartitioningOptions getHivePartitioningOptions() {
+    return hivePartitioningOptions;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -477,7 +494,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .add("useAvroLogicalTypes", useAvroLogicalTypes)
         .add("labels", labels)
         .add("jobTimeoutMs", jobTimeoutMs)
-        .add("rangePartitioning", rangePartitioning);
+        .add("rangePartitioning", rangePartitioning)
+        .add("hivePartitioningOptions", hivePartitioningOptions);
   }
 
   @Override
@@ -569,6 +587,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
     if (rangePartitioning != null) {
       loadConfigurationPb.setRangePartitioning(rangePartitioning.toPb());
+    }
+    if (hivePartitioningOptions != null) {
+      loadConfigurationPb.setHivePartitioningOptions(hivePartitioningOptions.toPb());
     }
     jobConfiguration.setLoad(loadConfigurationPb);
     return jobConfiguration;
