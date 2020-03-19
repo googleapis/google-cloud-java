@@ -368,19 +368,43 @@ public final class CloudMemcacheGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static CloudMemcacheStub newStub(io.grpc.Channel channel) {
-    return new CloudMemcacheStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudMemcacheStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudMemcacheStub>() {
+          @java.lang.Override
+          public CloudMemcacheStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudMemcacheStub(channel, callOptions);
+          }
+        };
+    return CloudMemcacheStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static CloudMemcacheBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new CloudMemcacheBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudMemcacheBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudMemcacheBlockingStub>() {
+          @java.lang.Override
+          public CloudMemcacheBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudMemcacheBlockingStub(channel, callOptions);
+          }
+        };
+    return CloudMemcacheBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static CloudMemcacheFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new CloudMemcacheFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudMemcacheFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudMemcacheFutureStub>() {
+          @java.lang.Override
+          public CloudMemcacheFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudMemcacheFutureStub(channel, callOptions);
+          }
+        };
+    return CloudMemcacheFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -566,11 +590,8 @@ public final class CloudMemcacheGrpc {
    * * `projects/my-memcached-project/locations/us-central1/instances/my-memcached`
    * </pre>
    */
-  public static final class CloudMemcacheStub extends io.grpc.stub.AbstractStub<CloudMemcacheStub> {
-    private CloudMemcacheStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class CloudMemcacheStub
+      extends io.grpc.stub.AbstractAsyncStub<CloudMemcacheStub> {
     private CloudMemcacheStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -716,11 +737,7 @@ public final class CloudMemcacheGrpc {
    * </pre>
    */
   public static final class CloudMemcacheBlockingStub
-      extends io.grpc.stub.AbstractStub<CloudMemcacheBlockingStub> {
-    private CloudMemcacheBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<CloudMemcacheBlockingStub> {
     private CloudMemcacheBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -839,11 +856,7 @@ public final class CloudMemcacheGrpc {
    * </pre>
    */
   public static final class CloudMemcacheFutureStub
-      extends io.grpc.stub.AbstractStub<CloudMemcacheFutureStub> {
-    private CloudMemcacheFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<CloudMemcacheFutureStub> {
     private CloudMemcacheFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
