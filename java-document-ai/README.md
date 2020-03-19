@@ -26,12 +26,13 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     </dependency>
   </dependencies>
 </dependencyManagement>
+
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-document-ai</artifactId>
   </dependency>
-</dependencies>
+
 ```
 
 [//]: # ({x-version-update-start:google-cloud-document-ai:released})
@@ -44,6 +45,7 @@ If you are using Maven without BOM, add this to your dependencies:
   <artifactId>google-cloud-document-ai</artifactId>
   <version>0.1.0</version>
 </dependency>
+
 ```
 
 If you are using Gradle, add this to your dependencies
