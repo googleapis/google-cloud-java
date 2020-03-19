@@ -168,12 +168,12 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Required. Rules that trigger alerts (notifications of thresholds
+   * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.cloud.billing.budgets.v1beta1.ThresholdRule> getThresholdRulesList();
@@ -181,12 +181,12 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Required. Rules that trigger alerts (notifications of thresholds
+   * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.billing.budgets.v1beta1.ThresholdRule getThresholdRules(int index);
@@ -194,12 +194,12 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Required. Rules that trigger alerts (notifications of thresholds
+   * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getThresholdRulesCount();
@@ -207,12 +207,12 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Required. Rules that trigger alerts (notifications of thresholds
+   * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<? extends com.google.cloud.billing.budgets.v1beta1.ThresholdRuleOrBuilder>
@@ -221,12 +221,12 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Required. Rules that trigger alerts (notifications of thresholds
+   * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.billing.budgets.v1beta1.ThresholdRuleOrBuilder getThresholdRulesOrBuilder(

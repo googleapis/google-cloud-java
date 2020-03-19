@@ -411,12 +411,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Rules that trigger alerts (notifications of thresholds
+   * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public java.util.List<com.google.cloud.billing.budgets.v1beta1.ThresholdRule>
@@ -427,12 +427,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Rules that trigger alerts (notifications of thresholds
+   * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public java.util.List<? extends com.google.cloud.billing.budgets.v1beta1.ThresholdRuleOrBuilder>
@@ -443,12 +443,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Rules that trigger alerts (notifications of thresholds
+   * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public int getThresholdRulesCount() {
@@ -458,12 +458,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Rules that trigger alerts (notifications of thresholds
+   * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.billing.budgets.v1beta1.ThresholdRule getThresholdRules(int index) {
@@ -473,12 +473,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Rules that trigger alerts (notifications of thresholds
+   * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.billing.budgets.v1beta1.ThresholdRuleOrBuilder getThresholdRulesOrBuilder(
@@ -1753,12 +1753,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.billing.budgets.v1beta1.ThresholdRule>
@@ -1773,12 +1773,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getThresholdRulesCount() {
@@ -1792,12 +1792,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.billing.budgets.v1beta1.ThresholdRule getThresholdRules(int index) {
@@ -1811,12 +1811,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setThresholdRules(
@@ -1837,12 +1837,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setThresholdRules(
@@ -1860,12 +1860,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addThresholdRules(com.google.cloud.billing.budgets.v1beta1.ThresholdRule value) {
@@ -1885,12 +1885,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addThresholdRules(
@@ -1911,12 +1911,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addThresholdRules(
@@ -1934,12 +1934,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addThresholdRules(
@@ -1957,12 +1957,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllThresholdRules(
@@ -1981,12 +1981,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearThresholdRules() {
@@ -2003,12 +2003,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeThresholdRules(int index) {
@@ -2025,12 +2025,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Builder getThresholdRulesBuilder(
@@ -2041,12 +2041,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.billing.budgets.v1beta1.ThresholdRuleOrBuilder
@@ -2061,12 +2061,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<? extends com.google.cloud.billing.budgets.v1beta1.ThresholdRuleOrBuilder>
@@ -2081,12 +2081,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Builder
@@ -2098,12 +2098,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Builder addThresholdRulesBuilder(
@@ -2116,12 +2116,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Rules that trigger alerts (notifications of thresholds
+     * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Builder>

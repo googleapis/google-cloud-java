@@ -71,7 +71,7 @@ public final class BudgetModel {
           + "(\01322.google.cloud.billing.budgets.v1beta"
           + "1.BudgetAmountB\003\340A\002\022Q\n\017threshold_rules\030\005"
           + " \003(\01323.google.cloud.billing.budgets.v1be"
-          + "ta1.ThresholdRuleB\003\340A\002\022S\n\020all_updates_ru"
+          + "ta1.ThresholdRuleB\003\340A\001\022S\n\020all_updates_ru"
           + "le\030\006 \001(\01324.google.cloud.billing.budgets."
           + "v1beta1.AllUpdatesRuleB\003\340A\001\022\021\n\004etag\030\007 \001("
           + "\tB\003\340A\001:]\352AZ\n$billingbudgets.googleapis.c"

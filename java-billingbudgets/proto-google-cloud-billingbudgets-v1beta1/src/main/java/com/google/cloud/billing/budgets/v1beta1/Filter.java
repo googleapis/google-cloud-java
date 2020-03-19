@@ -291,7 +291,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of projects of the form `projects/{project_id}`,
+   * Optional. A set of projects of the form `projects/{project}`,
    * specifying that usage from only this set of projects should be
    * included in the budget. If omitted, the report will include all usage for
    * the billing account, regardless of which project the usage occurred on.
@@ -309,7 +309,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of projects of the form `projects/{project_id}`,
+   * Optional. A set of projects of the form `projects/{project}`,
    * specifying that usage from only this set of projects should be
    * included in the budget. If omitted, the report will include all usage for
    * the billing account, regardless of which project the usage occurred on.
@@ -327,7 +327,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of projects of the form `projects/{project_id}`,
+   * Optional. A set of projects of the form `projects/{project}`,
    * specifying that usage from only this set of projects should be
    * included in the budget. If omitted, the report will include all usage for
    * the billing account, regardless of which project the usage occurred on.
@@ -346,7 +346,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of projects of the form `projects/{project_id}`,
+   * Optional. A set of projects of the form `projects/{project}`,
    * specifying that usage from only this set of projects should be
    * included in the budget. If omitted, the report will include all usage for
    * the billing account, regardless of which project the usage occurred on.
@@ -889,7 +889,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of projects of the form `projects/{project_id}`,
+     * Optional. A set of projects of the form `projects/{project}`,
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
@@ -907,7 +907,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of projects of the form `projects/{project_id}`,
+     * Optional. A set of projects of the form `projects/{project}`,
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
@@ -925,7 +925,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of projects of the form `projects/{project_id}`,
+     * Optional. A set of projects of the form `projects/{project}`,
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
@@ -944,7 +944,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of projects of the form `projects/{project_id}`,
+     * Optional. A set of projects of the form `projects/{project}`,
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
@@ -963,7 +963,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of projects of the form `projects/{project_id}`,
+     * Optional. A set of projects of the form `projects/{project}`,
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
@@ -989,7 +989,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of projects of the form `projects/{project_id}`,
+     * Optional. A set of projects of the form `projects/{project}`,
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
@@ -1014,7 +1014,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of projects of the form `projects/{project_id}`,
+     * Optional. A set of projects of the form `projects/{project}`,
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
@@ -1036,7 +1036,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of projects of the form `projects/{project_id}`,
+     * Optional. A set of projects of the form `projects/{project}`,
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
@@ -1057,7 +1057,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of projects of the form `projects/{project_id}`,
+     * Optional. A set of projects of the form `projects/{project}`,
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.

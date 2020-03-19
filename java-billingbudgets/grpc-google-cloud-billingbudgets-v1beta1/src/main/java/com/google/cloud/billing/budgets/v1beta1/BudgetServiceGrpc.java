@@ -372,6 +372,9 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Updates a budget and returns the updated budget.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren’t available on this API. Budget fields that are not exposed in
+     * this API will not be changed by this method.
      * </pre>
      */
     public void updateBudget(
@@ -386,6 +389,10 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Returns a budget.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren’t available on this API. When reading from the API, you will not
+     * see these fields in the return value, though they may have been set
+     * in the Cloud Console.
      * </pre>
      */
     public void getBudget(
@@ -400,6 +407,10 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Returns a list of budgets for a billing account.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren’t available on this API. When reading from the API, you will not
+     * see these fields in the return value, though they may have been set
+     * in the Cloud Console.
      * </pre>
      */
     public void listBudgets(
@@ -508,6 +519,9 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Updates a budget and returns the updated budget.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren’t available on this API. Budget fields that are not exposed in
+     * this API will not be changed by this method.
      * </pre>
      */
     public void updateBudget(
@@ -525,6 +539,10 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Returns a budget.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren’t available on this API. When reading from the API, you will not
+     * see these fields in the return value, though they may have been set
+     * in the Cloud Console.
      * </pre>
      */
     public void getBudget(
@@ -542,6 +560,10 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Returns a list of budgets for a billing account.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren’t available on this API. When reading from the API, you will not
+     * see these fields in the return value, though they may have been set
+     * in the Cloud Console.
      * </pre>
      */
     public void listBudgets(
@@ -615,6 +637,9 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Updates a budget and returns the updated budget.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren’t available on this API. Budget fields that are not exposed in
+     * this API will not be changed by this method.
      * </pre>
      */
     public com.google.cloud.billing.budgets.v1beta1.Budget updateBudget(
@@ -628,6 +653,10 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Returns a budget.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren’t available on this API. When reading from the API, you will not
+     * see these fields in the return value, though they may have been set
+     * in the Cloud Console.
      * </pre>
      */
     public com.google.cloud.billing.budgets.v1beta1.Budget getBudget(
@@ -640,6 +669,10 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Returns a list of budgets for a billing account.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren’t available on this API. When reading from the API, you will not
+     * see these fields in the return value, though they may have been set
+     * in the Cloud Console.
      * </pre>
      */
     public com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse listBudgets(
@@ -707,6 +740,9 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Updates a budget and returns the updated budget.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren’t available on this API. Budget fields that are not exposed in
+     * this API will not be changed by this method.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -721,6 +757,10 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Returns a budget.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren’t available on this API. When reading from the API, you will not
+     * see these fields in the return value, though they may have been set
+     * in the Cloud Console.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -735,6 +775,10 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Returns a list of budgets for a billing account.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren’t available on this API. When reading from the API, you will not
+     * see these fields in the return value, though they may have been set
+     * in the Cloud Console.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
