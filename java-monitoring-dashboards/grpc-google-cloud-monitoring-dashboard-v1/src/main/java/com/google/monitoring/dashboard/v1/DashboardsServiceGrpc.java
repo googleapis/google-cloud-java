@@ -270,19 +270,43 @@ public final class DashboardsServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static DashboardsServiceStub newStub(io.grpc.Channel channel) {
-    return new DashboardsServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DashboardsServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DashboardsServiceStub>() {
+          @java.lang.Override
+          public DashboardsServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DashboardsServiceStub(channel, callOptions);
+          }
+        };
+    return DashboardsServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static DashboardsServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new DashboardsServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DashboardsServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DashboardsServiceBlockingStub>() {
+          @java.lang.Override
+          public DashboardsServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DashboardsServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return DashboardsServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static DashboardsServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new DashboardsServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DashboardsServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DashboardsServiceFutureStub>() {
+          @java.lang.Override
+          public DashboardsServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DashboardsServiceFutureStub(channel, callOptions);
+          }
+        };
+    return DashboardsServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -428,11 +452,7 @@ public final class DashboardsServiceGrpc {
    * </pre>
    */
   public static final class DashboardsServiceStub
-      extends io.grpc.stub.AbstractStub<DashboardsServiceStub> {
-    private DashboardsServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<DashboardsServiceStub> {
     private DashboardsServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -552,11 +572,7 @@ public final class DashboardsServiceGrpc {
    * </pre>
    */
   public static final class DashboardsServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<DashboardsServiceBlockingStub> {
-    private DashboardsServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<DashboardsServiceBlockingStub> {
     private DashboardsServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -653,11 +669,7 @@ public final class DashboardsServiceGrpc {
    * </pre>
    */
   public static final class DashboardsServiceFutureStub
-      extends io.grpc.stub.AbstractStub<DashboardsServiceFutureStub> {
-    private DashboardsServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<DashboardsServiceFutureStub> {
     private DashboardsServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
