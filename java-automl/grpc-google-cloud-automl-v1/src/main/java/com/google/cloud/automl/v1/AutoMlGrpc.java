@@ -809,19 +809,42 @@ public final class AutoMlGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static AutoMlStub newStub(io.grpc.Channel channel) {
-    return new AutoMlStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AutoMlStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AutoMlStub>() {
+          @java.lang.Override
+          public AutoMlStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AutoMlStub(channel, callOptions);
+          }
+        };
+    return AutoMlStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static AutoMlBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new AutoMlBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AutoMlBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AutoMlBlockingStub>() {
+          @java.lang.Override
+          public AutoMlBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AutoMlBlockingStub(channel, callOptions);
+          }
+        };
+    return AutoMlBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static AutoMlFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new AutoMlFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AutoMlFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AutoMlFutureStub>() {
+          @java.lang.Override
+          public AutoMlFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AutoMlFutureStub(channel, callOptions);
+          }
+        };
+    return AutoMlFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -1252,11 +1275,7 @@ public final class AutoMlGrpc {
    * snake_case or kebab-case, either of those cases is accepted.
    * </pre>
    */
-  public static final class AutoMlStub extends io.grpc.stub.AbstractStub<AutoMlStub> {
-    private AutoMlStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class AutoMlStub extends io.grpc.stub.AbstractAsyncStub<AutoMlStub> {
     private AutoMlStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1603,11 +1622,7 @@ public final class AutoMlGrpc {
    * </pre>
    */
   public static final class AutoMlBlockingStub
-      extends io.grpc.stub.AbstractStub<AutoMlBlockingStub> {
-    private AutoMlBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<AutoMlBlockingStub> {
     private AutoMlBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1891,11 +1906,8 @@ public final class AutoMlGrpc {
    * snake_case or kebab-case, either of those cases is accepted.
    * </pre>
    */
-  public static final class AutoMlFutureStub extends io.grpc.stub.AbstractStub<AutoMlFutureStub> {
-    private AutoMlFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class AutoMlFutureStub
+      extends io.grpc.stub.AbstractFutureStub<AutoMlFutureStub> {
     private AutoMlFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }

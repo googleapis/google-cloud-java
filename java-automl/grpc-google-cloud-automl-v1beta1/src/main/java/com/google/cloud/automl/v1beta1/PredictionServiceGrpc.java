@@ -130,19 +130,43 @@ public final class PredictionServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static PredictionServiceStub newStub(io.grpc.Channel channel) {
-    return new PredictionServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<PredictionServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PredictionServiceStub>() {
+          @java.lang.Override
+          public PredictionServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PredictionServiceStub(channel, callOptions);
+          }
+        };
+    return PredictionServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static PredictionServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new PredictionServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<PredictionServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PredictionServiceBlockingStub>() {
+          @java.lang.Override
+          public PredictionServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PredictionServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return PredictionServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static PredictionServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new PredictionServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<PredictionServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PredictionServiceFutureStub>() {
+          @java.lang.Override
+          public PredictionServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PredictionServiceFutureStub(channel, callOptions);
+          }
+        };
+    return PredictionServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -240,11 +264,7 @@ public final class PredictionServiceGrpc {
    * </pre>
    */
   public static final class PredictionServiceStub
-      extends io.grpc.stub.AbstractStub<PredictionServiceStub> {
-    private PredictionServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<PredictionServiceStub> {
     private PredictionServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -325,11 +345,7 @@ public final class PredictionServiceGrpc {
    * </pre>
    */
   public static final class PredictionServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<PredictionServiceBlockingStub> {
-    private PredictionServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<PredictionServiceBlockingStub> {
     private PredictionServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -404,11 +420,7 @@ public final class PredictionServiceGrpc {
    * </pre>
    */
   public static final class PredictionServiceFutureStub
-      extends io.grpc.stub.AbstractStub<PredictionServiceFutureStub> {
-    private PredictionServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<PredictionServiceFutureStub> {
     private PredictionServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
