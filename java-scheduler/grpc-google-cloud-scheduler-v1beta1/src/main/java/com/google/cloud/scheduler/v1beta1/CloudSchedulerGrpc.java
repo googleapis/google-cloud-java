@@ -396,19 +396,43 @@ public final class CloudSchedulerGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static CloudSchedulerStub newStub(io.grpc.Channel channel) {
-    return new CloudSchedulerStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudSchedulerStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudSchedulerStub>() {
+          @java.lang.Override
+          public CloudSchedulerStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudSchedulerStub(channel, callOptions);
+          }
+        };
+    return CloudSchedulerStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static CloudSchedulerBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new CloudSchedulerBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudSchedulerBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudSchedulerBlockingStub>() {
+          @java.lang.Override
+          public CloudSchedulerBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudSchedulerBlockingStub(channel, callOptions);
+          }
+        };
+    return CloudSchedulerBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static CloudSchedulerFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new CloudSchedulerFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudSchedulerFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudSchedulerFutureStub>() {
+          @java.lang.Override
+          public CloudSchedulerFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudSchedulerFutureStub(channel, callOptions);
+          }
+        };
+    return CloudSchedulerFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -608,11 +632,7 @@ public final class CloudSchedulerGrpc {
    * </pre>
    */
   public static final class CloudSchedulerStub
-      extends io.grpc.stub.AbstractStub<CloudSchedulerStub> {
-    private CloudSchedulerStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<CloudSchedulerStub> {
     private CloudSchedulerStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -762,11 +782,7 @@ public final class CloudSchedulerGrpc {
    * </pre>
    */
   public static final class CloudSchedulerBlockingStub
-      extends io.grpc.stub.AbstractStub<CloudSchedulerBlockingStub> {
-    private CloudSchedulerBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<CloudSchedulerBlockingStub> {
     private CloudSchedulerBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -900,11 +916,7 @@ public final class CloudSchedulerGrpc {
    * </pre>
    */
   public static final class CloudSchedulerFutureStub
-      extends io.grpc.stub.AbstractStub<CloudSchedulerFutureStub> {
-    private CloudSchedulerFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<CloudSchedulerFutureStub> {
     private CloudSchedulerFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
