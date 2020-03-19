@@ -23,26 +23,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-
-  <!-- [START mediatranslation_install_with_bom] -->
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>libraries-bom</artifactId>
-        <version>4.2.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
   <dependencies>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-mediatranslation</artifactId>
+      <version>0.1.0</version>
     </dependency>
-    <!-- [END mediatranslation_install_with_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
