@@ -741,19 +741,43 @@ public final class SecretManagerServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static SecretManagerServiceStub newStub(io.grpc.Channel channel) {
-    return new SecretManagerServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<SecretManagerServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SecretManagerServiceStub>() {
+          @java.lang.Override
+          public SecretManagerServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SecretManagerServiceStub(channel, callOptions);
+          }
+        };
+    return SecretManagerServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static SecretManagerServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new SecretManagerServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<SecretManagerServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SecretManagerServiceBlockingStub>() {
+          @java.lang.Override
+          public SecretManagerServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SecretManagerServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return SecretManagerServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static SecretManagerServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new SecretManagerServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<SecretManagerServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SecretManagerServiceFutureStub>() {
+          @java.lang.Override
+          public SecretManagerServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SecretManagerServiceFutureStub(channel, callOptions);
+          }
+        };
+    return SecretManagerServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -1118,11 +1142,7 @@ public final class SecretManagerServiceGrpc {
    * </pre>
    */
   public static final class SecretManagerServiceStub
-      extends io.grpc.stub.AbstractStub<SecretManagerServiceStub> {
-    private SecretManagerServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<SecretManagerServiceStub> {
     private SecretManagerServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1420,11 +1440,7 @@ public final class SecretManagerServiceGrpc {
    * </pre>
    */
   public static final class SecretManagerServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<SecretManagerServiceBlockingStub> {
-    private SecretManagerServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<SecretManagerServiceBlockingStub> {
     private SecretManagerServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -1657,11 +1673,7 @@ public final class SecretManagerServiceGrpc {
    * </pre>
    */
   public static final class SecretManagerServiceFutureStub
-      extends io.grpc.stub.AbstractStub<SecretManagerServiceFutureStub> {
-    private SecretManagerServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<SecretManagerServiceFutureStub> {
     private SecretManagerServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
