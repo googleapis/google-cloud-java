@@ -32,7 +32,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/automl/v1/prediction_service.proto")
 public final class PredictionServiceGrpc {
 
@@ -41,26 +41,18 @@ public final class PredictionServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.automl.v1.PredictionService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getPredictMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1.PredictRequest, com.google.cloud.automl.v1.PredictResponse>
-      METHOD_PREDICT = getPredictMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1.PredictRequest, com.google.cloud.automl.v1.PredictResponse>
       getPredictMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Predict",
+      requestType = com.google.cloud.automl.v1.PredictRequest.class,
+      responseType = com.google.cloud.automl.v1.PredictResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1.PredictRequest, com.google.cloud.automl.v1.PredictResponse>
       getPredictMethod() {
-    return getPredictMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1.PredictRequest, com.google.cloud.automl.v1.PredictResponse>
-      getPredictMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1.PredictRequest, com.google.cloud.automl.v1.PredictResponse>
         getPredictMethod;
@@ -74,9 +66,7 @@ public final class PredictionServiceGrpc {
                           com.google.cloud.automl.v1.PredictResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1.PredictionService", "Predict"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Predict"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -92,26 +82,18 @@ public final class PredictionServiceGrpc {
     return getPredictMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchPredictMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1.BatchPredictRequest, com.google.longrunning.Operation>
-      METHOD_BATCH_PREDICT = getBatchPredictMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1.BatchPredictRequest, com.google.longrunning.Operation>
       getBatchPredictMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchPredict",
+      requestType = com.google.cloud.automl.v1.BatchPredictRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1.BatchPredictRequest, com.google.longrunning.Operation>
       getBatchPredictMethod() {
-    return getBatchPredictMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1.BatchPredictRequest, com.google.longrunning.Operation>
-      getBatchPredictMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1.BatchPredictRequest, com.google.longrunning.Operation>
         getBatchPredictMethod;
@@ -125,9 +107,7 @@ public final class PredictionServiceGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1.PredictionService", "BatchPredict"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchPredict"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -220,7 +200,7 @@ public final class PredictionServiceGrpc {
     public void predict(
         com.google.cloud.automl.v1.PredictRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.PredictResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getPredictMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getPredictMethod(), responseObserver);
     }
 
     /**
@@ -246,20 +226,20 @@ public final class PredictionServiceGrpc {
     public void batchPredict(
         com.google.cloud.automl.v1.BatchPredictRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchPredictMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getBatchPredictMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getPredictMethodHelper(),
+              getPredictMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1.PredictRequest,
                       com.google.cloud.automl.v1.PredictResponse>(this, METHODID_PREDICT)))
           .addMethod(
-              getBatchPredictMethodHelper(),
+              getBatchPredictMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1.BatchPredictRequest,
@@ -342,9 +322,7 @@ public final class PredictionServiceGrpc {
         com.google.cloud.automl.v1.PredictRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.PredictResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getPredictMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getPredictMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -371,7 +349,7 @@ public final class PredictionServiceGrpc {
         com.google.cloud.automl.v1.BatchPredictRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBatchPredictMethodHelper(), getCallOptions()),
+          getChannel().newCall(getBatchPredictMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -450,7 +428,7 @@ public final class PredictionServiceGrpc {
      */
     public com.google.cloud.automl.v1.PredictResponse predict(
         com.google.cloud.automl.v1.PredictRequest request) {
-      return blockingUnaryCall(getChannel(), getPredictMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getPredictMethod(), getCallOptions(), request);
     }
 
     /**
@@ -475,8 +453,7 @@ public final class PredictionServiceGrpc {
      */
     public com.google.longrunning.Operation batchPredict(
         com.google.cloud.automl.v1.BatchPredictRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getBatchPredictMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getBatchPredictMethod(), getCallOptions(), request);
     }
   }
 
@@ -553,8 +530,7 @@ public final class PredictionServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.automl.v1.PredictResponse>
         predict(com.google.cloud.automl.v1.PredictRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getPredictMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getPredictMethod(), getCallOptions()), request);
     }
 
     /**
@@ -580,7 +556,7 @@ public final class PredictionServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchPredict(com.google.cloud.automl.v1.BatchPredictRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getBatchPredictMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getBatchPredictMethod(), getCallOptions()), request);
     }
   }
 
@@ -679,8 +655,8 @@ public final class PredictionServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new PredictionServiceFileDescriptorSupplier())
-                      .addMethod(getPredictMethodHelper())
-                      .addMethod(getBatchPredictMethodHelper())
+                      .addMethod(getPredictMethod())
+                      .addMethod(getBatchPredictMethod())
                       .build();
         }
       }

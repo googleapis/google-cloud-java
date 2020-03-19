@@ -32,8 +32,7 @@
         "apiName": "automl",
         "apiVersion": "v1beta1",
         "language": "java",
-        "generator": "gapic",
-        "config": "google/cloud/automl/artman_automl_v1beta1.yaml"
+        "generator": "bazel"
       }
     },
     {
@@ -42,8 +41,7 @@
         "apiName": "automl",
         "apiVersion": "v1",
         "language": "java",
-        "generator": "gapic",
-        "config": "google/cloud/automl/artman_automl_v1.yaml"
+        "generator": "bazel"
       }
     }
   ]

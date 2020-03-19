@@ -24,12 +24,10 @@ service = 'automl'
 versions = ['v1beta1', 'v1']
 
 for version in versions:
-  java.gapic_library(
-    service=service,
-    version=version,
-    config_pattern='/google/cloud/automl/artman_{service}_{version}.yaml',
-    package_pattern='com.google.cloud.{service}.{version}',
-    gapic=gapic,
+  library = java.bazel_library(
+      service=service,
+      version=version,
+      bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
   )
 
 java.common_templates()

@@ -39,7 +39,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/automl/v1beta1/service.proto")
 public final class AutoMlGrpc {
 
@@ -48,30 +48,20 @@ public final class AutoMlGrpc {
   public static final String SERVICE_NAME = "google.cloud.automl.v1beta1.AutoMl";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateDatasetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.CreateDatasetRequest,
-          com.google.cloud.automl.v1beta1.Dataset>
-      METHOD_CREATE_DATASET = getCreateDatasetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.CreateDatasetRequest,
           com.google.cloud.automl.v1beta1.Dataset>
       getCreateDatasetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDataset",
+      requestType = com.google.cloud.automl.v1beta1.CreateDatasetRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.Dataset.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.CreateDatasetRequest,
           com.google.cloud.automl.v1beta1.Dataset>
       getCreateDatasetMethod() {
-    return getCreateDatasetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.CreateDatasetRequest,
-          com.google.cloud.automl.v1beta1.Dataset>
-      getCreateDatasetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.CreateDatasetRequest,
             com.google.cloud.automl.v1beta1.Dataset>
@@ -86,9 +76,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.Dataset>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "CreateDataset"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateDataset"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -105,30 +93,20 @@ public final class AutoMlGrpc {
     return getCreateDatasetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetDatasetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.GetDatasetRequest,
-          com.google.cloud.automl.v1beta1.Dataset>
-      METHOD_GET_DATASET = getGetDatasetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.GetDatasetRequest,
           com.google.cloud.automl.v1beta1.Dataset>
       getGetDatasetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDataset",
+      requestType = com.google.cloud.automl.v1beta1.GetDatasetRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.Dataset.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.GetDatasetRequest,
           com.google.cloud.automl.v1beta1.Dataset>
       getGetDatasetMethod() {
-    return getGetDatasetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.GetDatasetRequest,
-          com.google.cloud.automl.v1beta1.Dataset>
-      getGetDatasetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.GetDatasetRequest,
             com.google.cloud.automl.v1beta1.Dataset>
@@ -143,9 +121,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.Dataset>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "GetDataset"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDataset"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -162,30 +138,20 @@ public final class AutoMlGrpc {
     return getGetDatasetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListDatasetsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ListDatasetsRequest,
-          com.google.cloud.automl.v1beta1.ListDatasetsResponse>
-      METHOD_LIST_DATASETS = getListDatasetsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ListDatasetsRequest,
           com.google.cloud.automl.v1beta1.ListDatasetsResponse>
       getListDatasetsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDatasets",
+      requestType = com.google.cloud.automl.v1beta1.ListDatasetsRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.ListDatasetsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ListDatasetsRequest,
           com.google.cloud.automl.v1beta1.ListDatasetsResponse>
       getListDatasetsMethod() {
-    return getListDatasetsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ListDatasetsRequest,
-          com.google.cloud.automl.v1beta1.ListDatasetsResponse>
-      getListDatasetsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.ListDatasetsRequest,
             com.google.cloud.automl.v1beta1.ListDatasetsResponse>
@@ -200,9 +166,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.ListDatasetsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "ListDatasets"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDatasets"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -220,30 +184,20 @@ public final class AutoMlGrpc {
     return getListDatasetsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateDatasetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.UpdateDatasetRequest,
-          com.google.cloud.automl.v1beta1.Dataset>
-      METHOD_UPDATE_DATASET = getUpdateDatasetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.UpdateDatasetRequest,
           com.google.cloud.automl.v1beta1.Dataset>
       getUpdateDatasetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDataset",
+      requestType = com.google.cloud.automl.v1beta1.UpdateDatasetRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.Dataset.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.UpdateDatasetRequest,
           com.google.cloud.automl.v1beta1.Dataset>
       getUpdateDatasetMethod() {
-    return getUpdateDatasetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.UpdateDatasetRequest,
-          com.google.cloud.automl.v1beta1.Dataset>
-      getUpdateDatasetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.UpdateDatasetRequest,
             com.google.cloud.automl.v1beta1.Dataset>
@@ -258,9 +212,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.Dataset>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "UpdateDataset"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateDataset"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -277,26 +229,18 @@ public final class AutoMlGrpc {
     return getUpdateDatasetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteDatasetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.DeleteDatasetRequest, com.google.longrunning.Operation>
-      METHOD_DELETE_DATASET = getDeleteDatasetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.DeleteDatasetRequest, com.google.longrunning.Operation>
       getDeleteDatasetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDataset",
+      requestType = com.google.cloud.automl.v1beta1.DeleteDatasetRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.DeleteDatasetRequest, com.google.longrunning.Operation>
       getDeleteDatasetMethod() {
-    return getDeleteDatasetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.DeleteDatasetRequest, com.google.longrunning.Operation>
-      getDeleteDatasetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.DeleteDatasetRequest, com.google.longrunning.Operation>
         getDeleteDatasetMethod;
@@ -310,9 +254,7 @@ public final class AutoMlGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "DeleteDataset"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDataset"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -329,26 +271,18 @@ public final class AutoMlGrpc {
     return getDeleteDatasetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getImportDataMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ImportDataRequest, com.google.longrunning.Operation>
-      METHOD_IMPORT_DATA = getImportDataMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ImportDataRequest, com.google.longrunning.Operation>
       getImportDataMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportData",
+      requestType = com.google.cloud.automl.v1beta1.ImportDataRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ImportDataRequest, com.google.longrunning.Operation>
       getImportDataMethod() {
-    return getImportDataMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ImportDataRequest, com.google.longrunning.Operation>
-      getImportDataMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.ImportDataRequest, com.google.longrunning.Operation>
         getImportDataMethod;
@@ -362,9 +296,7 @@ public final class AutoMlGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "ImportData"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportData"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -381,26 +313,18 @@ public final class AutoMlGrpc {
     return getImportDataMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getExportDataMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ExportDataRequest, com.google.longrunning.Operation>
-      METHOD_EXPORT_DATA = getExportDataMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ExportDataRequest, com.google.longrunning.Operation>
       getExportDataMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportData",
+      requestType = com.google.cloud.automl.v1beta1.ExportDataRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ExportDataRequest, com.google.longrunning.Operation>
       getExportDataMethod() {
-    return getExportDataMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ExportDataRequest, com.google.longrunning.Operation>
-      getExportDataMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.ExportDataRequest, com.google.longrunning.Operation>
         getExportDataMethod;
@@ -414,9 +338,7 @@ public final class AutoMlGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "ExportData"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportData"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -433,30 +355,20 @@ public final class AutoMlGrpc {
     return getExportDataMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetAnnotationSpecMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.GetAnnotationSpecRequest,
-          com.google.cloud.automl.v1beta1.AnnotationSpec>
-      METHOD_GET_ANNOTATION_SPEC = getGetAnnotationSpecMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.GetAnnotationSpecRequest,
           com.google.cloud.automl.v1beta1.AnnotationSpec>
       getGetAnnotationSpecMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAnnotationSpec",
+      requestType = com.google.cloud.automl.v1beta1.GetAnnotationSpecRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.AnnotationSpec.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.GetAnnotationSpecRequest,
           com.google.cloud.automl.v1beta1.AnnotationSpec>
       getGetAnnotationSpecMethod() {
-    return getGetAnnotationSpecMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.GetAnnotationSpecRequest,
-          com.google.cloud.automl.v1beta1.AnnotationSpec>
-      getGetAnnotationSpecMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.GetAnnotationSpecRequest,
             com.google.cloud.automl.v1beta1.AnnotationSpec>
@@ -471,9 +383,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.AnnotationSpec>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "GetAnnotationSpec"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAnnotationSpec"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -490,30 +400,20 @@ public final class AutoMlGrpc {
     return getGetAnnotationSpecMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetTableSpecMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.GetTableSpecRequest,
-          com.google.cloud.automl.v1beta1.TableSpec>
-      METHOD_GET_TABLE_SPEC = getGetTableSpecMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.GetTableSpecRequest,
           com.google.cloud.automl.v1beta1.TableSpec>
       getGetTableSpecMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTableSpec",
+      requestType = com.google.cloud.automl.v1beta1.GetTableSpecRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.TableSpec.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.GetTableSpecRequest,
           com.google.cloud.automl.v1beta1.TableSpec>
       getGetTableSpecMethod() {
-    return getGetTableSpecMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.GetTableSpecRequest,
-          com.google.cloud.automl.v1beta1.TableSpec>
-      getGetTableSpecMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.GetTableSpecRequest,
             com.google.cloud.automl.v1beta1.TableSpec>
@@ -528,9 +428,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.TableSpec>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "GetTableSpec"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTableSpec"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -547,30 +445,20 @@ public final class AutoMlGrpc {
     return getGetTableSpecMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListTableSpecsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ListTableSpecsRequest,
-          com.google.cloud.automl.v1beta1.ListTableSpecsResponse>
-      METHOD_LIST_TABLE_SPECS = getListTableSpecsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ListTableSpecsRequest,
           com.google.cloud.automl.v1beta1.ListTableSpecsResponse>
       getListTableSpecsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTableSpecs",
+      requestType = com.google.cloud.automl.v1beta1.ListTableSpecsRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.ListTableSpecsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ListTableSpecsRequest,
           com.google.cloud.automl.v1beta1.ListTableSpecsResponse>
       getListTableSpecsMethod() {
-    return getListTableSpecsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ListTableSpecsRequest,
-          com.google.cloud.automl.v1beta1.ListTableSpecsResponse>
-      getListTableSpecsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.ListTableSpecsRequest,
             com.google.cloud.automl.v1beta1.ListTableSpecsResponse>
@@ -585,9 +473,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.ListTableSpecsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "ListTableSpecs"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTableSpecs"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -605,30 +491,20 @@ public final class AutoMlGrpc {
     return getListTableSpecsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateTableSpecMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.UpdateTableSpecRequest,
-          com.google.cloud.automl.v1beta1.TableSpec>
-      METHOD_UPDATE_TABLE_SPEC = getUpdateTableSpecMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.UpdateTableSpecRequest,
           com.google.cloud.automl.v1beta1.TableSpec>
       getUpdateTableSpecMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTableSpec",
+      requestType = com.google.cloud.automl.v1beta1.UpdateTableSpecRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.TableSpec.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.UpdateTableSpecRequest,
           com.google.cloud.automl.v1beta1.TableSpec>
       getUpdateTableSpecMethod() {
-    return getUpdateTableSpecMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.UpdateTableSpecRequest,
-          com.google.cloud.automl.v1beta1.TableSpec>
-      getUpdateTableSpecMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.UpdateTableSpecRequest,
             com.google.cloud.automl.v1beta1.TableSpec>
@@ -643,9 +519,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.TableSpec>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "UpdateTableSpec"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTableSpec"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -662,30 +536,20 @@ public final class AutoMlGrpc {
     return getUpdateTableSpecMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetColumnSpecMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.GetColumnSpecRequest,
-          com.google.cloud.automl.v1beta1.ColumnSpec>
-      METHOD_GET_COLUMN_SPEC = getGetColumnSpecMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.GetColumnSpecRequest,
           com.google.cloud.automl.v1beta1.ColumnSpec>
       getGetColumnSpecMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetColumnSpec",
+      requestType = com.google.cloud.automl.v1beta1.GetColumnSpecRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.ColumnSpec.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.GetColumnSpecRequest,
           com.google.cloud.automl.v1beta1.ColumnSpec>
       getGetColumnSpecMethod() {
-    return getGetColumnSpecMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.GetColumnSpecRequest,
-          com.google.cloud.automl.v1beta1.ColumnSpec>
-      getGetColumnSpecMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.GetColumnSpecRequest,
             com.google.cloud.automl.v1beta1.ColumnSpec>
@@ -700,9 +564,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.ColumnSpec>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "GetColumnSpec"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetColumnSpec"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -719,30 +581,20 @@ public final class AutoMlGrpc {
     return getGetColumnSpecMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListColumnSpecsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ListColumnSpecsRequest,
-          com.google.cloud.automl.v1beta1.ListColumnSpecsResponse>
-      METHOD_LIST_COLUMN_SPECS = getListColumnSpecsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ListColumnSpecsRequest,
           com.google.cloud.automl.v1beta1.ListColumnSpecsResponse>
       getListColumnSpecsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListColumnSpecs",
+      requestType = com.google.cloud.automl.v1beta1.ListColumnSpecsRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.ListColumnSpecsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ListColumnSpecsRequest,
           com.google.cloud.automl.v1beta1.ListColumnSpecsResponse>
       getListColumnSpecsMethod() {
-    return getListColumnSpecsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ListColumnSpecsRequest,
-          com.google.cloud.automl.v1beta1.ListColumnSpecsResponse>
-      getListColumnSpecsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.ListColumnSpecsRequest,
             com.google.cloud.automl.v1beta1.ListColumnSpecsResponse>
@@ -757,9 +609,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.ListColumnSpecsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "ListColumnSpecs"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListColumnSpecs"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -777,30 +627,20 @@ public final class AutoMlGrpc {
     return getListColumnSpecsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateColumnSpecMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest,
-          com.google.cloud.automl.v1beta1.ColumnSpec>
-      METHOD_UPDATE_COLUMN_SPEC = getUpdateColumnSpecMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest,
           com.google.cloud.automl.v1beta1.ColumnSpec>
       getUpdateColumnSpecMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateColumnSpec",
+      requestType = com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.ColumnSpec.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest,
           com.google.cloud.automl.v1beta1.ColumnSpec>
       getUpdateColumnSpecMethod() {
-    return getUpdateColumnSpecMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest,
-          com.google.cloud.automl.v1beta1.ColumnSpec>
-      getUpdateColumnSpecMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest,
             com.google.cloud.automl.v1beta1.ColumnSpec>
@@ -815,9 +655,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.ColumnSpec>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "UpdateColumnSpec"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateColumnSpec"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -834,26 +672,18 @@ public final class AutoMlGrpc {
     return getUpdateColumnSpecMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateModelMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.CreateModelRequest, com.google.longrunning.Operation>
-      METHOD_CREATE_MODEL = getCreateModelMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.CreateModelRequest, com.google.longrunning.Operation>
       getCreateModelMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateModel",
+      requestType = com.google.cloud.automl.v1beta1.CreateModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.CreateModelRequest, com.google.longrunning.Operation>
       getCreateModelMethod() {
-    return getCreateModelMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.CreateModelRequest, com.google.longrunning.Operation>
-      getCreateModelMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.CreateModelRequest, com.google.longrunning.Operation>
         getCreateModelMethod;
@@ -867,9 +697,7 @@ public final class AutoMlGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "CreateModel"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateModel"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -886,26 +714,18 @@ public final class AutoMlGrpc {
     return getCreateModelMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetModelMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.GetModelRequest, com.google.cloud.automl.v1beta1.Model>
-      METHOD_GET_MODEL = getGetModelMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.GetModelRequest, com.google.cloud.automl.v1beta1.Model>
       getGetModelMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetModel",
+      requestType = com.google.cloud.automl.v1beta1.GetModelRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.Model.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.GetModelRequest, com.google.cloud.automl.v1beta1.Model>
       getGetModelMethod() {
-    return getGetModelMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.GetModelRequest, com.google.cloud.automl.v1beta1.Model>
-      getGetModelMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.GetModelRequest, com.google.cloud.automl.v1beta1.Model>
         getGetModelMethod;
@@ -919,8 +739,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.Model>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName("google.cloud.automl.v1beta1.AutoMl", "GetModel"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetModel"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -936,30 +755,20 @@ public final class AutoMlGrpc {
     return getGetModelMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListModelsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ListModelsRequest,
-          com.google.cloud.automl.v1beta1.ListModelsResponse>
-      METHOD_LIST_MODELS = getListModelsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ListModelsRequest,
           com.google.cloud.automl.v1beta1.ListModelsResponse>
       getListModelsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListModels",
+      requestType = com.google.cloud.automl.v1beta1.ListModelsRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.ListModelsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ListModelsRequest,
           com.google.cloud.automl.v1beta1.ListModelsResponse>
       getListModelsMethod() {
-    return getListModelsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ListModelsRequest,
-          com.google.cloud.automl.v1beta1.ListModelsResponse>
-      getListModelsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.ListModelsRequest,
             com.google.cloud.automl.v1beta1.ListModelsResponse>
@@ -974,9 +783,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.ListModelsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "ListModels"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListModels"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -994,26 +801,18 @@ public final class AutoMlGrpc {
     return getListModelsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteModelMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.DeleteModelRequest, com.google.longrunning.Operation>
-      METHOD_DELETE_MODEL = getDeleteModelMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.DeleteModelRequest, com.google.longrunning.Operation>
       getDeleteModelMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteModel",
+      requestType = com.google.cloud.automl.v1beta1.DeleteModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.DeleteModelRequest, com.google.longrunning.Operation>
       getDeleteModelMethod() {
-    return getDeleteModelMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.DeleteModelRequest, com.google.longrunning.Operation>
-      getDeleteModelMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.DeleteModelRequest, com.google.longrunning.Operation>
         getDeleteModelMethod;
@@ -1027,9 +826,7 @@ public final class AutoMlGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "DeleteModel"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteModel"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1046,26 +843,18 @@ public final class AutoMlGrpc {
     return getDeleteModelMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeployModelMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.DeployModelRequest, com.google.longrunning.Operation>
-      METHOD_DEPLOY_MODEL = getDeployModelMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.DeployModelRequest, com.google.longrunning.Operation>
       getDeployModelMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeployModel",
+      requestType = com.google.cloud.automl.v1beta1.DeployModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.DeployModelRequest, com.google.longrunning.Operation>
       getDeployModelMethod() {
-    return getDeployModelMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.DeployModelRequest, com.google.longrunning.Operation>
-      getDeployModelMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.DeployModelRequest, com.google.longrunning.Operation>
         getDeployModelMethod;
@@ -1079,9 +868,7 @@ public final class AutoMlGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "DeployModel"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeployModel"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1098,26 +885,18 @@ public final class AutoMlGrpc {
     return getDeployModelMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUndeployModelMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.UndeployModelRequest, com.google.longrunning.Operation>
-      METHOD_UNDEPLOY_MODEL = getUndeployModelMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.UndeployModelRequest, com.google.longrunning.Operation>
       getUndeployModelMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UndeployModel",
+      requestType = com.google.cloud.automl.v1beta1.UndeployModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.UndeployModelRequest, com.google.longrunning.Operation>
       getUndeployModelMethod() {
-    return getUndeployModelMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.UndeployModelRequest, com.google.longrunning.Operation>
-      getUndeployModelMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.UndeployModelRequest, com.google.longrunning.Operation>
         getUndeployModelMethod;
@@ -1131,9 +910,7 @@ public final class AutoMlGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "UndeployModel"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UndeployModel"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1150,26 +927,18 @@ public final class AutoMlGrpc {
     return getUndeployModelMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getExportModelMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ExportModelRequest, com.google.longrunning.Operation>
-      METHOD_EXPORT_MODEL = getExportModelMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ExportModelRequest, com.google.longrunning.Operation>
       getExportModelMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportModel",
+      requestType = com.google.cloud.automl.v1beta1.ExportModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ExportModelRequest, com.google.longrunning.Operation>
       getExportModelMethod() {
-    return getExportModelMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ExportModelRequest, com.google.longrunning.Operation>
-      getExportModelMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.ExportModelRequest, com.google.longrunning.Operation>
         getExportModelMethod;
@@ -1183,9 +952,7 @@ public final class AutoMlGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "ExportModel"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportModel"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1202,30 +969,20 @@ public final class AutoMlGrpc {
     return getExportModelMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getExportEvaluatedExamplesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesRequest,
-          com.google.longrunning.Operation>
-      METHOD_EXPORT_EVALUATED_EXAMPLES = getExportEvaluatedExamplesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesRequest,
           com.google.longrunning.Operation>
       getExportEvaluatedExamplesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportEvaluatedExamples",
+      requestType = com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesRequest,
           com.google.longrunning.Operation>
       getExportEvaluatedExamplesMethod() {
-    return getExportEvaluatedExamplesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesRequest,
-          com.google.longrunning.Operation>
-      getExportEvaluatedExamplesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesRequest,
             com.google.longrunning.Operation>
@@ -1242,8 +999,7 @@ public final class AutoMlGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "ExportEvaluatedExamples"))
+                          generateFullMethodName(SERVICE_NAME, "ExportEvaluatedExamples"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1261,30 +1017,20 @@ public final class AutoMlGrpc {
     return getExportEvaluatedExamplesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetModelEvaluationMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.GetModelEvaluationRequest,
-          com.google.cloud.automl.v1beta1.ModelEvaluation>
-      METHOD_GET_MODEL_EVALUATION = getGetModelEvaluationMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.GetModelEvaluationRequest,
           com.google.cloud.automl.v1beta1.ModelEvaluation>
       getGetModelEvaluationMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetModelEvaluation",
+      requestType = com.google.cloud.automl.v1beta1.GetModelEvaluationRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.ModelEvaluation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.GetModelEvaluationRequest,
           com.google.cloud.automl.v1beta1.ModelEvaluation>
       getGetModelEvaluationMethod() {
-    return getGetModelEvaluationMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.GetModelEvaluationRequest,
-          com.google.cloud.automl.v1beta1.ModelEvaluation>
-      getGetModelEvaluationMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.GetModelEvaluationRequest,
             com.google.cloud.automl.v1beta1.ModelEvaluation>
@@ -1299,9 +1045,7 @@ public final class AutoMlGrpc {
                           com.google.cloud.automl.v1beta1.ModelEvaluation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "GetModelEvaluation"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetModelEvaluation"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1318,30 +1062,20 @@ public final class AutoMlGrpc {
     return getGetModelEvaluationMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListModelEvaluationsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest,
-          com.google.cloud.automl.v1beta1.ListModelEvaluationsResponse>
-      METHOD_LIST_MODEL_EVALUATIONS = getListModelEvaluationsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest,
           com.google.cloud.automl.v1beta1.ListModelEvaluationsResponse>
       getListModelEvaluationsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListModelEvaluations",
+      requestType = com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest.class,
+      responseType = com.google.cloud.automl.v1beta1.ListModelEvaluationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest,
           com.google.cloud.automl.v1beta1.ListModelEvaluationsResponse>
       getListModelEvaluationsMethod() {
-    return getListModelEvaluationsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest,
-          com.google.cloud.automl.v1beta1.ListModelEvaluationsResponse>
-      getListModelEvaluationsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest,
             com.google.cloud.automl.v1beta1.ListModelEvaluationsResponse>
@@ -1357,8 +1091,7 @@ public final class AutoMlGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.automl.v1beta1.AutoMl", "ListModelEvaluations"))
+                          generateFullMethodName(SERVICE_NAME, "ListModelEvaluations"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1422,7 +1155,7 @@ public final class AutoMlGrpc {
     public void createDataset(
         com.google.cloud.automl.v1beta1.CreateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.Dataset> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateDatasetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateDatasetMethod(), responseObserver);
     }
 
     /**
@@ -1435,7 +1168,7 @@ public final class AutoMlGrpc {
     public void getDataset(
         com.google.cloud.automl.v1beta1.GetDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.Dataset> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDatasetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetDatasetMethod(), responseObserver);
     }
 
     /**
@@ -1449,7 +1182,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.ListDatasetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ListDatasetsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListDatasetsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListDatasetsMethod(), responseObserver);
     }
 
     /**
@@ -1462,7 +1195,7 @@ public final class AutoMlGrpc {
     public void updateDataset(
         com.google.cloud.automl.v1beta1.UpdateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.Dataset> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateDatasetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateDatasetMethod(), responseObserver);
     }
 
     /**
@@ -1479,7 +1212,7 @@ public final class AutoMlGrpc {
     public void deleteDataset(
         com.google.cloud.automl.v1beta1.DeleteDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteDatasetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteDatasetMethod(), responseObserver);
     }
 
     /**
@@ -1499,7 +1232,7 @@ public final class AutoMlGrpc {
     public void importData(
         com.google.cloud.automl.v1beta1.ImportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportDataMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getImportDataMethod(), responseObserver);
     }
 
     /**
@@ -1514,7 +1247,7 @@ public final class AutoMlGrpc {
     public void exportData(
         com.google.cloud.automl.v1beta1.ExportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportDataMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getExportDataMethod(), responseObserver);
     }
 
     /**
@@ -1528,7 +1261,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.GetAnnotationSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.AnnotationSpec>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAnnotationSpecMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetAnnotationSpecMethod(), responseObserver);
     }
 
     /**
@@ -1541,7 +1274,7 @@ public final class AutoMlGrpc {
     public void getTableSpec(
         com.google.cloud.automl.v1beta1.GetTableSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.TableSpec> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetTableSpecMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetTableSpecMethod(), responseObserver);
     }
 
     /**
@@ -1555,7 +1288,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.ListTableSpecsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ListTableSpecsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListTableSpecsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListTableSpecsMethod(), responseObserver);
     }
 
     /**
@@ -1568,7 +1301,7 @@ public final class AutoMlGrpc {
     public void updateTableSpec(
         com.google.cloud.automl.v1beta1.UpdateTableSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.TableSpec> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateTableSpecMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateTableSpecMethod(), responseObserver);
     }
 
     /**
@@ -1581,7 +1314,7 @@ public final class AutoMlGrpc {
     public void getColumnSpec(
         com.google.cloud.automl.v1beta1.GetColumnSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ColumnSpec> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetColumnSpecMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetColumnSpecMethod(), responseObserver);
     }
 
     /**
@@ -1595,7 +1328,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.ListColumnSpecsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ListColumnSpecsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListColumnSpecsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListColumnSpecsMethod(), responseObserver);
     }
 
     /**
@@ -1608,7 +1341,7 @@ public final class AutoMlGrpc {
     public void updateColumnSpec(
         com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ColumnSpec> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateColumnSpecMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateColumnSpecMethod(), responseObserver);
     }
 
     /**
@@ -1625,7 +1358,7 @@ public final class AutoMlGrpc {
     public void createModel(
         com.google.cloud.automl.v1beta1.CreateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateModelMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateModelMethod(), responseObserver);
     }
 
     /**
@@ -1638,7 +1371,7 @@ public final class AutoMlGrpc {
     public void getModel(
         com.google.cloud.automl.v1beta1.GetModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.Model> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetModelMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetModelMethod(), responseObserver);
     }
 
     /**
@@ -1652,7 +1385,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.ListModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ListModelsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListModelsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListModelsMethod(), responseObserver);
     }
 
     /**
@@ -1669,7 +1402,7 @@ public final class AutoMlGrpc {
     public void deleteModel(
         com.google.cloud.automl.v1beta1.DeleteModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteModelMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteModelMethod(), responseObserver);
     }
 
     /**
@@ -1690,7 +1423,7 @@ public final class AutoMlGrpc {
     public void deployModel(
         com.google.cloud.automl.v1beta1.DeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeployModelMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeployModelMethod(), responseObserver);
     }
 
     /**
@@ -1707,7 +1440,7 @@ public final class AutoMlGrpc {
     public void undeployModel(
         com.google.cloud.automl.v1beta1.UndeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUndeployModelMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUndeployModelMethod(), responseObserver);
     }
 
     /**
@@ -1725,7 +1458,7 @@ public final class AutoMlGrpc {
     public void exportModel(
         com.google.cloud.automl.v1beta1.ExportModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportModelMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getExportModelMethod(), responseObserver);
     }
 
     /**
@@ -1748,7 +1481,7 @@ public final class AutoMlGrpc {
     public void exportEvaluatedExamples(
         com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportEvaluatedExamplesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getExportEvaluatedExamplesMethod(), responseObserver);
     }
 
     /**
@@ -1762,7 +1495,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.GetModelEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ModelEvaluation>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetModelEvaluationMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetModelEvaluationMethod(), responseObserver);
     }
 
     /**
@@ -1776,159 +1509,159 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ListModelEvaluationsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListModelEvaluationsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListModelEvaluationsMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getCreateDatasetMethodHelper(),
+              getCreateDatasetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.CreateDatasetRequest,
                       com.google.cloud.automl.v1beta1.Dataset>(this, METHODID_CREATE_DATASET)))
           .addMethod(
-              getGetDatasetMethodHelper(),
+              getGetDatasetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.GetDatasetRequest,
                       com.google.cloud.automl.v1beta1.Dataset>(this, METHODID_GET_DATASET)))
           .addMethod(
-              getListDatasetsMethodHelper(),
+              getListDatasetsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.ListDatasetsRequest,
                       com.google.cloud.automl.v1beta1.ListDatasetsResponse>(
                       this, METHODID_LIST_DATASETS)))
           .addMethod(
-              getUpdateDatasetMethodHelper(),
+              getUpdateDatasetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.UpdateDatasetRequest,
                       com.google.cloud.automl.v1beta1.Dataset>(this, METHODID_UPDATE_DATASET)))
           .addMethod(
-              getDeleteDatasetMethodHelper(),
+              getDeleteDatasetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.DeleteDatasetRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_DATASET)))
           .addMethod(
-              getImportDataMethodHelper(),
+              getImportDataMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.ImportDataRequest,
                       com.google.longrunning.Operation>(this, METHODID_IMPORT_DATA)))
           .addMethod(
-              getExportDataMethodHelper(),
+              getExportDataMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.ExportDataRequest,
                       com.google.longrunning.Operation>(this, METHODID_EXPORT_DATA)))
           .addMethod(
-              getGetAnnotationSpecMethodHelper(),
+              getGetAnnotationSpecMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.GetAnnotationSpecRequest,
                       com.google.cloud.automl.v1beta1.AnnotationSpec>(
                       this, METHODID_GET_ANNOTATION_SPEC)))
           .addMethod(
-              getGetTableSpecMethodHelper(),
+              getGetTableSpecMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.GetTableSpecRequest,
                       com.google.cloud.automl.v1beta1.TableSpec>(this, METHODID_GET_TABLE_SPEC)))
           .addMethod(
-              getListTableSpecsMethodHelper(),
+              getListTableSpecsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.ListTableSpecsRequest,
                       com.google.cloud.automl.v1beta1.ListTableSpecsResponse>(
                       this, METHODID_LIST_TABLE_SPECS)))
           .addMethod(
-              getUpdateTableSpecMethodHelper(),
+              getUpdateTableSpecMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.UpdateTableSpecRequest,
                       com.google.cloud.automl.v1beta1.TableSpec>(this, METHODID_UPDATE_TABLE_SPEC)))
           .addMethod(
-              getGetColumnSpecMethodHelper(),
+              getGetColumnSpecMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.GetColumnSpecRequest,
                       com.google.cloud.automl.v1beta1.ColumnSpec>(this, METHODID_GET_COLUMN_SPEC)))
           .addMethod(
-              getListColumnSpecsMethodHelper(),
+              getListColumnSpecsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.ListColumnSpecsRequest,
                       com.google.cloud.automl.v1beta1.ListColumnSpecsResponse>(
                       this, METHODID_LIST_COLUMN_SPECS)))
           .addMethod(
-              getUpdateColumnSpecMethodHelper(),
+              getUpdateColumnSpecMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest,
                       com.google.cloud.automl.v1beta1.ColumnSpec>(
                       this, METHODID_UPDATE_COLUMN_SPEC)))
           .addMethod(
-              getCreateModelMethodHelper(),
+              getCreateModelMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.CreateModelRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_MODEL)))
           .addMethod(
-              getGetModelMethodHelper(),
+              getGetModelMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.GetModelRequest,
                       com.google.cloud.automl.v1beta1.Model>(this, METHODID_GET_MODEL)))
           .addMethod(
-              getListModelsMethodHelper(),
+              getListModelsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.ListModelsRequest,
                       com.google.cloud.automl.v1beta1.ListModelsResponse>(
                       this, METHODID_LIST_MODELS)))
           .addMethod(
-              getDeleteModelMethodHelper(),
+              getDeleteModelMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.DeleteModelRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_MODEL)))
           .addMethod(
-              getDeployModelMethodHelper(),
+              getDeployModelMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.DeployModelRequest,
                       com.google.longrunning.Operation>(this, METHODID_DEPLOY_MODEL)))
           .addMethod(
-              getUndeployModelMethodHelper(),
+              getUndeployModelMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.UndeployModelRequest,
                       com.google.longrunning.Operation>(this, METHODID_UNDEPLOY_MODEL)))
           .addMethod(
-              getExportModelMethodHelper(),
+              getExportModelMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.ExportModelRequest,
                       com.google.longrunning.Operation>(this, METHODID_EXPORT_MODEL)))
           .addMethod(
-              getExportEvaluatedExamplesMethodHelper(),
+              getExportEvaluatedExamplesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesRequest,
                       com.google.longrunning.Operation>(this, METHODID_EXPORT_EVALUATED_EXAMPLES)))
           .addMethod(
-              getGetModelEvaluationMethodHelper(),
+              getGetModelEvaluationMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.GetModelEvaluationRequest,
                       com.google.cloud.automl.v1beta1.ModelEvaluation>(
                       this, METHODID_GET_MODEL_EVALUATION)))
           .addMethod(
-              getListModelEvaluationsMethodHelper(),
+              getListModelEvaluationsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest,
@@ -1979,7 +1712,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.CreateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.Dataset> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateDatasetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateDatasetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1995,9 +1728,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.GetDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.Dataset> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetDatasetMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetDatasetMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2012,7 +1743,7 @@ public final class AutoMlGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ListDatasetsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListDatasetsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListDatasetsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2028,7 +1759,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.UpdateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.Dataset> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateDatasetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateDatasetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2048,7 +1779,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.DeleteDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteDatasetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteDatasetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2071,9 +1802,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.ImportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getImportDataMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getImportDataMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2089,9 +1818,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.ExportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getExportDataMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getExportDataMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2106,7 +1833,7 @@ public final class AutoMlGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.AnnotationSpec>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetAnnotationSpecMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetAnnotationSpecMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2122,7 +1849,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.GetTableSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.TableSpec> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetTableSpecMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetTableSpecMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2139,7 +1866,7 @@ public final class AutoMlGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ListTableSpecsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListTableSpecsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListTableSpecsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2155,7 +1882,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.UpdateTableSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.TableSpec> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateTableSpecMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateTableSpecMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2171,7 +1898,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.GetColumnSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ColumnSpec> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetColumnSpecMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetColumnSpecMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2188,7 +1915,7 @@ public final class AutoMlGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ListColumnSpecsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListColumnSpecsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListColumnSpecsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2204,7 +1931,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ColumnSpec> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateColumnSpecMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateColumnSpecMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2224,7 +1951,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.CreateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateModelMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateModelMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2240,9 +1967,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.GetModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.Model> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetModelMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetModelMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2257,9 +1982,7 @@ public final class AutoMlGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ListModelsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListModelsMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getListModelsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2277,7 +2000,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.DeleteModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteModelMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteModelMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2301,7 +2024,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.DeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeployModelMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeployModelMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2321,7 +2044,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.UndeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUndeployModelMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUndeployModelMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2342,7 +2065,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.ExportModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getExportModelMethodHelper(), getCallOptions()),
+          getChannel().newCall(getExportModelMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2368,7 +2091,7 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getExportEvaluatedExamplesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getExportEvaluatedExamplesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2385,7 +2108,7 @@ public final class AutoMlGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ModelEvaluation>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetModelEvaluationMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetModelEvaluationMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2402,7 +2125,7 @@ public final class AutoMlGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.ListModelEvaluationsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListModelEvaluationsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListModelEvaluationsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2448,8 +2171,7 @@ public final class AutoMlGrpc {
      */
     public com.google.cloud.automl.v1beta1.Dataset createDataset(
         com.google.cloud.automl.v1beta1.CreateDatasetRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateDatasetMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2461,8 +2183,7 @@ public final class AutoMlGrpc {
      */
     public com.google.cloud.automl.v1beta1.Dataset getDataset(
         com.google.cloud.automl.v1beta1.GetDatasetRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetDatasetMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetDatasetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2474,8 +2195,7 @@ public final class AutoMlGrpc {
      */
     public com.google.cloud.automl.v1beta1.ListDatasetsResponse listDatasets(
         com.google.cloud.automl.v1beta1.ListDatasetsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListDatasetsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListDatasetsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2487,8 +2207,7 @@ public final class AutoMlGrpc {
      */
     public com.google.cloud.automl.v1beta1.Dataset updateDataset(
         com.google.cloud.automl.v1beta1.UpdateDatasetRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateDatasetMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateDatasetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2504,8 +2223,7 @@ public final class AutoMlGrpc {
      */
     public com.google.longrunning.Operation deleteDataset(
         com.google.cloud.automl.v1beta1.DeleteDatasetRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteDatasetMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2524,8 +2242,7 @@ public final class AutoMlGrpc {
      */
     public com.google.longrunning.Operation importData(
         com.google.cloud.automl.v1beta1.ImportDataRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getImportDataMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getImportDataMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2539,8 +2256,7 @@ public final class AutoMlGrpc {
      */
     public com.google.longrunning.Operation exportData(
         com.google.cloud.automl.v1beta1.ExportDataRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getExportDataMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getExportDataMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2553,7 +2269,7 @@ public final class AutoMlGrpc {
     public com.google.cloud.automl.v1beta1.AnnotationSpec getAnnotationSpec(
         com.google.cloud.automl.v1beta1.GetAnnotationSpecRequest request) {
       return blockingUnaryCall(
-          getChannel(), getGetAnnotationSpecMethodHelper(), getCallOptions(), request);
+          getChannel(), getGetAnnotationSpecMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2565,8 +2281,7 @@ public final class AutoMlGrpc {
      */
     public com.google.cloud.automl.v1beta1.TableSpec getTableSpec(
         com.google.cloud.automl.v1beta1.GetTableSpecRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetTableSpecMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetTableSpecMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2578,8 +2293,7 @@ public final class AutoMlGrpc {
      */
     public com.google.cloud.automl.v1beta1.ListTableSpecsResponse listTableSpecs(
         com.google.cloud.automl.v1beta1.ListTableSpecsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListTableSpecsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListTableSpecsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2591,8 +2305,7 @@ public final class AutoMlGrpc {
      */
     public com.google.cloud.automl.v1beta1.TableSpec updateTableSpec(
         com.google.cloud.automl.v1beta1.UpdateTableSpecRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateTableSpecMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateTableSpecMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2604,8 +2317,7 @@ public final class AutoMlGrpc {
      */
     public com.google.cloud.automl.v1beta1.ColumnSpec getColumnSpec(
         com.google.cloud.automl.v1beta1.GetColumnSpecRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetColumnSpecMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetColumnSpecMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2617,8 +2329,7 @@ public final class AutoMlGrpc {
      */
     public com.google.cloud.automl.v1beta1.ListColumnSpecsResponse listColumnSpecs(
         com.google.cloud.automl.v1beta1.ListColumnSpecsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListColumnSpecsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListColumnSpecsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2631,7 +2342,7 @@ public final class AutoMlGrpc {
     public com.google.cloud.automl.v1beta1.ColumnSpec updateColumnSpec(
         com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateColumnSpecMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateColumnSpecMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2647,8 +2358,7 @@ public final class AutoMlGrpc {
      */
     public com.google.longrunning.Operation createModel(
         com.google.cloud.automl.v1beta1.CreateModelRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateModelMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateModelMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2660,7 +2370,7 @@ public final class AutoMlGrpc {
      */
     public com.google.cloud.automl.v1beta1.Model getModel(
         com.google.cloud.automl.v1beta1.GetModelRequest request) {
-      return blockingUnaryCall(getChannel(), getGetModelMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetModelMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2672,8 +2382,7 @@ public final class AutoMlGrpc {
      */
     public com.google.cloud.automl.v1beta1.ListModelsResponse listModels(
         com.google.cloud.automl.v1beta1.ListModelsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListModelsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListModelsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2689,8 +2398,7 @@ public final class AutoMlGrpc {
      */
     public com.google.longrunning.Operation deleteModel(
         com.google.cloud.automl.v1beta1.DeleteModelRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteModelMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteModelMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2710,8 +2418,7 @@ public final class AutoMlGrpc {
      */
     public com.google.longrunning.Operation deployModel(
         com.google.cloud.automl.v1beta1.DeployModelRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeployModelMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeployModelMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2727,8 +2434,7 @@ public final class AutoMlGrpc {
      */
     public com.google.longrunning.Operation undeployModel(
         com.google.cloud.automl.v1beta1.UndeployModelRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUndeployModelMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUndeployModelMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2745,8 +2451,7 @@ public final class AutoMlGrpc {
      */
     public com.google.longrunning.Operation exportModel(
         com.google.cloud.automl.v1beta1.ExportModelRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getExportModelMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getExportModelMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2769,7 +2474,7 @@ public final class AutoMlGrpc {
     public com.google.longrunning.Operation exportEvaluatedExamples(
         com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getExportEvaluatedExamplesMethodHelper(), getCallOptions(), request);
+          getChannel(), getExportEvaluatedExamplesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2782,7 +2487,7 @@ public final class AutoMlGrpc {
     public com.google.cloud.automl.v1beta1.ModelEvaluation getModelEvaluation(
         com.google.cloud.automl.v1beta1.GetModelEvaluationRequest request) {
       return blockingUnaryCall(
-          getChannel(), getGetModelEvaluationMethodHelper(), getCallOptions(), request);
+          getChannel(), getGetModelEvaluationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2795,7 +2500,7 @@ public final class AutoMlGrpc {
     public com.google.cloud.automl.v1beta1.ListModelEvaluationsResponse listModelEvaluations(
         com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getListModelEvaluationsMethodHelper(), getCallOptions(), request);
+          getChannel(), getListModelEvaluationsMethod(), getCallOptions(), request);
     }
   }
 
@@ -2840,7 +2545,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.Dataset>
         createDataset(com.google.cloud.automl.v1beta1.CreateDatasetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateDatasetMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateDatasetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2854,7 +2559,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.Dataset>
         getDataset(com.google.cloud.automl.v1beta1.GetDatasetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetDatasetMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetDatasetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2868,7 +2573,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.ListDatasetsResponse>
         listDatasets(com.google.cloud.automl.v1beta1.ListDatasetsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListDatasetsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListDatasetsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2882,7 +2587,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.Dataset>
         updateDataset(com.google.cloud.automl.v1beta1.UpdateDatasetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateDatasetMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateDatasetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2899,7 +2604,7 @@ public final class AutoMlGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteDataset(com.google.cloud.automl.v1beta1.DeleteDatasetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteDatasetMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteDatasetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2919,7 +2624,7 @@ public final class AutoMlGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         importData(com.google.cloud.automl.v1beta1.ImportDataRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getImportDataMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getImportDataMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2934,7 +2639,7 @@ public final class AutoMlGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         exportData(com.google.cloud.automl.v1beta1.ExportDataRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getExportDataMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getExportDataMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2948,7 +2653,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.AnnotationSpec>
         getAnnotationSpec(com.google.cloud.automl.v1beta1.GetAnnotationSpecRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetAnnotationSpecMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetAnnotationSpecMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2962,7 +2667,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.TableSpec>
         getTableSpec(com.google.cloud.automl.v1beta1.GetTableSpecRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetTableSpecMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetTableSpecMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2976,7 +2681,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.ListTableSpecsResponse>
         listTableSpecs(com.google.cloud.automl.v1beta1.ListTableSpecsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListTableSpecsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListTableSpecsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2990,7 +2695,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.TableSpec>
         updateTableSpec(com.google.cloud.automl.v1beta1.UpdateTableSpecRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateTableSpecMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateTableSpecMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3004,7 +2709,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.ColumnSpec>
         getColumnSpec(com.google.cloud.automl.v1beta1.GetColumnSpecRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetColumnSpecMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetColumnSpecMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3018,7 +2723,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.ListColumnSpecsResponse>
         listColumnSpecs(com.google.cloud.automl.v1beta1.ListColumnSpecsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListColumnSpecsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListColumnSpecsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3032,7 +2737,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.ColumnSpec>
         updateColumnSpec(com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateColumnSpecMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateColumnSpecMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3049,7 +2754,7 @@ public final class AutoMlGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createModel(com.google.cloud.automl.v1beta1.CreateModelRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateModelMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateModelMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3061,8 +2766,7 @@ public final class AutoMlGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.automl.v1beta1.Model>
         getModel(com.google.cloud.automl.v1beta1.GetModelRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetModelMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getGetModelMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3076,7 +2780,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.ListModelsResponse>
         listModels(com.google.cloud.automl.v1beta1.ListModelsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListModelsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListModelsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3093,7 +2797,7 @@ public final class AutoMlGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteModel(com.google.cloud.automl.v1beta1.DeleteModelRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteModelMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteModelMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3114,7 +2818,7 @@ public final class AutoMlGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deployModel(com.google.cloud.automl.v1beta1.DeployModelRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeployModelMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeployModelMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3131,7 +2835,7 @@ public final class AutoMlGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         undeployModel(com.google.cloud.automl.v1beta1.UndeployModelRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUndeployModelMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUndeployModelMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3149,7 +2853,7 @@ public final class AutoMlGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         exportModel(com.google.cloud.automl.v1beta1.ExportModelRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getExportModelMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getExportModelMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3173,8 +2877,7 @@ public final class AutoMlGrpc {
         exportEvaluatedExamples(
             com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getExportEvaluatedExamplesMethodHelper(), getCallOptions()),
-          request);
+          getChannel().newCall(getExportEvaluatedExamplesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3188,7 +2891,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.ModelEvaluation>
         getModelEvaluation(com.google.cloud.automl.v1beta1.GetModelEvaluationRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetModelEvaluationMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetModelEvaluationMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3202,7 +2905,7 @@ public final class AutoMlGrpc {
             com.google.cloud.automl.v1beta1.ListModelEvaluationsResponse>
         listModelEvaluations(com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListModelEvaluationsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListModelEvaluationsMethod(), getCallOptions()), request);
     }
   }
 
@@ -3446,30 +3149,30 @@ public final class AutoMlGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new AutoMlFileDescriptorSupplier())
-                      .addMethod(getCreateDatasetMethodHelper())
-                      .addMethod(getGetDatasetMethodHelper())
-                      .addMethod(getListDatasetsMethodHelper())
-                      .addMethod(getUpdateDatasetMethodHelper())
-                      .addMethod(getDeleteDatasetMethodHelper())
-                      .addMethod(getImportDataMethodHelper())
-                      .addMethod(getExportDataMethodHelper())
-                      .addMethod(getGetAnnotationSpecMethodHelper())
-                      .addMethod(getGetTableSpecMethodHelper())
-                      .addMethod(getListTableSpecsMethodHelper())
-                      .addMethod(getUpdateTableSpecMethodHelper())
-                      .addMethod(getGetColumnSpecMethodHelper())
-                      .addMethod(getListColumnSpecsMethodHelper())
-                      .addMethod(getUpdateColumnSpecMethodHelper())
-                      .addMethod(getCreateModelMethodHelper())
-                      .addMethod(getGetModelMethodHelper())
-                      .addMethod(getListModelsMethodHelper())
-                      .addMethod(getDeleteModelMethodHelper())
-                      .addMethod(getDeployModelMethodHelper())
-                      .addMethod(getUndeployModelMethodHelper())
-                      .addMethod(getExportModelMethodHelper())
-                      .addMethod(getExportEvaluatedExamplesMethodHelper())
-                      .addMethod(getGetModelEvaluationMethodHelper())
-                      .addMethod(getListModelEvaluationsMethodHelper())
+                      .addMethod(getCreateDatasetMethod())
+                      .addMethod(getGetDatasetMethod())
+                      .addMethod(getListDatasetsMethod())
+                      .addMethod(getUpdateDatasetMethod())
+                      .addMethod(getDeleteDatasetMethod())
+                      .addMethod(getImportDataMethod())
+                      .addMethod(getExportDataMethod())
+                      .addMethod(getGetAnnotationSpecMethod())
+                      .addMethod(getGetTableSpecMethod())
+                      .addMethod(getListTableSpecsMethod())
+                      .addMethod(getUpdateTableSpecMethod())
+                      .addMethod(getGetColumnSpecMethod())
+                      .addMethod(getListColumnSpecsMethod())
+                      .addMethod(getUpdateColumnSpecMethod())
+                      .addMethod(getCreateModelMethod())
+                      .addMethod(getGetModelMethod())
+                      .addMethod(getListModelsMethod())
+                      .addMethod(getDeleteModelMethod())
+                      .addMethod(getDeployModelMethod())
+                      .addMethod(getUndeployModelMethod())
+                      .addMethod(getExportModelMethod())
+                      .addMethod(getExportEvaluatedExamplesMethod())
+                      .addMethod(getGetModelEvaluationMethod())
+                      .addMethod(getListModelEvaluationsMethod())
                       .build();
         }
       }
