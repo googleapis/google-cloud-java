@@ -88,19 +88,43 @@ public final class LookupServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static LookupServiceStub newStub(io.grpc.Channel channel) {
-    return new LookupServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<LookupServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LookupServiceStub>() {
+          @java.lang.Override
+          public LookupServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LookupServiceStub(channel, callOptions);
+          }
+        };
+    return LookupServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static LookupServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new LookupServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<LookupServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LookupServiceBlockingStub>() {
+          @java.lang.Override
+          public LookupServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LookupServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return LookupServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static LookupServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new LookupServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<LookupServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LookupServiceFutureStub>() {
+          @java.lang.Override
+          public LookupServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LookupServiceFutureStub(channel, callOptions);
+          }
+        };
+    return LookupServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -150,11 +174,8 @@ public final class LookupServiceGrpc {
    * Service Directory API for looking up service data at runtime.
    * </pre>
    */
-  public static final class LookupServiceStub extends io.grpc.stub.AbstractStub<LookupServiceStub> {
-    private LookupServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class LookupServiceStub
+      extends io.grpc.stub.AbstractAsyncStub<LookupServiceStub> {
     private LookupServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -193,11 +214,7 @@ public final class LookupServiceGrpc {
    * </pre>
    */
   public static final class LookupServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<LookupServiceBlockingStub> {
-    private LookupServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<LookupServiceBlockingStub> {
     private LookupServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -231,11 +248,7 @@ public final class LookupServiceGrpc {
    * </pre>
    */
   public static final class LookupServiceFutureStub
-      extends io.grpc.stub.AbstractStub<LookupServiceFutureStub> {
-    private LookupServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<LookupServiceFutureStub> {
     private LookupServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }

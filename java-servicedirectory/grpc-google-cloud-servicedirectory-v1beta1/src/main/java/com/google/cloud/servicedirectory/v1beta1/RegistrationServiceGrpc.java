@@ -876,19 +876,43 @@ public final class RegistrationServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static RegistrationServiceStub newStub(io.grpc.Channel channel) {
-    return new RegistrationServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RegistrationServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RegistrationServiceStub>() {
+          @java.lang.Override
+          public RegistrationServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RegistrationServiceStub(channel, callOptions);
+          }
+        };
+    return RegistrationServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static RegistrationServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new RegistrationServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RegistrationServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RegistrationServiceBlockingStub>() {
+          @java.lang.Override
+          public RegistrationServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RegistrationServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return RegistrationServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static RegistrationServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new RegistrationServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RegistrationServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RegistrationServiceFutureStub>() {
+          @java.lang.Override
+          public RegistrationServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RegistrationServiceFutureStub(channel, callOptions);
+          }
+        };
+    return RegistrationServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -1308,11 +1332,7 @@ public final class RegistrationServiceGrpc {
    * </pre>
    */
   public static final class RegistrationServiceStub
-      extends io.grpc.stub.AbstractStub<RegistrationServiceStub> {
-    private RegistrationServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<RegistrationServiceStub> {
     private RegistrationServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1645,11 +1665,7 @@ public final class RegistrationServiceGrpc {
    * </pre>
    */
   public static final class RegistrationServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<RegistrationServiceBlockingStub> {
-    private RegistrationServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<RegistrationServiceBlockingStub> {
     private RegistrationServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -1898,11 +1914,7 @@ public final class RegistrationServiceGrpc {
    * </pre>
    */
   public static final class RegistrationServiceFutureStub
-      extends io.grpc.stub.AbstractStub<RegistrationServiceFutureStub> {
-    private RegistrationServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<RegistrationServiceFutureStub> {
     private RegistrationServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
