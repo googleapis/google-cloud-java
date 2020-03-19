@@ -293,19 +293,43 @@ public final class BigQueryWriteGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static BigQueryWriteStub newStub(io.grpc.Channel channel) {
-    return new BigQueryWriteStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BigQueryWriteStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BigQueryWriteStub>() {
+          @java.lang.Override
+          public BigQueryWriteStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BigQueryWriteStub(channel, callOptions);
+          }
+        };
+    return BigQueryWriteStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static BigQueryWriteBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new BigQueryWriteBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BigQueryWriteBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BigQueryWriteBlockingStub>() {
+          @java.lang.Override
+          public BigQueryWriteBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BigQueryWriteBlockingStub(channel, callOptions);
+          }
+        };
+    return BigQueryWriteBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static BigQueryWriteFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new BigQueryWriteFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BigQueryWriteFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BigQueryWriteFutureStub>() {
+          @java.lang.Override
+          public BigQueryWriteFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BigQueryWriteFutureStub(channel, callOptions);
+          }
+        };
+    return BigQueryWriteFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -464,11 +488,8 @@ public final class BigQueryWriteGrpc {
    * The Write API can be used to write data to BigQuery.
    * </pre>
    */
-  public static final class BigQueryWriteStub extends io.grpc.stub.AbstractStub<BigQueryWriteStub> {
-    private BigQueryWriteStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class BigQueryWriteStub
+      extends io.grpc.stub.AbstractAsyncStub<BigQueryWriteStub> {
     private BigQueryWriteStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -595,11 +616,7 @@ public final class BigQueryWriteGrpc {
    * </pre>
    */
   public static final class BigQueryWriteBlockingStub
-      extends io.grpc.stub.AbstractStub<BigQueryWriteBlockingStub> {
-    private BigQueryWriteBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<BigQueryWriteBlockingStub> {
     private BigQueryWriteBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -679,11 +696,7 @@ public final class BigQueryWriteGrpc {
    * </pre>
    */
   public static final class BigQueryWriteFutureStub
-      extends io.grpc.stub.AbstractStub<BigQueryWriteFutureStub> {
-    private BigQueryWriteFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<BigQueryWriteFutureStub> {
     private BigQueryWriteFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }

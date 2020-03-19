@@ -185,19 +185,43 @@ public final class BigQueryReadGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static BigQueryReadStub newStub(io.grpc.Channel channel) {
-    return new BigQueryReadStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BigQueryReadStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BigQueryReadStub>() {
+          @java.lang.Override
+          public BigQueryReadStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BigQueryReadStub(channel, callOptions);
+          }
+        };
+    return BigQueryReadStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static BigQueryReadBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new BigQueryReadBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BigQueryReadBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BigQueryReadBlockingStub>() {
+          @java.lang.Override
+          public BigQueryReadBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BigQueryReadBlockingStub(channel, callOptions);
+          }
+        };
+    return BigQueryReadBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static BigQueryReadFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new BigQueryReadFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BigQueryReadFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BigQueryReadFutureStub>() {
+          @java.lang.Override
+          public BigQueryReadFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BigQueryReadFutureStub(channel, callOptions);
+          }
+        };
+    return BigQueryReadFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -318,11 +342,8 @@ public final class BigQueryReadGrpc {
    * The Read API can be used to read data from BigQuery.
    * </pre>
    */
-  public static final class BigQueryReadStub extends io.grpc.stub.AbstractStub<BigQueryReadStub> {
-    private BigQueryReadStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class BigQueryReadStub
+      extends io.grpc.stub.AbstractAsyncStub<BigQueryReadStub> {
     private BigQueryReadStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -421,11 +442,7 @@ public final class BigQueryReadGrpc {
    * </pre>
    */
   public static final class BigQueryReadBlockingStub
-      extends io.grpc.stub.AbstractStub<BigQueryReadBlockingStub> {
-    private BigQueryReadBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<BigQueryReadBlockingStub> {
     private BigQueryReadBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -514,11 +531,7 @@ public final class BigQueryReadGrpc {
    * </pre>
    */
   public static final class BigQueryReadFutureStub
-      extends io.grpc.stub.AbstractStub<BigQueryReadFutureStub> {
-    private BigQueryReadFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<BigQueryReadFutureStub> {
     private BigQueryReadFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }

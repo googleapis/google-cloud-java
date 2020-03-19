@@ -292,19 +292,43 @@ public final class BigQueryStorageGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static BigQueryStorageStub newStub(io.grpc.Channel channel) {
-    return new BigQueryStorageStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BigQueryStorageStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BigQueryStorageStub>() {
+          @java.lang.Override
+          public BigQueryStorageStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BigQueryStorageStub(channel, callOptions);
+          }
+        };
+    return BigQueryStorageStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static BigQueryStorageBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new BigQueryStorageBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BigQueryStorageBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BigQueryStorageBlockingStub>() {
+          @java.lang.Override
+          public BigQueryStorageBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BigQueryStorageBlockingStub(channel, callOptions);
+          }
+        };
+    return BigQueryStorageBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static BigQueryStorageFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new BigQueryStorageFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BigQueryStorageFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BigQueryStorageFutureStub>() {
+          @java.lang.Override
+          public BigQueryStorageFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BigQueryStorageFutureStub(channel, callOptions);
+          }
+        };
+    return BigQueryStorageFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -482,11 +506,7 @@ public final class BigQueryStorageGrpc {
    * </pre>
    */
   public static final class BigQueryStorageStub
-      extends io.grpc.stub.AbstractStub<BigQueryStorageStub> {
-    private BigQueryStorageStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<BigQueryStorageStub> {
     private BigQueryStorageStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -632,11 +652,7 @@ public final class BigQueryStorageGrpc {
    * </pre>
    */
   public static final class BigQueryStorageBlockingStub
-      extends io.grpc.stub.AbstractStub<BigQueryStorageBlockingStub> {
-    private BigQueryStorageBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<BigQueryStorageBlockingStub> {
     private BigQueryStorageBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -762,11 +778,7 @@ public final class BigQueryStorageGrpc {
    * </pre>
    */
   public static final class BigQueryStorageFutureStub
-      extends io.grpc.stub.AbstractStub<BigQueryStorageFutureStub> {
-    private BigQueryStorageFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<BigQueryStorageFutureStub> {
     private BigQueryStorageFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }

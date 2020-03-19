@@ -2393,7 +2393,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. Table that this ReadSession is reading from, in the form
-   * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}
+   * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`
    * </pre>
    *
    * <code>
@@ -2418,7 +2418,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. Table that this ReadSession is reading from, in the form
-   * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}
+   * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`
    * </pre>
    *
    * <code>
@@ -4097,7 +4097,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Table that this ReadSession is reading from, in the form
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}
+     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`
      * </pre>
      *
      * <code>
@@ -4122,7 +4122,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Table that this ReadSession is reading from, in the form
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}
+     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`
      * </pre>
      *
      * <code>
@@ -4147,7 +4147,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Table that this ReadSession is reading from, in the form
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}
+     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`
      * </pre>
      *
      * <code>
@@ -4171,7 +4171,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Table that this ReadSession is reading from, in the form
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}
+     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`
      * </pre>
      *
      * <code>
@@ -4191,7 +4191,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Table that this ReadSession is reading from, in the form
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}
+     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`
      * </pre>
      *
      * <code>
