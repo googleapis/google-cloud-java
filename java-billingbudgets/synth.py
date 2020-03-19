@@ -14,23 +14,21 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
 import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
 gapic = gcp.GAPICGenerator()
 
-service = 'billingbudgets'
+service = 'billing-budgets'
 versions = ['v1beta1']
-config_pattern = '/google/cloud/billing/budgets/artman_{service}_{version}.yaml'
 
 for version in versions:
-    java.gapic_library(
+    java.bazel_library(
         service=service,
         version=version,
-        config_pattern=config_pattern,
-        package_pattern='com.google.cloud.billing.budgets.{version}',
-        gapic=gapic,
+        proto_path=f'google/cloud/billing/budgets/{version}',
+        bazel_target=f'//google/cloud/billing/budgets/{version}:google-cloud-{service}-{version}-java',
+        destination_name='billingbudgets',
     )
 
 java.common_templates()

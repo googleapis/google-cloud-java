@@ -31,7 +31,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/billing/budgets/v1beta1/budget_service.proto")
 public final class BudgetServiceGrpc {
 
@@ -40,30 +40,20 @@ public final class BudgetServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.billing.budgets.v1beta1.BudgetService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateBudgetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.billing.budgets.v1beta1.CreateBudgetRequest,
-          com.google.cloud.billing.budgets.v1beta1.Budget>
-      METHOD_CREATE_BUDGET = getCreateBudgetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.billing.budgets.v1beta1.CreateBudgetRequest,
           com.google.cloud.billing.budgets.v1beta1.Budget>
       getCreateBudgetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateBudget",
+      requestType = com.google.cloud.billing.budgets.v1beta1.CreateBudgetRequest.class,
+      responseType = com.google.cloud.billing.budgets.v1beta1.Budget.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.billing.budgets.v1beta1.CreateBudgetRequest,
           com.google.cloud.billing.budgets.v1beta1.Budget>
       getCreateBudgetMethod() {
-    return getCreateBudgetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.billing.budgets.v1beta1.CreateBudgetRequest,
-          com.google.cloud.billing.budgets.v1beta1.Budget>
-      getCreateBudgetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.billing.budgets.v1beta1.CreateBudgetRequest,
             com.google.cloud.billing.budgets.v1beta1.Budget>
@@ -78,9 +68,7 @@ public final class BudgetServiceGrpc {
                           com.google.cloud.billing.budgets.v1beta1.Budget>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.billing.budgets.v1beta1.BudgetService", "CreateBudget"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateBudget"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -98,30 +86,20 @@ public final class BudgetServiceGrpc {
     return getCreateBudgetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateBudgetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest,
-          com.google.cloud.billing.budgets.v1beta1.Budget>
-      METHOD_UPDATE_BUDGET = getUpdateBudgetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest,
           com.google.cloud.billing.budgets.v1beta1.Budget>
       getUpdateBudgetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBudget",
+      requestType = com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest.class,
+      responseType = com.google.cloud.billing.budgets.v1beta1.Budget.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest,
           com.google.cloud.billing.budgets.v1beta1.Budget>
       getUpdateBudgetMethod() {
-    return getUpdateBudgetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest,
-          com.google.cloud.billing.budgets.v1beta1.Budget>
-      getUpdateBudgetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest,
             com.google.cloud.billing.budgets.v1beta1.Budget>
@@ -136,9 +114,7 @@ public final class BudgetServiceGrpc {
                           com.google.cloud.billing.budgets.v1beta1.Budget>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.billing.budgets.v1beta1.BudgetService", "UpdateBudget"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBudget"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -156,30 +132,20 @@ public final class BudgetServiceGrpc {
     return getUpdateBudgetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetBudgetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.billing.budgets.v1beta1.GetBudgetRequest,
-          com.google.cloud.billing.budgets.v1beta1.Budget>
-      METHOD_GET_BUDGET = getGetBudgetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.billing.budgets.v1beta1.GetBudgetRequest,
           com.google.cloud.billing.budgets.v1beta1.Budget>
       getGetBudgetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBudget",
+      requestType = com.google.cloud.billing.budgets.v1beta1.GetBudgetRequest.class,
+      responseType = com.google.cloud.billing.budgets.v1beta1.Budget.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.billing.budgets.v1beta1.GetBudgetRequest,
           com.google.cloud.billing.budgets.v1beta1.Budget>
       getGetBudgetMethod() {
-    return getGetBudgetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.billing.budgets.v1beta1.GetBudgetRequest,
-          com.google.cloud.billing.budgets.v1beta1.Budget>
-      getGetBudgetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.billing.budgets.v1beta1.GetBudgetRequest,
             com.google.cloud.billing.budgets.v1beta1.Budget>
@@ -194,9 +160,7 @@ public final class BudgetServiceGrpc {
                           com.google.cloud.billing.budgets.v1beta1.Budget>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.billing.budgets.v1beta1.BudgetService", "GetBudget"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBudget"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -213,30 +177,20 @@ public final class BudgetServiceGrpc {
     return getGetBudgetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListBudgetsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest,
-          com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse>
-      METHOD_LIST_BUDGETS = getListBudgetsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest,
           com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse>
       getListBudgetsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBudgets",
+      requestType = com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest.class,
+      responseType = com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest,
           com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse>
       getListBudgetsMethod() {
-    return getListBudgetsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest,
-          com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse>
-      getListBudgetsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest,
             com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse>
@@ -251,9 +205,7 @@ public final class BudgetServiceGrpc {
                           com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.billing.budgets.v1beta1.BudgetService", "ListBudgets"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBudgets"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -271,26 +223,18 @@ public final class BudgetServiceGrpc {
     return getListBudgetsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteBudgetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.billing.budgets.v1beta1.DeleteBudgetRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_BUDGET = getDeleteBudgetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.billing.budgets.v1beta1.DeleteBudgetRequest, com.google.protobuf.Empty>
       getDeleteBudgetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBudget",
+      requestType = com.google.cloud.billing.budgets.v1beta1.DeleteBudgetRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.billing.budgets.v1beta1.DeleteBudgetRequest, com.google.protobuf.Empty>
       getDeleteBudgetMethod() {
-    return getDeleteBudgetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.billing.budgets.v1beta1.DeleteBudgetRequest, com.google.protobuf.Empty>
-      getDeleteBudgetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.billing.budgets.v1beta1.DeleteBudgetRequest, com.google.protobuf.Empty>
         getDeleteBudgetMethod;
@@ -304,9 +248,7 @@ public final class BudgetServiceGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.billing.budgets.v1beta1.BudgetService", "DeleteBudget"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBudget"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -326,19 +268,43 @@ public final class BudgetServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static BudgetServiceStub newStub(io.grpc.Channel channel) {
-    return new BudgetServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BudgetServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BudgetServiceStub>() {
+          @java.lang.Override
+          public BudgetServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BudgetServiceStub(channel, callOptions);
+          }
+        };
+    return BudgetServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static BudgetServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new BudgetServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BudgetServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BudgetServiceBlockingStub>() {
+          @java.lang.Override
+          public BudgetServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BudgetServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return BudgetServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static BudgetServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new BudgetServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BudgetServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BudgetServiceFutureStub>() {
+          @java.lang.Override
+          public BudgetServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BudgetServiceFutureStub(channel, callOptions);
+          }
+        };
+    return BudgetServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -364,7 +330,7 @@ public final class BudgetServiceGrpc {
         com.google.cloud.billing.budgets.v1beta1.CreateBudgetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.budgets.v1beta1.Budget>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateBudgetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateBudgetMethod(), responseObserver);
     }
 
     /**
@@ -381,7 +347,7 @@ public final class BudgetServiceGrpc {
         com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.budgets.v1beta1.Budget>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateBudgetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateBudgetMethod(), responseObserver);
     }
 
     /**
@@ -399,7 +365,7 @@ public final class BudgetServiceGrpc {
         com.google.cloud.billing.budgets.v1beta1.GetBudgetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.budgets.v1beta1.Budget>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBudgetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetBudgetMethod(), responseObserver);
     }
 
     /**
@@ -417,7 +383,7 @@ public final class BudgetServiceGrpc {
         com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListBudgetsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListBudgetsMethod(), responseObserver);
     }
 
     /**
@@ -430,41 +396,41 @@ public final class BudgetServiceGrpc {
     public void deleteBudget(
         com.google.cloud.billing.budgets.v1beta1.DeleteBudgetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteBudgetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteBudgetMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getCreateBudgetMethodHelper(),
+              getCreateBudgetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.billing.budgets.v1beta1.CreateBudgetRequest,
                       com.google.cloud.billing.budgets.v1beta1.Budget>(
                       this, METHODID_CREATE_BUDGET)))
           .addMethod(
-              getUpdateBudgetMethodHelper(),
+              getUpdateBudgetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest,
                       com.google.cloud.billing.budgets.v1beta1.Budget>(
                       this, METHODID_UPDATE_BUDGET)))
           .addMethod(
-              getGetBudgetMethodHelper(),
+              getGetBudgetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.billing.budgets.v1beta1.GetBudgetRequest,
                       com.google.cloud.billing.budgets.v1beta1.Budget>(this, METHODID_GET_BUDGET)))
           .addMethod(
-              getListBudgetsMethodHelper(),
+              getListBudgetsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest,
                       com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse>(
                       this, METHODID_LIST_BUDGETS)))
           .addMethod(
-              getDeleteBudgetMethodHelper(),
+              getDeleteBudgetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.billing.budgets.v1beta1.DeleteBudgetRequest,
@@ -481,11 +447,8 @@ public final class BudgetServiceGrpc {
    * budget plan and rules to execute as we track spend against that plan.
    * </pre>
    */
-  public static final class BudgetServiceStub extends io.grpc.stub.AbstractStub<BudgetServiceStub> {
-    private BudgetServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class BudgetServiceStub
+      extends io.grpc.stub.AbstractAsyncStub<BudgetServiceStub> {
     private BudgetServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -509,7 +472,7 @@ public final class BudgetServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.billing.budgets.v1beta1.Budget>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateBudgetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateBudgetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -529,7 +492,7 @@ public final class BudgetServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.billing.budgets.v1beta1.Budget>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateBudgetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateBudgetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -550,9 +513,7 @@ public final class BudgetServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.billing.budgets.v1beta1.Budget>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetBudgetMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetBudgetMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -571,7 +532,7 @@ public final class BudgetServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListBudgetsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListBudgetsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -587,7 +548,7 @@ public final class BudgetServiceGrpc {
         com.google.cloud.billing.budgets.v1beta1.DeleteBudgetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteBudgetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteBudgetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -602,11 +563,7 @@ public final class BudgetServiceGrpc {
    * </pre>
    */
   public static final class BudgetServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<BudgetServiceBlockingStub> {
-    private BudgetServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<BudgetServiceBlockingStub> {
     private BudgetServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -628,8 +585,7 @@ public final class BudgetServiceGrpc {
      */
     public com.google.cloud.billing.budgets.v1beta1.Budget createBudget(
         com.google.cloud.billing.budgets.v1beta1.CreateBudgetRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateBudgetMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateBudgetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -644,8 +600,7 @@ public final class BudgetServiceGrpc {
      */
     public com.google.cloud.billing.budgets.v1beta1.Budget updateBudget(
         com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateBudgetMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateBudgetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -661,7 +616,7 @@ public final class BudgetServiceGrpc {
      */
     public com.google.cloud.billing.budgets.v1beta1.Budget getBudget(
         com.google.cloud.billing.budgets.v1beta1.GetBudgetRequest request) {
-      return blockingUnaryCall(getChannel(), getGetBudgetMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetBudgetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -677,8 +632,7 @@ public final class BudgetServiceGrpc {
      */
     public com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse listBudgets(
         com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListBudgetsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListBudgetsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -690,8 +644,7 @@ public final class BudgetServiceGrpc {
      */
     public com.google.protobuf.Empty deleteBudget(
         com.google.cloud.billing.budgets.v1beta1.DeleteBudgetRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteBudgetMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteBudgetMethod(), getCallOptions(), request);
     }
   }
 
@@ -704,11 +657,7 @@ public final class BudgetServiceGrpc {
    * </pre>
    */
   public static final class BudgetServiceFutureStub
-      extends io.grpc.stub.AbstractStub<BudgetServiceFutureStub> {
-    private BudgetServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<BudgetServiceFutureStub> {
     private BudgetServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -732,7 +681,7 @@ public final class BudgetServiceGrpc {
             com.google.cloud.billing.budgets.v1beta1.Budget>
         createBudget(com.google.cloud.billing.budgets.v1beta1.CreateBudgetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateBudgetMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateBudgetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -749,7 +698,7 @@ public final class BudgetServiceGrpc {
             com.google.cloud.billing.budgets.v1beta1.Budget>
         updateBudget(com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateBudgetMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateBudgetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -766,8 +715,7 @@ public final class BudgetServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.billing.budgets.v1beta1.Budget>
         getBudget(com.google.cloud.billing.budgets.v1beta1.GetBudgetRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetBudgetMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getGetBudgetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -785,7 +733,7 @@ public final class BudgetServiceGrpc {
             com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse>
         listBudgets(com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListBudgetsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListBudgetsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -798,7 +746,7 @@ public final class BudgetServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteBudget(com.google.cloud.billing.budgets.v1beta1.DeleteBudgetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteBudgetMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteBudgetMethod(), getCallOptions()), request);
     }
   }
 
@@ -919,11 +867,11 @@ public final class BudgetServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new BudgetServiceFileDescriptorSupplier())
-                      .addMethod(getCreateBudgetMethodHelper())
-                      .addMethod(getUpdateBudgetMethodHelper())
-                      .addMethod(getGetBudgetMethodHelper())
-                      .addMethod(getListBudgetsMethodHelper())
-                      .addMethod(getDeleteBudgetMethodHelper())
+                      .addMethod(getCreateBudgetMethod())
+                      .addMethod(getUpdateBudgetMethod())
+                      .addMethod(getGetBudgetMethod())
+                      .addMethod(getListBudgetsMethod())
+                      .addMethod(getDeleteBudgetMethod())
                       .build();
         }
       }
