@@ -217,19 +217,43 @@ public final class WebRiskServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static WebRiskServiceStub newStub(io.grpc.Channel channel) {
-    return new WebRiskServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<WebRiskServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WebRiskServiceStub>() {
+          @java.lang.Override
+          public WebRiskServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WebRiskServiceStub(channel, callOptions);
+          }
+        };
+    return WebRiskServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static WebRiskServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new WebRiskServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<WebRiskServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WebRiskServiceBlockingStub>() {
+          @java.lang.Override
+          public WebRiskServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WebRiskServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return WebRiskServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static WebRiskServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new WebRiskServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<WebRiskServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WebRiskServiceFutureStub>() {
+          @java.lang.Override
+          public WebRiskServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WebRiskServiceFutureStub(channel, callOptions);
+          }
+        };
+    return WebRiskServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -354,11 +378,7 @@ public final class WebRiskServiceGrpc {
    * </pre>
    */
   public static final class WebRiskServiceStub
-      extends io.grpc.stub.AbstractStub<WebRiskServiceStub> {
-    private WebRiskServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<WebRiskServiceStub> {
     private WebRiskServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -459,11 +479,7 @@ public final class WebRiskServiceGrpc {
    * </pre>
    */
   public static final class WebRiskServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<WebRiskServiceBlockingStub> {
-    private WebRiskServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<WebRiskServiceBlockingStub> {
     private WebRiskServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -552,11 +568,7 @@ public final class WebRiskServiceGrpc {
    * </pre>
    */
   public static final class WebRiskServiceFutureStub
-      extends io.grpc.stub.AbstractStub<WebRiskServiceFutureStub> {
-    private WebRiskServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<WebRiskServiceFutureStub> {
     private WebRiskServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
