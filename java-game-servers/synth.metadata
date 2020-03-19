@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-03-17T18:39:30.548784Z",
+  "updateTime": "2020-03-19T09:17:30.497861Z",
   "sources": [
     {
       "generator": {
@@ -12,15 +12,23 @@
       "git": {
         "name": "googleapis-private",
         "remote": "https://github.com/googleapis/googleapis-private.git",
-        "sha": "f557255ffc2382115850c7e4832b5505676ae63b",
-        "internalRef": "299734673"
+        "sha": "e6378caa596533251006a9eb318f3f9e71984f2b",
+        "internalRef": "301441701",
+        "log": "e6378caa596533251006a9eb318f3f9e71984f2b\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 301441701\n\n"
       }
     },
     {
-      "template": {
-        "name": "java_library",
-        "origin": "synthtool.gcp",
-        "version": "2020.2.4"
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "bcad3e01b69851ad682a87f8202003a1683ad73a"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "bcad3e01b69851ad682a87f8202003a1683ad73a"
       }
     }
   ],
