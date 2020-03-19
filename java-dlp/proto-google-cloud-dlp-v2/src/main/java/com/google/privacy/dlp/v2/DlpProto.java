@@ -1785,10 +1785,13 @@ public final class DlpProto {
           + "/{name=projects/*/locations/*/dlpJobs/*}"
           + ":finish:\001*\032F\312A\022dlp.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmB\215\001\n\031com.google.privacy.dlp.v2B\010DlpPro"
+          + "rmB\354\001\n\031com.google.privacy.dlp.v2B\010DlpPro"
           + "toP\001Z8google.golang.org/genproto/googlea"
           + "pis/privacy/dlp/v2;dlp\252\002\023Google.Cloud.Dl"
-          + "p.V2\312\002\023Google\\Cloud\\Dlp\\V2b\006proto3"
+          + "p.V2\312\002\023Google\\Cloud\\Dlp\\V2\352A\\\n\'dlp.googl"
+          + "eapis.com/OrganizationLocation\0221organiza"
+          + "tions/{organization}/locations/{location"
+          + "}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -3349,6 +3352,7 @@ public final class DlpProto {
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
