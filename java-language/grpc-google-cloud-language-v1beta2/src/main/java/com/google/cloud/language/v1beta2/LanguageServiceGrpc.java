@@ -327,19 +327,43 @@ public final class LanguageServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static LanguageServiceStub newStub(io.grpc.Channel channel) {
-    return new LanguageServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<LanguageServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LanguageServiceStub>() {
+          @java.lang.Override
+          public LanguageServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LanguageServiceStub(channel, callOptions);
+          }
+        };
+    return LanguageServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static LanguageServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new LanguageServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<LanguageServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LanguageServiceBlockingStub>() {
+          @java.lang.Override
+          public LanguageServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LanguageServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return LanguageServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static LanguageServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new LanguageServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<LanguageServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LanguageServiceFutureStub>() {
+          @java.lang.Override
+          public LanguageServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LanguageServiceFutureStub(channel, callOptions);
+          }
+        };
+    return LanguageServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -501,11 +525,7 @@ public final class LanguageServiceGrpc {
    * </pre>
    */
   public static final class LanguageServiceStub
-      extends io.grpc.stub.AbstractStub<LanguageServiceStub> {
-    private LanguageServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<LanguageServiceStub> {
     private LanguageServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -634,11 +654,7 @@ public final class LanguageServiceGrpc {
    * </pre>
    */
   public static final class LanguageServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<LanguageServiceBlockingStub> {
-    private LanguageServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<LanguageServiceBlockingStub> {
     private LanguageServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -739,11 +755,7 @@ public final class LanguageServiceGrpc {
    * </pre>
    */
   public static final class LanguageServiceFutureStub
-      extends io.grpc.stub.AbstractStub<LanguageServiceFutureStub> {
-    private LanguageServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<LanguageServiceFutureStub> {
     private LanguageServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
