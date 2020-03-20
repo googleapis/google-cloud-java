@@ -14,23 +14,18 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
-gapic = gcp.GAPICGenerator()
-
-service = 'dlp'
+service = 'privacy-dlp'
 versions = ['v2']
-config_pattern = '/google/privacy/dlp/artman_dlp_{version}.yaml'
 
 for version in versions:
-  java.gapic_library(
-    service=service,
-    version=version,
-    config_pattern=config_pattern,
-    package_pattern='com.google.privacy.{service}.{version}',
-    gapic=gapic,
+  java.bazel_library(
+      service=service,
+      version=version,
+      proto_path=f'/google/privacy/dlp/{version}',
+      bazel_target=f'//google/privacy/dlp/{version}:google-cloud-{service}-{version}-java',
+      destination_name='dlp',
   )
 
 java.common_templates()
