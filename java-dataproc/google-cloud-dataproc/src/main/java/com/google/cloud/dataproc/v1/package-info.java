@@ -15,11 +15,27 @@
  */
 
 /**
- * A client to Google Cloud Dataproc API.
+ * A client to Cloud Dataproc API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>======================= ClusterControllerClient =======================
+ * <p>============================== AutoscalingPolicyServiceClient ==============================
+ *
+ * <p>Service Description: The API interface for managing autoscaling policies in the Dataproc API.
+ *
+ * <p>Sample for AutoscalingPolicyServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
+ *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+ *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
+ *   AutoscalingPolicy response = autoscalingPolicyServiceClient.createAutoscalingPolicy(formattedParent, policy);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ======================= ClusterControllerClient =======================
  *
  * <p>Service Description: The ClusterControllerService provides methods to manage clusters of
  * Compute Engine instances.
@@ -66,22 +82,6 @@
  *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
  *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
  *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
- * }
- * </code>
- * </pre>
- *
- * ============================== AutoscalingPolicyServiceClient ==============================
- *
- * <p>Service Description: The API interface for managing autoscaling policies in the Dataproc API.
- *
- * <p>Sample for AutoscalingPolicyServiceClient:
- *
- * <pre>
- * <code>
- * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
- *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
- *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
- *   AutoscalingPolicy response = autoscalingPolicyServiceClient.createAutoscalingPolicy(formattedParent, policy);
  * }
  * </code>
  * </pre>

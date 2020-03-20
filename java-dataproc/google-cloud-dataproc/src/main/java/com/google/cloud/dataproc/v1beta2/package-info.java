@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud Dataproc API.
+ * A client to Cloud Dataproc API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

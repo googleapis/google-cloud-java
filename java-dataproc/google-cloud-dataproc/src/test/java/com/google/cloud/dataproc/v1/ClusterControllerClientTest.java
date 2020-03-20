@@ -47,28 +47,28 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ClusterControllerClientTest {
+  private static MockAutoscalingPolicyService mockAutoscalingPolicyService;
   private static MockClusterController mockClusterController;
   private static MockJobController mockJobController;
   private static MockWorkflowTemplateService mockWorkflowTemplateService;
-  private static MockAutoscalingPolicyService mockAutoscalingPolicyService;
   private static MockServiceHelper serviceHelper;
   private ClusterControllerClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
+    mockAutoscalingPolicyService = new MockAutoscalingPolicyService();
     mockClusterController = new MockClusterController();
     mockJobController = new MockJobController();
     mockWorkflowTemplateService = new MockWorkflowTemplateService();
-    mockAutoscalingPolicyService = new MockAutoscalingPolicyService();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
+                mockAutoscalingPolicyService,
                 mockClusterController,
                 mockJobController,
-                mockWorkflowTemplateService,
-                mockAutoscalingPolicyService));
+                mockWorkflowTemplateService));
     serviceHelper.start();
   }
 

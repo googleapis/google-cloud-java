@@ -14,22 +14,16 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
-
-gapic = gcp.GAPICGenerator()
 
 service = 'dataproc'
 versions = ['v1', 'v1beta2']
 
 for version in versions:
-  java.gapic_library(
-    service=service,
-    version=version,
-    config_pattern='/google/cloud/dataproc/artman_dataproc_{version}.yaml',
-    package_pattern='com.google.cloud.{service}.{version}',
-    gapic=gapic,
+  java.bazel_library(
+      service=service,
+      version=version,
+      bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
   )
 
 java.common_templates()

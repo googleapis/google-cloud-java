@@ -31,7 +31,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dataproc/v1beta2/autoscaling_policies.proto")
 public final class AutoscalingPolicyServiceGrpc {
 
@@ -41,30 +41,20 @@ public final class AutoscalingPolicyServiceGrpc {
       "google.cloud.dataproc.v1beta2.AutoscalingPolicyService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateAutoscalingPolicyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1beta2.CreateAutoscalingPolicyRequest,
-          com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
-      METHOD_CREATE_AUTOSCALING_POLICY = getCreateAutoscalingPolicyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1beta2.CreateAutoscalingPolicyRequest,
           com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
       getCreateAutoscalingPolicyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAutoscalingPolicy",
+      requestType = com.google.cloud.dataproc.v1beta2.CreateAutoscalingPolicyRequest.class,
+      responseType = com.google.cloud.dataproc.v1beta2.AutoscalingPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1beta2.CreateAutoscalingPolicyRequest,
           com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
       getCreateAutoscalingPolicyMethod() {
-    return getCreateAutoscalingPolicyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1beta2.CreateAutoscalingPolicyRequest,
-          com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
-      getCreateAutoscalingPolicyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dataproc.v1beta2.CreateAutoscalingPolicyRequest,
             com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
@@ -84,9 +74,7 @@ public final class AutoscalingPolicyServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dataproc.v1beta2.AutoscalingPolicyService",
-                              "CreateAutoscalingPolicy"))
+                          generateFullMethodName(SERVICE_NAME, "CreateAutoscalingPolicy"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -106,30 +94,20 @@ public final class AutoscalingPolicyServiceGrpc {
     return getCreateAutoscalingPolicyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateAutoscalingPolicyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1beta2.UpdateAutoscalingPolicyRequest,
-          com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
-      METHOD_UPDATE_AUTOSCALING_POLICY = getUpdateAutoscalingPolicyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1beta2.UpdateAutoscalingPolicyRequest,
           com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
       getUpdateAutoscalingPolicyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAutoscalingPolicy",
+      requestType = com.google.cloud.dataproc.v1beta2.UpdateAutoscalingPolicyRequest.class,
+      responseType = com.google.cloud.dataproc.v1beta2.AutoscalingPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1beta2.UpdateAutoscalingPolicyRequest,
           com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
       getUpdateAutoscalingPolicyMethod() {
-    return getUpdateAutoscalingPolicyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1beta2.UpdateAutoscalingPolicyRequest,
-          com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
-      getUpdateAutoscalingPolicyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dataproc.v1beta2.UpdateAutoscalingPolicyRequest,
             com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
@@ -149,9 +127,7 @@ public final class AutoscalingPolicyServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dataproc.v1beta2.AutoscalingPolicyService",
-                              "UpdateAutoscalingPolicy"))
+                          generateFullMethodName(SERVICE_NAME, "UpdateAutoscalingPolicy"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -171,30 +147,20 @@ public final class AutoscalingPolicyServiceGrpc {
     return getUpdateAutoscalingPolicyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetAutoscalingPolicyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1beta2.GetAutoscalingPolicyRequest,
-          com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
-      METHOD_GET_AUTOSCALING_POLICY = getGetAutoscalingPolicyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1beta2.GetAutoscalingPolicyRequest,
           com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
       getGetAutoscalingPolicyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAutoscalingPolicy",
+      requestType = com.google.cloud.dataproc.v1beta2.GetAutoscalingPolicyRequest.class,
+      responseType = com.google.cloud.dataproc.v1beta2.AutoscalingPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1beta2.GetAutoscalingPolicyRequest,
           com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
       getGetAutoscalingPolicyMethod() {
-    return getGetAutoscalingPolicyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1beta2.GetAutoscalingPolicyRequest,
-          com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
-      getGetAutoscalingPolicyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dataproc.v1beta2.GetAutoscalingPolicyRequest,
             com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
@@ -213,9 +179,7 @@ public final class AutoscalingPolicyServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dataproc.v1beta2.AutoscalingPolicyService",
-                              "GetAutoscalingPolicy"))
+                          generateFullMethodName(SERVICE_NAME, "GetAutoscalingPolicy"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -235,30 +199,20 @@ public final class AutoscalingPolicyServiceGrpc {
     return getGetAutoscalingPolicyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListAutoscalingPoliciesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesRequest,
-          com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesResponse>
-      METHOD_LIST_AUTOSCALING_POLICIES = getListAutoscalingPoliciesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesRequest,
           com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesResponse>
       getListAutoscalingPoliciesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAutoscalingPolicies",
+      requestType = com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesRequest.class,
+      responseType = com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesRequest,
           com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesResponse>
       getListAutoscalingPoliciesMethod() {
-    return getListAutoscalingPoliciesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesRequest,
-          com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesResponse>
-      getListAutoscalingPoliciesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesRequest,
             com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesResponse>
@@ -278,9 +232,7 @@ public final class AutoscalingPolicyServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dataproc.v1beta2.AutoscalingPolicyService",
-                              "ListAutoscalingPolicies"))
+                          generateFullMethodName(SERVICE_NAME, "ListAutoscalingPolicies"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -300,30 +252,20 @@ public final class AutoscalingPolicyServiceGrpc {
     return getListAutoscalingPoliciesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteAutoscalingPolicyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1beta2.DeleteAutoscalingPolicyRequest,
-          com.google.protobuf.Empty>
-      METHOD_DELETE_AUTOSCALING_POLICY = getDeleteAutoscalingPolicyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1beta2.DeleteAutoscalingPolicyRequest,
           com.google.protobuf.Empty>
       getDeleteAutoscalingPolicyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAutoscalingPolicy",
+      requestType = com.google.cloud.dataproc.v1beta2.DeleteAutoscalingPolicyRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1beta2.DeleteAutoscalingPolicyRequest,
           com.google.protobuf.Empty>
       getDeleteAutoscalingPolicyMethod() {
-    return getDeleteAutoscalingPolicyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1beta2.DeleteAutoscalingPolicyRequest,
-          com.google.protobuf.Empty>
-      getDeleteAutoscalingPolicyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dataproc.v1beta2.DeleteAutoscalingPolicyRequest,
             com.google.protobuf.Empty>
@@ -343,9 +285,7 @@ public final class AutoscalingPolicyServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dataproc.v1beta2.AutoscalingPolicyService",
-                              "DeleteAutoscalingPolicy"))
+                          generateFullMethodName(SERVICE_NAME, "DeleteAutoscalingPolicy"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -366,19 +306,43 @@ public final class AutoscalingPolicyServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static AutoscalingPolicyServiceStub newStub(io.grpc.Channel channel) {
-    return new AutoscalingPolicyServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AutoscalingPolicyServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AutoscalingPolicyServiceStub>() {
+          @java.lang.Override
+          public AutoscalingPolicyServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AutoscalingPolicyServiceStub(channel, callOptions);
+          }
+        };
+    return AutoscalingPolicyServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static AutoscalingPolicyServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new AutoscalingPolicyServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AutoscalingPolicyServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AutoscalingPolicyServiceBlockingStub>() {
+          @java.lang.Override
+          public AutoscalingPolicyServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AutoscalingPolicyServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return AutoscalingPolicyServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static AutoscalingPolicyServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new AutoscalingPolicyServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AutoscalingPolicyServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AutoscalingPolicyServiceFutureStub>() {
+          @java.lang.Override
+          public AutoscalingPolicyServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AutoscalingPolicyServiceFutureStub(channel, callOptions);
+          }
+        };
+    return AutoscalingPolicyServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -402,7 +366,7 @@ public final class AutoscalingPolicyServiceGrpc {
         com.google.cloud.dataproc.v1beta2.CreateAutoscalingPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateAutoscalingPolicyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateAutoscalingPolicyMethod(), responseObserver);
     }
 
     /**
@@ -418,7 +382,7 @@ public final class AutoscalingPolicyServiceGrpc {
         com.google.cloud.dataproc.v1beta2.UpdateAutoscalingPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateAutoscalingPolicyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateAutoscalingPolicyMethod(), responseObserver);
     }
 
     /**
@@ -432,7 +396,7 @@ public final class AutoscalingPolicyServiceGrpc {
         com.google.cloud.dataproc.v1beta2.GetAutoscalingPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAutoscalingPolicyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetAutoscalingPolicyMethod(), responseObserver);
     }
 
     /**
@@ -447,7 +411,7 @@ public final class AutoscalingPolicyServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListAutoscalingPoliciesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListAutoscalingPoliciesMethod(), responseObserver);
     }
 
     /**
@@ -461,42 +425,42 @@ public final class AutoscalingPolicyServiceGrpc {
     public void deleteAutoscalingPolicy(
         com.google.cloud.dataproc.v1beta2.DeleteAutoscalingPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteAutoscalingPolicyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteAutoscalingPolicyMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getCreateAutoscalingPolicyMethodHelper(),
+              getCreateAutoscalingPolicyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1beta2.CreateAutoscalingPolicyRequest,
                       com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>(
                       this, METHODID_CREATE_AUTOSCALING_POLICY)))
           .addMethod(
-              getUpdateAutoscalingPolicyMethodHelper(),
+              getUpdateAutoscalingPolicyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1beta2.UpdateAutoscalingPolicyRequest,
                       com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>(
                       this, METHODID_UPDATE_AUTOSCALING_POLICY)))
           .addMethod(
-              getGetAutoscalingPolicyMethodHelper(),
+              getGetAutoscalingPolicyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1beta2.GetAutoscalingPolicyRequest,
                       com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>(
                       this, METHODID_GET_AUTOSCALING_POLICY)))
           .addMethod(
-              getListAutoscalingPoliciesMethodHelper(),
+              getListAutoscalingPoliciesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesRequest,
                       com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesResponse>(
                       this, METHODID_LIST_AUTOSCALING_POLICIES)))
           .addMethod(
-              getDeleteAutoscalingPolicyMethodHelper(),
+              getDeleteAutoscalingPolicyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1beta2.DeleteAutoscalingPolicyRequest,
@@ -514,11 +478,7 @@ public final class AutoscalingPolicyServiceGrpc {
    * </pre>
    */
   public static final class AutoscalingPolicyServiceStub
-      extends io.grpc.stub.AbstractStub<AutoscalingPolicyServiceStub> {
-    private AutoscalingPolicyServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<AutoscalingPolicyServiceStub> {
     private AutoscalingPolicyServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -541,7 +501,7 @@ public final class AutoscalingPolicyServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateAutoscalingPolicyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateAutoscalingPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -560,7 +520,7 @@ public final class AutoscalingPolicyServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateAutoscalingPolicyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateAutoscalingPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -577,7 +537,7 @@ public final class AutoscalingPolicyServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.AutoscalingPolicy>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetAutoscalingPolicyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetAutoscalingPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -595,7 +555,7 @@ public final class AutoscalingPolicyServiceGrpc {
                 com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListAutoscalingPoliciesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListAutoscalingPoliciesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -612,7 +572,7 @@ public final class AutoscalingPolicyServiceGrpc {
         com.google.cloud.dataproc.v1beta2.DeleteAutoscalingPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteAutoscalingPolicyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteAutoscalingPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -627,11 +587,7 @@ public final class AutoscalingPolicyServiceGrpc {
    * </pre>
    */
   public static final class AutoscalingPolicyServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<AutoscalingPolicyServiceBlockingStub> {
-    private AutoscalingPolicyServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<AutoscalingPolicyServiceBlockingStub> {
     private AutoscalingPolicyServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -653,7 +609,7 @@ public final class AutoscalingPolicyServiceGrpc {
     public com.google.cloud.dataproc.v1beta2.AutoscalingPolicy createAutoscalingPolicy(
         com.google.cloud.dataproc.v1beta2.CreateAutoscalingPolicyRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateAutoscalingPolicyMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateAutoscalingPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -668,7 +624,7 @@ public final class AutoscalingPolicyServiceGrpc {
     public com.google.cloud.dataproc.v1beta2.AutoscalingPolicy updateAutoscalingPolicy(
         com.google.cloud.dataproc.v1beta2.UpdateAutoscalingPolicyRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateAutoscalingPolicyMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateAutoscalingPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -681,7 +637,7 @@ public final class AutoscalingPolicyServiceGrpc {
     public com.google.cloud.dataproc.v1beta2.AutoscalingPolicy getAutoscalingPolicy(
         com.google.cloud.dataproc.v1beta2.GetAutoscalingPolicyRequest request) {
       return blockingUnaryCall(
-          getChannel(), getGetAutoscalingPolicyMethodHelper(), getCallOptions(), request);
+          getChannel(), getGetAutoscalingPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -695,7 +651,7 @@ public final class AutoscalingPolicyServiceGrpc {
         listAutoscalingPolicies(
             com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getListAutoscalingPoliciesMethodHelper(), getCallOptions(), request);
+          getChannel(), getListAutoscalingPoliciesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -709,7 +665,7 @@ public final class AutoscalingPolicyServiceGrpc {
     public com.google.protobuf.Empty deleteAutoscalingPolicy(
         com.google.cloud.dataproc.v1beta2.DeleteAutoscalingPolicyRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteAutoscalingPolicyMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteAutoscalingPolicyMethod(), getCallOptions(), request);
     }
   }
 
@@ -722,11 +678,7 @@ public final class AutoscalingPolicyServiceGrpc {
    * </pre>
    */
   public static final class AutoscalingPolicyServiceFutureStub
-      extends io.grpc.stub.AbstractStub<AutoscalingPolicyServiceFutureStub> {
-    private AutoscalingPolicyServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<AutoscalingPolicyServiceFutureStub> {
     private AutoscalingPolicyServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -750,8 +702,7 @@ public final class AutoscalingPolicyServiceGrpc {
         createAutoscalingPolicy(
             com.google.cloud.dataproc.v1beta2.CreateAutoscalingPolicyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateAutoscalingPolicyMethodHelper(), getCallOptions()),
-          request);
+          getChannel().newCall(getCreateAutoscalingPolicyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -768,8 +719,7 @@ public final class AutoscalingPolicyServiceGrpc {
         updateAutoscalingPolicy(
             com.google.cloud.dataproc.v1beta2.UpdateAutoscalingPolicyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateAutoscalingPolicyMethodHelper(), getCallOptions()),
-          request);
+          getChannel().newCall(getUpdateAutoscalingPolicyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -784,7 +734,7 @@ public final class AutoscalingPolicyServiceGrpc {
         getAutoscalingPolicy(
             com.google.cloud.dataproc.v1beta2.GetAutoscalingPolicyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetAutoscalingPolicyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetAutoscalingPolicyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -799,8 +749,7 @@ public final class AutoscalingPolicyServiceGrpc {
         listAutoscalingPolicies(
             com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListAutoscalingPoliciesMethodHelper(), getCallOptions()),
-          request);
+          getChannel().newCall(getListAutoscalingPoliciesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -815,8 +764,7 @@ public final class AutoscalingPolicyServiceGrpc {
         deleteAutoscalingPolicy(
             com.google.cloud.dataproc.v1beta2.DeleteAutoscalingPolicyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteAutoscalingPolicyMethodHelper(), getCallOptions()),
-          request);
+          getChannel().newCall(getDeleteAutoscalingPolicyMethod(), getCallOptions()), request);
     }
   }
 
@@ -937,11 +885,11 @@ public final class AutoscalingPolicyServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new AutoscalingPolicyServiceFileDescriptorSupplier())
-                      .addMethod(getCreateAutoscalingPolicyMethodHelper())
-                      .addMethod(getUpdateAutoscalingPolicyMethodHelper())
-                      .addMethod(getGetAutoscalingPolicyMethodHelper())
-                      .addMethod(getListAutoscalingPoliciesMethodHelper())
-                      .addMethod(getDeleteAutoscalingPolicyMethodHelper())
+                      .addMethod(getCreateAutoscalingPolicyMethod())
+                      .addMethod(getUpdateAutoscalingPolicyMethod())
+                      .addMethod(getGetAutoscalingPolicyMethod())
+                      .addMethod(getListAutoscalingPoliciesMethod())
+                      .addMethod(getDeleteAutoscalingPolicyMethod())
                       .build();
         }
       }

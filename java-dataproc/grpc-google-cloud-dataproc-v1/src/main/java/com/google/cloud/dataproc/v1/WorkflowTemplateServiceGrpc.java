@@ -31,7 +31,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dataproc/v1/workflow_templates.proto")
 public final class WorkflowTemplateServiceGrpc {
 
@@ -40,30 +40,20 @@ public final class WorkflowTemplateServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.dataproc.v1.WorkflowTemplateService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateWorkflowTemplateMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest,
-          com.google.cloud.dataproc.v1.WorkflowTemplate>
-      METHOD_CREATE_WORKFLOW_TEMPLATE = getCreateWorkflowTemplateMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest,
           com.google.cloud.dataproc.v1.WorkflowTemplate>
       getCreateWorkflowTemplateMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateWorkflowTemplate",
+      requestType = com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest.class,
+      responseType = com.google.cloud.dataproc.v1.WorkflowTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest,
           com.google.cloud.dataproc.v1.WorkflowTemplate>
       getCreateWorkflowTemplateMethod() {
-    return getCreateWorkflowTemplateMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest,
-          com.google.cloud.dataproc.v1.WorkflowTemplate>
-      getCreateWorkflowTemplateMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest,
             com.google.cloud.dataproc.v1.WorkflowTemplate>
@@ -83,9 +73,7 @@ public final class WorkflowTemplateServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dataproc.v1.WorkflowTemplateService",
-                              "CreateWorkflowTemplate"))
+                          generateFullMethodName(SERVICE_NAME, "CreateWorkflowTemplate"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -104,30 +92,20 @@ public final class WorkflowTemplateServiceGrpc {
     return getCreateWorkflowTemplateMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetWorkflowTemplateMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.GetWorkflowTemplateRequest,
-          com.google.cloud.dataproc.v1.WorkflowTemplate>
-      METHOD_GET_WORKFLOW_TEMPLATE = getGetWorkflowTemplateMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.GetWorkflowTemplateRequest,
           com.google.cloud.dataproc.v1.WorkflowTemplate>
       getGetWorkflowTemplateMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetWorkflowTemplate",
+      requestType = com.google.cloud.dataproc.v1.GetWorkflowTemplateRequest.class,
+      responseType = com.google.cloud.dataproc.v1.WorkflowTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.GetWorkflowTemplateRequest,
           com.google.cloud.dataproc.v1.WorkflowTemplate>
       getGetWorkflowTemplateMethod() {
-    return getGetWorkflowTemplateMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.GetWorkflowTemplateRequest,
-          com.google.cloud.dataproc.v1.WorkflowTemplate>
-      getGetWorkflowTemplateMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dataproc.v1.GetWorkflowTemplateRequest,
             com.google.cloud.dataproc.v1.WorkflowTemplate>
@@ -146,9 +124,7 @@ public final class WorkflowTemplateServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dataproc.v1.WorkflowTemplateService",
-                              "GetWorkflowTemplate"))
+                          generateFullMethodName(SERVICE_NAME, "GetWorkflowTemplate"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -167,30 +143,20 @@ public final class WorkflowTemplateServiceGrpc {
     return getGetWorkflowTemplateMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getInstantiateWorkflowTemplateMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest,
-          com.google.longrunning.Operation>
-      METHOD_INSTANTIATE_WORKFLOW_TEMPLATE = getInstantiateWorkflowTemplateMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest,
           com.google.longrunning.Operation>
       getInstantiateWorkflowTemplateMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "InstantiateWorkflowTemplate",
+      requestType = com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest,
           com.google.longrunning.Operation>
       getInstantiateWorkflowTemplateMethod() {
-    return getInstantiateWorkflowTemplateMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest,
-          com.google.longrunning.Operation>
-      getInstantiateWorkflowTemplateMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest,
             com.google.longrunning.Operation>
@@ -210,9 +176,7 @@ public final class WorkflowTemplateServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dataproc.v1.WorkflowTemplateService",
-                              "InstantiateWorkflowTemplate"))
+                          generateFullMethodName(SERVICE_NAME, "InstantiateWorkflowTemplate"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -231,31 +195,20 @@ public final class WorkflowTemplateServiceGrpc {
     return getInstantiateWorkflowTemplateMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getInstantiateInlineWorkflowTemplateMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest,
-          com.google.longrunning.Operation>
-      METHOD_INSTANTIATE_INLINE_WORKFLOW_TEMPLATE =
-          getInstantiateInlineWorkflowTemplateMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest,
           com.google.longrunning.Operation>
       getInstantiateInlineWorkflowTemplateMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "InstantiateInlineWorkflowTemplate",
+      requestType = com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest,
           com.google.longrunning.Operation>
       getInstantiateInlineWorkflowTemplateMethod() {
-    return getInstantiateInlineWorkflowTemplateMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest,
-          com.google.longrunning.Operation>
-      getInstantiateInlineWorkflowTemplateMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest,
             com.google.longrunning.Operation>
@@ -275,9 +228,7 @@ public final class WorkflowTemplateServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dataproc.v1.WorkflowTemplateService",
-                              "InstantiateInlineWorkflowTemplate"))
+                          generateFullMethodName(SERVICE_NAME, "InstantiateInlineWorkflowTemplate"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -296,30 +247,20 @@ public final class WorkflowTemplateServiceGrpc {
     return getInstantiateInlineWorkflowTemplateMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateWorkflowTemplateMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest,
-          com.google.cloud.dataproc.v1.WorkflowTemplate>
-      METHOD_UPDATE_WORKFLOW_TEMPLATE = getUpdateWorkflowTemplateMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest,
           com.google.cloud.dataproc.v1.WorkflowTemplate>
       getUpdateWorkflowTemplateMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateWorkflowTemplate",
+      requestType = com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest.class,
+      responseType = com.google.cloud.dataproc.v1.WorkflowTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest,
           com.google.cloud.dataproc.v1.WorkflowTemplate>
       getUpdateWorkflowTemplateMethod() {
-    return getUpdateWorkflowTemplateMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest,
-          com.google.cloud.dataproc.v1.WorkflowTemplate>
-      getUpdateWorkflowTemplateMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest,
             com.google.cloud.dataproc.v1.WorkflowTemplate>
@@ -339,9 +280,7 @@ public final class WorkflowTemplateServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dataproc.v1.WorkflowTemplateService",
-                              "UpdateWorkflowTemplate"))
+                          generateFullMethodName(SERVICE_NAME, "UpdateWorkflowTemplate"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -360,30 +299,20 @@ public final class WorkflowTemplateServiceGrpc {
     return getUpdateWorkflowTemplateMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListWorkflowTemplatesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.ListWorkflowTemplatesRequest,
-          com.google.cloud.dataproc.v1.ListWorkflowTemplatesResponse>
-      METHOD_LIST_WORKFLOW_TEMPLATES = getListWorkflowTemplatesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.ListWorkflowTemplatesRequest,
           com.google.cloud.dataproc.v1.ListWorkflowTemplatesResponse>
       getListWorkflowTemplatesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListWorkflowTemplates",
+      requestType = com.google.cloud.dataproc.v1.ListWorkflowTemplatesRequest.class,
+      responseType = com.google.cloud.dataproc.v1.ListWorkflowTemplatesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.ListWorkflowTemplatesRequest,
           com.google.cloud.dataproc.v1.ListWorkflowTemplatesResponse>
       getListWorkflowTemplatesMethod() {
-    return getListWorkflowTemplatesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.ListWorkflowTemplatesRequest,
-          com.google.cloud.dataproc.v1.ListWorkflowTemplatesResponse>
-      getListWorkflowTemplatesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dataproc.v1.ListWorkflowTemplatesRequest,
             com.google.cloud.dataproc.v1.ListWorkflowTemplatesResponse>
@@ -403,9 +332,7 @@ public final class WorkflowTemplateServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dataproc.v1.WorkflowTemplateService",
-                              "ListWorkflowTemplates"))
+                          generateFullMethodName(SERVICE_NAME, "ListWorkflowTemplates"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -425,26 +352,18 @@ public final class WorkflowTemplateServiceGrpc {
     return getListWorkflowTemplatesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteWorkflowTemplateMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_WORKFLOW_TEMPLATE = getDeleteWorkflowTemplateMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest, com.google.protobuf.Empty>
       getDeleteWorkflowTemplateMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteWorkflowTemplate",
+      requestType = com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest, com.google.protobuf.Empty>
       getDeleteWorkflowTemplateMethod() {
-    return getDeleteWorkflowTemplateMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest, com.google.protobuf.Empty>
-      getDeleteWorkflowTemplateMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest, com.google.protobuf.Empty>
         getDeleteWorkflowTemplateMethod;
@@ -463,9 +382,7 @@ public final class WorkflowTemplateServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dataproc.v1.WorkflowTemplateService",
-                              "DeleteWorkflowTemplate"))
+                          generateFullMethodName(SERVICE_NAME, "DeleteWorkflowTemplate"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -486,19 +403,43 @@ public final class WorkflowTemplateServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static WorkflowTemplateServiceStub newStub(io.grpc.Channel channel) {
-    return new WorkflowTemplateServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<WorkflowTemplateServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WorkflowTemplateServiceStub>() {
+          @java.lang.Override
+          public WorkflowTemplateServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WorkflowTemplateServiceStub(channel, callOptions);
+          }
+        };
+    return WorkflowTemplateServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static WorkflowTemplateServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new WorkflowTemplateServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<WorkflowTemplateServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WorkflowTemplateServiceBlockingStub>() {
+          @java.lang.Override
+          public WorkflowTemplateServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WorkflowTemplateServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return WorkflowTemplateServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static WorkflowTemplateServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new WorkflowTemplateServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<WorkflowTemplateServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WorkflowTemplateServiceFutureStub>() {
+          @java.lang.Override
+          public WorkflowTemplateServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WorkflowTemplateServiceFutureStub(channel, callOptions);
+          }
+        };
+    return WorkflowTemplateServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -522,7 +463,7 @@ public final class WorkflowTemplateServiceGrpc {
         com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.WorkflowTemplate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateWorkflowTemplateMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateWorkflowTemplateMethod(), responseObserver);
     }
 
     /**
@@ -538,7 +479,7 @@ public final class WorkflowTemplateServiceGrpc {
         com.google.cloud.dataproc.v1.GetWorkflowTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.WorkflowTemplate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetWorkflowTemplateMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetWorkflowTemplateMethod(), responseObserver);
     }
 
     /**
@@ -566,7 +507,7 @@ public final class WorkflowTemplateServiceGrpc {
     public void instantiateWorkflowTemplate(
         com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getInstantiateWorkflowTemplateMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getInstantiateWorkflowTemplateMethod(), responseObserver);
     }
 
     /**
@@ -597,8 +538,7 @@ public final class WorkflowTemplateServiceGrpc {
     public void instantiateInlineWorkflowTemplate(
         com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(
-          getInstantiateInlineWorkflowTemplateMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getInstantiateInlineWorkflowTemplateMethod(), responseObserver);
     }
 
     /**
@@ -613,7 +553,7 @@ public final class WorkflowTemplateServiceGrpc {
         com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.WorkflowTemplate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateWorkflowTemplateMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateWorkflowTemplateMethod(), responseObserver);
     }
 
     /**
@@ -627,7 +567,7 @@ public final class WorkflowTemplateServiceGrpc {
         com.google.cloud.dataproc.v1.ListWorkflowTemplatesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.ListWorkflowTemplatesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListWorkflowTemplatesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListWorkflowTemplatesMethod(), responseObserver);
     }
 
     /**
@@ -640,56 +580,56 @@ public final class WorkflowTemplateServiceGrpc {
     public void deleteWorkflowTemplate(
         com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteWorkflowTemplateMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteWorkflowTemplateMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getCreateWorkflowTemplateMethodHelper(),
+              getCreateWorkflowTemplateMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest,
                       com.google.cloud.dataproc.v1.WorkflowTemplate>(
                       this, METHODID_CREATE_WORKFLOW_TEMPLATE)))
           .addMethod(
-              getGetWorkflowTemplateMethodHelper(),
+              getGetWorkflowTemplateMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1.GetWorkflowTemplateRequest,
                       com.google.cloud.dataproc.v1.WorkflowTemplate>(
                       this, METHODID_GET_WORKFLOW_TEMPLATE)))
           .addMethod(
-              getInstantiateWorkflowTemplateMethodHelper(),
+              getInstantiateWorkflowTemplateMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest,
                       com.google.longrunning.Operation>(
                       this, METHODID_INSTANTIATE_WORKFLOW_TEMPLATE)))
           .addMethod(
-              getInstantiateInlineWorkflowTemplateMethodHelper(),
+              getInstantiateInlineWorkflowTemplateMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest,
                       com.google.longrunning.Operation>(
                       this, METHODID_INSTANTIATE_INLINE_WORKFLOW_TEMPLATE)))
           .addMethod(
-              getUpdateWorkflowTemplateMethodHelper(),
+              getUpdateWorkflowTemplateMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest,
                       com.google.cloud.dataproc.v1.WorkflowTemplate>(
                       this, METHODID_UPDATE_WORKFLOW_TEMPLATE)))
           .addMethod(
-              getListWorkflowTemplatesMethodHelper(),
+              getListWorkflowTemplatesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1.ListWorkflowTemplatesRequest,
                       com.google.cloud.dataproc.v1.ListWorkflowTemplatesResponse>(
                       this, METHODID_LIST_WORKFLOW_TEMPLATES)))
           .addMethod(
-              getDeleteWorkflowTemplateMethodHelper(),
+              getDeleteWorkflowTemplateMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest,
@@ -707,11 +647,7 @@ public final class WorkflowTemplateServiceGrpc {
    * </pre>
    */
   public static final class WorkflowTemplateServiceStub
-      extends io.grpc.stub.AbstractStub<WorkflowTemplateServiceStub> {
-    private WorkflowTemplateServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<WorkflowTemplateServiceStub> {
     private WorkflowTemplateServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -734,7 +670,7 @@ public final class WorkflowTemplateServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.WorkflowTemplate>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateWorkflowTemplateMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateWorkflowTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -753,7 +689,7 @@ public final class WorkflowTemplateServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.WorkflowTemplate>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetWorkflowTemplateMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetWorkflowTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -784,7 +720,7 @@ public final class WorkflowTemplateServiceGrpc {
         com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getInstantiateWorkflowTemplateMethodHelper(), getCallOptions()),
+          getChannel().newCall(getInstantiateWorkflowTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -818,8 +754,7 @@ public final class WorkflowTemplateServiceGrpc {
         com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel()
-              .newCall(getInstantiateInlineWorkflowTemplateMethodHelper(), getCallOptions()),
+          getChannel().newCall(getInstantiateInlineWorkflowTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -837,7 +772,7 @@ public final class WorkflowTemplateServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.WorkflowTemplate>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateWorkflowTemplateMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateWorkflowTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -854,7 +789,7 @@ public final class WorkflowTemplateServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.ListWorkflowTemplatesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListWorkflowTemplatesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListWorkflowTemplatesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -870,7 +805,7 @@ public final class WorkflowTemplateServiceGrpc {
         com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteWorkflowTemplateMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteWorkflowTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -885,11 +820,7 @@ public final class WorkflowTemplateServiceGrpc {
    * </pre>
    */
   public static final class WorkflowTemplateServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<WorkflowTemplateServiceBlockingStub> {
-    private WorkflowTemplateServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<WorkflowTemplateServiceBlockingStub> {
     private WorkflowTemplateServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -911,7 +842,7 @@ public final class WorkflowTemplateServiceGrpc {
     public com.google.cloud.dataproc.v1.WorkflowTemplate createWorkflowTemplate(
         com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateWorkflowTemplateMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateWorkflowTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -926,7 +857,7 @@ public final class WorkflowTemplateServiceGrpc {
     public com.google.cloud.dataproc.v1.WorkflowTemplate getWorkflowTemplate(
         com.google.cloud.dataproc.v1.GetWorkflowTemplateRequest request) {
       return blockingUnaryCall(
-          getChannel(), getGetWorkflowTemplateMethodHelper(), getCallOptions(), request);
+          getChannel(), getGetWorkflowTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -954,7 +885,7 @@ public final class WorkflowTemplateServiceGrpc {
     public com.google.longrunning.Operation instantiateWorkflowTemplate(
         com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest request) {
       return blockingUnaryCall(
-          getChannel(), getInstantiateWorkflowTemplateMethodHelper(), getCallOptions(), request);
+          getChannel(), getInstantiateWorkflowTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -985,10 +916,7 @@ public final class WorkflowTemplateServiceGrpc {
     public com.google.longrunning.Operation instantiateInlineWorkflowTemplate(
         com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest request) {
       return blockingUnaryCall(
-          getChannel(),
-          getInstantiateInlineWorkflowTemplateMethodHelper(),
-          getCallOptions(),
-          request);
+          getChannel(), getInstantiateInlineWorkflowTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1002,7 +930,7 @@ public final class WorkflowTemplateServiceGrpc {
     public com.google.cloud.dataproc.v1.WorkflowTemplate updateWorkflowTemplate(
         com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateWorkflowTemplateMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateWorkflowTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1015,7 +943,7 @@ public final class WorkflowTemplateServiceGrpc {
     public com.google.cloud.dataproc.v1.ListWorkflowTemplatesResponse listWorkflowTemplates(
         com.google.cloud.dataproc.v1.ListWorkflowTemplatesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getListWorkflowTemplatesMethodHelper(), getCallOptions(), request);
+          getChannel(), getListWorkflowTemplatesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1028,7 +956,7 @@ public final class WorkflowTemplateServiceGrpc {
     public com.google.protobuf.Empty deleteWorkflowTemplate(
         com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteWorkflowTemplateMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteWorkflowTemplateMethod(), getCallOptions(), request);
     }
   }
 
@@ -1041,11 +969,7 @@ public final class WorkflowTemplateServiceGrpc {
    * </pre>
    */
   public static final class WorkflowTemplateServiceFutureStub
-      extends io.grpc.stub.AbstractStub<WorkflowTemplateServiceFutureStub> {
-    private WorkflowTemplateServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<WorkflowTemplateServiceFutureStub> {
     private WorkflowTemplateServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -1068,7 +992,7 @@ public final class WorkflowTemplateServiceGrpc {
             com.google.cloud.dataproc.v1.WorkflowTemplate>
         createWorkflowTemplate(com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateWorkflowTemplateMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateWorkflowTemplateMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1084,7 +1008,7 @@ public final class WorkflowTemplateServiceGrpc {
             com.google.cloud.dataproc.v1.WorkflowTemplate>
         getWorkflowTemplate(com.google.cloud.dataproc.v1.GetWorkflowTemplateRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetWorkflowTemplateMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetWorkflowTemplateMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1113,8 +1037,7 @@ public final class WorkflowTemplateServiceGrpc {
         instantiateWorkflowTemplate(
             com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getInstantiateWorkflowTemplateMethodHelper(), getCallOptions()),
-          request);
+          getChannel().newCall(getInstantiateWorkflowTemplateMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1146,8 +1069,7 @@ public final class WorkflowTemplateServiceGrpc {
         instantiateInlineWorkflowTemplate(
             com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest request) {
       return futureUnaryCall(
-          getChannel()
-              .newCall(getInstantiateInlineWorkflowTemplateMethodHelper(), getCallOptions()),
+          getChannel().newCall(getInstantiateInlineWorkflowTemplateMethod(), getCallOptions()),
           request);
     }
 
@@ -1163,7 +1085,7 @@ public final class WorkflowTemplateServiceGrpc {
             com.google.cloud.dataproc.v1.WorkflowTemplate>
         updateWorkflowTemplate(com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateWorkflowTemplateMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateWorkflowTemplateMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1177,7 +1099,7 @@ public final class WorkflowTemplateServiceGrpc {
             com.google.cloud.dataproc.v1.ListWorkflowTemplatesResponse>
         listWorkflowTemplates(com.google.cloud.dataproc.v1.ListWorkflowTemplatesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListWorkflowTemplatesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListWorkflowTemplatesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1190,7 +1112,7 @@ public final class WorkflowTemplateServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteWorkflowTemplate(com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteWorkflowTemplateMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteWorkflowTemplateMethod(), getCallOptions()), request);
     }
   }
 
@@ -1323,13 +1245,13 @@ public final class WorkflowTemplateServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new WorkflowTemplateServiceFileDescriptorSupplier())
-                      .addMethod(getCreateWorkflowTemplateMethodHelper())
-                      .addMethod(getGetWorkflowTemplateMethodHelper())
-                      .addMethod(getInstantiateWorkflowTemplateMethodHelper())
-                      .addMethod(getInstantiateInlineWorkflowTemplateMethodHelper())
-                      .addMethod(getUpdateWorkflowTemplateMethodHelper())
-                      .addMethod(getListWorkflowTemplatesMethodHelper())
-                      .addMethod(getDeleteWorkflowTemplateMethodHelper())
+                      .addMethod(getCreateWorkflowTemplateMethod())
+                      .addMethod(getGetWorkflowTemplateMethod())
+                      .addMethod(getInstantiateWorkflowTemplateMethod())
+                      .addMethod(getInstantiateInlineWorkflowTemplateMethod())
+                      .addMethod(getUpdateWorkflowTemplateMethod())
+                      .addMethod(getListWorkflowTemplatesMethod())
+                      .addMethod(getDeleteWorkflowTemplateMethod())
                       .build();
         }
       }

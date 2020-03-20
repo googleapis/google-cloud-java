@@ -46,7 +46,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for Google Cloud Dataproc API.
+ * gRPC stub implementation for Cloud Dataproc API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
