@@ -14,23 +14,18 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
-gapic = gcp.GAPICGenerator()
-
-service = 'iamcredentials'
+service = 'iam-credentials'
 versions = ['v1']
-config_pattern = '/google/iam/credentials/artman_iamcredentials_{version}.yaml'
 
 for version in versions:
-  java.gapic_library(
-    service=service,
-    version=version,
-    config_pattern=config_pattern,
-    package_pattern='com.google.cloud.iam.credentials.{version}',
-    gapic=gapic,
+  java.bazel_library(
+      service=service,
+      version=version,
+      proto_path=f'/google/iam/credentials/{version}',
+      bazel_target=f'//google/iam/credentials/{version}:google-cloud-{service}-{version}-java',
+      destination_name='iamcredentials',
   )
 
 java.common_templates()

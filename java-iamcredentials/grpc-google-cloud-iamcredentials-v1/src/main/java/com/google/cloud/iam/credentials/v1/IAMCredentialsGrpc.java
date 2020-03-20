@@ -37,7 +37,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/iam/credentials/v1/iamcredentials.proto")
 public final class IAMCredentialsGrpc {
 
@@ -46,30 +46,20 @@ public final class IAMCredentialsGrpc {
   public static final String SERVICE_NAME = "google.iam.credentials.v1.IAMCredentials";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGenerateAccessTokenMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest,
-          com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse>
-      METHOD_GENERATE_ACCESS_TOKEN = getGenerateAccessTokenMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest,
           com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse>
       getGenerateAccessTokenMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateAccessToken",
+      requestType = com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest.class,
+      responseType = com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest,
           com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse>
       getGenerateAccessTokenMethod() {
-    return getGenerateAccessTokenMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest,
-          com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse>
-      getGenerateAccessTokenMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest,
             com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse>
@@ -86,8 +76,7 @@ public final class IAMCredentialsGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.iam.credentials.v1.IAMCredentials", "GenerateAccessToken"))
+                          generateFullMethodName(SERVICE_NAME, "GenerateAccessToken"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -106,30 +95,20 @@ public final class IAMCredentialsGrpc {
     return getGenerateAccessTokenMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGenerateIdTokenMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest,
-          com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse>
-      METHOD_GENERATE_ID_TOKEN = getGenerateIdTokenMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest,
           com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse>
       getGenerateIdTokenMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateIdToken",
+      requestType = com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest.class,
+      responseType = com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest,
           com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse>
       getGenerateIdTokenMethod() {
-    return getGenerateIdTokenMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest,
-          com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse>
-      getGenerateIdTokenMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest,
             com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse>
@@ -144,9 +123,7 @@ public final class IAMCredentialsGrpc {
                           com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.iam.credentials.v1.IAMCredentials", "GenerateIdToken"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GenerateIdToken"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -165,30 +142,20 @@ public final class IAMCredentialsGrpc {
     return getGenerateIdTokenMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSignBlobMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.iam.credentials.v1.SignBlobRequest,
-          com.google.cloud.iam.credentials.v1.SignBlobResponse>
-      METHOD_SIGN_BLOB = getSignBlobMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.iam.credentials.v1.SignBlobRequest,
           com.google.cloud.iam.credentials.v1.SignBlobResponse>
       getSignBlobMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SignBlob",
+      requestType = com.google.cloud.iam.credentials.v1.SignBlobRequest.class,
+      responseType = com.google.cloud.iam.credentials.v1.SignBlobResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.iam.credentials.v1.SignBlobRequest,
           com.google.cloud.iam.credentials.v1.SignBlobResponse>
       getSignBlobMethod() {
-    return getSignBlobMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.iam.credentials.v1.SignBlobRequest,
-          com.google.cloud.iam.credentials.v1.SignBlobResponse>
-      getSignBlobMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.iam.credentials.v1.SignBlobRequest,
             com.google.cloud.iam.credentials.v1.SignBlobResponse>
@@ -203,9 +170,7 @@ public final class IAMCredentialsGrpc {
                           com.google.cloud.iam.credentials.v1.SignBlobResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.iam.credentials.v1.IAMCredentials", "SignBlob"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SignBlob"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -223,30 +188,20 @@ public final class IAMCredentialsGrpc {
     return getSignBlobMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSignJwtMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.iam.credentials.v1.SignJwtRequest,
-          com.google.cloud.iam.credentials.v1.SignJwtResponse>
-      METHOD_SIGN_JWT = getSignJwtMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.iam.credentials.v1.SignJwtRequest,
           com.google.cloud.iam.credentials.v1.SignJwtResponse>
       getSignJwtMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SignJwt",
+      requestType = com.google.cloud.iam.credentials.v1.SignJwtRequest.class,
+      responseType = com.google.cloud.iam.credentials.v1.SignJwtResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.iam.credentials.v1.SignJwtRequest,
           com.google.cloud.iam.credentials.v1.SignJwtResponse>
       getSignJwtMethod() {
-    return getSignJwtMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.iam.credentials.v1.SignJwtRequest,
-          com.google.cloud.iam.credentials.v1.SignJwtResponse>
-      getSignJwtMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.iam.credentials.v1.SignJwtRequest,
             com.google.cloud.iam.credentials.v1.SignJwtResponse>
@@ -261,9 +216,7 @@ public final class IAMCredentialsGrpc {
                           com.google.cloud.iam.credentials.v1.SignJwtResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.iam.credentials.v1.IAMCredentials", "SignJwt"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SignJwt"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -283,19 +236,43 @@ public final class IAMCredentialsGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static IAMCredentialsStub newStub(io.grpc.Channel channel) {
-    return new IAMCredentialsStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<IAMCredentialsStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<IAMCredentialsStub>() {
+          @java.lang.Override
+          public IAMCredentialsStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new IAMCredentialsStub(channel, callOptions);
+          }
+        };
+    return IAMCredentialsStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static IAMCredentialsBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new IAMCredentialsBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<IAMCredentialsBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<IAMCredentialsBlockingStub>() {
+          @java.lang.Override
+          public IAMCredentialsBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new IAMCredentialsBlockingStub(channel, callOptions);
+          }
+        };
+    return IAMCredentialsBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static IAMCredentialsFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new IAMCredentialsFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<IAMCredentialsFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<IAMCredentialsFutureStub>() {
+          @java.lang.Override
+          public IAMCredentialsFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new IAMCredentialsFutureStub(channel, callOptions);
+          }
+        };
+    return IAMCredentialsFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -325,7 +302,7 @@ public final class IAMCredentialsGrpc {
         com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGenerateAccessTokenMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGenerateAccessTokenMethod(), responseObserver);
     }
 
     /**
@@ -339,7 +316,7 @@ public final class IAMCredentialsGrpc {
         com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGenerateIdTokenMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGenerateIdTokenMethod(), responseObserver);
     }
 
     /**
@@ -353,7 +330,7 @@ public final class IAMCredentialsGrpc {
         com.google.cloud.iam.credentials.v1.SignBlobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iam.credentials.v1.SignBlobResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSignBlobMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getSignBlobMethod(), responseObserver);
     }
 
     /**
@@ -367,35 +344,35 @@ public final class IAMCredentialsGrpc {
         com.google.cloud.iam.credentials.v1.SignJwtRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iam.credentials.v1.SignJwtResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSignJwtMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getSignJwtMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getGenerateAccessTokenMethodHelper(),
+              getGenerateAccessTokenMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest,
                       com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse>(
                       this, METHODID_GENERATE_ACCESS_TOKEN)))
           .addMethod(
-              getGenerateIdTokenMethodHelper(),
+              getGenerateIdTokenMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest,
                       com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse>(
                       this, METHODID_GENERATE_ID_TOKEN)))
           .addMethod(
-              getSignBlobMethodHelper(),
+              getSignBlobMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iam.credentials.v1.SignBlobRequest,
                       com.google.cloud.iam.credentials.v1.SignBlobResponse>(
                       this, METHODID_SIGN_BLOB)))
           .addMethod(
-              getSignJwtMethodHelper(),
+              getSignJwtMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iam.credentials.v1.SignJwtRequest,
@@ -420,11 +397,7 @@ public final class IAMCredentialsGrpc {
    * </pre>
    */
   public static final class IAMCredentialsStub
-      extends io.grpc.stub.AbstractStub<IAMCredentialsStub> {
-    private IAMCredentialsStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<IAMCredentialsStub> {
     private IAMCredentialsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -446,7 +419,7 @@ public final class IAMCredentialsGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGenerateAccessTokenMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGenerateAccessTokenMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -463,7 +436,7 @@ public final class IAMCredentialsGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGenerateIdTokenMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGenerateIdTokenMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -480,9 +453,7 @@ public final class IAMCredentialsGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.iam.credentials.v1.SignBlobResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSignBlobMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getSignBlobMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -497,9 +468,7 @@ public final class IAMCredentialsGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.iam.credentials.v1.SignJwtResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSignJwtMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getSignJwtMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -518,11 +487,7 @@ public final class IAMCredentialsGrpc {
    * </pre>
    */
   public static final class IAMCredentialsBlockingStub
-      extends io.grpc.stub.AbstractStub<IAMCredentialsBlockingStub> {
-    private IAMCredentialsBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<IAMCredentialsBlockingStub> {
     private IAMCredentialsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -543,7 +508,7 @@ public final class IAMCredentialsGrpc {
     public com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse generateAccessToken(
         com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest request) {
       return blockingUnaryCall(
-          getChannel(), getGenerateAccessTokenMethodHelper(), getCallOptions(), request);
+          getChannel(), getGenerateAccessTokenMethod(), getCallOptions(), request);
     }
 
     /**
@@ -555,8 +520,7 @@ public final class IAMCredentialsGrpc {
      */
     public com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse generateIdToken(
         com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGenerateIdTokenMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGenerateIdTokenMethod(), getCallOptions(), request);
     }
 
     /**
@@ -568,7 +532,7 @@ public final class IAMCredentialsGrpc {
      */
     public com.google.cloud.iam.credentials.v1.SignBlobResponse signBlob(
         com.google.cloud.iam.credentials.v1.SignBlobRequest request) {
-      return blockingUnaryCall(getChannel(), getSignBlobMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getSignBlobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -580,7 +544,7 @@ public final class IAMCredentialsGrpc {
      */
     public com.google.cloud.iam.credentials.v1.SignJwtResponse signJwt(
         com.google.cloud.iam.credentials.v1.SignJwtRequest request) {
-      return blockingUnaryCall(getChannel(), getSignJwtMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getSignJwtMethod(), getCallOptions(), request);
     }
   }
 
@@ -599,11 +563,7 @@ public final class IAMCredentialsGrpc {
    * </pre>
    */
   public static final class IAMCredentialsFutureStub
-      extends io.grpc.stub.AbstractStub<IAMCredentialsFutureStub> {
-    private IAMCredentialsFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<IAMCredentialsFutureStub> {
     private IAMCredentialsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -626,7 +586,7 @@ public final class IAMCredentialsGrpc {
         generateAccessToken(
             com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGenerateAccessTokenMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGenerateAccessTokenMethod(), getCallOptions()), request);
     }
 
     /**
@@ -640,7 +600,7 @@ public final class IAMCredentialsGrpc {
             com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse>
         generateIdToken(com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGenerateIdTokenMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGenerateIdTokenMethod(), getCallOptions()), request);
     }
 
     /**
@@ -653,8 +613,7 @@ public final class IAMCredentialsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.iam.credentials.v1.SignBlobResponse>
         signBlob(com.google.cloud.iam.credentials.v1.SignBlobRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSignBlobMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getSignBlobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -667,8 +626,7 @@ public final class IAMCredentialsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.iam.credentials.v1.SignJwtResponse>
         signJwt(com.google.cloud.iam.credentials.v1.SignJwtRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSignJwtMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getSignJwtMethod(), getCallOptions()), request);
     }
   }
 
@@ -784,10 +742,10 @@ public final class IAMCredentialsGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new IAMCredentialsFileDescriptorSupplier())
-                      .addMethod(getGenerateAccessTokenMethodHelper())
-                      .addMethod(getGenerateIdTokenMethodHelper())
-                      .addMethod(getSignBlobMethodHelper())
-                      .addMethod(getSignJwtMethodHelper())
+                      .addMethod(getGenerateAccessTokenMethod())
+                      .addMethod(getGenerateIdTokenMethod())
+                      .addMethod(getSignBlobMethod())
+                      .addMethod(getSignJwtMethod())
                       .build();
         }
       }
