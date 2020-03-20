@@ -30,7 +30,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/phishingprotection/v1beta1/phishingprotection.proto")
 public final class PhishingProtectionServiceV1Beta1Grpc {
 
@@ -40,30 +40,20 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
       "google.cloud.phishingprotection.v1beta1.PhishingProtectionServiceV1Beta1";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getReportPhishingMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.phishingprotection.v1beta1.ReportPhishingRequest,
-          com.google.phishingprotection.v1beta1.ReportPhishingResponse>
-      METHOD_REPORT_PHISHING = getReportPhishingMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.phishingprotection.v1beta1.ReportPhishingRequest,
           com.google.phishingprotection.v1beta1.ReportPhishingResponse>
       getReportPhishingMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReportPhishing",
+      requestType = com.google.phishingprotection.v1beta1.ReportPhishingRequest.class,
+      responseType = com.google.phishingprotection.v1beta1.ReportPhishingResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.phishingprotection.v1beta1.ReportPhishingRequest,
           com.google.phishingprotection.v1beta1.ReportPhishingResponse>
       getReportPhishingMethod() {
-    return getReportPhishingMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.phishingprotection.v1beta1.ReportPhishingRequest,
-          com.google.phishingprotection.v1beta1.ReportPhishingResponse>
-      getReportPhishingMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.phishingprotection.v1beta1.ReportPhishingRequest,
             com.google.phishingprotection.v1beta1.ReportPhishingResponse>
@@ -80,10 +70,7 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
                           com.google.phishingprotection.v1beta1.ReportPhishingResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.phishingprotection.v1beta1.PhishingProtectionServiceV1Beta1",
-                              "ReportPhishing"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReportPhishing"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -105,7 +92,15 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static PhishingProtectionServiceV1Beta1Stub newStub(io.grpc.Channel channel) {
-    return new PhishingProtectionServiceV1Beta1Stub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<PhishingProtectionServiceV1Beta1Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PhishingProtectionServiceV1Beta1Stub>() {
+          @java.lang.Override
+          public PhishingProtectionServiceV1Beta1Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PhishingProtectionServiceV1Beta1Stub(channel, callOptions);
+          }
+        };
+    return PhishingProtectionServiceV1Beta1Stub.newStub(factory, channel);
   }
 
   /**
@@ -113,12 +108,28 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
    */
   public static PhishingProtectionServiceV1Beta1BlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new PhishingProtectionServiceV1Beta1BlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<PhishingProtectionServiceV1Beta1BlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PhishingProtectionServiceV1Beta1BlockingStub>() {
+          @java.lang.Override
+          public PhishingProtectionServiceV1Beta1BlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PhishingProtectionServiceV1Beta1BlockingStub(channel, callOptions);
+          }
+        };
+    return PhishingProtectionServiceV1Beta1BlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static PhishingProtectionServiceV1Beta1FutureStub newFutureStub(io.grpc.Channel channel) {
-    return new PhishingProtectionServiceV1Beta1FutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<PhishingProtectionServiceV1Beta1FutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PhishingProtectionServiceV1Beta1FutureStub>() {
+          @java.lang.Override
+          public PhishingProtectionServiceV1Beta1FutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PhishingProtectionServiceV1Beta1FutureStub(channel, callOptions);
+          }
+        };
+    return PhishingProtectionServiceV1Beta1FutureStub.newStub(factory, channel);
   }
 
   /**
@@ -148,14 +159,14 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
         com.google.phishingprotection.v1beta1.ReportPhishingRequest request,
         io.grpc.stub.StreamObserver<com.google.phishingprotection.v1beta1.ReportPhishingResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getReportPhishingMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getReportPhishingMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getReportPhishingMethodHelper(),
+              getReportPhishingMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.phishingprotection.v1beta1.ReportPhishingRequest,
@@ -173,11 +184,7 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
    * </pre>
    */
   public static final class PhishingProtectionServiceV1Beta1Stub
-      extends io.grpc.stub.AbstractStub<PhishingProtectionServiceV1Beta1Stub> {
-    private PhishingProtectionServiceV1Beta1Stub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<PhishingProtectionServiceV1Beta1Stub> {
     private PhishingProtectionServiceV1Beta1Stub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -207,7 +214,7 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
         io.grpc.stub.StreamObserver<com.google.phishingprotection.v1beta1.ReportPhishingResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getReportPhishingMethodHelper(), getCallOptions()),
+          getChannel().newCall(getReportPhishingMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -221,11 +228,7 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
    * </pre>
    */
   public static final class PhishingProtectionServiceV1Beta1BlockingStub
-      extends io.grpc.stub.AbstractStub<PhishingProtectionServiceV1Beta1BlockingStub> {
-    private PhishingProtectionServiceV1Beta1BlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<PhishingProtectionServiceV1Beta1BlockingStub> {
     private PhishingProtectionServiceV1Beta1BlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -252,8 +255,7 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
      */
     public com.google.phishingprotection.v1beta1.ReportPhishingResponse reportPhishing(
         com.google.phishingprotection.v1beta1.ReportPhishingRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getReportPhishingMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getReportPhishingMethod(), getCallOptions(), request);
     }
   }
 
@@ -265,11 +267,7 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
    * </pre>
    */
   public static final class PhishingProtectionServiceV1Beta1FutureStub
-      extends io.grpc.stub.AbstractStub<PhishingProtectionServiceV1Beta1FutureStub> {
-    private PhishingProtectionServiceV1Beta1FutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<PhishingProtectionServiceV1Beta1FutureStub> {
     private PhishingProtectionServiceV1Beta1FutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -298,7 +296,7 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
             com.google.phishingprotection.v1beta1.ReportPhishingResponse>
         reportPhishing(com.google.phishingprotection.v1beta1.ReportPhishingRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getReportPhishingMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getReportPhishingMethod(), getCallOptions()), request);
     }
   }
 
@@ -393,7 +391,7 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(
                           new PhishingProtectionServiceV1Beta1FileDescriptorSupplier())
-                      .addMethod(getReportPhishingMethodHelper())
+                      .addMethod(getReportPhishingMethod())
                       .build();
         }
       }
