@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;</code>
+   *
+   * @return A list containing the sourceProvenanceHash.
    */
   java.util.List<com.google.cloudbuild.v1.Hash.HashType> getSourceProvenanceHashList();
   /**
@@ -41,6 +43,8 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;</code>
+   *
+   * @return The count of sourceProvenanceHash.
    */
   int getSourceProvenanceHashCount();
   /**
@@ -51,6 +55,9 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The sourceProvenanceHash at the given index.
    */
   com.google.cloudbuild.v1.Hash.HashType getSourceProvenanceHash(int index);
   /**
@@ -61,6 +68,8 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for sourceProvenanceHash.
    */
   java.util.List<java.lang.Integer> getSourceProvenanceHashValueList();
   /**
@@ -71,6 +80,9 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of sourceProvenanceHash at the given index.
    */
   int getSourceProvenanceHashValue(int index);
 
@@ -83,6 +95,8 @@ public interface BuildOptionsOrBuilder
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.VerifyOption requested_verify_option = 2;
    * </code>
+   *
+   * @return The enum numeric value on the wire for requestedVerifyOption.
    */
   int getRequestedVerifyOptionValue();
   /**
@@ -94,6 +108,8 @@ public interface BuildOptionsOrBuilder
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.VerifyOption requested_verify_option = 2;
    * </code>
+   *
+   * @return The requestedVerifyOption.
    */
   com.google.cloudbuild.v1.BuildOptions.VerifyOption getRequestedVerifyOption();
 
@@ -105,6 +121,8 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.MachineType machine_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for machineType.
    */
   int getMachineTypeValue();
   /**
@@ -115,6 +133,8 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.MachineType machine_type = 3;</code>
+   *
+   * @return The machineType.
    */
   com.google.cloudbuild.v1.BuildOptions.MachineType getMachineType();
 
@@ -131,6 +151,8 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>int64 disk_size_gb = 6;</code>
+   *
+   * @return The diskSizeGb.
    */
   long getDiskSizeGb();
 
@@ -144,6 +166,8 @@ public interface BuildOptionsOrBuilder
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption substitution_option = 4;
    * </code>
+   *
+   * @return The enum numeric value on the wire for substitutionOption.
    */
   int getSubstitutionOptionValue();
   /**
@@ -156,6 +180,8 @@ public interface BuildOptionsOrBuilder
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption substitution_option = 4;
    * </code>
+   *
+   * @return The substitutionOption.
    */
   com.google.cloudbuild.v1.BuildOptions.SubstitutionOption getSubstitutionOption();
 
@@ -169,6 +195,8 @@ public interface BuildOptionsOrBuilder
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption log_streaming_option = 5;
    * </code>
+   *
+   * @return The enum numeric value on the wire for logStreamingOption.
    */
   int getLogStreamingOptionValue();
   /**
@@ -181,6 +209,8 @@ public interface BuildOptionsOrBuilder
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption log_streaming_option = 5;
    * </code>
+   *
+   * @return The logStreamingOption.
    */
   com.google.cloudbuild.v1.BuildOptions.LogStreamingOption getLogStreamingOption();
 
@@ -188,24 +218,28 @@ public interface BuildOptionsOrBuilder
    *
    *
    * <pre>
-   * Option to specify a `WorkerPool` for the build. User specifies the pool
-   * with the format "[WORKERPOOL_PROJECT_ID]/[WORKERPOOL_NAME]".
-   * This is an experimental field.
+   * Option to specify a `WorkerPool` for the build.
+   * Format: projects/{project}/workerPools/{workerPool}
+   * This field is experimental.
    * </pre>
    *
    * <code>string worker_pool = 7;</code>
+   *
+   * @return The workerPool.
    */
   java.lang.String getWorkerPool();
   /**
    *
    *
    * <pre>
-   * Option to specify a `WorkerPool` for the build. User specifies the pool
-   * with the format "[WORKERPOOL_PROJECT_ID]/[WORKERPOOL_NAME]".
-   * This is an experimental field.
+   * Option to specify a `WorkerPool` for the build.
+   * Format: projects/{project}/workerPools/{workerPool}
+   * This field is experimental.
    * </pre>
    *
    * <code>string worker_pool = 7;</code>
+   *
+   * @return The bytes for workerPool.
    */
   com.google.protobuf.ByteString getWorkerPoolBytes();
 
@@ -218,6 +252,8 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.LoggingMode logging = 11;</code>
+   *
+   * @return The enum numeric value on the wire for logging.
    */
   int getLoggingValue();
   /**
@@ -229,6 +265,8 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.LoggingMode logging = 11;</code>
+   *
+   * @return The logging.
    */
   com.google.cloudbuild.v1.BuildOptions.LoggingMode getLogging();
 
@@ -244,6 +282,8 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>repeated string env = 12;</code>
+   *
+   * @return A list containing the env.
    */
   java.util.List<java.lang.String> getEnvList();
   /**
@@ -258,6 +298,8 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>repeated string env = 12;</code>
+   *
+   * @return The count of env.
    */
   int getEnvCount();
   /**
@@ -272,6 +314,9 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>repeated string env = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The env at the given index.
    */
   java.lang.String getEnv(int index);
   /**
@@ -286,6 +331,9 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>repeated string env = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the env at the given index.
    */
   com.google.protobuf.ByteString getEnvBytes(int index);
 
@@ -300,6 +348,8 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>repeated string secret_env = 13;</code>
+   *
+   * @return A list containing the secretEnv.
    */
   java.util.List<java.lang.String> getSecretEnvList();
   /**
@@ -313,6 +363,8 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>repeated string secret_env = 13;</code>
+   *
+   * @return The count of secretEnv.
    */
   int getSecretEnvCount();
   /**
@@ -326,6 +378,9 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>repeated string secret_env = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The secretEnv at the given index.
    */
   java.lang.String getSecretEnv(int index);
   /**
@@ -339,6 +394,9 @@ public interface BuildOptionsOrBuilder
    * </pre>
    *
    * <code>repeated string secret_env = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the secretEnv at the given index.
    */
   com.google.protobuf.ByteString getSecretEnvBytes(int index);
 

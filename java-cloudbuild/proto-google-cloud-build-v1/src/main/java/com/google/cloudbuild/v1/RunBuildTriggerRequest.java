@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,12 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RunBuildTriggerRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -160,6 +167,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -183,6 +192,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The triggerId.
    */
   public java.lang.String getTriggerId() {
     java.lang.Object ref = triggerId_;
@@ -203,6 +214,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for triggerId.
    */
   public com.google.protobuf.ByteString getTriggerIdBytes() {
     java.lang.Object ref = triggerId_;
@@ -228,6 +241,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    * <code>
    * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the source field is set.
    */
   public boolean hasSource() {
     return source_ != null;
@@ -242,6 +257,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    * <code>
    * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The source.
    */
   public com.google.cloudbuild.v1.RepoSource getSource() {
     return source_ == null ? com.google.cloudbuild.v1.RepoSource.getDefaultInstance() : source_;
@@ -631,6 +648,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -651,6 +670,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -671,6 +692,9 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -689,6 +713,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -704,6 +730,9 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -725,6 +754,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The triggerId.
      */
     public java.lang.String getTriggerId() {
       java.lang.Object ref = triggerId_;
@@ -745,6 +776,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for triggerId.
      */
     public com.google.protobuf.ByteString getTriggerIdBytes() {
       java.lang.Object ref = triggerId_;
@@ -765,6 +798,9 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The triggerId to set.
+     * @return This builder for chaining.
      */
     public Builder setTriggerId(java.lang.String value) {
       if (value == null) {
@@ -783,6 +819,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTriggerId() {
 
@@ -798,6 +836,9 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for triggerId to set.
+     * @return This builder for chaining.
      */
     public Builder setTriggerIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -826,6 +867,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * <code>
      * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the source field is set.
      */
     public boolean hasSource() {
       return sourceBuilder_ != null || source_ != null;
@@ -840,6 +883,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * <code>
      * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The source.
      */
     public com.google.cloudbuild.v1.RepoSource getSource() {
       if (sourceBuilder_ == null) {

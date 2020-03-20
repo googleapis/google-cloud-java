@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ public interface SourceOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
+   *
+   * @return Whether the storageSource field is set.
    */
   boolean hasStorageSource();
   /**
@@ -41,6 +43,8 @@ public interface SourceOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
+   *
+   * @return The storageSource.
    */
   com.google.cloudbuild.v1.StorageSource getStorageSource();
   /**
@@ -63,6 +67,8 @@ public interface SourceOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource repo_source = 3;</code>
+   *
+   * @return Whether the repoSource field is set.
    */
   boolean hasRepoSource();
   /**
@@ -74,6 +80,8 @@ public interface SourceOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource repo_source = 3;</code>
+   *
+   * @return The repoSource.
    */
   com.google.cloudbuild.v1.RepoSource getRepoSource();
   /**

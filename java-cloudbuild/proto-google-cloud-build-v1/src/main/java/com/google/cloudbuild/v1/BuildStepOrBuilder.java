@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -67,6 +69,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -80,6 +84,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string env = 2;</code>
+   *
+   * @return A list containing the env.
    */
   java.util.List<java.lang.String> getEnvList();
   /**
@@ -92,6 +98,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string env = 2;</code>
+   *
+   * @return The count of env.
    */
   int getEnvCount();
   /**
@@ -104,6 +112,9 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string env = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The env at the given index.
    */
   java.lang.String getEnv(int index);
   /**
@@ -116,6 +127,9 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string env = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the env at the given index.
    */
   com.google.protobuf.ByteString getEnvBytes(int index);
 
@@ -131,6 +145,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string args = 3;</code>
+   *
+   * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
   /**
@@ -145,6 +161,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string args = 3;</code>
+   *
+   * @return The count of args.
    */
   int getArgsCount();
   /**
@@ -159,6 +177,9 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string args = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
   /**
@@ -173,6 +194,9 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string args = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the args at the given index.
    */
   com.google.protobuf.ByteString getArgsBytes(int index);
 
@@ -191,6 +215,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>string dir = 4;</code>
+   *
+   * @return The dir.
    */
   java.lang.String getDir();
   /**
@@ -208,6 +234,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>string dir = 4;</code>
+   *
+   * @return The bytes for dir.
    */
   com.google.protobuf.ByteString getDirBytes();
 
@@ -220,6 +248,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>string id = 5;</code>
+   *
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -231,6 +261,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>string id = 5;</code>
+   *
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString getIdBytes();
 
@@ -246,6 +278,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
+   *
+   * @return A list containing the waitFor.
    */
   java.util.List<java.lang.String> getWaitForList();
   /**
@@ -260,6 +294,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
+   *
+   * @return The count of waitFor.
    */
   int getWaitForCount();
   /**
@@ -274,6 +310,9 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The waitFor at the given index.
    */
   java.lang.String getWaitFor(int index);
   /**
@@ -288,6 +327,9 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the waitFor at the given index.
    */
   com.google.protobuf.ByteString getWaitForBytes(int index);
 
@@ -300,6 +342,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>string entrypoint = 7;</code>
+   *
+   * @return The entrypoint.
    */
   java.lang.String getEntrypoint();
   /**
@@ -311,6 +355,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>string entrypoint = 7;</code>
+   *
+   * @return The bytes for entrypoint.
    */
   com.google.protobuf.ByteString getEntrypointBytes();
 
@@ -324,6 +370,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string secret_env = 8;</code>
+   *
+   * @return A list containing the secretEnv.
    */
   java.util.List<java.lang.String> getSecretEnvList();
   /**
@@ -336,6 +384,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string secret_env = 8;</code>
+   *
+   * @return The count of secretEnv.
    */
   int getSecretEnvCount();
   /**
@@ -348,6 +398,9 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string secret_env = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The secretEnv at the given index.
    */
   java.lang.String getSecretEnv(int index);
   /**
@@ -360,6 +413,9 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>repeated string secret_env = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the secretEnv at the given index.
    */
   com.google.protobuf.ByteString getSecretEnvBytes(int index);
 
@@ -446,7 +502,11 @@ public interface BuildStepOrBuilder
    * Output only. Stores timing information for executing this build step.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the timing field is set.
    */
   boolean hasTiming();
   /**
@@ -456,7 +516,11 @@ public interface BuildStepOrBuilder
    * Output only. Stores timing information for executing this build step.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The timing.
    */
   com.google.cloudbuild.v1.TimeSpan getTiming();
   /**
@@ -466,7 +530,9 @@ public interface BuildStepOrBuilder
    * Output only. Stores timing information for executing this build step.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloudbuild.v1.TimeSpanOrBuilder getTimingOrBuilder();
 
@@ -479,6 +545,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+   *
+   * @return Whether the pullTiming field is set.
    */
   boolean hasPullTiming();
   /**
@@ -490,6 +558,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+   *
+   * @return The pullTiming.
    */
   com.google.cloudbuild.v1.TimeSpan getPullTiming();
   /**
@@ -514,6 +584,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 11;</code>
+   *
+   * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
   /**
@@ -526,6 +598,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 11;</code>
+   *
+   * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
   /**
@@ -551,6 +625,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+   *
+   * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
@@ -563,6 +639,8 @@ public interface BuildStepOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+   *
+   * @return The status.
    */
   com.google.cloudbuild.v1.Build.Status getStatus();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ public interface BuildOrBuilder
    * Output only. Unique identifier of the build.
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -40,7 +42,9 @@ public interface BuildOrBuilder
    * Output only. Unique identifier of the build.
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString getIdBytes();
 
@@ -51,7 +55,9 @@ public interface BuildOrBuilder
    * Output only. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 16;</code>
+   * <code>string project_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -61,7 +67,9 @@ public interface BuildOrBuilder
    * Output only. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 16;</code>
+   * <code>string project_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -73,6 +81,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Build.Status status = 2;</code>
+   *
+   * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
@@ -83,6 +93,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Build.Status status = 2;</code>
+   *
+   * @return The status.
    */
   com.google.cloudbuild.v1.Build.Status getStatus();
 
@@ -94,6 +106,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>string status_detail = 24;</code>
+   *
+   * @return The statusDetail.
    */
   java.lang.String getStatusDetail();
   /**
@@ -104,6 +118,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>string status_detail = 24;</code>
+   *
+   * @return The bytes for statusDetail.
    */
   com.google.protobuf.ByteString getStatusDetailBytes();
 
@@ -115,6 +131,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+   *
+   * @return Whether the source field is set.
    */
   boolean hasSource();
   /**
@@ -125,6 +143,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+   *
+   * @return The source.
    */
   com.google.cloudbuild.v1.Source getSource();
   /**
@@ -196,7 +216,11 @@ public interface BuildOrBuilder
    * Output only. Results of the build.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the results field is set.
    */
   boolean hasResults();
   /**
@@ -206,7 +230,11 @@ public interface BuildOrBuilder
    * Output only. Results of the build.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The results.
    */
   com.google.cloudbuild.v1.Results getResults();
   /**
@@ -216,7 +244,9 @@ public interface BuildOrBuilder
    * Output only. Results of the build.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloudbuild.v1.ResultsOrBuilder getResultsOrBuilder();
 
@@ -227,7 +257,10 @@ public interface BuildOrBuilder
    * Output only. Time at which the request to create the build was received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -237,7 +270,10 @@ public interface BuildOrBuilder
    * Output only. Time at which the request to create the build was received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -247,7 +283,8 @@ public interface BuildOrBuilder
    * Output only. Time at which the request to create the build was received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -258,7 +295,10 @@ public interface BuildOrBuilder
    * Output only. Time at which execution of the build was started.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 7;</code>
+   * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -268,7 +308,10 @@ public interface BuildOrBuilder
    * Output only. Time at which execution of the build was started.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 7;</code>
+   * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -278,7 +321,8 @@ public interface BuildOrBuilder
    * Output only. Time at which execution of the build was started.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 7;</code>
+   * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
@@ -291,7 +335,10 @@ public interface BuildOrBuilder
    * build's execution.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+   * <code>.google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the finishTime field is set.
    */
   boolean hasFinishTime();
   /**
@@ -303,7 +350,10 @@ public interface BuildOrBuilder
    * build's execution.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+   * <code>.google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The finishTime.
    */
   com.google.protobuf.Timestamp getFinishTime();
   /**
@@ -315,7 +365,8 @@ public interface BuildOrBuilder
    * build's execution.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+   * <code>.google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getFinishTimeOrBuilder();
 
@@ -330,6 +381,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 12;</code>
+   *
+   * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
   /**
@@ -343,6 +396,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 12;</code>
+   *
+   * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
   /**
@@ -373,6 +428,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>repeated string images = 13;</code>
+   *
+   * @return A list containing the images.
    */
   java.util.List<java.lang.String> getImagesList();
   /**
@@ -389,6 +446,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>repeated string images = 13;</code>
+   *
+   * @return The count of images.
    */
   int getImagesCount();
   /**
@@ -405,6 +464,9 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>repeated string images = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The images at the given index.
    */
   java.lang.String getImages(int index);
   /**
@@ -421,8 +483,55 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>repeated string images = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the images at the given index.
    */
   com.google.protobuf.ByteString getImagesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * TTL in queue for this build. If provided and the build is enqueued longer
+   * than this value, the build will expire and the build status will be
+   * `EXPIRED`.
+   * The TTL starts ticking from create_time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+   *
+   * @return Whether the queueTtl field is set.
+   */
+  boolean hasQueueTtl();
+  /**
+   *
+   *
+   * <pre>
+   * TTL in queue for this build. If provided and the build is enqueued longer
+   * than this value, the build will expire and the build status will be
+   * `EXPIRED`.
+   * The TTL starts ticking from create_time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+   *
+   * @return The queueTtl.
+   */
+  com.google.protobuf.Duration getQueueTtl();
+  /**
+   *
+   *
+   * <pre>
+   * TTL in queue for this build. If provided and the build is enqueued longer
+   * than this value, the build will expire and the build status will be
+   * `EXPIRED`.
+   * The TTL starts ticking from create_time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getQueueTtlOrBuilder();
 
   /**
    *
@@ -433,6 +542,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Artifacts artifacts = 37;</code>
+   *
+   * @return Whether the artifacts field is set.
    */
   boolean hasArtifacts();
   /**
@@ -444,6 +555,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Artifacts artifacts = 37;</code>
+   *
+   * @return The artifacts.
    */
   com.google.cloudbuild.v1.Artifacts getArtifacts();
   /**
@@ -469,6 +582,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>string logs_bucket = 19;</code>
+   *
+   * @return The logsBucket.
    */
   java.lang.String getLogsBucket();
   /**
@@ -482,6 +597,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>string logs_bucket = 19;</code>
+   *
+   * @return The bytes for logsBucket.
    */
   com.google.protobuf.ByteString getLogsBucketBytes();
 
@@ -493,6 +610,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.SourceProvenance source_provenance = 21;</code>
+   *
+   * @return Whether the sourceProvenance field is set.
    */
   boolean hasSourceProvenance();
   /**
@@ -503,6 +622,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.SourceProvenance source_provenance = 21;</code>
+   *
+   * @return The sourceProvenance.
    */
   com.google.cloudbuild.v1.SourceProvenance getSourceProvenance();
   /**
@@ -525,6 +646,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>string build_trigger_id = 22;</code>
+   *
+   * @return The buildTriggerId.
    */
   java.lang.String getBuildTriggerId();
   /**
@@ -536,6 +659,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>string build_trigger_id = 22;</code>
+   *
+   * @return The bytes for buildTriggerId.
    */
   com.google.protobuf.ByteString getBuildTriggerIdBytes();
 
@@ -547,6 +672,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions options = 23;</code>
+   *
+   * @return Whether the options field is set.
    */
   boolean hasOptions();
   /**
@@ -557,6 +684,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions options = 23;</code>
+   *
+   * @return The options.
    */
   com.google.cloudbuild.v1.BuildOptions getOptions();
   /**
@@ -577,7 +706,9 @@ public interface BuildOrBuilder
    * Output only. URL to logs for this build in Google Cloud Console.
    * </pre>
    *
-   * <code>string log_url = 25;</code>
+   * <code>string log_url = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The logUrl.
    */
   java.lang.String getLogUrl();
   /**
@@ -587,7 +718,9 @@ public interface BuildOrBuilder
    * Output only. URL to logs for this build in Google Cloud Console.
    * </pre>
    *
-   * <code>string log_url = 25;</code>
+   * <code>string log_url = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for logUrl.
    */
   com.google.protobuf.ByteString getLogUrlBytes();
 
@@ -653,6 +786,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>repeated string tags = 31;</code>
+   *
+   * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
   /**
@@ -663,6 +798,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>repeated string tags = 31;</code>
+   *
+   * @return The count of tags.
    */
   int getTagsCount();
   /**
@@ -673,6 +810,9 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>repeated string tags = 31;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
   /**
@@ -683,6 +823,9 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>repeated string tags = 31;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
    */
   com.google.protobuf.ByteString getTagsBytes(int index);
 
@@ -750,7 +893,9 @@ public interface BuildOrBuilder
    * these keys will not be included.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getTimingCount();
   /**
@@ -766,7 +911,9 @@ public interface BuildOrBuilder
    * these keys will not be included.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean containsTiming(java.lang.String key);
   /** Use {@link #getTimingMap()} instead. */
@@ -785,7 +932,9 @@ public interface BuildOrBuilder
    * these keys will not be included.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.Map<java.lang.String, com.google.cloudbuild.v1.TimeSpan> getTimingMap();
   /**
@@ -801,7 +950,9 @@ public interface BuildOrBuilder
    * these keys will not be included.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloudbuild.v1.TimeSpan getTimingOrDefault(
       java.lang.String key, com.google.cloudbuild.v1.TimeSpan defaultValue);
@@ -818,7 +969,9 @@ public interface BuildOrBuilder
    * these keys will not be included.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloudbuild.v1.TimeSpan getTimingOrThrow(java.lang.String key);
 }

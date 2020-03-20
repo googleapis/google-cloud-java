@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   private Source() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Source();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,7 +136,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
-  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     STORAGE_SOURCE(2),
     REPO_SOURCE(3),
     SOURCE_NOT_SET(0);
@@ -140,7 +148,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -177,6 +189,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
+   *
+   * @return Whether the storageSource field is set.
    */
   public boolean hasStorageSource() {
     return sourceCase_ == 2;
@@ -189,6 +203,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
+   *
+   * @return The storageSource.
    */
   public com.google.cloudbuild.v1.StorageSource getStorageSource() {
     if (sourceCase_ == 2) {
@@ -222,6 +238,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource repo_source = 3;</code>
+   *
+   * @return Whether the repoSource field is set.
    */
   public boolean hasRepoSource() {
     return sourceCase_ == 3;
@@ -235,6 +253,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource repo_source = 3;</code>
+   *
+   * @return The repoSource.
    */
   public com.google.cloudbuild.v1.RepoSource getRepoSource() {
     if (sourceCase_ == 3) {
@@ -654,6 +674,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
+     *
+     * @return Whether the storageSource field is set.
      */
     public boolean hasStorageSource() {
       return sourceCase_ == 2;
@@ -666,6 +688,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
+     *
+     * @return The storageSource.
      */
     public com.google.cloudbuild.v1.StorageSource getStorageSource() {
       if (storageSourceBuilder_ == null) {
@@ -857,6 +881,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource repo_source = 3;</code>
+     *
+     * @return Whether the repoSource field is set.
      */
     public boolean hasRepoSource() {
       return sourceCase_ == 3;
@@ -870,6 +896,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource repo_source = 3;</code>
+     *
+     * @return The repoSource.
      */
     public com.google.cloudbuild.v1.RepoSource getRepoSource() {
       if (repoSourceBuilder_ == null) {

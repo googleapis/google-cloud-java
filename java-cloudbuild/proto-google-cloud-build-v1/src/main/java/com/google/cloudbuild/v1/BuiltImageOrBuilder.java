@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,8 @@ public interface BuiltImageOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface BuiltImageOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface BuiltImageOrBuilder
    * </pre>
    *
    * <code>string digest = 3;</code>
+   *
+   * @return The digest.
    */
   java.lang.String getDigest();
   /**
@@ -64,6 +70,8 @@ public interface BuiltImageOrBuilder
    * </pre>
    *
    * <code>string digest = 3;</code>
+   *
+   * @return The bytes for digest.
    */
   com.google.protobuf.ByteString getDigestBytes();
 
@@ -74,7 +82,11 @@ public interface BuiltImageOrBuilder
    * Output only. Stores timing information for pushing the specified image.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the pushTiming field is set.
    */
   boolean hasPushTiming();
   /**
@@ -84,7 +96,11 @@ public interface BuiltImageOrBuilder
    * Output only. Stores timing information for pushing the specified image.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The pushTiming.
    */
   com.google.cloudbuild.v1.TimeSpan getPushTiming();
   /**
@@ -94,7 +110,9 @@ public interface BuiltImageOrBuilder
    * Output only. Stores timing information for pushing the specified image.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloudbuild.v1.TimeSpanOrBuilder getPushTimingOrBuilder();
 }

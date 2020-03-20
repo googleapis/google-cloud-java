@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,8 @@ public interface WorkerConfigOrBuilder
    * </pre>
    *
    * <code>string machine_type = 1;</code>
+   *
+   * @return The machineType.
    */
   java.lang.String getMachineType();
   /**
@@ -55,6 +57,8 @@ public interface WorkerConfigOrBuilder
    * </pre>
    *
    * <code>string machine_type = 1;</code>
+   *
+   * @return The bytes for machineType.
    */
   com.google.protobuf.ByteString getMachineTypeBytes();
 
@@ -73,6 +77,8 @@ public interface WorkerConfigOrBuilder
    * </pre>
    *
    * <code>int64 disk_size_gb = 2;</code>
+   *
+   * @return The diskSizeGb.
    */
   long getDiskSizeGb();
 
@@ -86,6 +92,8 @@ public interface WorkerConfigOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Network network = 3;</code>
+   *
+   * @return Whether the network field is set.
    */
   boolean hasNetwork();
   /**
@@ -98,6 +106,8 @@ public interface WorkerConfigOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Network network = 3;</code>
+   *
+   * @return The network.
    */
   com.google.cloudbuild.v1.Network getNetwork();
   /**
@@ -123,6 +133,8 @@ public interface WorkerConfigOrBuilder
    * </pre>
    *
    * <code>string tag = 4;</code>
+   *
+   * @return The tag.
    */
   java.lang.String getTag();
   /**
@@ -135,6 +147,8 @@ public interface WorkerConfigOrBuilder
    * </pre>
    *
    * <code>string tag = 4;</code>
+   *
+   * @return The bytes for tag.
    */
   com.google.protobuf.ByteString getTagBytes();
 }

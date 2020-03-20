@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,12 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
   private PushFilter() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PushFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,6 +80,11 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
               gitRefCase_ = 3;
               gitRef_ = s;
+              break;
+            }
+          case 32:
+            {
+              invertRegex_ = input.readBool();
               break;
             }
           default:
@@ -114,7 +124,10 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
   private int gitRefCase_ = 0;
   private java.lang.Object gitRef_;
 
-  public enum GitRefCase implements com.google.protobuf.Internal.EnumLite {
+  public enum GitRefCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BRANCH(2),
     TAG(3),
     GITREF_NOT_SET(0);
@@ -123,7 +136,11 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     private GitRefCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static GitRefCase valueOf(int value) {
       return forNumber(value);
@@ -162,6 +179,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string branch = 2;</code>
+   *
+   * @return The branch.
    */
   public java.lang.String getBranch() {
     java.lang.Object ref = "";
@@ -189,6 +208,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string branch = 2;</code>
+   *
+   * @return The bytes for branch.
    */
   public com.google.protobuf.ByteString getBranchBytes() {
     java.lang.Object ref = "";
@@ -218,6 +239,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string tag = 3;</code>
+   *
+   * @return The tag.
    */
   public java.lang.String getTag() {
     java.lang.Object ref = "";
@@ -245,6 +268,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string tag = 3;</code>
+   *
+   * @return The bytes for tag.
    */
   public com.google.protobuf.ByteString getTagBytes() {
     java.lang.Object ref = "";
@@ -261,6 +286,24 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int INVERT_REGEX_FIELD_NUMBER = 4;
+  private boolean invertRegex_;
+  /**
+   *
+   *
+   * <pre>
+   * When true, only trigger a build if the revision regex does NOT match the
+   * git_ref regex.
+   * </pre>
+   *
+   * <code>bool invert_regex = 4;</code>
+   *
+   * @return The invertRegex.
+   */
+  public boolean getInvertRegex() {
+    return invertRegex_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -283,6 +326,9 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     if (gitRefCase_ == 3) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gitRef_);
     }
+    if (invertRegex_ != false) {
+      output.writeBool(4, invertRegex_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -297,6 +343,9 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     }
     if (gitRefCase_ == 3) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gitRef_);
+    }
+    if (invertRegex_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, invertRegex_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -313,6 +362,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloudbuild.v1.PushFilter other = (com.google.cloudbuild.v1.PushFilter) obj;
 
+    if (getInvertRegex() != other.getInvertRegex()) return false;
     if (!getGitRefCase().equals(other.getGitRefCase())) return false;
     switch (gitRefCase_) {
       case 2:
@@ -335,6 +385,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + INVERT_REGEX_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInvertRegex());
     switch (gitRefCase_) {
       case 2:
         hash = (37 * hash) + BRANCH_FIELD_NUMBER;
@@ -491,6 +543,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      invertRegex_ = false;
+
       gitRefCase_ = 0;
       gitRef_ = null;
       return this;
@@ -525,6 +579,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
       if (gitRefCase_ == 3) {
         result.gitRef_ = gitRef_;
       }
+      result.invertRegex_ = invertRegex_;
       result.gitRefCase_ = gitRefCase_;
       onBuilt();
       return result;
@@ -575,6 +630,9 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloudbuild.v1.PushFilter other) {
       if (other == com.google.cloudbuild.v1.PushFilter.getDefaultInstance()) return this;
+      if (other.getInvertRegex() != false) {
+        setInvertRegex(other.getInvertRegex());
+      }
       switch (other.getGitRefCase()) {
         case BRANCH:
           {
@@ -648,6 +706,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string branch = 2;</code>
+     *
+     * @return The branch.
      */
     public java.lang.String getBranch() {
       java.lang.Object ref = "";
@@ -675,6 +735,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string branch = 2;</code>
+     *
+     * @return The bytes for branch.
      */
     public com.google.protobuf.ByteString getBranchBytes() {
       java.lang.Object ref = "";
@@ -702,6 +764,9 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string branch = 2;</code>
+     *
+     * @param value The branch to set.
+     * @return This builder for chaining.
      */
     public Builder setBranch(java.lang.String value) {
       if (value == null) {
@@ -722,6 +787,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string branch = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBranch() {
       if (gitRefCase_ == 2) {
@@ -741,6 +808,9 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string branch = 2;</code>
+     *
+     * @param value The bytes for branch to set.
+     * @return This builder for chaining.
      */
     public Builder setBranchBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -763,6 +833,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 3;</code>
+     *
+     * @return The tag.
      */
     public java.lang.String getTag() {
       java.lang.Object ref = "";
@@ -790,6 +862,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 3;</code>
+     *
+     * @return The bytes for tag.
      */
     public com.google.protobuf.ByteString getTagBytes() {
       java.lang.Object ref = "";
@@ -817,6 +891,9 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 3;</code>
+     *
+     * @param value The tag to set.
+     * @return This builder for chaining.
      */
     public Builder setTag(java.lang.String value) {
       if (value == null) {
@@ -837,6 +914,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTag() {
       if (gitRefCase_ == 3) {
@@ -856,6 +935,9 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 3;</code>
+     *
+     * @param value The bytes for tag to set.
+     * @return This builder for chaining.
      */
     public Builder setTagBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -864,6 +946,60 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       gitRefCase_ = 3;
       gitRef_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean invertRegex_;
+    /**
+     *
+     *
+     * <pre>
+     * When true, only trigger a build if the revision regex does NOT match the
+     * git_ref regex.
+     * </pre>
+     *
+     * <code>bool invert_regex = 4;</code>
+     *
+     * @return The invertRegex.
+     */
+    public boolean getInvertRegex() {
+      return invertRegex_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When true, only trigger a build if the revision regex does NOT match the
+     * git_ref regex.
+     * </pre>
+     *
+     * <code>bool invert_regex = 4;</code>
+     *
+     * @param value The invertRegex to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvertRegex(boolean value) {
+
+      invertRegex_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When true, only trigger a build if the revision regex does NOT match the
+     * git_ref regex.
+     * </pre>
+     *
+     * <code>bool invert_regex = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInvertRegex() {
+
+      invertRegex_ = false;
       onChanged();
       return this;
     }

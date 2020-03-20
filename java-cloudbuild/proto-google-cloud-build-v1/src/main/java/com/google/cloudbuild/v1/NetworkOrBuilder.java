@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,8 @@ public interface NetworkOrBuilder
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -49,6 +51,8 @@ public interface NetworkOrBuilder
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -61,6 +65,8 @@ public interface NetworkOrBuilder
    * </pre>
    *
    * <code>string network = 2;</code>
+   *
+   * @return The network.
    */
   java.lang.String getNetwork();
   /**
@@ -72,6 +78,8 @@ public interface NetworkOrBuilder
    * </pre>
    *
    * <code>string network = 2;</code>
+   *
+   * @return The bytes for network.
    */
   com.google.protobuf.ByteString getNetworkBytes();
 
@@ -84,6 +92,8 @@ public interface NetworkOrBuilder
    * </pre>
    *
    * <code>string subnetwork = 3;</code>
+   *
+   * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
   /**
@@ -95,6 +105,8 @@ public interface NetworkOrBuilder
    * </pre>
    *
    * <code>string subnetwork = 3;</code>
+   *
+   * @return The bytes for subnetwork.
    */
   com.google.protobuf.ByteString getSubnetworkBytes();
 }

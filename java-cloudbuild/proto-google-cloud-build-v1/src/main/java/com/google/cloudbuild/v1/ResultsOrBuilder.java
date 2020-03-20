@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,6 +83,8 @@ public interface ResultsOrBuilder
    * </pre>
    *
    * <code>repeated string build_step_images = 3;</code>
+   *
+   * @return A list containing the buildStepImages.
    */
   java.util.List<java.lang.String> getBuildStepImagesList();
   /**
@@ -94,6 +96,8 @@ public interface ResultsOrBuilder
    * </pre>
    *
    * <code>repeated string build_step_images = 3;</code>
+   *
+   * @return The count of buildStepImages.
    */
   int getBuildStepImagesCount();
   /**
@@ -105,6 +109,9 @@ public interface ResultsOrBuilder
    * </pre>
    *
    * <code>repeated string build_step_images = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The buildStepImages at the given index.
    */
   java.lang.String getBuildStepImages(int index);
   /**
@@ -116,6 +123,9 @@ public interface ResultsOrBuilder
    * </pre>
    *
    * <code>repeated string build_step_images = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the buildStepImages at the given index.
    */
   com.google.protobuf.ByteString getBuildStepImagesBytes(int index);
 
@@ -127,6 +137,8 @@ public interface ResultsOrBuilder
    * </pre>
    *
    * <code>string artifact_manifest = 4;</code>
+   *
+   * @return The artifactManifest.
    */
   java.lang.String getArtifactManifest();
   /**
@@ -137,6 +149,8 @@ public interface ResultsOrBuilder
    * </pre>
    *
    * <code>string artifact_manifest = 4;</code>
+   *
+   * @return The bytes for artifactManifest.
    */
   com.google.protobuf.ByteString getArtifactManifestBytes();
 
@@ -148,6 +162,8 @@ public interface ResultsOrBuilder
    * </pre>
    *
    * <code>int64 num_artifacts = 5;</code>
+   *
+   * @return The numArtifacts.
    */
   long getNumArtifacts();
 
@@ -163,6 +179,8 @@ public interface ResultsOrBuilder
    * </pre>
    *
    * <code>repeated bytes build_step_outputs = 6;</code>
+   *
+   * @return A list containing the buildStepOutputs.
    */
   java.util.List<com.google.protobuf.ByteString> getBuildStepOutputsList();
   /**
@@ -177,6 +195,8 @@ public interface ResultsOrBuilder
    * </pre>
    *
    * <code>repeated bytes build_step_outputs = 6;</code>
+   *
+   * @return The count of buildStepOutputs.
    */
   int getBuildStepOutputsCount();
   /**
@@ -191,6 +211,9 @@ public interface ResultsOrBuilder
    * </pre>
    *
    * <code>repeated bytes build_step_outputs = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The buildStepOutputs at the given index.
    */
   com.google.protobuf.ByteString getBuildStepOutputs(int index);
 
@@ -202,6 +225,8 @@ public interface ResultsOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+   *
+   * @return Whether the artifactTiming field is set.
    */
   boolean hasArtifactTiming();
   /**
@@ -212,6 +237,8 @@ public interface ResultsOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+   *
+   * @return The artifactTiming.
    */
   com.google.cloudbuild.v1.TimeSpan getArtifactTiming();
   /**

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,12 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
   }
 
   private SourceProvenance() {}
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SourceProvenance();
+  }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -82,11 +88,11 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fileHashes_ =
                     com.google.protobuf.MapField.newMapField(
                         FileHashesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.cloudbuild.v1.FileHashes>
                   fileHashes__ =
@@ -157,7 +163,6 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
             com.google.cloudbuild.v1.SourceProvenance.Builder.class);
   }
 
-  private int bitField0_;
   public static final int RESOLVED_STORAGE_SOURCE_FIELD_NUMBER = 3;
   private com.google.cloudbuild.v1.StorageSource resolvedStorageSource_;
   /**
@@ -169,6 +174,8 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSource resolved_storage_source = 3;</code>
+   *
+   * @return Whether the resolvedStorageSource field is set.
    */
   public boolean hasResolvedStorageSource() {
     return resolvedStorageSource_ != null;
@@ -182,6 +189,8 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSource resolved_storage_source = 3;</code>
+   *
+   * @return The resolvedStorageSource.
    */
   public com.google.cloudbuild.v1.StorageSource getResolvedStorageSource() {
     return resolvedStorageSource_ == null
@@ -213,6 +222,8 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource resolved_repo_source = 6;</code>
+   *
+   * @return Whether the resolvedRepoSource field is set.
    */
   public boolean hasResolvedRepoSource() {
     return resolvedRepoSource_ != null;
@@ -226,6 +237,8 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource resolved_repo_source = 6;</code>
+   *
+   * @return The resolvedRepoSource.
    */
   public com.google.cloudbuild.v1.RepoSource getResolvedRepoSource() {
     return resolvedRepoSource_ == null
@@ -289,7 +302,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean containsFileHashes(java.lang.String key) {
     if (key == null) {
@@ -316,7 +331,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.Map<java.lang.String, com.google.cloudbuild.v1.FileHashes> getFileHashesMap() {
     return internalGetFileHashes().getMap();
@@ -335,7 +352,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloudbuild.v1.FileHashes getFileHashesOrDefault(
       java.lang.String key, com.google.cloudbuild.v1.FileHashes defaultValue) {
@@ -360,7 +379,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloudbuild.v1.FileHashes getFileHashesOrThrow(java.lang.String key) {
     if (key == null) {
@@ -678,7 +699,6 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
       com.google.cloudbuild.v1.SourceProvenance result =
           new com.google.cloudbuild.v1.SourceProvenance(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (resolvedStorageSourceBuilder_ == null) {
         result.resolvedStorageSource_ = resolvedStorageSource_;
       } else {
@@ -691,7 +711,6 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
       }
       result.fileHashes_ = internalGetFileHashes();
       result.fileHashes_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -794,6 +813,8 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource resolved_storage_source = 3;</code>
+     *
+     * @return Whether the resolvedStorageSource field is set.
      */
     public boolean hasResolvedStorageSource() {
       return resolvedStorageSourceBuilder_ != null || resolvedStorageSource_ != null;
@@ -807,6 +828,8 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource resolved_storage_source = 3;</code>
+     *
+     * @return The resolvedStorageSource.
      */
     public com.google.cloudbuild.v1.StorageSource getResolvedStorageSource() {
       if (resolvedStorageSourceBuilder_ == null) {
@@ -985,6 +1008,8 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource resolved_repo_source = 6;</code>
+     *
+     * @return Whether the resolvedRepoSource field is set.
      */
     public boolean hasResolvedRepoSource() {
       return resolvedRepoSourceBuilder_ != null || resolvedRepoSource_ != null;
@@ -998,6 +1023,8 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource resolved_repo_source = 6;</code>
+     *
+     * @return The resolvedRepoSource.
      */
     public com.google.cloudbuild.v1.RepoSource getResolvedRepoSource() {
       if (resolvedRepoSourceBuilder_ == null) {
@@ -1204,7 +1231,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * (`.tar.gz`), the `FileHash` will be for the single path to that file.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean containsFileHashes(java.lang.String key) {
       if (key == null) {
@@ -1231,7 +1260,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * (`.tar.gz`), the `FileHash` will be for the single path to that file.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.Map<java.lang.String, com.google.cloudbuild.v1.FileHashes> getFileHashesMap() {
       return internalGetFileHashes().getMap();
@@ -1250,7 +1281,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * (`.tar.gz`), the `FileHash` will be for the single path to that file.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloudbuild.v1.FileHashes getFileHashesOrDefault(
         java.lang.String key, com.google.cloudbuild.v1.FileHashes defaultValue) {
@@ -1275,7 +1308,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * (`.tar.gz`), the `FileHash` will be for the single path to that file.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloudbuild.v1.FileHashes getFileHashesOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1307,7 +1342,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * (`.tar.gz`), the `FileHash` will be for the single path to that file.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeFileHashes(java.lang.String key) {
       if (key == null) {
@@ -1336,7 +1373,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * (`.tar.gz`), the `FileHash` will be for the single path to that file.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder putFileHashes(java.lang.String key, com.google.cloudbuild.v1.FileHashes value) {
       if (key == null) {
@@ -1362,7 +1401,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * (`.tar.gz`), the `FileHash` will be for the single path to that file.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder putAllFileHashes(
         java.util.Map<java.lang.String, com.google.cloudbuild.v1.FileHashes> values) {

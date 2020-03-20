@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@ public interface PullRequestFilterOrBuilder
    * </pre>
    *
    * <code>string branch = 2;</code>
+   *
+   * @return The branch.
    */
   java.lang.String getBranch();
   /**
@@ -45,6 +47,8 @@ public interface PullRequestFilterOrBuilder
    * </pre>
    *
    * <code>string branch = 2;</code>
+   *
+   * @return The bytes for branch.
    */
   com.google.protobuf.ByteString getBranchBytes();
 
@@ -52,26 +56,43 @@ public interface PullRequestFilterOrBuilder
    *
    *
    * <pre>
-   * Whether to block builds on a "/gcbrun" comment from a repository owner or
+   * Whether to block builds on a "/gcbrun" comment from a repository admin or
    * collaborator.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
    * </code>
+   *
+   * @return The enum numeric value on the wire for commentControl.
    */
   int getCommentControlValue();
   /**
    *
    *
    * <pre>
-   * Whether to block builds on a "/gcbrun" comment from a repository owner or
+   * Whether to block builds on a "/gcbrun" comment from a repository admin or
    * collaborator.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
    * </code>
+   *
+   * @return The commentControl.
    */
   com.google.cloudbuild.v1.PullRequestFilter.CommentControl getCommentControl();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, branches that do NOT match the git_ref will trigger a build.
+   * </pre>
+   *
+   * <code>bool invert_regex = 6;</code>
+   *
+   * @return The invertRegex.
+   */
+  boolean getInvertRegex();
 
   public com.google.cloudbuild.v1.PullRequestFilter.GitRefCase getGitRefCase();
 }

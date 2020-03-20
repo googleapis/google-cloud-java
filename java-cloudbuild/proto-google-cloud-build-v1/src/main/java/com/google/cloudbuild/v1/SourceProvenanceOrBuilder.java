@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,8 @@ public interface SourceProvenanceOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSource resolved_storage_source = 3;</code>
+   *
+   * @return Whether the resolvedStorageSource field is set.
    */
   boolean hasResolvedStorageSource();
   /**
@@ -43,6 +45,8 @@ public interface SourceProvenanceOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSource resolved_storage_source = 3;</code>
+   *
+   * @return The resolvedStorageSource.
    */
   com.google.cloudbuild.v1.StorageSource getResolvedStorageSource();
   /**
@@ -66,6 +70,8 @@ public interface SourceProvenanceOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource resolved_repo_source = 6;</code>
+   *
+   * @return Whether the resolvedRepoSource field is set.
    */
   boolean hasResolvedRepoSource();
   /**
@@ -77,6 +83,8 @@ public interface SourceProvenanceOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource resolved_repo_source = 6;</code>
+   *
+   * @return The resolvedRepoSource.
    */
   com.google.cloudbuild.v1.RepoSource getResolvedRepoSource();
   /**
@@ -105,7 +113,9 @@ public interface SourceProvenanceOrBuilder
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getFileHashesCount();
   /**
@@ -122,7 +132,9 @@ public interface SourceProvenanceOrBuilder
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean containsFileHashes(java.lang.String key);
   /** Use {@link #getFileHashesMap()} instead. */
@@ -142,7 +154,9 @@ public interface SourceProvenanceOrBuilder
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.Map<java.lang.String, com.google.cloudbuild.v1.FileHashes> getFileHashesMap();
   /**
@@ -159,7 +173,9 @@ public interface SourceProvenanceOrBuilder
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloudbuild.v1.FileHashes getFileHashesOrDefault(
       java.lang.String key, com.google.cloudbuild.v1.FileHashes defaultValue);
@@ -177,7 +193,9 @@ public interface SourceProvenanceOrBuilder
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloudbuild.v1.FileHashes getFileHashesOrThrow(java.lang.String key);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,12 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GetBuildRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -144,6 +151,8 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -167,6 +176,8 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -187,6 +198,8 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -540,6 +553,8 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -560,6 +575,8 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -580,6 +597,9 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -598,6 +618,8 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -613,6 +635,9 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -634,6 +659,8 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -654,6 +681,8 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -674,6 +703,9 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -692,6 +724,8 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
 
@@ -707,6 +741,9 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

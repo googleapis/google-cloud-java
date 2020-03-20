@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,12 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Secret();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -75,11 +81,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 secretEnv_ =
                     com.google.protobuf.MapField.newMapField(
                         SecretEnvDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
                   secretEnv__ =
@@ -133,7 +139,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v1.Secret.class, com.google.cloudbuild.v1.Secret.Builder.class);
   }
 
-  private int bitField0_;
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object kmsKeyName_;
   /**
@@ -144,6 +149,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string kms_key_name = 1;</code>
+   *
+   * @return The kmsKeyName.
    */
   public java.lang.String getKmsKeyName() {
     java.lang.Object ref = kmsKeyName_;
@@ -164,6 +171,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string kms_key_name = 1;</code>
+   *
+   * @return The bytes for kmsKeyName.
    */
   public com.google.protobuf.ByteString getKmsKeyNameBytes() {
     java.lang.Object ref = kmsKeyName_;
@@ -561,11 +570,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.Secret buildPartial() {
       com.google.cloudbuild.v1.Secret result = new com.google.cloudbuild.v1.Secret(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.kmsKeyName_ = kmsKeyName_;
       result.secretEnv_ = internalGetSecretEnv();
       result.secretEnv_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -660,6 +667,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string kms_key_name = 1;</code>
+     *
+     * @return The kmsKeyName.
      */
     public java.lang.String getKmsKeyName() {
       java.lang.Object ref = kmsKeyName_;
@@ -680,6 +689,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string kms_key_name = 1;</code>
+     *
+     * @return The bytes for kmsKeyName.
      */
     public com.google.protobuf.ByteString getKmsKeyNameBytes() {
       java.lang.Object ref = kmsKeyName_;
@@ -700,6 +711,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string kms_key_name = 1;</code>
+     *
+     * @param value The kmsKeyName to set.
+     * @return This builder for chaining.
      */
     public Builder setKmsKeyName(java.lang.String value) {
       if (value == null) {
@@ -718,6 +732,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string kms_key_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKmsKeyName() {
 
@@ -733,6 +749,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string kms_key_name = 1;</code>
+     *
+     * @param value The bytes for kmsKeyName to set.
+     * @return This builder for chaining.
      */
     public Builder setKmsKeyNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

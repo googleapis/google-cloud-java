@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ public interface HashOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Hash.HashType type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -41,6 +43,8 @@ public interface HashOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Hash.HashType type = 1;</code>
+   *
+   * @return The type.
    */
   com.google.cloudbuild.v1.Hash.HashType getType();
 
@@ -52,6 +56,8 @@ public interface HashOrBuilder
    * </pre>
    *
    * <code>bytes value = 2;</code>
+   *
+   * @return The value.
    */
   com.google.protobuf.ByteString getValue();
 }

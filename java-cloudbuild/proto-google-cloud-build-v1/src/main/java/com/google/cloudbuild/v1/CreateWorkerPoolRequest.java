@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,12 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateWorkerPoolRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,6 +137,8 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -152,6 +159,8 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -175,6 +184,8 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+   *
+   * @return Whether the workerPool field is set.
    */
   public boolean hasWorkerPool() {
     return workerPool_ != null;
@@ -187,6 +198,8 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+   *
+   * @return The workerPool.
    */
   public com.google.cloudbuild.v1.WorkerPool getWorkerPool() {
     return workerPool_ == null
@@ -560,6 +573,8 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -580,6 +595,8 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -600,6 +617,9 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -618,6 +638,8 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -633,6 +655,9 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -659,6 +684,8 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+     *
+     * @return Whether the workerPool field is set.
      */
     public boolean hasWorkerPool() {
       return workerPoolBuilder_ != null || workerPool_ != null;
@@ -671,6 +698,8 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+     *
+     * @return The workerPool.
      */
     public com.google.cloudbuild.v1.WorkerPool getWorkerPool() {
       if (workerPoolBuilder_ == null) {

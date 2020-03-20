@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -205,7 +205,6 @@ public class CloudBuildClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation createBuild(String projectId, Build build) {
-
     CreateBuildRequest request =
         CreateBuildRequest.newBuilder().setProjectId(projectId).setBuild(build).build();
     return createBuild(request);
@@ -288,7 +287,6 @@ public class CloudBuildClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Build getBuild(String projectId, String id) {
-
     GetBuildRequest request =
         GetBuildRequest.newBuilder().setProjectId(projectId).setId(id).build();
     return getBuild(request);
@@ -486,7 +484,6 @@ public class CloudBuildClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Build cancelBuild(String projectId, String id) {
-
     CancelBuildRequest request =
         CancelBuildRequest.newBuilder().setProjectId(projectId).setId(id).build();
     return cancelBuild(request);
@@ -562,7 +559,6 @@ public class CloudBuildClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BuildTrigger createBuildTrigger(String projectId, BuildTrigger trigger) {
-
     CreateBuildTriggerRequest request =
         CreateBuildTriggerRequest.newBuilder().setProjectId(projectId).setTrigger(trigger).build();
     return createBuildTrigger(request);
@@ -638,11 +634,10 @@ public class CloudBuildClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. ID of the project that owns the trigger.
-   * @param triggerId Required. ID of the `BuildTrigger` to get.
+   * @param triggerId Required. Identifier (`id` or `name`) of the `BuildTrigger` to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BuildTrigger getBuildTrigger(String projectId, String triggerId) {
-
     GetBuildTriggerRequest request =
         GetBuildTriggerRequest.newBuilder().setProjectId(projectId).setTriggerId(triggerId).build();
     return getBuildTrigger(request);
@@ -720,7 +715,6 @@ public class CloudBuildClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBuildTriggersResponse listBuildTriggers(String projectId) {
-
     ListBuildTriggersRequest request =
         ListBuildTriggersRequest.newBuilder().setProjectId(projectId).build();
     return listBuildTriggers(request);
@@ -797,7 +791,6 @@ public class CloudBuildClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteBuildTrigger(String projectId, String triggerId) {
-
     DeleteBuildTriggerRequest request =
         DeleteBuildTriggerRequest.newBuilder()
             .setProjectId(projectId)
@@ -883,7 +876,6 @@ public class CloudBuildClient implements BackgroundResource {
    */
   public final BuildTrigger updateBuildTrigger(
       String projectId, String triggerId, BuildTrigger trigger) {
-
     UpdateBuildTriggerRequest request =
         UpdateBuildTriggerRequest.newBuilder()
             .setProjectId(projectId)
@@ -971,7 +963,6 @@ public class CloudBuildClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation runBuildTrigger(String projectId, String triggerId, RepoSource source) {
-
     RunBuildTriggerRequest request =
         RunBuildTriggerRequest.newBuilder()
             .setProjectId(projectId)
@@ -1076,7 +1067,6 @@ public class CloudBuildClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation retryBuild(String projectId, String id) {
-
     RetryBuildRequest request =
         RetryBuildRequest.newBuilder().setProjectId(projectId).setId(id).build();
     return retryBuild(request);

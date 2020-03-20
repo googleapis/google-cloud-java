@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@ public interface StorageSourceOrBuilder
    * </pre>
    *
    * <code>string bucket = 1;</code>
+   *
+   * @return The bucket.
    */
   java.lang.String getBucket();
   /**
@@ -45,6 +47,8 @@ public interface StorageSourceOrBuilder
    * </pre>
    *
    * <code>string bucket = 1;</code>
+   *
+   * @return The bytes for bucket.
    */
   com.google.protobuf.ByteString getBucketBytes();
 
@@ -58,6 +62,8 @@ public interface StorageSourceOrBuilder
    * </pre>
    *
    * <code>string object = 2;</code>
+   *
+   * @return The object.
    */
   java.lang.String getObject();
   /**
@@ -70,6 +76,8 @@ public interface StorageSourceOrBuilder
    * </pre>
    *
    * <code>string object = 2;</code>
+   *
+   * @return The bytes for object.
    */
   com.google.protobuf.ByteString getObjectBytes();
 
@@ -82,6 +90,8 @@ public interface StorageSourceOrBuilder
    * </pre>
    *
    * <code>int64 generation = 3;</code>
+   *
+   * @return The generation.
    */
   long getGeneration();
 }

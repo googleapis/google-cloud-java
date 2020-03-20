@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>string name = 14;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>string name = 14;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -62,6 +68,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -75,6 +83,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>string service_account_email = 3;</code>
+   *
+   * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
   /**
@@ -87,6 +97,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>string service_account_email = 3;</code>
+   *
+   * @return The bytes for serviceAccountEmail.
    */
   com.google.protobuf.ByteString getServiceAccountEmailBytes();
 
@@ -98,6 +110,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>int64 worker_count = 4;</code>
+   *
+   * @return The workerCount.
    */
   long getWorkerCount();
 
@@ -109,6 +123,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
+   *
+   * @return Whether the workerConfig field is set.
    */
   boolean hasWorkerConfig();
   /**
@@ -119,6 +135,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
+   *
+   * @return The workerConfig.
    */
   com.google.cloudbuild.v1.WorkerConfig getWorkerConfig();
   /**
@@ -144,6 +162,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+   *
+   * @return A list containing the regions.
    */
   java.util.List<com.google.cloudbuild.v1.WorkerPool.Region> getRegionsList();
   /**
@@ -158,6 +178,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+   *
+   * @return The count of regions.
    */
   int getRegionsCount();
   /**
@@ -172,6 +194,9 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The regions at the given index.
    */
   com.google.cloudbuild.v1.WorkerPool.Region getRegions(int index);
   /**
@@ -186,6 +211,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for regions.
    */
   java.util.List<java.lang.Integer> getRegionsValueList();
   /**
@@ -200,6 +227,9 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of regions at the given index.
    */
   int getRegionsValue(int index);
 
@@ -212,6 +242,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -223,6 +255,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -246,6 +280,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 17;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -257,6 +293,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 17;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -280,6 +318,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+   *
+   * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
   /**
@@ -291,6 +331,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+   *
+   * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
   /**
@@ -313,6 +355,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+   *
+   * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
@@ -323,6 +367,8 @@ public interface WorkerPoolOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+   *
+   * @return The status.
    */
   com.google.cloudbuild.v1.WorkerPool.Status getStatus();
 }

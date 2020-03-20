@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@ public interface PushFilterOrBuilder
    * </pre>
    *
    * <code>string branch = 2;</code>
+   *
+   * @return The branch.
    */
   java.lang.String getBranch();
   /**
@@ -45,6 +47,8 @@ public interface PushFilterOrBuilder
    * </pre>
    *
    * <code>string branch = 2;</code>
+   *
+   * @return The bytes for branch.
    */
   com.google.protobuf.ByteString getBranchBytes();
 
@@ -58,6 +62,8 @@ public interface PushFilterOrBuilder
    * </pre>
    *
    * <code>string tag = 3;</code>
+   *
+   * @return The tag.
    */
   java.lang.String getTag();
   /**
@@ -70,8 +76,24 @@ public interface PushFilterOrBuilder
    * </pre>
    *
    * <code>string tag = 3;</code>
+   *
+   * @return The bytes for tag.
    */
   com.google.protobuf.ByteString getTagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * When true, only trigger a build if the revision regex does NOT match the
+   * git_ref regex.
+   * </pre>
+   *
+   * <code>bool invert_regex = 4;</code>
+   *
+   * @return The invertRegex.
+   */
+  boolean getInvertRegex();
 
   public com.google.cloudbuild.v1.PushFilter.GitRefCase getGitRefCase();
 }

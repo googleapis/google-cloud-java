@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,8 @@ public interface RepoSourceOrBuilder
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -43,6 +45,8 @@ public interface RepoSourceOrBuilder
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -50,22 +54,24 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Name of the Cloud Source Repository. If omitted, the name "default" is
-   * assumed.
+   * Required. Name of the Cloud Source Repository.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
+   *
+   * @return The repoName.
    */
   java.lang.String getRepoName();
   /**
    *
    *
    * <pre>
-   * Name of the Cloud Source Repository. If omitted, the name "default" is
-   * assumed.
+   * Required. Name of the Cloud Source Repository.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
+   *
+   * @return The bytes for repoName.
    */
   com.google.protobuf.ByteString getRepoNameBytes();
 
@@ -79,6 +85,8 @@ public interface RepoSourceOrBuilder
    * </pre>
    *
    * <code>string branch_name = 3;</code>
+   *
+   * @return The branchName.
    */
   java.lang.String getBranchName();
   /**
@@ -91,6 +99,8 @@ public interface RepoSourceOrBuilder
    * </pre>
    *
    * <code>string branch_name = 3;</code>
+   *
+   * @return The bytes for branchName.
    */
   com.google.protobuf.ByteString getBranchNameBytes();
 
@@ -104,6 +114,8 @@ public interface RepoSourceOrBuilder
    * </pre>
    *
    * <code>string tag_name = 4;</code>
+   *
+   * @return The tagName.
    */
   java.lang.String getTagName();
   /**
@@ -116,6 +128,8 @@ public interface RepoSourceOrBuilder
    * </pre>
    *
    * <code>string tag_name = 4;</code>
+   *
+   * @return The bytes for tagName.
    */
   com.google.protobuf.ByteString getTagNameBytes();
 
@@ -127,6 +141,8 @@ public interface RepoSourceOrBuilder
    * </pre>
    *
    * <code>string commit_sha = 5;</code>
+   *
+   * @return The commitSha.
    */
   java.lang.String getCommitSha();
   /**
@@ -137,6 +153,8 @@ public interface RepoSourceOrBuilder
    * </pre>
    *
    * <code>string commit_sha = 5;</code>
+   *
+   * @return The bytes for commitSha.
    */
   com.google.protobuf.ByteString getCommitShaBytes();
 
@@ -150,6 +168,8 @@ public interface RepoSourceOrBuilder
    * </pre>
    *
    * <code>string dir = 7;</code>
+   *
+   * @return The dir.
    */
   java.lang.String getDir();
   /**
@@ -162,8 +182,83 @@ public interface RepoSourceOrBuilder
    * </pre>
    *
    * <code>string dir = 7;</code>
+   *
+   * @return The bytes for dir.
    */
   com.google.protobuf.ByteString getDirBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Only trigger a build if the revision regex does NOT match the revision
+   * regex.
+   * </pre>
+   *
+   * <code>bool invert_regex = 8;</code>
+   *
+   * @return The invertRegex.
+   */
+  boolean getInvertRegex();
+
+  /**
+   *
+   *
+   * <pre>
+   * Substitutions to use in a triggered build.
+   * Should only be used with RunBuildTrigger
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   */
+  int getSubstitutionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Substitutions to use in a triggered build.
+   * Should only be used with RunBuildTrigger
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   */
+  boolean containsSubstitutions(java.lang.String key);
+  /** Use {@link #getSubstitutionsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getSubstitutions();
+  /**
+   *
+   *
+   * <pre>
+   * Substitutions to use in a triggered build.
+   * Should only be used with RunBuildTrigger
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Substitutions to use in a triggered build.
+   * Should only be used with RunBuildTrigger
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   */
+  java.lang.String getSubstitutionsOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Substitutions to use in a triggered build.
+   * Should only be used with RunBuildTrigger
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   */
+  java.lang.String getSubstitutionsOrThrow(java.lang.String key);
 
   public com.google.cloudbuild.v1.RepoSource.RevisionCase getRevisionCase();
 }

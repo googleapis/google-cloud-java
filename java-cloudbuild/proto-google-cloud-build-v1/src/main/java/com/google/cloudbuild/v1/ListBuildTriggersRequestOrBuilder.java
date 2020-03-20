@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ public interface ListBuildTriggersRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -41,6 +43,8 @@ public interface ListBuildTriggersRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -52,6 +56,8 @@ public interface ListBuildTriggersRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -63,6 +69,8 @@ public interface ListBuildTriggersRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -73,6 +81,8 @@ public interface ListBuildTriggersRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

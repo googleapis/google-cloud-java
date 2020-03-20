@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BuildStep();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -84,9 +90,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 env_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               env_.add(s);
               break;
@@ -94,9 +100,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 args_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               args_.add(s);
               break;
@@ -118,9 +124,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 waitFor_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000004;
               }
               waitFor_.add(s);
               break;
@@ -135,18 +141,18 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
           case 66:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 secretEnv_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000008;
               }
               secretEnv_.add(s);
               break;
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 volumes_ = new java.util.ArrayList<com.google.cloudbuild.v1.Volume>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000010;
               }
               volumes_.add(
                   input.readMessage(com.google.cloudbuild.v1.Volume.parser(), extensionRegistry));
@@ -218,19 +224,19 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         env_ = env_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         args_ = args_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         waitFor_ = waitFor_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         secretEnv_ = secretEnv_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         volumes_ = java.util.Collections.unmodifiableList(volumes_);
       }
       this.unknownFields = unknownFields.build();
@@ -253,7 +259,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v1.BuildStep.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -277,6 +282,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -310,6 +317,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -335,6 +344,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string env = 2;</code>
+   *
+   * @return A list containing the env.
    */
   public com.google.protobuf.ProtocolStringList getEnvList() {
     return env_;
@@ -349,6 +360,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string env = 2;</code>
+   *
+   * @return The count of env.
    */
   public int getEnvCount() {
     return env_.size();
@@ -363,6 +376,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string env = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The env at the given index.
    */
   public java.lang.String getEnv(int index) {
     return env_.get(index);
@@ -377,6 +393,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string env = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the env at the given index.
    */
   public com.google.protobuf.ByteString getEnvBytes(int index) {
     return env_.getByteString(index);
@@ -396,6 +415,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string args = 3;</code>
+   *
+   * @return A list containing the args.
    */
   public com.google.protobuf.ProtocolStringList getArgsList() {
     return args_;
@@ -412,6 +433,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string args = 3;</code>
+   *
+   * @return The count of args.
    */
   public int getArgsCount() {
     return args_.size();
@@ -428,6 +451,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string args = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The args at the given index.
    */
   public java.lang.String getArgs(int index) {
     return args_.get(index);
@@ -444,6 +470,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string args = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the args at the given index.
    */
   public com.google.protobuf.ByteString getArgsBytes(int index) {
     return args_.getByteString(index);
@@ -466,6 +495,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string dir = 4;</code>
+   *
+   * @return The dir.
    */
   public java.lang.String getDir() {
     java.lang.Object ref = dir_;
@@ -493,6 +524,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string dir = 4;</code>
+   *
+   * @return The bytes for dir.
    */
   public com.google.protobuf.ByteString getDirBytes() {
     java.lang.Object ref = dir_;
@@ -517,6 +550,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string id = 5;</code>
+   *
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -538,6 +573,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string id = 5;</code>
+   *
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -565,6 +602,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
+   *
+   * @return A list containing the waitFor.
    */
   public com.google.protobuf.ProtocolStringList getWaitForList() {
     return waitFor_;
@@ -581,6 +620,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
+   *
+   * @return The count of waitFor.
    */
   public int getWaitForCount() {
     return waitFor_.size();
@@ -597,6 +638,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The waitFor at the given index.
    */
   public java.lang.String getWaitFor(int index) {
     return waitFor_.get(index);
@@ -613,6 +657,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the waitFor at the given index.
    */
   public com.google.protobuf.ByteString getWaitForBytes(int index) {
     return waitFor_.getByteString(index);
@@ -629,6 +676,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string entrypoint = 7;</code>
+   *
+   * @return The entrypoint.
    */
   public java.lang.String getEntrypoint() {
     java.lang.Object ref = entrypoint_;
@@ -650,6 +699,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string entrypoint = 7;</code>
+   *
+   * @return The bytes for entrypoint.
    */
   public com.google.protobuf.ByteString getEntrypointBytes() {
     java.lang.Object ref = entrypoint_;
@@ -675,6 +726,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string secret_env = 8;</code>
+   *
+   * @return A list containing the secretEnv.
    */
   public com.google.protobuf.ProtocolStringList getSecretEnvList() {
     return secretEnv_;
@@ -689,6 +742,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string secret_env = 8;</code>
+   *
+   * @return The count of secretEnv.
    */
   public int getSecretEnvCount() {
     return secretEnv_.size();
@@ -703,6 +758,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string secret_env = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The secretEnv at the given index.
    */
   public java.lang.String getSecretEnv(int index) {
     return secretEnv_.get(index);
@@ -717,6 +775,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string secret_env = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the secretEnv at the given index.
    */
   public com.google.protobuf.ByteString getSecretEnvBytes(int index) {
     return secretEnv_.getByteString(index);
@@ -820,7 +881,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * Output only. Stores timing information for executing this build step.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the timing field is set.
    */
   public boolean hasTiming() {
     return timing_ != null;
@@ -832,7 +897,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * Output only. Stores timing information for executing this build step.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The timing.
    */
   public com.google.cloudbuild.v1.TimeSpan getTiming() {
     return timing_ == null ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance() : timing_;
@@ -844,7 +913,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * Output only. Stores timing information for executing this build step.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloudbuild.v1.TimeSpanOrBuilder getTimingOrBuilder() {
     return getTiming();
@@ -861,6 +932,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+   *
+   * @return Whether the pullTiming field is set.
    */
   public boolean hasPullTiming() {
     return pullTiming_ != null;
@@ -874,6 +947,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+   *
+   * @return The pullTiming.
    */
   public com.google.cloudbuild.v1.TimeSpan getPullTiming() {
     return pullTiming_ == null
@@ -906,6 +981,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 11;</code>
+   *
+   * @return Whether the timeout field is set.
    */
   public boolean hasTimeout() {
     return timeout_ != null;
@@ -920,6 +997,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 11;</code>
+   *
+   * @return The timeout.
    */
   public com.google.protobuf.Duration getTimeout() {
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
@@ -951,6 +1030,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+   *
+   * @return The enum numeric value on the wire for status.
    */
   public int getStatusValue() {
     return status_;
@@ -965,6 +1046,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+   *
+   * @return The status.
    */
   public com.google.cloudbuild.v1.Build.Status getStatus() {
     @SuppressWarnings("deprecation")
@@ -1333,22 +1416,22 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
 
       env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       dir_ = "";
 
       id_ = "";
 
       waitFor_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000004);
       entrypoint_ = "";
 
       secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         volumesBuilder_.clear();
       }
@@ -1399,35 +1482,34 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.BuildStep buildPartial() {
       com.google.cloudbuild.v1.BuildStep result = new com.google.cloudbuild.v1.BuildStep(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         env_ = env_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.env_ = env_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.args_ = args_;
       result.dir_ = dir_;
       result.id_ = id_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         waitFor_ = waitFor_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.waitFor_ = waitFor_;
       result.entrypoint_ = entrypoint_;
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         secretEnv_ = secretEnv_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.secretEnv_ = secretEnv_;
       if (volumesBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.volumes_ = volumes_;
       } else {
@@ -1449,7 +1531,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         result.timeout_ = timeoutBuilder_.build();
       }
       result.status_ = status_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1506,7 +1587,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (!other.env_.isEmpty()) {
         if (env_.isEmpty()) {
           env_ = other.env_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureEnvIsMutable();
           env_.addAll(other.env_);
@@ -1516,7 +1597,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -1534,7 +1615,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (!other.waitFor_.isEmpty()) {
         if (waitFor_.isEmpty()) {
           waitFor_ = other.waitFor_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureWaitForIsMutable();
           waitFor_.addAll(other.waitFor_);
@@ -1548,7 +1629,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (!other.secretEnv_.isEmpty()) {
         if (secretEnv_.isEmpty()) {
           secretEnv_ = other.secretEnv_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureSecretEnvIsMutable();
           secretEnv_.addAll(other.secretEnv_);
@@ -1559,7 +1640,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         if (!other.volumes_.isEmpty()) {
           if (volumes_.isEmpty()) {
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureVolumesIsMutable();
             volumes_.addAll(other.volumes_);
@@ -1572,7 +1653,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
             volumesBuilder_.dispose();
             volumesBuilder_ = null;
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000010);
             volumesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVolumesFieldBuilder()
@@ -1647,6 +1728,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1680,6 +1763,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1713,6 +1798,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1744,6 +1832,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1772,6 +1862,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1787,9 +1880,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.LazyStringList env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEnvIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         env_ = new com.google.protobuf.LazyStringArrayList(env_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1802,6 +1895,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 2;</code>
+     *
+     * @return A list containing the env.
      */
     public com.google.protobuf.ProtocolStringList getEnvList() {
       return env_.getUnmodifiableView();
@@ -1816,6 +1911,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 2;</code>
+     *
+     * @return The count of env.
      */
     public int getEnvCount() {
       return env_.size();
@@ -1830,6 +1927,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The env at the given index.
      */
     public java.lang.String getEnv(int index) {
       return env_.get(index);
@@ -1844,6 +1944,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the env at the given index.
      */
     public com.google.protobuf.ByteString getEnvBytes(int index) {
       return env_.getByteString(index);
@@ -1858,6 +1961,10 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The env to set.
+     * @return This builder for chaining.
      */
     public Builder setEnv(int index, java.lang.String value) {
       if (value == null) {
@@ -1878,6 +1985,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 2;</code>
+     *
+     * @param value The env to add.
+     * @return This builder for chaining.
      */
     public Builder addEnv(java.lang.String value) {
       if (value == null) {
@@ -1898,6 +2008,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 2;</code>
+     *
+     * @param values The env to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEnv(java.lang.Iterable<java.lang.String> values) {
       ensureEnvIsMutable();
@@ -1915,10 +2028,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnv() {
       env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1932,6 +2047,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 2;</code>
+     *
+     * @param value The bytes of the env to add.
+     * @return This builder for chaining.
      */
     public Builder addEnvBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1948,9 +2066,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1965,6 +2083,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 3;</code>
+     *
+     * @return A list containing the args.
      */
     public com.google.protobuf.ProtocolStringList getArgsList() {
       return args_.getUnmodifiableView();
@@ -1981,6 +2101,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 3;</code>
+     *
+     * @return The count of args.
      */
     public int getArgsCount() {
       return args_.size();
@@ -1997,6 +2119,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The args at the given index.
      */
     public java.lang.String getArgs(int index) {
       return args_.get(index);
@@ -2013,6 +2138,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the args at the given index.
      */
     public com.google.protobuf.ByteString getArgsBytes(int index) {
       return args_.getByteString(index);
@@ -2029,6 +2157,10 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The args to set.
+     * @return This builder for chaining.
      */
     public Builder setArgs(int index, java.lang.String value) {
       if (value == null) {
@@ -2051,6 +2183,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 3;</code>
+     *
+     * @param value The args to add.
+     * @return This builder for chaining.
      */
     public Builder addArgs(java.lang.String value) {
       if (value == null) {
@@ -2073,6 +2208,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 3;</code>
+     *
+     * @param values The args to add.
+     * @return This builder for chaining.
      */
     public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
       ensureArgsIsMutable();
@@ -2092,10 +2230,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearArgs() {
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2111,6 +2251,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 3;</code>
+     *
+     * @param value The bytes of the args to add.
+     * @return This builder for chaining.
      */
     public Builder addArgsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2139,6 +2282,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dir = 4;</code>
+     *
+     * @return The dir.
      */
     public java.lang.String getDir() {
       java.lang.Object ref = dir_;
@@ -2166,6 +2311,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dir = 4;</code>
+     *
+     * @return The bytes for dir.
      */
     public com.google.protobuf.ByteString getDirBytes() {
       java.lang.Object ref = dir_;
@@ -2193,6 +2340,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dir = 4;</code>
+     *
+     * @param value The dir to set.
+     * @return This builder for chaining.
      */
     public Builder setDir(java.lang.String value) {
       if (value == null) {
@@ -2218,6 +2368,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dir = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDir() {
 
@@ -2240,6 +2392,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dir = 4;</code>
+     *
+     * @param value The bytes for dir to set.
+     * @return This builder for chaining.
      */
     public Builder setDirBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2262,6 +2417,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 5;</code>
+     *
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -2283,6 +2440,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 5;</code>
+     *
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -2304,6 +2463,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 5;</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -2323,6 +2485,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
 
@@ -2339,6 +2503,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 5;</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2355,9 +2522,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureWaitForIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         waitFor_ = new com.google.protobuf.LazyStringArrayList(waitFor_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -2372,6 +2539,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string wait_for = 6;</code>
+     *
+     * @return A list containing the waitFor.
      */
     public com.google.protobuf.ProtocolStringList getWaitForList() {
       return waitFor_.getUnmodifiableView();
@@ -2388,6 +2557,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string wait_for = 6;</code>
+     *
+     * @return The count of waitFor.
      */
     public int getWaitForCount() {
       return waitFor_.size();
@@ -2404,6 +2575,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string wait_for = 6;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The waitFor at the given index.
      */
     public java.lang.String getWaitFor(int index) {
       return waitFor_.get(index);
@@ -2420,6 +2594,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string wait_for = 6;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the waitFor at the given index.
      */
     public com.google.protobuf.ByteString getWaitForBytes(int index) {
       return waitFor_.getByteString(index);
@@ -2436,6 +2613,10 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string wait_for = 6;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The waitFor to set.
+     * @return This builder for chaining.
      */
     public Builder setWaitFor(int index, java.lang.String value) {
       if (value == null) {
@@ -2458,6 +2639,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string wait_for = 6;</code>
+     *
+     * @param value The waitFor to add.
+     * @return This builder for chaining.
      */
     public Builder addWaitFor(java.lang.String value) {
       if (value == null) {
@@ -2480,6 +2664,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string wait_for = 6;</code>
+     *
+     * @param values The waitFor to add.
+     * @return This builder for chaining.
      */
     public Builder addAllWaitFor(java.lang.Iterable<java.lang.String> values) {
       ensureWaitForIsMutable();
@@ -2499,10 +2686,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string wait_for = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWaitFor() {
       waitFor_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2518,6 +2707,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string wait_for = 6;</code>
+     *
+     * @param value The bytes of the waitFor to add.
+     * @return This builder for chaining.
      */
     public Builder addWaitForBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2540,6 +2732,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entrypoint = 7;</code>
+     *
+     * @return The entrypoint.
      */
     public java.lang.String getEntrypoint() {
       java.lang.Object ref = entrypoint_;
@@ -2561,6 +2755,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entrypoint = 7;</code>
+     *
+     * @return The bytes for entrypoint.
      */
     public com.google.protobuf.ByteString getEntrypointBytes() {
       java.lang.Object ref = entrypoint_;
@@ -2582,6 +2778,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entrypoint = 7;</code>
+     *
+     * @param value The entrypoint to set.
+     * @return This builder for chaining.
      */
     public Builder setEntrypoint(java.lang.String value) {
       if (value == null) {
@@ -2601,6 +2800,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entrypoint = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEntrypoint() {
 
@@ -2617,6 +2818,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entrypoint = 7;</code>
+     *
+     * @param value The bytes for entrypoint to set.
+     * @return This builder for chaining.
      */
     public Builder setEntrypointBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2633,9 +2837,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSecretEnvIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         secretEnv_ = new com.google.protobuf.LazyStringArrayList(secretEnv_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -2648,6 +2852,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 8;</code>
+     *
+     * @return A list containing the secretEnv.
      */
     public com.google.protobuf.ProtocolStringList getSecretEnvList() {
       return secretEnv_.getUnmodifiableView();
@@ -2662,6 +2868,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 8;</code>
+     *
+     * @return The count of secretEnv.
      */
     public int getSecretEnvCount() {
       return secretEnv_.size();
@@ -2676,6 +2884,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 8;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The secretEnv at the given index.
      */
     public java.lang.String getSecretEnv(int index) {
       return secretEnv_.get(index);
@@ -2690,6 +2901,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 8;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the secretEnv at the given index.
      */
     public com.google.protobuf.ByteString getSecretEnvBytes(int index) {
       return secretEnv_.getByteString(index);
@@ -2704,6 +2918,10 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 8;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The secretEnv to set.
+     * @return This builder for chaining.
      */
     public Builder setSecretEnv(int index, java.lang.String value) {
       if (value == null) {
@@ -2724,6 +2942,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 8;</code>
+     *
+     * @param value The secretEnv to add.
+     * @return This builder for chaining.
      */
     public Builder addSecretEnv(java.lang.String value) {
       if (value == null) {
@@ -2744,6 +2965,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 8;</code>
+     *
+     * @param values The secretEnv to add.
+     * @return This builder for chaining.
      */
     public Builder addAllSecretEnv(java.lang.Iterable<java.lang.String> values) {
       ensureSecretEnvIsMutable();
@@ -2761,10 +2985,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSecretEnv() {
       secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2778,6 +3004,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 8;</code>
+     *
+     * @param value The bytes of the secretEnv to add.
+     * @return This builder for chaining.
      */
     public Builder addSecretEnvBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2794,9 +3023,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVolumesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         volumes_ = new java.util.ArrayList<com.google.cloudbuild.v1.Volume>(volumes_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3064,7 +3293,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVolumes() {
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         volumesBuilder_.clear();
@@ -3220,7 +3449,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.Volume,
                 com.google.cloudbuild.v1.Volume.Builder,
                 com.google.cloudbuild.v1.VolumeOrBuilder>(
-                volumes_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                volumes_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         volumes_ = null;
       }
       return volumesBuilder_;
@@ -3239,7 +3468,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for executing this build step.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the timing field is set.
      */
     public boolean hasTiming() {
       return timingBuilder_ != null || timing_ != null;
@@ -3251,7 +3484,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for executing this build step.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The timing.
      */
     public com.google.cloudbuild.v1.TimeSpan getTiming() {
       if (timingBuilder_ == null) {
@@ -3267,7 +3504,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for executing this build step.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setTiming(com.google.cloudbuild.v1.TimeSpan value) {
       if (timingBuilder_ == null) {
@@ -3289,7 +3528,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for executing this build step.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setTiming(com.google.cloudbuild.v1.TimeSpan.Builder builderForValue) {
       if (timingBuilder_ == null) {
@@ -3308,7 +3549,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for executing this build step.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeTiming(com.google.cloudbuild.v1.TimeSpan value) {
       if (timingBuilder_ == null) {
@@ -3332,7 +3575,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for executing this build step.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearTiming() {
       if (timingBuilder_ == null) {
@@ -3352,7 +3597,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for executing this build step.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloudbuild.v1.TimeSpan.Builder getTimingBuilder() {
 
@@ -3366,7 +3613,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for executing this build step.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloudbuild.v1.TimeSpanOrBuilder getTimingOrBuilder() {
       if (timingBuilder_ != null) {
@@ -3382,7 +3631,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for executing this build step.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.TimeSpan,
@@ -3416,6 +3667,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+     *
+     * @return Whether the pullTiming field is set.
      */
     public boolean hasPullTiming() {
       return pullTimingBuilder_ != null || pullTiming_ != null;
@@ -3429,6 +3682,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+     *
+     * @return The pullTiming.
      */
     public com.google.cloudbuild.v1.TimeSpan getPullTiming() {
       if (pullTimingBuilder_ == null) {
@@ -3607,6 +3862,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 11;</code>
+     *
+     * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
       return timeoutBuilder_ != null || timeout_ != null;
@@ -3621,6 +3878,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 11;</code>
+     *
+     * @return The timeout.
      */
     public com.google.protobuf.Duration getTimeout() {
       if (timeoutBuilder_ == null) {
@@ -3795,6 +4054,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+     *
+     * @return The enum numeric value on the wire for status.
      */
     public int getStatusValue() {
       return status_;
@@ -3809,6 +4070,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+     *
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
       status_ = value;
@@ -3825,6 +4089,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+     *
+     * @return The status.
      */
     public com.google.cloudbuild.v1.Build.Status getStatus() {
       @SuppressWarnings("deprecation")
@@ -3842,6 +4108,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+     *
+     * @param value The status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatus(com.google.cloudbuild.v1.Build.Status value) {
       if (value == null) {
@@ -3862,6 +4131,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatus() {
 

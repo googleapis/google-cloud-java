@@ -14,33 +14,21 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
 import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
 gapic = gcp.GAPICGenerator()
 
-service = 'cloudbuild'
+service='devtools-cloudbuild'
 versions = ['v1']
-config_pattern = '/google/devtools/cloudbuild/artman_cloudbuild.yaml'
 
 for version in versions:
-    library = gapic.java_library(
+    library = java.bazel_library(
         service=service,
         version=version,
-        config_path=config_pattern.format(version=version),
-        artman_output_name='')
-
-    package_name = f'com.google.cloudbuild.{version}'
-    java.fix_proto_headers(library / f'proto-google-cloud-build-{version}')
-    java.fix_grpc_headers(library / f'grpc-google-cloud-build-{version}', package_name)
-
-    s.copy(library / f'gapic-google-cloud-build-{version}/src', f'google-cloud-build/src')
-    s.copy(library / f'grpc-google-cloud-build-{version}/src', f'grpc-google-cloud-build-{version}/src')
-    s.copy(library / f'proto-google-cloud-build-{version}/src', f'proto-google-cloud-build-{version}/src')
-
-    java.format_code(f'google-cloud-build/src')
-    java.format_code(f'grpc-google-cloud-build-{version}/src')
-    java.format_code(f'proto-google-cloud-build-{version}/src')
+        proto_path=f'google/devtools/cloudbuild/{version}',
+        bazel_target=f'//google/devtools/cloudbuild/{version}:google-cloud-{service}-{version}-java',
+        destination_name='build',
+    )
 
 java.common_templates()

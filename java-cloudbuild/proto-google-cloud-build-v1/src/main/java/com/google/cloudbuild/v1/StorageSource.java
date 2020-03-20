@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,12 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StorageSource();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,6 +136,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string bucket = 1;</code>
+   *
+   * @return The bucket.
    */
   public java.lang.String getBucket() {
     java.lang.Object ref = bucket_;
@@ -153,6 +160,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string bucket = 1;</code>
+   *
+   * @return The bytes for bucket.
    */
   public com.google.protobuf.ByteString getBucketBytes() {
     java.lang.Object ref = bucket_;
@@ -178,6 +187,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string object = 2;</code>
+   *
+   * @return The object.
    */
   public java.lang.String getObject() {
     java.lang.Object ref = object_;
@@ -200,6 +211,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string object = 2;</code>
+   *
+   * @return The bytes for object.
    */
   public com.google.protobuf.ByteString getObjectBytes() {
     java.lang.Object ref = object_;
@@ -224,6 +237,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 generation = 3;</code>
+   *
+   * @return The generation.
    */
   public long getGeneration() {
     return generation_;
@@ -586,6 +601,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string bucket = 1;</code>
+     *
+     * @return The bucket.
      */
     public java.lang.String getBucket() {
       java.lang.Object ref = bucket_;
@@ -608,6 +625,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string bucket = 1;</code>
+     *
+     * @return The bytes for bucket.
      */
     public com.google.protobuf.ByteString getBucketBytes() {
       java.lang.Object ref = bucket_;
@@ -630,6 +649,9 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string bucket = 1;</code>
+     *
+     * @param value The bucket to set.
+     * @return This builder for chaining.
      */
     public Builder setBucket(java.lang.String value) {
       if (value == null) {
@@ -650,6 +672,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string bucket = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBucket() {
 
@@ -667,6 +691,9 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string bucket = 1;</code>
+     *
+     * @param value The bytes for bucket to set.
+     * @return This builder for chaining.
      */
     public Builder setBucketBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -690,6 +717,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string object = 2;</code>
+     *
+     * @return The object.
      */
     public java.lang.String getObject() {
       java.lang.Object ref = object_;
@@ -712,6 +741,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string object = 2;</code>
+     *
+     * @return The bytes for object.
      */
     public com.google.protobuf.ByteString getObjectBytes() {
       java.lang.Object ref = object_;
@@ -734,6 +765,9 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string object = 2;</code>
+     *
+     * @param value The object to set.
+     * @return This builder for chaining.
      */
     public Builder setObject(java.lang.String value) {
       if (value == null) {
@@ -754,6 +788,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string object = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearObject() {
 
@@ -771,6 +807,9 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string object = 2;</code>
+     *
+     * @param value The bytes for object to set.
+     * @return This builder for chaining.
      */
     public Builder setObjectBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -793,6 +832,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 generation = 3;</code>
+     *
+     * @return The generation.
      */
     public long getGeneration() {
       return generation_;
@@ -806,6 +847,9 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 generation = 3;</code>
+     *
+     * @param value The generation to set.
+     * @return This builder for chaining.
      */
     public Builder setGeneration(long value) {
 
@@ -822,6 +866,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 generation = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGeneration() {
 

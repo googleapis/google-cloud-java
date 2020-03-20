@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ public interface CreateWorkerPoolRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -41,6 +43,8 @@ public interface CreateWorkerPoolRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -52,6 +56,8 @@ public interface CreateWorkerPoolRequestOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+   *
+   * @return Whether the workerPool field is set.
    */
   boolean hasWorkerPool();
   /**
@@ -62,6 +68,8 @@ public interface CreateWorkerPoolRequestOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+   *
+   * @return The workerPool.
    */
   com.google.cloudbuild.v1.WorkerPool getWorkerPool();
   /**

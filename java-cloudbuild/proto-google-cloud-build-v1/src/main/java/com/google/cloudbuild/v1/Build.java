@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     logUrl_ = "";
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     secrets_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Build();
   }
 
   @java.lang.Override
@@ -179,9 +185,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 steps_ = new java.util.ArrayList<com.google.cloudbuild.v1.BuildStep>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               steps_.add(
                   input.readMessage(
@@ -206,9 +212,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
           case 106:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 images_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00000002;
               }
               images_.add(s);
               break;
@@ -282,11 +288,11 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
             }
           case 234:
             {
-              if (!((mutable_bitField0_ & 0x00040000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 substitutions_ =
                     com.google.protobuf.MapField.newMapField(
                         SubstitutionsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00040000;
+                mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> substitutions__ =
                   input.readMessage(
@@ -300,18 +306,18 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
           case 250:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00080000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00080000;
+                mutable_bitField0_ |= 0x00000008;
               }
               tags_.add(s);
               break;
             }
           case 258:
             {
-              if (!((mutable_bitField0_ & 0x00100000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 secrets_ = new java.util.ArrayList<com.google.cloudbuild.v1.Secret>();
-                mutable_bitField0_ |= 0x00100000;
+                mutable_bitField0_ |= 0x00000010;
               }
               secrets_.add(
                   input.readMessage(com.google.cloudbuild.v1.Secret.parser(), extensionRegistry));
@@ -319,10 +325,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
             }
           case 266:
             {
-              if (!((mutable_bitField0_ & 0x00200000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 timing_ =
                     com.google.protobuf.MapField.newMapField(TimingDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00200000;
+                mutable_bitField0_ |= 0x00000020;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.cloudbuild.v1.TimeSpan>
                   timing__ =
@@ -347,6 +353,21 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 322:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (queueTtl_ != null) {
+                subBuilder = queueTtl_.toBuilder();
+              }
+              queueTtl_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(queueTtl_);
+                queueTtl_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -361,16 +382,16 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         steps_ = java.util.Collections.unmodifiableList(steps_);
       }
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         images_ = images_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00080000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         tags_ = tags_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00100000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         secrets_ = java.util.Collections.unmodifiableList(secrets_);
       }
       this.unknownFields = unknownFields.build();
@@ -495,6 +516,16 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLED = 7;</code>
      */
     CANCELLED(7),
+    /**
+     *
+     *
+     * <pre>
+     * Build was enqueued for longer than the value of `queue_ttl`.
+     * </pre>
+     *
+     * <code>EXPIRED = 9;</code>
+     */
+    EXPIRED(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -578,6 +609,16 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLED = 7;</code>
      */
     public static final int CANCELLED_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Build was enqueued for longer than the value of `queue_ttl`.
+     * </pre>
+     *
+     * <code>EXPIRED = 9;</code>
+     */
+    public static final int EXPIRED_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -587,12 +628,20 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Status valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Status forNumber(int value) {
       switch (value) {
         case 0:
@@ -611,6 +660,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
           return TIMEOUT;
         case 7:
           return CANCELLED;
+        case 9:
+          return EXPIRED;
         default:
           return null;
       }
@@ -660,7 +711,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.devtools.cloudbuild.v1.Build.Status)
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
@@ -670,7 +720,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. Unique identifier of the build.
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -690,7 +742,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. Unique identifier of the build.
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -713,7 +767,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 16;</code>
+   * <code>string project_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -733,7 +789,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 16;</code>
+   * <code>string project_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -757,6 +815,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Build.Status status = 2;</code>
+   *
+   * @return The enum numeric value on the wire for status.
    */
   public int getStatusValue() {
     return status_;
@@ -769,6 +829,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Build.Status status = 2;</code>
+   *
+   * @return The status.
    */
   public com.google.cloudbuild.v1.Build.Status getStatus() {
     @SuppressWarnings("deprecation")
@@ -787,6 +849,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string status_detail = 24;</code>
+   *
+   * @return The statusDetail.
    */
   public java.lang.String getStatusDetail() {
     java.lang.Object ref = statusDetail_;
@@ -807,6 +871,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string status_detail = 24;</code>
+   *
+   * @return The bytes for statusDetail.
    */
   public com.google.protobuf.ByteString getStatusDetailBytes() {
     java.lang.Object ref = statusDetail_;
@@ -830,6 +896,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+   *
+   * @return Whether the source field is set.
    */
   public boolean hasSource() {
     return source_ != null;
@@ -842,6 +910,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+   *
+   * @return The source.
    */
   public com.google.cloudbuild.v1.Source getSource() {
     return source_ == null ? com.google.cloudbuild.v1.Source.getDefaultInstance() : source_;
@@ -932,7 +1002,11 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. Results of the build.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the results field is set.
    */
   public boolean hasResults() {
     return results_ != null;
@@ -944,7 +1018,11 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. Results of the build.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The results.
    */
   public com.google.cloudbuild.v1.Results getResults() {
     return results_ == null ? com.google.cloudbuild.v1.Results.getDefaultInstance() : results_;
@@ -956,7 +1034,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. Results of the build.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloudbuild.v1.ResultsOrBuilder getResultsOrBuilder() {
     return getResults();
@@ -971,7 +1051,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. Time at which the request to create the build was received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -983,7 +1066,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. Time at which the request to create the build was received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -995,7 +1081,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. Time at which the request to create the build was received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -1010,7 +1097,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. Time at which execution of the build was started.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 7;</code>
+   * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -1022,7 +1112,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. Time at which execution of the build was started.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 7;</code>
+   * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -1034,7 +1127,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. Time at which execution of the build was started.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 7;</code>
+   * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
@@ -1051,7 +1145,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * build's execution.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+   * <code>.google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the finishTime field is set.
    */
   public boolean hasFinishTime() {
     return finishTime_ != null;
@@ -1065,7 +1162,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * build's execution.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+   * <code>.google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The finishTime.
    */
   public com.google.protobuf.Timestamp getFinishTime() {
     return finishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishTime_;
@@ -1079,7 +1179,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * build's execution.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+   * <code>.google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getFinishTimeOrBuilder() {
     return getFinishTime();
@@ -1098,6 +1199,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 12;</code>
+   *
+   * @return Whether the timeout field is set.
    */
   public boolean hasTimeout() {
     return timeout_ != null;
@@ -1113,6 +1216,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 12;</code>
+   *
+   * @return The timeout.
    */
   public com.google.protobuf.Duration getTimeout() {
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
@@ -1149,6 +1254,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string images = 13;</code>
+   *
+   * @return A list containing the images.
    */
   public com.google.protobuf.ProtocolStringList getImagesList() {
     return images_;
@@ -1167,6 +1274,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string images = 13;</code>
+   *
+   * @return The count of images.
    */
   public int getImagesCount() {
     return images_.size();
@@ -1185,6 +1294,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string images = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The images at the given index.
    */
   public java.lang.String getImages(int index) {
     return images_.get(index);
@@ -1203,9 +1315,64 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string images = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the images at the given index.
    */
   public com.google.protobuf.ByteString getImagesBytes(int index) {
     return images_.getByteString(index);
+  }
+
+  public static final int QUEUE_TTL_FIELD_NUMBER = 40;
+  private com.google.protobuf.Duration queueTtl_;
+  /**
+   *
+   *
+   * <pre>
+   * TTL in queue for this build. If provided and the build is enqueued longer
+   * than this value, the build will expire and the build status will be
+   * `EXPIRED`.
+   * The TTL starts ticking from create_time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+   *
+   * @return Whether the queueTtl field is set.
+   */
+  public boolean hasQueueTtl() {
+    return queueTtl_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * TTL in queue for this build. If provided and the build is enqueued longer
+   * than this value, the build will expire and the build status will be
+   * `EXPIRED`.
+   * The TTL starts ticking from create_time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+   *
+   * @return The queueTtl.
+   */
+  public com.google.protobuf.Duration getQueueTtl() {
+    return queueTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : queueTtl_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * TTL in queue for this build. If provided and the build is enqueued longer
+   * than this value, the build will expire and the build status will be
+   * `EXPIRED`.
+   * The TTL starts ticking from create_time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+   */
+  public com.google.protobuf.DurationOrBuilder getQueueTtlOrBuilder() {
+    return getQueueTtl();
   }
 
   public static final int ARTIFACTS_FIELD_NUMBER = 37;
@@ -1219,6 +1386,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Artifacts artifacts = 37;</code>
+   *
+   * @return Whether the artifacts field is set.
    */
   public boolean hasArtifacts() {
     return artifacts_ != null;
@@ -1232,6 +1401,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Artifacts artifacts = 37;</code>
+   *
+   * @return The artifacts.
    */
   public com.google.cloudbuild.v1.Artifacts getArtifacts() {
     return artifacts_ == null
@@ -1265,6 +1436,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string logs_bucket = 19;</code>
+   *
+   * @return The logsBucket.
    */
   public java.lang.String getLogsBucket() {
     java.lang.Object ref = logsBucket_;
@@ -1288,6 +1461,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string logs_bucket = 19;</code>
+   *
+   * @return The bytes for logsBucket.
    */
   public com.google.protobuf.ByteString getLogsBucketBytes() {
     java.lang.Object ref = logsBucket_;
@@ -1311,6 +1486,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.SourceProvenance source_provenance = 21;</code>
+   *
+   * @return Whether the sourceProvenance field is set.
    */
   public boolean hasSourceProvenance() {
     return sourceProvenance_ != null;
@@ -1323,6 +1500,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.SourceProvenance source_provenance = 21;</code>
+   *
+   * @return The sourceProvenance.
    */
   public com.google.cloudbuild.v1.SourceProvenance getSourceProvenance() {
     return sourceProvenance_ == null
@@ -1353,6 +1532,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string build_trigger_id = 22;</code>
+   *
+   * @return The buildTriggerId.
    */
   public java.lang.String getBuildTriggerId() {
     java.lang.Object ref = buildTriggerId_;
@@ -1374,6 +1555,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string build_trigger_id = 22;</code>
+   *
+   * @return The bytes for buildTriggerId.
    */
   public com.google.protobuf.ByteString getBuildTriggerIdBytes() {
     java.lang.Object ref = buildTriggerId_;
@@ -1397,6 +1580,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions options = 23;</code>
+   *
+   * @return Whether the options field is set.
    */
   public boolean hasOptions() {
     return options_ != null;
@@ -1409,6 +1594,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions options = 23;</code>
+   *
+   * @return The options.
    */
   public com.google.cloudbuild.v1.BuildOptions getOptions() {
     return options_ == null ? com.google.cloudbuild.v1.BuildOptions.getDefaultInstance() : options_;
@@ -1435,7 +1622,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. URL to logs for this build in Google Cloud Console.
    * </pre>
    *
-   * <code>string log_url = 25;</code>
+   * <code>string log_url = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The logUrl.
    */
   public java.lang.String getLogUrl() {
     java.lang.Object ref = logUrl_;
@@ -1455,7 +1644,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Output only. URL to logs for this build in Google Cloud Console.
    * </pre>
    *
-   * <code>string log_url = 25;</code>
+   * <code>string log_url = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for logUrl.
    */
   public com.google.protobuf.ByteString getLogUrlBytes() {
     java.lang.Object ref = logUrl_;
@@ -1575,6 +1766,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string tags = 31;</code>
+   *
+   * @return A list containing the tags.
    */
   public com.google.protobuf.ProtocolStringList getTagsList() {
     return tags_;
@@ -1587,6 +1780,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string tags = 31;</code>
+   *
+   * @return The count of tags.
    */
   public int getTagsCount() {
     return tags_.size();
@@ -1599,6 +1794,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string tags = 31;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
    */
   public java.lang.String getTags(int index) {
     return tags_.get(index);
@@ -1611,6 +1809,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string tags = 31;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
    */
   public com.google.protobuf.ByteString getTagsBytes(int index) {
     return tags_.getByteString(index);
@@ -1721,7 +1922,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * these keys will not be included.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean containsTiming(java.lang.String key) {
     if (key == null) {
@@ -1747,7 +1950,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * these keys will not be included.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.Map<java.lang.String, com.google.cloudbuild.v1.TimeSpan> getTimingMap() {
     return internalGetTiming().getMap();
@@ -1765,7 +1970,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * these keys will not be included.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloudbuild.v1.TimeSpan getTimingOrDefault(
       java.lang.String key, com.google.cloudbuild.v1.TimeSpan defaultValue) {
@@ -1789,7 +1996,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * these keys will not be included.
    * </pre>
    *
-   * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+   * <code>
+   * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloudbuild.v1.TimeSpan getTimingOrThrow(java.lang.String key) {
     if (key == null) {
@@ -1880,6 +2089,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         output, internalGetTiming(), TimingDefaultEntryHolder.defaultEntry, 33);
     if (artifacts_ != null) {
       output.writeMessage(37, getArtifacts());
+    }
+    if (queueTtl_ != null) {
+      output.writeMessage(40, getQueueTtl());
     }
     unknownFields.writeTo(output);
   }
@@ -1980,6 +2192,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     if (artifacts_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(37, getArtifacts());
     }
+    if (queueTtl_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(40, getQueueTtl());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2025,6 +2240,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       if (!getTimeout().equals(other.getTimeout())) return false;
     }
     if (!getImagesList().equals(other.getImagesList())) return false;
+    if (hasQueueTtl() != other.hasQueueTtl()) return false;
+    if (hasQueueTtl()) {
+      if (!getQueueTtl().equals(other.getQueueTtl())) return false;
+    }
     if (hasArtifacts() != other.hasArtifacts()) return false;
     if (hasArtifacts()) {
       if (!getArtifacts().equals(other.getArtifacts())) return false;
@@ -2094,6 +2313,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     if (getImagesCount() > 0) {
       hash = (37 * hash) + IMAGES_FIELD_NUMBER;
       hash = (53 * hash) + getImagesList().hashCode();
+    }
+    if (hasQueueTtl()) {
+      hash = (37 * hash) + QUEUE_TTL_FIELD_NUMBER;
+      hash = (53 * hash) + getQueueTtl().hashCode();
     }
     if (hasArtifacts()) {
       hash = (37 * hash) + ARTIFACTS_FIELD_NUMBER;
@@ -2328,7 +2551,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       }
       if (stepsBuilder_ == null) {
         steps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         stepsBuilder_.clear();
       }
@@ -2363,7 +2586,13 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         timeoutBuilder_ = null;
       }
       images_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000002);
+      if (queueTtlBuilder_ == null) {
+        queueTtl_ = null;
+      } else {
+        queueTtl_ = null;
+        queueTtlBuilder_ = null;
+      }
       if (artifactsBuilder_ == null) {
         artifacts_ = null;
       } else {
@@ -2390,10 +2619,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
 
       internalGetMutableSubstitutions().clear();
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (secretsBuilder_ == null) {
         secrets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         secretsBuilder_.clear();
       }
@@ -2425,7 +2654,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.Build buildPartial() {
       com.google.cloudbuild.v1.Build result = new com.google.cloudbuild.v1.Build(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.id_ = id_;
       result.projectId_ = projectId_;
       result.status_ = status_;
@@ -2436,9 +2664,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         result.source_ = sourceBuilder_.build();
       }
       if (stepsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           steps_ = java.util.Collections.unmodifiableList(steps_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.steps_ = steps_;
       } else {
@@ -2469,11 +2697,16 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.timeout_ = timeoutBuilder_.build();
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         images_ = images_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.images_ = images_;
+      if (queueTtlBuilder_ == null) {
+        result.queueTtl_ = queueTtl_;
+      } else {
+        result.queueTtl_ = queueTtlBuilder_.build();
+      }
       if (artifactsBuilder_ == null) {
         result.artifacts_ = artifacts_;
       } else {
@@ -2494,15 +2727,15 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       result.logUrl_ = logUrl_;
       result.substitutions_ = internalGetSubstitutions();
       result.substitutions_.makeImmutable();
-      if (((bitField0_ & 0x00080000) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.tags_ = tags_;
       if (secretsBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           secrets_ = java.util.Collections.unmodifiableList(secrets_);
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.secrets_ = secrets_;
       } else {
@@ -2510,7 +2743,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       }
       result.timing_ = internalGetTiming();
       result.timing_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2582,7 +2814,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         if (!other.steps_.isEmpty()) {
           if (steps_.isEmpty()) {
             steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureStepsIsMutable();
             steps_.addAll(other.steps_);
@@ -2595,7 +2827,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
             stepsBuilder_.dispose();
             stepsBuilder_ = null;
             steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
             stepsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStepsFieldBuilder()
@@ -2623,12 +2855,15 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       if (!other.images_.isEmpty()) {
         if (images_.isEmpty()) {
           images_ = other.images_;
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureImagesIsMutable();
           images_.addAll(other.images_);
         }
         onChanged();
+      }
+      if (other.hasQueueTtl()) {
+        mergeQueueTtl(other.getQueueTtl());
       }
       if (other.hasArtifacts()) {
         mergeArtifacts(other.getArtifacts());
@@ -2655,7 +2890,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00080000);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -2666,7 +2901,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         if (!other.secrets_.isEmpty()) {
           if (secrets_.isEmpty()) {
             secrets_ = other.secrets_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureSecretsIsMutable();
             secrets_.addAll(other.secrets_);
@@ -2679,7 +2914,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
             secretsBuilder_.dispose();
             secretsBuilder_ = null;
             secrets_ = other.secrets_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00000010);
             secretsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSecretsFieldBuilder()
@@ -2729,7 +2964,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique identifier of the build.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -2749,7 +2986,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique identifier of the build.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -2769,7 +3008,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique identifier of the build.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -2787,7 +3029,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique identifier of the build.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
 
@@ -2802,7 +3046,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique identifier of the build.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2823,7 +3070,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 16;</code>
+     * <code>string project_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -2843,7 +3092,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 16;</code>
+     * <code>string project_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -2863,7 +3114,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 16;</code>
+     * <code>string project_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -2881,7 +3135,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 16;</code>
+     * <code>string project_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -2896,7 +3152,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 16;</code>
+     * <code>string project_id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2918,6 +3177,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Build.Status status = 2;</code>
+     *
+     * @return The enum numeric value on the wire for status.
      */
     public int getStatusValue() {
       return status_;
@@ -2930,6 +3191,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Build.Status status = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
       status_ = value;
@@ -2944,6 +3208,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Build.Status status = 2;</code>
+     *
+     * @return The status.
      */
     public com.google.cloudbuild.v1.Build.Status getStatus() {
       @SuppressWarnings("deprecation")
@@ -2959,6 +3225,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Build.Status status = 2;</code>
+     *
+     * @param value The status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatus(com.google.cloudbuild.v1.Build.Status value) {
       if (value == null) {
@@ -2977,6 +3246,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Build.Status status = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatus() {
 
@@ -2994,6 +3265,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_detail = 24;</code>
+     *
+     * @return The statusDetail.
      */
     public java.lang.String getStatusDetail() {
       java.lang.Object ref = statusDetail_;
@@ -3014,6 +3287,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_detail = 24;</code>
+     *
+     * @return The bytes for statusDetail.
      */
     public com.google.protobuf.ByteString getStatusDetailBytes() {
       java.lang.Object ref = statusDetail_;
@@ -3034,6 +3309,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_detail = 24;</code>
+     *
+     * @param value The statusDetail to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusDetail(java.lang.String value) {
       if (value == null) {
@@ -3052,6 +3330,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_detail = 24;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatusDetail() {
 
@@ -3067,6 +3347,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_detail = 24;</code>
+     *
+     * @param value The bytes for statusDetail to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusDetailBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3093,6 +3376,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+     *
+     * @return Whether the source field is set.
      */
     public boolean hasSource() {
       return sourceBuilder_ != null || source_ != null;
@@ -3105,6 +3390,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+     *
+     * @return The source.
      */
     public com.google.cloudbuild.v1.Source getSource() {
       if (sourceBuilder_ == null) {
@@ -3258,9 +3545,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStepsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         steps_ = new java.util.ArrayList<com.google.cloudbuild.v1.BuildStep>(steps_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -3473,7 +3760,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSteps() {
       if (stepsBuilder_ == null) {
         steps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         stepsBuilder_.clear();
@@ -3594,7 +3881,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.BuildStep,
                 com.google.cloudbuild.v1.BuildStep.Builder,
                 com.google.cloudbuild.v1.BuildStepOrBuilder>(
-                steps_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                steps_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         steps_ = null;
       }
       return stepsBuilder_;
@@ -3613,7 +3900,11 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Results of the build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the results field is set.
      */
     public boolean hasResults() {
       return resultsBuilder_ != null || results_ != null;
@@ -3625,7 +3916,11 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Results of the build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The results.
      */
     public com.google.cloudbuild.v1.Results getResults() {
       if (resultsBuilder_ == null) {
@@ -3641,7 +3936,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Results of the build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setResults(com.google.cloudbuild.v1.Results value) {
       if (resultsBuilder_ == null) {
@@ -3663,7 +3960,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Results of the build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setResults(com.google.cloudbuild.v1.Results.Builder builderForValue) {
       if (resultsBuilder_ == null) {
@@ -3682,7 +3981,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Results of the build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeResults(com.google.cloudbuild.v1.Results value) {
       if (resultsBuilder_ == null) {
@@ -3706,7 +4007,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Results of the build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearResults() {
       if (resultsBuilder_ == null) {
@@ -3726,7 +4029,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Results of the build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloudbuild.v1.Results.Builder getResultsBuilder() {
 
@@ -3740,7 +4045,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Results of the build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloudbuild.v1.ResultsOrBuilder getResultsOrBuilder() {
       if (resultsBuilder_ != null) {
@@ -3756,7 +4063,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Results of the build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Results results = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.Results,
@@ -3788,7 +4097,11 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which the request to create the build was received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -3800,7 +4113,11 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which the request to create the build was received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -3818,7 +4135,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which the request to create the build was received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -3840,7 +4159,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which the request to create the build was received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -3859,7 +4180,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which the request to create the build was received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -3883,7 +4206,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which the request to create the build was received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -3903,7 +4228,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which the request to create the build was received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
@@ -3917,7 +4244,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which the request to create the build was received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -3935,7 +4264,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which the request to create the build was received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3967,7 +4298,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which execution of the build was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 7;</code>
+     * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -3979,7 +4313,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which execution of the build was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 7;</code>
+     * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -3995,7 +4332,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which execution of the build was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 7;</code>
+     * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
@@ -4017,7 +4355,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which execution of the build was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 7;</code>
+     * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
@@ -4036,7 +4375,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which execution of the build was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 7;</code>
+     * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
@@ -4060,7 +4400,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which execution of the build was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 7;</code>
+     * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearStartTime() {
       if (startTimeBuilder_ == null) {
@@ -4080,7 +4421,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which execution of the build was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 7;</code>
+     * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
 
@@ -4094,7 +4436,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which execution of the build was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 7;</code>
+     * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
       if (startTimeBuilder_ != null) {
@@ -4110,7 +4453,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time at which execution of the build was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 7;</code>
+     * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -4144,7 +4488,11 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * build's execution.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the finishTime field is set.
      */
     public boolean hasFinishTime() {
       return finishTimeBuilder_ != null || finishTime_ != null;
@@ -4158,7 +4506,11 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * build's execution.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The finishTime.
      */
     public com.google.protobuf.Timestamp getFinishTime() {
       if (finishTimeBuilder_ == null) {
@@ -4178,7 +4530,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * build's execution.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setFinishTime(com.google.protobuf.Timestamp value) {
       if (finishTimeBuilder_ == null) {
@@ -4202,7 +4556,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * build's execution.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setFinishTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (finishTimeBuilder_ == null) {
@@ -4223,7 +4579,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * build's execution.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeFinishTime(com.google.protobuf.Timestamp value) {
       if (finishTimeBuilder_ == null) {
@@ -4249,7 +4607,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * build's execution.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearFinishTime() {
       if (finishTimeBuilder_ == null) {
@@ -4271,7 +4631,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * build's execution.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getFinishTimeBuilder() {
 
@@ -4287,7 +4649,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * build's execution.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getFinishTimeOrBuilder() {
       if (finishTimeBuilder_ != null) {
@@ -4307,7 +4671,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * build's execution.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -4343,6 +4709,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 12;</code>
+     *
+     * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
       return timeoutBuilder_ != null || timeout_ != null;
@@ -4358,6 +4726,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 12;</code>
+     *
+     * @return The timeout.
      */
     public com.google.protobuf.Duration getTimeout() {
       if (timeoutBuilder_ == null) {
@@ -4532,9 +4902,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureImagesIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         images_ = new com.google.protobuf.LazyStringArrayList(images_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -4551,6 +4921,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 13;</code>
+     *
+     * @return A list containing the images.
      */
     public com.google.protobuf.ProtocolStringList getImagesList() {
       return images_.getUnmodifiableView();
@@ -4569,6 +4941,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 13;</code>
+     *
+     * @return The count of images.
      */
     public int getImagesCount() {
       return images_.size();
@@ -4587,6 +4961,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 13;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The images at the given index.
      */
     public java.lang.String getImages(int index) {
       return images_.get(index);
@@ -4605,6 +4982,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 13;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the images at the given index.
      */
     public com.google.protobuf.ByteString getImagesBytes(int index) {
       return images_.getByteString(index);
@@ -4623,6 +5003,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 13;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The images to set.
+     * @return This builder for chaining.
      */
     public Builder setImages(int index, java.lang.String value) {
       if (value == null) {
@@ -4647,6 +5031,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 13;</code>
+     *
+     * @param value The images to add.
+     * @return This builder for chaining.
      */
     public Builder addImages(java.lang.String value) {
       if (value == null) {
@@ -4671,6 +5058,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 13;</code>
+     *
+     * @param values The images to add.
+     * @return This builder for chaining.
      */
     public Builder addAllImages(java.lang.Iterable<java.lang.String> values) {
       ensureImagesIsMutable();
@@ -4692,10 +5082,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 13;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImages() {
       images_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -4713,6 +5105,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 13;</code>
+     *
+     * @param value The bytes of the images to add.
+     * @return This builder for chaining.
      */
     public Builder addImagesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4723,6 +5118,212 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       images_.add(value);
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Duration queueTtl_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        queueTtlBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * TTL in queue for this build. If provided and the build is enqueued longer
+     * than this value, the build will expire and the build status will be
+     * `EXPIRED`.
+     * The TTL starts ticking from create_time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+     *
+     * @return Whether the queueTtl field is set.
+     */
+    public boolean hasQueueTtl() {
+      return queueTtlBuilder_ != null || queueTtl_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TTL in queue for this build. If provided and the build is enqueued longer
+     * than this value, the build will expire and the build status will be
+     * `EXPIRED`.
+     * The TTL starts ticking from create_time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+     *
+     * @return The queueTtl.
+     */
+    public com.google.protobuf.Duration getQueueTtl() {
+      if (queueTtlBuilder_ == null) {
+        return queueTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : queueTtl_;
+      } else {
+        return queueTtlBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TTL in queue for this build. If provided and the build is enqueued longer
+     * than this value, the build will expire and the build status will be
+     * `EXPIRED`.
+     * The TTL starts ticking from create_time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+     */
+    public Builder setQueueTtl(com.google.protobuf.Duration value) {
+      if (queueTtlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        queueTtl_ = value;
+        onChanged();
+      } else {
+        queueTtlBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TTL in queue for this build. If provided and the build is enqueued longer
+     * than this value, the build will expire and the build status will be
+     * `EXPIRED`.
+     * The TTL starts ticking from create_time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+     */
+    public Builder setQueueTtl(com.google.protobuf.Duration.Builder builderForValue) {
+      if (queueTtlBuilder_ == null) {
+        queueTtl_ = builderForValue.build();
+        onChanged();
+      } else {
+        queueTtlBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TTL in queue for this build. If provided and the build is enqueued longer
+     * than this value, the build will expire and the build status will be
+     * `EXPIRED`.
+     * The TTL starts ticking from create_time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+     */
+    public Builder mergeQueueTtl(com.google.protobuf.Duration value) {
+      if (queueTtlBuilder_ == null) {
+        if (queueTtl_ != null) {
+          queueTtl_ =
+              com.google.protobuf.Duration.newBuilder(queueTtl_).mergeFrom(value).buildPartial();
+        } else {
+          queueTtl_ = value;
+        }
+        onChanged();
+      } else {
+        queueTtlBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TTL in queue for this build. If provided and the build is enqueued longer
+     * than this value, the build will expire and the build status will be
+     * `EXPIRED`.
+     * The TTL starts ticking from create_time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+     */
+    public Builder clearQueueTtl() {
+      if (queueTtlBuilder_ == null) {
+        queueTtl_ = null;
+        onChanged();
+      } else {
+        queueTtl_ = null;
+        queueTtlBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TTL in queue for this build. If provided and the build is enqueued longer
+     * than this value, the build will expire and the build status will be
+     * `EXPIRED`.
+     * The TTL starts ticking from create_time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+     */
+    public com.google.protobuf.Duration.Builder getQueueTtlBuilder() {
+
+      onChanged();
+      return getQueueTtlFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TTL in queue for this build. If provided and the build is enqueued longer
+     * than this value, the build will expire and the build status will be
+     * `EXPIRED`.
+     * The TTL starts ticking from create_time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getQueueTtlOrBuilder() {
+      if (queueTtlBuilder_ != null) {
+        return queueTtlBuilder_.getMessageOrBuilder();
+      } else {
+        return queueTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : queueTtl_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TTL in queue for this build. If provided and the build is enqueued longer
+     * than this value, the build will expire and the build status will be
+     * `EXPIRED`.
+     * The TTL starts ticking from create_time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration queue_ttl = 40;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getQueueTtlFieldBuilder() {
+      if (queueTtlBuilder_ == null) {
+        queueTtlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getQueueTtl(), getParentForChildren(), isClean());
+        queueTtl_ = null;
+      }
+      return queueTtlBuilder_;
     }
 
     private com.google.cloudbuild.v1.Artifacts artifacts_;
@@ -4740,6 +5341,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Artifacts artifacts = 37;</code>
+     *
+     * @return Whether the artifacts field is set.
      */
     public boolean hasArtifacts() {
       return artifactsBuilder_ != null || artifacts_ != null;
@@ -4753,6 +5356,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Artifacts artifacts = 37;</code>
+     *
+     * @return The artifacts.
      */
     public com.google.cloudbuild.v1.Artifacts getArtifacts() {
       if (artifactsBuilder_ == null) {
@@ -4927,6 +5532,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string logs_bucket = 19;</code>
+     *
+     * @return The logsBucket.
      */
     public java.lang.String getLogsBucket() {
       java.lang.Object ref = logsBucket_;
@@ -4950,6 +5557,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string logs_bucket = 19;</code>
+     *
+     * @return The bytes for logsBucket.
      */
     public com.google.protobuf.ByteString getLogsBucketBytes() {
       java.lang.Object ref = logsBucket_;
@@ -4973,6 +5582,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string logs_bucket = 19;</code>
+     *
+     * @param value The logsBucket to set.
+     * @return This builder for chaining.
      */
     public Builder setLogsBucket(java.lang.String value) {
       if (value == null) {
@@ -4994,6 +5606,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string logs_bucket = 19;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLogsBucket() {
 
@@ -5012,6 +5626,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string logs_bucket = 19;</code>
+     *
+     * @param value The bytes for logsBucket to set.
+     * @return This builder for chaining.
      */
     public Builder setLogsBucketBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -5038,6 +5655,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.SourceProvenance source_provenance = 21;</code>
+     *
+     * @return Whether the sourceProvenance field is set.
      */
     public boolean hasSourceProvenance() {
       return sourceProvenanceBuilder_ != null || sourceProvenance_ != null;
@@ -5050,6 +5669,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.SourceProvenance source_provenance = 21;</code>
+     *
+     * @return The sourceProvenance.
      */
     public com.google.cloudbuild.v1.SourceProvenance getSourceProvenance() {
       if (sourceProvenanceBuilder_ == null) {
@@ -5216,6 +5837,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string build_trigger_id = 22;</code>
+     *
+     * @return The buildTriggerId.
      */
     public java.lang.String getBuildTriggerId() {
       java.lang.Object ref = buildTriggerId_;
@@ -5237,6 +5860,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string build_trigger_id = 22;</code>
+     *
+     * @return The bytes for buildTriggerId.
      */
     public com.google.protobuf.ByteString getBuildTriggerIdBytes() {
       java.lang.Object ref = buildTriggerId_;
@@ -5258,6 +5883,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string build_trigger_id = 22;</code>
+     *
+     * @param value The buildTriggerId to set.
+     * @return This builder for chaining.
      */
     public Builder setBuildTriggerId(java.lang.String value) {
       if (value == null) {
@@ -5277,6 +5905,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string build_trigger_id = 22;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBuildTriggerId() {
 
@@ -5293,6 +5923,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string build_trigger_id = 22;</code>
+     *
+     * @param value The bytes for buildTriggerId to set.
+     * @return This builder for chaining.
      */
     public Builder setBuildTriggerIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -5319,6 +5952,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions options = 23;</code>
+     *
+     * @return Whether the options field is set.
      */
     public boolean hasOptions() {
       return optionsBuilder_ != null || options_ != null;
@@ -5331,6 +5966,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions options = 23;</code>
+     *
+     * @return The options.
      */
     public com.google.cloudbuild.v1.BuildOptions getOptions() {
       if (optionsBuilder_ == null) {
@@ -5494,7 +6131,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. URL to logs for this build in Google Cloud Console.
      * </pre>
      *
-     * <code>string log_url = 25;</code>
+     * <code>string log_url = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The logUrl.
      */
     public java.lang.String getLogUrl() {
       java.lang.Object ref = logUrl_;
@@ -5514,7 +6153,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. URL to logs for this build in Google Cloud Console.
      * </pre>
      *
-     * <code>string log_url = 25;</code>
+     * <code>string log_url = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for logUrl.
      */
     public com.google.protobuf.ByteString getLogUrlBytes() {
       java.lang.Object ref = logUrl_;
@@ -5534,7 +6175,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. URL to logs for this build in Google Cloud Console.
      * </pre>
      *
-     * <code>string log_url = 25;</code>
+     * <code>string log_url = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The logUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setLogUrl(java.lang.String value) {
       if (value == null) {
@@ -5552,7 +6196,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. URL to logs for this build in Google Cloud Console.
      * </pre>
      *
-     * <code>string log_url = 25;</code>
+     * <code>string log_url = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLogUrl() {
 
@@ -5567,7 +6213,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Output only. URL to logs for this build in Google Cloud Console.
      * </pre>
      *
-     * <code>string log_url = 25;</code>
+     * <code>string log_url = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for logUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setLogUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -5739,9 +6388,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00080000) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -5752,6 +6401,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 31;</code>
+     *
+     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
       return tags_.getUnmodifiableView();
@@ -5764,6 +6415,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 31;</code>
+     *
+     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
@@ -5776,6 +6429,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 31;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
@@ -5788,6 +6444,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 31;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString getTagsBytes(int index) {
       return tags_.getByteString(index);
@@ -5800,6 +6459,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 31;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The tags to set.
+     * @return This builder for chaining.
      */
     public Builder setTags(int index, java.lang.String value) {
       if (value == null) {
@@ -5818,6 +6481,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 31;</code>
+     *
+     * @param value The tags to add.
+     * @return This builder for chaining.
      */
     public Builder addTags(java.lang.String value) {
       if (value == null) {
@@ -5836,6 +6502,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 31;</code>
+     *
+     * @param values The tags to add.
+     * @return This builder for chaining.
      */
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
@@ -5851,10 +6520,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 31;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -5866,6 +6537,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 31;</code>
+     *
+     * @param value The bytes of the tags to add.
+     * @return This builder for chaining.
      */
     public Builder addTagsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -5882,9 +6556,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSecretsIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         secrets_ = new java.util.ArrayList<com.google.cloudbuild.v1.Secret>(secrets_);
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -6097,7 +6771,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSecrets() {
       if (secretsBuilder_ == null) {
         secrets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         secretsBuilder_.clear();
@@ -6218,7 +6892,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.Secret,
                 com.google.cloudbuild.v1.Secret.Builder,
                 com.google.cloudbuild.v1.SecretOrBuilder>(
-                secrets_, ((bitField0_ & 0x00100000) != 0), getParentForChildren(), isClean());
+                secrets_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         secrets_ = null;
       }
       return secretsBuilder_;
@@ -6264,7 +6938,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * these keys will not be included.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean containsTiming(java.lang.String key) {
       if (key == null) {
@@ -6290,7 +6966,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * these keys will not be included.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.Map<java.lang.String, com.google.cloudbuild.v1.TimeSpan> getTimingMap() {
       return internalGetTiming().getMap();
@@ -6308,7 +6986,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * these keys will not be included.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloudbuild.v1.TimeSpan getTimingOrDefault(
         java.lang.String key, com.google.cloudbuild.v1.TimeSpan defaultValue) {
@@ -6332,7 +7012,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * these keys will not be included.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloudbuild.v1.TimeSpan getTimingOrThrow(java.lang.String key) {
       if (key == null) {
@@ -6363,7 +7045,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * these keys will not be included.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeTiming(java.lang.String key) {
       if (key == null) {
@@ -6390,7 +7074,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * these keys will not be included.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder putTiming(java.lang.String key, com.google.cloudbuild.v1.TimeSpan value) {
       if (key == null) {
@@ -6415,7 +7101,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * these keys will not be included.
      * </pre>
      *
-     * <code>map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33;</code>
+     * <code>
+     * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder putAllTiming(
         java.util.Map<java.lang.String, com.google.cloudbuild.v1.TimeSpan> values) {

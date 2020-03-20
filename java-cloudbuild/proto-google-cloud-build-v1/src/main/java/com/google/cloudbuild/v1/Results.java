@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,12 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     buildStepImages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     artifactManifest_ = "";
     buildStepOutputs_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Results();
   }
 
   @java.lang.Override
@@ -103,9 +109,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 buildStepOutputs_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000004;
               }
               buildStepOutputs_.add(input.readBytes());
               break;
@@ -145,7 +151,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         buildStepImages_ = buildStepImages_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         buildStepOutputs_ = java.util.Collections.unmodifiableList(buildStepOutputs_); // C
       }
       this.unknownFields = unknownFields.build();
@@ -167,7 +173,6 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v1.Results.class, com.google.cloudbuild.v1.Results.Builder.class);
   }
 
-  private int bitField0_;
   public static final int IMAGES_FIELD_NUMBER = 2;
   private java.util.List<com.google.cloudbuild.v1.BuiltImage> images_;
   /**
@@ -243,6 +248,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string build_step_images = 3;</code>
+   *
+   * @return A list containing the buildStepImages.
    */
   public com.google.protobuf.ProtocolStringList getBuildStepImagesList() {
     return buildStepImages_;
@@ -256,6 +263,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string build_step_images = 3;</code>
+   *
+   * @return The count of buildStepImages.
    */
   public int getBuildStepImagesCount() {
     return buildStepImages_.size();
@@ -269,6 +278,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string build_step_images = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The buildStepImages at the given index.
    */
   public java.lang.String getBuildStepImages(int index) {
     return buildStepImages_.get(index);
@@ -282,6 +294,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string build_step_images = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the buildStepImages at the given index.
    */
   public com.google.protobuf.ByteString getBuildStepImagesBytes(int index) {
     return buildStepImages_.getByteString(index);
@@ -297,6 +312,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string artifact_manifest = 4;</code>
+   *
+   * @return The artifactManifest.
    */
   public java.lang.String getArtifactManifest() {
     java.lang.Object ref = artifactManifest_;
@@ -317,6 +334,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string artifact_manifest = 4;</code>
+   *
+   * @return The bytes for artifactManifest.
    */
   public com.google.protobuf.ByteString getArtifactManifestBytes() {
     java.lang.Object ref = artifactManifest_;
@@ -340,6 +359,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 num_artifacts = 5;</code>
+   *
+   * @return The numArtifacts.
    */
   public long getNumArtifacts() {
     return numArtifacts_;
@@ -359,6 +380,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated bytes build_step_outputs = 6;</code>
+   *
+   * @return A list containing the buildStepOutputs.
    */
   public java.util.List<com.google.protobuf.ByteString> getBuildStepOutputsList() {
     return buildStepOutputs_;
@@ -375,6 +398,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated bytes build_step_outputs = 6;</code>
+   *
+   * @return The count of buildStepOutputs.
    */
   public int getBuildStepOutputsCount() {
     return buildStepOutputs_.size();
@@ -391,6 +416,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated bytes build_step_outputs = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The buildStepOutputs at the given index.
    */
   public com.google.protobuf.ByteString getBuildStepOutputs(int index) {
     return buildStepOutputs_.get(index);
@@ -406,6 +434,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+   *
+   * @return Whether the artifactTiming field is set.
    */
   public boolean hasArtifactTiming() {
     return artifactTiming_ != null;
@@ -418,6 +448,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+   *
+   * @return The artifactTiming.
    */
   public com.google.cloudbuild.v1.TimeSpan getArtifactTiming() {
     return artifactTiming_ == null
@@ -721,7 +753,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       numArtifacts_ = 0L;
 
       buildStepOutputs_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (artifactTimingBuilder_ == null) {
         artifactTiming_ = null;
       } else {
@@ -755,7 +787,6 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.Results buildPartial() {
       com.google.cloudbuild.v1.Results result = new com.google.cloudbuild.v1.Results(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (imagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           images_ = java.util.Collections.unmodifiableList(images_);
@@ -772,9 +803,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       result.buildStepImages_ = buildStepImages_;
       result.artifactManifest_ = artifactManifest_;
       result.numArtifacts_ = numArtifacts_;
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         buildStepOutputs_ = java.util.Collections.unmodifiableList(buildStepOutputs_);
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.buildStepOutputs_ = buildStepOutputs_;
       if (artifactTimingBuilder_ == null) {
@@ -782,7 +813,6 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.artifactTiming_ = artifactTimingBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -879,7 +909,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       if (!other.buildStepOutputs_.isEmpty()) {
         if (buildStepOutputs_.isEmpty()) {
           buildStepOutputs_ = other.buildStepOutputs_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureBuildStepOutputsIsMutable();
           buildStepOutputs_.addAll(other.buildStepOutputs_);
@@ -1286,6 +1316,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string build_step_images = 3;</code>
+     *
+     * @return A list containing the buildStepImages.
      */
     public com.google.protobuf.ProtocolStringList getBuildStepImagesList() {
       return buildStepImages_.getUnmodifiableView();
@@ -1299,6 +1331,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string build_step_images = 3;</code>
+     *
+     * @return The count of buildStepImages.
      */
     public int getBuildStepImagesCount() {
       return buildStepImages_.size();
@@ -1312,6 +1346,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string build_step_images = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The buildStepImages at the given index.
      */
     public java.lang.String getBuildStepImages(int index) {
       return buildStepImages_.get(index);
@@ -1325,6 +1362,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string build_step_images = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the buildStepImages at the given index.
      */
     public com.google.protobuf.ByteString getBuildStepImagesBytes(int index) {
       return buildStepImages_.getByteString(index);
@@ -1338,6 +1378,10 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string build_step_images = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The buildStepImages to set.
+     * @return This builder for chaining.
      */
     public Builder setBuildStepImages(int index, java.lang.String value) {
       if (value == null) {
@@ -1357,6 +1401,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string build_step_images = 3;</code>
+     *
+     * @param value The buildStepImages to add.
+     * @return This builder for chaining.
      */
     public Builder addBuildStepImages(java.lang.String value) {
       if (value == null) {
@@ -1376,6 +1423,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string build_step_images = 3;</code>
+     *
+     * @param values The buildStepImages to add.
+     * @return This builder for chaining.
      */
     public Builder addAllBuildStepImages(java.lang.Iterable<java.lang.String> values) {
       ensureBuildStepImagesIsMutable();
@@ -1392,6 +1442,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string build_step_images = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBuildStepImages() {
       buildStepImages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1408,6 +1460,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string build_step_images = 3;</code>
+     *
+     * @param value The bytes of the buildStepImages to add.
+     * @return This builder for chaining.
      */
     public Builder addBuildStepImagesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1429,6 +1484,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string artifact_manifest = 4;</code>
+     *
+     * @return The artifactManifest.
      */
     public java.lang.String getArtifactManifest() {
       java.lang.Object ref = artifactManifest_;
@@ -1449,6 +1506,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string artifact_manifest = 4;</code>
+     *
+     * @return The bytes for artifactManifest.
      */
     public com.google.protobuf.ByteString getArtifactManifestBytes() {
       java.lang.Object ref = artifactManifest_;
@@ -1469,6 +1528,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string artifact_manifest = 4;</code>
+     *
+     * @param value The artifactManifest to set.
+     * @return This builder for chaining.
      */
     public Builder setArtifactManifest(java.lang.String value) {
       if (value == null) {
@@ -1487,6 +1549,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string artifact_manifest = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearArtifactManifest() {
 
@@ -1502,6 +1566,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string artifact_manifest = 4;</code>
+     *
+     * @param value The bytes for artifactManifest to set.
+     * @return This builder for chaining.
      */
     public Builder setArtifactManifestBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1523,6 +1590,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 num_artifacts = 5;</code>
+     *
+     * @return The numArtifacts.
      */
     public long getNumArtifacts() {
       return numArtifacts_;
@@ -1535,6 +1604,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 num_artifacts = 5;</code>
+     *
+     * @param value The numArtifacts to set.
+     * @return This builder for chaining.
      */
     public Builder setNumArtifacts(long value) {
 
@@ -1550,6 +1622,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 num_artifacts = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNumArtifacts() {
 
@@ -1562,10 +1636,10 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureBuildStepOutputsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         buildStepOutputs_ =
             new java.util.ArrayList<com.google.protobuf.ByteString>(buildStepOutputs_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1580,9 +1654,11 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes build_step_outputs = 6;</code>
+     *
+     * @return A list containing the buildStepOutputs.
      */
     public java.util.List<com.google.protobuf.ByteString> getBuildStepOutputsList() {
-      return ((bitField0_ & 0x00000010) != 0)
+      return ((bitField0_ & 0x00000004) != 0)
           ? java.util.Collections.unmodifiableList(buildStepOutputs_)
           : buildStepOutputs_;
     }
@@ -1598,6 +1674,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes build_step_outputs = 6;</code>
+     *
+     * @return The count of buildStepOutputs.
      */
     public int getBuildStepOutputsCount() {
       return buildStepOutputs_.size();
@@ -1614,6 +1692,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes build_step_outputs = 6;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The buildStepOutputs at the given index.
      */
     public com.google.protobuf.ByteString getBuildStepOutputs(int index) {
       return buildStepOutputs_.get(index);
@@ -1630,6 +1711,10 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes build_step_outputs = 6;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The buildStepOutputs to set.
+     * @return This builder for chaining.
      */
     public Builder setBuildStepOutputs(int index, com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1652,6 +1737,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes build_step_outputs = 6;</code>
+     *
+     * @param value The buildStepOutputs to add.
+     * @return This builder for chaining.
      */
     public Builder addBuildStepOutputs(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1674,6 +1762,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes build_step_outputs = 6;</code>
+     *
+     * @param values The buildStepOutputs to add.
+     * @return This builder for chaining.
      */
     public Builder addAllBuildStepOutputs(
         java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
@@ -1694,10 +1785,12 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes build_step_outputs = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBuildStepOutputs() {
       buildStepOutputs_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1716,6 +1809,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+     *
+     * @return Whether the artifactTiming field is set.
      */
     public boolean hasArtifactTiming() {
       return artifactTimingBuilder_ != null || artifactTiming_ != null;
@@ -1728,6 +1823,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+     *
+     * @return The artifactTiming.
      */
     public com.google.cloudbuild.v1.TimeSpan getArtifactTiming() {
       if (artifactTimingBuilder_ == null) {

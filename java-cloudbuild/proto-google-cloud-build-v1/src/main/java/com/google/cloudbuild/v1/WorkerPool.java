@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,12 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WorkerPool();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -96,9 +102,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
           case 72:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 regions_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               regions_.add(rawValue);
               break;
@@ -109,9 +115,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   regions_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000020;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 regions_.add(rawValue);
               }
@@ -207,7 +213,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         regions_ = java.util.Collections.unmodifiableList(regions_);
       }
       this.unknownFields = unknownFields.build();
@@ -352,12 +358,20 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Region valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Region forNumber(int value) {
       switch (value) {
         case 0:
@@ -463,7 +477,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * `WorkerPool` is being deleting: cancelling builds and draining workers.
+     * `WorkerPool` is being deleted: cancelling builds and draining workers.
      * </pre>
      *
      * <code>DELETING = 3;</code>
@@ -516,7 +530,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * `WorkerPool` is being deleting: cancelling builds and draining workers.
+     * `WorkerPool` is being deleted: cancelling builds and draining workers.
      * </pre>
      *
      * <code>DELETING = 3;</code>
@@ -541,12 +555,20 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Status valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Status forNumber(int value) {
       switch (value) {
         case 0:
@@ -608,7 +630,6 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.devtools.cloudbuild.v1.WorkerPool.Status)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 14;
   private volatile java.lang.Object name_;
   /**
@@ -619,6 +640,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 14;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -639,6 +662,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 14;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -662,6 +687,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -682,6 +709,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -707,6 +736,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string service_account_email = 3;</code>
+   *
+   * @return The serviceAccountEmail.
    */
   public java.lang.String getServiceAccountEmail() {
     java.lang.Object ref = serviceAccountEmail_;
@@ -729,6 +760,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string service_account_email = 3;</code>
+   *
+   * @return The bytes for serviceAccountEmail.
    */
   public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
     java.lang.Object ref = serviceAccountEmail_;
@@ -752,6 +785,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 worker_count = 4;</code>
+   *
+   * @return The workerCount.
    */
   public long getWorkerCount() {
     return workerCount_;
@@ -767,6 +802,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
+   *
+   * @return Whether the workerConfig field is set.
    */
   public boolean hasWorkerConfig() {
     return workerConfig_ != null;
@@ -779,6 +816,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
+   *
+   * @return The workerConfig.
    */
   public com.google.cloudbuild.v1.WorkerConfig getWorkerConfig() {
     return workerConfig_ == null
@@ -826,6 +865,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+   *
+   * @return A list containing the regions.
    */
   public java.util.List<com.google.cloudbuild.v1.WorkerPool.Region> getRegionsList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -844,6 +885,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+   *
+   * @return The count of regions.
    */
   public int getRegionsCount() {
     return regions_.size();
@@ -860,6 +903,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The regions at the given index.
    */
   public com.google.cloudbuild.v1.WorkerPool.Region getRegions(int index) {
     return regions_converter_.convert(regions_.get(index));
@@ -876,6 +922,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for regions.
    */
   public java.util.List<java.lang.Integer> getRegionsValueList() {
     return regions_;
@@ -892,6 +940,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of regions at the given index.
    */
   public int getRegionsValue(int index) {
     return regions_.get(index);
@@ -910,6 +961,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -923,6 +976,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -952,6 +1007,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 17;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -965,6 +1022,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 17;</code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -994,6 +1053,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+   *
+   * @return Whether the deleteTime field is set.
    */
   public boolean hasDeleteTime() {
     return deleteTime_ != null;
@@ -1007,6 +1068,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+   *
+   * @return The deleteTime.
    */
   public com.google.protobuf.Timestamp getDeleteTime() {
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
@@ -1035,6 +1098,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+   *
+   * @return The enum numeric value on the wire for status.
    */
   public int getStatusValue() {
     return status_;
@@ -1047,6 +1112,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+   *
+   * @return The status.
    */
   public com.google.cloudbuild.v1.WorkerPool.Status getStatus() {
     @SuppressWarnings("deprecation")
@@ -1394,7 +1461,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         workerConfigBuilder_ = null;
       }
       regions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -1442,7 +1509,6 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.WorkerPool buildPartial() {
       com.google.cloudbuild.v1.WorkerPool result = new com.google.cloudbuild.v1.WorkerPool(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.projectId_ = projectId_;
       result.serviceAccountEmail_ = serviceAccountEmail_;
@@ -1452,9 +1518,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.workerConfig_ = workerConfigBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         regions_ = java.util.Collections.unmodifiableList(regions_);
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.regions_ = regions_;
       if (createTimeBuilder_ == null) {
@@ -1473,7 +1539,6 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         result.deleteTime_ = deleteTimeBuilder_.build();
       }
       result.status_ = status_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1544,7 +1609,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (!other.regions_.isEmpty()) {
         if (regions_.isEmpty()) {
           regions_ = other.regions_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureRegionsIsMutable();
           regions_.addAll(other.regions_);
@@ -1603,6 +1668,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 14;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1623,6 +1690,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 14;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1643,6 +1712,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 14;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1661,6 +1733,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 14;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1676,6 +1750,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 14;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1697,6 +1774,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -1717,6 +1796,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -1737,6 +1818,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -1755,6 +1839,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -1770,6 +1856,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1793,6 +1882,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 3;</code>
+     *
+     * @return The serviceAccountEmail.
      */
     public java.lang.String getServiceAccountEmail() {
       java.lang.Object ref = serviceAccountEmail_;
@@ -1815,6 +1906,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 3;</code>
+     *
+     * @return The bytes for serviceAccountEmail.
      */
     public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
       java.lang.Object ref = serviceAccountEmail_;
@@ -1837,6 +1930,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 3;</code>
+     *
+     * @param value The serviceAccountEmail to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccountEmail(java.lang.String value) {
       if (value == null) {
@@ -1857,6 +1953,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearServiceAccountEmail() {
 
@@ -1874,6 +1972,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 3;</code>
+     *
+     * @param value The bytes for serviceAccountEmail to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccountEmailBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1895,6 +1996,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 worker_count = 4;</code>
+     *
+     * @return The workerCount.
      */
     public long getWorkerCount() {
       return workerCount_;
@@ -1907,6 +2010,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 worker_count = 4;</code>
+     *
+     * @param value The workerCount to set.
+     * @return This builder for chaining.
      */
     public Builder setWorkerCount(long value) {
 
@@ -1922,6 +2028,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 worker_count = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWorkerCount() {
 
@@ -1944,6 +2052,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
+     *
+     * @return Whether the workerConfig field is set.
      */
     public boolean hasWorkerConfig() {
       return workerConfigBuilder_ != null || workerConfig_ != null;
@@ -1956,6 +2066,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
+     *
+     * @return The workerConfig.
      */
     public com.google.cloudbuild.v1.WorkerConfig getWorkerConfig() {
       if (workerConfigBuilder_ == null) {
@@ -2114,9 +2226,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> regions_ = java.util.Collections.emptyList();
 
     private void ensureRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         regions_ = new java.util.ArrayList<java.lang.Integer>(regions_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -2131,6 +2243,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+     *
+     * @return A list containing the regions.
      */
     public java.util.List<com.google.cloudbuild.v1.WorkerPool.Region> getRegionsList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -2149,6 +2263,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+     *
+     * @return The count of regions.
      */
     public int getRegionsCount() {
       return regions_.size();
@@ -2165,6 +2281,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The regions at the given index.
      */
     public com.google.cloudbuild.v1.WorkerPool.Region getRegions(int index) {
       return regions_converter_.convert(regions_.get(index));
@@ -2181,6 +2300,10 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The regions to set.
+     * @return This builder for chaining.
      */
     public Builder setRegions(int index, com.google.cloudbuild.v1.WorkerPool.Region value) {
       if (value == null) {
@@ -2203,6 +2326,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+     *
+     * @param value The regions to add.
+     * @return This builder for chaining.
      */
     public Builder addRegions(com.google.cloudbuild.v1.WorkerPool.Region value) {
       if (value == null) {
@@ -2225,6 +2351,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+     *
+     * @param values The regions to add.
+     * @return This builder for chaining.
      */
     public Builder addAllRegions(
         java.lang.Iterable<? extends com.google.cloudbuild.v1.WorkerPool.Region> values) {
@@ -2247,10 +2376,12 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRegions() {
       regions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2266,6 +2397,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+     *
+     * @return A list containing the enum numeric values on the wire for regions.
      */
     public java.util.List<java.lang.Integer> getRegionsValueList() {
       return java.util.Collections.unmodifiableList(regions_);
@@ -2282,6 +2415,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of regions at the given index.
      */
     public int getRegionsValue(int index) {
       return regions_.get(index);
@@ -2298,6 +2434,10 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of regions at the given index.
+     * @return This builder for chaining.
      */
     public Builder setRegionsValue(int index, int value) {
       ensureRegionsIsMutable();
@@ -2317,6 +2457,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+     *
+     * @param value The enum numeric value on the wire for regions to add.
+     * @return This builder for chaining.
      */
     public Builder addRegionsValue(int value) {
       ensureRegionsIsMutable();
@@ -2336,6 +2479,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
+     *
+     * @param values The enum numeric values on the wire for regions to add.
+     * @return This builder for chaining.
      */
     public Builder addAllRegionsValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureRegionsIsMutable();
@@ -2361,6 +2507,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -2374,6 +2522,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2549,6 +2699,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 17;</code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -2562,6 +2714,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 17;</code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -2737,6 +2891,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+     *
+     * @return Whether the deleteTime field is set.
      */
     public boolean hasDeleteTime() {
       return deleteTimeBuilder_ != null || deleteTime_ != null;
@@ -2750,6 +2906,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+     *
+     * @return The deleteTime.
      */
     public com.google.protobuf.Timestamp getDeleteTime() {
       if (deleteTimeBuilder_ == null) {
@@ -2919,6 +3077,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+     *
+     * @return The enum numeric value on the wire for status.
      */
     public int getStatusValue() {
       return status_;
@@ -2931,6 +3091,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+     *
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
       status_ = value;
@@ -2945,6 +3108,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+     *
+     * @return The status.
      */
     public com.google.cloudbuild.v1.WorkerPool.Status getStatus() {
       @SuppressWarnings("deprecation")
@@ -2960,6 +3125,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+     *
+     * @param value The status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatus(com.google.cloudbuild.v1.WorkerPool.Status value) {
       if (value == null) {
@@ -2978,6 +3146,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatus() {
 

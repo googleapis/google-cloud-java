@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     projectId_ = "";
     repoName_ = "";
     dir_ = "";
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RepoSource();
   }
 
   @java.lang.Override
@@ -109,6 +115,28 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
               dir_ = s;
               break;
             }
+          case 64:
+            {
+              invertRegex_ = input.readBool();
+              break;
+            }
+          case 74:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                substitutions_ =
+                    com.google.protobuf.MapField.newMapField(
+                        SubstitutionsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> substitutions__ =
+                  input.readMessage(
+                      SubstitutionsDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              substitutions_
+                  .getMutableMap()
+                  .put(substitutions__.getKey(), substitutions__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -133,6 +161,17 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_devtools_cloudbuild_v1_RepoSource_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 9:
+        return internalGetSubstitutions();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -146,7 +185,10 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
   private int revisionCase_ = 0;
   private java.lang.Object revision_;
 
-  public enum RevisionCase implements com.google.protobuf.Internal.EnumLite {
+  public enum RevisionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BRANCH_NAME(3),
     TAG_NAME(4),
     COMMIT_SHA(5),
@@ -156,7 +198,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     private RevisionCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static RevisionCase valueOf(int value) {
       return forNumber(value);
@@ -197,6 +243,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -218,6 +266,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -237,11 +287,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the Cloud Source Repository. If omitted, the name "default" is
-   * assumed.
+   * Required. Name of the Cloud Source Repository.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
+   *
+   * @return The repoName.
    */
   public java.lang.String getRepoName() {
     java.lang.Object ref = repoName_;
@@ -258,11 +309,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the Cloud Source Repository. If omitted, the name "default" is
-   * assumed.
+   * Required. Name of the Cloud Source Repository.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
+   *
+   * @return The bytes for repoName.
    */
   public com.google.protobuf.ByteString getRepoNameBytes() {
     java.lang.Object ref = repoName_;
@@ -287,6 +339,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string branch_name = 3;</code>
+   *
+   * @return The branchName.
    */
   public java.lang.String getBranchName() {
     java.lang.Object ref = "";
@@ -314,6 +368,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string branch_name = 3;</code>
+   *
+   * @return The bytes for branchName.
    */
   public com.google.protobuf.ByteString getBranchNameBytes() {
     java.lang.Object ref = "";
@@ -343,6 +399,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string tag_name = 4;</code>
+   *
+   * @return The tagName.
    */
   public java.lang.String getTagName() {
     java.lang.Object ref = "";
@@ -370,6 +428,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string tag_name = 4;</code>
+   *
+   * @return The bytes for tagName.
    */
   public com.google.protobuf.ByteString getTagNameBytes() {
     java.lang.Object ref = "";
@@ -397,6 +457,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string commit_sha = 5;</code>
+   *
+   * @return The commitSha.
    */
   public java.lang.String getCommitSha() {
     java.lang.Object ref = "";
@@ -422,6 +484,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string commit_sha = 5;</code>
+   *
+   * @return The bytes for commitSha.
    */
   public com.google.protobuf.ByteString getCommitShaBytes() {
     java.lang.Object ref = "";
@@ -452,6 +516,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string dir = 7;</code>
+   *
+   * @return The dir.
    */
   public java.lang.String getDir() {
     java.lang.Object ref = dir_;
@@ -474,6 +540,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string dir = 7;</code>
+   *
+   * @return The bytes for dir.
    */
   public com.google.protobuf.ByteString getDirBytes() {
     java.lang.Object ref = dir_;
@@ -485,6 +553,124 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int INVERT_REGEX_FIELD_NUMBER = 8;
+  private boolean invertRegex_;
+  /**
+   *
+   *
+   * <pre>
+   * Only trigger a build if the revision regex does NOT match the revision
+   * regex.
+   * </pre>
+   *
+   * <code>bool invert_regex = 8;</code>
+   *
+   * @return The invertRegex.
+   */
+  public boolean getInvertRegex() {
+    return invertRegex_;
+  }
+
+  public static final int SUBSTITUTIONS_FIELD_NUMBER = 9;
+
+  private static final class SubstitutionsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloudbuild.v1.Cloudbuild
+                .internal_static_google_devtools_cloudbuild_v1_RepoSource_SubstitutionsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> substitutions_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetSubstitutions() {
+    if (substitutions_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          SubstitutionsDefaultEntryHolder.defaultEntry);
+    }
+    return substitutions_;
+  }
+
+  public int getSubstitutionsCount() {
+    return internalGetSubstitutions().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Substitutions to use in a triggered build.
+   * Should only be used with RunBuildTrigger
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   */
+  public boolean containsSubstitutions(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetSubstitutions().getMap().containsKey(key);
+  }
+  /** Use {@link #getSubstitutionsMap()} instead. */
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getSubstitutions() {
+    return getSubstitutionsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Substitutions to use in a triggered build.
+   * Should only be used with RunBuildTrigger
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   */
+  public java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap() {
+    return internalGetSubstitutions().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Substitutions to use in a triggered build.
+   * Should only be used with RunBuildTrigger
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   */
+  public java.lang.String getSubstitutionsOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetSubstitutions().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Substitutions to use in a triggered build.
+   * Should only be used with RunBuildTrigger
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   */
+  public java.lang.String getSubstitutionsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetSubstitutions().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -519,6 +705,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     if (!getDirBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, dir_);
     }
+    if (invertRegex_ != false) {
+      output.writeBool(8, invertRegex_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetSubstitutions(), SubstitutionsDefaultEntryHolder.defaultEntry, 9);
     unknownFields.writeTo(output);
   }
 
@@ -546,6 +737,19 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     if (!getDirBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, dir_);
     }
+    if (invertRegex_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, invertRegex_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetSubstitutions().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> substitutions__ =
+          SubstitutionsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, substitutions__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -564,6 +768,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     if (!getProjectId().equals(other.getProjectId())) return false;
     if (!getRepoName().equals(other.getRepoName())) return false;
     if (!getDir().equals(other.getDir())) return false;
+    if (getInvertRegex() != other.getInvertRegex()) return false;
+    if (!internalGetSubstitutions().equals(other.internalGetSubstitutions())) return false;
     if (!getRevisionCase().equals(other.getRevisionCase())) return false;
     switch (revisionCase_) {
       case 3:
@@ -595,6 +801,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getRepoName().hashCode();
     hash = (37 * hash) + DIR_FIELD_NUMBER;
     hash = (53 * hash) + getDir().hashCode();
+    hash = (37 * hash) + INVERT_REGEX_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInvertRegex());
+    if (!internalGetSubstitutions().getMap().isEmpty()) {
+      hash = (37 * hash) + SUBSTITUTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetSubstitutions().hashCode();
+    }
     switch (revisionCase_) {
       case 3:
         hash = (37 * hash) + BRANCH_NAME_FIELD_NUMBER;
@@ -728,6 +940,26 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_devtools_cloudbuild_v1_RepoSource_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 9:
+          return internalGetSubstitutions();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 9:
+          return internalGetMutableSubstitutions();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -761,6 +993,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
 
       dir_ = "";
 
+      invertRegex_ = false;
+
+      internalGetMutableSubstitutions().clear();
       revisionCase_ = 0;
       revision_ = null;
       return this;
@@ -789,6 +1024,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloudbuild.v1.RepoSource buildPartial() {
       com.google.cloudbuild.v1.RepoSource result = new com.google.cloudbuild.v1.RepoSource(this);
+      int from_bitField0_ = bitField0_;
       result.projectId_ = projectId_;
       result.repoName_ = repoName_;
       if (revisionCase_ == 3) {
@@ -801,6 +1037,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
         result.revision_ = revision_;
       }
       result.dir_ = dir_;
+      result.invertRegex_ = invertRegex_;
+      result.substitutions_ = internalGetSubstitutions();
+      result.substitutions_.makeImmutable();
       result.revisionCase_ = revisionCase_;
       onBuilt();
       return result;
@@ -863,6 +1102,10 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
         dir_ = other.dir_;
         onChanged();
       }
+      if (other.getInvertRegex() != false) {
+        setInvertRegex(other.getInvertRegex());
+      }
+      internalGetMutableSubstitutions().mergeFrom(other.internalGetSubstitutions());
       switch (other.getRevisionCase()) {
         case BRANCH_NAME:
           {
@@ -933,6 +1176,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object projectId_ = "";
     /**
      *
@@ -943,6 +1188,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -964,6 +1211,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -985,6 +1234,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -1004,6 +1256,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -1020,6 +1274,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1037,11 +1294,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the Cloud Source Repository. If omitted, the name "default" is
-     * assumed.
+     * Required. Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
+     * @return The repoName.
      */
     public java.lang.String getRepoName() {
       java.lang.Object ref = repoName_;
@@ -1058,11 +1316,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the Cloud Source Repository. If omitted, the name "default" is
-     * assumed.
+     * Required. Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
+     * @return The bytes for repoName.
      */
     public com.google.protobuf.ByteString getRepoNameBytes() {
       java.lang.Object ref = repoName_;
@@ -1079,11 +1338,13 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the Cloud Source Repository. If omitted, the name "default" is
-     * assumed.
+     * Required. Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
+     * @param value The repoName to set.
+     * @return This builder for chaining.
      */
     public Builder setRepoName(java.lang.String value) {
       if (value == null) {
@@ -1098,11 +1359,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the Cloud Source Repository. If omitted, the name "default" is
-     * assumed.
+     * Required. Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRepoName() {
 
@@ -1114,11 +1376,13 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the Cloud Source Repository. If omitted, the name "default" is
-     * assumed.
+     * Required. Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
+     * @param value The bytes for repoName to set.
+     * @return This builder for chaining.
      */
     public Builder setRepoNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1141,6 +1405,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string branch_name = 3;</code>
+     *
+     * @return The branchName.
      */
     public java.lang.String getBranchName() {
       java.lang.Object ref = "";
@@ -1168,6 +1434,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string branch_name = 3;</code>
+     *
+     * @return The bytes for branchName.
      */
     public com.google.protobuf.ByteString getBranchNameBytes() {
       java.lang.Object ref = "";
@@ -1195,6 +1463,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string branch_name = 3;</code>
+     *
+     * @param value The branchName to set.
+     * @return This builder for chaining.
      */
     public Builder setBranchName(java.lang.String value) {
       if (value == null) {
@@ -1215,6 +1486,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string branch_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBranchName() {
       if (revisionCase_ == 3) {
@@ -1234,6 +1507,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string branch_name = 3;</code>
+     *
+     * @param value The bytes for branchName to set.
+     * @return This builder for chaining.
      */
     public Builder setBranchNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1256,6 +1532,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag_name = 4;</code>
+     *
+     * @return The tagName.
      */
     public java.lang.String getTagName() {
       java.lang.Object ref = "";
@@ -1283,6 +1561,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag_name = 4;</code>
+     *
+     * @return The bytes for tagName.
      */
     public com.google.protobuf.ByteString getTagNameBytes() {
       java.lang.Object ref = "";
@@ -1310,6 +1590,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag_name = 4;</code>
+     *
+     * @param value The tagName to set.
+     * @return This builder for chaining.
      */
     public Builder setTagName(java.lang.String value) {
       if (value == null) {
@@ -1330,6 +1613,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag_name = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTagName() {
       if (revisionCase_ == 4) {
@@ -1349,6 +1634,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag_name = 4;</code>
+     *
+     * @param value The bytes for tagName to set.
+     * @return This builder for chaining.
      */
     public Builder setTagNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1369,6 +1657,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string commit_sha = 5;</code>
+     *
+     * @return The commitSha.
      */
     public java.lang.String getCommitSha() {
       java.lang.Object ref = "";
@@ -1394,6 +1684,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string commit_sha = 5;</code>
+     *
+     * @return The bytes for commitSha.
      */
     public com.google.protobuf.ByteString getCommitShaBytes() {
       java.lang.Object ref = "";
@@ -1419,6 +1711,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string commit_sha = 5;</code>
+     *
+     * @param value The commitSha to set.
+     * @return This builder for chaining.
      */
     public Builder setCommitSha(java.lang.String value) {
       if (value == null) {
@@ -1437,6 +1732,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string commit_sha = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCommitSha() {
       if (revisionCase_ == 5) {
@@ -1454,6 +1751,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string commit_sha = 5;</code>
+     *
+     * @param value The bytes for commitSha to set.
+     * @return This builder for chaining.
      */
     public Builder setCommitShaBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1477,6 +1777,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dir = 7;</code>
+     *
+     * @return The dir.
      */
     public java.lang.String getDir() {
       java.lang.Object ref = dir_;
@@ -1499,6 +1801,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dir = 7;</code>
+     *
+     * @return The bytes for dir.
      */
     public com.google.protobuf.ByteString getDirBytes() {
       java.lang.Object ref = dir_;
@@ -1521,6 +1825,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dir = 7;</code>
+     *
+     * @param value The dir to set.
+     * @return This builder for chaining.
      */
     public Builder setDir(java.lang.String value) {
       if (value == null) {
@@ -1541,6 +1848,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dir = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDir() {
 
@@ -1558,6 +1867,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dir = 7;</code>
+     *
+     * @param value The bytes for dir to set.
+     * @return This builder for chaining.
      */
     public Builder setDirBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1567,6 +1879,222 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
 
       dir_ = value;
       onChanged();
+      return this;
+    }
+
+    private boolean invertRegex_;
+    /**
+     *
+     *
+     * <pre>
+     * Only trigger a build if the revision regex does NOT match the revision
+     * regex.
+     * </pre>
+     *
+     * <code>bool invert_regex = 8;</code>
+     *
+     * @return The invertRegex.
+     */
+    public boolean getInvertRegex() {
+      return invertRegex_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only trigger a build if the revision regex does NOT match the revision
+     * regex.
+     * </pre>
+     *
+     * <code>bool invert_regex = 8;</code>
+     *
+     * @param value The invertRegex to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvertRegex(boolean value) {
+
+      invertRegex_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only trigger a build if the revision regex does NOT match the revision
+     * regex.
+     * </pre>
+     *
+     * <code>bool invert_regex = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInvertRegex() {
+
+      invertRegex_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> substitutions_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetSubstitutions() {
+      if (substitutions_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            SubstitutionsDefaultEntryHolder.defaultEntry);
+      }
+      return substitutions_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableSubstitutions() {
+      onChanged();
+      ;
+      if (substitutions_ == null) {
+        substitutions_ =
+            com.google.protobuf.MapField.newMapField(SubstitutionsDefaultEntryHolder.defaultEntry);
+      }
+      if (!substitutions_.isMutable()) {
+        substitutions_ = substitutions_.copy();
+      }
+      return substitutions_;
+    }
+
+    public int getSubstitutionsCount() {
+      return internalGetSubstitutions().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Substitutions to use in a triggered build.
+     * Should only be used with RunBuildTrigger
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     */
+    public boolean containsSubstitutions(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetSubstitutions().getMap().containsKey(key);
+    }
+    /** Use {@link #getSubstitutionsMap()} instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getSubstitutions() {
+      return getSubstitutionsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Substitutions to use in a triggered build.
+     * Should only be used with RunBuildTrigger
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     */
+    public java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap() {
+      return internalGetSubstitutions().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Substitutions to use in a triggered build.
+     * Should only be used with RunBuildTrigger
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     */
+    public java.lang.String getSubstitutionsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetSubstitutions().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Substitutions to use in a triggered build.
+     * Should only be used with RunBuildTrigger
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     */
+    public java.lang.String getSubstitutionsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetSubstitutions().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearSubstitutions() {
+      internalGetMutableSubstitutions().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Substitutions to use in a triggered build.
+     * Should only be used with RunBuildTrigger
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     */
+    public Builder removeSubstitutions(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableSubstitutions().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableSubstitutions() {
+      return internalGetMutableSubstitutions().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Substitutions to use in a triggered build.
+     * Should only be used with RunBuildTrigger
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     */
+    public Builder putSubstitutions(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableSubstitutions().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Substitutions to use in a triggered build.
+     * Should only be used with RunBuildTrigger
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     */
+    public Builder putAllSubstitutions(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableSubstitutions().getMutableMap().putAll(values);
       return this;
     }
 

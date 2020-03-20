@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/devtools/cloudbuild/v1/cloudbuild.proto")
 public final class CloudBuildGrpc {
 
@@ -44,26 +44,18 @@ public final class CloudBuildGrpc {
   public static final String SERVICE_NAME = "google.devtools.cloudbuild.v1.CloudBuild";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateBuildMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.CreateBuildRequest, com.google.longrunning.Operation>
-      METHOD_CREATE_BUILD = getCreateBuildMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.CreateBuildRequest, com.google.longrunning.Operation>
       getCreateBuildMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateBuild",
+      requestType = com.google.cloudbuild.v1.CreateBuildRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.CreateBuildRequest, com.google.longrunning.Operation>
       getCreateBuildMethod() {
-    return getCreateBuildMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.CreateBuildRequest, com.google.longrunning.Operation>
-      getCreateBuildMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.CreateBuildRequest, com.google.longrunning.Operation>
         getCreateBuildMethod;
@@ -77,9 +69,7 @@ public final class CloudBuildGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "CreateBuild"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateBuild"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -95,26 +85,18 @@ public final class CloudBuildGrpc {
     return getCreateBuildMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetBuildMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.GetBuildRequest, com.google.cloudbuild.v1.Build>
-      METHOD_GET_BUILD = getGetBuildMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.GetBuildRequest, com.google.cloudbuild.v1.Build>
       getGetBuildMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBuild",
+      requestType = com.google.cloudbuild.v1.GetBuildRequest.class,
+      responseType = com.google.cloudbuild.v1.Build.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.GetBuildRequest, com.google.cloudbuild.v1.Build>
       getGetBuildMethod() {
-    return getGetBuildMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.GetBuildRequest, com.google.cloudbuild.v1.Build>
-      getGetBuildMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.GetBuildRequest, com.google.cloudbuild.v1.Build>
         getGetBuildMethod;
@@ -127,9 +109,7 @@ public final class CloudBuildGrpc {
                       .<com.google.cloudbuild.v1.GetBuildRequest, com.google.cloudbuild.v1.Build>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "GetBuild"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBuild"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -145,26 +125,18 @@ public final class CloudBuildGrpc {
     return getGetBuildMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListBuildsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.ListBuildsRequest, com.google.cloudbuild.v1.ListBuildsResponse>
-      METHOD_LIST_BUILDS = getListBuildsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.ListBuildsRequest, com.google.cloudbuild.v1.ListBuildsResponse>
       getListBuildsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBuilds",
+      requestType = com.google.cloudbuild.v1.ListBuildsRequest.class,
+      responseType = com.google.cloudbuild.v1.ListBuildsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.ListBuildsRequest, com.google.cloudbuild.v1.ListBuildsResponse>
       getListBuildsMethod() {
-    return getListBuildsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.ListBuildsRequest, com.google.cloudbuild.v1.ListBuildsResponse>
-      getListBuildsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.ListBuildsRequest, com.google.cloudbuild.v1.ListBuildsResponse>
         getListBuildsMethod;
@@ -178,9 +150,7 @@ public final class CloudBuildGrpc {
                           com.google.cloudbuild.v1.ListBuildsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "ListBuilds"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBuilds"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -196,26 +166,18 @@ public final class CloudBuildGrpc {
     return getListBuildsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCancelBuildMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.CancelBuildRequest, com.google.cloudbuild.v1.Build>
-      METHOD_CANCEL_BUILD = getCancelBuildMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.CancelBuildRequest, com.google.cloudbuild.v1.Build>
       getCancelBuildMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelBuild",
+      requestType = com.google.cloudbuild.v1.CancelBuildRequest.class,
+      responseType = com.google.cloudbuild.v1.Build.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.CancelBuildRequest, com.google.cloudbuild.v1.Build>
       getCancelBuildMethod() {
-    return getCancelBuildMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.CancelBuildRequest, com.google.cloudbuild.v1.Build>
-      getCancelBuildMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.CancelBuildRequest, com.google.cloudbuild.v1.Build>
         getCancelBuildMethod;
@@ -228,9 +190,7 @@ public final class CloudBuildGrpc {
                       .<com.google.cloudbuild.v1.CancelBuildRequest, com.google.cloudbuild.v1.Build>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "CancelBuild"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelBuild"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -246,26 +206,18 @@ public final class CloudBuildGrpc {
     return getCancelBuildMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getRetryBuildMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.RetryBuildRequest, com.google.longrunning.Operation>
-      METHOD_RETRY_BUILD = getRetryBuildMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.RetryBuildRequest, com.google.longrunning.Operation>
       getRetryBuildMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RetryBuild",
+      requestType = com.google.cloudbuild.v1.RetryBuildRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.RetryBuildRequest, com.google.longrunning.Operation>
       getRetryBuildMethod() {
-    return getRetryBuildMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.RetryBuildRequest, com.google.longrunning.Operation>
-      getRetryBuildMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.RetryBuildRequest, com.google.longrunning.Operation>
         getRetryBuildMethod;
@@ -279,9 +231,7 @@ public final class CloudBuildGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "RetryBuild"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RetryBuild"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -297,26 +247,18 @@ public final class CloudBuildGrpc {
     return getRetryBuildMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateBuildTriggerMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.CreateBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
-      METHOD_CREATE_BUILD_TRIGGER = getCreateBuildTriggerMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.CreateBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
       getCreateBuildTriggerMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateBuildTrigger",
+      requestType = com.google.cloudbuild.v1.CreateBuildTriggerRequest.class,
+      responseType = com.google.cloudbuild.v1.BuildTrigger.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.CreateBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
       getCreateBuildTriggerMethod() {
-    return getCreateBuildTriggerMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.CreateBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
-      getCreateBuildTriggerMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.CreateBuildTriggerRequest,
             com.google.cloudbuild.v1.BuildTrigger>
@@ -331,9 +273,7 @@ public final class CloudBuildGrpc {
                           com.google.cloudbuild.v1.BuildTrigger>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "CreateBuildTrigger"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateBuildTrigger"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -351,26 +291,18 @@ public final class CloudBuildGrpc {
     return getCreateBuildTriggerMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetBuildTriggerMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.GetBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
-      METHOD_GET_BUILD_TRIGGER = getGetBuildTriggerMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.GetBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
       getGetBuildTriggerMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBuildTrigger",
+      requestType = com.google.cloudbuild.v1.GetBuildTriggerRequest.class,
+      responseType = com.google.cloudbuild.v1.BuildTrigger.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.GetBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
       getGetBuildTriggerMethod() {
-    return getGetBuildTriggerMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.GetBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
-      getGetBuildTriggerMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.GetBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
         getGetBuildTriggerMethod;
@@ -384,9 +316,7 @@ public final class CloudBuildGrpc {
                           com.google.cloudbuild.v1.BuildTrigger>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "GetBuildTrigger"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBuildTrigger"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -403,30 +333,20 @@ public final class CloudBuildGrpc {
     return getGetBuildTriggerMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListBuildTriggersMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.ListBuildTriggersRequest,
-          com.google.cloudbuild.v1.ListBuildTriggersResponse>
-      METHOD_LIST_BUILD_TRIGGERS = getListBuildTriggersMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.ListBuildTriggersRequest,
           com.google.cloudbuild.v1.ListBuildTriggersResponse>
       getListBuildTriggersMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBuildTriggers",
+      requestType = com.google.cloudbuild.v1.ListBuildTriggersRequest.class,
+      responseType = com.google.cloudbuild.v1.ListBuildTriggersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.ListBuildTriggersRequest,
           com.google.cloudbuild.v1.ListBuildTriggersResponse>
       getListBuildTriggersMethod() {
-    return getListBuildTriggersMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.ListBuildTriggersRequest,
-          com.google.cloudbuild.v1.ListBuildTriggersResponse>
-      getListBuildTriggersMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.ListBuildTriggersRequest,
             com.google.cloudbuild.v1.ListBuildTriggersResponse>
@@ -441,9 +361,7 @@ public final class CloudBuildGrpc {
                           com.google.cloudbuild.v1.ListBuildTriggersResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "ListBuildTriggers"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBuildTriggers"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -462,26 +380,18 @@ public final class CloudBuildGrpc {
     return getListBuildTriggersMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteBuildTriggerMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.DeleteBuildTriggerRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_BUILD_TRIGGER = getDeleteBuildTriggerMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.DeleteBuildTriggerRequest, com.google.protobuf.Empty>
       getDeleteBuildTriggerMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBuildTrigger",
+      requestType = com.google.cloudbuild.v1.DeleteBuildTriggerRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.DeleteBuildTriggerRequest, com.google.protobuf.Empty>
       getDeleteBuildTriggerMethod() {
-    return getDeleteBuildTriggerMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.DeleteBuildTriggerRequest, com.google.protobuf.Empty>
-      getDeleteBuildTriggerMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.DeleteBuildTriggerRequest, com.google.protobuf.Empty>
         getDeleteBuildTriggerMethod;
@@ -495,9 +405,7 @@ public final class CloudBuildGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "DeleteBuildTrigger"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBuildTrigger"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -515,26 +423,18 @@ public final class CloudBuildGrpc {
     return getDeleteBuildTriggerMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateBuildTriggerMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.UpdateBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
-      METHOD_UPDATE_BUILD_TRIGGER = getUpdateBuildTriggerMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.UpdateBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
       getUpdateBuildTriggerMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBuildTrigger",
+      requestType = com.google.cloudbuild.v1.UpdateBuildTriggerRequest.class,
+      responseType = com.google.cloudbuild.v1.BuildTrigger.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.UpdateBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
       getUpdateBuildTriggerMethod() {
-    return getUpdateBuildTriggerMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.UpdateBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
-      getUpdateBuildTriggerMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.UpdateBuildTriggerRequest,
             com.google.cloudbuild.v1.BuildTrigger>
@@ -549,9 +449,7 @@ public final class CloudBuildGrpc {
                           com.google.cloudbuild.v1.BuildTrigger>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "UpdateBuildTrigger"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBuildTrigger"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -569,26 +467,18 @@ public final class CloudBuildGrpc {
     return getUpdateBuildTriggerMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getRunBuildTriggerMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.RunBuildTriggerRequest, com.google.longrunning.Operation>
-      METHOD_RUN_BUILD_TRIGGER = getRunBuildTriggerMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.RunBuildTriggerRequest, com.google.longrunning.Operation>
       getRunBuildTriggerMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RunBuildTrigger",
+      requestType = com.google.cloudbuild.v1.RunBuildTriggerRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.RunBuildTriggerRequest, com.google.longrunning.Operation>
       getRunBuildTriggerMethod() {
-    return getRunBuildTriggerMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.RunBuildTriggerRequest, com.google.longrunning.Operation>
-      getRunBuildTriggerMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.RunBuildTriggerRequest, com.google.longrunning.Operation>
         getRunBuildTriggerMethod;
@@ -602,9 +492,7 @@ public final class CloudBuildGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "RunBuildTrigger"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RunBuildTrigger"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -621,26 +509,18 @@ public final class CloudBuildGrpc {
     return getRunBuildTriggerMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateWorkerPoolMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
-      METHOD_CREATE_WORKER_POOL = getCreateWorkerPoolMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
       getCreateWorkerPoolMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateWorkerPool",
+      requestType = com.google.cloudbuild.v1.CreateWorkerPoolRequest.class,
+      responseType = com.google.cloudbuild.v1.WorkerPool.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
       getCreateWorkerPoolMethod() {
-    return getCreateWorkerPoolMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
-      getCreateWorkerPoolMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
         getCreateWorkerPoolMethod;
@@ -654,9 +534,7 @@ public final class CloudBuildGrpc {
                           com.google.cloudbuild.v1.WorkerPool>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "CreateWorkerPool"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateWorkerPool"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -674,26 +552,18 @@ public final class CloudBuildGrpc {
     return getCreateWorkerPoolMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetWorkerPoolMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.GetWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
-      METHOD_GET_WORKER_POOL = getGetWorkerPoolMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.GetWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
       getGetWorkerPoolMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetWorkerPool",
+      requestType = com.google.cloudbuild.v1.GetWorkerPoolRequest.class,
+      responseType = com.google.cloudbuild.v1.WorkerPool.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.GetWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
       getGetWorkerPoolMethod() {
-    return getGetWorkerPoolMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.GetWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
-      getGetWorkerPoolMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.GetWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
         getGetWorkerPoolMethod;
@@ -707,9 +577,7 @@ public final class CloudBuildGrpc {
                           com.google.cloudbuild.v1.WorkerPool>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "GetWorkerPool"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetWorkerPool"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -725,26 +593,18 @@ public final class CloudBuildGrpc {
     return getGetWorkerPoolMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteWorkerPoolMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_WORKER_POOL = getDeleteWorkerPoolMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
       getDeleteWorkerPoolMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteWorkerPool",
+      requestType = com.google.cloudbuild.v1.DeleteWorkerPoolRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
       getDeleteWorkerPoolMethod() {
-    return getDeleteWorkerPoolMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
-      getDeleteWorkerPoolMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
         getDeleteWorkerPoolMethod;
@@ -757,9 +617,7 @@ public final class CloudBuildGrpc {
                       .<com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "DeleteWorkerPool"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteWorkerPool"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -777,26 +635,18 @@ public final class CloudBuildGrpc {
     return getDeleteWorkerPoolMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateWorkerPoolMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
-      METHOD_UPDATE_WORKER_POOL = getUpdateWorkerPoolMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
       getUpdateWorkerPoolMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateWorkerPool",
+      requestType = com.google.cloudbuild.v1.UpdateWorkerPoolRequest.class,
+      responseType = com.google.cloudbuild.v1.WorkerPool.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
       getUpdateWorkerPoolMethod() {
-    return getUpdateWorkerPoolMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
-      getUpdateWorkerPoolMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
         getUpdateWorkerPoolMethod;
@@ -810,9 +660,7 @@ public final class CloudBuildGrpc {
                           com.google.cloudbuild.v1.WorkerPool>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "UpdateWorkerPool"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateWorkerPool"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -830,30 +678,20 @@ public final class CloudBuildGrpc {
     return getUpdateWorkerPoolMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListWorkerPoolsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.ListWorkerPoolsRequest,
-          com.google.cloudbuild.v1.ListWorkerPoolsResponse>
-      METHOD_LIST_WORKER_POOLS = getListWorkerPoolsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.ListWorkerPoolsRequest,
           com.google.cloudbuild.v1.ListWorkerPoolsResponse>
       getListWorkerPoolsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListWorkerPools",
+      requestType = com.google.cloudbuild.v1.ListWorkerPoolsRequest.class,
+      responseType = com.google.cloudbuild.v1.ListWorkerPoolsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.ListWorkerPoolsRequest,
           com.google.cloudbuild.v1.ListWorkerPoolsResponse>
       getListWorkerPoolsMethod() {
-    return getListWorkerPoolsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.ListWorkerPoolsRequest,
-          com.google.cloudbuild.v1.ListWorkerPoolsResponse>
-      getListWorkerPoolsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloudbuild.v1.ListWorkerPoolsRequest,
             com.google.cloudbuild.v1.ListWorkerPoolsResponse>
@@ -868,9 +706,7 @@ public final class CloudBuildGrpc {
                           com.google.cloudbuild.v1.ListWorkerPoolsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudbuild.v1.CloudBuild", "ListWorkerPools"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListWorkerPools"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -890,19 +726,42 @@ public final class CloudBuildGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static CloudBuildStub newStub(io.grpc.Channel channel) {
-    return new CloudBuildStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudBuildStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudBuildStub>() {
+          @java.lang.Override
+          public CloudBuildStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudBuildStub(channel, callOptions);
+          }
+        };
+    return CloudBuildStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static CloudBuildBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new CloudBuildBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudBuildBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudBuildBlockingStub>() {
+          @java.lang.Override
+          public CloudBuildBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudBuildBlockingStub(channel, callOptions);
+          }
+        };
+    return CloudBuildBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static CloudBuildFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new CloudBuildFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudBuildFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudBuildFutureStub>() {
+          @java.lang.Override
+          public CloudBuildFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudBuildFutureStub(channel, callOptions);
+          }
+        };
+    return CloudBuildFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -932,7 +791,7 @@ public final class CloudBuildGrpc {
     public void createBuild(
         com.google.cloudbuild.v1.CreateBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateBuildMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateBuildMethod(), responseObserver);
     }
 
     /**
@@ -947,7 +806,7 @@ public final class CloudBuildGrpc {
     public void getBuild(
         com.google.cloudbuild.v1.GetBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.Build> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBuildMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetBuildMethod(), responseObserver);
     }
 
     /**
@@ -962,7 +821,7 @@ public final class CloudBuildGrpc {
     public void listBuilds(
         com.google.cloudbuild.v1.ListBuildsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ListBuildsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListBuildsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListBuildsMethod(), responseObserver);
     }
 
     /**
@@ -975,7 +834,7 @@ public final class CloudBuildGrpc {
     public void cancelBuild(
         com.google.cloudbuild.v1.CancelBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.Build> responseObserver) {
-      asyncUnimplementedUnaryCall(getCancelBuildMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCancelBuildMethod(), responseObserver);
     }
 
     /**
@@ -1007,7 +866,7 @@ public final class CloudBuildGrpc {
     public void retryBuild(
         com.google.cloudbuild.v1.RetryBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getRetryBuildMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getRetryBuildMethod(), responseObserver);
     }
 
     /**
@@ -1021,7 +880,7 @@ public final class CloudBuildGrpc {
     public void createBuildTrigger(
         com.google.cloudbuild.v1.CreateBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.BuildTrigger> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateBuildTriggerMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateBuildTriggerMethod(), responseObserver);
     }
 
     /**
@@ -1035,7 +894,7 @@ public final class CloudBuildGrpc {
     public void getBuildTrigger(
         com.google.cloudbuild.v1.GetBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.BuildTrigger> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBuildTriggerMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetBuildTriggerMethod(), responseObserver);
     }
 
     /**
@@ -1050,7 +909,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.ListBuildTriggersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ListBuildTriggersResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListBuildTriggersMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListBuildTriggersMethod(), responseObserver);
     }
 
     /**
@@ -1064,7 +923,7 @@ public final class CloudBuildGrpc {
     public void deleteBuildTrigger(
         com.google.cloudbuild.v1.DeleteBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteBuildTriggerMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteBuildTriggerMethod(), responseObserver);
     }
 
     /**
@@ -1078,7 +937,7 @@ public final class CloudBuildGrpc {
     public void updateBuildTrigger(
         com.google.cloudbuild.v1.UpdateBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.BuildTrigger> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateBuildTriggerMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateBuildTriggerMethod(), responseObserver);
     }
 
     /**
@@ -1091,7 +950,7 @@ public final class CloudBuildGrpc {
     public void runBuildTrigger(
         com.google.cloudbuild.v1.RunBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getRunBuildTriggerMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getRunBuildTriggerMethod(), responseObserver);
     }
 
     /**
@@ -1105,7 +964,7 @@ public final class CloudBuildGrpc {
     public void createWorkerPool(
         com.google.cloudbuild.v1.CreateWorkerPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateWorkerPoolMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateWorkerPoolMethod(), responseObserver);
     }
 
     /**
@@ -1119,7 +978,7 @@ public final class CloudBuildGrpc {
     public void getWorkerPool(
         com.google.cloudbuild.v1.GetWorkerPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetWorkerPoolMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetWorkerPoolMethod(), responseObserver);
     }
 
     /**
@@ -1133,7 +992,7 @@ public final class CloudBuildGrpc {
     public void deleteWorkerPool(
         com.google.cloudbuild.v1.DeleteWorkerPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteWorkerPoolMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteWorkerPoolMethod(), responseObserver);
     }
 
     /**
@@ -1147,7 +1006,7 @@ public final class CloudBuildGrpc {
     public void updateWorkerPool(
         com.google.cloudbuild.v1.UpdateWorkerPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateWorkerPoolMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateWorkerPoolMethod(), responseObserver);
     }
 
     /**
@@ -1162,105 +1021,105 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.ListWorkerPoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ListWorkerPoolsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListWorkerPoolsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListWorkerPoolsMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getCreateBuildMethodHelper(),
+              getCreateBuildMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.CreateBuildRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_BUILD)))
           .addMethod(
-              getGetBuildMethodHelper(),
+              getGetBuildMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.GetBuildRequest, com.google.cloudbuild.v1.Build>(
                       this, METHODID_GET_BUILD)))
           .addMethod(
-              getListBuildsMethodHelper(),
+              getListBuildsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.ListBuildsRequest,
                       com.google.cloudbuild.v1.ListBuildsResponse>(this, METHODID_LIST_BUILDS)))
           .addMethod(
-              getCancelBuildMethodHelper(),
+              getCancelBuildMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.CancelBuildRequest, com.google.cloudbuild.v1.Build>(
                       this, METHODID_CANCEL_BUILD)))
           .addMethod(
-              getRetryBuildMethodHelper(),
+              getRetryBuildMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.RetryBuildRequest, com.google.longrunning.Operation>(
                       this, METHODID_RETRY_BUILD)))
           .addMethod(
-              getCreateBuildTriggerMethodHelper(),
+              getCreateBuildTriggerMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.CreateBuildTriggerRequest,
                       com.google.cloudbuild.v1.BuildTrigger>(this, METHODID_CREATE_BUILD_TRIGGER)))
           .addMethod(
-              getGetBuildTriggerMethodHelper(),
+              getGetBuildTriggerMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.GetBuildTriggerRequest,
                       com.google.cloudbuild.v1.BuildTrigger>(this, METHODID_GET_BUILD_TRIGGER)))
           .addMethod(
-              getListBuildTriggersMethodHelper(),
+              getListBuildTriggersMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.ListBuildTriggersRequest,
                       com.google.cloudbuild.v1.ListBuildTriggersResponse>(
                       this, METHODID_LIST_BUILD_TRIGGERS)))
           .addMethod(
-              getDeleteBuildTriggerMethodHelper(),
+              getDeleteBuildTriggerMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.DeleteBuildTriggerRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_BUILD_TRIGGER)))
           .addMethod(
-              getUpdateBuildTriggerMethodHelper(),
+              getUpdateBuildTriggerMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.UpdateBuildTriggerRequest,
                       com.google.cloudbuild.v1.BuildTrigger>(this, METHODID_UPDATE_BUILD_TRIGGER)))
           .addMethod(
-              getRunBuildTriggerMethodHelper(),
+              getRunBuildTriggerMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.RunBuildTriggerRequest,
                       com.google.longrunning.Operation>(this, METHODID_RUN_BUILD_TRIGGER)))
           .addMethod(
-              getCreateWorkerPoolMethodHelper(),
+              getCreateWorkerPoolMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.CreateWorkerPoolRequest,
                       com.google.cloudbuild.v1.WorkerPool>(this, METHODID_CREATE_WORKER_POOL)))
           .addMethod(
-              getGetWorkerPoolMethodHelper(),
+              getGetWorkerPoolMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.GetWorkerPoolRequest,
                       com.google.cloudbuild.v1.WorkerPool>(this, METHODID_GET_WORKER_POOL)))
           .addMethod(
-              getDeleteWorkerPoolMethodHelper(),
+              getDeleteWorkerPoolMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_WORKER_POOL)))
           .addMethod(
-              getUpdateWorkerPoolMethodHelper(),
+              getUpdateWorkerPoolMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.UpdateWorkerPoolRequest,
                       com.google.cloudbuild.v1.WorkerPool>(this, METHODID_UPDATE_WORKER_POOL)))
           .addMethod(
-              getListWorkerPoolsMethodHelper(),
+              getListWorkerPoolsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.ListWorkerPoolsRequest,
@@ -1282,11 +1141,7 @@ public final class CloudBuildGrpc {
    * determine the status of the build.
    * </pre>
    */
-  public static final class CloudBuildStub extends io.grpc.stub.AbstractStub<CloudBuildStub> {
-    private CloudBuildStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class CloudBuildStub extends io.grpc.stub.AbstractAsyncStub<CloudBuildStub> {
     private CloudBuildStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1310,7 +1165,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.CreateBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateBuildMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateBuildMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1328,9 +1183,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.GetBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.Build> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetBuildMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetBuildMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1346,9 +1199,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.ListBuildsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ListBuildsResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListBuildsMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getListBuildsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1362,7 +1213,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.CancelBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.Build> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCancelBuildMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCancelBuildMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1397,9 +1248,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.RetryBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getRetryBuildMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getRetryBuildMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1414,7 +1263,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.CreateBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.BuildTrigger> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateBuildTriggerMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateBuildTriggerMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1431,7 +1280,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.GetBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.BuildTrigger> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetBuildTriggerMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetBuildTriggerMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1449,7 +1298,7 @@ public final class CloudBuildGrpc {
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ListBuildTriggersResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListBuildTriggersMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListBuildTriggersMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1466,7 +1315,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.DeleteBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteBuildTriggerMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteBuildTriggerMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1483,7 +1332,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.UpdateBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.BuildTrigger> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateBuildTriggerMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateBuildTriggerMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1499,7 +1348,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.RunBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getRunBuildTriggerMethodHelper(), getCallOptions()),
+          getChannel().newCall(getRunBuildTriggerMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1516,7 +1365,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.CreateWorkerPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateWorkerPoolMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateWorkerPoolMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1533,7 +1382,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.GetWorkerPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetWorkerPoolMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetWorkerPoolMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1550,7 +1399,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.DeleteWorkerPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteWorkerPoolMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteWorkerPoolMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1567,7 +1416,7 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.UpdateWorkerPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateWorkerPoolMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateWorkerPoolMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1585,7 +1434,7 @@ public final class CloudBuildGrpc {
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ListWorkerPoolsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListWorkerPoolsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListWorkerPoolsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1604,11 +1453,7 @@ public final class CloudBuildGrpc {
    * </pre>
    */
   public static final class CloudBuildBlockingStub
-      extends io.grpc.stub.AbstractStub<CloudBuildBlockingStub> {
-    private CloudBuildBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<CloudBuildBlockingStub> {
     private CloudBuildBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1631,8 +1476,7 @@ public final class CloudBuildGrpc {
      */
     public com.google.longrunning.Operation createBuild(
         com.google.cloudbuild.v1.CreateBuildRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateBuildMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateBuildMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1646,7 +1490,7 @@ public final class CloudBuildGrpc {
      */
     public com.google.cloudbuild.v1.Build getBuild(
         com.google.cloudbuild.v1.GetBuildRequest request) {
-      return blockingUnaryCall(getChannel(), getGetBuildMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetBuildMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1660,8 +1504,7 @@ public final class CloudBuildGrpc {
      */
     public com.google.cloudbuild.v1.ListBuildsResponse listBuilds(
         com.google.cloudbuild.v1.ListBuildsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListBuildsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListBuildsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1673,8 +1516,7 @@ public final class CloudBuildGrpc {
      */
     public com.google.cloudbuild.v1.Build cancelBuild(
         com.google.cloudbuild.v1.CancelBuildRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCancelBuildMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCancelBuildMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1705,8 +1547,7 @@ public final class CloudBuildGrpc {
      */
     public com.google.longrunning.Operation retryBuild(
         com.google.cloudbuild.v1.RetryBuildRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getRetryBuildMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getRetryBuildMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1720,7 +1561,7 @@ public final class CloudBuildGrpc {
     public com.google.cloudbuild.v1.BuildTrigger createBuildTrigger(
         com.google.cloudbuild.v1.CreateBuildTriggerRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateBuildTriggerMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateBuildTriggerMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1733,8 +1574,7 @@ public final class CloudBuildGrpc {
      */
     public com.google.cloudbuild.v1.BuildTrigger getBuildTrigger(
         com.google.cloudbuild.v1.GetBuildTriggerRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetBuildTriggerMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetBuildTriggerMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1748,7 +1588,7 @@ public final class CloudBuildGrpc {
     public com.google.cloudbuild.v1.ListBuildTriggersResponse listBuildTriggers(
         com.google.cloudbuild.v1.ListBuildTriggersRequest request) {
       return blockingUnaryCall(
-          getChannel(), getListBuildTriggersMethodHelper(), getCallOptions(), request);
+          getChannel(), getListBuildTriggersMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1762,7 +1602,7 @@ public final class CloudBuildGrpc {
     public com.google.protobuf.Empty deleteBuildTrigger(
         com.google.cloudbuild.v1.DeleteBuildTriggerRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteBuildTriggerMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteBuildTriggerMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1776,7 +1616,7 @@ public final class CloudBuildGrpc {
     public com.google.cloudbuild.v1.BuildTrigger updateBuildTrigger(
         com.google.cloudbuild.v1.UpdateBuildTriggerRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateBuildTriggerMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateBuildTriggerMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1788,8 +1628,7 @@ public final class CloudBuildGrpc {
      */
     public com.google.longrunning.Operation runBuildTrigger(
         com.google.cloudbuild.v1.RunBuildTriggerRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getRunBuildTriggerMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getRunBuildTriggerMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1803,7 +1642,7 @@ public final class CloudBuildGrpc {
     public com.google.cloudbuild.v1.WorkerPool createWorkerPool(
         com.google.cloudbuild.v1.CreateWorkerPoolRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateWorkerPoolMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateWorkerPoolMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1816,8 +1655,7 @@ public final class CloudBuildGrpc {
      */
     public com.google.cloudbuild.v1.WorkerPool getWorkerPool(
         com.google.cloudbuild.v1.GetWorkerPoolRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetWorkerPoolMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetWorkerPoolMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1831,7 +1669,7 @@ public final class CloudBuildGrpc {
     public com.google.protobuf.Empty deleteWorkerPool(
         com.google.cloudbuild.v1.DeleteWorkerPoolRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteWorkerPoolMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteWorkerPoolMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1845,7 +1683,7 @@ public final class CloudBuildGrpc {
     public com.google.cloudbuild.v1.WorkerPool updateWorkerPool(
         com.google.cloudbuild.v1.UpdateWorkerPoolRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateWorkerPoolMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateWorkerPoolMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1858,8 +1696,7 @@ public final class CloudBuildGrpc {
      */
     public com.google.cloudbuild.v1.ListWorkerPoolsResponse listWorkerPools(
         com.google.cloudbuild.v1.ListWorkerPoolsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListWorkerPoolsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListWorkerPoolsMethod(), getCallOptions(), request);
     }
   }
 
@@ -1876,11 +1713,7 @@ public final class CloudBuildGrpc {
    * </pre>
    */
   public static final class CloudBuildFutureStub
-      extends io.grpc.stub.AbstractStub<CloudBuildFutureStub> {
-    private CloudBuildFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<CloudBuildFutureStub> {
     private CloudBuildFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1903,7 +1736,7 @@ public final class CloudBuildGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createBuild(com.google.cloudbuild.v1.CreateBuildRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateBuildMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateBuildMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1917,8 +1750,7 @@ public final class CloudBuildGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.Build>
         getBuild(com.google.cloudbuild.v1.GetBuildRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetBuildMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getGetBuildMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1934,7 +1766,7 @@ public final class CloudBuildGrpc {
             com.google.cloudbuild.v1.ListBuildsResponse>
         listBuilds(com.google.cloudbuild.v1.ListBuildsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListBuildsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListBuildsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1947,7 +1779,7 @@ public final class CloudBuildGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.Build>
         cancelBuild(com.google.cloudbuild.v1.CancelBuildRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCancelBuildMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCancelBuildMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1979,7 +1811,7 @@ public final class CloudBuildGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         retryBuild(com.google.cloudbuild.v1.RetryBuildRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getRetryBuildMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getRetryBuildMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1993,7 +1825,7 @@ public final class CloudBuildGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.BuildTrigger>
         createBuildTrigger(com.google.cloudbuild.v1.CreateBuildTriggerRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateBuildTriggerMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateBuildTriggerMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2007,7 +1839,7 @@ public final class CloudBuildGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.BuildTrigger>
         getBuildTrigger(com.google.cloudbuild.v1.GetBuildTriggerRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetBuildTriggerMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetBuildTriggerMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2022,7 +1854,7 @@ public final class CloudBuildGrpc {
             com.google.cloudbuild.v1.ListBuildTriggersResponse>
         listBuildTriggers(com.google.cloudbuild.v1.ListBuildTriggersRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListBuildTriggersMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListBuildTriggersMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2036,7 +1868,7 @@ public final class CloudBuildGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteBuildTrigger(com.google.cloudbuild.v1.DeleteBuildTriggerRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteBuildTriggerMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteBuildTriggerMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2050,7 +1882,7 @@ public final class CloudBuildGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.BuildTrigger>
         updateBuildTrigger(com.google.cloudbuild.v1.UpdateBuildTriggerRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateBuildTriggerMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateBuildTriggerMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2063,7 +1895,7 @@ public final class CloudBuildGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         runBuildTrigger(com.google.cloudbuild.v1.RunBuildTriggerRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getRunBuildTriggerMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getRunBuildTriggerMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2077,7 +1909,7 @@ public final class CloudBuildGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.WorkerPool>
         createWorkerPool(com.google.cloudbuild.v1.CreateWorkerPoolRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateWorkerPoolMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateWorkerPoolMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2091,7 +1923,7 @@ public final class CloudBuildGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.WorkerPool>
         getWorkerPool(com.google.cloudbuild.v1.GetWorkerPoolRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetWorkerPoolMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetWorkerPoolMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2105,7 +1937,7 @@ public final class CloudBuildGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteWorkerPool(com.google.cloudbuild.v1.DeleteWorkerPoolRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteWorkerPoolMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteWorkerPoolMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2119,7 +1951,7 @@ public final class CloudBuildGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.WorkerPool>
         updateWorkerPool(com.google.cloudbuild.v1.UpdateWorkerPoolRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateWorkerPoolMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateWorkerPoolMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2134,7 +1966,7 @@ public final class CloudBuildGrpc {
             com.google.cloudbuild.v1.ListWorkerPoolsResponse>
         listWorkerPools(com.google.cloudbuild.v1.ListWorkerPoolsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListWorkerPoolsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListWorkerPoolsMethod(), getCallOptions()), request);
     }
   }
 
@@ -2322,22 +2154,22 @@ public final class CloudBuildGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new CloudBuildFileDescriptorSupplier())
-                      .addMethod(getCreateBuildMethodHelper())
-                      .addMethod(getGetBuildMethodHelper())
-                      .addMethod(getListBuildsMethodHelper())
-                      .addMethod(getCancelBuildMethodHelper())
-                      .addMethod(getRetryBuildMethodHelper())
-                      .addMethod(getCreateBuildTriggerMethodHelper())
-                      .addMethod(getGetBuildTriggerMethodHelper())
-                      .addMethod(getListBuildTriggersMethodHelper())
-                      .addMethod(getDeleteBuildTriggerMethodHelper())
-                      .addMethod(getUpdateBuildTriggerMethodHelper())
-                      .addMethod(getRunBuildTriggerMethodHelper())
-                      .addMethod(getCreateWorkerPoolMethodHelper())
-                      .addMethod(getGetWorkerPoolMethodHelper())
-                      .addMethod(getDeleteWorkerPoolMethodHelper())
-                      .addMethod(getUpdateWorkerPoolMethodHelper())
-                      .addMethod(getListWorkerPoolsMethodHelper())
+                      .addMethod(getCreateBuildMethod())
+                      .addMethod(getGetBuildMethod())
+                      .addMethod(getListBuildsMethod())
+                      .addMethod(getCancelBuildMethod())
+                      .addMethod(getRetryBuildMethod())
+                      .addMethod(getCreateBuildTriggerMethod())
+                      .addMethod(getGetBuildTriggerMethod())
+                      .addMethod(getListBuildTriggersMethod())
+                      .addMethod(getDeleteBuildTriggerMethod())
+                      .addMethod(getUpdateBuildTriggerMethod())
+                      .addMethod(getRunBuildTriggerMethod())
+                      .addMethod(getCreateWorkerPoolMethod())
+                      .addMethod(getGetWorkerPoolMethod())
+                      .addMethod(getDeleteWorkerPoolMethod())
+                      .addMethod(getUpdateWorkerPoolMethod())
+                      .addMethod(getListWorkerPoolsMethod())
                       .build();
         }
       }

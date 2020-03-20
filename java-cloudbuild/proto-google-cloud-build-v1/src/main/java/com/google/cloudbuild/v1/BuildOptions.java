@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     volumes_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BuildOptions();
   }
 
   @java.lang.Override
@@ -149,9 +155,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
           case 98:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 env_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000002;
               }
               env_.add(s);
               break;
@@ -159,18 +165,18 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
           case 106:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 secretEnv_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000004;
               }
               secretEnv_.add(s);
               break;
             }
           case 114:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 volumes_ = new java.util.ArrayList<com.google.cloudbuild.v1.Volume>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000008;
               }
               volumes_.add(
                   input.readMessage(com.google.cloudbuild.v1.Volume.parser(), extensionRegistry));
@@ -193,13 +199,13 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         sourceProvenanceHash_ = java.util.Collections.unmodifiableList(sourceProvenanceHash_);
       }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         env_ = env_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         secretEnv_ = secretEnv_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         volumes_ = java.util.Collections.unmodifiableList(volumes_);
       }
       this.unknownFields = unknownFields.build();
@@ -284,12 +290,20 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static VerifyOption valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static VerifyOption forNumber(int value) {
       switch (value) {
         case 0:
@@ -427,12 +441,20 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static MachineType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static MachineType forNumber(int value) {
       switch (value) {
         case 0:
@@ -554,12 +576,20 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SubstitutionOption valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static SubstitutionOption forNumber(int value) {
       switch (value) {
         case 0:
@@ -702,12 +732,20 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static LogStreamingOption valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static LogStreamingOption forNumber(int value) {
       switch (value) {
         case 0:
@@ -852,12 +890,20 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static LoggingMode valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static LoggingMode forNumber(int value) {
       switch (value) {
         case 0:
@@ -915,7 +961,6 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.devtools.cloudbuild.v1.BuildOptions.LoggingMode)
   }
 
-  private int bitField0_;
   public static final int SOURCE_PROVENANCE_HASH_FIELD_NUMBER = 1;
   private java.util.List<java.lang.Integer> sourceProvenanceHash_;
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
@@ -938,6 +983,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;</code>
+   *
+   * @return A list containing the sourceProvenanceHash.
    */
   public java.util.List<com.google.cloudbuild.v1.Hash.HashType> getSourceProvenanceHashList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -952,6 +999,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;</code>
+   *
+   * @return The count of sourceProvenanceHash.
    */
   public int getSourceProvenanceHashCount() {
     return sourceProvenanceHash_.size();
@@ -964,6 +1013,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The sourceProvenanceHash at the given index.
    */
   public com.google.cloudbuild.v1.Hash.HashType getSourceProvenanceHash(int index) {
     return sourceProvenanceHash_converter_.convert(sourceProvenanceHash_.get(index));
@@ -976,6 +1028,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for sourceProvenanceHash.
    */
   public java.util.List<java.lang.Integer> getSourceProvenanceHashValueList() {
     return sourceProvenanceHash_;
@@ -988,6 +1042,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of sourceProvenanceHash at the given index.
    */
   public int getSourceProvenanceHashValue(int index) {
     return sourceProvenanceHash_.get(index);
@@ -1006,6 +1063,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.VerifyOption requested_verify_option = 2;
    * </code>
+   *
+   * @return The enum numeric value on the wire for requestedVerifyOption.
    */
   public int getRequestedVerifyOptionValue() {
     return requestedVerifyOption_;
@@ -1019,6 +1078,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.VerifyOption requested_verify_option = 2;
    * </code>
+   *
+   * @return The requestedVerifyOption.
    */
   public com.google.cloudbuild.v1.BuildOptions.VerifyOption getRequestedVerifyOption() {
     @SuppressWarnings("deprecation")
@@ -1039,6 +1100,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.MachineType machine_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for machineType.
    */
   public int getMachineTypeValue() {
     return machineType_;
@@ -1051,6 +1114,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.MachineType machine_type = 3;</code>
+   *
+   * @return The machineType.
    */
   public com.google.cloudbuild.v1.BuildOptions.MachineType getMachineType() {
     @SuppressWarnings("deprecation")
@@ -1074,6 +1139,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 disk_size_gb = 6;</code>
+   *
+   * @return The diskSizeGb.
    */
   public long getDiskSizeGb() {
     return diskSizeGb_;
@@ -1091,6 +1158,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption substitution_option = 4;
    * </code>
+   *
+   * @return The enum numeric value on the wire for substitutionOption.
    */
   public int getSubstitutionOptionValue() {
     return substitutionOption_;
@@ -1105,6 +1174,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption substitution_option = 4;
    * </code>
+   *
+   * @return The substitutionOption.
    */
   public com.google.cloudbuild.v1.BuildOptions.SubstitutionOption getSubstitutionOption() {
     @SuppressWarnings("deprecation")
@@ -1127,6 +1198,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption log_streaming_option = 5;
    * </code>
+   *
+   * @return The enum numeric value on the wire for logStreamingOption.
    */
   public int getLogStreamingOptionValue() {
     return logStreamingOption_;
@@ -1141,6 +1214,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption log_streaming_option = 5;
    * </code>
+   *
+   * @return The logStreamingOption.
    */
   public com.google.cloudbuild.v1.BuildOptions.LogStreamingOption getLogStreamingOption() {
     @SuppressWarnings("deprecation")
@@ -1157,12 +1232,14 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Option to specify a `WorkerPool` for the build. User specifies the pool
-   * with the format "[WORKERPOOL_PROJECT_ID]/[WORKERPOOL_NAME]".
-   * This is an experimental field.
+   * Option to specify a `WorkerPool` for the build.
+   * Format: projects/{project}/workerPools/{workerPool}
+   * This field is experimental.
    * </pre>
    *
    * <code>string worker_pool = 7;</code>
+   *
+   * @return The workerPool.
    */
   public java.lang.String getWorkerPool() {
     java.lang.Object ref = workerPool_;
@@ -1179,12 +1256,14 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Option to specify a `WorkerPool` for the build. User specifies the pool
-   * with the format "[WORKERPOOL_PROJECT_ID]/[WORKERPOOL_NAME]".
-   * This is an experimental field.
+   * Option to specify a `WorkerPool` for the build.
+   * Format: projects/{project}/workerPools/{workerPool}
+   * This field is experimental.
    * </pre>
    *
    * <code>string worker_pool = 7;</code>
+   *
+   * @return The bytes for workerPool.
    */
   public com.google.protobuf.ByteString getWorkerPoolBytes() {
     java.lang.Object ref = workerPool_;
@@ -1209,6 +1288,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.LoggingMode logging = 11;</code>
+   *
+   * @return The enum numeric value on the wire for logging.
    */
   public int getLoggingValue() {
     return logging_;
@@ -1222,6 +1303,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.LoggingMode logging = 11;</code>
+   *
+   * @return The logging.
    */
   public com.google.cloudbuild.v1.BuildOptions.LoggingMode getLogging() {
     @SuppressWarnings("deprecation")
@@ -1244,6 +1327,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string env = 12;</code>
+   *
+   * @return A list containing the env.
    */
   public com.google.protobuf.ProtocolStringList getEnvList() {
     return env_;
@@ -1260,6 +1345,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string env = 12;</code>
+   *
+   * @return The count of env.
    */
   public int getEnvCount() {
     return env_.size();
@@ -1276,6 +1363,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string env = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The env at the given index.
    */
   public java.lang.String getEnv(int index) {
     return env_.get(index);
@@ -1292,6 +1382,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string env = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the env at the given index.
    */
   public com.google.protobuf.ByteString getEnvBytes(int index) {
     return env_.getByteString(index);
@@ -1310,6 +1403,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string secret_env = 13;</code>
+   *
+   * @return A list containing the secretEnv.
    */
   public com.google.protobuf.ProtocolStringList getSecretEnvList() {
     return secretEnv_;
@@ -1325,6 +1420,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string secret_env = 13;</code>
+   *
+   * @return The count of secretEnv.
    */
   public int getSecretEnvCount() {
     return secretEnv_.size();
@@ -1340,6 +1437,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string secret_env = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The secretEnv at the given index.
    */
   public java.lang.String getSecretEnv(int index) {
     return secretEnv_.get(index);
@@ -1355,6 +1455,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string secret_env = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the secretEnv at the given index.
    */
   public com.google.protobuf.ByteString getSecretEnvBytes(int index) {
     return secretEnv_.getByteString(index);
@@ -1807,12 +1910,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       logging_ = 0;
 
       env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000002);
       secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         volumesBuilder_.clear();
       }
@@ -1844,7 +1947,6 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       com.google.cloudbuild.v1.BuildOptions result =
           new com.google.cloudbuild.v1.BuildOptions(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         sourceProvenanceHash_ = java.util.Collections.unmodifiableList(sourceProvenanceHash_);
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1857,26 +1959,25 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       result.logStreamingOption_ = logStreamingOption_;
       result.workerPool_ = workerPool_;
       result.logging_ = logging_;
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         env_ = env_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.env_ = env_;
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         secretEnv_ = secretEnv_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.secretEnv_ = secretEnv_;
       if (volumesBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.volumes_ = volumes_;
       } else {
         result.volumes_ = volumesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1961,7 +2062,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (!other.env_.isEmpty()) {
         if (env_.isEmpty()) {
           env_ = other.env_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureEnvIsMutable();
           env_.addAll(other.env_);
@@ -1971,7 +2072,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (!other.secretEnv_.isEmpty()) {
         if (secretEnv_.isEmpty()) {
           secretEnv_ = other.secretEnv_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureSecretEnvIsMutable();
           secretEnv_.addAll(other.secretEnv_);
@@ -1982,7 +2083,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         if (!other.volumes_.isEmpty()) {
           if (volumes_.isEmpty()) {
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureVolumesIsMutable();
             volumes_.addAll(other.volumes_);
@@ -1995,7 +2096,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
             volumesBuilder_.dispose();
             volumesBuilder_ = null;
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000008);
             volumesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVolumesFieldBuilder()
@@ -2054,6 +2155,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;
      * </code>
+     *
+     * @return A list containing the sourceProvenanceHash.
      */
     public java.util.List<com.google.cloudbuild.v1.Hash.HashType> getSourceProvenanceHashList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -2069,6 +2172,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;
      * </code>
+     *
+     * @return The count of sourceProvenanceHash.
      */
     public int getSourceProvenanceHashCount() {
       return sourceProvenanceHash_.size();
@@ -2082,6 +2187,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The sourceProvenanceHash at the given index.
      */
     public com.google.cloudbuild.v1.Hash.HashType getSourceProvenanceHash(int index) {
       return sourceProvenanceHash_converter_.convert(sourceProvenanceHash_.get(index));
@@ -2095,6 +2203,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The sourceProvenanceHash to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceProvenanceHash(
         int index, com.google.cloudbuild.v1.Hash.HashType value) {
@@ -2115,6 +2227,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;
      * </code>
+     *
+     * @param value The sourceProvenanceHash to add.
+     * @return This builder for chaining.
      */
     public Builder addSourceProvenanceHash(com.google.cloudbuild.v1.Hash.HashType value) {
       if (value == null) {
@@ -2134,6 +2249,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;
      * </code>
+     *
+     * @param values The sourceProvenanceHash to add.
+     * @return This builder for chaining.
      */
     public Builder addAllSourceProvenanceHash(
         java.lang.Iterable<? extends com.google.cloudbuild.v1.Hash.HashType> values) {
@@ -2153,6 +2271,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSourceProvenanceHash() {
       sourceProvenanceHash_ = java.util.Collections.emptyList();
@@ -2169,6 +2289,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for sourceProvenanceHash.
      */
     public java.util.List<java.lang.Integer> getSourceProvenanceHashValueList() {
       return java.util.Collections.unmodifiableList(sourceProvenanceHash_);
@@ -2182,6 +2304,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of sourceProvenanceHash at the given index.
      */
     public int getSourceProvenanceHashValue(int index) {
       return sourceProvenanceHash_.get(index);
@@ -2195,6 +2320,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of sourceProvenanceHash at the given index.
+     * @return This builder for chaining.
      */
     public Builder setSourceProvenanceHashValue(int index, int value) {
       ensureSourceProvenanceHashIsMutable();
@@ -2211,6 +2340,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for sourceProvenanceHash to add.
+     * @return This builder for chaining.
      */
     public Builder addSourceProvenanceHashValue(int value) {
       ensureSourceProvenanceHashIsMutable();
@@ -2227,6 +2359,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudbuild.v1.Hash.HashType source_provenance_hash = 1;
      * </code>
+     *
+     * @param values The enum numeric values on the wire for sourceProvenanceHash to add.
+     * @return This builder for chaining.
      */
     public Builder addAllSourceProvenanceHashValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureSourceProvenanceHashIsMutable();
@@ -2247,6 +2382,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.VerifyOption requested_verify_option = 2;
      * </code>
+     *
+     * @return The enum numeric value on the wire for requestedVerifyOption.
      */
     public int getRequestedVerifyOptionValue() {
       return requestedVerifyOption_;
@@ -2260,6 +2397,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.VerifyOption requested_verify_option = 2;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for requestedVerifyOption to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestedVerifyOptionValue(int value) {
       requestedVerifyOption_ = value;
@@ -2275,6 +2415,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.VerifyOption requested_verify_option = 2;
      * </code>
+     *
+     * @return The requestedVerifyOption.
      */
     public com.google.cloudbuild.v1.BuildOptions.VerifyOption getRequestedVerifyOption() {
       @SuppressWarnings("deprecation")
@@ -2293,6 +2435,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.VerifyOption requested_verify_option = 2;
      * </code>
+     *
+     * @param value The requestedVerifyOption to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestedVerifyOption(
         com.google.cloudbuild.v1.BuildOptions.VerifyOption value) {
@@ -2313,6 +2458,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.VerifyOption requested_verify_option = 2;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRequestedVerifyOption() {
 
@@ -2330,6 +2477,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.MachineType machine_type = 3;</code>
+     *
+     * @return The enum numeric value on the wire for machineType.
      */
     public int getMachineTypeValue() {
       return machineType_;
@@ -2342,6 +2491,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.MachineType machine_type = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for machineType to set.
+     * @return This builder for chaining.
      */
     public Builder setMachineTypeValue(int value) {
       machineType_ = value;
@@ -2356,6 +2508,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.MachineType machine_type = 3;</code>
+     *
+     * @return The machineType.
      */
     public com.google.cloudbuild.v1.BuildOptions.MachineType getMachineType() {
       @SuppressWarnings("deprecation")
@@ -2373,6 +2527,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.MachineType machine_type = 3;</code>
+     *
+     * @param value The machineType to set.
+     * @return This builder for chaining.
      */
     public Builder setMachineType(com.google.cloudbuild.v1.BuildOptions.MachineType value) {
       if (value == null) {
@@ -2391,6 +2548,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.MachineType machine_type = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMachineType() {
 
@@ -2413,6 +2572,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 disk_size_gb = 6;</code>
+     *
+     * @return The diskSizeGb.
      */
     public long getDiskSizeGb() {
       return diskSizeGb_;
@@ -2430,6 +2591,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 disk_size_gb = 6;</code>
+     *
+     * @param value The diskSizeGb to set.
+     * @return This builder for chaining.
      */
     public Builder setDiskSizeGb(long value) {
 
@@ -2450,6 +2614,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 disk_size_gb = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
 
@@ -2469,6 +2635,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption substitution_option = 4;
      * </code>
+     *
+     * @return The enum numeric value on the wire for substitutionOption.
      */
     public int getSubstitutionOptionValue() {
       return substitutionOption_;
@@ -2483,6 +2651,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption substitution_option = 4;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for substitutionOption to set.
+     * @return This builder for chaining.
      */
     public Builder setSubstitutionOptionValue(int value) {
       substitutionOption_ = value;
@@ -2499,6 +2670,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption substitution_option = 4;
      * </code>
+     *
+     * @return The substitutionOption.
      */
     public com.google.cloudbuild.v1.BuildOptions.SubstitutionOption getSubstitutionOption() {
       @SuppressWarnings("deprecation")
@@ -2518,6 +2691,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption substitution_option = 4;
      * </code>
+     *
+     * @param value The substitutionOption to set.
+     * @return This builder for chaining.
      */
     public Builder setSubstitutionOption(
         com.google.cloudbuild.v1.BuildOptions.SubstitutionOption value) {
@@ -2539,6 +2715,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption substitution_option = 4;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSubstitutionOption() {
 
@@ -2559,6 +2737,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption log_streaming_option = 5;
      * </code>
+     *
+     * @return The enum numeric value on the wire for logStreamingOption.
      */
     public int getLogStreamingOptionValue() {
       return logStreamingOption_;
@@ -2574,6 +2754,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption log_streaming_option = 5;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for logStreamingOption to set.
+     * @return This builder for chaining.
      */
     public Builder setLogStreamingOptionValue(int value) {
       logStreamingOption_ = value;
@@ -2591,6 +2774,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption log_streaming_option = 5;
      * </code>
+     *
+     * @return The logStreamingOption.
      */
     public com.google.cloudbuild.v1.BuildOptions.LogStreamingOption getLogStreamingOption() {
       @SuppressWarnings("deprecation")
@@ -2611,6 +2796,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption log_streaming_option = 5;
      * </code>
+     *
+     * @param value The logStreamingOption to set.
+     * @return This builder for chaining.
      */
     public Builder setLogStreamingOption(
         com.google.cloudbuild.v1.BuildOptions.LogStreamingOption value) {
@@ -2633,6 +2821,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption log_streaming_option = 5;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLogStreamingOption() {
 
@@ -2646,12 +2836,14 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify a `WorkerPool` for the build. User specifies the pool
-     * with the format "[WORKERPOOL_PROJECT_ID]/[WORKERPOOL_NAME]".
-     * This is an experimental field.
+     * Option to specify a `WorkerPool` for the build.
+     * Format: projects/{project}/workerPools/{workerPool}
+     * This field is experimental.
      * </pre>
      *
      * <code>string worker_pool = 7;</code>
+     *
+     * @return The workerPool.
      */
     public java.lang.String getWorkerPool() {
       java.lang.Object ref = workerPool_;
@@ -2668,12 +2860,14 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify a `WorkerPool` for the build. User specifies the pool
-     * with the format "[WORKERPOOL_PROJECT_ID]/[WORKERPOOL_NAME]".
-     * This is an experimental field.
+     * Option to specify a `WorkerPool` for the build.
+     * Format: projects/{project}/workerPools/{workerPool}
+     * This field is experimental.
      * </pre>
      *
      * <code>string worker_pool = 7;</code>
+     *
+     * @return The bytes for workerPool.
      */
     public com.google.protobuf.ByteString getWorkerPoolBytes() {
       java.lang.Object ref = workerPool_;
@@ -2690,12 +2884,15 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify a `WorkerPool` for the build. User specifies the pool
-     * with the format "[WORKERPOOL_PROJECT_ID]/[WORKERPOOL_NAME]".
-     * This is an experimental field.
+     * Option to specify a `WorkerPool` for the build.
+     * Format: projects/{project}/workerPools/{workerPool}
+     * This field is experimental.
      * </pre>
      *
      * <code>string worker_pool = 7;</code>
+     *
+     * @param value The workerPool to set.
+     * @return This builder for chaining.
      */
     public Builder setWorkerPool(java.lang.String value) {
       if (value == null) {
@@ -2710,12 +2907,14 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify a `WorkerPool` for the build. User specifies the pool
-     * with the format "[WORKERPOOL_PROJECT_ID]/[WORKERPOOL_NAME]".
-     * This is an experimental field.
+     * Option to specify a `WorkerPool` for the build.
+     * Format: projects/{project}/workerPools/{workerPool}
+     * This field is experimental.
      * </pre>
      *
      * <code>string worker_pool = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWorkerPool() {
 
@@ -2727,12 +2926,15 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify a `WorkerPool` for the build. User specifies the pool
-     * with the format "[WORKERPOOL_PROJECT_ID]/[WORKERPOOL_NAME]".
-     * This is an experimental field.
+     * Option to specify a `WorkerPool` for the build.
+     * Format: projects/{project}/workerPools/{workerPool}
+     * This field is experimental.
      * </pre>
      *
      * <code>string worker_pool = 7;</code>
+     *
+     * @param value The bytes for workerPool to set.
+     * @return This builder for chaining.
      */
     public Builder setWorkerPoolBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2755,6 +2957,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.LoggingMode logging = 11;</code>
+     *
+     * @return The enum numeric value on the wire for logging.
      */
     public int getLoggingValue() {
       return logging_;
@@ -2768,6 +2972,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.LoggingMode logging = 11;</code>
+     *
+     * @param value The enum numeric value on the wire for logging to set.
+     * @return This builder for chaining.
      */
     public Builder setLoggingValue(int value) {
       logging_ = value;
@@ -2783,6 +2990,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.LoggingMode logging = 11;</code>
+     *
+     * @return The logging.
      */
     public com.google.cloudbuild.v1.BuildOptions.LoggingMode getLogging() {
       @SuppressWarnings("deprecation")
@@ -2801,6 +3010,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.LoggingMode logging = 11;</code>
+     *
+     * @param value The logging to set.
+     * @return This builder for chaining.
      */
     public Builder setLogging(com.google.cloudbuild.v1.BuildOptions.LoggingMode value) {
       if (value == null) {
@@ -2820,6 +3032,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.BuildOptions.LoggingMode logging = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLogging() {
 
@@ -2831,9 +3045,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.LazyStringList env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEnvIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         env_ = new com.google.protobuf.LazyStringArrayList(env_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -2848,6 +3062,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 12;</code>
+     *
+     * @return A list containing the env.
      */
     public com.google.protobuf.ProtocolStringList getEnvList() {
       return env_.getUnmodifiableView();
@@ -2864,6 +3080,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 12;</code>
+     *
+     * @return The count of env.
      */
     public int getEnvCount() {
       return env_.size();
@@ -2880,6 +3098,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 12;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The env at the given index.
      */
     public java.lang.String getEnv(int index) {
       return env_.get(index);
@@ -2896,6 +3117,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 12;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the env at the given index.
      */
     public com.google.protobuf.ByteString getEnvBytes(int index) {
       return env_.getByteString(index);
@@ -2912,6 +3136,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 12;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The env to set.
+     * @return This builder for chaining.
      */
     public Builder setEnv(int index, java.lang.String value) {
       if (value == null) {
@@ -2934,6 +3162,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 12;</code>
+     *
+     * @param value The env to add.
+     * @return This builder for chaining.
      */
     public Builder addEnv(java.lang.String value) {
       if (value == null) {
@@ -2956,6 +3187,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 12;</code>
+     *
+     * @param values The env to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEnv(java.lang.Iterable<java.lang.String> values) {
       ensureEnvIsMutable();
@@ -2975,10 +3209,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnv() {
       env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2994,6 +3230,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string env = 12;</code>
+     *
+     * @param value The bytes of the env to add.
+     * @return This builder for chaining.
      */
     public Builder addEnvBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3010,9 +3249,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSecretEnvIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         secretEnv_ = new com.google.protobuf.LazyStringArrayList(secretEnv_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -3026,6 +3265,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 13;</code>
+     *
+     * @return A list containing the secretEnv.
      */
     public com.google.protobuf.ProtocolStringList getSecretEnvList() {
       return secretEnv_.getUnmodifiableView();
@@ -3041,6 +3282,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 13;</code>
+     *
+     * @return The count of secretEnv.
      */
     public int getSecretEnvCount() {
       return secretEnv_.size();
@@ -3056,6 +3299,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 13;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The secretEnv at the given index.
      */
     public java.lang.String getSecretEnv(int index) {
       return secretEnv_.get(index);
@@ -3071,6 +3317,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 13;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the secretEnv at the given index.
      */
     public com.google.protobuf.ByteString getSecretEnvBytes(int index) {
       return secretEnv_.getByteString(index);
@@ -3086,6 +3335,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 13;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The secretEnv to set.
+     * @return This builder for chaining.
      */
     public Builder setSecretEnv(int index, java.lang.String value) {
       if (value == null) {
@@ -3107,6 +3360,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 13;</code>
+     *
+     * @param value The secretEnv to add.
+     * @return This builder for chaining.
      */
     public Builder addSecretEnv(java.lang.String value) {
       if (value == null) {
@@ -3128,6 +3384,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 13;</code>
+     *
+     * @param values The secretEnv to add.
+     * @return This builder for chaining.
      */
     public Builder addAllSecretEnv(java.lang.Iterable<java.lang.String> values) {
       ensureSecretEnvIsMutable();
@@ -3146,10 +3405,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 13;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSecretEnv() {
       secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3164,6 +3425,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string secret_env = 13;</code>
+     *
+     * @param value The bytes of the secretEnv to add.
+     * @return This builder for chaining.
      */
     public Builder addSecretEnvBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3180,9 +3444,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVolumesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         volumes_ = new java.util.ArrayList<com.google.cloudbuild.v1.Volume>(volumes_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -3461,7 +3725,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVolumes() {
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         volumesBuilder_.clear();
@@ -3624,7 +3888,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.Volume,
                 com.google.cloudbuild.v1.Volume.Builder,
                 com.google.cloudbuild.v1.VolumeOrBuilder>(
-                volumes_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                volumes_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         volumes_ = null;
       }
       return volumesBuilder_;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ public interface BuildTriggerOrBuilder
    * Output only. Unique identifier of the trigger.
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -40,7 +42,9 @@ public interface BuildTriggerOrBuilder
    * Output only. Unique identifier of the trigger.
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString getIdBytes();
 
@@ -52,6 +56,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>string description = 10;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -62,6 +68,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>string description = 10;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -69,20 +77,32 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
-   * User assigned name of the trigger. Must be unique within the project.
+   * User-assigned name of the trigger. Must be unique within the project.
+   * Trigger names must meet the following requirements:
+   * + They must contain only alphanumeric characters and dashes.
+   * + They can be 1-64 characters long.
+   * + They must begin and end with an alphanumeric character.
    * </pre>
    *
    * <code>string name = 21;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * User assigned name of the trigger. Must be unique within the project.
+   * User-assigned name of the trigger. Must be unique within the project.
+   * Trigger names must meet the following requirements:
+   * + They must contain only alphanumeric characters and dashes.
+   * + They can be 1-64 characters long.
+   * + They must begin and end with an alphanumeric character.
    * </pre>
    *
    * <code>string name = 21;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -94,6 +114,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>repeated string tags = 19;</code>
+   *
+   * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
   /**
@@ -104,6 +126,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>repeated string tags = 19;</code>
+   *
+   * @return The count of tags.
    */
   int getTagsCount();
   /**
@@ -114,6 +138,9 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>repeated string tags = 19;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
   /**
@@ -124,6 +151,9 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>repeated string tags = 19;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
    */
   com.google.protobuf.ByteString getTagsBytes(int index);
 
@@ -139,6 +169,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
+   *
+   * @return Whether the triggerTemplate field is set.
    */
   boolean hasTriggerTemplate();
   /**
@@ -153,6 +185,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
+   *
+   * @return The triggerTemplate.
    */
   com.google.cloudbuild.v1.RepoSource getTriggerTemplate();
   /**
@@ -180,6 +214,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+   *
+   * @return Whether the github field is set.
    */
   boolean hasGithub();
   /**
@@ -192,6 +228,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+   *
+   * @return The github.
    */
   com.google.cloudbuild.v1.GitHubEventsConfig getGithub();
   /**
@@ -215,6 +253,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Build build = 4;</code>
+   *
+   * @return Whether the build field is set.
    */
   boolean hasBuild();
   /**
@@ -225,6 +265,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Build build = 4;</code>
+   *
+   * @return The build.
    */
   com.google.cloudbuild.v1.Build getBuild();
   /**
@@ -247,6 +289,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>string filename = 8;</code>
+   *
+   * @return The filename.
    */
   java.lang.String getFilename();
   /**
@@ -258,6 +302,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>string filename = 8;</code>
+   *
+   * @return The bytes for filename.
    */
   com.google.protobuf.ByteString getFilenameBytes();
 
@@ -268,7 +314,10 @@ public interface BuildTriggerOrBuilder
    * Output only. Time when the trigger was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -278,7 +327,10 @@ public interface BuildTriggerOrBuilder
    * Output only. Time when the trigger was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -288,7 +340,8 @@ public interface BuildTriggerOrBuilder
    * Output only. Time when the trigger was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -300,6 +353,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>bool disabled = 9;</code>
+   *
+   * @return The disabled.
    */
   boolean getDisabled();
 
@@ -307,7 +362,9 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
-   * Substitutions data for Build resource.
+   * Substitutions for Build resource. The keys must match the following
+   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+   * keys in bindings.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -317,7 +374,9 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
-   * Substitutions data for Build resource.
+   * Substitutions for Build resource. The keys must match the following
+   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+   * keys in bindings.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -330,7 +389,9 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
-   * Substitutions data for Build resource.
+   * Substitutions for Build resource. The keys must match the following
+   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+   * keys in bindings.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -340,7 +401,9 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
-   * Substitutions data for Build resource.
+   * Substitutions for Build resource. The keys must match the following
+   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+   * keys in bindings.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -350,7 +413,9 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
-   * Substitutions data for Build resource.
+   * Substitutions for Build resource. The keys must match the following
+   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+   * keys in bindings.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -362,7 +427,7 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * ignored_files and included_files are file glob matches using
-   * http://godoc/pkg/path/filepath#Match extended with support for "**".
+   * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
    * If ignored_files is not empty, then we ignore any files that match
@@ -371,6 +436,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>repeated string ignored_files = 15;</code>
+   *
+   * @return A list containing the ignoredFiles.
    */
   java.util.List<java.lang.String> getIgnoredFilesList();
   /**
@@ -378,7 +445,7 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * ignored_files and included_files are file glob matches using
-   * http://godoc/pkg/path/filepath#Match extended with support for "**".
+   * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
    * If ignored_files is not empty, then we ignore any files that match
@@ -387,6 +454,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>repeated string ignored_files = 15;</code>
+   *
+   * @return The count of ignoredFiles.
    */
   int getIgnoredFilesCount();
   /**
@@ -394,7 +463,7 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * ignored_files and included_files are file glob matches using
-   * http://godoc/pkg/path/filepath#Match extended with support for "**".
+   * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
    * If ignored_files is not empty, then we ignore any files that match
@@ -403,6 +472,9 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>repeated string ignored_files = 15;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The ignoredFiles at the given index.
    */
   java.lang.String getIgnoredFiles(int index);
   /**
@@ -410,7 +482,7 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * ignored_files and included_files are file glob matches using
-   * http://godoc/pkg/path/filepath#Match extended with support for "**".
+   * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
    * If ignored_files is not empty, then we ignore any files that match
@@ -419,6 +491,9 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>repeated string ignored_files = 15;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the ignoredFiles at the given index.
    */
   com.google.protobuf.ByteString getIgnoredFilesBytes(int index);
 
@@ -436,6 +511,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>repeated string included_files = 16;</code>
+   *
+   * @return A list containing the includedFiles.
    */
   java.util.List<java.lang.String> getIncludedFilesList();
   /**
@@ -452,6 +529,8 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>repeated string included_files = 16;</code>
+   *
+   * @return The count of includedFiles.
    */
   int getIncludedFilesCount();
   /**
@@ -468,6 +547,9 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>repeated string included_files = 16;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The includedFiles at the given index.
    */
   java.lang.String getIncludedFiles(int index);
   /**
@@ -484,6 +566,9 @@ public interface BuildTriggerOrBuilder
    * </pre>
    *
    * <code>repeated string included_files = 16;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includedFiles at the given index.
    */
   com.google.protobuf.ByteString getIncludedFilesBytes(int index);
 

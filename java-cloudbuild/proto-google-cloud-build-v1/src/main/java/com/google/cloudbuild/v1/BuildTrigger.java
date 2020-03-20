@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     ignoredFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     includedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BuildTrigger();
   }
 
   @java.lang.Override
@@ -145,11 +151,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 substitutions_ =
                     com.google.protobuf.MapField.newMapField(
                         SubstitutionsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> substitutions__ =
                   input.readMessage(
@@ -179,9 +185,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
           case 122:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 ignoredFiles_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00000004;
               }
               ignoredFiles_.add(s);
               break;
@@ -189,9 +195,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
           case 130:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 includedFiles_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00001000;
+                mutable_bitField0_ |= 0x00000008;
               }
               includedFiles_.add(s);
               break;
@@ -199,9 +205,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
           case 154:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               tags_.add(s);
               break;
@@ -227,13 +233,13 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         ignoredFiles_ = ignoredFiles_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00001000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         includedFiles_ = includedFiles_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         tags_ = tags_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -267,11 +273,13 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v1.BuildTrigger.Builder.class);
   }
 
-  private int bitField0_;
   private int buildTemplateCase_ = 0;
   private java.lang.Object buildTemplate_;
 
-  public enum BuildTemplateCase implements com.google.protobuf.Internal.EnumLite {
+  public enum BuildTemplateCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BUILD(4),
     FILENAME(8),
     BUILDTEMPLATE_NOT_SET(0);
@@ -280,7 +288,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     private BuildTemplateCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static BuildTemplateCase valueOf(int value) {
       return forNumber(value);
@@ -317,7 +329,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * Output only. Unique identifier of the trigger.
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -337,7 +351,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * Output only. Unique identifier of the trigger.
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -361,6 +377,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 10;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -381,6 +399,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 10;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -400,10 +420,16 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User assigned name of the trigger. Must be unique within the project.
+   * User-assigned name of the trigger. Must be unique within the project.
+   * Trigger names must meet the following requirements:
+   * + They must contain only alphanumeric characters and dashes.
+   * + They can be 1-64 characters long.
+   * + They must begin and end with an alphanumeric character.
    * </pre>
    *
    * <code>string name = 21;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -420,10 +446,16 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User assigned name of the trigger. Must be unique within the project.
+   * User-assigned name of the trigger. Must be unique within the project.
+   * Trigger names must meet the following requirements:
+   * + They must contain only alphanumeric characters and dashes.
+   * + They can be 1-64 characters long.
+   * + They must begin and end with an alphanumeric character.
    * </pre>
    *
    * <code>string name = 21;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -447,6 +479,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string tags = 19;</code>
+   *
+   * @return A list containing the tags.
    */
   public com.google.protobuf.ProtocolStringList getTagsList() {
     return tags_;
@@ -459,6 +493,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string tags = 19;</code>
+   *
+   * @return The count of tags.
    */
   public int getTagsCount() {
     return tags_.size();
@@ -471,6 +507,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string tags = 19;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
    */
   public java.lang.String getTags(int index) {
     return tags_.get(index);
@@ -483,6 +522,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string tags = 19;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
    */
   public com.google.protobuf.ByteString getTagsBytes(int index) {
     return tags_.getByteString(index);
@@ -502,6 +544,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
+   *
+   * @return Whether the triggerTemplate field is set.
    */
   public boolean hasTriggerTemplate() {
     return triggerTemplate_ != null;
@@ -518,6 +562,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
+   *
+   * @return The triggerTemplate.
    */
   public com.google.cloudbuild.v1.RepoSource getTriggerTemplate() {
     return triggerTemplate_ == null
@@ -553,6 +599,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+   *
+   * @return Whether the github field is set.
    */
   public boolean hasGithub() {
     return github_ != null;
@@ -567,6 +615,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+   *
+   * @return The github.
    */
   public com.google.cloudbuild.v1.GitHubEventsConfig getGithub() {
     return github_ == null
@@ -597,6 +647,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Build build = 4;</code>
+   *
+   * @return Whether the build field is set.
    */
   public boolean hasBuild() {
     return buildTemplateCase_ == 4;
@@ -609,6 +661,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Build build = 4;</code>
+   *
+   * @return The build.
    */
   public com.google.cloudbuild.v1.Build getBuild() {
     if (buildTemplateCase_ == 4) {
@@ -642,6 +696,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string filename = 8;</code>
+   *
+   * @return The filename.
    */
   public java.lang.String getFilename() {
     java.lang.Object ref = "";
@@ -668,6 +724,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string filename = 8;</code>
+   *
+   * @return The bytes for filename.
    */
   public com.google.protobuf.ByteString getFilenameBytes() {
     java.lang.Object ref = "";
@@ -695,7 +753,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * Output only. Time when the trigger was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -707,7 +768,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * Output only. Time when the trigger was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -719,7 +783,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * Output only. Time when the trigger was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -735,6 +800,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool disabled = 9;</code>
+   *
+   * @return The disabled.
    */
   public boolean getDisabled() {
     return disabled_;
@@ -771,7 +838,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Substitutions data for Build resource.
+   * Substitutions for Build resource. The keys must match the following
+   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+   * keys in bindings.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -791,7 +860,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Substitutions data for Build resource.
+   * Substitutions for Build resource. The keys must match the following
+   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+   * keys in bindings.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -803,7 +874,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Substitutions data for Build resource.
+   * Substitutions for Build resource. The keys must match the following
+   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+   * keys in bindings.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -820,7 +893,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Substitutions data for Build resource.
+   * Substitutions for Build resource. The keys must match the following
+   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+   * keys in bindings.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -843,7 +918,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * ignored_files and included_files are file glob matches using
-   * http://godoc/pkg/path/filepath#Match extended with support for "**".
+   * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
    * If ignored_files is not empty, then we ignore any files that match
@@ -852,6 +927,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string ignored_files = 15;</code>
+   *
+   * @return A list containing the ignoredFiles.
    */
   public com.google.protobuf.ProtocolStringList getIgnoredFilesList() {
     return ignoredFiles_;
@@ -861,7 +938,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * ignored_files and included_files are file glob matches using
-   * http://godoc/pkg/path/filepath#Match extended with support for "**".
+   * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
    * If ignored_files is not empty, then we ignore any files that match
@@ -870,6 +947,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string ignored_files = 15;</code>
+   *
+   * @return The count of ignoredFiles.
    */
   public int getIgnoredFilesCount() {
     return ignoredFiles_.size();
@@ -879,7 +958,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * ignored_files and included_files are file glob matches using
-   * http://godoc/pkg/path/filepath#Match extended with support for "**".
+   * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
    * If ignored_files is not empty, then we ignore any files that match
@@ -888,6 +967,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string ignored_files = 15;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The ignoredFiles at the given index.
    */
   public java.lang.String getIgnoredFiles(int index) {
     return ignoredFiles_.get(index);
@@ -897,7 +979,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * ignored_files and included_files are file glob matches using
-   * http://godoc/pkg/path/filepath#Match extended with support for "**".
+   * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
    * If ignored_files is not empty, then we ignore any files that match
@@ -906,6 +988,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string ignored_files = 15;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the ignoredFiles at the given index.
    */
   public com.google.protobuf.ByteString getIgnoredFilesBytes(int index) {
     return ignoredFiles_.getByteString(index);
@@ -927,6 +1012,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string included_files = 16;</code>
+   *
+   * @return A list containing the includedFiles.
    */
   public com.google.protobuf.ProtocolStringList getIncludedFilesList() {
     return includedFiles_;
@@ -945,6 +1032,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string included_files = 16;</code>
+   *
+   * @return The count of includedFiles.
    */
   public int getIncludedFilesCount() {
     return includedFiles_.size();
@@ -963,6 +1052,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string included_files = 16;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The includedFiles at the given index.
    */
   public java.lang.String getIncludedFiles(int index) {
     return includedFiles_.get(index);
@@ -981,6 +1073,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string included_files = 16;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includedFiles at the given index.
    */
   public com.google.protobuf.ByteString getIncludedFilesBytes(int index) {
     return includedFiles_.getByteString(index);
@@ -1387,7 +1482,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
 
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (triggerTemplateBuilder_ == null) {
         triggerTemplate_ = null;
       } else {
@@ -1410,9 +1505,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
 
       internalGetMutableSubstitutions().clear();
       ignoredFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000004);
       includedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000008);
       buildTemplateCase_ = 0;
       buildTemplate_ = null;
       return this;
@@ -1443,13 +1538,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       com.google.cloudbuild.v1.BuildTrigger result =
           new com.google.cloudbuild.v1.BuildTrigger(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.id_ = id_;
       result.description_ = description_;
       result.name_ = name_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.tags_ = tags_;
       if (triggerTemplateBuilder_ == null) {
@@ -1480,17 +1574,16 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       result.disabled_ = disabled_;
       result.substitutions_ = internalGetSubstitutions();
       result.substitutions_.makeImmutable();
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         ignoredFiles_ = ignoredFiles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.ignoredFiles_ = ignoredFiles_;
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         includedFiles_ = includedFiles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.includedFiles_ = includedFiles_;
-      result.bitField0_ = to_bitField0_;
       result.buildTemplateCase_ = buildTemplateCase_;
       onBuilt();
       return result;
@@ -1556,7 +1649,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -1579,7 +1672,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (!other.ignoredFiles_.isEmpty()) {
         if (ignoredFiles_.isEmpty()) {
           ignoredFiles_ = other.ignoredFiles_;
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureIgnoredFilesIsMutable();
           ignoredFiles_.addAll(other.ignoredFiles_);
@@ -1589,7 +1682,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (!other.includedFiles_.isEmpty()) {
         if (includedFiles_.isEmpty()) {
           includedFiles_ = other.includedFiles_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureIncludedFilesIsMutable();
           includedFiles_.addAll(other.includedFiles_);
@@ -1667,7 +1760,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique identifier of the trigger.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -1687,7 +1782,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique identifier of the trigger.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -1707,7 +1804,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique identifier of the trigger.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -1725,7 +1825,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique identifier of the trigger.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
 
@@ -1740,7 +1842,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique identifier of the trigger.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1762,6 +1867,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 10;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1782,6 +1889,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 10;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1802,6 +1911,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 10;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1820,6 +1932,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1835,6 +1949,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 10;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1852,10 +1969,16 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User assigned name of the trigger. Must be unique within the project.
+     * User-assigned name of the trigger. Must be unique within the project.
+     * Trigger names must meet the following requirements:
+     * + They must contain only alphanumeric characters and dashes.
+     * + They can be 1-64 characters long.
+     * + They must begin and end with an alphanumeric character.
      * </pre>
      *
      * <code>string name = 21;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1872,10 +1995,16 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User assigned name of the trigger. Must be unique within the project.
+     * User-assigned name of the trigger. Must be unique within the project.
+     * Trigger names must meet the following requirements:
+     * + They must contain only alphanumeric characters and dashes.
+     * + They can be 1-64 characters long.
+     * + They must begin and end with an alphanumeric character.
      * </pre>
      *
      * <code>string name = 21;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1892,10 +2021,17 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User assigned name of the trigger. Must be unique within the project.
+     * User-assigned name of the trigger. Must be unique within the project.
+     * Trigger names must meet the following requirements:
+     * + They must contain only alphanumeric characters and dashes.
+     * + They can be 1-64 characters long.
+     * + They must begin and end with an alphanumeric character.
      * </pre>
      *
      * <code>string name = 21;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1910,10 +2046,16 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User assigned name of the trigger. Must be unique within the project.
+     * User-assigned name of the trigger. Must be unique within the project.
+     * Trigger names must meet the following requirements:
+     * + They must contain only alphanumeric characters and dashes.
+     * + They can be 1-64 characters long.
+     * + They must begin and end with an alphanumeric character.
      * </pre>
      *
      * <code>string name = 21;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1925,10 +2067,17 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User assigned name of the trigger. Must be unique within the project.
+     * User-assigned name of the trigger. Must be unique within the project.
+     * Trigger names must meet the following requirements:
+     * + They must contain only alphanumeric characters and dashes.
+     * + They can be 1-64 characters long.
+     * + They must begin and end with an alphanumeric character.
      * </pre>
      *
      * <code>string name = 21;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1945,9 +2094,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1958,6 +2107,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 19;</code>
+     *
+     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
       return tags_.getUnmodifiableView();
@@ -1970,6 +2121,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 19;</code>
+     *
+     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
@@ -1982,6 +2135,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 19;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
@@ -1994,6 +2150,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 19;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString getTagsBytes(int index) {
       return tags_.getByteString(index);
@@ -2006,6 +2165,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 19;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The tags to set.
+     * @return This builder for chaining.
      */
     public Builder setTags(int index, java.lang.String value) {
       if (value == null) {
@@ -2024,6 +2187,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 19;</code>
+     *
+     * @param value The tags to add.
+     * @return This builder for chaining.
      */
     public Builder addTags(java.lang.String value) {
       if (value == null) {
@@ -2042,6 +2208,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 19;</code>
+     *
+     * @param values The tags to add.
+     * @return This builder for chaining.
      */
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
@@ -2057,10 +2226,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 19;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2072,6 +2243,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 19;</code>
+     *
+     * @param value The bytes of the tags to add.
+     * @return This builder for chaining.
      */
     public Builder addTagsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2102,6 +2276,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
+     *
+     * @return Whether the triggerTemplate field is set.
      */
     public boolean hasTriggerTemplate() {
       return triggerTemplateBuilder_ != null || triggerTemplate_ != null;
@@ -2118,6 +2294,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
+     *
+     * @return The triggerTemplate.
      */
     public com.google.cloudbuild.v1.RepoSource getTriggerTemplate() {
       if (triggerTemplateBuilder_ == null) {
@@ -2317,6 +2495,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+     *
+     * @return Whether the github field is set.
      */
     public boolean hasGithub() {
       return githubBuilder_ != null || github_ != null;
@@ -2331,6 +2511,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+     *
+     * @return The github.
      */
     public com.google.cloudbuild.v1.GitHubEventsConfig getGithub() {
       if (githubBuilder_ == null) {
@@ -2513,6 +2695,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Build build = 4;</code>
+     *
+     * @return Whether the build field is set.
      */
     public boolean hasBuild() {
       return buildTemplateCase_ == 4;
@@ -2525,6 +2709,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Build build = 4;</code>
+     *
+     * @return The build.
      */
     public com.google.cloudbuild.v1.Build getBuild() {
       if (buildBuilder_ == null) {
@@ -2708,6 +2894,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filename = 8;</code>
+     *
+     * @return The filename.
      */
     public java.lang.String getFilename() {
       java.lang.Object ref = "";
@@ -2734,6 +2922,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filename = 8;</code>
+     *
+     * @return The bytes for filename.
      */
     public com.google.protobuf.ByteString getFilenameBytes() {
       java.lang.Object ref = "";
@@ -2760,6 +2950,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filename = 8;</code>
+     *
+     * @param value The filename to set.
+     * @return This builder for chaining.
      */
     public Builder setFilename(java.lang.String value) {
       if (value == null) {
@@ -2779,6 +2972,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filename = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilename() {
       if (buildTemplateCase_ == 8) {
@@ -2797,6 +2992,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filename = 8;</code>
+     *
+     * @param value The bytes for filename to set.
+     * @return This builder for chaining.
      */
     public Builder setFilenameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2822,7 +3020,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when the trigger was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -2834,7 +3036,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when the trigger was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2852,7 +3058,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when the trigger was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2874,7 +3082,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when the trigger was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -2893,7 +3103,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when the trigger was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2917,7 +3129,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when the trigger was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2937,7 +3151,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when the trigger was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
@@ -2951,7 +3167,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when the trigger was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -2969,7 +3187,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when the trigger was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -2997,6 +3217,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool disabled = 9;</code>
+     *
+     * @return The disabled.
      */
     public boolean getDisabled() {
       return disabled_;
@@ -3009,6 +3231,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool disabled = 9;</code>
+     *
+     * @param value The disabled to set.
+     * @return This builder for chaining.
      */
     public Builder setDisabled(boolean value) {
 
@@ -3024,6 +3249,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool disabled = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisabled() {
 
@@ -3064,7 +3291,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions data for Build resource.
+     * Substitutions for Build resource. The keys must match the following
+     * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+     * keys in bindings.
      * </pre>
      *
      * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -3084,7 +3313,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions data for Build resource.
+     * Substitutions for Build resource. The keys must match the following
+     * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+     * keys in bindings.
      * </pre>
      *
      * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -3096,7 +3327,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions data for Build resource.
+     * Substitutions for Build resource. The keys must match the following
+     * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+     * keys in bindings.
      * </pre>
      *
      * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -3113,7 +3346,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions data for Build resource.
+     * Substitutions for Build resource. The keys must match the following
+     * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+     * keys in bindings.
      * </pre>
      *
      * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -3137,7 +3372,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions data for Build resource.
+     * Substitutions for Build resource. The keys must match the following
+     * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+     * keys in bindings.
      * </pre>
      *
      * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -3158,7 +3395,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions data for Build resource.
+     * Substitutions for Build resource. The keys must match the following
+     * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+     * keys in bindings.
      * </pre>
      *
      * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -3177,7 +3416,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions data for Build resource.
+     * Substitutions for Build resource. The keys must match the following
+     * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+     * keys in bindings.
      * </pre>
      *
      * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -3191,9 +3432,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureIgnoredFilesIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         ignoredFiles_ = new com.google.protobuf.LazyStringArrayList(ignoredFiles_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -3201,7 +3442,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ignored_files and included_files are file glob matches using
-     * http://godoc/pkg/path/filepath#Match extended with support for "**".
+     * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
      * If ignored_files is not empty, then we ignore any files that match
@@ -3210,6 +3451,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ignored_files = 15;</code>
+     *
+     * @return A list containing the ignoredFiles.
      */
     public com.google.protobuf.ProtocolStringList getIgnoredFilesList() {
       return ignoredFiles_.getUnmodifiableView();
@@ -3219,7 +3462,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ignored_files and included_files are file glob matches using
-     * http://godoc/pkg/path/filepath#Match extended with support for "**".
+     * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
      * If ignored_files is not empty, then we ignore any files that match
@@ -3228,6 +3471,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ignored_files = 15;</code>
+     *
+     * @return The count of ignoredFiles.
      */
     public int getIgnoredFilesCount() {
       return ignoredFiles_.size();
@@ -3237,7 +3482,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ignored_files and included_files are file glob matches using
-     * http://godoc/pkg/path/filepath#Match extended with support for "**".
+     * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
      * If ignored_files is not empty, then we ignore any files that match
@@ -3246,6 +3491,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ignored_files = 15;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The ignoredFiles at the given index.
      */
     public java.lang.String getIgnoredFiles(int index) {
       return ignoredFiles_.get(index);
@@ -3255,7 +3503,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ignored_files and included_files are file glob matches using
-     * http://godoc/pkg/path/filepath#Match extended with support for "**".
+     * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
      * If ignored_files is not empty, then we ignore any files that match
@@ -3264,6 +3512,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ignored_files = 15;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the ignoredFiles at the given index.
      */
     public com.google.protobuf.ByteString getIgnoredFilesBytes(int index) {
       return ignoredFiles_.getByteString(index);
@@ -3273,7 +3524,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ignored_files and included_files are file glob matches using
-     * http://godoc/pkg/path/filepath#Match extended with support for "**".
+     * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
      * If ignored_files is not empty, then we ignore any files that match
@@ -3282,6 +3533,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ignored_files = 15;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The ignoredFiles to set.
+     * @return This builder for chaining.
      */
     public Builder setIgnoredFiles(int index, java.lang.String value) {
       if (value == null) {
@@ -3297,7 +3552,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ignored_files and included_files are file glob matches using
-     * http://godoc/pkg/path/filepath#Match extended with support for "**".
+     * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
      * If ignored_files is not empty, then we ignore any files that match
@@ -3306,6 +3561,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ignored_files = 15;</code>
+     *
+     * @param value The ignoredFiles to add.
+     * @return This builder for chaining.
      */
     public Builder addIgnoredFiles(java.lang.String value) {
       if (value == null) {
@@ -3321,7 +3579,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ignored_files and included_files are file glob matches using
-     * http://godoc/pkg/path/filepath#Match extended with support for "**".
+     * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
      * If ignored_files is not empty, then we ignore any files that match
@@ -3330,6 +3588,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ignored_files = 15;</code>
+     *
+     * @param values The ignoredFiles to add.
+     * @return This builder for chaining.
      */
     public Builder addAllIgnoredFiles(java.lang.Iterable<java.lang.String> values) {
       ensureIgnoredFilesIsMutable();
@@ -3342,7 +3603,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ignored_files and included_files are file glob matches using
-     * http://godoc/pkg/path/filepath#Match extended with support for "**".
+     * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
      * If ignored_files is not empty, then we ignore any files that match
@@ -3351,10 +3612,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ignored_files = 15;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIgnoredFiles() {
       ignoredFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3363,7 +3626,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ignored_files and included_files are file glob matches using
-     * http://godoc/pkg/path/filepath#Match extended with support for "**".
+     * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
      * If ignored_files is not empty, then we ignore any files that match
@@ -3372,6 +3635,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ignored_files = 15;</code>
+     *
+     * @param value The bytes of the ignoredFiles to add.
+     * @return This builder for chaining.
      */
     public Builder addIgnoredFilesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3388,9 +3654,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureIncludedFilesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         includedFiles_ = new com.google.protobuf.LazyStringArrayList(includedFiles_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -3407,6 +3673,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string included_files = 16;</code>
+     *
+     * @return A list containing the includedFiles.
      */
     public com.google.protobuf.ProtocolStringList getIncludedFilesList() {
       return includedFiles_.getUnmodifiableView();
@@ -3425,6 +3693,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string included_files = 16;</code>
+     *
+     * @return The count of includedFiles.
      */
     public int getIncludedFilesCount() {
       return includedFiles_.size();
@@ -3443,6 +3713,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string included_files = 16;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The includedFiles at the given index.
      */
     public java.lang.String getIncludedFiles(int index) {
       return includedFiles_.get(index);
@@ -3461,6 +3734,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string included_files = 16;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includedFiles at the given index.
      */
     public com.google.protobuf.ByteString getIncludedFilesBytes(int index) {
       return includedFiles_.getByteString(index);
@@ -3479,6 +3755,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string included_files = 16;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The includedFiles to set.
+     * @return This builder for chaining.
      */
     public Builder setIncludedFiles(int index, java.lang.String value) {
       if (value == null) {
@@ -3503,6 +3783,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string included_files = 16;</code>
+     *
+     * @param value The includedFiles to add.
+     * @return This builder for chaining.
      */
     public Builder addIncludedFiles(java.lang.String value) {
       if (value == null) {
@@ -3527,6 +3810,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string included_files = 16;</code>
+     *
+     * @param values The includedFiles to add.
+     * @return This builder for chaining.
      */
     public Builder addAllIncludedFiles(java.lang.Iterable<java.lang.String> values) {
       ensureIncludedFilesIsMutable();
@@ -3548,10 +3834,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string included_files = 16;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIncludedFiles() {
       includedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3569,6 +3857,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string included_files = 16;</code>
+     *
+     * @param value The bytes of the includedFiles to add.
+     * @return This builder for chaining.
      */
     public Builder addIncludedFilesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

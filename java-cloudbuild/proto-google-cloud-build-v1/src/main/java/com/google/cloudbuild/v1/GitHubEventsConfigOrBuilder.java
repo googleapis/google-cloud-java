@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ public interface GitHubEventsConfigOrBuilder
    * </pre>
    *
    * <code>int64 installation_id = 1 [deprecated = true];</code>
+   *
+   * @return The installationId.
    */
   @java.lang.Deprecated
   long getInstallationId();
@@ -45,6 +47,8 @@ public interface GitHubEventsConfigOrBuilder
    * </pre>
    *
    * <code>string owner = 6;</code>
+   *
+   * @return The owner.
    */
   java.lang.String getOwner();
   /**
@@ -57,6 +61,8 @@ public interface GitHubEventsConfigOrBuilder
    * </pre>
    *
    * <code>string owner = 6;</code>
+   *
+   * @return The bytes for owner.
    */
   com.google.protobuf.ByteString getOwnerBytes();
 
@@ -69,6 +75,8 @@ public interface GitHubEventsConfigOrBuilder
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -80,6 +88,8 @@ public interface GitHubEventsConfigOrBuilder
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -91,6 +101,8 @@ public interface GitHubEventsConfigOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PullRequestFilter pull_request = 4;</code>
+   *
+   * @return Whether the pullRequest field is set.
    */
   boolean hasPullRequest();
   /**
@@ -101,6 +113,8 @@ public interface GitHubEventsConfigOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PullRequestFilter pull_request = 4;</code>
+   *
+   * @return The pullRequest.
    */
   com.google.cloudbuild.v1.PullRequestFilter getPullRequest();
   /**
@@ -122,6 +136,8 @@ public interface GitHubEventsConfigOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PushFilter push = 5;</code>
+   *
+   * @return Whether the push field is set.
    */
   boolean hasPush();
   /**
@@ -132,6 +148,8 @@ public interface GitHubEventsConfigOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PushFilter push = 5;</code>
+   *
+   * @return The push.
    */
   com.google.cloudbuild.v1.PushFilter getPush();
   /**

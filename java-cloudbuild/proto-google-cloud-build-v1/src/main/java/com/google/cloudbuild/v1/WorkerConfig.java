@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,12 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WorkerConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -152,6 +157,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string machine_type = 1;</code>
+   *
+   * @return The machineType.
    */
   public java.lang.String getMachineType() {
     java.lang.Object ref = machineType_;
@@ -179,6 +186,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string machine_type = 1;</code>
+   *
+   * @return The bytes for machineType.
    */
   public com.google.protobuf.ByteString getMachineTypeBytes() {
     java.lang.Object ref = machineType_;
@@ -209,6 +218,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 disk_size_gb = 2;</code>
+   *
+   * @return The diskSizeGb.
    */
   public long getDiskSizeGb() {
     return diskSizeGb_;
@@ -226,6 +237,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Network network = 3;</code>
+   *
+   * @return Whether the network field is set.
    */
   public boolean hasNetwork() {
     return network_ != null;
@@ -240,6 +253,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Network network = 3;</code>
+   *
+   * @return The network.
    */
   public com.google.cloudbuild.v1.Network getNetwork() {
     return network_ == null ? com.google.cloudbuild.v1.Network.getDefaultInstance() : network_;
@@ -271,6 +286,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string tag = 4;</code>
+   *
+   * @return The tag.
    */
   public java.lang.String getTag() {
     java.lang.Object ref = tag_;
@@ -293,6 +310,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string tag = 4;</code>
+   *
+   * @return The bytes for tag.
    */
   public com.google.protobuf.ByteString getTagBytes() {
     java.lang.Object ref = tag_;
@@ -696,6 +715,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string machine_type = 1;</code>
+     *
+     * @return The machineType.
      */
     public java.lang.String getMachineType() {
       java.lang.Object ref = machineType_;
@@ -723,6 +744,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string machine_type = 1;</code>
+     *
+     * @return The bytes for machineType.
      */
     public com.google.protobuf.ByteString getMachineTypeBytes() {
       java.lang.Object ref = machineType_;
@@ -750,6 +773,9 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string machine_type = 1;</code>
+     *
+     * @param value The machineType to set.
+     * @return This builder for chaining.
      */
     public Builder setMachineType(java.lang.String value) {
       if (value == null) {
@@ -775,6 +801,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string machine_type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMachineType() {
 
@@ -797,6 +825,9 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string machine_type = 1;</code>
+     *
+     * @param value The bytes for machineType to set.
+     * @return This builder for chaining.
      */
     public Builder setMachineTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -825,6 +856,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 disk_size_gb = 2;</code>
+     *
+     * @return The diskSizeGb.
      */
     public long getDiskSizeGb() {
       return diskSizeGb_;
@@ -844,6 +877,9 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 disk_size_gb = 2;</code>
+     *
+     * @param value The diskSizeGb to set.
+     * @return This builder for chaining.
      */
     public Builder setDiskSizeGb(long value) {
 
@@ -866,6 +902,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 disk_size_gb = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
 
@@ -890,6 +928,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Network network = 3;</code>
+     *
+     * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
       return networkBuilder_ != null || network_ != null;
@@ -904,6 +944,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Network network = 3;</code>
+     *
+     * @return The network.
      */
     public com.google.cloudbuild.v1.Network getNetwork() {
       if (networkBuilder_ == null) {
@@ -1078,6 +1120,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 4;</code>
+     *
+     * @return The tag.
      */
     public java.lang.String getTag() {
       java.lang.Object ref = tag_;
@@ -1100,6 +1144,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 4;</code>
+     *
+     * @return The bytes for tag.
      */
     public com.google.protobuf.ByteString getTagBytes() {
       java.lang.Object ref = tag_;
@@ -1122,6 +1168,9 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 4;</code>
+     *
+     * @param value The tag to set.
+     * @return This builder for chaining.
      */
     public Builder setTag(java.lang.String value) {
       if (value == null) {
@@ -1142,6 +1191,8 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTag() {
 
@@ -1159,6 +1210,9 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 4;</code>
+     *
+     * @param value The bytes for tag to set.
+     * @return This builder for chaining.
      */
     public Builder setTagBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

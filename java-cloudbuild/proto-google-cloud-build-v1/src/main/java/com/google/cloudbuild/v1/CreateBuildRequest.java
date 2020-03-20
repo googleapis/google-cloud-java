@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,12 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateBuildRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,6 +136,8 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -151,6 +158,8 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -175,6 +184,8 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the build field is set.
    */
   public boolean hasBuild() {
     return build_ != null;
@@ -188,6 +199,8 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The build.
    */
   public com.google.cloudbuild.v1.Build getBuild() {
     return build_ == null ? com.google.cloudbuild.v1.Build.getDefaultInstance() : build_;
@@ -559,6 +572,8 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -579,6 +594,8 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -599,6 +616,9 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -617,6 +637,8 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -632,6 +654,9 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -660,6 +685,8 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the build field is set.
      */
     public boolean hasBuild() {
       return buildBuilder_ != null || build_ != null;
@@ -674,6 +701,8 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The build.
      */
     public com.google.cloudbuild.v1.Build getBuild() {
       if (buildBuilder_ == null) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,12 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ArtifactResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,9 +82,9 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fileHash_ = new java.util.ArrayList<com.google.cloudbuild.v1.FileHashes>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               fileHash_.add(
                   input.readMessage(
@@ -99,7 +105,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fileHash_ = java.util.Collections.unmodifiableList(fileHash_);
       }
       this.unknownFields = unknownFields.build();
@@ -122,7 +128,6 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v1.ArtifactResult.Builder.class);
   }
 
-  private int bitField0_;
   public static final int LOCATION_FIELD_NUMBER = 1;
   private volatile java.lang.Object location_;
   /**
@@ -135,6 +140,8 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string location = 1;</code>
+   *
+   * @return The location.
    */
   public java.lang.String getLocation() {
     java.lang.Object ref = location_;
@@ -157,6 +164,8 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string location = 1;</code>
+   *
+   * @return The bytes for location.
    */
   public com.google.protobuf.ByteString getLocationBytes() {
     java.lang.Object ref = location_;
@@ -455,7 +464,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
 
       if (fileHashBuilder_ == null) {
         fileHash_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         fileHashBuilder_.clear();
       }
@@ -487,18 +496,16 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       com.google.cloudbuild.v1.ArtifactResult result =
           new com.google.cloudbuild.v1.ArtifactResult(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.location_ = location_;
       if (fileHashBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           fileHash_ = java.util.Collections.unmodifiableList(fileHash_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.fileHash_ = fileHash_;
       } else {
         result.fileHash_ = fileHashBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -556,7 +563,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
         if (!other.fileHash_.isEmpty()) {
           if (fileHash_.isEmpty()) {
             fileHash_ = other.fileHash_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureFileHashIsMutable();
             fileHash_.addAll(other.fileHash_);
@@ -569,7 +576,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
             fileHashBuilder_.dispose();
             fileHashBuilder_ = null;
             fileHash_ = other.fileHash_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             fileHashBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFileHashFieldBuilder()
@@ -621,6 +628,8 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return The location.
      */
     public java.lang.String getLocation() {
       java.lang.Object ref = location_;
@@ -643,6 +652,8 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return The bytes for location.
      */
     public com.google.protobuf.ByteString getLocationBytes() {
       java.lang.Object ref = location_;
@@ -665,6 +676,9 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @param value The location to set.
+     * @return This builder for chaining.
      */
     public Builder setLocation(java.lang.String value) {
       if (value == null) {
@@ -685,6 +699,8 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocation() {
 
@@ -702,6 +718,9 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @param value The bytes for location to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -718,9 +737,9 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureFileHashIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fileHash_ = new java.util.ArrayList<com.google.cloudbuild.v1.FileHashes>(fileHash_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -935,7 +954,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFileHash() {
       if (fileHashBuilder_ == null) {
         fileHash_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         fileHashBuilder_.clear();
@@ -1056,7 +1075,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.FileHashes,
                 com.google.cloudbuild.v1.FileHashes.Builder,
                 com.google.cloudbuild.v1.FileHashesOrBuilder>(
-                fileHash_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                fileHash_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         fileHash_ = null;
       }
       return fileHashBuilder_;

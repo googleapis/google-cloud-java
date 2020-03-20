@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,12 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GitHubEventsConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -156,7 +161,10 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
   private int eventCase_ = 0;
   private java.lang.Object event_;
 
-  public enum EventCase implements com.google.protobuf.Internal.EnumLite {
+  public enum EventCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PULL_REQUEST(4),
     PUSH(5),
     EVENT_NOT_SET(0);
@@ -165,7 +173,11 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     private EventCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static EventCase valueOf(int value) {
       return forNumber(value);
@@ -203,6 +215,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>int64 installation_id = 1 [deprecated = true];</code>
+   *
+   * @return The installationId.
    */
   @java.lang.Deprecated
   public long getInstallationId() {
@@ -221,6 +235,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string owner = 6;</code>
+   *
+   * @return The owner.
    */
   public java.lang.String getOwner() {
     java.lang.Object ref = owner_;
@@ -243,6 +259,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string owner = 6;</code>
+   *
+   * @return The bytes for owner.
    */
   public com.google.protobuf.ByteString getOwnerBytes() {
     java.lang.Object ref = owner_;
@@ -267,6 +285,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -288,6 +308,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -310,6 +332,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PullRequestFilter pull_request = 4;</code>
+   *
+   * @return Whether the pullRequest field is set.
    */
   public boolean hasPullRequest() {
     return eventCase_ == 4;
@@ -322,6 +346,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PullRequestFilter pull_request = 4;</code>
+   *
+   * @return The pullRequest.
    */
   public com.google.cloudbuild.v1.PullRequestFilter getPullRequest() {
     if (eventCase_ == 4) {
@@ -354,6 +380,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PushFilter push = 5;</code>
+   *
+   * @return Whether the push field is set.
    */
   public boolean hasPush() {
     return eventCase_ == 5;
@@ -366,6 +394,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PushFilter push = 5;</code>
+   *
+   * @return The push.
    */
   public com.google.cloudbuild.v1.PushFilter getPush() {
     if (eventCase_ == 5) {
@@ -833,6 +863,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int64 installation_id = 1 [deprecated = true];</code>
+     *
+     * @return The installationId.
      */
     @java.lang.Deprecated
     public long getInstallationId() {
@@ -846,6 +878,9 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int64 installation_id = 1 [deprecated = true];</code>
+     *
+     * @param value The installationId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setInstallationId(long value) {
@@ -862,6 +897,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int64 installation_id = 1 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearInstallationId() {
@@ -882,6 +919,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string owner = 6;</code>
+     *
+     * @return The owner.
      */
     public java.lang.String getOwner() {
       java.lang.Object ref = owner_;
@@ -904,6 +943,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string owner = 6;</code>
+     *
+     * @return The bytes for owner.
      */
     public com.google.protobuf.ByteString getOwnerBytes() {
       java.lang.Object ref = owner_;
@@ -926,6 +967,9 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string owner = 6;</code>
+     *
+     * @param value The owner to set.
+     * @return This builder for chaining.
      */
     public Builder setOwner(java.lang.String value) {
       if (value == null) {
@@ -946,6 +990,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string owner = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOwner() {
 
@@ -963,6 +1009,9 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string owner = 6;</code>
+     *
+     * @param value The bytes for owner to set.
+     * @return This builder for chaining.
      */
     public Builder setOwnerBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -985,6 +1034,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1006,6 +1057,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1027,6 +1080,9 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1046,6 +1102,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1062,6 +1120,9 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1087,6 +1148,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PullRequestFilter pull_request = 4;</code>
+     *
+     * @return Whether the pullRequest field is set.
      */
     public boolean hasPullRequest() {
       return eventCase_ == 4;
@@ -1099,6 +1162,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PullRequestFilter pull_request = 4;</code>
+     *
+     * @return The pullRequest.
      */
     public com.google.cloudbuild.v1.PullRequestFilter getPullRequest() {
       if (pullRequestBuilder_ == null) {
@@ -1289,6 +1354,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PushFilter push = 5;</code>
+     *
+     * @return Whether the push field is set.
      */
     public boolean hasPush() {
       return eventCase_ == 5;
@@ -1301,6 +1368,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PushFilter push = 5;</code>
+     *
+     * @return The push.
      */
     public com.google.cloudbuild.v1.PushFilter getPush() {
       if (pushBuilder_ == null) {

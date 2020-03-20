@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,12 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
   private ListBuildTriggersResponse() {
     triggers_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListBuildTriggersResponse();
   }
 
   @java.lang.Override
@@ -121,7 +127,6 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
             com.google.cloudbuild.v1.ListBuildTriggersResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TRIGGERS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloudbuild.v1.BuildTrigger> triggers_;
   /**
@@ -196,6 +201,8 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -216,6 +223,8 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -482,7 +491,6 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       com.google.cloudbuild.v1.ListBuildTriggersResponse result =
           new com.google.cloudbuild.v1.ListBuildTriggersResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (triggersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           triggers_ = java.util.Collections.unmodifiableList(triggers_);
@@ -493,7 +501,6 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
         result.triggers_ = triggersBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -964,6 +971,8 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -984,6 +993,8 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1004,6 +1015,9 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1022,6 +1036,8 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1037,6 +1053,9 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

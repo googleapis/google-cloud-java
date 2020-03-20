@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,12 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PullRequestFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -78,6 +83,11 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
               int rawValue = input.readEnum();
 
               commentControl_ = rawValue;
+              break;
+            }
+          case 48:
+            {
+              invertRegex_ = input.readBool();
               break;
             }
           default:
@@ -178,12 +188,20 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static CommentControl valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static CommentControl forNumber(int value) {
       switch (value) {
         case 0:
@@ -242,7 +260,10 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
   private int gitRefCase_ = 0;
   private java.lang.Object gitRef_;
 
-  public enum GitRefCase implements com.google.protobuf.Internal.EnumLite {
+  public enum GitRefCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BRANCH(2),
     GITREF_NOT_SET(0);
     private final int value;
@@ -250,7 +271,11 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     private GitRefCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static GitRefCase valueOf(int value) {
       return forNumber(value);
@@ -287,6 +312,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string branch = 2;</code>
+   *
+   * @return The branch.
    */
   public java.lang.String getBranch() {
     java.lang.Object ref = "";
@@ -314,6 +341,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string branch = 2;</code>
+   *
+   * @return The bytes for branch.
    */
   public com.google.protobuf.ByteString getBranchBytes() {
     java.lang.Object ref = "";
@@ -338,12 +367,14 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Whether to block builds on a "/gcbrun" comment from a repository owner or
+   * Whether to block builds on a "/gcbrun" comment from a repository admin or
    * collaborator.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
    * </code>
+   *
+   * @return The enum numeric value on the wire for commentControl.
    */
   public int getCommentControlValue() {
     return commentControl_;
@@ -352,12 +383,14 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Whether to block builds on a "/gcbrun" comment from a repository owner or
+   * Whether to block builds on a "/gcbrun" comment from a repository admin or
    * collaborator.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
    * </code>
+   *
+   * @return The commentControl.
    */
   public com.google.cloudbuild.v1.PullRequestFilter.CommentControl getCommentControl() {
     @SuppressWarnings("deprecation")
@@ -366,6 +399,23 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     return result == null
         ? com.google.cloudbuild.v1.PullRequestFilter.CommentControl.UNRECOGNIZED
         : result;
+  }
+
+  public static final int INVERT_REGEX_FIELD_NUMBER = 6;
+  private boolean invertRegex_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, branches that do NOT match the git_ref will trigger a build.
+   * </pre>
+   *
+   * <code>bool invert_regex = 6;</code>
+   *
+   * @return The invertRegex.
+   */
+  public boolean getInvertRegex() {
+    return invertRegex_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -390,6 +440,9 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(5, commentControl_);
     }
+    if (invertRegex_ != false) {
+      output.writeBool(6, invertRegex_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -406,6 +459,9 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
         != com.google.cloudbuild.v1.PullRequestFilter.CommentControl.COMMENTS_DISABLED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, commentControl_);
+    }
+    if (invertRegex_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, invertRegex_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -424,6 +480,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
         (com.google.cloudbuild.v1.PullRequestFilter) obj;
 
     if (commentControl_ != other.commentControl_) return false;
+    if (getInvertRegex() != other.getInvertRegex()) return false;
     if (!getGitRefCase().equals(other.getGitRefCase())) return false;
     switch (gitRefCase_) {
       case 2:
@@ -445,6 +502,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + COMMENT_CONTROL_FIELD_NUMBER;
     hash = (53 * hash) + commentControl_;
+    hash = (37 * hash) + INVERT_REGEX_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInvertRegex());
     switch (gitRefCase_) {
       case 2:
         hash = (37 * hash) + BRANCH_FIELD_NUMBER;
@@ -601,6 +660,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
       super.clear();
       commentControl_ = 0;
 
+      invertRegex_ = false;
+
       gitRefCase_ = 0;
       gitRef_ = null;
       return this;
@@ -634,6 +695,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
         result.gitRef_ = gitRef_;
       }
       result.commentControl_ = commentControl_;
+      result.invertRegex_ = invertRegex_;
       result.gitRefCase_ = gitRefCase_;
       onBuilt();
       return result;
@@ -686,6 +748,9 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloudbuild.v1.PullRequestFilter.getDefaultInstance()) return this;
       if (other.commentControl_ != 0) {
         setCommentControlValue(other.getCommentControlValue());
+      }
+      if (other.getInvertRegex() != false) {
+        setInvertRegex(other.getInvertRegex());
       }
       switch (other.getGitRefCase()) {
         case BRANCH:
@@ -753,6 +818,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string branch = 2;</code>
+     *
+     * @return The branch.
      */
     public java.lang.String getBranch() {
       java.lang.Object ref = "";
@@ -780,6 +847,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string branch = 2;</code>
+     *
+     * @return The bytes for branch.
      */
     public com.google.protobuf.ByteString getBranchBytes() {
       java.lang.Object ref = "";
@@ -807,6 +876,9 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string branch = 2;</code>
+     *
+     * @param value The branch to set.
+     * @return This builder for chaining.
      */
     public Builder setBranch(java.lang.String value) {
       if (value == null) {
@@ -827,6 +899,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string branch = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBranch() {
       if (gitRefCase_ == 2) {
@@ -846,6 +920,9 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string branch = 2;</code>
+     *
+     * @param value The bytes for branch to set.
+     * @return This builder for chaining.
      */
     public Builder setBranchBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -863,12 +940,14 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether to block builds on a "/gcbrun" comment from a repository owner or
+     * Whether to block builds on a "/gcbrun" comment from a repository admin or
      * collaborator.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
      * </code>
+     *
+     * @return The enum numeric value on the wire for commentControl.
      */
     public int getCommentControlValue() {
       return commentControl_;
@@ -877,12 +956,15 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether to block builds on a "/gcbrun" comment from a repository owner or
+     * Whether to block builds on a "/gcbrun" comment from a repository admin or
      * collaborator.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for commentControl to set.
+     * @return This builder for chaining.
      */
     public Builder setCommentControlValue(int value) {
       commentControl_ = value;
@@ -893,12 +975,14 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether to block builds on a "/gcbrun" comment from a repository owner or
+     * Whether to block builds on a "/gcbrun" comment from a repository admin or
      * collaborator.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
      * </code>
+     *
+     * @return The commentControl.
      */
     public com.google.cloudbuild.v1.PullRequestFilter.CommentControl getCommentControl() {
       @SuppressWarnings("deprecation")
@@ -912,12 +996,15 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether to block builds on a "/gcbrun" comment from a repository owner or
+     * Whether to block builds on a "/gcbrun" comment from a repository admin or
      * collaborator.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
      * </code>
+     *
+     * @param value The commentControl to set.
+     * @return This builder for chaining.
      */
     public Builder setCommentControl(
         com.google.cloudbuild.v1.PullRequestFilter.CommentControl value) {
@@ -933,16 +1020,69 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether to block builds on a "/gcbrun" comment from a repository owner or
+     * Whether to block builds on a "/gcbrun" comment from a repository admin or
      * collaborator.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCommentControl() {
 
       commentControl_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean invertRegex_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, branches that do NOT match the git_ref will trigger a build.
+     * </pre>
+     *
+     * <code>bool invert_regex = 6;</code>
+     *
+     * @return The invertRegex.
+     */
+    public boolean getInvertRegex() {
+      return invertRegex_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, branches that do NOT match the git_ref will trigger a build.
+     * </pre>
+     *
+     * <code>bool invert_regex = 6;</code>
+     *
+     * @param value The invertRegex to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvertRegex(boolean value) {
+
+      invertRegex_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, branches that do NOT match the git_ref will trigger a build.
+     * </pre>
+     *
+     * <code>bool invert_regex = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInvertRegex() {
+
+      invertRegex_ = false;
       onChanged();
       return this;
     }

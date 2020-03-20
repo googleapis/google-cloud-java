@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,12 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BuiltImage();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -161,6 +168,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -184,6 +193,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string digest = 3;</code>
+   *
+   * @return The digest.
    */
   public java.lang.String getDigest() {
     java.lang.Object ref = digest_;
@@ -204,6 +215,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string digest = 3;</code>
+   *
+   * @return The bytes for digest.
    */
   public com.google.protobuf.ByteString getDigestBytes() {
     java.lang.Object ref = digest_;
@@ -226,7 +239,11 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    * Output only. Stores timing information for pushing the specified image.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the pushTiming field is set.
    */
   public boolean hasPushTiming() {
     return pushTiming_ != null;
@@ -238,7 +255,11 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    * Output only. Stores timing information for pushing the specified image.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The pushTiming.
    */
   public com.google.cloudbuild.v1.TimeSpan getPushTiming() {
     return pushTiming_ == null
@@ -252,7 +273,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    * Output only. Stores timing information for pushing the specified image.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloudbuild.v1.TimeSpanOrBuilder getPushTimingOrBuilder() {
     return getPushTiming();
@@ -625,6 +648,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -646,6 +671,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -667,6 +694,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -686,6 +716,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -702,6 +734,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -723,6 +758,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string digest = 3;</code>
+     *
+     * @return The digest.
      */
     public java.lang.String getDigest() {
       java.lang.Object ref = digest_;
@@ -743,6 +780,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string digest = 3;</code>
+     *
+     * @return The bytes for digest.
      */
     public com.google.protobuf.ByteString getDigestBytes() {
       java.lang.Object ref = digest_;
@@ -763,6 +802,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string digest = 3;</code>
+     *
+     * @param value The digest to set.
+     * @return This builder for chaining.
      */
     public Builder setDigest(java.lang.String value) {
       if (value == null) {
@@ -781,6 +823,8 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string digest = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDigest() {
 
@@ -796,6 +840,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string digest = 3;</code>
+     *
+     * @param value The bytes for digest to set.
+     * @return This builder for chaining.
      */
     public Builder setDigestBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -821,7 +868,11 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing the specified image.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the pushTiming field is set.
      */
     public boolean hasPushTiming() {
       return pushTimingBuilder_ != null || pushTiming_ != null;
@@ -833,7 +884,11 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing the specified image.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The pushTiming.
      */
     public com.google.cloudbuild.v1.TimeSpan getPushTiming() {
       if (pushTimingBuilder_ == null) {
@@ -851,7 +906,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing the specified image.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setPushTiming(com.google.cloudbuild.v1.TimeSpan value) {
       if (pushTimingBuilder_ == null) {
@@ -873,7 +930,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing the specified image.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setPushTiming(com.google.cloudbuild.v1.TimeSpan.Builder builderForValue) {
       if (pushTimingBuilder_ == null) {
@@ -892,7 +951,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing the specified image.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergePushTiming(com.google.cloudbuild.v1.TimeSpan value) {
       if (pushTimingBuilder_ == null) {
@@ -918,7 +979,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing the specified image.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearPushTiming() {
       if (pushTimingBuilder_ == null) {
@@ -938,7 +1001,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing the specified image.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloudbuild.v1.TimeSpan.Builder getPushTimingBuilder() {
 
@@ -952,7 +1017,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing the specified image.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloudbuild.v1.TimeSpanOrBuilder getPushTimingOrBuilder() {
       if (pushTimingBuilder_ != null) {
@@ -970,7 +1037,9 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing the specified image.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan push_timing = 4;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.TimeSpan,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,12 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
 
   private Artifacts() {
     images_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Artifacts();
   }
 
   @java.lang.Override
@@ -147,6 +153,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return The location.
      */
     java.lang.String getLocation();
     /**
@@ -161,6 +169,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return The bytes for location.
      */
     com.google.protobuf.ByteString getLocationBytes();
 
@@ -172,6 +182,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string paths = 2;</code>
+     *
+     * @return A list containing the paths.
      */
     java.util.List<java.lang.String> getPathsList();
     /**
@@ -182,6 +194,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string paths = 2;</code>
+     *
+     * @return The count of paths.
      */
     int getPathsCount();
     /**
@@ -192,6 +206,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string paths = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The paths at the given index.
      */
     java.lang.String getPaths(int index);
     /**
@@ -202,6 +219,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string paths = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the paths at the given index.
      */
     com.google.protobuf.ByteString getPathsBytes(int index);
 
@@ -213,6 +233,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+     *
+     * @return Whether the timing field is set.
      */
     boolean hasTiming();
     /**
@@ -223,6 +245,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+     *
+     * @return The timing.
      */
     com.google.cloudbuild.v1.TimeSpan getTiming();
     /**
@@ -262,6 +286,12 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ArtifactObjects();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -295,9 +325,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   paths_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 paths_.add(s);
                 break;
@@ -332,7 +362,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           paths_ = paths_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -355,7 +385,6 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
               com.google.cloudbuild.v1.Artifacts.ArtifactObjects.Builder.class);
     }
 
-    private int bitField0_;
     public static final int LOCATION_FIELD_NUMBER = 1;
     private volatile java.lang.Object location_;
     /**
@@ -370,6 +399,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return The location.
      */
     public java.lang.String getLocation() {
       java.lang.Object ref = location_;
@@ -394,6 +425,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return The bytes for location.
      */
     public com.google.protobuf.ByteString getLocationBytes() {
       java.lang.Object ref = location_;
@@ -417,6 +450,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string paths = 2;</code>
+     *
+     * @return A list containing the paths.
      */
     public com.google.protobuf.ProtocolStringList getPathsList() {
       return paths_;
@@ -429,6 +464,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string paths = 2;</code>
+     *
+     * @return The count of paths.
      */
     public int getPathsCount() {
       return paths_.size();
@@ -441,6 +478,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string paths = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The paths at the given index.
      */
     public java.lang.String getPaths(int index) {
       return paths_.get(index);
@@ -453,6 +493,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string paths = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the paths at the given index.
      */
     public com.google.protobuf.ByteString getPathsBytes(int index) {
       return paths_.getByteString(index);
@@ -468,6 +511,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+     *
+     * @return Whether the timing field is set.
      */
     public boolean hasTiming() {
       return timing_ != null;
@@ -480,6 +525,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+     *
+     * @return The timing.
      */
     public com.google.cloudbuild.v1.TimeSpan getTiming() {
       return timing_ == null ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance() : timing_;
@@ -737,7 +784,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         location_ = "";
 
         paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (timingBuilder_ == null) {
           timing_ = null;
         } else {
@@ -772,11 +819,10 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         com.google.cloudbuild.v1.Artifacts.ArtifactObjects result =
             new com.google.cloudbuild.v1.Artifacts.ArtifactObjects(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.location_ = location_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           paths_ = paths_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.paths_ = paths_;
         if (timingBuilder_ == null) {
@@ -784,7 +830,6 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.timing_ = timingBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -844,7 +889,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         if (!other.paths_.isEmpty()) {
           if (paths_.isEmpty()) {
             paths_ = other.paths_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePathsIsMutable();
             paths_.addAll(other.paths_);
@@ -899,6 +944,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string location = 1;</code>
+       *
+       * @return The location.
        */
       public java.lang.String getLocation() {
         java.lang.Object ref = location_;
@@ -923,6 +970,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string location = 1;</code>
+       *
+       * @return The bytes for location.
        */
       public com.google.protobuf.ByteString getLocationBytes() {
         java.lang.Object ref = location_;
@@ -947,6 +996,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string location = 1;</code>
+       *
+       * @param value The location to set.
+       * @return This builder for chaining.
        */
       public Builder setLocation(java.lang.String value) {
         if (value == null) {
@@ -969,6 +1021,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string location = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearLocation() {
 
@@ -988,6 +1042,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string location = 1;</code>
+       *
+       * @param value The bytes for location to set.
+       * @return This builder for chaining.
        */
       public Builder setLocationBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1004,9 +1061,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePathsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           paths_ = new com.google.protobuf.LazyStringArrayList(paths_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -1017,6 +1074,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string paths = 2;</code>
+       *
+       * @return A list containing the paths.
        */
       public com.google.protobuf.ProtocolStringList getPathsList() {
         return paths_.getUnmodifiableView();
@@ -1029,6 +1088,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string paths = 2;</code>
+       *
+       * @return The count of paths.
        */
       public int getPathsCount() {
         return paths_.size();
@@ -1041,6 +1102,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string paths = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The paths at the given index.
        */
       public java.lang.String getPaths(int index) {
         return paths_.get(index);
@@ -1053,6 +1117,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string paths = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the paths at the given index.
        */
       public com.google.protobuf.ByteString getPathsBytes(int index) {
         return paths_.getByteString(index);
@@ -1065,6 +1132,10 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string paths = 2;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The paths to set.
+       * @return This builder for chaining.
        */
       public Builder setPaths(int index, java.lang.String value) {
         if (value == null) {
@@ -1083,6 +1154,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string paths = 2;</code>
+       *
+       * @param value The paths to add.
+       * @return This builder for chaining.
        */
       public Builder addPaths(java.lang.String value) {
         if (value == null) {
@@ -1101,6 +1175,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string paths = 2;</code>
+       *
+       * @param values The paths to add.
+       * @return This builder for chaining.
        */
       public Builder addAllPaths(java.lang.Iterable<java.lang.String> values) {
         ensurePathsIsMutable();
@@ -1116,10 +1193,12 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string paths = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPaths() {
         paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1131,6 +1210,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string paths = 2;</code>
+       *
+       * @param value The bytes of the paths to add.
+       * @return This builder for chaining.
        */
       public Builder addPathsBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1157,6 +1239,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+       *
+       * @return Whether the timing field is set.
        */
       public boolean hasTiming() {
         return timingBuilder_ != null || timing_ != null;
@@ -1169,6 +1253,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+       *
+       * @return The timing.
        */
       public com.google.cloudbuild.v1.TimeSpan getTiming() {
         if (timingBuilder_ == null) {
@@ -1372,7 +1458,6 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int IMAGES_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList images_;
   /**
@@ -1388,6 +1473,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string images = 1;</code>
+   *
+   * @return A list containing the images.
    */
   public com.google.protobuf.ProtocolStringList getImagesList() {
     return images_;
@@ -1405,6 +1492,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string images = 1;</code>
+   *
+   * @return The count of images.
    */
   public int getImagesCount() {
     return images_.size();
@@ -1422,6 +1511,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string images = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The images at the given index.
    */
   public java.lang.String getImages(int index) {
     return images_.get(index);
@@ -1439,6 +1531,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string images = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the images at the given index.
    */
   public com.google.protobuf.ByteString getImagesBytes(int index) {
     return images_.getByteString(index);
@@ -1461,6 +1556,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Artifacts.ArtifactObjects objects = 2;</code>
+   *
+   * @return Whether the objects field is set.
    */
   public boolean hasObjects() {
     return objects_ != null;
@@ -1480,6 +1577,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Artifacts.ArtifactObjects objects = 2;</code>
+   *
+   * @return The objects.
    */
   public com.google.cloudbuild.v1.Artifacts.ArtifactObjects getObjects() {
     return objects_ == null
@@ -1765,7 +1864,6 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.Artifacts buildPartial() {
       com.google.cloudbuild.v1.Artifacts result = new com.google.cloudbuild.v1.Artifacts(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         images_ = images_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1776,7 +1874,6 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.objects_ = objectsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1892,6 +1989,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 1;</code>
+     *
+     * @return A list containing the images.
      */
     public com.google.protobuf.ProtocolStringList getImagesList() {
       return images_.getUnmodifiableView();
@@ -1909,6 +2008,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 1;</code>
+     *
+     * @return The count of images.
      */
     public int getImagesCount() {
       return images_.size();
@@ -1926,6 +2027,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The images at the given index.
      */
     public java.lang.String getImages(int index) {
       return images_.get(index);
@@ -1943,6 +2047,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the images at the given index.
      */
     public com.google.protobuf.ByteString getImagesBytes(int index) {
       return images_.getByteString(index);
@@ -1960,6 +2067,10 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The images to set.
+     * @return This builder for chaining.
      */
     public Builder setImages(int index, java.lang.String value) {
       if (value == null) {
@@ -1983,6 +2094,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 1;</code>
+     *
+     * @param value The images to add.
+     * @return This builder for chaining.
      */
     public Builder addImages(java.lang.String value) {
       if (value == null) {
@@ -2006,6 +2120,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 1;</code>
+     *
+     * @param values The images to add.
+     * @return This builder for chaining.
      */
     public Builder addAllImages(java.lang.Iterable<java.lang.String> values) {
       ensureImagesIsMutable();
@@ -2026,6 +2143,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImages() {
       images_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2046,6 +2165,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string images = 1;</code>
+     *
+     * @param value The bytes of the images to add.
+     * @return This builder for chaining.
      */
     public Builder addImagesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2079,6 +2201,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Artifacts.ArtifactObjects objects = 2;</code>
+     *
+     * @return Whether the objects field is set.
      */
     public boolean hasObjects() {
       return objectsBuilder_ != null || objects_ != null;
@@ -2098,6 +2222,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.Artifacts.ArtifactObjects objects = 2;</code>
+     *
+     * @return The objects.
      */
     public com.google.cloudbuild.v1.Artifacts.ArtifactObjects getObjects() {
       if (objectsBuilder_ == null) {

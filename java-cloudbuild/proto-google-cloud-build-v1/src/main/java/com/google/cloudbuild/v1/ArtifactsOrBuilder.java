@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,8 @@ public interface ArtifactsOrBuilder
    * </pre>
    *
    * <code>repeated string images = 1;</code>
+   *
+   * @return A list containing the images.
    */
   java.util.List<java.lang.String> getImagesList();
   /**
@@ -51,6 +53,8 @@ public interface ArtifactsOrBuilder
    * </pre>
    *
    * <code>repeated string images = 1;</code>
+   *
+   * @return The count of images.
    */
   int getImagesCount();
   /**
@@ -66,6 +70,9 @@ public interface ArtifactsOrBuilder
    * </pre>
    *
    * <code>repeated string images = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The images at the given index.
    */
   java.lang.String getImages(int index);
   /**
@@ -81,6 +88,9 @@ public interface ArtifactsOrBuilder
    * </pre>
    *
    * <code>repeated string images = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the images at the given index.
    */
   com.google.protobuf.ByteString getImagesBytes(int index);
 
@@ -99,6 +109,8 @@ public interface ArtifactsOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Artifacts.ArtifactObjects objects = 2;</code>
+   *
+   * @return Whether the objects field is set.
    */
   boolean hasObjects();
   /**
@@ -116,6 +128,8 @@ public interface ArtifactsOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.Artifacts.ArtifactObjects objects = 2;</code>
+   *
+   * @return The objects.
    */
   com.google.cloudbuild.v1.Artifacts.ArtifactObjects getObjects();
   /**
