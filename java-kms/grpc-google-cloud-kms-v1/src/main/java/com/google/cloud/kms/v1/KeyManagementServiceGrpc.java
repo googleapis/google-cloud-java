@@ -38,7 +38,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/kms/v1/service.proto")
 public final class KeyManagementServiceGrpc {
 
@@ -47,26 +47,18 @@ public final class KeyManagementServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.kms.v1.KeyManagementService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListKeyRingsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.ListKeyRingsRequest, com.google.cloud.kms.v1.ListKeyRingsResponse>
-      METHOD_LIST_KEY_RINGS = getListKeyRingsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.ListKeyRingsRequest, com.google.cloud.kms.v1.ListKeyRingsResponse>
       getListKeyRingsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListKeyRings",
+      requestType = com.google.cloud.kms.v1.ListKeyRingsRequest.class,
+      responseType = com.google.cloud.kms.v1.ListKeyRingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.ListKeyRingsRequest, com.google.cloud.kms.v1.ListKeyRingsResponse>
       getListKeyRingsMethod() {
-    return getListKeyRingsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.ListKeyRingsRequest, com.google.cloud.kms.v1.ListKeyRingsResponse>
-      getListKeyRingsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.ListKeyRingsRequest,
             com.google.cloud.kms.v1.ListKeyRingsResponse>
@@ -81,9 +73,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.ListKeyRingsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "ListKeyRings"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListKeyRings"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -100,30 +90,20 @@ public final class KeyManagementServiceGrpc {
     return getListKeyRingsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListCryptoKeysMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.ListCryptoKeysRequest,
-          com.google.cloud.kms.v1.ListCryptoKeysResponse>
-      METHOD_LIST_CRYPTO_KEYS = getListCryptoKeysMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.ListCryptoKeysRequest,
           com.google.cloud.kms.v1.ListCryptoKeysResponse>
       getListCryptoKeysMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCryptoKeys",
+      requestType = com.google.cloud.kms.v1.ListCryptoKeysRequest.class,
+      responseType = com.google.cloud.kms.v1.ListCryptoKeysResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.ListCryptoKeysRequest,
           com.google.cloud.kms.v1.ListCryptoKeysResponse>
       getListCryptoKeysMethod() {
-    return getListCryptoKeysMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.ListCryptoKeysRequest,
-          com.google.cloud.kms.v1.ListCryptoKeysResponse>
-      getListCryptoKeysMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.ListCryptoKeysRequest,
             com.google.cloud.kms.v1.ListCryptoKeysResponse>
@@ -138,9 +118,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.ListCryptoKeysResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "ListCryptoKeys"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCryptoKeys"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -157,30 +135,20 @@ public final class KeyManagementServiceGrpc {
     return getListCryptoKeysMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListCryptoKeyVersionsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest,
-          com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>
-      METHOD_LIST_CRYPTO_KEY_VERSIONS = getListCryptoKeyVersionsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest,
           com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>
       getListCryptoKeyVersionsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCryptoKeyVersions",
+      requestType = com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest.class,
+      responseType = com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest,
           com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>
       getListCryptoKeyVersionsMethod() {
-    return getListCryptoKeyVersionsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest,
-          com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>
-      getListCryptoKeyVersionsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest,
             com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>
@@ -199,8 +167,7 @@ public final class KeyManagementServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "ListCryptoKeyVersions"))
+                          generateFullMethodName(SERVICE_NAME, "ListCryptoKeyVersions"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -219,30 +186,20 @@ public final class KeyManagementServiceGrpc {
     return getListCryptoKeyVersionsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListImportJobsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.ListImportJobsRequest,
-          com.google.cloud.kms.v1.ListImportJobsResponse>
-      METHOD_LIST_IMPORT_JOBS = getListImportJobsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.ListImportJobsRequest,
           com.google.cloud.kms.v1.ListImportJobsResponse>
       getListImportJobsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListImportJobs",
+      requestType = com.google.cloud.kms.v1.ListImportJobsRequest.class,
+      responseType = com.google.cloud.kms.v1.ListImportJobsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.ListImportJobsRequest,
           com.google.cloud.kms.v1.ListImportJobsResponse>
       getListImportJobsMethod() {
-    return getListImportJobsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.ListImportJobsRequest,
-          com.google.cloud.kms.v1.ListImportJobsResponse>
-      getListImportJobsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.ListImportJobsRequest,
             com.google.cloud.kms.v1.ListImportJobsResponse>
@@ -257,9 +214,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.ListImportJobsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "ListImportJobs"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListImportJobs"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -276,26 +231,18 @@ public final class KeyManagementServiceGrpc {
     return getListImportJobsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetKeyRingMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
-      METHOD_GET_KEY_RING = getGetKeyRingMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
       getGetKeyRingMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetKeyRing",
+      requestType = com.google.cloud.kms.v1.GetKeyRingRequest.class,
+      responseType = com.google.cloud.kms.v1.KeyRing.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
       getGetKeyRingMethod() {
-    return getGetKeyRingMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
-      getGetKeyRingMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
         getGetKeyRingMethod;
@@ -308,9 +255,7 @@ public final class KeyManagementServiceGrpc {
                       .<com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "GetKeyRing"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetKeyRing"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -327,26 +272,18 @@ public final class KeyManagementServiceGrpc {
     return getGetKeyRingMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetCryptoKeyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.GetCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
-      METHOD_GET_CRYPTO_KEY = getGetCryptoKeyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.GetCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
       getGetCryptoKeyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCryptoKey",
+      requestType = com.google.cloud.kms.v1.GetCryptoKeyRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKey.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.GetCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
       getGetCryptoKeyMethod() {
-    return getGetCryptoKeyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.GetCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
-      getGetCryptoKeyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.GetCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
         getGetCryptoKeyMethod;
@@ -360,9 +297,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.CryptoKey>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "GetCryptoKey"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCryptoKey"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -379,30 +314,20 @@ public final class KeyManagementServiceGrpc {
     return getGetCryptoKeyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetCryptoKeyVersionMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.GetCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      METHOD_GET_CRYPTO_KEY_VERSION = getGetCryptoKeyVersionMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.GetCryptoKeyVersionRequest,
           com.google.cloud.kms.v1.CryptoKeyVersion>
       getGetCryptoKeyVersionMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCryptoKeyVersion",
+      requestType = com.google.cloud.kms.v1.GetCryptoKeyVersionRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKeyVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.GetCryptoKeyVersionRequest,
           com.google.cloud.kms.v1.CryptoKeyVersion>
       getGetCryptoKeyVersionMethod() {
-    return getGetCryptoKeyVersionMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.GetCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      getGetCryptoKeyVersionMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.GetCryptoKeyVersionRequest,
             com.google.cloud.kms.v1.CryptoKeyVersion>
@@ -420,8 +345,7 @@ public final class KeyManagementServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "GetCryptoKeyVersion"))
+                          generateFullMethodName(SERVICE_NAME, "GetCryptoKeyVersion"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -439,26 +363,18 @@ public final class KeyManagementServiceGrpc {
     return getGetCryptoKeyVersionMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetPublicKeyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.GetPublicKeyRequest, com.google.cloud.kms.v1.PublicKey>
-      METHOD_GET_PUBLIC_KEY = getGetPublicKeyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.GetPublicKeyRequest, com.google.cloud.kms.v1.PublicKey>
       getGetPublicKeyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPublicKey",
+      requestType = com.google.cloud.kms.v1.GetPublicKeyRequest.class,
+      responseType = com.google.cloud.kms.v1.PublicKey.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.GetPublicKeyRequest, com.google.cloud.kms.v1.PublicKey>
       getGetPublicKeyMethod() {
-    return getGetPublicKeyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.GetPublicKeyRequest, com.google.cloud.kms.v1.PublicKey>
-      getGetPublicKeyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.GetPublicKeyRequest, com.google.cloud.kms.v1.PublicKey>
         getGetPublicKeyMethod;
@@ -472,9 +388,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.PublicKey>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "GetPublicKey"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPublicKey"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -491,26 +405,18 @@ public final class KeyManagementServiceGrpc {
     return getGetPublicKeyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetImportJobMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.GetImportJobRequest, com.google.cloud.kms.v1.ImportJob>
-      METHOD_GET_IMPORT_JOB = getGetImportJobMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.GetImportJobRequest, com.google.cloud.kms.v1.ImportJob>
       getGetImportJobMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetImportJob",
+      requestType = com.google.cloud.kms.v1.GetImportJobRequest.class,
+      responseType = com.google.cloud.kms.v1.ImportJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.GetImportJobRequest, com.google.cloud.kms.v1.ImportJob>
       getGetImportJobMethod() {
-    return getGetImportJobMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.GetImportJobRequest, com.google.cloud.kms.v1.ImportJob>
-      getGetImportJobMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.GetImportJobRequest, com.google.cloud.kms.v1.ImportJob>
         getGetImportJobMethod;
@@ -524,9 +430,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.ImportJob>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "GetImportJob"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetImportJob"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -543,26 +447,18 @@ public final class KeyManagementServiceGrpc {
     return getGetImportJobMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateKeyRingMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.CreateKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
-      METHOD_CREATE_KEY_RING = getCreateKeyRingMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.CreateKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
       getCreateKeyRingMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateKeyRing",
+      requestType = com.google.cloud.kms.v1.CreateKeyRingRequest.class,
+      responseType = com.google.cloud.kms.v1.KeyRing.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.CreateKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
       getCreateKeyRingMethod() {
-    return getCreateKeyRingMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.CreateKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
-      getCreateKeyRingMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.CreateKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
         getCreateKeyRingMethod;
@@ -576,9 +472,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.KeyRing>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "CreateKeyRing"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateKeyRing"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -595,26 +489,18 @@ public final class KeyManagementServiceGrpc {
     return getCreateKeyRingMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateCryptoKeyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.CreateCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
-      METHOD_CREATE_CRYPTO_KEY = getCreateCryptoKeyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.CreateCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
       getCreateCryptoKeyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCryptoKey",
+      requestType = com.google.cloud.kms.v1.CreateCryptoKeyRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKey.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.CreateCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
       getCreateCryptoKeyMethod() {
-    return getCreateCryptoKeyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.CreateCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
-      getCreateCryptoKeyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.CreateCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
         getCreateCryptoKeyMethod;
@@ -629,9 +515,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.CryptoKey>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "CreateCryptoKey"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCryptoKey"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -648,30 +532,20 @@ public final class KeyManagementServiceGrpc {
     return getCreateCryptoKeyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateCryptoKeyVersionMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      METHOD_CREATE_CRYPTO_KEY_VERSION = getCreateCryptoKeyVersionMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest,
           com.google.cloud.kms.v1.CryptoKeyVersion>
       getCreateCryptoKeyVersionMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCryptoKeyVersion",
+      requestType = com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKeyVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest,
           com.google.cloud.kms.v1.CryptoKeyVersion>
       getCreateCryptoKeyVersionMethod() {
-    return getCreateCryptoKeyVersionMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      getCreateCryptoKeyVersionMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest,
             com.google.cloud.kms.v1.CryptoKeyVersion>
@@ -690,8 +564,7 @@ public final class KeyManagementServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "CreateCryptoKeyVersion"))
+                          generateFullMethodName(SERVICE_NAME, "CreateCryptoKeyVersion"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -710,30 +583,20 @@ public final class KeyManagementServiceGrpc {
     return getCreateCryptoKeyVersionMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getImportCryptoKeyVersionMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      METHOD_IMPORT_CRYPTO_KEY_VERSION = getImportCryptoKeyVersionMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
           com.google.cloud.kms.v1.CryptoKeyVersion>
       getImportCryptoKeyVersionMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportCryptoKeyVersion",
+      requestType = com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKeyVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
           com.google.cloud.kms.v1.CryptoKeyVersion>
       getImportCryptoKeyVersionMethod() {
-    return getImportCryptoKeyVersionMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      getImportCryptoKeyVersionMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
             com.google.cloud.kms.v1.CryptoKeyVersion>
@@ -752,8 +615,7 @@ public final class KeyManagementServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "ImportCryptoKeyVersion"))
+                          generateFullMethodName(SERVICE_NAME, "ImportCryptoKeyVersion"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -772,26 +634,18 @@ public final class KeyManagementServiceGrpc {
     return getImportCryptoKeyVersionMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateImportJobMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.CreateImportJobRequest, com.google.cloud.kms.v1.ImportJob>
-      METHOD_CREATE_IMPORT_JOB = getCreateImportJobMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.CreateImportJobRequest, com.google.cloud.kms.v1.ImportJob>
       getCreateImportJobMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateImportJob",
+      requestType = com.google.cloud.kms.v1.CreateImportJobRequest.class,
+      responseType = com.google.cloud.kms.v1.ImportJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.CreateImportJobRequest, com.google.cloud.kms.v1.ImportJob>
       getCreateImportJobMethod() {
-    return getCreateImportJobMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.CreateImportJobRequest, com.google.cloud.kms.v1.ImportJob>
-      getCreateImportJobMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.CreateImportJobRequest, com.google.cloud.kms.v1.ImportJob>
         getCreateImportJobMethod;
@@ -806,9 +660,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.ImportJob>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "CreateImportJob"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateImportJob"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -825,26 +677,18 @@ public final class KeyManagementServiceGrpc {
     return getCreateImportJobMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateCryptoKeyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.UpdateCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
-      METHOD_UPDATE_CRYPTO_KEY = getUpdateCryptoKeyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.UpdateCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
       getUpdateCryptoKeyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCryptoKey",
+      requestType = com.google.cloud.kms.v1.UpdateCryptoKeyRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKey.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.UpdateCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
       getUpdateCryptoKeyMethod() {
-    return getUpdateCryptoKeyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.UpdateCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
-      getUpdateCryptoKeyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.UpdateCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>
         getUpdateCryptoKeyMethod;
@@ -859,9 +703,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.CryptoKey>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "UpdateCryptoKey"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCryptoKey"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -878,30 +720,20 @@ public final class KeyManagementServiceGrpc {
     return getUpdateCryptoKeyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateCryptoKeyVersionMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      METHOD_UPDATE_CRYPTO_KEY_VERSION = getUpdateCryptoKeyVersionMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest,
           com.google.cloud.kms.v1.CryptoKeyVersion>
       getUpdateCryptoKeyVersionMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCryptoKeyVersion",
+      requestType = com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKeyVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest,
           com.google.cloud.kms.v1.CryptoKeyVersion>
       getUpdateCryptoKeyVersionMethod() {
-    return getUpdateCryptoKeyVersionMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      getUpdateCryptoKeyVersionMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest,
             com.google.cloud.kms.v1.CryptoKeyVersion>
@@ -920,8 +752,7 @@ public final class KeyManagementServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "UpdateCryptoKeyVersion"))
+                          generateFullMethodName(SERVICE_NAME, "UpdateCryptoKeyVersion"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -940,26 +771,18 @@ public final class KeyManagementServiceGrpc {
     return getUpdateCryptoKeyVersionMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getEncryptMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.EncryptRequest, com.google.cloud.kms.v1.EncryptResponse>
-      METHOD_ENCRYPT = getEncryptMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.EncryptRequest, com.google.cloud.kms.v1.EncryptResponse>
       getEncryptMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Encrypt",
+      requestType = com.google.cloud.kms.v1.EncryptRequest.class,
+      responseType = com.google.cloud.kms.v1.EncryptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.EncryptRequest, com.google.cloud.kms.v1.EncryptResponse>
       getEncryptMethod() {
-    return getEncryptMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.EncryptRequest, com.google.cloud.kms.v1.EncryptResponse>
-      getEncryptMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.EncryptRequest, com.google.cloud.kms.v1.EncryptResponse>
         getEncryptMethod;
@@ -973,9 +796,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.EncryptResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "Encrypt"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Encrypt"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -992,26 +813,18 @@ public final class KeyManagementServiceGrpc {
     return getEncryptMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDecryptMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.DecryptRequest, com.google.cloud.kms.v1.DecryptResponse>
-      METHOD_DECRYPT = getDecryptMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.DecryptRequest, com.google.cloud.kms.v1.DecryptResponse>
       getDecryptMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Decrypt",
+      requestType = com.google.cloud.kms.v1.DecryptRequest.class,
+      responseType = com.google.cloud.kms.v1.DecryptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.DecryptRequest, com.google.cloud.kms.v1.DecryptResponse>
       getDecryptMethod() {
-    return getDecryptMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.DecryptRequest, com.google.cloud.kms.v1.DecryptResponse>
-      getDecryptMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.DecryptRequest, com.google.cloud.kms.v1.DecryptResponse>
         getDecryptMethod;
@@ -1025,9 +838,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.DecryptResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "Decrypt"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Decrypt"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1044,30 +855,20 @@ public final class KeyManagementServiceGrpc {
     return getDecryptMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getAsymmetricSignMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.AsymmetricSignRequest,
-          com.google.cloud.kms.v1.AsymmetricSignResponse>
-      METHOD_ASYMMETRIC_SIGN = getAsymmetricSignMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.AsymmetricSignRequest,
           com.google.cloud.kms.v1.AsymmetricSignResponse>
       getAsymmetricSignMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AsymmetricSign",
+      requestType = com.google.cloud.kms.v1.AsymmetricSignRequest.class,
+      responseType = com.google.cloud.kms.v1.AsymmetricSignResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.AsymmetricSignRequest,
           com.google.cloud.kms.v1.AsymmetricSignResponse>
       getAsymmetricSignMethod() {
-    return getAsymmetricSignMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.AsymmetricSignRequest,
-          com.google.cloud.kms.v1.AsymmetricSignResponse>
-      getAsymmetricSignMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.AsymmetricSignRequest,
             com.google.cloud.kms.v1.AsymmetricSignResponse>
@@ -1082,9 +883,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.AsymmetricSignResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "AsymmetricSign"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AsymmetricSign"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1101,30 +900,20 @@ public final class KeyManagementServiceGrpc {
     return getAsymmetricSignMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getAsymmetricDecryptMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.AsymmetricDecryptRequest,
-          com.google.cloud.kms.v1.AsymmetricDecryptResponse>
-      METHOD_ASYMMETRIC_DECRYPT = getAsymmetricDecryptMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.AsymmetricDecryptRequest,
           com.google.cloud.kms.v1.AsymmetricDecryptResponse>
       getAsymmetricDecryptMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AsymmetricDecrypt",
+      requestType = com.google.cloud.kms.v1.AsymmetricDecryptRequest.class,
+      responseType = com.google.cloud.kms.v1.AsymmetricDecryptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.AsymmetricDecryptRequest,
           com.google.cloud.kms.v1.AsymmetricDecryptResponse>
       getAsymmetricDecryptMethod() {
-    return getAsymmetricDecryptMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.AsymmetricDecryptRequest,
-          com.google.cloud.kms.v1.AsymmetricDecryptResponse>
-      getAsymmetricDecryptMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.AsymmetricDecryptRequest,
             com.google.cloud.kms.v1.AsymmetricDecryptResponse>
@@ -1141,9 +930,7 @@ public final class KeyManagementServiceGrpc {
                           com.google.cloud.kms.v1.AsymmetricDecryptResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService", "AsymmetricDecrypt"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AsymmetricDecrypt"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1162,30 +949,20 @@ public final class KeyManagementServiceGrpc {
     return getAsymmetricDecryptMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateCryptoKeyPrimaryVersionMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
-          com.google.cloud.kms.v1.CryptoKey>
-      METHOD_UPDATE_CRYPTO_KEY_PRIMARY_VERSION = getUpdateCryptoKeyPrimaryVersionMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
           com.google.cloud.kms.v1.CryptoKey>
       getUpdateCryptoKeyPrimaryVersionMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCryptoKeyPrimaryVersion",
+      requestType = com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKey.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
           com.google.cloud.kms.v1.CryptoKey>
       getUpdateCryptoKeyPrimaryVersionMethod() {
-    return getUpdateCryptoKeyPrimaryVersionMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
-          com.google.cloud.kms.v1.CryptoKey>
-      getUpdateCryptoKeyPrimaryVersionMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
             com.google.cloud.kms.v1.CryptoKey>
@@ -1205,9 +982,7 @@ public final class KeyManagementServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService",
-                              "UpdateCryptoKeyPrimaryVersion"))
+                          generateFullMethodName(SERVICE_NAME, "UpdateCryptoKeyPrimaryVersion"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1226,30 +1001,20 @@ public final class KeyManagementServiceGrpc {
     return getUpdateCryptoKeyPrimaryVersionMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDestroyCryptoKeyVersionMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      METHOD_DESTROY_CRYPTO_KEY_VERSION = getDestroyCryptoKeyVersionMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
           com.google.cloud.kms.v1.CryptoKeyVersion>
       getDestroyCryptoKeyVersionMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DestroyCryptoKeyVersion",
+      requestType = com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKeyVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
           com.google.cloud.kms.v1.CryptoKeyVersion>
       getDestroyCryptoKeyVersionMethod() {
-    return getDestroyCryptoKeyVersionMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      getDestroyCryptoKeyVersionMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
             com.google.cloud.kms.v1.CryptoKeyVersion>
@@ -1269,9 +1034,7 @@ public final class KeyManagementServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService",
-                              "DestroyCryptoKeyVersion"))
+                          generateFullMethodName(SERVICE_NAME, "DestroyCryptoKeyVersion"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1290,30 +1053,20 @@ public final class KeyManagementServiceGrpc {
     return getDestroyCryptoKeyVersionMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getRestoreCryptoKeyVersionMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      METHOD_RESTORE_CRYPTO_KEY_VERSION = getRestoreCryptoKeyVersionMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
           com.google.cloud.kms.v1.CryptoKeyVersion>
       getRestoreCryptoKeyVersionMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestoreCryptoKeyVersion",
+      requestType = com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKeyVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
           com.google.cloud.kms.v1.CryptoKeyVersion>
       getRestoreCryptoKeyVersionMethod() {
-    return getRestoreCryptoKeyVersionMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      getRestoreCryptoKeyVersionMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
             com.google.cloud.kms.v1.CryptoKeyVersion>
@@ -1333,9 +1086,7 @@ public final class KeyManagementServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.kms.v1.KeyManagementService",
-                              "RestoreCryptoKeyVersion"))
+                          generateFullMethodName(SERVICE_NAME, "RestoreCryptoKeyVersion"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1356,19 +1107,43 @@ public final class KeyManagementServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static KeyManagementServiceStub newStub(io.grpc.Channel channel) {
-    return new KeyManagementServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<KeyManagementServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<KeyManagementServiceStub>() {
+          @java.lang.Override
+          public KeyManagementServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new KeyManagementServiceStub(channel, callOptions);
+          }
+        };
+    return KeyManagementServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static KeyManagementServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new KeyManagementServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<KeyManagementServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<KeyManagementServiceBlockingStub>() {
+          @java.lang.Override
+          public KeyManagementServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new KeyManagementServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return KeyManagementServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static KeyManagementServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new KeyManagementServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<KeyManagementServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<KeyManagementServiceFutureStub>() {
+          @java.lang.Override
+          public KeyManagementServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new KeyManagementServiceFutureStub(channel, callOptions);
+          }
+        };
+    return KeyManagementServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -1399,7 +1174,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.ListKeyRingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListKeyRingsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListKeyRingsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListKeyRingsMethod(), responseObserver);
     }
 
     /**
@@ -1413,7 +1188,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.ListCryptoKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListCryptoKeysResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListCryptoKeysMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListCryptoKeysMethod(), responseObserver);
     }
 
     /**
@@ -1427,7 +1202,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListCryptoKeyVersionsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListCryptoKeyVersionsMethod(), responseObserver);
     }
 
     /**
@@ -1441,7 +1216,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.ListImportJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListImportJobsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListImportJobsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListImportJobsMethod(), responseObserver);
     }
 
     /**
@@ -1454,7 +1229,7 @@ public final class KeyManagementServiceGrpc {
     public void getKeyRing(
         com.google.cloud.kms.v1.GetKeyRingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.KeyRing> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetKeyRingMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetKeyRingMethod(), responseObserver);
     }
 
     /**
@@ -1468,7 +1243,7 @@ public final class KeyManagementServiceGrpc {
     public void getCryptoKey(
         com.google.cloud.kms.v1.GetCryptoKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCryptoKeyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetCryptoKeyMethod(), responseObserver);
     }
 
     /**
@@ -1481,7 +1256,7 @@ public final class KeyManagementServiceGrpc {
     public void getCryptoKeyVersion(
         com.google.cloud.kms.v1.GetCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCryptoKeyVersionMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetCryptoKeyVersionMethod(), responseObserver);
     }
 
     /**
@@ -1497,7 +1272,7 @@ public final class KeyManagementServiceGrpc {
     public void getPublicKey(
         com.google.cloud.kms.v1.GetPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.PublicKey> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetPublicKeyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetPublicKeyMethod(), responseObserver);
     }
 
     /**
@@ -1510,7 +1285,7 @@ public final class KeyManagementServiceGrpc {
     public void getImportJob(
         com.google.cloud.kms.v1.GetImportJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ImportJob> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetImportJobMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetImportJobMethod(), responseObserver);
     }
 
     /**
@@ -1523,7 +1298,7 @@ public final class KeyManagementServiceGrpc {
     public void createKeyRing(
         com.google.cloud.kms.v1.CreateKeyRingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.KeyRing> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateKeyRingMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateKeyRingMethod(), responseObserver);
     }
 
     /**
@@ -1539,7 +1314,7 @@ public final class KeyManagementServiceGrpc {
     public void createCryptoKey(
         com.google.cloud.kms.v1.CreateCryptoKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCryptoKeyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateCryptoKeyMethod(), responseObserver);
     }
 
     /**
@@ -1555,7 +1330,7 @@ public final class KeyManagementServiceGrpc {
     public void createCryptoKeyVersion(
         com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCryptoKeyVersionMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateCryptoKeyVersionMethod(), responseObserver);
     }
 
     /**
@@ -1571,7 +1346,7 @@ public final class KeyManagementServiceGrpc {
     public void importCryptoKeyVersion(
         com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportCryptoKeyVersionMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getImportCryptoKeyVersionMethod(), responseObserver);
     }
 
     /**
@@ -1585,7 +1360,7 @@ public final class KeyManagementServiceGrpc {
     public void createImportJob(
         com.google.cloud.kms.v1.CreateImportJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ImportJob> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateImportJobMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateImportJobMethod(), responseObserver);
     }
 
     /**
@@ -1598,7 +1373,7 @@ public final class KeyManagementServiceGrpc {
     public void updateCryptoKey(
         com.google.cloud.kms.v1.UpdateCryptoKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCryptoKeyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateCryptoKeyMethod(), responseObserver);
     }
 
     /**
@@ -1616,7 +1391,7 @@ public final class KeyManagementServiceGrpc {
     public void updateCryptoKeyVersion(
         com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCryptoKeyVersionMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateCryptoKeyVersionMethod(), responseObserver);
     }
 
     /**
@@ -1631,7 +1406,7 @@ public final class KeyManagementServiceGrpc {
     public void encrypt(
         com.google.cloud.kms.v1.EncryptRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EncryptResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getEncryptMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getEncryptMethod(), responseObserver);
     }
 
     /**
@@ -1645,7 +1420,7 @@ public final class KeyManagementServiceGrpc {
     public void decrypt(
         com.google.cloud.kms.v1.DecryptRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.DecryptResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getDecryptMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDecryptMethod(), responseObserver);
     }
 
     /**
@@ -1661,7 +1436,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.AsymmetricSignRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.AsymmetricSignResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAsymmetricSignMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getAsymmetricSignMethod(), responseObserver);
     }
 
     /**
@@ -1677,7 +1452,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.AsymmetricDecryptRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.AsymmetricDecryptResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAsymmetricDecryptMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getAsymmetricDecryptMethod(), responseObserver);
     }
 
     /**
@@ -1691,7 +1466,7 @@ public final class KeyManagementServiceGrpc {
     public void updateCryptoKeyPrimaryVersion(
         com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCryptoKeyPrimaryVersionMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateCryptoKeyPrimaryVersionMethod(), responseObserver);
     }
 
     /**
@@ -1713,7 +1488,7 @@ public final class KeyManagementServiceGrpc {
     public void destroyCryptoKeyVersion(
         com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
-      asyncUnimplementedUnaryCall(getDestroyCryptoKeyVersionMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDestroyCryptoKeyVersionMethod(), responseObserver);
     }
 
     /**
@@ -1731,157 +1506,157 @@ public final class KeyManagementServiceGrpc {
     public void restoreCryptoKeyVersion(
         com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
-      asyncUnimplementedUnaryCall(getRestoreCryptoKeyVersionMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getRestoreCryptoKeyVersionMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getListKeyRingsMethodHelper(),
+              getListKeyRingsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.ListKeyRingsRequest,
                       com.google.cloud.kms.v1.ListKeyRingsResponse>(this, METHODID_LIST_KEY_RINGS)))
           .addMethod(
-              getListCryptoKeysMethodHelper(),
+              getListCryptoKeysMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.ListCryptoKeysRequest,
                       com.google.cloud.kms.v1.ListCryptoKeysResponse>(
                       this, METHODID_LIST_CRYPTO_KEYS)))
           .addMethod(
-              getListCryptoKeyVersionsMethodHelper(),
+              getListCryptoKeyVersionsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest,
                       com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>(
                       this, METHODID_LIST_CRYPTO_KEY_VERSIONS)))
           .addMethod(
-              getListImportJobsMethodHelper(),
+              getListImportJobsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.ListImportJobsRequest,
                       com.google.cloud.kms.v1.ListImportJobsResponse>(
                       this, METHODID_LIST_IMPORT_JOBS)))
           .addMethod(
-              getGetKeyRingMethodHelper(),
+              getGetKeyRingMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>(
                       this, METHODID_GET_KEY_RING)))
           .addMethod(
-              getGetCryptoKeyMethodHelper(),
+              getGetCryptoKeyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.GetCryptoKeyRequest,
                       com.google.cloud.kms.v1.CryptoKey>(this, METHODID_GET_CRYPTO_KEY)))
           .addMethod(
-              getGetCryptoKeyVersionMethodHelper(),
+              getGetCryptoKeyVersionMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.GetCryptoKeyVersionRequest,
                       com.google.cloud.kms.v1.CryptoKeyVersion>(
                       this, METHODID_GET_CRYPTO_KEY_VERSION)))
           .addMethod(
-              getGetPublicKeyMethodHelper(),
+              getGetPublicKeyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.GetPublicKeyRequest,
                       com.google.cloud.kms.v1.PublicKey>(this, METHODID_GET_PUBLIC_KEY)))
           .addMethod(
-              getGetImportJobMethodHelper(),
+              getGetImportJobMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.GetImportJobRequest,
                       com.google.cloud.kms.v1.ImportJob>(this, METHODID_GET_IMPORT_JOB)))
           .addMethod(
-              getCreateKeyRingMethodHelper(),
+              getCreateKeyRingMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.CreateKeyRingRequest,
                       com.google.cloud.kms.v1.KeyRing>(this, METHODID_CREATE_KEY_RING)))
           .addMethod(
-              getCreateCryptoKeyMethodHelper(),
+              getCreateCryptoKeyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.CreateCryptoKeyRequest,
                       com.google.cloud.kms.v1.CryptoKey>(this, METHODID_CREATE_CRYPTO_KEY)))
           .addMethod(
-              getCreateCryptoKeyVersionMethodHelper(),
+              getCreateCryptoKeyVersionMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest,
                       com.google.cloud.kms.v1.CryptoKeyVersion>(
                       this, METHODID_CREATE_CRYPTO_KEY_VERSION)))
           .addMethod(
-              getImportCryptoKeyVersionMethodHelper(),
+              getImportCryptoKeyVersionMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
                       com.google.cloud.kms.v1.CryptoKeyVersion>(
                       this, METHODID_IMPORT_CRYPTO_KEY_VERSION)))
           .addMethod(
-              getCreateImportJobMethodHelper(),
+              getCreateImportJobMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.CreateImportJobRequest,
                       com.google.cloud.kms.v1.ImportJob>(this, METHODID_CREATE_IMPORT_JOB)))
           .addMethod(
-              getUpdateCryptoKeyMethodHelper(),
+              getUpdateCryptoKeyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.UpdateCryptoKeyRequest,
                       com.google.cloud.kms.v1.CryptoKey>(this, METHODID_UPDATE_CRYPTO_KEY)))
           .addMethod(
-              getUpdateCryptoKeyVersionMethodHelper(),
+              getUpdateCryptoKeyVersionMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest,
                       com.google.cloud.kms.v1.CryptoKeyVersion>(
                       this, METHODID_UPDATE_CRYPTO_KEY_VERSION)))
           .addMethod(
-              getEncryptMethodHelper(),
+              getEncryptMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.EncryptRequest,
                       com.google.cloud.kms.v1.EncryptResponse>(this, METHODID_ENCRYPT)))
           .addMethod(
-              getDecryptMethodHelper(),
+              getDecryptMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.DecryptRequest,
                       com.google.cloud.kms.v1.DecryptResponse>(this, METHODID_DECRYPT)))
           .addMethod(
-              getAsymmetricSignMethodHelper(),
+              getAsymmetricSignMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.AsymmetricSignRequest,
                       com.google.cloud.kms.v1.AsymmetricSignResponse>(
                       this, METHODID_ASYMMETRIC_SIGN)))
           .addMethod(
-              getAsymmetricDecryptMethodHelper(),
+              getAsymmetricDecryptMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.AsymmetricDecryptRequest,
                       com.google.cloud.kms.v1.AsymmetricDecryptResponse>(
                       this, METHODID_ASYMMETRIC_DECRYPT)))
           .addMethod(
-              getUpdateCryptoKeyPrimaryVersionMethodHelper(),
+              getUpdateCryptoKeyPrimaryVersionMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
                       com.google.cloud.kms.v1.CryptoKey>(
                       this, METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION)))
           .addMethod(
-              getDestroyCryptoKeyVersionMethodHelper(),
+              getDestroyCryptoKeyVersionMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
                       com.google.cloud.kms.v1.CryptoKeyVersion>(
                       this, METHODID_DESTROY_CRYPTO_KEY_VERSION)))
           .addMethod(
-              getRestoreCryptoKeyVersionMethodHelper(),
+              getRestoreCryptoKeyVersionMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
@@ -1907,11 +1682,7 @@ public final class KeyManagementServiceGrpc {
    * </pre>
    */
   public static final class KeyManagementServiceStub
-      extends io.grpc.stub.AbstractStub<KeyManagementServiceStub> {
-    private KeyManagementServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<KeyManagementServiceStub> {
     private KeyManagementServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1934,7 +1705,7 @@ public final class KeyManagementServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListKeyRingsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListKeyRingsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListKeyRingsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1951,7 +1722,7 @@ public final class KeyManagementServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListCryptoKeysResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListCryptoKeysMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListCryptoKeysMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1968,7 +1739,7 @@ public final class KeyManagementServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListCryptoKeyVersionsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListCryptoKeyVersionsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1985,7 +1756,7 @@ public final class KeyManagementServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListImportJobsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListImportJobsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListImportJobsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2001,9 +1772,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.GetKeyRingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.KeyRing> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetKeyRingMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetKeyRingMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2018,7 +1787,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.GetCryptoKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetCryptoKeyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetCryptoKeyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2034,7 +1803,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.GetCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetCryptoKeyVersionMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetCryptoKeyVersionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2053,7 +1822,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.GetPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.PublicKey> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetPublicKeyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetPublicKeyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2069,7 +1838,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.GetImportJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ImportJob> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetImportJobMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetImportJobMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2085,7 +1854,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.CreateKeyRingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.KeyRing> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateKeyRingMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateKeyRingMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2104,7 +1873,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.CreateCryptoKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateCryptoKeyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateCryptoKeyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2123,7 +1892,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateCryptoKeyVersionMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateCryptoKeyVersionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2142,7 +1911,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getImportCryptoKeyVersionMethodHelper(), getCallOptions()),
+          getChannel().newCall(getImportCryptoKeyVersionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2159,7 +1928,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.CreateImportJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ImportJob> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateImportJobMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateImportJobMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2175,7 +1944,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.UpdateCryptoKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateCryptoKeyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateCryptoKeyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2196,7 +1965,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateCryptoKeyVersionMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateCryptoKeyVersionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2214,9 +1983,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.EncryptRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EncryptResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getEncryptMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getEncryptMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2231,9 +1998,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.DecryptRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.DecryptResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDecryptMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getDecryptMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2250,7 +2015,7 @@ public final class KeyManagementServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.AsymmetricSignResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getAsymmetricSignMethodHelper(), getCallOptions()),
+          getChannel().newCall(getAsymmetricSignMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2269,7 +2034,7 @@ public final class KeyManagementServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.AsymmetricDecryptResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getAsymmetricDecryptMethodHelper(), getCallOptions()),
+          getChannel().newCall(getAsymmetricDecryptMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2286,7 +2051,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateCryptoKeyPrimaryVersionMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateCryptoKeyPrimaryVersionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2311,7 +2076,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDestroyCryptoKeyVersionMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDestroyCryptoKeyVersionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2332,7 +2097,7 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getRestoreCryptoKeyVersionMethodHelper(), getCallOptions()),
+          getChannel().newCall(getRestoreCryptoKeyVersionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2354,11 +2119,7 @@ public final class KeyManagementServiceGrpc {
    * </pre>
    */
   public static final class KeyManagementServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<KeyManagementServiceBlockingStub> {
-    private KeyManagementServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<KeyManagementServiceBlockingStub> {
     private KeyManagementServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -2379,8 +2140,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.ListKeyRingsResponse listKeyRings(
         com.google.cloud.kms.v1.ListKeyRingsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListKeyRingsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListKeyRingsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2392,8 +2152,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.ListCryptoKeysResponse listCryptoKeys(
         com.google.cloud.kms.v1.ListCryptoKeysRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListCryptoKeysMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListCryptoKeysMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2406,7 +2165,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse listCryptoKeyVersions(
         com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getListCryptoKeyVersionsMethodHelper(), getCallOptions(), request);
+          getChannel(), getListCryptoKeyVersionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2418,8 +2177,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.ListImportJobsResponse listImportJobs(
         com.google.cloud.kms.v1.ListImportJobsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListImportJobsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListImportJobsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2431,8 +2189,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.KeyRing getKeyRing(
         com.google.cloud.kms.v1.GetKeyRingRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetKeyRingMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetKeyRingMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2445,8 +2202,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.CryptoKey getCryptoKey(
         com.google.cloud.kms.v1.GetCryptoKeyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetCryptoKeyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetCryptoKeyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2459,7 +2215,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion(
         com.google.cloud.kms.v1.GetCryptoKeyVersionRequest request) {
       return blockingUnaryCall(
-          getChannel(), getGetCryptoKeyVersionMethodHelper(), getCallOptions(), request);
+          getChannel(), getGetCryptoKeyVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2474,8 +2230,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.PublicKey getPublicKey(
         com.google.cloud.kms.v1.GetPublicKeyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetPublicKeyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetPublicKeyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2487,8 +2242,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.ImportJob getImportJob(
         com.google.cloud.kms.v1.GetImportJobRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetImportJobMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetImportJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2500,8 +2254,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.KeyRing createKeyRing(
         com.google.cloud.kms.v1.CreateKeyRingRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateKeyRingMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateKeyRingMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2516,8 +2269,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.CryptoKey createCryptoKey(
         com.google.cloud.kms.v1.CreateCryptoKeyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateCryptoKeyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateCryptoKeyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2533,7 +2285,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.cloud.kms.v1.CryptoKeyVersion createCryptoKeyVersion(
         com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateCryptoKeyVersionMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateCryptoKeyVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2549,7 +2301,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.cloud.kms.v1.CryptoKeyVersion importCryptoKeyVersion(
         com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest request) {
       return blockingUnaryCall(
-          getChannel(), getImportCryptoKeyVersionMethodHelper(), getCallOptions(), request);
+          getChannel(), getImportCryptoKeyVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2562,8 +2314,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.ImportJob createImportJob(
         com.google.cloud.kms.v1.CreateImportJobRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateImportJobMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateImportJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2575,8 +2326,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.CryptoKey updateCryptoKey(
         com.google.cloud.kms.v1.UpdateCryptoKeyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateCryptoKeyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateCryptoKeyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2594,7 +2344,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.cloud.kms.v1.CryptoKeyVersion updateCryptoKeyVersion(
         com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateCryptoKeyVersionMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateCryptoKeyVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2608,7 +2358,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.EncryptResponse encrypt(
         com.google.cloud.kms.v1.EncryptRequest request) {
-      return blockingUnaryCall(getChannel(), getEncryptMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getEncryptMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2621,7 +2371,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.DecryptResponse decrypt(
         com.google.cloud.kms.v1.DecryptRequest request) {
-      return blockingUnaryCall(getChannel(), getDecryptMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDecryptMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2635,8 +2385,7 @@ public final class KeyManagementServiceGrpc {
      */
     public com.google.cloud.kms.v1.AsymmetricSignResponse asymmetricSign(
         com.google.cloud.kms.v1.AsymmetricSignRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getAsymmetricSignMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getAsymmetricSignMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2651,7 +2400,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.cloud.kms.v1.AsymmetricDecryptResponse asymmetricDecrypt(
         com.google.cloud.kms.v1.AsymmetricDecryptRequest request) {
       return blockingUnaryCall(
-          getChannel(), getAsymmetricDecryptMethodHelper(), getCallOptions(), request);
+          getChannel(), getAsymmetricDecryptMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2665,7 +2414,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.cloud.kms.v1.CryptoKey updateCryptoKeyPrimaryVersion(
         com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateCryptoKeyPrimaryVersionMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateCryptoKeyPrimaryVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2687,7 +2436,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.cloud.kms.v1.CryptoKeyVersion destroyCryptoKeyVersion(
         com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDestroyCryptoKeyVersionMethodHelper(), getCallOptions(), request);
+          getChannel(), getDestroyCryptoKeyVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2705,7 +2454,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.cloud.kms.v1.CryptoKeyVersion restoreCryptoKeyVersion(
         com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request) {
       return blockingUnaryCall(
-          getChannel(), getRestoreCryptoKeyVersionMethodHelper(), getCallOptions(), request);
+          getChannel(), getRestoreCryptoKeyVersionMethod(), getCallOptions(), request);
     }
   }
 
@@ -2725,11 +2474,7 @@ public final class KeyManagementServiceGrpc {
    * </pre>
    */
   public static final class KeyManagementServiceFutureStub
-      extends io.grpc.stub.AbstractStub<KeyManagementServiceFutureStub> {
-    private KeyManagementServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<KeyManagementServiceFutureStub> {
     private KeyManagementServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -2752,7 +2497,7 @@ public final class KeyManagementServiceGrpc {
             com.google.cloud.kms.v1.ListKeyRingsResponse>
         listKeyRings(com.google.cloud.kms.v1.ListKeyRingsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListKeyRingsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListKeyRingsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2766,7 +2511,7 @@ public final class KeyManagementServiceGrpc {
             com.google.cloud.kms.v1.ListCryptoKeysResponse>
         listCryptoKeys(com.google.cloud.kms.v1.ListCryptoKeysRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListCryptoKeysMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListCryptoKeysMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2780,7 +2525,7 @@ public final class KeyManagementServiceGrpc {
             com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>
         listCryptoKeyVersions(com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListCryptoKeyVersionsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListCryptoKeyVersionsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2794,7 +2539,7 @@ public final class KeyManagementServiceGrpc {
             com.google.cloud.kms.v1.ListImportJobsResponse>
         listImportJobs(com.google.cloud.kms.v1.ListImportJobsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListImportJobsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListImportJobsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2807,7 +2552,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.KeyRing>
         getKeyRing(com.google.cloud.kms.v1.GetKeyRingRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetKeyRingMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetKeyRingMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2821,7 +2566,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.CryptoKey>
         getCryptoKey(com.google.cloud.kms.v1.GetCryptoKeyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetCryptoKeyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetCryptoKeyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2835,7 +2580,7 @@ public final class KeyManagementServiceGrpc {
             com.google.cloud.kms.v1.CryptoKeyVersion>
         getCryptoKeyVersion(com.google.cloud.kms.v1.GetCryptoKeyVersionRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetCryptoKeyVersionMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetCryptoKeyVersionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2851,7 +2596,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.PublicKey>
         getPublicKey(com.google.cloud.kms.v1.GetPublicKeyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetPublicKeyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetPublicKeyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2864,7 +2609,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.ImportJob>
         getImportJob(com.google.cloud.kms.v1.GetImportJobRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetImportJobMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetImportJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2877,7 +2622,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.KeyRing>
         createKeyRing(com.google.cloud.kms.v1.CreateKeyRingRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateKeyRingMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateKeyRingMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2893,7 +2638,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.CryptoKey>
         createCryptoKey(com.google.cloud.kms.v1.CreateCryptoKeyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateCryptoKeyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateCryptoKeyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2910,7 +2655,7 @@ public final class KeyManagementServiceGrpc {
             com.google.cloud.kms.v1.CryptoKeyVersion>
         createCryptoKeyVersion(com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateCryptoKeyVersionMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateCryptoKeyVersionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2927,7 +2672,7 @@ public final class KeyManagementServiceGrpc {
             com.google.cloud.kms.v1.CryptoKeyVersion>
         importCryptoKeyVersion(com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getImportCryptoKeyVersionMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getImportCryptoKeyVersionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2941,7 +2686,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.ImportJob>
         createImportJob(com.google.cloud.kms.v1.CreateImportJobRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateImportJobMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateImportJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2954,7 +2699,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.CryptoKey>
         updateCryptoKey(com.google.cloud.kms.v1.UpdateCryptoKeyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateCryptoKeyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateCryptoKeyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2973,7 +2718,7 @@ public final class KeyManagementServiceGrpc {
             com.google.cloud.kms.v1.CryptoKeyVersion>
         updateCryptoKeyVersion(com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateCryptoKeyVersionMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateCryptoKeyVersionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2988,8 +2733,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.kms.v1.EncryptResponse>
         encrypt(com.google.cloud.kms.v1.EncryptRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getEncryptMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getEncryptMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3003,8 +2747,7 @@ public final class KeyManagementServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.kms.v1.DecryptResponse>
         decrypt(com.google.cloud.kms.v1.DecryptRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getDecryptMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getDecryptMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3020,7 +2763,7 @@ public final class KeyManagementServiceGrpc {
             com.google.cloud.kms.v1.AsymmetricSignResponse>
         asymmetricSign(com.google.cloud.kms.v1.AsymmetricSignRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getAsymmetricSignMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getAsymmetricSignMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3036,7 +2779,7 @@ public final class KeyManagementServiceGrpc {
             com.google.cloud.kms.v1.AsymmetricDecryptResponse>
         asymmetricDecrypt(com.google.cloud.kms.v1.AsymmetricDecryptRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getAsymmetricDecryptMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getAsymmetricDecryptMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3051,7 +2794,7 @@ public final class KeyManagementServiceGrpc {
         updateCryptoKeyPrimaryVersion(
             com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateCryptoKeyPrimaryVersionMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateCryptoKeyPrimaryVersionMethod(), getCallOptions()),
           request);
     }
 
@@ -3075,8 +2818,7 @@ public final class KeyManagementServiceGrpc {
             com.google.cloud.kms.v1.CryptoKeyVersion>
         destroyCryptoKeyVersion(com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDestroyCryptoKeyVersionMethodHelper(), getCallOptions()),
-          request);
+          getChannel().newCall(getDestroyCryptoKeyVersionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3095,8 +2837,7 @@ public final class KeyManagementServiceGrpc {
             com.google.cloud.kms.v1.CryptoKeyVersion>
         restoreCryptoKeyVersion(com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getRestoreCryptoKeyVersionMethodHelper(), getCallOptions()),
-          request);
+          getChannel().newCall(getRestoreCryptoKeyVersionMethod(), getCallOptions()), request);
     }
   }
 
@@ -3334,29 +3075,29 @@ public final class KeyManagementServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new KeyManagementServiceFileDescriptorSupplier())
-                      .addMethod(getListKeyRingsMethodHelper())
-                      .addMethod(getListCryptoKeysMethodHelper())
-                      .addMethod(getListCryptoKeyVersionsMethodHelper())
-                      .addMethod(getListImportJobsMethodHelper())
-                      .addMethod(getGetKeyRingMethodHelper())
-                      .addMethod(getGetCryptoKeyMethodHelper())
-                      .addMethod(getGetCryptoKeyVersionMethodHelper())
-                      .addMethod(getGetPublicKeyMethodHelper())
-                      .addMethod(getGetImportJobMethodHelper())
-                      .addMethod(getCreateKeyRingMethodHelper())
-                      .addMethod(getCreateCryptoKeyMethodHelper())
-                      .addMethod(getCreateCryptoKeyVersionMethodHelper())
-                      .addMethod(getImportCryptoKeyVersionMethodHelper())
-                      .addMethod(getCreateImportJobMethodHelper())
-                      .addMethod(getUpdateCryptoKeyMethodHelper())
-                      .addMethod(getUpdateCryptoKeyVersionMethodHelper())
-                      .addMethod(getEncryptMethodHelper())
-                      .addMethod(getDecryptMethodHelper())
-                      .addMethod(getAsymmetricSignMethodHelper())
-                      .addMethod(getAsymmetricDecryptMethodHelper())
-                      .addMethod(getUpdateCryptoKeyPrimaryVersionMethodHelper())
-                      .addMethod(getDestroyCryptoKeyVersionMethodHelper())
-                      .addMethod(getRestoreCryptoKeyVersionMethodHelper())
+                      .addMethod(getListKeyRingsMethod())
+                      .addMethod(getListCryptoKeysMethod())
+                      .addMethod(getListCryptoKeyVersionsMethod())
+                      .addMethod(getListImportJobsMethod())
+                      .addMethod(getGetKeyRingMethod())
+                      .addMethod(getGetCryptoKeyMethod())
+                      .addMethod(getGetCryptoKeyVersionMethod())
+                      .addMethod(getGetPublicKeyMethod())
+                      .addMethod(getGetImportJobMethod())
+                      .addMethod(getCreateKeyRingMethod())
+                      .addMethod(getCreateCryptoKeyMethod())
+                      .addMethod(getCreateCryptoKeyVersionMethod())
+                      .addMethod(getImportCryptoKeyVersionMethod())
+                      .addMethod(getCreateImportJobMethod())
+                      .addMethod(getUpdateCryptoKeyMethod())
+                      .addMethod(getUpdateCryptoKeyVersionMethod())
+                      .addMethod(getEncryptMethod())
+                      .addMethod(getDecryptMethod())
+                      .addMethod(getAsymmetricSignMethod())
+                      .addMethod(getAsymmetricDecryptMethod())
+                      .addMethod(getUpdateCryptoKeyPrimaryVersionMethod())
+                      .addMethod(getDestroyCryptoKeyVersionMethod())
+                      .addMethod(getRestoreCryptoKeyVersionMethod())
                       .build();
         }
       }
