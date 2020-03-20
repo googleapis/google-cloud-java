@@ -20,10 +20,13 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.assertNotNull;
 
+import com.google.cloud.dlp.v2.DlpServiceClient;
+import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -100,31 +103,59 @@ public class InspectTests {
 
   @Test
   public void testInspectGcsFile() throws InterruptedException, ExecutionException, IOException {
+
     InspectGcsFile.inspectGcsFile(PROJECT_ID, GCS_PATH, TOPIC_ID, SUBSCRIPTION_ID);
+    // Await job creation
+    TimeUnit.SECONDS.sleep(3);
 
     String output = bout.toString();
-    assertThat(output, containsString("Info type: PHONE_NUMBER"));
-    assertThat(output, containsString("Info type: EMAIL_ADDRESS"));
+    assertThat(output, containsString("Job created: "));
+
+    // Cancelling the job early to conserve quota
+    String jobId = output.split("Job created: ")[1].split("\n")[0];
+    CancelDlpJobRequest request = CancelDlpJobRequest.newBuilder().setName(jobId).build();
+    try (DlpServiceClient client = DlpServiceClient.create()) {
+      client.cancelDlpJob(request);
+    }
   }
 
   @Test
   public void testInspectDatastoreEntity()
       throws InterruptedException, ExecutionException, IOException {
+
     InspectDatastoreEntity.insepctDatastoreEntity(
         PROJECT_ID, datastoreNamespace, datastoreKind, TOPIC_ID, SUBSCRIPTION_ID);
+    // Await job creation
+    TimeUnit.SECONDS.sleep(3);
 
     String output = bout.toString();
-    assertThat(output, containsString("Info type: PHONE_NUMBER"));
-    assertThat(output, containsString("Info type: EMAIL_ADDRESS"));
+    assertThat(output, containsString("Job created: "));
+
+    // Cancelling the job early to conserve quota
+    String jobId = output.split("Job created: ")[1].split("\n")[0];
+    CancelDlpJobRequest request = CancelDlpJobRequest.newBuilder().setName(jobId).build();
+    try (DlpServiceClient client = DlpServiceClient.create()) {
+      client.cancelDlpJob(request);
+    }
   }
 
   @Test
   public void testInspectBigQueryTable()
       throws InterruptedException, ExecutionException, IOException {
+
     InspectBigQueryTable.inspectBigQueryTable(
         PROJECT_ID, DATASET_ID, TABLE_ID, TOPIC_ID, SUBSCRIPTION_ID);
+    // Await job creation
+    TimeUnit.SECONDS.sleep(3);
 
     String output = bout.toString();
-    assertThat(output, containsString("Info type: PHONE_NUMBER"));
+    assertThat(output, containsString("Job created: "));
+
+    // Cancelling the job early to conserve quota
+    String jobId = output.split("Job created: ")[1].split("\n")[0];
+    CancelDlpJobRequest request = CancelDlpJobRequest.newBuilder().setName(jobId).build();
+    try (DlpServiceClient client = DlpServiceClient.create()) {
+      client.cancelDlpJob(request);
+    }
   }
 }
