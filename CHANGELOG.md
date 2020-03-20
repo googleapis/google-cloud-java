@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.110.0](https://www.github.com/googleapis/java-bigquery/compare/v1.109.0...v1.110.0) (2020-03-20)
+
+
+### Features
+
+* add support for Hive partitioning options when creating external tables ([#235](https://www.github.com/googleapis/java-bigquery/issues/235)) ([#236](https://www.github.com/googleapis/java-bigquery/issues/236)) ([ccc2bb3](https://www.github.com/googleapis/java-bigquery/commit/ccc2bb3de28a36e3791d5441c8bdea2333877ee8))
+
 ## [1.109.0](https://www.github.com/googleapis/java-bigquery/compare/v1.108.1...v1.109.0) (2020-03-20)
 
 
