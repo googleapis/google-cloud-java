@@ -31,7 +31,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/v2beta1/knowledge_base.proto")
 public final class KnowledgeBasesGrpc {
 
@@ -40,30 +40,20 @@ public final class KnowledgeBasesGrpc {
   public static final String SERVICE_NAME = "google.cloud.dialogflow.v2beta1.KnowledgeBases";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListKnowledgeBasesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest,
-          com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>
-      METHOD_LIST_KNOWLEDGE_BASES = getListKnowledgeBasesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest,
           com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>
       getListKnowledgeBasesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListKnowledgeBases",
+      requestType = com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest,
           com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>
       getListKnowledgeBasesMethod() {
-    return getListKnowledgeBasesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest,
-          com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>
-      getListKnowledgeBasesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest,
             com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>
@@ -79,10 +69,7 @@ public final class KnowledgeBasesGrpc {
                           com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.KnowledgeBases",
-                              "ListKnowledgeBases"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListKnowledgeBases"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -101,30 +88,20 @@ public final class KnowledgeBasesGrpc {
     return getListKnowledgeBasesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetKnowledgeBaseMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest,
-          com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
-      METHOD_GET_KNOWLEDGE_BASE = getGetKnowledgeBaseMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest,
           com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
       getGetKnowledgeBaseMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetKnowledgeBase",
+      requestType = com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.KnowledgeBase.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest,
           com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
       getGetKnowledgeBaseMethod() {
-    return getGetKnowledgeBaseMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest,
-          com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
-      getGetKnowledgeBaseMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest,
             com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
@@ -139,9 +116,7 @@ public final class KnowledgeBasesGrpc {
                           com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.KnowledgeBases", "GetKnowledgeBase"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetKnowledgeBase"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -160,30 +135,20 @@ public final class KnowledgeBasesGrpc {
     return getGetKnowledgeBaseMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateKnowledgeBaseMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest,
-          com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
-      METHOD_CREATE_KNOWLEDGE_BASE = getCreateKnowledgeBaseMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest,
           com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
       getCreateKnowledgeBaseMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateKnowledgeBase",
+      requestType = com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.KnowledgeBase.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest,
           com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
       getCreateKnowledgeBaseMethod() {
-    return getCreateKnowledgeBaseMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest,
-          com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
-      getCreateKnowledgeBaseMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest,
             com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
@@ -200,9 +165,7 @@ public final class KnowledgeBasesGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.KnowledgeBases",
-                              "CreateKnowledgeBase"))
+                          generateFullMethodName(SERVICE_NAME, "CreateKnowledgeBase"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -221,26 +184,18 @@ public final class KnowledgeBasesGrpc {
     return getCreateKnowledgeBaseMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteKnowledgeBaseMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_KNOWLEDGE_BASE = getDeleteKnowledgeBaseMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest, com.google.protobuf.Empty>
       getDeleteKnowledgeBaseMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteKnowledgeBase",
+      requestType = com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest, com.google.protobuf.Empty>
       getDeleteKnowledgeBaseMethod() {
-    return getDeleteKnowledgeBaseMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest, com.google.protobuf.Empty>
-      getDeleteKnowledgeBaseMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest,
             com.google.protobuf.Empty>
@@ -257,9 +212,7 @@ public final class KnowledgeBasesGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.KnowledgeBases",
-                              "DeleteKnowledgeBase"))
+                          generateFullMethodName(SERVICE_NAME, "DeleteKnowledgeBase"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -277,30 +230,20 @@ public final class KnowledgeBasesGrpc {
     return getDeleteKnowledgeBaseMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateKnowledgeBaseMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest,
-          com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
-      METHOD_UPDATE_KNOWLEDGE_BASE = getUpdateKnowledgeBaseMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest,
           com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
       getUpdateKnowledgeBaseMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateKnowledgeBase",
+      requestType = com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.KnowledgeBase.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest,
           com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
       getUpdateKnowledgeBaseMethod() {
-    return getUpdateKnowledgeBaseMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest,
-          com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
-      getUpdateKnowledgeBaseMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest,
             com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
@@ -317,9 +260,7 @@ public final class KnowledgeBasesGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.KnowledgeBases",
-                              "UpdateKnowledgeBase"))
+                          generateFullMethodName(SERVICE_NAME, "UpdateKnowledgeBase"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -340,19 +281,43 @@ public final class KnowledgeBasesGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static KnowledgeBasesStub newStub(io.grpc.Channel channel) {
-    return new KnowledgeBasesStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<KnowledgeBasesStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<KnowledgeBasesStub>() {
+          @java.lang.Override
+          public KnowledgeBasesStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new KnowledgeBasesStub(channel, callOptions);
+          }
+        };
+    return KnowledgeBasesStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static KnowledgeBasesBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new KnowledgeBasesBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<KnowledgeBasesBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<KnowledgeBasesBlockingStub>() {
+          @java.lang.Override
+          public KnowledgeBasesBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new KnowledgeBasesBlockingStub(channel, callOptions);
+          }
+        };
+    return KnowledgeBasesBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static KnowledgeBasesFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new KnowledgeBasesFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<KnowledgeBasesFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<KnowledgeBasesFutureStub>() {
+          @java.lang.Override
+          public KnowledgeBasesFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new KnowledgeBasesFutureStub(channel, callOptions);
+          }
+        };
+    return KnowledgeBasesFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -378,7 +343,7 @@ public final class KnowledgeBasesGrpc {
         com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListKnowledgeBasesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListKnowledgeBasesMethod(), responseObserver);
     }
 
     /**
@@ -394,7 +359,7 @@ public final class KnowledgeBasesGrpc {
         com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetKnowledgeBaseMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetKnowledgeBaseMethod(), responseObserver);
     }
 
     /**
@@ -410,7 +375,7 @@ public final class KnowledgeBasesGrpc {
         com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateKnowledgeBaseMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateKnowledgeBaseMethod(), responseObserver);
     }
 
     /**
@@ -425,7 +390,7 @@ public final class KnowledgeBasesGrpc {
     public void deleteKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteKnowledgeBaseMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteKnowledgeBaseMethod(), responseObserver);
     }
 
     /**
@@ -441,41 +406,41 @@ public final class KnowledgeBasesGrpc {
         com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateKnowledgeBaseMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateKnowledgeBaseMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getListKnowledgeBasesMethodHelper(),
+              getListKnowledgeBasesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest,
                       com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>(
                       this, METHODID_LIST_KNOWLEDGE_BASES)))
           .addMethod(
-              getGetKnowledgeBaseMethodHelper(),
+              getGetKnowledgeBaseMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest,
                       com.google.cloud.dialogflow.v2beta1.KnowledgeBase>(
                       this, METHODID_GET_KNOWLEDGE_BASE)))
           .addMethod(
-              getCreateKnowledgeBaseMethodHelper(),
+              getCreateKnowledgeBaseMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest,
                       com.google.cloud.dialogflow.v2beta1.KnowledgeBase>(
                       this, METHODID_CREATE_KNOWLEDGE_BASE)))
           .addMethod(
-              getDeleteKnowledgeBaseMethodHelper(),
+              getDeleteKnowledgeBaseMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_KNOWLEDGE_BASE)))
           .addMethod(
-              getUpdateKnowledgeBaseMethodHelper(),
+              getUpdateKnowledgeBaseMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest,
@@ -494,11 +459,7 @@ public final class KnowledgeBasesGrpc {
    * </pre>
    */
   public static final class KnowledgeBasesStub
-      extends io.grpc.stub.AbstractStub<KnowledgeBasesStub> {
-    private KnowledgeBasesStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<KnowledgeBasesStub> {
     private KnowledgeBasesStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -522,7 +483,7 @@ public final class KnowledgeBasesGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListKnowledgeBasesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListKnowledgeBasesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -541,7 +502,7 @@ public final class KnowledgeBasesGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetKnowledgeBaseMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetKnowledgeBaseMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -560,7 +521,7 @@ public final class KnowledgeBasesGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateKnowledgeBaseMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateKnowledgeBaseMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -578,7 +539,7 @@ public final class KnowledgeBasesGrpc {
         com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteKnowledgeBaseMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteKnowledgeBaseMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -597,7 +558,7 @@ public final class KnowledgeBasesGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateKnowledgeBaseMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateKnowledgeBaseMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -612,11 +573,7 @@ public final class KnowledgeBasesGrpc {
    * </pre>
    */
   public static final class KnowledgeBasesBlockingStub
-      extends io.grpc.stub.AbstractStub<KnowledgeBasesBlockingStub> {
-    private KnowledgeBasesBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<KnowledgeBasesBlockingStub> {
     private KnowledgeBasesBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -639,7 +596,7 @@ public final class KnowledgeBasesGrpc {
     public com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse listKnowledgeBases(
         com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getListKnowledgeBasesMethodHelper(), getCallOptions(), request);
+          getChannel(), getListKnowledgeBasesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -654,7 +611,7 @@ public final class KnowledgeBasesGrpc {
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase getKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest request) {
       return blockingUnaryCall(
-          getChannel(), getGetKnowledgeBaseMethodHelper(), getCallOptions(), request);
+          getChannel(), getGetKnowledgeBaseMethod(), getCallOptions(), request);
     }
 
     /**
@@ -669,7 +626,7 @@ public final class KnowledgeBasesGrpc {
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase createKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateKnowledgeBaseMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateKnowledgeBaseMethod(), getCallOptions(), request);
     }
 
     /**
@@ -684,7 +641,7 @@ public final class KnowledgeBasesGrpc {
     public com.google.protobuf.Empty deleteKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteKnowledgeBaseMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteKnowledgeBaseMethod(), getCallOptions(), request);
     }
 
     /**
@@ -699,7 +656,7 @@ public final class KnowledgeBasesGrpc {
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase updateKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateKnowledgeBaseMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateKnowledgeBaseMethod(), getCallOptions(), request);
     }
   }
 
@@ -712,11 +669,7 @@ public final class KnowledgeBasesGrpc {
    * </pre>
    */
   public static final class KnowledgeBasesFutureStub
-      extends io.grpc.stub.AbstractStub<KnowledgeBasesFutureStub> {
-    private KnowledgeBasesFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<KnowledgeBasesFutureStub> {
     private KnowledgeBasesFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -740,7 +693,7 @@ public final class KnowledgeBasesGrpc {
             com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>
         listKnowledgeBases(com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListKnowledgeBasesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListKnowledgeBasesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -756,7 +709,7 @@ public final class KnowledgeBasesGrpc {
             com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
         getKnowledgeBase(com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetKnowledgeBaseMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetKnowledgeBaseMethod(), getCallOptions()), request);
     }
 
     /**
@@ -773,7 +726,7 @@ public final class KnowledgeBasesGrpc {
         createKnowledgeBase(
             com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateKnowledgeBaseMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateKnowledgeBaseMethod(), getCallOptions()), request);
     }
 
     /**
@@ -789,7 +742,7 @@ public final class KnowledgeBasesGrpc {
         deleteKnowledgeBase(
             com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteKnowledgeBaseMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteKnowledgeBaseMethod(), getCallOptions()), request);
     }
 
     /**
@@ -806,7 +759,7 @@ public final class KnowledgeBasesGrpc {
         updateKnowledgeBase(
             com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateKnowledgeBaseMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateKnowledgeBaseMethod(), getCallOptions()), request);
     }
   }
 
@@ -927,11 +880,11 @@ public final class KnowledgeBasesGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new KnowledgeBasesFileDescriptorSupplier())
-                      .addMethod(getListKnowledgeBasesMethodHelper())
-                      .addMethod(getGetKnowledgeBaseMethodHelper())
-                      .addMethod(getCreateKnowledgeBaseMethodHelper())
-                      .addMethod(getDeleteKnowledgeBaseMethodHelper())
-                      .addMethod(getUpdateKnowledgeBaseMethodHelper())
+                      .addMethod(getListKnowledgeBasesMethod())
+                      .addMethod(getGetKnowledgeBaseMethod())
+                      .addMethod(getCreateKnowledgeBaseMethod())
+                      .addMethod(getDeleteKnowledgeBaseMethod())
+                      .addMethod(getUpdateKnowledgeBaseMethod())
                       .build();
         }
       }

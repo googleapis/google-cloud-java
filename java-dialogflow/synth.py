@@ -14,48 +14,17 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
-
-gapic = gcp.GAPICGenerator()
 
 service = 'dialogflow'
 versions = ['v2', 'v2beta1']
 config_pattern = '/google/cloud/dialogflow/{version}/artman_dialogflow_{version}.yaml'
 
-library = gapic.java_library(
-    service=service,
-    version='v2',
-    config_path='/google/cloud/dialogflow/v2/artman_dialogflow_v2.yaml',
-    artman_output_name='')
-
-package_name = f'com.google.cloud.{service}.v2'
-java.fix_proto_headers(library / f'proto-google-cloud-{service}-v2')
-java.fix_grpc_headers(library / f'grpc-google-cloud-{service}-v2', package_name)
-
-s.copy(library / f'gapic-google-cloud-{service}-v2/src', f'google-cloud-{service}/src')
-s.copy(library / f'grpc-google-cloud-{service}-v2/src', f'grpc-google-cloud-{service}-v2/src')
-s.copy(library / f'proto-google-cloud-{service}-v2/src', f'proto-google-cloud-{service}-v2/src')
-
-library = gapic.java_library(
-    service=service,
-    version='v2beta1',
-    config_path='/google/cloud/dialogflow/v2beta1/artman_dialogflow_v2beta1_java.yaml',
-    artman_output_name='')
-
-package_name = f'com.google.cloud.{service}.v2beta1'
-java.fix_proto_headers(library / f'proto-google-cloud-{service}-v2beta1')
-java.fix_grpc_headers(library / f'grpc-google-cloud-{service}-v2beta1', package_name)
-
-s.copy(library / f'gapic-google-cloud-{service}-v2beta1/src', f'google-cloud-{service}/src')
-s.copy(library / f'grpc-google-cloud-{service}-v2beta1/src', f'grpc-google-cloud-{service}-v2beta1/src')
-s.copy(library / f'proto-google-cloud-{service}-v2beta1/src', f'proto-google-cloud-{service}-v2beta1/src')
-
-
 for version in versions:
-  java.format_code(f'google-cloud-{service}/src')
-  java.format_code(f'grpc-google-cloud-{service}-{version}/src')
-  java.format_code(f'proto-google-cloud-{service}-{version}/src')
+  java.bazel_library(
+      service=service,
+      version=version,
+      bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
+  )
 
 java.common_templates()

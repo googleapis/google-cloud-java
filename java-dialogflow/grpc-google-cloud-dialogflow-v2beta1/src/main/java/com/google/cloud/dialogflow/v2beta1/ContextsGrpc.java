@@ -45,7 +45,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/v2beta1/context.proto")
 public final class ContextsGrpc {
 
@@ -54,30 +54,20 @@ public final class ContextsGrpc {
   public static final String SERVICE_NAME = "google.cloud.dialogflow.v2beta1.Contexts";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListContextsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.ListContextsRequest,
-          com.google.cloud.dialogflow.v2beta1.ListContextsResponse>
-      METHOD_LIST_CONTEXTS = getListContextsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.ListContextsRequest,
           com.google.cloud.dialogflow.v2beta1.ListContextsResponse>
       getListContextsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListContexts",
+      requestType = com.google.cloud.dialogflow.v2beta1.ListContextsRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.ListContextsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.ListContextsRequest,
           com.google.cloud.dialogflow.v2beta1.ListContextsResponse>
       getListContextsMethod() {
-    return getListContextsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.ListContextsRequest,
-          com.google.cloud.dialogflow.v2beta1.ListContextsResponse>
-      getListContextsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.ListContextsRequest,
             com.google.cloud.dialogflow.v2beta1.ListContextsResponse>
@@ -92,9 +82,7 @@ public final class ContextsGrpc {
                           com.google.cloud.dialogflow.v2beta1.ListContextsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.Contexts", "ListContexts"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListContexts"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -112,30 +100,20 @@ public final class ContextsGrpc {
     return getListContextsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetContextMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.GetContextRequest,
-          com.google.cloud.dialogflow.v2beta1.Context>
-      METHOD_GET_CONTEXT = getGetContextMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.GetContextRequest,
           com.google.cloud.dialogflow.v2beta1.Context>
       getGetContextMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetContext",
+      requestType = com.google.cloud.dialogflow.v2beta1.GetContextRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.Context.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.GetContextRequest,
           com.google.cloud.dialogflow.v2beta1.Context>
       getGetContextMethod() {
-    return getGetContextMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.GetContextRequest,
-          com.google.cloud.dialogflow.v2beta1.Context>
-      getGetContextMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.GetContextRequest,
             com.google.cloud.dialogflow.v2beta1.Context>
@@ -150,9 +128,7 @@ public final class ContextsGrpc {
                           com.google.cloud.dialogflow.v2beta1.Context>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.Contexts", "GetContext"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetContext"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -169,30 +145,20 @@ public final class ContextsGrpc {
     return getGetContextMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateContextMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.CreateContextRequest,
-          com.google.cloud.dialogflow.v2beta1.Context>
-      METHOD_CREATE_CONTEXT = getCreateContextMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.CreateContextRequest,
           com.google.cloud.dialogflow.v2beta1.Context>
       getCreateContextMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateContext",
+      requestType = com.google.cloud.dialogflow.v2beta1.CreateContextRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.Context.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.CreateContextRequest,
           com.google.cloud.dialogflow.v2beta1.Context>
       getCreateContextMethod() {
-    return getCreateContextMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.CreateContextRequest,
-          com.google.cloud.dialogflow.v2beta1.Context>
-      getCreateContextMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.CreateContextRequest,
             com.google.cloud.dialogflow.v2beta1.Context>
@@ -207,9 +173,7 @@ public final class ContextsGrpc {
                           com.google.cloud.dialogflow.v2beta1.Context>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.Contexts", "CreateContext"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateContext"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -226,30 +190,20 @@ public final class ContextsGrpc {
     return getCreateContextMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateContextMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.UpdateContextRequest,
-          com.google.cloud.dialogflow.v2beta1.Context>
-      METHOD_UPDATE_CONTEXT = getUpdateContextMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.UpdateContextRequest,
           com.google.cloud.dialogflow.v2beta1.Context>
       getUpdateContextMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateContext",
+      requestType = com.google.cloud.dialogflow.v2beta1.UpdateContextRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.Context.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.UpdateContextRequest,
           com.google.cloud.dialogflow.v2beta1.Context>
       getUpdateContextMethod() {
-    return getUpdateContextMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.UpdateContextRequest,
-          com.google.cloud.dialogflow.v2beta1.Context>
-      getUpdateContextMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.UpdateContextRequest,
             com.google.cloud.dialogflow.v2beta1.Context>
@@ -264,9 +218,7 @@ public final class ContextsGrpc {
                           com.google.cloud.dialogflow.v2beta1.Context>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.Contexts", "UpdateContext"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateContext"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -283,26 +235,18 @@ public final class ContextsGrpc {
     return getUpdateContextMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteContextMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.DeleteContextRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_CONTEXT = getDeleteContextMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.DeleteContextRequest, com.google.protobuf.Empty>
       getDeleteContextMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteContext",
+      requestType = com.google.cloud.dialogflow.v2beta1.DeleteContextRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.DeleteContextRequest, com.google.protobuf.Empty>
       getDeleteContextMethod() {
-    return getDeleteContextMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.DeleteContextRequest, com.google.protobuf.Empty>
-      getDeleteContextMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.DeleteContextRequest, com.google.protobuf.Empty>
         getDeleteContextMethod;
@@ -316,9 +260,7 @@ public final class ContextsGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.Contexts", "DeleteContext"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteContext"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -335,26 +277,18 @@ public final class ContextsGrpc {
     return getDeleteContextMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteAllContextsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_ALL_CONTEXTS = getDeleteAllContextsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest, com.google.protobuf.Empty>
       getDeleteAllContextsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAllContexts",
+      requestType = com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest, com.google.protobuf.Empty>
       getDeleteAllContextsMethod() {
-    return getDeleteAllContextsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest, com.google.protobuf.Empty>
-      getDeleteAllContextsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest, com.google.protobuf.Empty>
         getDeleteAllContextsMethod;
@@ -368,9 +302,7 @@ public final class ContextsGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.Contexts", "DeleteAllContexts"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAllContexts"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -390,19 +322,42 @@ public final class ContextsGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static ContextsStub newStub(io.grpc.Channel channel) {
-    return new ContextsStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ContextsStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ContextsStub>() {
+          @java.lang.Override
+          public ContextsStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ContextsStub(channel, callOptions);
+          }
+        };
+    return ContextsStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static ContextsBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new ContextsBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ContextsBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ContextsBlockingStub>() {
+          @java.lang.Override
+          public ContextsBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ContextsBlockingStub(channel, callOptions);
+          }
+        };
+    return ContextsBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static ContextsFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new ContextsFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ContextsFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ContextsFutureStub>() {
+          @java.lang.Override
+          public ContextsFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ContextsFutureStub(channel, callOptions);
+          }
+        };
+    return ContextsFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -440,7 +395,7 @@ public final class ContextsGrpc {
         com.google.cloud.dialogflow.v2beta1.ListContextsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListContextsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListContextsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListContextsMethod(), responseObserver);
     }
 
     /**
@@ -453,7 +408,7 @@ public final class ContextsGrpc {
     public void getContext(
         com.google.cloud.dialogflow.v2beta1.GetContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Context> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetContextMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetContextMethod(), responseObserver);
     }
 
     /**
@@ -467,7 +422,7 @@ public final class ContextsGrpc {
     public void createContext(
         com.google.cloud.dialogflow.v2beta1.CreateContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Context> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateContextMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateContextMethod(), responseObserver);
     }
 
     /**
@@ -480,7 +435,7 @@ public final class ContextsGrpc {
     public void updateContext(
         com.google.cloud.dialogflow.v2beta1.UpdateContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Context> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateContextMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateContextMethod(), responseObserver);
     }
 
     /**
@@ -493,7 +448,7 @@ public final class ContextsGrpc {
     public void deleteContext(
         com.google.cloud.dialogflow.v2beta1.DeleteContextRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteContextMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteContextMethod(), responseObserver);
     }
 
     /**
@@ -506,45 +461,45 @@ public final class ContextsGrpc {
     public void deleteAllContexts(
         com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteAllContextsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteAllContextsMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getListContextsMethodHelper(),
+              getListContextsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.ListContextsRequest,
                       com.google.cloud.dialogflow.v2beta1.ListContextsResponse>(
                       this, METHODID_LIST_CONTEXTS)))
           .addMethod(
-              getGetContextMethodHelper(),
+              getGetContextMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.GetContextRequest,
                       com.google.cloud.dialogflow.v2beta1.Context>(this, METHODID_GET_CONTEXT)))
           .addMethod(
-              getCreateContextMethodHelper(),
+              getCreateContextMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.CreateContextRequest,
                       com.google.cloud.dialogflow.v2beta1.Context>(this, METHODID_CREATE_CONTEXT)))
           .addMethod(
-              getUpdateContextMethodHelper(),
+              getUpdateContextMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.UpdateContextRequest,
                       com.google.cloud.dialogflow.v2beta1.Context>(this, METHODID_UPDATE_CONTEXT)))
           .addMethod(
-              getDeleteContextMethodHelper(),
+              getDeleteContextMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.DeleteContextRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_CONTEXT)))
           .addMethod(
-              getDeleteAllContextsMethodHelper(),
+              getDeleteAllContextsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest,
@@ -575,11 +530,7 @@ public final class ContextsGrpc {
    * documentation](https://cloud.google.com/dialogflow/docs/contexts-overview).
    * </pre>
    */
-  public static final class ContextsStub extends io.grpc.stub.AbstractStub<ContextsStub> {
-    private ContextsStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class ContextsStub extends io.grpc.stub.AbstractAsyncStub<ContextsStub> {
     private ContextsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -601,7 +552,7 @@ public final class ContextsGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListContextsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListContextsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListContextsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -617,9 +568,7 @@ public final class ContextsGrpc {
         com.google.cloud.dialogflow.v2beta1.GetContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Context> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetContextMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetContextMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -634,7 +583,7 @@ public final class ContextsGrpc {
         com.google.cloud.dialogflow.v2beta1.CreateContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Context> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateContextMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateContextMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -650,7 +599,7 @@ public final class ContextsGrpc {
         com.google.cloud.dialogflow.v2beta1.UpdateContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Context> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateContextMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateContextMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -666,7 +615,7 @@ public final class ContextsGrpc {
         com.google.cloud.dialogflow.v2beta1.DeleteContextRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteContextMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteContextMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -682,7 +631,7 @@ public final class ContextsGrpc {
         com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteAllContextsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteAllContextsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -711,11 +660,7 @@ public final class ContextsGrpc {
    * </pre>
    */
   public static final class ContextsBlockingStub
-      extends io.grpc.stub.AbstractStub<ContextsBlockingStub> {
-    private ContextsBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<ContextsBlockingStub> {
     private ContextsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -734,8 +679,7 @@ public final class ContextsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.ListContextsResponse listContexts(
         com.google.cloud.dialogflow.v2beta1.ListContextsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListContextsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListContextsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -747,8 +691,7 @@ public final class ContextsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.Context getContext(
         com.google.cloud.dialogflow.v2beta1.GetContextRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetContextMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetContextMethod(), getCallOptions(), request);
     }
 
     /**
@@ -761,8 +704,7 @@ public final class ContextsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.Context createContext(
         com.google.cloud.dialogflow.v2beta1.CreateContextRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateContextMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateContextMethod(), getCallOptions(), request);
     }
 
     /**
@@ -774,8 +716,7 @@ public final class ContextsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.Context updateContext(
         com.google.cloud.dialogflow.v2beta1.UpdateContextRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateContextMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateContextMethod(), getCallOptions(), request);
     }
 
     /**
@@ -787,8 +728,7 @@ public final class ContextsGrpc {
      */
     public com.google.protobuf.Empty deleteContext(
         com.google.cloud.dialogflow.v2beta1.DeleteContextRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteContextMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteContextMethod(), getCallOptions(), request);
     }
 
     /**
@@ -801,7 +741,7 @@ public final class ContextsGrpc {
     public com.google.protobuf.Empty deleteAllContexts(
         com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteAllContextsMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteAllContextsMethod(), getCallOptions(), request);
     }
   }
 
@@ -828,11 +768,7 @@ public final class ContextsGrpc {
    * </pre>
    */
   public static final class ContextsFutureStub
-      extends io.grpc.stub.AbstractStub<ContextsFutureStub> {
-    private ContextsFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<ContextsFutureStub> {
     private ContextsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -853,7 +789,7 @@ public final class ContextsGrpc {
             com.google.cloud.dialogflow.v2beta1.ListContextsResponse>
         listContexts(com.google.cloud.dialogflow.v2beta1.ListContextsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListContextsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListContextsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -867,7 +803,7 @@ public final class ContextsGrpc {
             com.google.cloud.dialogflow.v2beta1.Context>
         getContext(com.google.cloud.dialogflow.v2beta1.GetContextRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetContextMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetContextMethod(), getCallOptions()), request);
     }
 
     /**
@@ -882,7 +818,7 @@ public final class ContextsGrpc {
             com.google.cloud.dialogflow.v2beta1.Context>
         createContext(com.google.cloud.dialogflow.v2beta1.CreateContextRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateContextMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateContextMethod(), getCallOptions()), request);
     }
 
     /**
@@ -896,7 +832,7 @@ public final class ContextsGrpc {
             com.google.cloud.dialogflow.v2beta1.Context>
         updateContext(com.google.cloud.dialogflow.v2beta1.UpdateContextRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateContextMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateContextMethod(), getCallOptions()), request);
     }
 
     /**
@@ -909,7 +845,7 @@ public final class ContextsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteContext(com.google.cloud.dialogflow.v2beta1.DeleteContextRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteContextMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteContextMethod(), getCallOptions()), request);
     }
 
     /**
@@ -922,7 +858,7 @@ public final class ContextsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteAllContexts(com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteAllContextsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteAllContextsMethod(), getCallOptions()), request);
     }
   }
 
@@ -1047,12 +983,12 @@ public final class ContextsGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ContextsFileDescriptorSupplier())
-                      .addMethod(getListContextsMethodHelper())
-                      .addMethod(getGetContextMethodHelper())
-                      .addMethod(getCreateContextMethodHelper())
-                      .addMethod(getUpdateContextMethodHelper())
-                      .addMethod(getDeleteContextMethodHelper())
-                      .addMethod(getDeleteAllContextsMethodHelper())
+                      .addMethod(getListContextsMethod())
+                      .addMethod(getGetContextMethod())
+                      .addMethod(getCreateContextMethod())
+                      .addMethod(getUpdateContextMethod())
+                      .addMethod(getDeleteContextMethod())
+                      .addMethod(getDeleteAllContextsMethod())
                       .build();
         }
       }

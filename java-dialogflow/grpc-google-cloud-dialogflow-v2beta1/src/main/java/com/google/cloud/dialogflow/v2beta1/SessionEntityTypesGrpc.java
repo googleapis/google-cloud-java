@@ -43,7 +43,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/v2beta1/session_entity_type.proto")
 public final class SessionEntityTypesGrpc {
 
@@ -52,30 +52,20 @@ public final class SessionEntityTypesGrpc {
   public static final String SERVICE_NAME = "google.cloud.dialogflow.v2beta1.SessionEntityTypes";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListSessionEntityTypesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest,
-          com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse>
-      METHOD_LIST_SESSION_ENTITY_TYPES = getListSessionEntityTypesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest,
           com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse>
       getListSessionEntityTypesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSessionEntityTypes",
+      requestType = com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest,
           com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse>
       getListSessionEntityTypesMethod() {
-    return getListSessionEntityTypesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest,
-          com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse>
-      getListSessionEntityTypesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest,
             com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse>
@@ -94,9 +84,7 @@ public final class SessionEntityTypesGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.SessionEntityTypes",
-                              "ListSessionEntityTypes"))
+                          generateFullMethodName(SERVICE_NAME, "ListSessionEntityTypes"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -115,30 +103,20 @@ public final class SessionEntityTypesGrpc {
     return getListSessionEntityTypesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetSessionEntityTypeMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest,
-          com.google.cloud.dialogflow.v2beta1.SessionEntityType>
-      METHOD_GET_SESSION_ENTITY_TYPE = getGetSessionEntityTypeMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest,
           com.google.cloud.dialogflow.v2beta1.SessionEntityType>
       getGetSessionEntityTypeMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSessionEntityType",
+      requestType = com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.SessionEntityType.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest,
           com.google.cloud.dialogflow.v2beta1.SessionEntityType>
       getGetSessionEntityTypeMethod() {
-    return getGetSessionEntityTypeMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest,
-          com.google.cloud.dialogflow.v2beta1.SessionEntityType>
-      getGetSessionEntityTypeMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest,
             com.google.cloud.dialogflow.v2beta1.SessionEntityType>
@@ -156,9 +134,7 @@ public final class SessionEntityTypesGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.SessionEntityTypes",
-                              "GetSessionEntityType"))
+                          generateFullMethodName(SERVICE_NAME, "GetSessionEntityType"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -177,30 +153,20 @@ public final class SessionEntityTypesGrpc {
     return getGetSessionEntityTypeMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateSessionEntityTypeMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest,
-          com.google.cloud.dialogflow.v2beta1.SessionEntityType>
-      METHOD_CREATE_SESSION_ENTITY_TYPE = getCreateSessionEntityTypeMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest,
           com.google.cloud.dialogflow.v2beta1.SessionEntityType>
       getCreateSessionEntityTypeMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSessionEntityType",
+      requestType = com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.SessionEntityType.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest,
           com.google.cloud.dialogflow.v2beta1.SessionEntityType>
       getCreateSessionEntityTypeMethod() {
-    return getCreateSessionEntityTypeMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest,
-          com.google.cloud.dialogflow.v2beta1.SessionEntityType>
-      getCreateSessionEntityTypeMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest,
             com.google.cloud.dialogflow.v2beta1.SessionEntityType>
@@ -219,9 +185,7 @@ public final class SessionEntityTypesGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.SessionEntityTypes",
-                              "CreateSessionEntityType"))
+                          generateFullMethodName(SERVICE_NAME, "CreateSessionEntityType"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -240,30 +204,20 @@ public final class SessionEntityTypesGrpc {
     return getCreateSessionEntityTypeMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateSessionEntityTypeMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest,
-          com.google.cloud.dialogflow.v2beta1.SessionEntityType>
-      METHOD_UPDATE_SESSION_ENTITY_TYPE = getUpdateSessionEntityTypeMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest,
           com.google.cloud.dialogflow.v2beta1.SessionEntityType>
       getUpdateSessionEntityTypeMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSessionEntityType",
+      requestType = com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.SessionEntityType.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest,
           com.google.cloud.dialogflow.v2beta1.SessionEntityType>
       getUpdateSessionEntityTypeMethod() {
-    return getUpdateSessionEntityTypeMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest,
-          com.google.cloud.dialogflow.v2beta1.SessionEntityType>
-      getUpdateSessionEntityTypeMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest,
             com.google.cloud.dialogflow.v2beta1.SessionEntityType>
@@ -282,9 +236,7 @@ public final class SessionEntityTypesGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.SessionEntityTypes",
-                              "UpdateSessionEntityType"))
+                          generateFullMethodName(SERVICE_NAME, "UpdateSessionEntityType"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -303,30 +255,20 @@ public final class SessionEntityTypesGrpc {
     return getUpdateSessionEntityTypeMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteSessionEntityTypeMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest,
-          com.google.protobuf.Empty>
-      METHOD_DELETE_SESSION_ENTITY_TYPE = getDeleteSessionEntityTypeMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest,
           com.google.protobuf.Empty>
       getDeleteSessionEntityTypeMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSessionEntityType",
+      requestType = com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest,
           com.google.protobuf.Empty>
       getDeleteSessionEntityTypeMethod() {
-    return getDeleteSessionEntityTypeMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest,
-          com.google.protobuf.Empty>
-      getDeleteSessionEntityTypeMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest,
             com.google.protobuf.Empty>
@@ -345,9 +287,7 @@ public final class SessionEntityTypesGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.SessionEntityTypes",
-                              "DeleteSessionEntityType"))
+                          generateFullMethodName(SERVICE_NAME, "DeleteSessionEntityType"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -367,19 +307,43 @@ public final class SessionEntityTypesGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static SessionEntityTypesStub newStub(io.grpc.Channel channel) {
-    return new SessionEntityTypesStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<SessionEntityTypesStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SessionEntityTypesStub>() {
+          @java.lang.Override
+          public SessionEntityTypesStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SessionEntityTypesStub(channel, callOptions);
+          }
+        };
+    return SessionEntityTypesStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static SessionEntityTypesBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new SessionEntityTypesBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<SessionEntityTypesBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SessionEntityTypesBlockingStub>() {
+          @java.lang.Override
+          public SessionEntityTypesBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SessionEntityTypesBlockingStub(channel, callOptions);
+          }
+        };
+    return SessionEntityTypesBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static SessionEntityTypesFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new SessionEntityTypesFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<SessionEntityTypesFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SessionEntityTypesFutureStub>() {
+          @java.lang.Override
+          public SessionEntityTypesFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SessionEntityTypesFutureStub(channel, callOptions);
+          }
+        };
+    return SessionEntityTypesFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -419,7 +383,7 @@ public final class SessionEntityTypesGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListSessionEntityTypesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListSessionEntityTypesMethod(), responseObserver);
     }
 
     /**
@@ -436,7 +400,7 @@ public final class SessionEntityTypesGrpc {
         com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.SessionEntityType>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetSessionEntityTypeMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetSessionEntityTypeMethod(), responseObserver);
     }
 
     /**
@@ -455,7 +419,7 @@ public final class SessionEntityTypesGrpc {
         com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.SessionEntityType>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateSessionEntityTypeMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateSessionEntityTypeMethod(), responseObserver);
     }
 
     /**
@@ -472,7 +436,7 @@ public final class SessionEntityTypesGrpc {
         com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.SessionEntityType>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateSessionEntityTypeMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateSessionEntityTypeMethod(), responseObserver);
     }
 
     /**
@@ -488,42 +452,42 @@ public final class SessionEntityTypesGrpc {
     public void deleteSessionEntityType(
         com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteSessionEntityTypeMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteSessionEntityTypeMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getListSessionEntityTypesMethodHelper(),
+              getListSessionEntityTypesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest,
                       com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse>(
                       this, METHODID_LIST_SESSION_ENTITY_TYPES)))
           .addMethod(
-              getGetSessionEntityTypeMethodHelper(),
+              getGetSessionEntityTypeMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest,
                       com.google.cloud.dialogflow.v2beta1.SessionEntityType>(
                       this, METHODID_GET_SESSION_ENTITY_TYPE)))
           .addMethod(
-              getCreateSessionEntityTypeMethodHelper(),
+              getCreateSessionEntityTypeMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest,
                       com.google.cloud.dialogflow.v2beta1.SessionEntityType>(
                       this, METHODID_CREATE_SESSION_ENTITY_TYPE)))
           .addMethod(
-              getUpdateSessionEntityTypeMethodHelper(),
+              getUpdateSessionEntityTypeMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest,
                       com.google.cloud.dialogflow.v2beta1.SessionEntityType>(
                       this, METHODID_UPDATE_SESSION_ENTITY_TYPE)))
           .addMethod(
-              getDeleteSessionEntityTypeMethodHelper(),
+              getDeleteSessionEntityTypeMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest,
@@ -553,11 +517,7 @@ public final class SessionEntityTypesGrpc {
    * </pre>
    */
   public static final class SessionEntityTypesStub
-      extends io.grpc.stub.AbstractStub<SessionEntityTypesStub> {
-    private SessionEntityTypesStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<SessionEntityTypesStub> {
     private SessionEntityTypesStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -584,7 +544,7 @@ public final class SessionEntityTypesGrpc {
                 com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListSessionEntityTypesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListSessionEntityTypesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -604,7 +564,7 @@ public final class SessionEntityTypesGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.SessionEntityType>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetSessionEntityTypeMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetSessionEntityTypeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -626,7 +586,7 @@ public final class SessionEntityTypesGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.SessionEntityType>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateSessionEntityTypeMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateSessionEntityTypeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -646,7 +606,7 @@ public final class SessionEntityTypesGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.SessionEntityType>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateSessionEntityTypeMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateSessionEntityTypeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -665,7 +625,7 @@ public final class SessionEntityTypesGrpc {
         com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteSessionEntityTypeMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteSessionEntityTypeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -692,11 +652,7 @@ public final class SessionEntityTypesGrpc {
    * </pre>
    */
   public static final class SessionEntityTypesBlockingStub
-      extends io.grpc.stub.AbstractStub<SessionEntityTypesBlockingStub> {
-    private SessionEntityTypesBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<SessionEntityTypesBlockingStub> {
     private SessionEntityTypesBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -722,7 +678,7 @@ public final class SessionEntityTypesGrpc {
         listSessionEntityTypes(
             com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getListSessionEntityTypesMethodHelper(), getCallOptions(), request);
+          getChannel(), getListSessionEntityTypesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -738,7 +694,7 @@ public final class SessionEntityTypesGrpc {
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityType(
         com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest request) {
       return blockingUnaryCall(
-          getChannel(), getGetSessionEntityTypeMethodHelper(), getCallOptions(), request);
+          getChannel(), getGetSessionEntityTypeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -756,7 +712,7 @@ public final class SessionEntityTypesGrpc {
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType createSessionEntityType(
         com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateSessionEntityTypeMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateSessionEntityTypeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -772,7 +728,7 @@ public final class SessionEntityTypesGrpc {
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType updateSessionEntityType(
         com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateSessionEntityTypeMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateSessionEntityTypeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -788,7 +744,7 @@ public final class SessionEntityTypesGrpc {
     public com.google.protobuf.Empty deleteSessionEntityType(
         com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteSessionEntityTypeMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteSessionEntityTypeMethod(), getCallOptions(), request);
     }
   }
 
@@ -813,11 +769,7 @@ public final class SessionEntityTypesGrpc {
    * </pre>
    */
   public static final class SessionEntityTypesFutureStub
-      extends io.grpc.stub.AbstractStub<SessionEntityTypesFutureStub> {
-    private SessionEntityTypesFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<SessionEntityTypesFutureStub> {
     private SessionEntityTypesFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -843,7 +795,7 @@ public final class SessionEntityTypesGrpc {
         listSessionEntityTypes(
             com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListSessionEntityTypesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListSessionEntityTypesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -861,7 +813,7 @@ public final class SessionEntityTypesGrpc {
         getSessionEntityType(
             com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetSessionEntityTypeMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetSessionEntityTypeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -881,8 +833,7 @@ public final class SessionEntityTypesGrpc {
         createSessionEntityType(
             com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateSessionEntityTypeMethodHelper(), getCallOptions()),
-          request);
+          getChannel().newCall(getCreateSessionEntityTypeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -900,8 +851,7 @@ public final class SessionEntityTypesGrpc {
         updateSessionEntityType(
             com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateSessionEntityTypeMethodHelper(), getCallOptions()),
-          request);
+          getChannel().newCall(getUpdateSessionEntityTypeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -918,8 +868,7 @@ public final class SessionEntityTypesGrpc {
         deleteSessionEntityType(
             com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteSessionEntityTypeMethodHelper(), getCallOptions()),
-          request);
+          getChannel().newCall(getDeleteSessionEntityTypeMethod(), getCallOptions()), request);
     }
   }
 
@@ -1040,11 +989,11 @@ public final class SessionEntityTypesGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new SessionEntityTypesFileDescriptorSupplier())
-                      .addMethod(getListSessionEntityTypesMethodHelper())
-                      .addMethod(getGetSessionEntityTypeMethodHelper())
-                      .addMethod(getCreateSessionEntityTypeMethodHelper())
-                      .addMethod(getUpdateSessionEntityTypeMethodHelper())
-                      .addMethod(getDeleteSessionEntityTypeMethodHelper())
+                      .addMethod(getListSessionEntityTypesMethod())
+                      .addMethod(getGetSessionEntityTypeMethod())
+                      .addMethod(getCreateSessionEntityTypeMethod())
+                      .addMethod(getUpdateSessionEntityTypeMethod())
+                      .addMethod(getDeleteSessionEntityTypeMethod())
                       .build();
         }
       }

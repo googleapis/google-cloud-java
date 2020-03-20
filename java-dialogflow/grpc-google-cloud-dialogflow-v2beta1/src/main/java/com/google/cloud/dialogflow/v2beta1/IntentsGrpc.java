@@ -56,7 +56,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/v2beta1/intent.proto")
 public final class IntentsGrpc {
 
@@ -65,30 +65,20 @@ public final class IntentsGrpc {
   public static final String SERVICE_NAME = "google.cloud.dialogflow.v2beta1.Intents";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListIntentsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.ListIntentsRequest,
-          com.google.cloud.dialogflow.v2beta1.ListIntentsResponse>
-      METHOD_LIST_INTENTS = getListIntentsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.ListIntentsRequest,
           com.google.cloud.dialogflow.v2beta1.ListIntentsResponse>
       getListIntentsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListIntents",
+      requestType = com.google.cloud.dialogflow.v2beta1.ListIntentsRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.ListIntentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.ListIntentsRequest,
           com.google.cloud.dialogflow.v2beta1.ListIntentsResponse>
       getListIntentsMethod() {
-    return getListIntentsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.ListIntentsRequest,
-          com.google.cloud.dialogflow.v2beta1.ListIntentsResponse>
-      getListIntentsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.ListIntentsRequest,
             com.google.cloud.dialogflow.v2beta1.ListIntentsResponse>
@@ -103,9 +93,7 @@ public final class IntentsGrpc {
                           com.google.cloud.dialogflow.v2beta1.ListIntentsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.Intents", "ListIntents"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListIntents"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -123,30 +111,20 @@ public final class IntentsGrpc {
     return getListIntentsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetIntentMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.GetIntentRequest,
-          com.google.cloud.dialogflow.v2beta1.Intent>
-      METHOD_GET_INTENT = getGetIntentMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.GetIntentRequest,
           com.google.cloud.dialogflow.v2beta1.Intent>
       getGetIntentMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIntent",
+      requestType = com.google.cloud.dialogflow.v2beta1.GetIntentRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.Intent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.GetIntentRequest,
           com.google.cloud.dialogflow.v2beta1.Intent>
       getGetIntentMethod() {
-    return getGetIntentMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.GetIntentRequest,
-          com.google.cloud.dialogflow.v2beta1.Intent>
-      getGetIntentMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.GetIntentRequest,
             com.google.cloud.dialogflow.v2beta1.Intent>
@@ -161,9 +139,7 @@ public final class IntentsGrpc {
                           com.google.cloud.dialogflow.v2beta1.Intent>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.Intents", "GetIntent"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetIntent"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -180,30 +156,20 @@ public final class IntentsGrpc {
     return getGetIntentMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateIntentMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.CreateIntentRequest,
-          com.google.cloud.dialogflow.v2beta1.Intent>
-      METHOD_CREATE_INTENT = getCreateIntentMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.CreateIntentRequest,
           com.google.cloud.dialogflow.v2beta1.Intent>
       getCreateIntentMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateIntent",
+      requestType = com.google.cloud.dialogflow.v2beta1.CreateIntentRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.Intent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.CreateIntentRequest,
           com.google.cloud.dialogflow.v2beta1.Intent>
       getCreateIntentMethod() {
-    return getCreateIntentMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.CreateIntentRequest,
-          com.google.cloud.dialogflow.v2beta1.Intent>
-      getCreateIntentMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.CreateIntentRequest,
             com.google.cloud.dialogflow.v2beta1.Intent>
@@ -218,9 +184,7 @@ public final class IntentsGrpc {
                           com.google.cloud.dialogflow.v2beta1.Intent>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.Intents", "CreateIntent"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateIntent"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -237,30 +201,20 @@ public final class IntentsGrpc {
     return getCreateIntentMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateIntentMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest,
-          com.google.cloud.dialogflow.v2beta1.Intent>
-      METHOD_UPDATE_INTENT = getUpdateIntentMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest,
           com.google.cloud.dialogflow.v2beta1.Intent>
       getUpdateIntentMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateIntent",
+      requestType = com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.Intent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest,
           com.google.cloud.dialogflow.v2beta1.Intent>
       getUpdateIntentMethod() {
-    return getUpdateIntentMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest,
-          com.google.cloud.dialogflow.v2beta1.Intent>
-      getUpdateIntentMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest,
             com.google.cloud.dialogflow.v2beta1.Intent>
@@ -275,9 +229,7 @@ public final class IntentsGrpc {
                           com.google.cloud.dialogflow.v2beta1.Intent>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.Intents", "UpdateIntent"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateIntent"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -294,26 +246,18 @@ public final class IntentsGrpc {
     return getUpdateIntentMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteIntentMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_INTENT = getDeleteIntentMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest, com.google.protobuf.Empty>
       getDeleteIntentMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteIntent",
+      requestType = com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest, com.google.protobuf.Empty>
       getDeleteIntentMethod() {
-    return getDeleteIntentMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest, com.google.protobuf.Empty>
-      getDeleteIntentMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest, com.google.protobuf.Empty>
         getDeleteIntentMethod;
@@ -327,9 +271,7 @@ public final class IntentsGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.Intents", "DeleteIntent"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteIntent"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -346,30 +288,20 @@ public final class IntentsGrpc {
     return getDeleteIntentMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchUpdateIntentsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest,
-          com.google.longrunning.Operation>
-      METHOD_BATCH_UPDATE_INTENTS = getBatchUpdateIntentsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest,
           com.google.longrunning.Operation>
       getBatchUpdateIntentsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchUpdateIntents",
+      requestType = com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest,
           com.google.longrunning.Operation>
       getBatchUpdateIntentsMethod() {
-    return getBatchUpdateIntentsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest,
-          com.google.longrunning.Operation>
-      getBatchUpdateIntentsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest,
             com.google.longrunning.Operation>
@@ -384,9 +316,7 @@ public final class IntentsGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.Intents", "BatchUpdateIntents"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchUpdateIntents"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -404,30 +334,20 @@ public final class IntentsGrpc {
     return getBatchUpdateIntentsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchDeleteIntentsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest,
-          com.google.longrunning.Operation>
-      METHOD_BATCH_DELETE_INTENTS = getBatchDeleteIntentsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest,
           com.google.longrunning.Operation>
       getBatchDeleteIntentsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteIntents",
+      requestType = com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest,
           com.google.longrunning.Operation>
       getBatchDeleteIntentsMethod() {
-    return getBatchDeleteIntentsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest,
-          com.google.longrunning.Operation>
-      getBatchDeleteIntentsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest,
             com.google.longrunning.Operation>
@@ -442,9 +362,7 @@ public final class IntentsGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.dialogflow.v2beta1.Intents", "BatchDeleteIntents"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchDeleteIntents"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -464,19 +382,42 @@ public final class IntentsGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static IntentsStub newStub(io.grpc.Channel channel) {
-    return new IntentsStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<IntentsStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<IntentsStub>() {
+          @java.lang.Override
+          public IntentsStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new IntentsStub(channel, callOptions);
+          }
+        };
+    return IntentsStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static IntentsBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new IntentsBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<IntentsBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<IntentsBlockingStub>() {
+          @java.lang.Override
+          public IntentsBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new IntentsBlockingStub(channel, callOptions);
+          }
+        };
+    return IntentsBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static IntentsFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new IntentsFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<IntentsFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<IntentsFutureStub>() {
+          @java.lang.Override
+          public IntentsFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new IntentsFutureStub(channel, callOptions);
+          }
+        };
+    return IntentsFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -525,7 +466,7 @@ public final class IntentsGrpc {
         com.google.cloud.dialogflow.v2beta1.ListIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListIntentsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListIntentsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListIntentsMethod(), responseObserver);
     }
 
     /**
@@ -538,7 +479,7 @@ public final class IntentsGrpc {
     public void getIntent(
         com.google.cloud.dialogflow.v2beta1.GetIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Intent> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetIntentMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetIntentMethod(), responseObserver);
     }
 
     /**
@@ -551,7 +492,7 @@ public final class IntentsGrpc {
     public void createIntent(
         com.google.cloud.dialogflow.v2beta1.CreateIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Intent> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateIntentMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateIntentMethod(), responseObserver);
     }
 
     /**
@@ -564,7 +505,7 @@ public final class IntentsGrpc {
     public void updateIntent(
         com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Intent> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateIntentMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateIntentMethod(), responseObserver);
     }
 
     /**
@@ -577,7 +518,7 @@ public final class IntentsGrpc {
     public void deleteIntent(
         com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteIntentMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteIntentMethod(), responseObserver);
     }
 
     /**
@@ -591,7 +532,7 @@ public final class IntentsGrpc {
     public void batchUpdateIntents(
         com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchUpdateIntentsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getBatchUpdateIntentsMethod(), responseObserver);
     }
 
     /**
@@ -605,51 +546,51 @@ public final class IntentsGrpc {
     public void batchDeleteIntents(
         com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchDeleteIntentsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getBatchDeleteIntentsMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getListIntentsMethodHelper(),
+              getListIntentsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.ListIntentsRequest,
                       com.google.cloud.dialogflow.v2beta1.ListIntentsResponse>(
                       this, METHODID_LIST_INTENTS)))
           .addMethod(
-              getGetIntentMethodHelper(),
+              getGetIntentMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.GetIntentRequest,
                       com.google.cloud.dialogflow.v2beta1.Intent>(this, METHODID_GET_INTENT)))
           .addMethod(
-              getCreateIntentMethodHelper(),
+              getCreateIntentMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.CreateIntentRequest,
                       com.google.cloud.dialogflow.v2beta1.Intent>(this, METHODID_CREATE_INTENT)))
           .addMethod(
-              getUpdateIntentMethodHelper(),
+              getUpdateIntentMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest,
                       com.google.cloud.dialogflow.v2beta1.Intent>(this, METHODID_UPDATE_INTENT)))
           .addMethod(
-              getDeleteIntentMethodHelper(),
+              getDeleteIntentMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_INTENT)))
           .addMethod(
-              getBatchUpdateIntentsMethodHelper(),
+              getBatchUpdateIntentsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest,
                       com.google.longrunning.Operation>(this, METHODID_BATCH_UPDATE_INTENTS)))
           .addMethod(
-              getBatchDeleteIntentsMethodHelper(),
+              getBatchDeleteIntentsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest,
@@ -691,11 +632,7 @@ public final class IntentsGrpc {
    * documentation](https://cloud.google.com/dialogflow/docs/intents-overview).
    * </pre>
    */
-  public static final class IntentsStub extends io.grpc.stub.AbstractStub<IntentsStub> {
-    private IntentsStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class IntentsStub extends io.grpc.stub.AbstractAsyncStub<IntentsStub> {
     private IntentsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -717,7 +654,7 @@ public final class IntentsGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListIntentsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListIntentsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListIntentsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -733,9 +670,7 @@ public final class IntentsGrpc {
         com.google.cloud.dialogflow.v2beta1.GetIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Intent> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetIntentMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetIntentMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -749,7 +684,7 @@ public final class IntentsGrpc {
         com.google.cloud.dialogflow.v2beta1.CreateIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Intent> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateIntentMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateIntentMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -765,7 +700,7 @@ public final class IntentsGrpc {
         com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Intent> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateIntentMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateIntentMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -781,7 +716,7 @@ public final class IntentsGrpc {
         com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteIntentMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteIntentMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -798,7 +733,7 @@ public final class IntentsGrpc {
         com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBatchUpdateIntentsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getBatchUpdateIntentsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -815,7 +750,7 @@ public final class IntentsGrpc {
         com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBatchDeleteIntentsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getBatchDeleteIntentsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -855,11 +790,7 @@ public final class IntentsGrpc {
    * </pre>
    */
   public static final class IntentsBlockingStub
-      extends io.grpc.stub.AbstractStub<IntentsBlockingStub> {
-    private IntentsBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<IntentsBlockingStub> {
     private IntentsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -878,8 +809,7 @@ public final class IntentsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.ListIntentsResponse listIntents(
         com.google.cloud.dialogflow.v2beta1.ListIntentsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListIntentsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListIntentsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -891,7 +821,7 @@ public final class IntentsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.Intent getIntent(
         com.google.cloud.dialogflow.v2beta1.GetIntentRequest request) {
-      return blockingUnaryCall(getChannel(), getGetIntentMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetIntentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -903,8 +833,7 @@ public final class IntentsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.Intent createIntent(
         com.google.cloud.dialogflow.v2beta1.CreateIntentRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateIntentMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateIntentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -916,8 +845,7 @@ public final class IntentsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.Intent updateIntent(
         com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateIntentMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateIntentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -929,8 +857,7 @@ public final class IntentsGrpc {
      */
     public com.google.protobuf.Empty deleteIntent(
         com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteIntentMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteIntentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -944,7 +871,7 @@ public final class IntentsGrpc {
     public com.google.longrunning.Operation batchUpdateIntents(
         com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getBatchUpdateIntentsMethodHelper(), getCallOptions(), request);
+          getChannel(), getBatchUpdateIntentsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -958,7 +885,7 @@ public final class IntentsGrpc {
     public com.google.longrunning.Operation batchDeleteIntents(
         com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getBatchDeleteIntentsMethodHelper(), getCallOptions(), request);
+          getChannel(), getBatchDeleteIntentsMethod(), getCallOptions(), request);
     }
   }
 
@@ -995,11 +922,8 @@ public final class IntentsGrpc {
    * documentation](https://cloud.google.com/dialogflow/docs/intents-overview).
    * </pre>
    */
-  public static final class IntentsFutureStub extends io.grpc.stub.AbstractStub<IntentsFutureStub> {
-    private IntentsFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class IntentsFutureStub
+      extends io.grpc.stub.AbstractFutureStub<IntentsFutureStub> {
     private IntentsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1020,7 +944,7 @@ public final class IntentsGrpc {
             com.google.cloud.dialogflow.v2beta1.ListIntentsResponse>
         listIntents(com.google.cloud.dialogflow.v2beta1.ListIntentsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListIntentsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListIntentsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1033,8 +957,7 @@ public final class IntentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.Intent>
         getIntent(com.google.cloud.dialogflow.v2beta1.GetIntentRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetIntentMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getGetIntentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1048,7 +971,7 @@ public final class IntentsGrpc {
             com.google.cloud.dialogflow.v2beta1.Intent>
         createIntent(com.google.cloud.dialogflow.v2beta1.CreateIntentRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateIntentMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateIntentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1062,7 +985,7 @@ public final class IntentsGrpc {
             com.google.cloud.dialogflow.v2beta1.Intent>
         updateIntent(com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateIntentMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateIntentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1075,7 +998,7 @@ public final class IntentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteIntent(com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteIntentMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteIntentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1089,7 +1012,7 @@ public final class IntentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchUpdateIntents(com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getBatchUpdateIntentsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getBatchUpdateIntentsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1103,7 +1026,7 @@ public final class IntentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchDeleteIntents(com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getBatchDeleteIntentsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getBatchDeleteIntentsMethod(), getCallOptions()), request);
     }
   }
 
@@ -1233,13 +1156,13 @@ public final class IntentsGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new IntentsFileDescriptorSupplier())
-                      .addMethod(getListIntentsMethodHelper())
-                      .addMethod(getGetIntentMethodHelper())
-                      .addMethod(getCreateIntentMethodHelper())
-                      .addMethod(getUpdateIntentMethodHelper())
-                      .addMethod(getDeleteIntentMethodHelper())
-                      .addMethod(getBatchUpdateIntentsMethodHelper())
-                      .addMethod(getBatchDeleteIntentsMethodHelper())
+                      .addMethod(getListIntentsMethod())
+                      .addMethod(getGetIntentMethod())
+                      .addMethod(getCreateIntentMethod())
+                      .addMethod(getUpdateIntentMethod())
+                      .addMethod(getDeleteIntentMethod())
+                      .addMethod(getBatchUpdateIntentsMethod())
+                      .addMethod(getBatchDeleteIntentsMethod())
                       .build();
         }
       }
