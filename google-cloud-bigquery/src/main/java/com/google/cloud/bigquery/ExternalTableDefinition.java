@@ -135,6 +135,14 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     /** Sets the table schema. */
     public abstract Builder setSchema(Schema schema);
 
+    /** Sets the table Hive partitioning options. */
+    public Builder setHivePartitioningOptions(HivePartitioningOptions hivePartitioningOptions) {
+      return setHivePartitioningOptionsInner(hivePartitioningOptions);
+    };
+
+    abstract Builder setHivePartitioningOptionsInner(
+        HivePartitioningOptions hivePartitioningOptions);
+
     /** Creates an {@code ExternalTableDefinition} object. */
     @Override
     public abstract ExternalTableDefinition build();
@@ -212,6 +220,19 @@ public abstract class ExternalTableDefinition extends TableDefinition {
   @Nullable
   public abstract Boolean getAutodetect();
 
+  /**
+   * [Experimental] Returns the HivePartitioningOptions when the data layout follows Hive
+   * partitioning convention
+   */
+  @SuppressWarnings("unchecked")
+  @Nullable
+  public HivePartitioningOptions getHivePartitioningOptions() {
+    return getHivePartitioningOptionsInner();
+  }
+
+  @Nullable
+  abstract HivePartitioningOptions getHivePartitioningOptionsInner();
+
   /** Returns a builder for the {@code ExternalTableDefinition} object. */
   public abstract Builder toBuilder();
 
@@ -256,6 +277,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     }
     if (getAutodetect() != null) {
       externalConfigurationPb.setAutodetect(getAutodetect());
+    }
+    if (getHivePartitioningOptions() != null) {
+      externalConfigurationPb.setHivePartitioningOptions(getHivePartitioningOptions().toPb());
     }
     return externalConfigurationPb;
   }
@@ -405,6 +429,10 @@ public abstract class ExternalTableDefinition extends TableDefinition {
       }
       builder.setMaxBadRecords(externalDataConfiguration.getMaxBadRecords());
       builder.setAutodetect(externalDataConfiguration.getAutodetect());
+      if (externalDataConfiguration.getHivePartitioningOptions() != null) {
+        builder.setHivePartitioningOptions(
+            HivePartitioningOptions.fromPb(externalDataConfiguration.getHivePartitioningOptions()));
+      }
     }
     return builder.build();
   }
@@ -443,6 +471,10 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     }
     if (externalDataConfiguration.getAutodetect() != null) {
       builder.setAutodetect(externalDataConfiguration.getAutodetect());
+    }
+    if (externalDataConfiguration.getHivePartitioningOptions() != null) {
+      builder.setHivePartitioningOptions(
+          HivePartitioningOptions.fromPb(externalDataConfiguration.getHivePartitioningOptions()));
     }
     return builder.build();
   }

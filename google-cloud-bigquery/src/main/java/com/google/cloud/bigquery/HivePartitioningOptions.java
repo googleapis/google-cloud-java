@@ -104,6 +104,16 @@ public final class HivePartitioningOptions {
   }
 
   @Override
+  public boolean equals(Object obj) {
+    return obj == this
+        || obj != null
+            && obj.getClass().equals(HivePartitioningOptions.class)
+            && Objects.equals(mode, ((HivePartitioningOptions) obj).getMode())
+            && Objects.equals(
+                sourceUriPrefix, ((HivePartitioningOptions) obj).getSourceUriPrefix());
+  }
+
+  @Override
   public int hashCode() {
     return Objects.hash(mode, sourceUriPrefix);
   }

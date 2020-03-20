@@ -46,12 +46,18 @@ public class ExternalTableDefinitionTest {
   private static final String COMPRESSION = "GZIP";
   private static final Boolean AUTODETECT = true;
   private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder().build();
+  private static final HivePartitioningOptions HIVE_PARTITIONING_OPTIONS =
+      HivePartitioningOptions.newBuilder()
+          .setMode("AUTO")
+          .setSourceUriPrefix(SOURCE_URIS.get(0))
+          .build();
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
       ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .setCompression(COMPRESSION)
           .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .setMaxBadRecords(MAX_BAD_RECORDS)
           .setAutodetect(AUTODETECT)
+          .setHivePartitioningOptions(HIVE_PARTITIONING_OPTIONS)
           .build();
 
   @Test
@@ -83,6 +89,7 @@ public class ExternalTableDefinitionTest {
     assertEquals(TABLE_SCHEMA, EXTERNAL_TABLE_DEFINITION.getSchema());
     assertEquals(SOURCE_URIS, EXTERNAL_TABLE_DEFINITION.getSourceUris());
     assertEquals(AUTODETECT, EXTERNAL_TABLE_DEFINITION.getAutodetect());
+    assertEquals(HIVE_PARTITIONING_OPTIONS, EXTERNAL_TABLE_DEFINITION.getHivePartitioningOptions());
   }
 
   @Test
@@ -107,5 +114,6 @@ public class ExternalTableDefinitionTest {
     assertEquals(expected.getSourceUris(), value.getSourceUris());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.getAutodetect(), value.getAutodetect());
+    assertEquals(expected.getHivePartitioningOptions(), value.getHivePartitioningOptions());
   }
 }
