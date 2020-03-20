@@ -30,7 +30,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/recaptchaenterprise/v1beta1/recaptchaenterprise.proto")
 public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
 
@@ -40,30 +40,20 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
       "google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateAssessmentMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest,
-          com.google.recaptchaenterprise.v1beta1.Assessment>
-      METHOD_CREATE_ASSESSMENT = getCreateAssessmentMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest,
           com.google.recaptchaenterprise.v1beta1.Assessment>
       getCreateAssessmentMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAssessment",
+      requestType = com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest.class,
+      responseType = com.google.recaptchaenterprise.v1beta1.Assessment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest,
           com.google.recaptchaenterprise.v1beta1.Assessment>
       getCreateAssessmentMethod() {
-    return getCreateAssessmentMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest,
-          com.google.recaptchaenterprise.v1beta1.Assessment>
-      getCreateAssessmentMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest,
             com.google.recaptchaenterprise.v1beta1.Assessment>
@@ -82,10 +72,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
                           com.google.recaptchaenterprise.v1beta1.Assessment>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1",
-                              "CreateAssessment"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAssessment"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -105,30 +92,20 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     return getCreateAssessmentMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getAnnotateAssessmentMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest,
-          com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse>
-      METHOD_ANNOTATE_ASSESSMENT = getAnnotateAssessmentMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest,
           com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse>
       getAnnotateAssessmentMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnnotateAssessment",
+      requestType = com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.class,
+      responseType = com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest,
           com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse>
       getAnnotateAssessmentMethod() {
-    return getAnnotateAssessmentMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest,
-          com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse>
-      getAnnotateAssessmentMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest,
             com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse>
@@ -147,10 +124,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
                           com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1",
-                              "AnnotateAssessment"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AnnotateAssessment"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -170,30 +144,20 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     return getAnnotateAssessmentMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateKeyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.CreateKeyRequest,
-          com.google.recaptchaenterprise.v1beta1.Key>
-      METHOD_CREATE_KEY = getCreateKeyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.CreateKeyRequest,
           com.google.recaptchaenterprise.v1beta1.Key>
       getCreateKeyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateKey",
+      requestType = com.google.recaptchaenterprise.v1beta1.CreateKeyRequest.class,
+      responseType = com.google.recaptchaenterprise.v1beta1.Key.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.CreateKeyRequest,
           com.google.recaptchaenterprise.v1beta1.Key>
       getCreateKeyMethod() {
-    return getCreateKeyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.CreateKeyRequest,
-          com.google.recaptchaenterprise.v1beta1.Key>
-      getCreateKeyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.recaptchaenterprise.v1beta1.CreateKeyRequest,
             com.google.recaptchaenterprise.v1beta1.Key>
@@ -209,10 +173,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
                           com.google.recaptchaenterprise.v1beta1.Key>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1",
-                              "CreateKey"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateKey"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -231,30 +192,20 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     return getCreateKeyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListKeysMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.ListKeysRequest,
-          com.google.recaptchaenterprise.v1beta1.ListKeysResponse>
-      METHOD_LIST_KEYS = getListKeysMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.ListKeysRequest,
           com.google.recaptchaenterprise.v1beta1.ListKeysResponse>
       getListKeysMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListKeys",
+      requestType = com.google.recaptchaenterprise.v1beta1.ListKeysRequest.class,
+      responseType = com.google.recaptchaenterprise.v1beta1.ListKeysResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.ListKeysRequest,
           com.google.recaptchaenterprise.v1beta1.ListKeysResponse>
       getListKeysMethod() {
-    return getListKeysMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.ListKeysRequest,
-          com.google.recaptchaenterprise.v1beta1.ListKeysResponse>
-      getListKeysMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.recaptchaenterprise.v1beta1.ListKeysRequest,
             com.google.recaptchaenterprise.v1beta1.ListKeysResponse>
@@ -269,10 +220,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
                           com.google.recaptchaenterprise.v1beta1.ListKeysResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1",
-                              "ListKeys"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListKeys"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -291,30 +239,20 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     return getListKeysMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetKeyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.GetKeyRequest,
-          com.google.recaptchaenterprise.v1beta1.Key>
-      METHOD_GET_KEY = getGetKeyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.GetKeyRequest,
           com.google.recaptchaenterprise.v1beta1.Key>
       getGetKeyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetKey",
+      requestType = com.google.recaptchaenterprise.v1beta1.GetKeyRequest.class,
+      responseType = com.google.recaptchaenterprise.v1beta1.Key.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.GetKeyRequest,
           com.google.recaptchaenterprise.v1beta1.Key>
       getGetKeyMethod() {
-    return getGetKeyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.GetKeyRequest,
-          com.google.recaptchaenterprise.v1beta1.Key>
-      getGetKeyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.recaptchaenterprise.v1beta1.GetKeyRequest,
             com.google.recaptchaenterprise.v1beta1.Key>
@@ -329,10 +267,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
                           com.google.recaptchaenterprise.v1beta1.Key>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1",
-                              "GetKey"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetKey"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -350,30 +285,20 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     return getGetKeyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateKeyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest,
-          com.google.recaptchaenterprise.v1beta1.Key>
-      METHOD_UPDATE_KEY = getUpdateKeyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest,
           com.google.recaptchaenterprise.v1beta1.Key>
       getUpdateKeyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateKey",
+      requestType = com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest.class,
+      responseType = com.google.recaptchaenterprise.v1beta1.Key.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest,
           com.google.recaptchaenterprise.v1beta1.Key>
       getUpdateKeyMethod() {
-    return getUpdateKeyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest,
-          com.google.recaptchaenterprise.v1beta1.Key>
-      getUpdateKeyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest,
             com.google.recaptchaenterprise.v1beta1.Key>
@@ -389,10 +314,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
                           com.google.recaptchaenterprise.v1beta1.Key>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1",
-                              "UpdateKey"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateKey"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -411,26 +333,18 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     return getUpdateKeyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteKeyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_KEY = getDeleteKeyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest, com.google.protobuf.Empty>
       getDeleteKeyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteKey",
+      requestType = com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest, com.google.protobuf.Empty>
       getDeleteKeyMethod() {
-    return getDeleteKeyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest, com.google.protobuf.Empty>
-      getDeleteKeyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest, com.google.protobuf.Empty>
         getDeleteKeyMethod;
@@ -445,10 +359,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1",
-                              "DeleteKey"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteKey"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -469,7 +380,15 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static RecaptchaEnterpriseServiceV1Beta1Stub newStub(io.grpc.Channel channel) {
-    return new RecaptchaEnterpriseServiceV1Beta1Stub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RecaptchaEnterpriseServiceV1Beta1Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RecaptchaEnterpriseServiceV1Beta1Stub>() {
+          @java.lang.Override
+          public RecaptchaEnterpriseServiceV1Beta1Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RecaptchaEnterpriseServiceV1Beta1Stub(channel, callOptions);
+          }
+        };
+    return RecaptchaEnterpriseServiceV1Beta1Stub.newStub(factory, channel);
   }
 
   /**
@@ -477,12 +396,28 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
    */
   public static RecaptchaEnterpriseServiceV1Beta1BlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new RecaptchaEnterpriseServiceV1Beta1BlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RecaptchaEnterpriseServiceV1Beta1BlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RecaptchaEnterpriseServiceV1Beta1BlockingStub>() {
+          @java.lang.Override
+          public RecaptchaEnterpriseServiceV1Beta1BlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RecaptchaEnterpriseServiceV1Beta1BlockingStub(channel, callOptions);
+          }
+        };
+    return RecaptchaEnterpriseServiceV1Beta1BlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static RecaptchaEnterpriseServiceV1Beta1FutureStub newFutureStub(io.grpc.Channel channel) {
-    return new RecaptchaEnterpriseServiceV1Beta1FutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RecaptchaEnterpriseServiceV1Beta1FutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RecaptchaEnterpriseServiceV1Beta1FutureStub>() {
+          @java.lang.Override
+          public RecaptchaEnterpriseServiceV1Beta1FutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RecaptchaEnterpriseServiceV1Beta1FutureStub(channel, callOptions);
+          }
+        };
+    return RecaptchaEnterpriseServiceV1Beta1FutureStub.newStub(factory, channel);
   }
 
   /**
@@ -506,7 +441,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
         com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1beta1.Assessment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateAssessmentMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateAssessmentMethod(), responseObserver);
     }
 
     /**
@@ -522,7 +457,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
         io.grpc.stub.StreamObserver<
                 com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAnnotateAssessmentMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getAnnotateAssessmentMethod(), responseObserver);
     }
 
     /**
@@ -535,7 +470,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     public void createKey(
         com.google.recaptchaenterprise.v1beta1.CreateKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1beta1.Key> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateKeyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateKeyMethod(), responseObserver);
     }
 
     /**
@@ -549,7 +484,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
         com.google.recaptchaenterprise.v1beta1.ListKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1beta1.ListKeysResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListKeysMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListKeysMethod(), responseObserver);
     }
 
     /**
@@ -562,7 +497,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     public void getKey(
         com.google.recaptchaenterprise.v1beta1.GetKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1beta1.Key> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetKeyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetKeyMethod(), responseObserver);
     }
 
     /**
@@ -575,7 +510,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     public void updateKey(
         com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1beta1.Key> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateKeyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateKeyMethod(), responseObserver);
     }
 
     /**
@@ -588,53 +523,53 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     public void deleteKey(
         com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteKeyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteKeyMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getCreateAssessmentMethodHelper(),
+              getCreateAssessmentMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest,
                       com.google.recaptchaenterprise.v1beta1.Assessment>(
                       this, METHODID_CREATE_ASSESSMENT)))
           .addMethod(
-              getAnnotateAssessmentMethodHelper(),
+              getAnnotateAssessmentMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest,
                       com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse>(
                       this, METHODID_ANNOTATE_ASSESSMENT)))
           .addMethod(
-              getCreateKeyMethodHelper(),
+              getCreateKeyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.recaptchaenterprise.v1beta1.CreateKeyRequest,
                       com.google.recaptchaenterprise.v1beta1.Key>(this, METHODID_CREATE_KEY)))
           .addMethod(
-              getListKeysMethodHelper(),
+              getListKeysMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.recaptchaenterprise.v1beta1.ListKeysRequest,
                       com.google.recaptchaenterprise.v1beta1.ListKeysResponse>(
                       this, METHODID_LIST_KEYS)))
           .addMethod(
-              getGetKeyMethodHelper(),
+              getGetKeyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.recaptchaenterprise.v1beta1.GetKeyRequest,
                       com.google.recaptchaenterprise.v1beta1.Key>(this, METHODID_GET_KEY)))
           .addMethod(
-              getUpdateKeyMethodHelper(),
+              getUpdateKeyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest,
                       com.google.recaptchaenterprise.v1beta1.Key>(this, METHODID_UPDATE_KEY)))
           .addMethod(
-              getDeleteKeyMethodHelper(),
+              getDeleteKeyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest,
@@ -651,11 +586,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
    * </pre>
    */
   public static final class RecaptchaEnterpriseServiceV1Beta1Stub
-      extends io.grpc.stub.AbstractStub<RecaptchaEnterpriseServiceV1Beta1Stub> {
-    private RecaptchaEnterpriseServiceV1Beta1Stub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<RecaptchaEnterpriseServiceV1Beta1Stub> {
     private RecaptchaEnterpriseServiceV1Beta1Stub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -679,7 +610,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1beta1.Assessment>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateAssessmentMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateAssessmentMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -698,7 +629,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
                 com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getAnnotateAssessmentMethodHelper(), getCallOptions()),
+          getChannel().newCall(getAnnotateAssessmentMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -714,9 +645,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
         com.google.recaptchaenterprise.v1beta1.CreateKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1beta1.Key> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateKeyMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getCreateKeyMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -731,9 +660,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1beta1.ListKeysResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListKeysMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getListKeysMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -747,9 +674,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
         com.google.recaptchaenterprise.v1beta1.GetKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1beta1.Key> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetKeyMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetKeyMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -763,9 +688,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
         com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1beta1.Key> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateKeyMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getUpdateKeyMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -779,9 +702,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
         com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteKeyMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getDeleteKeyMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -793,11 +714,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
    * </pre>
    */
   public static final class RecaptchaEnterpriseServiceV1Beta1BlockingStub
-      extends io.grpc.stub.AbstractStub<RecaptchaEnterpriseServiceV1Beta1BlockingStub> {
-    private RecaptchaEnterpriseServiceV1Beta1BlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<RecaptchaEnterpriseServiceV1Beta1BlockingStub> {
     private RecaptchaEnterpriseServiceV1Beta1BlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -819,7 +736,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     public com.google.recaptchaenterprise.v1beta1.Assessment createAssessment(
         com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateAssessmentMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateAssessmentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -833,7 +750,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse annotateAssessment(
         com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest request) {
       return blockingUnaryCall(
-          getChannel(), getAnnotateAssessmentMethodHelper(), getCallOptions(), request);
+          getChannel(), getAnnotateAssessmentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -845,7 +762,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
      */
     public com.google.recaptchaenterprise.v1beta1.Key createKey(
         com.google.recaptchaenterprise.v1beta1.CreateKeyRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateKeyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateKeyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -857,7 +774,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
      */
     public com.google.recaptchaenterprise.v1beta1.ListKeysResponse listKeys(
         com.google.recaptchaenterprise.v1beta1.ListKeysRequest request) {
-      return blockingUnaryCall(getChannel(), getListKeysMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListKeysMethod(), getCallOptions(), request);
     }
 
     /**
@@ -869,7 +786,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
      */
     public com.google.recaptchaenterprise.v1beta1.Key getKey(
         com.google.recaptchaenterprise.v1beta1.GetKeyRequest request) {
-      return blockingUnaryCall(getChannel(), getGetKeyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetKeyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -881,7 +798,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
      */
     public com.google.recaptchaenterprise.v1beta1.Key updateKey(
         com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateKeyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateKeyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -893,7 +810,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
      */
     public com.google.protobuf.Empty deleteKey(
         com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteKeyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteKeyMethod(), getCallOptions(), request);
     }
   }
 
@@ -905,11 +822,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
    * </pre>
    */
   public static final class RecaptchaEnterpriseServiceV1Beta1FutureStub
-      extends io.grpc.stub.AbstractStub<RecaptchaEnterpriseServiceV1Beta1FutureStub> {
-    private RecaptchaEnterpriseServiceV1Beta1FutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<RecaptchaEnterpriseServiceV1Beta1FutureStub> {
     private RecaptchaEnterpriseServiceV1Beta1FutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -932,7 +845,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
             com.google.recaptchaenterprise.v1beta1.Assessment>
         createAssessment(com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateAssessmentMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateAssessmentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -948,7 +861,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
         annotateAssessment(
             com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getAnnotateAssessmentMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getAnnotateAssessmentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -961,8 +874,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.recaptchaenterprise.v1beta1.Key>
         createKey(com.google.recaptchaenterprise.v1beta1.CreateKeyRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getCreateKeyMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getCreateKeyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -975,8 +887,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.recaptchaenterprise.v1beta1.ListKeysResponse>
         listKeys(com.google.recaptchaenterprise.v1beta1.ListKeysRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getListKeysMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getListKeysMethod(), getCallOptions()), request);
     }
 
     /**
@@ -989,8 +900,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.recaptchaenterprise.v1beta1.Key>
         getKey(com.google.recaptchaenterprise.v1beta1.GetKeyRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetKeyMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getGetKeyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1003,8 +913,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.recaptchaenterprise.v1beta1.Key>
         updateKey(com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getUpdateKeyMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getUpdateKeyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1016,8 +925,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteKey(
         com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getDeleteKeyMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getDeleteKeyMethod(), getCallOptions()), request);
     }
   }
 
@@ -1153,13 +1061,13 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(
                           new RecaptchaEnterpriseServiceV1Beta1FileDescriptorSupplier())
-                      .addMethod(getCreateAssessmentMethodHelper())
-                      .addMethod(getAnnotateAssessmentMethodHelper())
-                      .addMethod(getCreateKeyMethodHelper())
-                      .addMethod(getListKeysMethodHelper())
-                      .addMethod(getGetKeyMethodHelper())
-                      .addMethod(getUpdateKeyMethodHelper())
-                      .addMethod(getDeleteKeyMethodHelper())
+                      .addMethod(getCreateAssessmentMethod())
+                      .addMethod(getAnnotateAssessmentMethod())
+                      .addMethod(getCreateKeyMethod())
+                      .addMethod(getListKeysMethod())
+                      .addMethod(getGetKeyMethod())
+                      .addMethod(getUpdateKeyMethod())
+                      .addMethod(getDeleteKeyMethod())
                       .build();
         }
       }
