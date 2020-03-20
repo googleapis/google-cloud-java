@@ -26,13 +26,12 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     </dependency>
   </dependencies>
 </dependencyManagement>
-
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-mediatranslation</artifactId>
   </dependency>
-
+</dependencies>
 ```
 
 [//]: # ({x-version-update-start:google-cloud-mediatranslation:released})
