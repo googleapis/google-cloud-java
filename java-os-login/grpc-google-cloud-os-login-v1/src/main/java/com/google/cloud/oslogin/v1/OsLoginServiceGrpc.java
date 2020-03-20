@@ -32,7 +32,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/oslogin/v1/oslogin.proto")
 public final class OsLoginServiceGrpc {
 
@@ -41,26 +41,18 @@ public final class OsLoginServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.oslogin.v1.OsLoginService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeletePosixAccountMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.oslogin.v1.DeletePosixAccountRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_POSIX_ACCOUNT = getDeletePosixAccountMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oslogin.v1.DeletePosixAccountRequest, com.google.protobuf.Empty>
       getDeletePosixAccountMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeletePosixAccount",
+      requestType = com.google.cloud.oslogin.v1.DeletePosixAccountRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.oslogin.v1.DeletePosixAccountRequest, com.google.protobuf.Empty>
       getDeletePosixAccountMethod() {
-    return getDeletePosixAccountMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.oslogin.v1.DeletePosixAccountRequest, com.google.protobuf.Empty>
-      getDeletePosixAccountMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.oslogin.v1.DeletePosixAccountRequest, com.google.protobuf.Empty>
         getDeletePosixAccountMethod;
@@ -75,9 +67,7 @@ public final class OsLoginServiceGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.oslogin.v1.OsLoginService", "DeletePosixAccount"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletePosixAccount"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -95,26 +85,18 @@ public final class OsLoginServiceGrpc {
     return getDeletePosixAccountMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteSshPublicKeyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_SSH_PUBLIC_KEY = getDeleteSshPublicKeyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest, com.google.protobuf.Empty>
       getDeleteSshPublicKeyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSshPublicKey",
+      requestType = com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest, com.google.protobuf.Empty>
       getDeleteSshPublicKeyMethod() {
-    return getDeleteSshPublicKeyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest, com.google.protobuf.Empty>
-      getDeleteSshPublicKeyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest, com.google.protobuf.Empty>
         getDeleteSshPublicKeyMethod;
@@ -129,9 +111,7 @@ public final class OsLoginServiceGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.oslogin.v1.OsLoginService", "DeleteSshPublicKey"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSshPublicKey"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -149,30 +129,20 @@ public final class OsLoginServiceGrpc {
     return getDeleteSshPublicKeyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetLoginProfileMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.oslogin.v1.GetLoginProfileRequest,
-          com.google.cloud.oslogin.v1.LoginProfile>
-      METHOD_GET_LOGIN_PROFILE = getGetLoginProfileMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oslogin.v1.GetLoginProfileRequest,
           com.google.cloud.oslogin.v1.LoginProfile>
       getGetLoginProfileMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLoginProfile",
+      requestType = com.google.cloud.oslogin.v1.GetLoginProfileRequest.class,
+      responseType = com.google.cloud.oslogin.v1.LoginProfile.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.oslogin.v1.GetLoginProfileRequest,
           com.google.cloud.oslogin.v1.LoginProfile>
       getGetLoginProfileMethod() {
-    return getGetLoginProfileMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.oslogin.v1.GetLoginProfileRequest,
-          com.google.cloud.oslogin.v1.LoginProfile>
-      getGetLoginProfileMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.oslogin.v1.GetLoginProfileRequest,
             com.google.cloud.oslogin.v1.LoginProfile>
@@ -187,9 +157,7 @@ public final class OsLoginServiceGrpc {
                           com.google.cloud.oslogin.v1.LoginProfile>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.oslogin.v1.OsLoginService", "GetLoginProfile"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLoginProfile"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -207,30 +175,20 @@ public final class OsLoginServiceGrpc {
     return getGetLoginProfileMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetSshPublicKeyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.oslogin.v1.GetSshPublicKeyRequest,
-          com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
-      METHOD_GET_SSH_PUBLIC_KEY = getGetSshPublicKeyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oslogin.v1.GetSshPublicKeyRequest,
           com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
       getGetSshPublicKeyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSshPublicKey",
+      requestType = com.google.cloud.oslogin.v1.GetSshPublicKeyRequest.class,
+      responseType = com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.oslogin.v1.GetSshPublicKeyRequest,
           com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
       getGetSshPublicKeyMethod() {
-    return getGetSshPublicKeyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.oslogin.v1.GetSshPublicKeyRequest,
-          com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
-      getGetSshPublicKeyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.oslogin.v1.GetSshPublicKeyRequest,
             com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
@@ -245,9 +203,7 @@ public final class OsLoginServiceGrpc {
                           com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.oslogin.v1.OsLoginService", "GetSshPublicKey"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSshPublicKey"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -266,30 +222,20 @@ public final class OsLoginServiceGrpc {
     return getGetSshPublicKeyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getImportSshPublicKeyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest,
-          com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse>
-      METHOD_IMPORT_SSH_PUBLIC_KEY = getImportSshPublicKeyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest,
           com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse>
       getImportSshPublicKeyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportSshPublicKey",
+      requestType = com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest.class,
+      responseType = com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest,
           com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse>
       getImportSshPublicKeyMethod() {
-    return getImportSshPublicKeyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest,
-          com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse>
-      getImportSshPublicKeyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest,
             com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse>
@@ -305,9 +251,7 @@ public final class OsLoginServiceGrpc {
                           com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.oslogin.v1.OsLoginService", "ImportSshPublicKey"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportSshPublicKey"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -326,30 +270,20 @@ public final class OsLoginServiceGrpc {
     return getImportSshPublicKeyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateSshPublicKeyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest,
-          com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
-      METHOD_UPDATE_SSH_PUBLIC_KEY = getUpdateSshPublicKeyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest,
           com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
       getUpdateSshPublicKeyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSshPublicKey",
+      requestType = com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest.class,
+      responseType = com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest,
           com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
       getUpdateSshPublicKeyMethod() {
-    return getUpdateSshPublicKeyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest,
-          com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
-      getUpdateSshPublicKeyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest,
             com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
@@ -365,9 +299,7 @@ public final class OsLoginServiceGrpc {
                           com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.oslogin.v1.OsLoginService", "UpdateSshPublicKey"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSshPublicKey"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -388,19 +320,43 @@ public final class OsLoginServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static OsLoginServiceStub newStub(io.grpc.Channel channel) {
-    return new OsLoginServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<OsLoginServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<OsLoginServiceStub>() {
+          @java.lang.Override
+          public OsLoginServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new OsLoginServiceStub(channel, callOptions);
+          }
+        };
+    return OsLoginServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static OsLoginServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new OsLoginServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<OsLoginServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<OsLoginServiceBlockingStub>() {
+          @java.lang.Override
+          public OsLoginServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new OsLoginServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return OsLoginServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static OsLoginServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new OsLoginServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<OsLoginServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<OsLoginServiceFutureStub>() {
+          @java.lang.Override
+          public OsLoginServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new OsLoginServiceFutureStub(channel, callOptions);
+          }
+        };
+    return OsLoginServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -424,7 +380,7 @@ public final class OsLoginServiceGrpc {
     public void deletePosixAccount(
         com.google.cloud.oslogin.v1.DeletePosixAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeletePosixAccountMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeletePosixAccountMethod(), responseObserver);
     }
 
     /**
@@ -437,7 +393,7 @@ public final class OsLoginServiceGrpc {
     public void deleteSshPublicKey(
         com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteSshPublicKeyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteSshPublicKeyMethod(), responseObserver);
     }
 
     /**
@@ -451,7 +407,7 @@ public final class OsLoginServiceGrpc {
     public void getLoginProfile(
         com.google.cloud.oslogin.v1.GetLoginProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.oslogin.v1.LoginProfile> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetLoginProfileMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetLoginProfileMethod(), responseObserver);
     }
 
     /**
@@ -465,7 +421,7 @@ public final class OsLoginServiceGrpc {
         com.google.cloud.oslogin.v1.GetSshPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetSshPublicKeyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetSshPublicKeyMethod(), responseObserver);
     }
 
     /**
@@ -481,7 +437,7 @@ public final class OsLoginServiceGrpc {
         com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getImportSshPublicKeyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getImportSshPublicKeyMethod(), responseObserver);
     }
 
     /**
@@ -496,46 +452,46 @@ public final class OsLoginServiceGrpc {
         com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateSshPublicKeyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateSshPublicKeyMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getDeletePosixAccountMethodHelper(),
+              getDeletePosixAccountMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.oslogin.v1.DeletePosixAccountRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_POSIX_ACCOUNT)))
           .addMethod(
-              getDeleteSshPublicKeyMethodHelper(),
+              getDeleteSshPublicKeyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_SSH_PUBLIC_KEY)))
           .addMethod(
-              getGetLoginProfileMethodHelper(),
+              getGetLoginProfileMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.oslogin.v1.GetLoginProfileRequest,
                       com.google.cloud.oslogin.v1.LoginProfile>(this, METHODID_GET_LOGIN_PROFILE)))
           .addMethod(
-              getGetSshPublicKeyMethodHelper(),
+              getGetSshPublicKeyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.oslogin.v1.GetSshPublicKeyRequest,
                       com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>(
                       this, METHODID_GET_SSH_PUBLIC_KEY)))
           .addMethod(
-              getImportSshPublicKeyMethodHelper(),
+              getImportSshPublicKeyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest,
                       com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse>(
                       this, METHODID_IMPORT_SSH_PUBLIC_KEY)))
           .addMethod(
-              getUpdateSshPublicKeyMethodHelper(),
+              getUpdateSshPublicKeyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest,
@@ -555,11 +511,7 @@ public final class OsLoginServiceGrpc {
    * </pre>
    */
   public static final class OsLoginServiceStub
-      extends io.grpc.stub.AbstractStub<OsLoginServiceStub> {
-    private OsLoginServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<OsLoginServiceStub> {
     private OsLoginServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -580,7 +532,7 @@ public final class OsLoginServiceGrpc {
         com.google.cloud.oslogin.v1.DeletePosixAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeletePosixAccountMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeletePosixAccountMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -596,7 +548,7 @@ public final class OsLoginServiceGrpc {
         com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteSshPublicKeyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteSshPublicKeyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -613,7 +565,7 @@ public final class OsLoginServiceGrpc {
         com.google.cloud.oslogin.v1.GetLoginProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.oslogin.v1.LoginProfile> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetLoginProfileMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetLoginProfileMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -630,7 +582,7 @@ public final class OsLoginServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetSshPublicKeyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetSshPublicKeyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -649,7 +601,7 @@ public final class OsLoginServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getImportSshPublicKeyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getImportSshPublicKeyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -667,7 +619,7 @@ public final class OsLoginServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateSshPublicKeyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateSshPublicKeyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -683,11 +635,7 @@ public final class OsLoginServiceGrpc {
    * </pre>
    */
   public static final class OsLoginServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<OsLoginServiceBlockingStub> {
-    private OsLoginServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<OsLoginServiceBlockingStub> {
     private OsLoginServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -708,7 +656,7 @@ public final class OsLoginServiceGrpc {
     public com.google.protobuf.Empty deletePosixAccount(
         com.google.cloud.oslogin.v1.DeletePosixAccountRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeletePosixAccountMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeletePosixAccountMethod(), getCallOptions(), request);
     }
 
     /**
@@ -721,7 +669,7 @@ public final class OsLoginServiceGrpc {
     public com.google.protobuf.Empty deleteSshPublicKey(
         com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteSshPublicKeyMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteSshPublicKeyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -734,8 +682,7 @@ public final class OsLoginServiceGrpc {
      */
     public com.google.cloud.oslogin.v1.LoginProfile getLoginProfile(
         com.google.cloud.oslogin.v1.GetLoginProfileRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetLoginProfileMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetLoginProfileMethod(), getCallOptions(), request);
     }
 
     /**
@@ -747,8 +694,7 @@ public final class OsLoginServiceGrpc {
      */
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey(
         com.google.cloud.oslogin.v1.GetSshPublicKeyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetSshPublicKeyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetSshPublicKeyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -763,7 +709,7 @@ public final class OsLoginServiceGrpc {
     public com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse importSshPublicKey(
         com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest request) {
       return blockingUnaryCall(
-          getChannel(), getImportSshPublicKeyMethodHelper(), getCallOptions(), request);
+          getChannel(), getImportSshPublicKeyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -777,7 +723,7 @@ public final class OsLoginServiceGrpc {
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey updateSshPublicKey(
         com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateSshPublicKeyMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateSshPublicKeyMethod(), getCallOptions(), request);
     }
   }
 
@@ -791,11 +737,7 @@ public final class OsLoginServiceGrpc {
    * </pre>
    */
   public static final class OsLoginServiceFutureStub
-      extends io.grpc.stub.AbstractStub<OsLoginServiceFutureStub> {
-    private OsLoginServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<OsLoginServiceFutureStub> {
     private OsLoginServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -816,7 +758,7 @@ public final class OsLoginServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deletePosixAccount(com.google.cloud.oslogin.v1.DeletePosixAccountRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeletePosixAccountMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeletePosixAccountMethod(), getCallOptions()), request);
     }
 
     /**
@@ -829,7 +771,7 @@ public final class OsLoginServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteSshPublicKey(com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteSshPublicKeyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteSshPublicKeyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -844,7 +786,7 @@ public final class OsLoginServiceGrpc {
             com.google.cloud.oslogin.v1.LoginProfile>
         getLoginProfile(com.google.cloud.oslogin.v1.GetLoginProfileRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetLoginProfileMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetLoginProfileMethod(), getCallOptions()), request);
     }
 
     /**
@@ -858,7 +800,7 @@ public final class OsLoginServiceGrpc {
             com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
         getSshPublicKey(com.google.cloud.oslogin.v1.GetSshPublicKeyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetSshPublicKeyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetSshPublicKeyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -874,7 +816,7 @@ public final class OsLoginServiceGrpc {
             com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse>
         importSshPublicKey(com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getImportSshPublicKeyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getImportSshPublicKeyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -889,7 +831,7 @@ public final class OsLoginServiceGrpc {
             com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
         updateSshPublicKey(com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateSshPublicKeyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateSshPublicKeyMethod(), getCallOptions()), request);
     }
   }
 
@@ -1017,12 +959,12 @@ public final class OsLoginServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new OsLoginServiceFileDescriptorSupplier())
-                      .addMethod(getDeletePosixAccountMethodHelper())
-                      .addMethod(getDeleteSshPublicKeyMethodHelper())
-                      .addMethod(getGetLoginProfileMethodHelper())
-                      .addMethod(getGetSshPublicKeyMethodHelper())
-                      .addMethod(getImportSshPublicKeyMethodHelper())
-                      .addMethod(getUpdateSshPublicKeyMethodHelper())
+                      .addMethod(getDeletePosixAccountMethod())
+                      .addMethod(getDeleteSshPublicKeyMethod())
+                      .addMethod(getGetLoginProfileMethod())
+                      .addMethod(getGetSshPublicKeyMethod())
+                      .addMethod(getImportSshPublicKeyMethod())
+                      .addMethod(getUpdateSshPublicKeyMethod())
                       .build();
         }
       }

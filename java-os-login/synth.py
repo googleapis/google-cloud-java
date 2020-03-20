@@ -15,29 +15,18 @@
 """This script is used to synthesize generated parts of this library."""
 
 import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
-gapic = gcp.GAPICGenerator()
-
-service = 'os-login'
+service = 'oslogin'
 versions = ['v1']
-config_pattern = '/google/cloud/oslogin/artman_oslogin_{version}.yaml'
 
 for version in versions:
-  library = gapic.java_library(
+  library = java.bazel_library(
       service=service,
       version=version,
-      config_path=config_pattern.format(version=version),
-      artman_output_name='')
-
-  package_name = f'com.google.cloud.oslogin.{version}'
-  java.fix_proto_headers(library / f'proto-google-cloud-{service}-{version}')
-  java.fix_grpc_headers(library / f'grpc-google-cloud-{service}-{version}', package_name)
-
-  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', f'google-cloud-{service}/src')
-  s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'grpc-google-cloud-{service}-{version}/src')
-  s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'proto-google-cloud-{service}-{version}/src')
+      bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
+      destination_name='os-login',
+  )
 
   s.replace('**/OsLoginServiceClient.java', 'PosixAccountName', 'ProjectName')
   s.replace('**/OsLoginServiceClient.java', 'SshPublicKeyName', 'FingerprintName')
