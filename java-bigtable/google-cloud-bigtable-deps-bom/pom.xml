@@ -84,7 +84,7 @@
     <guava.version>28.2-android</guava.version>
     <opencensus.version>0.25.0</opencensus.version>
     <protobuf.version>3.11.4</protobuf.version>
-    <threeten.version>1.4.1</threeten.version>
+    <threeten.version>1.4.2</threeten.version>
   </properties>
 
   <dependencyManagement>
