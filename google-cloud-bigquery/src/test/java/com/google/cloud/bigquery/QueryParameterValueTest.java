@@ -23,10 +23,13 @@ import static org.threeten.bp.temporal.ChronoField.NANO_OF_SECOND;
 import static org.threeten.bp.temporal.ChronoField.SECOND_OF_MINUTE;
 
 import com.google.api.services.bigquery.model.QueryParameterType;
+import com.google.common.collect.ImmutableMap;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.Test;
 import org.threeten.bp.Instant;
 import org.threeten.bp.ZoneOffset;
@@ -376,6 +379,68 @@ public class QueryParameterValueTest {
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
     assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.INT64);
     assertThat(value.getArrayValues()).isEmpty();
+  }
+
+  @Test
+  public void testStruct() {
+    QueryParameterValue booleanField = QueryParameterValue.bool(true);
+    QueryParameterValue integerField = QueryParameterValue.int64(15);
+    QueryParameterValue stringField = QueryParameterValue.string("test-string");
+    QueryParameterValue recordField =
+        QueryParameterValue.struct(
+            ImmutableMap.of(
+                "booleanField",
+                booleanField,
+                "integerField",
+                integerField,
+                "stringField",
+                stringField));
+    com.google.api.services.bigquery.model.QueryParameterValue parameterValue =
+        recordField.toValuePb();
+    QueryParameterType parameterType = recordField.toTypePb();
+    QueryParameterValue queryParameterValue =
+        QueryParameterValue.fromPb(parameterValue, parameterType);
+    assertThat(queryParameterValue).isEqualTo(recordField);
+    assertThat(recordField.getValue()).isNull();
+    assertThat(recordField.getType()).isEqualTo(StandardSQLTypeName.STRUCT);
+    assertThat(recordField.getStructTypes()).isNotNull();
+    assertThat(recordField.getStructValues()).isNotNull();
+  }
+
+  @Test
+  public void testNestedStruct() {
+    QueryParameterValue booleanField = QueryParameterValue.bool(true);
+    QueryParameterValue integerField = QueryParameterValue.int64(15);
+    QueryParameterValue stringField = QueryParameterValue.string("test-string");
+    QueryParameterValue recordField =
+        QueryParameterValue.struct(
+            ImmutableMap.of(
+                "booleanField",
+                booleanField,
+                "integerField",
+                integerField,
+                "stringField",
+                stringField));
+    Map<String, QueryParameterValue> structValue = new HashMap<>();
+    structValue.put("bool", booleanField);
+    structValue.put("int", integerField);
+    structValue.put("string", stringField);
+    structValue.put("struct", recordField);
+    QueryParameterValue nestedRecordField = QueryParameterValue.struct(structValue);
+    com.google.api.services.bigquery.model.QueryParameterValue parameterValue =
+        nestedRecordField.toValuePb();
+    QueryParameterType parameterType = nestedRecordField.toTypePb();
+    QueryParameterValue queryParameterValue =
+        QueryParameterValue.fromPb(parameterValue, parameterType);
+    assertThat(queryParameterValue).isEqualTo(nestedRecordField);
+    assertThat(nestedRecordField.getValue()).isNull();
+    assertThat(nestedRecordField.getType()).isEqualTo(StandardSQLTypeName.STRUCT);
+    assertThat(nestedRecordField.getStructTypes().get("struct").getType())
+        .isEqualTo(StandardSQLTypeName.STRUCT);
+    assertThat(nestedRecordField.getStructValues().get("struct").getStructValues())
+        .containsAtLeastEntriesIn(recordField.getStructValues());
+    assertThat(nestedRecordField.getStructTypes().size()).isEqualTo(structValue.size());
+    assertThat(nestedRecordField.getStructValues().size()).isEqualTo(structValue.size());
   }
 
   private static void assertArrayDataEquals(
