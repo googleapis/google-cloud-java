@@ -31,7 +31,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/datacatalog/v1beta1/policytagmanagerserialization.proto")
 public final class PolicyTagManagerSerializationGrpc {
 
@@ -41,30 +41,20 @@ public final class PolicyTagManagerSerializationGrpc {
       "google.cloud.datacatalog.v1beta1.PolicyTagManagerSerialization";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getImportTaxonomiesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest,
-          com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse>
-      METHOD_IMPORT_TAXONOMIES = getImportTaxonomiesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest,
           com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse>
       getImportTaxonomiesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportTaxonomies",
+      requestType = com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest,
           com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse>
       getImportTaxonomiesMethod() {
-    return getImportTaxonomiesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest,
-          com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse>
-      getImportTaxonomiesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest,
             com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse>
@@ -82,10 +72,7 @@ public final class PolicyTagManagerSerializationGrpc {
                           com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.PolicyTagManagerSerialization",
-                              "ImportTaxonomies"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportTaxonomies"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -105,30 +92,20 @@ public final class PolicyTagManagerSerializationGrpc {
     return getImportTaxonomiesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getExportTaxonomiesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest,
-          com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse>
-      METHOD_EXPORT_TAXONOMIES = getExportTaxonomiesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest,
           com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse>
       getExportTaxonomiesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportTaxonomies",
+      requestType = com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest,
           com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse>
       getExportTaxonomiesMethod() {
-    return getExportTaxonomiesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest,
-          com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse>
-      getExportTaxonomiesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest,
             com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse>
@@ -146,10 +123,7 @@ public final class PolicyTagManagerSerializationGrpc {
                           com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.PolicyTagManagerSerialization",
-                              "ExportTaxonomies"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportTaxonomies"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -171,19 +145,43 @@ public final class PolicyTagManagerSerializationGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static PolicyTagManagerSerializationStub newStub(io.grpc.Channel channel) {
-    return new PolicyTagManagerSerializationStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<PolicyTagManagerSerializationStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PolicyTagManagerSerializationStub>() {
+          @java.lang.Override
+          public PolicyTagManagerSerializationStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PolicyTagManagerSerializationStub(channel, callOptions);
+          }
+        };
+    return PolicyTagManagerSerializationStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static PolicyTagManagerSerializationBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new PolicyTagManagerSerializationBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<PolicyTagManagerSerializationBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PolicyTagManagerSerializationBlockingStub>() {
+          @java.lang.Override
+          public PolicyTagManagerSerializationBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PolicyTagManagerSerializationBlockingStub(channel, callOptions);
+          }
+        };
+    return PolicyTagManagerSerializationBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static PolicyTagManagerSerializationFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new PolicyTagManagerSerializationFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<PolicyTagManagerSerializationFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PolicyTagManagerSerializationFutureStub>() {
+          @java.lang.Override
+          public PolicyTagManagerSerializationFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PolicyTagManagerSerializationFutureStub(channel, callOptions);
+          }
+        };
+    return PolicyTagManagerSerializationFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -211,7 +209,7 @@ public final class PolicyTagManagerSerializationGrpc {
         com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getImportTaxonomiesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getImportTaxonomiesMethod(), responseObserver);
     }
 
     /**
@@ -227,21 +225,21 @@ public final class PolicyTagManagerSerializationGrpc {
         com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getExportTaxonomiesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getExportTaxonomiesMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getImportTaxonomiesMethodHelper(),
+              getImportTaxonomiesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest,
                       com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse>(
                       this, METHODID_IMPORT_TAXONOMIES)))
           .addMethod(
-              getExportTaxonomiesMethodHelper(),
+              getExportTaxonomiesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest,
@@ -260,11 +258,7 @@ public final class PolicyTagManagerSerializationGrpc {
    * </pre>
    */
   public static final class PolicyTagManagerSerializationStub
-      extends io.grpc.stub.AbstractStub<PolicyTagManagerSerializationStub> {
-    private PolicyTagManagerSerializationStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<PolicyTagManagerSerializationStub> {
     private PolicyTagManagerSerializationStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -291,7 +285,7 @@ public final class PolicyTagManagerSerializationGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getImportTaxonomiesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getImportTaxonomiesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -310,7 +304,7 @@ public final class PolicyTagManagerSerializationGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getExportTaxonomiesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getExportTaxonomiesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -325,11 +319,7 @@ public final class PolicyTagManagerSerializationGrpc {
    * </pre>
    */
   public static final class PolicyTagManagerSerializationBlockingStub
-      extends io.grpc.stub.AbstractStub<PolicyTagManagerSerializationBlockingStub> {
-    private PolicyTagManagerSerializationBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<PolicyTagManagerSerializationBlockingStub> {
     private PolicyTagManagerSerializationBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -354,7 +344,7 @@ public final class PolicyTagManagerSerializationGrpc {
     public com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse importTaxonomies(
         com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getImportTaxonomiesMethodHelper(), getCallOptions(), request);
+          getChannel(), getImportTaxonomiesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -369,7 +359,7 @@ public final class PolicyTagManagerSerializationGrpc {
     public com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse exportTaxonomies(
         com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getExportTaxonomiesMethodHelper(), getCallOptions(), request);
+          getChannel(), getExportTaxonomiesMethod(), getCallOptions(), request);
     }
   }
 
@@ -382,11 +372,7 @@ public final class PolicyTagManagerSerializationGrpc {
    * </pre>
    */
   public static final class PolicyTagManagerSerializationFutureStub
-      extends io.grpc.stub.AbstractStub<PolicyTagManagerSerializationFutureStub> {
-    private PolicyTagManagerSerializationFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<PolicyTagManagerSerializationFutureStub> {
     private PolicyTagManagerSerializationFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -412,7 +398,7 @@ public final class PolicyTagManagerSerializationGrpc {
             com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse>
         importTaxonomies(com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getImportTaxonomiesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getImportTaxonomiesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -428,7 +414,7 @@ public final class PolicyTagManagerSerializationGrpc {
             com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse>
         exportTaxonomies(com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getExportTaxonomiesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getExportTaxonomiesMethod(), getCallOptions()), request);
     }
   }
 
@@ -532,8 +518,8 @@ public final class PolicyTagManagerSerializationGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(
                           new PolicyTagManagerSerializationFileDescriptorSupplier())
-                      .addMethod(getImportTaxonomiesMethodHelper())
-                      .addMethod(getExportTaxonomiesMethodHelper())
+                      .addMethod(getImportTaxonomiesMethod())
+                      .addMethod(getExportTaxonomiesMethod())
                       .build();
         }
       }

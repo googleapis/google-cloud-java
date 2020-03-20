@@ -31,7 +31,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/datacatalog/v1beta1/datacatalog.proto")
 public final class DataCatalogGrpc {
 
@@ -40,30 +40,20 @@ public final class DataCatalogGrpc {
   public static final String SERVICE_NAME = "google.cloud.datacatalog.v1beta1.DataCatalog";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSearchCatalogMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest,
-          com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>
-      METHOD_SEARCH_CATALOG = getSearchCatalogMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest,
           com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>
       getSearchCatalogMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchCatalog",
+      requestType = com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest,
           com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>
       getSearchCatalogMethod() {
-    return getSearchCatalogMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest,
-          com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>
-      getSearchCatalogMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest,
             com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>
@@ -78,9 +68,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "SearchCatalog"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchCatalog"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -98,30 +86,20 @@ public final class DataCatalogGrpc {
     return getSearchCatalogMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateEntryGroupMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest,
-          com.google.cloud.datacatalog.v1beta1.EntryGroup>
-      METHOD_CREATE_ENTRY_GROUP = getCreateEntryGroupMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest,
           com.google.cloud.datacatalog.v1beta1.EntryGroup>
       getCreateEntryGroupMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEntryGroup",
+      requestType = com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.EntryGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest,
           com.google.cloud.datacatalog.v1beta1.EntryGroup>
       getCreateEntryGroupMethod() {
-    return getCreateEntryGroupMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest,
-          com.google.cloud.datacatalog.v1beta1.EntryGroup>
-      getCreateEntryGroupMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest,
             com.google.cloud.datacatalog.v1beta1.EntryGroup>
@@ -136,9 +114,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.EntryGroup>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "CreateEntryGroup"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEntryGroup"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -156,30 +132,20 @@ public final class DataCatalogGrpc {
     return getCreateEntryGroupMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateEntryGroupMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest,
-          com.google.cloud.datacatalog.v1beta1.EntryGroup>
-      METHOD_UPDATE_ENTRY_GROUP = getUpdateEntryGroupMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest,
           com.google.cloud.datacatalog.v1beta1.EntryGroup>
       getUpdateEntryGroupMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEntryGroup",
+      requestType = com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.EntryGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest,
           com.google.cloud.datacatalog.v1beta1.EntryGroup>
       getUpdateEntryGroupMethod() {
-    return getUpdateEntryGroupMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest,
-          com.google.cloud.datacatalog.v1beta1.EntryGroup>
-      getUpdateEntryGroupMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest,
             com.google.cloud.datacatalog.v1beta1.EntryGroup>
@@ -194,9 +160,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.EntryGroup>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "UpdateEntryGroup"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEntryGroup"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -214,30 +178,20 @@ public final class DataCatalogGrpc {
     return getUpdateEntryGroupMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetEntryGroupMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest,
-          com.google.cloud.datacatalog.v1beta1.EntryGroup>
-      METHOD_GET_ENTRY_GROUP = getGetEntryGroupMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest,
           com.google.cloud.datacatalog.v1beta1.EntryGroup>
       getGetEntryGroupMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEntryGroup",
+      requestType = com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.EntryGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest,
           com.google.cloud.datacatalog.v1beta1.EntryGroup>
       getGetEntryGroupMethod() {
-    return getGetEntryGroupMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest,
-          com.google.cloud.datacatalog.v1beta1.EntryGroup>
-      getGetEntryGroupMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest,
             com.google.cloud.datacatalog.v1beta1.EntryGroup>
@@ -252,9 +206,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.EntryGroup>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "GetEntryGroup"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEntryGroup"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -271,26 +223,18 @@ public final class DataCatalogGrpc {
     return getGetEntryGroupMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteEntryGroupMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_ENTRY_GROUP = getDeleteEntryGroupMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest, com.google.protobuf.Empty>
       getDeleteEntryGroupMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEntryGroup",
+      requestType = com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest, com.google.protobuf.Empty>
       getDeleteEntryGroupMethod() {
-    return getDeleteEntryGroupMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest, com.google.protobuf.Empty>
-      getDeleteEntryGroupMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest, com.google.protobuf.Empty>
         getDeleteEntryGroupMethod;
@@ -304,9 +248,7 @@ public final class DataCatalogGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "DeleteEntryGroup"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEntryGroup"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -324,30 +266,20 @@ public final class DataCatalogGrpc {
     return getDeleteEntryGroupMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListEntryGroupsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest,
-          com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>
-      METHOD_LIST_ENTRY_GROUPS = getListEntryGroupsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest,
           com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>
       getListEntryGroupsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListEntryGroups",
+      requestType = com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest,
           com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>
       getListEntryGroupsMethod() {
-    return getListEntryGroupsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest,
-          com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>
-      getListEntryGroupsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest,
             com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>
@@ -362,9 +294,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "ListEntryGroups"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEntryGroups"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -383,30 +313,20 @@ public final class DataCatalogGrpc {
     return getListEntryGroupsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateEntryMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.CreateEntryRequest,
-          com.google.cloud.datacatalog.v1beta1.Entry>
-      METHOD_CREATE_ENTRY = getCreateEntryMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.CreateEntryRequest,
           com.google.cloud.datacatalog.v1beta1.Entry>
       getCreateEntryMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEntry",
+      requestType = com.google.cloud.datacatalog.v1beta1.CreateEntryRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.Entry.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.CreateEntryRequest,
           com.google.cloud.datacatalog.v1beta1.Entry>
       getCreateEntryMethod() {
-    return getCreateEntryMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.CreateEntryRequest,
-          com.google.cloud.datacatalog.v1beta1.Entry>
-      getCreateEntryMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.CreateEntryRequest,
             com.google.cloud.datacatalog.v1beta1.Entry>
@@ -421,9 +341,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.Entry>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "CreateEntry"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEntry"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -440,30 +358,20 @@ public final class DataCatalogGrpc {
     return getCreateEntryMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateEntryMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest,
-          com.google.cloud.datacatalog.v1beta1.Entry>
-      METHOD_UPDATE_ENTRY = getUpdateEntryMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest,
           com.google.cloud.datacatalog.v1beta1.Entry>
       getUpdateEntryMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEntry",
+      requestType = com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.Entry.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest,
           com.google.cloud.datacatalog.v1beta1.Entry>
       getUpdateEntryMethod() {
-    return getUpdateEntryMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest,
-          com.google.cloud.datacatalog.v1beta1.Entry>
-      getUpdateEntryMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest,
             com.google.cloud.datacatalog.v1beta1.Entry>
@@ -478,9 +386,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.Entry>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "UpdateEntry"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEntry"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -497,26 +403,18 @@ public final class DataCatalogGrpc {
     return getUpdateEntryMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteEntryMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_ENTRY = getDeleteEntryMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest, com.google.protobuf.Empty>
       getDeleteEntryMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEntry",
+      requestType = com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest, com.google.protobuf.Empty>
       getDeleteEntryMethod() {
-    return getDeleteEntryMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest, com.google.protobuf.Empty>
-      getDeleteEntryMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest, com.google.protobuf.Empty>
         getDeleteEntryMethod;
@@ -530,9 +428,7 @@ public final class DataCatalogGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "DeleteEntry"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEntry"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -549,30 +445,20 @@ public final class DataCatalogGrpc {
     return getDeleteEntryMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetEntryMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.GetEntryRequest,
-          com.google.cloud.datacatalog.v1beta1.Entry>
-      METHOD_GET_ENTRY = getGetEntryMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.GetEntryRequest,
           com.google.cloud.datacatalog.v1beta1.Entry>
       getGetEntryMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEntry",
+      requestType = com.google.cloud.datacatalog.v1beta1.GetEntryRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.Entry.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.GetEntryRequest,
           com.google.cloud.datacatalog.v1beta1.Entry>
       getGetEntryMethod() {
-    return getGetEntryMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.GetEntryRequest,
-          com.google.cloud.datacatalog.v1beta1.Entry>
-      getGetEntryMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.GetEntryRequest,
             com.google.cloud.datacatalog.v1beta1.Entry>
@@ -587,9 +473,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.Entry>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "GetEntry"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEntry"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -606,30 +490,20 @@ public final class DataCatalogGrpc {
     return getGetEntryMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getLookupEntryMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.LookupEntryRequest,
-          com.google.cloud.datacatalog.v1beta1.Entry>
-      METHOD_LOOKUP_ENTRY = getLookupEntryMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.LookupEntryRequest,
           com.google.cloud.datacatalog.v1beta1.Entry>
       getLookupEntryMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LookupEntry",
+      requestType = com.google.cloud.datacatalog.v1beta1.LookupEntryRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.Entry.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.LookupEntryRequest,
           com.google.cloud.datacatalog.v1beta1.Entry>
       getLookupEntryMethod() {
-    return getLookupEntryMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.LookupEntryRequest,
-          com.google.cloud.datacatalog.v1beta1.Entry>
-      getLookupEntryMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.LookupEntryRequest,
             com.google.cloud.datacatalog.v1beta1.Entry>
@@ -644,9 +518,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.Entry>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "LookupEntry"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LookupEntry"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -663,30 +535,20 @@ public final class DataCatalogGrpc {
     return getLookupEntryMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListEntriesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.ListEntriesRequest,
-          com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>
-      METHOD_LIST_ENTRIES = getListEntriesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.ListEntriesRequest,
           com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>
       getListEntriesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListEntries",
+      requestType = com.google.cloud.datacatalog.v1beta1.ListEntriesRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.ListEntriesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.ListEntriesRequest,
           com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>
       getListEntriesMethod() {
-    return getListEntriesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.ListEntriesRequest,
-          com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>
-      getListEntriesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.ListEntriesRequest,
             com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>
@@ -701,9 +563,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "ListEntries"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEntries"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -721,30 +581,20 @@ public final class DataCatalogGrpc {
     return getListEntriesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateTagTemplateMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest,
-          com.google.cloud.datacatalog.v1beta1.TagTemplate>
-      METHOD_CREATE_TAG_TEMPLATE = getCreateTagTemplateMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest,
           com.google.cloud.datacatalog.v1beta1.TagTemplate>
       getCreateTagTemplateMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateTagTemplate",
+      requestType = com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.TagTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest,
           com.google.cloud.datacatalog.v1beta1.TagTemplate>
       getCreateTagTemplateMethod() {
-    return getCreateTagTemplateMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest,
-          com.google.cloud.datacatalog.v1beta1.TagTemplate>
-      getCreateTagTemplateMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest,
             com.google.cloud.datacatalog.v1beta1.TagTemplate>
@@ -759,9 +609,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.TagTemplate>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "CreateTagTemplate"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateTagTemplate"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -780,30 +628,20 @@ public final class DataCatalogGrpc {
     return getCreateTagTemplateMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetTagTemplateMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest,
-          com.google.cloud.datacatalog.v1beta1.TagTemplate>
-      METHOD_GET_TAG_TEMPLATE = getGetTagTemplateMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest,
           com.google.cloud.datacatalog.v1beta1.TagTemplate>
       getGetTagTemplateMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTagTemplate",
+      requestType = com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.TagTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest,
           com.google.cloud.datacatalog.v1beta1.TagTemplate>
       getGetTagTemplateMethod() {
-    return getGetTagTemplateMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest,
-          com.google.cloud.datacatalog.v1beta1.TagTemplate>
-      getGetTagTemplateMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest,
             com.google.cloud.datacatalog.v1beta1.TagTemplate>
@@ -818,9 +656,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.TagTemplate>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "GetTagTemplate"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTagTemplate"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -839,30 +675,20 @@ public final class DataCatalogGrpc {
     return getGetTagTemplateMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateTagTemplateMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest,
-          com.google.cloud.datacatalog.v1beta1.TagTemplate>
-      METHOD_UPDATE_TAG_TEMPLATE = getUpdateTagTemplateMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest,
           com.google.cloud.datacatalog.v1beta1.TagTemplate>
       getUpdateTagTemplateMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTagTemplate",
+      requestType = com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.TagTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest,
           com.google.cloud.datacatalog.v1beta1.TagTemplate>
       getUpdateTagTemplateMethod() {
-    return getUpdateTagTemplateMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest,
-          com.google.cloud.datacatalog.v1beta1.TagTemplate>
-      getUpdateTagTemplateMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest,
             com.google.cloud.datacatalog.v1beta1.TagTemplate>
@@ -877,9 +703,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.TagTemplate>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "UpdateTagTemplate"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTagTemplate"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -898,26 +722,18 @@ public final class DataCatalogGrpc {
     return getUpdateTagTemplateMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteTagTemplateMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_TAG_TEMPLATE = getDeleteTagTemplateMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest, com.google.protobuf.Empty>
       getDeleteTagTemplateMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTagTemplate",
+      requestType = com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest, com.google.protobuf.Empty>
       getDeleteTagTemplateMethod() {
-    return getDeleteTagTemplateMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest, com.google.protobuf.Empty>
-      getDeleteTagTemplateMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest,
             com.google.protobuf.Empty>
@@ -932,9 +748,7 @@ public final class DataCatalogGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "DeleteTagTemplate"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTagTemplate"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -952,30 +766,20 @@ public final class DataCatalogGrpc {
     return getDeleteTagTemplateMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateTagTemplateFieldMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest,
-          com.google.cloud.datacatalog.v1beta1.TagTemplateField>
-      METHOD_CREATE_TAG_TEMPLATE_FIELD = getCreateTagTemplateFieldMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest,
           com.google.cloud.datacatalog.v1beta1.TagTemplateField>
       getCreateTagTemplateFieldMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateTagTemplateField",
+      requestType = com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.TagTemplateField.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest,
           com.google.cloud.datacatalog.v1beta1.TagTemplateField>
       getCreateTagTemplateFieldMethod() {
-    return getCreateTagTemplateFieldMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest,
-          com.google.cloud.datacatalog.v1beta1.TagTemplateField>
-      getCreateTagTemplateFieldMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest,
             com.google.cloud.datacatalog.v1beta1.TagTemplateField>
@@ -993,9 +797,7 @@ public final class DataCatalogGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog",
-                              "CreateTagTemplateField"))
+                          generateFullMethodName(SERVICE_NAME, "CreateTagTemplateField"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1014,30 +816,20 @@ public final class DataCatalogGrpc {
     return getCreateTagTemplateFieldMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateTagTemplateFieldMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest,
-          com.google.cloud.datacatalog.v1beta1.TagTemplateField>
-      METHOD_UPDATE_TAG_TEMPLATE_FIELD = getUpdateTagTemplateFieldMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest,
           com.google.cloud.datacatalog.v1beta1.TagTemplateField>
       getUpdateTagTemplateFieldMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTagTemplateField",
+      requestType = com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.TagTemplateField.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest,
           com.google.cloud.datacatalog.v1beta1.TagTemplateField>
       getUpdateTagTemplateFieldMethod() {
-    return getUpdateTagTemplateFieldMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest,
-          com.google.cloud.datacatalog.v1beta1.TagTemplateField>
-      getUpdateTagTemplateFieldMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest,
             com.google.cloud.datacatalog.v1beta1.TagTemplateField>
@@ -1055,9 +847,7 @@ public final class DataCatalogGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog",
-                              "UpdateTagTemplateField"))
+                          generateFullMethodName(SERVICE_NAME, "UpdateTagTemplateField"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1076,30 +866,20 @@ public final class DataCatalogGrpc {
     return getUpdateTagTemplateFieldMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getRenameTagTemplateFieldMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest,
-          com.google.cloud.datacatalog.v1beta1.TagTemplateField>
-      METHOD_RENAME_TAG_TEMPLATE_FIELD = getRenameTagTemplateFieldMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest,
           com.google.cloud.datacatalog.v1beta1.TagTemplateField>
       getRenameTagTemplateFieldMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RenameTagTemplateField",
+      requestType = com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.TagTemplateField.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest,
           com.google.cloud.datacatalog.v1beta1.TagTemplateField>
       getRenameTagTemplateFieldMethod() {
-    return getRenameTagTemplateFieldMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest,
-          com.google.cloud.datacatalog.v1beta1.TagTemplateField>
-      getRenameTagTemplateFieldMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest,
             com.google.cloud.datacatalog.v1beta1.TagTemplateField>
@@ -1117,9 +897,7 @@ public final class DataCatalogGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog",
-                              "RenameTagTemplateField"))
+                          generateFullMethodName(SERVICE_NAME, "RenameTagTemplateField"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1138,30 +916,20 @@ public final class DataCatalogGrpc {
     return getRenameTagTemplateFieldMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteTagTemplateFieldMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest,
-          com.google.protobuf.Empty>
-      METHOD_DELETE_TAG_TEMPLATE_FIELD = getDeleteTagTemplateFieldMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest,
           com.google.protobuf.Empty>
       getDeleteTagTemplateFieldMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTagTemplateField",
+      requestType = com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest,
           com.google.protobuf.Empty>
       getDeleteTagTemplateFieldMethod() {
-    return getDeleteTagTemplateFieldMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest,
-          com.google.protobuf.Empty>
-      getDeleteTagTemplateFieldMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest,
             com.google.protobuf.Empty>
@@ -1179,9 +947,7 @@ public final class DataCatalogGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog",
-                              "DeleteTagTemplateField"))
+                          generateFullMethodName(SERVICE_NAME, "DeleteTagTemplateField"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1199,30 +965,20 @@ public final class DataCatalogGrpc {
     return getDeleteTagTemplateFieldMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateTagMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.CreateTagRequest,
-          com.google.cloud.datacatalog.v1beta1.Tag>
-      METHOD_CREATE_TAG = getCreateTagMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.CreateTagRequest,
           com.google.cloud.datacatalog.v1beta1.Tag>
       getCreateTagMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateTag",
+      requestType = com.google.cloud.datacatalog.v1beta1.CreateTagRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.Tag.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.CreateTagRequest,
           com.google.cloud.datacatalog.v1beta1.Tag>
       getCreateTagMethod() {
-    return getCreateTagMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.CreateTagRequest,
-          com.google.cloud.datacatalog.v1beta1.Tag>
-      getCreateTagMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.CreateTagRequest,
             com.google.cloud.datacatalog.v1beta1.Tag>
@@ -1237,9 +993,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.Tag>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "CreateTag"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateTag"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1256,30 +1010,20 @@ public final class DataCatalogGrpc {
     return getCreateTagMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateTagMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.UpdateTagRequest,
-          com.google.cloud.datacatalog.v1beta1.Tag>
-      METHOD_UPDATE_TAG = getUpdateTagMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.UpdateTagRequest,
           com.google.cloud.datacatalog.v1beta1.Tag>
       getUpdateTagMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTag",
+      requestType = com.google.cloud.datacatalog.v1beta1.UpdateTagRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.Tag.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.UpdateTagRequest,
           com.google.cloud.datacatalog.v1beta1.Tag>
       getUpdateTagMethod() {
-    return getUpdateTagMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.UpdateTagRequest,
-          com.google.cloud.datacatalog.v1beta1.Tag>
-      getUpdateTagMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.UpdateTagRequest,
             com.google.cloud.datacatalog.v1beta1.Tag>
@@ -1294,9 +1038,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.Tag>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "UpdateTag"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTag"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1313,26 +1055,18 @@ public final class DataCatalogGrpc {
     return getUpdateTagMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteTagMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.DeleteTagRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_TAG = getDeleteTagMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.DeleteTagRequest, com.google.protobuf.Empty>
       getDeleteTagMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTag",
+      requestType = com.google.cloud.datacatalog.v1beta1.DeleteTagRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.DeleteTagRequest, com.google.protobuf.Empty>
       getDeleteTagMethod() {
-    return getDeleteTagMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.DeleteTagRequest, com.google.protobuf.Empty>
-      getDeleteTagMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.DeleteTagRequest, com.google.protobuf.Empty>
         getDeleteTagMethod;
@@ -1346,9 +1080,7 @@ public final class DataCatalogGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "DeleteTag"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTag"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1365,30 +1097,20 @@ public final class DataCatalogGrpc {
     return getDeleteTagMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListTagsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.ListTagsRequest,
-          com.google.cloud.datacatalog.v1beta1.ListTagsResponse>
-      METHOD_LIST_TAGS = getListTagsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.ListTagsRequest,
           com.google.cloud.datacatalog.v1beta1.ListTagsResponse>
       getListTagsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTags",
+      requestType = com.google.cloud.datacatalog.v1beta1.ListTagsRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.ListTagsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.ListTagsRequest,
           com.google.cloud.datacatalog.v1beta1.ListTagsResponse>
       getListTagsMethod() {
-    return getListTagsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.datacatalog.v1beta1.ListTagsRequest,
-          com.google.cloud.datacatalog.v1beta1.ListTagsResponse>
-      getListTagsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.datacatalog.v1beta1.ListTagsRequest,
             com.google.cloud.datacatalog.v1beta1.ListTagsResponse>
@@ -1403,9 +1125,7 @@ public final class DataCatalogGrpc {
                           com.google.cloud.datacatalog.v1beta1.ListTagsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "ListTags"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTags"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1423,26 +1143,18 @@ public final class DataCatalogGrpc {
     return getListTagsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSetIamPolicyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
-      METHOD_SET_IAM_POLICY = getSetIamPolicyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
       getSetIamPolicyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetIamPolicy",
+      requestType = com.google.iam.v1.SetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
       getSetIamPolicyMethod() {
-    return getSetIamPolicyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
-      getSetIamPolicyMethodHelper() {
     io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
         getSetIamPolicyMethod;
     if ((getSetIamPolicyMethod = DataCatalogGrpc.getSetIamPolicyMethod) == null) {
@@ -1453,9 +1165,7 @@ public final class DataCatalogGrpc {
                   io.grpc.MethodDescriptor
                       .<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "SetIamPolicy"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetIamPolicy"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1471,26 +1181,18 @@ public final class DataCatalogGrpc {
     return getSetIamPolicyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetIamPolicyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
-      METHOD_GET_IAM_POLICY = getGetIamPolicyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
       getGetIamPolicyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIamPolicy",
+      requestType = com.google.iam.v1.GetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
       getGetIamPolicyMethod() {
-    return getGetIamPolicyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
-      getGetIamPolicyMethodHelper() {
     io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
         getGetIamPolicyMethod;
     if ((getGetIamPolicyMethod = DataCatalogGrpc.getGetIamPolicyMethod) == null) {
@@ -1501,9 +1203,7 @@ public final class DataCatalogGrpc {
                   io.grpc.MethodDescriptor
                       .<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "GetIamPolicy"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetIamPolicy"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1519,26 +1219,18 @@ public final class DataCatalogGrpc {
     return getGetIamPolicyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getTestIamPermissionsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
-      METHOD_TEST_IAM_PERMISSIONS = getTestIamPermissionsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
       getTestIamPermissionsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TestIamPermissions",
+      requestType = com.google.iam.v1.TestIamPermissionsRequest.class,
+      responseType = com.google.iam.v1.TestIamPermissionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
       getTestIamPermissionsMethod() {
-    return getTestIamPermissionsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
-      getTestIamPermissionsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.iam.v1.TestIamPermissionsRequest,
             com.google.iam.v1.TestIamPermissionsResponse>
@@ -1553,9 +1245,7 @@ public final class DataCatalogGrpc {
                           com.google.iam.v1.TestIamPermissionsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.datacatalog.v1beta1.DataCatalog", "TestIamPermissions"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TestIamPermissions"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1574,19 +1264,42 @@ public final class DataCatalogGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static DataCatalogStub newStub(io.grpc.Channel channel) {
-    return new DataCatalogStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DataCatalogStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataCatalogStub>() {
+          @java.lang.Override
+          public DataCatalogStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataCatalogStub(channel, callOptions);
+          }
+        };
+    return DataCatalogStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static DataCatalogBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new DataCatalogBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DataCatalogBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataCatalogBlockingStub>() {
+          @java.lang.Override
+          public DataCatalogBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataCatalogBlockingStub(channel, callOptions);
+          }
+        };
+    return DataCatalogBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static DataCatalogFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new DataCatalogFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DataCatalogFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataCatalogFutureStub>() {
+          @java.lang.Override
+          public DataCatalogFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataCatalogFutureStub(channel, callOptions);
+          }
+        };
+    return DataCatalogFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -1621,7 +1334,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchCatalogMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getSearchCatalogMethod(), responseObserver);
     }
 
     /**
@@ -1648,7 +1361,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.EntryGroup>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateEntryGroupMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateEntryGroupMethod(), responseObserver);
     }
 
     /**
@@ -1665,7 +1378,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.EntryGroup>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateEntryGroupMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateEntryGroupMethod(), responseObserver);
     }
 
     /**
@@ -1679,7 +1392,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.EntryGroup>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetEntryGroupMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetEntryGroupMethod(), responseObserver);
     }
 
     /**
@@ -1695,7 +1408,7 @@ public final class DataCatalogGrpc {
     public void deleteEntryGroup(
         com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteEntryGroupMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteEntryGroupMethod(), responseObserver);
     }
 
     /**
@@ -1709,7 +1422,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListEntryGroupsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListEntryGroupsMethod(), responseObserver);
     }
 
     /**
@@ -1727,7 +1440,7 @@ public final class DataCatalogGrpc {
     public void createEntry(
         com.google.cloud.datacatalog.v1beta1.CreateEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateEntryMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateEntryMethod(), responseObserver);
     }
 
     /**
@@ -1743,7 +1456,7 @@ public final class DataCatalogGrpc {
     public void updateEntry(
         com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateEntryMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateEntryMethod(), responseObserver);
     }
 
     /**
@@ -1761,7 +1474,7 @@ public final class DataCatalogGrpc {
     public void deleteEntry(
         com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteEntryMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteEntryMethod(), responseObserver);
     }
 
     /**
@@ -1774,7 +1487,7 @@ public final class DataCatalogGrpc {
     public void getEntry(
         com.google.cloud.datacatalog.v1beta1.GetEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetEntryMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetEntryMethod(), responseObserver);
     }
 
     /**
@@ -1789,7 +1502,7 @@ public final class DataCatalogGrpc {
     public void lookupEntry(
         com.google.cloud.datacatalog.v1beta1.LookupEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
-      asyncUnimplementedUnaryCall(getLookupEntryMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getLookupEntryMethod(), responseObserver);
     }
 
     /**
@@ -1803,7 +1516,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.ListEntriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListEntriesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListEntriesMethod(), responseObserver);
     }
 
     /**
@@ -1820,7 +1533,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTagTemplateMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateTagTemplateMethod(), responseObserver);
     }
 
     /**
@@ -1834,7 +1547,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetTagTemplateMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetTagTemplateMethod(), responseObserver);
     }
 
     /**
@@ -1853,7 +1566,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateTagTemplateMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateTagTemplateMethod(), responseObserver);
     }
 
     /**
@@ -1869,7 +1582,7 @@ public final class DataCatalogGrpc {
     public void deleteTagTemplate(
         com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteTagTemplateMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteTagTemplateMethod(), responseObserver);
     }
 
     /**
@@ -1887,7 +1600,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTagTemplateFieldMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateTagTemplateFieldMethod(), responseObserver);
     }
 
     /**
@@ -1904,7 +1617,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateTagTemplateFieldMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateTagTemplateFieldMethod(), responseObserver);
     }
 
     /**
@@ -1921,7 +1634,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getRenameTagTemplateFieldMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getRenameTagTemplateFieldMethod(), responseObserver);
     }
 
     /**
@@ -1937,7 +1650,7 @@ public final class DataCatalogGrpc {
     public void deleteTagTemplateField(
         com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteTagTemplateFieldMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteTagTemplateFieldMethod(), responseObserver);
     }
 
     /**
@@ -1956,7 +1669,7 @@ public final class DataCatalogGrpc {
     public void createTag(
         com.google.cloud.datacatalog.v1beta1.CreateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Tag> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTagMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateTagMethod(), responseObserver);
     }
 
     /**
@@ -1969,7 +1682,7 @@ public final class DataCatalogGrpc {
     public void updateTag(
         com.google.cloud.datacatalog.v1beta1.UpdateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Tag> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateTagMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateTagMethod(), responseObserver);
     }
 
     /**
@@ -1982,7 +1695,7 @@ public final class DataCatalogGrpc {
     public void deleteTag(
         com.google.cloud.datacatalog.v1beta1.DeleteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteTagMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteTagMethod(), responseObserver);
     }
 
     /**
@@ -1996,7 +1709,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.ListTagsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ListTagsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListTagsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListTagsMethod(), responseObserver);
     }
 
     /**
@@ -2022,7 +1735,7 @@ public final class DataCatalogGrpc {
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetIamPolicyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -2049,7 +1762,7 @@ public final class DataCatalogGrpc {
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetIamPolicyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -2074,183 +1787,183 @@ public final class DataCatalogGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getTestIamPermissionsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getTestIamPermissionsMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getSearchCatalogMethodHelper(),
+              getSearchCatalogMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest,
                       com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>(
                       this, METHODID_SEARCH_CATALOG)))
           .addMethod(
-              getCreateEntryGroupMethodHelper(),
+              getCreateEntryGroupMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest,
                       com.google.cloud.datacatalog.v1beta1.EntryGroup>(
                       this, METHODID_CREATE_ENTRY_GROUP)))
           .addMethod(
-              getUpdateEntryGroupMethodHelper(),
+              getUpdateEntryGroupMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest,
                       com.google.cloud.datacatalog.v1beta1.EntryGroup>(
                       this, METHODID_UPDATE_ENTRY_GROUP)))
           .addMethod(
-              getGetEntryGroupMethodHelper(),
+              getGetEntryGroupMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest,
                       com.google.cloud.datacatalog.v1beta1.EntryGroup>(
                       this, METHODID_GET_ENTRY_GROUP)))
           .addMethod(
-              getDeleteEntryGroupMethodHelper(),
+              getDeleteEntryGroupMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_ENTRY_GROUP)))
           .addMethod(
-              getListEntryGroupsMethodHelper(),
+              getListEntryGroupsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest,
                       com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>(
                       this, METHODID_LIST_ENTRY_GROUPS)))
           .addMethod(
-              getCreateEntryMethodHelper(),
+              getCreateEntryMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.CreateEntryRequest,
                       com.google.cloud.datacatalog.v1beta1.Entry>(this, METHODID_CREATE_ENTRY)))
           .addMethod(
-              getUpdateEntryMethodHelper(),
+              getUpdateEntryMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest,
                       com.google.cloud.datacatalog.v1beta1.Entry>(this, METHODID_UPDATE_ENTRY)))
           .addMethod(
-              getDeleteEntryMethodHelper(),
+              getDeleteEntryMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_ENTRY)))
           .addMethod(
-              getGetEntryMethodHelper(),
+              getGetEntryMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.GetEntryRequest,
                       com.google.cloud.datacatalog.v1beta1.Entry>(this, METHODID_GET_ENTRY)))
           .addMethod(
-              getLookupEntryMethodHelper(),
+              getLookupEntryMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.LookupEntryRequest,
                       com.google.cloud.datacatalog.v1beta1.Entry>(this, METHODID_LOOKUP_ENTRY)))
           .addMethod(
-              getListEntriesMethodHelper(),
+              getListEntriesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.ListEntriesRequest,
                       com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>(
                       this, METHODID_LIST_ENTRIES)))
           .addMethod(
-              getCreateTagTemplateMethodHelper(),
+              getCreateTagTemplateMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest,
                       com.google.cloud.datacatalog.v1beta1.TagTemplate>(
                       this, METHODID_CREATE_TAG_TEMPLATE)))
           .addMethod(
-              getGetTagTemplateMethodHelper(),
+              getGetTagTemplateMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest,
                       com.google.cloud.datacatalog.v1beta1.TagTemplate>(
                       this, METHODID_GET_TAG_TEMPLATE)))
           .addMethod(
-              getUpdateTagTemplateMethodHelper(),
+              getUpdateTagTemplateMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest,
                       com.google.cloud.datacatalog.v1beta1.TagTemplate>(
                       this, METHODID_UPDATE_TAG_TEMPLATE)))
           .addMethod(
-              getDeleteTagTemplateMethodHelper(),
+              getDeleteTagTemplateMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_TAG_TEMPLATE)))
           .addMethod(
-              getCreateTagTemplateFieldMethodHelper(),
+              getCreateTagTemplateFieldMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest,
                       com.google.cloud.datacatalog.v1beta1.TagTemplateField>(
                       this, METHODID_CREATE_TAG_TEMPLATE_FIELD)))
           .addMethod(
-              getUpdateTagTemplateFieldMethodHelper(),
+              getUpdateTagTemplateFieldMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest,
                       com.google.cloud.datacatalog.v1beta1.TagTemplateField>(
                       this, METHODID_UPDATE_TAG_TEMPLATE_FIELD)))
           .addMethod(
-              getRenameTagTemplateFieldMethodHelper(),
+              getRenameTagTemplateFieldMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest,
                       com.google.cloud.datacatalog.v1beta1.TagTemplateField>(
                       this, METHODID_RENAME_TAG_TEMPLATE_FIELD)))
           .addMethod(
-              getDeleteTagTemplateFieldMethodHelper(),
+              getDeleteTagTemplateFieldMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_TAG_TEMPLATE_FIELD)))
           .addMethod(
-              getCreateTagMethodHelper(),
+              getCreateTagMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.CreateTagRequest,
                       com.google.cloud.datacatalog.v1beta1.Tag>(this, METHODID_CREATE_TAG)))
           .addMethod(
-              getUpdateTagMethodHelper(),
+              getUpdateTagMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.UpdateTagRequest,
                       com.google.cloud.datacatalog.v1beta1.Tag>(this, METHODID_UPDATE_TAG)))
           .addMethod(
-              getDeleteTagMethodHelper(),
+              getDeleteTagMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.DeleteTagRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_TAG)))
           .addMethod(
-              getListTagsMethodHelper(),
+              getListTagsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.ListTagsRequest,
                       com.google.cloud.datacatalog.v1beta1.ListTagsResponse>(
                       this, METHODID_LIST_TAGS)))
           .addMethod(
-              getSetIamPolicyMethodHelper(),
+              getSetIamPolicyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_SET_IAM_POLICY)))
           .addMethod(
-              getGetIamPolicyMethodHelper(),
+              getGetIamPolicyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_GET_IAM_POLICY)))
           .addMethod(
-              getTestIamPermissionsMethodHelper(),
+              getTestIamPermissionsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.TestIamPermissionsRequest,
@@ -2268,11 +1981,8 @@ public final class DataCatalogGrpc {
    * their data.
    * </pre>
    */
-  public static final class DataCatalogStub extends io.grpc.stub.AbstractStub<DataCatalogStub> {
-    private DataCatalogStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class DataCatalogStub
+      extends io.grpc.stub.AbstractAsyncStub<DataCatalogStub> {
     private DataCatalogStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -2305,7 +2015,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSearchCatalogMethodHelper(), getCallOptions()),
+          getChannel().newCall(getSearchCatalogMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2335,7 +2045,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.EntryGroup>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateEntryGroupMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateEntryGroupMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2355,7 +2065,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.EntryGroup>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateEntryGroupMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateEntryGroupMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2372,7 +2082,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.EntryGroup>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetEntryGroupMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetEntryGroupMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2391,7 +2101,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteEntryGroupMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteEntryGroupMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2408,7 +2118,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListEntryGroupsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListEntryGroupsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2429,7 +2139,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.CreateEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateEntryMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateEntryMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2448,7 +2158,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateEntryMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateEntryMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2469,7 +2179,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteEntryMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteEntryMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2485,9 +2195,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.GetEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetEntryMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetEntryMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2503,7 +2211,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.LookupEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getLookupEntryMethodHelper(), getCallOptions()),
+          getChannel().newCall(getLookupEntryMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2520,7 +2228,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListEntriesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListEntriesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2540,7 +2248,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplate>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateTagTemplateMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateTagTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2557,7 +2265,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplate>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetTagTemplateMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetTagTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2579,7 +2287,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplate>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateTagTemplateMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateTagTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2598,7 +2306,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteTagTemplateMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteTagTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2619,7 +2327,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateTagTemplateFieldMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateTagTemplateFieldMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2639,7 +2347,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateTagTemplateFieldMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateTagTemplateFieldMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2659,7 +2367,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getRenameTagTemplateFieldMethodHelper(), getCallOptions()),
+          getChannel().newCall(getRenameTagTemplateFieldMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2678,7 +2386,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteTagTemplateFieldMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteTagTemplateFieldMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2700,9 +2408,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.CreateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Tag> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateTagMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getCreateTagMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2716,9 +2422,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.UpdateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Tag> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateTagMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getUpdateTagMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2732,9 +2436,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.DeleteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteTagMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getDeleteTagMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2749,9 +2451,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ListTagsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListTagsMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getListTagsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2778,7 +2478,7 @@ public final class DataCatalogGrpc {
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSetIamPolicyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2808,7 +2508,7 @@ public final class DataCatalogGrpc {
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2836,7 +2536,7 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2851,11 +2551,7 @@ public final class DataCatalogGrpc {
    * </pre>
    */
   public static final class DataCatalogBlockingStub
-      extends io.grpc.stub.AbstractStub<DataCatalogBlockingStub> {
-    private DataCatalogBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<DataCatalogBlockingStub> {
     private DataCatalogBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -2886,8 +2582,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse searchCatalog(
         com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getSearchCatalogMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getSearchCatalogMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2913,7 +2608,7 @@ public final class DataCatalogGrpc {
     public com.google.cloud.datacatalog.v1beta1.EntryGroup createEntryGroup(
         com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateEntryGroupMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateEntryGroupMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2929,7 +2624,7 @@ public final class DataCatalogGrpc {
     public com.google.cloud.datacatalog.v1beta1.EntryGroup updateEntryGroup(
         com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateEntryGroupMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateEntryGroupMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2941,8 +2636,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.EntryGroup getEntryGroup(
         com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetEntryGroupMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetEntryGroupMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2958,7 +2652,7 @@ public final class DataCatalogGrpc {
     public com.google.protobuf.Empty deleteEntryGroup(
         com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteEntryGroupMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteEntryGroupMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2970,8 +2664,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse listEntryGroups(
         com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListEntryGroupsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListEntryGroupsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2988,8 +2681,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.Entry createEntry(
         com.google.cloud.datacatalog.v1beta1.CreateEntryRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateEntryMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateEntryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3004,8 +2696,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.Entry updateEntry(
         com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateEntryMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateEntryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3022,8 +2713,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.protobuf.Empty deleteEntry(
         com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteEntryMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteEntryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3035,7 +2725,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.Entry getEntry(
         com.google.cloud.datacatalog.v1beta1.GetEntryRequest request) {
-      return blockingUnaryCall(getChannel(), getGetEntryMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetEntryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3049,8 +2739,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.Entry lookupEntry(
         com.google.cloud.datacatalog.v1beta1.LookupEntryRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getLookupEntryMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getLookupEntryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3062,8 +2751,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.ListEntriesResponse listEntries(
         com.google.cloud.datacatalog.v1beta1.ListEntriesRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListEntriesMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListEntriesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3079,7 +2767,7 @@ public final class DataCatalogGrpc {
     public com.google.cloud.datacatalog.v1beta1.TagTemplate createTagTemplate(
         com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateTagTemplateMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateTagTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3091,8 +2779,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.TagTemplate getTagTemplate(
         com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetTagTemplateMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetTagTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3110,7 +2797,7 @@ public final class DataCatalogGrpc {
     public com.google.cloud.datacatalog.v1beta1.TagTemplate updateTagTemplate(
         com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateTagTemplateMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateTagTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3126,7 +2813,7 @@ public final class DataCatalogGrpc {
     public com.google.protobuf.Empty deleteTagTemplate(
         com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteTagTemplateMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteTagTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3143,7 +2830,7 @@ public final class DataCatalogGrpc {
     public com.google.cloud.datacatalog.v1beta1.TagTemplateField createTagTemplateField(
         com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateTagTemplateFieldMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateTagTemplateFieldMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3159,7 +2846,7 @@ public final class DataCatalogGrpc {
     public com.google.cloud.datacatalog.v1beta1.TagTemplateField updateTagTemplateField(
         com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateTagTemplateFieldMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateTagTemplateFieldMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3175,7 +2862,7 @@ public final class DataCatalogGrpc {
     public com.google.cloud.datacatalog.v1beta1.TagTemplateField renameTagTemplateField(
         com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest request) {
       return blockingUnaryCall(
-          getChannel(), getRenameTagTemplateFieldMethodHelper(), getCallOptions(), request);
+          getChannel(), getRenameTagTemplateFieldMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3191,7 +2878,7 @@ public final class DataCatalogGrpc {
     public com.google.protobuf.Empty deleteTagTemplateField(
         com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteTagTemplateFieldMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteTagTemplateFieldMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3209,7 +2896,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.Tag createTag(
         com.google.cloud.datacatalog.v1beta1.CreateTagRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateTagMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateTagMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3221,7 +2908,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.Tag updateTag(
         com.google.cloud.datacatalog.v1beta1.UpdateTagRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateTagMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateTagMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3233,7 +2920,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.protobuf.Empty deleteTag(
         com.google.cloud.datacatalog.v1beta1.DeleteTagRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteTagMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteTagMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3245,7 +2932,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.ListTagsResponse listTags(
         com.google.cloud.datacatalog.v1beta1.ListTagsRequest request) {
-      return blockingUnaryCall(getChannel(), getListTagsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListTagsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3269,8 +2956,7 @@ public final class DataCatalogGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getSetIamPolicyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3295,8 +2981,7 @@ public final class DataCatalogGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetIamPolicyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3320,7 +3005,7 @@ public final class DataCatalogGrpc {
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getTestIamPermissionsMethodHelper(), getCallOptions(), request);
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }
 
@@ -3333,11 +3018,7 @@ public final class DataCatalogGrpc {
    * </pre>
    */
   public static final class DataCatalogFutureStub
-      extends io.grpc.stub.AbstractStub<DataCatalogFutureStub> {
-    private DataCatalogFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<DataCatalogFutureStub> {
     private DataCatalogFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -3370,7 +3051,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>
         searchCatalog(com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getSearchCatalogMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getSearchCatalogMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3397,7 +3078,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.EntryGroup>
         createEntryGroup(com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateEntryGroupMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateEntryGroupMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3414,7 +3095,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.EntryGroup>
         updateEntryGroup(com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateEntryGroupMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateEntryGroupMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3428,7 +3109,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.EntryGroup>
         getEntryGroup(com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetEntryGroupMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetEntryGroupMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3444,7 +3125,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteEntryGroup(com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteEntryGroupMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteEntryGroupMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3458,7 +3139,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>
         listEntryGroups(com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListEntryGroupsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListEntryGroupsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3477,7 +3158,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.Entry>
         createEntry(com.google.cloud.datacatalog.v1beta1.CreateEntryRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateEntryMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateEntryMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3494,7 +3175,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.Entry>
         updateEntry(com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateEntryMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateEntryMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3512,7 +3193,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteEntry(com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteEntryMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteEntryMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3525,8 +3206,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.Entry>
         getEntry(com.google.cloud.datacatalog.v1beta1.GetEntryRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetEntryMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getGetEntryMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3542,7 +3222,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.Entry>
         lookupEntry(com.google.cloud.datacatalog.v1beta1.LookupEntryRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getLookupEntryMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getLookupEntryMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3556,7 +3236,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>
         listEntries(com.google.cloud.datacatalog.v1beta1.ListEntriesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListEntriesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListEntriesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3573,7 +3253,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.TagTemplate>
         createTagTemplate(com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateTagTemplateMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateTagTemplateMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3587,7 +3267,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.TagTemplate>
         getTagTemplate(com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetTagTemplateMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetTagTemplateMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3606,7 +3286,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.TagTemplate>
         updateTagTemplate(com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateTagTemplateMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateTagTemplateMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3622,7 +3302,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteTagTemplate(com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteTagTemplateMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteTagTemplateMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3641,7 +3321,7 @@ public final class DataCatalogGrpc {
         createTagTemplateField(
             com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateTagTemplateFieldMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateTagTemplateFieldMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3659,7 +3339,7 @@ public final class DataCatalogGrpc {
         updateTagTemplateField(
             com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateTagTemplateFieldMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateTagTemplateFieldMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3677,7 +3357,7 @@ public final class DataCatalogGrpc {
         renameTagTemplateField(
             com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getRenameTagTemplateFieldMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getRenameTagTemplateFieldMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3694,7 +3374,7 @@ public final class DataCatalogGrpc {
         deleteTagTemplateField(
             com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteTagTemplateFieldMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteTagTemplateFieldMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3713,8 +3393,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.Tag>
         createTag(com.google.cloud.datacatalog.v1beta1.CreateTagRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getCreateTagMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getCreateTagMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3727,8 +3406,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.Tag>
         updateTag(com.google.cloud.datacatalog.v1beta1.UpdateTagRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getUpdateTagMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getUpdateTagMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3740,8 +3418,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTag(
         com.google.cloud.datacatalog.v1beta1.DeleteTagRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getDeleteTagMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getDeleteTagMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3754,8 +3431,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.ListTagsResponse>
         listTags(com.google.cloud.datacatalog.v1beta1.ListTagsRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getListTagsMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getListTagsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3781,7 +3457,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getSetIamPolicyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3808,7 +3484,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3833,7 +3509,7 @@ public final class DataCatalogGrpc {
             com.google.iam.v1.TestIamPermissionsResponse>
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
   }
 
@@ -4104,33 +3780,33 @@ public final class DataCatalogGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new DataCatalogFileDescriptorSupplier())
-                      .addMethod(getSearchCatalogMethodHelper())
-                      .addMethod(getCreateEntryGroupMethodHelper())
-                      .addMethod(getUpdateEntryGroupMethodHelper())
-                      .addMethod(getGetEntryGroupMethodHelper())
-                      .addMethod(getDeleteEntryGroupMethodHelper())
-                      .addMethod(getListEntryGroupsMethodHelper())
-                      .addMethod(getCreateEntryMethodHelper())
-                      .addMethod(getUpdateEntryMethodHelper())
-                      .addMethod(getDeleteEntryMethodHelper())
-                      .addMethod(getGetEntryMethodHelper())
-                      .addMethod(getLookupEntryMethodHelper())
-                      .addMethod(getListEntriesMethodHelper())
-                      .addMethod(getCreateTagTemplateMethodHelper())
-                      .addMethod(getGetTagTemplateMethodHelper())
-                      .addMethod(getUpdateTagTemplateMethodHelper())
-                      .addMethod(getDeleteTagTemplateMethodHelper())
-                      .addMethod(getCreateTagTemplateFieldMethodHelper())
-                      .addMethod(getUpdateTagTemplateFieldMethodHelper())
-                      .addMethod(getRenameTagTemplateFieldMethodHelper())
-                      .addMethod(getDeleteTagTemplateFieldMethodHelper())
-                      .addMethod(getCreateTagMethodHelper())
-                      .addMethod(getUpdateTagMethodHelper())
-                      .addMethod(getDeleteTagMethodHelper())
-                      .addMethod(getListTagsMethodHelper())
-                      .addMethod(getSetIamPolicyMethodHelper())
-                      .addMethod(getGetIamPolicyMethodHelper())
-                      .addMethod(getTestIamPermissionsMethodHelper())
+                      .addMethod(getSearchCatalogMethod())
+                      .addMethod(getCreateEntryGroupMethod())
+                      .addMethod(getUpdateEntryGroupMethod())
+                      .addMethod(getGetEntryGroupMethod())
+                      .addMethod(getDeleteEntryGroupMethod())
+                      .addMethod(getListEntryGroupsMethod())
+                      .addMethod(getCreateEntryMethod())
+                      .addMethod(getUpdateEntryMethod())
+                      .addMethod(getDeleteEntryMethod())
+                      .addMethod(getGetEntryMethod())
+                      .addMethod(getLookupEntryMethod())
+                      .addMethod(getListEntriesMethod())
+                      .addMethod(getCreateTagTemplateMethod())
+                      .addMethod(getGetTagTemplateMethod())
+                      .addMethod(getUpdateTagTemplateMethod())
+                      .addMethod(getDeleteTagTemplateMethod())
+                      .addMethod(getCreateTagTemplateFieldMethod())
+                      .addMethod(getUpdateTagTemplateFieldMethod())
+                      .addMethod(getRenameTagTemplateFieldMethod())
+                      .addMethod(getDeleteTagTemplateFieldMethod())
+                      .addMethod(getCreateTagMethod())
+                      .addMethod(getUpdateTagMethod())
+                      .addMethod(getDeleteTagMethod())
+                      .addMethod(getListTagsMethod())
+                      .addMethod(getSetIamPolicyMethod())
+                      .addMethod(getGetIamPolicyMethod())
+                      .addMethod(getTestIamPermissionsMethod())
                       .build();
         }
       }

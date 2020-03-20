@@ -5,4 +5,10 @@
     <differenceType>8001</differenceType>
     <className>com/google/cloud/datacatalog/*</className>
   </difference>
+  <!-- TODO: remove after 0.33.1 released -->
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/*Grpc</className>
+    <field>METHOD_*</field>
+  </difference>
 </differences>
