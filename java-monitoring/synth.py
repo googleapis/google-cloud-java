@@ -14,23 +14,17 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
-
-gapic = gcp.GAPICGenerator()
 
 service = 'monitoring'
 versions = ['v3']
-config_pattern = '/google/monitoring/artman_monitoring.yaml'
 
 for version in versions:
-  java.gapic_library(
-    service=service,
-    version=version,
-    config_pattern=config_pattern,
-    package_pattern='com.google.{service}.{version}',
-    gapic=gapic
+  java.bazel_library(
+      service=service,
+      version=version,
+      proto_path=f'google/{service}/{version}',
+      bazel_target=f'//google/{service}/{version}:google-cloud-{service}-{version}-java',
   )
 
 java.common_templates()
