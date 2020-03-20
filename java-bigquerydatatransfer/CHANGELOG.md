@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.125.2](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.125.1...v0.125.2) (2020-03-20)
+
+
+### Dependencies
+
+* update dependency org.threeten:threetenbp to v1.4.2 ([#85](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/85)) ([1f94e8a](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/1f94e8a697dcb59fd1edd5f9f82ea1a798f43c05))
+
 ### [0.125.1](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.125.0...v0.125.1) (2020-03-13)
 
 
