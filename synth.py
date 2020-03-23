@@ -14,11 +14,8 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
+import synthtool.languages.java as java
 
-
-templates = gcp.CommonTemplates().java_library()
-s.copy(templates, excludes=[
+java.common_templates(excludes=[
     'README.md',
 ])
