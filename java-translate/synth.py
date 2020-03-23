@@ -14,23 +14,18 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
-gapic = gcp.GAPICGenerator()
-
-service = 'translate'
+service = 'translation'
 versions = ['v3beta1', 'v3']
-config_pattern = '/google/cloud/translate/artman_translate_{version}.yaml'
 
 for version in versions:
-  java.gapic_library(
-    service=service,
-    version=version,
-    config_pattern=config_pattern,
-    package_pattern='com.google.cloud.{service}.{version}',
-    gapic=gapic,
+  java.bazel_library(
+      service=service,
+      version=version,
+      proto_path=f'google/cloud/translate/{version}',
+      bazel_target=f'//google/cloud/translate/{version}:google-cloud-{service}-{version}-java',
+      destination_name='translate',
   )
 
 java.common_templates()
