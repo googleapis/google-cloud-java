@@ -164,9 +164,13 @@ public class SessionsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param session Required. The name of the session this query is sent to. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API caller
-   *     to choose an appropriate session ID. It can be a random number or some type of user
-   *     identifier (preferably hashed). The length of the session ID must not exceed 36 bytes.
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or `projects/&lt;Project
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;`. If `Environment ID` is not specified, we assume default 'draft' environment. If
+   *     `User ID` is not specified, we are using "-". It's up to the API caller to choose an
+   *     appropriate `Session ID` and `User Id`. They can be a random number or some type of user
+   *     and session identifiers (preferably hashed). The length of the `Session ID` and `User ID`
+   *     must not exceed 36 characters.
    * @param queryInput Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,
@@ -200,9 +204,13 @@ public class SessionsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param session Required. The name of the session this query is sent to. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API caller
-   *     to choose an appropriate session ID. It can be a random number or some type of user
-   *     identifier (preferably hashed). The length of the session ID must not exceed 36 bytes.
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or `projects/&lt;Project
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;`. If `Environment ID` is not specified, we assume default 'draft' environment. If
+   *     `User ID` is not specified, we are using "-". It's up to the API caller to choose an
+   *     appropriate `Session ID` and `User Id`. They can be a random number or some type of user
+   *     and session identifiers (preferably hashed). The length of the `Session ID` and `User ID`
+   *     must not exceed 36 characters.
    * @param queryInput Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,

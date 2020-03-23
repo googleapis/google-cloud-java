@@ -131,7 +131,11 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The session to list all contexts from.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+   * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -154,7 +158,11 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The session to list all contexts from.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+   * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -593,7 +601,11 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The session to list all contexts from.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -616,7 +628,11 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The session to list all contexts from.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -639,7 +655,11 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The session to list all contexts from.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -661,7 +681,11 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The session to list all contexts from.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -679,7 +703,11 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The session to list all contexts from.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

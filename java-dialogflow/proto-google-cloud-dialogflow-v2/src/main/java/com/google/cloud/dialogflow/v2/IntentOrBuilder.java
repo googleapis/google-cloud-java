@@ -222,6 +222,7 @@ public interface IntentOrBuilder
    * Optional. The collection of event names that trigger the intent.
    * If the collection of input contexts is not empty, all of the contexts must
    * be present in the active user session for an event to trigger this intent.
+   * Event names are limited to 150 characters.
    * </pre>
    *
    * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -236,6 +237,7 @@ public interface IntentOrBuilder
    * Optional. The collection of event names that trigger the intent.
    * If the collection of input contexts is not empty, all of the contexts must
    * be present in the active user session for an event to trigger this intent.
+   * Event names are limited to 150 characters.
    * </pre>
    *
    * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -250,6 +252,7 @@ public interface IntentOrBuilder
    * Optional. The collection of event names that trigger the intent.
    * If the collection of input contexts is not empty, all of the contexts must
    * be present in the active user session for an event to trigger this intent.
+   * Event names are limited to 150 characters.
    * </pre>
    *
    * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -265,6 +268,7 @@ public interface IntentOrBuilder
    * Optional. The collection of event names that trigger the intent.
    * If the collection of input contexts is not empty, all of the contexts must
    * be present in the active user session for an event to trigger this intent.
+   * Event names are limited to 150 characters.
    * </pre>
    *
    * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

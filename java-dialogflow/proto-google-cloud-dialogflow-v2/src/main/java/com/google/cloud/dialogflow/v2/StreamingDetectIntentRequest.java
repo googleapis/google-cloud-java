@@ -217,13 +217,19 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The name of the session the query is sent to.
    * Format of the session name:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
-   * caller to choose an appropriate `Session ID`. It can be a random number or
-   * some type of user identifier (preferably hashed). The length of the session
-   * ID must not exceed 36 characters.
+   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+   * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+   * default 'draft' environment. If `User ID` is not specified, we are using
+   * "-". It's up to the API caller to choose an appropriate `Session ID` and
+   * `User Id`. They can be a random number or some type of user and session
+   * identifiers (preferably hashed). The length of the `Session ID` and
+   * `User ID` must not exceed 36 characters.
    * </pre>
    *
-   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The session.
    */
@@ -244,13 +250,19 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The name of the session the query is sent to.
    * Format of the session name:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
-   * caller to choose an appropriate `Session ID`. It can be a random number or
-   * some type of user identifier (preferably hashed). The length of the session
-   * ID must not exceed 36 characters.
+   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+   * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+   * default 'draft' environment. If `User ID` is not specified, we are using
+   * "-". It's up to the API caller to choose an appropriate `Session ID` and
+   * `User Id`. They can be a random number or some type of user and session
+   * identifiers (preferably hashed). The length of the `Session ID` and
+   * `User ID` must not exceed 36 characters.
    * </pre>
    *
-   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for session.
    */
@@ -1019,13 +1031,19 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the session the query is sent to.
      * Format of the session name:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
-     * caller to choose an appropriate `Session ID`. It can be a random number or
-     * some type of user identifier (preferably hashed). The length of the session
-     * ID must not exceed 36 characters.
+     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+     * default 'draft' environment. If `User ID` is not specified, we are using
+     * "-". It's up to the API caller to choose an appropriate `Session ID` and
+     * `User Id`. They can be a random number or some type of user and session
+     * identifiers (preferably hashed). The length of the `Session ID` and
+     * `User ID` must not exceed 36 characters.
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The session.
      */
@@ -1046,13 +1064,19 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the session the query is sent to.
      * Format of the session name:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
-     * caller to choose an appropriate `Session ID`. It can be a random number or
-     * some type of user identifier (preferably hashed). The length of the session
-     * ID must not exceed 36 characters.
+     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+     * default 'draft' environment. If `User ID` is not specified, we are using
+     * "-". It's up to the API caller to choose an appropriate `Session ID` and
+     * `User Id`. They can be a random number or some type of user and session
+     * identifiers (preferably hashed). The length of the `Session ID` and
+     * `User ID` must not exceed 36 characters.
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for session.
      */
@@ -1073,13 +1097,19 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the session the query is sent to.
      * Format of the session name:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
-     * caller to choose an appropriate `Session ID`. It can be a random number or
-     * some type of user identifier (preferably hashed). The length of the session
-     * ID must not exceed 36 characters.
+     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+     * default 'draft' environment. If `User ID` is not specified, we are using
+     * "-". It's up to the API caller to choose an appropriate `Session ID` and
+     * `User Id`. They can be a random number or some type of user and session
+     * identifiers (preferably hashed). The length of the `Session ID` and
+     * `User ID` must not exceed 36 characters.
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The session to set.
      * @return This builder for chaining.
@@ -1099,13 +1129,19 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the session the query is sent to.
      * Format of the session name:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
-     * caller to choose an appropriate `Session ID`. It can be a random number or
-     * some type of user identifier (preferably hashed). The length of the session
-     * ID must not exceed 36 characters.
+     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+     * default 'draft' environment. If `User ID` is not specified, we are using
+     * "-". It's up to the API caller to choose an appropriate `Session ID` and
+     * `User Id`. They can be a random number or some type of user and session
+     * identifiers (preferably hashed). The length of the `Session ID` and
+     * `User ID` must not exceed 36 characters.
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1121,13 +1157,19 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the session the query is sent to.
      * Format of the session name:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
-     * caller to choose an appropriate `Session ID`. It can be a random number or
-     * some type of user identifier (preferably hashed). The length of the session
-     * ID must not exceed 36 characters.
+     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+     * default 'draft' environment. If `User ID` is not specified, we are using
+     * "-". It's up to the API caller to choose an appropriate `Session ID` and
+     * `User Id`. They can be a random number or some type of user and session
+     * identifiers (preferably hashed). The length of the `Session ID` and
+     * `User ID` must not exceed 36 characters.
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for session to set.
      * @return This builder for chaining.

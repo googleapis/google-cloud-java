@@ -134,10 +134,16 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The session to create a context for.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+   * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -157,10 +163,16 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The session to create a context for.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+   * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -579,10 +591,16 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The session to create a context for.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -602,10 +620,16 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The session to create a context for.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -625,10 +649,16 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The session to create a context for.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -647,10 +677,16 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The session to create a context for.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -665,10 +701,16 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The session to create a context for.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

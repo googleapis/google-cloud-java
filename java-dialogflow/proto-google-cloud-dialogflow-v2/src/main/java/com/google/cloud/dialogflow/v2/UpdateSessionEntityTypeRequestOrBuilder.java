@@ -27,9 +27,7 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entity type to update. Format:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
-   * Display Name&gt;`.
+   * Required. The session entity type to update.
    * </pre>
    *
    * <code>
@@ -43,9 +41,7 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entity type to update. Format:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
-   * Display Name&gt;`.
+   * Required. The session entity type to update.
    * </pre>
    *
    * <code>
@@ -59,9 +55,7 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entity type to update. Format:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
-   * Display Name&gt;`.
+   * Required. The session entity type to update.
    * </pre>
    *
    * <code>

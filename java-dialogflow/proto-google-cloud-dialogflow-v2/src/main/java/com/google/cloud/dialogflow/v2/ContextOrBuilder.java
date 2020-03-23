@@ -28,9 +28,13 @@ public interface ContextOrBuilder
    *
    * <pre>
    * Required. The unique identifier of the context. Format:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`.
+   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`,
+   * or `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   * ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`.
    * The `Context ID` is always converted to lowercase, may only contain
-   * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
+   * characters in a-zA-Z0-9_-% and may be at most 250 bytes long.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment. If `User ID` is not specified, we assume default '-' user.
    * The following context names are reserved for internal use by Dialogflow.
    * You should not use these contexts or create contexts with these names:
    * * `__system_counters__`
@@ -48,9 +52,13 @@ public interface ContextOrBuilder
    *
    * <pre>
    * Required. The unique identifier of the context. Format:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`.
+   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`,
+   * or `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   * ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`.
    * The `Context ID` is always converted to lowercase, may only contain
-   * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
+   * characters in a-zA-Z0-9_-% and may be at most 250 bytes long.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment. If `User ID` is not specified, we assume default '-' user.
    * The following context names are reserved for internal use by Dialogflow.
    * You should not use these contexts or create contexts with these names:
    * * `__system_counters__`

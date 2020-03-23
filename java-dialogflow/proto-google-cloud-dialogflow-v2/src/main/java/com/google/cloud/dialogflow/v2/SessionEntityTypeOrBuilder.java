@@ -29,7 +29,11 @@ public interface SessionEntityTypeOrBuilder
    * <pre>
    * Required. The unique identifier of this session entity type. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
-   * Display Name&gt;`.
+   * Display Name&gt;`, or `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment
+   * ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display
+   * Name&gt;`.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment. If `User ID` is not specified, we assume default '-' user.
    * `&lt;Entity Type Display Name&gt;` must be the display name of an existing entity
    * type in the same agent that will be overridden or supplemented.
    * </pre>
@@ -45,7 +49,11 @@ public interface SessionEntityTypeOrBuilder
    * <pre>
    * Required. The unique identifier of this session entity type. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
-   * Display Name&gt;`.
+   * Display Name&gt;`, or `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment
+   * ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display
+   * Name&gt;`.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment. If `User ID` is not specified, we assume default '-' user.
    * `&lt;Entity Type Display Name&gt;` must be the display name of an existing entity
    * type in the same agent that will be overridden or supplemented.
    * </pre>
