@@ -1,0 +1,15 @@
+{
+  "name": "recommendationengine",
+  "name_pretty": "Recommendations AI",
+  "product_documentation": "https://cloud.google.com/recommendations-ai/",
+  "api_description": "delivers highly personalized product recommendations at scale.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-recommendations-ai/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-recommendations-ai",
+  "repo_short": "java-recommendations-ai",
+  "distribution_name": "com.google.cloud:google-cloud-recommendations-ai",
+  "api_id": "recommendationengine.googleapis.com",
+  "requires_billing": true
+}
