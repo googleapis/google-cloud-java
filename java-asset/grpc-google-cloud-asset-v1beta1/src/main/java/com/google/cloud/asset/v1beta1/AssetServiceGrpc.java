@@ -30,7 +30,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/asset/v1beta1/asset_service.proto")
 public final class AssetServiceGrpc {
 
@@ -39,26 +39,18 @@ public final class AssetServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.asset.v1beta1.AssetService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getExportAssetsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1beta1.ExportAssetsRequest, com.google.longrunning.Operation>
-      METHOD_EXPORT_ASSETS = getExportAssetsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.asset.v1beta1.ExportAssetsRequest, com.google.longrunning.Operation>
       getExportAssetsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportAssets",
+      requestType = com.google.cloud.asset.v1beta1.ExportAssetsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.asset.v1beta1.ExportAssetsRequest, com.google.longrunning.Operation>
       getExportAssetsMethod() {
-    return getExportAssetsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1beta1.ExportAssetsRequest, com.google.longrunning.Operation>
-      getExportAssetsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.asset.v1beta1.ExportAssetsRequest, com.google.longrunning.Operation>
         getExportAssetsMethod;
@@ -72,9 +64,7 @@ public final class AssetServiceGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.asset.v1beta1.AssetService", "ExportAssets"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportAssets"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -91,30 +81,20 @@ public final class AssetServiceGrpc {
     return getExportAssetsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchGetAssetsHistoryMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest,
-          com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse>
-      METHOD_BATCH_GET_ASSETS_HISTORY = getBatchGetAssetsHistoryMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest,
           com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse>
       getBatchGetAssetsHistoryMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchGetAssetsHistory",
+      requestType = com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest.class,
+      responseType = com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest,
           com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse>
       getBatchGetAssetsHistoryMethod() {
-    return getBatchGetAssetsHistoryMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest,
-          com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse>
-      getBatchGetAssetsHistoryMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest,
             com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse>
@@ -132,8 +112,7 @@ public final class AssetServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.asset.v1beta1.AssetService", "BatchGetAssetsHistory"))
+                          generateFullMethodName(SERVICE_NAME, "BatchGetAssetsHistory"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -154,19 +133,43 @@ public final class AssetServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static AssetServiceStub newStub(io.grpc.Channel channel) {
-    return new AssetServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AssetServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AssetServiceStub>() {
+          @java.lang.Override
+          public AssetServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AssetServiceStub(channel, callOptions);
+          }
+        };
+    return AssetServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static AssetServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new AssetServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingStub>() {
+          @java.lang.Override
+          public AssetServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AssetServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return AssetServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static AssetServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new AssetServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AssetServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AssetServiceFutureStub>() {
+          @java.lang.Override
+          public AssetServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AssetServiceFutureStub(channel, callOptions);
+          }
+        };
+    return AssetServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -192,7 +195,7 @@ public final class AssetServiceGrpc {
     public void exportAssets(
         com.google.cloud.asset.v1beta1.ExportAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportAssetsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getExportAssetsMethod(), responseObserver);
     }
 
     /**
@@ -212,20 +215,20 @@ public final class AssetServiceGrpc {
         com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchGetAssetsHistoryMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getBatchGetAssetsHistoryMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getExportAssetsMethodHelper(),
+              getExportAssetsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.asset.v1beta1.ExportAssetsRequest,
                       com.google.longrunning.Operation>(this, METHODID_EXPORT_ASSETS)))
           .addMethod(
-              getBatchGetAssetsHistoryMethodHelper(),
+              getBatchGetAssetsHistoryMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest,
@@ -242,11 +245,8 @@ public final class AssetServiceGrpc {
    * Asset service definition.
    * </pre>
    */
-  public static final class AssetServiceStub extends io.grpc.stub.AbstractStub<AssetServiceStub> {
-    private AssetServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class AssetServiceStub
+      extends io.grpc.stub.AbstractAsyncStub<AssetServiceStub> {
     private AssetServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -271,7 +271,7 @@ public final class AssetServiceGrpc {
         com.google.cloud.asset.v1beta1.ExportAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getExportAssetsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getExportAssetsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -294,7 +294,7 @@ public final class AssetServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBatchGetAssetsHistoryMethodHelper(), getCallOptions()),
+          getChannel().newCall(getBatchGetAssetsHistoryMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -308,11 +308,7 @@ public final class AssetServiceGrpc {
    * </pre>
    */
   public static final class AssetServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<AssetServiceBlockingStub> {
-    private AssetServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<AssetServiceBlockingStub> {
     private AssetServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -336,8 +332,7 @@ public final class AssetServiceGrpc {
      */
     public com.google.longrunning.Operation exportAssets(
         com.google.cloud.asset.v1beta1.ExportAssetsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getExportAssetsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getExportAssetsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -356,7 +351,7 @@ public final class AssetServiceGrpc {
     public com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse batchGetAssetsHistory(
         com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest request) {
       return blockingUnaryCall(
-          getChannel(), getBatchGetAssetsHistoryMethodHelper(), getCallOptions(), request);
+          getChannel(), getBatchGetAssetsHistoryMethod(), getCallOptions(), request);
     }
   }
 
@@ -368,11 +363,7 @@ public final class AssetServiceGrpc {
    * </pre>
    */
   public static final class AssetServiceFutureStub
-      extends io.grpc.stub.AbstractStub<AssetServiceFutureStub> {
-    private AssetServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<AssetServiceFutureStub> {
     private AssetServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -397,7 +388,7 @@ public final class AssetServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         exportAssets(com.google.cloud.asset.v1beta1.ExportAssetsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getExportAssetsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getExportAssetsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -417,7 +408,7 @@ public final class AssetServiceGrpc {
             com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse>
         batchGetAssetsHistory(com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getBatchGetAssetsHistoryMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getBatchGetAssetsHistoryMethod(), getCallOptions()), request);
     }
   }
 
@@ -517,8 +508,8 @@ public final class AssetServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new AssetServiceFileDescriptorSupplier())
-                      .addMethod(getExportAssetsMethodHelper())
-                      .addMethod(getBatchGetAssetsHistoryMethodHelper())
+                      .addMethod(getExportAssetsMethod())
+                      .addMethod(getBatchGetAssetsHistoryMethod())
                       .build();
         }
       }

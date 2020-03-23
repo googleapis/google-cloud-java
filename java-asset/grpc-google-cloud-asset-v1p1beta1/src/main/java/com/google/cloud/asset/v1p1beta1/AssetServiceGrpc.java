@@ -30,7 +30,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/asset/v1p1beta1/asset_service.proto")
 public final class AssetServiceGrpc {
 
@@ -39,30 +39,20 @@ public final class AssetServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.asset.v1p1beta1.AssetService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSearchAllResourcesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest,
-          com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse>
-      METHOD_SEARCH_ALL_RESOURCES = getSearchAllResourcesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest,
           com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse>
       getSearchAllResourcesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchAllResources",
+      requestType = com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest.class,
+      responseType = com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest,
           com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse>
       getSearchAllResourcesMethod() {
-    return getSearchAllResourcesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest,
-          com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse>
-      getSearchAllResourcesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest,
             com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse>
@@ -77,9 +67,7 @@ public final class AssetServiceGrpc {
                           com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.asset.v1p1beta1.AssetService", "SearchAllResources"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchAllResources"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -98,30 +86,20 @@ public final class AssetServiceGrpc {
     return getSearchAllResourcesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSearchAllIamPoliciesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest,
-          com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse>
-      METHOD_SEARCH_ALL_IAM_POLICIES = getSearchAllIamPoliciesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest,
           com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse>
       getSearchAllIamPoliciesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchAllIamPolicies",
+      requestType = com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest.class,
+      responseType = com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest,
           com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse>
       getSearchAllIamPoliciesMethod() {
-    return getSearchAllIamPoliciesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest,
-          com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse>
-      getSearchAllIamPoliciesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest,
             com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse>
@@ -138,8 +116,7 @@ public final class AssetServiceGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.asset.v1p1beta1.AssetService", "SearchAllIamPolicies"))
+                          generateFullMethodName(SERVICE_NAME, "SearchAllIamPolicies"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -160,19 +137,43 @@ public final class AssetServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static AssetServiceStub newStub(io.grpc.Channel channel) {
-    return new AssetServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AssetServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AssetServiceStub>() {
+          @java.lang.Override
+          public AssetServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AssetServiceStub(channel, callOptions);
+          }
+        };
+    return AssetServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static AssetServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new AssetServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingStub>() {
+          @java.lang.Override
+          public AssetServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AssetServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return AssetServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static AssetServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new AssetServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<AssetServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AssetServiceFutureStub>() {
+          @java.lang.Override
+          public AssetServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AssetServiceFutureStub(channel, callOptions);
+          }
+        };
+    return AssetServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -200,7 +201,7 @@ public final class AssetServiceGrpc {
         com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchAllResourcesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getSearchAllResourcesMethod(), responseObserver);
     }
 
     /**
@@ -219,21 +220,21 @@ public final class AssetServiceGrpc {
         com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchAllIamPoliciesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getSearchAllIamPoliciesMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getSearchAllResourcesMethodHelper(),
+              getSearchAllResourcesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest,
                       com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse>(
                       this, METHODID_SEARCH_ALL_RESOURCES)))
           .addMethod(
-              getSearchAllIamPoliciesMethodHelper(),
+              getSearchAllIamPoliciesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest,
@@ -250,11 +251,8 @@ public final class AssetServiceGrpc {
    * Asset service definition.
    * </pre>
    */
-  public static final class AssetServiceStub extends io.grpc.stub.AbstractStub<AssetServiceStub> {
-    private AssetServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class AssetServiceStub
+      extends io.grpc.stub.AbstractAsyncStub<AssetServiceStub> {
     private AssetServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -281,7 +279,7 @@ public final class AssetServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSearchAllResourcesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getSearchAllResourcesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -303,7 +301,7 @@ public final class AssetServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSearchAllIamPoliciesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getSearchAllIamPoliciesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -317,11 +315,7 @@ public final class AssetServiceGrpc {
    * </pre>
    */
   public static final class AssetServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<AssetServiceBlockingStub> {
-    private AssetServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<AssetServiceBlockingStub> {
     private AssetServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -347,7 +341,7 @@ public final class AssetServiceGrpc {
     public com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse searchAllResources(
         com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getSearchAllResourcesMethodHelper(), getCallOptions(), request);
+          getChannel(), getSearchAllResourcesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -365,7 +359,7 @@ public final class AssetServiceGrpc {
     public com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse searchAllIamPolicies(
         com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getSearchAllIamPoliciesMethodHelper(), getCallOptions(), request);
+          getChannel(), getSearchAllIamPoliciesMethod(), getCallOptions(), request);
     }
   }
 
@@ -377,11 +371,7 @@ public final class AssetServiceGrpc {
    * </pre>
    */
   public static final class AssetServiceFutureStub
-      extends io.grpc.stub.AbstractStub<AssetServiceFutureStub> {
-    private AssetServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<AssetServiceFutureStub> {
     private AssetServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -408,7 +398,7 @@ public final class AssetServiceGrpc {
             com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse>
         searchAllResources(com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getSearchAllResourcesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getSearchAllResourcesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -427,7 +417,7 @@ public final class AssetServiceGrpc {
             com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse>
         searchAllIamPolicies(com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getSearchAllIamPoliciesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getSearchAllIamPoliciesMethod(), getCallOptions()), request);
     }
   }
 
@@ -529,8 +519,8 @@ public final class AssetServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new AssetServiceFileDescriptorSupplier())
-                      .addMethod(getSearchAllResourcesMethodHelper())
-                      .addMethod(getSearchAllIamPoliciesMethodHelper())
+                      .addMethod(getSearchAllResourcesMethod())
+                      .addMethod(getSearchAllIamPoliciesMethod())
                       .build();
         }
       }

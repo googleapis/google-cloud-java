@@ -14,38 +14,18 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-gapic = gcp.GAPICGenerator()
-
 service = 'asset'
-versions = ['v1', 'v1beta1', 'v1p2beta1']
-config_pattern = '/google/cloud/asset/artman_cloudasset_{version}.yaml'
+versions = ['v1', 'v1beta1', 'v1p2beta1', 'v1p1beta1', 'v1p4beta1']
 
 for version in versions:
-  java.gapic_library(
+  library = java.bazel_library(
       service=service,
       version=version,
-      config_pattern='/google/cloud/asset/artman_cloudasset_{version}.yaml',
-      package_pattern='com.google.cloud.{service}.{version}',
-      gapic=gapic,
+      bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
   )
-
-java.gapic_library(
-    service=service,
-    version='v1p1beta1',
-    config_pattern='/google/cloud/asset/{version}/artman_cloudasset_{version}.yaml',
-    package_pattern='com.google.cloud.{service}.{version}',
-    gapic=gapic,
-)
-
-java.bazel_library(
-    service=service,
-    version='v1p4beta1',
-)
 
 java.common_templates()
