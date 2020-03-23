@@ -39,7 +39,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/vision/v1p3beta1/product_search_service.proto")
 public final class ProductSearchGrpc {
 
@@ -48,30 +48,20 @@ public final class ProductSearchGrpc {
   public static final String SERVICE_NAME = "google.cloud.vision.v1p3beta1.ProductSearch";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateProductSetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.CreateProductSetRequest,
-          com.google.cloud.vision.v1p3beta1.ProductSet>
-      METHOD_CREATE_PRODUCT_SET = getCreateProductSetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.CreateProductSetRequest,
           com.google.cloud.vision.v1p3beta1.ProductSet>
       getCreateProductSetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateProductSet",
+      requestType = com.google.cloud.vision.v1p3beta1.CreateProductSetRequest.class,
+      responseType = com.google.cloud.vision.v1p3beta1.ProductSet.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.CreateProductSetRequest,
           com.google.cloud.vision.v1p3beta1.ProductSet>
       getCreateProductSetMethod() {
-    return getCreateProductSetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.CreateProductSetRequest,
-          com.google.cloud.vision.v1p3beta1.ProductSet>
-      getCreateProductSetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.CreateProductSetRequest,
             com.google.cloud.vision.v1p3beta1.ProductSet>
@@ -86,9 +76,7 @@ public final class ProductSearchGrpc {
                           com.google.cloud.vision.v1p3beta1.ProductSet>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch", "CreateProductSet"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateProductSet"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -106,30 +94,20 @@ public final class ProductSearchGrpc {
     return getCreateProductSetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListProductSetsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.ListProductSetsRequest,
-          com.google.cloud.vision.v1p3beta1.ListProductSetsResponse>
-      METHOD_LIST_PRODUCT_SETS = getListProductSetsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.ListProductSetsRequest,
           com.google.cloud.vision.v1p3beta1.ListProductSetsResponse>
       getListProductSetsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListProductSets",
+      requestType = com.google.cloud.vision.v1p3beta1.ListProductSetsRequest.class,
+      responseType = com.google.cloud.vision.v1p3beta1.ListProductSetsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.ListProductSetsRequest,
           com.google.cloud.vision.v1p3beta1.ListProductSetsResponse>
       getListProductSetsMethod() {
-    return getListProductSetsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.ListProductSetsRequest,
-          com.google.cloud.vision.v1p3beta1.ListProductSetsResponse>
-      getListProductSetsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.ListProductSetsRequest,
             com.google.cloud.vision.v1p3beta1.ListProductSetsResponse>
@@ -144,9 +122,7 @@ public final class ProductSearchGrpc {
                           com.google.cloud.vision.v1p3beta1.ListProductSetsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch", "ListProductSets"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListProductSets"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -165,30 +141,20 @@ public final class ProductSearchGrpc {
     return getListProductSetsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetProductSetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.GetProductSetRequest,
-          com.google.cloud.vision.v1p3beta1.ProductSet>
-      METHOD_GET_PRODUCT_SET = getGetProductSetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.GetProductSetRequest,
           com.google.cloud.vision.v1p3beta1.ProductSet>
       getGetProductSetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProductSet",
+      requestType = com.google.cloud.vision.v1p3beta1.GetProductSetRequest.class,
+      responseType = com.google.cloud.vision.v1p3beta1.ProductSet.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.GetProductSetRequest,
           com.google.cloud.vision.v1p3beta1.ProductSet>
       getGetProductSetMethod() {
-    return getGetProductSetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.GetProductSetRequest,
-          com.google.cloud.vision.v1p3beta1.ProductSet>
-      getGetProductSetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.GetProductSetRequest,
             com.google.cloud.vision.v1p3beta1.ProductSet>
@@ -203,9 +169,7 @@ public final class ProductSearchGrpc {
                           com.google.cloud.vision.v1p3beta1.ProductSet>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch", "GetProductSet"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProductSet"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -223,30 +187,20 @@ public final class ProductSearchGrpc {
     return getGetProductSetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateProductSetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.UpdateProductSetRequest,
-          com.google.cloud.vision.v1p3beta1.ProductSet>
-      METHOD_UPDATE_PRODUCT_SET = getUpdateProductSetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.UpdateProductSetRequest,
           com.google.cloud.vision.v1p3beta1.ProductSet>
       getUpdateProductSetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateProductSet",
+      requestType = com.google.cloud.vision.v1p3beta1.UpdateProductSetRequest.class,
+      responseType = com.google.cloud.vision.v1p3beta1.ProductSet.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.UpdateProductSetRequest,
           com.google.cloud.vision.v1p3beta1.ProductSet>
       getUpdateProductSetMethod() {
-    return getUpdateProductSetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.UpdateProductSetRequest,
-          com.google.cloud.vision.v1p3beta1.ProductSet>
-      getUpdateProductSetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.UpdateProductSetRequest,
             com.google.cloud.vision.v1p3beta1.ProductSet>
@@ -261,9 +215,7 @@ public final class ProductSearchGrpc {
                           com.google.cloud.vision.v1p3beta1.ProductSet>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch", "UpdateProductSet"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateProductSet"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -281,26 +233,18 @@ public final class ProductSearchGrpc {
     return getUpdateProductSetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteProductSetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.DeleteProductSetRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_PRODUCT_SET = getDeleteProductSetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.DeleteProductSetRequest, com.google.protobuf.Empty>
       getDeleteProductSetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteProductSet",
+      requestType = com.google.cloud.vision.v1p3beta1.DeleteProductSetRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.DeleteProductSetRequest, com.google.protobuf.Empty>
       getDeleteProductSetMethod() {
-    return getDeleteProductSetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.DeleteProductSetRequest, com.google.protobuf.Empty>
-      getDeleteProductSetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.DeleteProductSetRequest, com.google.protobuf.Empty>
         getDeleteProductSetMethod;
@@ -314,9 +258,7 @@ public final class ProductSearchGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch", "DeleteProductSet"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteProductSet"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -334,30 +276,20 @@ public final class ProductSearchGrpc {
     return getDeleteProductSetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateProductMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.CreateProductRequest,
-          com.google.cloud.vision.v1p3beta1.Product>
-      METHOD_CREATE_PRODUCT = getCreateProductMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.CreateProductRequest,
           com.google.cloud.vision.v1p3beta1.Product>
       getCreateProductMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateProduct",
+      requestType = com.google.cloud.vision.v1p3beta1.CreateProductRequest.class,
+      responseType = com.google.cloud.vision.v1p3beta1.Product.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.CreateProductRequest,
           com.google.cloud.vision.v1p3beta1.Product>
       getCreateProductMethod() {
-    return getCreateProductMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.CreateProductRequest,
-          com.google.cloud.vision.v1p3beta1.Product>
-      getCreateProductMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.CreateProductRequest,
             com.google.cloud.vision.v1p3beta1.Product>
@@ -372,9 +304,7 @@ public final class ProductSearchGrpc {
                           com.google.cloud.vision.v1p3beta1.Product>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch", "CreateProduct"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateProduct"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -392,30 +322,20 @@ public final class ProductSearchGrpc {
     return getCreateProductMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListProductsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.ListProductsRequest,
-          com.google.cloud.vision.v1p3beta1.ListProductsResponse>
-      METHOD_LIST_PRODUCTS = getListProductsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.ListProductsRequest,
           com.google.cloud.vision.v1p3beta1.ListProductsResponse>
       getListProductsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListProducts",
+      requestType = com.google.cloud.vision.v1p3beta1.ListProductsRequest.class,
+      responseType = com.google.cloud.vision.v1p3beta1.ListProductsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.ListProductsRequest,
           com.google.cloud.vision.v1p3beta1.ListProductsResponse>
       getListProductsMethod() {
-    return getListProductsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.ListProductsRequest,
-          com.google.cloud.vision.v1p3beta1.ListProductsResponse>
-      getListProductsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.ListProductsRequest,
             com.google.cloud.vision.v1p3beta1.ListProductsResponse>
@@ -430,9 +350,7 @@ public final class ProductSearchGrpc {
                           com.google.cloud.vision.v1p3beta1.ListProductsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch", "ListProducts"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListProducts"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -451,30 +369,20 @@ public final class ProductSearchGrpc {
     return getListProductsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetProductMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.GetProductRequest,
-          com.google.cloud.vision.v1p3beta1.Product>
-      METHOD_GET_PRODUCT = getGetProductMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.GetProductRequest,
           com.google.cloud.vision.v1p3beta1.Product>
       getGetProductMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProduct",
+      requestType = com.google.cloud.vision.v1p3beta1.GetProductRequest.class,
+      responseType = com.google.cloud.vision.v1p3beta1.Product.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.GetProductRequest,
           com.google.cloud.vision.v1p3beta1.Product>
       getGetProductMethod() {
-    return getGetProductMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.GetProductRequest,
-          com.google.cloud.vision.v1p3beta1.Product>
-      getGetProductMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.GetProductRequest,
             com.google.cloud.vision.v1p3beta1.Product>
@@ -489,9 +397,7 @@ public final class ProductSearchGrpc {
                           com.google.cloud.vision.v1p3beta1.Product>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch", "GetProduct"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProduct"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -508,30 +414,20 @@ public final class ProductSearchGrpc {
     return getGetProductMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateProductMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.UpdateProductRequest,
-          com.google.cloud.vision.v1p3beta1.Product>
-      METHOD_UPDATE_PRODUCT = getUpdateProductMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.UpdateProductRequest,
           com.google.cloud.vision.v1p3beta1.Product>
       getUpdateProductMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateProduct",
+      requestType = com.google.cloud.vision.v1p3beta1.UpdateProductRequest.class,
+      responseType = com.google.cloud.vision.v1p3beta1.Product.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.UpdateProductRequest,
           com.google.cloud.vision.v1p3beta1.Product>
       getUpdateProductMethod() {
-    return getUpdateProductMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.UpdateProductRequest,
-          com.google.cloud.vision.v1p3beta1.Product>
-      getUpdateProductMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.UpdateProductRequest,
             com.google.cloud.vision.v1p3beta1.Product>
@@ -546,9 +442,7 @@ public final class ProductSearchGrpc {
                           com.google.cloud.vision.v1p3beta1.Product>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch", "UpdateProduct"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateProduct"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -566,26 +460,18 @@ public final class ProductSearchGrpc {
     return getUpdateProductMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteProductMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.DeleteProductRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_PRODUCT = getDeleteProductMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.DeleteProductRequest, com.google.protobuf.Empty>
       getDeleteProductMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteProduct",
+      requestType = com.google.cloud.vision.v1p3beta1.DeleteProductRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.DeleteProductRequest, com.google.protobuf.Empty>
       getDeleteProductMethod() {
-    return getDeleteProductMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.DeleteProductRequest, com.google.protobuf.Empty>
-      getDeleteProductMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.DeleteProductRequest, com.google.protobuf.Empty>
         getDeleteProductMethod;
@@ -599,9 +485,7 @@ public final class ProductSearchGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch", "DeleteProduct"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteProduct"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -619,30 +503,20 @@ public final class ProductSearchGrpc {
     return getDeleteProductMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateReferenceImageMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest,
-          com.google.cloud.vision.v1p3beta1.ReferenceImage>
-      METHOD_CREATE_REFERENCE_IMAGE = getCreateReferenceImageMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest,
           com.google.cloud.vision.v1p3beta1.ReferenceImage>
       getCreateReferenceImageMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateReferenceImage",
+      requestType = com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest.class,
+      responseType = com.google.cloud.vision.v1p3beta1.ReferenceImage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest,
           com.google.cloud.vision.v1p3beta1.ReferenceImage>
       getCreateReferenceImageMethod() {
-    return getCreateReferenceImageMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest,
-          com.google.cloud.vision.v1p3beta1.ReferenceImage>
-      getCreateReferenceImageMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest,
             com.google.cloud.vision.v1p3beta1.ReferenceImage>
@@ -659,9 +533,7 @@ public final class ProductSearchGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch",
-                              "CreateReferenceImage"))
+                          generateFullMethodName(SERVICE_NAME, "CreateReferenceImage"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -680,26 +552,18 @@ public final class ProductSearchGrpc {
     return getCreateReferenceImageMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteReferenceImageMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.DeleteReferenceImageRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_REFERENCE_IMAGE = getDeleteReferenceImageMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.DeleteReferenceImageRequest, com.google.protobuf.Empty>
       getDeleteReferenceImageMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteReferenceImage",
+      requestType = com.google.cloud.vision.v1p3beta1.DeleteReferenceImageRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.DeleteReferenceImageRequest, com.google.protobuf.Empty>
       getDeleteReferenceImageMethod() {
-    return getDeleteReferenceImageMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.DeleteReferenceImageRequest, com.google.protobuf.Empty>
-      getDeleteReferenceImageMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.DeleteReferenceImageRequest,
             com.google.protobuf.Empty>
@@ -716,9 +580,7 @@ public final class ProductSearchGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch",
-                              "DeleteReferenceImage"))
+                          generateFullMethodName(SERVICE_NAME, "DeleteReferenceImage"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -736,30 +598,20 @@ public final class ProductSearchGrpc {
     return getDeleteReferenceImageMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListReferenceImagesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.ListReferenceImagesRequest,
-          com.google.cloud.vision.v1p3beta1.ListReferenceImagesResponse>
-      METHOD_LIST_REFERENCE_IMAGES = getListReferenceImagesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.ListReferenceImagesRequest,
           com.google.cloud.vision.v1p3beta1.ListReferenceImagesResponse>
       getListReferenceImagesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListReferenceImages",
+      requestType = com.google.cloud.vision.v1p3beta1.ListReferenceImagesRequest.class,
+      responseType = com.google.cloud.vision.v1p3beta1.ListReferenceImagesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.ListReferenceImagesRequest,
           com.google.cloud.vision.v1p3beta1.ListReferenceImagesResponse>
       getListReferenceImagesMethod() {
-    return getListReferenceImagesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.ListReferenceImagesRequest,
-          com.google.cloud.vision.v1p3beta1.ListReferenceImagesResponse>
-      getListReferenceImagesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.ListReferenceImagesRequest,
             com.google.cloud.vision.v1p3beta1.ListReferenceImagesResponse>
@@ -776,8 +628,7 @@ public final class ProductSearchGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch", "ListReferenceImages"))
+                          generateFullMethodName(SERVICE_NAME, "ListReferenceImages"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -796,30 +647,20 @@ public final class ProductSearchGrpc {
     return getListReferenceImagesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetReferenceImageMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.GetReferenceImageRequest,
-          com.google.cloud.vision.v1p3beta1.ReferenceImage>
-      METHOD_GET_REFERENCE_IMAGE = getGetReferenceImageMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.GetReferenceImageRequest,
           com.google.cloud.vision.v1p3beta1.ReferenceImage>
       getGetReferenceImageMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetReferenceImage",
+      requestType = com.google.cloud.vision.v1p3beta1.GetReferenceImageRequest.class,
+      responseType = com.google.cloud.vision.v1p3beta1.ReferenceImage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.GetReferenceImageRequest,
           com.google.cloud.vision.v1p3beta1.ReferenceImage>
       getGetReferenceImageMethod() {
-    return getGetReferenceImageMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.GetReferenceImageRequest,
-          com.google.cloud.vision.v1p3beta1.ReferenceImage>
-      getGetReferenceImageMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.GetReferenceImageRequest,
             com.google.cloud.vision.v1p3beta1.ReferenceImage>
@@ -834,9 +675,7 @@ public final class ProductSearchGrpc {
                           com.google.cloud.vision.v1p3beta1.ReferenceImage>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch", "GetReferenceImage"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetReferenceImage"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -855,30 +694,20 @@ public final class ProductSearchGrpc {
     return getGetReferenceImageMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getAddProductToProductSetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.AddProductToProductSetRequest,
-          com.google.protobuf.Empty>
-      METHOD_ADD_PRODUCT_TO_PRODUCT_SET = getAddProductToProductSetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.AddProductToProductSetRequest,
           com.google.protobuf.Empty>
       getAddProductToProductSetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddProductToProductSet",
+      requestType = com.google.cloud.vision.v1p3beta1.AddProductToProductSetRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.AddProductToProductSetRequest,
           com.google.protobuf.Empty>
       getAddProductToProductSetMethod() {
-    return getAddProductToProductSetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.AddProductToProductSetRequest,
-          com.google.protobuf.Empty>
-      getAddProductToProductSetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.AddProductToProductSetRequest,
             com.google.protobuf.Empty>
@@ -896,9 +725,7 @@ public final class ProductSearchGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch",
-                              "AddProductToProductSet"))
+                          generateFullMethodName(SERVICE_NAME, "AddProductToProductSet"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -916,30 +743,20 @@ public final class ProductSearchGrpc {
     return getAddProductToProductSetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getRemoveProductFromProductSetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.RemoveProductFromProductSetRequest,
-          com.google.protobuf.Empty>
-      METHOD_REMOVE_PRODUCT_FROM_PRODUCT_SET = getRemoveProductFromProductSetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.RemoveProductFromProductSetRequest,
           com.google.protobuf.Empty>
       getRemoveProductFromProductSetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RemoveProductFromProductSet",
+      requestType = com.google.cloud.vision.v1p3beta1.RemoveProductFromProductSetRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.RemoveProductFromProductSetRequest,
           com.google.protobuf.Empty>
       getRemoveProductFromProductSetMethod() {
-    return getRemoveProductFromProductSetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.RemoveProductFromProductSetRequest,
-          com.google.protobuf.Empty>
-      getRemoveProductFromProductSetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.RemoveProductFromProductSetRequest,
             com.google.protobuf.Empty>
@@ -959,9 +776,7 @@ public final class ProductSearchGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch",
-                              "RemoveProductFromProductSet"))
+                          generateFullMethodName(SERVICE_NAME, "RemoveProductFromProductSet"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -979,30 +794,20 @@ public final class ProductSearchGrpc {
     return getRemoveProductFromProductSetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListProductsInProductSetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.ListProductsInProductSetRequest,
-          com.google.cloud.vision.v1p3beta1.ListProductsInProductSetResponse>
-      METHOD_LIST_PRODUCTS_IN_PRODUCT_SET = getListProductsInProductSetMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.ListProductsInProductSetRequest,
           com.google.cloud.vision.v1p3beta1.ListProductsInProductSetResponse>
       getListProductsInProductSetMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListProductsInProductSet",
+      requestType = com.google.cloud.vision.v1p3beta1.ListProductsInProductSetRequest.class,
+      responseType = com.google.cloud.vision.v1p3beta1.ListProductsInProductSetResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.ListProductsInProductSetRequest,
           com.google.cloud.vision.v1p3beta1.ListProductsInProductSetResponse>
       getListProductsInProductSetMethod() {
-    return getListProductsInProductSetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.ListProductsInProductSetRequest,
-          com.google.cloud.vision.v1p3beta1.ListProductsInProductSetResponse>
-      getListProductsInProductSetMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.ListProductsInProductSetRequest,
             com.google.cloud.vision.v1p3beta1.ListProductsInProductSetResponse>
@@ -1021,9 +826,7 @@ public final class ProductSearchGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch",
-                              "ListProductsInProductSet"))
+                          generateFullMethodName(SERVICE_NAME, "ListProductsInProductSet"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1042,30 +845,20 @@ public final class ProductSearchGrpc {
     return getListProductsInProductSetMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getImportProductSetsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.ImportProductSetsRequest,
-          com.google.longrunning.Operation>
-      METHOD_IMPORT_PRODUCT_SETS = getImportProductSetsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.ImportProductSetsRequest,
           com.google.longrunning.Operation>
       getImportProductSetsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportProductSets",
+      requestType = com.google.cloud.vision.v1p3beta1.ImportProductSetsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p3beta1.ImportProductSetsRequest,
           com.google.longrunning.Operation>
       getImportProductSetsMethod() {
-    return getImportProductSetsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p3beta1.ImportProductSetsRequest,
-          com.google.longrunning.Operation>
-      getImportProductSetsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p3beta1.ImportProductSetsRequest,
             com.google.longrunning.Operation>
@@ -1080,9 +873,7 @@ public final class ProductSearchGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p3beta1.ProductSearch", "ImportProductSets"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportProductSets"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -1102,19 +893,43 @@ public final class ProductSearchGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static ProductSearchStub newStub(io.grpc.Channel channel) {
-    return new ProductSearchStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ProductSearchStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProductSearchStub>() {
+          @java.lang.Override
+          public ProductSearchStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProductSearchStub(channel, callOptions);
+          }
+        };
+    return ProductSearchStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static ProductSearchBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new ProductSearchBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ProductSearchBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProductSearchBlockingStub>() {
+          @java.lang.Override
+          public ProductSearchBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProductSearchBlockingStub(channel, callOptions);
+          }
+        };
+    return ProductSearchBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static ProductSearchFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new ProductSearchFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ProductSearchFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProductSearchFutureStub>() {
+          @java.lang.Override
+          public ProductSearchFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProductSearchFutureStub(channel, callOptions);
+          }
+        };
+    return ProductSearchFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -1149,7 +964,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.CreateProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ProductSet>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateProductSetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateProductSetMethod(), responseObserver);
     }
 
     /**
@@ -1166,7 +981,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.ListProductSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ListProductSetsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListProductSetsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListProductSetsMethod(), responseObserver);
     }
 
     /**
@@ -1182,7 +997,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.GetProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ProductSet>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetProductSetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetProductSetMethod(), responseObserver);
     }
 
     /**
@@ -1201,7 +1016,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.UpdateProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ProductSet>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateProductSetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateProductSetMethod(), responseObserver);
     }
 
     /**
@@ -1218,7 +1033,7 @@ public final class ProductSearchGrpc {
     public void deleteProductSet(
         com.google.cloud.vision.v1p3beta1.DeleteProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteProductSetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteProductSetMethod(), responseObserver);
     }
 
     /**
@@ -1236,7 +1051,7 @@ public final class ProductSearchGrpc {
     public void createProduct(
         com.google.cloud.vision.v1p3beta1.CreateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.Product> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateProductMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateProductMethod(), responseObserver);
     }
 
     /**
@@ -1252,7 +1067,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.ListProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ListProductsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListProductsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListProductsMethod(), responseObserver);
     }
 
     /**
@@ -1267,7 +1082,7 @@ public final class ProductSearchGrpc {
     public void getProduct(
         com.google.cloud.vision.v1p3beta1.GetProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.Product> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetProductMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetProductMethod(), responseObserver);
     }
 
     /**
@@ -1290,7 +1105,7 @@ public final class ProductSearchGrpc {
     public void updateProduct(
         com.google.cloud.vision.v1p3beta1.UpdateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.Product> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateProductMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateProductMethod(), responseObserver);
     }
 
     /**
@@ -1308,7 +1123,7 @@ public final class ProductSearchGrpc {
     public void deleteProduct(
         com.google.cloud.vision.v1p3beta1.DeleteProductRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteProductMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteProductMethod(), responseObserver);
     }
 
     /**
@@ -1336,7 +1151,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ReferenceImage>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateReferenceImageMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateReferenceImageMethod(), responseObserver);
     }
 
     /**
@@ -1355,7 +1170,7 @@ public final class ProductSearchGrpc {
     public void deleteReferenceImage(
         com.google.cloud.vision.v1p3beta1.DeleteReferenceImageRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteReferenceImageMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteReferenceImageMethod(), responseObserver);
     }
 
     /**
@@ -1373,7 +1188,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.ListReferenceImagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ListReferenceImagesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListReferenceImagesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListReferenceImagesMethod(), responseObserver);
     }
 
     /**
@@ -1389,7 +1204,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.GetReferenceImageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ReferenceImage>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetReferenceImageMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetReferenceImageMethod(), responseObserver);
     }
 
     /**
@@ -1406,7 +1221,7 @@ public final class ProductSearchGrpc {
     public void addProductToProductSet(
         com.google.cloud.vision.v1p3beta1.AddProductToProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getAddProductToProductSetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getAddProductToProductSetMethod(), responseObserver);
     }
 
     /**
@@ -1421,7 +1236,7 @@ public final class ProductSearchGrpc {
     public void removeProductFromProductSet(
         com.google.cloud.vision.v1p3beta1.RemoveProductFromProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getRemoveProductFromProductSetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getRemoveProductFromProductSetMethod(), responseObserver);
     }
 
     /**
@@ -1440,7 +1255,7 @@ public final class ProductSearchGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.vision.v1p3beta1.ListProductsInProductSetResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListProductsInProductSetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListProductsInProductSetMethod(), responseObserver);
     }
 
     /**
@@ -1461,125 +1276,125 @@ public final class ProductSearchGrpc {
     public void importProductSets(
         com.google.cloud.vision.v1p3beta1.ImportProductSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportProductSetsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getImportProductSetsMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getCreateProductSetMethodHelper(),
+              getCreateProductSetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.CreateProductSetRequest,
                       com.google.cloud.vision.v1p3beta1.ProductSet>(
                       this, METHODID_CREATE_PRODUCT_SET)))
           .addMethod(
-              getListProductSetsMethodHelper(),
+              getListProductSetsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.ListProductSetsRequest,
                       com.google.cloud.vision.v1p3beta1.ListProductSetsResponse>(
                       this, METHODID_LIST_PRODUCT_SETS)))
           .addMethod(
-              getGetProductSetMethodHelper(),
+              getGetProductSetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.GetProductSetRequest,
                       com.google.cloud.vision.v1p3beta1.ProductSet>(
                       this, METHODID_GET_PRODUCT_SET)))
           .addMethod(
-              getUpdateProductSetMethodHelper(),
+              getUpdateProductSetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.UpdateProductSetRequest,
                       com.google.cloud.vision.v1p3beta1.ProductSet>(
                       this, METHODID_UPDATE_PRODUCT_SET)))
           .addMethod(
-              getDeleteProductSetMethodHelper(),
+              getDeleteProductSetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.DeleteProductSetRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_PRODUCT_SET)))
           .addMethod(
-              getCreateProductMethodHelper(),
+              getCreateProductMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.CreateProductRequest,
                       com.google.cloud.vision.v1p3beta1.Product>(this, METHODID_CREATE_PRODUCT)))
           .addMethod(
-              getListProductsMethodHelper(),
+              getListProductsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.ListProductsRequest,
                       com.google.cloud.vision.v1p3beta1.ListProductsResponse>(
                       this, METHODID_LIST_PRODUCTS)))
           .addMethod(
-              getGetProductMethodHelper(),
+              getGetProductMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.GetProductRequest,
                       com.google.cloud.vision.v1p3beta1.Product>(this, METHODID_GET_PRODUCT)))
           .addMethod(
-              getUpdateProductMethodHelper(),
+              getUpdateProductMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.UpdateProductRequest,
                       com.google.cloud.vision.v1p3beta1.Product>(this, METHODID_UPDATE_PRODUCT)))
           .addMethod(
-              getDeleteProductMethodHelper(),
+              getDeleteProductMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.DeleteProductRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_PRODUCT)))
           .addMethod(
-              getCreateReferenceImageMethodHelper(),
+              getCreateReferenceImageMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest,
                       com.google.cloud.vision.v1p3beta1.ReferenceImage>(
                       this, METHODID_CREATE_REFERENCE_IMAGE)))
           .addMethod(
-              getDeleteReferenceImageMethodHelper(),
+              getDeleteReferenceImageMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.DeleteReferenceImageRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_REFERENCE_IMAGE)))
           .addMethod(
-              getListReferenceImagesMethodHelper(),
+              getListReferenceImagesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.ListReferenceImagesRequest,
                       com.google.cloud.vision.v1p3beta1.ListReferenceImagesResponse>(
                       this, METHODID_LIST_REFERENCE_IMAGES)))
           .addMethod(
-              getGetReferenceImageMethodHelper(),
+              getGetReferenceImageMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.GetReferenceImageRequest,
                       com.google.cloud.vision.v1p3beta1.ReferenceImage>(
                       this, METHODID_GET_REFERENCE_IMAGE)))
           .addMethod(
-              getAddProductToProductSetMethodHelper(),
+              getAddProductToProductSetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.AddProductToProductSetRequest,
                       com.google.protobuf.Empty>(this, METHODID_ADD_PRODUCT_TO_PRODUCT_SET)))
           .addMethod(
-              getRemoveProductFromProductSetMethodHelper(),
+              getRemoveProductFromProductSetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.RemoveProductFromProductSetRequest,
                       com.google.protobuf.Empty>(this, METHODID_REMOVE_PRODUCT_FROM_PRODUCT_SET)))
           .addMethod(
-              getListProductsInProductSetMethodHelper(),
+              getListProductsInProductSetMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.ListProductsInProductSetRequest,
                       com.google.cloud.vision.v1p3beta1.ListProductsInProductSetResponse>(
                       this, METHODID_LIST_PRODUCTS_IN_PRODUCT_SET)))
           .addMethod(
-              getImportProductSetsMethodHelper(),
+              getImportProductSetsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p3beta1.ImportProductSetsRequest,
@@ -1604,11 +1419,8 @@ public final class ProductSearchGrpc {
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */
-  public static final class ProductSearchStub extends io.grpc.stub.AbstractStub<ProductSearchStub> {
-    private ProductSearchStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class ProductSearchStub
+      extends io.grpc.stub.AbstractAsyncStub<ProductSearchStub> {
     private ProductSearchStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1633,7 +1445,7 @@ public final class ProductSearchGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ProductSet>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateProductSetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateProductSetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1653,7 +1465,7 @@ public final class ProductSearchGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ListProductSetsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListProductSetsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListProductSetsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1672,7 +1484,7 @@ public final class ProductSearchGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ProductSet>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetProductSetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetProductSetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1694,7 +1506,7 @@ public final class ProductSearchGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ProductSet>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateProductSetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateProductSetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1714,7 +1526,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.DeleteProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteProductSetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteProductSetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1735,7 +1547,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.CreateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.Product> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateProductMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateProductMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1754,7 +1566,7 @@ public final class ProductSearchGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ListProductsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListProductsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListProductsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1772,9 +1584,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.GetProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.Product> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetProductMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetProductMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1798,7 +1608,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.UpdateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.Product> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateProductMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateProductMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1819,7 +1629,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.DeleteProductRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteProductMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteProductMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1850,7 +1660,7 @@ public final class ProductSearchGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ReferenceImage>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateReferenceImageMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateReferenceImageMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1872,7 +1682,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.DeleteReferenceImageRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteReferenceImageMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteReferenceImageMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1893,7 +1703,7 @@ public final class ProductSearchGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ListReferenceImagesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListReferenceImagesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListReferenceImagesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1912,7 +1722,7 @@ public final class ProductSearchGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.ReferenceImage>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetReferenceImageMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetReferenceImageMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1932,7 +1742,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.AddProductToProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getAddProductToProductSetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getAddProductToProductSetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1950,7 +1760,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.RemoveProductFromProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getRemoveProductFromProductSetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getRemoveProductFromProductSetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1972,7 +1782,7 @@ public final class ProductSearchGrpc {
                 com.google.cloud.vision.v1p3beta1.ListProductsInProductSetResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListProductsInProductSetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListProductsInProductSetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1996,7 +1806,7 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p3beta1.ImportProductSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getImportProductSetsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getImportProductSetsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2019,11 +1829,7 @@ public final class ProductSearchGrpc {
    * </pre>
    */
   public static final class ProductSearchBlockingStub
-      extends io.grpc.stub.AbstractStub<ProductSearchBlockingStub> {
-    private ProductSearchBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<ProductSearchBlockingStub> {
     private ProductSearchBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -2047,7 +1853,7 @@ public final class ProductSearchGrpc {
     public com.google.cloud.vision.v1p3beta1.ProductSet createProductSet(
         com.google.cloud.vision.v1p3beta1.CreateProductSetRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateProductSetMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateProductSetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2062,8 +1868,7 @@ public final class ProductSearchGrpc {
      */
     public com.google.cloud.vision.v1p3beta1.ListProductSetsResponse listProductSets(
         com.google.cloud.vision.v1p3beta1.ListProductSetsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListProductSetsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListProductSetsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2077,8 +1882,7 @@ public final class ProductSearchGrpc {
      */
     public com.google.cloud.vision.v1p3beta1.ProductSet getProductSet(
         com.google.cloud.vision.v1p3beta1.GetProductSetRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetProductSetMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetProductSetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2096,7 +1900,7 @@ public final class ProductSearchGrpc {
     public com.google.cloud.vision.v1p3beta1.ProductSet updateProductSet(
         com.google.cloud.vision.v1p3beta1.UpdateProductSetRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateProductSetMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateProductSetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2113,7 +1917,7 @@ public final class ProductSearchGrpc {
     public com.google.protobuf.Empty deleteProductSet(
         com.google.cloud.vision.v1p3beta1.DeleteProductSetRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteProductSetMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteProductSetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2130,8 +1934,7 @@ public final class ProductSearchGrpc {
      */
     public com.google.cloud.vision.v1p3beta1.Product createProduct(
         com.google.cloud.vision.v1p3beta1.CreateProductRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateProductMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateProductMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2145,8 +1948,7 @@ public final class ProductSearchGrpc {
      */
     public com.google.cloud.vision.v1p3beta1.ListProductsResponse listProducts(
         com.google.cloud.vision.v1p3beta1.ListProductsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListProductsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListProductsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2160,8 +1962,7 @@ public final class ProductSearchGrpc {
      */
     public com.google.cloud.vision.v1p3beta1.Product getProduct(
         com.google.cloud.vision.v1p3beta1.GetProductRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetProductMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetProductMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2183,8 +1984,7 @@ public final class ProductSearchGrpc {
      */
     public com.google.cloud.vision.v1p3beta1.Product updateProduct(
         com.google.cloud.vision.v1p3beta1.UpdateProductRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateProductMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateProductMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2201,8 +2001,7 @@ public final class ProductSearchGrpc {
      */
     public com.google.protobuf.Empty deleteProduct(
         com.google.cloud.vision.v1p3beta1.DeleteProductRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteProductMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteProductMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2229,7 +2028,7 @@ public final class ProductSearchGrpc {
     public com.google.cloud.vision.v1p3beta1.ReferenceImage createReferenceImage(
         com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateReferenceImageMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateReferenceImageMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2248,7 +2047,7 @@ public final class ProductSearchGrpc {
     public com.google.protobuf.Empty deleteReferenceImage(
         com.google.cloud.vision.v1p3beta1.DeleteReferenceImageRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteReferenceImageMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteReferenceImageMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2265,7 +2064,7 @@ public final class ProductSearchGrpc {
     public com.google.cloud.vision.v1p3beta1.ListReferenceImagesResponse listReferenceImages(
         com.google.cloud.vision.v1p3beta1.ListReferenceImagesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getListReferenceImagesMethodHelper(), getCallOptions(), request);
+          getChannel(), getListReferenceImagesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2280,7 +2079,7 @@ public final class ProductSearchGrpc {
     public com.google.cloud.vision.v1p3beta1.ReferenceImage getReferenceImage(
         com.google.cloud.vision.v1p3beta1.GetReferenceImageRequest request) {
       return blockingUnaryCall(
-          getChannel(), getGetReferenceImageMethodHelper(), getCallOptions(), request);
+          getChannel(), getGetReferenceImageMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2297,7 +2096,7 @@ public final class ProductSearchGrpc {
     public com.google.protobuf.Empty addProductToProductSet(
         com.google.cloud.vision.v1p3beta1.AddProductToProductSetRequest request) {
       return blockingUnaryCall(
-          getChannel(), getAddProductToProductSetMethodHelper(), getCallOptions(), request);
+          getChannel(), getAddProductToProductSetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2312,7 +2111,7 @@ public final class ProductSearchGrpc {
     public com.google.protobuf.Empty removeProductFromProductSet(
         com.google.cloud.vision.v1p3beta1.RemoveProductFromProductSetRequest request) {
       return blockingUnaryCall(
-          getChannel(), getRemoveProductFromProductSetMethodHelper(), getCallOptions(), request);
+          getChannel(), getRemoveProductFromProductSetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2330,7 +2129,7 @@ public final class ProductSearchGrpc {
         listProductsInProductSet(
             com.google.cloud.vision.v1p3beta1.ListProductsInProductSetRequest request) {
       return blockingUnaryCall(
-          getChannel(), getListProductsInProductSetMethodHelper(), getCallOptions(), request);
+          getChannel(), getListProductsInProductSetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2351,7 +2150,7 @@ public final class ProductSearchGrpc {
     public com.google.longrunning.Operation importProductSets(
         com.google.cloud.vision.v1p3beta1.ImportProductSetsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getImportProductSetsMethodHelper(), getCallOptions(), request);
+          getChannel(), getImportProductSetsMethod(), getCallOptions(), request);
     }
   }
 
@@ -2372,11 +2171,7 @@ public final class ProductSearchGrpc {
    * </pre>
    */
   public static final class ProductSearchFutureStub
-      extends io.grpc.stub.AbstractStub<ProductSearchFutureStub> {
-    private ProductSearchFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<ProductSearchFutureStub> {
     private ProductSearchFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -2401,7 +2196,7 @@ public final class ProductSearchGrpc {
             com.google.cloud.vision.v1p3beta1.ProductSet>
         createProductSet(com.google.cloud.vision.v1p3beta1.CreateProductSetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateProductSetMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateProductSetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2418,7 +2213,7 @@ public final class ProductSearchGrpc {
             com.google.cloud.vision.v1p3beta1.ListProductSetsResponse>
         listProductSets(com.google.cloud.vision.v1p3beta1.ListProductSetsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListProductSetsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListProductSetsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2434,7 +2229,7 @@ public final class ProductSearchGrpc {
             com.google.cloud.vision.v1p3beta1.ProductSet>
         getProductSet(com.google.cloud.vision.v1p3beta1.GetProductSetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetProductSetMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetProductSetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2453,7 +2248,7 @@ public final class ProductSearchGrpc {
             com.google.cloud.vision.v1p3beta1.ProductSet>
         updateProductSet(com.google.cloud.vision.v1p3beta1.UpdateProductSetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateProductSetMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateProductSetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2470,7 +2265,7 @@ public final class ProductSearchGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteProductSet(com.google.cloud.vision.v1p3beta1.DeleteProductSetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteProductSetMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteProductSetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2489,7 +2284,7 @@ public final class ProductSearchGrpc {
             com.google.cloud.vision.v1p3beta1.Product>
         createProduct(com.google.cloud.vision.v1p3beta1.CreateProductRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateProductMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateProductMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2505,7 +2300,7 @@ public final class ProductSearchGrpc {
             com.google.cloud.vision.v1p3beta1.ListProductsResponse>
         listProducts(com.google.cloud.vision.v1p3beta1.ListProductsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListProductsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListProductsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2521,7 +2316,7 @@ public final class ProductSearchGrpc {
             com.google.cloud.vision.v1p3beta1.Product>
         getProduct(com.google.cloud.vision.v1p3beta1.GetProductRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetProductMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetProductMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2545,7 +2340,7 @@ public final class ProductSearchGrpc {
             com.google.cloud.vision.v1p3beta1.Product>
         updateProduct(com.google.cloud.vision.v1p3beta1.UpdateProductRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateProductMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateProductMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2563,7 +2358,7 @@ public final class ProductSearchGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteProduct(com.google.cloud.vision.v1p3beta1.DeleteProductRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteProductMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteProductMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2592,7 +2387,7 @@ public final class ProductSearchGrpc {
         createReferenceImage(
             com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateReferenceImageMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateReferenceImageMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2612,7 +2407,7 @@ public final class ProductSearchGrpc {
         deleteReferenceImage(
             com.google.cloud.vision.v1p3beta1.DeleteReferenceImageRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteReferenceImageMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteReferenceImageMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2630,7 +2425,7 @@ public final class ProductSearchGrpc {
             com.google.cloud.vision.v1p3beta1.ListReferenceImagesResponse>
         listReferenceImages(com.google.cloud.vision.v1p3beta1.ListReferenceImagesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListReferenceImagesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListReferenceImagesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2646,7 +2441,7 @@ public final class ProductSearchGrpc {
             com.google.cloud.vision.v1p3beta1.ReferenceImage>
         getReferenceImage(com.google.cloud.vision.v1p3beta1.GetReferenceImageRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetReferenceImageMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetReferenceImageMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2664,7 +2459,7 @@ public final class ProductSearchGrpc {
         addProductToProductSet(
             com.google.cloud.vision.v1p3beta1.AddProductToProductSetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getAddProductToProductSetMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getAddProductToProductSetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2680,8 +2475,7 @@ public final class ProductSearchGrpc {
         removeProductFromProductSet(
             com.google.cloud.vision.v1p3beta1.RemoveProductFromProductSetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getRemoveProductFromProductSetMethodHelper(), getCallOptions()),
-          request);
+          getChannel().newCall(getRemoveProductFromProductSetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2700,8 +2494,7 @@ public final class ProductSearchGrpc {
         listProductsInProductSet(
             com.google.cloud.vision.v1p3beta1.ListProductsInProductSetRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListProductsInProductSetMethodHelper(), getCallOptions()),
-          request);
+          getChannel().newCall(getListProductsInProductSetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2722,7 +2515,7 @@ public final class ProductSearchGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         importProductSets(com.google.cloud.vision.v1p3beta1.ImportProductSetsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getImportProductSetsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getImportProductSetsMethod(), getCallOptions()), request);
     }
   }
 
@@ -2931,24 +2724,24 @@ public final class ProductSearchGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ProductSearchFileDescriptorSupplier())
-                      .addMethod(getCreateProductSetMethodHelper())
-                      .addMethod(getListProductSetsMethodHelper())
-                      .addMethod(getGetProductSetMethodHelper())
-                      .addMethod(getUpdateProductSetMethodHelper())
-                      .addMethod(getDeleteProductSetMethodHelper())
-                      .addMethod(getCreateProductMethodHelper())
-                      .addMethod(getListProductsMethodHelper())
-                      .addMethod(getGetProductMethodHelper())
-                      .addMethod(getUpdateProductMethodHelper())
-                      .addMethod(getDeleteProductMethodHelper())
-                      .addMethod(getCreateReferenceImageMethodHelper())
-                      .addMethod(getDeleteReferenceImageMethodHelper())
-                      .addMethod(getListReferenceImagesMethodHelper())
-                      .addMethod(getGetReferenceImageMethodHelper())
-                      .addMethod(getAddProductToProductSetMethodHelper())
-                      .addMethod(getRemoveProductFromProductSetMethodHelper())
-                      .addMethod(getListProductsInProductSetMethodHelper())
-                      .addMethod(getImportProductSetsMethodHelper())
+                      .addMethod(getCreateProductSetMethod())
+                      .addMethod(getListProductSetsMethod())
+                      .addMethod(getGetProductSetMethod())
+                      .addMethod(getUpdateProductSetMethod())
+                      .addMethod(getDeleteProductSetMethod())
+                      .addMethod(getCreateProductMethod())
+                      .addMethod(getListProductsMethod())
+                      .addMethod(getGetProductMethod())
+                      .addMethod(getUpdateProductMethod())
+                      .addMethod(getDeleteProductMethod())
+                      .addMethod(getCreateReferenceImageMethod())
+                      .addMethod(getDeleteReferenceImageMethod())
+                      .addMethod(getListReferenceImagesMethod())
+                      .addMethod(getGetReferenceImageMethod())
+                      .addMethod(getAddProductToProductSetMethod())
+                      .addMethod(getRemoveProductFromProductSetMethod())
+                      .addMethod(getListProductsInProductSetMethod())
+                      .addMethod(getImportProductSetsMethod())
                       .build();
         }
       }

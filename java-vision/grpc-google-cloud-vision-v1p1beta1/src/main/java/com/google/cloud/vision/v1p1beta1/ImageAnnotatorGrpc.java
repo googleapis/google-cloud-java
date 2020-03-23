@@ -32,7 +32,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/vision/v1p1beta1/image_annotator.proto")
 public final class ImageAnnotatorGrpc {
 
@@ -41,30 +41,20 @@ public final class ImageAnnotatorGrpc {
   public static final String SERVICE_NAME = "google.cloud.vision.v1p1beta1.ImageAnnotator";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchAnnotateImagesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest,
-          com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse>
-      METHOD_BATCH_ANNOTATE_IMAGES = getBatchAnnotateImagesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest,
           com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse>
       getBatchAnnotateImagesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchAnnotateImages",
+      requestType = com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest.class,
+      responseType = com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest,
           com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse>
       getBatchAnnotateImagesMethod() {
-    return getBatchAnnotateImagesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest,
-          com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse>
-      getBatchAnnotateImagesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest,
             com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse>
@@ -81,9 +71,7 @@ public final class ImageAnnotatorGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.vision.v1p1beta1.ImageAnnotator",
-                              "BatchAnnotateImages"))
+                          generateFullMethodName(SERVICE_NAME, "BatchAnnotateImages"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -104,19 +92,43 @@ public final class ImageAnnotatorGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static ImageAnnotatorStub newStub(io.grpc.Channel channel) {
-    return new ImageAnnotatorStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ImageAnnotatorStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ImageAnnotatorStub>() {
+          @java.lang.Override
+          public ImageAnnotatorStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ImageAnnotatorStub(channel, callOptions);
+          }
+        };
+    return ImageAnnotatorStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static ImageAnnotatorBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new ImageAnnotatorBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ImageAnnotatorBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ImageAnnotatorBlockingStub>() {
+          @java.lang.Override
+          public ImageAnnotatorBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ImageAnnotatorBlockingStub(channel, callOptions);
+          }
+        };
+    return ImageAnnotatorBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static ImageAnnotatorFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new ImageAnnotatorFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ImageAnnotatorFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ImageAnnotatorFutureStub>() {
+          @java.lang.Override
+          public ImageAnnotatorFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ImageAnnotatorFutureStub(channel, callOptions);
+          }
+        };
+    return ImageAnnotatorFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -141,14 +153,14 @@ public final class ImageAnnotatorGrpc {
         com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchAnnotateImagesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getBatchAnnotateImagesMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getBatchAnnotateImagesMethodHelper(),
+              getBatchAnnotateImagesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest,
@@ -168,11 +180,7 @@ public final class ImageAnnotatorGrpc {
    * </pre>
    */
   public static final class ImageAnnotatorStub
-      extends io.grpc.stub.AbstractStub<ImageAnnotatorStub> {
-    private ImageAnnotatorStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<ImageAnnotatorStub> {
     private ImageAnnotatorStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -194,7 +202,7 @@ public final class ImageAnnotatorGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBatchAnnotateImagesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getBatchAnnotateImagesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -210,11 +218,7 @@ public final class ImageAnnotatorGrpc {
    * </pre>
    */
   public static final class ImageAnnotatorBlockingStub
-      extends io.grpc.stub.AbstractStub<ImageAnnotatorBlockingStub> {
-    private ImageAnnotatorBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<ImageAnnotatorBlockingStub> {
     private ImageAnnotatorBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -235,7 +239,7 @@ public final class ImageAnnotatorGrpc {
     public com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse batchAnnotateImages(
         com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getBatchAnnotateImagesMethodHelper(), getCallOptions(), request);
+          getChannel(), getBatchAnnotateImagesMethod(), getCallOptions(), request);
     }
   }
 
@@ -249,11 +253,7 @@ public final class ImageAnnotatorGrpc {
    * </pre>
    */
   public static final class ImageAnnotatorFutureStub
-      extends io.grpc.stub.AbstractStub<ImageAnnotatorFutureStub> {
-    private ImageAnnotatorFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<ImageAnnotatorFutureStub> {
     private ImageAnnotatorFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -275,7 +275,7 @@ public final class ImageAnnotatorGrpc {
             com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse>
         batchAnnotateImages(com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getBatchAnnotateImagesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getBatchAnnotateImagesMethod(), getCallOptions()), request);
     }
   }
 
@@ -369,7 +369,7 @@ public final class ImageAnnotatorGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ImageAnnotatorFileDescriptorSupplier())
-                      .addMethod(getBatchAnnotateImagesMethodHelper())
+                      .addMethod(getBatchAnnotateImagesMethod())
                       .build();
         }
       }
