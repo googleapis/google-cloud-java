@@ -14,23 +14,16 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
-
-gapic = gcp.GAPICGenerator()
 
 service = 'speech'
 versions = ['v1', 'v1p1beta1']
-config_pattern = '/google/cloud/speech/artman_speech_{version}.yaml'
 
 for version in versions:
-  java.gapic_library(
-    service=service,
-    version=version,
-    config_pattern=config_pattern,
-    package_pattern='com.google.cloud.{service}.{version}',
-    gapic=gapic,
+  library = java.bazel_library(
+      service=service,
+      version=version,
+      bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
   )
 
 java.common_templates()
