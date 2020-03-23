@@ -16,7 +16,7 @@
 
 import synthtool.languages.java as java
 
-versions = ['v1beta1']
+versions = ['v1beta1', 'v1']
 service = 'recaptchaenterprise'
 
 for version in versions:
