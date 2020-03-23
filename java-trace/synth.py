@@ -14,22 +14,18 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
-gapic = gcp.GAPICGenerator()
-
-service = 'trace'
+service = 'devtools-cloudtrace'
 versions = ['v1', 'v2']
 
 for version in versions:
-    java.gapic_library(
+    java.bazel_library(
         service=service,
         version=version,
-        config_pattern='/google/devtools/cloudtrace/artman_cloudtrace_{version}.yaml',
-        package_pattern='com.google.devtools.cloudtrace.{version}',
-        gapic=gapic,
+        proto_path=f'/google/devtools/cloudtrace/{version}',
+        bazel_target=f'//google/devtools/cloudtrace/{version}:google-cloud-{service}-{version}-java',
+        destination_name='trace',
     )
 
 java.common_templates()

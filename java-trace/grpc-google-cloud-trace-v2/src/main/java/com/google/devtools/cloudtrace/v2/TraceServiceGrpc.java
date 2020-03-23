@@ -34,7 +34,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/devtools/cloudtrace/v2/tracing.proto")
 public final class TraceServiceGrpc {
 
@@ -43,26 +43,18 @@ public final class TraceServiceGrpc {
   public static final String SERVICE_NAME = "google.devtools.cloudtrace.v2.TraceService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchWriteSpansMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest, com.google.protobuf.Empty>
-      METHOD_BATCH_WRITE_SPANS = getBatchWriteSpansMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest, com.google.protobuf.Empty>
       getBatchWriteSpansMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchWriteSpans",
+      requestType = com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest, com.google.protobuf.Empty>
       getBatchWriteSpansMethod() {
-    return getBatchWriteSpansMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest, com.google.protobuf.Empty>
-      getBatchWriteSpansMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest, com.google.protobuf.Empty>
         getBatchWriteSpansMethod;
@@ -76,9 +68,7 @@ public final class TraceServiceGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudtrace.v2.TraceService", "BatchWriteSpans"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchWriteSpans"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -96,26 +86,18 @@ public final class TraceServiceGrpc {
     return getBatchWriteSpansMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateSpanMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.devtools.cloudtrace.v2.Span, com.google.devtools.cloudtrace.v2.Span>
-      METHOD_CREATE_SPAN = getCreateSpanMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.devtools.cloudtrace.v2.Span, com.google.devtools.cloudtrace.v2.Span>
       getCreateSpanMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSpan",
+      requestType = com.google.devtools.cloudtrace.v2.Span.class,
+      responseType = com.google.devtools.cloudtrace.v2.Span.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.devtools.cloudtrace.v2.Span, com.google.devtools.cloudtrace.v2.Span>
       getCreateSpanMethod() {
-    return getCreateSpanMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.devtools.cloudtrace.v2.Span, com.google.devtools.cloudtrace.v2.Span>
-      getCreateSpanMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.devtools.cloudtrace.v2.Span, com.google.devtools.cloudtrace.v2.Span>
         getCreateSpanMethod;
@@ -129,9 +111,7 @@ public final class TraceServiceGrpc {
                           com.google.devtools.cloudtrace.v2.Span>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.cloudtrace.v2.TraceService", "CreateSpan"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSpan"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -149,19 +129,43 @@ public final class TraceServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static TraceServiceStub newStub(io.grpc.Channel channel) {
-    return new TraceServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<TraceServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TraceServiceStub>() {
+          @java.lang.Override
+          public TraceServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TraceServiceStub(channel, callOptions);
+          }
+        };
+    return TraceServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static TraceServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new TraceServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<TraceServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TraceServiceBlockingStub>() {
+          @java.lang.Override
+          public TraceServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TraceServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return TraceServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static TraceServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new TraceServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<TraceServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TraceServiceFutureStub>() {
+          @java.lang.Override
+          public TraceServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TraceServiceFutureStub(channel, callOptions);
+          }
+        };
+    return TraceServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -188,7 +192,7 @@ public final class TraceServiceGrpc {
     public void batchWriteSpans(
         com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchWriteSpansMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getBatchWriteSpansMethod(), responseObserver);
     }
 
     /**
@@ -201,20 +205,20 @@ public final class TraceServiceGrpc {
     public void createSpan(
         com.google.devtools.cloudtrace.v2.Span request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudtrace.v2.Span> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateSpanMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateSpanMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getBatchWriteSpansMethodHelper(),
+              getBatchWriteSpansMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest,
                       com.google.protobuf.Empty>(this, METHODID_BATCH_WRITE_SPANS)))
           .addMethod(
-              getCreateSpanMethodHelper(),
+              getCreateSpanMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.devtools.cloudtrace.v2.Span,
@@ -234,11 +238,8 @@ public final class TraceServiceGrpc {
    * contain span(s) from multiple services.
    * </pre>
    */
-  public static final class TraceServiceStub extends io.grpc.stub.AbstractStub<TraceServiceStub> {
-    private TraceServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class TraceServiceStub
+      extends io.grpc.stub.AbstractAsyncStub<TraceServiceStub> {
     private TraceServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -260,7 +261,7 @@ public final class TraceServiceGrpc {
         com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBatchWriteSpansMethodHelper(), getCallOptions()),
+          getChannel().newCall(getBatchWriteSpansMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -276,9 +277,7 @@ public final class TraceServiceGrpc {
         com.google.devtools.cloudtrace.v2.Span request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudtrace.v2.Span> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateSpanMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getCreateSpanMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -294,11 +293,7 @@ public final class TraceServiceGrpc {
    * </pre>
    */
   public static final class TraceServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<TraceServiceBlockingStub> {
-    private TraceServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<TraceServiceBlockingStub> {
     private TraceServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -319,8 +314,7 @@ public final class TraceServiceGrpc {
      */
     public com.google.protobuf.Empty batchWriteSpans(
         com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getBatchWriteSpansMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getBatchWriteSpansMethod(), getCallOptions(), request);
     }
 
     /**
@@ -332,8 +326,7 @@ public final class TraceServiceGrpc {
      */
     public com.google.devtools.cloudtrace.v2.Span createSpan(
         com.google.devtools.cloudtrace.v2.Span request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateSpanMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateSpanMethod(), getCallOptions(), request);
     }
   }
 
@@ -349,11 +342,7 @@ public final class TraceServiceGrpc {
    * </pre>
    */
   public static final class TraceServiceFutureStub
-      extends io.grpc.stub.AbstractStub<TraceServiceFutureStub> {
-    private TraceServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<TraceServiceFutureStub> {
     private TraceServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -375,7 +364,7 @@ public final class TraceServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         batchWriteSpans(com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getBatchWriteSpansMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getBatchWriteSpansMethod(), getCallOptions()), request);
     }
 
     /**
@@ -389,7 +378,7 @@ public final class TraceServiceGrpc {
             com.google.devtools.cloudtrace.v2.Span>
         createSpan(com.google.devtools.cloudtrace.v2.Span request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateSpanMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateSpanMethod(), getCallOptions()), request);
     }
   }
 
@@ -488,8 +477,8 @@ public final class TraceServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new TraceServiceFileDescriptorSupplier())
-                      .addMethod(getBatchWriteSpansMethodHelper())
-                      .addMethod(getCreateSpanMethodHelper())
+                      .addMethod(getBatchWriteSpansMethod())
+                      .addMethod(getCreateSpanMethod())
                       .build();
         }
       }
