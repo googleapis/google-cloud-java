@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,12 @@
 
 package com.example.bigquery;
 
-// [START bigquery_create_table]
+// [START bigquery_nested_repeated_schema]
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Field.Mode;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.StandardTableDefinition;
@@ -28,34 +29,50 @@ import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 
-public class CreateTable {
+public class NestedRepeatedSchema {
 
-  public static void runCreateTable() {
+  public static void runNestedRepeatedSchema() {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
-    Schema schema =
-        Schema.of(
-            Field.of("stringField", StandardSQLTypeName.STRING),
-            Field.of("booleanField", StandardSQLTypeName.BOOL));
-    createTable(datasetName, tableName, schema);
+    createTableWithNestedRepeatedSchema(datasetName, tableName);
   }
 
-  public static void createTable(String datasetName, String tableName, Schema schema) {
+  public static void createTableWithNestedRepeatedSchema(String datasetName, String tableName) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
       TableId tableId = TableId.of(datasetName, tableName);
+
+      Schema schema =
+          Schema.of(
+              Field.of("id", StandardSQLTypeName.STRING),
+              Field.of("first_name", StandardSQLTypeName.STRING),
+              Field.of("last_name", StandardSQLTypeName.STRING),
+              Field.of("dob", StandardSQLTypeName.DATE),
+              // create the nested and repeated field
+              Field.newBuilder(
+                      "addresses",
+                      StandardSQLTypeName.STRUCT,
+                      Field.of("status", StandardSQLTypeName.STRING),
+                      Field.of("address", StandardSQLTypeName.STRING),
+                      Field.of("city", StandardSQLTypeName.STRING),
+                      Field.of("state", StandardSQLTypeName.STRING),
+                      Field.of("zip", StandardSQLTypeName.STRING),
+                      Field.of("numberOfYears", StandardSQLTypeName.STRING))
+                  .setMode(Mode.REPEATED)
+                  .build());
+
       TableDefinition tableDefinition = StandardTableDefinition.of(schema);
       TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
 
       bigquery.create(tableInfo);
-      System.out.println("Table created successfully");
+      System.out.println("Table with nested and repeated schema created successfully");
     } catch (BigQueryException e) {
       System.out.println("Table was not created. \n" + e.toString());
     }
   }
 }
-// [END bigquery_create_table]
+// [END bigquery_nested_repeated_schema]
