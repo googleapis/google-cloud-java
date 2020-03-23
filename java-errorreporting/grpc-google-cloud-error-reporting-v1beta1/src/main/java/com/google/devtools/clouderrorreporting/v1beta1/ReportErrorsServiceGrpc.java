@@ -30,7 +30,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/devtools/clouderrorreporting/v1beta1/report_errors_service.proto")
 public final class ReportErrorsServiceGrpc {
 
@@ -40,30 +40,20 @@ public final class ReportErrorsServiceGrpc {
       "google.devtools.clouderrorreporting.v1beta1.ReportErrorsService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getReportErrorEventMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest,
-          com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>
-      METHOD_REPORT_ERROR_EVENT = getReportErrorEventMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest,
           com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>
       getReportErrorEventMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReportErrorEvent",
+      requestType = com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest.class,
+      responseType = com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest,
           com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>
       getReportErrorEventMethod() {
-    return getReportErrorEventMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest,
-          com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>
-      getReportErrorEventMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest,
             com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>
@@ -79,10 +69,7 @@ public final class ReportErrorsServiceGrpc {
                           com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.clouderrorreporting.v1beta1.ReportErrorsService",
-                              "ReportErrorEvent"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReportErrorEvent"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -103,19 +90,43 @@ public final class ReportErrorsServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static ReportErrorsServiceStub newStub(io.grpc.Channel channel) {
-    return new ReportErrorsServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ReportErrorsServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ReportErrorsServiceStub>() {
+          @java.lang.Override
+          public ReportErrorsServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ReportErrorsServiceStub(channel, callOptions);
+          }
+        };
+    return ReportErrorsServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static ReportErrorsServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new ReportErrorsServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ReportErrorsServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ReportErrorsServiceBlockingStub>() {
+          @java.lang.Override
+          public ReportErrorsServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ReportErrorsServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return ReportErrorsServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static ReportErrorsServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new ReportErrorsServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ReportErrorsServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ReportErrorsServiceFutureStub>() {
+          @java.lang.Override
+          public ReportErrorsServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ReportErrorsServiceFutureStub(channel, callOptions);
+          }
+        };
+    return ReportErrorsServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -145,14 +156,14 @@ public final class ReportErrorsServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getReportErrorEventMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getReportErrorEventMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getReportErrorEventMethodHelper(),
+              getReportErrorEventMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest,
@@ -170,11 +181,7 @@ public final class ReportErrorsServiceGrpc {
    * </pre>
    */
   public static final class ReportErrorsServiceStub
-      extends io.grpc.stub.AbstractStub<ReportErrorsServiceStub> {
-    private ReportErrorsServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<ReportErrorsServiceStub> {
     private ReportErrorsServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -204,7 +211,7 @@ public final class ReportErrorsServiceGrpc {
                 com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getReportErrorEventMethodHelper(), getCallOptions()),
+          getChannel().newCall(getReportErrorEventMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -218,11 +225,7 @@ public final class ReportErrorsServiceGrpc {
    * </pre>
    */
   public static final class ReportErrorsServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<ReportErrorsServiceBlockingStub> {
-    private ReportErrorsServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<ReportErrorsServiceBlockingStub> {
     private ReportErrorsServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -251,7 +254,7 @@ public final class ReportErrorsServiceGrpc {
         reportErrorEvent(
             com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest request) {
       return blockingUnaryCall(
-          getChannel(), getReportErrorEventMethodHelper(), getCallOptions(), request);
+          getChannel(), getReportErrorEventMethod(), getCallOptions(), request);
     }
   }
 
@@ -263,11 +266,7 @@ public final class ReportErrorsServiceGrpc {
    * </pre>
    */
   public static final class ReportErrorsServiceFutureStub
-      extends io.grpc.stub.AbstractStub<ReportErrorsServiceFutureStub> {
-    private ReportErrorsServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<ReportErrorsServiceFutureStub> {
     private ReportErrorsServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -297,7 +296,7 @@ public final class ReportErrorsServiceGrpc {
         reportErrorEvent(
             com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getReportErrorEventMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getReportErrorEventMethod(), getCallOptions()), request);
     }
   }
 
@@ -392,7 +391,7 @@ public final class ReportErrorsServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ReportErrorsServiceFileDescriptorSupplier())
-                      .addMethod(getReportErrorEventMethodHelper())
+                      .addMethod(getReportErrorEventMethod())
                       .build();
         }
       }

@@ -19,7 +19,22 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>======================= ErrorStatsServiceClient =======================
+ * <p>======================= ErrorGroupServiceClient =======================
+ *
+ * <p>Service Description: Service for retrieving and updating individual error groups.
+ *
+ * <p>Sample for ErrorGroupServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+ *   ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
+ *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ======================= ErrorStatsServiceClient =======================
  *
  * <p>Service Description: An API for retrieving and managing error statistics as well as data for
  * individual events.
@@ -31,21 +46,6 @@
  * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
  *   ProjectName projectName = ProjectName.of("[PROJECT]");
  *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
- * }
- * </code>
- * </pre>
- *
- * ======================= ErrorGroupServiceClient =======================
- *
- * <p>Service Description: Service for retrieving and updating individual error groups.
- *
- * <p>Sample for ErrorGroupServiceClient:
- *
- * <pre>
- * <code>
- * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
- *   ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
- *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
  * }
  * </code>
  * </pre>

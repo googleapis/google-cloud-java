@@ -31,7 +31,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/devtools/clouderrorreporting/v1beta1/error_stats_service.proto")
 public final class ErrorStatsServiceGrpc {
 
@@ -41,30 +41,20 @@ public final class ErrorStatsServiceGrpc {
       "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListGroupStatsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest,
-          com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse>
-      METHOD_LIST_GROUP_STATS = getListGroupStatsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest,
           com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse>
       getListGroupStatsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListGroupStats",
+      requestType = com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest.class,
+      responseType = com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest,
           com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse>
       getListGroupStatsMethod() {
-    return getListGroupStatsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest,
-          com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse>
-      getListGroupStatsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest,
             com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse>
@@ -79,10 +69,7 @@ public final class ErrorStatsServiceGrpc {
                           com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService",
-                              "ListGroupStats"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListGroupStats"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -101,30 +88,20 @@ public final class ErrorStatsServiceGrpc {
     return getListGroupStatsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListEventsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest,
-          com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse>
-      METHOD_LIST_EVENTS = getListEventsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest,
           com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse>
       getListEventsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListEvents",
+      requestType = com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest.class,
+      responseType = com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest,
           com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse>
       getListEventsMethod() {
-    return getListEventsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest,
-          com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse>
-      getListEventsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest,
             com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse>
@@ -139,10 +116,7 @@ public final class ErrorStatsServiceGrpc {
                           com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService",
-                              "ListEvents"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEvents"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -161,30 +135,20 @@ public final class ErrorStatsServiceGrpc {
     return getListEventsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteEventsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest,
-          com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse>
-      METHOD_DELETE_EVENTS = getDeleteEventsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest,
           com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse>
       getDeleteEventsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEvents",
+      requestType = com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest.class,
+      responseType = com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest,
           com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse>
       getDeleteEventsMethod() {
-    return getDeleteEventsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest,
-          com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse>
-      getDeleteEventsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest,
             com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse>
@@ -199,10 +163,7 @@ public final class ErrorStatsServiceGrpc {
                           com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService",
-                              "DeleteEvents"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEvents"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -223,19 +184,43 @@ public final class ErrorStatsServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static ErrorStatsServiceStub newStub(io.grpc.Channel channel) {
-    return new ErrorStatsServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ErrorStatsServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ErrorStatsServiceStub>() {
+          @java.lang.Override
+          public ErrorStatsServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ErrorStatsServiceStub(channel, callOptions);
+          }
+        };
+    return ErrorStatsServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static ErrorStatsServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new ErrorStatsServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ErrorStatsServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ErrorStatsServiceBlockingStub>() {
+          @java.lang.Override
+          public ErrorStatsServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ErrorStatsServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return ErrorStatsServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static ErrorStatsServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new ErrorStatsServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ErrorStatsServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ErrorStatsServiceFutureStub>() {
+          @java.lang.Override
+          public ErrorStatsServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ErrorStatsServiceFutureStub(channel, callOptions);
+          }
+        };
+    return ErrorStatsServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -260,7 +245,7 @@ public final class ErrorStatsServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListGroupStatsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListGroupStatsMethod(), responseObserver);
     }
 
     /**
@@ -275,7 +260,7 @@ public final class ErrorStatsServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListEventsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListEventsMethod(), responseObserver);
     }
 
     /**
@@ -290,28 +275,28 @@ public final class ErrorStatsServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteEventsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteEventsMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getListGroupStatsMethodHelper(),
+              getListGroupStatsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest,
                       com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse>(
                       this, METHODID_LIST_GROUP_STATS)))
           .addMethod(
-              getListEventsMethodHelper(),
+              getListEventsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest,
                       com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse>(
                       this, METHODID_LIST_EVENTS)))
           .addMethod(
-              getDeleteEventsMethodHelper(),
+              getDeleteEventsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest,
@@ -330,11 +315,7 @@ public final class ErrorStatsServiceGrpc {
    * </pre>
    */
   public static final class ErrorStatsServiceStub
-      extends io.grpc.stub.AbstractStub<ErrorStatsServiceStub> {
-    private ErrorStatsServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<ErrorStatsServiceStub> {
     private ErrorStatsServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -358,7 +339,7 @@ public final class ErrorStatsServiceGrpc {
                 com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListGroupStatsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListGroupStatsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -376,9 +357,7 @@ public final class ErrorStatsServiceGrpc {
                 com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListEventsMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getListEventsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -394,7 +373,7 @@ public final class ErrorStatsServiceGrpc {
                 com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteEventsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteEventsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -409,11 +388,7 @@ public final class ErrorStatsServiceGrpc {
    * </pre>
    */
   public static final class ErrorStatsServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<ErrorStatsServiceBlockingStub> {
-    private ErrorStatsServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<ErrorStatsServiceBlockingStub> {
     private ErrorStatsServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -434,8 +409,7 @@ public final class ErrorStatsServiceGrpc {
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse listGroupStats(
         com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListGroupStatsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListGroupStatsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -447,8 +421,7 @@ public final class ErrorStatsServiceGrpc {
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse listEvents(
         com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListEventsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListEventsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -460,8 +433,7 @@ public final class ErrorStatsServiceGrpc {
      */
     public com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse deleteEvents(
         com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteEventsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteEventsMethod(), getCallOptions(), request);
     }
   }
 
@@ -474,11 +446,7 @@ public final class ErrorStatsServiceGrpc {
    * </pre>
    */
   public static final class ErrorStatsServiceFutureStub
-      extends io.grpc.stub.AbstractStub<ErrorStatsServiceFutureStub> {
-    private ErrorStatsServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<ErrorStatsServiceFutureStub> {
     private ErrorStatsServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -501,7 +469,7 @@ public final class ErrorStatsServiceGrpc {
         listGroupStats(
             com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListGroupStatsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListGroupStatsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -515,7 +483,7 @@ public final class ErrorStatsServiceGrpc {
             com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse>
         listEvents(com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListEventsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListEventsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -529,7 +497,7 @@ public final class ErrorStatsServiceGrpc {
             com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse>
         deleteEvents(com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteEventsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteEventsMethod(), getCallOptions()), request);
     }
   }
 
@@ -639,9 +607,9 @@ public final class ErrorStatsServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ErrorStatsServiceFileDescriptorSupplier())
-                      .addMethod(getListGroupStatsMethodHelper())
-                      .addMethod(getListEventsMethodHelper())
-                      .addMethod(getDeleteEventsMethodHelper())
+                      .addMethod(getListGroupStatsMethod())
+                      .addMethod(getListEventsMethod())
+                      .addMethod(getDeleteEventsMethod())
                       .build();
         }
       }

@@ -18,11 +18,10 @@ import synthtool as s
 import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
-gapic = gcp.GAPICGenerator()
+gapic = gcp.GAPICBazel()
 
-service = 'error-reporting'
+service = 'devtools-clouderrorreporting'
 versions = ['v1beta1']
-config_pattern = '/google/devtools/clouderrorreporting/artman_errorreporting.yaml'
 
 ERROR_GROUP_OVERLOAD = """
   // Inserted by synthtool to preserve backwards-compatibility
@@ -64,30 +63,32 @@ for version in versions:
   library = gapic.java_library(
       service=service,
       version=version,
-      config_path=config_pattern.format(version=version),
-      artman_output_name='')
+      proto_path=f'google/devtools/clouderrorreporting/{version}',
+      bazel_target=f'//google/devtools/clouderrorreporting/{version}:google-cloud-{service}-{version}-java',
+  )
 
-  package_name = f'com.google.devtools.clouderrorreporting.{version}'
-  java.fix_proto_headers(library / f'proto-google-cloud-{service}-{version}')
-  java.fix_grpc_headers(library / f'grpc-google-cloud-{service}-{version}', package_name)
+  library = library / f"google-cloud-{service}-{version}-java"
+
+  java.fix_proto_headers(library / f'proto-google-cloud-{service}-{version}-java')
+  java.fix_grpc_headers(library / f'grpc-google-cloud-{service}-{version}-java', "")
 
   s.replace(
-      library / f'gapic-google-cloud-{service}-{version}/src/**/ErrorGroupServiceClient.java',
+      library / f'gapic-google-cloud-{service}-{version}-java/src/**/ErrorGroupServiceClient.java',
       ERROR_GROUP_OVERLOAD_PREVIOUS_METHOD,
       "\g<1>\n\n" + ERROR_GROUP_OVERLOAD
   )
   s.replace(
-      library / f'gapic-google-cloud-{service}-{version}/src/**/ErrorGroupServiceClient.java',
+      library / f'gapic-google-cloud-{service}-{version}-java/src/**/ErrorGroupServiceClient.java',
       "import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupName;",
       "import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupName;\nimport com.google.devtools.clouderrorreporting.v1beta1.GroupName;"
   )
 
-  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', f'google-cloud-errorreporting/src')
-  s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'grpc-google-cloud-{service}-{version}/src')
-  s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'proto-google-cloud-{service}-{version}/src')
+  s.copy(library / f'gapic-google-cloud-{service}-{version}-java/src', f'google-cloud-errorreporting/src')
+  s.copy(library / f'grpc-google-cloud-{service}-{version}-java/src', f'grpc-google-cloud-error-reporting-{version}/src')
+  s.copy(library / f'proto-google-cloud-{service}-{version}-java/src', f'proto-google-cloud-error-reporting-{version}/src')
 
   java.format_code(f'google-cloud-errorreporting/src')
-  java.format_code(f'grpc-google-cloud-{service}-{version}/src')
-  java.format_code(f'proto-google-cloud-{service}-{version}/src')
+  java.format_code(f'grpc-google-cloud-error-reporting-{version}/src')
+  java.format_code(f'proto-google-cloud-error-reporting-{version}/src')
 
 java.common_templates()
