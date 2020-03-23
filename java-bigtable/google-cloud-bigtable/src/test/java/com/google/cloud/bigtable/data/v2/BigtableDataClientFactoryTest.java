@@ -27,6 +27,7 @@ import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.common.base.Preconditions;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
@@ -128,32 +129,29 @@ public class BigtableDataClientFactoryTest {
 
   @Test
   public void testNewClientsShareTransportChannel() throws Exception {
-    BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
 
     // Create 3 lightweight clients
-    BigtableDataClient client1 = factory.createForInstance("project1", "instance1");
-    BigtableDataClient client2 = factory.createForInstance("project2", "instance2");
-    BigtableDataClient client3 = factory.createForInstance("project3", "instance3");
 
-    // Make sure that only 1 instance is created by each provider
-    Mockito.verify(transportChannelProvider, Mockito.times(1)).getTransportChannel();
-    Mockito.verify(credentialsProvider, Mockito.times(1)).getCredentials();
-    Mockito.verify(executorProvider, Mockito.times(1)).getExecutor();
-    Mockito.verify(watchdogProvider, Mockito.times(1)).getWatchdog();
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
+        BigtableDataClient ignored1 = factory.createForInstance("project1", "instance1");
+        BigtableDataClient ignored2 = factory.createForInstance("project2", "instance2");
+        BigtableDataClient ignored3 = factory.createForInstance("project3", "instance3")) {
 
-    // clean up
-    client1.close();
-    client2.close();
-    client3.close();
-    factory.close();
+      // Make sure that only 1 instance is created by each provider
+      Mockito.verify(transportChannelProvider, Mockito.times(1)).getTransportChannel();
+      Mockito.verify(credentialsProvider, Mockito.times(1)).getCredentials();
+      Mockito.verify(executorProvider, Mockito.times(1)).getExecutor();
+      Mockito.verify(watchdogProvider, Mockito.times(1)).getWatchdog();
+    }
   }
 
   @Test
   public void testCreateDefaultKeepsSettings() throws Exception {
-    BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
-    BigtableDataClient client = factory.createDefault();
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
+        BigtableDataClient client = factory.createDefault()) {
 
-    client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+      client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+    }
 
     assertThat(service.lastRequest.getTableName())
         .isEqualTo(NameUtil.formatTableName(DEFAULT_PROJECT_ID, DEFAULT_INSTANCE_ID, "some-table"));
@@ -162,10 +160,11 @@ public class BigtableDataClientFactoryTest {
 
   @Test
   public void testCreateForAppProfileHasCorrectSettings() throws Exception {
-    BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
-    BigtableDataClient client = factory.createForAppProfile("other-app-profile");
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
+        BigtableDataClient client = factory.createForAppProfile("other-app-profile")) {
 
-    client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+      client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+    }
 
     assertThat(service.lastRequest.getTableName())
         .isEqualTo(NameUtil.formatTableName(DEFAULT_PROJECT_ID, DEFAULT_INSTANCE_ID, "some-table"));
@@ -174,10 +173,12 @@ public class BigtableDataClientFactoryTest {
 
   @Test
   public void testCreateForInstanceHasCorrectSettings() throws Exception {
-    BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
-    BigtableDataClient client = factory.createForInstance("other-project", "other-instance");
 
-    client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
+        BigtableDataClient client = factory.createForInstance("other-project", "other-instance")) {
+
+      client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+    }
 
     assertThat(service.lastRequest.getTableName())
         .isEqualTo(NameUtil.formatTableName("other-project", "other-instance", "some-table"));
@@ -187,11 +188,12 @@ public class BigtableDataClientFactoryTest {
 
   @Test
   public void testCreateForInstanceWithAppProfileHasCorrectSettings() throws Exception {
-    BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
-    BigtableDataClient client =
-        factory.createForInstance("other-project", "other-instance", "other-app-profile");
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
+        BigtableDataClient client =
+            factory.createForInstance("other-project", "other-instance", "other-app-profile")) {
 
-    client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+      client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+    }
 
     assertThat(service.lastRequest.getTableName())
         .isEqualTo(NameUtil.formatTableName("other-project", "other-instance", "some-table"));
@@ -215,7 +217,7 @@ public class BigtableDataClientFactoryTest {
     private final Class<T> targetClass;
     private T targetInstance;
 
-    public BuilderAnswer(Class<T> targetClass, T targetInstance) {
+    private BuilderAnswer(Class<T> targetClass, T targetInstance) {
       this.targetClass = targetClass;
       this.targetInstance = targetInstance;
     }
@@ -227,10 +229,17 @@ public class BigtableDataClientFactoryTest {
 
       if (method.getName().startsWith("with")
           && targetClass.isAssignableFrom(method.getReturnType())) {
-        this.targetInstance = (T) r;
+        this.targetInstance = castToTarget(r);
         r = invocation.getMock();
       }
       return r;
+    }
+
+    @SuppressWarnings("unchecked")
+    private T castToTarget(Object o) {
+      Preconditions.checkArgument(
+          targetClass.isAssignableFrom(targetClass), "Expected instance of " + targetClass);
+      return (T) o;
     }
   }
 }
