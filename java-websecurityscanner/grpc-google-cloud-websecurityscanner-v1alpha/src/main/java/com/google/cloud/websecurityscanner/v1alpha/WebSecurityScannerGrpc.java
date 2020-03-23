@@ -32,7 +32,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/websecurityscanner/v1alpha/web_security_scanner.proto")
 public final class WebSecurityScannerGrpc {
 
@@ -42,30 +42,20 @@ public final class WebSecurityScannerGrpc {
       "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateScanConfigMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
-      METHOD_CREATE_SCAN_CONFIG = getCreateScanConfigMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest,
           com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
       getCreateScanConfigMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateScanConfig",
+      requestType = com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest.class,
+      responseType = com.google.cloud.websecurityscanner.v1alpha.ScanConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest,
           com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
       getCreateScanConfigMethod() {
-    return getCreateScanConfigMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
-      getCreateScanConfigMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest,
             com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
@@ -81,10 +71,7 @@ public final class WebSecurityScannerGrpc {
                           com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner",
-                              "CreateScanConfig"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateScanConfig"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -103,30 +90,20 @@ public final class WebSecurityScannerGrpc {
     return getCreateScanConfigMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteScanConfigMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest,
-          com.google.protobuf.Empty>
-      METHOD_DELETE_SCAN_CONFIG = getDeleteScanConfigMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest,
           com.google.protobuf.Empty>
       getDeleteScanConfigMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteScanConfig",
+      requestType = com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest,
           com.google.protobuf.Empty>
       getDeleteScanConfigMethod() {
-    return getDeleteScanConfigMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest,
-          com.google.protobuf.Empty>
-      getDeleteScanConfigMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest,
             com.google.protobuf.Empty>
@@ -142,10 +119,7 @@ public final class WebSecurityScannerGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner",
-                              "DeleteScanConfig"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteScanConfig"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -163,30 +137,20 @@ public final class WebSecurityScannerGrpc {
     return getDeleteScanConfigMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetScanConfigMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.GetScanConfigRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
-      METHOD_GET_SCAN_CONFIG = getGetScanConfigMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.GetScanConfigRequest,
           com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
       getGetScanConfigMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetScanConfig",
+      requestType = com.google.cloud.websecurityscanner.v1alpha.GetScanConfigRequest.class,
+      responseType = com.google.cloud.websecurityscanner.v1alpha.ScanConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.GetScanConfigRequest,
           com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
       getGetScanConfigMethod() {
-    return getGetScanConfigMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.GetScanConfigRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
-      getGetScanConfigMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.websecurityscanner.v1alpha.GetScanConfigRequest,
             com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
@@ -201,10 +165,7 @@ public final class WebSecurityScannerGrpc {
                           com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner",
-                              "GetScanConfig"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetScanConfig"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -223,30 +184,20 @@ public final class WebSecurityScannerGrpc {
     return getGetScanConfigMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListScanConfigsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsResponse>
-      METHOD_LIST_SCAN_CONFIGS = getListScanConfigsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest,
           com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsResponse>
       getListScanConfigsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListScanConfigs",
+      requestType = com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest.class,
+      responseType = com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest,
           com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsResponse>
       getListScanConfigsMethod() {
-    return getListScanConfigsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsResponse>
-      getListScanConfigsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest,
             com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsResponse>
@@ -261,10 +212,7 @@ public final class WebSecurityScannerGrpc {
                           com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner",
-                              "ListScanConfigs"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListScanConfigs"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -283,30 +231,20 @@ public final class WebSecurityScannerGrpc {
     return getListScanConfigsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateScanConfigMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
-      METHOD_UPDATE_SCAN_CONFIG = getUpdateScanConfigMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest,
           com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
       getUpdateScanConfigMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateScanConfig",
+      requestType = com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest.class,
+      responseType = com.google.cloud.websecurityscanner.v1alpha.ScanConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest,
           com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
       getUpdateScanConfigMethod() {
-    return getUpdateScanConfigMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
-      getUpdateScanConfigMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest,
             com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
@@ -322,10 +260,7 @@ public final class WebSecurityScannerGrpc {
                           com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner",
-                              "UpdateScanConfig"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateScanConfig"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -344,30 +279,20 @@ public final class WebSecurityScannerGrpc {
     return getUpdateScanConfigMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getStartScanRunMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.StartScanRunRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ScanRun>
-      METHOD_START_SCAN_RUN = getStartScanRunMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.StartScanRunRequest,
           com.google.cloud.websecurityscanner.v1alpha.ScanRun>
       getStartScanRunMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StartScanRun",
+      requestType = com.google.cloud.websecurityscanner.v1alpha.StartScanRunRequest.class,
+      responseType = com.google.cloud.websecurityscanner.v1alpha.ScanRun.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.StartScanRunRequest,
           com.google.cloud.websecurityscanner.v1alpha.ScanRun>
       getStartScanRunMethod() {
-    return getStartScanRunMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.StartScanRunRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ScanRun>
-      getStartScanRunMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.websecurityscanner.v1alpha.StartScanRunRequest,
             com.google.cloud.websecurityscanner.v1alpha.ScanRun>
@@ -382,10 +307,7 @@ public final class WebSecurityScannerGrpc {
                           com.google.cloud.websecurityscanner.v1alpha.ScanRun>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner",
-                              "StartScanRun"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StartScanRun"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -404,30 +326,20 @@ public final class WebSecurityScannerGrpc {
     return getStartScanRunMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetScanRunMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.GetScanRunRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ScanRun>
-      METHOD_GET_SCAN_RUN = getGetScanRunMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.GetScanRunRequest,
           com.google.cloud.websecurityscanner.v1alpha.ScanRun>
       getGetScanRunMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetScanRun",
+      requestType = com.google.cloud.websecurityscanner.v1alpha.GetScanRunRequest.class,
+      responseType = com.google.cloud.websecurityscanner.v1alpha.ScanRun.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.GetScanRunRequest,
           com.google.cloud.websecurityscanner.v1alpha.ScanRun>
       getGetScanRunMethod() {
-    return getGetScanRunMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.GetScanRunRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ScanRun>
-      getGetScanRunMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.websecurityscanner.v1alpha.GetScanRunRequest,
             com.google.cloud.websecurityscanner.v1alpha.ScanRun>
@@ -442,10 +354,7 @@ public final class WebSecurityScannerGrpc {
                           com.google.cloud.websecurityscanner.v1alpha.ScanRun>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner",
-                              "GetScanRun"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetScanRun"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -464,30 +373,20 @@ public final class WebSecurityScannerGrpc {
     return getGetScanRunMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListScanRunsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.ListScanRunsRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse>
-      METHOD_LIST_SCAN_RUNS = getListScanRunsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.ListScanRunsRequest,
           com.google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse>
       getListScanRunsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListScanRuns",
+      requestType = com.google.cloud.websecurityscanner.v1alpha.ListScanRunsRequest.class,
+      responseType = com.google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.ListScanRunsRequest,
           com.google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse>
       getListScanRunsMethod() {
-    return getListScanRunsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.ListScanRunsRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse>
-      getListScanRunsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.websecurityscanner.v1alpha.ListScanRunsRequest,
             com.google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse>
@@ -502,10 +401,7 @@ public final class WebSecurityScannerGrpc {
                           com.google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner",
-                              "ListScanRuns"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListScanRuns"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -524,30 +420,20 @@ public final class WebSecurityScannerGrpc {
     return getListScanRunsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getStopScanRunMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.StopScanRunRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ScanRun>
-      METHOD_STOP_SCAN_RUN = getStopScanRunMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.StopScanRunRequest,
           com.google.cloud.websecurityscanner.v1alpha.ScanRun>
       getStopScanRunMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StopScanRun",
+      requestType = com.google.cloud.websecurityscanner.v1alpha.StopScanRunRequest.class,
+      responseType = com.google.cloud.websecurityscanner.v1alpha.ScanRun.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.StopScanRunRequest,
           com.google.cloud.websecurityscanner.v1alpha.ScanRun>
       getStopScanRunMethod() {
-    return getStopScanRunMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.StopScanRunRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ScanRun>
-      getStopScanRunMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.websecurityscanner.v1alpha.StopScanRunRequest,
             com.google.cloud.websecurityscanner.v1alpha.ScanRun>
@@ -562,10 +448,7 @@ public final class WebSecurityScannerGrpc {
                           com.google.cloud.websecurityscanner.v1alpha.ScanRun>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner",
-                              "StopScanRun"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StopScanRun"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -584,30 +467,20 @@ public final class WebSecurityScannerGrpc {
     return getStopScanRunMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListCrawledUrlsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse>
-      METHOD_LIST_CRAWLED_URLS = getListCrawledUrlsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsRequest,
           com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse>
       getListCrawledUrlsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCrawledUrls",
+      requestType = com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsRequest.class,
+      responseType = com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsRequest,
           com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse>
       getListCrawledUrlsMethod() {
-    return getListCrawledUrlsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse>
-      getListCrawledUrlsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsRequest,
             com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse>
@@ -622,10 +495,7 @@ public final class WebSecurityScannerGrpc {
                           com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner",
-                              "ListCrawledUrls"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCrawledUrls"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -644,30 +514,20 @@ public final class WebSecurityScannerGrpc {
     return getListCrawledUrlsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetFindingMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.GetFindingRequest,
-          com.google.cloud.websecurityscanner.v1alpha.Finding>
-      METHOD_GET_FINDING = getGetFindingMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.GetFindingRequest,
           com.google.cloud.websecurityscanner.v1alpha.Finding>
       getGetFindingMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetFinding",
+      requestType = com.google.cloud.websecurityscanner.v1alpha.GetFindingRequest.class,
+      responseType = com.google.cloud.websecurityscanner.v1alpha.Finding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.GetFindingRequest,
           com.google.cloud.websecurityscanner.v1alpha.Finding>
       getGetFindingMethod() {
-    return getGetFindingMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.GetFindingRequest,
-          com.google.cloud.websecurityscanner.v1alpha.Finding>
-      getGetFindingMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.websecurityscanner.v1alpha.GetFindingRequest,
             com.google.cloud.websecurityscanner.v1alpha.Finding>
@@ -682,10 +542,7 @@ public final class WebSecurityScannerGrpc {
                           com.google.cloud.websecurityscanner.v1alpha.Finding>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner",
-                              "GetFinding"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetFinding"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -704,30 +561,20 @@ public final class WebSecurityScannerGrpc {
     return getGetFindingMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListFindingsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.ListFindingsRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ListFindingsResponse>
-      METHOD_LIST_FINDINGS = getListFindingsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.ListFindingsRequest,
           com.google.cloud.websecurityscanner.v1alpha.ListFindingsResponse>
       getListFindingsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListFindings",
+      requestType = com.google.cloud.websecurityscanner.v1alpha.ListFindingsRequest.class,
+      responseType = com.google.cloud.websecurityscanner.v1alpha.ListFindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.ListFindingsRequest,
           com.google.cloud.websecurityscanner.v1alpha.ListFindingsResponse>
       getListFindingsMethod() {
-    return getListFindingsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.ListFindingsRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ListFindingsResponse>
-      getListFindingsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.websecurityscanner.v1alpha.ListFindingsRequest,
             com.google.cloud.websecurityscanner.v1alpha.ListFindingsResponse>
@@ -742,10 +589,7 @@ public final class WebSecurityScannerGrpc {
                           com.google.cloud.websecurityscanner.v1alpha.ListFindingsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner",
-                              "ListFindings"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListFindings"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -764,30 +608,20 @@ public final class WebSecurityScannerGrpc {
     return getListFindingsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListFindingTypeStatsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsResponse>
-      METHOD_LIST_FINDING_TYPE_STATS = getListFindingTypeStatsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsRequest,
           com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsResponse>
       getListFindingTypeStatsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListFindingTypeStats",
+      requestType = com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsRequest.class,
+      responseType = com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsRequest,
           com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsResponse>
       getListFindingTypeStatsMethod() {
-    return getListFindingTypeStatsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsRequest,
-          com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsResponse>
-      getListFindingTypeStatsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsRequest,
             com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsResponse>
@@ -805,9 +639,7 @@ public final class WebSecurityScannerGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner",
-                              "ListFindingTypeStats"))
+                          generateFullMethodName(SERVICE_NAME, "ListFindingTypeStats"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -828,19 +660,43 @@ public final class WebSecurityScannerGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static WebSecurityScannerStub newStub(io.grpc.Channel channel) {
-    return new WebSecurityScannerStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<WebSecurityScannerStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WebSecurityScannerStub>() {
+          @java.lang.Override
+          public WebSecurityScannerStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WebSecurityScannerStub(channel, callOptions);
+          }
+        };
+    return WebSecurityScannerStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static WebSecurityScannerBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new WebSecurityScannerBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<WebSecurityScannerBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WebSecurityScannerBlockingStub>() {
+          @java.lang.Override
+          public WebSecurityScannerBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WebSecurityScannerBlockingStub(channel, callOptions);
+          }
+        };
+    return WebSecurityScannerBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static WebSecurityScannerFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new WebSecurityScannerFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<WebSecurityScannerFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WebSecurityScannerFutureStub>() {
+          @java.lang.Override
+          public WebSecurityScannerFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WebSecurityScannerFutureStub(channel, callOptions);
+          }
+        };
+    return WebSecurityScannerFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -865,7 +721,7 @@ public final class WebSecurityScannerGrpc {
         com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateScanConfigMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateScanConfigMethod(), responseObserver);
     }
 
     /**
@@ -878,7 +734,7 @@ public final class WebSecurityScannerGrpc {
     public void deleteScanConfig(
         com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteScanConfigMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteScanConfigMethod(), responseObserver);
     }
 
     /**
@@ -892,7 +748,7 @@ public final class WebSecurityScannerGrpc {
         com.google.cloud.websecurityscanner.v1alpha.GetScanConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetScanConfigMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetScanConfigMethod(), responseObserver);
     }
 
     /**
@@ -907,7 +763,7 @@ public final class WebSecurityScannerGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListScanConfigsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListScanConfigsMethod(), responseObserver);
     }
 
     /**
@@ -921,7 +777,7 @@ public final class WebSecurityScannerGrpc {
         com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateScanConfigMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateScanConfigMethod(), responseObserver);
     }
 
     /**
@@ -935,7 +791,7 @@ public final class WebSecurityScannerGrpc {
         com.google.cloud.websecurityscanner.v1alpha.StartScanRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.ScanRun>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getStartScanRunMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getStartScanRunMethod(), responseObserver);
     }
 
     /**
@@ -949,7 +805,7 @@ public final class WebSecurityScannerGrpc {
         com.google.cloud.websecurityscanner.v1alpha.GetScanRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.ScanRun>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetScanRunMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetScanRunMethod(), responseObserver);
     }
 
     /**
@@ -965,7 +821,7 @@ public final class WebSecurityScannerGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListScanRunsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListScanRunsMethod(), responseObserver);
     }
 
     /**
@@ -979,7 +835,7 @@ public final class WebSecurityScannerGrpc {
         com.google.cloud.websecurityscanner.v1alpha.StopScanRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.ScanRun>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getStopScanRunMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getStopScanRunMethod(), responseObserver);
     }
 
     /**
@@ -994,7 +850,7 @@ public final class WebSecurityScannerGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListCrawledUrlsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListCrawledUrlsMethod(), responseObserver);
     }
 
     /**
@@ -1008,7 +864,7 @@ public final class WebSecurityScannerGrpc {
         com.google.cloud.websecurityscanner.v1alpha.GetFindingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.Finding>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetFindingMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetFindingMethod(), responseObserver);
     }
 
     /**
@@ -1023,7 +879,7 @@ public final class WebSecurityScannerGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.websecurityscanner.v1alpha.ListFindingsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListFindingsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListFindingsMethod(), responseObserver);
     }
 
     /**
@@ -1038,97 +894,97 @@ public final class WebSecurityScannerGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListFindingTypeStatsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListFindingTypeStatsMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getCreateScanConfigMethodHelper(),
+              getCreateScanConfigMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest,
                       com.google.cloud.websecurityscanner.v1alpha.ScanConfig>(
                       this, METHODID_CREATE_SCAN_CONFIG)))
           .addMethod(
-              getDeleteScanConfigMethodHelper(),
+              getDeleteScanConfigMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_SCAN_CONFIG)))
           .addMethod(
-              getGetScanConfigMethodHelper(),
+              getGetScanConfigMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.websecurityscanner.v1alpha.GetScanConfigRequest,
                       com.google.cloud.websecurityscanner.v1alpha.ScanConfig>(
                       this, METHODID_GET_SCAN_CONFIG)))
           .addMethod(
-              getListScanConfigsMethodHelper(),
+              getListScanConfigsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest,
                       com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsResponse>(
                       this, METHODID_LIST_SCAN_CONFIGS)))
           .addMethod(
-              getUpdateScanConfigMethodHelper(),
+              getUpdateScanConfigMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest,
                       com.google.cloud.websecurityscanner.v1alpha.ScanConfig>(
                       this, METHODID_UPDATE_SCAN_CONFIG)))
           .addMethod(
-              getStartScanRunMethodHelper(),
+              getStartScanRunMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.websecurityscanner.v1alpha.StartScanRunRequest,
                       com.google.cloud.websecurityscanner.v1alpha.ScanRun>(
                       this, METHODID_START_SCAN_RUN)))
           .addMethod(
-              getGetScanRunMethodHelper(),
+              getGetScanRunMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.websecurityscanner.v1alpha.GetScanRunRequest,
                       com.google.cloud.websecurityscanner.v1alpha.ScanRun>(
                       this, METHODID_GET_SCAN_RUN)))
           .addMethod(
-              getListScanRunsMethodHelper(),
+              getListScanRunsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.websecurityscanner.v1alpha.ListScanRunsRequest,
                       com.google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse>(
                       this, METHODID_LIST_SCAN_RUNS)))
           .addMethod(
-              getStopScanRunMethodHelper(),
+              getStopScanRunMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.websecurityscanner.v1alpha.StopScanRunRequest,
                       com.google.cloud.websecurityscanner.v1alpha.ScanRun>(
                       this, METHODID_STOP_SCAN_RUN)))
           .addMethod(
-              getListCrawledUrlsMethodHelper(),
+              getListCrawledUrlsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsRequest,
                       com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse>(
                       this, METHODID_LIST_CRAWLED_URLS)))
           .addMethod(
-              getGetFindingMethodHelper(),
+              getGetFindingMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.websecurityscanner.v1alpha.GetFindingRequest,
                       com.google.cloud.websecurityscanner.v1alpha.Finding>(
                       this, METHODID_GET_FINDING)))
           .addMethod(
-              getListFindingsMethodHelper(),
+              getListFindingsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.websecurityscanner.v1alpha.ListFindingsRequest,
                       com.google.cloud.websecurityscanner.v1alpha.ListFindingsResponse>(
                       this, METHODID_LIST_FINDINGS)))
           .addMethod(
-              getListFindingTypeStatsMethodHelper(),
+              getListFindingTypeStatsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsRequest,
@@ -1148,11 +1004,7 @@ public final class WebSecurityScannerGrpc {
    * </pre>
    */
   public static final class WebSecurityScannerStub
-      extends io.grpc.stub.AbstractStub<WebSecurityScannerStub> {
-    private WebSecurityScannerStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<WebSecurityScannerStub> {
     private WebSecurityScannerStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1175,7 +1027,7 @@ public final class WebSecurityScannerGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateScanConfigMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateScanConfigMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1191,7 +1043,7 @@ public final class WebSecurityScannerGrpc {
         com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteScanConfigMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteScanConfigMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1208,7 +1060,7 @@ public final class WebSecurityScannerGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetScanConfigMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetScanConfigMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1226,7 +1078,7 @@ public final class WebSecurityScannerGrpc {
                 com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListScanConfigsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListScanConfigsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1243,7 +1095,7 @@ public final class WebSecurityScannerGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateScanConfigMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateScanConfigMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1260,7 +1112,7 @@ public final class WebSecurityScannerGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.ScanRun>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getStartScanRunMethodHelper(), getCallOptions()),
+          getChannel().newCall(getStartScanRunMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1277,9 +1129,7 @@ public final class WebSecurityScannerGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.ScanRun>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetScanRunMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetScanRunMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1296,7 +1146,7 @@ public final class WebSecurityScannerGrpc {
                 com.google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListScanRunsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListScanRunsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1313,7 +1163,7 @@ public final class WebSecurityScannerGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.ScanRun>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getStopScanRunMethodHelper(), getCallOptions()),
+          getChannel().newCall(getStopScanRunMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1331,7 +1181,7 @@ public final class WebSecurityScannerGrpc {
                 com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListCrawledUrlsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListCrawledUrlsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1348,9 +1198,7 @@ public final class WebSecurityScannerGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1alpha.Finding>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetFindingMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetFindingMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1366,7 +1214,7 @@ public final class WebSecurityScannerGrpc {
                 com.google.cloud.websecurityscanner.v1alpha.ListFindingsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListFindingsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListFindingsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1384,7 +1232,7 @@ public final class WebSecurityScannerGrpc {
                 com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListFindingTypeStatsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListFindingTypeStatsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1400,11 +1248,7 @@ public final class WebSecurityScannerGrpc {
    * </pre>
    */
   public static final class WebSecurityScannerBlockingStub
-      extends io.grpc.stub.AbstractStub<WebSecurityScannerBlockingStub> {
-    private WebSecurityScannerBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<WebSecurityScannerBlockingStub> {
     private WebSecurityScannerBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -1426,7 +1270,7 @@ public final class WebSecurityScannerGrpc {
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig createScanConfig(
         com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateScanConfigMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateScanConfigMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1439,7 +1283,7 @@ public final class WebSecurityScannerGrpc {
     public com.google.protobuf.Empty deleteScanConfig(
         com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteScanConfigMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteScanConfigMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1451,8 +1295,7 @@ public final class WebSecurityScannerGrpc {
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig getScanConfig(
         com.google.cloud.websecurityscanner.v1alpha.GetScanConfigRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetScanConfigMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetScanConfigMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1464,8 +1307,7 @@ public final class WebSecurityScannerGrpc {
      */
     public com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsResponse listScanConfigs(
         com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListScanConfigsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListScanConfigsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1478,7 +1320,7 @@ public final class WebSecurityScannerGrpc {
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig updateScanConfig(
         com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateScanConfigMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateScanConfigMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1490,8 +1332,7 @@ public final class WebSecurityScannerGrpc {
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanRun startScanRun(
         com.google.cloud.websecurityscanner.v1alpha.StartScanRunRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getStartScanRunMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getStartScanRunMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1503,8 +1344,7 @@ public final class WebSecurityScannerGrpc {
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanRun getScanRun(
         com.google.cloud.websecurityscanner.v1alpha.GetScanRunRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetScanRunMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetScanRunMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1517,8 +1357,7 @@ public final class WebSecurityScannerGrpc {
      */
     public com.google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse listScanRuns(
         com.google.cloud.websecurityscanner.v1alpha.ListScanRunsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListScanRunsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListScanRunsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1530,8 +1369,7 @@ public final class WebSecurityScannerGrpc {
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanRun stopScanRun(
         com.google.cloud.websecurityscanner.v1alpha.StopScanRunRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getStopScanRunMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getStopScanRunMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1543,8 +1381,7 @@ public final class WebSecurityScannerGrpc {
      */
     public com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse listCrawledUrls(
         com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListCrawledUrlsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListCrawledUrlsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1556,8 +1393,7 @@ public final class WebSecurityScannerGrpc {
      */
     public com.google.cloud.websecurityscanner.v1alpha.Finding getFinding(
         com.google.cloud.websecurityscanner.v1alpha.GetFindingRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetFindingMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetFindingMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1569,8 +1405,7 @@ public final class WebSecurityScannerGrpc {
      */
     public com.google.cloud.websecurityscanner.v1alpha.ListFindingsResponse listFindings(
         com.google.cloud.websecurityscanner.v1alpha.ListFindingsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListFindingsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListFindingsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1584,7 +1419,7 @@ public final class WebSecurityScannerGrpc {
         listFindingTypeStats(
             com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getListFindingTypeStatsMethodHelper(), getCallOptions(), request);
+          getChannel(), getListFindingTypeStatsMethod(), getCallOptions(), request);
     }
   }
 
@@ -1598,11 +1433,7 @@ public final class WebSecurityScannerGrpc {
    * </pre>
    */
   public static final class WebSecurityScannerFutureStub
-      extends io.grpc.stub.AbstractStub<WebSecurityScannerFutureStub> {
-    private WebSecurityScannerFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<WebSecurityScannerFutureStub> {
     private WebSecurityScannerFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1625,7 +1456,7 @@ public final class WebSecurityScannerGrpc {
         createScanConfig(
             com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateScanConfigMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateScanConfigMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1639,7 +1470,7 @@ public final class WebSecurityScannerGrpc {
         deleteScanConfig(
             com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteScanConfigMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteScanConfigMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1653,7 +1484,7 @@ public final class WebSecurityScannerGrpc {
             com.google.cloud.websecurityscanner.v1alpha.ScanConfig>
         getScanConfig(com.google.cloud.websecurityscanner.v1alpha.GetScanConfigRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetScanConfigMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetScanConfigMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1668,7 +1499,7 @@ public final class WebSecurityScannerGrpc {
         listScanConfigs(
             com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListScanConfigsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListScanConfigsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1683,7 +1514,7 @@ public final class WebSecurityScannerGrpc {
         updateScanConfig(
             com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateScanConfigMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateScanConfigMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1697,7 +1528,7 @@ public final class WebSecurityScannerGrpc {
             com.google.cloud.websecurityscanner.v1alpha.ScanRun>
         startScanRun(com.google.cloud.websecurityscanner.v1alpha.StartScanRunRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getStartScanRunMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getStartScanRunMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1711,7 +1542,7 @@ public final class WebSecurityScannerGrpc {
             com.google.cloud.websecurityscanner.v1alpha.ScanRun>
         getScanRun(com.google.cloud.websecurityscanner.v1alpha.GetScanRunRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetScanRunMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetScanRunMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1726,7 +1557,7 @@ public final class WebSecurityScannerGrpc {
             com.google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse>
         listScanRuns(com.google.cloud.websecurityscanner.v1alpha.ListScanRunsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListScanRunsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListScanRunsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1740,7 +1571,7 @@ public final class WebSecurityScannerGrpc {
             com.google.cloud.websecurityscanner.v1alpha.ScanRun>
         stopScanRun(com.google.cloud.websecurityscanner.v1alpha.StopScanRunRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getStopScanRunMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getStopScanRunMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1755,7 +1586,7 @@ public final class WebSecurityScannerGrpc {
         listCrawledUrls(
             com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListCrawledUrlsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListCrawledUrlsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1769,7 +1600,7 @@ public final class WebSecurityScannerGrpc {
             com.google.cloud.websecurityscanner.v1alpha.Finding>
         getFinding(com.google.cloud.websecurityscanner.v1alpha.GetFindingRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetFindingMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetFindingMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1783,7 +1614,7 @@ public final class WebSecurityScannerGrpc {
             com.google.cloud.websecurityscanner.v1alpha.ListFindingsResponse>
         listFindings(com.google.cloud.websecurityscanner.v1alpha.ListFindingsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListFindingsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListFindingsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1798,7 +1629,7 @@ public final class WebSecurityScannerGrpc {
         listFindingTypeStats(
             com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListFindingTypeStatsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListFindingTypeStatsMethod(), getCallOptions()), request);
     }
   }
 
@@ -1979,19 +1810,19 @@ public final class WebSecurityScannerGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new WebSecurityScannerFileDescriptorSupplier())
-                      .addMethod(getCreateScanConfigMethodHelper())
-                      .addMethod(getDeleteScanConfigMethodHelper())
-                      .addMethod(getGetScanConfigMethodHelper())
-                      .addMethod(getListScanConfigsMethodHelper())
-                      .addMethod(getUpdateScanConfigMethodHelper())
-                      .addMethod(getStartScanRunMethodHelper())
-                      .addMethod(getGetScanRunMethodHelper())
-                      .addMethod(getListScanRunsMethodHelper())
-                      .addMethod(getStopScanRunMethodHelper())
-                      .addMethod(getListCrawledUrlsMethodHelper())
-                      .addMethod(getGetFindingMethodHelper())
-                      .addMethod(getListFindingsMethodHelper())
-                      .addMethod(getListFindingTypeStatsMethodHelper())
+                      .addMethod(getCreateScanConfigMethod())
+                      .addMethod(getDeleteScanConfigMethod())
+                      .addMethod(getGetScanConfigMethod())
+                      .addMethod(getListScanConfigsMethod())
+                      .addMethod(getUpdateScanConfigMethod())
+                      .addMethod(getStartScanRunMethod())
+                      .addMethod(getGetScanRunMethod())
+                      .addMethod(getListScanRunsMethod())
+                      .addMethod(getStopScanRunMethod())
+                      .addMethod(getListCrawledUrlsMethod())
+                      .addMethod(getGetFindingMethod())
+                      .addMethod(getListFindingsMethod())
+                      .addMethod(getListFindingTypeStatsMethod())
                       .build();
         }
       }
