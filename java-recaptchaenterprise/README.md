@@ -42,17 +42,17 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recaptchaenterprise</artifactId>
-  <version>0.29.1</version>
+  <version>0.30.0</version>
 </dependency>
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-recaptchaenterprise:0.29.1'
+compile 'com.google.cloud:google-cloud-recaptchaenterprise:0.30.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-recaptchaenterprise" % "0.29.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-recaptchaenterprise" % "0.30.0"
 ```
 [//]: # ({x-version-update-end})
 

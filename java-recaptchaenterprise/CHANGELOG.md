@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.30.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v0.29.1...v0.30.0) (2020-03-23)
+
+
+### Features
+
+* **v1:** add v1 client ([#84](https://www.github.com/googleapis/java-recaptchaenterprise/issues/84)) ([876db58](https://www.github.com/googleapis/java-recaptchaenterprise/commit/876db58562463f8fb358671681c8d26c0d11e5af)), closes [#38](https://www.github.com/googleapis/java-recaptchaenterprise/issues/38)
+
+
+### Dependencies
+
+* update core dependencies to v1.54.0 ([#68](https://www.github.com/googleapis/java-recaptchaenterprise/issues/68)) ([3dbef30](https://www.github.com/googleapis/java-recaptchaenterprise/commit/3dbef30f1ff71b8199354640c736733b798e7073))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([b208090](https://www.github.com/googleapis/java-recaptchaenterprise/commit/b208090bbd7a3cfcf177e75171fef8489ee9f466))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([53df5b7](https://www.github.com/googleapis/java-recaptchaenterprise/commit/53df5b7f4a27ebf4def34032068215862fb95518))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([7aaae92](https://www.github.com/googleapis/java-recaptchaenterprise/commit/7aaae92cc62d116d39b7d4cae73213505d61b6d7))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([3cd680e](https://www.github.com/googleapis/java-recaptchaenterprise/commit/3cd680e7bea759fe0976672adb6999058b13eb33))
+
 ### [0.29.1](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v0.29.0...v0.29.1) (2020-02-04)
 
 
