@@ -16,6 +16,8 @@
 
 import synthtool.languages.java as java
 
+AUTOSYNTH_MULTIPLE_COMMITS = True
+
 service = 'iam-credentials'
 versions = ['v1']
 
