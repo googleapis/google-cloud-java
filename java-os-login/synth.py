@@ -17,6 +17,8 @@
 import synthtool as s
 import synthtool.languages.java as java
 
+AUTOSYNTH_MULTIPLE_COMMITS = True
+
 service = 'oslogin'
 versions = ['v1']
 
