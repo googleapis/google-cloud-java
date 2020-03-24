@@ -1,21 +1,19 @@
 {
-  "updateTime": "2020-03-20T21:59:49.490541Z",
+  "updateTime": "2020-03-24T09:23:58.343494Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
         "sha": "6c248fd13e8543f8d22cbf118d978301a9fbe2a8",
-        "internalRef": "302063117",
-        "log": "6c248fd13e8543f8d22cbf118d978301a9fbe2a8\nAdd missing resource annotations and additional_bindings to dialogflow v2 API.\n\nPiperOrigin-RevId: 302063117\n\n9a3a7f33be9eeacf7b3e98435816b7022d206bd7\nChange the service name from \"chromeos-moblab.googleapis.com\" to \"chromeosmoblab.googleapis.com\"\n\nPiperOrigin-RevId: 302060989\n\n98a339237577e3de26cb4921f75fb5c57cc7a19f\nfeat: devtools/build/v1 publish client library config annotations\n\n* add details field to some of the BuildEvents\n* add final_invocation_id and build_tool_exit_code fields to BuildStatus\n\nPiperOrigin-RevId: 302044087\n\ncfabc98c6bbbb22d1aeaf7612179c0be193b3a13\nfeat: home/graph/v1 publish client library config annotations & comment updates\n\nThis change includes adding the client library configuration annotations, updated proto comments, and some client library configuration files.\n\nPiperOrigin-RevId: 302042647\n\n"
+        "internalRef": "302063117"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "7e98e1609c91082f4eeb63b530c6468aefd18cfd",
-        "log": "7e98e1609c91082f4eeb63b530c6468aefd18cfd\nbuild: use checkout@v2, not v1, as this allows manual re-running of tests (#451)\n\nhttps://github.com/actions/checkout/issues/23\n"
+        "sha": "7e98e1609c91082f4eeb63b530c6468aefd18cfd"
       }
     }
   ],
