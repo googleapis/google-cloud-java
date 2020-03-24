@@ -16,6 +16,8 @@
 
 import synthtool.languages.java as java
 
+AUTOSYNTH_MULTIPLE_COMMITS = True
+
 service = 'texttospeech'
 versions = ['v1','v1beta1']
 
