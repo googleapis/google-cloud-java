@@ -16,6 +16,8 @@
 
 import synthtool.languages.java as java
 
+AUTOSYNTH_MULTIPLE_COMMITS = True
+
 service = 'translation'
 versions = ['v3beta1', 'v3']
 
