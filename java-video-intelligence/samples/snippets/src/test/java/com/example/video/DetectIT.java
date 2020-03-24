@@ -21,32 +21,35 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation;
 import com.google.cloud.videointelligence.v1.TextAnnotation;
 import com.google.cloud.videointelligence.v1.VideoAnnotationResults;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for video analysis sample. */
+/**
+ * Tests for video analysis sample.
+ */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class DetectIT {
-  private ByteArrayOutputStream bout;
-  private PrintStream out;
-
   static final String LABEL_GCS_LOCATION = "gs://cloud-samples-data/video/cat.mp4";
   static final String LABEL_FILE_LOCATION = "./resources/cat.mp4";
   static final String SHOTS_FILE_LOCATION = "gs://cloud-samples-data/video/gbikes_dinosaur.mp4";
-  static final String EXPLICIT_CONTENT_LOCATION =  "gs://cloud-samples-data/video/cat.mp4";
+  static final String EXPLICIT_CONTENT_LOCATION = "gs://cloud-samples-data/video/cat.mp4";
   static final String SPEECH_GCS_LOCATION =
           "gs://java-docs-samples-testing/video/googlework_short.mp4";
   private static final List<String> POSSIBLE_TEXTS = Arrays.asList(
-      "Google", "SUR", "SUR", "ROTO", "Vice President", "58oo9", "LONDRES", "OMAR", "PARIS",
-      "METRO", "RUE", "CARLO");
+          "Google", "SUR", "SUR", "ROTO", "Vice President", "58oo9", "LONDRES", "OMAR", "PARIS",
+          "METRO", "RUE", "CARLO");
+  private ByteArrayOutputStream bout;
+  private PrintStream out;
 
   @Before
   public void setUp() {
