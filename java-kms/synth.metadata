@@ -1,20 +1,12 @@
 {
-  "updateTime": "2020-03-19T09:19:32.948915Z",
+  "updateTime": "2020-03-24T09:19:26.813458Z",
   "sources": [
-    {
-      "generator": {
-        "name": "artman",
-        "version": "1.1.1",
-        "dockerImage": "googleapis/artman@sha256:5ef340c8d9334719bc5c6981d95f4a5d2737b0a6a24f2b9a0d430e96fff85c5b"
-      }
-    },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
         "sha": "275fbcce2c900278d487c33293a3c7e1fbcd3a34",
-        "internalRef": "301661567",
-        "log": "275fbcce2c900278d487c33293a3c7e1fbcd3a34\nfeat: pubsub/v1 add an experimental filter field to Subscription\n\nPiperOrigin-RevId: 301661567\n\nf2b18cec51d27c999ad30011dba17f3965677e9c\nFix: UpdateBackupRequest.backup is a resource, not a resource reference - remove annotation.\n\nPiperOrigin-RevId: 301636171\n\n800384063ac93a0cac3a510d41726fa4b2cd4a83\nCloud Billing Budget API v1beta1\nModified api documentation to include warnings about the new filter field.\n\nPiperOrigin-RevId: 301634389\n\n0cc6c146b660db21f04056c3d58a4b752ee445e3\nCloud Billing Budget API v1alpha1\nModified api documentation to include warnings about the new filter field.\n\nPiperOrigin-RevId: 301630018\n\nff2ea00f69065585c3ac0993c8b582af3b6fc215\nFix: Add resource definition for a parent of InspectTemplate which was otherwise missing.\n\nPiperOrigin-RevId: 301623052\n\n55fa441c9daf03173910760191646399338f2b7c\nAdd proto definition for AccessLevel, AccessPolicy, and ServicePerimeter.\n\nPiperOrigin-RevId: 301620844\n\ne7b10591c5408a67cf14ffafa267556f3290e262\nCloud Bigtable Managed Backup service and message proto files.\n\nPiperOrigin-RevId: 301585144\n\nd8e226f702f8ddf92915128c9f4693b63fb8685d\nfeat: Add time-to-live in a queue for builds\n\nPiperOrigin-RevId: 301579876\n\n430375af011f8c7a5174884f0d0e539c6ffa7675\ndocs: add missing closing backtick\n\nPiperOrigin-RevId: 301538851\n\n0e9f1f60ded9ad1c2e725e37719112f5b487ab65\nbazel: Use latest release of gax_java\n\nPiperOrigin-RevId: 301480457\n\n5058c1c96d0ece7f5301a154cf5a07b2ad03a571\nUpdate GAPIC v2 with batching parameters for Logging API\n\nPiperOrigin-RevId: 301443847\n\n"
+        "internalRef": "301661567"
       }
     },
     {
@@ -32,8 +24,7 @@
         "apiName": "kms",
         "apiVersion": "v1",
         "language": "java",
-        "generator": "gapic",
-        "config": "google/cloud/kms/artman_cloudkms.yaml"
+        "generator": "bazel"
       }
     }
   ]
