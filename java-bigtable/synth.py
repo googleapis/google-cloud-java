@@ -43,8 +43,8 @@ def main():
 
 def generate_data_api(gapic):
   library = gapic.java_library(
-      service='bigtable',
-      version='v2',
+    service='bigtable',
+    version='v2',
     config_path='/google/bigtable/artman_bigtable.yaml',
     artman_output_name='')
 
@@ -84,8 +84,8 @@ def generate_data_api(gapic):
 
 def generate_admin_api(gapic):
   library = gapic.java_library(
-        service='bigtable-admin',
-        version='v2',
+      service='bigtable-admin',
+      version='v2',
       config_path='/google/bigtable/admin/artman_bigtableadmin.yaml',
       artman_output_name='')
 
