@@ -15,6 +15,9 @@
 """This script is used to synthesize generated parts of this library."""
 
 import synthtool.languages.java as java
+
+AUTOSYNTH_MULTIPLE_COMMITS = True
+
 java.common_templates(excludes=[
   'README.md',
 ])
