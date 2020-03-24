@@ -18,6 +18,8 @@ import synthtool as s
 import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
+AUTOSYNTH_MULTIPLE_COMMITS = True
+
 service = 'securitycenter-settings'
 versions = ['v1beta1']
 
