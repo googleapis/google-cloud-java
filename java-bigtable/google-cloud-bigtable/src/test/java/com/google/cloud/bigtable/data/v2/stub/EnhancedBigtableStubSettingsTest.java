@@ -523,7 +523,7 @@ public class EnhancedBigtableStubSettingsTest {
         .isLessThan(256L * 1024 * 1024);
     assertThat(
             builder.getBatchingSettings().getFlowControlSettings().getMaxOutstandingElementCount())
-        .isLessThan(10_000L);
+        .isAtMost(20_000L);
     assertThat(
             builder.getBatchingSettings().getFlowControlSettings().getMaxOutstandingRequestBytes())
         .isLessThan(512L * 1024 * 1024);
