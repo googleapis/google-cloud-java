@@ -1,0 +1,14 @@
+{
+  "name": "orgpolicy",
+  "name_pretty": "Cloud Organization Policy",
+  "product_documentation": "n/a",
+  "api_description": "n/a",
+  "client_documentation": "https://googleapis.dev/java/proto-google-cloud-orgpolicy-v1/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "requires_billing": true,
+  "language": "java",
+  "repo": "googleapis/java-orgpolicy",
+  "repo_short": "java-orgpolicy",
+  "distribution_name": "com.google.api.grpc:proto-google-cloud-orgpolicy-v1"
+}

@@ -1,0 +1,23 @@
+{
+  "updateTime": "2020-03-24T18:20:37.093175Z",
+  "sources": [
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "6a17abc7652e2fe563e1288c6e8c23fc260dda97"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "orgpolicy",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ]
+}
