@@ -1,13 +1,12 @@
 {
-  "updateTime": "2020-03-19T09:44:54.773412Z",
+  "updateTime": "2020-03-23T22:19:44.860500Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
         "sha": "0e9f1f60ded9ad1c2e725e37719112f5b487ab65",
-        "internalRef": "301480457",
-        "log": "0e9f1f60ded9ad1c2e725e37719112f5b487ab65\nbazel: Use latest release of gax_java\n\nPiperOrigin-RevId: 301480457\n\n5058c1c96d0ece7f5301a154cf5a07b2ad03a571\nUpdate GAPIC v2 with batching parameters for Logging API\n\nPiperOrigin-RevId: 301443847\n\n"
+        "internalRef": "301480457"
       }
     },
     {
