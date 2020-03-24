@@ -16,6 +16,8 @@
 
 import synthtool.languages.java as java
 
+AUTOSYNTH_MULTIPLE_COMMITS = True
+
 service = 'dialogflow'
 versions = ['v2', 'v2beta1']
 config_pattern = '/google/cloud/dialogflow/{version}/artman_dialogflow_{version}.yaml'
