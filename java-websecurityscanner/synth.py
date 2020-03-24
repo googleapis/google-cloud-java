@@ -16,6 +16,8 @@
 
 import synthtool.languages.java as java
 
+AUTOSYNTH_MULTIPLE_COMMITS = True
+
 service = 'websecurityscanner'
 versions = ['v1alpha', 'v1beta']
 
