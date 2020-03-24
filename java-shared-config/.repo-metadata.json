@@ -5,5 +5,5 @@
   "language": "java",
   "repo": "googleapis/java-shared-config",
   "repo_short": "java-shared-config",
-  "distribution_name": "google-cloud-shared-config"
+  "distribution_name": "com.google.cloud:google-cloud-shared-config"
 }
