@@ -16,6 +16,8 @@
 
 import synthtool.languages.java as java
 
+AUTOSYNTH_MULTIPLE_COMMITS = True
+
 service = 'securitycenter'
 versions = ['v1p1beta1', 'v1beta1', 'v1']
 
