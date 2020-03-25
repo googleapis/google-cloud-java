@@ -57,7 +57,8 @@
     {
       "packagePatterns": [
         "^com.google.cloud:google-cloud-kms",
-        "^com.google.cloud:libraries-bom"
+        "^com.google.cloud:libraries-bom",
+        "^com.google.cloud.samples:shared-configuration"
       ],
       "semanticCommitType": "chore",
       "semanticCommitScope": "deps"
