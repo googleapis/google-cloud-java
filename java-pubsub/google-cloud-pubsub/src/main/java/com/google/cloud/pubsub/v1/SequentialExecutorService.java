@@ -247,6 +247,10 @@ final class SequentialExecutorService {
       keysWithErrors.remove(key);
     }
 
+    void stopPublish(String key) {
+      keysWithErrors.add(key);
+    }
+
     /** Cancels every task in the queue associated with {@code key}. */
     private void cancelQueuedTasks(final String key, Throwable e) {
       keysWithErrors.add(key);

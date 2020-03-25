@@ -25,6 +25,8 @@ import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.FlowControlSettings;
+import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -43,7 +45,10 @@ import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessServerBuilder;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import org.easymock.EasyMock;
 import org.junit.After;
@@ -921,6 +926,191 @@ public class PublisherImplTest {
     sendTestMessage(publisher, "A");
     publisher.shutdown();
     assertTrue(publisher.awaitTermination(1, TimeUnit.MINUTES));
+  }
+
+  @Test
+  public void testPublishFlowControl_throwException() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(1L)
+                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setFlowControlSettings(
+                        FlowControlSettings.newBuilder()
+                            .setLimitExceededBehavior(
+                                FlowController.LimitExceededBehavior.ThrowException)
+                            .setMaxOutstandingElementCount(1L)
+                            .setMaxOutstandingRequestBytes(10L)
+                            .build())
+                    .build())
+            .build();
+
+    // Sending a message that is too large results in an exception.
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "AAAAAAAAAAA");
+    try {
+      publishFuture1.get();
+      fail("Should have thrown an FlowController.MaxOutstandingRequestBytesReachedException");
+    } catch (ExecutionException e) {
+      assertThat(e.getCause())
+          .isInstanceOf(FlowController.MaxOutstandingRequestBytesReachedException.class);
+    }
+
+    // Sending a second message succeeds.
+    ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "AAAA");
+
+    // Sending a third message fails because of the outstanding message.
+    ApiFuture<String> publishFuture3 = sendTestMessage(publisher, "AA");
+    try {
+      publishFuture3.get();
+      fail("Should have thrown an FlowController.MaxOutstandingElementCountReachedException");
+    } catch (ExecutionException e) {
+      assertThat(e.getCause())
+          .isInstanceOf(FlowController.MaxOutstandingElementCountReachedException.class);
+    }
+
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
+    assertEquals("1", publishFuture2.get());
+
+    // Sending another message succeeds.
+    ApiFuture<String> publishFuture4 = sendTestMessage(publisher, "AAAA");
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("2"));
+    assertEquals("2", publishFuture4.get());
+  }
+
+  @Test
+  public void testPublishFlowControl_throwExceptionWithOrderingKey() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(1L)
+                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setFlowControlSettings(
+                        FlowControlSettings.newBuilder()
+                            .setLimitExceededBehavior(
+                                FlowController.LimitExceededBehavior.ThrowException)
+                            .setMaxOutstandingElementCount(1L)
+                            .setMaxOutstandingRequestBytes(10L)
+                            .build())
+                    .build())
+            .setEnableMessageOrdering(true)
+            .build();
+
+    // Sending a message that is too large results in an exception.
+    ApiFuture<String> publishFuture1 =
+        sendTestMessageWithOrderingKey(publisher, "AAAAAAAAAAA", "a");
+    try {
+      publishFuture1.get();
+      fail("Should have thrown an FlowController.MaxOutstandingRequestBytesReachedException");
+    } catch (ExecutionException e) {
+      assertThat(e.getCause())
+          .isInstanceOf(FlowController.MaxOutstandingRequestBytesReachedException.class);
+    }
+
+    // Sending a second message for the same ordering key fails because the first one failed.
+    ApiFuture<String> publishFuture2 = sendTestMessageWithOrderingKey(publisher, "AAAA", "a");
+    try {
+      publishFuture2.get();
+      Assert.fail("This should fail.");
+    } catch (ExecutionException e) {
+      assertEquals(SequentialExecutorService.CallbackExecutor.CANCELLATION_EXCEPTION, e.getCause());
+    }
+  }
+
+  @Test
+  public void testPublishFlowControl_block() throws Exception {
+    final Publisher publisher =
+        getTestPublisherBuilder()
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(1L)
+                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setFlowControlSettings(
+                        FlowControlSettings.newBuilder()
+                            .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Block)
+                            .setMaxOutstandingElementCount(2L)
+                            .setMaxOutstandingRequestBytes(10L)
+                            .build())
+                    .build())
+            .build();
+    Executor responseExecutor = Executors.newScheduledThreadPool(10);
+    final CountDownLatch sendResponse1 = new CountDownLatch(1);
+    final CountDownLatch response1Sent = new CountDownLatch(1);
+    final CountDownLatch sendResponse2 = new CountDownLatch(1);
+    responseExecutor.execute(
+        new Runnable() {
+          @Override
+          public void run() {
+            try {
+              sendResponse1.await();
+              testPublisherServiceImpl.addPublishResponse(
+                  PublishResponse.newBuilder().addMessageIds("1"));
+              response1Sent.countDown();
+              sendResponse2.await();
+              testPublisherServiceImpl.addPublishResponse(
+                  PublishResponse.newBuilder().addMessageIds("2"));
+            } catch (Exception e) {
+            }
+          }
+        });
+
+    // Sending two messages succeeds.
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "AA");
+    ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "AA");
+
+    // Sending a third message blocks because messages are outstanding.
+    final CountDownLatch publish3Completed = new CountDownLatch(1);
+    final CountDownLatch response3Sent = new CountDownLatch(1);
+    responseExecutor.execute(
+        new Runnable() {
+          @Override
+          public void run() {
+            ApiFuture<String> publishFuture3 = sendTestMessage(publisher, "AAAAAA");
+            publish3Completed.countDown();
+          }
+        });
+
+    responseExecutor.execute(
+        new Runnable() {
+          @Override
+          public void run() {
+            try {
+              sendResponse1.countDown();
+              response1Sent.await();
+              sendResponse2.countDown();
+            } catch (Exception e) {
+            }
+          }
+        });
+
+    // Sending a fourth message blocks because although only one message has been sent,
+    // the third message claimed the tokens for outstanding bytes.
+    final CountDownLatch publish4Completed = new CountDownLatch(1);
+    responseExecutor.execute(
+        new Runnable() {
+          @Override
+          public void run() {
+            try {
+              publish3Completed.await();
+              ApiFuture<String> publishFuture4 = sendTestMessage(publisher, "A");
+              publish4Completed.countDown();
+            } catch (Exception e) {
+            }
+          }
+        });
+
+    publish3Completed.await();
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("3"));
+    response3Sent.countDown();
+
+    publish4Completed.await();
   }
 
   private Builder getTestPublisherBuilder() {
