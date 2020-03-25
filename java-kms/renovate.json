@@ -56,6 +56,7 @@
     },
     {
       "packagePatterns": [
+        "^com.google.cloud:google-cloud-kms",
         "^com.google.cloud:libraries-bom"
       ],
       "semanticCommitType": "chore",
