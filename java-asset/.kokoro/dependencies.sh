@@ -15,7 +15,13 @@
 
 set -eo pipefail
 
-cd github/java-asset/
+## Get the directory of the build script
+scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+## cd to the parent directory, i.e. the root of the git repo
+cd ${scriptDir}/..
+
+# include common functions
+source ${scriptDir}/common.sh
 
 # Print out Java
 java -version
@@ -24,8 +30,9 @@ echo $JOB_TYPE
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
 
 # this should run maven enforcer
-mvn install -B -V \
-  -DskipTests=true \
-  -Dclirr.skip=true
+retry_with_backoff 3 10 \
+  mvn install -B -V \
+    -DskipTests=true \
+    -Dclirr.skip=true
 
 mvn -B dependency:analyze -DfailOnWarning=true
