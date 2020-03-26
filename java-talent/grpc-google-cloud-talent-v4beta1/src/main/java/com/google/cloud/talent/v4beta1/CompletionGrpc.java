@@ -30,7 +30,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/talent/v4beta1/completion_service.proto")
 public final class CompletionGrpc {
 
@@ -39,30 +39,20 @@ public final class CompletionGrpc {
   public static final String SERVICE_NAME = "google.cloud.talent.v4beta1.Completion";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCompleteQueryMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.CompleteQueryRequest,
-          com.google.cloud.talent.v4beta1.CompleteQueryResponse>
-      METHOD_COMPLETE_QUERY = getCompleteQueryMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.CompleteQueryRequest,
           com.google.cloud.talent.v4beta1.CompleteQueryResponse>
       getCompleteQueryMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CompleteQuery",
+      requestType = com.google.cloud.talent.v4beta1.CompleteQueryRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.CompleteQueryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.CompleteQueryRequest,
           com.google.cloud.talent.v4beta1.CompleteQueryResponse>
       getCompleteQueryMethod() {
-    return getCompleteQueryMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.CompleteQueryRequest,
-          com.google.cloud.talent.v4beta1.CompleteQueryResponse>
-      getCompleteQueryMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.CompleteQueryRequest,
             com.google.cloud.talent.v4beta1.CompleteQueryResponse>
@@ -77,9 +67,7 @@ public final class CompletionGrpc {
                           com.google.cloud.talent.v4beta1.CompleteQueryResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.Completion", "CompleteQuery"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CompleteQuery"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -99,19 +87,42 @@ public final class CompletionGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static CompletionStub newStub(io.grpc.Channel channel) {
-    return new CompletionStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CompletionStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CompletionStub>() {
+          @java.lang.Override
+          public CompletionStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CompletionStub(channel, callOptions);
+          }
+        };
+    return CompletionStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static CompletionBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new CompletionBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CompletionBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CompletionBlockingStub>() {
+          @java.lang.Override
+          public CompletionBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CompletionBlockingStub(channel, callOptions);
+          }
+        };
+    return CompletionBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static CompletionFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new CompletionFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CompletionFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CompletionFutureStub>() {
+          @java.lang.Override
+          public CompletionFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CompletionFutureStub(channel, callOptions);
+          }
+        };
+    return CompletionFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -135,14 +146,14 @@ public final class CompletionGrpc {
         com.google.cloud.talent.v4beta1.CompleteQueryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.CompleteQueryResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCompleteQueryMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCompleteQueryMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getCompleteQueryMethodHelper(),
+              getCompleteQueryMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.CompleteQueryRequest,
@@ -159,11 +170,7 @@ public final class CompletionGrpc {
    * A service handles auto completion.
    * </pre>
    */
-  public static final class CompletionStub extends io.grpc.stub.AbstractStub<CompletionStub> {
-    private CompletionStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class CompletionStub extends io.grpc.stub.AbstractAsyncStub<CompletionStub> {
     private CompletionStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -186,7 +193,7 @@ public final class CompletionGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.CompleteQueryResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCompleteQueryMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCompleteQueryMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -200,11 +207,7 @@ public final class CompletionGrpc {
    * </pre>
    */
   public static final class CompletionBlockingStub
-      extends io.grpc.stub.AbstractStub<CompletionBlockingStub> {
-    private CompletionBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<CompletionBlockingStub> {
     private CompletionBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -225,8 +228,7 @@ public final class CompletionGrpc {
      */
     public com.google.cloud.talent.v4beta1.CompleteQueryResponse completeQuery(
         com.google.cloud.talent.v4beta1.CompleteQueryRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCompleteQueryMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCompleteQueryMethod(), getCallOptions(), request);
     }
   }
 
@@ -238,11 +240,7 @@ public final class CompletionGrpc {
    * </pre>
    */
   public static final class CompletionFutureStub
-      extends io.grpc.stub.AbstractStub<CompletionFutureStub> {
-    private CompletionFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<CompletionFutureStub> {
     private CompletionFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -264,7 +262,7 @@ public final class CompletionGrpc {
             com.google.cloud.talent.v4beta1.CompleteQueryResponse>
         completeQuery(com.google.cloud.talent.v4beta1.CompleteQueryRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCompleteQueryMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCompleteQueryMethod(), getCallOptions()), request);
     }
   }
 
@@ -357,7 +355,7 @@ public final class CompletionGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new CompletionFileDescriptorSupplier())
-                      .addMethod(getCompleteQueryMethodHelper())
+                      .addMethod(getCompleteQueryMethod())
                       .build();
         }
       }

@@ -6,6 +6,6 @@
     <differenceType>7005</differenceType>
     <className>com/google/cloud/talent/v4beta1/*ServiceClient</className>
     <method>* *(com.google.cloud.talent.v4beta1.TenantOrProjectName*)</method>
-    <to>* *(com.google.cloud.talent.v4beta1.ProjectName*)</to>
+    <to>* *(com.google.cloud.talent.v4beta1.TenantName*)</to>
   </difference>
 </differences>

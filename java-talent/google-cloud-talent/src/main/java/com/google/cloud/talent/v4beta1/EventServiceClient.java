@@ -34,7 +34,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
  *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
  * }
@@ -155,40 +155,6 @@ public class EventServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
-   *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. Resource name of the tenant under which the event is created.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created, for
-   *     example, "projects/foo".
-   * @param clientEvent Required. Events issued when end user interacts with customer's application
-   *     that uses Cloud Talent Solution.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ClientEvent createClientEvent(ProjectName parent, ClientEvent clientEvent) {
-    CreateClientEventRequest request =
-        CreateClientEventRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setClientEvent(clientEvent)
-            .build();
-    return createClientEvent(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Report events issued when end user interacts with customer's application that uses Cloud Talent
-   * Solution. You may inspect the created events in [self service
-   * tools](https://console.cloud.google.com/talent-solution/overview). [Learn
-   * more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
    *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
    *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
@@ -225,6 +191,40 @@ public class EventServiceClient implements BackgroundResource {
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
+   *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Resource name of the tenant under which the event is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created, for
+   *     example, "projects/foo".
+   * @param clientEvent Required. Events issued when end user interacts with customer's application
+   *     that uses Cloud Talent Solution.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ClientEvent createClientEvent(ProjectName parent, ClientEvent clientEvent) {
+    CreateClientEventRequest request =
+        CreateClientEventRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setClientEvent(clientEvent)
+            .build();
+    return createClientEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Report events issued when end user interacts with customer's application that uses Cloud Talent
+   * Solution. You may inspect the created events in [self service
+   * tools](https://console.cloud.google.com/talent-solution/overview). [Learn
+   * more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
    *   ClientEvent response = eventServiceClient.createClientEvent(parent.toString(), clientEvent);
    * }
    * </code></pre>
@@ -254,7 +254,7 @@ public class EventServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
    *   CreateClientEventRequest request = CreateClientEventRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -282,7 +282,7 @@ public class EventServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
    *   CreateClientEventRequest request = CreateClientEventRequest.newBuilder()
    *     .setParent(parent.toString())

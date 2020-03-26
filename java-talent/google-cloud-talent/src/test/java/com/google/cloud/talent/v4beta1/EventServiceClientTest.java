@@ -38,37 +38,37 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class EventServiceClientTest {
-  private static MockTenantService mockTenantService;
-  private static MockProfileService mockProfileService;
-  private static MockEventService mockEventService;
   private static MockApplicationService mockApplicationService;
   private static MockCompanyService mockCompanyService;
-  private static MockJobService mockJobService;
   private static MockCompletion mockCompletion;
+  private static MockEventService mockEventService;
+  private static MockJobService mockJobService;
+  private static MockProfileService mockProfileService;
+  private static MockTenantService mockTenantService;
   private static MockServiceHelper serviceHelper;
   private EventServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockTenantService = new MockTenantService();
-    mockProfileService = new MockProfileService();
-    mockEventService = new MockEventService();
     mockApplicationService = new MockApplicationService();
     mockCompanyService = new MockCompanyService();
-    mockJobService = new MockJobService();
     mockCompletion = new MockCompletion();
+    mockEventService = new MockEventService();
+    mockJobService = new MockJobService();
+    mockProfileService = new MockProfileService();
+    mockTenantService = new MockTenantService();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockTenantService,
-                mockProfileService,
-                mockEventService,
                 mockApplicationService,
                 mockCompanyService,
+                mockCompletion,
+                mockEventService,
                 mockJobService,
-                mockCompletion));
+                mockProfileService,
+                mockTenantService));
     serviceHelper.start();
   }
 
@@ -108,7 +108,7 @@ public class EventServiceClientTest {
             .build();
     mockEventService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
     ClientEvent clientEvent = ClientEvent.newBuilder().build();
 
     ClientEvent actualResponse = client.createClientEvent(parent, clientEvent);
@@ -118,7 +118,7 @@ public class EventServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateClientEventRequest actualRequest = (CreateClientEventRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, TenantName.parse(actualRequest.getParent()));
     Assert.assertEquals(clientEvent, actualRequest.getClientEvent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -133,7 +133,7 @@ public class EventServiceClientTest {
     mockEventService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
       ClientEvent clientEvent = ClientEvent.newBuilder().build();
 
       client.createClientEvent(parent, clientEvent);

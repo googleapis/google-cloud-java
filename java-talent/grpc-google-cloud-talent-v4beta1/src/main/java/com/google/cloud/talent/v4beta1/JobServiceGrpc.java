@@ -30,7 +30,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/talent/v4beta1/job_service.proto")
 public final class JobServiceGrpc {
 
@@ -39,26 +39,18 @@ public final class JobServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.talent.v4beta1.JobService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateJobMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.CreateJobRequest, com.google.cloud.talent.v4beta1.Job>
-      METHOD_CREATE_JOB = getCreateJobMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.CreateJobRequest, com.google.cloud.talent.v4beta1.Job>
       getCreateJobMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateJob",
+      requestType = com.google.cloud.talent.v4beta1.CreateJobRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.Job.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.CreateJobRequest, com.google.cloud.talent.v4beta1.Job>
       getCreateJobMethod() {
-    return getCreateJobMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.CreateJobRequest, com.google.cloud.talent.v4beta1.Job>
-      getCreateJobMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.CreateJobRequest, com.google.cloud.talent.v4beta1.Job>
         getCreateJobMethod;
@@ -72,9 +64,7 @@ public final class JobServiceGrpc {
                           com.google.cloud.talent.v4beta1.Job>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.JobService", "CreateJob"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateJob"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -91,26 +81,18 @@ public final class JobServiceGrpc {
     return getCreateJobMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchCreateJobsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
-      METHOD_BATCH_CREATE_JOBS = getBatchCreateJobsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
       getBatchCreateJobsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateJobs",
+      requestType = com.google.cloud.talent.v4beta1.BatchCreateJobsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
       getBatchCreateJobsMethod() {
-    return getBatchCreateJobsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
-      getBatchCreateJobsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.BatchCreateJobsRequest,
             com.google.longrunning.Operation>
@@ -125,9 +107,7 @@ public final class JobServiceGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.JobService", "BatchCreateJobs"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchCreateJobs"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -145,26 +125,18 @@ public final class JobServiceGrpc {
     return getBatchCreateJobsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetJobMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.GetJobRequest, com.google.cloud.talent.v4beta1.Job>
-      METHOD_GET_JOB = getGetJobMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.GetJobRequest, com.google.cloud.talent.v4beta1.Job>
       getGetJobMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetJob",
+      requestType = com.google.cloud.talent.v4beta1.GetJobRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.Job.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.GetJobRequest, com.google.cloud.talent.v4beta1.Job>
       getGetJobMethod() {
-    return getGetJobMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.GetJobRequest, com.google.cloud.talent.v4beta1.Job>
-      getGetJobMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.GetJobRequest, com.google.cloud.talent.v4beta1.Job>
         getGetJobMethod;
@@ -178,9 +150,7 @@ public final class JobServiceGrpc {
                           com.google.cloud.talent.v4beta1.Job>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.JobService", "GetJob"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetJob"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -196,26 +166,18 @@ public final class JobServiceGrpc {
     return getGetJobMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateJobMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.UpdateJobRequest, com.google.cloud.talent.v4beta1.Job>
-      METHOD_UPDATE_JOB = getUpdateJobMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.UpdateJobRequest, com.google.cloud.talent.v4beta1.Job>
       getUpdateJobMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateJob",
+      requestType = com.google.cloud.talent.v4beta1.UpdateJobRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.Job.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.UpdateJobRequest, com.google.cloud.talent.v4beta1.Job>
       getUpdateJobMethod() {
-    return getUpdateJobMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.UpdateJobRequest, com.google.cloud.talent.v4beta1.Job>
-      getUpdateJobMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.UpdateJobRequest, com.google.cloud.talent.v4beta1.Job>
         getUpdateJobMethod;
@@ -229,9 +191,7 @@ public final class JobServiceGrpc {
                           com.google.cloud.talent.v4beta1.Job>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.JobService", "UpdateJob"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateJob"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -248,26 +208,18 @@ public final class JobServiceGrpc {
     return getUpdateJobMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchUpdateJobsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
-      METHOD_BATCH_UPDATE_JOBS = getBatchUpdateJobsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
       getBatchUpdateJobsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchUpdateJobs",
+      requestType = com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
       getBatchUpdateJobsMethod() {
-    return getBatchUpdateJobsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
-      getBatchUpdateJobsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest,
             com.google.longrunning.Operation>
@@ -282,9 +234,7 @@ public final class JobServiceGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.JobService", "BatchUpdateJobs"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchUpdateJobs"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -302,26 +252,18 @@ public final class JobServiceGrpc {
     return getBatchUpdateJobsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteJobMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.DeleteJobRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_JOB = getDeleteJobMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.DeleteJobRequest, com.google.protobuf.Empty>
       getDeleteJobMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteJob",
+      requestType = com.google.cloud.talent.v4beta1.DeleteJobRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.DeleteJobRequest, com.google.protobuf.Empty>
       getDeleteJobMethod() {
-    return getDeleteJobMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.DeleteJobRequest, com.google.protobuf.Empty>
-      getDeleteJobMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.DeleteJobRequest, com.google.protobuf.Empty>
         getDeleteJobMethod;
@@ -334,9 +276,7 @@ public final class JobServiceGrpc {
                       .<com.google.cloud.talent.v4beta1.DeleteJobRequest, com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.JobService", "DeleteJob"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteJob"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -353,26 +293,18 @@ public final class JobServiceGrpc {
     return getDeleteJobMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchDeleteJobsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
-      METHOD_BATCH_DELETE_JOBS = getBatchDeleteJobsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
       getBatchDeleteJobsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteJobs",
+      requestType = com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
       getBatchDeleteJobsMethod() {
-    return getBatchDeleteJobsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
-      getBatchDeleteJobsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
         getBatchDeleteJobsMethod;
@@ -386,9 +318,7 @@ public final class JobServiceGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.JobService", "BatchDeleteJobs"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchDeleteJobs"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -406,30 +336,20 @@ public final class JobServiceGrpc {
     return getBatchDeleteJobsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListJobsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.ListJobsRequest,
-          com.google.cloud.talent.v4beta1.ListJobsResponse>
-      METHOD_LIST_JOBS = getListJobsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.ListJobsRequest,
           com.google.cloud.talent.v4beta1.ListJobsResponse>
       getListJobsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListJobs",
+      requestType = com.google.cloud.talent.v4beta1.ListJobsRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.ListJobsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.ListJobsRequest,
           com.google.cloud.talent.v4beta1.ListJobsResponse>
       getListJobsMethod() {
-    return getListJobsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.ListJobsRequest,
-          com.google.cloud.talent.v4beta1.ListJobsResponse>
-      getListJobsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.ListJobsRequest,
             com.google.cloud.talent.v4beta1.ListJobsResponse>
@@ -444,9 +364,7 @@ public final class JobServiceGrpc {
                           com.google.cloud.talent.v4beta1.ListJobsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.JobService", "ListJobs"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListJobs"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -463,30 +381,20 @@ public final class JobServiceGrpc {
     return getListJobsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSearchJobsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.SearchJobsRequest,
-          com.google.cloud.talent.v4beta1.SearchJobsResponse>
-      METHOD_SEARCH_JOBS = getSearchJobsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.SearchJobsRequest,
           com.google.cloud.talent.v4beta1.SearchJobsResponse>
       getSearchJobsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchJobs",
+      requestType = com.google.cloud.talent.v4beta1.SearchJobsRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.SearchJobsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.SearchJobsRequest,
           com.google.cloud.talent.v4beta1.SearchJobsResponse>
       getSearchJobsMethod() {
-    return getSearchJobsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.SearchJobsRequest,
-          com.google.cloud.talent.v4beta1.SearchJobsResponse>
-      getSearchJobsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.SearchJobsRequest,
             com.google.cloud.talent.v4beta1.SearchJobsResponse>
@@ -501,9 +409,7 @@ public final class JobServiceGrpc {
                           com.google.cloud.talent.v4beta1.SearchJobsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.JobService", "SearchJobs"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchJobs"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -521,30 +427,20 @@ public final class JobServiceGrpc {
     return getSearchJobsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSearchJobsForAlertMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.SearchJobsRequest,
-          com.google.cloud.talent.v4beta1.SearchJobsResponse>
-      METHOD_SEARCH_JOBS_FOR_ALERT = getSearchJobsForAlertMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.SearchJobsRequest,
           com.google.cloud.talent.v4beta1.SearchJobsResponse>
       getSearchJobsForAlertMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchJobsForAlert",
+      requestType = com.google.cloud.talent.v4beta1.SearchJobsRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.SearchJobsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.SearchJobsRequest,
           com.google.cloud.talent.v4beta1.SearchJobsResponse>
       getSearchJobsForAlertMethod() {
-    return getSearchJobsForAlertMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.SearchJobsRequest,
-          com.google.cloud.talent.v4beta1.SearchJobsResponse>
-      getSearchJobsForAlertMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.SearchJobsRequest,
             com.google.cloud.talent.v4beta1.SearchJobsResponse>
@@ -559,9 +455,7 @@ public final class JobServiceGrpc {
                           com.google.cloud.talent.v4beta1.SearchJobsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.JobService", "SearchJobsForAlert"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchJobsForAlert"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -582,19 +476,42 @@ public final class JobServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static JobServiceStub newStub(io.grpc.Channel channel) {
-    return new JobServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<JobServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<JobServiceStub>() {
+          @java.lang.Override
+          public JobServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new JobServiceStub(channel, callOptions);
+          }
+        };
+    return JobServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static JobServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new JobServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<JobServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<JobServiceBlockingStub>() {
+          @java.lang.Override
+          public JobServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new JobServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return JobServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static JobServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new JobServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<JobServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<JobServiceFutureStub>() {
+          @java.lang.Override
+          public JobServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new JobServiceFutureStub(channel, callOptions);
+          }
+        };
+    return JobServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -618,7 +535,7 @@ public final class JobServiceGrpc {
     public void createJob(
         com.google.cloud.talent.v4beta1.CreateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Job> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateJobMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateJobMethod(), responseObserver);
     }
 
     /**
@@ -631,7 +548,7 @@ public final class JobServiceGrpc {
     public void batchCreateJobs(
         com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchCreateJobsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getBatchCreateJobsMethod(), responseObserver);
     }
 
     /**
@@ -645,7 +562,7 @@ public final class JobServiceGrpc {
     public void getJob(
         com.google.cloud.talent.v4beta1.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Job> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetJobMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
     }
 
     /**
@@ -660,7 +577,7 @@ public final class JobServiceGrpc {
     public void updateJob(
         com.google.cloud.talent.v4beta1.UpdateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Job> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateJobMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateJobMethod(), responseObserver);
     }
 
     /**
@@ -673,7 +590,7 @@ public final class JobServiceGrpc {
     public void batchUpdateJobs(
         com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchUpdateJobsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getBatchUpdateJobsMethod(), responseObserver);
     }
 
     /**
@@ -688,7 +605,7 @@ public final class JobServiceGrpc {
     public void deleteJob(
         com.google.cloud.talent.v4beta1.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteJobMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
     }
 
     /**
@@ -701,7 +618,7 @@ public final class JobServiceGrpc {
     public void batchDeleteJobs(
         com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchDeleteJobsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getBatchDeleteJobsMethod(), responseObserver);
     }
 
     /**
@@ -715,7 +632,7 @@ public final class JobServiceGrpc {
         com.google.cloud.talent.v4beta1.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListJobsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListJobsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListJobsMethod(), responseObserver);
     }
 
     /**
@@ -732,7 +649,7 @@ public final class JobServiceGrpc {
         com.google.cloud.talent.v4beta1.SearchJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.SearchJobsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchJobsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getSearchJobsMethod(), responseObserver);
     }
 
     /**
@@ -753,69 +670,69 @@ public final class JobServiceGrpc {
         com.google.cloud.talent.v4beta1.SearchJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.SearchJobsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchJobsForAlertMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getSearchJobsForAlertMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getCreateJobMethodHelper(),
+              getCreateJobMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.CreateJobRequest,
                       com.google.cloud.talent.v4beta1.Job>(this, METHODID_CREATE_JOB)))
           .addMethod(
-              getBatchCreateJobsMethodHelper(),
+              getBatchCreateJobsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.BatchCreateJobsRequest,
                       com.google.longrunning.Operation>(this, METHODID_BATCH_CREATE_JOBS)))
           .addMethod(
-              getGetJobMethodHelper(),
+              getGetJobMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.GetJobRequest,
                       com.google.cloud.talent.v4beta1.Job>(this, METHODID_GET_JOB)))
           .addMethod(
-              getUpdateJobMethodHelper(),
+              getUpdateJobMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.UpdateJobRequest,
                       com.google.cloud.talent.v4beta1.Job>(this, METHODID_UPDATE_JOB)))
           .addMethod(
-              getBatchUpdateJobsMethodHelper(),
+              getBatchUpdateJobsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest,
                       com.google.longrunning.Operation>(this, METHODID_BATCH_UPDATE_JOBS)))
           .addMethod(
-              getDeleteJobMethodHelper(),
+              getDeleteJobMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.DeleteJobRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_JOB)))
           .addMethod(
-              getBatchDeleteJobsMethodHelper(),
+              getBatchDeleteJobsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest,
                       com.google.protobuf.Empty>(this, METHODID_BATCH_DELETE_JOBS)))
           .addMethod(
-              getListJobsMethodHelper(),
+              getListJobsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.ListJobsRequest,
                       com.google.cloud.talent.v4beta1.ListJobsResponse>(this, METHODID_LIST_JOBS)))
           .addMethod(
-              getSearchJobsMethodHelper(),
+              getSearchJobsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.SearchJobsRequest,
                       com.google.cloud.talent.v4beta1.SearchJobsResponse>(
                       this, METHODID_SEARCH_JOBS)))
           .addMethod(
-              getSearchJobsForAlertMethodHelper(),
+              getSearchJobsForAlertMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.SearchJobsRequest,
@@ -832,11 +749,7 @@ public final class JobServiceGrpc {
    * A service handles job management, including job CRUD, enumeration and search.
    * </pre>
    */
-  public static final class JobServiceStub extends io.grpc.stub.AbstractStub<JobServiceStub> {
-    private JobServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class JobServiceStub extends io.grpc.stub.AbstractAsyncStub<JobServiceStub> {
     private JobServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -859,9 +772,7 @@ public final class JobServiceGrpc {
         com.google.cloud.talent.v4beta1.CreateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Job> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateJobMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getCreateJobMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -875,7 +786,7 @@ public final class JobServiceGrpc {
         com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBatchCreateJobsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getBatchCreateJobsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -892,9 +803,7 @@ public final class JobServiceGrpc {
         com.google.cloud.talent.v4beta1.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Job> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetJobMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetJobMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -910,9 +819,7 @@ public final class JobServiceGrpc {
         com.google.cloud.talent.v4beta1.UpdateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Job> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateJobMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -926,7 +833,7 @@ public final class JobServiceGrpc {
         com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBatchUpdateJobsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getBatchUpdateJobsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -944,9 +851,7 @@ public final class JobServiceGrpc {
         com.google.cloud.talent.v4beta1.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteJobMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -960,7 +865,7 @@ public final class JobServiceGrpc {
         com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBatchDeleteJobsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getBatchDeleteJobsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -977,9 +882,7 @@ public final class JobServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListJobsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListJobsMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getListJobsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -997,9 +900,7 @@ public final class JobServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.SearchJobsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSearchJobsMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getSearchJobsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1021,7 +922,7 @@ public final class JobServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.SearchJobsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSearchJobsForAlertMethodHelper(), getCallOptions()),
+          getChannel().newCall(getSearchJobsForAlertMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1035,11 +936,7 @@ public final class JobServiceGrpc {
    * </pre>
    */
   public static final class JobServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<JobServiceBlockingStub> {
-    private JobServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<JobServiceBlockingStub> {
     private JobServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1061,7 +958,7 @@ public final class JobServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Job createJob(
         com.google.cloud.talent.v4beta1.CreateJobRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateJobMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1073,8 +970,7 @@ public final class JobServiceGrpc {
      */
     public com.google.longrunning.Operation batchCreateJobs(
         com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getBatchCreateJobsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getBatchCreateJobsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1087,7 +983,7 @@ public final class JobServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Job getJob(
         com.google.cloud.talent.v4beta1.GetJobRequest request) {
-      return blockingUnaryCall(getChannel(), getGetJobMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1101,7 +997,7 @@ public final class JobServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Job updateJob(
         com.google.cloud.talent.v4beta1.UpdateJobRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateJobMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1113,8 +1009,7 @@ public final class JobServiceGrpc {
      */
     public com.google.longrunning.Operation batchUpdateJobs(
         com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getBatchUpdateJobsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getBatchUpdateJobsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1128,7 +1023,7 @@ public final class JobServiceGrpc {
      */
     public com.google.protobuf.Empty deleteJob(
         com.google.cloud.talent.v4beta1.DeleteJobRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteJobMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1140,8 +1035,7 @@ public final class JobServiceGrpc {
      */
     public com.google.protobuf.Empty batchDeleteJobs(
         com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getBatchDeleteJobsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getBatchDeleteJobsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1153,7 +1047,7 @@ public final class JobServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.ListJobsResponse listJobs(
         com.google.cloud.talent.v4beta1.ListJobsRequest request) {
-      return blockingUnaryCall(getChannel(), getListJobsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1168,8 +1062,7 @@ public final class JobServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.SearchJobsResponse searchJobs(
         com.google.cloud.talent.v4beta1.SearchJobsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getSearchJobsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getSearchJobsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1189,7 +1082,7 @@ public final class JobServiceGrpc {
     public com.google.cloud.talent.v4beta1.SearchJobsResponse searchJobsForAlert(
         com.google.cloud.talent.v4beta1.SearchJobsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getSearchJobsForAlertMethodHelper(), getCallOptions(), request);
+          getChannel(), getSearchJobsForAlertMethod(), getCallOptions(), request);
     }
   }
 
@@ -1201,11 +1094,7 @@ public final class JobServiceGrpc {
    * </pre>
    */
   public static final class JobServiceFutureStub
-      extends io.grpc.stub.AbstractStub<JobServiceFutureStub> {
-    private JobServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<JobServiceFutureStub> {
     private JobServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1226,8 +1115,7 @@ public final class JobServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.talent.v4beta1.Job>
         createJob(com.google.cloud.talent.v4beta1.CreateJobRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getCreateJobMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getCreateJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1240,7 +1128,7 @@ public final class JobServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchCreateJobs(com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getBatchCreateJobsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getBatchCreateJobsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1253,8 +1141,7 @@ public final class JobServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.talent.v4beta1.Job>
         getJob(com.google.cloud.talent.v4beta1.GetJobRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetJobMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getGetJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1268,8 +1155,7 @@ public final class JobServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.talent.v4beta1.Job>
         updateJob(com.google.cloud.talent.v4beta1.UpdateJobRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getUpdateJobMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1282,7 +1168,7 @@ public final class JobServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchUpdateJobs(com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getBatchUpdateJobsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getBatchUpdateJobsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1296,8 +1182,7 @@ public final class JobServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteJob(
         com.google.cloud.talent.v4beta1.DeleteJobRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getDeleteJobMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1310,7 +1195,7 @@ public final class JobServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         batchDeleteJobs(com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getBatchDeleteJobsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getBatchDeleteJobsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1323,8 +1208,7 @@ public final class JobServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.ListJobsResponse>
         listJobs(com.google.cloud.talent.v4beta1.ListJobsRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getListJobsMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getListJobsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1341,7 +1225,7 @@ public final class JobServiceGrpc {
             com.google.cloud.talent.v4beta1.SearchJobsResponse>
         searchJobs(com.google.cloud.talent.v4beta1.SearchJobsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getSearchJobsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getSearchJobsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1362,7 +1246,7 @@ public final class JobServiceGrpc {
             com.google.cloud.talent.v4beta1.SearchJobsResponse>
         searchJobsForAlert(com.google.cloud.talent.v4beta1.SearchJobsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getSearchJobsForAlertMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getSearchJobsForAlertMethod(), getCallOptions()), request);
     }
   }
 
@@ -1511,16 +1395,16 @@ public final class JobServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new JobServiceFileDescriptorSupplier())
-                      .addMethod(getCreateJobMethodHelper())
-                      .addMethod(getBatchCreateJobsMethodHelper())
-                      .addMethod(getGetJobMethodHelper())
-                      .addMethod(getUpdateJobMethodHelper())
-                      .addMethod(getBatchUpdateJobsMethodHelper())
-                      .addMethod(getDeleteJobMethodHelper())
-                      .addMethod(getBatchDeleteJobsMethodHelper())
-                      .addMethod(getListJobsMethodHelper())
-                      .addMethod(getSearchJobsMethodHelper())
-                      .addMethod(getSearchJobsForAlertMethodHelper())
+                      .addMethod(getCreateJobMethod())
+                      .addMethod(getBatchCreateJobsMethod())
+                      .addMethod(getGetJobMethod())
+                      .addMethod(getUpdateJobMethod())
+                      .addMethod(getBatchUpdateJobsMethod())
+                      .addMethod(getDeleteJobMethod())
+                      .addMethod(getBatchDeleteJobsMethod())
+                      .addMethod(getListJobsMethod())
+                      .addMethod(getSearchJobsMethod())
+                      .addMethod(getSearchJobsForAlertMethod())
                       .build();
         }
       }

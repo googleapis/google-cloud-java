@@ -19,54 +19,7 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>=================== TenantServiceClient ===================
- *
- * <p>Service Description: A service that handles tenant management, including CRUD and enumeration.
- *
- * <p>Sample for TenantServiceClient:
- *
- * <pre>
- * <code>
- * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
- *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
- *   tenantServiceClient.deleteTenant(name);
- * }
- * </code>
- * </pre>
- *
- * ==================== ProfileServiceClient ====================
- *
- * <p>Service Description: A service that handles profile management, including profile CRUD,
- * enumeration and search.
- *
- * <p>Sample for ProfileServiceClient:
- *
- * <pre>
- * <code>
- * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
- *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
- *   profileServiceClient.deleteProfile(name);
- * }
- * </code>
- * </pre>
- *
- * ================== EventServiceClient ==================
- *
- * <p>Service Description: A service handles client event report.
- *
- * <p>Sample for EventServiceClient:
- *
- * <pre>
- * <code>
- * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
- *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
- * }
- * </code>
- * </pre>
- *
- * ======================== ApplicationServiceClient ========================
+ * <p>======================== ApplicationServiceClient ========================
  *
  * <p>Service Description: A service that handles application management, including CRUD and
  * enumeration.
@@ -98,6 +51,44 @@
  * </code>
  * </pre>
  *
+ * ================ CompletionClient ================
+ *
+ * <p>Service Description: A service handles auto completion.
+ *
+ * <p>Sample for CompletionClient:
+ *
+ * <pre>
+ * <code>
+ * try (CompletionClient completionClient = CompletionClient.create()) {
+ *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   String query = "";
+ *   int pageSize = 0;
+ *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()
+ *     .setParent(parent.toString())
+ *     .setQuery(query)
+ *     .setPageSize(pageSize)
+ *     .build();
+ *   CompleteQueryResponse response = completionClient.completeQuery(request);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================== EventServiceClient ==================
+ *
+ * <p>Service Description: A service handles client event report.
+ *
+ * <p>Sample for EventServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
+ *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
+ *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
+ * }
+ * </code>
+ * </pre>
+ *
  * ================ JobServiceClient ================
  *
  * <p>Service Description: A service handles job management, including job CRUD, enumeration and
@@ -114,24 +105,33 @@
  * </code>
  * </pre>
  *
- * ================ CompletionClient ================
+ * ==================== ProfileServiceClient ====================
  *
- * <p>Service Description: A service handles auto completion.
+ * <p>Service Description: A service that handles profile management, including profile CRUD,
+ * enumeration and search.
  *
- * <p>Sample for CompletionClient:
+ * <p>Sample for ProfileServiceClient:
  *
  * <pre>
  * <code>
- * try (CompletionClient completionClient = CompletionClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   String query = "";
- *   int pageSize = 0;
- *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()
- *     .setParent(parent.toString())
- *     .setQuery(query)
- *     .setPageSize(pageSize)
- *     .build();
- *   CompleteQueryResponse response = completionClient.completeQuery(request);
+ * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+ *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+ *   profileServiceClient.deleteProfile(name);
+ * }
+ * </code>
+ * </pre>
+ *
+ * =================== TenantServiceClient ===================
+ *
+ * <p>Service Description: A service that handles tenant management, including CRUD and enumeration.
+ *
+ * <p>Sample for TenantServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
+ *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
+ *   tenantServiceClient.deleteTenant(name);
  * }
  * </code>
  * </pre>

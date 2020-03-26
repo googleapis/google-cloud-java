@@ -30,7 +30,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/talent/v4beta1/event_service.proto")
 public final class EventServiceGrpc {
 
@@ -39,30 +39,20 @@ public final class EventServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.talent.v4beta1.EventService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateClientEventMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.CreateClientEventRequest,
-          com.google.cloud.talent.v4beta1.ClientEvent>
-      METHOD_CREATE_CLIENT_EVENT = getCreateClientEventMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.CreateClientEventRequest,
           com.google.cloud.talent.v4beta1.ClientEvent>
       getCreateClientEventMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateClientEvent",
+      requestType = com.google.cloud.talent.v4beta1.CreateClientEventRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.ClientEvent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.CreateClientEventRequest,
           com.google.cloud.talent.v4beta1.ClientEvent>
       getCreateClientEventMethod() {
-    return getCreateClientEventMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.CreateClientEventRequest,
-          com.google.cloud.talent.v4beta1.ClientEvent>
-      getCreateClientEventMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.CreateClientEventRequest,
             com.google.cloud.talent.v4beta1.ClientEvent>
@@ -77,9 +67,7 @@ public final class EventServiceGrpc {
                           com.google.cloud.talent.v4beta1.ClientEvent>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.EventService", "CreateClientEvent"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateClientEvent"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -99,19 +87,43 @@ public final class EventServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static EventServiceStub newStub(io.grpc.Channel channel) {
-    return new EventServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<EventServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EventServiceStub>() {
+          @java.lang.Override
+          public EventServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EventServiceStub(channel, callOptions);
+          }
+        };
+    return EventServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static EventServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new EventServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<EventServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EventServiceBlockingStub>() {
+          @java.lang.Override
+          public EventServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EventServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return EventServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static EventServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new EventServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<EventServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EventServiceFutureStub>() {
+          @java.lang.Override
+          public EventServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EventServiceFutureStub(channel, callOptions);
+          }
+        };
+    return EventServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -139,14 +151,14 @@ public final class EventServiceGrpc {
     public void createClientEvent(
         com.google.cloud.talent.v4beta1.CreateClientEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ClientEvent> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateClientEventMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateClientEventMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getCreateClientEventMethodHelper(),
+              getCreateClientEventMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.CreateClientEventRequest,
@@ -163,11 +175,8 @@ public final class EventServiceGrpc {
    * A service handles client event report.
    * </pre>
    */
-  public static final class EventServiceStub extends io.grpc.stub.AbstractStub<EventServiceStub> {
-    private EventServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class EventServiceStub
+      extends io.grpc.stub.AbstractAsyncStub<EventServiceStub> {
     private EventServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -194,7 +203,7 @@ public final class EventServiceGrpc {
         com.google.cloud.talent.v4beta1.CreateClientEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ClientEvent> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateClientEventMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateClientEventMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -208,11 +217,7 @@ public final class EventServiceGrpc {
    * </pre>
    */
   public static final class EventServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<EventServiceBlockingStub> {
-    private EventServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<EventServiceBlockingStub> {
     private EventServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -239,7 +244,7 @@ public final class EventServiceGrpc {
     public com.google.cloud.talent.v4beta1.ClientEvent createClientEvent(
         com.google.cloud.talent.v4beta1.CreateClientEventRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateClientEventMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateClientEventMethod(), getCallOptions(), request);
     }
   }
 
@@ -251,11 +256,7 @@ public final class EventServiceGrpc {
    * </pre>
    */
   public static final class EventServiceFutureStub
-      extends io.grpc.stub.AbstractStub<EventServiceFutureStub> {
-    private EventServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<EventServiceFutureStub> {
     private EventServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -283,7 +284,7 @@ public final class EventServiceGrpc {
             com.google.cloud.talent.v4beta1.ClientEvent>
         createClientEvent(com.google.cloud.talent.v4beta1.CreateClientEventRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateClientEventMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateClientEventMethod(), getCallOptions()), request);
     }
   }
 
@@ -376,7 +377,7 @@ public final class EventServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new EventServiceFileDescriptorSupplier())
-                      .addMethod(getCreateClientEventMethodHelper())
+                      .addMethod(getCreateClientEventMethod())
                       .build();
         }
       }

@@ -43,37 +43,37 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ProfileServiceClientTest {
-  private static MockTenantService mockTenantService;
-  private static MockProfileService mockProfileService;
-  private static MockEventService mockEventService;
   private static MockApplicationService mockApplicationService;
   private static MockCompanyService mockCompanyService;
-  private static MockJobService mockJobService;
   private static MockCompletion mockCompletion;
+  private static MockEventService mockEventService;
+  private static MockJobService mockJobService;
+  private static MockProfileService mockProfileService;
+  private static MockTenantService mockTenantService;
   private static MockServiceHelper serviceHelper;
   private ProfileServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockTenantService = new MockTenantService();
-    mockProfileService = new MockProfileService();
-    mockEventService = new MockEventService();
     mockApplicationService = new MockApplicationService();
     mockCompanyService = new MockCompanyService();
-    mockJobService = new MockJobService();
     mockCompletion = new MockCompletion();
+    mockEventService = new MockEventService();
+    mockJobService = new MockJobService();
+    mockProfileService = new MockProfileService();
+    mockTenantService = new MockTenantService();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockTenantService,
-                mockProfileService,
-                mockEventService,
                 mockApplicationService,
                 mockCompanyService,
+                mockCompletion,
+                mockEventService,
                 mockJobService,
-                mockCompletion));
+                mockProfileService,
+                mockTenantService));
     serviceHelper.start();
   }
 

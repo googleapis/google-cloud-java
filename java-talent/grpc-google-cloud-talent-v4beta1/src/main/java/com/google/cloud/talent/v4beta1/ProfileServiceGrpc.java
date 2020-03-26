@@ -31,7 +31,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/talent/v4beta1/profile_service.proto")
 public final class ProfileServiceGrpc {
 
@@ -40,30 +40,20 @@ public final class ProfileServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.talent.v4beta1.ProfileService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListProfilesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.ListProfilesRequest,
-          com.google.cloud.talent.v4beta1.ListProfilesResponse>
-      METHOD_LIST_PROFILES = getListProfilesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.ListProfilesRequest,
           com.google.cloud.talent.v4beta1.ListProfilesResponse>
       getListProfilesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListProfiles",
+      requestType = com.google.cloud.talent.v4beta1.ListProfilesRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.ListProfilesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.ListProfilesRequest,
           com.google.cloud.talent.v4beta1.ListProfilesResponse>
       getListProfilesMethod() {
-    return getListProfilesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.ListProfilesRequest,
-          com.google.cloud.talent.v4beta1.ListProfilesResponse>
-      getListProfilesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.ListProfilesRequest,
             com.google.cloud.talent.v4beta1.ListProfilesResponse>
@@ -78,9 +68,7 @@ public final class ProfileServiceGrpc {
                           com.google.cloud.talent.v4beta1.ListProfilesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.ProfileService", "ListProfiles"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListProfiles"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -99,30 +87,20 @@ public final class ProfileServiceGrpc {
     return getListProfilesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateProfileMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.CreateProfileRequest,
-          com.google.cloud.talent.v4beta1.Profile>
-      METHOD_CREATE_PROFILE = getCreateProfileMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.CreateProfileRequest,
           com.google.cloud.talent.v4beta1.Profile>
       getCreateProfileMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateProfile",
+      requestType = com.google.cloud.talent.v4beta1.CreateProfileRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.Profile.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.CreateProfileRequest,
           com.google.cloud.talent.v4beta1.Profile>
       getCreateProfileMethod() {
-    return getCreateProfileMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.CreateProfileRequest,
-          com.google.cloud.talent.v4beta1.Profile>
-      getCreateProfileMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.CreateProfileRequest,
             com.google.cloud.talent.v4beta1.Profile>
@@ -137,9 +115,7 @@ public final class ProfileServiceGrpc {
                           com.google.cloud.talent.v4beta1.Profile>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.ProfileService", "CreateProfile"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateProfile"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -157,30 +133,20 @@ public final class ProfileServiceGrpc {
     return getCreateProfileMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetProfileMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.GetProfileRequest,
-          com.google.cloud.talent.v4beta1.Profile>
-      METHOD_GET_PROFILE = getGetProfileMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.GetProfileRequest,
           com.google.cloud.talent.v4beta1.Profile>
       getGetProfileMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProfile",
+      requestType = com.google.cloud.talent.v4beta1.GetProfileRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.Profile.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.GetProfileRequest,
           com.google.cloud.talent.v4beta1.Profile>
       getGetProfileMethod() {
-    return getGetProfileMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.GetProfileRequest,
-          com.google.cloud.talent.v4beta1.Profile>
-      getGetProfileMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.GetProfileRequest,
             com.google.cloud.talent.v4beta1.Profile>
@@ -195,9 +161,7 @@ public final class ProfileServiceGrpc {
                           com.google.cloud.talent.v4beta1.Profile>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.ProfileService", "GetProfile"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProfile"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -214,30 +178,20 @@ public final class ProfileServiceGrpc {
     return getGetProfileMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateProfileMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.UpdateProfileRequest,
-          com.google.cloud.talent.v4beta1.Profile>
-      METHOD_UPDATE_PROFILE = getUpdateProfileMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.UpdateProfileRequest,
           com.google.cloud.talent.v4beta1.Profile>
       getUpdateProfileMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateProfile",
+      requestType = com.google.cloud.talent.v4beta1.UpdateProfileRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.Profile.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.UpdateProfileRequest,
           com.google.cloud.talent.v4beta1.Profile>
       getUpdateProfileMethod() {
-    return getUpdateProfileMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.UpdateProfileRequest,
-          com.google.cloud.talent.v4beta1.Profile>
-      getUpdateProfileMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.UpdateProfileRequest,
             com.google.cloud.talent.v4beta1.Profile>
@@ -252,9 +206,7 @@ public final class ProfileServiceGrpc {
                           com.google.cloud.talent.v4beta1.Profile>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.ProfileService", "UpdateProfile"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateProfile"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -272,26 +224,18 @@ public final class ProfileServiceGrpc {
     return getUpdateProfileMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteProfileMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.DeleteProfileRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_PROFILE = getDeleteProfileMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.DeleteProfileRequest, com.google.protobuf.Empty>
       getDeleteProfileMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteProfile",
+      requestType = com.google.cloud.talent.v4beta1.DeleteProfileRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.DeleteProfileRequest, com.google.protobuf.Empty>
       getDeleteProfileMethod() {
-    return getDeleteProfileMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.DeleteProfileRequest, com.google.protobuf.Empty>
-      getDeleteProfileMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.DeleteProfileRequest, com.google.protobuf.Empty>
         getDeleteProfileMethod;
@@ -305,9 +249,7 @@ public final class ProfileServiceGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.ProfileService", "DeleteProfile"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteProfile"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -325,30 +267,20 @@ public final class ProfileServiceGrpc {
     return getDeleteProfileMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSearchProfilesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.SearchProfilesRequest,
-          com.google.cloud.talent.v4beta1.SearchProfilesResponse>
-      METHOD_SEARCH_PROFILES = getSearchProfilesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.SearchProfilesRequest,
           com.google.cloud.talent.v4beta1.SearchProfilesResponse>
       getSearchProfilesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchProfiles",
+      requestType = com.google.cloud.talent.v4beta1.SearchProfilesRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.SearchProfilesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.SearchProfilesRequest,
           com.google.cloud.talent.v4beta1.SearchProfilesResponse>
       getSearchProfilesMethod() {
-    return getSearchProfilesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.SearchProfilesRequest,
-          com.google.cloud.talent.v4beta1.SearchProfilesResponse>
-      getSearchProfilesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.SearchProfilesRequest,
             com.google.cloud.talent.v4beta1.SearchProfilesResponse>
@@ -363,9 +295,7 @@ public final class ProfileServiceGrpc {
                           com.google.cloud.talent.v4beta1.SearchProfilesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.ProfileService", "SearchProfiles"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchProfiles"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -386,19 +316,43 @@ public final class ProfileServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static ProfileServiceStub newStub(io.grpc.Channel channel) {
-    return new ProfileServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ProfileServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProfileServiceStub>() {
+          @java.lang.Override
+          public ProfileServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProfileServiceStub(channel, callOptions);
+          }
+        };
+    return ProfileServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static ProfileServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new ProfileServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ProfileServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProfileServiceBlockingStub>() {
+          @java.lang.Override
+          public ProfileServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProfileServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return ProfileServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static ProfileServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new ProfileServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ProfileServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProfileServiceFutureStub>() {
+          @java.lang.Override
+          public ProfileServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProfileServiceFutureStub(channel, callOptions);
+          }
+        };
+    return ProfileServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -422,7 +376,7 @@ public final class ProfileServiceGrpc {
         com.google.cloud.talent.v4beta1.ListProfilesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListProfilesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListProfilesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListProfilesMethod(), responseObserver);
     }
 
     /**
@@ -435,7 +389,7 @@ public final class ProfileServiceGrpc {
     public void createProfile(
         com.google.cloud.talent.v4beta1.CreateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Profile> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateProfileMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateProfileMethod(), responseObserver);
     }
 
     /**
@@ -448,7 +402,7 @@ public final class ProfileServiceGrpc {
     public void getProfile(
         com.google.cloud.talent.v4beta1.GetProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Profile> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetProfileMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetProfileMethod(), responseObserver);
     }
 
     /**
@@ -461,7 +415,7 @@ public final class ProfileServiceGrpc {
     public void updateProfile(
         com.google.cloud.talent.v4beta1.UpdateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Profile> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateProfileMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateProfileMethod(), responseObserver);
     }
 
     /**
@@ -476,7 +430,7 @@ public final class ProfileServiceGrpc {
     public void deleteProfile(
         com.google.cloud.talent.v4beta1.DeleteProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteProfileMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteProfileMethod(), responseObserver);
     }
 
     /**
@@ -493,45 +447,45 @@ public final class ProfileServiceGrpc {
         com.google.cloud.talent.v4beta1.SearchProfilesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.SearchProfilesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchProfilesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getSearchProfilesMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getListProfilesMethodHelper(),
+              getListProfilesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.ListProfilesRequest,
                       com.google.cloud.talent.v4beta1.ListProfilesResponse>(
                       this, METHODID_LIST_PROFILES)))
           .addMethod(
-              getCreateProfileMethodHelper(),
+              getCreateProfileMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.CreateProfileRequest,
                       com.google.cloud.talent.v4beta1.Profile>(this, METHODID_CREATE_PROFILE)))
           .addMethod(
-              getGetProfileMethodHelper(),
+              getGetProfileMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.GetProfileRequest,
                       com.google.cloud.talent.v4beta1.Profile>(this, METHODID_GET_PROFILE)))
           .addMethod(
-              getUpdateProfileMethodHelper(),
+              getUpdateProfileMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.UpdateProfileRequest,
                       com.google.cloud.talent.v4beta1.Profile>(this, METHODID_UPDATE_PROFILE)))
           .addMethod(
-              getDeleteProfileMethodHelper(),
+              getDeleteProfileMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.DeleteProfileRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_PROFILE)))
           .addMethod(
-              getSearchProfilesMethodHelper(),
+              getSearchProfilesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.SearchProfilesRequest,
@@ -550,11 +504,7 @@ public final class ProfileServiceGrpc {
    * </pre>
    */
   public static final class ProfileServiceStub
-      extends io.grpc.stub.AbstractStub<ProfileServiceStub> {
-    private ProfileServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<ProfileServiceStub> {
     private ProfileServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -576,7 +526,7 @@ public final class ProfileServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListProfilesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListProfilesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListProfilesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -592,7 +542,7 @@ public final class ProfileServiceGrpc {
         com.google.cloud.talent.v4beta1.CreateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Profile> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateProfileMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateProfileMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -608,9 +558,7 @@ public final class ProfileServiceGrpc {
         com.google.cloud.talent.v4beta1.GetProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Profile> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetProfileMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetProfileMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -624,7 +572,7 @@ public final class ProfileServiceGrpc {
         com.google.cloud.talent.v4beta1.UpdateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Profile> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateProfileMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateProfileMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -642,7 +590,7 @@ public final class ProfileServiceGrpc {
         com.google.cloud.talent.v4beta1.DeleteProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteProfileMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteProfileMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -662,7 +610,7 @@ public final class ProfileServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.SearchProfilesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSearchProfilesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getSearchProfilesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -677,11 +625,7 @@ public final class ProfileServiceGrpc {
    * </pre>
    */
   public static final class ProfileServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<ProfileServiceBlockingStub> {
-    private ProfileServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<ProfileServiceBlockingStub> {
     private ProfileServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -701,8 +645,7 @@ public final class ProfileServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.ListProfilesResponse listProfiles(
         com.google.cloud.talent.v4beta1.ListProfilesRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListProfilesMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListProfilesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -714,8 +657,7 @@ public final class ProfileServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Profile createProfile(
         com.google.cloud.talent.v4beta1.CreateProfileRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateProfileMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateProfileMethod(), getCallOptions(), request);
     }
 
     /**
@@ -727,8 +669,7 @@ public final class ProfileServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Profile getProfile(
         com.google.cloud.talent.v4beta1.GetProfileRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetProfileMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetProfileMethod(), getCallOptions(), request);
     }
 
     /**
@@ -740,8 +681,7 @@ public final class ProfileServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Profile updateProfile(
         com.google.cloud.talent.v4beta1.UpdateProfileRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateProfileMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateProfileMethod(), getCallOptions(), request);
     }
 
     /**
@@ -755,8 +695,7 @@ public final class ProfileServiceGrpc {
      */
     public com.google.protobuf.Empty deleteProfile(
         com.google.cloud.talent.v4beta1.DeleteProfileRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteProfileMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteProfileMethod(), getCallOptions(), request);
     }
 
     /**
@@ -771,8 +710,7 @@ public final class ProfileServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.SearchProfilesResponse searchProfiles(
         com.google.cloud.talent.v4beta1.SearchProfilesRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getSearchProfilesMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getSearchProfilesMethod(), getCallOptions(), request);
     }
   }
 
@@ -785,11 +723,7 @@ public final class ProfileServiceGrpc {
    * </pre>
    */
   public static final class ProfileServiceFutureStub
-      extends io.grpc.stub.AbstractStub<ProfileServiceFutureStub> {
-    private ProfileServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<ProfileServiceFutureStub> {
     private ProfileServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -811,7 +745,7 @@ public final class ProfileServiceGrpc {
             com.google.cloud.talent.v4beta1.ListProfilesResponse>
         listProfiles(com.google.cloud.talent.v4beta1.ListProfilesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListProfilesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListProfilesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -825,7 +759,7 @@ public final class ProfileServiceGrpc {
             com.google.cloud.talent.v4beta1.Profile>
         createProfile(com.google.cloud.talent.v4beta1.CreateProfileRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateProfileMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateProfileMethod(), getCallOptions()), request);
     }
 
     /**
@@ -839,7 +773,7 @@ public final class ProfileServiceGrpc {
             com.google.cloud.talent.v4beta1.Profile>
         getProfile(com.google.cloud.talent.v4beta1.GetProfileRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetProfileMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetProfileMethod(), getCallOptions()), request);
     }
 
     /**
@@ -853,7 +787,7 @@ public final class ProfileServiceGrpc {
             com.google.cloud.talent.v4beta1.Profile>
         updateProfile(com.google.cloud.talent.v4beta1.UpdateProfileRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateProfileMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateProfileMethod(), getCallOptions()), request);
     }
 
     /**
@@ -868,7 +802,7 @@ public final class ProfileServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteProfile(com.google.cloud.talent.v4beta1.DeleteProfileRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteProfileMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteProfileMethod(), getCallOptions()), request);
     }
 
     /**
@@ -885,7 +819,7 @@ public final class ProfileServiceGrpc {
             com.google.cloud.talent.v4beta1.SearchProfilesResponse>
         searchProfiles(com.google.cloud.talent.v4beta1.SearchProfilesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getSearchProfilesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getSearchProfilesMethod(), getCallOptions()), request);
     }
   }
 
@@ -1012,12 +946,12 @@ public final class ProfileServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ProfileServiceFileDescriptorSupplier())
-                      .addMethod(getListProfilesMethodHelper())
-                      .addMethod(getCreateProfileMethodHelper())
-                      .addMethod(getGetProfileMethodHelper())
-                      .addMethod(getUpdateProfileMethodHelper())
-                      .addMethod(getDeleteProfileMethodHelper())
-                      .addMethod(getSearchProfilesMethodHelper())
+                      .addMethod(getListProfilesMethod())
+                      .addMethod(getCreateProfileMethod())
+                      .addMethod(getGetProfileMethod())
+                      .addMethod(getUpdateProfileMethod())
+                      .addMethod(getDeleteProfileMethod())
+                      .addMethod(getSearchProfilesMethod())
                       .build();
         }
       }

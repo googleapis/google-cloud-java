@@ -30,7 +30,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/talent/v4beta1/company_service.proto")
 public final class CompanyServiceGrpc {
 
@@ -39,30 +39,20 @@ public final class CompanyServiceGrpc {
   public static final String SERVICE_NAME = "google.cloud.talent.v4beta1.CompanyService";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateCompanyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.CreateCompanyRequest,
-          com.google.cloud.talent.v4beta1.Company>
-      METHOD_CREATE_COMPANY = getCreateCompanyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.CreateCompanyRequest,
           com.google.cloud.talent.v4beta1.Company>
       getCreateCompanyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCompany",
+      requestType = com.google.cloud.talent.v4beta1.CreateCompanyRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.Company.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.CreateCompanyRequest,
           com.google.cloud.talent.v4beta1.Company>
       getCreateCompanyMethod() {
-    return getCreateCompanyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.CreateCompanyRequest,
-          com.google.cloud.talent.v4beta1.Company>
-      getCreateCompanyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.CreateCompanyRequest,
             com.google.cloud.talent.v4beta1.Company>
@@ -77,9 +67,7 @@ public final class CompanyServiceGrpc {
                           com.google.cloud.talent.v4beta1.Company>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.CompanyService", "CreateCompany"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCompany"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -97,30 +85,20 @@ public final class CompanyServiceGrpc {
     return getCreateCompanyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetCompanyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.GetCompanyRequest,
-          com.google.cloud.talent.v4beta1.Company>
-      METHOD_GET_COMPANY = getGetCompanyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.GetCompanyRequest,
           com.google.cloud.talent.v4beta1.Company>
       getGetCompanyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCompany",
+      requestType = com.google.cloud.talent.v4beta1.GetCompanyRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.Company.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.GetCompanyRequest,
           com.google.cloud.talent.v4beta1.Company>
       getGetCompanyMethod() {
-    return getGetCompanyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.GetCompanyRequest,
-          com.google.cloud.talent.v4beta1.Company>
-      getGetCompanyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.GetCompanyRequest,
             com.google.cloud.talent.v4beta1.Company>
@@ -135,9 +113,7 @@ public final class CompanyServiceGrpc {
                           com.google.cloud.talent.v4beta1.Company>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.CompanyService", "GetCompany"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCompany"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -154,30 +130,20 @@ public final class CompanyServiceGrpc {
     return getGetCompanyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateCompanyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.UpdateCompanyRequest,
-          com.google.cloud.talent.v4beta1.Company>
-      METHOD_UPDATE_COMPANY = getUpdateCompanyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.UpdateCompanyRequest,
           com.google.cloud.talent.v4beta1.Company>
       getUpdateCompanyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCompany",
+      requestType = com.google.cloud.talent.v4beta1.UpdateCompanyRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.Company.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.UpdateCompanyRequest,
           com.google.cloud.talent.v4beta1.Company>
       getUpdateCompanyMethod() {
-    return getUpdateCompanyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.UpdateCompanyRequest,
-          com.google.cloud.talent.v4beta1.Company>
-      getUpdateCompanyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.UpdateCompanyRequest,
             com.google.cloud.talent.v4beta1.Company>
@@ -192,9 +158,7 @@ public final class CompanyServiceGrpc {
                           com.google.cloud.talent.v4beta1.Company>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.CompanyService", "UpdateCompany"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCompany"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -212,26 +176,18 @@ public final class CompanyServiceGrpc {
     return getUpdateCompanyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteCompanyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.DeleteCompanyRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_COMPANY = getDeleteCompanyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.DeleteCompanyRequest, com.google.protobuf.Empty>
       getDeleteCompanyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCompany",
+      requestType = com.google.cloud.talent.v4beta1.DeleteCompanyRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.DeleteCompanyRequest, com.google.protobuf.Empty>
       getDeleteCompanyMethod() {
-    return getDeleteCompanyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.DeleteCompanyRequest, com.google.protobuf.Empty>
-      getDeleteCompanyMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.DeleteCompanyRequest, com.google.protobuf.Empty>
         getDeleteCompanyMethod;
@@ -245,9 +201,7 @@ public final class CompanyServiceGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.CompanyService", "DeleteCompany"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCompany"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -265,30 +219,20 @@ public final class CompanyServiceGrpc {
     return getDeleteCompanyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListCompaniesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.ListCompaniesRequest,
-          com.google.cloud.talent.v4beta1.ListCompaniesResponse>
-      METHOD_LIST_COMPANIES = getListCompaniesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.ListCompaniesRequest,
           com.google.cloud.talent.v4beta1.ListCompaniesResponse>
       getListCompaniesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCompanies",
+      requestType = com.google.cloud.talent.v4beta1.ListCompaniesRequest.class,
+      responseType = com.google.cloud.talent.v4beta1.ListCompaniesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.ListCompaniesRequest,
           com.google.cloud.talent.v4beta1.ListCompaniesResponse>
       getListCompaniesMethod() {
-    return getListCompaniesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.ListCompaniesRequest,
-          com.google.cloud.talent.v4beta1.ListCompaniesResponse>
-      getListCompaniesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.talent.v4beta1.ListCompaniesRequest,
             com.google.cloud.talent.v4beta1.ListCompaniesResponse>
@@ -303,9 +247,7 @@ public final class CompanyServiceGrpc {
                           com.google.cloud.talent.v4beta1.ListCompaniesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.CompanyService", "ListCompanies"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCompanies"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -326,19 +268,43 @@ public final class CompanyServiceGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static CompanyServiceStub newStub(io.grpc.Channel channel) {
-    return new CompanyServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CompanyServiceStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CompanyServiceStub>() {
+          @java.lang.Override
+          public CompanyServiceStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CompanyServiceStub(channel, callOptions);
+          }
+        };
+    return CompanyServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static CompanyServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new CompanyServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CompanyServiceBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CompanyServiceBlockingStub>() {
+          @java.lang.Override
+          public CompanyServiceBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CompanyServiceBlockingStub(channel, callOptions);
+          }
+        };
+    return CompanyServiceBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static CompanyServiceFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new CompanyServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CompanyServiceFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CompanyServiceFutureStub>() {
+          @java.lang.Override
+          public CompanyServiceFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CompanyServiceFutureStub(channel, callOptions);
+          }
+        };
+    return CompanyServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -360,7 +326,7 @@ public final class CompanyServiceGrpc {
     public void createCompany(
         com.google.cloud.talent.v4beta1.CreateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCompanyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateCompanyMethod(), responseObserver);
     }
 
     /**
@@ -373,7 +339,7 @@ public final class CompanyServiceGrpc {
     public void getCompany(
         com.google.cloud.talent.v4beta1.GetCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCompanyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetCompanyMethod(), responseObserver);
     }
 
     /**
@@ -386,7 +352,7 @@ public final class CompanyServiceGrpc {
     public void updateCompany(
         com.google.cloud.talent.v4beta1.UpdateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCompanyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateCompanyMethod(), responseObserver);
     }
 
     /**
@@ -400,7 +366,7 @@ public final class CompanyServiceGrpc {
     public void deleteCompany(
         com.google.cloud.talent.v4beta1.DeleteCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteCompanyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteCompanyMethod(), responseObserver);
     }
 
     /**
@@ -414,38 +380,38 @@ public final class CompanyServiceGrpc {
         com.google.cloud.talent.v4beta1.ListCompaniesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListCompaniesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListCompaniesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListCompaniesMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getCreateCompanyMethodHelper(),
+              getCreateCompanyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.CreateCompanyRequest,
                       com.google.cloud.talent.v4beta1.Company>(this, METHODID_CREATE_COMPANY)))
           .addMethod(
-              getGetCompanyMethodHelper(),
+              getGetCompanyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.GetCompanyRequest,
                       com.google.cloud.talent.v4beta1.Company>(this, METHODID_GET_COMPANY)))
           .addMethod(
-              getUpdateCompanyMethodHelper(),
+              getUpdateCompanyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.UpdateCompanyRequest,
                       com.google.cloud.talent.v4beta1.Company>(this, METHODID_UPDATE_COMPANY)))
           .addMethod(
-              getDeleteCompanyMethodHelper(),
+              getDeleteCompanyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.DeleteCompanyRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_COMPANY)))
           .addMethod(
-              getListCompaniesMethodHelper(),
+              getListCompaniesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.ListCompaniesRequest,
@@ -463,11 +429,7 @@ public final class CompanyServiceGrpc {
    * </pre>
    */
   public static final class CompanyServiceStub
-      extends io.grpc.stub.AbstractStub<CompanyServiceStub> {
-    private CompanyServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<CompanyServiceStub> {
     private CompanyServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -488,7 +450,7 @@ public final class CompanyServiceGrpc {
         com.google.cloud.talent.v4beta1.CreateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateCompanyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateCompanyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -504,9 +466,7 @@ public final class CompanyServiceGrpc {
         com.google.cloud.talent.v4beta1.GetCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetCompanyMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetCompanyMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -520,7 +480,7 @@ public final class CompanyServiceGrpc {
         com.google.cloud.talent.v4beta1.UpdateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateCompanyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateCompanyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -537,7 +497,7 @@ public final class CompanyServiceGrpc {
         com.google.cloud.talent.v4beta1.DeleteCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteCompanyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteCompanyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -554,7 +514,7 @@ public final class CompanyServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListCompaniesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListCompaniesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListCompaniesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -568,11 +528,7 @@ public final class CompanyServiceGrpc {
    * </pre>
    */
   public static final class CompanyServiceBlockingStub
-      extends io.grpc.stub.AbstractStub<CompanyServiceBlockingStub> {
-    private CompanyServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<CompanyServiceBlockingStub> {
     private CompanyServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -592,8 +548,7 @@ public final class CompanyServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Company createCompany(
         com.google.cloud.talent.v4beta1.CreateCompanyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateCompanyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateCompanyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -605,8 +560,7 @@ public final class CompanyServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Company getCompany(
         com.google.cloud.talent.v4beta1.GetCompanyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetCompanyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetCompanyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -618,8 +572,7 @@ public final class CompanyServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Company updateCompany(
         com.google.cloud.talent.v4beta1.UpdateCompanyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateCompanyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateCompanyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -632,8 +585,7 @@ public final class CompanyServiceGrpc {
      */
     public com.google.protobuf.Empty deleteCompany(
         com.google.cloud.talent.v4beta1.DeleteCompanyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteCompanyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteCompanyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -645,8 +597,7 @@ public final class CompanyServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.ListCompaniesResponse listCompanies(
         com.google.cloud.talent.v4beta1.ListCompaniesRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListCompaniesMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListCompaniesMethod(), getCallOptions(), request);
     }
   }
 
@@ -658,11 +609,7 @@ public final class CompanyServiceGrpc {
    * </pre>
    */
   public static final class CompanyServiceFutureStub
-      extends io.grpc.stub.AbstractStub<CompanyServiceFutureStub> {
-    private CompanyServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<CompanyServiceFutureStub> {
     private CompanyServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -684,7 +631,7 @@ public final class CompanyServiceGrpc {
             com.google.cloud.talent.v4beta1.Company>
         createCompany(com.google.cloud.talent.v4beta1.CreateCompanyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateCompanyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateCompanyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -698,7 +645,7 @@ public final class CompanyServiceGrpc {
             com.google.cloud.talent.v4beta1.Company>
         getCompany(com.google.cloud.talent.v4beta1.GetCompanyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetCompanyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetCompanyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -712,7 +659,7 @@ public final class CompanyServiceGrpc {
             com.google.cloud.talent.v4beta1.Company>
         updateCompany(com.google.cloud.talent.v4beta1.UpdateCompanyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateCompanyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateCompanyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -726,7 +673,7 @@ public final class CompanyServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteCompany(com.google.cloud.talent.v4beta1.DeleteCompanyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteCompanyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteCompanyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -740,7 +687,7 @@ public final class CompanyServiceGrpc {
             com.google.cloud.talent.v4beta1.ListCompaniesResponse>
         listCompanies(com.google.cloud.talent.v4beta1.ListCompaniesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListCompaniesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListCompaniesMethod(), getCallOptions()), request);
     }
   }
 
@@ -860,11 +807,11 @@ public final class CompanyServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new CompanyServiceFileDescriptorSupplier())
-                      .addMethod(getCreateCompanyMethodHelper())
-                      .addMethod(getGetCompanyMethodHelper())
-                      .addMethod(getUpdateCompanyMethodHelper())
-                      .addMethod(getDeleteCompanyMethodHelper())
-                      .addMethod(getListCompaniesMethodHelper())
+                      .addMethod(getCreateCompanyMethod())
+                      .addMethod(getGetCompanyMethod())
+                      .addMethod(getUpdateCompanyMethod())
+                      .addMethod(getDeleteCompanyMethod())
+                      .addMethod(getListCompaniesMethod())
                       .build();
         }
       }
