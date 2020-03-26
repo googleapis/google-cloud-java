@@ -48,7 +48,7 @@
  * the requested_expiration in the past or with no activity for 14 days are considered dismissed.
  * When an approval expires, the request is considered dismissed.
  *
- * <p>If a request is not approved or dismissed, we call it pending. LINT.IfChange
+ * <p>If a request is not approved or dismissed, we call it pending.
  *
  * <p>Sample for AccessApprovalAdminClient:
  *

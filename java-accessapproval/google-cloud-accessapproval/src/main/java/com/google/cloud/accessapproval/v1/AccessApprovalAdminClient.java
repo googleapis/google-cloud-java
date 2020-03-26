@@ -64,7 +64,7 @@ import javax.annotation.Generated;
  * the requested_expiration in the past or with no activity for 14 days are considered dismissed.
  * When an approval expires, the request is considered dismissed.
  *
- * <p>If a request is not approved or dismissed, we call it pending. LINT.IfChange
+ * <p>If a request is not approved or dismissed, we call it pending.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

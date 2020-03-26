@@ -53,7 +53,6 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * for 14 days are considered dismissed. When an approval expires, the request
  * is considered dismissed.
  * If a request is not approved or dismissed, we call it pending.
- * LINT.IfChange
  * </pre>
  */
 @javax.annotation.Generated(
@@ -492,7 +491,6 @@ public final class AccessApprovalGrpc {
    * for 14 days are considered dismissed. When an approval expires, the request
    * is considered dismissed.
    * If a request is not approved or dismissed, we call it pending.
-   * LINT.IfChange
    * </pre>
    */
   public abstract static class AccessApprovalImplBase implements io.grpc.BindableService {
@@ -696,7 +694,6 @@ public final class AccessApprovalGrpc {
    * for 14 days are considered dismissed. When an approval expires, the request
    * is considered dismissed.
    * If a request is not approved or dismissed, we call it pending.
-   * LINT.IfChange
    * </pre>
    */
   public static final class AccessApprovalStub
@@ -876,7 +873,6 @@ public final class AccessApprovalGrpc {
    * for 14 days are considered dismissed. When an approval expires, the request
    * is considered dismissed.
    * If a request is not approved or dismissed, we call it pending.
-   * LINT.IfChange
    * </pre>
    */
   public static final class AccessApprovalBlockingStub
@@ -1030,7 +1026,6 @@ public final class AccessApprovalGrpc {
    * for 14 days are considered dismissed. When an approval expires, the request
    * is considered dismissed.
    * If a request is not approved or dismissed, we call it pending.
-   * LINT.IfChange
    * </pre>
    */
   public static final class AccessApprovalFutureStub
