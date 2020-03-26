@@ -22,19 +22,4 @@ AUTOSYNTH_MULTIPLE_COMMITS = True
 
 gapic = gcp.GAPICGenerator()
 common_templates = gcp.CommonTemplates()
-
-versions = ['v1alpha']
-service = 'gameservices'
-config_pattern = "/google/cloud/gaming/artman_gameservices_{version}.yaml"
-
-for version in versions:
-  java.gapic_library(
-    service=service,
-    version=version,
-    config_pattern=config_pattern,
-    package_pattern="com.google.cloud.gaming.{version}",
-    gapic=gapic,
-    private=True,
-  )
-
 java.common_templates()
