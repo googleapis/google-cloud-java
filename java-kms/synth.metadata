@@ -1,21 +1,19 @@
 {
-  "updateTime": "2020-03-25T17:52:18.853146Z",
+  "updateTime": "2020-03-26T02:06:16.498411Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "fd83ab212176a1042e8d45ea90766b3bf59ac679",
-        "internalRef": "302913609",
-        "log": "fd83ab212176a1042e8d45ea90766b3bf59ac679\nfix: migrate osconfig/agentendpoint/v1 go_gapic_library target to microgen impl\n\nPiperOrigin-RevId: 302913609\n\n0e07113e776bdd8fcc0783372e08bb6e76cb1b5b\ndocs: Update documentation with links to smart home developer guides and reference pages. Remove outdated authorization instructions.\n\nPiperOrigin-RevId: 302892245\n\n"
+        "sha": "d4aa417ed2bba89c2d216900282bddfdafef6128",
+        "internalRef": "303010132"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "e36822bfa0acb355502dab391b8ef9c4f30208d8",
-        "log": "e36822bfa0acb355502dab391b8ef9c4f30208d8\nchore(java): treat samples shared configuration dependency update as chore (#457)\n\n\n1b4cc80a7aaf164f6241937dd87f3bd1f4149e0c\nfix: do not run node 8 CI (#456)\n\n\n"
+        "sha": "e36822bfa0acb355502dab391b8ef9c4f30208d8"
       }
     }
   ],

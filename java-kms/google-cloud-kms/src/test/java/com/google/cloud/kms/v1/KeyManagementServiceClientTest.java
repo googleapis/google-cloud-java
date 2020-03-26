@@ -27,6 +27,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -339,8 +340,8 @@ public class KeyManagementServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getImportJobTest() {
-    String name2 = "name2-1052831874";
-    ImportJob expectedResponse = ImportJob.newBuilder().setName(name2).build();
+    ImportJobName name2 = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+    ImportJob expectedResponse = ImportJob.newBuilder().setName(name2.toString()).build();
     mockKeyManagementService.addResponse(expectedResponse);
 
     ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
@@ -516,8 +517,8 @@ public class KeyManagementServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createImportJobTest() {
-    String name = "name3373707";
-    ImportJob expectedResponse = ImportJob.newBuilder().setName(name).build();
+    ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+    ImportJob expectedResponse = ImportJob.newBuilder().setName(name.toString()).build();
     mockKeyManagementService.addResponse(expectedResponse);
 
     KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
@@ -863,8 +864,7 @@ public class KeyManagementServiceClientTest {
         EncryptResponse.newBuilder().setName(name2).setCiphertext(ciphertext).build();
     mockKeyManagementService.addResponse(expectedResponse);
 
-    CryptoKeyPathName name =
-        CryptoKeyPathName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY_PATH]");
+    ResourceName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
     ByteString plaintext = ByteString.copyFromUtf8("-9");
 
     EncryptResponse actualResponse = client.encrypt(name, plaintext);
@@ -874,7 +874,7 @@ public class KeyManagementServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     EncryptRequest actualRequest = (EncryptRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, CryptoKeyPathName.parse(actualRequest.getName()));
+    Assert.assertEquals(Objects.toString(name), Objects.toString(actualRequest.getName()));
     Assert.assertEquals(plaintext, actualRequest.getPlaintext());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -889,8 +889,7 @@ public class KeyManagementServiceClientTest {
     mockKeyManagementService.addException(exception);
 
     try {
-      CryptoKeyPathName name =
-          CryptoKeyPathName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY_PATH]");
+      ResourceName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
       ByteString plaintext = ByteString.copyFromUtf8("-9");
 
       client.encrypt(name, plaintext);
@@ -1238,10 +1237,13 @@ public class KeyManagementServiceClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+    ResourceName resource =
+        CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
     Policy policy = Policy.newBuilder().build();
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder().setResource(resource.toString()).setPolicy(policy).build();
 
-    Policy actualResponse = client.setIamPolicy(resource, policy);
+    Policy actualResponse = client.setIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
@@ -1263,10 +1265,16 @@ public class KeyManagementServiceClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+      ResourceName resource =
+          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
       Policy policy = Policy.newBuilder().build();
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(resource.toString())
+              .setPolicy(policy)
+              .build();
 
-      client.setIamPolicy(resource, policy);
+      client.setIamPolicy(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1281,9 +1289,12 @@ public class KeyManagementServiceClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+    ResourceName resource =
+        CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
 
-    Policy actualResponse = client.getIamPolicy(resource);
+    Policy actualResponse = client.getIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
@@ -1304,9 +1315,12 @@ public class KeyManagementServiceClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+      ResourceName resource =
+          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
 
-      client.getIamPolicy(resource);
+      client.getIamPolicy(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1319,10 +1333,16 @@ public class KeyManagementServiceClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+    ResourceName resource =
+        CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
     List<String> permissions = new ArrayList<>();
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource.toString())
+            .addAllPermissions(permissions)
+            .build();
 
-    TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
@@ -1344,10 +1364,16 @@ public class KeyManagementServiceClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+      ResourceName resource =
+          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
       List<String> permissions = new ArrayList<>();
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(resource.toString())
+              .addAllPermissions(permissions)
+              .build();
 
-      client.testIamPermissions(resource, permissions);
+      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

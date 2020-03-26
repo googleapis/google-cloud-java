@@ -25,6 +25,7 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.kms.v1.stub.KeyManagementServiceStub;
 import com.google.cloud.kms.v1.stub.KeyManagementServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -1925,7 +1926,46 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyPathName name = CryptoKeyPathName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY_PATH]");
+   *   ResourceName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   ByteString plaintext = ByteString.copyFromUtf8("");
+   *   EncryptResponse response = keyManagementServiceClient.encrypt(name, plaintext);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] or
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for encryption.
+   *     <p>If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server will use its
+   *     [primary version][google.cloud.kms.v1.CryptoKey.primary].
+   * @param plaintext Required. The data to encrypt. Must be no larger than 64KiB.
+   *     <p>The maximum size depends on the key version's
+   *     [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
+   *     [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the plaintext must be no
+   *     larger than 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined
+   *     length of the plaintext and additional_authenticated_data fields must be no larger than
+   *     8KiB.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EncryptResponse encrypt(ResourceName name, ByteString plaintext) {
+    EncryptRequest request =
+        EncryptRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setPlaintext(plaintext)
+            .build();
+    return encrypt(request);
+  }
+
+  // ADDED BY SYNTH
+  /**
+   * Encrypts data, so that it can only be recovered by a call to
+   * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt]. The
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyPathName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
    *   ByteString plaintext = ByteString.copyFromUtf8("");
    *   EncryptResponse response = keyManagementServiceClient.encrypt(name, plaintext);
    * }
@@ -1964,7 +2004,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyPathName name = CryptoKeyPathName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY_PATH]");
+   *   ResourceName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
    *   ByteString plaintext = ByteString.copyFromUtf8("");
    *   EncryptResponse response = keyManagementServiceClient.encrypt(name.toString(), plaintext);
    * }
@@ -2000,7 +2040,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyPathName name = CryptoKeyPathName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY_PATH]");
+   *   ResourceName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
    *   ByteString plaintext = ByteString.copyFromUtf8("");
    *   EncryptRequest request = EncryptRequest.newBuilder()
    *     .setName(name.toString())
@@ -2028,7 +2068,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyPathName name = CryptoKeyPathName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY_PATH]");
+   *   ResourceName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
    *   ByteString plaintext = ByteString.copyFromUtf8("");
    *   EncryptRequest request = EncryptRequest.newBuilder()
    *     .setName(name.toString())
@@ -2899,6 +2939,33 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setPolicy(policy)
+   *     .build();
+   *   Policy response = keyManagementServiceClient.setIamPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // ADDED BY SYNTH
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
    *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = keyManagementServiceClient.setIamPolicy(resource, policy);
@@ -2921,7 +2988,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // ADDED BY SYNTH
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
@@ -2960,34 +3027,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ResourceName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .setPolicy(policy)
-   *     .build();
-   *   Policy response = keyManagementServiceClient.setIamPolicy(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy setIamPolicy(SetIamPolicyRequest request) {
-    return setIamPolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
-   *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ResourceName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -3004,6 +3044,30 @@ public class KeyManagementServiceClient implements BackgroundResource {
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   Policy response = keyManagementServiceClient.getIamPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // ADDED BY SYNTH
   /**
    * Gets the access control policy for a resource. Returns an empty policy if the resource exists
    * and does not have a policy set.
@@ -3029,7 +3093,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // ADDED BY SYNTH
   /**
    * Gets the access control policy for a resource. Returns an empty policy if the resource exists
    * and does not have a policy set.
@@ -3061,31 +3125,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ResourceName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .build();
-   *   Policy response = keyManagementServiceClient.getIamPolicy(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getIamPolicy(GetIamPolicyRequest request) {
-    return getIamPolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
-   * and does not have a policy set.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ResourceName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
    *     .build();
@@ -3100,6 +3140,36 @@ public class KeyManagementServiceClient implements BackgroundResource {
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource. If the resource does not
+   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   *
+   * <p>Note: This operation is designed to be used for building permission-aware UIs and
+   * command-line tools, not for authorization checking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .addAllPermissions(permissions)
+   *     .build();
+   *   TestIamPermissionsResponse response = keyManagementServiceClient.testIamPermissions(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // ADDED BY SYNTH
   /**
    * Returns permissions that a caller has on the specified resource. If the resource does not
    * exist, this will return an empty set of permissions, not a NOT_FOUND error.
@@ -3135,7 +3205,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // ADDED BY SYNTH
   /**
    * Returns permissions that a caller has on the specified resource. If the resource does not
    * exist, this will return an empty set of permissions, not a NOT_FOUND error.
@@ -3184,37 +3254,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ResourceName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .addAllPermissions(permissions)
-   *     .build();
-   *   TestIamPermissionsResponse response = keyManagementServiceClient.testIamPermissions(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
-    return testIamPermissionsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
-   *
-   * <p>Note: This operation is designed to be used for building permission-aware UIs and
-   * command-line tools, not for authorization checking. This operation may "fail open" without
-   * warning.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ResourceName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())
