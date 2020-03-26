@@ -140,8 +140,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Resource name of the parent workspace.
-   * Of the form `projects/{project_id}`.
+   * Required. Resource name of the parent workspace. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -165,8 +165,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Resource name of the parent workspace.
-   * Of the form `projects/{project_id}`.
+   * Required. Resource name of the parent workspace. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -194,7 +194,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The Service id to use for this Service. If omitted, an id will be
-   * generated instead. Must match the pattern [a-z0-9&#92;-]+
+   * generated instead. Must match the pattern `[a-z0-9&#92;-]+`
    * </pre>
    *
    * <code>string service_id = 3;</code>
@@ -217,7 +217,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The Service id to use for this Service. If omitted, an id will be
-   * generated instead. Must match the pattern [a-z0-9&#92;-]+
+   * generated instead. Must match the pattern `[a-z0-9&#92;-]+`
    * </pre>
    *
    * <code>string service_id = 3;</code>
@@ -647,8 +647,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name of the parent workspace.
-     * Of the form `projects/{project_id}`.
+     * Required. Resource name of the parent workspace. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -672,8 +672,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name of the parent workspace.
-     * Of the form `projects/{project_id}`.
+     * Required. Resource name of the parent workspace. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -697,8 +697,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name of the parent workspace.
-     * Of the form `projects/{project_id}`.
+     * Required. Resource name of the parent workspace. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -721,8 +721,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name of the parent workspace.
-     * Of the form `projects/{project_id}`.
+     * Required. Resource name of the parent workspace. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -741,8 +741,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name of the parent workspace.
-     * Of the form `projects/{project_id}`.
+     * Required. Resource name of the parent workspace. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -769,7 +769,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The Service id to use for this Service. If omitted, an id will be
-     * generated instead. Must match the pattern [a-z0-9&#92;-]+
+     * generated instead. Must match the pattern `[a-z0-9&#92;-]+`
      * </pre>
      *
      * <code>string service_id = 3;</code>
@@ -792,7 +792,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The Service id to use for this Service. If omitted, an id will be
-     * generated instead. Must match the pattern [a-z0-9&#92;-]+
+     * generated instead. Must match the pattern `[a-z0-9&#92;-]+`
      * </pre>
      *
      * <code>string service_id = 3;</code>
@@ -815,7 +815,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The Service id to use for this Service. If omitted, an id will be
-     * generated instead. Must match the pattern [a-z0-9&#92;-]+
+     * generated instead. Must match the pattern `[a-z0-9&#92;-]+`
      * </pre>
      *
      * <code>string service_id = 3;</code>
@@ -837,7 +837,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The Service id to use for this Service. If omitted, an id will be
-     * generated instead. Must match the pattern [a-z0-9&#92;-]+
+     * generated instead. Must match the pattern `[a-z0-9&#92;-]+`
      * </pre>
      *
      * <code>string service_id = 3;</code>
@@ -855,7 +855,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The Service id to use for this Service. If omitted, an id will be
-     * generated instead. Must match the pattern [a-z0-9&#92;-]+
+     * generated instead. Must match the pattern `[a-z0-9&#92;-]+`
      * </pre>
      *
      * <code>string service_id = 3;</code>

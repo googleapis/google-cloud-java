@@ -333,8 +333,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
-   *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-   * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+   *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
+   * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
    * Uptime check config associated with the internal checker.
    * </pre>
    *
@@ -358,8 +358,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
-   *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-   * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+   *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
+   * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
    * Uptime check config associated with the internal checker.
    * </pre>
    *
@@ -1012,8 +1012,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
-     *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-     * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+     *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
+     * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
      * Uptime check config associated with the internal checker.
      * </pre>
      *
@@ -1037,8 +1037,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
-     *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-     * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+     *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
+     * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
      * Uptime check config associated with the internal checker.
      * </pre>
      *
@@ -1062,8 +1062,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
-     *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-     * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+     *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
+     * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
      * Uptime check config associated with the internal checker.
      * </pre>
      *
@@ -1086,8 +1086,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
-     *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-     * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+     *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
+     * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
      * Uptime check config associated with the internal checker.
      * </pre>
      *
@@ -1106,8 +1106,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
-     *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-     * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+     *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
+     * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
      * Uptime check config associated with the internal checker.
      * </pre>
      *

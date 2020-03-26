@@ -26,7 +26,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * The Stackdriver Monitoring Service-Oriented Monitoring API has endpoints for
+ * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
  * managing and querying aspects of a workspace's services. These include the
  * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
  * of categorized Health Metrics.
@@ -560,7 +560,7 @@ public final class ServiceMonitoringServiceGrpc {
    *
    *
    * <pre>
-   * The Stackdriver Monitoring Service-Oriented Monitoring API has endpoints for
+   * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
    * managing and querying aspects of a workspace's services. These include the
    * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
    * of categorized Health Metrics.
@@ -778,7 +778,7 @@ public final class ServiceMonitoringServiceGrpc {
    *
    *
    * <pre>
-   * The Stackdriver Monitoring Service-Oriented Monitoring API has endpoints for
+   * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
    * managing and querying aspects of a workspace's services. These include the
    * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
    * of categorized Health Metrics.
@@ -964,7 +964,7 @@ public final class ServiceMonitoringServiceGrpc {
    *
    *
    * <pre>
-   * The Stackdriver Monitoring Service-Oriented Monitoring API has endpoints for
+   * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
    * managing and querying aspects of a workspace's services. These include the
    * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
    * of categorized Health Metrics.
@@ -1113,7 +1113,7 @@ public final class ServiceMonitoringServiceGrpc {
    *
    *
    * <pre>
-   * The Stackdriver Monitoring Service-Oriented Monitoring API has endpoints for
+   * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
    * managing and querying aspects of a workspace's services. These include the
    * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
    * of categorized Health Metrics.

@@ -27,8 +27,8 @@ public interface ListUptimeCheckConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project whose Uptime check configurations are listed. The format
-   *   is `projects/[PROJECT_ID]`.
+   * Required. The project whose Uptime check configurations are listed. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListUptimeCheckConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project whose Uptime check configurations are listed. The format
-   *   is `projects/[PROJECT_ID]`.
+   * Required. The project whose Uptime check configurations are listed. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>

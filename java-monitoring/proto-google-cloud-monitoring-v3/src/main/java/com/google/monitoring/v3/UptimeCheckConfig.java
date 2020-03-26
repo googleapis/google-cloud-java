@@ -303,7 +303,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The group of resources being monitored. Should be only the `[GROUP_ID]`,
-     * and not the full-path `projects/[PROJECT_ID]/groups/[GROUP_ID]`.
+     * and not the full-path
+     * `projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]`.
      * </pre>
      *
      * <code>string group_id = 1;</code>
@@ -316,7 +317,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The group of resources being monitored. Should be only the `[GROUP_ID]`,
-     * and not the full-path `projects/[PROJECT_ID]/groups/[GROUP_ID]`.
+     * and not the full-path
+     * `projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]`.
      * </pre>
      *
      * <code>string group_id = 1;</code>
@@ -459,7 +461,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The group of resources being monitored. Should be only the `[GROUP_ID]`,
-     * and not the full-path `projects/[PROJECT_ID]/groups/[GROUP_ID]`.
+     * and not the full-path
+     * `projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]`.
      * </pre>
      *
      * <code>string group_id = 1;</code>
@@ -482,7 +485,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The group of resources being monitored. Should be only the `[GROUP_ID]`,
-     * and not the full-path `projects/[PROJECT_ID]/groups/[GROUP_ID]`.
+     * and not the full-path
+     * `projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]`.
      * </pre>
      *
      * <code>string group_id = 1;</code>
@@ -882,7 +886,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The group of resources being monitored. Should be only the `[GROUP_ID]`,
-       * and not the full-path `projects/[PROJECT_ID]/groups/[GROUP_ID]`.
+       * and not the full-path
+       * `projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]`.
        * </pre>
        *
        * <code>string group_id = 1;</code>
@@ -905,7 +910,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The group of resources being monitored. Should be only the `[GROUP_ID]`,
-       * and not the full-path `projects/[PROJECT_ID]/groups/[GROUP_ID]`.
+       * and not the full-path
+       * `projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]`.
        * </pre>
        *
        * <code>string group_id = 1;</code>
@@ -928,7 +934,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The group of resources being monitored. Should be only the `[GROUP_ID]`,
-       * and not the full-path `projects/[PROJECT_ID]/groups/[GROUP_ID]`.
+       * and not the full-path
+       * `projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]`.
        * </pre>
        *
        * <code>string group_id = 1;</code>
@@ -950,7 +957,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The group of resources being monitored. Should be only the `[GROUP_ID]`,
-       * and not the full-path `projects/[PROJECT_ID]/groups/[GROUP_ID]`.
+       * and not the full-path
+       * `projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]`.
        * </pre>
        *
        * <code>string group_id = 1;</code>
@@ -968,7 +976,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The group of resources being monitored. Should be only the `[GROUP_ID]`,
-       * and not the full-path `projects/[PROJECT_ID]/groups/[GROUP_ID]`.
+       * and not the full-path
+       * `projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]`.
        * </pre>
        *
        * <code>string group_id = 1;</code>
@@ -5763,7 +5772,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A unique resource name for this Uptime check configuration. The format is:
-   *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+   *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    * This field should be omitted when creating the Uptime check configuration;
    * on create, the resource name is assigned by the server and included in the
    * response.
@@ -5789,7 +5798,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A unique resource name for this Uptime check configuration. The format is:
-   *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+   *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    * This field should be omitted when creating the Uptime check configuration;
    * on create, the resource name is assigned by the server and included in the
    * response.
@@ -7238,7 +7247,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
-     *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+     *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.
@@ -7264,7 +7273,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
-     *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+     *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.
@@ -7290,7 +7299,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
-     *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+     *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.
@@ -7315,7 +7324,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
-     *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+     *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.
@@ -7336,7 +7345,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
-     *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+     *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.

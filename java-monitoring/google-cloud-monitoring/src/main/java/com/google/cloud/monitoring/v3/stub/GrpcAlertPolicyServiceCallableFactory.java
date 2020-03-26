@@ -36,7 +36,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC callable factory implementation for Stackdriver Monitoring API.
+ * gRPC callable factory implementation for Cloud Monitoring API.
  *
  * <p>This class is for advanced usage.
  */

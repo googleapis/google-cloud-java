@@ -186,8 +186,9 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The project whose Uptime check configurations are listed. The format is
-   *     `projects/[PROJECT_ID]`.
+   * @param parent Required. The project whose Uptime check configurations are listed. The format
+   *     is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListUptimeCheckConfigsPagedResponse listUptimeCheckConfigs(String parent) {
@@ -295,8 +296,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The Uptime check configuration to retrieve. The format is
-   *     `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+   * @param name Required. The Uptime check configuration to retrieve. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UptimeCheckConfig getUptimeCheckConfig(UptimeCheckConfigName name) {
@@ -320,8 +321,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The Uptime check configuration to retrieve. The format is
-   *     `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+   * @param name Required. The Uptime check configuration to retrieve. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UptimeCheckConfig getUptimeCheckConfig(String name) {
@@ -390,8 +391,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The project in which to create the Uptime check. The format is
-   *     `projects/[PROJECT_ID]`.
+   * @param parent Required. The project in which to create the Uptime check. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param uptimeCheckConfig Required. The new Uptime check configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -551,8 +552,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The Uptime check configuration to delete. The format is
-   *     `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+   * @param name Required. The Uptime check configuration to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteUptimeCheckConfig(UptimeCheckConfigName name) {
@@ -578,8 +579,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The Uptime check configuration to delete. The format is
-   *     `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+   * @param name Required. The Uptime check configuration to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteUptimeCheckConfig(String name) {

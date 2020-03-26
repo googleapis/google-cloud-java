@@ -22,10 +22,11 @@ package com.google.monitoring.v3;
  *
  *
  * <pre>
- * The context of a span, attached to google.api.Distribution.Exemplars
- * in google.api.Distribution values during aggregation.
+ * The context of a span, attached to
+ * [Exemplars][google.api.Distribution.Exemplars]
+ * in [Distribution][google.api.Distribution] values during aggregation.
  * It contains the name of a span with format:
- *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
+ *     projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID]
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.SpanContext}
@@ -120,11 +121,11 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the span in the following format:
-   *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-   * [TRACE_ID] is a unique identifier for a trace within a project;
+   * The resource name of the span. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID]
+   * `[TRACE_ID]` is a unique identifier for a trace within a project;
    * it is a 32-character hexadecimal encoding of a 16-byte array.
-   * [SPAN_ID] is a unique identifier for a span within a trace; it
+   * `[SPAN_ID]` is a unique identifier for a span within a trace; it
    * is a 16-character hexadecimal encoding of an 8-byte array.
    * </pre>
    *
@@ -147,11 +148,11 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the span in the following format:
-   *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-   * [TRACE_ID] is a unique identifier for a trace within a project;
+   * The resource name of the span. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID]
+   * `[TRACE_ID]` is a unique identifier for a trace within a project;
    * it is a 32-character hexadecimal encoding of a 16-byte array.
-   * [SPAN_ID] is a unique identifier for a span within a trace; it
+   * `[SPAN_ID]` is a unique identifier for a span within a trace; it
    * is a 16-character hexadecimal encoding of an 8-byte array.
    * </pre>
    *
@@ -332,10 +333,11 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The context of a span, attached to google.api.Distribution.Exemplars
-   * in google.api.Distribution values during aggregation.
+   * The context of a span, attached to
+   * [Exemplars][google.api.Distribution.Exemplars]
+   * in [Distribution][google.api.Distribution] values during aggregation.
    * It contains the name of a span with format:
-   *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
+   *     projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID]
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.SpanContext}
@@ -492,11 +494,11 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the span in the following format:
-     *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-     * [TRACE_ID] is a unique identifier for a trace within a project;
+     * The resource name of the span. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID]
+     * `[TRACE_ID]` is a unique identifier for a trace within a project;
      * it is a 32-character hexadecimal encoding of a 16-byte array.
-     * [SPAN_ID] is a unique identifier for a span within a trace; it
+     * `[SPAN_ID]` is a unique identifier for a span within a trace; it
      * is a 16-character hexadecimal encoding of an 8-byte array.
      * </pre>
      *
@@ -519,11 +521,11 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the span in the following format:
-     *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-     * [TRACE_ID] is a unique identifier for a trace within a project;
+     * The resource name of the span. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID]
+     * `[TRACE_ID]` is a unique identifier for a trace within a project;
      * it is a 32-character hexadecimal encoding of a 16-byte array.
-     * [SPAN_ID] is a unique identifier for a span within a trace; it
+     * `[SPAN_ID]` is a unique identifier for a span within a trace; it
      * is a 16-character hexadecimal encoding of an 8-byte array.
      * </pre>
      *
@@ -546,11 +548,11 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the span in the following format:
-     *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-     * [TRACE_ID] is a unique identifier for a trace within a project;
+     * The resource name of the span. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID]
+     * `[TRACE_ID]` is a unique identifier for a trace within a project;
      * it is a 32-character hexadecimal encoding of a 16-byte array.
-     * [SPAN_ID] is a unique identifier for a span within a trace; it
+     * `[SPAN_ID]` is a unique identifier for a span within a trace; it
      * is a 16-character hexadecimal encoding of an 8-byte array.
      * </pre>
      *
@@ -572,11 +574,11 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the span in the following format:
-     *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-     * [TRACE_ID] is a unique identifier for a trace within a project;
+     * The resource name of the span. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID]
+     * `[TRACE_ID]` is a unique identifier for a trace within a project;
      * it is a 32-character hexadecimal encoding of a 16-byte array.
-     * [SPAN_ID] is a unique identifier for a span within a trace; it
+     * `[SPAN_ID]` is a unique identifier for a span within a trace; it
      * is a 16-character hexadecimal encoding of an 8-byte array.
      * </pre>
      *
@@ -594,11 +596,11 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the span in the following format:
-     *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-     * [TRACE_ID] is a unique identifier for a trace within a project;
+     * The resource name of the span. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID]
+     * `[TRACE_ID]` is a unique identifier for a trace within a project;
      * it is a 32-character hexadecimal encoding of a 16-byte array.
-     * [SPAN_ID] is a unique identifier for a span within a trace; it
+     * `[SPAN_ID]` is a unique identifier for a span within a trace; it
      * is a 16-character hexadecimal encoding of an 8-byte array.
      * </pre>
      *

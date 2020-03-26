@@ -48,6 +48,10 @@ public final class ServiceMonitoringProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_monitoring_v3_Service_ClusterIstio_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_Service_MeshIstio_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_Service_MeshIstio_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_monitoring_v3_Service_Telemetry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_monitoring_v3_Service_Telemetry_fieldAccessorTable;
@@ -113,87 +117,90 @@ public final class ServiceMonitoringProto {
           + "_resource.proto\032\031google/api/resource.pro"
           + "to\032\036google/protobuf/duration.proto\032\037goog"
           + "le/protobuf/timestamp.proto\032!google/type"
-          + "/calendar_period.proto\"\200\006\n\007Service\022\014\n\004na"
+          + "/calendar_period.proto\"\227\007\n\007Service\022\014\n\004na"
           + "me\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\0226\n\006custom"
           + "\030\006 \001(\0132$.google.monitoring.v3.Service.Cu"
           + "stomH\000\022=\n\napp_engine\030\007 \001(\0132\'.google.moni"
           + "toring.v3.Service.AppEngineH\000\022G\n\017cloud_e"
           + "ndpoints\030\010 \001(\0132,.google.monitoring.v3.Se"
-          + "rvice.CloudEndpointsH\000\022C\n\rcluster_istio\030"
+          + "rvice.CloudEndpointsH\000\022G\n\rcluster_istio\030"
           + "\t \001(\0132*.google.monitoring.v3.Service.Clu"
-          + "sterIstioH\000\022:\n\ttelemetry\030\r \001(\0132\'.google."
-          + "monitoring.v3.Service.Telemetry\032\010\n\006Custo"
-          + "m\032\036\n\tAppEngine\022\021\n\tmodule_id\030\001 \001(\t\032!\n\016Clo"
-          + "udEndpoints\022\017\n\007service\030\001 \001(\t\032g\n\014ClusterI"
-          + "stio\022\020\n\010location\030\001 \001(\t\022\024\n\014cluster_name\030\002"
-          + " \001(\t\022\031\n\021service_namespace\030\003 \001(\t\022\024\n\014servi"
-          + "ce_name\030\004 \001(\t\032\"\n\tTelemetry\022\025\n\rresource_n"
-          + "ame\030\001 \001(\t:\247\001\352A\243\001\n!monitoring.googleapis."
-          + "com/Service\022%projects/{project}/services"
-          + "/{service}\022/organizations/{organization}"
-          + "/services/{service}\022#folders/{folder}/se"
-          + "rvices/{service}\022\001*B\014\n\nidentifier\"\221\005\n\025Se"
-          + "rviceLevelObjective\022\014\n\004name\030\001 \001(\t\022\024\n\014dis"
-          + "play_name\030\013 \001(\t\022L\n\027service_level_indicat"
-          + "or\030\003 \001(\0132+.google.monitoring.v3.ServiceL"
-          + "evelIndicator\022\014\n\004goal\030\004 \001(\001\0223\n\016rolling_p"
-          + "eriod\030\005 \001(\0132\031.google.protobuf.DurationH\000"
-          + "\0226\n\017calendar_period\030\006 \001(\0162\033.google.type."
-          + "CalendarPeriodH\000\"4\n\004View\022\024\n\020VIEW_UNSPECI"
-          + "FIED\020\000\022\010\n\004FULL\020\002\022\014\n\010EXPLICIT\020\001:\312\002\352A\306\002\n/m"
-          + "onitoring.googleapis.com/ServiceLevelObj"
-          + "ective\022Vprojects/{project}/services/{ser"
-          + "vice}/serviceLevelObjectives/{service_le"
-          + "vel_objective}\022`organizations/{organizat"
-          + "ion}/services/{service}/serviceLevelObje"
-          + "ctives/{service_level_objective}\022Tfolder"
-          + "s/{folder}/services/{service}/serviceLev"
-          + "elObjectives/{service_level_objective}\022\001"
-          + "* \001B\010\n\006period\"\324\001\n\025ServiceLevelIndicator\022"
-          + "3\n\tbasic_sli\030\004 \001(\0132\036.google.monitoring.v"
-          + "3.BasicSliH\000\022>\n\rrequest_based\030\001 \001(\0132%.go"
-          + "ogle.monitoring.v3.RequestBasedSliH\000\022>\n\r"
-          + "windows_based\030\002 \001(\0132%.google.monitoring."
-          + "v3.WindowsBasedSliH\000B\006\n\004type\"\266\002\n\010BasicSl"
-          + "i\022\016\n\006method\030\007 \003(\t\022\020\n\010location\030\010 \003(\t\022\017\n\007v"
-          + "ersion\030\t \003(\t\022K\n\014availability\030\002 \001(\01323.goo"
-          + "gle.monitoring.v3.BasicSli.AvailabilityC"
-          + "riteriaH\000\022A\n\007latency\030\003 \001(\0132..google.moni"
-          + "toring.v3.BasicSli.LatencyCriteriaH\000\032\026\n\024"
-          + "AvailabilityCriteria\032?\n\017LatencyCriteria\022"
-          + ",\n\tthreshold\030\003 \001(\0132\031.google.protobuf.Dur"
-          + "ationB\016\n\014sli_criteria\"!\n\005Range\022\013\n\003min\030\001 "
-          + "\001(\001\022\013\n\003max\030\002 \001(\001\"\241\001\n\017RequestBasedSli\022A\n\020"
-          + "good_total_ratio\030\001 \001(\0132%.google.monitori"
-          + "ng.v3.TimeSeriesRatioH\000\022A\n\020distribution_"
-          + "cut\030\003 \001(\0132%.google.monitoring.v3.Distrib"
-          + "utionCutH\000B\010\n\006method\"h\n\017TimeSeriesRatio\022"
-          + "\033\n\023good_service_filter\030\004 \001(\t\022\032\n\022bad_serv"
-          + "ice_filter\030\005 \001(\t\022\034\n\024total_service_filter"
-          + "\030\006 \001(\t\"Z\n\017DistributionCut\022\033\n\023distributio"
-          + "n_filter\030\004 \001(\t\022*\n\005range\030\005 \001(\0132\033.google.m"
-          + "onitoring.v3.Range\"\203\005\n\017WindowsBasedSli\022 "
-          + "\n\026good_bad_metric_filter\030\005 \001(\tH\000\022`\n\032good"
-          + "_total_ratio_threshold\030\002 \001(\0132:.google.mo"
-          + "nitoring.v3.WindowsBasedSli.PerformanceT"
-          + "hresholdH\000\022Q\n\024metric_mean_in_range\030\006 \001(\013"
-          + "21.google.monitoring.v3.WindowsBasedSli."
-          + "MetricRangeH\000\022P\n\023metric_sum_in_range\030\007 \001"
-          + "(\01321.google.monitoring.v3.WindowsBasedSl"
-          + "i.MetricRangeH\000\0220\n\rwindow_period\030\004 \001(\0132\031"
-          + ".google.protobuf.Duration\032\260\001\n\024Performanc"
-          + "eThreshold\022<\n\013performance\030\001 \001(\0132%.google"
-          + ".monitoring.v3.RequestBasedSliH\000\022?\n\025basi"
-          + "c_sli_performance\030\003 \001(\0132\036.google.monitor"
-          + "ing.v3.BasicSliH\000\022\021\n\tthreshold\030\002 \001(\001B\006\n\004"
-          + "type\032N\n\013MetricRange\022\023\n\013time_series\030\001 \001(\t"
-          + "\022*\n\005range\030\004 \001(\0132\033.google.monitoring.v3.R"
-          + "angeB\022\n\020window_criterionB\256\001\n\030com.google."
-          + "monitoring.v3B\026ServiceMonitoringProtoP\001Z"
-          + ">google.golang.org/genproto/googleapis/m"
-          + "onitoring/v3;monitoring\252\002\032Google.Cloud.M"
-          + "onitoring.V3\312\002\032Google\\Cloud\\Monitoring\\V"
-          + "3b\006proto3"
+          + "sterIstioB\002\030\001H\000\022=\n\nmesh_istio\030\n \001(\0132\'.go"
+          + "ogle.monitoring.v3.Service.MeshIstioH\000\022:"
+          + "\n\ttelemetry\030\r \001(\0132\'.google.monitoring.v3"
+          + ".Service.Telemetry\032\010\n\006Custom\032\036\n\tAppEngin"
+          + "e\022\021\n\tmodule_id\030\001 \001(\t\032!\n\016CloudEndpoints\022\017"
+          + "\n\007service\030\001 \001(\t\032k\n\014ClusterIstio\022\020\n\010locat"
+          + "ion\030\001 \001(\t\022\024\n\014cluster_name\030\002 \001(\t\022\031\n\021servi"
+          + "ce_namespace\030\003 \001(\t\022\024\n\014service_name\030\004 \001(\t"
+          + ":\002\030\001\032N\n\tMeshIstio\022\020\n\010mesh_uid\030\001 \001(\t\022\031\n\021s"
+          + "ervice_namespace\030\003 \001(\t\022\024\n\014service_name\030\004"
+          + " \001(\t\032\"\n\tTelemetry\022\025\n\rresource_name\030\001 \001(\t"
+          + ":\247\001\352A\243\001\n!monitoring.googleapis.com/Servi"
+          + "ce\022%projects/{project}/services/{service"
+          + "}\022/organizations/{organization}/services"
+          + "/{service}\022#folders/{folder}/services/{s"
+          + "ervice}\022\001*B\014\n\nidentifier\"\221\005\n\025ServiceLeve"
+          + "lObjective\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name"
+          + "\030\013 \001(\t\022L\n\027service_level_indicator\030\003 \001(\0132"
+          + "+.google.monitoring.v3.ServiceLevelIndic"
+          + "ator\022\014\n\004goal\030\004 \001(\001\0223\n\016rolling_period\030\005 \001"
+          + "(\0132\031.google.protobuf.DurationH\000\0226\n\017calen"
+          + "dar_period\030\006 \001(\0162\033.google.type.CalendarP"
+          + "eriodH\000\"4\n\004View\022\024\n\020VIEW_UNSPECIFIED\020\000\022\010\n"
+          + "\004FULL\020\002\022\014\n\010EXPLICIT\020\001:\312\002\352A\306\002\n/monitoring"
+          + ".googleapis.com/ServiceLevelObjective\022Vp"
+          + "rojects/{project}/services/{service}/ser"
+          + "viceLevelObjectives/{service_level_objec"
+          + "tive}\022`organizations/{organization}/serv"
+          + "ices/{service}/serviceLevelObjectives/{s"
+          + "ervice_level_objective}\022Tfolders/{folder"
+          + "}/services/{service}/serviceLevelObjecti"
+          + "ves/{service_level_objective}\022\001* \001B\010\n\006pe"
+          + "riod\"\324\001\n\025ServiceLevelIndicator\0223\n\tbasic_"
+          + "sli\030\004 \001(\0132\036.google.monitoring.v3.BasicSl"
+          + "iH\000\022>\n\rrequest_based\030\001 \001(\0132%.google.moni"
+          + "toring.v3.RequestBasedSliH\000\022>\n\rwindows_b"
+          + "ased\030\002 \001(\0132%.google.monitoring.v3.Window"
+          + "sBasedSliH\000B\006\n\004type\"\266\002\n\010BasicSli\022\016\n\006meth"
+          + "od\030\007 \003(\t\022\020\n\010location\030\010 \003(\t\022\017\n\007version\030\t "
+          + "\003(\t\022K\n\014availability\030\002 \001(\01323.google.monit"
+          + "oring.v3.BasicSli.AvailabilityCriteriaH\000"
+          + "\022A\n\007latency\030\003 \001(\0132..google.monitoring.v3"
+          + ".BasicSli.LatencyCriteriaH\000\032\026\n\024Availabil"
+          + "ityCriteria\032?\n\017LatencyCriteria\022,\n\tthresh"
+          + "old\030\003 \001(\0132\031.google.protobuf.DurationB\016\n\014"
+          + "sli_criteria\"!\n\005Range\022\013\n\003min\030\001 \001(\001\022\013\n\003ma"
+          + "x\030\002 \001(\001\"\241\001\n\017RequestBasedSli\022A\n\020good_tota"
+          + "l_ratio\030\001 \001(\0132%.google.monitoring.v3.Tim"
+          + "eSeriesRatioH\000\022A\n\020distribution_cut\030\003 \001(\013"
+          + "2%.google.monitoring.v3.DistributionCutH"
+          + "\000B\010\n\006method\"h\n\017TimeSeriesRatio\022\033\n\023good_s"
+          + "ervice_filter\030\004 \001(\t\022\032\n\022bad_service_filte"
+          + "r\030\005 \001(\t\022\034\n\024total_service_filter\030\006 \001(\t\"Z\n"
+          + "\017DistributionCut\022\033\n\023distribution_filter\030"
+          + "\004 \001(\t\022*\n\005range\030\005 \001(\0132\033.google.monitoring"
+          + ".v3.Range\"\203\005\n\017WindowsBasedSli\022 \n\026good_ba"
+          + "d_metric_filter\030\005 \001(\tH\000\022`\n\032good_total_ra"
+          + "tio_threshold\030\002 \001(\0132:.google.monitoring."
+          + "v3.WindowsBasedSli.PerformanceThresholdH"
+          + "\000\022Q\n\024metric_mean_in_range\030\006 \001(\01321.google"
+          + ".monitoring.v3.WindowsBasedSli.MetricRan"
+          + "geH\000\022P\n\023metric_sum_in_range\030\007 \001(\01321.goog"
+          + "le.monitoring.v3.WindowsBasedSli.MetricR"
+          + "angeH\000\0220\n\rwindow_period\030\004 \001(\0132\031.google.p"
+          + "rotobuf.Duration\032\260\001\n\024PerformanceThreshol"
+          + "d\022<\n\013performance\030\001 \001(\0132%.google.monitori"
+          + "ng.v3.RequestBasedSliH\000\022?\n\025basic_sli_per"
+          + "formance\030\003 \001(\0132\036.google.monitoring.v3.Ba"
+          + "sicSliH\000\022\021\n\tthreshold\030\002 \001(\001B\006\n\004type\032N\n\013M"
+          + "etricRange\022\023\n\013time_series\030\001 \001(\t\022*\n\005range"
+          + "\030\004 \001(\0132\033.google.monitoring.v3.RangeB\022\n\020w"
+          + "indow_criterionB\256\001\n\030com.google.monitorin"
+          + "g.v3B\026ServiceMonitoringProtoP\001Z>google.g"
+          + "olang.org/genproto/googleapis/monitoring"
+          + "/v3;monitoring\252\002\032Google.Cloud.Monitoring"
+          + ".V3\312\002\032Google\\Cloud\\Monitoring\\V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -217,6 +224,7 @@ public final class ServiceMonitoringProto {
               "AppEngine",
               "CloudEndpoints",
               "ClusterIstio",
+              "MeshIstio",
               "Telemetry",
               "Identifier",
             });
@@ -250,8 +258,16 @@ public final class ServiceMonitoringProto {
             new java.lang.String[] {
               "Location", "ClusterName", "ServiceNamespace", "ServiceName",
             });
-    internal_static_google_monitoring_v3_Service_Telemetry_descriptor =
+    internal_static_google_monitoring_v3_Service_MeshIstio_descriptor =
         internal_static_google_monitoring_v3_Service_descriptor.getNestedTypes().get(4);
+    internal_static_google_monitoring_v3_Service_MeshIstio_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_Service_MeshIstio_descriptor,
+            new java.lang.String[] {
+              "MeshUid", "ServiceNamespace", "ServiceName",
+            });
+    internal_static_google_monitoring_v3_Service_Telemetry_descriptor =
+        internal_static_google_monitoring_v3_Service_descriptor.getNestedTypes().get(5);
     internal_static_google_monitoring_v3_Service_Telemetry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_monitoring_v3_Service_Telemetry_descriptor,

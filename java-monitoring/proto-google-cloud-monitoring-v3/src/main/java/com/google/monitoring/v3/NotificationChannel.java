@@ -434,8 +434,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The full REST resource name for this channel. The syntax is:
-   *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+   * The full REST resource name for this channel. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
    * </pre>
    *
@@ -458,8 +458,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The full REST resource name for this channel. The syntax is:
-   *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+   * The full REST resource name for this channel. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
    * </pre>
    *
@@ -1539,8 +1539,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full REST resource name for this channel. The syntax is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * The full REST resource name for this channel. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
      * </pre>
      *
@@ -1563,8 +1563,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full REST resource name for this channel. The syntax is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * The full REST resource name for this channel. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
      * </pre>
      *
@@ -1587,8 +1587,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full REST resource name for this channel. The syntax is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * The full REST resource name for this channel. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
      * </pre>
      *
@@ -1610,8 +1610,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full REST resource name for this channel. The syntax is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * The full REST resource name for this channel. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
      * </pre>
      *
@@ -1629,8 +1629,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full REST resource name for this channel. The syntax is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * The full REST resource name for this channel. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
      * </pre>
      *

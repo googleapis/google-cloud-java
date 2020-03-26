@@ -27,9 +27,8 @@ public interface DeleteServiceLevelObjectiveRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the `ServiceLevelObjective` to delete.
-   * Of the form
-   * `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
+   * Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
    *
    * <code>
@@ -43,9 +42,8 @@ public interface DeleteServiceLevelObjectiveRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the `ServiceLevelObjective` to delete.
-   * Of the form
-   * `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
+   * Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
    *
    * <code>

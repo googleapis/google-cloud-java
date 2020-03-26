@@ -117,8 +117,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Resource name of the `Service`.
-   * Of the form `projects/{project_id}/services/{service_id}`.
+   * Required. Resource name of the `Service`. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
    * <code>
@@ -142,8 +142,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Resource name of the `Service`.
-   * Of the form `projects/{project_id}/services/{service_id}`.
+   * Required. Resource name of the `Service`. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
    * <code>
@@ -485,8 +485,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Resource name of the `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the `Service`. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
      * <code>
@@ -510,8 +510,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Resource name of the `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the `Service`. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
      * <code>
@@ -535,8 +535,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Resource name of the `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the `Service`. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
      * <code>
@@ -559,8 +559,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Resource name of the `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the `Service`. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
      * <code>
@@ -579,8 +579,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Resource name of the `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the `Service`. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
      * <code>

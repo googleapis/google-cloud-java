@@ -25,7 +25,7 @@ package com.google.monitoring.v3;
  * A description of the conditions under which some aspect of your system is
  * considered to be "unhealthy" and the ways to notify people or services about
  * this state. For an overview of alert policies, see
- * [Introduction to Alerting](/monitoring/alerts/).
+ * [Introduction to Alerting](https://cloud.google.com/monitoring/alerts/).
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.AlertPolicy}
@@ -1529,6 +1529,55 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsenceOrBuilder
         getConditionAbsentOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * A condition that uses the time series query language format to define
+     * alerts.
+     * If set, no other conditions can be present.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+     * </code>
+     *
+     * @return Whether the conditionTimeSeriesQueryLanguage field is set.
+     */
+    boolean hasConditionTimeSeriesQueryLanguage();
+    /**
+     *
+     *
+     * <pre>
+     * A condition that uses the time series query language format to define
+     * alerts.
+     * If set, no other conditions can be present.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+     * </code>
+     *
+     * @return The conditionTimeSeriesQueryLanguage.
+     */
+    com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+        getConditionTimeSeriesQueryLanguage();
+    /**
+     *
+     *
+     * <pre>
+     * A condition that uses the time series query language format to define
+     * alerts.
+     * If set, no other conditions can be present.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+     * </code>
+     */
+    com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageConditionOrBuilder
+        getConditionTimeSeriesQueryLanguageOrBuilder();
+
     public com.google.monitoring.v3.AlertPolicy.Condition.ConditionCase getConditionCase();
   }
   /**
@@ -1640,6 +1689,33 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 java.lang.String s = input.readStringRequireUtf8();
 
                 name_ = s;
+                break;
+              }
+            case 114:
+              {
+                com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+                        .Builder
+                    subBuilder = null;
+                if (conditionCase_ == 14) {
+                  subBuilder =
+                      ((com.google.monitoring.v3.AlertPolicy.Condition
+                                  .TimeSeriesQueryLanguageCondition)
+                              condition_)
+                          .toBuilder();
+                }
+                condition_ =
+                    input.readMessage(
+                        com.google.monitoring.v3.AlertPolicy.Condition
+                            .TimeSeriesQueryLanguageCondition.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.monitoring.v3.AlertPolicy.Condition
+                              .TimeSeriesQueryLanguageCondition)
+                          condition_);
+                  condition_ = subBuilder.buildPartial();
+                }
+                conditionCase_ = 14;
                 break;
               }
             default:
@@ -2467,8 +2543,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-       * call is useful to verify the time series that will be retrieved /
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+       * (that call is useful to verify the time series that will be retrieved /
        * processed) and must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -2487,8 +2563,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-       * call is useful to verify the time series that will be retrieved /
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+       * (that call is useful to verify the time series that will be retrieved /
        * processed) and must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -2511,8 +2587,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -2530,8 +2606,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -2549,8 +2625,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -2568,8 +2644,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -2588,8 +2664,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -3077,8 +3153,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-       * call is useful to verify the time series that will be retrieved /
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+       * (that call is useful to verify the time series that will be retrieved /
        * processed) and must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -3107,8 +3183,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-       * call is useful to verify the time series that will be retrieved /
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+       * (that call is useful to verify the time series that will be retrieved /
        * processed) and must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -3143,8 +3219,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -3164,8 +3240,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -3186,8 +3262,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -3207,8 +3283,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -3228,8 +3304,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -4160,8 +4236,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+         * (that call is useful to verify the time series that will be retrieved /
          * processed) and must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -4190,8 +4266,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+         * (that call is useful to verify the time series that will be retrieved /
          * processed) and must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -4220,8 +4296,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+         * (that call is useful to verify the time series that will be retrieved /
          * processed) and must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -4249,8 +4325,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+         * (that call is useful to verify the time series that will be retrieved /
          * processed) and must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -4274,8 +4350,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+         * (that call is useful to verify the time series that will be retrieved /
          * processed) and must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -4325,8 +4401,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4350,8 +4426,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4375,8 +4451,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4400,8 +4476,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4431,8 +4507,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4460,8 +4536,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4491,8 +4567,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4522,8 +4598,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4551,8 +4627,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4580,8 +4656,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4609,8 +4685,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4637,8 +4713,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4665,8 +4741,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4686,8 +4762,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4711,8 +4787,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4737,8 +4813,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4759,8 +4835,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -4781,8 +4857,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -6185,8 +6261,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-       * call is useful to verify the time series that will be retrieved /
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+       * (that call is useful to verify the time series that will be retrieved /
        * processed) and must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -6205,8 +6281,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-       * call is useful to verify the time series that will be retrieved /
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+       * (that call is useful to verify the time series that will be retrieved /
        * processed) and must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -6229,8 +6305,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -6248,8 +6324,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -6267,8 +6343,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -6286,8 +6362,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -6306,8 +6382,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -6565,8 +6641,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-       * call is useful to verify the time series that will be retrieved /
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+       * (that call is useful to verify the time series that will be retrieved /
        * processed) and must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -6595,8 +6671,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-       * call is useful to verify the time series that will be retrieved /
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+       * (that call is useful to verify the time series that will be retrieved /
        * processed) and must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -6631,8 +6707,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -6652,8 +6728,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -6674,8 +6750,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -6695,8 +6771,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -6716,8 +6792,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
+       * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+       * It is advisable to use the `ListTimeSeries` method when debugging this
        * field.
        * </pre>
        *
@@ -7293,8 +7369,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+         * (that call is useful to verify the time series that will be retrieved /
          * processed) and must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -7323,8 +7399,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+         * (that call is useful to verify the time series that will be retrieved /
          * processed) and must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -7353,8 +7429,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+         * (that call is useful to verify the time series that will be retrieved /
          * processed) and must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -7382,8 +7458,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+         * (that call is useful to verify the time series that will be retrieved /
          * processed) and must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -7407,8 +7483,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+         * (that call is useful to verify the time series that will be retrieved /
          * processed) and must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -7458,8 +7534,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7483,8 +7559,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7508,8 +7584,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7533,8 +7609,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7564,8 +7640,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7593,8 +7669,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7624,8 +7700,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7655,8 +7731,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7684,8 +7760,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7713,8 +7789,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7742,8 +7818,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7770,8 +7846,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7798,8 +7874,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7819,8 +7895,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7844,8 +7920,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7870,8 +7946,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7892,8 +7968,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -7914,8 +7990,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
+         * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+         * It is advisable to use the `ListTimeSeries` method when debugging this
          * field.
          * </pre>
          *
@@ -8445,6 +8521,928 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface TimeSeriesQueryLanguageConditionOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * A query in the time series query language format that generates time
+       * series indicating points in time that the condition should be
+       * considered active.
+       * </pre>
+       *
+       * <code>string query = 1;</code>
+       *
+       * @return The query.
+       */
+      java.lang.String getQuery();
+      /**
+       *
+       *
+       * <pre>
+       * A query in the time series query language format that generates time
+       * series indicating points in time that the condition should be
+       * considered active.
+       * </pre>
+       *
+       * <code>string query = 1;</code>
+       *
+       * @return The bytes for query.
+       */
+      com.google.protobuf.ByteString getQueryBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * A short explanation of what the query represents. For example:
+       *   "Error ratio exceeds 15% for &gt;5% of servers in &gt;2 regions"
+       * </pre>
+       *
+       * <code>string summary = 2;</code>
+       *
+       * @return The summary.
+       */
+      java.lang.String getSummary();
+      /**
+       *
+       *
+       * <pre>
+       * A short explanation of what the query represents. For example:
+       *   "Error ratio exceeds 15% for &gt;5% of servers in &gt;2 regions"
+       * </pre>
+       *
+       * <code>string summary = 2;</code>
+       *
+       * @return The bytes for summary.
+       */
+      com.google.protobuf.ByteString getSummaryBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition type that allows alert policies to be defined using the
+     * time series query language.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition}
+     */
+    public static final class TimeSeriesQueryLanguageCondition
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+        TimeSeriesQueryLanguageConditionOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use TimeSeriesQueryLanguageCondition.newBuilder() to construct.
+      private TimeSeriesQueryLanguageCondition(
+          com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private TimeSeriesQueryLanguageCondition() {
+        query_ = "";
+        summary_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new TimeSeriesQueryLanguageCondition();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private TimeSeriesQueryLanguageCondition(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  query_ = s;
+                  break;
+                }
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  summary_ = s;
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_Condition_TimeSeriesQueryLanguageCondition_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_Condition_TimeSeriesQueryLanguageCondition_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+                    .class,
+                com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+                    .Builder.class);
+      }
+
+      public static final int QUERY_FIELD_NUMBER = 1;
+      private volatile java.lang.Object query_;
+      /**
+       *
+       *
+       * <pre>
+       * A query in the time series query language format that generates time
+       * series indicating points in time that the condition should be
+       * considered active.
+       * </pre>
+       *
+       * <code>string query = 1;</code>
+       *
+       * @return The query.
+       */
+      public java.lang.String getQuery() {
+        java.lang.Object ref = query_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          query_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A query in the time series query language format that generates time
+       * series indicating points in time that the condition should be
+       * considered active.
+       * </pre>
+       *
+       * <code>string query = 1;</code>
+       *
+       * @return The bytes for query.
+       */
+      public com.google.protobuf.ByteString getQueryBytes() {
+        java.lang.Object ref = query_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          query_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int SUMMARY_FIELD_NUMBER = 2;
+      private volatile java.lang.Object summary_;
+      /**
+       *
+       *
+       * <pre>
+       * A short explanation of what the query represents. For example:
+       *   "Error ratio exceeds 15% for &gt;5% of servers in &gt;2 regions"
+       * </pre>
+       *
+       * <code>string summary = 2;</code>
+       *
+       * @return The summary.
+       */
+      public java.lang.String getSummary() {
+        java.lang.Object ref = summary_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          summary_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A short explanation of what the query represents. For example:
+       *   "Error ratio exceeds 15% for &gt;5% of servers in &gt;2 regions"
+       * </pre>
+       *
+       * <code>string summary = 2;</code>
+       *
+       * @return The bytes for summary.
+       */
+      public com.google.protobuf.ByteString getSummaryBytes() {
+        java.lang.Object ref = summary_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          summary_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!getQueryBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, query_);
+        }
+        if (!getSummaryBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, summary_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getQueryBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, query_);
+        }
+        if (!getSummaryBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, summary_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)) {
+          return super.equals(obj);
+        }
+        com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition other =
+            (com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition) obj;
+
+        if (!getQuery().equals(other.getQuery())) return false;
+        if (!getSummary().equals(other.getSummary())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + QUERY_FIELD_NUMBER;
+        hash = (53 * hash) + getQuery().hashCode();
+        hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
+        hash = (53 * hash) + getSummary().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition type that allows alert policies to be defined using the
+       * time series query language.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+          com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageConditionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_TimeSeriesQueryLanguageCondition_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_TimeSeriesQueryLanguageCondition_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+                      .class,
+                  com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          query_ = "";
+
+          summary_ = "";
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_TimeSeriesQueryLanguageCondition_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+            getDefaultInstanceForType() {
+          return com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+            build() {
+          com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+            buildPartial() {
+          com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition result =
+              new com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition(
+                  this);
+          result.query_ = query_;
+          result.summary_ = summary_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition) {
+            return mergeFrom(
+                (com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition other) {
+          if (other
+              == com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+                  .getDefaultInstance()) return this;
+          if (!other.getQuery().isEmpty()) {
+            query_ = other.query_;
+            onChanged();
+          }
+          if (!other.getSummary().isEmpty()) {
+            summary_ = other.summary_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+              parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object query_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * A query in the time series query language format that generates time
+         * series indicating points in time that the condition should be
+         * considered active.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @return The query.
+         */
+        public java.lang.String getQuery() {
+          java.lang.Object ref = query_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            query_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A query in the time series query language format that generates time
+         * series indicating points in time that the condition should be
+         * considered active.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @return The bytes for query.
+         */
+        public com.google.protobuf.ByteString getQueryBytes() {
+          java.lang.Object ref = query_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            query_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A query in the time series query language format that generates time
+         * series indicating points in time that the condition should be
+         * considered active.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @param value The query to set.
+         * @return This builder for chaining.
+         */
+        public Builder setQuery(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          query_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A query in the time series query language format that generates time
+         * series indicating points in time that the condition should be
+         * considered active.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearQuery() {
+
+          query_ = getDefaultInstance().getQuery();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A query in the time series query language format that generates time
+         * series indicating points in time that the condition should be
+         * considered active.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @param value The bytes for query to set.
+         * @return This builder for chaining.
+         */
+        public Builder setQueryBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          query_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object summary_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * A short explanation of what the query represents. For example:
+         *   "Error ratio exceeds 15% for &gt;5% of servers in &gt;2 regions"
+         * </pre>
+         *
+         * <code>string summary = 2;</code>
+         *
+         * @return The summary.
+         */
+        public java.lang.String getSummary() {
+          java.lang.Object ref = summary_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            summary_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A short explanation of what the query represents. For example:
+         *   "Error ratio exceeds 15% for &gt;5% of servers in &gt;2 regions"
+         * </pre>
+         *
+         * <code>string summary = 2;</code>
+         *
+         * @return The bytes for summary.
+         */
+        public com.google.protobuf.ByteString getSummaryBytes() {
+          java.lang.Object ref = summary_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            summary_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A short explanation of what the query represents. For example:
+         *   "Error ratio exceeds 15% for &gt;5% of servers in &gt;2 regions"
+         * </pre>
+         *
+         * <code>string summary = 2;</code>
+         *
+         * @param value The summary to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSummary(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          summary_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A short explanation of what the query represents. For example:
+         *   "Error ratio exceeds 15% for &gt;5% of servers in &gt;2 regions"
+         * </pre>
+         *
+         * <code>string summary = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSummary() {
+
+          summary_ = getDefaultInstance().getSummary();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A short explanation of what the query represents. For example:
+         *   "Error ratio exceeds 15% for &gt;5% of servers in &gt;2 regions"
+         * </pre>
+         *
+         * <code>string summary = 2;</code>
+         *
+         * @param value The bytes for summary to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSummaryBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          summary_ = value;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+      private static final com.google.monitoring.v3.AlertPolicy.Condition
+              .TimeSeriesQueryLanguageCondition
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition();
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TimeSeriesQueryLanguageCondition> PARSER =
+          new com.google.protobuf.AbstractParser<TimeSeriesQueryLanguageCondition>() {
+            @java.lang.Override
+            public TimeSeriesQueryLanguageCondition parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new TimeSeriesQueryLanguageCondition(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<TimeSeriesQueryLanguageCondition> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TimeSeriesQueryLanguageCondition> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int conditionCase_ = 0;
     private java.lang.Object condition_;
 
@@ -8454,6 +9452,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       CONDITION_THRESHOLD(1),
       CONDITION_ABSENT(2),
+      CONDITION_TIME_SERIES_QUERY_LANGUAGE(14),
       CONDITION_NOT_SET(0);
       private final int value;
 
@@ -8476,6 +9475,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             return CONDITION_THRESHOLD;
           case 2:
             return CONDITION_ABSENT;
+          case 14:
+            return CONDITION_TIME_SERIES_QUERY_LANGUAGE;
           case 0:
             return CONDITION_NOT_SET;
           default:
@@ -8732,6 +9733,72 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       return com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence.getDefaultInstance();
     }
 
+    public static final int CONDITION_TIME_SERIES_QUERY_LANGUAGE_FIELD_NUMBER = 14;
+    /**
+     *
+     *
+     * <pre>
+     * A condition that uses the time series query language format to define
+     * alerts.
+     * If set, no other conditions can be present.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+     * </code>
+     *
+     * @return Whether the conditionTimeSeriesQueryLanguage field is set.
+     */
+    public boolean hasConditionTimeSeriesQueryLanguage() {
+      return conditionCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition that uses the time series query language format to define
+     * alerts.
+     * If set, no other conditions can be present.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+     * </code>
+     *
+     * @return The conditionTimeSeriesQueryLanguage.
+     */
+    public com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+        getConditionTimeSeriesQueryLanguage() {
+      if (conditionCase_ == 14) {
+        return (com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+            condition_;
+      }
+      return com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition that uses the time series query language format to define
+     * alerts.
+     * If set, no other conditions can be present.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+     * </code>
+     */
+    public com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageConditionOrBuilder
+        getConditionTimeSeriesQueryLanguageOrBuilder() {
+      if (conditionCase_ == 14) {
+        return (com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+            condition_;
+      }
+      return com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -8760,6 +9827,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, name_);
       }
+      if (conditionCase_ == 14) {
+        output.writeMessage(
+            14,
+            (com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+                condition_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -8784,6 +9857,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, name_);
+      }
+      if (conditionCase_ == 14) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                14,
+                (com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+                    condition_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8811,6 +9891,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         case 2:
           if (!getConditionAbsent().equals(other.getConditionAbsent())) return false;
           break;
+        case 14:
+          if (!getConditionTimeSeriesQueryLanguage()
+              .equals(other.getConditionTimeSeriesQueryLanguage())) return false;
+          break;
         case 0:
         default:
       }
@@ -8837,6 +9921,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         case 2:
           hash = (37 * hash) + CONDITION_ABSENT_FIELD_NUMBER;
           hash = (53 * hash) + getConditionAbsent().hashCode();
+          break;
+        case 14:
+          hash = (37 * hash) + CONDITION_TIME_SERIES_QUERY_LANGUAGE_FIELD_NUMBER;
+          hash = (53 * hash) + getConditionTimeSeriesQueryLanguage().hashCode();
           break;
         case 0:
         default:
@@ -9039,6 +10127,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             result.condition_ = conditionAbsentBuilder_.build();
           }
         }
+        if (conditionCase_ == 14) {
+          if (conditionTimeSeriesQueryLanguageBuilder_ == null) {
+            result.condition_ = condition_;
+          } else {
+            result.condition_ = conditionTimeSeriesQueryLanguageBuilder_.build();
+          }
+        }
         result.conditionCase_ = conditionCase_;
         onBuilt();
         return result;
@@ -9109,6 +10204,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           case CONDITION_ABSENT:
             {
               mergeConditionAbsent(other.getConditionAbsent());
+              break;
+            }
+          case CONDITION_TIME_SERIES_QUERY_LANGUAGE:
+            {
+              mergeConditionTimeSeriesQueryLanguage(other.getConditionTimeSeriesQueryLanguage());
               break;
             }
           case CONDITION_NOT_SET:
@@ -9931,6 +11031,274 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         ;
         return conditionAbsentBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition,
+              com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+                  .Builder,
+              com.google.monitoring.v3.AlertPolicy.Condition
+                  .TimeSeriesQueryLanguageConditionOrBuilder>
+          conditionTimeSeriesQueryLanguageBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the time series query language format to define
+       * alerts.
+       * If set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+       * </code>
+       *
+       * @return Whether the conditionTimeSeriesQueryLanguage field is set.
+       */
+      public boolean hasConditionTimeSeriesQueryLanguage() {
+        return conditionCase_ == 14;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the time series query language format to define
+       * alerts.
+       * If set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+       * </code>
+       *
+       * @return The conditionTimeSeriesQueryLanguage.
+       */
+      public com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+          getConditionTimeSeriesQueryLanguage() {
+        if (conditionTimeSeriesQueryLanguageBuilder_ == null) {
+          if (conditionCase_ == 14) {
+            return (com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+                condition_;
+          }
+          return com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+              .getDefaultInstance();
+        } else {
+          if (conditionCase_ == 14) {
+            return conditionTimeSeriesQueryLanguageBuilder_.getMessage();
+          }
+          return com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the time series query language format to define
+       * alerts.
+       * If set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+       * </code>
+       */
+      public Builder setConditionTimeSeriesQueryLanguage(
+          com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition value) {
+        if (conditionTimeSeriesQueryLanguageBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          condition_ = value;
+          onChanged();
+        } else {
+          conditionTimeSeriesQueryLanguageBuilder_.setMessage(value);
+        }
+        conditionCase_ = 14;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the time series query language format to define
+       * alerts.
+       * If set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+       * </code>
+       */
+      public Builder setConditionTimeSeriesQueryLanguage(
+          com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition.Builder
+              builderForValue) {
+        if (conditionTimeSeriesQueryLanguageBuilder_ == null) {
+          condition_ = builderForValue.build();
+          onChanged();
+        } else {
+          conditionTimeSeriesQueryLanguageBuilder_.setMessage(builderForValue.build());
+        }
+        conditionCase_ = 14;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the time series query language format to define
+       * alerts.
+       * If set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+       * </code>
+       */
+      public Builder mergeConditionTimeSeriesQueryLanguage(
+          com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition value) {
+        if (conditionTimeSeriesQueryLanguageBuilder_ == null) {
+          if (conditionCase_ == 14
+              && condition_
+                  != com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+                      .getDefaultInstance()) {
+            condition_ =
+                com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+                    .newBuilder(
+                        (com.google.monitoring.v3.AlertPolicy.Condition
+                                .TimeSeriesQueryLanguageCondition)
+                            condition_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            condition_ = value;
+          }
+          onChanged();
+        } else {
+          if (conditionCase_ == 14) {
+            conditionTimeSeriesQueryLanguageBuilder_.mergeFrom(value);
+          }
+          conditionTimeSeriesQueryLanguageBuilder_.setMessage(value);
+        }
+        conditionCase_ = 14;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the time series query language format to define
+       * alerts.
+       * If set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+       * </code>
+       */
+      public Builder clearConditionTimeSeriesQueryLanguage() {
+        if (conditionTimeSeriesQueryLanguageBuilder_ == null) {
+          if (conditionCase_ == 14) {
+            conditionCase_ = 0;
+            condition_ = null;
+            onChanged();
+          }
+        } else {
+          if (conditionCase_ == 14) {
+            conditionCase_ = 0;
+            condition_ = null;
+          }
+          conditionTimeSeriesQueryLanguageBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the time series query language format to define
+       * alerts.
+       * If set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+       * </code>
+       */
+      public com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition.Builder
+          getConditionTimeSeriesQueryLanguageBuilder() {
+        return getConditionTimeSeriesQueryLanguageFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the time series query language format to define
+       * alerts.
+       * If set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+       * </code>
+       */
+      public com.google.monitoring.v3.AlertPolicy.Condition
+              .TimeSeriesQueryLanguageConditionOrBuilder
+          getConditionTimeSeriesQueryLanguageOrBuilder() {
+        if ((conditionCase_ == 14) && (conditionTimeSeriesQueryLanguageBuilder_ != null)) {
+          return conditionTimeSeriesQueryLanguageBuilder_.getMessageOrBuilder();
+        } else {
+          if (conditionCase_ == 14) {
+            return (com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+                condition_;
+          }
+          return com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the time series query language format to define
+       * alerts.
+       * If set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition condition_time_series_query_language = 14;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition,
+              com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+                  .Builder,
+              com.google.monitoring.v3.AlertPolicy.Condition
+                  .TimeSeriesQueryLanguageConditionOrBuilder>
+          getConditionTimeSeriesQueryLanguageFieldBuilder() {
+        if (conditionTimeSeriesQueryLanguageBuilder_ == null) {
+          if (!(conditionCase_ == 14)) {
+            condition_ =
+                com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+                    .getDefaultInstance();
+          }
+          conditionTimeSeriesQueryLanguageBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition,
+                  com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition
+                      .Builder,
+                  com.google.monitoring.v3.AlertPolicy.Condition
+                      .TimeSeriesQueryLanguageConditionOrBuilder>(
+                  (com.google.monitoring.v3.AlertPolicy.Condition.TimeSeriesQueryLanguageCondition)
+                      condition_,
+                  getParentForChildren(),
+                  isClean());
+          condition_ = null;
+        }
+        conditionCase_ = 14;
+        onChanged();
+        ;
+        return conditionTimeSeriesQueryLanguageBuilder_;
       }
 
       @java.lang.Override
@@ -10992,7 +12360,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * A description of the conditions under which some aspect of your system is
    * considered to be "unhealthy" and the ways to notify people or services about
    * this state. For an overview of alert policies, see
-   * [Introduction to Alerting](/monitoring/alerts/).
+   * [Introduction to Alerting](https://cloud.google.com/monitoring/alerts/).
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.AlertPolicy}

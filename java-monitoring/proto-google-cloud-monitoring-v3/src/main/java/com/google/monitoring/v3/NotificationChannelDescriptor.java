@@ -195,8 +195,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The full REST resource name for this descriptor. The syntax is:
-   *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
+   * The full REST resource name for this descriptor. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[TYPE]
    * In the above, `[TYPE]` is the value of the `type` field.
    * </pre>
    *
@@ -219,8 +219,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The full REST resource name for this descriptor. The syntax is:
-   *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
+   * The full REST resource name for this descriptor. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[TYPE]
    * In the above, `[TYPE]` is the value of the `type` field.
    * </pre>
    *
@@ -1092,8 +1092,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The full REST resource name for this descriptor. The syntax is:
-     *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
+     * The full REST resource name for this descriptor. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[TYPE]
      * In the above, `[TYPE]` is the value of the `type` field.
      * </pre>
      *
@@ -1116,8 +1116,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The full REST resource name for this descriptor. The syntax is:
-     *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
+     * The full REST resource name for this descriptor. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[TYPE]
      * In the above, `[TYPE]` is the value of the `type` field.
      * </pre>
      *
@@ -1140,8 +1140,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The full REST resource name for this descriptor. The syntax is:
-     *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
+     * The full REST resource name for this descriptor. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[TYPE]
      * In the above, `[TYPE]` is the value of the `type` field.
      * </pre>
      *
@@ -1163,8 +1163,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The full REST resource name for this descriptor. The syntax is:
-     *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
+     * The full REST resource name for this descriptor. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[TYPE]
      * In the above, `[TYPE]` is the value of the `type` field.
      * </pre>
      *
@@ -1182,8 +1182,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The full REST resource name for this descriptor. The syntax is:
-     *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
+     * The full REST resource name for this descriptor. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[TYPE]
      * In the above, `[TYPE]` is the value of the `type` field.
      * </pre>
      *

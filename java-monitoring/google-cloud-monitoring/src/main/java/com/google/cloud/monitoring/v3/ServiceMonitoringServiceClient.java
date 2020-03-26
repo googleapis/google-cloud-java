@@ -53,7 +53,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: The Stackdriver Monitoring Service-Oriented Monitoring API has endpoints for
+ * Service Description: The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
  * managing and querying aspects of a workspace's services. These include the `Service`'s monitored
  * resources, its Service-Level Objectives, and a taxonomy of categorized Health Metrics.
  *
@@ -190,8 +190,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Resource name of the parent workspace. Of the form
-   *     `projects/{project_id}`.
+   * @param parent Required. Resource name of the parent workspace. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -218,8 +218,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Resource name of the parent workspace. Of the form
-   *     `projects/{project_id}`.
+   * @param parent Required. Resource name of the parent workspace. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -291,8 +291,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. Resource name of the `Service`. Of the form
-   *     `projects/{project_id}/services/{service_id}`.
+   * @param name Required. Resource name of the `Service`. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service getService(ServiceName name) {
@@ -314,8 +314,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. Resource name of the `Service`. Of the form
-   *     `projects/{project_id}/services/{service_id}`.
+   * @param name Required. Resource name of the `Service`. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service getService(String name) {
@@ -383,8 +383,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Resource name of the parent `Workspace`. Of the form
-   *     `projects/{project_id}`.
+   * @param parent Required. Resource name of the parent containing the listed services, either a
+   *     project or a Monitoring Workspace. The formats are:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServicesPagedResponse listServices(ProjectName parent) {
@@ -410,8 +411,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Resource name of the parent `Workspace`. Of the form
-   *     `projects/{project_id}`.
+   * @param parent Required. Resource name of the parent containing the listed services, either a
+   *     project or a Monitoring Workspace. The formats are:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServicesPagedResponse listServices(String parent) {
@@ -580,8 +582,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. Resource name of the `Service` to delete. Of the form
-   *     `projects/{project_id}/services/{service_id}`.
+   * @param name Required. Resource name of the `Service` to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteService(ServiceName name) {
@@ -603,8 +605,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. Resource name of the `Service` to delete. Of the form
-   *     `projects/{project_id}/services/{service_id}`.
+   * @param name Required. Resource name of the `Service` to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteService(String name) {
@@ -671,8 +673,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Resource name of the parent `Service`. Of the form
-   *     `projects/{project_id}/services/{service_id}`.
+   * @param parent Required. Resource name of the parent `Service`. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * @param serviceLevelObjective Required. The `ServiceLevelObjective` to create. The provided
    *     `name` will be respected if no `ServiceLevelObjective` exists with this name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -701,8 +703,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Resource name of the parent `Service`. Of the form
-   *     `projects/{project_id}/services/{service_id}`.
+   * @param parent Required. Resource name of the parent `Service`. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * @param serviceLevelObjective Required. The `ServiceLevelObjective` to create. The provided
    *     `name` will be respected if no `ServiceLevelObjective` exists with this name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -781,8 +783,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. Resource name of the `ServiceLevelObjective` to get. Of the form
-   *     `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
+   * @param name Required. Resource name of the `ServiceLevelObjective` to get. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceLevelObjective getServiceLevelObjective(ServiceLevelObjectiveName name) {
@@ -806,8 +808,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. Resource name of the `ServiceLevelObjective` to get. Of the form
-   *     `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
+   * @param name Required. Resource name of the `ServiceLevelObjective` to get. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceLevelObjective getServiceLevelObjective(String name) {
@@ -878,8 +880,10 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Resource name of the parent `Service`. Of the form
-   *     `projects/{project_id}/services/{service_id}`.
+   * @param parent Required. Resource name of the parent containing the listed SLOs, either a
+   *     project or a Monitoring Workspace. The formats are:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+   *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceLevelObjectivesPagedResponse listServiceLevelObjectives(
@@ -906,8 +910,10 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Resource name of the parent `Service`. Of the form
-   *     `projects/{project_id}/services/{service_id}`.
+   * @param parent Required. Resource name of the parent containing the listed SLOs, either a
+   *     project or a Monitoring Workspace. The formats are:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+   *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceLevelObjectivesPagedResponse listServiceLevelObjectives(String parent) {
@@ -1086,8 +1092,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. Resource name of the `ServiceLevelObjective` to delete. Of the form
-   *     `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
+   * @param name Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteServiceLevelObjective(ServiceLevelObjectiveName name) {
@@ -1111,8 +1117,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. Resource name of the `ServiceLevelObjective` to delete. Of the form
-   *     `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
+   * @param name Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteServiceLevelObjective(String name) {

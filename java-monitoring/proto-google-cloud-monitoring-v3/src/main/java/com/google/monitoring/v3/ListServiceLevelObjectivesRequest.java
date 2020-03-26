@@ -147,8 +147,10 @@ public final class ListServiceLevelObjectivesRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. Resource name of the parent `Service`.
-   * Of the form `projects/{project_id}/services/{service_id}`.
+   * Required. Resource name of the parent containing the listed SLOs, either a
+   * project or a Monitoring Workspace. The formats are:
+   *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+   *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
    * </pre>
    *
    * <code>
@@ -172,8 +174,10 @@ public final class ListServiceLevelObjectivesRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. Resource name of the parent `Service`.
-   * Of the form `projects/{project_id}/services/{service_id}`.
+   * Required. Resource name of the parent containing the listed SLOs, either a
+   * project or a Monitoring Workspace. The formats are:
+   *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+   *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
    * </pre>
    *
    * <code>
@@ -738,8 +742,10 @@ public final class ListServiceLevelObjectivesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the parent containing the listed SLOs, either a
+     * project or a Monitoring Workspace. The formats are:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+     *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
      * </pre>
      *
      * <code>
@@ -763,8 +769,10 @@ public final class ListServiceLevelObjectivesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the parent containing the listed SLOs, either a
+     * project or a Monitoring Workspace. The formats are:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+     *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
      * </pre>
      *
      * <code>
@@ -788,8 +796,10 @@ public final class ListServiceLevelObjectivesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the parent containing the listed SLOs, either a
+     * project or a Monitoring Workspace. The formats are:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+     *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
      * </pre>
      *
      * <code>
@@ -812,8 +822,10 @@ public final class ListServiceLevelObjectivesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the parent containing the listed SLOs, either a
+     * project or a Monitoring Workspace. The formats are:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+     *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
      * </pre>
      *
      * <code>
@@ -832,8 +844,10 @@ public final class ListServiceLevelObjectivesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the parent containing the listed SLOs, either a
+     * project or a Monitoring Workspace. The formats are:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+     *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
      * </pre>
      *
      * <code>

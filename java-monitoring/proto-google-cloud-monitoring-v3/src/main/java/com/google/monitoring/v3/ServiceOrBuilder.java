@@ -27,8 +27,8 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Resource name for this Service. Of the form
-   * `projects/{project_id}/services/{service_id}`.
+   * Resource name for this Service. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -40,8 +40,8 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Resource name for this Service. Of the form
-   * `projects/{project_id}/services/{service_id}`.
+   * Resource name for this Service. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -187,10 +187,11 @@ public interface ServiceOrBuilder
    * Type used for Istio services that live in a Kubernetes cluster.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
+   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];</code>
    *
    * @return Whether the clusterIstio field is set.
    */
+  @java.lang.Deprecated
   boolean hasClusterIstio();
   /**
    *
@@ -199,10 +200,11 @@ public interface ServiceOrBuilder
    * Type used for Istio services that live in a Kubernetes cluster.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
+   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];</code>
    *
    * @return The clusterIstio.
    */
+  @java.lang.Deprecated
   com.google.monitoring.v3.Service.ClusterIstio getClusterIstio();
   /**
    *
@@ -211,9 +213,45 @@ public interface ServiceOrBuilder
    * Type used for Istio services that live in a Kubernetes cluster.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
+   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.monitoring.v3.Service.ClusterIstioOrBuilder getClusterIstioOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type used for Istio services scoped to an Istio mesh.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.MeshIstio mesh_istio = 10;</code>
+   *
+   * @return Whether the meshIstio field is set.
+   */
+  boolean hasMeshIstio();
+  /**
+   *
+   *
+   * <pre>
+   * Type used for Istio services scoped to an Istio mesh.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.MeshIstio mesh_istio = 10;</code>
+   *
+   * @return The meshIstio.
+   */
+  com.google.monitoring.v3.Service.MeshIstio getMeshIstio();
+  /**
+   *
+   *
+   * <pre>
+   * Type used for Istio services scoped to an Istio mesh.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.MeshIstio mesh_istio = 10;</code>
+   */
+  com.google.monitoring.v3.Service.MeshIstioOrBuilder getMeshIstioOrBuilder();
 
   /**
    *

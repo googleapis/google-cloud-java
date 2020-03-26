@@ -27,9 +27,8 @@ public interface ServiceLevelObjectiveOrBuilder
    *
    *
    * <pre>
-   * Resource name for this `ServiceLevelObjective`.
-   * Of the form
-   * `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
+   * Resource name for this `ServiceLevelObjective`. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,9 +40,8 @@ public interface ServiceLevelObjectiveOrBuilder
    *
    *
    * <pre>
-   * Resource name for this `ServiceLevelObjective`.
-   * Of the form
-   * `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
+   * Resource name for this `ServiceLevelObjective`. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
    *
    * <code>string name = 1;</code>

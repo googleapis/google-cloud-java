@@ -142,8 +142,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. Resource name of the parent `Service`.
-   * Of the form `projects/{project_id}/services/{service_id}`.
+   * Required. Resource name of the parent `Service`. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
    * <code>
@@ -167,8 +167,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. Resource name of the parent `Service`.
-   * Of the form `projects/{project_id}/services/{service_id}`.
+   * Required. Resource name of the parent `Service`. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
    * <code>
@@ -197,7 +197,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    * <pre>
    * Optional. The ServiceLevelObjective id to use for this
    * ServiceLevelObjective. If omitted, an id will be generated instead. Must
-   * match the pattern [a-z0-9&#92;-]+
+   * match the pattern `[a-z0-9&#92;-]+`
    * </pre>
    *
    * <code>string service_level_objective_id = 3;</code>
@@ -221,7 +221,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    * <pre>
    * Optional. The ServiceLevelObjective id to use for this
    * ServiceLevelObjective. If omitted, an id will be generated instead. Must
-   * match the pattern [a-z0-9&#92;-]+
+   * match the pattern `[a-z0-9&#92;-]+`
    * </pre>
    *
    * <code>string service_level_objective_id = 3;</code>
@@ -667,8 +667,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the parent `Service`. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
      * <code>
@@ -692,8 +692,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the parent `Service`. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
      * <code>
@@ -717,8 +717,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the parent `Service`. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
      * <code>
@@ -741,8 +741,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the parent `Service`. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
      * <code>
@@ -761,8 +761,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Service`.
-     * Of the form `projects/{project_id}/services/{service_id}`.
+     * Required. Resource name of the parent `Service`. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
      * <code>
@@ -790,7 +790,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * <pre>
      * Optional. The ServiceLevelObjective id to use for this
      * ServiceLevelObjective. If omitted, an id will be generated instead. Must
-     * match the pattern [a-z0-9&#92;-]+
+     * match the pattern `[a-z0-9&#92;-]+`
      * </pre>
      *
      * <code>string service_level_objective_id = 3;</code>
@@ -814,7 +814,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * <pre>
      * Optional. The ServiceLevelObjective id to use for this
      * ServiceLevelObjective. If omitted, an id will be generated instead. Must
-     * match the pattern [a-z0-9&#92;-]+
+     * match the pattern `[a-z0-9&#92;-]+`
      * </pre>
      *
      * <code>string service_level_objective_id = 3;</code>
@@ -838,7 +838,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * <pre>
      * Optional. The ServiceLevelObjective id to use for this
      * ServiceLevelObjective. If omitted, an id will be generated instead. Must
-     * match the pattern [a-z0-9&#92;-]+
+     * match the pattern `[a-z0-9&#92;-]+`
      * </pre>
      *
      * <code>string service_level_objective_id = 3;</code>
@@ -861,7 +861,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * <pre>
      * Optional. The ServiceLevelObjective id to use for this
      * ServiceLevelObjective. If omitted, an id will be generated instead. Must
-     * match the pattern [a-z0-9&#92;-]+
+     * match the pattern `[a-z0-9&#92;-]+`
      * </pre>
      *
      * <code>string service_level_objective_id = 3;</code>
@@ -880,7 +880,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * <pre>
      * Optional. The ServiceLevelObjective id to use for this
      * ServiceLevelObjective. If omitted, an id will be generated instead. Must
-     * match the pattern [a-z0-9&#92;-]+
+     * match the pattern `[a-z0-9&#92;-]+`
      * </pre>
      *
      * <code>string service_level_objective_id = 3;</code>

@@ -175,7 +175,7 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Lists monitored resource descriptors that match a filter. This method does not require a
-   * Stackdriver account.
+   * Workspace.
    *
    * <p>Sample code:
    *
@@ -204,7 +204,7 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Lists monitored resource descriptors that match a filter. This method does not require a
-   * Stackdriver account.
+   * Workspace.
    *
    * <p>Sample code:
    *
@@ -231,7 +231,7 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Lists monitored resource descriptors that match a filter. This method does not require a
-   * Stackdriver account.
+   * Workspace.
    *
    * <p>Sample code:
    *
@@ -258,7 +258,7 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Lists monitored resource descriptors that match a filter. This method does not require a
-   * Stackdriver account.
+   * Workspace.
    *
    * <p>Sample code:
    *
@@ -285,7 +285,7 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Lists monitored resource descriptors that match a filter. This method does not require a
-   * Stackdriver account.
+   * Workspace.
    *
    * <p>Sample code:
    *
@@ -318,8 +318,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single monitored resource descriptor. This method does not require a Stackdriver
-   * account.
+   * Gets a single monitored resource descriptor. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -346,8 +345,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single monitored resource descriptor. This method does not require a Stackdriver
-   * account.
+   * Gets a single monitored resource descriptor. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -371,8 +369,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single monitored resource descriptor. This method does not require a Stackdriver
-   * account.
+   * Gets a single monitored resource descriptor. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -396,8 +393,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single monitored resource descriptor. This method does not require a Stackdriver
-   * account.
+   * Gets a single monitored resource descriptor. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -420,8 +416,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Stackdriver
-   * account.
+   * Lists metric descriptors that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -448,8 +443,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Stackdriver
-   * account.
+   * Lists metric descriptors that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -474,8 +468,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Stackdriver
-   * account.
+   * Lists metric descriptors that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -501,8 +494,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Stackdriver
-   * account.
+   * Lists metric descriptors that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -527,8 +519,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Stackdriver
-   * account.
+   * Lists metric descriptors that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -560,7 +551,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single metric descriptor. This method does not require a Stackdriver account.
+   * Gets a single metric descriptor. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -587,7 +578,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single metric descriptor. This method does not require a Stackdriver account.
+   * Gets a single metric descriptor. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -612,7 +603,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single metric descriptor. This method does not require a Stackdriver account.
+   * Gets a single metric descriptor. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -635,7 +626,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single metric descriptor. This method does not require a Stackdriver account.
+   * Gets a single metric descriptor. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -872,7 +863,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists time series that match a filter. This method does not require a Stackdriver account.
+   * Lists time series that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -918,7 +909,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists time series that match a filter. This method does not require a Stackdriver account.
+   * Lists time series that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -964,7 +955,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists time series that match a filter. This method does not require a Stackdriver account.
+   * Lists time series that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -995,7 +986,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists time series that match a filter. This method does not require a Stackdriver account.
+   * Lists time series that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
    *
@@ -1026,7 +1017,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists time series that match a filter. This method does not require a Stackdriver account.
+   * Lists time series that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
    *

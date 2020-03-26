@@ -134,8 +134,8 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The project in which to create the Uptime check. The format
-   *   is `projects/[PROJECT_ID]`.
+   * Required. The project in which to create the Uptime check. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -159,8 +159,8 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The project in which to create the Uptime check. The format
-   *   is `projects/[PROJECT_ID]`.
+   * Required. The project in which to create the Uptime check. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -584,8 +584,8 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The project in which to create the Uptime check. The format
-     *   is `projects/[PROJECT_ID]`.
+     * Required. The project in which to create the Uptime check. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -609,8 +609,8 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The project in which to create the Uptime check. The format
-     *   is `projects/[PROJECT_ID]`.
+     * Required. The project in which to create the Uptime check. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -634,8 +634,8 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The project in which to create the Uptime check. The format
-     *   is `projects/[PROJECT_ID]`.
+     * Required. The project in which to create the Uptime check. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -658,8 +658,8 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The project in which to create the Uptime check. The format
-     *   is `projects/[PROJECT_ID]`.
+     * Required. The project in which to create the Uptime check. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -678,8 +678,8 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The project in which to create the Uptime check. The format
-     *   is `projects/[PROJECT_ID]`.
+     * Required. The project in which to create the Uptime check. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>

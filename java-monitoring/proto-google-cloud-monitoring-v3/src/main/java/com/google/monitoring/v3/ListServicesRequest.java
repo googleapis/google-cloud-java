@@ -138,8 +138,10 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Resource name of the parent `Workspace`.
-   * Of the form `projects/{project_id}`.
+   * Required. Resource name of the parent containing the listed services, either a
+   * project or a Monitoring Workspace. The formats are:
+   *     projects/[PROJECT_ID_OR_NUMBER]
+   *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -163,8 +165,10 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Resource name of the parent `Workspace`.
-   * Of the form `projects/{project_id}`.
+   * Required. Resource name of the parent containing the listed services, either a
+   * project or a Monitoring Workspace. The formats are:
+   *     projects/[PROJECT_ID_OR_NUMBER]
+   *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -693,8 +697,10 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Workspace`.
-     * Of the form `projects/{project_id}`.
+     * Required. Resource name of the parent containing the listed services, either a
+     * project or a Monitoring Workspace. The formats are:
+     *     projects/[PROJECT_ID_OR_NUMBER]
+     *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -718,8 +724,10 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Workspace`.
-     * Of the form `projects/{project_id}`.
+     * Required. Resource name of the parent containing the listed services, either a
+     * project or a Monitoring Workspace. The formats are:
+     *     projects/[PROJECT_ID_OR_NUMBER]
+     *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -743,8 +751,10 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Workspace`.
-     * Of the form `projects/{project_id}`.
+     * Required. Resource name of the parent containing the listed services, either a
+     * project or a Monitoring Workspace. The formats are:
+     *     projects/[PROJECT_ID_OR_NUMBER]
+     *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -767,8 +777,10 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Workspace`.
-     * Of the form `projects/{project_id}`.
+     * Required. Resource name of the parent containing the listed services, either a
+     * project or a Monitoring Workspace. The formats are:
+     *     projects/[PROJECT_ID_OR_NUMBER]
+     *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -787,8 +799,10 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the parent `Workspace`.
-     * Of the form `projects/{project_id}`.
+     * Required. Resource name of the parent containing the listed services, either a
+     * project or a Monitoring Workspace. The formats are:
+     *     projects/[PROJECT_ID_OR_NUMBER]
+     *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>

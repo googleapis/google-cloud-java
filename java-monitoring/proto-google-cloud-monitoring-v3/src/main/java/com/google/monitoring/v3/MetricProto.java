@@ -35,6 +35,38 @@ public final class MetricProto {
       internal_static_google_monitoring_v3_TimeSeries_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_monitoring_v3_TimeSeries_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_TimeSeriesDescriptor_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_TimeSeriesDescriptor_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_TimeSeriesDescriptor_ValueDescriptor_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_TimeSeriesDescriptor_ValueDescriptor_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_TimeSeriesData_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_TimeSeriesData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_TimeSeriesData_PointData_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_TimeSeriesData_PointData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_LabelValue_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_LabelValue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_QueryError_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_QueryError_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_TextLocator_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_TextLocator_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_TextLocator_Position_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_TextLocator_Position_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -49,22 +81,49 @@ public final class MetricProto {
           + "on.proto\032\026google/api/label.proto\032\027google"
           + "/api/metric.proto\032#google/api/monitored_"
           + "resource.proto\032!google/monitoring/v3/com"
-          + "mon.proto\"n\n\005Point\0224\n\010interval\030\001 \001(\0132\".g"
-          + "oogle.monitoring.v3.TimeInterval\022/\n\005valu"
-          + "e\030\002 \001(\0132 .google.monitoring.v3.TypedValu"
-          + "e\"\301\002\n\nTimeSeries\022\"\n\006metric\030\001 \001(\0132\022.googl"
-          + "e.api.Metric\022/\n\010resource\030\002 \001(\0132\035.google."
-          + "api.MonitoredResource\0227\n\010metadata\030\007 \001(\0132"
-          + "%.google.api.MonitoredResourceMetadata\022<"
-          + "\n\013metric_kind\030\003 \001(\0162\'.google.api.MetricD"
-          + "escriptor.MetricKind\022:\n\nvalue_type\030\004 \001(\016"
-          + "2&.google.api.MetricDescriptor.ValueType"
-          + "\022+\n\006points\030\005 \003(\0132\033.google.monitoring.v3."
-          + "PointB\243\001\n\030com.google.monitoring.v3B\013Metr"
-          + "icProtoP\001Z>google.golang.org/genproto/go"
-          + "ogleapis/monitoring/v3;monitoring\252\002\032Goog"
-          + "le.Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Mo"
-          + "nitoring\\V3b\006proto3"
+          + "mon.proto\032\036google/protobuf/duration.prot"
+          + "o\"n\n\005Point\0224\n\010interval\030\001 \001(\0132\".google.mo"
+          + "nitoring.v3.TimeInterval\022/\n\005value\030\002 \001(\0132"
+          + " .google.monitoring.v3.TypedValue\"\301\002\n\nTi"
+          + "meSeries\022\"\n\006metric\030\001 \001(\0132\022.google.api.Me"
+          + "tric\022/\n\010resource\030\002 \001(\0132\035.google.api.Moni"
+          + "toredResource\0227\n\010metadata\030\007 \001(\0132%.google"
+          + ".api.MonitoredResourceMetadata\022<\n\013metric"
+          + "_kind\030\003 \001(\0162\'.google.api.MetricDescripto"
+          + "r.MetricKind\022:\n\nvalue_type\030\004 \001(\0162&.googl"
+          + "e.api.MetricDescriptor.ValueType\022+\n\006poin"
+          + "ts\030\005 \003(\0132\033.google.monitoring.v3.Point\"\300\002"
+          + "\n\024TimeSeriesDescriptor\0226\n\021label_descript"
+          + "ors\030\001 \003(\0132\033.google.api.LabelDescriptor\022U"
+          + "\n\021point_descriptors\030\005 \003(\0132:.google.monit"
+          + "oring.v3.TimeSeriesDescriptor.ValueDescr"
+          + "iptor\032\230\001\n\017ValueDescriptor\022\013\n\003key\030\001 \001(\t\022:"
+          + "\n\nvalue_type\030\002 \001(\0162&.google.api.MetricDe"
+          + "scriptor.ValueType\022<\n\013metric_kind\030\003 \001(\0162"
+          + "\'.google.api.MetricDescriptor.MetricKind"
+          + "\"\206\002\n\016TimeSeriesData\0226\n\014label_values\030\001 \003("
+          + "\0132 .google.monitoring.v3.LabelValue\022B\n\np"
+          + "oint_data\030\002 \003(\0132..google.monitoring.v3.T"
+          + "imeSeriesData.PointData\032x\n\tPointData\0220\n\006"
+          + "values\030\001 \003(\0132 .google.monitoring.v3.Type"
+          + "dValue\0229\n\rtime_interval\030\002 \001(\0132\".google.m"
+          + "onitoring.v3.TimeInterval\"Z\n\nLabelValue\022"
+          + "\024\n\nbool_value\030\001 \001(\010H\000\022\025\n\013int64_value\030\002 \001"
+          + "(\003H\000\022\026\n\014string_value\030\003 \001(\tH\000B\007\n\005value\"Q\n"
+          + "\nQueryError\0222\n\007locator\030\001 \001(\0132!.google.mo"
+          + "nitoring.v3.TextLocator\022\017\n\007message\030\002 \001(\t"
+          + "\"\240\002\n\013TextLocator\022\016\n\006source\030\001 \001(\t\022B\n\016star"
+          + "t_position\030\002 \001(\0132*.google.monitoring.v3."
+          + "TextLocator.Position\022@\n\014end_position\030\003 \001"
+          + "(\0132*.google.monitoring.v3.TextLocator.Po"
+          + "sition\0229\n\016nested_locator\030\004 \001(\0132!.google."
+          + "monitoring.v3.TextLocator\022\026\n\016nesting_rea"
+          + "son\030\005 \001(\t\032(\n\010Position\022\014\n\004line\030\001 \001(\005\022\016\n\006c"
+          + "olumn\030\002 \001(\005B\243\001\n\030com.google.monitoring.v3"
+          + "B\013MetricProtoP\001Z>google.golang.org/genpr"
+          + "oto/googleapis/monitoring/v3;monitoring\252"
+          + "\002\032Google.Cloud.Monitoring.V3\312\002\032Google\\Cl"
+          + "oud\\Monitoring\\V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -75,6 +134,7 @@ public final class MetricProto {
               com.google.api.MetricProto.getDescriptor(),
               com.google.api.MonitoredResourceProto.getDescriptor(),
               com.google.monitoring.v3.CommonProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
             });
     internal_static_google_monitoring_v3_Point_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -92,11 +152,78 @@ public final class MetricProto {
             new java.lang.String[] {
               "Metric", "Resource", "Metadata", "MetricKind", "ValueType", "Points",
             });
+    internal_static_google_monitoring_v3_TimeSeriesDescriptor_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_monitoring_v3_TimeSeriesDescriptor_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_TimeSeriesDescriptor_descriptor,
+            new java.lang.String[] {
+              "LabelDescriptors", "PointDescriptors",
+            });
+    internal_static_google_monitoring_v3_TimeSeriesDescriptor_ValueDescriptor_descriptor =
+        internal_static_google_monitoring_v3_TimeSeriesDescriptor_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_monitoring_v3_TimeSeriesDescriptor_ValueDescriptor_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_TimeSeriesDescriptor_ValueDescriptor_descriptor,
+            new java.lang.String[] {
+              "Key", "ValueType", "MetricKind",
+            });
+    internal_static_google_monitoring_v3_TimeSeriesData_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_monitoring_v3_TimeSeriesData_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_TimeSeriesData_descriptor,
+            new java.lang.String[] {
+              "LabelValues", "PointData",
+            });
+    internal_static_google_monitoring_v3_TimeSeriesData_PointData_descriptor =
+        internal_static_google_monitoring_v3_TimeSeriesData_descriptor.getNestedTypes().get(0);
+    internal_static_google_monitoring_v3_TimeSeriesData_PointData_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_TimeSeriesData_PointData_descriptor,
+            new java.lang.String[] {
+              "Values", "TimeInterval",
+            });
+    internal_static_google_monitoring_v3_LabelValue_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_monitoring_v3_LabelValue_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_LabelValue_descriptor,
+            new java.lang.String[] {
+              "BoolValue", "Int64Value", "StringValue", "Value",
+            });
+    internal_static_google_monitoring_v3_QueryError_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_monitoring_v3_QueryError_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_QueryError_descriptor,
+            new java.lang.String[] {
+              "Locator", "Message",
+            });
+    internal_static_google_monitoring_v3_TextLocator_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_monitoring_v3_TextLocator_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_TextLocator_descriptor,
+            new java.lang.String[] {
+              "Source", "StartPosition", "EndPosition", "NestedLocator", "NestingReason",
+            });
+    internal_static_google_monitoring_v3_TextLocator_Position_descriptor =
+        internal_static_google_monitoring_v3_TextLocator_descriptor.getNestedTypes().get(0);
+    internal_static_google_monitoring_v3_TextLocator_Position_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_TextLocator_Position_descriptor,
+            new java.lang.String[] {
+              "Line", "Column",
+            });
     com.google.api.DistributionProto.getDescriptor();
     com.google.api.LabelProto.getDescriptor();
     com.google.api.MetricProto.getDescriptor();
     com.google.api.MonitoredResourceProto.getDescriptor();
     com.google.monitoring.v3.CommonProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

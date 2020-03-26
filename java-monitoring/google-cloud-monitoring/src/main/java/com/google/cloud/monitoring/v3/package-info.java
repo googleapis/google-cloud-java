@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Stackdriver Monitoring API.
+ * A client to Cloud Monitoring API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
@@ -97,9 +97,9 @@
  *
  * ============================== ServiceMonitoringServiceClient ==============================
  *
- * <p>Service Description: The Stackdriver Monitoring Service-Oriented Monitoring API has endpoints
- * for managing and querying aspects of a workspace's services. These include the `Service`'s
- * monitored resources, its Service-Level Objectives, and a taxonomy of categorized Health Metrics.
+ * <p>Service Description: The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
+ * managing and querying aspects of a workspace's services. These include the `Service`'s monitored
+ * resources, its Service-Level Objectives, and a taxonomy of categorized Health Metrics.
  *
  * <p>Sample for ServiceMonitoringServiceClient:
  *
