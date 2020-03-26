@@ -40,7 +40,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/devtools/containeranalysis/v1/containeranalysis.proto")
 public final class ContainerAnalysisGrpc {
 
@@ -50,26 +50,18 @@ public final class ContainerAnalysisGrpc {
       "google.devtools.containeranalysis.v1.ContainerAnalysis";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSetIamPolicyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
-      METHOD_SET_IAM_POLICY = getSetIamPolicyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
       getSetIamPolicyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetIamPolicy",
+      requestType = com.google.iam.v1.SetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
       getSetIamPolicyMethod() {
-    return getSetIamPolicyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
-      getSetIamPolicyMethodHelper() {
     io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
         getSetIamPolicyMethod;
     if ((getSetIamPolicyMethod = ContainerAnalysisGrpc.getSetIamPolicyMethod) == null) {
@@ -80,10 +72,7 @@ public final class ContainerAnalysisGrpc {
                   io.grpc.MethodDescriptor
                       .<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.containeranalysis.v1.ContainerAnalysis",
-                              "SetIamPolicy"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetIamPolicy"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -100,26 +89,18 @@ public final class ContainerAnalysisGrpc {
     return getSetIamPolicyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetIamPolicyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
-      METHOD_GET_IAM_POLICY = getGetIamPolicyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
       getGetIamPolicyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIamPolicy",
+      requestType = com.google.iam.v1.GetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
       getGetIamPolicyMethod() {
-    return getGetIamPolicyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
-      getGetIamPolicyMethodHelper() {
     io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
         getGetIamPolicyMethod;
     if ((getGetIamPolicyMethod = ContainerAnalysisGrpc.getGetIamPolicyMethod) == null) {
@@ -130,10 +111,7 @@ public final class ContainerAnalysisGrpc {
                   io.grpc.MethodDescriptor
                       .<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.containeranalysis.v1.ContainerAnalysis",
-                              "GetIamPolicy"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetIamPolicy"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -150,26 +128,18 @@ public final class ContainerAnalysisGrpc {
     return getGetIamPolicyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getTestIamPermissionsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
-      METHOD_TEST_IAM_PERMISSIONS = getTestIamPermissionsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
       getTestIamPermissionsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TestIamPermissions",
+      requestType = com.google.iam.v1.TestIamPermissionsRequest.class,
+      responseType = com.google.iam.v1.TestIamPermissionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
       getTestIamPermissionsMethod() {
-    return getTestIamPermissionsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
-      getTestIamPermissionsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.iam.v1.TestIamPermissionsRequest,
             com.google.iam.v1.TestIamPermissionsResponse>
@@ -185,10 +155,7 @@ public final class ContainerAnalysisGrpc {
                           com.google.iam.v1.TestIamPermissionsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.devtools.containeranalysis.v1.ContainerAnalysis",
-                              "TestIamPermissions"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TestIamPermissions"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -207,19 +174,43 @@ public final class ContainerAnalysisGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static ContainerAnalysisStub newStub(io.grpc.Channel channel) {
-    return new ContainerAnalysisStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ContainerAnalysisStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ContainerAnalysisStub>() {
+          @java.lang.Override
+          public ContainerAnalysisStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ContainerAnalysisStub(channel, callOptions);
+          }
+        };
+    return ContainerAnalysisStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static ContainerAnalysisBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new ContainerAnalysisBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ContainerAnalysisBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ContainerAnalysisBlockingStub>() {
+          @java.lang.Override
+          public ContainerAnalysisBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ContainerAnalysisBlockingStub(channel, callOptions);
+          }
+        };
+    return ContainerAnalysisBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static ContainerAnalysisFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new ContainerAnalysisFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ContainerAnalysisFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ContainerAnalysisFutureStub>() {
+          @java.lang.Override
+          public ContainerAnalysisFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ContainerAnalysisFutureStub(channel, callOptions);
+          }
+        };
+    return ContainerAnalysisFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -257,7 +248,7 @@ public final class ContainerAnalysisGrpc {
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetIamPolicyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -276,7 +267,7 @@ public final class ContainerAnalysisGrpc {
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetIamPolicyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -295,26 +286,26 @@ public final class ContainerAnalysisGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getTestIamPermissionsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getTestIamPermissionsMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getSetIamPolicyMethodHelper(),
+              getSetIamPolicyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_SET_IAM_POLICY)))
           .addMethod(
-              getGetIamPolicyMethodHelper(),
+              getGetIamPolicyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_GET_IAM_POLICY)))
           .addMethod(
-              getTestIamPermissionsMethodHelper(),
+              getTestIamPermissionsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.TestIamPermissionsRequest,
@@ -342,11 +333,7 @@ public final class ContainerAnalysisGrpc {
    * </pre>
    */
   public static final class ContainerAnalysisStub
-      extends io.grpc.stub.AbstractStub<ContainerAnalysisStub> {
-    private ContainerAnalysisStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<ContainerAnalysisStub> {
     private ContainerAnalysisStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -374,7 +361,7 @@ public final class ContainerAnalysisGrpc {
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSetIamPolicyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -396,7 +383,7 @@ public final class ContainerAnalysisGrpc {
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -418,7 +405,7 @@ public final class ContainerAnalysisGrpc {
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -442,11 +429,7 @@ public final class ContainerAnalysisGrpc {
    * </pre>
    */
   public static final class ContainerAnalysisBlockingStub
-      extends io.grpc.stub.AbstractStub<ContainerAnalysisBlockingStub> {
-    private ContainerAnalysisBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<ContainerAnalysisBlockingStub> {
     private ContainerAnalysisBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -472,8 +455,7 @@ public final class ContainerAnalysisGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getSetIamPolicyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -490,8 +472,7 @@ public final class ContainerAnalysisGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetIamPolicyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -509,7 +490,7 @@ public final class ContainerAnalysisGrpc {
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getTestIamPermissionsMethodHelper(), getCallOptions(), request);
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }
 
@@ -531,11 +512,7 @@ public final class ContainerAnalysisGrpc {
    * </pre>
    */
   public static final class ContainerAnalysisFutureStub
-      extends io.grpc.stub.AbstractStub<ContainerAnalysisFutureStub> {
-    private ContainerAnalysisFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<ContainerAnalysisFutureStub> {
     private ContainerAnalysisFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -562,7 +539,7 @@ public final class ContainerAnalysisGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getSetIamPolicyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -581,7 +558,7 @@ public final class ContainerAnalysisGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -600,7 +577,7 @@ public final class ContainerAnalysisGrpc {
             com.google.iam.v1.TestIamPermissionsResponse>
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
   }
 
@@ -705,9 +682,9 @@ public final class ContainerAnalysisGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ContainerAnalysisFileDescriptorSupplier())
-                      .addMethod(getSetIamPolicyMethodHelper())
-                      .addMethod(getGetIamPolicyMethodHelper())
-                      .addMethod(getTestIamPermissionsMethodHelper())
+                      .addMethod(getSetIamPolicyMethod())
+                      .addMethod(getGetIamPolicyMethod())
+                      .addMethod(getTestIamPermissionsMethod())
                       .build();
         }
       }

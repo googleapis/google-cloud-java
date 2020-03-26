@@ -40,7 +40,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/devtools/containeranalysis/v1beta1/grafeas/grafeas.proto")
 public final class GrafeasV1Beta1Grpc {
 
@@ -49,26 +49,18 @@ public final class GrafeasV1Beta1Grpc {
   public static final String SERVICE_NAME = "grafeas.v1beta1.GrafeasV1Beta1";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetOccurrenceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.GetOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
-      METHOD_GET_OCCURRENCE = getGetOccurrenceMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.GetOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
       getGetOccurrenceMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetOccurrence",
+      requestType = io.grafeas.v1beta1.GetOccurrenceRequest.class,
+      responseType = io.grafeas.v1beta1.Occurrence.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.GetOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
       getGetOccurrenceMethod() {
-    return getGetOccurrenceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.GetOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
-      getGetOccurrenceMethodHelper() {
     io.grpc.MethodDescriptor<io.grafeas.v1beta1.GetOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
         getGetOccurrenceMethod;
     if ((getGetOccurrenceMethod = GrafeasV1Beta1Grpc.getGetOccurrenceMethod) == null) {
@@ -80,8 +72,7 @@ public final class GrafeasV1Beta1Grpc {
                       .<io.grafeas.v1beta1.GetOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName("grafeas.v1beta1.GrafeasV1Beta1", "GetOccurrence"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetOccurrence"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -98,26 +89,18 @@ public final class GrafeasV1Beta1Grpc {
     return getGetOccurrenceMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListOccurrencesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.ListOccurrencesRequest, io.grafeas.v1beta1.ListOccurrencesResponse>
-      METHOD_LIST_OCCURRENCES = getListOccurrencesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.ListOccurrencesRequest, io.grafeas.v1beta1.ListOccurrencesResponse>
       getListOccurrencesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListOccurrences",
+      requestType = io.grafeas.v1beta1.ListOccurrencesRequest.class,
+      responseType = io.grafeas.v1beta1.ListOccurrencesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.ListOccurrencesRequest, io.grafeas.v1beta1.ListOccurrencesResponse>
       getListOccurrencesMethod() {
-    return getListOccurrencesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.ListOccurrencesRequest, io.grafeas.v1beta1.ListOccurrencesResponse>
-      getListOccurrencesMethodHelper() {
     io.grpc.MethodDescriptor<
             io.grafeas.v1beta1.ListOccurrencesRequest, io.grafeas.v1beta1.ListOccurrencesResponse>
         getListOccurrencesMethod;
@@ -131,9 +114,7 @@ public final class GrafeasV1Beta1Grpc {
                           io.grafeas.v1beta1.ListOccurrencesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "grafeas.v1beta1.GrafeasV1Beta1", "ListOccurrences"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListOccurrences"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -150,26 +131,18 @@ public final class GrafeasV1Beta1Grpc {
     return getListOccurrencesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteOccurrenceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.DeleteOccurrenceRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_OCCURRENCE = getDeleteOccurrenceMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.DeleteOccurrenceRequest, com.google.protobuf.Empty>
       getDeleteOccurrenceMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteOccurrence",
+      requestType = io.grafeas.v1beta1.DeleteOccurrenceRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.DeleteOccurrenceRequest, com.google.protobuf.Empty>
       getDeleteOccurrenceMethod() {
-    return getDeleteOccurrenceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.DeleteOccurrenceRequest, com.google.protobuf.Empty>
-      getDeleteOccurrenceMethodHelper() {
     io.grpc.MethodDescriptor<io.grafeas.v1beta1.DeleteOccurrenceRequest, com.google.protobuf.Empty>
         getDeleteOccurrenceMethod;
     if ((getDeleteOccurrenceMethod = GrafeasV1Beta1Grpc.getDeleteOccurrenceMethod) == null) {
@@ -181,9 +154,7 @@ public final class GrafeasV1Beta1Grpc {
                       .<io.grafeas.v1beta1.DeleteOccurrenceRequest, com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "grafeas.v1beta1.GrafeasV1Beta1", "DeleteOccurrence"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteOccurrence"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -200,26 +171,18 @@ public final class GrafeasV1Beta1Grpc {
     return getDeleteOccurrenceMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateOccurrenceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.CreateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
-      METHOD_CREATE_OCCURRENCE = getCreateOccurrenceMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.CreateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
       getCreateOccurrenceMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateOccurrence",
+      requestType = io.grafeas.v1beta1.CreateOccurrenceRequest.class,
+      responseType = io.grafeas.v1beta1.Occurrence.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.CreateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
       getCreateOccurrenceMethod() {
-    return getCreateOccurrenceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.CreateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
-      getCreateOccurrenceMethodHelper() {
     io.grpc.MethodDescriptor<
             io.grafeas.v1beta1.CreateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
         getCreateOccurrenceMethod;
@@ -232,9 +195,7 @@ public final class GrafeasV1Beta1Grpc {
                       .<io.grafeas.v1beta1.CreateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "grafeas.v1beta1.GrafeasV1Beta1", "CreateOccurrence"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateOccurrence"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -251,30 +212,20 @@ public final class GrafeasV1Beta1Grpc {
     return getCreateOccurrenceMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchCreateOccurrencesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.BatchCreateOccurrencesRequest,
-          io.grafeas.v1beta1.BatchCreateOccurrencesResponse>
-      METHOD_BATCH_CREATE_OCCURRENCES = getBatchCreateOccurrencesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.BatchCreateOccurrencesRequest,
           io.grafeas.v1beta1.BatchCreateOccurrencesResponse>
       getBatchCreateOccurrencesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateOccurrences",
+      requestType = io.grafeas.v1beta1.BatchCreateOccurrencesRequest.class,
+      responseType = io.grafeas.v1beta1.BatchCreateOccurrencesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.BatchCreateOccurrencesRequest,
           io.grafeas.v1beta1.BatchCreateOccurrencesResponse>
       getBatchCreateOccurrencesMethod() {
-    return getBatchCreateOccurrencesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.BatchCreateOccurrencesRequest,
-          io.grafeas.v1beta1.BatchCreateOccurrencesResponse>
-      getBatchCreateOccurrencesMethodHelper() {
     io.grpc.MethodDescriptor<
             io.grafeas.v1beta1.BatchCreateOccurrencesRequest,
             io.grafeas.v1beta1.BatchCreateOccurrencesResponse>
@@ -292,8 +243,7 @@ public final class GrafeasV1Beta1Grpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "grafeas.v1beta1.GrafeasV1Beta1", "BatchCreateOccurrences"))
+                          generateFullMethodName(SERVICE_NAME, "BatchCreateOccurrences"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -312,26 +262,18 @@ public final class GrafeasV1Beta1Grpc {
     return getBatchCreateOccurrencesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateOccurrenceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.UpdateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
-      METHOD_UPDATE_OCCURRENCE = getUpdateOccurrenceMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.UpdateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
       getUpdateOccurrenceMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateOccurrence",
+      requestType = io.grafeas.v1beta1.UpdateOccurrenceRequest.class,
+      responseType = io.grafeas.v1beta1.Occurrence.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.UpdateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
       getUpdateOccurrenceMethod() {
-    return getUpdateOccurrenceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.UpdateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
-      getUpdateOccurrenceMethodHelper() {
     io.grpc.MethodDescriptor<
             io.grafeas.v1beta1.UpdateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
         getUpdateOccurrenceMethod;
@@ -344,9 +286,7 @@ public final class GrafeasV1Beta1Grpc {
                       .<io.grafeas.v1beta1.UpdateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "grafeas.v1beta1.GrafeasV1Beta1", "UpdateOccurrence"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateOccurrence"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -363,26 +303,18 @@ public final class GrafeasV1Beta1Grpc {
     return getUpdateOccurrenceMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetOccurrenceNoteMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.GetOccurrenceNoteRequest, io.grafeas.v1beta1.Note>
-      METHOD_GET_OCCURRENCE_NOTE = getGetOccurrenceNoteMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.GetOccurrenceNoteRequest, io.grafeas.v1beta1.Note>
       getGetOccurrenceNoteMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetOccurrenceNote",
+      requestType = io.grafeas.v1beta1.GetOccurrenceNoteRequest.class,
+      responseType = io.grafeas.v1beta1.Note.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.GetOccurrenceNoteRequest, io.grafeas.v1beta1.Note>
       getGetOccurrenceNoteMethod() {
-    return getGetOccurrenceNoteMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.GetOccurrenceNoteRequest, io.grafeas.v1beta1.Note>
-      getGetOccurrenceNoteMethodHelper() {
     io.grpc.MethodDescriptor<io.grafeas.v1beta1.GetOccurrenceNoteRequest, io.grafeas.v1beta1.Note>
         getGetOccurrenceNoteMethod;
     if ((getGetOccurrenceNoteMethod = GrafeasV1Beta1Grpc.getGetOccurrenceNoteMethod) == null) {
@@ -394,9 +326,7 @@ public final class GrafeasV1Beta1Grpc {
                       .<io.grafeas.v1beta1.GetOccurrenceNoteRequest, io.grafeas.v1beta1.Note>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "grafeas.v1beta1.GrafeasV1Beta1", "GetOccurrenceNote"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetOccurrenceNote"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -413,25 +343,17 @@ public final class GrafeasV1Beta1Grpc {
     return getGetOccurrenceNoteMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetNoteMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.GetNoteRequest, io.grafeas.v1beta1.Note>
-      METHOD_GET_NOTE = getGetNoteMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.GetNoteRequest, io.grafeas.v1beta1.Note>
       getGetNoteMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetNote",
+      requestType = io.grafeas.v1beta1.GetNoteRequest.class,
+      responseType = io.grafeas.v1beta1.Note.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<io.grafeas.v1beta1.GetNoteRequest, io.grafeas.v1beta1.Note>
       getGetNoteMethod() {
-    return getGetNoteMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.GetNoteRequest, io.grafeas.v1beta1.Note>
-      getGetNoteMethodHelper() {
     io.grpc.MethodDescriptor<io.grafeas.v1beta1.GetNoteRequest, io.grafeas.v1beta1.Note>
         getGetNoteMethod;
     if ((getGetNoteMethod = GrafeasV1Beta1Grpc.getGetNoteMethod) == null) {
@@ -442,8 +364,7 @@ public final class GrafeasV1Beta1Grpc {
                   io.grpc.MethodDescriptor
                       .<io.grafeas.v1beta1.GetNoteRequest, io.grafeas.v1beta1.Note>newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName("grafeas.v1beta1.GrafeasV1Beta1", "GetNote"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetNote"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -459,26 +380,18 @@ public final class GrafeasV1Beta1Grpc {
     return getGetNoteMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListNotesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.ListNotesRequest, io.grafeas.v1beta1.ListNotesResponse>
-      METHOD_LIST_NOTES = getListNotesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.ListNotesRequest, io.grafeas.v1beta1.ListNotesResponse>
       getListNotesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNotes",
+      requestType = io.grafeas.v1beta1.ListNotesRequest.class,
+      responseType = io.grafeas.v1beta1.ListNotesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.ListNotesRequest, io.grafeas.v1beta1.ListNotesResponse>
       getListNotesMethod() {
-    return getListNotesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.ListNotesRequest, io.grafeas.v1beta1.ListNotesResponse>
-      getListNotesMethodHelper() {
     io.grpc.MethodDescriptor<
             io.grafeas.v1beta1.ListNotesRequest, io.grafeas.v1beta1.ListNotesResponse>
         getListNotesMethod;
@@ -491,8 +404,7 @@ public final class GrafeasV1Beta1Grpc {
                       .<io.grafeas.v1beta1.ListNotesRequest, io.grafeas.v1beta1.ListNotesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName("grafeas.v1beta1.GrafeasV1Beta1", "ListNotes"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNotes"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -508,26 +420,18 @@ public final class GrafeasV1Beta1Grpc {
     return getListNotesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteNoteMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.DeleteNoteRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_NOTE = getDeleteNoteMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.DeleteNoteRequest, com.google.protobuf.Empty>
       getDeleteNoteMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteNote",
+      requestType = io.grafeas.v1beta1.DeleteNoteRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.DeleteNoteRequest, com.google.protobuf.Empty>
       getDeleteNoteMethod() {
-    return getDeleteNoteMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.DeleteNoteRequest, com.google.protobuf.Empty>
-      getDeleteNoteMethodHelper() {
     io.grpc.MethodDescriptor<io.grafeas.v1beta1.DeleteNoteRequest, com.google.protobuf.Empty>
         getDeleteNoteMethod;
     if ((getDeleteNoteMethod = GrafeasV1Beta1Grpc.getDeleteNoteMethod) == null) {
@@ -538,8 +442,7 @@ public final class GrafeasV1Beta1Grpc {
                   io.grpc.MethodDescriptor
                       .<io.grafeas.v1beta1.DeleteNoteRequest, com.google.protobuf.Empty>newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName("grafeas.v1beta1.GrafeasV1Beta1", "DeleteNote"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteNote"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -555,26 +458,18 @@ public final class GrafeasV1Beta1Grpc {
     return getDeleteNoteMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateNoteMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.CreateNoteRequest, io.grafeas.v1beta1.Note>
-      METHOD_CREATE_NOTE = getCreateNoteMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.CreateNoteRequest, io.grafeas.v1beta1.Note>
       getCreateNoteMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateNote",
+      requestType = io.grafeas.v1beta1.CreateNoteRequest.class,
+      responseType = io.grafeas.v1beta1.Note.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.CreateNoteRequest, io.grafeas.v1beta1.Note>
       getCreateNoteMethod() {
-    return getCreateNoteMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.CreateNoteRequest, io.grafeas.v1beta1.Note>
-      getCreateNoteMethodHelper() {
     io.grpc.MethodDescriptor<io.grafeas.v1beta1.CreateNoteRequest, io.grafeas.v1beta1.Note>
         getCreateNoteMethod;
     if ((getCreateNoteMethod = GrafeasV1Beta1Grpc.getCreateNoteMethod) == null) {
@@ -585,8 +480,7 @@ public final class GrafeasV1Beta1Grpc {
                   io.grpc.MethodDescriptor
                       .<io.grafeas.v1beta1.CreateNoteRequest, io.grafeas.v1beta1.Note>newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName("grafeas.v1beta1.GrafeasV1Beta1", "CreateNote"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateNote"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -602,26 +496,18 @@ public final class GrafeasV1Beta1Grpc {
     return getCreateNoteMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchCreateNotesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.BatchCreateNotesRequest, io.grafeas.v1beta1.BatchCreateNotesResponse>
-      METHOD_BATCH_CREATE_NOTES = getBatchCreateNotesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.BatchCreateNotesRequest, io.grafeas.v1beta1.BatchCreateNotesResponse>
       getBatchCreateNotesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateNotes",
+      requestType = io.grafeas.v1beta1.BatchCreateNotesRequest.class,
+      responseType = io.grafeas.v1beta1.BatchCreateNotesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.BatchCreateNotesRequest, io.grafeas.v1beta1.BatchCreateNotesResponse>
       getBatchCreateNotesMethod() {
-    return getBatchCreateNotesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.BatchCreateNotesRequest, io.grafeas.v1beta1.BatchCreateNotesResponse>
-      getBatchCreateNotesMethodHelper() {
     io.grpc.MethodDescriptor<
             io.grafeas.v1beta1.BatchCreateNotesRequest, io.grafeas.v1beta1.BatchCreateNotesResponse>
         getBatchCreateNotesMethod;
@@ -635,9 +521,7 @@ public final class GrafeasV1Beta1Grpc {
                           io.grafeas.v1beta1.BatchCreateNotesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "grafeas.v1beta1.GrafeasV1Beta1", "BatchCreateNotes"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchCreateNotes"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -654,26 +538,18 @@ public final class GrafeasV1Beta1Grpc {
     return getBatchCreateNotesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateNoteMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.UpdateNoteRequest, io.grafeas.v1beta1.Note>
-      METHOD_UPDATE_NOTE = getUpdateNoteMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.UpdateNoteRequest, io.grafeas.v1beta1.Note>
       getUpdateNoteMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateNote",
+      requestType = io.grafeas.v1beta1.UpdateNoteRequest.class,
+      responseType = io.grafeas.v1beta1.Note.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.UpdateNoteRequest, io.grafeas.v1beta1.Note>
       getUpdateNoteMethod() {
-    return getUpdateNoteMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.UpdateNoteRequest, io.grafeas.v1beta1.Note>
-      getUpdateNoteMethodHelper() {
     io.grpc.MethodDescriptor<io.grafeas.v1beta1.UpdateNoteRequest, io.grafeas.v1beta1.Note>
         getUpdateNoteMethod;
     if ((getUpdateNoteMethod = GrafeasV1Beta1Grpc.getUpdateNoteMethod) == null) {
@@ -684,8 +560,7 @@ public final class GrafeasV1Beta1Grpc {
                   io.grpc.MethodDescriptor
                       .<io.grafeas.v1beta1.UpdateNoteRequest, io.grafeas.v1beta1.Note>newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName("grafeas.v1beta1.GrafeasV1Beta1", "UpdateNote"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateNote"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -701,30 +576,20 @@ public final class GrafeasV1Beta1Grpc {
     return getUpdateNoteMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListNoteOccurrencesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.ListNoteOccurrencesRequest,
-          io.grafeas.v1beta1.ListNoteOccurrencesResponse>
-      METHOD_LIST_NOTE_OCCURRENCES = getListNoteOccurrencesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.ListNoteOccurrencesRequest,
           io.grafeas.v1beta1.ListNoteOccurrencesResponse>
       getListNoteOccurrencesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNoteOccurrences",
+      requestType = io.grafeas.v1beta1.ListNoteOccurrencesRequest.class,
+      responseType = io.grafeas.v1beta1.ListNoteOccurrencesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.ListNoteOccurrencesRequest,
           io.grafeas.v1beta1.ListNoteOccurrencesResponse>
       getListNoteOccurrencesMethod() {
-    return getListNoteOccurrencesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.ListNoteOccurrencesRequest,
-          io.grafeas.v1beta1.ListNoteOccurrencesResponse>
-      getListNoteOccurrencesMethodHelper() {
     io.grpc.MethodDescriptor<
             io.grafeas.v1beta1.ListNoteOccurrencesRequest,
             io.grafeas.v1beta1.ListNoteOccurrencesResponse>
@@ -741,8 +606,7 @@ public final class GrafeasV1Beta1Grpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "grafeas.v1beta1.GrafeasV1Beta1", "ListNoteOccurrences"))
+                          generateFullMethodName(SERVICE_NAME, "ListNoteOccurrences"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -759,31 +623,20 @@ public final class GrafeasV1Beta1Grpc {
     return getListNoteOccurrencesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetVulnerabilityOccurrencesSummaryMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest,
-          io.grafeas.v1beta1.VulnerabilityOccurrencesSummary>
-      METHOD_GET_VULNERABILITY_OCCURRENCES_SUMMARY =
-          getGetVulnerabilityOccurrencesSummaryMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest,
           io.grafeas.v1beta1.VulnerabilityOccurrencesSummary>
       getGetVulnerabilityOccurrencesSummaryMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetVulnerabilityOccurrencesSummary",
+      requestType = io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest.class,
+      responseType = io.grafeas.v1beta1.VulnerabilityOccurrencesSummary.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest,
           io.grafeas.v1beta1.VulnerabilityOccurrencesSummary>
       getGetVulnerabilityOccurrencesSummaryMethod() {
-    return getGetVulnerabilityOccurrencesSummaryMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest,
-          io.grafeas.v1beta1.VulnerabilityOccurrencesSummary>
-      getGetVulnerabilityOccurrencesSummaryMethodHelper() {
     io.grpc.MethodDescriptor<
             io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest,
             io.grafeas.v1beta1.VulnerabilityOccurrencesSummary>
@@ -804,8 +657,7 @@ public final class GrafeasV1Beta1Grpc {
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
                           generateFullMethodName(
-                              "grafeas.v1beta1.GrafeasV1Beta1",
-                              "GetVulnerabilityOccurrencesSummary"))
+                              SERVICE_NAME, "GetVulnerabilityOccurrencesSummary"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -827,19 +679,43 @@ public final class GrafeasV1Beta1Grpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static GrafeasV1Beta1Stub newStub(io.grpc.Channel channel) {
-    return new GrafeasV1Beta1Stub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<GrafeasV1Beta1Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<GrafeasV1Beta1Stub>() {
+          @java.lang.Override
+          public GrafeasV1Beta1Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new GrafeasV1Beta1Stub(channel, callOptions);
+          }
+        };
+    return GrafeasV1Beta1Stub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static GrafeasV1Beta1BlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new GrafeasV1Beta1BlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<GrafeasV1Beta1BlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<GrafeasV1Beta1BlockingStub>() {
+          @java.lang.Override
+          public GrafeasV1Beta1BlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new GrafeasV1Beta1BlockingStub(channel, callOptions);
+          }
+        };
+    return GrafeasV1Beta1BlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static GrafeasV1Beta1FutureStub newFutureStub(io.grpc.Channel channel) {
-    return new GrafeasV1Beta1FutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<GrafeasV1Beta1FutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<GrafeasV1Beta1FutureStub>() {
+          @java.lang.Override
+          public GrafeasV1Beta1FutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new GrafeasV1Beta1FutureStub(channel, callOptions);
+          }
+        };
+    return GrafeasV1Beta1FutureStub.newStub(factory, channel);
   }
 
   /**
@@ -871,7 +747,7 @@ public final class GrafeasV1Beta1Grpc {
     public void getOccurrence(
         io.grafeas.v1beta1.GetOccurrenceRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Occurrence> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetOccurrenceMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetOccurrenceMethod(), responseObserver);
     }
 
     /**
@@ -884,7 +760,7 @@ public final class GrafeasV1Beta1Grpc {
     public void listOccurrences(
         io.grafeas.v1beta1.ListOccurrencesRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.ListOccurrencesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListOccurrencesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListOccurrencesMethod(), responseObserver);
     }
 
     /**
@@ -899,7 +775,7 @@ public final class GrafeasV1Beta1Grpc {
     public void deleteOccurrence(
         io.grafeas.v1beta1.DeleteOccurrenceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteOccurrenceMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteOccurrenceMethod(), responseObserver);
     }
 
     /**
@@ -912,7 +788,7 @@ public final class GrafeasV1Beta1Grpc {
     public void createOccurrence(
         io.grafeas.v1beta1.CreateOccurrenceRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Occurrence> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateOccurrenceMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateOccurrenceMethod(), responseObserver);
     }
 
     /**
@@ -926,7 +802,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.BatchCreateOccurrencesRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.BatchCreateOccurrencesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchCreateOccurrencesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getBatchCreateOccurrencesMethod(), responseObserver);
     }
 
     /**
@@ -939,7 +815,7 @@ public final class GrafeasV1Beta1Grpc {
     public void updateOccurrence(
         io.grafeas.v1beta1.UpdateOccurrenceRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Occurrence> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateOccurrenceMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateOccurrenceMethod(), responseObserver);
     }
 
     /**
@@ -953,7 +829,7 @@ public final class GrafeasV1Beta1Grpc {
     public void getOccurrenceNote(
         io.grafeas.v1beta1.GetOccurrenceNoteRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Note> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetOccurrenceNoteMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetOccurrenceNoteMethod(), responseObserver);
     }
 
     /**
@@ -966,7 +842,7 @@ public final class GrafeasV1Beta1Grpc {
     public void getNote(
         io.grafeas.v1beta1.GetNoteRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Note> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetNoteMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetNoteMethod(), responseObserver);
     }
 
     /**
@@ -979,7 +855,7 @@ public final class GrafeasV1Beta1Grpc {
     public void listNotes(
         io.grafeas.v1beta1.ListNotesRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.ListNotesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListNotesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListNotesMethod(), responseObserver);
     }
 
     /**
@@ -992,7 +868,7 @@ public final class GrafeasV1Beta1Grpc {
     public void deleteNote(
         io.grafeas.v1beta1.DeleteNoteRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteNoteMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteNoteMethod(), responseObserver);
     }
 
     /**
@@ -1005,7 +881,7 @@ public final class GrafeasV1Beta1Grpc {
     public void createNote(
         io.grafeas.v1beta1.CreateNoteRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Note> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateNoteMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateNoteMethod(), responseObserver);
     }
 
     /**
@@ -1018,7 +894,7 @@ public final class GrafeasV1Beta1Grpc {
     public void batchCreateNotes(
         io.grafeas.v1beta1.BatchCreateNotesRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.BatchCreateNotesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchCreateNotesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getBatchCreateNotesMethod(), responseObserver);
     }
 
     /**
@@ -1031,7 +907,7 @@ public final class GrafeasV1Beta1Grpc {
     public void updateNote(
         io.grafeas.v1beta1.UpdateNoteRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Note> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateNoteMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateNoteMethod(), responseObserver);
     }
 
     /**
@@ -1047,7 +923,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.ListNoteOccurrencesRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.ListNoteOccurrencesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListNoteOccurrencesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListNoteOccurrencesMethod(), responseObserver);
     }
 
     /**
@@ -1061,99 +937,98 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.VulnerabilityOccurrencesSummary>
             responseObserver) {
-      asyncUnimplementedUnaryCall(
-          getGetVulnerabilityOccurrencesSummaryMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetVulnerabilityOccurrencesSummaryMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getGetOccurrenceMethodHelper(),
+              getGetOccurrenceMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       io.grafeas.v1beta1.GetOccurrenceRequest, io.grafeas.v1beta1.Occurrence>(
                       this, METHODID_GET_OCCURRENCE)))
           .addMethod(
-              getListOccurrencesMethodHelper(),
+              getListOccurrencesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       io.grafeas.v1beta1.ListOccurrencesRequest,
                       io.grafeas.v1beta1.ListOccurrencesResponse>(this, METHODID_LIST_OCCURRENCES)))
           .addMethod(
-              getDeleteOccurrenceMethodHelper(),
+              getDeleteOccurrenceMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       io.grafeas.v1beta1.DeleteOccurrenceRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_OCCURRENCE)))
           .addMethod(
-              getCreateOccurrenceMethodHelper(),
+              getCreateOccurrenceMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       io.grafeas.v1beta1.CreateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>(
                       this, METHODID_CREATE_OCCURRENCE)))
           .addMethod(
-              getBatchCreateOccurrencesMethodHelper(),
+              getBatchCreateOccurrencesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       io.grafeas.v1beta1.BatchCreateOccurrencesRequest,
                       io.grafeas.v1beta1.BatchCreateOccurrencesResponse>(
                       this, METHODID_BATCH_CREATE_OCCURRENCES)))
           .addMethod(
-              getUpdateOccurrenceMethodHelper(),
+              getUpdateOccurrenceMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       io.grafeas.v1beta1.UpdateOccurrenceRequest, io.grafeas.v1beta1.Occurrence>(
                       this, METHODID_UPDATE_OCCURRENCE)))
           .addMethod(
-              getGetOccurrenceNoteMethodHelper(),
+              getGetOccurrenceNoteMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       io.grafeas.v1beta1.GetOccurrenceNoteRequest, io.grafeas.v1beta1.Note>(
                       this, METHODID_GET_OCCURRENCE_NOTE)))
           .addMethod(
-              getGetNoteMethodHelper(),
+              getGetNoteMethod(),
               asyncUnaryCall(
                   new MethodHandlers<io.grafeas.v1beta1.GetNoteRequest, io.grafeas.v1beta1.Note>(
                       this, METHODID_GET_NOTE)))
           .addMethod(
-              getListNotesMethodHelper(),
+              getListNotesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       io.grafeas.v1beta1.ListNotesRequest, io.grafeas.v1beta1.ListNotesResponse>(
                       this, METHODID_LIST_NOTES)))
           .addMethod(
-              getDeleteNoteMethodHelper(),
+              getDeleteNoteMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       io.grafeas.v1beta1.DeleteNoteRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_NOTE)))
           .addMethod(
-              getCreateNoteMethodHelper(),
+              getCreateNoteMethod(),
               asyncUnaryCall(
                   new MethodHandlers<io.grafeas.v1beta1.CreateNoteRequest, io.grafeas.v1beta1.Note>(
                       this, METHODID_CREATE_NOTE)))
           .addMethod(
-              getBatchCreateNotesMethodHelper(),
+              getBatchCreateNotesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       io.grafeas.v1beta1.BatchCreateNotesRequest,
                       io.grafeas.v1beta1.BatchCreateNotesResponse>(
                       this, METHODID_BATCH_CREATE_NOTES)))
           .addMethod(
-              getUpdateNoteMethodHelper(),
+              getUpdateNoteMethod(),
               asyncUnaryCall(
                   new MethodHandlers<io.grafeas.v1beta1.UpdateNoteRequest, io.grafeas.v1beta1.Note>(
                       this, METHODID_UPDATE_NOTE)))
           .addMethod(
-              getListNoteOccurrencesMethodHelper(),
+              getListNoteOccurrencesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       io.grafeas.v1beta1.ListNoteOccurrencesRequest,
                       io.grafeas.v1beta1.ListNoteOccurrencesResponse>(
                       this, METHODID_LIST_NOTE_OCCURRENCES)))
           .addMethod(
-              getGetVulnerabilityOccurrencesSummaryMethodHelper(),
+              getGetVulnerabilityOccurrencesSummaryMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest,
@@ -1181,11 +1056,7 @@ public final class GrafeasV1Beta1Grpc {
    * </pre>
    */
   public static final class GrafeasV1Beta1Stub
-      extends io.grpc.stub.AbstractStub<GrafeasV1Beta1Stub> {
-    private GrafeasV1Beta1Stub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<GrafeasV1Beta1Stub> {
     private GrafeasV1Beta1Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1206,7 +1077,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.GetOccurrenceRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Occurrence> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetOccurrenceMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetOccurrenceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1222,7 +1093,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.ListOccurrencesRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.ListOccurrencesResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListOccurrencesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListOccurrencesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1240,7 +1111,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.DeleteOccurrenceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteOccurrenceMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteOccurrenceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1256,7 +1127,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.CreateOccurrenceRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Occurrence> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateOccurrenceMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateOccurrenceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1273,7 +1144,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.BatchCreateOccurrencesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBatchCreateOccurrencesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getBatchCreateOccurrencesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1289,7 +1160,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.UpdateOccurrenceRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Occurrence> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateOccurrenceMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateOccurrenceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1306,7 +1177,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.GetOccurrenceNoteRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Note> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetOccurrenceNoteMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetOccurrenceNoteMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1322,9 +1193,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.GetNoteRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Note> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetNoteMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetNoteMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1338,9 +1207,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.ListNotesRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.ListNotesResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListNotesMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getListNotesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1354,9 +1221,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.DeleteNoteRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteNoteMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getDeleteNoteMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1370,9 +1235,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.CreateNoteRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Note> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateNoteMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getCreateNoteMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1386,7 +1249,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.BatchCreateNotesRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.BatchCreateNotesResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBatchCreateNotesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getBatchCreateNotesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1402,9 +1265,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grafeas.v1beta1.UpdateNoteRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.Note> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateNoteMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getUpdateNoteMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1421,7 +1282,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.ListNoteOccurrencesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListNoteOccurrencesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListNoteOccurrencesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1438,8 +1299,7 @@ public final class GrafeasV1Beta1Grpc {
         io.grpc.stub.StreamObserver<io.grafeas.v1beta1.VulnerabilityOccurrencesSummary>
             responseObserver) {
       asyncUnaryCall(
-          getChannel()
-              .newCall(getGetVulnerabilityOccurrencesSummaryMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetVulnerabilityOccurrencesSummaryMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1463,11 +1323,7 @@ public final class GrafeasV1Beta1Grpc {
    * </pre>
    */
   public static final class GrafeasV1Beta1BlockingStub
-      extends io.grpc.stub.AbstractStub<GrafeasV1Beta1BlockingStub> {
-    private GrafeasV1Beta1BlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<GrafeasV1Beta1BlockingStub> {
     private GrafeasV1Beta1BlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1487,8 +1343,7 @@ public final class GrafeasV1Beta1Grpc {
      */
     public io.grafeas.v1beta1.Occurrence getOccurrence(
         io.grafeas.v1beta1.GetOccurrenceRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetOccurrenceMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetOccurrenceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1500,8 +1355,7 @@ public final class GrafeasV1Beta1Grpc {
      */
     public io.grafeas.v1beta1.ListOccurrencesResponse listOccurrences(
         io.grafeas.v1beta1.ListOccurrencesRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListOccurrencesMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListOccurrencesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1516,7 +1370,7 @@ public final class GrafeasV1Beta1Grpc {
     public com.google.protobuf.Empty deleteOccurrence(
         io.grafeas.v1beta1.DeleteOccurrenceRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteOccurrenceMethodHelper(), getCallOptions(), request);
+          getChannel(), getDeleteOccurrenceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1529,7 +1383,7 @@ public final class GrafeasV1Beta1Grpc {
     public io.grafeas.v1beta1.Occurrence createOccurrence(
         io.grafeas.v1beta1.CreateOccurrenceRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateOccurrenceMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateOccurrenceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1542,7 +1396,7 @@ public final class GrafeasV1Beta1Grpc {
     public io.grafeas.v1beta1.BatchCreateOccurrencesResponse batchCreateOccurrences(
         io.grafeas.v1beta1.BatchCreateOccurrencesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getBatchCreateOccurrencesMethodHelper(), getCallOptions(), request);
+          getChannel(), getBatchCreateOccurrencesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1555,7 +1409,7 @@ public final class GrafeasV1Beta1Grpc {
     public io.grafeas.v1beta1.Occurrence updateOccurrence(
         io.grafeas.v1beta1.UpdateOccurrenceRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateOccurrenceMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateOccurrenceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1569,7 +1423,7 @@ public final class GrafeasV1Beta1Grpc {
     public io.grafeas.v1beta1.Note getOccurrenceNote(
         io.grafeas.v1beta1.GetOccurrenceNoteRequest request) {
       return blockingUnaryCall(
-          getChannel(), getGetOccurrenceNoteMethodHelper(), getCallOptions(), request);
+          getChannel(), getGetOccurrenceNoteMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1580,7 +1434,7 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public io.grafeas.v1beta1.Note getNote(io.grafeas.v1beta1.GetNoteRequest request) {
-      return blockingUnaryCall(getChannel(), getGetNoteMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetNoteMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1592,7 +1446,7 @@ public final class GrafeasV1Beta1Grpc {
      */
     public io.grafeas.v1beta1.ListNotesResponse listNotes(
         io.grafeas.v1beta1.ListNotesRequest request) {
-      return blockingUnaryCall(getChannel(), getListNotesMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListNotesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1603,8 +1457,7 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteNote(io.grafeas.v1beta1.DeleteNoteRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteNoteMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteNoteMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1615,8 +1468,7 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public io.grafeas.v1beta1.Note createNote(io.grafeas.v1beta1.CreateNoteRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateNoteMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateNoteMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1629,7 +1481,7 @@ public final class GrafeasV1Beta1Grpc {
     public io.grafeas.v1beta1.BatchCreateNotesResponse batchCreateNotes(
         io.grafeas.v1beta1.BatchCreateNotesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getBatchCreateNotesMethodHelper(), getCallOptions(), request);
+          getChannel(), getBatchCreateNotesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1640,8 +1492,7 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public io.grafeas.v1beta1.Note updateNote(io.grafeas.v1beta1.UpdateNoteRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateNoteMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateNoteMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1656,7 +1507,7 @@ public final class GrafeasV1Beta1Grpc {
     public io.grafeas.v1beta1.ListNoteOccurrencesResponse listNoteOccurrences(
         io.grafeas.v1beta1.ListNoteOccurrencesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getListNoteOccurrencesMethodHelper(), getCallOptions(), request);
+          getChannel(), getListNoteOccurrencesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1669,10 +1520,7 @@ public final class GrafeasV1Beta1Grpc {
     public io.grafeas.v1beta1.VulnerabilityOccurrencesSummary getVulnerabilityOccurrencesSummary(
         io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest request) {
       return blockingUnaryCall(
-          getChannel(),
-          getGetVulnerabilityOccurrencesSummaryMethodHelper(),
-          getCallOptions(),
-          request);
+          getChannel(), getGetVulnerabilityOccurrencesSummaryMethod(), getCallOptions(), request);
     }
   }
 
@@ -1694,11 +1542,7 @@ public final class GrafeasV1Beta1Grpc {
    * </pre>
    */
   public static final class GrafeasV1Beta1FutureStub
-      extends io.grpc.stub.AbstractStub<GrafeasV1Beta1FutureStub> {
-    private GrafeasV1Beta1FutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<GrafeasV1Beta1FutureStub> {
     private GrafeasV1Beta1FutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1719,7 +1563,7 @@ public final class GrafeasV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<io.grafeas.v1beta1.Occurrence>
         getOccurrence(io.grafeas.v1beta1.GetOccurrenceRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetOccurrenceMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetOccurrenceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1733,7 +1577,7 @@ public final class GrafeasV1Beta1Grpc {
             io.grafeas.v1beta1.ListOccurrencesResponse>
         listOccurrences(io.grafeas.v1beta1.ListOccurrencesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListOccurrencesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListOccurrencesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1748,7 +1592,7 @@ public final class GrafeasV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteOccurrence(io.grafeas.v1beta1.DeleteOccurrenceRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteOccurrenceMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteOccurrenceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1761,7 +1605,7 @@ public final class GrafeasV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<io.grafeas.v1beta1.Occurrence>
         createOccurrence(io.grafeas.v1beta1.CreateOccurrenceRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateOccurrenceMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateOccurrenceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1775,7 +1619,7 @@ public final class GrafeasV1Beta1Grpc {
             io.grafeas.v1beta1.BatchCreateOccurrencesResponse>
         batchCreateOccurrences(io.grafeas.v1beta1.BatchCreateOccurrencesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getBatchCreateOccurrencesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getBatchCreateOccurrencesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1788,7 +1632,7 @@ public final class GrafeasV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<io.grafeas.v1beta1.Occurrence>
         updateOccurrence(io.grafeas.v1beta1.UpdateOccurrenceRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateOccurrenceMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateOccurrenceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1802,7 +1646,7 @@ public final class GrafeasV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<io.grafeas.v1beta1.Note>
         getOccurrenceNote(io.grafeas.v1beta1.GetOccurrenceNoteRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetOccurrenceNoteMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetOccurrenceNoteMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1814,8 +1658,7 @@ public final class GrafeasV1Beta1Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<io.grafeas.v1beta1.Note> getNote(
         io.grafeas.v1beta1.GetNoteRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetNoteMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getGetNoteMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1827,8 +1670,7 @@ public final class GrafeasV1Beta1Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<io.grafeas.v1beta1.ListNotesResponse>
         listNotes(io.grafeas.v1beta1.ListNotesRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getListNotesMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getListNotesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1841,7 +1683,7 @@ public final class GrafeasV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteNote(
         io.grafeas.v1beta1.DeleteNoteRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteNoteMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteNoteMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1854,7 +1696,7 @@ public final class GrafeasV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<io.grafeas.v1beta1.Note> createNote(
         io.grafeas.v1beta1.CreateNoteRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateNoteMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateNoteMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1868,7 +1710,7 @@ public final class GrafeasV1Beta1Grpc {
             io.grafeas.v1beta1.BatchCreateNotesResponse>
         batchCreateNotes(io.grafeas.v1beta1.BatchCreateNotesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getBatchCreateNotesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getBatchCreateNotesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1881,7 +1723,7 @@ public final class GrafeasV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<io.grafeas.v1beta1.Note> updateNote(
         io.grafeas.v1beta1.UpdateNoteRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateNoteMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateNoteMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1897,7 +1739,7 @@ public final class GrafeasV1Beta1Grpc {
             io.grafeas.v1beta1.ListNoteOccurrencesResponse>
         listNoteOccurrences(io.grafeas.v1beta1.ListNoteOccurrencesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListNoteOccurrencesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListNoteOccurrencesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1912,8 +1754,7 @@ public final class GrafeasV1Beta1Grpc {
         getVulnerabilityOccurrencesSummary(
             io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest request) {
       return futureUnaryCall(
-          getChannel()
-              .newCall(getGetVulnerabilityOccurrencesSummaryMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetVulnerabilityOccurrencesSummaryMethod(), getCallOptions()),
           request);
     }
   }
@@ -2095,21 +1936,21 @@ public final class GrafeasV1Beta1Grpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new GrafeasV1Beta1FileDescriptorSupplier())
-                      .addMethod(getGetOccurrenceMethodHelper())
-                      .addMethod(getListOccurrencesMethodHelper())
-                      .addMethod(getDeleteOccurrenceMethodHelper())
-                      .addMethod(getCreateOccurrenceMethodHelper())
-                      .addMethod(getBatchCreateOccurrencesMethodHelper())
-                      .addMethod(getUpdateOccurrenceMethodHelper())
-                      .addMethod(getGetOccurrenceNoteMethodHelper())
-                      .addMethod(getGetNoteMethodHelper())
-                      .addMethod(getListNotesMethodHelper())
-                      .addMethod(getDeleteNoteMethodHelper())
-                      .addMethod(getCreateNoteMethodHelper())
-                      .addMethod(getBatchCreateNotesMethodHelper())
-                      .addMethod(getUpdateNoteMethodHelper())
-                      .addMethod(getListNoteOccurrencesMethodHelper())
-                      .addMethod(getGetVulnerabilityOccurrencesSummaryMethodHelper())
+                      .addMethod(getGetOccurrenceMethod())
+                      .addMethod(getListOccurrencesMethod())
+                      .addMethod(getDeleteOccurrenceMethod())
+                      .addMethod(getCreateOccurrenceMethod())
+                      .addMethod(getBatchCreateOccurrencesMethod())
+                      .addMethod(getUpdateOccurrenceMethod())
+                      .addMethod(getGetOccurrenceNoteMethod())
+                      .addMethod(getGetNoteMethod())
+                      .addMethod(getListNotesMethod())
+                      .addMethod(getDeleteNoteMethod())
+                      .addMethod(getCreateNoteMethod())
+                      .addMethod(getBatchCreateNotesMethod())
+                      .addMethod(getUpdateNoteMethod())
+                      .addMethod(getListNoteOccurrencesMethod())
+                      .addMethod(getGetVulnerabilityOccurrencesSummaryMethod())
                       .build();
         }
       }
