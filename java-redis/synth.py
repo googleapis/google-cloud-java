@@ -14,25 +14,18 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-gapic = gcp.GAPICGenerator()
-
 service = 'redis'
 versions = ['v1', 'v1beta1']
-config_pattern = '/google/cloud/redis/artman_redis_{version}.yaml'
 
 for version in versions:
-  java.gapic_library(
-    service=service,
-    version=version,
-    config_pattern=config_pattern,
-    package_pattern='com.google.cloud.{service}.{version}',
-    gapic=gapic,
+  library = java.bazel_library(
+      service=service,
+      version=version,
+      bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
   )
 
 java.common_templates(excludes=[

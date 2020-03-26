@@ -41,7 +41,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/redis/v1/cloud_redis.proto")
 public final class CloudRedisGrpc {
 
@@ -50,30 +50,20 @@ public final class CloudRedisGrpc {
   public static final String SERVICE_NAME = "google.cloud.redis.v1.CloudRedis";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListInstancesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ListInstancesRequest,
-          com.google.cloud.redis.v1.ListInstancesResponse>
-      METHOD_LIST_INSTANCES = getListInstancesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.ListInstancesRequest,
           com.google.cloud.redis.v1.ListInstancesResponse>
       getListInstancesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListInstances",
+      requestType = com.google.cloud.redis.v1.ListInstancesRequest.class,
+      responseType = com.google.cloud.redis.v1.ListInstancesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.ListInstancesRequest,
           com.google.cloud.redis.v1.ListInstancesResponse>
       getListInstancesMethod() {
-    return getListInstancesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ListInstancesRequest,
-          com.google.cloud.redis.v1.ListInstancesResponse>
-      getListInstancesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.redis.v1.ListInstancesRequest,
             com.google.cloud.redis.v1.ListInstancesResponse>
@@ -88,9 +78,7 @@ public final class CloudRedisGrpc {
                           com.google.cloud.redis.v1.ListInstancesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.redis.v1.CloudRedis", "ListInstances"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListInstances"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -106,26 +94,18 @@ public final class CloudRedisGrpc {
     return getListInstancesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetInstanceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.GetInstanceRequest, com.google.cloud.redis.v1.Instance>
-      METHOD_GET_INSTANCE = getGetInstanceMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.GetInstanceRequest, com.google.cloud.redis.v1.Instance>
       getGetInstanceMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetInstance",
+      requestType = com.google.cloud.redis.v1.GetInstanceRequest.class,
+      responseType = com.google.cloud.redis.v1.Instance.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.GetInstanceRequest, com.google.cloud.redis.v1.Instance>
       getGetInstanceMethod() {
-    return getGetInstanceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.GetInstanceRequest, com.google.cloud.redis.v1.Instance>
-      getGetInstanceMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.redis.v1.GetInstanceRequest, com.google.cloud.redis.v1.Instance>
         getGetInstanceMethod;
@@ -139,8 +119,7 @@ public final class CloudRedisGrpc {
                           com.google.cloud.redis.v1.Instance>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName("google.cloud.redis.v1.CloudRedis", "GetInstance"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetInstance"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -156,26 +135,18 @@ public final class CloudRedisGrpc {
     return getGetInstanceMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateInstanceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.CreateInstanceRequest, com.google.longrunning.Operation>
-      METHOD_CREATE_INSTANCE = getCreateInstanceMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.CreateInstanceRequest, com.google.longrunning.Operation>
       getCreateInstanceMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateInstance",
+      requestType = com.google.cloud.redis.v1.CreateInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.CreateInstanceRequest, com.google.longrunning.Operation>
       getCreateInstanceMethod() {
-    return getCreateInstanceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.CreateInstanceRequest, com.google.longrunning.Operation>
-      getCreateInstanceMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.redis.v1.CreateInstanceRequest, com.google.longrunning.Operation>
         getCreateInstanceMethod;
@@ -189,9 +160,7 @@ public final class CloudRedisGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.redis.v1.CloudRedis", "CreateInstance"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateInstance"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -207,26 +176,18 @@ public final class CloudRedisGrpc {
     return getCreateInstanceMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateInstanceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.UpdateInstanceRequest, com.google.longrunning.Operation>
-      METHOD_UPDATE_INSTANCE = getUpdateInstanceMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.UpdateInstanceRequest, com.google.longrunning.Operation>
       getUpdateInstanceMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateInstance",
+      requestType = com.google.cloud.redis.v1.UpdateInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.UpdateInstanceRequest, com.google.longrunning.Operation>
       getUpdateInstanceMethod() {
-    return getUpdateInstanceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.UpdateInstanceRequest, com.google.longrunning.Operation>
-      getUpdateInstanceMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.redis.v1.UpdateInstanceRequest, com.google.longrunning.Operation>
         getUpdateInstanceMethod;
@@ -240,9 +201,7 @@ public final class CloudRedisGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.redis.v1.CloudRedis", "UpdateInstance"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateInstance"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -258,26 +217,18 @@ public final class CloudRedisGrpc {
     return getUpdateInstanceMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getImportInstanceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ImportInstanceRequest, com.google.longrunning.Operation>
-      METHOD_IMPORT_INSTANCE = getImportInstanceMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.ImportInstanceRequest, com.google.longrunning.Operation>
       getImportInstanceMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportInstance",
+      requestType = com.google.cloud.redis.v1.ImportInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.ImportInstanceRequest, com.google.longrunning.Operation>
       getImportInstanceMethod() {
-    return getImportInstanceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ImportInstanceRequest, com.google.longrunning.Operation>
-      getImportInstanceMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.redis.v1.ImportInstanceRequest, com.google.longrunning.Operation>
         getImportInstanceMethod;
@@ -291,9 +242,7 @@ public final class CloudRedisGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.redis.v1.CloudRedis", "ImportInstance"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportInstance"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -309,26 +258,18 @@ public final class CloudRedisGrpc {
     return getImportInstanceMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getExportInstanceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ExportInstanceRequest, com.google.longrunning.Operation>
-      METHOD_EXPORT_INSTANCE = getExportInstanceMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.ExportInstanceRequest, com.google.longrunning.Operation>
       getExportInstanceMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportInstance",
+      requestType = com.google.cloud.redis.v1.ExportInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.ExportInstanceRequest, com.google.longrunning.Operation>
       getExportInstanceMethod() {
-    return getExportInstanceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ExportInstanceRequest, com.google.longrunning.Operation>
-      getExportInstanceMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.redis.v1.ExportInstanceRequest, com.google.longrunning.Operation>
         getExportInstanceMethod;
@@ -342,9 +283,7 @@ public final class CloudRedisGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.redis.v1.CloudRedis", "ExportInstance"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportInstance"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -360,26 +299,18 @@ public final class CloudRedisGrpc {
     return getExportInstanceMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getFailoverInstanceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.FailoverInstanceRequest, com.google.longrunning.Operation>
-      METHOD_FAILOVER_INSTANCE = getFailoverInstanceMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.FailoverInstanceRequest, com.google.longrunning.Operation>
       getFailoverInstanceMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FailoverInstance",
+      requestType = com.google.cloud.redis.v1.FailoverInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.FailoverInstanceRequest, com.google.longrunning.Operation>
       getFailoverInstanceMethod() {
-    return getFailoverInstanceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.FailoverInstanceRequest, com.google.longrunning.Operation>
-      getFailoverInstanceMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.redis.v1.FailoverInstanceRequest, com.google.longrunning.Operation>
         getFailoverInstanceMethod;
@@ -393,9 +324,7 @@ public final class CloudRedisGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.redis.v1.CloudRedis", "FailoverInstance"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FailoverInstance"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -413,26 +342,18 @@ public final class CloudRedisGrpc {
     return getFailoverInstanceMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteInstanceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.DeleteInstanceRequest, com.google.longrunning.Operation>
-      METHOD_DELETE_INSTANCE = getDeleteInstanceMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.DeleteInstanceRequest, com.google.longrunning.Operation>
       getDeleteInstanceMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteInstance",
+      requestType = com.google.cloud.redis.v1.DeleteInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.DeleteInstanceRequest, com.google.longrunning.Operation>
       getDeleteInstanceMethod() {
-    return getDeleteInstanceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.DeleteInstanceRequest, com.google.longrunning.Operation>
-      getDeleteInstanceMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.redis.v1.DeleteInstanceRequest, com.google.longrunning.Operation>
         getDeleteInstanceMethod;
@@ -446,9 +367,7 @@ public final class CloudRedisGrpc {
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.redis.v1.CloudRedis", "DeleteInstance"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteInstance"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -466,19 +385,42 @@ public final class CloudRedisGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static CloudRedisStub newStub(io.grpc.Channel channel) {
-    return new CloudRedisStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudRedisStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudRedisStub>() {
+          @java.lang.Override
+          public CloudRedisStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudRedisStub(channel, callOptions);
+          }
+        };
+    return CloudRedisStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static CloudRedisBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new CloudRedisBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudRedisBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudRedisBlockingStub>() {
+          @java.lang.Override
+          public CloudRedisBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudRedisBlockingStub(channel, callOptions);
+          }
+        };
+    return CloudRedisBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static CloudRedisFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new CloudRedisFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudRedisFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudRedisFutureStub>() {
+          @java.lang.Override
+          public CloudRedisFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudRedisFutureStub(channel, callOptions);
+          }
+        };
+    return CloudRedisFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -517,7 +459,7 @@ public final class CloudRedisGrpc {
         com.google.cloud.redis.v1.ListInstancesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.ListInstancesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListInstancesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListInstancesMethod(), responseObserver);
     }
 
     /**
@@ -530,7 +472,7 @@ public final class CloudRedisGrpc {
     public void getInstance(
         com.google.cloud.redis.v1.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.Instance> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetInstanceMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetInstanceMethod(), responseObserver);
     }
 
     /**
@@ -551,7 +493,7 @@ public final class CloudRedisGrpc {
     public void createInstance(
         com.google.cloud.redis.v1.CreateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateInstanceMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateInstanceMethod(), responseObserver);
     }
 
     /**
@@ -567,7 +509,7 @@ public final class CloudRedisGrpc {
     public void updateInstance(
         com.google.cloud.redis.v1.UpdateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateInstanceMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateInstanceMethod(), responseObserver);
     }
 
     /**
@@ -585,7 +527,7 @@ public final class CloudRedisGrpc {
     public void importInstance(
         com.google.cloud.redis.v1.ImportInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportInstanceMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getImportInstanceMethod(), responseObserver);
     }
 
     /**
@@ -601,7 +543,7 @@ public final class CloudRedisGrpc {
     public void exportInstance(
         com.google.cloud.redis.v1.ExportInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportInstanceMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getExportInstanceMethod(), responseObserver);
     }
 
     /**
@@ -615,7 +557,7 @@ public final class CloudRedisGrpc {
     public void failoverInstance(
         com.google.cloud.redis.v1.FailoverInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getFailoverInstanceMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getFailoverInstanceMethod(), responseObserver);
     }
 
     /**
@@ -629,57 +571,57 @@ public final class CloudRedisGrpc {
     public void deleteInstance(
         com.google.cloud.redis.v1.DeleteInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteInstanceMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteInstanceMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getListInstancesMethodHelper(),
+              getListInstancesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.redis.v1.ListInstancesRequest,
                       com.google.cloud.redis.v1.ListInstancesResponse>(
                       this, METHODID_LIST_INSTANCES)))
           .addMethod(
-              getGetInstanceMethodHelper(),
+              getGetInstanceMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.redis.v1.GetInstanceRequest,
                       com.google.cloud.redis.v1.Instance>(this, METHODID_GET_INSTANCE)))
           .addMethod(
-              getCreateInstanceMethodHelper(),
+              getCreateInstanceMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.redis.v1.CreateInstanceRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_INSTANCE)))
           .addMethod(
-              getUpdateInstanceMethodHelper(),
+              getUpdateInstanceMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.redis.v1.UpdateInstanceRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_INSTANCE)))
           .addMethod(
-              getImportInstanceMethodHelper(),
+              getImportInstanceMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.redis.v1.ImportInstanceRequest,
                       com.google.longrunning.Operation>(this, METHODID_IMPORT_INSTANCE)))
           .addMethod(
-              getExportInstanceMethodHelper(),
+              getExportInstanceMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.redis.v1.ExportInstanceRequest,
                       com.google.longrunning.Operation>(this, METHODID_EXPORT_INSTANCE)))
           .addMethod(
-              getFailoverInstanceMethodHelper(),
+              getFailoverInstanceMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.redis.v1.FailoverInstanceRequest,
                       com.google.longrunning.Operation>(this, METHODID_FAILOVER_INSTANCE)))
           .addMethod(
-              getDeleteInstanceMethodHelper(),
+              getDeleteInstanceMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.redis.v1.DeleteInstanceRequest,
@@ -706,11 +648,7 @@ public final class CloudRedisGrpc {
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
-  public static final class CloudRedisStub extends io.grpc.stub.AbstractStub<CloudRedisStub> {
-    private CloudRedisStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class CloudRedisStub extends io.grpc.stub.AbstractAsyncStub<CloudRedisStub> {
     private CloudRedisStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -737,7 +675,7 @@ public final class CloudRedisGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.ListInstancesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListInstancesMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListInstancesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -753,7 +691,7 @@ public final class CloudRedisGrpc {
         com.google.cloud.redis.v1.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.Instance> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetInstanceMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetInstanceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -777,7 +715,7 @@ public final class CloudRedisGrpc {
         com.google.cloud.redis.v1.CreateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateInstanceMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateInstanceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -796,7 +734,7 @@ public final class CloudRedisGrpc {
         com.google.cloud.redis.v1.UpdateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateInstanceMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateInstanceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -817,7 +755,7 @@ public final class CloudRedisGrpc {
         com.google.cloud.redis.v1.ImportInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getImportInstanceMethodHelper(), getCallOptions()),
+          getChannel().newCall(getImportInstanceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -836,7 +774,7 @@ public final class CloudRedisGrpc {
         com.google.cloud.redis.v1.ExportInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getExportInstanceMethodHelper(), getCallOptions()),
+          getChannel().newCall(getExportInstanceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -853,7 +791,7 @@ public final class CloudRedisGrpc {
         com.google.cloud.redis.v1.FailoverInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getFailoverInstanceMethodHelper(), getCallOptions()),
+          getChannel().newCall(getFailoverInstanceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -870,7 +808,7 @@ public final class CloudRedisGrpc {
         com.google.cloud.redis.v1.DeleteInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteInstanceMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteInstanceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -895,11 +833,7 @@ public final class CloudRedisGrpc {
    * </pre>
    */
   public static final class CloudRedisBlockingStub
-      extends io.grpc.stub.AbstractStub<CloudRedisBlockingStub> {
-    private CloudRedisBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<CloudRedisBlockingStub> {
     private CloudRedisBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -924,8 +858,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.cloud.redis.v1.ListInstancesResponse listInstances(
         com.google.cloud.redis.v1.ListInstancesRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListInstancesMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -937,8 +870,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.cloud.redis.v1.Instance getInstance(
         com.google.cloud.redis.v1.GetInstanceRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetInstanceMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -958,8 +890,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.longrunning.Operation createInstance(
         com.google.cloud.redis.v1.CreateInstanceRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateInstanceMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -974,8 +905,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.longrunning.Operation updateInstance(
         com.google.cloud.redis.v1.UpdateInstanceRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateInstanceMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -992,8 +922,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.longrunning.Operation importInstance(
         com.google.cloud.redis.v1.ImportInstanceRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getImportInstanceMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getImportInstanceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1008,8 +937,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.longrunning.Operation exportInstance(
         com.google.cloud.redis.v1.ExportInstanceRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getExportInstanceMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getExportInstanceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1023,7 +951,7 @@ public final class CloudRedisGrpc {
     public com.google.longrunning.Operation failoverInstance(
         com.google.cloud.redis.v1.FailoverInstanceRequest request) {
       return blockingUnaryCall(
-          getChannel(), getFailoverInstanceMethodHelper(), getCallOptions(), request);
+          getChannel(), getFailoverInstanceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1036,8 +964,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.longrunning.Operation deleteInstance(
         com.google.cloud.redis.v1.DeleteInstanceRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteInstanceMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
   }
 
@@ -1060,11 +987,7 @@ public final class CloudRedisGrpc {
    * </pre>
    */
   public static final class CloudRedisFutureStub
-      extends io.grpc.stub.AbstractStub<CloudRedisFutureStub> {
-    private CloudRedisFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<CloudRedisFutureStub> {
     private CloudRedisFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1090,7 +1013,7 @@ public final class CloudRedisGrpc {
             com.google.cloud.redis.v1.ListInstancesResponse>
         listInstances(com.google.cloud.redis.v1.ListInstancesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListInstancesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListInstancesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1103,7 +1026,7 @@ public final class CloudRedisGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.redis.v1.Instance>
         getInstance(com.google.cloud.redis.v1.GetInstanceRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetInstanceMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetInstanceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1124,7 +1047,7 @@ public final class CloudRedisGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createInstance(com.google.cloud.redis.v1.CreateInstanceRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateInstanceMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateInstanceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1140,7 +1063,7 @@ public final class CloudRedisGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateInstance(com.google.cloud.redis.v1.UpdateInstanceRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateInstanceMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateInstanceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1158,7 +1081,7 @@ public final class CloudRedisGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         importInstance(com.google.cloud.redis.v1.ImportInstanceRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getImportInstanceMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getImportInstanceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1174,7 +1097,7 @@ public final class CloudRedisGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         exportInstance(com.google.cloud.redis.v1.ExportInstanceRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getExportInstanceMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getExportInstanceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1188,7 +1111,7 @@ public final class CloudRedisGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         failoverInstance(com.google.cloud.redis.v1.FailoverInstanceRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getFailoverInstanceMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getFailoverInstanceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1202,7 +1125,7 @@ public final class CloudRedisGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteInstance(com.google.cloud.redis.v1.DeleteInstanceRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteInstanceMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteInstanceMethod(), getCallOptions()), request);
     }
   }
 
@@ -1337,14 +1260,14 @@ public final class CloudRedisGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new CloudRedisFileDescriptorSupplier())
-                      .addMethod(getListInstancesMethodHelper())
-                      .addMethod(getGetInstanceMethodHelper())
-                      .addMethod(getCreateInstanceMethodHelper())
-                      .addMethod(getUpdateInstanceMethodHelper())
-                      .addMethod(getImportInstanceMethodHelper())
-                      .addMethod(getExportInstanceMethodHelper())
-                      .addMethod(getFailoverInstanceMethodHelper())
-                      .addMethod(getDeleteInstanceMethodHelper())
+                      .addMethod(getListInstancesMethod())
+                      .addMethod(getGetInstanceMethod())
+                      .addMethod(getCreateInstanceMethod())
+                      .addMethod(getUpdateInstanceMethod())
+                      .addMethod(getImportInstanceMethod())
+                      .addMethod(getExportInstanceMethod())
+                      .addMethod(getFailoverInstanceMethod())
+                      .addMethod(getDeleteInstanceMethod())
                       .build();
         }
       }
