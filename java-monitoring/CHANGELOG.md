@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.100.0](https://www.github.com/googleapis/java-monitoring/compare/v1.99.2...v1.100.0) (2020-03-26)
+
+
+### Features
+
+* **v3:** added support for TimeSeriesQueryLanguageCondition condition type in alert policies ([#106](https://www.github.com/googleapis/java-monitoring/issues/106)) ([ef9ee03](https://www.github.com/googleapis/java-monitoring/commit/ef9ee034f96e59e6b9f9301bc6749435de9cf1d0))
+
+
+### Bug Fixes
+
+* update default RPC timeouts/retry backoff ([#86](https://www.github.com/googleapis/java-monitoring/issues/86)) ([5b18b8a](https://www.github.com/googleapis/java-monitoring/commit/5b18b8a4c68aec25e380063a330fe94099963041))
+
+
+### Dependencies
+
+* update core dependencies to v1.54.0 ([#82](https://www.github.com/googleapis/java-monitoring/issues/82)) ([6700754](https://www.github.com/googleapis/java-monitoring/commit/67007546c393bb658371f187dd42d1583273670d))
+* update dependency com.google.api:api-common to v1.9.0 ([#107](https://www.github.com/googleapis/java-monitoring/issues/107)) ([52312ae](https://www.github.com/googleapis/java-monitoring/commit/52312ae10588a98ef5d34462207e29c5fe87af58))
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.13 ([#84](https://www.github.com/googleapis/java-monitoring/issues/84)) ([1cb9d5e](https://www.github.com/googleapis/java-monitoring/commit/1cb9d5eb7c996a03e994e9fc2c8fbfafc9c8c5fb))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([eaa949e](https://www.github.com/googleapis/java-monitoring/commit/eaa949e26e982099b34622eac57697760633d1d1))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([f27babd](https://www.github.com/googleapis/java-monitoring/commit/f27babd963c30c62787ab5b0df897c90b4101547))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([dfcc5bc](https://www.github.com/googleapis/java-monitoring/commit/dfcc5bce3c393e1a2aaae68a8fe30952d6cb2111))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([0978208](https://www.github.com/googleapis/java-monitoring/commit/09782087208405b6d0c8b371a51f61e813a097c2))
+* **regen:** updated proto documentation ([#74](https://www.github.com/googleapis/java-monitoring/issues/74)) ([96c73b1](https://www.github.com/googleapis/java-monitoring/commit/96c73b122f83a47962eb9270c4275c205d76a537))
+
 ### [1.99.2](https://www.github.com/googleapis/java-monitoring/compare/v1.99.1...v1.99.2) (2020-02-04)
 
 
