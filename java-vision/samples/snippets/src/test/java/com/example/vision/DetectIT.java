@@ -18,6 +18,11 @@ package com.example.vision;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.paging.Page;
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.Storage.BlobListOption;
+import com.google.cloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -135,5 +140,13 @@ public class DetectIT {
     // Assert
     String got = bout.toString();
     assertThat(got).contains("red:");
+
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    Page<Blob> blobs = storage.list(OUTPUT_BUCKET, BlobListOption.currentDirectory(),
+        BlobListOption.prefix(OUTPUT_PREFIX + "/"));
+    for (Blob blob : blobs.iterateAll()) {
+      blob.delete();
+    }
   }
 }
