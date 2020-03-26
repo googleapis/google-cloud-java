@@ -16,4 +16,10 @@
     <className>io/grafeas/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <!-- TODO: remove after 0.24.1 released -->
+    <differenceType>6001</differenceType>
+    <className>io/grafeas/v1/*Grpc</className>
+    <field>METHOD_*</field>
+  </difference>
 </differences>

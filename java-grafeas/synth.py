@@ -20,11 +20,10 @@ import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-gapic = gcp.GAPICGenerator()
+gapic = gcp.GAPICBazel()
 
 service = 'grafeas'
 versions = ['v1']
-config_pattern = '/grafeas/artman_grafeas_{version}.yaml'
 
 # License header
 license = """
@@ -50,16 +49,19 @@ for version in versions:
   library = gapic.java_library(
       service=service,
       version=version,
-      config_path=config_pattern.format(version=version),
-      artman_output_name='')
+      proto_path=f'{service}/{version}',
+      bazel_target=f'//{service}/{version}:google-cloud-{service}-{version}-java',
+  )
+
+  library = library / f"google-cloud-{service}-{version}-java"
 
   s.replace(
-      library / f'proto-google-cloud-{service}-{version}/src/**/*.java',
+      library / f'proto-google-cloud-{service}-{version}-java/src/**/*.java',
       protobuf_header,
       f"{license}\n{protobuf_header}"
   )
   s.replace(
-      library / f'grpc-google-cloud-{service}-{version}/src/**/*.java',
+      library / f'grpc-google-cloud-{service}-{version}-java/src/**/*.java',
       f"package io.grafeas.{version};",
       f"{license}\npackage io.grafeas.{version};"
   )
@@ -67,26 +69,26 @@ for version in versions:
   # strip out Google-specific parts
   # Remove default scope
   s.replace(
-      library / f'gapic-google-cloud-{service}-{version}/src/**/GrafeasStubSettings.java',
+      library / f'gapic-google-cloud-{service}-{version}-java/src/**/GrafeasStubSettings.java',
       r'^(.*)ImmutableList\.<String>builder\(\).add\(".*"\)\.build\(\);',
       '\g<1>ImmutableList.of();'
   )
   # Remove default service endpoint
   s.replace(
-      library / f'gapic-google-cloud-{service}-{version}/src/**/GrafeasStubSettings.java',
+      library / f'gapic-google-cloud-{service}-{version}-java/src/**/GrafeasStubSettings.java',
       '    return "containeranalysis.googleapis.com:443";',
       '    return null;'
   )
   # Remove default service endpoint javadoc
   s.replace(
-      library / f'gapic-google-cloud-{service}-{version}/src/**/GrafeasStubSettings.java',
+      library / f'gapic-google-cloud-{service}-{version}-java/src/**/GrafeasStubSettings.java',
       '\s+\*.*default service address.*\n\s+\*.*',
       ''
   )
 
-  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
-  s.copy(library / f'grpc-google-cloud-{service}-{version}/src', 'src')
-  s.copy(library / f'proto-google-cloud-{service}-{version}/src', 'src')
+  s.copy(library / f'gapic-google-cloud-{service}-{version}-java/src', 'src')
+  s.copy(library / f'grpc-google-cloud-{service}-{version}-java/src', 'src')
+  s.copy(library / f'proto-google-cloud-{service}-{version}-java/src', 'src')
 
 
 java.format_code('./src')
