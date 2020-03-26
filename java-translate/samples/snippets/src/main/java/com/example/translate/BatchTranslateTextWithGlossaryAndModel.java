@@ -111,7 +111,7 @@ public class BatchTranslateTextWithGlossaryAndModel {
           client.batchTranslateTextAsync(request);
 
       System.out.println("Waiting for operation to complete...");
-      BatchTranslateResponse response = future.get(120, TimeUnit.SECONDS);
+      BatchTranslateResponse response = future.get(180, TimeUnit.SECONDS);
       // Display the translation for each input text provided
       System.out.printf("Total Characters: %s\n", response.getTotalCharacters());
       System.out.printf("Translated Characters: %s\n", response.getTranslatedCharacters());
