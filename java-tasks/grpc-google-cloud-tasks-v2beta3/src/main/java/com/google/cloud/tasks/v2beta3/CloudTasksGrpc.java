@@ -31,7 +31,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/tasks/v2beta3/cloudtasks.proto")
 public final class CloudTasksGrpc {
 
@@ -40,30 +40,20 @@ public final class CloudTasksGrpc {
   public static final String SERVICE_NAME = "google.cloud.tasks.v2beta3.CloudTasks";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListQueuesMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.ListQueuesRequest,
-          com.google.cloud.tasks.v2beta3.ListQueuesResponse>
-      METHOD_LIST_QUEUES = getListQueuesMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.ListQueuesRequest,
           com.google.cloud.tasks.v2beta3.ListQueuesResponse>
       getListQueuesMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListQueues",
+      requestType = com.google.cloud.tasks.v2beta3.ListQueuesRequest.class,
+      responseType = com.google.cloud.tasks.v2beta3.ListQueuesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.ListQueuesRequest,
           com.google.cloud.tasks.v2beta3.ListQueuesResponse>
       getListQueuesMethod() {
-    return getListQueuesMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.ListQueuesRequest,
-          com.google.cloud.tasks.v2beta3.ListQueuesResponse>
-      getListQueuesMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.tasks.v2beta3.ListQueuesRequest,
             com.google.cloud.tasks.v2beta3.ListQueuesResponse>
@@ -78,9 +68,7 @@ public final class CloudTasksGrpc {
                           com.google.cloud.tasks.v2beta3.ListQueuesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "ListQueues"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListQueues"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -98,26 +86,18 @@ public final class CloudTasksGrpc {
     return getListQueuesMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetQueueMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.GetQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
-      METHOD_GET_QUEUE = getGetQueueMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.GetQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
       getGetQueueMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetQueue",
+      requestType = com.google.cloud.tasks.v2beta3.GetQueueRequest.class,
+      responseType = com.google.cloud.tasks.v2beta3.Queue.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.GetQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
       getGetQueueMethod() {
-    return getGetQueueMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.GetQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
-      getGetQueueMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.tasks.v2beta3.GetQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
         getGetQueueMethod;
@@ -131,9 +111,7 @@ public final class CloudTasksGrpc {
                           com.google.cloud.tasks.v2beta3.Queue>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "GetQueue"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetQueue"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -149,26 +127,18 @@ public final class CloudTasksGrpc {
     return getGetQueueMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateQueueMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.CreateQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
-      METHOD_CREATE_QUEUE = getCreateQueueMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.CreateQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
       getCreateQueueMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateQueue",
+      requestType = com.google.cloud.tasks.v2beta3.CreateQueueRequest.class,
+      responseType = com.google.cloud.tasks.v2beta3.Queue.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.CreateQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
       getCreateQueueMethod() {
-    return getCreateQueueMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.CreateQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
-      getCreateQueueMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.tasks.v2beta3.CreateQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
         getCreateQueueMethod;
@@ -182,9 +152,7 @@ public final class CloudTasksGrpc {
                           com.google.cloud.tasks.v2beta3.Queue>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "CreateQueue"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateQueue"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -201,26 +169,18 @@ public final class CloudTasksGrpc {
     return getCreateQueueMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateQueueMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.UpdateQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
-      METHOD_UPDATE_QUEUE = getUpdateQueueMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.UpdateQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
       getUpdateQueueMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateQueue",
+      requestType = com.google.cloud.tasks.v2beta3.UpdateQueueRequest.class,
+      responseType = com.google.cloud.tasks.v2beta3.Queue.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.UpdateQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
       getUpdateQueueMethod() {
-    return getUpdateQueueMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.UpdateQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
-      getUpdateQueueMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.tasks.v2beta3.UpdateQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
         getUpdateQueueMethod;
@@ -234,9 +194,7 @@ public final class CloudTasksGrpc {
                           com.google.cloud.tasks.v2beta3.Queue>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "UpdateQueue"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateQueue"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -253,26 +211,18 @@ public final class CloudTasksGrpc {
     return getUpdateQueueMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteQueueMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.DeleteQueueRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_QUEUE = getDeleteQueueMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.DeleteQueueRequest, com.google.protobuf.Empty>
       getDeleteQueueMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteQueue",
+      requestType = com.google.cloud.tasks.v2beta3.DeleteQueueRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.DeleteQueueRequest, com.google.protobuf.Empty>
       getDeleteQueueMethod() {
-    return getDeleteQueueMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.DeleteQueueRequest, com.google.protobuf.Empty>
-      getDeleteQueueMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.tasks.v2beta3.DeleteQueueRequest, com.google.protobuf.Empty>
         getDeleteQueueMethod;
@@ -286,9 +236,7 @@ public final class CloudTasksGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "DeleteQueue"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteQueue"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -305,26 +253,18 @@ public final class CloudTasksGrpc {
     return getDeleteQueueMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getPurgeQueueMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.PurgeQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
-      METHOD_PURGE_QUEUE = getPurgeQueueMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.PurgeQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
       getPurgeQueueMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PurgeQueue",
+      requestType = com.google.cloud.tasks.v2beta3.PurgeQueueRequest.class,
+      responseType = com.google.cloud.tasks.v2beta3.Queue.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.PurgeQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
       getPurgeQueueMethod() {
-    return getPurgeQueueMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.PurgeQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
-      getPurgeQueueMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.tasks.v2beta3.PurgeQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
         getPurgeQueueMethod;
@@ -338,9 +278,7 @@ public final class CloudTasksGrpc {
                           com.google.cloud.tasks.v2beta3.Queue>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "PurgeQueue"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PurgeQueue"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -357,26 +295,18 @@ public final class CloudTasksGrpc {
     return getPurgeQueueMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getPauseQueueMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.PauseQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
-      METHOD_PAUSE_QUEUE = getPauseQueueMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.PauseQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
       getPauseQueueMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PauseQueue",
+      requestType = com.google.cloud.tasks.v2beta3.PauseQueueRequest.class,
+      responseType = com.google.cloud.tasks.v2beta3.Queue.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.PauseQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
       getPauseQueueMethod() {
-    return getPauseQueueMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.PauseQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
-      getPauseQueueMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.tasks.v2beta3.PauseQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
         getPauseQueueMethod;
@@ -390,9 +320,7 @@ public final class CloudTasksGrpc {
                           com.google.cloud.tasks.v2beta3.Queue>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "PauseQueue"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PauseQueue"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -409,26 +337,18 @@ public final class CloudTasksGrpc {
     return getPauseQueueMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getResumeQueueMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.ResumeQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
-      METHOD_RESUME_QUEUE = getResumeQueueMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.ResumeQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
       getResumeQueueMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ResumeQueue",
+      requestType = com.google.cloud.tasks.v2beta3.ResumeQueueRequest.class,
+      responseType = com.google.cloud.tasks.v2beta3.Queue.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.ResumeQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
       getResumeQueueMethod() {
-    return getResumeQueueMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.ResumeQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
-      getResumeQueueMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.tasks.v2beta3.ResumeQueueRequest, com.google.cloud.tasks.v2beta3.Queue>
         getResumeQueueMethod;
@@ -442,9 +362,7 @@ public final class CloudTasksGrpc {
                           com.google.cloud.tasks.v2beta3.Queue>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "ResumeQueue"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ResumeQueue"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -461,26 +379,18 @@ public final class CloudTasksGrpc {
     return getResumeQueueMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetIamPolicyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
-      METHOD_GET_IAM_POLICY = getGetIamPolicyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
       getGetIamPolicyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIamPolicy",
+      requestType = com.google.iam.v1.GetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
       getGetIamPolicyMethod() {
-    return getGetIamPolicyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
-      getGetIamPolicyMethodHelper() {
     io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
         getGetIamPolicyMethod;
     if ((getGetIamPolicyMethod = CloudTasksGrpc.getGetIamPolicyMethod) == null) {
@@ -491,9 +401,7 @@ public final class CloudTasksGrpc {
                   io.grpc.MethodDescriptor
                       .<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "GetIamPolicy"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetIamPolicy"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -509,26 +417,18 @@ public final class CloudTasksGrpc {
     return getGetIamPolicyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSetIamPolicyMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
-      METHOD_SET_IAM_POLICY = getSetIamPolicyMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
       getSetIamPolicyMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetIamPolicy",
+      requestType = com.google.iam.v1.SetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
       getSetIamPolicyMethod() {
-    return getSetIamPolicyMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
-      getSetIamPolicyMethodHelper() {
     io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
         getSetIamPolicyMethod;
     if ((getSetIamPolicyMethod = CloudTasksGrpc.getSetIamPolicyMethod) == null) {
@@ -539,9 +439,7 @@ public final class CloudTasksGrpc {
                   io.grpc.MethodDescriptor
                       .<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "SetIamPolicy"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetIamPolicy"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -557,26 +455,18 @@ public final class CloudTasksGrpc {
     return getSetIamPolicyMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getTestIamPermissionsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
-      METHOD_TEST_IAM_PERMISSIONS = getTestIamPermissionsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
       getTestIamPermissionsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TestIamPermissions",
+      requestType = com.google.iam.v1.TestIamPermissionsRequest.class,
+      responseType = com.google.iam.v1.TestIamPermissionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
       getTestIamPermissionsMethod() {
-    return getTestIamPermissionsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
-      getTestIamPermissionsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.iam.v1.TestIamPermissionsRequest,
             com.google.iam.v1.TestIamPermissionsResponse>
@@ -591,9 +481,7 @@ public final class CloudTasksGrpc {
                           com.google.iam.v1.TestIamPermissionsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "TestIamPermissions"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TestIamPermissions"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -610,30 +498,20 @@ public final class CloudTasksGrpc {
     return getTestIamPermissionsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListTasksMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.ListTasksRequest,
-          com.google.cloud.tasks.v2beta3.ListTasksResponse>
-      METHOD_LIST_TASKS = getListTasksMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.ListTasksRequest,
           com.google.cloud.tasks.v2beta3.ListTasksResponse>
       getListTasksMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTasks",
+      requestType = com.google.cloud.tasks.v2beta3.ListTasksRequest.class,
+      responseType = com.google.cloud.tasks.v2beta3.ListTasksResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.ListTasksRequest,
           com.google.cloud.tasks.v2beta3.ListTasksResponse>
       getListTasksMethod() {
-    return getListTasksMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.ListTasksRequest,
-          com.google.cloud.tasks.v2beta3.ListTasksResponse>
-      getListTasksMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.tasks.v2beta3.ListTasksRequest,
             com.google.cloud.tasks.v2beta3.ListTasksResponse>
@@ -648,9 +526,7 @@ public final class CloudTasksGrpc {
                           com.google.cloud.tasks.v2beta3.ListTasksResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "ListTasks"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTasks"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -667,26 +543,18 @@ public final class CloudTasksGrpc {
     return getListTasksMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetTaskMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.GetTaskRequest, com.google.cloud.tasks.v2beta3.Task>
-      METHOD_GET_TASK = getGetTaskMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.GetTaskRequest, com.google.cloud.tasks.v2beta3.Task>
       getGetTaskMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTask",
+      requestType = com.google.cloud.tasks.v2beta3.GetTaskRequest.class,
+      responseType = com.google.cloud.tasks.v2beta3.Task.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.GetTaskRequest, com.google.cloud.tasks.v2beta3.Task>
       getGetTaskMethod() {
-    return getGetTaskMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.GetTaskRequest, com.google.cloud.tasks.v2beta3.Task>
-      getGetTaskMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.tasks.v2beta3.GetTaskRequest, com.google.cloud.tasks.v2beta3.Task>
         getGetTaskMethod;
@@ -700,9 +568,7 @@ public final class CloudTasksGrpc {
                           com.google.cloud.tasks.v2beta3.Task>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "GetTask"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTask"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -718,26 +584,18 @@ public final class CloudTasksGrpc {
     return getGetTaskMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateTaskMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.CreateTaskRequest, com.google.cloud.tasks.v2beta3.Task>
-      METHOD_CREATE_TASK = getCreateTaskMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.CreateTaskRequest, com.google.cloud.tasks.v2beta3.Task>
       getCreateTaskMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateTask",
+      requestType = com.google.cloud.tasks.v2beta3.CreateTaskRequest.class,
+      responseType = com.google.cloud.tasks.v2beta3.Task.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.CreateTaskRequest, com.google.cloud.tasks.v2beta3.Task>
       getCreateTaskMethod() {
-    return getCreateTaskMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.CreateTaskRequest, com.google.cloud.tasks.v2beta3.Task>
-      getCreateTaskMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.tasks.v2beta3.CreateTaskRequest, com.google.cloud.tasks.v2beta3.Task>
         getCreateTaskMethod;
@@ -751,9 +609,7 @@ public final class CloudTasksGrpc {
                           com.google.cloud.tasks.v2beta3.Task>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "CreateTask"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateTask"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -770,26 +626,18 @@ public final class CloudTasksGrpc {
     return getCreateTaskMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteTaskMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.DeleteTaskRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_TASK = getDeleteTaskMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.DeleteTaskRequest, com.google.protobuf.Empty>
       getDeleteTaskMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTask",
+      requestType = com.google.cloud.tasks.v2beta3.DeleteTaskRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.DeleteTaskRequest, com.google.protobuf.Empty>
       getDeleteTaskMethod() {
-    return getDeleteTaskMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.DeleteTaskRequest, com.google.protobuf.Empty>
-      getDeleteTaskMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.tasks.v2beta3.DeleteTaskRequest, com.google.protobuf.Empty>
         getDeleteTaskMethod;
@@ -802,9 +650,7 @@ public final class CloudTasksGrpc {
                       .<com.google.cloud.tasks.v2beta3.DeleteTaskRequest, com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "DeleteTask"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTask"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -821,26 +667,18 @@ public final class CloudTasksGrpc {
     return getDeleteTaskMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getRunTaskMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.RunTaskRequest, com.google.cloud.tasks.v2beta3.Task>
-      METHOD_RUN_TASK = getRunTaskMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.RunTaskRequest, com.google.cloud.tasks.v2beta3.Task>
       getRunTaskMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RunTask",
+      requestType = com.google.cloud.tasks.v2beta3.RunTaskRequest.class,
+      responseType = com.google.cloud.tasks.v2beta3.Task.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2beta3.RunTaskRequest, com.google.cloud.tasks.v2beta3.Task>
       getRunTaskMethod() {
-    return getRunTaskMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.RunTaskRequest, com.google.cloud.tasks.v2beta3.Task>
-      getRunTaskMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.tasks.v2beta3.RunTaskRequest, com.google.cloud.tasks.v2beta3.Task>
         getRunTaskMethod;
@@ -854,9 +692,7 @@ public final class CloudTasksGrpc {
                           com.google.cloud.tasks.v2beta3.Task>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.tasks.v2beta3.CloudTasks", "RunTask"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RunTask"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -874,19 +710,42 @@ public final class CloudTasksGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static CloudTasksStub newStub(io.grpc.Channel channel) {
-    return new CloudTasksStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudTasksStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudTasksStub>() {
+          @java.lang.Override
+          public CloudTasksStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudTasksStub(channel, callOptions);
+          }
+        };
+    return CloudTasksStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static CloudTasksBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new CloudTasksBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudTasksBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudTasksBlockingStub>() {
+          @java.lang.Override
+          public CloudTasksBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudTasksBlockingStub(channel, callOptions);
+          }
+        };
+    return CloudTasksBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static CloudTasksFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new CloudTasksFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CloudTasksFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudTasksFutureStub>() {
+          @java.lang.Override
+          public CloudTasksFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudTasksFutureStub(channel, callOptions);
+          }
+        };
+    return CloudTasksFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -911,7 +770,7 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.ListQueuesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.ListQueuesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListQueuesMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListQueuesMethod(), responseObserver);
     }
 
     /**
@@ -924,7 +783,7 @@ public final class CloudTasksGrpc {
     public void getQueue(
         com.google.cloud.tasks.v2beta3.GetQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Queue> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetQueueMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetQueueMethod(), responseObserver);
     }
 
     /**
@@ -946,7 +805,7 @@ public final class CloudTasksGrpc {
     public void createQueue(
         com.google.cloud.tasks.v2beta3.CreateQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Queue> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateQueueMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateQueueMethod(), responseObserver);
     }
 
     /**
@@ -970,7 +829,7 @@ public final class CloudTasksGrpc {
     public void updateQueue(
         com.google.cloud.tasks.v2beta3.UpdateQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Queue> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateQueueMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateQueueMethod(), responseObserver);
     }
 
     /**
@@ -992,7 +851,7 @@ public final class CloudTasksGrpc {
     public void deleteQueue(
         com.google.cloud.tasks.v2beta3.DeleteQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteQueueMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteQueueMethod(), responseObserver);
     }
 
     /**
@@ -1008,7 +867,7 @@ public final class CloudTasksGrpc {
     public void purgeQueue(
         com.google.cloud.tasks.v2beta3.PurgeQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Queue> responseObserver) {
-      asyncUnimplementedUnaryCall(getPurgeQueueMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getPurgeQueueMethod(), responseObserver);
     }
 
     /**
@@ -1026,7 +885,7 @@ public final class CloudTasksGrpc {
     public void pauseQueue(
         com.google.cloud.tasks.v2beta3.PauseQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Queue> responseObserver) {
-      asyncUnimplementedUnaryCall(getPauseQueueMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getPauseQueueMethod(), responseObserver);
     }
 
     /**
@@ -1049,7 +908,7 @@ public final class CloudTasksGrpc {
     public void resumeQueue(
         com.google.cloud.tasks.v2beta3.ResumeQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Queue> responseObserver) {
-      asyncUnimplementedUnaryCall(getResumeQueueMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getResumeQueueMethod(), responseObserver);
     }
 
     /**
@@ -1068,7 +927,7 @@ public final class CloudTasksGrpc {
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetIamPolicyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1088,7 +947,7 @@ public final class CloudTasksGrpc {
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetIamPolicyMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1107,7 +966,7 @@ public final class CloudTasksGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getTestIamPermissionsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getTestIamPermissionsMethod(), responseObserver);
     }
 
     /**
@@ -1127,7 +986,7 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.ListTasksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.ListTasksResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListTasksMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListTasksMethod(), responseObserver);
     }
 
     /**
@@ -1140,7 +999,7 @@ public final class CloudTasksGrpc {
     public void getTask(
         com.google.cloud.tasks.v2beta3.GetTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Task> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetTaskMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetTaskMethod(), responseObserver);
     }
 
     /**
@@ -1155,7 +1014,7 @@ public final class CloudTasksGrpc {
     public void createTask(
         com.google.cloud.tasks.v2beta3.CreateTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Task> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTaskMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateTaskMethod(), responseObserver);
     }
 
     /**
@@ -1171,7 +1030,7 @@ public final class CloudTasksGrpc {
     public void deleteTask(
         com.google.cloud.tasks.v2beta3.DeleteTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteTaskMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteTaskMethod(), responseObserver);
     }
 
     /**
@@ -1202,106 +1061,106 @@ public final class CloudTasksGrpc {
     public void runTask(
         com.google.cloud.tasks.v2beta3.RunTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Task> responseObserver) {
-      asyncUnimplementedUnaryCall(getRunTaskMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getRunTaskMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getListQueuesMethodHelper(),
+              getListQueuesMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.tasks.v2beta3.ListQueuesRequest,
                       com.google.cloud.tasks.v2beta3.ListQueuesResponse>(
                       this, METHODID_LIST_QUEUES)))
           .addMethod(
-              getGetQueueMethodHelper(),
+              getGetQueueMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.tasks.v2beta3.GetQueueRequest,
                       com.google.cloud.tasks.v2beta3.Queue>(this, METHODID_GET_QUEUE)))
           .addMethod(
-              getCreateQueueMethodHelper(),
+              getCreateQueueMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.tasks.v2beta3.CreateQueueRequest,
                       com.google.cloud.tasks.v2beta3.Queue>(this, METHODID_CREATE_QUEUE)))
           .addMethod(
-              getUpdateQueueMethodHelper(),
+              getUpdateQueueMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.tasks.v2beta3.UpdateQueueRequest,
                       com.google.cloud.tasks.v2beta3.Queue>(this, METHODID_UPDATE_QUEUE)))
           .addMethod(
-              getDeleteQueueMethodHelper(),
+              getDeleteQueueMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.tasks.v2beta3.DeleteQueueRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_QUEUE)))
           .addMethod(
-              getPurgeQueueMethodHelper(),
+              getPurgeQueueMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.tasks.v2beta3.PurgeQueueRequest,
                       com.google.cloud.tasks.v2beta3.Queue>(this, METHODID_PURGE_QUEUE)))
           .addMethod(
-              getPauseQueueMethodHelper(),
+              getPauseQueueMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.tasks.v2beta3.PauseQueueRequest,
                       com.google.cloud.tasks.v2beta3.Queue>(this, METHODID_PAUSE_QUEUE)))
           .addMethod(
-              getResumeQueueMethodHelper(),
+              getResumeQueueMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.tasks.v2beta3.ResumeQueueRequest,
                       com.google.cloud.tasks.v2beta3.Queue>(this, METHODID_RESUME_QUEUE)))
           .addMethod(
-              getGetIamPolicyMethodHelper(),
+              getGetIamPolicyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_GET_IAM_POLICY)))
           .addMethod(
-              getSetIamPolicyMethodHelper(),
+              getSetIamPolicyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_SET_IAM_POLICY)))
           .addMethod(
-              getTestIamPermissionsMethodHelper(),
+              getTestIamPermissionsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.TestIamPermissionsRequest,
                       com.google.iam.v1.TestIamPermissionsResponse>(
                       this, METHODID_TEST_IAM_PERMISSIONS)))
           .addMethod(
-              getListTasksMethodHelper(),
+              getListTasksMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.tasks.v2beta3.ListTasksRequest,
                       com.google.cloud.tasks.v2beta3.ListTasksResponse>(this, METHODID_LIST_TASKS)))
           .addMethod(
-              getGetTaskMethodHelper(),
+              getGetTaskMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.tasks.v2beta3.GetTaskRequest,
                       com.google.cloud.tasks.v2beta3.Task>(this, METHODID_GET_TASK)))
           .addMethod(
-              getCreateTaskMethodHelper(),
+              getCreateTaskMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.tasks.v2beta3.CreateTaskRequest,
                       com.google.cloud.tasks.v2beta3.Task>(this, METHODID_CREATE_TASK)))
           .addMethod(
-              getDeleteTaskMethodHelper(),
+              getDeleteTaskMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.tasks.v2beta3.DeleteTaskRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_TASK)))
           .addMethod(
-              getRunTaskMethodHelper(),
+              getRunTaskMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.tasks.v2beta3.RunTaskRequest,
@@ -1318,11 +1177,7 @@ public final class CloudTasksGrpc {
    * work in their applications.
    * </pre>
    */
-  public static final class CloudTasksStub extends io.grpc.stub.AbstractStub<CloudTasksStub> {
-    private CloudTasksStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class CloudTasksStub extends io.grpc.stub.AbstractAsyncStub<CloudTasksStub> {
     private CloudTasksStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1345,9 +1200,7 @@ public final class CloudTasksGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.ListQueuesResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListQueuesMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getListQueuesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1361,9 +1214,7 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.GetQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Queue> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetQueueMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetQueueMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1386,7 +1237,7 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.CreateQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Queue> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateQueueMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateQueueMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1413,7 +1264,7 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.UpdateQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Queue> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateQueueMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateQueueMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1438,7 +1289,7 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.DeleteQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteQueueMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteQueueMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1457,9 +1308,7 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.PurgeQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Queue> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getPurgeQueueMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getPurgeQueueMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1478,9 +1327,7 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.PauseQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Queue> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getPauseQueueMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getPauseQueueMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1504,7 +1351,7 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.ResumeQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Queue> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getResumeQueueMethodHelper(), getCallOptions()),
+          getChannel().newCall(getResumeQueueMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1526,7 +1373,7 @@ public final class CloudTasksGrpc {
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1549,7 +1396,7 @@ public final class CloudTasksGrpc {
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSetIamPolicyMethodHelper(), getCallOptions()),
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1571,7 +1418,7 @@ public final class CloudTasksGrpc {
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1594,9 +1441,7 @@ public final class CloudTasksGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.ListTasksResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListTasksMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getListTasksMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1610,9 +1455,7 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.GetTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Task> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetTaskMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetTaskMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1628,9 +1471,7 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.CreateTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Task> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateTaskMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getCreateTaskMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1647,9 +1488,7 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.DeleteTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteTaskMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getDeleteTaskMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1681,9 +1520,7 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.RunTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Task> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getRunTaskMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getRunTaskMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -1696,11 +1533,7 @@ public final class CloudTasksGrpc {
    * </pre>
    */
   public static final class CloudTasksBlockingStub
-      extends io.grpc.stub.AbstractStub<CloudTasksBlockingStub> {
-    private CloudTasksBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<CloudTasksBlockingStub> {
     private CloudTasksBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1721,8 +1554,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.cloud.tasks.v2beta3.ListQueuesResponse listQueues(
         com.google.cloud.tasks.v2beta3.ListQueuesRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListQueuesMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListQueuesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1734,7 +1566,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.cloud.tasks.v2beta3.Queue getQueue(
         com.google.cloud.tasks.v2beta3.GetQueueRequest request) {
-      return blockingUnaryCall(getChannel(), getGetQueueMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetQueueMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1755,8 +1587,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.cloud.tasks.v2beta3.Queue createQueue(
         com.google.cloud.tasks.v2beta3.CreateQueueRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateQueueMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateQueueMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1779,8 +1610,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.cloud.tasks.v2beta3.Queue updateQueue(
         com.google.cloud.tasks.v2beta3.UpdateQueueRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateQueueMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateQueueMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1801,8 +1631,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.protobuf.Empty deleteQueue(
         com.google.cloud.tasks.v2beta3.DeleteQueueRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteQueueMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteQueueMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1817,8 +1646,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.cloud.tasks.v2beta3.Queue purgeQueue(
         com.google.cloud.tasks.v2beta3.PurgeQueueRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getPurgeQueueMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getPurgeQueueMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1835,8 +1663,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.cloud.tasks.v2beta3.Queue pauseQueue(
         com.google.cloud.tasks.v2beta3.PauseQueueRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getPauseQueueMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getPauseQueueMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1858,8 +1685,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.cloud.tasks.v2beta3.Queue resumeQueue(
         com.google.cloud.tasks.v2beta3.ResumeQueueRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getResumeQueueMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getResumeQueueMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1876,8 +1702,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetIamPolicyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1895,8 +1720,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getSetIamPolicyMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1914,7 +1738,7 @@ public final class CloudTasksGrpc {
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getTestIamPermissionsMethodHelper(), getCallOptions(), request);
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1932,7 +1756,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.cloud.tasks.v2beta3.ListTasksResponse listTasks(
         com.google.cloud.tasks.v2beta3.ListTasksRequest request) {
-      return blockingUnaryCall(getChannel(), getListTasksMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListTasksMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1944,7 +1768,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.cloud.tasks.v2beta3.Task getTask(
         com.google.cloud.tasks.v2beta3.GetTaskRequest request) {
-      return blockingUnaryCall(getChannel(), getGetTaskMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetTaskMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1958,8 +1782,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.cloud.tasks.v2beta3.Task createTask(
         com.google.cloud.tasks.v2beta3.CreateTaskRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateTaskMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateTaskMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1974,8 +1797,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.protobuf.Empty deleteTask(
         com.google.cloud.tasks.v2beta3.DeleteTaskRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteTaskMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteTaskMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2005,7 +1827,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.cloud.tasks.v2beta3.Task runTask(
         com.google.cloud.tasks.v2beta3.RunTaskRequest request) {
-      return blockingUnaryCall(getChannel(), getRunTaskMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getRunTaskMethod(), getCallOptions(), request);
     }
   }
 
@@ -2018,11 +1840,7 @@ public final class CloudTasksGrpc {
    * </pre>
    */
   public static final class CloudTasksFutureStub
-      extends io.grpc.stub.AbstractStub<CloudTasksFutureStub> {
-    private CloudTasksFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<CloudTasksFutureStub> {
     private CloudTasksFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -2044,7 +1862,7 @@ public final class CloudTasksGrpc {
             com.google.cloud.tasks.v2beta3.ListQueuesResponse>
         listQueues(com.google.cloud.tasks.v2beta3.ListQueuesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListQueuesMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListQueuesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2056,8 +1874,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta3.Queue>
         getQueue(com.google.cloud.tasks.v2beta3.GetQueueRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetQueueMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getGetQueueMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2079,7 +1896,7 @@ public final class CloudTasksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta3.Queue>
         createQueue(com.google.cloud.tasks.v2beta3.CreateQueueRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateQueueMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateQueueMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2103,7 +1920,7 @@ public final class CloudTasksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta3.Queue>
         updateQueue(com.google.cloud.tasks.v2beta3.UpdateQueueRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateQueueMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateQueueMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2125,7 +1942,7 @@ public final class CloudTasksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteQueue(com.google.cloud.tasks.v2beta3.DeleteQueueRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteQueueMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteQueueMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2141,7 +1958,7 @@ public final class CloudTasksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta3.Queue>
         purgeQueue(com.google.cloud.tasks.v2beta3.PurgeQueueRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getPurgeQueueMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getPurgeQueueMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2159,7 +1976,7 @@ public final class CloudTasksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta3.Queue>
         pauseQueue(com.google.cloud.tasks.v2beta3.PauseQueueRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getPauseQueueMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getPauseQueueMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2182,7 +1999,7 @@ public final class CloudTasksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta3.Queue>
         resumeQueue(com.google.cloud.tasks.v2beta3.ResumeQueueRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getResumeQueueMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getResumeQueueMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2201,7 +2018,7 @@ public final class CloudTasksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2221,7 +2038,7 @@ public final class CloudTasksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getSetIamPolicyMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2240,7 +2057,7 @@ public final class CloudTasksGrpc {
             com.google.iam.v1.TestIamPermissionsResponse>
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2259,8 +2076,7 @@ public final class CloudTasksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.tasks.v2beta3.ListTasksResponse>
         listTasks(com.google.cloud.tasks.v2beta3.ListTasksRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getListTasksMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getListTasksMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2272,8 +2088,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta3.Task>
         getTask(com.google.cloud.tasks.v2beta3.GetTaskRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetTaskMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getGetTaskMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2288,7 +2103,7 @@ public final class CloudTasksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta3.Task>
         createTask(com.google.cloud.tasks.v2beta3.CreateTaskRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateTaskMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateTaskMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2304,7 +2119,7 @@ public final class CloudTasksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTask(
         com.google.cloud.tasks.v2beta3.DeleteTaskRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteTaskMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteTaskMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2334,8 +2149,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta3.Task>
         runTask(com.google.cloud.tasks.v2beta3.RunTaskRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getRunTaskMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getRunTaskMethod(), getCallOptions()), request);
     }
   }
 
@@ -2520,22 +2334,22 @@ public final class CloudTasksGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new CloudTasksFileDescriptorSupplier())
-                      .addMethod(getListQueuesMethodHelper())
-                      .addMethod(getGetQueueMethodHelper())
-                      .addMethod(getCreateQueueMethodHelper())
-                      .addMethod(getUpdateQueueMethodHelper())
-                      .addMethod(getDeleteQueueMethodHelper())
-                      .addMethod(getPurgeQueueMethodHelper())
-                      .addMethod(getPauseQueueMethodHelper())
-                      .addMethod(getResumeQueueMethodHelper())
-                      .addMethod(getGetIamPolicyMethodHelper())
-                      .addMethod(getSetIamPolicyMethodHelper())
-                      .addMethod(getTestIamPermissionsMethodHelper())
-                      .addMethod(getListTasksMethodHelper())
-                      .addMethod(getGetTaskMethodHelper())
-                      .addMethod(getCreateTaskMethodHelper())
-                      .addMethod(getDeleteTaskMethodHelper())
-                      .addMethod(getRunTaskMethodHelper())
+                      .addMethod(getListQueuesMethod())
+                      .addMethod(getGetQueueMethod())
+                      .addMethod(getCreateQueueMethod())
+                      .addMethod(getUpdateQueueMethod())
+                      .addMethod(getDeleteQueueMethod())
+                      .addMethod(getPurgeQueueMethod())
+                      .addMethod(getPauseQueueMethod())
+                      .addMethod(getResumeQueueMethod())
+                      .addMethod(getGetIamPolicyMethod())
+                      .addMethod(getSetIamPolicyMethod())
+                      .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getListTasksMethod())
+                      .addMethod(getGetTaskMethod())
+                      .addMethod(getCreateTaskMethod())
+                      .addMethod(getDeleteTaskMethod())
+                      .addMethod(getRunTaskMethod())
                       .build();
         }
       }

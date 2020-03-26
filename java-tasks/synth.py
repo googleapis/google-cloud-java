@@ -20,7 +20,7 @@ import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-gapic = gcp.GAPICGenerator()
+gapic = gcp.GAPICBazel()
 
 service = 'tasks'
 versions = ['v2beta2', 'v2beta3', 'v2']
@@ -52,32 +52,34 @@ for version in versions:
     library = gapic.java_library(
         service=service,
         version=version,
-        config_path=config_pattern.format(version=version),
-        artman_output_name='')
+        bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
+    )
+
+    library = library / f"google-cloud-{service}-{version}-java"
 
     package_name = f'com.google.cloud.{service}.{version}'
-    java.fix_proto_headers(library / f'proto-google-cloud-{service}-{version}')
-    java.fix_grpc_headers(library / f'grpc-google-cloud-{service}-{version}', package_name)
+    java.fix_proto_headers(library / f'proto-google-cloud-{service}-{version}-java')
+    java.fix_grpc_headers(library / f'grpc-google-cloud-{service}-{version}-java', package_name)
 
     s.replace(
-        library / f'gapic-google-cloud-{service}-{version}/src/**/CloudTasksClient.java',
+        library / f'gapic-google-cloud-{service}-{version}-java/src/**/CloudTasksClient.java',
         GET_IAM_POLICY_PREVIOUS,
         "\g<1>\n\n" + GET_IAM_POLICY
     )
     s.replace(
-        library / f'gapic-google-cloud-{service}-{version}/src/**/CloudTasksClient.java',
+        library / f'gapic-google-cloud-{service}-{version}-java/src/**/CloudTasksClient.java',
         SET_IAM_POLICY_PREVIOUS,
         "\g<1>\n\n" + SET_IAM_POLICY
     )
     s.replace(
-        library / f'gapic-google-cloud-{service}-{version}/src/**/CloudTasksClient.java',
+        library / f'gapic-google-cloud-{service}-{version}-java/src/**/CloudTasksClient.java',
         TEST_IAM_POLICY_PREVIOUS,
         "\g<1>\n\n" + TEST_IAM_POLICY
     )
 
-    s.copy(library / f'gapic-google-cloud-{service}-{version}/src', f'google-cloud-{service}/src')
-    s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'grpc-google-cloud-{service}-{version}/src')
-    s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'proto-google-cloud-{service}-{version}/src')
+    s.copy(library / f'gapic-google-cloud-{service}-{version}-java/src', f'google-cloud-{service}/src')
+    s.copy(library / f'grpc-google-cloud-{service}-{version}-java/src', f'grpc-google-cloud-{service}-{version}/src')
+    s.copy(library / f'proto-google-cloud-{service}-{version}-java/src', f'proto-google-cloud-{service}-{version}/src')
 
     java.format_code(f'google-cloud-{service}/src')
     java.format_code(f'grpc-google-cloud-{service}-{version}/src')
