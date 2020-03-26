@@ -92,8 +92,6 @@ for version in versions:
 
 
 java.format_code('./src')
-common_templates = gcp.CommonTemplates()
-templates = common_templates.java_library()
-s.copy(templates, excludes=[
+java.common_templates(excludes=[
     'README.md',
 ])
