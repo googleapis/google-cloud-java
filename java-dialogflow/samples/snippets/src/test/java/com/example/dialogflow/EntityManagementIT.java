@@ -22,14 +22,12 @@ import static org.junit.Assert.assertEquals;
 import com.google.cloud.dialogflow.v2.EntityType;
 import com.google.cloud.dialogflow.v2.EntityType.Entity;
 import com.google.protobuf.ProtocolStringList;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;

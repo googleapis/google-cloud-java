@@ -28,7 +28,6 @@ import com.google.cloud.dialogflow.v2.IntentName;
 import com.google.cloud.dialogflow.v2.IntentsClient;
 import com.google.cloud.dialogflow.v2.ProjectAgentName;
 import com.google.common.collect.Lists;
-
 import java.util.ArrayList;
 import java.util.List;
 

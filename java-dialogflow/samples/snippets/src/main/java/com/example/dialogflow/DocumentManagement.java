@@ -23,7 +23,6 @@ import com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType;
 import com.google.cloud.dialogflow.v2beta1.DocumentsClient;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata;
 import com.google.common.collect.Lists;
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 

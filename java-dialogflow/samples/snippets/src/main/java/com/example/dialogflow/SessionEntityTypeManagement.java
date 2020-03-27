@@ -25,7 +25,6 @@ import com.google.cloud.dialogflow.v2.SessionEntityTypeName;
 import com.google.cloud.dialogflow.v2.SessionEntityTypesClient;
 import com.google.cloud.dialogflow.v2.SessionName;
 import com.google.common.collect.Lists;
-
 import java.util.ArrayList;
 import java.util.List;
 

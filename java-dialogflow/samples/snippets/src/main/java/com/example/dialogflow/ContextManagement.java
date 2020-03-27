@@ -24,7 +24,6 @@ import com.google.cloud.dialogflow.v2.ContextsClient;
 import com.google.cloud.dialogflow.v2.SessionName;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Value;
-
 import java.util.List;
 import java.util.Map.Entry;
 

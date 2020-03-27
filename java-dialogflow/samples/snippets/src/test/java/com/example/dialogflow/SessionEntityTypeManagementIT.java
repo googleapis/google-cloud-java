@@ -25,13 +25,11 @@ import com.google.cloud.dialogflow.v2.EntityType.Kind;
 import com.google.cloud.dialogflow.v2.SessionEntityType;
 import com.google.cloud.dialogflow.v2.SessionEntityTypesClient;
 import com.google.cloud.dialogflow.v2.SessionName;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

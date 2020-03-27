@@ -20,7 +20,6 @@ import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
 import com.google.cloud.dialogflow.v2beta1.ProjectName;
 import com.google.common.collect.Lists;
-
 import java.util.List;
 
 public class KnowledgeBaseManagement {

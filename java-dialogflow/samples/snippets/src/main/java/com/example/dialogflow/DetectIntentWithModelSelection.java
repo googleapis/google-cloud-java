@@ -25,7 +25,6 @@ import com.google.cloud.dialogflow.v2beta1.QueryResult;
 import com.google.cloud.dialogflow.v2beta1.SessionName;
 import com.google.cloud.dialogflow.v2beta1.SessionsClient;
 import com.google.protobuf.ByteString;
-
 import java.nio.file.Files;
 import java.nio.file.Paths;
 

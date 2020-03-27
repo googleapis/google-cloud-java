@@ -23,12 +23,10 @@ import static org.junit.Assert.assertTrue;
 import com.google.cloud.dialogflow.v2.Context;
 import com.google.cloud.dialogflow.v2.ContextName;
 import com.google.cloud.dialogflow.v2.ContextsClient;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.List;
 import java.util.UUID;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

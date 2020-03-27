@@ -30,7 +30,6 @@ import com.google.cloud.dialogflow.v2beta1.SessionsClient;
 import com.google.cloud.dialogflow.v2beta1.TextInput;
 import com.google.cloud.dialogflow.v2beta1.TextInput.Builder;
 import com.google.common.collect.Maps;
-
 import java.util.List;
 import java.util.Map;
 
