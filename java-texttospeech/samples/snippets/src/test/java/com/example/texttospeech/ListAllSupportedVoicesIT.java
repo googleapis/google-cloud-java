@@ -21,7 +21,6 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.cloud.texttospeech.v1.Voice;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
 import java.util.List;
 import org.junit.After;
 import org.junit.Before;
@@ -29,9 +28,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Tests for ListAllSupportedVoices sample.
- */
+/** Tests for ListAllSupportedVoices sample. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class ListAllSupportedVoicesIT {
@@ -39,7 +36,6 @@ public class ListAllSupportedVoicesIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private ListAllSupportedVoices listAllSupportedVoices;
-
 
   @Before
   public void setUp() {
