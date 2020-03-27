@@ -23,13 +23,11 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -50,8 +48,8 @@ public class AsyncBatchAnnotateImagesTest {
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
-            System.getenv(varName),
-            "Environment variable '%s' is required to perform these tests.".format(varName));
+        System.getenv(varName),
+        "Environment variable '%s' is required to perform these tests.".format(varName));
   }
 
   @BeforeClass
@@ -72,7 +70,10 @@ public class AsyncBatchAnnotateImagesTest {
 
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
-    Page<Blob> blobs = storage.list(PROJECT_ID, Storage.BlobListOption.currentDirectory(),
+    Page<Blob> blobs =
+        storage.list(
+            PROJECT_ID,
+            Storage.BlobListOption.currentDirectory(),
             Storage.BlobListOption.prefix(PREFIX));
     for (Blob blob : blobs.iterateAll()) {
       blob.delete();

@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package com.example.vision;
 
 // [START vision_quickstart]
@@ -52,10 +51,8 @@ public class QuickstartSample {
       List<AnnotateImageRequest> requests = new ArrayList<>();
       Image img = Image.newBuilder().setContent(imgBytes).build();
       Feature feat = Feature.newBuilder().setType(Type.LABEL_DETECTION).build();
-      AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
-          .addFeatures(feat)
-          .setImage(img)
-          .build();
+      AnnotateImageRequest request =
+          AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
       requests.add(request);
 
       // Performs label detection on the image file
@@ -69,8 +66,9 @@ public class QuickstartSample {
         }
 
         for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
-          annotation.getAllFields().forEach((k, v) ->
-              System.out.printf("%s : %s\n", k, v.toString()));
+          annotation
+              .getAllFields()
+              .forEach((k, v) -> System.out.printf("%s : %s\n", k, v.toString()));
         }
       }
     }

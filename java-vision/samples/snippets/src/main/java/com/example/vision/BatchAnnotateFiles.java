@@ -30,7 +30,6 @@ import com.google.cloud.vision.v1.Paragraph;
 import com.google.cloud.vision.v1.Symbol;
 import com.google.cloud.vision.v1.Word;
 import com.google.protobuf.ByteString;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;

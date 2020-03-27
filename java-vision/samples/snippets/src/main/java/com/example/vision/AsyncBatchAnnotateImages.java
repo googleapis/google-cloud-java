@@ -26,7 +26,6 @@ import com.google.cloud.vision.v1.Image;
 import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import com.google.cloud.vision.v1.ImageSource;
 import com.google.cloud.vision.v1.OutputConfig;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 

@@ -25,7 +25,6 @@ import com.google.cloud.vision.v1.Image;
 import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import com.google.cloud.vision.v1.ImageAnnotatorSettings;
 import com.google.cloud.vision.v1.ImageSource;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

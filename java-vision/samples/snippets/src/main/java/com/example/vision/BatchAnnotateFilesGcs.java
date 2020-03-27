@@ -30,7 +30,6 @@ import com.google.cloud.vision.v1.Page;
 import com.google.cloud.vision.v1.Paragraph;
 import com.google.cloud.vision.v1.Symbol;
 import com.google.cloud.vision.v1.Word;
-
 import java.io.IOException;
 
 public class BatchAnnotateFilesGcs {

@@ -62,9 +62,7 @@ import com.google.cloud.vision.v1.WebDetection.WebLabel;
 import com.google.cloud.vision.v1.WebDetection.WebPage;
 import com.google.cloud.vision.v1.WebDetectionParams;
 import com.google.cloud.vision.v1.Word;
-
 import com.google.protobuf.ByteString;
-
 import com.google.protobuf.util.JsonFormat;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -249,14 +247,13 @@ public class Detect {
    * Detects faces in the specified remote image on Google Cloud Storage.
    *
    * @param gcsPath The path to the remote file on Google Cloud Storage to perform face detection
-   *                on.
+   *     on.
    * @param out A {@link PrintStream} to write detected features to.
    * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
   // [START vision_face_detection_gcs]
-  public static void detectFacesGcs(String gcsPath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectFacesGcs(String gcsPath, PrintStream out) throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -334,14 +331,14 @@ public class Detect {
    * Detects labels in the specified remote image on Google Cloud Storage.
    *
    * @param gcsPath The path to the remote file on Google Cloud Storage to perform label detection
-   *                on.
+   *     on.
    * @param out A {@link PrintStream} to write detected features to.
    * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
   // [START vision_label_detection_gcs]
-  public static void detectLabelsGcs(String gcsPath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectLabelsGcs(String gcsPath, PrintStream out)
+      throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -363,8 +360,7 @@ public class Detect {
 
         // For full list of available annotations, see http://g.co/cloud/vision/docs
         for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
-          annotation.getAllFields().forEach((k, v) ->
-              out.printf("%s : %s\n", k, v.toString()));
+          annotation.getAllFields().forEach((k, v) -> out.printf("%s : %s\n", k, v.toString()));
         }
       }
     }
@@ -380,8 +376,8 @@ public class Detect {
    * @throws IOException on Input/Output errors.
    */
   // [START vision_landmark_detection]
-  public static void detectLandmarks(String filePath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectLandmarks(String filePath, PrintStream out)
+      throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
 
@@ -419,8 +415,7 @@ public class Detect {
    * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectLandmarksUrl(String uri, PrintStream out) throws Exception,
-      IOException {
+  public static void detectLandmarksUrl(String uri, PrintStream out) throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setImageUri(uri).build();
@@ -453,14 +448,14 @@ public class Detect {
    * Detects landmarks in the specified remote image on Google Cloud Storage.
    *
    * @param gcsPath The path to the remote file on Google Cloud Storage to perform landmark
-   *                detection on.
+   *     detection on.
    * @param out A {@link PrintStream} to write detected landmarks to.
    * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
   // [START vision_landmark_detection_gcs]
-  public static void detectLandmarksGcs(String gcsPath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectLandmarksGcs(String gcsPath, PrintStream out)
+      throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -533,14 +528,13 @@ public class Detect {
    * Detects logos in the specified remote image on Google Cloud Storage.
    *
    * @param gcsPath The path to the remote file on Google Cloud Storage to perform logo detection
-   *                on.
+   *     on.
    * @param out A {@link PrintStream} to write detected logos to.
    * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
   // [START vision_logo_detection_gcs]
-  public static void detectLogosGcs(String gcsPath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectLogosGcs(String gcsPath, PrintStream out) throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -657,8 +651,8 @@ public class Detect {
    * @throws IOException on Input/Output errors.
    */
   // [START vision_image_property_detection]
-  public static void detectProperties(String filePath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectProperties(String filePath, PrintStream out)
+      throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -704,8 +698,8 @@ public class Detect {
    * @throws IOException on Input/Output errors.
    */
   // [START vision_image_property_detection_gcs]
-  public static void detectPropertiesGcs(String gcsPath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectPropertiesGcs(String gcsPath, PrintStream out)
+      throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -749,8 +743,8 @@ public class Detect {
    * @throws IOException on Input/Output errors.
    */
   // [START vision_safe_search_detection]
-  public static void detectSafeSearch(String filePath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectSafeSearch(String filePath, PrintStream out)
+      throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -786,8 +780,8 @@ public class Detect {
   // [END vision_safe_search_detection]
 
   /**
-   * Detects whether the specified image on Google Cloud Storage has features you would want
-   * to moderate.
+   * Detects whether the specified image on Google Cloud Storage has features you would want to
+   * moderate.
    *
    * @param gcsPath The path to the remote file on Google Cloud Storage to detect safe-search on.
    * @param out A {@link PrintStream} to write the results to.
@@ -795,8 +789,8 @@ public class Detect {
    * @throws IOException on Input/Output errors.
    */
   // [START vision_safe_search_detection_gcs]
-  public static void detectSafeSearchGcs(String gcsPath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectSafeSearchGcs(String gcsPath, PrintStream out)
+      throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -839,8 +833,8 @@ public class Detect {
    * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectWebDetections(String filePath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectWebDetections(String filePath, PrintStream out)
+      throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -868,8 +862,8 @@ public class Detect {
         out.println("Entity:Id:Score");
         out.println("===============");
         for (WebEntity entity : annotation.getWebEntitiesList()) {
-          out.println(entity.getDescription() + " : " + entity.getEntityId() + " : "
-              + entity.getScore());
+          out.println(
+              entity.getDescription() + " : " + entity.getEntityId() + " : " + entity.getScore());
         }
         for (WebLabel label : annotation.getBestGuessLabelsList()) {
           out.format("\nBest guess label: %s", label.getLabel());
@@ -905,8 +899,8 @@ public class Detect {
    * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectWebDetectionsGcs(String gcsPath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectWebDetectionsGcs(String gcsPath, PrintStream out)
+      throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -933,8 +927,8 @@ public class Detect {
         out.println("Entity:Id:Score");
         out.println("===============");
         for (WebEntity entity : annotation.getWebEntitiesList()) {
-          out.println(entity.getDescription() + " : " + entity.getEntityId() + " : "
-              + entity.getScore());
+          out.println(
+              entity.getDescription() + " : " + entity.getEntityId() + " : " + entity.getScore());
         }
         for (WebLabel label : annotation.getBestGuessLabelsList()) {
           out.format("\nBest guess label: %s", label.getLabel());
@@ -962,13 +956,14 @@ public class Detect {
 
   /**
    * Find web entities given a local image.
+   *
    * @param filePath The path of the image to detect.
    * @param out A {@link PrintStream} to write the results to.
    * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectWebEntities(String filePath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectWebEntities(String filePath, PrintStream out)
+      throws Exception, IOException {
     // Instantiates a client
     try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
       // Read in the local image
@@ -978,71 +973,87 @@ public class Detect {
       Image image = Image.newBuilder().setContent(contents).build();
 
       // Create the request with the image and the specified feature: web detection
-      AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
-          .addFeatures(Feature.newBuilder().setType(Type.WEB_DETECTION))
-          .setImage(image)
-          .build();
+      AnnotateImageRequest request =
+          AnnotateImageRequest.newBuilder()
+              .addFeatures(Feature.newBuilder().setType(Type.WEB_DETECTION))
+              .setImage(image)
+              .build();
 
       // Perform the request
       BatchAnnotateImagesResponse response = client.batchAnnotateImages(Arrays.asList(request));
 
       // Display the results
-      response.getResponsesList().stream()
-          .forEach(r -> r.getWebDetection().getWebEntitiesList().stream()
-              .forEach(entity -> {
-                out.format("Description: %s\n", entity.getDescription());
-                out.format("Score: %f\n", entity.getScore());
-              }));
+      response
+          .getResponsesList()
+          .stream()
+          .forEach(
+              r ->
+                  r.getWebDetection()
+                      .getWebEntitiesList()
+                      .stream()
+                      .forEach(
+                          entity -> {
+                            out.format("Description: %s\n", entity.getDescription());
+                            out.format("Score: %f\n", entity.getScore());
+                          }));
     }
   }
 
   /**
    * Find web entities given the remote image on Google Cloud Storage.
+   *
    * @param gcsPath The path to the remote file on Google Cloud Storage to detect web entities.
    * @param out A {@link PrintStream} to write the results to.
    * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectWebEntitiesGcs(String gcsPath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectWebEntitiesGcs(String gcsPath, PrintStream out)
+      throws Exception, IOException {
     // Instantiates a client
     try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
       // Set the image source to the given gs uri
-      ImageSource imageSource = ImageSource.newBuilder()
-          .setGcsImageUri(gcsPath)
-          .build();
+      ImageSource imageSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
       // Build the image
       Image image = Image.newBuilder().setSource(imageSource).build();
 
       // Create the request with the image and the specified feature: web detection
-      AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
-          .addFeatures(Feature.newBuilder().setType(Type.WEB_DETECTION))
-          .setImage(image)
-          .build();
+      AnnotateImageRequest request =
+          AnnotateImageRequest.newBuilder()
+              .addFeatures(Feature.newBuilder().setType(Type.WEB_DETECTION))
+              .setImage(image)
+              .build();
 
       // Perform the request
       BatchAnnotateImagesResponse response = client.batchAnnotateImages(Arrays.asList(request));
 
       // Display the results
-      response.getResponsesList().stream()
-          .forEach(r -> r.getWebDetection().getWebEntitiesList().stream()
-              .forEach(entity -> {
-                System.out.format("Description: %s\n", entity.getDescription());
-                System.out.format("Score: %f\n", entity.getScore());
-              }));
+      response
+          .getResponsesList()
+          .stream()
+          .forEach(
+              r ->
+                  r.getWebDetection()
+                      .getWebEntitiesList()
+                      .stream()
+                      .forEach(
+                          entity -> {
+                            System.out.format("Description: %s\n", entity.getDescription());
+                            System.out.format("Score: %f\n", entity.getScore());
+                          }));
     }
   }
 
   // [START vision_web_detection_include_geo]
   /**
    * Find web entities given a local image.
+   *
    * @param filePath The path of the image to detect.
    * @param out A {@link PrintStream} to write the results to.
    * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectWebEntitiesIncludeGeoResults(String filePath, PrintStream out) throws
-      Exception, IOException {
+  public static void detectWebEntitiesIncludeGeoResults(String filePath, PrintStream out)
+      throws Exception, IOException {
     // Instantiates a client
     try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
       // Read in the local image
@@ -1052,32 +1063,38 @@ public class Detect {
       Image image = Image.newBuilder().setContent(contents).build();
 
       // Enable `IncludeGeoResults`
-      WebDetectionParams webDetectionParams = WebDetectionParams.newBuilder()
-          .setIncludeGeoResults(true)
-          .build();
+      WebDetectionParams webDetectionParams =
+          WebDetectionParams.newBuilder().setIncludeGeoResults(true).build();
 
       // Set the parameters for the image
-      ImageContext imageContext = ImageContext.newBuilder()
-          .setWebDetectionParams(webDetectionParams)
-          .build();
+      ImageContext imageContext =
+          ImageContext.newBuilder().setWebDetectionParams(webDetectionParams).build();
 
       // Create the request with the image, imageContext, and the specified feature: web detection
-      AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
-          .addFeatures(Feature.newBuilder().setType(Type.WEB_DETECTION))
-          .setImage(image)
-          .setImageContext(imageContext)
-          .build();
+      AnnotateImageRequest request =
+          AnnotateImageRequest.newBuilder()
+              .addFeatures(Feature.newBuilder().setType(Type.WEB_DETECTION))
+              .setImage(image)
+              .setImageContext(imageContext)
+              .build();
 
       // Perform the request
       BatchAnnotateImagesResponse response = client.batchAnnotateImages(Arrays.asList(request));
 
       // Display the results
-      response.getResponsesList().stream()
-          .forEach(r -> r.getWebDetection().getWebEntitiesList().stream()
-              .forEach(entity -> {
-                out.format("Description: %s\n", entity.getDescription());
-                out.format("Score: %f\n", entity.getScore());
-              }));
+      response
+          .getResponsesList()
+          .stream()
+          .forEach(
+              r ->
+                  r.getWebDetection()
+                      .getWebEntitiesList()
+                      .stream()
+                      .forEach(
+                          entity -> {
+                            out.format("Description: %s\n", entity.getDescription());
+                            out.format("Score: %f\n", entity.getScore());
+                          }));
     }
   }
   // [END vision_web_detection_include_geo]
@@ -1085,50 +1102,55 @@ public class Detect {
   // [START vision_web_detection_include_geo_gcs]
   /**
    * Find web entities given the remote image on Google Cloud Storage.
+   *
    * @param gcsPath The path to the remote file on Google Cloud Storage to detect web entities with
-   *                geo results.
+   *     geo results.
    * @param out A {@link PrintStream} to write the results to.
    * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectWebEntitiesIncludeGeoResultsGcs(String gcsPath, PrintStream out) throws
-      Exception, IOException {
+  public static void detectWebEntitiesIncludeGeoResultsGcs(String gcsPath, PrintStream out)
+      throws Exception, IOException {
     // Instantiates a client
     try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
       // Set the image source to the given gs uri
-      ImageSource imageSource = ImageSource.newBuilder()
-          .setGcsImageUri(gcsPath)
-          .build();
+      ImageSource imageSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
       // Build the image
       Image image = Image.newBuilder().setSource(imageSource).build();
 
       // Enable `IncludeGeoResults`
-      WebDetectionParams webDetectionParams = WebDetectionParams.newBuilder()
-          .setIncludeGeoResults(true)
-          .build();
+      WebDetectionParams webDetectionParams =
+          WebDetectionParams.newBuilder().setIncludeGeoResults(true).build();
 
       // Set the parameters for the image
-      ImageContext imageContext = ImageContext.newBuilder()
-          .setWebDetectionParams(webDetectionParams)
-          .build();
+      ImageContext imageContext =
+          ImageContext.newBuilder().setWebDetectionParams(webDetectionParams).build();
 
       // Create the request with the image, imageContext, and the specified feature: web detection
-      AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
-          .addFeatures(Feature.newBuilder().setType(Type.WEB_DETECTION))
-          .setImage(image)
-          .setImageContext(imageContext)
-          .build();
+      AnnotateImageRequest request =
+          AnnotateImageRequest.newBuilder()
+              .addFeatures(Feature.newBuilder().setType(Type.WEB_DETECTION))
+              .setImage(image)
+              .setImageContext(imageContext)
+              .build();
 
       // Perform the request
       BatchAnnotateImagesResponse response = client.batchAnnotateImages(Arrays.asList(request));
 
       // Display the results
-      response.getResponsesList().stream()
-          .forEach(r -> r.getWebDetection().getWebEntitiesList().stream()
-              .forEach(entity -> {
-                out.format("Description: %s\n", entity.getDescription());
-                out.format("Score: %f\n", entity.getScore());
-              }));
+      response
+          .getResponsesList()
+          .stream()
+          .forEach(
+              r ->
+                  r.getWebDetection()
+                      .getWebEntitiesList()
+                      .stream()
+                      .forEach(
+                          entity -> {
+                            out.format("Description: %s\n", entity.getDescription());
+                            out.format("Score: %f\n", entity.getScore());
+                          }));
     }
   }
   // [END vision_web_detection_include_geo_gcs]
@@ -1142,8 +1164,8 @@ public class Detect {
    * @throws IOException on Input/Output errors.
    */
   // [START vision_crop_hint_detection]
-  public static void detectCropHints(String filePath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectCropHints(String filePath, PrintStream out)
+      throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -1183,8 +1205,8 @@ public class Detect {
    * @throws IOException on Input/Output errors.
    */
   // [START vision_crop_hint_detection_gcs]
-  public static void detectCropHintsGcs(String gcsPath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectCropHintsGcs(String gcsPath, PrintStream out)
+      throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -1223,8 +1245,8 @@ public class Detect {
    * @throws IOException on Input/Output errors.
    */
   // [START vision_fulltext_detection]
-  public static void detectDocumentText(String filePath, PrintStream out) throws Exception,
-       IOException {
+  public static void detectDocumentText(String filePath, PrintStream out)
+      throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -1248,18 +1270,19 @@ public class Detect {
 
         // For full list of available annotations, see http://g.co/cloud/vision/docs
         TextAnnotation annotation = res.getFullTextAnnotation();
-        for (Page page: annotation.getPagesList()) {
+        for (Page page : annotation.getPagesList()) {
           String pageText = "";
           for (Block block : page.getBlocksList()) {
             String blockText = "";
             for (Paragraph para : block.getParagraphsList()) {
               String paraText = "";
-              for (Word word: para.getWordsList()) {
+              for (Word word : para.getWordsList()) {
                 String wordText = "";
-                for (Symbol symbol: word.getSymbolsList()) {
+                for (Symbol symbol : word.getSymbolsList()) {
                   wordText = wordText + symbol.getText();
-                  out.format("Symbol text: %s (confidence: %f)\n", symbol.getText(),
-                      symbol.getConfidence());
+                  out.format(
+                      "Symbol text: %s (confidence: %f)\n",
+                      symbol.getText(), symbol.getConfidence());
                 }
                 out.format("Word text: %s (confidence: %f)\n\n", wordText, word.getConfidence());
                 paraText = String.format("%s %s", paraText, wordText);
@@ -1288,8 +1311,8 @@ public class Detect {
    * @throws IOException on Input/Output errors.
    */
   // [START vision_fulltext_detection_gcs]
-  public static void detectDocumentTextGcs(String gcsPath, PrintStream out) throws Exception,
-      IOException {
+  public static void detectDocumentTextGcs(String gcsPath, PrintStream out)
+      throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -1311,18 +1334,19 @@ public class Detect {
         }
         // For full list of available annotations, see http://g.co/cloud/vision/docs
         TextAnnotation annotation = res.getFullTextAnnotation();
-        for (Page page: annotation.getPagesList()) {
+        for (Page page : annotation.getPagesList()) {
           String pageText = "";
           for (Block block : page.getBlocksList()) {
             String blockText = "";
             for (Paragraph para : block.getParagraphsList()) {
               String paraText = "";
-              for (Word word: para.getWordsList()) {
+              for (Word word : para.getWordsList()) {
                 String wordText = "";
-                for (Symbol symbol: word.getSymbolsList()) {
+                for (Symbol symbol : word.getSymbolsList()) {
                   wordText = wordText + symbol.getText();
-                  out.format("Symbol text: %s (confidence: %f)\n", symbol.getText(),
-                      symbol.getConfidence());
+                  out.format(
+                      "Symbol text: %s (confidence: %f)\n",
+                      symbol.getText(), symbol.getConfidence());
                 }
                 out.format("Word text: %s (confidence: %f)\n\n", wordText, word.getConfidence());
                 paraText = String.format("%s %s", paraText, wordText);
@@ -1347,49 +1371,47 @@ public class Detect {
    * Performs document text OCR with PDF/TIFF as source files on Google Cloud Storage.
    *
    * @param gcsSourcePath The path to the remote file on Google Cloud Storage to detect document
-   *                      text on.
+   *     text on.
    * @param gcsDestinationPath The path to the remote file on Google Cloud Storage to store the
-   *                           results on.
+   *     results on.
    * @throws Exception on errors while closing the client.
    */
-  public static void detectDocumentsGcs(String gcsSourcePath, String gcsDestinationPath) throws
-      Exception {
+  public static void detectDocumentsGcs(String gcsSourcePath, String gcsDestinationPath)
+      throws Exception {
     try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
       List<AsyncAnnotateFileRequest> requests = new ArrayList<>();
 
       // Set the GCS source path for the remote file.
-      GcsSource gcsSource = GcsSource.newBuilder()
-          .setUri(gcsSourcePath)
-          .build();
+      GcsSource gcsSource = GcsSource.newBuilder().setUri(gcsSourcePath).build();
 
       // Create the configuration with the specified MIME (Multipurpose Internet Mail Extensions)
       // types
-      InputConfig inputConfig = InputConfig.newBuilder()
-          .setMimeType("application/pdf") // Supported MimeTypes: "application/pdf", "image/tiff"
-          .setGcsSource(gcsSource)
-          .build();
+      InputConfig inputConfig =
+          InputConfig.newBuilder()
+              .setMimeType(
+                  "application/pdf") // Supported MimeTypes: "application/pdf", "image/tiff"
+              .setGcsSource(gcsSource)
+              .build();
 
       // Set the GCS destination path for where to save the results.
-      GcsDestination gcsDestination = GcsDestination.newBuilder()
-          .setUri(gcsDestinationPath)
-          .build();
+      GcsDestination gcsDestination =
+          GcsDestination.newBuilder().setUri(gcsDestinationPath).build();
 
       // Create the configuration for the output with the batch size.
       // The batch size sets how many pages should be grouped into each json output file.
-      OutputConfig outputConfig = OutputConfig.newBuilder()
-          .setBatchSize(2)
-          .setGcsDestination(gcsDestination)
-          .build();
+      OutputConfig outputConfig =
+          OutputConfig.newBuilder().setBatchSize(2).setGcsDestination(gcsDestination).build();
 
       // Select the Feature required by the vision API
       Feature feature = Feature.newBuilder().setType(Feature.Type.DOCUMENT_TEXT_DETECTION).build();
 
       // Build the OCR request
-      AsyncAnnotateFileRequest request = AsyncAnnotateFileRequest.newBuilder()
-          .addFeatures(feature)
-          .setInputConfig(inputConfig)
-          .setOutputConfig(outputConfig)
-          .build();
+      AsyncAnnotateFileRequest request =
+          AsyncAnnotateFileRequest.newBuilder()
+              .addFeatures(feature)
+              .setInputConfig(inputConfig)
+              .setOutputConfig(outputConfig)
+              .build();
 
       requests.add(request);
 
@@ -1401,8 +1423,8 @@ public class Detect {
 
       // Wait for the request to finish. (The result is not used, since the API saves the result to
       // the specified location on GCS.)
-      List<AsyncAnnotateFileResponse> result = response.get(180, TimeUnit.SECONDS)
-          .getResponsesList();
+      List<AsyncAnnotateFileResponse> result =
+          response.get(180, TimeUnit.SECONDS).getResponsesList();
 
       // Once the request has completed and the output has been
       // written to GCS, we can list all the output files.
