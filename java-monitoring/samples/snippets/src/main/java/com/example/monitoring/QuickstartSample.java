@@ -16,7 +16,7 @@
 
 package com.example.monitoring;
 
-//CHECKSTYLE OFF: VariableDeclarationUsageDistance
+// CHECKSTYLE OFF: VariableDeclarationUsageDistance
 // [START monitoring_quickstart]
 
 import com.google.api.Metric;
@@ -51,16 +51,12 @@ public class QuickstartSample {
     MetricServiceClient metricServiceClient = MetricServiceClient.create();
 
     // Prepares an individual data point
-    TimeInterval interval = TimeInterval.newBuilder()
-        .setEndTime(Timestamps.fromMillis(System.currentTimeMillis()))
-        .build();
-    TypedValue value = TypedValue.newBuilder()
-        .setDoubleValue(123.45)
-        .build();
-    Point point = Point.newBuilder()
-        .setInterval(interval)
-        .setValue(value)
-        .build();
+    TimeInterval interval =
+        TimeInterval.newBuilder()
+            .setEndTime(Timestamps.fromMillis(System.currentTimeMillis()))
+            .build();
+    TypedValue value = TypedValue.newBuilder().setDoubleValue(123.45).build();
+    Point point = Point.newBuilder().setInterval(interval).setValue(value).build();
 
     List<Point> pointList = new ArrayList<>();
     pointList.add(point);
@@ -70,32 +66,33 @@ public class QuickstartSample {
     // Prepares the metric descriptor
     Map<String, String> metricLabels = new HashMap<String, String>();
     metricLabels.put("store_id", "Pittsburg");
-    Metric metric = Metric.newBuilder()
-        .setType("custom.googleapis.com/stores/daily_sales")
-        .putAllLabels(metricLabels)
-        .build();
+    Metric metric =
+        Metric.newBuilder()
+            .setType("custom.googleapis.com/stores/daily_sales")
+            .putAllLabels(metricLabels)
+            .build();
 
     // Prepares the monitored resource descriptor
     Map<String, String> resourceLabels = new HashMap<String, String>();
     resourceLabels.put("project_id", projectId);
-    MonitoredResource resource = MonitoredResource.newBuilder()
-        .setType("global")
-        .putAllLabels(resourceLabels)
-        .build();
+    MonitoredResource resource =
+        MonitoredResource.newBuilder().setType("global").putAllLabels(resourceLabels).build();
 
     // Prepares the time series request
-    TimeSeries timeSeries = TimeSeries.newBuilder()
-        .setMetric(metric)
-        .setResource(resource)
-        .addAllPoints(pointList)
-        .build();
+    TimeSeries timeSeries =
+        TimeSeries.newBuilder()
+            .setMetric(metric)
+            .setResource(resource)
+            .addAllPoints(pointList)
+            .build();
     List<TimeSeries> timeSeriesList = new ArrayList<>();
     timeSeriesList.add(timeSeries);
 
-    CreateTimeSeriesRequest request = CreateTimeSeriesRequest.newBuilder()
-        .setName(name.toString())
-        .addAllTimeSeries(timeSeriesList)
-        .build();
+    CreateTimeSeriesRequest request =
+        CreateTimeSeriesRequest.newBuilder()
+            .setName(name.toString())
+            .addAllTimeSeries(timeSeriesList)
+            .build();
 
     // Writes time series data
     metricServiceClient.createTimeSeries(request);
@@ -106,4 +103,4 @@ public class QuickstartSample {
   }
 }
 // [END monitoring_quickstart]
-//CHECKSTYLE ON: VariableDeclarationUsageDistance
+// CHECKSTYLE ON: VariableDeclarationUsageDistance

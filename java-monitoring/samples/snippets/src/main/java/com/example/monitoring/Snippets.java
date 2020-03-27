@@ -41,7 +41,6 @@ import com.google.monitoring.v3.TimeSeries;
 import com.google.monitoring.v3.TypedValue;
 import com.google.protobuf.Duration;
 import com.google.protobuf.util.Timestamps;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,16 +49,17 @@ import java.util.Map;
 
 // Imports the Google Cloud client library
 
-
 public class Snippets {
   private static final String CUSTOM_METRIC_DOMAIN = "custom.googleapis.com";
   private static final Gson gson = new Gson();
 
   /**
    * Exercises the methods defined in this class.
+   *
    * <p>
-   * <p>Assumes that you are authenticated using the Google Cloud SDK (using
-   * {@code gcloud auth application-default-login}).
+   *
+   * <p>Assumes that you are authenticated using the Google Cloud SDK (using {@code gcloud auth
+   * application-default-login}).
    */
   public static void main(String[] args) throws Exception {
 
@@ -85,8 +85,9 @@ public class Snippets {
 
   /**
    * Creates a metric descriptor.
-   * <p>
-   * See: https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors/create
+   *
+   * <p>See:
+   * https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors/create
    *
    * @param type The metric type
    */
@@ -99,21 +100,23 @@ public class Snippets {
     final MetricServiceClient client = MetricServiceClient.create();
     ProjectName name = ProjectName.of(projectId);
 
-    MetricDescriptor descriptor = MetricDescriptor.newBuilder()
-        .setType(metricType)
-        .addLabels(LabelDescriptor
-            .newBuilder()
-            .setKey("store_id")
-            .setValueType(LabelDescriptor.ValueType.STRING))
-        .setDescription("This is a simple example of a custom metric.")
-        .setMetricKind(MetricDescriptor.MetricKind.GAUGE)
-        .setValueType(MetricDescriptor.ValueType.DOUBLE)
-        .build();
+    MetricDescriptor descriptor =
+        MetricDescriptor.newBuilder()
+            .setType(metricType)
+            .addLabels(
+                LabelDescriptor.newBuilder()
+                    .setKey("store_id")
+                    .setValueType(LabelDescriptor.ValueType.STRING))
+            .setDescription("This is a simple example of a custom metric.")
+            .setMetricKind(MetricDescriptor.MetricKind.GAUGE)
+            .setValueType(MetricDescriptor.ValueType.DOUBLE)
+            .build();
 
-    CreateMetricDescriptorRequest request = CreateMetricDescriptorRequest.newBuilder()
-        .setName(name.toString())
-        .setMetricDescriptor(descriptor)
-        .build();
+    CreateMetricDescriptorRequest request =
+        CreateMetricDescriptorRequest.newBuilder()
+            .setName(name.toString())
+            .setMetricDescriptor(descriptor)
+            .build();
 
     client.createMetricDescriptor(request);
     // [END monitoring_create_metric]
@@ -137,12 +140,11 @@ public class Snippets {
   /**
    * Demonstrates writing a time series value for the metric type
    * 'custom.google.apis.com/my_metric'.
-   * <p>
-   * This method assumes `my_metric` descriptor has already been created as a
-   * DOUBLE value_type and GAUGE metric kind. If the metric descriptor
-   * doesn't exist, it will be auto-created.
+   *
+   * <p>This method assumes `my_metric` descriptor has already been created as a DOUBLE value_type
+   * and GAUGE metric kind. If the metric descriptor doesn't exist, it will be auto-created.
    */
-  //CHECKSTYLE OFF: VariableDeclarationUsageDistance
+  // CHECKSTYLE OFF: VariableDeclarationUsageDistance
   void writeTimeSeries() throws IOException {
     // [START monitoring_write_timeseries]
     String projectId = System.getProperty("projectId");
@@ -150,16 +152,12 @@ public class Snippets {
     MetricServiceClient metricServiceClient = MetricServiceClient.create();
 
     // Prepares an individual data point
-    TimeInterval interval = TimeInterval.newBuilder()
-        .setEndTime(Timestamps.fromMillis(System.currentTimeMillis()))
-        .build();
-    TypedValue value = TypedValue.newBuilder()
-        .setDoubleValue(123.45)
-        .build();
-    Point point = Point.newBuilder()
-        .setInterval(interval)
-        .setValue(value)
-        .build();
+    TimeInterval interval =
+        TimeInterval.newBuilder()
+            .setEndTime(Timestamps.fromMillis(System.currentTimeMillis()))
+            .build();
+    TypedValue value = TypedValue.newBuilder().setDoubleValue(123.45).build();
+    Point point = Point.newBuilder().setInterval(interval).setValue(value).build();
 
     List<Point> pointList = new ArrayList<>();
     pointList.add(point);
@@ -168,46 +166,45 @@ public class Snippets {
 
     // Prepares the metric descriptor
     Map<String, String> metricLabels = new HashMap<>();
-    Metric metric = Metric.newBuilder()
-        .setType("custom.googleapis.com/my_metric")
-        .putAllLabels(metricLabels)
-        .build();
+    Metric metric =
+        Metric.newBuilder()
+            .setType("custom.googleapis.com/my_metric")
+            .putAllLabels(metricLabels)
+            .build();
 
     // Prepares the monitored resource descriptor
     Map<String, String> resourceLabels = new HashMap<>();
     resourceLabels.put("instance_id", "1234567890123456789");
     resourceLabels.put("zone", "us-central1-f");
 
-    MonitoredResource resource = MonitoredResource.newBuilder()
-        .setType("gce_instance")
-        .putAllLabels(resourceLabels)
-        .build();
+    MonitoredResource resource =
+        MonitoredResource.newBuilder().setType("gce_instance").putAllLabels(resourceLabels).build();
 
     // Prepares the time series request
-    TimeSeries timeSeries = TimeSeries.newBuilder()
-        .setMetric(metric)
-        .setResource(resource)
-        .addAllPoints(pointList)
-        .build();
+    TimeSeries timeSeries =
+        TimeSeries.newBuilder()
+            .setMetric(metric)
+            .setResource(resource)
+            .addAllPoints(pointList)
+            .build();
 
     List<TimeSeries> timeSeriesList = new ArrayList<>();
     timeSeriesList.add(timeSeries);
 
-    CreateTimeSeriesRequest request = CreateTimeSeriesRequest.newBuilder()
-        .setName(name.toString())
-        .addAllTimeSeries(timeSeriesList)
-        .build();
+    CreateTimeSeriesRequest request =
+        CreateTimeSeriesRequest.newBuilder()
+            .setName(name.toString())
+            .addAllTimeSeries(timeSeriesList)
+            .build();
 
     // Writes time series data
     metricServiceClient.createTimeSeries(request);
     System.out.println("Done writing time series value.");
     // [END monitoring_write_timeseries]
   }
-  //CHECKSTYLE ON: VariableDeclarationUsageDistance
+  // CHECKSTYLE ON: VariableDeclarationUsageDistance
 
-  /**
-   * Demonstrates listing time series headers.
-   */
+  /** Demonstrates listing time series headers. */
   void listTimeSeriesHeaders() throws IOException {
     // [START monitoring_read_timeseries_fields]
     MetricServiceClient metricServiceClient = MetricServiceClient.create();
@@ -216,16 +213,18 @@ public class Snippets {
 
     // Restrict time to last 20 minutes
     long startMillis = System.currentTimeMillis() - ((60 * 20) * 1000);
-    TimeInterval interval = TimeInterval.newBuilder()
-        .setStartTime(Timestamps.fromMillis(startMillis))
-        .setEndTime(Timestamps.fromMillis(System.currentTimeMillis()))
-        .build();
+    TimeInterval interval =
+        TimeInterval.newBuilder()
+            .setStartTime(Timestamps.fromMillis(startMillis))
+            .setEndTime(Timestamps.fromMillis(System.currentTimeMillis()))
+            .build();
 
-    ListTimeSeriesRequest.Builder requestBuilder = ListTimeSeriesRequest.newBuilder()
-        .setName(name.toString())
-        .setFilter("metric.type=\"compute.googleapis.com/instance/cpu/utilization\"")
-        .setInterval(interval)
-        .setView(ListTimeSeriesRequest.TimeSeriesView.HEADERS);
+    ListTimeSeriesRequest.Builder requestBuilder =
+        ListTimeSeriesRequest.newBuilder()
+            .setName(name.toString())
+            .setFilter("metric.type=\"compute.googleapis.com/instance/cpu/utilization\"")
+            .setInterval(interval)
+            .setView(ListTimeSeriesRequest.TimeSeriesView.HEADERS);
 
     ListTimeSeriesRequest request = requestBuilder.build();
 
@@ -238,9 +237,7 @@ public class Snippets {
     // [END monitoring_read_timeseries_fields]
   }
 
-  /**
-   * Demonstrates listing time series using a filter.
-   */
+  /** Demonstrates listing time series using a filter. */
   void listTimeSeries(String filter) throws IOException {
     // [START monitoring_read_timeseries_simple]
     MetricServiceClient metricServiceClient = MetricServiceClient.create();
@@ -249,15 +246,17 @@ public class Snippets {
 
     // Restrict time to last 20 minutes
     long startMillis = System.currentTimeMillis() - ((60 * 20) * 1000);
-    TimeInterval interval = TimeInterval.newBuilder()
-        .setStartTime(Timestamps.fromMillis(startMillis))
-        .setEndTime(Timestamps.fromMillis(System.currentTimeMillis()))
-        .build();
+    TimeInterval interval =
+        TimeInterval.newBuilder()
+            .setStartTime(Timestamps.fromMillis(startMillis))
+            .setEndTime(Timestamps.fromMillis(System.currentTimeMillis()))
+            .build();
 
-    ListTimeSeriesRequest.Builder requestBuilder = ListTimeSeriesRequest.newBuilder()
-        .setName(name.toString())
-        .setFilter(filter)
-        .setInterval(interval);
+    ListTimeSeriesRequest.Builder requestBuilder =
+        ListTimeSeriesRequest.newBuilder()
+            .setName(name.toString())
+            .setFilter(filter)
+            .setInterval(interval);
 
     ListTimeSeriesRequest request = requestBuilder.build();
 
@@ -270,9 +269,7 @@ public class Snippets {
     // [END monitoring_read_timeseries_simple]
   }
 
-  /**
-   * Demonstrates listing time series and aggregating them.
-   */
+  /** Demonstrates listing time series and aggregating them. */
   void listTimeSeriesAggregrate() throws IOException {
     // [START monitoring_read_timeseries_align]
     MetricServiceClient metricServiceClient = MetricServiceClient.create();
@@ -281,21 +278,24 @@ public class Snippets {
 
     // Restrict time to last 20 minutes
     long startMillis = System.currentTimeMillis() - ((60 * 20) * 1000);
-    TimeInterval interval = TimeInterval.newBuilder()
-        .setStartTime(Timestamps.fromMillis(startMillis))
-        .setEndTime(Timestamps.fromMillis(System.currentTimeMillis()))
-        .build();
+    TimeInterval interval =
+        TimeInterval.newBuilder()
+            .setStartTime(Timestamps.fromMillis(startMillis))
+            .setEndTime(Timestamps.fromMillis(System.currentTimeMillis()))
+            .build();
 
-    Aggregation aggregation = Aggregation.newBuilder()
-        .setAlignmentPeriod(Duration.newBuilder().setSeconds(600).build())
-        .setPerSeriesAligner(Aggregation.Aligner.ALIGN_MEAN)
-        .build();
+    Aggregation aggregation =
+        Aggregation.newBuilder()
+            .setAlignmentPeriod(Duration.newBuilder().setSeconds(600).build())
+            .setPerSeriesAligner(Aggregation.Aligner.ALIGN_MEAN)
+            .build();
 
-    ListTimeSeriesRequest.Builder requestBuilder = ListTimeSeriesRequest.newBuilder()
-        .setName(name.toString())
-        .setFilter("metric.type=\"compute.googleapis.com/instance/cpu/utilization\"")
-        .setInterval(interval)
-        .setAggregation(aggregation);
+    ListTimeSeriesRequest.Builder requestBuilder =
+        ListTimeSeriesRequest.newBuilder()
+            .setName(name.toString())
+            .setFilter("metric.type=\"compute.googleapis.com/instance/cpu/utilization\"")
+            .setInterval(interval)
+            .setAggregation(aggregation);
 
     ListTimeSeriesRequest request = requestBuilder.build();
 
@@ -308,9 +308,7 @@ public class Snippets {
     // [END monitoring_read_timeseries_align]
   }
 
-  /**
-   * Demonstrates listing time series and aggregating and reducing them.
-   */
+  /** Demonstrates listing time series and aggregating and reducing them. */
   void listTimeSeriesReduce() throws IOException {
     // [START monitoring_read_timeseries_reduce]
     MetricServiceClient metricServiceClient = MetricServiceClient.create();
@@ -319,22 +317,25 @@ public class Snippets {
 
     // Restrict time to last 20 minutes
     long startMillis = System.currentTimeMillis() - ((60 * 20) * 1000);
-    TimeInterval interval = TimeInterval.newBuilder()
-        .setStartTime(Timestamps.fromMillis(startMillis))
-        .setEndTime(Timestamps.fromMillis(System.currentTimeMillis()))
-        .build();
+    TimeInterval interval =
+        TimeInterval.newBuilder()
+            .setStartTime(Timestamps.fromMillis(startMillis))
+            .setEndTime(Timestamps.fromMillis(System.currentTimeMillis()))
+            .build();
 
-    Aggregation aggregation = Aggregation.newBuilder()
-        .setAlignmentPeriod(Duration.newBuilder().setSeconds(600).build())
-        .setPerSeriesAligner(Aggregation.Aligner.ALIGN_MEAN)
-        .setCrossSeriesReducer(Aggregation.Reducer.REDUCE_MEAN)
-        .build();
+    Aggregation aggregation =
+        Aggregation.newBuilder()
+            .setAlignmentPeriod(Duration.newBuilder().setSeconds(600).build())
+            .setPerSeriesAligner(Aggregation.Aligner.ALIGN_MEAN)
+            .setCrossSeriesReducer(Aggregation.Reducer.REDUCE_MEAN)
+            .build();
 
-    ListTimeSeriesRequest.Builder requestBuilder = ListTimeSeriesRequest.newBuilder()
-        .setName(name.toString())
-        .setFilter("metric.type=\"compute.googleapis.com/instance/cpu/utilization\"")
-        .setInterval(interval)
-        .setAggregation(aggregation);
+    ListTimeSeriesRequest.Builder requestBuilder =
+        ListTimeSeriesRequest.newBuilder()
+            .setName(name.toString())
+            .setFilter("metric.type=\"compute.googleapis.com/instance/cpu/utilization\"")
+            .setInterval(interval)
+            .setAggregation(aggregation);
 
     ListTimeSeriesRequest request = requestBuilder.build();
 
@@ -347,9 +348,7 @@ public class Snippets {
     // [END monitoring_read_timeseries_reduce]
   }
 
-  /**
-   * Returns the first page of all metric descriptors.
-   */
+  /** Returns the first page of all metric descriptors. */
   void listMetricDescriptors() throws IOException {
     // [START monitoring_list_descriptors]
     // Your Google Cloud Platform project ID
@@ -358,10 +357,8 @@ public class Snippets {
     final MetricServiceClient client = MetricServiceClient.create();
     ProjectName name = ProjectName.of(projectId);
 
-    ListMetricDescriptorsRequest request = ListMetricDescriptorsRequest
-        .newBuilder()
-        .setName(name.toString())
-        .build();
+    ListMetricDescriptorsRequest request =
+        ListMetricDescriptorsRequest.newBuilder().setName(name.toString()).build();
     ListMetricDescriptorsPagedResponse response = client.listMetricDescriptors(request);
 
     System.out.println("Listing descriptors: ");
@@ -372,9 +369,7 @@ public class Snippets {
     // [END monitoring_list_descriptors]
   }
 
-  /**
-   * Gets all monitored resource descriptors.
-   */
+  /** Gets all monitored resource descriptors. */
   void listMonitoredResources() throws IOException {
     // [START monitoring_list_resources]
     // Your Google Cloud Platform project ID
@@ -383,15 +378,13 @@ public class Snippets {
     final MetricServiceClient client = MetricServiceClient.create();
     ProjectName name = ProjectName.of(projectId);
 
-    ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest
-        .newBuilder()
-        .setName(name.toString())
-        .build();
+    ListMonitoredResourceDescriptorsRequest request =
+        ListMonitoredResourceDescriptorsRequest.newBuilder().setName(name.toString()).build();
 
     System.out.println("Listing monitored resource descriptors: ");
 
-    ListMonitoredResourceDescriptorsPagedResponse response = client
-        .listMonitoredResourceDescriptors(request);
+    ListMonitoredResourceDescriptorsPagedResponse response =
+        client.listMonitoredResourceDescriptors(request);
 
     for (MonitoredResourceDescriptor d : response.iterateAll()) {
       System.out.println(d.getType());
@@ -428,7 +421,6 @@ public class Snippets {
     System.out.println(response);
     // [END monitoring_get_descriptor]
   }
-
 
   /**
    * Handles a single command.
@@ -531,15 +523,18 @@ public class Snippets {
     System.out.println("  get-resource Describes a monitored resource");
     System.out.println("  delete-metric-descriptors  Deletes a metric descriptor");
     System.out.println("  write-time-series  Writes a time series value to a metric");
-    System.out.println("  list-headers <filter> List time series header of "
-        + " 'compute.googleapis.com/instance/cpu/utilization'");
-    System.out.println("  list-time-series-header <filter> List time series data that matches a "
-        + "given filter");
-    System.out.println("  list-aggregate `Aggregates time series data that matches"
-        + "'compute.googleapis.com/instance/cpu/utilization");
-    System.out.println("  list-reduce `Reduces time series data that matches"
-        + " 'compute.googleapis.com/instance/cpu/utilization");
+    System.out.println(
+        "  list-headers <filter> List time series header of "
+            + " 'compute.googleapis.com/instance/cpu/utilization'");
+    System.out.println(
+        "  list-time-series-header <filter> List time series data that matches a "
+            + "given filter");
+    System.out.println(
+        "  list-aggregate `Aggregates time series data that matches"
+            + "'compute.googleapis.com/instance/cpu/utilization");
+    System.out.println(
+        "  list-reduce `Reduces time series data that matches"
+            + " 'compute.googleapis.com/instance/cpu/utilization");
     System.out.println();
   }
-
 }
