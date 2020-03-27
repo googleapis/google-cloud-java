@@ -30,9 +30,7 @@ import com.google.cloud.videointelligence.v1p3beta1.VideoAnnotationResults;
 import com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceClient;
 import com.google.cloud.videointelligence.v1p3beta1.VideoSegment;
 import com.google.protobuf.Duration;
-
 import java.io.IOException;
-
 import java.util.concurrent.ExecutionException;
 
 public class DetectLogoGcs {

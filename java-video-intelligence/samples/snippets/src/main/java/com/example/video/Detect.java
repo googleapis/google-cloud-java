@@ -33,8 +33,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Detect {
   /**
-   * Detects video transcription using the Video Intelligence
-   * API
+   * Detects video transcription using the Video Intelligence API
+   *
    * @param args specifies features to detect and the path to the video on Google Cloud Storage.
    */
   public static void main(String[] args) {
@@ -48,8 +48,8 @@ public class Detect {
 
   /**
    * Helper that handles the input passed to the program.
-   * @param args specifies features to detect and the path to the video on Google Cloud Storage.
    *
+   * @param args specifies features to detect and the path to the video on Google Cloud Storage.
    * @throws IOException on Input/Output errors.
    */
   public static void argsHelper(String[] args) throws Exception {
@@ -82,22 +82,22 @@ public class Detect {
     // Instantiate a com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceClient
     try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
       // Set the language code
-      SpeechTranscriptionConfig config = SpeechTranscriptionConfig.newBuilder()
-          .setLanguageCode("en-US")
-          .setEnableAutomaticPunctuation(true)
-          .build();
+      SpeechTranscriptionConfig config =
+          SpeechTranscriptionConfig.newBuilder()
+              .setLanguageCode("en-US")
+              .setEnableAutomaticPunctuation(true)
+              .build();
 
       // Set the video context with the above configuration
-      VideoContext context = VideoContext.newBuilder()
-          .setSpeechTranscriptionConfig(config)
-          .build();
+      VideoContext context = VideoContext.newBuilder().setSpeechTranscriptionConfig(config).build();
 
       // Create the request
-      AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-          .setInputUri(gcsUri)
-          .addFeatures(Feature.SPEECH_TRANSCRIPTION)
-          .setVideoContext(context)
-          .build();
+      AnnotateVideoRequest request =
+          AnnotateVideoRequest.newBuilder()
+              .setInputUri(gcsUri)
+              .addFeatures(Feature.SPEECH_TRANSCRIPTION)
+              .setVideoContext(context)
+              .build();
 
       // asynchronously perform speech transcription on videos
       OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> response =
@@ -105,8 +105,8 @@ public class Detect {
 
       System.out.println("Waiting for operation to complete...");
       // Display the results
-      for (VideoAnnotationResults results : response.get(300, TimeUnit.SECONDS)
-          .getAnnotationResultsList()) {
+      for (VideoAnnotationResults results :
+          response.get(300, TimeUnit.SECONDS).getAnnotationResultsList()) {
         for (SpeechTranscription speechTranscription : results.getSpeechTranscriptionsList()) {
           try {
             // Print the transcription
@@ -118,12 +118,12 @@ public class Detect {
 
               System.out.println("Word level information:");
               for (WordInfo wordInfo : alternative.getWordsList()) {
-                double startTime = wordInfo.getStartTime().getSeconds()
-                    + wordInfo.getStartTime().getNanos() / 1e9;
-                double endTime = wordInfo.getEndTime().getSeconds()
-                    + wordInfo.getEndTime().getNanos() / 1e9;
-                System.out.printf("\t%4.2fs - %4.2fs: %s\n",
-                    startTime, endTime, wordInfo.getWord());
+                double startTime =
+                    wordInfo.getStartTime().getSeconds() + wordInfo.getStartTime().getNanos() / 1e9;
+                double endTime =
+                    wordInfo.getEndTime().getSeconds() + wordInfo.getEndTime().getNanos() / 1e9;
+                System.out.printf(
+                    "\t%4.2fs - %4.2fs: %s\n", startTime, endTime, wordInfo.getWord());
               }
             } else {
               System.out.println("No transcription found");

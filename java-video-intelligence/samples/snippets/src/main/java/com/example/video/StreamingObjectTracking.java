@@ -49,31 +49,30 @@ class StreamingObjectTracking {
       int chunkSize = 5 * 1024 * 1024;
       int numChunks = (int) Math.ceil((double) data.length / chunkSize);
 
-      StreamingLabelDetectionConfig labelConfig = StreamingLabelDetectionConfig.newBuilder()
-          .setStationaryCamera(false)
-          .build();
+      StreamingLabelDetectionConfig labelConfig =
+          StreamingLabelDetectionConfig.newBuilder().setStationaryCamera(false).build();
 
-      StreamingVideoConfig streamingVideoConfig = StreamingVideoConfig.newBuilder()
-          .setFeature(StreamingFeature.STREAMING_OBJECT_TRACKING)
-          .setLabelDetectionConfig(labelConfig)
-          .build();
+      StreamingVideoConfig streamingVideoConfig =
+          StreamingVideoConfig.newBuilder()
+              .setFeature(StreamingFeature.STREAMING_OBJECT_TRACKING)
+              .setLabelDetectionConfig(labelConfig)
+              .build();
 
       BidiStream<StreamingAnnotateVideoRequest, StreamingAnnotateVideoResponse> call =
           client.streamingAnnotateVideoCallable().call();
 
       // The first request must **only** contain the audio configuration:
       call.send(
-          StreamingAnnotateVideoRequest.newBuilder()
-              .setVideoConfig(streamingVideoConfig)
-              .build());
+          StreamingAnnotateVideoRequest.newBuilder().setVideoConfig(streamingVideoConfig).build());
 
       // Subsequent requests must **only** contain the audio data.
       // Send the requests in chunks
       for (int i = 0; i < numChunks; i++) {
         call.send(
             StreamingAnnotateVideoRequest.newBuilder()
-                .setInputContent(ByteString.copyFrom(
-                    Arrays.copyOfRange(data, i * chunkSize, i * chunkSize + chunkSize)))
+                .setInputContent(
+                    ByteString.copyFrom(
+                        Arrays.copyOfRange(data, i * chunkSize, i * chunkSize + chunkSize)))
                 .build());
       }
 
@@ -93,8 +92,8 @@ class StreamingObjectTracking {
 
           // In streaming, there is always one frame.
           ObjectTrackingFrame frame = objectAnnotations.getFrames(0);
-          double offset = frame.getTimeOffset().getSeconds()
-              + frame.getTimeOffset().getNanos() / 1e9;
+          double offset =
+              frame.getTimeOffset().getSeconds() + frame.getTimeOffset().getNanos() / 1e9;
           System.out.format("Offset: %f\n", offset);
 
           System.out.println("Bounding Box:");

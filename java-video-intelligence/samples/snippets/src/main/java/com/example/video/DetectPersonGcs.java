@@ -46,29 +46,29 @@ public class DetectPersonGcs {
   // the Cloud Video Intelligence API.
   public static void detectPersonGcs(String gcsUri) throws Exception {
     try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
-                 VideoIntelligenceServiceClient.create()) {
+        VideoIntelligenceServiceClient.create()) {
       // Reads a local video file and converts it to base64.
 
       PersonDetectionConfig personDetectionConfig =
-              PersonDetectionConfig.newBuilder()
-                      // Must set includeBoundingBoxes to true to get poses and attributes.
-                      .setIncludeBoundingBoxes(true)
-                      .setIncludePoseLandmarks(true)
-                      .setIncludeAttributes(true)
-                      .build();
+          PersonDetectionConfig.newBuilder()
+              // Must set includeBoundingBoxes to true to get poses and attributes.
+              .setIncludeBoundingBoxes(true)
+              .setIncludePoseLandmarks(true)
+              .setIncludeAttributes(true)
+              .build();
       VideoContext videoContext =
-              VideoContext.newBuilder().setPersonDetectionConfig(personDetectionConfig).build();
+          VideoContext.newBuilder().setPersonDetectionConfig(personDetectionConfig).build();
 
       AnnotateVideoRequest request =
-              AnnotateVideoRequest.newBuilder()
-                      .setInputUri(gcsUri)
-                      .addFeatures(Feature.PERSON_DETECTION)
-                      .setVideoContext(videoContext)
-                      .build();
+          AnnotateVideoRequest.newBuilder()
+              .setInputUri(gcsUri)
+              .addFeatures(Feature.PERSON_DETECTION)
+              .setVideoContext(videoContext)
+              .build();
 
       // Detects people in a video
       OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> future =
-              videoIntelligenceServiceClient.annotateVideoAsync(request);
+          videoIntelligenceServiceClient.annotateVideoAsync(request);
 
       System.out.println("Waiting for operation to complete...");
       AnnotateVideoResponse response = future.get();
@@ -77,18 +77,17 @@ public class DetectPersonGcs {
 
       // Annotations for list of people detected, tracked and recognized in video.
       for (PersonDetectionAnnotation personDetectionAnnotation :
-              annotationResult.getPersonDetectionAnnotationsList()) {
+          annotationResult.getPersonDetectionAnnotationsList()) {
         System.out.print("Person detected:\n");
         for (Track track : personDetectionAnnotation.getTracksList()) {
           VideoSegment segment = track.getSegment();
           System.out.printf(
-                  "\tStart: %d.%.0fs\n",
-                  segment.getStartTimeOffset().getSeconds(),
-                  segment.getStartTimeOffset().getNanos() / 1e6);
+              "\tStart: %d.%.0fs\n",
+              segment.getStartTimeOffset().getSeconds(),
+              segment.getStartTimeOffset().getNanos() / 1e6);
           System.out.printf(
-                  "\tEnd: %d.%.0fs\n",
-                  segment.getEndTimeOffset().getSeconds(),
-                  segment.getEndTimeOffset().getNanos() / 1e6);
+              "\tEnd: %d.%.0fs\n",
+              segment.getEndTimeOffset().getSeconds(), segment.getEndTimeOffset().getNanos() / 1e6);
 
           // Each segment includes timestamped objects that include characteristic--e.g. clothes,
           // posture of the person detected.
@@ -97,14 +96,14 @@ public class DetectPersonGcs {
           // Attributes include unique pieces of clothing, poses, or hair color.
           for (DetectedAttribute attribute : firstTimestampedObject.getAttributesList()) {
             System.out.printf(
-                    "\tAttribute: %s; Value: %s\n", attribute.getName(), attribute.getValue());
+                "\tAttribute: %s; Value: %s\n", attribute.getName(), attribute.getValue());
           }
 
           // Landmarks in person detection include body parts.
           for (DetectedLandmark attribute : firstTimestampedObject.getLandmarksList()) {
             System.out.printf(
-                    "\tLandmark: %s; Vertex: %f, %f\n",
-                    attribute.getName(), attribute.getPoint().getX(), attribute.getPoint().getY());
+                "\tLandmark: %s; Vertex: %f, %f\n",
+                attribute.getName(), attribute.getPoint().getX(), attribute.getPoint().getY());
           }
         }
       }

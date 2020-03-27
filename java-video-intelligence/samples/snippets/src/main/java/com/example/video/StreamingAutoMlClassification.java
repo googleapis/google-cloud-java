@@ -28,7 +28,6 @@ import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResu
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceClient;
 import com.google.protobuf.ByteString;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -43,7 +42,7 @@ class StreamingAutoMlClassification {
     // String modelId = "YOUR_AUTO_ML_CLASSIFICATION_MODEL_ID";
 
     try (StreamingVideoIntelligenceServiceClient client =
-                 StreamingVideoIntelligenceServiceClient.create()) {
+        StreamingVideoIntelligenceServiceClient.create()) {
 
       Path path = Paths.get(filePath);
       byte[] data = Files.readAllBytes(path);
@@ -51,39 +50,36 @@ class StreamingAutoMlClassification {
       int chunkSize = 5 * 1024 * 1024;
       int numChunks = (int) Math.ceil((double) data.length / chunkSize);
 
-      String modelPath = String.format("projects/%s/locations/us-central1/models/%s",
-              projectId,
-              modelId);
+      String modelPath =
+          String.format("projects/%s/locations/us-central1/models/%s", projectId, modelId);
 
       System.out.println(modelPath);
 
       StreamingAutomlClassificationConfig streamingAutomlClassificationConfig =
-              StreamingAutomlClassificationConfig.newBuilder()
-                      .setModelName(modelPath)
-                      .build();
+          StreamingAutomlClassificationConfig.newBuilder().setModelName(modelPath).build();
 
-      StreamingVideoConfig streamingVideoConfig = StreamingVideoConfig.newBuilder()
+      StreamingVideoConfig streamingVideoConfig =
+          StreamingVideoConfig.newBuilder()
               .setFeature(StreamingFeature.STREAMING_AUTOML_CLASSIFICATION)
               .setAutomlClassificationConfig(streamingAutomlClassificationConfig)
               .build();
 
       BidiStream<StreamingAnnotateVideoRequest, StreamingAnnotateVideoResponse> call =
-              client.streamingAnnotateVideoCallable().call();
+          client.streamingAnnotateVideoCallable().call();
 
       // The first request must **only** contain the audio configuration:
       call.send(
-              StreamingAnnotateVideoRequest.newBuilder()
-                      .setVideoConfig(streamingVideoConfig)
-                      .build());
+          StreamingAnnotateVideoRequest.newBuilder().setVideoConfig(streamingVideoConfig).build());
 
       // Subsequent requests must **only** contain the audio data.
       // Send the requests in chunks
       for (int i = 0; i < numChunks; i++) {
         call.send(
-                StreamingAnnotateVideoRequest.newBuilder()
-                        .setInputContent(ByteString.copyFrom(
-                                Arrays.copyOfRange(data, i * chunkSize, i * chunkSize + chunkSize)))
-                        .build());
+            StreamingAnnotateVideoRequest.newBuilder()
+                .setInputContent(
+                    ByteString.copyFrom(
+                        Arrays.copyOfRange(data, i * chunkSize, i * chunkSize + chunkSize)))
+                .build());
       }
 
       // Tell the service you are done sending data
@@ -102,8 +98,8 @@ class StreamingAutoMlClassification {
 
           // There is only one frame per annotation
           LabelFrame labelFrame = annotation.getFrames(0);
-          double offset = labelFrame.getTimeOffset().getSeconds()
-                  + labelFrame.getTimeOffset().getNanos() / 1e9;
+          double offset =
+              labelFrame.getTimeOffset().getSeconds() + labelFrame.getTimeOffset().getNanos() / 1e9;
           float confidence = labelFrame.getConfidence();
 
           System.out.format("%fs: %s (%f)\n", offset, entity, confidence);

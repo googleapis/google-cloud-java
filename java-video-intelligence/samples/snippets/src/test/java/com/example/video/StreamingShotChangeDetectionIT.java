@@ -26,9 +26,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration (system) tests for {@link StreamingShotChangeDetection}.
- */
+/** Integration (system) tests for {@link StreamingShotChangeDetection}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class StreamingShotChangeDetectionIT {

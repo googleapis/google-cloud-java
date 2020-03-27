@@ -44,27 +44,27 @@ public class DetectFacesGcs {
   // Detects faces in a video stored in Google Cloud Storage using the Cloud Video Intelligence API.
   public static void detectFacesGcs(String gcsUri) throws Exception {
     try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
-                 VideoIntelligenceServiceClient.create()) {
+        VideoIntelligenceServiceClient.create()) {
 
       FaceDetectionConfig faceDetectionConfig =
-              FaceDetectionConfig.newBuilder()
-                      // Must set includeBoundingBoxes to true to get facial attributes.
-                      .setIncludeBoundingBoxes(true)
-                      .setIncludeAttributes(true)
-                      .build();
+          FaceDetectionConfig.newBuilder()
+              // Must set includeBoundingBoxes to true to get facial attributes.
+              .setIncludeBoundingBoxes(true)
+              .setIncludeAttributes(true)
+              .build();
       VideoContext videoContext =
-              VideoContext.newBuilder().setFaceDetectionConfig(faceDetectionConfig).build();
+          VideoContext.newBuilder().setFaceDetectionConfig(faceDetectionConfig).build();
 
       AnnotateVideoRequest request =
-              AnnotateVideoRequest.newBuilder()
-                      .setInputUri(gcsUri)
-                      .addFeatures(Feature.FACE_DETECTION)
-                      .setVideoContext(videoContext)
-                      .build();
+          AnnotateVideoRequest.newBuilder()
+              .setInputUri(gcsUri)
+              .addFeatures(Feature.FACE_DETECTION)
+              .setVideoContext(videoContext)
+              .build();
 
       // Detects faces in a video
       OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> future =
-              videoIntelligenceServiceClient.annotateVideoAsync(request);
+          videoIntelligenceServiceClient.annotateVideoAsync(request);
 
       System.out.println("Waiting for operation to complete...");
       AnnotateVideoResponse response = future.get();
@@ -74,18 +74,17 @@ public class DetectFacesGcs {
 
       // Annotations for list of people detected, tracked and recognized in video.
       for (FaceDetectionAnnotation faceDetectionAnnotation :
-              annotationResult.getFaceDetectionAnnotationsList()) {
+          annotationResult.getFaceDetectionAnnotationsList()) {
         System.out.print("Face detected:\n");
         for (Track track : faceDetectionAnnotation.getTracksList()) {
           VideoSegment segment = track.getSegment();
           System.out.printf(
-                  "\tStart: %d.%.0fs\n",
-                  segment.getStartTimeOffset().getSeconds(),
-                  segment.getStartTimeOffset().getNanos() / 1e6);
+              "\tStart: %d.%.0fs\n",
+              segment.getStartTimeOffset().getSeconds(),
+              segment.getStartTimeOffset().getNanos() / 1e6);
           System.out.printf(
-                  "\tEnd: %d.%.0fs\n",
-                  segment.getEndTimeOffset().getSeconds(),
-                  segment.getEndTimeOffset().getNanos() / 1e6);
+              "\tEnd: %d.%.0fs\n",
+              segment.getEndTimeOffset().getSeconds(), segment.getEndTimeOffset().getNanos() / 1e6);
 
           // Each segment includes timestamped objects that
           // include characteristics of the face detected.

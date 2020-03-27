@@ -48,31 +48,30 @@ class StreamingShotChangeDetection {
       int chunkSize = 5 * 1024 * 1024;
       int numChunks = (int) Math.ceil((double) data.length / chunkSize);
 
-      StreamingLabelDetectionConfig labelConfig = StreamingLabelDetectionConfig.newBuilder()
-          .setStationaryCamera(false)
-          .build();
+      StreamingLabelDetectionConfig labelConfig =
+          StreamingLabelDetectionConfig.newBuilder().setStationaryCamera(false).build();
 
-      StreamingVideoConfig streamingVideoConfig = StreamingVideoConfig.newBuilder()
-          .setFeature(StreamingFeature.STREAMING_SHOT_CHANGE_DETECTION)
-          .setLabelDetectionConfig(labelConfig)
-          .build();
+      StreamingVideoConfig streamingVideoConfig =
+          StreamingVideoConfig.newBuilder()
+              .setFeature(StreamingFeature.STREAMING_SHOT_CHANGE_DETECTION)
+              .setLabelDetectionConfig(labelConfig)
+              .build();
 
       BidiStream<StreamingAnnotateVideoRequest, StreamingAnnotateVideoResponse> call =
           client.streamingAnnotateVideoCallable().call();
 
       // The first request must **only** contain the audio configuration:
       call.send(
-          StreamingAnnotateVideoRequest.newBuilder()
-              .setVideoConfig(streamingVideoConfig)
-              .build());
+          StreamingAnnotateVideoRequest.newBuilder().setVideoConfig(streamingVideoConfig).build());
 
       // Subsequent requests must **only** contain the audio data.
       // Send the requests in chunks
       for (int i = 0; i < numChunks; i++) {
         call.send(
             StreamingAnnotateVideoRequest.newBuilder()
-                .setInputContent(ByteString.copyFrom(
-                    Arrays.copyOfRange(data, i * chunkSize, i * chunkSize + chunkSize)))
+                .setInputContent(
+                    ByteString.copyFrom(
+                        Arrays.copyOfRange(data, i * chunkSize, i * chunkSize + chunkSize)))
                 .build());
       }
 
@@ -83,10 +82,11 @@ class StreamingShotChangeDetection {
         StreamingVideoAnnotationResults annotationResults = response.getAnnotationResults();
 
         for (VideoSegment segment : annotationResults.getShotAnnotationsList()) {
-          double startTimeOffset = segment.getStartTimeOffset().getSeconds()
-              + segment.getStartTimeOffset().getNanos() / 1e9;
-          double endTimeOffset = segment.getEndTimeOffset().getSeconds()
-              + segment.getEndTimeOffset().getNanos() / 1e9;
+          double startTimeOffset =
+              segment.getStartTimeOffset().getSeconds()
+                  + segment.getStartTimeOffset().getNanos() / 1e9;
+          double endTimeOffset =
+              segment.getEndTimeOffset().getSeconds() + segment.getEndTimeOffset().getNanos() / 1e9;
 
           System.out.format("Shot: %fs to %fs\n", startTimeOffset, endTimeOffset);
         }
@@ -97,4 +97,3 @@ class StreamingShotChangeDetection {
   }
 }
 // [END video_streaming_shot_change_detection_beta]
-

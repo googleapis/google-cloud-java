@@ -31,12 +31,10 @@ import com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceClie
 import com.google.cloud.videointelligence.v1p3beta1.VideoSegment;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 import java.util.concurrent.ExecutionException;
 
 public class DetectLogo {

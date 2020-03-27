@@ -14,24 +14,19 @@
  * limitations under the License.
  */
 
-
 package com.example.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-
-/**
- * Integration (system) tests for {@link StreamingAutoMlClassification}.
- */
+/** Integration (system) tests for {@link StreamingAutoMlClassification}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class StreamingAutoMlClassificationIT {
@@ -57,9 +52,7 @@ public class StreamingAutoMlClassificationIT {
   @Test
   public void testStreamingAutoMlClassification() {
     StreamingAutoMlClassification.streamingAutoMlClassification(
-            "resources/cat.mp4",
-            PROJECT_ID,
-            MODEL_ID);
+        "resources/cat.mp4", PROJECT_ID, MODEL_ID);
     String got = bout.toString();
 
     assertThat(got).contains("brush_hair");

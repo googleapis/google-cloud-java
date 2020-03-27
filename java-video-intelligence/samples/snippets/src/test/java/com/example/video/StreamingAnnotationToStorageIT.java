@@ -31,9 +31,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration (system) tests for {@link StreamingAnnotationToStorage}.
- */
+/** Integration (system) tests for {@link StreamingAnnotationToStorage}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class StreamingAnnotationToStorageIT {
@@ -65,8 +63,11 @@ public class StreamingAnnotationToStorageIT {
 
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
-    Page<Blob> blobs = storage.list(PROJECT_ID, BlobListOption.currentDirectory(),
-        BlobListOption.prefix(OUTPUT_PREFIX + "/"));
+    Page<Blob> blobs =
+        storage.list(
+            PROJECT_ID,
+            BlobListOption.currentDirectory(),
+            BlobListOption.prefix(OUTPUT_PREFIX + "/"));
 
     deleteDirectory(storage, blobs);
   }
@@ -75,8 +76,11 @@ public class StreamingAnnotationToStorageIT {
     for (Blob blob : blobs.iterateAll()) {
       System.out.println(blob.getName());
       if (!blob.delete()) {
-        Page<Blob> subBlobs = storage.list(PROJECT_ID, BlobListOption.currentDirectory(),
-            BlobListOption.prefix(blob.getName()));
+        Page<Blob> subBlobs =
+            storage.list(
+                PROJECT_ID,
+                BlobListOption.currentDirectory(),
+                BlobListOption.prefix(blob.getName()));
 
         deleteDirectory(storage, subBlobs);
       }

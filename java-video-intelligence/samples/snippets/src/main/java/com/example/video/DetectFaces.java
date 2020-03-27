@@ -33,12 +33,9 @@ import com.google.cloud.videointelligence.v1p3beta1.VideoContext;
 import com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceClient;
 import com.google.cloud.videointelligence.v1p3beta1.VideoSegment;
 import com.google.protobuf.ByteString;
-
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.concurrent.ExecutionException;
 
 public class DetectFaces {
 
@@ -51,31 +48,31 @@ public class DetectFaces {
   // Detects faces in a video stored in a local file using the Cloud Video Intelligence API.
   public static void detectFaces(String localFilePath) throws Exception {
     try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
-                 VideoIntelligenceServiceClient.create()) {
+        VideoIntelligenceServiceClient.create()) {
       // Reads a local video file and converts it to base64.
       Path path = Paths.get(localFilePath);
       byte[] data = Files.readAllBytes(path);
       ByteString inputContent = ByteString.copyFrom(data);
 
       FaceDetectionConfig faceDetectionConfig =
-              FaceDetectionConfig.newBuilder()
-                      // Must set includeBoundingBoxes to true to get facial attributes.
-                      .setIncludeBoundingBoxes(true)
-                      .setIncludeAttributes(true)
-                      .build();
+          FaceDetectionConfig.newBuilder()
+              // Must set includeBoundingBoxes to true to get facial attributes.
+              .setIncludeBoundingBoxes(true)
+              .setIncludeAttributes(true)
+              .build();
       VideoContext videoContext =
-              VideoContext.newBuilder().setFaceDetectionConfig(faceDetectionConfig).build();
+          VideoContext.newBuilder().setFaceDetectionConfig(faceDetectionConfig).build();
 
       AnnotateVideoRequest request =
-              AnnotateVideoRequest.newBuilder()
-                      .setInputContent(inputContent)
-                      .addFeatures(Feature.FACE_DETECTION)
-                      .setVideoContext(videoContext)
-                      .build();
+          AnnotateVideoRequest.newBuilder()
+              .setInputContent(inputContent)
+              .addFeatures(Feature.FACE_DETECTION)
+              .setVideoContext(videoContext)
+              .build();
 
       // Detects faces in a video
       OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> future =
-              videoIntelligenceServiceClient.annotateVideoAsync(request);
+          videoIntelligenceServiceClient.annotateVideoAsync(request);
 
       System.out.println("Waiting for operation to complete...");
       AnnotateVideoResponse response = future.get();
@@ -85,18 +82,17 @@ public class DetectFaces {
 
       // Annotations for list of faces detected, tracked and recognized in video.
       for (FaceDetectionAnnotation faceDetectionAnnotation :
-              annotationResult.getFaceDetectionAnnotationsList()) {
+          annotationResult.getFaceDetectionAnnotationsList()) {
         System.out.print("Face detected:\n");
         for (Track track : faceDetectionAnnotation.getTracksList()) {
           VideoSegment segment = track.getSegment();
           System.out.printf(
-                  "\tStart: %d.%.0fs\n",
-                  segment.getStartTimeOffset().getSeconds(),
-                  segment.getStartTimeOffset().getNanos() / 1e6);
+              "\tStart: %d.%.0fs\n",
+              segment.getStartTimeOffset().getSeconds(),
+              segment.getStartTimeOffset().getNanos() / 1e6);
           System.out.printf(
-                  "\tEnd: %d.%.0fs\n",
-                  segment.getEndTimeOffset().getSeconds(),
-                  segment.getEndTimeOffset().getNanos() / 1e6);
+              "\tEnd: %d.%.0fs\n",
+              segment.getEndTimeOffset().getSeconds(), segment.getEndTimeOffset().getNanos() / 1e6);
 
           // Each segment includes timestamped objects that
           // include characteristics of the face detected.
