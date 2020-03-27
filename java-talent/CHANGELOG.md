@@ -1,5 +1,38 @@
 # Changelog
 
+## [0.36.0](https://www.github.com/googleapis/java-talent/compare/v0.35.2...v0.36.0) (2020-03-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* use `TenantName` for resources in place of `TenantOrProjectName`
+* adopt the new multi-pattern resource names (#88)
+
+### Features
+
+* adopt the new multi-pattern resource names ([#88](https://www.github.com/googleapis/java-talent/issues/88)) ([0a8a4c9](https://www.github.com/googleapis/java-talent/commit/0a8a4c9141e5b024ab4106975690f6b3f1c91bf3))
+* resource name change ([#106](https://www.github.com/googleapis/java-talent/issues/106)) ([2c44fa8](https://www.github.com/googleapis/java-talent/commit/2c44fa85b84cb8b64715a784b9c960a0ac23065c))
+
+
+### Bug Fixes
+
+* undeprecate resource name classes until multi-pattern resources are available ([#83](https://www.github.com/googleapis/java-talent/issues/83)) ([c6ac9f8](https://www.github.com/googleapis/java-talent/commit/c6ac9f825e122cd4805f51ae5ef3fc9e2185ca1b))
+
+
+### Dependencies
+
+* update core dependencies ([#84](https://www.github.com/googleapis/java-talent/issues/84)) ([2824acd](https://www.github.com/googleapis/java-talent/commit/2824acd3d725f7a2b2c246dad5140e248ceb318c))
+* update dependency com.google.api:api-common to v1.9.0 ([#108](https://www.github.com/googleapis/java-talent/issues/108)) ([3e9cd1f](https://www.github.com/googleapis/java-talent/commit/3e9cd1fbd46f00d83dd5cedcce487644ba7eb465))
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([bd15e46](https://www.github.com/googleapis/java-talent/commit/bd15e4646a653e0951999a35336c472bc3c1661c))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([e6ca466](https://www.github.com/googleapis/java-talent/commit/e6ca46662f9f78760fde934e23deaa1d4582d604))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([b9a488d](https://www.github.com/googleapis/java-talent/commit/b9a488d3356e772131a427934011d5f4543fac2c))
+
+
+### Documentation
+
+* **regen:** update generate proto documentation ([#86](https://www.github.com/googleapis/java-talent/issues/86)) ([3e2a860](https://www.github.com/googleapis/java-talent/commit/3e2a860d3d10cb46dcbe97582afc0b283d591f01))
+* **regen:** update sample code to set total timeout, add API client header test ([10922f4](https://www.github.com/googleapis/java-talent/commit/10922f4c050ea3a54e57c30d5963d95e749228dd))
+
 ### [0.35.2](https://www.github.com/googleapis/java-talent/compare/v0.35.1...v0.35.2) (2020-02-04)
 
 
