@@ -25,7 +25,6 @@ package com.example.automl;
 import com.google.cloud.automl.v1.AutoMlClient;
 import com.google.cloud.automl.v1.Dataset;
 import com.google.cloud.automl.v1.DatasetName;
-
 import java.io.IOException;
 
 class GetDataset {

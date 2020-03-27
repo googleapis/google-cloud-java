@@ -26,7 +26,6 @@ import com.google.cloud.automl.v1.AutoMlClient;
 import com.google.cloud.automl.v1.Dataset;
 import com.google.cloud.automl.v1.ListDatasetsRequest;
 import com.google.cloud.automl.v1.LocationName;
-
 import java.io.IOException;
 
 class ListDatasets {
@@ -46,9 +45,7 @@ class ListDatasets {
       // A resource that represents Google Cloud Platform location.
       LocationName projectLocation = LocationName.of(projectId, "us-central1");
       ListDatasetsRequest request =
-          ListDatasetsRequest.newBuilder()
-              .setParent(projectLocation.toString())
-              .build();
+          ListDatasetsRequest.newBuilder().setParent(projectLocation.toString()).build();
 
       // List all the datasets available in the region by applying filter.
       System.out.println("List of datasets:");

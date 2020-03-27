@@ -19,7 +19,6 @@ package com.example.automl;
 // [START automl_get_operation_status]
 import com.google.cloud.automl.v1.AutoMlClient;
 import com.google.longrunning.Operation;
-
 import java.io.IOException;
 
 class GetOperationStatus {

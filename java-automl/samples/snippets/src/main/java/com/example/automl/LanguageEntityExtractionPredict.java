@@ -25,7 +25,6 @@ import com.google.cloud.automl.v1.PredictResponse;
 import com.google.cloud.automl.v1.PredictionServiceClient;
 import com.google.cloud.automl.v1.TextSegment;
 import com.google.cloud.automl.v1.TextSnippet;
-
 import java.io.IOException;
 
 class LanguageEntityExtractionPredict {

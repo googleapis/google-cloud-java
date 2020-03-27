@@ -24,7 +24,6 @@ import com.google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata;
 import com.google.cloud.automl.v1.ModelName;
 import com.google.cloud.automl.v1.OperationMetadata;
 import com.google.protobuf.Empty;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 

@@ -21,7 +21,6 @@ import com.google.cloud.automl.v1.AutoMlClient;
 import com.google.cloud.automl.v1.LocationName;
 import com.google.longrunning.ListOperationsRequest;
 import com.google.longrunning.Operation;
-
 import java.io.IOException;
 
 class ListOperationStatus {

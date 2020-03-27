@@ -19,19 +19,10 @@ package com.example.automl;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.api.gax.paging.Page;
-import com.google.cloud.automl.v1.AutoMlClient;
-import com.google.cloud.automl.v1.DeployModelRequest;
-import com.google.cloud.automl.v1.Model;
-import com.google.cloud.automl.v1.ModelName;
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.concurrent.ExecutionException;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -82,11 +73,9 @@ public class BatchPredictTest {
       String outputUri = String.format("gs://%s/TEST_BATCH_PREDICT/", BUCKET_ID);
       BatchPredict.batchPredict(PROJECT_ID, MODEL_ID, inputUri, outputUri);
       String got = bout.toString();
-      assertThat(got)
-          .contains("does not exist");
+      assertThat(got).contains("does not exist");
     } catch (IOException | ExecutionException | InterruptedException e) {
-      assertThat(e.getMessage())
-          .contains("does not exist");
+      assertThat(e.getMessage()).contains("does not exist");
     }
   }
 }

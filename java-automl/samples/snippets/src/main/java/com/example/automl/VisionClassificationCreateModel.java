@@ -23,7 +23,6 @@ import com.google.cloud.automl.v1.ImageClassificationModelMetadata;
 import com.google.cloud.automl.v1.LocationName;
 import com.google.cloud.automl.v1.Model;
 import com.google.cloud.automl.v1.OperationMetadata;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
