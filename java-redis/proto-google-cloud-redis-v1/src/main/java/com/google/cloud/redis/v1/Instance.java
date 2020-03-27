@@ -1195,8 +1195,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used. Currently, the
    * supported values are:
-   *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
+   *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+   *  *   `REDIS_5_0` for Redis 5.0 compatibility
    * </pre>
    *
    * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1221,8 +1222,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used. Currently, the
    * supported values are:
-   *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
+   *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+   *  *   `REDIS_5_0` for Redis 5.0 compatibility
    * </pre>
    *
    * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1582,13 +1584,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
-   *  Redis 3.2 and above:
+   *  Redis version 3.2 and newer:
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
-   *  Redis 4.0 and above:
+   *  Redis version 4.0 and newer:
    *  *   activedefrag
-   *  *   lfu-log-factor
    *  *   lfu-decay-time
+   *  *   lfu-log-factor
+   *  *   maxmemory-gb
+   *  Redis version 5.0 and newer:
+   *  *   stream-node-max-bytes
+   *  *   stream-node-max-entries
    * </pre>
    *
    * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1612,13 +1618,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
-   *  Redis 3.2 and above:
+   *  Redis version 3.2 and newer:
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
-   *  Redis 4.0 and above:
+   *  Redis version 4.0 and newer:
    *  *   activedefrag
-   *  *   lfu-log-factor
    *  *   lfu-decay-time
+   *  *   lfu-log-factor
+   *  *   maxmemory-gb
+   *  Redis version 5.0 and newer:
+   *  *   stream-node-max-bytes
+   *  *   stream-node-max-entries
    * </pre>
    *
    * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1634,13 +1644,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
-   *  Redis 3.2 and above:
+   *  Redis version 3.2 and newer:
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
-   *  Redis 4.0 and above:
+   *  Redis version 4.0 and newer:
    *  *   activedefrag
-   *  *   lfu-log-factor
    *  *   lfu-decay-time
+   *  *   lfu-log-factor
+   *  *   maxmemory-gb
+   *  Redis version 5.0 and newer:
+   *  *   stream-node-max-bytes
+   *  *   stream-node-max-entries
    * </pre>
    *
    * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1661,13 +1675,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
-   *  Redis 3.2 and above:
+   *  Redis version 3.2 and newer:
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
-   *  Redis 4.0 and above:
+   *  Redis version 4.0 and newer:
    *  *   activedefrag
-   *  *   lfu-log-factor
    *  *   lfu-decay-time
+   *  *   lfu-log-factor
+   *  *   maxmemory-gb
+   *  Redis version 5.0 and newer:
+   *  *   stream-node-max-bytes
+   *  *   stream-node-max-entries
    * </pre>
    *
    * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -3183,8 +3201,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
-     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+     *  *   `REDIS_5_0` for Redis 5.0 compatibility
      * </pre>
      *
      * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3209,8 +3228,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
-     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+     *  *   `REDIS_5_0` for Redis 5.0 compatibility
      * </pre>
      *
      * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3235,8 +3255,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
-     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+     *  *   `REDIS_5_0` for Redis 5.0 compatibility
      * </pre>
      *
      * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3260,8 +3281,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
-     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+     *  *   `REDIS_5_0` for Redis 5.0 compatibility
      * </pre>
      *
      * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3281,8 +3303,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
-     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+     *  *   `REDIS_5_0` for Redis 5.0 compatibility
      * </pre>
      *
      * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4155,13 +4178,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
+     *  Redis version 3.2 and newer:
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
-     *  Redis 4.0 and above:
+     *  Redis version 4.0 and newer:
      *  *   activedefrag
-     *  *   lfu-log-factor
      *  *   lfu-decay-time
+     *  *   lfu-log-factor
+     *  *   maxmemory-gb
+     *  Redis version 5.0 and newer:
+     *  *   stream-node-max-bytes
+     *  *   stream-node-max-entries
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -4185,13 +4212,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
+     *  Redis version 3.2 and newer:
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
-     *  Redis 4.0 and above:
+     *  Redis version 4.0 and newer:
      *  *   activedefrag
-     *  *   lfu-log-factor
      *  *   lfu-decay-time
+     *  *   lfu-log-factor
+     *  *   maxmemory-gb
+     *  Redis version 5.0 and newer:
+     *  *   stream-node-max-bytes
+     *  *   stream-node-max-entries
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -4207,13 +4238,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
+     *  Redis version 3.2 and newer:
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
-     *  Redis 4.0 and above:
+     *  Redis version 4.0 and newer:
      *  *   activedefrag
-     *  *   lfu-log-factor
      *  *   lfu-decay-time
+     *  *   lfu-log-factor
+     *  *   maxmemory-gb
+     *  Redis version 5.0 and newer:
+     *  *   stream-node-max-bytes
+     *  *   stream-node-max-entries
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -4234,13 +4269,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
+     *  Redis version 3.2 and newer:
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
-     *  Redis 4.0 and above:
+     *  Redis version 4.0 and newer:
      *  *   activedefrag
-     *  *   lfu-log-factor
      *  *   lfu-decay-time
+     *  *   lfu-log-factor
+     *  *   maxmemory-gb
+     *  Redis version 5.0 and newer:
+     *  *   stream-node-max-bytes
+     *  *   stream-node-max-entries
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -4268,13 +4307,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
+     *  Redis version 3.2 and newer:
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
-     *  Redis 4.0 and above:
+     *  Redis version 4.0 and newer:
      *  *   activedefrag
-     *  *   lfu-log-factor
      *  *   lfu-decay-time
+     *  *   lfu-log-factor
+     *  *   maxmemory-gb
+     *  Redis version 5.0 and newer:
+     *  *   stream-node-max-bytes
+     *  *   stream-node-max-entries
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -4299,13 +4342,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
+     *  Redis version 3.2 and newer:
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
-     *  Redis 4.0 and above:
+     *  Redis version 4.0 and newer:
      *  *   activedefrag
-     *  *   lfu-log-factor
      *  *   lfu-decay-time
+     *  *   lfu-log-factor
+     *  *   maxmemory-gb
+     *  Redis version 5.0 and newer:
+     *  *   stream-node-max-bytes
+     *  *   stream-node-max-entries
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -4328,13 +4375,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
+     *  Redis version 3.2 and newer:
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
-     *  Redis 4.0 and above:
+     *  Redis version 4.0 and newer:
      *  *   activedefrag
-     *  *   lfu-log-factor
      *  *   lfu-decay-time
+     *  *   lfu-log-factor
+     *  *   maxmemory-gb
+     *  Redis version 5.0 and newer:
+     *  *   stream-node-max-bytes
+     *  *   stream-node-max-entries
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
