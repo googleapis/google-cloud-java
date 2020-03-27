@@ -21,21 +21,17 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.cloud.kms.v1.CryptoKey;
 import com.google.cloud.kms.v1.CryptoKeyVersion;
 import com.google.cloud.kms.v1.KeyRing;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.List;
 import java.util.UUID;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration (system) tests for {@link Quickstart}.
- */
+/** Integration (system) tests for {@link Quickstart}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class QuickstartIT {
@@ -45,32 +41,31 @@ public class QuickstartIT {
   private static final String KEY_RING_ID = "test-key-ring-" + UUID.randomUUID().toString();
   private static final String CRYPTO_KEY_ID = UUID.randomUUID().toString();
 
-  /**
-   * Creates a CryptoKey for use during this test run.
-   */
+  /** Creates a CryptoKey for use during this test run. */
   @BeforeClass
   public static void setUpClass() throws Exception {
     KeyRing keyRing = Snippets.createKeyRing(PROJECT_ID, LOCATION_ID, KEY_RING_ID);
     assertThat(keyRing.getName()).contains("keyRings/" + KEY_RING_ID);
 
-    CryptoKey cryptoKey = 
+    CryptoKey cryptoKey =
         Snippets.createCryptoKey(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
-    assertThat(cryptoKey.getName()).contains(String.format(
-        "keyRings/%s/cryptoKeys/%s", KEY_RING_ID, CRYPTO_KEY_ID));
+    assertThat(cryptoKey.getName())
+        .contains(String.format("keyRings/%s/cryptoKeys/%s", KEY_RING_ID, CRYPTO_KEY_ID));
   }
 
-  /**
-   * Destroys all the key versions created during this test run.
-   */
+  /** Destroys all the key versions created during this test run. */
   @AfterClass
   public static void tearDownClass() throws Exception {
-    List<CryptoKeyVersion> versions = 
+    List<CryptoKeyVersion> versions =
         Snippets.listCryptoKeyVersions(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
 
     for (CryptoKeyVersion v : versions) {
       if (!v.getState().equals(CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED)) {
         Snippets.destroyCryptoKeyVersion(
-            PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID,
+            PROJECT_ID,
+            LOCATION_ID,
+            KEY_RING_ID,
+            CRYPTO_KEY_ID,
             SnippetsIT.parseVersionId(v.getName()));
       }
     }

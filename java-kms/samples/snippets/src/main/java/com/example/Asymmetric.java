@@ -28,7 +28,6 @@ import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.kms.v1.KeyRingName;
 import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
-
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.security.KeyFactory;
@@ -42,15 +41,13 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.OAEPParameterSpec;
 import javax.crypto.spec.PSource;
 
-//CHECKSTYLE OFF: AbbreviationAsWordInName
+// CHECKSTYLE OFF: AbbreviationAsWordInName
 public class Asymmetric {
 
   // [START kms_create_asymmetric_key]
-  /**
-   * Creates an RSA encrypt/decrypt key pair with the given id.
-   */
-  public static CryptoKey createAsymmetricKey(String projectId, String locationId, String keyRingId,
-      String cryptoKeyId)
+  /** Creates an RSA encrypt/decrypt key pair with the given id. */
+  public static CryptoKey createAsymmetricKey(
+      String projectId, String locationId, String keyRingId, String cryptoKeyId)
       throws IOException {
 
     try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
@@ -59,13 +56,10 @@ public class Asymmetric {
       CryptoKeyPurpose purpose = CryptoKeyPurpose.ASYMMETRIC_DECRYPT;
       CryptoKeyVersionAlgorithm algorithm = CryptoKeyVersionAlgorithm.RSA_DECRYPT_OAEP_2048_SHA256;
 
-      CryptoKeyVersionTemplate version = CryptoKeyVersionTemplate.newBuilder()
-          .setAlgorithm(algorithm)
-          .build();
-      CryptoKey cryptoKey = CryptoKey.newBuilder()
-          .setPurpose(purpose)
-          .setVersionTemplate(version)
-          .build();
+      CryptoKeyVersionTemplate version =
+          CryptoKeyVersionTemplate.newBuilder().setAlgorithm(algorithm).build();
+      CryptoKey cryptoKey =
+          CryptoKey.newBuilder().setPurpose(purpose).setVersionTemplate(version).build();
 
       CryptoKey createdKey = client.createCryptoKey(parent, cryptoKeyId, cryptoKey);
 
@@ -78,10 +72,10 @@ public class Asymmetric {
   /**
    * Retrieves the public key from a saved asymmetric key pair on Cloud KMS
    *
-   * Example keyName:
-   *   "projects/PROJECT_ID/locations/global/keyRings/RING_ID/cryptoKeys/KEY_ID/cryptoKeyVersions/1"
+   * <p>Example keyName:
+   * "projects/PROJECT_ID/locations/global/keyRings/RING_ID/cryptoKeys/KEY_ID/cryptoKeyVersions/1"
    */
-  public static PublicKey getAsymmetricPublicKey(String keyName) 
+  public static PublicKey getAsymmetricPublicKey(String keyName)
       throws IOException, GeneralSecurityException {
 
     // Create the Cloud KMS client.
@@ -102,8 +96,9 @@ public class Asymmetric {
       } else if (pub.getAlgorithm().name().contains("EC")) {
         return KeyFactory.getInstance("EC").generatePublic(keySpec);
       } else {
-        throw new UnsupportedOperationException(String.format(
-            "key at path '%s' is of unsupported type '%s'.", keyName, pub.getAlgorithm()));
+        throw new UnsupportedOperationException(
+            String.format(
+                "key at path '%s' is of unsupported type '%s'.", keyName, pub.getAlgorithm()));
       }
     }
   }
@@ -111,17 +106,17 @@ public class Asymmetric {
 
   // [START kms_decrypt_rsa]
   /**
-   * Decrypt a given ciphertext using an 'RSA_DECRYPT_OAEP_2048_SHA256' private key
-   * stored on Cloud KMS
+   * Decrypt a given ciphertext using an 'RSA_DECRYPT_OAEP_2048_SHA256' private key stored on Cloud
+   * KMS
    *
-   * Example keyName:
-   *   "projects/PROJECT_ID/locations/global/keyRings/RING_ID/cryptoKeys/KEY_ID/cryptoKeyVersions/1"
+   * <p>Example keyName:
+   * "projects/PROJECT_ID/locations/global/keyRings/RING_ID/cryptoKeys/KEY_ID/cryptoKeyVersions/1"
    */
   public static byte[] decryptRSA(String keyName, byte[] ciphertext) throws IOException {
     // Create the Cloud KMS client.
     try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
-      AsymmetricDecryptResponse response = client.asymmetricDecrypt(
-          keyName, ByteString.copyFrom(ciphertext));
+      AsymmetricDecryptResponse response =
+          client.asymmetricDecrypt(keyName, ByteString.copyFrom(ciphertext));
       return response.getPlaintext().toByteArray();
     }
   }
@@ -129,13 +124,13 @@ public class Asymmetric {
 
   // [START kms_encrypt_rsa]
   /**
-   * Encrypt data locally using an 'RSA_DECRYPT_OAEP_2048_SHA256' public key 
-   * retrieved from Cloud KMS
+   * Encrypt data locally using an 'RSA_DECRYPT_OAEP_2048_SHA256' public key retrieved from Cloud
+   * KMS
    *
-   * Example keyName:
-   *   "projects/PROJECT_ID/locations/global/keyRings/RING_ID/cryptoKeys/KEY_ID/cryptoKeyVersions/1"
+   * <p>Example keyName:
+   * "projects/PROJECT_ID/locations/global/keyRings/RING_ID/cryptoKeys/KEY_ID/cryptoKeyVersions/1"
    */
-  public static byte[] encryptRSA(String keyName, byte[] plaintext) 
+  public static byte[] encryptRSA(String keyName, byte[] plaintext)
       throws IOException, GeneralSecurityException {
     // Create the Cloud KMS client.
     try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
@@ -153,8 +148,9 @@ public class Asymmetric {
       // For other key algorithms:
       // https://docs.oracle.com/javase/7/docs/api/javax/crypto/Cipher.html
       Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPWithSHA-256AndMGF1Padding");
-      OAEPParameterSpec oaepParams = new OAEPParameterSpec(
-          "SHA-256", "MGF1", MGF1ParameterSpec.SHA256, PSource.PSpecified.DEFAULT);
+      OAEPParameterSpec oaepParams =
+          new OAEPParameterSpec(
+              "SHA-256", "MGF1", MGF1ParameterSpec.SHA256, PSource.PSpecified.DEFAULT);
       cipher.init(Cipher.ENCRYPT_MODE, rsaKey, oaepParams);
 
       return cipher.doFinal(plaintext);
@@ -164,10 +160,10 @@ public class Asymmetric {
 
   // [START kms_sign_asymmetric]
   /**
-   *  Create a signature for a message using a private key stored on Cloud KMS
+   * Create a signature for a message using a private key stored on Cloud KMS
    *
-   * Example keyName:
-   *   "projects/PROJECT_ID/locations/global/keyRings/RING_ID/cryptoKeys/KEY_ID/cryptoKeyVersions/1"
+   * <p>Example keyName:
+   * "projects/PROJECT_ID/locations/global/keyRings/RING_ID/cryptoKeys/KEY_ID/cryptoKeyVersions/1"
    */
   public static byte[] signAsymmetric(String keyName, byte[] message)
       throws IOException, NoSuchAlgorithmException {
@@ -178,10 +174,11 @@ public class Asymmetric {
       // For example, EC_SIGN_P384_SHA384 requires SHA-384
       byte[] messageHash = MessageDigest.getInstance("SHA-256").digest(message);
 
-      AsymmetricSignRequest request = AsymmetricSignRequest.newBuilder()
-          .setName(keyName)
-          .setDigest(Digest.newBuilder().setSha256(ByteString.copyFrom(messageHash)))
-          .build();
+      AsymmetricSignRequest request =
+          AsymmetricSignRequest.newBuilder()
+              .setName(keyName)
+              .setDigest(Digest.newBuilder().setSha256(ByteString.copyFrom(messageHash)))
+              .build();
 
       AsymmetricSignResponse response = client.asymmetricSign(request);
       return response.getSignature().toByteArray();
@@ -191,11 +188,10 @@ public class Asymmetric {
 
   // [START kms_verify_signature_rsa]
   /**
-   * Verify the validity of an 'RSA_SIGN_PKCS1_2048_SHA256' signature for the 
-   * specified message
+   * Verify the validity of an 'RSA_SIGN_PKCS1_2048_SHA256' signature for the specified message
    *
-   * Example keyName:
-   *   "projects/PROJECT_ID/locations/global/keyRings/RING_ID/cryptoKeys/KEY_ID/cryptoKeyVersions/1"
+   * <p>Example keyName:
+   * "projects/PROJECT_ID/locations/global/keyRings/RING_ID/cryptoKeys/KEY_ID/cryptoKeyVersions/1"
    */
   public static boolean verifySignatureRSA(String keyName, byte[] message, byte[] signature)
       throws IOException, GeneralSecurityException {
@@ -224,12 +220,11 @@ public class Asymmetric {
   // [END kms_verify_signature_rsa]
 
   // [START kms_verify_signature_ec]
-  /** 
-   * Verify the validity of an 'EC_SIGN_P256_SHA256' signature for the 
-   * specified message
+  /**
+   * Verify the validity of an 'EC_SIGN_P256_SHA256' signature for the specified message
    *
-   * Example keyName:
-   *   "projects/PROJECT_ID/locations/global/keyRings/RING_ID/cryptoKeys/KEY_ID/cryptoKeyVersions/1"
+   * <p>Example keyName:
+   * "projects/PROJECT_ID/locations/global/keyRings/RING_ID/cryptoKeys/KEY_ID/cryptoKeyVersions/1"
    */
   public static boolean verifySignatureEC(String keyName, byte[] message, byte[] signature)
       throws IOException, GeneralSecurityException {
@@ -257,5 +252,4 @@ public class Asymmetric {
   }
   // [END kms_verify_signature_ec]
 }
-//CHECKSTYLE ON: AbbreviationAsWordInName
-
+// CHECKSTYLE ON: AbbreviationAsWordInName

@@ -19,16 +19,10 @@ package com.example;
 // [START kms_quickstart]
 // Imports the Google Cloud client library
 
-import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.GoogleCredentialsProvider;
-import com.google.auth.Credentials;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
-import com.google.cloud.kms.v1.KeyManagementServiceSettings;
 import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.LocationName;
-
-import java.io.IOException;
 
 public class Quickstart {
 

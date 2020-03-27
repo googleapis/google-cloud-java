@@ -21,7 +21,6 @@ import com.google.cloud.kms.v1.DecryptResponse;
 import com.google.cloud.kms.v1.EncryptResponse;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.protobuf.ByteString;
-
 import java.io.IOException;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
@@ -30,9 +29,7 @@ public class CryptFile {
 
   // [START kms_encrypt]
 
-  /**
-   * Encrypts the given plaintext using the specified crypto key.
-   */
+  /** Encrypts the given plaintext using the specified crypto key. */
   public static byte[] encrypt(
       String projectId, String locationId, String keyRingId, String cryptoKeyId, byte[] plaintext)
       throws IOException {
@@ -54,9 +51,7 @@ public class CryptFile {
 
   // [START kms_decrypt]
 
-  /**
-   * Decrypts the provided ciphertext with the specified crypto key.
-   */
+  /** Decrypts the provided ciphertext with the specified crypto key. */
   public static byte[] decrypt(
       String projectId, String locationId, String keyRingId, String cryptoKeyId, byte[] ciphertext)
       throws IOException {

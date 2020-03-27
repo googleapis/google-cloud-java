@@ -23,13 +23,9 @@ import org.kohsuke.args4j.spi.SubCommand;
 import org.kohsuke.args4j.spi.SubCommandHandler;
 import org.kohsuke.args4j.spi.SubCommands;
 
-/**
- * Defines the different sub-commands and their parameters, for command-line invocation.
- */
+/** Defines the different sub-commands and their parameters, for command-line invocation. */
 class SnippetCommands {
-  /**
-   * An interface for a command-line sub-command.
-   */
+  /** An interface for a command-line sub-command. */
   interface Command {
     void run() throws IOException;
   }
@@ -60,7 +56,6 @@ class SnippetCommands {
     @Argument(metaVar = "version", required = true, index = 3, usage = "The key version")
     String version;
   }
-
 
   public static class CreateKeyRingCommand extends KeyRingArgs implements Command {
     public void run() throws IOException {
@@ -142,14 +137,23 @@ class SnippetCommands {
   }
 
   public static class AddMemberToKeyRingPolicyCommand extends KeyRingArgs implements Command {
-    @Argument(metaVar = "member", required = true, index = 1,
-        usage = "The member to add.\n"
-            + "See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding "
-            + "for valid values.")
+    @Argument(
+        metaVar = "member",
+        required = true,
+        index = 1,
+        usage =
+            "The member to add.\n"
+                + "See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding "
+                + "for valid values.")
     String member;
-    @Argument(metaVar = "role", required = true, index = 2,
-        usage = "The role for the member.\n"
-            + "See https://g.co/cloud/iam/docs/understanding-roles for valid values.")
+
+    @Argument(
+        metaVar = "role",
+        required = true,
+        index = 2,
+        usage =
+            "The role for the member.\n"
+                + "See https://g.co/cloud/iam/docs/understanding-roles for valid values.")
     String role;
 
     public void run() throws IOException {
@@ -158,31 +162,49 @@ class SnippetCommands {
   }
 
   public static class AddMemberToCryptoKeyPolicyCommand extends KeyArgs implements Command {
-    @Argument(metaVar = "member", required = true, index = 2,
-        usage = "The member to add.\n"
-            + "See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding "
-            + "for valid values.")
+    @Argument(
+        metaVar = "member",
+        required = true,
+        index = 2,
+        usage =
+            "The member to add.\n"
+                + "See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding "
+                + "for valid values.")
     String member;
-    @Argument(metaVar = "role", required = true, index = 3,
-        usage = "The role for the member.\n"
-            + "See https://g.co/cloud/iam/docs/understanding-roles for valid values.")
+
+    @Argument(
+        metaVar = "role",
+        required = true,
+        index = 3,
+        usage =
+            "The role for the member.\n"
+                + "See https://g.co/cloud/iam/docs/understanding-roles for valid values.")
     String role;
 
     public void run() throws IOException {
-      Snippets
-          .addMemberToCryptoKeyPolicy(projectId, locationId, keyRingId, cryptoKeyId, member, role);
+      Snippets.addMemberToCryptoKeyPolicy(
+          projectId, locationId, keyRingId, cryptoKeyId, member, role);
     }
   }
 
   public static class RemoveMemberFromKeyRingPolicyCommand extends KeyRingArgs implements Command {
-    @Argument(metaVar = "member", required = true, index = 1,
-        usage = "The member to add.\n"
-            + "See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding "
-            + "for valid values.")
+    @Argument(
+        metaVar = "member",
+        required = true,
+        index = 1,
+        usage =
+            "The member to add.\n"
+                + "See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding "
+                + "for valid values.")
     String member;
-    @Argument(metaVar = "role", required = true, index = 2,
-        usage = "The role for the member.\n"
-            + "See https://g.co/cloud/iam/docs/understanding-roles for valid values.")
+
+    @Argument(
+        metaVar = "role",
+        required = true,
+        index = 2,
+        usage =
+            "The role for the member.\n"
+                + "See https://g.co/cloud/iam/docs/understanding-roles for valid values.")
     String role;
 
     public void run() throws IOException {
@@ -191,24 +213,35 @@ class SnippetCommands {
   }
 
   public static class RemoveMemberFromCryptoKeyPolicyCommand extends KeyArgs implements Command {
-    @Argument(metaVar = "member", required = true, index = 2,
-        usage = "The member to add.\n"
-            + "See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding "
-            + "for valid values.")
+    @Argument(
+        metaVar = "member",
+        required = true,
+        index = 2,
+        usage =
+            "The member to add.\n"
+                + "See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding "
+                + "for valid values.")
     String member;
-    @Argument(metaVar = "role", required = true, index = 3,
-        usage = "The role for the member.\n"
-            + "See https://g.co/cloud/iam/docs/understanding-roles for valid values.")
+
+    @Argument(
+        metaVar = "role",
+        required = true,
+        index = 3,
+        usage =
+            "The role for the member.\n"
+                + "See https://g.co/cloud/iam/docs/understanding-roles for valid values.")
     String role;
 
     public void run() throws IOException {
-      Snippets
-          .removeMemberFromCryptoKeyPolicy(projectId, locationId, keyRingId, cryptoKeyId, member,
-              role);
+      Snippets.removeMemberFromCryptoKeyPolicy(
+          projectId, locationId, keyRingId, cryptoKeyId, member, role);
     }
   }
 
-  @Argument(metaVar = "command", required = true, handler = SubCommandHandler.class,
+  @Argument(
+      metaVar = "command",
+      required = true,
+      handler = SubCommandHandler.class,
       usage = "The subcommand to run")
   @SubCommands({
       @SubCommand(name = "createKeyRing", impl = CreateKeyRingCommand.class),
@@ -225,11 +258,14 @@ class SnippetCommands {
       @SubCommand(name = "getCryptoKeyPolicy", impl = GetCryptoKeyPolicyCommand.class),
       @SubCommand(name = "setPrimaryVersion", impl = SetPrimaryVersionCommand.class),
       @SubCommand(name = "addMemberToKeyRingPolicy", impl = AddMemberToKeyRingPolicyCommand.class),
-      @SubCommand(name = "addMemberToCryptoKeyPolicy",
+      @SubCommand(
+          name = "addMemberToCryptoKeyPolicy",
           impl = AddMemberToCryptoKeyPolicyCommand.class),
-      @SubCommand(name = "removeMemberFromKeyRingPolicy",
+      @SubCommand(
+          name = "removeMemberFromKeyRingPolicy",
           impl = RemoveMemberFromKeyRingPolicyCommand.class),
-      @SubCommand(name = "removeMemberFromCryptoKeyPolicy",
+      @SubCommand(
+          name = "removeMemberFromCryptoKeyPolicy",
           impl = RemoveMemberFromCryptoKeyPolicyCommand.class)
   })
   Command command;
