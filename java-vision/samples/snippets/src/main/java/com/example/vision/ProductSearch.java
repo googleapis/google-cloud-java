@@ -29,14 +29,12 @@ import com.google.cloud.vision.v1.ProductSearchParams;
 import com.google.cloud.vision.v1.ProductSearchResults.Result;
 import com.google.cloud.vision.v1.ProductSetName;
 import com.google.protobuf.ByteString;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.List;
-
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
@@ -48,10 +46,9 @@ import net.sourceforge.argparse4j.inf.Subparsers;
  * This application demonstrates how to perform similar product search operation in Cloud Vision
  * Product Search.
  *
- * For more information, see the tutorial page at
+ * <p>For more information, see the tutorial page at
  * https://cloud.google.com/vision/product-search/docs/
  */
-
 public class ProductSearch {
 
   // [START vision_product_search_get_similar_products]

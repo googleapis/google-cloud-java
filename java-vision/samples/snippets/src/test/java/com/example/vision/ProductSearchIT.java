@@ -20,8 +20,6 @@ import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.UUID;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,9 +27,9 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
- * Integration (system) tests for {@link ProductSearch}.Tests rely on pre-created product set
- * that has been indexed.
- **/
+ * Integration (system) tests for {@link ProductSearch}.Tests rely on pre-created product set that
+ * has been indexed.
+ */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class ProductSearchIT {

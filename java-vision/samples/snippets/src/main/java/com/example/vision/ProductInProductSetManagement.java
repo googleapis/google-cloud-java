@@ -19,10 +19,8 @@ package com.example.vision;
 import com.google.cloud.vision.v1.Product;
 import com.google.cloud.vision.v1.ProductName;
 import com.google.cloud.vision.v1.ProductSearchClient;
-
 import java.io.IOException;
 import java.io.PrintStream;
-
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
@@ -172,7 +170,7 @@ public class ProductInProductSetManagement {
       }
       if (ns.get("command").equals("remove_product_from_product_set")) {
         removeProductFromProductSet(
-                projectId, computeRegion, ns.getString("productId"), ns.getString("productSetId"));
+            projectId, computeRegion, ns.getString("productId"), ns.getString("productSetId"));
       }
 
     } catch (ArgumentParserException e) {

@@ -16,14 +16,11 @@
 
 package com.example.vision;
 
-import com.google.cloud.vision.v1.Image;
 import com.google.cloud.vision.v1.ImageName;
 import com.google.cloud.vision.v1.ProductSearchClient;
 import com.google.cloud.vision.v1.ReferenceImage;
-
 import java.io.IOException;
 import java.io.PrintStream;
-
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
@@ -125,8 +122,7 @@ public class ReferenceImageManagement {
 
       // Get the full path of the reference image.
       String formattedName =
-              ImageName.format(
-              projectId, computeRegion, productId, referenceImageId);
+          ImageName.format(projectId, computeRegion, productId, referenceImageId);
       // Get complete detail of the reference image.
       ReferenceImage image = client.getReferenceImage(formattedName);
       // Display the reference image information.
@@ -160,8 +156,7 @@ public class ReferenceImageManagement {
 
       // Get the full path of the reference image.
       String formattedName =
-              ImageName.format(
-              projectId, computeRegion, productId, referenceImageId);
+          ImageName.format(projectId, computeRegion, productId, referenceImageId);
       // Delete the reference image.
       client.deleteReferenceImage(formattedName);
       System.out.println("Reference image deleted from product.");

@@ -22,7 +22,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,7 +35,7 @@ public class ProductManagementIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String COMPUTE_REGION = "us-west1";
   private static final String PRODUCT_DISPLAY_NAME =
-          String.format("test_%s", UUID.randomUUID().toString());
+      String.format("test_%s", UUID.randomUUID().toString());
   private static final String PRODUCT_CATEGORY = "homegoods";
   private static final String PRODUCT_ID = String.format("test_%s", UUID.randomUUID().toString());
   private static final String KEY = String.format("test_%s", UUID.randomUUID().toString());

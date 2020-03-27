@@ -21,15 +21,12 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.vision.v1.LocationName;
 import com.google.cloud.vision.v1.ProductSearchClient;
 import com.google.cloud.vision.v1.PurgeProductsRequest;
-
 import java.util.concurrent.TimeUnit;
-
 
 public class PurgeProducts {
 
   // Delete the product and all its reference images.
-  public static void purgeOrphanProducts(String projectId, String computeRegion)
-          throws Exception {
+  public static void purgeOrphanProducts(String projectId, String computeRegion) throws Exception {
 
     // String projectId = "YOUR_PROJECT_ID";
     // String computeRegion = "us-central1";
@@ -39,8 +36,8 @@ public class PurgeProducts {
       String parent = LocationName.format(projectId, computeRegion);
 
       // The purge operation is async.
-      PurgeProductsRequest request = PurgeProductsRequest
-              .newBuilder()
+      PurgeProductsRequest request =
+          PurgeProductsRequest.newBuilder()
               .setDeleteOrphanProducts(true)
               // The operation is irreversible and removes multiple products.
               // The user is required to pass in force=True to actually perform the

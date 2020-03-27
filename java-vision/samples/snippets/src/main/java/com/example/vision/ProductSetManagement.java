@@ -19,10 +19,8 @@ package com.example.vision;
 import com.google.cloud.vision.v1.CreateProductSetRequest;
 import com.google.cloud.vision.v1.ProductSearchClient;
 import com.google.cloud.vision.v1.ProductSet;
-
 import java.io.IOException;
 import java.io.PrintStream;
-
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;

@@ -26,7 +26,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,11 +34,11 @@ public class ProductInProductSetManagementTests {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String COMPUTE_REGION = "us-west1";
   private static final String PRODUCT_SET_DISPLAY_NAME =
-          String.format("test_%s", UUID.randomUUID().toString());
+      String.format("test_%s", UUID.randomUUID().toString());
   private static final String PRODUCT_SET_ID =
-          String.format("test_%s", UUID.randomUUID().toString());
+      String.format("test_%s", UUID.randomUUID().toString());
   private static final String PRODUCT_DISPLAY_NAME =
-          String.format("test_%s", UUID.randomUUID().toString());
+      String.format("test_%s", UUID.randomUUID().toString());
   private static final String PRODUCT_CATEGORY = "apparel";
   private static final String PRODUCT_ID = String.format("test_%s", UUID.randomUUID().toString());
   private ByteArrayOutputStream bout;
@@ -51,9 +50,9 @@ public class ProductInProductSetManagementTests {
     out = new PrintStream(bout);
     System.setOut(out);
     ProductSetManagement.createProductSet(
-            PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID, PRODUCT_SET_DISPLAY_NAME);
+        PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID, PRODUCT_SET_DISPLAY_NAME);
     ProductManagement.createProduct(
-            PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_DISPLAY_NAME, PRODUCT_CATEGORY);
+        PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_DISPLAY_NAME, PRODUCT_CATEGORY);
     bout.reset();
   }
 
@@ -68,20 +67,17 @@ public class ProductInProductSetManagementTests {
   public void testPurgeProductsInProductSet() throws Exception {
     // Act
     ProductInProductSetManagement.addProductToProductSet(
-            PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_SET_ID);
-    ProductManagement.listProducts(
-            PROJECT_ID, COMPUTE_REGION);
+        PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_SET_ID);
+    ProductManagement.listProducts(PROJECT_ID, COMPUTE_REGION);
 
     // Assert
     String got = bout.toString();
     assertThat(got).contains(PRODUCT_ID);
 
     bout.reset();
-    PurgeProductsInProductSet.purgeProductsInProductSet(
-            PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID);
+    PurgeProductsInProductSet.purgeProductsInProductSet(PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID);
 
-    ProductManagement.listProducts(
-            PROJECT_ID, COMPUTE_REGION);
+    ProductManagement.listProducts(PROJECT_ID, COMPUTE_REGION);
 
     // Assert
     got = bout.toString();

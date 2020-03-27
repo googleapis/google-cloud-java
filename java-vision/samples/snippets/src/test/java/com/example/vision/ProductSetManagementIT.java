@@ -21,7 +21,6 @@ import static com.google.common.truth.Truth.assertThat;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,9 +34,9 @@ public class ProductSetManagementIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String COMPUTE_REGION = "us-west1";
   private static final String PRODUCT_SET_ID =
-          String.format("test_%s", UUID.randomUUID().toString());
+      String.format("test_%s", UUID.randomUUID().toString());
   private static final String PRODUCT_SET_DISPLAY_NAME =
-          String.format("test_%s", UUID.randomUUID().toString());
+      String.format("test_%s", UUID.randomUUID().toString());
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -56,7 +55,7 @@ public class ProductSetManagementIT {
   @Test
   public void testCreateDeleteProductSet() throws Exception {
     ProductSetManagement.createProductSet(
-            PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID, PRODUCT_SET_DISPLAY_NAME);
+        PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID, PRODUCT_SET_DISPLAY_NAME);
     String got = bout.toString();
     assertThat(got).contains(PRODUCT_SET_ID);
 

@@ -28,7 +28,6 @@ import com.google.cloud.vision.v1.ReferenceImage;
 // [END vision_product_search_tutorial_import]
 import java.io.PrintStream;
 import javax.swing.JPanel;
-
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;

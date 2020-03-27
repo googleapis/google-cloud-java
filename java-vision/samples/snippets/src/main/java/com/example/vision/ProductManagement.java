@@ -20,10 +20,8 @@ import com.google.cloud.vision.v1.Product;
 import com.google.cloud.vision.v1.Product.KeyValue;
 import com.google.cloud.vision.v1.ProductSearchClient;
 import com.google.protobuf.FieldMask;
-
 import java.io.IOException;
 import java.io.PrintStream;
-
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
