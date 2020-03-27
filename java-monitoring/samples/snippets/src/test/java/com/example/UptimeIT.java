@@ -19,11 +19,9 @@ package com.example;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.monitoring.v3.UptimeCheckConfig;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
-
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
@@ -32,9 +30,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.junit.runners.MethodSorters;
 
-/**
- * Integration (system) tests for {@link UptimeSample}.
- */
+/** Integration (system) tests for {@link UptimeSample}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -42,10 +38,10 @@ public class UptimeIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
-  private static UptimeCheckConfig config = UptimeCheckConfig
-      .newBuilder()
-      .setDisplayName("check-" + UUID.randomUUID().toString().substring(0, 6))
-      .build();
+  private static UptimeCheckConfig config =
+      UptimeCheckConfig.newBuilder()
+          .setDisplayName("check-" + UUID.randomUUID().toString().substring(0, 6))
+          .build();
 
   @BeforeClass
   public static void setUpClass() {
@@ -63,10 +59,8 @@ public class UptimeIT {
 
   @Test
   public void test1_CreateUptimeCheck() throws Exception {
-    UptimeSample.main(
-        "create", "-n", config.getDisplayName(), "-o", "test.example.com", "-a", "/");
+    UptimeSample.main("create", "-n", config.getDisplayName(), "-o", "test.example.com", "-a", "/");
     assertThat(bout.toString()).contains("Uptime check created: " + config.getDisplayName());
-
   }
 
   @Test

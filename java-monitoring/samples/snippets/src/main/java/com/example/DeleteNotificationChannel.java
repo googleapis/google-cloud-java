@@ -18,12 +18,12 @@ package com.example;
 
 import com.google.cloud.monitoring.v3.NotificationChannelServiceClient;
 import com.google.monitoring.v3.NotificationChannelName;
-
 import java.io.IOException;
 
 public class DeleteNotificationChannel {
   /**
    * Demonstrates deleting a notification channel by name.
+   *
    * @param channelName Name of the notification channel to delete.
    */
   // [START monitoring_alert_delete_channel]
