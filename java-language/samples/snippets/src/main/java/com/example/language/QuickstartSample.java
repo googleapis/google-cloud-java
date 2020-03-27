@@ -30,8 +30,7 @@ public class QuickstartSample {
 
       // The text to analyze
       String text = "Hello, world!";
-      Document doc = Document.newBuilder()
-          .setContent(text).setType(Type.PLAIN_TEXT).build();
+      Document doc = Document.newBuilder().setContent(text).setType(Type.PLAIN_TEXT).build();
 
       // Detects the sentiment of the text
       Sentiment sentiment = language.analyzeSentiment(doc).getDocumentSentiment();

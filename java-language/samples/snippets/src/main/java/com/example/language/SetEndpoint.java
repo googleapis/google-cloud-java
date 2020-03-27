@@ -20,7 +20,6 @@ import com.google.cloud.language.v1.Document;
 import com.google.cloud.language.v1.LanguageServiceClient;
 import com.google.cloud.language.v1.LanguageServiceSettings;
 import com.google.cloud.language.v1.Sentiment;
-
 import java.io.IOException;
 
 class SetEndpoint {
@@ -28,9 +27,8 @@ class SetEndpoint {
   // Change your endpoint
   static void setEndpoint() throws IOException {
     // [START language_set_endpoint]
-    LanguageServiceSettings settings = LanguageServiceSettings.newBuilder()
-            .setEndpoint("eu-language.googleapis.com:443")
-            .build();
+    LanguageServiceSettings settings =
+        LanguageServiceSettings.newBuilder().setEndpoint("eu-language.googleapis.com:443").build();
 
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
@@ -40,8 +38,7 @@ class SetEndpoint {
 
     // The text to analyze
     String text = "Hello, world!";
-    Document doc = Document.newBuilder()
-            .setContent(text).setType(Document.Type.PLAIN_TEXT).build();
+    Document doc = Document.newBuilder().setContent(text).setType(Document.Type.PLAIN_TEXT).build();
 
     // Detects the sentiment of the text
     Sentiment sentiment = client.analyzeSentiment(doc).getDocumentSentiment();
