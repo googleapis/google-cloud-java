@@ -86,9 +86,8 @@ public class AsyncBatchAnnotateImagesGcs {
               .setOutputConfig(outputConfig)
               .build();
 
-
       OperationFuture<AsyncBatchAnnotateImagesResponse, OperationMetadata> response =
-              client.asyncBatchAnnotateImagesAsync(request);
+          client.asyncBatchAnnotateImagesAsync(request);
       System.out.println("Waiting for the operation to finish.");
 
       // we're not processing the response, since we'll be reading the output from GCS.

@@ -33,7 +33,6 @@ import com.google.cloud.vision.v1p3beta1.Symbol;
 import com.google.cloud.vision.v1p3beta1.TextAnnotation;
 import com.google.cloud.vision.v1p3beta1.Word;
 import com.google.protobuf.ByteString;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintStream;

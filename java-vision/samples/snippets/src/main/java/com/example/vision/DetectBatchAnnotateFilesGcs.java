@@ -33,7 +33,6 @@ import com.google.cloud.vision.v1p4beta1.Paragraph;
 import com.google.cloud.vision.v1p4beta1.Symbol;
 import com.google.cloud.vision.v1p4beta1.TextAnnotation;
 import com.google.cloud.vision.v1p4beta1.Word;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -50,7 +49,7 @@ public class DetectBatchAnnotateFilesGcs {
       List<Integer> pages = Arrays.asList(1, 2, -1);
       GcsSource gcsSource = GcsSource.newBuilder().setUri(gcsPath).build();
       Feature feat = Feature.newBuilder().setType(Type.DOCUMENT_TEXT_DETECTION).build();
-      //Other supported mime types : 'image/tiff' or 'image/gif'
+      // Other supported mime types : 'image/tiff' or 'image/gif'
       InputConfig inputConfig =
           InputConfig.newBuilder().setMimeType("application/pdf").setGcsSource(gcsSource).build();
       AnnotateFileRequest request =
