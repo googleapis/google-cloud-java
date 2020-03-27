@@ -26,11 +26,9 @@ import com.google.cloud.automl.v1beta1.ListDatasetsRequest;
 import com.google.cloud.automl.v1beta1.LocationName;
 import com.google.cloud.automl.v1beta1.TranslationDatasetMetadata;
 import com.google.protobuf.Empty;
-
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.concurrent.ExecutionException;
-
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;

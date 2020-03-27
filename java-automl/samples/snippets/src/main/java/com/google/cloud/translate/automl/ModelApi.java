@@ -30,11 +30,9 @@ import com.google.cloud.automl.v1beta1.OperationMetadata;
 import com.google.cloud.automl.v1beta1.TranslationModelMetadata;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
-
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.concurrent.ExecutionException;
-
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
