@@ -57,7 +57,8 @@
     {
       "packagePatterns": [
         "^io.grafeas:grafeas",
-        "^com.google.cloud:libraries-bom"
+        "^com.google.cloud:libraries-bom",
+        "^com.google.cloud.samples:shared-configuration"
       ],
       "semanticCommitType": "chore",
       "semanticCommitScope": "deps"
