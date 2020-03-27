@@ -25,7 +25,6 @@ import com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse;
 import com.google.cloud.texttospeech.v1beta1.TextToSpeechClient;
 import com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams;
 import com.google.protobuf.ByteString;
-
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import net.sourceforge.argparse4j.ArgumentParsers;
@@ -35,9 +34,8 @@ import net.sourceforge.argparse4j.inf.MutuallyExclusiveGroup;
 import net.sourceforge.argparse4j.inf.Namespace;
 
 /**
- * Google Cloud TextToSpeech API sample application.
- * Example usage: mvn package exec:java-Dexec.mainClass='com.example.texttospeech.SynthesizeText'
- *                                     -Dexec.args='--text "hello"'
+ * Google Cloud TextToSpeech API sample application. Example usage: mvn package
+ * exec:java-Dexec.mainClass='com.example.texttospeech.SynthesizeText' -Dexec.args='--text "hello"'
  */
 public class SynthesizeText {
 

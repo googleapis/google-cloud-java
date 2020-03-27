@@ -22,20 +22,18 @@ import com.google.cloud.texttospeech.v1beta1.ListVoicesResponse;
 import com.google.cloud.texttospeech.v1beta1.TextToSpeechClient;
 import com.google.cloud.texttospeech.v1beta1.Voice;
 import com.google.protobuf.ByteString;
-
 import java.util.List;
 
-
 /**
- * Google Cloud TextToSpeech API sample application.
- * Example usage: mvn package exec:java
- *                    -Dexec.mainClass='com.example.texttospeech.ListAllSupportedVoices'
+ * Google Cloud TextToSpeech API sample application. Example usage: mvn package exec:java
+ * -Dexec.mainClass='com.example.texttospeech.ListAllSupportedVoices'
  */
 public class ListAllSupportedVoices {
 
   // [START tts_list_voices]
   /**
    * Demonstrates using the Text to Speech client to list the client's supported voices.
+   *
    * @throws Exception on TextToSpeechClient Errors.
    */
   public static void listAllSupportedVoices() throws Exception {
@@ -62,8 +60,7 @@ public class ListAllSupportedVoices {
         System.out.format("SSML Voice Gender: %s\n", voice.getSsmlGender());
 
         // Display the natural sample rate hertz for this voice. Example: 24000
-        System.out.format("Natural Sample Rate Hertz: %s\n\n",
-            voice.getNaturalSampleRateHertz());
+        System.out.format("Natural Sample Rate Hertz: %s\n\n", voice.getNaturalSampleRateHertz());
       }
     }
   }

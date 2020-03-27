@@ -20,7 +20,6 @@ import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
@@ -28,9 +27,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Tests for SynthesizeFile sample.
- */
+/** Tests for SynthesizeFile sample. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class SynthesizeFileIT {
