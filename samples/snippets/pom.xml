@@ -1,6 +1,5 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <!--
-  ~ Copyright 2019 Google LLC
+  ~ Copyright 2020 Google LLC
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -14,18 +13,11 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-bigquery-samples</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- This artifact should not be released -->
-  <packaging>pom</packaging>
-  <name>Google BigQuery Samples Parent</name>
-  <url>https://github.com/googleapis/java-bigquery</url>
-  <description>
-    Java idiomatic client for Google Cloud Platform services.
-  </description>
+  <groupId>com.example.bigquery</groupId>
+  <artifactId>bigquery-google-cloud-samples</artifactId>
+  <packaging>jar</packaging>
 
   <!--
     The parent pom defines common style checks and testing strategies for our samples.
@@ -34,7 +26,7 @@
   <parent>
     <groupId>com.google.cloud.samples</groupId>
     <artifactId>shared-configuration</artifactId>
-    <version>1.0.12</version>
+    <version>1.0.13</version>
   </parent>
 
   <properties>
@@ -43,11 +35,42 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <modules>
-    <module>install-without-bom</module>
-    <module>snapshot</module>
-    <module>snippets</module>
-  </modules>
+  <!-- [START bigquery_install_with_bom] -->
+  <!--  Using libraries-bom to manage versions.
+  See https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>libraries-bom</artifactId>
+        <version>4.3.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigquery</artifactId>
+    </dependency>
+    <!-- [END bigquery_install_with_bom] -->
+
+    <!-- Test dependencies -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <version>1.0.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -69,4 +92,4 @@
       </plugin>
     </plugins>
   </build>
-</project> 
+</project>

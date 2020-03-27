@@ -20,19 +20,35 @@ set -eo pipefail
 echo "********** MAVEN INFO  ***********"
 mvn -v
 
+# Get the directory of the build script
+scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+## cd to the parent directory, i.e. the root of the git repo
+cd ${scriptDir}/..
+
+# include common functions
+source ${scriptDir}/common.sh
+
 # Setup required env variables
 source ${KOKORO_GFILE_DIR}/bigquery_secrets.txt
 echo "********** Successfully Set All Environment Variables **********"
+
+# Attempt to install 3 times with exponential backoff (starting with 10 seconds)
+retry_with_backoff 3 10 \
+  mvn install -B -V \
+    -DskipTests=true \
+    -Dclirr.skip=true \
+    -Denforcer.skip=true \
+    -Dmaven.javadoc.skip=true \
+    -Dgcloud.download.skip=true \
+    -T 1C
 
 # Activate service account
 gcloud auth activate-service-account \
     --key-file="$GOOGLE_APPLICATION_CREDENTIALS" \
     --project="$GOOGLE_CLOUD_PROJECT"
 
-# Get the directory of the build script
-scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 # Move into the samples directory
-cd ${scriptDir}/../samples/
+cd samples/
 
 echo -e "\n******************** RUNNING SAMPLE TESTS ********************"
 
