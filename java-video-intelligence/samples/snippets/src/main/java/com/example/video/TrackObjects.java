@@ -29,7 +29,6 @@ import com.google.cloud.videointelligence.v1.VideoAnnotationResults;
 import com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient;
 import com.google.cloud.videointelligence.v1.VideoSegment;
 import com.google.protobuf.ByteString;
-
 import com.google.protobuf.Duration;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -172,5 +171,3 @@ public class TrackObjects {
   }
   // [END video_object_tracking_gcs]
 }
-
-

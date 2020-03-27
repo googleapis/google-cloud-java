@@ -21,12 +21,10 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation;
 import com.google.cloud.videointelligence.v1.TextAnnotation;
 import com.google.cloud.videointelligence.v1.VideoAnnotationResults;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
