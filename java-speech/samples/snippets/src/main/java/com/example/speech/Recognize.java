@@ -29,12 +29,10 @@ import com.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType
 import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
 import com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig;
 import com.google.cloud.speech.v1p1beta1.SpeechClient;
-
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
 import com.google.cloud.speech.v1p1beta1.WordInfo;
 import com.google.protobuf.ByteString;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -156,14 +154,16 @@ public class Recognize {
       RecognitionAudio recognitionAudio =
           RecognitionAudio.newBuilder().setContent(ByteString.copyFrom(content)).build();
 
-      SpeakerDiarizationConfig speakerDiarizationConfig = SpeakerDiarizationConfig.newBuilder()
+      SpeakerDiarizationConfig speakerDiarizationConfig =
+          SpeakerDiarizationConfig.newBuilder()
               .setEnableSpeakerDiarization(true)
               .setMinSpeakerCount(2)
               .setMaxSpeakerCount(2)
               .build();
 
       // Configure request to enable Speaker diarization
-      RecognitionConfig config = RecognitionConfig.newBuilder()
+      RecognitionConfig config =
+          RecognitionConfig.newBuilder()
               .setEncoding(AudioEncoding.LINEAR16)
               .setLanguageCode("en-US")
               .setSampleRateHertz(8000)
@@ -175,8 +175,7 @@ public class Recognize {
 
       // Speaker Tags are only included in the last result object, which has only one alternative.
       SpeechRecognitionAlternative alternative =
-              recognizeResponse.getResults(
-                      recognizeResponse.getResultsCount() - 1).getAlternatives(0);
+          recognizeResponse.getResults(recognizeResponse.getResultsCount() - 1).getAlternatives(0);
 
       // The alternative is made up of WordInfo objects that contain the speaker_tag.
       WordInfo wordInfo = alternative.getWords(0);
@@ -184,7 +183,8 @@ public class Recognize {
 
       // For each word, get all the words associated with one speaker, once the speaker changes,
       // add a new line with the new speaker and their spoken words.
-      StringBuilder speakerWords = new StringBuilder(
+      StringBuilder speakerWords =
+          new StringBuilder(
               String.format("Speaker %d: %s", wordInfo.getSpeakerTag(), wordInfo.getWord()));
 
       for (int i = 1; i < alternative.getWordsCount(); i++) {
@@ -194,9 +194,7 @@ public class Recognize {
           speakerWords.append(wordInfo.getWord());
         } else {
           speakerWords.append(
-                  String.format("\nSpeaker %d: %s",
-                          wordInfo.getSpeakerTag(),
-                          wordInfo.getWord()));
+              String.format("\nSpeaker %d: %s", wordInfo.getSpeakerTag(), wordInfo.getWord()));
           currentSpeakerTag = wordInfo.getSpeakerTag();
         }
       }
@@ -214,7 +212,8 @@ public class Recognize {
    */
   public static void transcribeDiarizationGcs(String gcsUri) throws Exception {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      SpeakerDiarizationConfig speakerDiarizationConfig = SpeakerDiarizationConfig.newBuilder()
+      SpeakerDiarizationConfig speakerDiarizationConfig =
+          SpeakerDiarizationConfig.newBuilder()
               .setEnableSpeakerDiarization(true)
               .setMinSpeakerCount(2)
               .setMaxSpeakerCount(2)
@@ -244,9 +243,9 @@ public class Recognize {
       // Speaker Tags are only included in the last result object, which has only one alternative.
       LongRunningRecognizeResponse longRunningRecognizeResponse = response.get();
       SpeechRecognitionAlternative alternative =
-              longRunningRecognizeResponse.getResults(
-                      longRunningRecognizeResponse.getResultsCount() - 1)
-                      .getAlternatives(0);
+          longRunningRecognizeResponse
+              .getResults(longRunningRecognizeResponse.getResultsCount() - 1)
+              .getAlternatives(0);
 
       // The alternative is made up of WordInfo objects that contain the speaker_tag.
       WordInfo wordInfo = alternative.getWords(0);
@@ -254,7 +253,8 @@ public class Recognize {
 
       // For each word, get all the words associated with one speaker, once the speaker changes,
       // add a new line with the new speaker and their spoken words.
-      StringBuilder speakerWords = new StringBuilder(
+      StringBuilder speakerWords =
+          new StringBuilder(
               String.format("Speaker %d: %s", wordInfo.getSpeakerTag(), wordInfo.getWord()));
 
       for (int i = 1; i < alternative.getWordsCount(); i++) {
@@ -264,9 +264,7 @@ public class Recognize {
           speakerWords.append(wordInfo.getWord());
         } else {
           speakerWords.append(
-                  String.format("\nSpeaker %d: %s",
-                          wordInfo.getSpeakerTag(),
-                          wordInfo.getWord()));
+              String.format("\nSpeaker %d: %s", wordInfo.getSpeakerTag(), wordInfo.getWord()));
           currentSpeakerTag = wordInfo.getSpeakerTag();
         }
       }

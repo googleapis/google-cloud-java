@@ -25,7 +25,6 @@ import com.google.cloud.speech.v1p1beta1.SpeechClient;
 import com.google.cloud.speech.v1p1beta1.SpeechContext;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
-
 import java.io.IOException;
 
 public class SpeechAdaptation {
