@@ -23,7 +23,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.concurrent.ExecutionException;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -43,9 +42,8 @@ public class TranscribeDiarizationIT {
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
-            System.getenv(varName),
-            "Environment variable '%s' is required to perform these tests.".format(varName)
-    );
+        System.getenv(varName),
+        "Environment variable '%s' is required to perform these tests.".format(varName));
   }
 
   @BeforeClass
@@ -75,7 +73,7 @@ public class TranscribeDiarizationIT {
   @Test
   public void testDiarizationGcs() throws IOException, ExecutionException, InterruptedException {
     TranscribeDiarizationGcs.transcribeDiarizationGcs(
-            "gs://cloud-samples-data/speech/commercial_mono.wav");
+        "gs://cloud-samples-data/speech/commercial_mono.wav");
     String got = bout.toString();
     assertThat(got).contains("Speaker");
   }

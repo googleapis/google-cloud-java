@@ -24,18 +24,18 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
 public class InfiniteStreamRecognizeOptions {
-  String langCode = "en-US";  //by default english US
+  String langCode = "en-US"; // by default english US
 
   /** Construct an InfiniteStreamRecognizeOptions class from command line flags. */
   public static InfiniteStreamRecognizeOptions fromFlags(String[] args) {
     Options options = new Options();
     options.addOption(
-            Option.builder()
-                    .type(String.class)
-                    .longOpt("lang_code")
-                    .hasArg()
-                    .desc("Language code")
-                    .build());
+        Option.builder()
+            .type(String.class)
+            .longOpt("lang_code")
+            .hasArg()
+            .desc("Language code")
+            .build());
 
     CommandLineParser parser = new DefaultParser();
     CommandLine commandLine;
@@ -52,5 +52,4 @@ public class InfiniteStreamRecognizeOptions {
       return null;
     }
   }
-
 }
