@@ -34,10 +34,7 @@ public class QuickstartSample {
     // Translates some text into Russian
     Translation translation =
         translate.translate(
-            text,
-            TranslateOption.sourceLanguage("en"),
-            TranslateOption.targetLanguage("ru"));
-
+            text, TranslateOption.sourceLanguage("en"), TranslateOption.targetLanguage("ru"));
 
     System.out.printf("Text: %s%n", text);
     System.out.printf("Translation: %s%n", translation.getTranslatedText());

@@ -29,7 +29,6 @@ import com.google.cloud.translate.v3.LocationName;
 import com.google.cloud.translate.v3.OutputConfig;
 import com.google.cloud.translate.v3.TranslateTextGlossaryConfig;
 import com.google.cloud.translate.v3.TranslationServiceClient;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;

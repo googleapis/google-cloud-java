@@ -22,7 +22,6 @@ import com.google.cloud.translate.v3.DetectLanguageResponse;
 import com.google.cloud.translate.v3.DetectedLanguage;
 import com.google.cloud.translate.v3.LocationName;
 import com.google.cloud.translate.v3.TranslationServiceClient;
-
 import java.io.IOException;
 
 public class DetectLanguage {

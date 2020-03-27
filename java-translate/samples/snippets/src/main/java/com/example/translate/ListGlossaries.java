@@ -21,7 +21,6 @@ import com.google.cloud.translate.v3.Glossary;
 import com.google.cloud.translate.v3.ListGlossariesRequest;
 import com.google.cloud.translate.v3.LocationName;
 import com.google.cloud.translate.v3.TranslationServiceClient;
-
 import java.io.IOException;
 
 public class ListGlossaries {

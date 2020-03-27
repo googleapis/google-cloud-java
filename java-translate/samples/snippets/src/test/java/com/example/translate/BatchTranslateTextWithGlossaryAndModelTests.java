@@ -19,23 +19,10 @@ package com.example.translate;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import com.google.cloud.translate.v3.CreateGlossaryMetadata;
-import com.google.cloud.translate.v3.CreateGlossaryRequest;
-import com.google.cloud.translate.v3.DeleteGlossaryMetadata;
-import com.google.cloud.translate.v3.DeleteGlossaryRequest;
-import com.google.cloud.translate.v3.DeleteGlossaryResponse;
-import com.google.cloud.translate.v3.GcsSource;
-import com.google.cloud.translate.v3.Glossary;
-import com.google.cloud.translate.v3.GlossaryInputConfig;
-import com.google.cloud.translate.v3.GlossaryName;
-import com.google.cloud.translate.v3.LocationName;
-import com.google.cloud.translate.v3.TranslationServiceClient;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -44,7 +31,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -66,7 +52,7 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
       "gs://cloud-samples-data/translation/glossary_ja.csv";
   private static final String PREFIX = "BATCH_TRANSLATION_OUTPUT/";
   private static final String OUTPUT_URI =
-          String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
+      String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -136,13 +122,7 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
   public void testBatchTranslateTextWithGlossaryAndModel()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
     BatchTranslateTextWithGlossaryAndModel.batchTranslateTextWithGlossaryAndModel(
-        PROJECT_ID,
-        "en",
-        "ja",
-        INPUT_URI,
-        OUTPUT_URI,
-        GLOSSARY_ID,
-        MODEL_ID);
+        PROJECT_ID, "en", "ja", INPUT_URI, OUTPUT_URI, GLOSSARY_ID, MODEL_ID);
     String got = bout.toString();
     assertThat(got).contains("Total Characters: 25");
   }

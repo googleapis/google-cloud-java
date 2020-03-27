@@ -27,7 +27,6 @@ import com.google.cloud.translate.v3.InputConfig;
 import com.google.cloud.translate.v3.LocationName;
 import com.google.cloud.translate.v3.OutputConfig;
 import com.google.cloud.translate.v3.TranslationServiceClient;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -54,7 +53,7 @@ public class BatchTranslateText {
       String targetLanguage,
       String inputUri,
       String outputUri)
-          throws IOException, ExecutionException, InterruptedException, TimeoutException {
+      throws IOException, ExecutionException, InterruptedException, TimeoutException {
 
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call

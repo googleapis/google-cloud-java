@@ -23,14 +23,12 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -46,7 +44,7 @@ public class BatchTranslateTextTests {
   private static final String INPUT_URI = "gs://cloud-samples-data/translation/text.txt";
   private static final String PREFIX = "BATCH_TRANSLATION_OUTPUT/";
   private static final String OUTPUT_URI =
-          String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
+      String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -105,8 +103,7 @@ public class BatchTranslateTextTests {
   @Test
   public void testBatchTranslateText()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
-    BatchTranslateText.batchTranslateText(
-        PROJECT_ID, "en", "es", INPUT_URI, OUTPUT_URI);
+    BatchTranslateText.batchTranslateText(PROJECT_ID, "en", "es", INPUT_URI, OUTPUT_URI);
     String got = bout.toString();
     assertThat(got).contains("Total Characters: 13");
   }

@@ -23,7 +23,6 @@ import com.google.cloud.translate.v3.DeleteGlossaryRequest;
 import com.google.cloud.translate.v3.DeleteGlossaryResponse;
 import com.google.cloud.translate.v3.GlossaryName;
 import com.google.cloud.translate.v3.TranslationServiceClient;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 

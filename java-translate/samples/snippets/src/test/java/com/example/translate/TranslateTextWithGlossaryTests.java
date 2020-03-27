@@ -19,19 +19,6 @@ package com.example.translate;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.translate.v3.CreateGlossaryMetadata;
-import com.google.cloud.translate.v3.CreateGlossaryRequest;
-import com.google.cloud.translate.v3.DeleteGlossaryMetadata;
-import com.google.cloud.translate.v3.DeleteGlossaryRequest;
-import com.google.cloud.translate.v3.DeleteGlossaryResponse;
-import com.google.cloud.translate.v3.GcsSource;
-import com.google.cloud.translate.v3.Glossary;
-import com.google.cloud.translate.v3.GlossaryInputConfig;
-import com.google.cloud.translate.v3.GlossaryName;
-import com.google.cloud.translate.v3.LocationName;
-import com.google.cloud.translate.v3.TranslationServiceClient;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -39,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;

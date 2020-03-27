@@ -20,7 +20,6 @@ import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
 import com.google.api.gax.paging.Page;
-
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
@@ -30,7 +29,6 @@ import java.io.PrintStream;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -48,7 +46,7 @@ public class BatchTranslateTextWithModelTests {
   private static final String MODEL_ID = "TRL2188848820815848149";
   private static final String PREFIX = "BATCH_TRANSLATION_OUTPUT/";
   private static final String OUTPUT_URI =
-          String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
+      String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -108,12 +106,7 @@ public class BatchTranslateTextWithModelTests {
   public void testBatchTranslateTextWithModel()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
     BatchTranslateTextWithModel.batchTranslateTextWithModel(
-        PROJECT_ID,
-        "en",
-        "ja",
-        INPUT_URI,
-        OUTPUT_URI,
-        MODEL_ID);
+        PROJECT_ID, "en", "ja", INPUT_URI, OUTPUT_URI, MODEL_ID);
     String got = bout.toString();
     assertThat(got).contains("Total Characters: 15");
   }

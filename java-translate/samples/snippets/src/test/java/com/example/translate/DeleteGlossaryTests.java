@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -81,8 +80,7 @@ public class DeleteGlossaryTests {
   }
 
   @Test
-  public void testDeleteGlossary()
-      throws InterruptedException, ExecutionException, IOException {
+  public void testDeleteGlossary() throws InterruptedException, ExecutionException, IOException {
     DeleteGlossary.deleteGlossary(PROJECT_ID, GLOSSARY_ID);
     String got = bout.toString();
     assertThat(got).contains("us-central1");
