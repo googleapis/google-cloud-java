@@ -94,4 +94,5 @@ for version in versions:
 java.format_code('./src')
 java.common_templates(excludes=[
     'README.md',
+    'samples/*',
 ])
