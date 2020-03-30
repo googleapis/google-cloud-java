@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-dlp/compare/v1.0.1...v1.1.0) (2020-03-30)
+
+
+### Features
+
+* **v2:** add HybridInspect RPCs, add missing fields to Finding ([#97](https://www.github.com/googleapis/java-dlp/issues/97)) ([6d511b1](https://www.github.com/googleapis/java-dlp/commit/6d511b1a06834a50d3cbca4d7701ed817425b584))
+
+
+### Bug Fixes
+
+* undeprecate resource name classes until multi-pattern resources are available ([#92](https://www.github.com/googleapis/java-dlp/issues/92)) ([972b63b](https://www.github.com/googleapis/java-dlp/commit/972b63b755a456087777e5f84da77c6c7995d7fa))
+
+
+### Dependencies
+
+* update core ([#91](https://www.github.com/googleapis/java-dlp/issues/91)) ([d468c44](https://www.github.com/googleapis/java-dlp/commit/d468c4424c7f5c14cfb3b5bab1959e2930e2cbf0))
+* update core dependencies to v1.54.0 ([#89](https://www.github.com/googleapis/java-dlp/issues/89)) ([b25fb80](https://www.github.com/googleapis/java-dlp/commit/b25fb80e5b34ba3a91225d23599324e90e5eaee6))
+* update dependency com.google.api:api-common to v1.9.0 ([#113](https://www.github.com/googleapis/java-dlp/issues/113)) ([a360c76](https://www.github.com/googleapis/java-dlp/commit/a360c76e0c171d99510cdb20da083e6ab5dc9def))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([4a82db8](https://www.github.com/googleapis/java-dlp/commit/4a82db8acbd2672cb79c3c287a4bb3709602079e))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([640ef5f](https://www.github.com/googleapis/java-dlp/commit/640ef5f7869190de4954c3ed6627b3be0df0810b))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([772b048](https://www.github.com/googleapis/java-dlp/commit/772b04812d61e534c1c5966e215e086c7744c6e9))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([991e966](https://www.github.com/googleapis/java-dlp/commit/991e9660b36014339db0a5d6265b565d1492bc90))
+
 ### [1.0.1](https://www.github.com/googleapis/java-dlp/compare/v1.0.0...v1.0.1) (2020-02-04)
 
 
