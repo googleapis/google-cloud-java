@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.29.0](https://www.github.com/googleapis/java-tasks/compare/v1.28.2...v1.29.0) (2020-03-30)
+
+
+### Features
+
+* **regen:** add StackdriverLoggingConfig to Queue ([1ffe5bc](https://www.github.com/googleapis/java-tasks/commit/1ffe5bc2086312272b79ec451feaeeb01f163626)), closes [#71](https://www.github.com/googleapis/java-tasks/issues/71)
+
+
+### Dependencies
+
+* update core dependencies ([#71](https://www.github.com/googleapis/java-tasks/issues/71)) ([a578f22](https://www.github.com/googleapis/java-tasks/commit/a578f229f93560329f96aea6e2446d5278a6cd5f))
+* update core dependencies ([#84](https://www.github.com/googleapis/java-tasks/issues/84)) ([b672c21](https://www.github.com/googleapis/java-tasks/commit/b672c21a89fb69da73fc80bf41355f926061afde))
+* update dependency com.google.api:api-common to v1.9.0 ([#103](https://www.github.com/googleapis/java-tasks/issues/103)) ([f330679](https://www.github.com/googleapis/java-tasks/commit/f330679ebff1a1cf2bd0ed5dcbd91ef1efe54f2d))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([83c7274](https://www.github.com/googleapis/java-tasks/commit/83c7274c220a83ad1c66aa9affa42f32d62b3450))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([#70](https://www.github.com/googleapis/java-tasks/issues/70)) ([ea4926d](https://www.github.com/googleapis/java-tasks/commit/ea4926d7c9930cc0e19d084b8645711da8987963))
+
 ### [1.28.2](https://www.github.com/googleapis/java-tasks/compare/v1.28.1...v1.28.2) (2020-02-06)
 
 
