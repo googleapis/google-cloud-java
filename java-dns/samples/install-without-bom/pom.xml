@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-dns</artifactId>
-      <version></version>
+      <version>0.117.5-alpha</version>
     </dependency>
     <!-- [END dns_install_without_bom] -->
 
