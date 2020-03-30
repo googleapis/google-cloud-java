@@ -1,0 +1,8 @@
+{
+  "name": "google-cloud-shared-dependencies",
+  "name_pretty": "Google Cloud Shared Dependencies BOM",
+  "release_level": "beta",
+  "language": "java",
+  "repo": "googleapis/java-shared-dependencies",
+  "distribution_name": "com.google.cloud:google-cloud-shared-dependencies"
+}
