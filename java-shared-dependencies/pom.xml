@@ -59,7 +59,7 @@
     <gax.version>1.54.0</gax.version>
     <guava.version>28.2-android</guava.version>
     <protobuf.version>3.11.4</protobuf.version>
-    <google.api-common.version>1.8.1</google.api-common.version>
+    <google.api-common.version>1.9.0</google.api-common.version>
     <google.common-protos.version>1.17.0</google.common-protos.version>
     <google.core.version>1.93.0</google.core.version>
     <google.auth.version>0.20.0</google.auth.version>
