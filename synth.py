@@ -14,25 +14,19 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-gapic = gcp.GAPICGenerator()
-
 service = 'logging'
 versions = ['v2']
-config_pattern = '/google/logging/artman_logging.yaml'
 
 for version in versions:
-  library = java.gapic_library(
-    service=service,
-    version=version,
-    config_pattern=config_pattern,
-    package_pattern='com.google.{service}.{version}',
-    gapic=gapic,
+  java.bazel_library(
+      service=service,
+      version=version,
+      proto_path=f'google/{service}/{version}',
+      bazel_target=f'//google/{service}/{version}:google-cloud-{service}-{version}-java',
   )
 
 java.common_templates()
