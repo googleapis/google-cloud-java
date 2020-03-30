@@ -4,5 +4,6 @@
   "release_level": "beta",
   "language": "java",
   "repo": "googleapis/java-shared-dependencies",
+  "repo_short": "java-shared-dependencies",
   "distribution_name": "com.google.cloud:google-cloud-shared-dependencies"
 }

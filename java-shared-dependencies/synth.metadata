@@ -1,11 +1,11 @@
 {
-  "updateTime": "2020-02-28T22:11:00.677306Z",
+  "updateTime": "2020-03-30T21:54:45.652823Z",
   "sources": [
     {
-      "template": {
-        "name": "java_library",
-        "origin": "synthtool.gcp",
-        "version": "2020.2.4"
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "a003d8655d3ebec2bbbd5fc3898e91e152265c67"
       }
     }
   ]

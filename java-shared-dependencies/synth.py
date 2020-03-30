@@ -17,5 +17,6 @@
 from synthtool.languages import java
 
 java.common_templates(excludes=[
-  "README.md"
+  "README.md",
+  "samples/*"
 ])
