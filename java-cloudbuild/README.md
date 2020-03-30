@@ -40,18 +40,18 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-build</artifactId>
-  <version>1.0.3</version>
+  <version>1.1.0</version>
 </dependency>
 
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-build:1.0.3'
+compile 'com.google.cloud:google-cloud-build:1.1.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-build" % "1.0.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-build" % "1.1.0"
 ```
 [//]: # ({x-version-update-end})
 

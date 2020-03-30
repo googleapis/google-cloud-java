@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-cloudbuild/compare/v1.0.3...v1.1.0) (2020-03-30)
+
+
+### Features
+
+* add queue_ttl to Build, invert_regex to RepoSource ([#100](https://www.github.com/googleapis/java-cloudbuild/issues/100)) ([db14077](https://www.github.com/googleapis/java-cloudbuild/commit/db14077a07f54a260d26483868866b16b200cd2b))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.0 ([#112](https://www.github.com/googleapis/java-cloudbuild/issues/112)) ([76452e2](https://www.github.com/googleapis/java-cloudbuild/commit/76452e288e5d4215057c369e21102009b9ca27b1))
+
 ### [1.0.3](https://www.github.com/googleapis/java-cloudbuild/compare/v1.0.2...v1.0.3) (2020-03-03)
 
 
