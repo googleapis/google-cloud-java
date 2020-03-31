@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-// [START dataproc_instantiate_inline_workflow]
+// [START dataproc_instantiate_inline_workflow_template]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.dataproc.v1.ClusterConfig;
 import com.google.cloud.dataproc.v1.GceClusterConfig;
@@ -80,7 +80,7 @@ public class InstantiateInlineWorkflowTemplate {
               .build();
 
       // Configure the cluster placement for the workflow.
-      // Leave "ZoneUri" empty for "autozone".
+      // Leave "ZoneUri" empty for "Auto Zone Placement".
       // GceClusterConfig gceClusterConfig =
       //     GceClusterConfig.newBuilder().setZoneUri("").build();
       GceClusterConfig gceClusterConfig =
@@ -118,4 +118,4 @@ public class InstantiateInlineWorkflowTemplate {
     }
   }
 }
-// [END dataproc_instantiate_inline_workflow]
+// [END dataproc_instantiate_inline_workflow_template]
