@@ -18,7 +18,7 @@ import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-versions = ['v1beta1']
+versions = ['v1beta1', 'v1']
 service = 'datacatalog'
 
 for version in versions:

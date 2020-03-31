@@ -81,8 +81,18 @@
     <dependencies>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
+        <version>0.33.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datacatalog-v1beta1</artifactId>
         <version>0.33.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-datacatalog-v1</artifactId>
+        <version>0.33.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -189,7 +199,9 @@
   </build>
 
   <modules>
+    <module>proto-google-cloud-datacatalog-v1</module>
     <module>proto-google-cloud-datacatalog-v1beta1</module>
+    <module>grpc-google-cloud-datacatalog-v1</module>
     <module>grpc-google-cloud-datacatalog-v1beta1</module>
     <module>google-cloud-datacatalog</module>
     <module>google-cloud-datacatalog-bom</module>
