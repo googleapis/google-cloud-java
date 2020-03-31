@@ -1,0 +1,4 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-logging-logback:10.116.0-alpha:0.116.0-alpha
