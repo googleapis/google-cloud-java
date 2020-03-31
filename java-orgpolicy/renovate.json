@@ -56,7 +56,9 @@
     },
     {
       "packagePatterns": [
-        "^com.google.cloud:libraries-bom"
+        "^com.google.api.grpc:proto-google-cloud-orgpolicy-v1",
+        "^com.google.cloud:libraries-bom",
+        "^com.google.cloud.samples:shared-configuration"
       ],
       "semanticCommitType": "chore",
       "semanticCommitScope": "deps"
