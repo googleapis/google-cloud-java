@@ -68,7 +68,7 @@
     <gax.version>1.55.0</gax.version>
     <junit.version>4.13</junit.version>
     <guava.version>28.2-android</guava.version>
-    <threeten.version>1.4.1</threeten.version>
+    <threeten.version>1.4.2</threeten.version>
     <google.core-http.version>1.93.3</google.core-http.version>
     <api-client.version>1.30.9</api-client.version>
     <easymock.version>3.6</easymock.version>
