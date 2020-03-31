@@ -38,10 +38,13 @@ public final class Common {
       "\n(google/cloud/datacatalog/v1/common.pro"
           + "to\022\033google.cloud.datacatalog.v1*U\n\020Integ"
           + "ratedSystem\022!\n\035INTEGRATED_SYSTEM_UNSPECI"
-          + "FIED\020\000\022\014\n\010BIGQUERY\020\001\022\020\n\014CLOUD_PUBSUB\020\002Bn"
-          + "\n\037com.google.cloud.datacatalog.v1P\001ZFgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/datacatalog/v1;datacatalog\370\001\001b\006proto3"
+          + "FIED\020\000\022\014\n\010BIGQUERY\020\001\022\020\n\014CLOUD_PUBSUB\020\002B\313"
+          + "\001\n\037com.google.cloud.datacatalog.v1P\001ZFgo"
+          + "ogle.golang.org/genproto/googleapis/clou"
+          + "d/datacatalog/v1;datacatalog\370\001\001\252\002\033Google"
+          + ".Cloud.DataCatalog.V1\312\002\033Google\\Cloud\\Dat"
+          + "aCatalog\\V1\352\002\036Google::Cloud::DataCatalog"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

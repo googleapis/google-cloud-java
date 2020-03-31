@@ -52,10 +52,13 @@ public final class SchemaOuterClass {
           + "column\030\006 \001(\tB\003\340A\002\022\021\n\004type\030\001 \001(\tB\003\340A\002\022\030\n\013"
           + "description\030\002 \001(\tB\003\340A\001\022\021\n\004mode\030\003 \001(\tB\003\340A"
           + "\001\022B\n\nsubcolumns\030\007 \003(\0132).google.cloud.dat"
-          + "acatalog.v1.ColumnSchemaB\003\340A\001Bn\n\037com.goo"
-          + "gle.cloud.datacatalog.v1P\001ZFgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/datacata"
-          + "log/v1;datacatalog\370\001\001b\006proto3"
+          + "acatalog.v1.ColumnSchemaB\003\340A\001B\313\001\n\037com.go"
+          + "ogle.cloud.datacatalog.v1P\001ZFgoogle.gola"
+          + "ng.org/genproto/googleapis/cloud/datacat"
+          + "alog/v1;datacatalog\370\001\001\252\002\033Google.Cloud.Da"
+          + "taCatalog.V1\312\002\033Google\\Cloud\\DataCatalog\\"
+          + "V1\352\002\036Google::Cloud::DataCatalog::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

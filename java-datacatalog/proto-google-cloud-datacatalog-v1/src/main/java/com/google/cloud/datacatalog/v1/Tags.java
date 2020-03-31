@@ -123,10 +123,12 @@ public final class Tags {
           + "isplay_name\030\001 \001(\tB\003\340A\002\"`\n\rPrimitiveType\022"
           + "\036\n\032PRIMITIVE_TYPE_UNSPECIFIED\020\000\022\n\n\006DOUBL"
           + "E\020\001\022\n\n\006STRING\020\002\022\010\n\004BOOL\020\003\022\r\n\tTIMESTAMP\020\004"
-          + "B\013\n\ttype_declBn\n\037com.google.cloud.dataca"
-          + "talog.v1P\001ZFgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/datacatalog/v1;datacatal"
-          + "og\370\001\001b\006proto3"
+          + "B\013\n\ttype_declB\313\001\n\037com.google.cloud.datac"
+          + "atalog.v1P\001ZFgoogle.golang.org/genproto/"
+          + "googleapis/cloud/datacatalog/v1;datacata"
+          + "log\370\001\001\252\002\033Google.Cloud.DataCatalog.V1\312\002\033G"
+          + "oogle\\Cloud\\DataCatalog\\V1\352\002\036Google::Clo"
+          + "ud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
