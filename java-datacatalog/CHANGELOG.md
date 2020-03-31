@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.34.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.33.0...v0.34.0) (2020-03-31)
+
+
+### Features
+
+* **v1:** add v1 client ([#131](https://www.github.com/googleapis/java-datacatalog/issues/131)) ([115d82b](https://www.github.com/googleapis/java-datacatalog/commit/115d82bd9f49c5bb8582a738bfd3cf8af38e15a8))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.0 ([#129](https://www.github.com/googleapis/java-datacatalog/issues/129)) ([e832dac](https://www.github.com/googleapis/java-datacatalog/commit/e832dac064d43461e452f4b020adf20d57f510ea))
+
 ## [0.33.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.32.1...v0.33.0) (2020-03-11)
 
 
