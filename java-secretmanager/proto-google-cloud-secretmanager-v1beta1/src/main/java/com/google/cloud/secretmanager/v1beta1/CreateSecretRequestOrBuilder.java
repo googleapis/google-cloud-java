@@ -59,6 +59,9 @@ public interface CreateSecretRequestOrBuilder
    *
    * <pre>
    * Required. This must be unique within the project.
+   * A secret ID is a string with a maximum length of 255 characters and can
+   * contain uppercase and lowercase letters, numerals, and the hyphen (`-`) and
+   * underscore (`_`) characters.
    * </pre>
    *
    * <code>string secret_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -71,6 +74,9 @@ public interface CreateSecretRequestOrBuilder
    *
    * <pre>
    * Required. This must be unique within the project.
+   * A secret ID is a string with a maximum length of 255 characters and can
+   * contain uppercase and lowercase letters, numerals, and the hyphen (`-`) and
+   * underscore (`_`) characters.
    * </pre>
    *
    * <code>string secret_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

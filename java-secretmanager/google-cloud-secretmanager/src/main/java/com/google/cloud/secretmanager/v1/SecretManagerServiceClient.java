@@ -320,6 +320,9 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the project to associate with the
    *     [Secret][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
    * @param secretId Required. This must be unique within the project.
+   *     <p>A secret ID is a string with a maximum length of 255 characters and can contain
+   *     uppercase and lowercase letters, numerals, and the hyphen (`-`) and underscore (`_`)
+   *     characters.
    * @param secret Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field
    *     values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -353,6 +356,9 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the project to associate with the
    *     [Secret][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
    * @param secretId Required. This must be unique within the project.
+   *     <p>A secret ID is a string with a maximum length of 255 characters and can contain
+   *     uppercase and lowercase letters, numerals, and the hyphen (`-`) and underscore (`_`)
+   *     characters.
    * @param secret Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field
    *     values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
