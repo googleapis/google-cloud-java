@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.33.1](https://www.github.com/googleapis/java-webrisk/compare/v0.33.0...v0.33.1) (2020-03-30)
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.0 ([#102](https://www.github.com/googleapis/java-webrisk/issues/102)) ([0affdb9](https://www.github.com/googleapis/java-webrisk/commit/0affdb92f1b5fbc121a2b46e5c7af7c7d9a16c08))
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.13 ([#101](https://www.github.com/googleapis/java-webrisk/issues/101)) ([49e6839](https://www.github.com/googleapis/java-webrisk/commit/49e68397c9547641d114f38bcb79eee184bbfb91))
+
 ## [0.33.0](https://www.github.com/googleapis/java-webrisk/compare/v0.32.1...v0.33.0) (2020-03-16)
 
 
