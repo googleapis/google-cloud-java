@@ -305,6 +305,24 @@ public class LoggingAppenderTest {
     assertThat(capturedArgumentMap.get("bar")).isEqualTo("bar");
   }
 
+  @Test
+  public void testFlush() {
+    logging.setFlushSeverity(Severity.ERROR);
+    Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
+    logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
+    expectLastCall().times(2);
+    logging.flush();
+    replay(logging);
+    loggingAppender.start();
+    Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
+    LoggingEvent firstLoggingEvent = createLoggingEvent(Level.WARN, timestamp.getSeconds());
+    LoggingEvent secondLoggingEvent = createLoggingEvent(Level.INFO, timestamp.getSeconds());
+    loggingAppender.doAppend(firstLoggingEvent);
+    loggingAppender.doAppend(secondLoggingEvent);
+    loggingAppender.flush();
+    verify(logging);
+  }
+
   static class CustomLoggingEventEnhancer1 implements LoggingEventEnhancer {
 
     @Override

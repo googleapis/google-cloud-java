@@ -245,6 +245,16 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     return logging;
   }
 
+  /** Flushes any pending asynchronous logging writes. */
+  public void flush() {
+    if (!isStarted()) {
+      return;
+    }
+    synchronized (this) {
+      getLogging().flush();
+    }
+  }
+
   /** Gets the {@link LoggingOptions} to use for this {@link LoggingAppender}. */
   protected LoggingOptions getLoggingOptions() {
     if (loggingOptions == null) {
