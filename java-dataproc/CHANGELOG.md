@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.121.0](https://www.github.com/googleapis/java-dataproc/compare/v0.120.0...v0.121.0) (2020-04-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* Please use AutoscalingPolicyName$Builder.setLocation(String)
+
+### Bug Fixes
+
+* AutoscalingPolicyName now uses locations instead of regions ([#118](https://www.github.com/googleapis/java-dataproc/issues/118)) ([48110e6](https://www.github.com/googleapis/java-dataproc/commit/48110e6a7c6426172b81b126001a609650a4f3bd))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.0 ([#113](https://www.github.com/googleapis/java-dataproc/issues/113)) ([34b0ec6](https://www.github.com/googleapis/java-dataproc/commit/34b0ec60c21d76217d45b29410c1472ff8869ba0))
+
 ## [0.120.0](https://www.github.com/googleapis/java-dataproc/compare/v0.119.0...v0.120.0) (2020-03-13)
 
 

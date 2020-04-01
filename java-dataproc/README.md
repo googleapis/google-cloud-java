@@ -43,18 +43,18 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc</artifactId>
-  <version>0.120.0</version>
+  <version>0.121.0</version>
 </dependency>
 
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-dataproc:0.120.0'
+compile 'com.google.cloud:google-cloud-dataproc:0.121.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dataproc" % "0.120.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-dataproc" % "0.121.0"
 ```
 [//]: # ({x-version-update-end})
 
