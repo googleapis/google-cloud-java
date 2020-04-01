@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.37.0](https://www.github.com/googleapis/java-kms/compare/v1.36.1...v1.37.0) (2020-04-01)
+
+
+### Features
+
+* replace the usage of KeyName and CryptoKeyPathName with the interface ResourceName ([#117](https://www.github.com/googleapis/java-kms/issues/117)) ([0c57b5f](https://www.github.com/googleapis/java-kms/commit/0c57b5f246aeba9ca1b2733e288a6a04f4e14acc))
+
+
+### Bug Fixes
+
+* undeprecate resource name classes until multi-pattern resources are available ([#91](https://www.github.com/googleapis/java-kms/issues/91)) ([ebdefc2](https://www.github.com/googleapis/java-kms/commit/ebdefc2a883da7b6614e0d1fb602550454a77718))
+
+
+### Dependencies
+
+* update core libraries ([#90](https://www.github.com/googleapis/java-kms/issues/90)) ([a98636c](https://www.github.com/googleapis/java-kms/commit/a98636c3a842e2a30bd616729d0e59e4917c9909))
+* update dependency com.google.api:api-common to v1.9.0 ([#114](https://www.github.com/googleapis/java-kms/issues/114)) ([163c590](https://www.github.com/googleapis/java-kms/commit/163c5907b824303de275e71c832712a93613ed99))
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([32fab45](https://www.github.com/googleapis/java-kms/commit/32fab455149c0084a4c85d86050ad697d0ef9cf8))
+* update dependency com.google.cloud:google-cloud-core to v1.93.1 ([#92](https://www.github.com/googleapis/java-kms/issues/92)) ([2a49211](https://www.github.com/googleapis/java-kms/commit/2a49211f2504b5c5618fc3ecc2db6bbae35b0609))
+* update dependency com.google.http-client:google-http-client-bom to v1.34.2 ([#80](https://www.github.com/googleapis/java-kms/issues/80)) ([3b61f2e](https://www.github.com/googleapis/java-kms/commit/3b61f2ea83bcccf45c0f9ecd9016bb8255d28b42))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([#82](https://www.github.com/googleapis/java-kms/issues/82)) ([7c15f29](https://www.github.com/googleapis/java-kms/commit/7c15f2989c327e80e4cb4187d520691b068d6d86))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([#81](https://www.github.com/googleapis/java-kms/issues/81)) ([ced89b5](https://www.github.com/googleapis/java-kms/commit/ced89b5cfe783aa3d13d500ae55890217133b66d))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([45a2396](https://www.github.com/googleapis/java-kms/commit/45a23964f51f42df0bc273045a5d095842d0522a))
+
 ### [1.36.1](https://www.github.com/googleapis/java-kms/compare/v1.36.0...v1.36.1) (2020-02-04)
 
 
