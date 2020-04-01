@@ -94,7 +94,6 @@ public class ITPubSubTest {
     ProjectTopicName topicName =
         ProjectTopicName.of(projectId, formatForTest("testing-topic-policy"));
     topicAdminClient.createTopic(topicName);
-
     Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
     Binding binding =
         Binding.newBuilder().setRole("roles/viewer").addMembers("allAuthenticatedUsers").build();

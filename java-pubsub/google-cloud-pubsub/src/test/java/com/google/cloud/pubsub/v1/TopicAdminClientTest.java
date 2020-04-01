@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -43,11 +44,11 @@ import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.ProjectSubscriptionName;
-import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.Topic;
+import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.UpdateTopicRequest;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -55,6 +56,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -109,13 +111,13 @@ public class TopicAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void createTopicTest() {
-    ProjectTopicName name2 = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+    TopicName name2 = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     String kmsKeyName = "kmsKeyName2094986649";
     Topic expectedResponse =
         Topic.newBuilder().setName(name2.toString()).setKmsKeyName(kmsKeyName).build();
     mockPublisher.addResponse(expectedResponse);
 
-    ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+    TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
     Topic actualResponse = client.createTopic(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -124,7 +126,7 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     Topic actualRequest = (Topic) actualRequests.get(0);
 
-    Assert.assertEquals(name, ProjectTopicName.parse(actualRequest.getName()));
+    Assert.assertEquals(name, TopicName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -138,7 +140,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+      TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
       client.createTopic(name);
       Assert.fail("No exception raised");
@@ -150,7 +152,7 @@ public class TopicAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateTopicTest() {
-    ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+    TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     String kmsKeyName = "kmsKeyName2094986649";
     Topic expectedResponse =
         Topic.newBuilder().setName(name.toString()).setKmsKeyName(kmsKeyName).build();
@@ -204,7 +206,7 @@ public class TopicAdminClientTest {
         PublishResponse.newBuilder().addAllMessageIds(messageIds).build();
     mockPublisher.addResponse(expectedResponse);
 
-    ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     ByteString data = ByteString.copyFromUtf8("-86");
     PubsubMessage messagesElement = PubsubMessage.newBuilder().setData(data).build();
     List<PubsubMessage> messages = Arrays.asList(messagesElement);
@@ -216,7 +218,7 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     PublishRequest actualRequest = (PublishRequest) actualRequests.get(0);
 
-    Assert.assertEquals(topic, ProjectTopicName.parse(actualRequest.getTopic()));
+    Assert.assertEquals(topic, TopicName.parse(actualRequest.getTopic()));
     Assert.assertEquals(messages, actualRequest.getMessagesList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -231,7 +233,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+      TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
       ByteString data = ByteString.copyFromUtf8("-86");
       PubsubMessage messagesElement = PubsubMessage.newBuilder().setData(data).build();
       List<PubsubMessage> messages = Arrays.asList(messagesElement);
@@ -246,13 +248,13 @@ public class TopicAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTopicTest() {
-    ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+    TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     String kmsKeyName = "kmsKeyName2094986649";
     Topic expectedResponse =
         Topic.newBuilder().setName(name.toString()).setKmsKeyName(kmsKeyName).build();
     mockPublisher.addResponse(expectedResponse);
 
-    ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
     Topic actualResponse = client.getTopic(topic);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -261,7 +263,7 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetTopicRequest actualRequest = (GetTopicRequest) actualRequests.get(0);
 
-    Assert.assertEquals(topic, ProjectTopicName.parse(actualRequest.getTopic()));
+    Assert.assertEquals(topic, TopicName.parse(actualRequest.getTopic()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -275,7 +277,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+      TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
       client.getTopic(topic);
       Assert.fail("No exception raised");
@@ -346,7 +348,7 @@ public class TopicAdminClientTest {
             .build();
     mockPublisher.addResponse(expectedResponse);
 
-    ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
     ListTopicSubscriptionsPagedResponse pagedListResponse = client.listTopicSubscriptions(topic);
 
@@ -365,7 +367,7 @@ public class TopicAdminClientTest {
     ListTopicSubscriptionsRequest actualRequest =
         (ListTopicSubscriptionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(topic, ProjectTopicName.parse(actualRequest.getTopic()));
+    Assert.assertEquals(topic, TopicName.parse(actualRequest.getTopic()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -379,7 +381,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+      TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
       client.listTopicSubscriptions(topic);
       Assert.fail("No exception raised");
@@ -394,7 +396,7 @@ public class TopicAdminClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockPublisher.addResponse(expectedResponse);
 
-    ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
     client.deleteTopic(topic);
 
@@ -402,7 +404,7 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteTopicRequest actualRequest = (DeleteTopicRequest) actualRequests.get(0);
 
-    Assert.assertEquals(topic, ProjectTopicName.parse(actualRequest.getTopic()));
+    Assert.assertEquals(topic, TopicName.parse(actualRequest.getTopic()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -416,7 +418,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+      TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
       client.deleteTopic(topic);
       Assert.fail("No exception raised");
@@ -433,17 +435,19 @@ public class TopicAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
     Policy policy = Policy.newBuilder().build();
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder().setResource(resource.toString()).setPolicy(policy).build();
 
-    Policy actualResponse = client.setIamPolicy(formattedResource, policy);
+    Policy actualResponse = client.setIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertEquals(policy, actualRequest.getPolicy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -458,10 +462,15 @@ public class TopicAdminClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       Policy policy = Policy.newBuilder().build();
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(resource.toString())
+              .setPolicy(policy)
+              .build();
 
-      client.setIamPolicy(formattedResource, policy);
+      client.setIamPolicy(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -476,16 +485,18 @@ public class TopicAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
 
-    Policy actualResponse = client.getIamPolicy(formattedResource);
+    Policy actualResponse = client.getIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -499,9 +510,11 @@ public class TopicAdminClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
 
-      client.getIamPolicy(formattedResource);
+      client.getIamPolicy(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -514,18 +527,22 @@ public class TopicAdminClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
     List<String> permissions = new ArrayList<>();
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource.toString())
+            .addAllPermissions(permissions)
+            .build();
 
-    TestIamPermissionsResponse actualResponse =
-        client.testIamPermissions(formattedResource, permissions);
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertEquals(permissions, actualRequest.getPermissionsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -540,10 +557,15 @@ public class TopicAdminClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       List<String> permissions = new ArrayList<>();
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(resource.toString())
+              .addAllPermissions(permissions)
+              .build();
 
-      client.testIamPermissions(formattedResource, permissions);
+      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

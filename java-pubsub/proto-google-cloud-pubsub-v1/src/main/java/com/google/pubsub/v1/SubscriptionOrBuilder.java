@@ -362,6 +362,43 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
+   * An expression written in the Cloud Pub/Sub filter language. If non-empty,
+   * then only `PubsubMessage`s whose `attributes` field matches the filter are
+   * delivered on this subscription. If empty, then no messages are filtered
+   * out.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>string filter = 12;</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * An expression written in the Cloud Pub/Sub filter language. If non-empty,
+   * then only `PubsubMessage`s whose `attributes` field matches the filter are
+   * delivered on this subscription. If empty, then no messages are filtered
+   * out.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>string filter = 12;</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A policy that specifies the conditions for dead lettering messages in
    * this subscription. If dead_letter_policy is not set, dead lettering
    * is disabled.
@@ -419,4 +456,63 @@ public interface SubscriptionOrBuilder
    * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
    */
   com.google.pubsub.v1.DeadLetterPolicyOrBuilder getDeadLetterPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+   * subscription.
+   * If not set, the default retry policy is applied. This generally implies
+   * that messages will be retried as soon as possible for healthy subscribers.
+   * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+   * exceeded events for a given message.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+   * ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+   *
+   * @return Whether the retryPolicy field is set.
+   */
+  boolean hasRetryPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+   * subscription.
+   * If not set, the default retry policy is applied. This generally implies
+   * that messages will be retried as soon as possible for healthy subscribers.
+   * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+   * exceeded events for a given message.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+   * ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+   *
+   * @return The retryPolicy.
+   */
+  com.google.pubsub.v1.RetryPolicy getRetryPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+   * subscription.
+   * If not set, the default retry policy is applied. This generally implies
+   * that messages will be retried as soon as possible for healthy subscribers.
+   * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+   * exceeded events for a given message.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+   * ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+   */
+  com.google.pubsub.v1.RetryPolicyOrBuilder getRetryPolicyOrBuilder();
 }

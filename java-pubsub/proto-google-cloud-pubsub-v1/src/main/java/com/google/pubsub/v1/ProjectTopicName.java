@@ -122,7 +122,7 @@ public class ProjectTopicName extends TopicName {
   }
 
   /** Builder for ProjectTopicName. */
-  public static class Builder {
+  public static class Builder extends TopicName.Builder {
 
     private String project;
     private String topic;
