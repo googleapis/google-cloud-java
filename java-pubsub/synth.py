@@ -15,24 +15,19 @@
 """This script is used to synthesize generated parts of this library."""
 
 import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-gapic = gcp.GAPICGenerator()
-
 service = 'pubsub'
 versions = ['v1']
-config_pattern = '/google/pubsub/artman_pubsub.yaml'
 
 for version in versions:
-    java.gapic_library(
+    java.bazel_library(
         service=service,
         version=version,
-        config_pattern=config_pattern,
-        package_pattern='com.google.{service}.{version}',
-        gapic=gapic,
+        proto_path=f'google/{service}/{version}',
+        bazel_target=f'//google/{service}/{version}:google-cloud-{service}-{version}-java',
     )
     s.replace(
         '**/stub/SubscriberStubSettings.java',
