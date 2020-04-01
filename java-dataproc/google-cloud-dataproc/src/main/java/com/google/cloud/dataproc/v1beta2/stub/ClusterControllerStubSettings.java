@@ -48,7 +48,6 @@ import com.google.cloud.dataproc.v1beta2.ClusterOperationMetadata;
 import com.google.cloud.dataproc.v1beta2.CreateClusterRequest;
 import com.google.cloud.dataproc.v1beta2.DeleteClusterRequest;
 import com.google.cloud.dataproc.v1beta2.DiagnoseClusterRequest;
-import com.google.cloud.dataproc.v1beta2.DiagnoseClusterResults;
 import com.google.cloud.dataproc.v1beta2.GetClusterRequest;
 import com.google.cloud.dataproc.v1beta2.ListClustersRequest;
 import com.google.cloud.dataproc.v1beta2.ListClustersResponse;
@@ -116,7 +115,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
       listClustersSettings;
   private final UnaryCallSettings<DiagnoseClusterRequest, Operation> diagnoseClusterSettings;
-  private final OperationCallSettings<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+  private final OperationCallSettings<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
       diagnoseClusterOperationSettings;
 
   /** Returns the object with the settings used for calls to createCluster. */
@@ -173,7 +172,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
 
   /** Returns the object with the settings used for calls to diagnoseCluster. */
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+  public OperationCallSettings<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
       diagnoseClusterOperationSettings() {
     return diagnoseClusterOperationSettings;
   }
@@ -335,7 +334,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     private final UnaryCallSettings.Builder<DiagnoseClusterRequest, Operation>
         diagnoseClusterSettings;
     private final OperationCallSettings.Builder<
-            DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+            DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
         diagnoseClusterOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -367,10 +366,10 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(10000L))
+              .setInitialRpcTimeout(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(10000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
+              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -470,13 +469,13 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(1000L))
-                      .setRetryDelayMultiplier(2.0)
-                      .setMaxRetryDelay(Duration.ofMillis(10000L))
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(900000L))
+                      .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
       builder
           .updateClusterOperationSettings()
@@ -493,13 +492,13 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(1000L))
-                      .setRetryDelayMultiplier(2.0)
-                      .setMaxRetryDelay(Duration.ofMillis(10000L))
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(900000L))
+                      .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
       builder
           .deleteClusterOperationSettings()
@@ -516,13 +515,13 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(1000L))
-                      .setRetryDelayMultiplier(2.0)
-                      .setMaxRetryDelay(Duration.ofMillis(10000L))
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(900000L))
+                      .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
       builder
           .diagnoseClusterOperationSettings()
@@ -535,17 +534,17 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
           .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(DiagnoseClusterResults.class))
+              ProtoOperationTransformers.MetadataTransformer.create(ClusterOperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(1000L))
-                      .setRetryDelayMultiplier(2.0)
-                      .setMaxRetryDelay(Duration.ofMillis(10000L))
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(30000L))
+                      .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -650,7 +649,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     /** Returns the builder for the settings used for calls to diagnoseCluster. */
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+    public OperationCallSettings.Builder<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
         diagnoseClusterOperationSettings() {
       return diagnoseClusterOperationSettings;
     }

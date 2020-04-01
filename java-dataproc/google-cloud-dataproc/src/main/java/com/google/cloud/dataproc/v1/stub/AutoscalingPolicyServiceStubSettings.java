@@ -71,16 +71,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createAutoscalingPolicy to 30 seconds:
+ * <p>For example, to set the total timeout of updateAutoscalingPolicy to 30 seconds:
  *
  * <pre>
  * <code>
  * AutoscalingPolicyServiceStubSettings.Builder autoscalingPolicyServiceSettingsBuilder =
  *     AutoscalingPolicyServiceStubSettings.newBuilder();
  * autoscalingPolicyServiceSettingsBuilder
- *     .createAutoscalingPolicySettings()
+ *     .updateAutoscalingPolicySettings()
  *     .setRetrySettings(
- *         autoscalingPolicyServiceSettingsBuilder.createAutoscalingPolicySettings().getRetrySettings().toBuilder()
+ *         autoscalingPolicyServiceSettingsBuilder.updateAutoscalingPolicySettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AutoscalingPolicyServiceStubSettings autoscalingPolicyServiceSettings = autoscalingPolicyServiceSettingsBuilder.build();
@@ -95,10 +95,10 @@ public class AutoscalingPolicyServiceStubSettings
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
-      createAutoscalingPolicySettings;
   private final UnaryCallSettings<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
       updateAutoscalingPolicySettings;
+  private final UnaryCallSettings<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
+      createAutoscalingPolicySettings;
   private final UnaryCallSettings<GetAutoscalingPolicyRequest, AutoscalingPolicy>
       getAutoscalingPolicySettings;
   private final PagedCallSettings<
@@ -109,16 +109,16 @@ public class AutoscalingPolicyServiceStubSettings
   private final UnaryCallSettings<DeleteAutoscalingPolicyRequest, Empty>
       deleteAutoscalingPolicySettings;
 
-  /** Returns the object with the settings used for calls to createAutoscalingPolicy. */
-  public UnaryCallSettings<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
-      createAutoscalingPolicySettings() {
-    return createAutoscalingPolicySettings;
-  }
-
   /** Returns the object with the settings used for calls to updateAutoscalingPolicy. */
   public UnaryCallSettings<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
       updateAutoscalingPolicySettings() {
     return updateAutoscalingPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAutoscalingPolicy. */
+  public UnaryCallSettings<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
+      createAutoscalingPolicySettings() {
+    return createAutoscalingPolicySettings;
   }
 
   /** Returns the object with the settings used for calls to getAutoscalingPolicy. */
@@ -211,8 +211,8 @@ public class AutoscalingPolicyServiceStubSettings
   protected AutoscalingPolicyServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    createAutoscalingPolicySettings = settingsBuilder.createAutoscalingPolicySettings().build();
     updateAutoscalingPolicySettings = settingsBuilder.updateAutoscalingPolicySettings().build();
+    createAutoscalingPolicySettings = settingsBuilder.createAutoscalingPolicySettings().build();
     getAutoscalingPolicySettings = settingsBuilder.getAutoscalingPolicySettings().build();
     listAutoscalingPoliciesSettings = settingsBuilder.listAutoscalingPoliciesSettings().build();
     deleteAutoscalingPolicySettings = settingsBuilder.deleteAutoscalingPolicySettings().build();
@@ -295,10 +295,10 @@ public class AutoscalingPolicyServiceStubSettings
       extends StubSettings.Builder<AutoscalingPolicyServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
-        createAutoscalingPolicySettings;
     private final UnaryCallSettings.Builder<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
         updateAutoscalingPolicySettings;
+    private final UnaryCallSettings.Builder<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
+        createAutoscalingPolicySettings;
     private final UnaryCallSettings.Builder<GetAutoscalingPolicyRequest, AutoscalingPolicy>
         getAutoscalingPolicySettings;
     private final PagedCallSettings.Builder<
@@ -350,9 +350,9 @@ public class AutoscalingPolicyServiceStubSettings
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      createAutoscalingPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateAutoscalingPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      createAutoscalingPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getAutoscalingPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -363,8 +363,8 @@ public class AutoscalingPolicyServiceStubSettings
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createAutoscalingPolicySettings,
               updateAutoscalingPolicySettings,
+              createAutoscalingPolicySettings,
               getAutoscalingPolicySettings,
               listAutoscalingPoliciesSettings,
               deleteAutoscalingPolicySettings);
@@ -384,13 +384,13 @@ public class AutoscalingPolicyServiceStubSettings
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .createAutoscalingPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .updateAutoscalingPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .updateAutoscalingPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .createAutoscalingPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -414,16 +414,16 @@ public class AutoscalingPolicyServiceStubSettings
     protected Builder(AutoscalingPolicyServiceStubSettings settings) {
       super(settings);
 
-      createAutoscalingPolicySettings = settings.createAutoscalingPolicySettings.toBuilder();
       updateAutoscalingPolicySettings = settings.updateAutoscalingPolicySettings.toBuilder();
+      createAutoscalingPolicySettings = settings.createAutoscalingPolicySettings.toBuilder();
       getAutoscalingPolicySettings = settings.getAutoscalingPolicySettings.toBuilder();
       listAutoscalingPoliciesSettings = settings.listAutoscalingPoliciesSettings.toBuilder();
       deleteAutoscalingPolicySettings = settings.deleteAutoscalingPolicySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createAutoscalingPolicySettings,
               updateAutoscalingPolicySettings,
+              createAutoscalingPolicySettings,
               getAutoscalingPolicySettings,
               listAutoscalingPoliciesSettings,
               deleteAutoscalingPolicySettings);
@@ -445,16 +445,16 @@ public class AutoscalingPolicyServiceStubSettings
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to createAutoscalingPolicy. */
-    public UnaryCallSettings.Builder<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
-        createAutoscalingPolicySettings() {
-      return createAutoscalingPolicySettings;
-    }
-
     /** Returns the builder for the settings used for calls to updateAutoscalingPolicy. */
     public UnaryCallSettings.Builder<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
         updateAutoscalingPolicySettings() {
       return updateAutoscalingPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAutoscalingPolicy. */
+    public UnaryCallSettings.Builder<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
+        createAutoscalingPolicySettings() {
+      return createAutoscalingPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to getAutoscalingPolicy. */

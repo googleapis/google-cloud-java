@@ -30,7 +30,6 @@ import com.google.cloud.dataproc.v1beta2.ClusterOperationMetadata;
 import com.google.cloud.dataproc.v1beta2.CreateClusterRequest;
 import com.google.cloud.dataproc.v1beta2.DeleteClusterRequest;
 import com.google.cloud.dataproc.v1beta2.DiagnoseClusterRequest;
-import com.google.cloud.dataproc.v1beta2.DiagnoseClusterResults;
 import com.google.cloud.dataproc.v1beta2.GetClusterRequest;
 import com.google.cloud.dataproc.v1beta2.ListClustersRequest;
 import com.google.cloud.dataproc.v1beta2.ListClustersResponse;
@@ -124,7 +123,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
   private final UnaryCallable<ListClustersRequest, ListClustersPagedResponse>
       listClustersPagedCallable;
   private final UnaryCallable<DiagnoseClusterRequest, Operation> diagnoseClusterCallable;
-  private final OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+  private final OperationCallable<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
       diagnoseClusterOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
@@ -291,7 +290,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+  public OperationCallable<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
       diagnoseClusterOperationCallable() {
     return diagnoseClusterOperationCallable;
   }

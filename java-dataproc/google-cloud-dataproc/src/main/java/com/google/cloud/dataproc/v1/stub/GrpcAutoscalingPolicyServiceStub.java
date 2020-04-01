@@ -51,16 +51,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceStub {
 
-  private static final MethodDescriptor<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
-      createAutoscalingPolicyMethodDescriptor =
-          MethodDescriptor.<CreateAutoscalingPolicyRequest, AutoscalingPolicy>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.dataproc.v1.AutoscalingPolicyService/CreateAutoscalingPolicy")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateAutoscalingPolicyRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(AutoscalingPolicy.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
       updateAutoscalingPolicyMethodDescriptor =
           MethodDescriptor.<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>newBuilder()
@@ -69,6 +59,16 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                   "google.cloud.dataproc.v1.AutoscalingPolicyService/UpdateAutoscalingPolicy")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAutoscalingPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AutoscalingPolicy.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
+      createAutoscalingPolicyMethodDescriptor =
+          MethodDescriptor.<CreateAutoscalingPolicyRequest, AutoscalingPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dataproc.v1.AutoscalingPolicyService/CreateAutoscalingPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAutoscalingPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutoscalingPolicy.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<GetAutoscalingPolicyRequest, AutoscalingPolicy>
@@ -107,10 +107,10 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
-      createAutoscalingPolicyCallable;
   private final UnaryCallable<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
       updateAutoscalingPolicyCallable;
+  private final UnaryCallable<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
+      createAutoscalingPolicyCallable;
   private final UnaryCallable<GetAutoscalingPolicyRequest, AutoscalingPolicy>
       getAutoscalingPolicyCallable;
   private final UnaryCallable<ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse>
@@ -162,20 +162,6 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
-        createAutoscalingPolicyTransportSettings =
-            GrpcCallSettings.<CreateAutoscalingPolicyRequest, AutoscalingPolicy>newBuilder()
-                .setMethodDescriptor(createAutoscalingPolicyMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<CreateAutoscalingPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateAutoscalingPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
         updateAutoscalingPolicyTransportSettings =
             GrpcCallSettings.<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>newBuilder()
@@ -186,6 +172,20 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                       public Map<String, String> extract(UpdateAutoscalingPolicyRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("policy.name", String.valueOf(request.getPolicy().getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
+        createAutoscalingPolicyTransportSettings =
+            GrpcCallSettings.<CreateAutoscalingPolicyRequest, AutoscalingPolicy>newBuilder()
+                .setMethodDescriptor(createAutoscalingPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<CreateAutoscalingPolicyRequest>() {
+                      @Override
+                      public Map<String, String> extract(CreateAutoscalingPolicyRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
                         return params.build();
                       }
                     })
@@ -234,15 +234,15 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                     })
                 .build();
 
-    this.createAutoscalingPolicyCallable =
-        callableFactory.createUnaryCallable(
-            createAutoscalingPolicyTransportSettings,
-            settings.createAutoscalingPolicySettings(),
-            clientContext);
     this.updateAutoscalingPolicyCallable =
         callableFactory.createUnaryCallable(
             updateAutoscalingPolicyTransportSettings,
             settings.updateAutoscalingPolicySettings(),
+            clientContext);
+    this.createAutoscalingPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createAutoscalingPolicyTransportSettings,
+            settings.createAutoscalingPolicySettings(),
             clientContext);
     this.getAutoscalingPolicyCallable =
         callableFactory.createUnaryCallable(
@@ -268,14 +268,14 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
-      createAutoscalingPolicyCallable() {
-    return createAutoscalingPolicyCallable;
-  }
-
   public UnaryCallable<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
       updateAutoscalingPolicyCallable() {
     return updateAutoscalingPolicyCallable;
+  }
+
+  public UnaryCallable<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
+      createAutoscalingPolicyCallable() {
+    return createAutoscalingPolicyCallable;
   }
 
   public UnaryCallable<GetAutoscalingPolicyRequest, AutoscalingPolicy>

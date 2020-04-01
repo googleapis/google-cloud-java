@@ -100,7 +100,8 @@ public class WorkflowTemplateServiceClientTest {
   public void createWorkflowTemplateTest() {
     String id = "id3355";
     WorkflowTemplateName name =
-        WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+        WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+            "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
     int version = 351608024;
     WorkflowTemplate expectedResponse =
         WorkflowTemplate.newBuilder()
@@ -151,7 +152,8 @@ public class WorkflowTemplateServiceClientTest {
   public void getWorkflowTemplateTest() {
     String id = "id3355";
     WorkflowTemplateName name2 =
-        WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+        WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+            "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
     int version = 351608024;
     WorkflowTemplate expectedResponse =
         WorkflowTemplate.newBuilder()
@@ -162,7 +164,8 @@ public class WorkflowTemplateServiceClientTest {
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
     WorkflowTemplateName name =
-        WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+        WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+            "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
 
     WorkflowTemplate actualResponse = client.getWorkflowTemplate(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -186,7 +189,8 @@ public class WorkflowTemplateServiceClientTest {
 
     try {
       WorkflowTemplateName name =
-          WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+          WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+              "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
 
       client.getWorkflowTemplate(name);
       Assert.fail("No exception raised");
@@ -208,7 +212,8 @@ public class WorkflowTemplateServiceClientTest {
     mockWorkflowTemplateService.addResponse(resultOperation);
 
     WorkflowTemplateName name =
-        WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+        WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+            "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
 
     Empty actualResponse = client.instantiateWorkflowTemplateAsync(name).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -233,7 +238,8 @@ public class WorkflowTemplateServiceClientTest {
 
     try {
       WorkflowTemplateName name =
-          WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+          WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+              "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
 
       client.instantiateWorkflowTemplateAsync(name).get();
       Assert.fail("No exception raised");
@@ -257,7 +263,8 @@ public class WorkflowTemplateServiceClientTest {
     mockWorkflowTemplateService.addResponse(resultOperation);
 
     WorkflowTemplateName name =
-        WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+        WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+            "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
     Map<String, String> parameters = new HashMap<>();
 
     Empty actualResponse = client.instantiateWorkflowTemplateAsync(name, parameters).get();
@@ -284,7 +291,8 @@ public class WorkflowTemplateServiceClientTest {
 
     try {
       WorkflowTemplateName name =
-          WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+          WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+              "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
       Map<String, String> parameters = new HashMap<>();
 
       client.instantiateWorkflowTemplateAsync(name, parameters).get();
@@ -351,7 +359,8 @@ public class WorkflowTemplateServiceClientTest {
   public void updateWorkflowTemplateTest() {
     String id = "id3355";
     WorkflowTemplateName name =
-        WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+        WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+            "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
     int version = 351608024;
     WorkflowTemplate expectedResponse =
         WorkflowTemplate.newBuilder()
@@ -450,7 +459,8 @@ public class WorkflowTemplateServiceClientTest {
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
     WorkflowTemplateName name =
-        WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+        WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+            "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
 
     client.deleteWorkflowTemplate(name);
 
@@ -474,7 +484,8 @@ public class WorkflowTemplateServiceClientTest {
 
     try {
       WorkflowTemplateName name =
-          WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+          WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+              "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
 
       client.deleteWorkflowTemplate(name);
       Assert.fail("No exception raised");

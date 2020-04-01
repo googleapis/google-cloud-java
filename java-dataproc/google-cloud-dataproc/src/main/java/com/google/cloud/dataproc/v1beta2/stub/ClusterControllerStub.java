@@ -26,7 +26,6 @@ import com.google.cloud.dataproc.v1beta2.ClusterOperationMetadata;
 import com.google.cloud.dataproc.v1beta2.CreateClusterRequest;
 import com.google.cloud.dataproc.v1beta2.DeleteClusterRequest;
 import com.google.cloud.dataproc.v1beta2.DiagnoseClusterRequest;
-import com.google.cloud.dataproc.v1beta2.DiagnoseClusterResults;
 import com.google.cloud.dataproc.v1beta2.GetClusterRequest;
 import com.google.cloud.dataproc.v1beta2.ListClustersRequest;
 import com.google.cloud.dataproc.v1beta2.ListClustersResponse;
@@ -94,7 +93,7 @@ public abstract class ClusterControllerStub implements BackgroundResource {
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+  public OperationCallable<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
       diagnoseClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: diagnoseClusterOperationCallable()");
   }

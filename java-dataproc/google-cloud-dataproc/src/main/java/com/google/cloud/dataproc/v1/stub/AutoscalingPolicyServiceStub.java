@@ -40,14 +40,14 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class AutoscalingPolicyServiceStub implements BackgroundResource {
 
-  public UnaryCallable<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
-      createAutoscalingPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: createAutoscalingPolicyCallable()");
-  }
-
   public UnaryCallable<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
       updateAutoscalingPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: updateAutoscalingPolicyCallable()");
+  }
+
+  public UnaryCallable<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
+      createAutoscalingPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAutoscalingPolicyCallable()");
   }
 
   public UnaryCallable<GetAutoscalingPolicyRequest, AutoscalingPolicy>

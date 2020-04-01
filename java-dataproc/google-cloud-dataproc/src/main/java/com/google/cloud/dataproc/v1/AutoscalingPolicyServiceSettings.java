@@ -49,16 +49,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createAutoscalingPolicy to 30 seconds:
+ * <p>For example, to set the total timeout of updateAutoscalingPolicy to 30 seconds:
  *
  * <pre>
  * <code>
  * AutoscalingPolicyServiceSettings.Builder autoscalingPolicyServiceSettingsBuilder =
  *     AutoscalingPolicyServiceSettings.newBuilder();
  * autoscalingPolicyServiceSettingsBuilder
- *     .createAutoscalingPolicySettings()
+ *     .updateAutoscalingPolicySettings()
  *     .setRetrySettings(
- *         autoscalingPolicyServiceSettingsBuilder.createAutoscalingPolicySettings().getRetrySettings().toBuilder()
+ *         autoscalingPolicyServiceSettingsBuilder.updateAutoscalingPolicySettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AutoscalingPolicyServiceSettings autoscalingPolicyServiceSettings = autoscalingPolicyServiceSettingsBuilder.build();
@@ -69,18 +69,18 @@ import javax.annotation.Generated;
 @BetaApi
 public class AutoscalingPolicyServiceSettings
     extends ClientSettings<AutoscalingPolicyServiceSettings> {
-  /** Returns the object with the settings used for calls to createAutoscalingPolicy. */
-  public UnaryCallSettings<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
-      createAutoscalingPolicySettings() {
-    return ((AutoscalingPolicyServiceStubSettings) getStubSettings())
-        .createAutoscalingPolicySettings();
-  }
-
   /** Returns the object with the settings used for calls to updateAutoscalingPolicy. */
   public UnaryCallSettings<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
       updateAutoscalingPolicySettings() {
     return ((AutoscalingPolicyServiceStubSettings) getStubSettings())
         .updateAutoscalingPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAutoscalingPolicy. */
+  public UnaryCallSettings<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
+      createAutoscalingPolicySettings() {
+    return ((AutoscalingPolicyServiceStubSettings) getStubSettings())
+        .createAutoscalingPolicySettings();
   }
 
   /** Returns the object with the settings used for calls to getAutoscalingPolicy. */
@@ -205,16 +205,16 @@ public class AutoscalingPolicyServiceSettings
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to createAutoscalingPolicy. */
-    public UnaryCallSettings.Builder<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
-        createAutoscalingPolicySettings() {
-      return getStubSettingsBuilder().createAutoscalingPolicySettings();
-    }
-
     /** Returns the builder for the settings used for calls to updateAutoscalingPolicy. */
     public UnaryCallSettings.Builder<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
         updateAutoscalingPolicySettings() {
       return getStubSettingsBuilder().updateAutoscalingPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAutoscalingPolicy. */
+    public UnaryCallSettings.Builder<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
+        createAutoscalingPolicySettings() {
+      return getStubSettingsBuilder().createAutoscalingPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to getAutoscalingPolicy. */

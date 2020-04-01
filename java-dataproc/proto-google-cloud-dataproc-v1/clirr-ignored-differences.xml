@@ -16,4 +16,9 @@
     <className>com/google/cloud/dataproc/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dataproc/v1/AutoscalingPolicyName$Builder</className>
+    <method>* *etRegion(*)</method>
+  </difference>
 </differences>

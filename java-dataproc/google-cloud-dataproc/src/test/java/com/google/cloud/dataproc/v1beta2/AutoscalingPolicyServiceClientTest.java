@@ -94,7 +94,8 @@ public class AutoscalingPolicyServiceClientTest {
   public void createAutoscalingPolicyTest() {
     String id = "id3355";
     AutoscalingPolicyName name =
-        AutoscalingPolicyName.of("[PROJECT]", "[REGION]", "[AUTOSCALING_POLICY]");
+        AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+            "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
     AutoscalingPolicy expectedResponse =
         AutoscalingPolicy.newBuilder().setId(id).setName(name.toString()).build();
     mockAutoscalingPolicyService.addResponse(expectedResponse);
@@ -140,7 +141,8 @@ public class AutoscalingPolicyServiceClientTest {
   public void updateAutoscalingPolicyTest() {
     String id = "id3355";
     AutoscalingPolicyName name =
-        AutoscalingPolicyName.of("[PROJECT]", "[REGION]", "[AUTOSCALING_POLICY]");
+        AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+            "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
     AutoscalingPolicy expectedResponse =
         AutoscalingPolicy.newBuilder().setId(id).setName(name.toString()).build();
     mockAutoscalingPolicyService.addResponse(expectedResponse);
@@ -183,13 +185,15 @@ public class AutoscalingPolicyServiceClientTest {
   public void getAutoscalingPolicyTest() {
     String id = "id3355";
     AutoscalingPolicyName name2 =
-        AutoscalingPolicyName.of("[PROJECT]", "[REGION]", "[AUTOSCALING_POLICY]");
+        AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+            "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
     AutoscalingPolicy expectedResponse =
         AutoscalingPolicy.newBuilder().setId(id).setName(name2.toString()).build();
     mockAutoscalingPolicyService.addResponse(expectedResponse);
 
     AutoscalingPolicyName name =
-        AutoscalingPolicyName.of("[PROJECT]", "[REGION]", "[AUTOSCALING_POLICY]");
+        AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+            "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
 
     AutoscalingPolicy actualResponse = client.getAutoscalingPolicy(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -213,7 +217,8 @@ public class AutoscalingPolicyServiceClientTest {
 
     try {
       AutoscalingPolicyName name =
-          AutoscalingPolicyName.of("[PROJECT]", "[REGION]", "[AUTOSCALING_POLICY]");
+          AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+              "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
 
       client.getAutoscalingPolicy(name);
       Assert.fail("No exception raised");
@@ -278,7 +283,8 @@ public class AutoscalingPolicyServiceClientTest {
     mockAutoscalingPolicyService.addResponse(expectedResponse);
 
     AutoscalingPolicyName name =
-        AutoscalingPolicyName.of("[PROJECT]", "[REGION]", "[AUTOSCALING_POLICY]");
+        AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+            "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
 
     client.deleteAutoscalingPolicy(name);
 
@@ -302,7 +308,8 @@ public class AutoscalingPolicyServiceClientTest {
 
     try {
       AutoscalingPolicyName name =
-          AutoscalingPolicyName.of("[PROJECT]", "[REGION]", "[AUTOSCALING_POLICY]");
+          AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+              "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
 
       client.deleteAutoscalingPolicy(name);
       Assert.fail("No exception raised");

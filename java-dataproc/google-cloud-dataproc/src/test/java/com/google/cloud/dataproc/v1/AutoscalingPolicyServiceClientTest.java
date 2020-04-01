@@ -91,56 +91,13 @@ public class AutoscalingPolicyServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void createAutoscalingPolicyTest() {
-    String id = "id3355";
-    String name = "name3373707";
-    AutoscalingPolicy expectedResponse =
-        AutoscalingPolicy.newBuilder().setId(id).setName(name).build();
-    mockAutoscalingPolicyService.addResponse(expectedResponse);
-
-    String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
-    AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
-
-    AutoscalingPolicy actualResponse = client.createAutoscalingPolicy(formattedParent, policy);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAutoscalingPolicyService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateAutoscalingPolicyRequest actualRequest =
-        (CreateAutoscalingPolicyRequest) actualRequests.get(0);
-
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
-    Assert.assertEquals(policy, actualRequest.getPolicy());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createAutoscalingPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAutoscalingPolicyService.addException(exception);
-
-    try {
-      String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
-      AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
-
-      client.createAutoscalingPolicy(formattedParent, policy);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void updateAutoscalingPolicyTest() {
     String id = "id3355";
-    String name = "name3373707";
+    AutoscalingPolicyName name =
+        AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+            "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
     AutoscalingPolicy expectedResponse =
-        AutoscalingPolicy.newBuilder().setId(id).setName(name).build();
+        AutoscalingPolicy.newBuilder().setId(id).setName(name.toString()).build();
     mockAutoscalingPolicyService.addResponse(expectedResponse);
 
     AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
@@ -178,24 +135,74 @@ public class AutoscalingPolicyServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void getAutoscalingPolicyTest() {
+  public void createAutoscalingPolicyTest() {
     String id = "id3355";
-    String name2 = "name2-1052831874";
+    AutoscalingPolicyName name =
+        AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+            "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
     AutoscalingPolicy expectedResponse =
-        AutoscalingPolicy.newBuilder().setId(id).setName(name2).build();
+        AutoscalingPolicy.newBuilder().setId(id).setName(name.toString()).build();
     mockAutoscalingPolicyService.addResponse(expectedResponse);
 
-    String formattedName =
-        AutoscalingPolicyName.format("[PROJECT]", "[REGION]", "[AUTOSCALING_POLICY]");
+    RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+    AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
 
-    AutoscalingPolicy actualResponse = client.getAutoscalingPolicy(formattedName);
+    AutoscalingPolicy actualResponse = client.createAutoscalingPolicy(parent, policy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAutoscalingPolicyService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAutoscalingPolicyRequest actualRequest =
+        (CreateAutoscalingPolicyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, RegionName.parse(actualRequest.getParent()));
+    Assert.assertEquals(policy, actualRequest.getPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createAutoscalingPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAutoscalingPolicyService.addException(exception);
+
+    try {
+      RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+      AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
+
+      client.createAutoscalingPolicy(parent, policy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getAutoscalingPolicyTest() {
+    String id = "id3355";
+    AutoscalingPolicyName name2 =
+        AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+            "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
+    AutoscalingPolicy expectedResponse =
+        AutoscalingPolicy.newBuilder().setId(id).setName(name2.toString()).build();
+    mockAutoscalingPolicyService.addResponse(expectedResponse);
+
+    AutoscalingPolicyName name =
+        AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+            "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
+
+    AutoscalingPolicy actualResponse = client.getAutoscalingPolicy(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockAutoscalingPolicyService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetAutoscalingPolicyRequest actualRequest = (GetAutoscalingPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, AutoscalingPolicyName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -209,10 +216,11 @@ public class AutoscalingPolicyServiceClientTest {
     mockAutoscalingPolicyService.addException(exception);
 
     try {
-      String formattedName =
-          AutoscalingPolicyName.format("[PROJECT]", "[REGION]", "[AUTOSCALING_POLICY]");
+      AutoscalingPolicyName name =
+          AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+              "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
 
-      client.getAutoscalingPolicy(formattedName);
+      client.getAutoscalingPolicy(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -232,10 +240,9 @@ public class AutoscalingPolicyServiceClientTest {
             .build();
     mockAutoscalingPolicyService.addResponse(expectedResponse);
 
-    String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+    RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
 
-    ListAutoscalingPoliciesPagedResponse pagedListResponse =
-        client.listAutoscalingPolicies(formattedParent);
+    ListAutoscalingPoliciesPagedResponse pagedListResponse = client.listAutoscalingPolicies(parent);
 
     List<AutoscalingPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -246,7 +253,7 @@ public class AutoscalingPolicyServiceClientTest {
     ListAutoscalingPoliciesRequest actualRequest =
         (ListAutoscalingPoliciesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, RegionName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -260,9 +267,9 @@ public class AutoscalingPolicyServiceClientTest {
     mockAutoscalingPolicyService.addException(exception);
 
     try {
-      String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+      RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
 
-      client.listAutoscalingPolicies(formattedParent);
+      client.listAutoscalingPolicies(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -275,17 +282,18 @@ public class AutoscalingPolicyServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockAutoscalingPolicyService.addResponse(expectedResponse);
 
-    String formattedName =
-        AutoscalingPolicyName.format("[PROJECT]", "[REGION]", "[AUTOSCALING_POLICY]");
+    AutoscalingPolicyName name =
+        AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+            "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
 
-    client.deleteAutoscalingPolicy(formattedName);
+    client.deleteAutoscalingPolicy(name);
 
     List<AbstractMessage> actualRequests = mockAutoscalingPolicyService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteAutoscalingPolicyRequest actualRequest =
         (DeleteAutoscalingPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, AutoscalingPolicyName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -299,10 +307,11 @@ public class AutoscalingPolicyServiceClientTest {
     mockAutoscalingPolicyService.addException(exception);
 
     try {
-      String formattedName =
-          AutoscalingPolicyName.format("[PROJECT]", "[REGION]", "[AUTOSCALING_POLICY]");
+      AutoscalingPolicyName name =
+          AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+              "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
 
-      client.deleteAutoscalingPolicy(formattedName);
+      client.deleteAutoscalingPolicy(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

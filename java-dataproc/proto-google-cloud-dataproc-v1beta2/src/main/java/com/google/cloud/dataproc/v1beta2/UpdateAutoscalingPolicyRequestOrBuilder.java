@@ -31,7 +31,7 @@ public interface UpdateAutoscalingPolicyRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the policy field is set.
@@ -45,7 +45,7 @@ public interface UpdateAutoscalingPolicyRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The policy.
@@ -59,7 +59,7 @@ public interface UpdateAutoscalingPolicyRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.dataproc.v1beta2.AutoscalingPolicyOrBuilder getPolicyOrBuilder();

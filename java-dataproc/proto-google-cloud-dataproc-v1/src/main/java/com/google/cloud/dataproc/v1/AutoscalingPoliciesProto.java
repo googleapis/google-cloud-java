@@ -78,11 +78,11 @@ public final class AutoscalingPoliciesProto {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/dataproc/v1/autoscaling_p"
           + "olicies.proto\022\030google.cloud.dataproc.v1\032"
-          + "\034google/api/annotations.proto\032\037google/ap"
-          + "i/field_behavior.proto\032\031google/api/resou"
-          + "rce.proto\032\036google/protobuf/duration.prot"
-          + "o\032\033google/protobuf/empty.proto\032\027google/a"
-          + "pi/client.proto\"\250\004\n\021AutoscalingPolicy\022\n\n"
+          + "\034google/api/annotations.proto\032\027google/ap"
+          + "i/client.proto\032\037google/api/field_behavio"
+          + "r.proto\032\031google/api/resource.proto\032\036goog"
+          + "le/protobuf/duration.proto\032\033google/proto"
+          + "buf/empty.proto\"\250\004\n\021AutoscalingPolicy\022\n\n"
           + "\002id\030\001 \001(\t\022\021\n\004name\030\002 \001(\tB\003\340A\003\022S\n\017basic_al"
           + "gorithm\030\003 \001(\01323.google.cloud.dataproc.v1"
           + ".BasicAutoscalingAlgorithmB\003\340A\002H\000\022Z\n\rwor"
@@ -128,58 +128,59 @@ public final class AutoscalingPoliciesProto {
           + "ListAutoscalingPoliciesResponse\022B\n\010polic"
           + "ies\030\001 \003(\0132+.google.cloud.dataproc.v1.Aut"
           + "oscalingPolicyB\003\340A\003\022\034\n\017next_page_token\030\002"
-          + " \001(\tB\003\340A\0032\375\n\n\030AutoscalingPolicyService\022\214"
+          + " \001(\tB\003\340A\0032\256\013\n\030AutoscalingPolicyService\022\234"
           + "\002\n\027CreateAutoscalingPolicy\0228.google.clou"
           + "d.dataproc.v1.CreateAutoscalingPolicyReq"
           + "uest\032+.google.cloud.dataproc.v1.Autoscal"
-          + "ingPolicy\"\211\001\202\323\344\223\002\202\001\"7/v1/{parent=project"
+          + "ingPolicy\"\231\001\202\323\344\223\002\202\001\"7/v1/{parent=project"
           + "s/*/locations/*}/autoscalingPolicies:\006po"
           + "licyZ?\"5/v1/{parent=projects/*/regions/*"
-          + "}/autoscalingPolicies:\006policy\022\232\002\n\027Update"
-          + "AutoscalingPolicy\0228.google.cloud.datapro"
-          + "c.v1.UpdateAutoscalingPolicyRequest\032+.go"
-          + "ogle.cloud.dataproc.v1.AutoscalingPolicy"
-          + "\"\227\001\202\323\344\223\002\220\001\032>/v1/{policy.name=projects/*/"
-          + "locations/*/autoscalingPolicies/*}:\006poli"
-          + "cyZF\032</v1/{policy.name=projects/*/region"
-          + "s/*/autoscalingPolicies/*}:\006policy\022\364\001\n\024G"
-          + "etAutoscalingPolicy\0225.google.cloud.datap"
-          + "roc.v1.GetAutoscalingPolicyRequest\032+.goo"
-          + "gle.cloud.dataproc.v1.AutoscalingPolicy\""
-          + "x\202\323\344\223\002r\0227/v1/{name=projects/*/locations/"
-          + "*/autoscalingPolicies/*}Z7\0225/v1/{name=pr"
-          + "ojects/*/regions/*/autoscalingPolicies/*"
-          + "}\022\210\002\n\027ListAutoscalingPolicies\0228.google.c"
-          + "loud.dataproc.v1.ListAutoscalingPolicies"
-          + "Request\0329.google.cloud.dataproc.v1.ListA"
-          + "utoscalingPoliciesResponse\"x\202\323\344\223\002r\0227/v1/"
-          + "{parent=projects/*/locations/*}/autoscal"
-          + "ingPoliciesZ7\0225/v1/{parent=projects/*/re"
-          + "gions/*}/autoscalingPolicies\022\345\001\n\027DeleteA"
-          + "utoscalingPolicy\0228.google.cloud.dataproc"
-          + ".v1.DeleteAutoscalingPolicyRequest\032\026.goo"
-          + "gle.protobuf.Empty\"x\202\323\344\223\002r*7/v1/{name=pr"
-          + "ojects/*/locations/*/autoscalingPolicies"
-          + "/*}Z7*5/v1/{name=projects/*/regions/*/au"
-          + "toscalingPolicies/*}\032K\312A\027dataproc.google"
-          + "apis.com\322A.https://www.googleapis.com/au"
-          + "th/cloud-platformB\304\001\n\034com.google.cloud.d"
-          + "ataproc.v1B\030AutoscalingPoliciesProtoP\001Z@"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/dataproc/v1;dataproc\352AE\n\036dataproc.go"
-          + "ogleapis.com/Region\022#projects/{project}/"
-          + "regions/{region}b\006proto3"
+          + "}/autoscalingPolicies:\006policy\332A\rparent,p"
+          + "olicy\022\243\002\n\027UpdateAutoscalingPolicy\0228.goog"
+          + "le.cloud.dataproc.v1.UpdateAutoscalingPo"
+          + "licyRequest\032+.google.cloud.dataproc.v1.A"
+          + "utoscalingPolicy\"\240\001\202\323\344\223\002\220\001\032>/v1/{policy."
+          + "name=projects/*/locations/*/autoscalingP"
+          + "olicies/*}:\006policyZF\032</v1/{policy.name=p"
+          + "rojects/*/regions/*/autoscalingPolicies/"
+          + "*}:\006policy\332A\006policy\022\373\001\n\024GetAutoscalingPo"
+          + "licy\0225.google.cloud.dataproc.v1.GetAutos"
+          + "calingPolicyRequest\032+.google.cloud.datap"
+          + "roc.v1.AutoscalingPolicy\"\177\202\323\344\223\002r\0227/v1/{n"
+          + "ame=projects/*/locations/*/autoscalingPo"
+          + "licies/*}Z7\0225/v1/{name=projects/*/region"
+          + "s/*/autoscalingPolicies/*}\332A\004name\022\222\002\n\027Li"
+          + "stAutoscalingPolicies\0228.google.cloud.dat"
+          + "aproc.v1.ListAutoscalingPoliciesRequest\032"
+          + "9.google.cloud.dataproc.v1.ListAutoscali"
+          + "ngPoliciesResponse\"\201\001\202\323\344\223\002r\0227/v1/{parent"
+          + "=projects/*/locations/*}/autoscalingPoli"
+          + "ciesZ7\0225/v1/{parent=projects/*/regions/*"
+          + "}/autoscalingPolicies\332A\006parent\022\354\001\n\027Delet"
+          + "eAutoscalingPolicy\0228.google.cloud.datapr"
+          + "oc.v1.DeleteAutoscalingPolicyRequest\032\026.g"
+          + "oogle.protobuf.Empty\"\177\202\323\344\223\002r*7/v1/{name="
+          + "projects/*/locations/*/autoscalingPolici"
+          + "es/*}Z7*5/v1/{name=projects/*/regions/*/"
+          + "autoscalingPolicies/*}\332A\004name\032K\312A\027datapr"
+          + "oc.googleapis.com\322A.https://www.googleap"
+          + "is.com/auth/cloud-platformB\304\001\n\034com.googl"
+          + "e.cloud.dataproc.v1B\030AutoscalingPolicies"
+          + "ProtoP\001Z@google.golang.org/genproto/goog"
+          + "leapis/cloud/dataproc/v1;dataproc\352AE\n\036da"
+          + "taproc.googleapis.com/Region\022#projects/{"
+          + "project}/regions/{region}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_dataproc_v1_AutoscalingPolicy_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -270,6 +271,7 @@ public final class AutoscalingPoliciesProto {
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceDefinition);
@@ -277,11 +279,11 @@ public final class AutoscalingPoliciesProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

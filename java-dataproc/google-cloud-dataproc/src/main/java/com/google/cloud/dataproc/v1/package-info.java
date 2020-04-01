@@ -28,9 +28,8 @@
  * <pre>
  * <code>
  * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
- *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
  *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
- *   AutoscalingPolicy response = autoscalingPolicyServiceClient.createAutoscalingPolicy(formattedParent, policy);
+ *   AutoscalingPolicy response = autoscalingPolicyServiceClient.updateAutoscalingPolicy(policy);
  * }
  * </code>
  * </pre>

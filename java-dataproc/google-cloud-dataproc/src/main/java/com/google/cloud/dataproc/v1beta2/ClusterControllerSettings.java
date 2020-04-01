@@ -128,7 +128,7 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
   /** Returns the object with the settings used for calls to diagnoseCluster. */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+  public OperationCallSettings<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
       diagnoseClusterOperationSettings() {
     return ((ClusterControllerStubSettings) getStubSettings()).diagnoseClusterOperationSettings();
   }
@@ -289,7 +289,7 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
     /** Returns the builder for the settings used for calls to diagnoseCluster. */
     @BetaApi(
         "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+    public OperationCallSettings.Builder<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
         diagnoseClusterOperationSettings() {
       return getStubSettingsBuilder().diagnoseClusterOperationSettings();
     }
