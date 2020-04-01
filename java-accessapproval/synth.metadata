@@ -1,13 +1,12 @@
 {
-  "updateTime": "2020-03-25T21:40:04.564473Z",
+  "updateTime": "2020-04-01T21:39:36.238486Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
         "sha": "1b0fff5f2ec6dc4a9443d9b50e70e9c94c30c45b",
-        "internalRef": "302928106",
-        "log": "1b0fff5f2ec6dc4a9443d9b50e70e9c94c30c45b\ndocs: remove an internal lint declaration\n\nPiperOrigin-RevId: 302928106\n\n2be23f3f3036a6f7ce0844def3d2d3da74e5d415\nfix(google/maps): Add post-processing rules for Google Maps APIs\n\nPiperOrigin-RevId: 302925222\n\nfd83ab212176a1042e8d45ea90766b3bf59ac679\nfix: migrate osconfig/agentendpoint/v1 go_gapic_library target to microgen impl\n\nPiperOrigin-RevId: 302913609\n\n"
+        "internalRef": "302928106"
       }
     },
     {
