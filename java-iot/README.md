@@ -1,6 +1,6 @@
-# Google Google Cloud Internet of Things (IoT) Core Client for Java
+# Google Cloud Internet of Things (IoT) Core Client for Java
 
-Java idiomatic client for [Google Cloud Internet of Things (IoT) Core][product-docs].
+Java idiomatic client for [Cloud Internet of Things (IoT) Core][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -63,8 +63,8 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Internet of Things (IoT) Core [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Google Cloud Internet of Things (IoT) Core.
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Internet of Things (IoT) Core [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Cloud Internet of Things (IoT) Core.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -74,13 +74,13 @@ You will need to [enable billing][enable-billing] to use Google Google Cloud Int
 You'll need to obtain the `google-cloud-iot` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-iot` as a dependency in your code.
 
-## About Google Cloud Internet of Things (IoT) Core
+## About Cloud Internet of Things (IoT) Core
 
 
-[Google Cloud Internet of Things (IoT) Core][product-docs] is a complete set of tools to connect, process, store, and analyze data both at the edge and in the cloud. The platform consists of scalable, fully-managed cloud services; an integrated software stack for edge/on-premises computing with machine learning capabilities for all your IoT needs.
+[Cloud Internet of Things (IoT) Core][product-docs] is a complete set of tools to connect, process, store, and analyze data both at the edge and in the cloud. The platform consists of scalable, fully-managed cloud services; an integrated software stack for edge/on-premises computing with machine learning capabilities for all your IoT needs.
 
-See the [Google Cloud Internet of Things (IoT) Core client library docs][javadocs] to learn how to
-use this Google Cloud Internet of Things (IoT) Core Client Library.
+See the [Cloud Internet of Things (IoT) Core client library docs][javadocs] to learn how to
+use this Cloud Internet of Things (IoT) Core Client Library.
 
 
 
@@ -93,7 +93,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud Internet of Things (IoT) Core uses gRPC for the transport layer.
+Cloud Internet of Things (IoT) Core uses gRPC for the transport layer.
 
 ## Java Versions
 
