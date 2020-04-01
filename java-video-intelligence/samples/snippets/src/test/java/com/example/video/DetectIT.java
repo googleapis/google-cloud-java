@@ -79,17 +79,11 @@ public class DetectIT {
 
   @Test
   public void testTrackObjects() throws Exception {
-    VideoAnnotationResults result = TrackObjects.trackObjects("resources/cat.mp4");
+    TrackObjects.trackObjects("resources/googlework_short.mp4");
 
-    boolean textExists = false;
-    for (ObjectTrackingAnnotation objectTrackingAnnotation : result.getObjectAnnotationsList()) {
-      if (objectTrackingAnnotation.getEntity().getDescription().toUpperCase().contains("CAT")) {
-        textExists = true;
-        break;
-      }
-    }
+    String got = bout.toString();
 
-    assertThat(textExists).isTrue();
+    assertThat(got).contains("Entity id");
   }
 
   @Test
