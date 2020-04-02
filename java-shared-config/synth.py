@@ -21,5 +21,6 @@ AUTOSYNTH_MULTIPLE_COMMITS = True
 java.common_templates(excludes=[
   "README.md",
   ".github/release-please.yml",
+  "samples/*"
 ])
 
