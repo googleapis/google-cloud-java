@@ -107,12 +107,15 @@ public final class PredictionServiceOuterClass {
           + "*/locations/*/catalogs/*/eventStores/*/p"
           + "lacements/*}:predict:\001*\032W\312A#recommendati"
           + "onengine.googleapis.com\322A.https://www.go"
-          + "ogleapis.com/auth/cloud-platformB\304\001\n-com"
+          + "ogleapis.com/auth/cloud-platformB\237\002\n-com"
           + ".google.cloud.recommendationengine.v1bet"
           + "a1P\001Z]google.golang.org/genproto/googlea"
           + "pis/cloud/recommendationengine/v1beta1;r"
           + "ecommendationengine\242\002\005RECAI\252\002)Google.Clo"
-          + "ud.RecommendationEngine.V1Beta1b\006proto3"
+          + "ud.RecommendationEngine.V1Beta1\312\002)Google"
+          + "\\Cloud\\RecommendationEngine\\V1beta1\352\002,Go"
+          + "ogle::Cloud::RecommendationEngine::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

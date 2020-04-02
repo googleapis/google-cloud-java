@@ -101,12 +101,15 @@ public final class PredictionApikeyRegistryService {
           + "s/*/catalogs/*/eventStores/*/predictionA"
           + "piKeyRegistrations/*}\032W\312A#recommendation"
           + "engine.googleapis.com\322A.https://www.goog"
-          + "leapis.com/auth/cloud-platformB\304\001\n-com.g"
+          + "leapis.com/auth/cloud-platformB\237\002\n-com.g"
           + "oogle.cloud.recommendationengine.v1beta1"
           + "P\001Z]google.golang.org/genproto/googleapi"
           + "s/cloud/recommendationengine/v1beta1;rec"
           + "ommendationengine\242\002\005RECAI\252\002)Google.Cloud"
-          + ".RecommendationEngine.V1Beta1b\006proto3"
+          + ".RecommendationEngine.V1Beta1\312\002)Google\\C"
+          + "loud\\RecommendationEngine\\V1beta1\352\002,Goog"
+          + "le::Cloud::RecommendationEngine::V1beta1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

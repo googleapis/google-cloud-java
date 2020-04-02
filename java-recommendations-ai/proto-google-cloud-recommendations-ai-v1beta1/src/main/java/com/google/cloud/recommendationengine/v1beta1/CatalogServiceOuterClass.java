@@ -126,12 +126,15 @@ public final class CatalogServiceOuterClass {
           + "e\0228google.cloud.recommendationengine.v1b"
           + "eta1.ImportMetadata\032W\312A#recommendationen"
           + "gine.googleapis.com\322A.https://www.google"
-          + "apis.com/auth/cloud-platformB\304\001\n-com.goo"
+          + "apis.com/auth/cloud-platformB\237\002\n-com.goo"
           + "gle.cloud.recommendationengine.v1beta1P\001"
           + "Z]google.golang.org/genproto/googleapis/"
           + "cloud/recommendationengine/v1beta1;recom"
           + "mendationengine\242\002\005RECAI\252\002)Google.Cloud.R"
-          + "ecommendationEngine.V1Beta1b\006proto3"
+          + "ecommendationEngine.V1Beta1\312\002)Google\\Clo"
+          + "ud\\RecommendationEngine\\V1beta1\352\002,Google"
+          + "::Cloud::RecommendationEngine::V1beta1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

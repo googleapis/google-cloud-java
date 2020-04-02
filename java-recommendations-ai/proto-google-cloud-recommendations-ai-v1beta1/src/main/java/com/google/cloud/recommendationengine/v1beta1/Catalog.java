@@ -106,12 +106,15 @@ public final class Catalog {
           + "\000\022\014\n\010IN_STOCK\020\000\022\020\n\014OUT_OF_STOCK\020\001\022\014\n\010PRE"
           + "ORDER\020\002\022\r\n\tBACKORDER\020\003\032\002\020\001B\007\n\005price\"B\n\005I"
           + "mage\022\020\n\003uri\030\001 \001(\tB\003\340A\002\022\023\n\006height\030\002 \001(\005B\003"
-          + "\340A\001\022\022\n\005width\030\003 \001(\005B\003\340A\001B\304\001\n-com.google.c"
+          + "\340A\001\022\022\n\005width\030\003 \001(\005B\003\340A\001B\237\002\n-com.google.c"
           + "loud.recommendationengine.v1beta1P\001Z]goo"
           + "gle.golang.org/genproto/googleapis/cloud"
           + "/recommendationengine/v1beta1;recommenda"
           + "tionengine\242\002\005RECAI\252\002)Google.Cloud.Recomm"
-          + "endationEngine.V1Beta1b\006proto3"
+          + "endationEngine.V1Beta1\312\002)Google\\Cloud\\Re"
+          + "commendationEngine\\V1beta1\352\002,Google::Clo"
+          + "ud::RecommendationEngine::V1beta1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

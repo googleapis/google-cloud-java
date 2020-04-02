@@ -132,12 +132,14 @@ public final class UserEventServiceOuterClass {
           + ".recommendationengine.v1beta1.ImportMeta"
           + "data\032W\312A#recommendationengine.googleapis"
           + ".com\322A.https://www.googleapis.com/auth/c"
-          + "loud-platformB\304\001\n-com.google.cloud.recom"
+          + "loud-platformB\237\002\n-com.google.cloud.recom"
           + "mendationengine.v1beta1P\001Z]google.golang"
           + ".org/genproto/googleapis/cloud/recommend"
           + "ationengine/v1beta1;recommendationengine"
           + "\242\002\005RECAI\252\002)Google.Cloud.RecommendationEn"
-          + "gine.V1Beta1b\006proto3"
+          + "gine.V1Beta1\312\002)Google\\Cloud\\Recommendati"
+          + "onEngine\\V1beta1\352\002,Google::Cloud::Recomm"
+          + "endationEngine::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -72,12 +72,15 @@ public final class Common {
           + "atureMap.StringList:\0028\001\032y\n\026NumericalFeat"
           + "uresEntry\022\013\n\003key\030\001 \001(\t\022N\n\005value\030\002 \001(\0132?."
           + "google.cloud.recommendationengine.v1beta"
-          + "1.FeatureMap.FloatList:\0028\001B\304\001\n-com.googl"
+          + "1.FeatureMap.FloatList:\0028\001B\237\002\n-com.googl"
           + "e.cloud.recommendationengine.v1beta1P\001Z]"
           + "google.golang.org/genproto/googleapis/cl"
           + "oud/recommendationengine/v1beta1;recomme"
           + "ndationengine\242\002\005RECAI\252\002)Google.Cloud.Rec"
-          + "ommendationEngine.V1Beta1b\006proto3"
+          + "ommendationEngine.V1Beta1\312\002)Google\\Cloud"
+          + "\\RecommendationEngine\\V1beta1\352\002,Google::"
+          + "Cloud::RecommendationEngine::V1beta1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

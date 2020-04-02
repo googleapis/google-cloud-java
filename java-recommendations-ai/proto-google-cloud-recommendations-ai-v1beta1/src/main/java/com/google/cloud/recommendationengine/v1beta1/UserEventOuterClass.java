@@ -126,12 +126,14 @@ public final class UserEventOuterClass {
           + "\001(\005B\003\340A\001\022\037\n\022available_quantity\030\007 \001(\005B\003\340A"
           + "\001\022S\n\017item_attributes\030\010 \001(\01325.google.clou"
           + "d.recommendationengine.v1beta1.FeatureMa"
-          + "pB\003\340A\001B\304\001\n-com.google.cloud.recommendati"
+          + "pB\003\340A\001B\237\002\n-com.google.cloud.recommendati"
           + "onengine.v1beta1P\001Z]google.golang.org/ge"
           + "nproto/googleapis/cloud/recommendationen"
           + "gine/v1beta1;recommendationengine\242\002\005RECA"
           + "I\252\002)Google.Cloud.RecommendationEngine.V1"
-          + "Beta1b\006proto3"
+          + "Beta1\312\002)Google\\Cloud\\RecommendationEngin"
+          + "e\\V1beta1\352\002,Google::Cloud::Recommendatio"
+          + "nEngine::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

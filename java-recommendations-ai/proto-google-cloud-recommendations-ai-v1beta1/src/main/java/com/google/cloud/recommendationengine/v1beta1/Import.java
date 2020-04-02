@@ -133,12 +133,15 @@ public final class Import {
           + "gle.cloud.recommendationengine.v1beta1.U"
           + "serEventImportSummary\"T\n\026UserEventImport"
           + "Summary\022\033\n\023joined_events_count\030\001 \001(\003\022\035\n\025"
-          + "unjoined_events_count\030\002 \001(\003B\304\001\n-com.goog"
+          + "unjoined_events_count\030\002 \001(\003B\237\002\n-com.goog"
           + "le.cloud.recommendationengine.v1beta1P\001Z"
           + "]google.golang.org/genproto/googleapis/c"
           + "loud/recommendationengine/v1beta1;recomm"
           + "endationengine\242\002\005RECAI\252\002)Google.Cloud.Re"
-          + "commendationEngine.V1Beta1b\006proto3"
+          + "commendationEngine.V1Beta1\312\002)Google\\Clou"
+          + "d\\RecommendationEngine\\V1beta1\352\002,Google:"
+          + ":Cloud::RecommendationEngine::V1beta1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
