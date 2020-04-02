@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.104.0](https://www.github.com/googleapis/java-pubsub/compare/v1.103.1...v1.104.0) (2020-04-02)
+
+
+### Features
+
+* Add flow control support to publisher ([#119](https://www.github.com/googleapis/java-pubsub/issues/119)) ([fdd9434](https://www.github.com/googleapis/java-pubsub/commit/fdd943433cface4bc6634f74aa12afa6e471f3a3))
+* add TopicName ([#113](https://www.github.com/googleapis/java-pubsub/issues/113)) ([4558c34](https://www.github.com/googleapis/java-pubsub/commit/4558c3430901cdaec12a43e06ea4fafaa01c08e0))
+
+
+### Bug Fixes
+
+* Re-generated  to pick up changes in the API or client library generator. ([#104](https://www.github.com/googleapis/java-pubsub/issues/104)) ([0e366c3](https://www.github.com/googleapis/java-pubsub/commit/0e366c35580116fcd6aa40caadedd95be07bdd87))
+
+
+### Dependencies
+
+* update core dependencies ([#105](https://www.github.com/googleapis/java-pubsub/issues/105)) ([5639f63](https://www.github.com/googleapis/java-pubsub/commit/5639f6321e1506fdf803f5de58f2c7fdf5afb448))
+* update core dependencies to v1.55.0 ([#122](https://www.github.com/googleapis/java-pubsub/issues/122)) ([3ea1202](https://www.github.com/googleapis/java-pubsub/commit/3ea1202dbe13b60cfdc14c2855e878e190a52199))
+* update dependency com.google.api:api-common to v1.9.0 ([#121](https://www.github.com/googleapis/java-pubsub/issues/121)) ([30a1dee](https://www.github.com/googleapis/java-pubsub/commit/30a1deecbecf63d1629ae93407658865518febce))
+* update dependency org.threeten:threetenbp to v1.4.2 ([#116](https://www.github.com/googleapis/java-pubsub/issues/116)) ([e7c007b](https://www.github.com/googleapis/java-pubsub/commit/e7c007b917618e75f9c8fecd2475f31c7eba0817))
+* update opencensus.version to v0.26.0 ([#115](https://www.github.com/googleapis/java-pubsub/issues/115)) ([26aec5d](https://www.github.com/googleapis/java-pubsub/commit/26aec5d7ee45bec5b39b6cbe67122a6e5944268e))
+
 ### [1.103.1](https://www.github.com/googleapis/java-pubsub/compare/v1.103.0...v1.103.1) (2020-03-03)
 
 
