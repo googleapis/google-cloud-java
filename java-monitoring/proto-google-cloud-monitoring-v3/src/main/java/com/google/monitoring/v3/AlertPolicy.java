@@ -1533,7 +1533,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A condition that uses the time series query language format to define
+     * A condition that uses the Monitoring Query Language to define
      * alerts.
      * If set, no other conditions can be present.
      * </pre>
@@ -1549,7 +1549,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A condition that uses the time series query language format to define
+     * A condition that uses the Monitoring Query Language to define
      * alerts.
      * If set, no other conditions can be present.
      * </pre>
@@ -1566,7 +1566,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A condition that uses the time series query language format to define
+     * A condition that uses the Monitoring Query Language to define
      * alerts.
      * If set, no other conditions can be present.
      * </pre>
@@ -8530,9 +8530,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A query in the time series query language format that generates time
-       * series indicating points in time that the condition should be
-       * considered active.
+       * Monitoring Query Language query that generates time series data and
+       * describes a condition for alerting on that data.
        * </pre>
        *
        * <code>string query = 1;</code>
@@ -8544,9 +8543,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A query in the time series query language format that generates time
-       * series indicating points in time that the condition should be
-       * considered active.
+       * Monitoring Query Language query that generates time series data and
+       * describes a condition for alerting on that data.
        * </pre>
        *
        * <code>string query = 1;</code>
@@ -8586,8 +8584,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A condition type that allows alert policies to be defined using the
-     * time series query language.
+     * A condition type that allows alert policies to be defined using
+     * Monitoring Query Language.
      * </pre>
      *
      * Protobuf type {@code
@@ -8696,9 +8694,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A query in the time series query language format that generates time
-       * series indicating points in time that the condition should be
-       * considered active.
+       * Monitoring Query Language query that generates time series data and
+       * describes a condition for alerting on that data.
        * </pre>
        *
        * <code>string query = 1;</code>
@@ -8720,9 +8717,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A query in the time series query language format that generates time
-       * series indicating points in time that the condition should be
-       * considered active.
+       * Monitoring Query Language query that generates time series data and
+       * describes a condition for alerting on that data.
        * </pre>
        *
        * <code>string query = 1;</code>
@@ -8975,8 +8971,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition type that allows alert policies to be defined using the
-       * time series query language.
+       * A condition type that allows alert policies to be defined using
+       * Monitoring Query Language.
        * </pre>
        *
        * Protobuf type {@code
@@ -9164,9 +9160,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A query in the time series query language format that generates time
-         * series indicating points in time that the condition should be
-         * considered active.
+         * Monitoring Query Language query that generates time series data and
+         * describes a condition for alerting on that data.
          * </pre>
          *
          * <code>string query = 1;</code>
@@ -9188,9 +9183,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A query in the time series query language format that generates time
-         * series indicating points in time that the condition should be
-         * considered active.
+         * Monitoring Query Language query that generates time series data and
+         * describes a condition for alerting on that data.
          * </pre>
          *
          * <code>string query = 1;</code>
@@ -9212,9 +9206,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A query in the time series query language format that generates time
-         * series indicating points in time that the condition should be
-         * considered active.
+         * Monitoring Query Language query that generates time series data and
+         * describes a condition for alerting on that data.
          * </pre>
          *
          * <code>string query = 1;</code>
@@ -9235,9 +9228,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A query in the time series query language format that generates time
-         * series indicating points in time that the condition should be
-         * considered active.
+         * Monitoring Query Language query that generates time series data and
+         * describes a condition for alerting on that data.
          * </pre>
          *
          * <code>string query = 1;</code>
@@ -9254,9 +9246,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A query in the time series query language format that generates time
-         * series indicating points in time that the condition should be
-         * considered active.
+         * Monitoring Query Language query that generates time series data and
+         * describes a condition for alerting on that data.
          * </pre>
          *
          * <code>string query = 1;</code>
@@ -9738,7 +9729,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A condition that uses the time series query language format to define
+     * A condition that uses the Monitoring Query Language to define
      * alerts.
      * If set, no other conditions can be present.
      * </pre>
@@ -9756,7 +9747,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A condition that uses the time series query language format to define
+     * A condition that uses the Monitoring Query Language to define
      * alerts.
      * If set, no other conditions can be present.
      * </pre>
@@ -9780,7 +9771,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A condition that uses the time series query language format to define
+     * A condition that uses the Monitoring Query Language to define
      * alerts.
      * If set, no other conditions can be present.
      * </pre>
@@ -11044,7 +11035,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition that uses the time series query language format to define
+       * A condition that uses the Monitoring Query Language to define
        * alerts.
        * If set, no other conditions can be present.
        * </pre>
@@ -11062,7 +11053,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition that uses the time series query language format to define
+       * A condition that uses the Monitoring Query Language to define
        * alerts.
        * If set, no other conditions can be present.
        * </pre>
@@ -11094,7 +11085,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition that uses the time series query language format to define
+       * A condition that uses the Monitoring Query Language to define
        * alerts.
        * If set, no other conditions can be present.
        * </pre>
@@ -11121,7 +11112,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition that uses the time series query language format to define
+       * A condition that uses the Monitoring Query Language to define
        * alerts.
        * If set, no other conditions can be present.
        * </pre>
@@ -11146,7 +11137,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition that uses the time series query language format to define
+       * A condition that uses the Monitoring Query Language to define
        * alerts.
        * If set, no other conditions can be present.
        * </pre>
@@ -11187,7 +11178,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition that uses the time series query language format to define
+       * A condition that uses the Monitoring Query Language to define
        * alerts.
        * If set, no other conditions can be present.
        * </pre>
@@ -11216,7 +11207,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition that uses the time series query language format to define
+       * A condition that uses the Monitoring Query Language to define
        * alerts.
        * If set, no other conditions can be present.
        * </pre>
@@ -11233,7 +11224,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition that uses the time series query language format to define
+       * A condition that uses the Monitoring Query Language to define
        * alerts.
        * If set, no other conditions can be present.
        * </pre>
@@ -11260,7 +11251,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition that uses the time series query language format to define
+       * A condition that uses the Monitoring Query Language to define
        * alerts.
        * If set, no other conditions can be present.
        * </pre>

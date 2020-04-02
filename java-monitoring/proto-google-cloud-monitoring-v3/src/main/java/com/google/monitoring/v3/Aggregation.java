@@ -43,8 +43,8 @@ package com.google.monitoring.v3;
  * 95% latency across the average of all tasks in a cluster". This
  * representative data can be more easily graphed and comprehended, and the
  * individual time series data is still available for later drilldown. For more
- * details, see [Aggregating Time
- * Series](https://cloud.google.com/monitoring/api/v3/metrics#aggregating_time_series).
+ * details, see [Filtering and
+ * aggregation](https://cloud.google.com/monitoring/api/v3/aggregation).
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.Aggregation}
@@ -1865,8 +1865,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * 95% latency across the average of all tasks in a cluster". This
    * representative data can be more easily graphed and comprehended, and the
    * individual time series data is still available for later drilldown. For more
-   * details, see [Aggregating Time
-   * Series](https://cloud.google.com/monitoring/api/v3/metrics#aggregating_time_series).
+   * details, see [Filtering and
+   * aggregation](https://cloud.google.com/monitoring/api/v3/aggregation).
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.Aggregation}

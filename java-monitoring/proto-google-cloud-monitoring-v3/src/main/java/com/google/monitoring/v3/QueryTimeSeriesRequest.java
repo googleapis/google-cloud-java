@@ -187,7 +187,7 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The query in the time series query language format. The default
+   * Required. The query in the monitoring query language format. The default
    * time zone is in UTC.
    * </pre>
    *
@@ -210,7 +210,7 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The query in the time series query language format. The default
+   * Required. The query in the monitoring query language format. The default
    * time zone is in UTC.
    * </pre>
    *
@@ -778,7 +778,7 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The query in the time series query language format. The default
+     * Required. The query in the monitoring query language format. The default
      * time zone is in UTC.
      * </pre>
      *
@@ -801,7 +801,7 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The query in the time series query language format. The default
+     * Required. The query in the monitoring query language format. The default
      * time zone is in UTC.
      * </pre>
      *
@@ -824,7 +824,7 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The query in the time series query language format. The default
+     * Required. The query in the monitoring query language format. The default
      * time zone is in UTC.
      * </pre>
      *
@@ -846,7 +846,7 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The query in the time series query language format. The default
+     * Required. The query in the monitoring query language format. The default
      * time zone is in UTC.
      * </pre>
      *
@@ -864,7 +864,7 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The query in the time series query language format. The default
+     * Required. The query in the monitoring query language format. The default
      * time zone is in UTC.
      * </pre>
      *
