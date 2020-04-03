@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-03-31T21:56:05.754039Z",
+  "updateTime": "2020-04-01T22:21:26.574855Z",
   "sources": [
     {
       "git": {
@@ -14,8 +14,7 @@
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
         "sha": "48a166ce9f6e2a88b10947341b37336fe9dd3478",
-        "internalRef": "303302813",
-        "log": "48a166ce9f6e2a88b10947341b37336fe9dd3478\nPush of PHP, C# and Ruby namespaces\n\nPiperOrigin-RevId: 303302813\n\n42f77489b300df2e27c84a7b65c4e8f04da20981\nThis is first release of the API protos and Bazel BUILD files for the Analytics Management API V1alpha.\n\nPiperOrigin-RevId: 303241805\n\n8bea81bfa461698981b3d3a488a95633d2f6e9ff\nchore: use latest protoc-java-resource-name-plugin in bazel WORKSPACE.\nnew commits:\n- fix: stop generating `parseList` and `toStringList` if a multi-pattern resource name has subclasses (#79)\n\ncommitter: @hzyi-google\nPiperOrigin-RevId: 303197602\n\nb14af92e565264675d6b12cd2c0ded6c94ddd7f8\nfix talent API incorrect placeholders in two resource name patterns.\ncommitter: @hzyi-google\n\nPiperOrigin-RevId: 303189497\n\n8e22db908ae09e1f7e2802c03b4563fd6b524e0e\nchore(google/maps): Update postprocessing script for Java.\n\n- Update root build.gradle to load local plugin\n- Change com.google.api.grpc group to com.google.maps\n\nPiperOrigin-RevId: 303176850\n\n65816afa71e588252b7119dc723592abe51ea106\nbazel: update gapic-generator-go to v0.12.5 and gapic-generator hash\n\nChanges to gapic-generator-go include:\n* feat: strip invalid link references in comments\n* chore: updating Go deps in bazel repositories\n\nChanges to gapic-generator include:\n* fix: bazel go build gen check for cloud in proto pkg name\n* Revert \"feat: allow static substitution for group name\"\n\nPiperOrigin-RevId: 303150338\n\n"
+        "internalRef": "303302813"
       }
     },
     {
