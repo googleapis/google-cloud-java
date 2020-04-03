@@ -1,0 +1,14 @@
+{
+  "name": "os-config",
+  "name_pretty": "OS Config API",
+  "product_documentation": "https://cloud.google.com/compute/docs/os-patch-management",
+  "api_description": "provides OS management tools that can be used for patch management, patch compliance, and configuration management on VM instances.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-os-config/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-os-config",
+  "repo_short": "java-os-config",
+  "distribution_name": "com.google.cloud:google-cloud-os-config",
+  "api_id": "os-config.googleapis.com"
+}
