@@ -1149,7 +1149,7 @@ public class ITComputeTest {
   public void getIamPolicyDiskTest() {
     Policy policy = diskClient.getIamPolicyDisk(PROJECT_ZONE_DISK_RESOURCE_NAME);
     assertThat(policy).isNotNull();
-    assertThat(policy.getVersion()).isEqualTo(1);
+    assertThat(policy.getEtag()).isEqualTo("ACAB");
   }
 
   @Test
@@ -1452,7 +1452,7 @@ public class ITComputeTest {
   public void getIamPolicyImageTest() {
     Policy policy = imageClient.getIamPolicyImage(IMAGE_RESOURCE_NAME);
     assertThat(policy).isNotNull();
-    assertThat(policy.getVersion()).isEqualTo(1);
+    assertThat(policy.getEtag()).isEqualTo("ACAB");
   }
 
   @Test
@@ -1966,7 +1966,7 @@ public class ITComputeTest {
     ProjectGlobalLicenseResourceName licenseResourceName =
         ProjectGlobalLicenseResourceName.of(DEFAULT_PROJECT, LICENSE);
     Policy policy = licenseClient.getIamPolicyLicense(licenseResourceName);
-    assertThat(policy.getVersion()).isEqualTo(1);
+    assertThat(policy).isNotNull();
     assertThat(policy.getEtag()).isEqualTo("ACAB");
   }
 
