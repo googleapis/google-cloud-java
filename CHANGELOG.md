@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.127.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.126.0...v0.127.0) (2020-04-03)
+
+
+### Features
+
+* create manual client for Write API ([#112](https://www.github.com/googleapis/java-bigquerystorage/issues/112)) ([98851e9](https://www.github.com/googleapis/java-bigquerystorage/commit/98851e96f7c20228cf888e4a847ac98f3da2e4b7))
+* proto converter library ([#100](https://www.github.com/googleapis/java-bigquerystorage/issues/100)) ([8fbb80e](https://www.github.com/googleapis/java-bigquerystorage/commit/8fbb80eccdfafe8ffd5ff24fe04132878d09d9ae))
+
+
+### Dependencies
+
+* update core dependencies ([#98](https://www.github.com/googleapis/java-bigquerystorage/issues/98)) ([0983575](https://www.github.com/googleapis/java-bigquerystorage/commit/09835752000a99f1cef113cc0808b0c7c907c190))
+* update core dependencies to v1.55.0 ([#127](https://www.github.com/googleapis/java-bigquerystorage/issues/127)) ([99cedf9](https://www.github.com/googleapis/java-bigquerystorage/commit/99cedf926a7b51f58dbec6539ecba350a5e5b845))
+* update dependency com.google.api:api-common to v1.9.0 ([#126](https://www.github.com/googleapis/java-bigquerystorage/issues/126)) ([27db090](https://www.github.com/googleapis/java-bigquerystorage/commit/27db090caf065c68f724f0457df47b83a186e91c))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.109.0 ([#114](https://www.github.com/googleapis/java-bigquerystorage/issues/114)) ([f5b48d8](https://www.github.com/googleapis/java-bigquerystorage/commit/f5b48d85f4561e31b01b614d4395c4c3b1d65ed4))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.110.0 ([#115](https://www.github.com/googleapis/java-bigquerystorage/issues/115)) ([9b20371](https://www.github.com/googleapis/java-bigquerystorage/commit/9b20371be163ed69cdb2260023afb9512102d4d5))
+* update dependency com.google.cloud:google-cloud-core to v1.93.3 ([#104](https://www.github.com/googleapis/java-bigquerystorage/issues/104)) ([519bd1e](https://www.github.com/googleapis/java-bigquerystorage/commit/519bd1ed7cfa7ba4bd4f370cf05b50e85256ac2a))
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.13 ([#123](https://www.github.com/googleapis/java-bigquerystorage/issues/123)) ([819dc70](https://www.github.com/googleapis/java-bigquerystorage/commit/819dc70ac8cc6688cea5276a2ec2af323b26d55d))
+* update dependency io.grpc:grpc-bom to v1.28.1 ([#132](https://www.github.com/googleapis/java-bigquerystorage/issues/132)) ([711c5c7](https://www.github.com/googleapis/java-bigquerystorage/commit/711c5c793e992098f96f7683f4e9643ee7424d81))
+* update dependency org.threeten:threetenbp to v1.4.2 ([#113](https://www.github.com/googleapis/java-bigquerystorage/issues/113)) ([09451c1](https://www.github.com/googleapis/java-bigquerystorage/commit/09451c11fbdc9ab1bb32f41a90970cab3c9589ab))
+
+
+### Documentation
+
+* **regen:** fix closing backtick in docs ([#109](https://www.github.com/googleapis/java-bigquerystorage/issues/109)) ([98f3cb2](https://www.github.com/googleapis/java-bigquerystorage/commit/98f3cb2065e8fdb3de263fa8288278e37d6160b3))
+
 ## [0.126.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.125.0...v0.126.0) (2020-03-09)
 
 
