@@ -243,7 +243,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * setting a hint will help get better results (although it will be a
    * significant hindrance if the hint is wrong). Text detection returns an
    * error if one or more of the specified languages is not one of the
-   * [supported languages](/vision/docs/languages).
+   * [supported languages](https://cloud.google.com/vision/docs/languages).
    * </pre>
    *
    * <code>repeated string language_hints = 2;</code>
@@ -264,7 +264,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * setting a hint will help get better results (although it will be a
    * significant hindrance if the hint is wrong). Text detection returns an
    * error if one or more of the specified languages is not one of the
-   * [supported languages](/vision/docs/languages).
+   * [supported languages](https://cloud.google.com/vision/docs/languages).
    * </pre>
    *
    * <code>repeated string language_hints = 2;</code>
@@ -285,7 +285,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * setting a hint will help get better results (although it will be a
    * significant hindrance if the hint is wrong). Text detection returns an
    * error if one or more of the specified languages is not one of the
-   * [supported languages](/vision/docs/languages).
+   * [supported languages](https://cloud.google.com/vision/docs/languages).
    * </pre>
    *
    * <code>repeated string language_hints = 2;</code>
@@ -307,7 +307,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * setting a hint will help get better results (although it will be a
    * significant hindrance if the hint is wrong). Text detection returns an
    * error if one or more of the specified languages is not one of the
-   * [supported languages](/vision/docs/languages).
+   * [supported languages](https://cloud.google.com/vision/docs/languages).
    * </pre>
    *
    * <code>repeated string language_hints = 2;</code>
@@ -1110,7 +1110,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * setting a hint will help get better results (although it will be a
      * significant hindrance if the hint is wrong). Text detection returns an
      * error if one or more of the specified languages is not one of the
-     * [supported languages](/vision/docs/languages).
+     * [supported languages](https://cloud.google.com/vision/docs/languages).
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
@@ -1131,7 +1131,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * setting a hint will help get better results (although it will be a
      * significant hindrance if the hint is wrong). Text detection returns an
      * error if one or more of the specified languages is not one of the
-     * [supported languages](/vision/docs/languages).
+     * [supported languages](https://cloud.google.com/vision/docs/languages).
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
@@ -1152,7 +1152,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * setting a hint will help get better results (although it will be a
      * significant hindrance if the hint is wrong). Text detection returns an
      * error if one or more of the specified languages is not one of the
-     * [supported languages](/vision/docs/languages).
+     * [supported languages](https://cloud.google.com/vision/docs/languages).
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
@@ -1174,7 +1174,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * setting a hint will help get better results (although it will be a
      * significant hindrance if the hint is wrong). Text detection returns an
      * error if one or more of the specified languages is not one of the
-     * [supported languages](/vision/docs/languages).
+     * [supported languages](https://cloud.google.com/vision/docs/languages).
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
@@ -1196,7 +1196,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * setting a hint will help get better results (although it will be a
      * significant hindrance if the hint is wrong). Text detection returns an
      * error if one or more of the specified languages is not one of the
-     * [supported languages](/vision/docs/languages).
+     * [supported languages](https://cloud.google.com/vision/docs/languages).
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
@@ -1225,7 +1225,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * setting a hint will help get better results (although it will be a
      * significant hindrance if the hint is wrong). Text detection returns an
      * error if one or more of the specified languages is not one of the
-     * [supported languages](/vision/docs/languages).
+     * [supported languages](https://cloud.google.com/vision/docs/languages).
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
@@ -1253,7 +1253,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * setting a hint will help get better results (although it will be a
      * significant hindrance if the hint is wrong). Text detection returns an
      * error if one or more of the specified languages is not one of the
-     * [supported languages](/vision/docs/languages).
+     * [supported languages](https://cloud.google.com/vision/docs/languages).
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
@@ -1278,7 +1278,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * setting a hint will help get better results (although it will be a
      * significant hindrance if the hint is wrong). Text detection returns an
      * error if one or more of the specified languages is not one of the
-     * [supported languages](/vision/docs/languages).
+     * [supported languages](https://cloud.google.com/vision/docs/languages).
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
@@ -1302,7 +1302,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * setting a hint will help get better results (although it will be a
      * significant hindrance if the hint is wrong). Text detection returns an
      * error if one or more of the specified languages is not one of the
-     * [supported languages](/vision/docs/languages).
+     * [supported languages](https://cloud.google.com/vision/docs/languages).
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
