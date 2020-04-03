@@ -138,12 +138,12 @@ public final class OsLoginProto {
           + "ey\332A\037name,ssh_public_key,update_mask\032r\312A"
           + "\026oslogin.googleapis.com\322AVhttps://www.go"
           + "ogleapis.com/auth/cloud-platform,https:/"
-          + "/www.googleapis.com/auth/computeB\241\001\n\033com"
+          + "/www.googleapis.com/auth/computeB\276\001\n\033com"
           + ".google.cloud.oslogin.v1B\014OsLoginProtoP\001"
           + "Z>google.golang.org/genproto/googleapis/"
           + "cloud/oslogin/v1;oslogin\252\002\027Google.Cloud."
-          + "OsLogin.V1\312\002\027Google\\Cloud\\OsLogin\\V1b\006pr"
-          + "oto3"
+          + "OsLogin.V1\312\002\027Google\\Cloud\\OsLogin\\V1\352\002\032G"
+          + "oogle::Cloud::OsLogin::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
