@@ -109,10 +109,11 @@ public class TargetHttpProxyClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListTargetHttpProxiesPagedResponse pagedListResponse =
-        client.aggregatedListTargetHttpProxies(project);
+        client.aggregatedListTargetHttpProxies(includeAllScopes, project);
 
     List<TargetHttpProxiesScopedList> resources =
         Lists.newArrayList(pagedListResponse.iterateAll());
@@ -144,9 +145,10 @@ public class TargetHttpProxyClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListTargetHttpProxies(project);
+      client.aggregatedListTargetHttpProxies(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

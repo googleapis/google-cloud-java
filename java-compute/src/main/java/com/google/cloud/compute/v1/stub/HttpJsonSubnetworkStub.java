@@ -81,7 +81,8 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                   ApiMessageHttpRequestFormatter.<AggregatedListSubnetworksHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/subnetworks"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())

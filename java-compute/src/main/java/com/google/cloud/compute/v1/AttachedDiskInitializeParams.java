@@ -40,6 +40,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   private final String diskSizeGb;
   private final String diskType;
   private final Map<String, String> labels;
+  private final String onUpdateAction;
   private final List<String> resourcePolicies;
   private final String sourceImage;
   private final CustomerEncryptionKey sourceImageEncryptionKey;
@@ -52,6 +53,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     this.diskSizeGb = null;
     this.diskType = null;
     this.labels = null;
+    this.onUpdateAction = null;
     this.resourcePolicies = null;
     this.sourceImage = null;
     this.sourceImageEncryptionKey = null;
@@ -65,6 +67,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       String diskSizeGb,
       String diskType,
       Map<String, String> labels,
+      String onUpdateAction,
       List<String> resourcePolicies,
       String sourceImage,
       CustomerEncryptionKey sourceImageEncryptionKey,
@@ -75,6 +78,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     this.diskSizeGb = diskSizeGb;
     this.diskType = diskType;
     this.labels = labels;
+    this.onUpdateAction = onUpdateAction;
     this.resourcePolicies = resourcePolicies;
     this.sourceImage = sourceImage;
     this.sourceImageEncryptionKey = sourceImageEncryptionKey;
@@ -98,6 +102,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     }
     if ("labels".equals(fieldName)) {
       return labels;
+    }
+    if ("onUpdateAction".equals(fieldName)) {
+      return onUpdateAction;
     }
     if ("resourcePolicies".equals(fieldName)) {
       return resourcePolicies;
@@ -179,6 +186,14 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
    */
   public Map<String, String> getLabelsMap() {
     return labels;
+  }
+
+  /**
+   * Specifies which action to take on instance update with this disk. Default is to use the
+   * existing disk.
+   */
+  public String getOnUpdateAction() {
+    return onUpdateAction;
   }
 
   /**
@@ -273,6 +288,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     private String diskSizeGb;
     private String diskType;
     private Map<String, String> labels;
+    private String onUpdateAction;
     private List<String> resourcePolicies;
     private String sourceImage;
     private CustomerEncryptionKey sourceImageEncryptionKey;
@@ -298,6 +314,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       if (other.getLabelsMap() != null) {
         this.labels = other.labels;
       }
+      if (other.getOnUpdateAction() != null) {
+        this.onUpdateAction = other.onUpdateAction;
+      }
       if (other.getResourcePoliciesList() != null) {
         this.resourcePolicies = other.resourcePolicies;
       }
@@ -322,6 +341,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       this.diskSizeGb = source.diskSizeGb;
       this.diskType = source.diskType;
       this.labels = source.labels;
+      this.onUpdateAction = source.onUpdateAction;
       this.resourcePolicies = source.resourcePolicies;
       this.sourceImage = source.sourceImage;
       this.sourceImageEncryptionKey = source.sourceImageEncryptionKey;
@@ -423,6 +443,23 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
      */
     public Builder putAllLabels(Map<String, String> labels) {
       this.labels = labels;
+      return this;
+    }
+
+    /**
+     * Specifies which action to take on instance update with this disk. Default is to use the
+     * existing disk.
+     */
+    public String getOnUpdateAction() {
+      return onUpdateAction;
+    }
+
+    /**
+     * Specifies which action to take on instance update with this disk. Default is to use the
+     * existing disk.
+     */
+    public Builder setOnUpdateAction(String onUpdateAction) {
+      this.onUpdateAction = onUpdateAction;
       return this;
     }
 
@@ -583,6 +620,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
           diskSizeGb,
           diskType,
           labels,
+          onUpdateAction,
           resourcePolicies,
           sourceImage,
           sourceImageEncryptionKey,
@@ -597,6 +635,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       newBuilder.setDiskSizeGb(this.diskSizeGb);
       newBuilder.setDiskType(this.diskType);
       newBuilder.putAllLabels(this.labels);
+      newBuilder.setOnUpdateAction(this.onUpdateAction);
       newBuilder.addAllResourcePolicies(this.resourcePolicies);
       newBuilder.setSourceImage(this.sourceImage);
       newBuilder.setSourceImageEncryptionKey(this.sourceImageEncryptionKey);
@@ -623,6 +662,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
         + ", "
         + "labels="
         + labels
+        + ", "
+        + "onUpdateAction="
+        + onUpdateAction
         + ", "
         + "resourcePolicies="
         + resourcePolicies
@@ -653,6 +695,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
           && Objects.equals(this.diskSizeGb, that.getDiskSizeGb())
           && Objects.equals(this.diskType, that.getDiskType())
           && Objects.equals(this.labels, that.getLabelsMap())
+          && Objects.equals(this.onUpdateAction, that.getOnUpdateAction())
           && Objects.equals(this.resourcePolicies, that.getResourcePoliciesList())
           && Objects.equals(this.sourceImage, that.getSourceImage())
           && Objects.equals(this.sourceImageEncryptionKey, that.getSourceImageEncryptionKey())
@@ -671,6 +714,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
         diskSizeGb,
         diskType,
         labels,
+        onUpdateAction,
         resourcePolicies,
         sourceImage,
         sourceImageEncryptionKey,

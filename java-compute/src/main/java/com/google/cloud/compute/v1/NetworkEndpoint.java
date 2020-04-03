@@ -26,17 +26,20 @@ import javax.annotation.Nullable;
 @BetaApi
 /** The network endpoint. Next ID: 7 */
 public final class NetworkEndpoint implements ApiMessage {
+  private final String fqdn;
   private final String instance;
   private final String ipAddress;
   private final Integer port;
 
   private NetworkEndpoint() {
+    this.fqdn = null;
     this.instance = null;
     this.ipAddress = null;
     this.port = null;
   }
 
-  private NetworkEndpoint(String instance, String ipAddress, Integer port) {
+  private NetworkEndpoint(String fqdn, String instance, String ipAddress, Integer port) {
+    this.fqdn = fqdn;
     this.instance = instance;
     this.ipAddress = ipAddress;
     this.port = port;
@@ -44,6 +47,9 @@ public final class NetworkEndpoint implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("fqdn".equals(fieldName)) {
+      return fqdn;
+    }
     if ("instance".equals(fieldName)) {
       return instance;
     }
@@ -72,6 +78,14 @@ public final class NetworkEndpoint implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /**
+   * Optional fully qualified domain name of network endpoint. This can only be specified when
+   * NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
+   */
+  public String getFqdn() {
+    return fqdn;
   }
 
   /**
@@ -127,6 +141,7 @@ public final class NetworkEndpoint implements ApiMessage {
   }
 
   public static class Builder {
+    private String fqdn;
     private String instance;
     private String ipAddress;
     private Integer port;
@@ -135,6 +150,9 @@ public final class NetworkEndpoint implements ApiMessage {
 
     public Builder mergeFrom(NetworkEndpoint other) {
       if (other == NetworkEndpoint.getDefaultInstance()) return this;
+      if (other.getFqdn() != null) {
+        this.fqdn = other.fqdn;
+      }
       if (other.getInstance() != null) {
         this.instance = other.instance;
       }
@@ -148,9 +166,27 @@ public final class NetworkEndpoint implements ApiMessage {
     }
 
     Builder(NetworkEndpoint source) {
+      this.fqdn = source.fqdn;
       this.instance = source.instance;
       this.ipAddress = source.ipAddress;
       this.port = source.port;
+    }
+
+    /**
+     * Optional fully qualified domain name of network endpoint. This can only be specified when
+     * NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
+     */
+    public String getFqdn() {
+      return fqdn;
+    }
+
+    /**
+     * Optional fully qualified domain name of network endpoint. This can only be specified when
+     * NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
+     */
+    public Builder setFqdn(String fqdn) {
+      this.fqdn = fqdn;
+      return this;
     }
 
     /**
@@ -218,11 +254,12 @@ public final class NetworkEndpoint implements ApiMessage {
 
     public NetworkEndpoint build() {
 
-      return new NetworkEndpoint(instance, ipAddress, port);
+      return new NetworkEndpoint(fqdn, instance, ipAddress, port);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setFqdn(this.fqdn);
       newBuilder.setInstance(this.instance);
       newBuilder.setIpAddress(this.ipAddress);
       newBuilder.setPort(this.port);
@@ -233,6 +270,9 @@ public final class NetworkEndpoint implements ApiMessage {
   @Override
   public String toString() {
     return "NetworkEndpoint{"
+        + "fqdn="
+        + fqdn
+        + ", "
         + "instance="
         + instance
         + ", "
@@ -251,7 +291,8 @@ public final class NetworkEndpoint implements ApiMessage {
     }
     if (o instanceof NetworkEndpoint) {
       NetworkEndpoint that = (NetworkEndpoint) o;
-      return Objects.equals(this.instance, that.getInstance())
+      return Objects.equals(this.fqdn, that.getFqdn())
+          && Objects.equals(this.instance, that.getInstance())
           && Objects.equals(this.ipAddress, that.getIpAddress())
           && Objects.equals(this.port, that.getPort());
     }
@@ -260,6 +301,6 @@ public final class NetworkEndpoint implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(instance, ipAddress, port);
+    return Objects.hash(fqdn, instance, ipAddress, port);
   }
 }

@@ -82,7 +82,10 @@ public final class ResourcePolicyHourlyCycle implements ApiMessage {
     return duration;
   }
 
-  /** Allows to define schedule that runs every nth hour. */
+  /**
+   * Defines a schedule with units measured in hours. The value determines how many hours pass
+   * between the start of each cycle.
+   */
   public Integer getHoursInCycle() {
     return hoursInCycle;
   }
@@ -161,12 +164,18 @@ public final class ResourcePolicyHourlyCycle implements ApiMessage {
       return this;
     }
 
-    /** Allows to define schedule that runs every nth hour. */
+    /**
+     * Defines a schedule with units measured in hours. The value determines how many hours pass
+     * between the start of each cycle.
+     */
     public Integer getHoursInCycle() {
       return hoursInCycle;
     }
 
-    /** Allows to define schedule that runs every nth hour. */
+    /**
+     * Defines a schedule with units measured in hours. The value determines how many hours pass
+     * between the start of each cycle.
+     */
     public Builder setHoursInCycle(Integer hoursInCycle) {
       this.hoursInCycle = hoursInCycle;
       return this;

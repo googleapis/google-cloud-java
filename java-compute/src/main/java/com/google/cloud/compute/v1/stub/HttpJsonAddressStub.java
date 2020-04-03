@@ -68,7 +68,8 @@ public class HttpJsonAddressStub extends AddressStub {
                   ApiMessageHttpRequestFormatter.<AggregatedListAddressesHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/addresses"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())

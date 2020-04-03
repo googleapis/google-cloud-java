@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedListInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListErrorsInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -23,6 +24,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AbandonInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListInstanceGroupManagersHttpRequest;
+import com.google.cloud.compute.v1.ApplyUpdatesToInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.CreateInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstancesInstanceGroupManagerHttpRequest;
@@ -31,7 +33,9 @@ import com.google.cloud.compute.v1.InsertInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InstanceGroupManager;
 import com.google.cloud.compute.v1.InstanceGroupManagerAggregatedList;
 import com.google.cloud.compute.v1.InstanceGroupManagerList;
+import com.google.cloud.compute.v1.InstanceGroupManagersListErrorsResponse;
 import com.google.cloud.compute.v1.InstanceGroupManagersListManagedInstancesResponse;
+import com.google.cloud.compute.v1.ListErrorsInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
@@ -74,6 +78,13 @@ public abstract class InstanceGroupManagerStub implements BackgroundResource {
       aggregatedListInstanceGroupManagersCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: aggregatedListInstanceGroupManagersCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<ApplyUpdatesToInstancesInstanceGroupManagerHttpRequest, Operation>
+      applyUpdatesToInstancesInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: applyUpdatesToInstancesInstanceGroupManagerCallable()");
   }
 
   @BetaApi
@@ -121,6 +132,22 @@ public abstract class InstanceGroupManagerStub implements BackgroundResource {
   public UnaryCallable<ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList>
       listInstanceGroupManagersCallable() {
     throw new UnsupportedOperationException("Not implemented: listInstanceGroupManagersCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListErrorsInstanceGroupManagersHttpRequest, ListErrorsInstanceGroupManagersPagedResponse>
+      listErrorsInstanceGroupManagersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listErrorsInstanceGroupManagersPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListErrorsInstanceGroupManagersHttpRequest, InstanceGroupManagersListErrorsResponse>
+      listErrorsInstanceGroupManagersCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listErrorsInstanceGroupManagersCallable()");
   }
 
   @BetaApi

@@ -112,10 +112,11 @@ public class PacketMirroringClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListPacketMirroringsPagedResponse pagedListResponse =
-        client.aggregatedListPacketMirrorings(project);
+        client.aggregatedListPacketMirrorings(includeAllScopes, project);
 
     List<PacketMirroringsScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -146,9 +147,10 @@ public class PacketMirroringClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListPacketMirrorings(project);
+      client.aggregatedListPacketMirrorings(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

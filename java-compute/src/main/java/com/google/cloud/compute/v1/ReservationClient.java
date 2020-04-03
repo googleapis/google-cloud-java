@@ -160,21 +160,29 @@ public class ReservationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationClient reservationClient = ReservationClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (ReservationsScopedList element : reservationClient.aggregatedListReservations(project).iterateAll()) {
+   *   for (ReservationsScopedList element : reservationClient.aggregatedListReservations(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListReservationsPagedResponse aggregatedListReservations(
-      ProjectName project) {
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListReservationsHttpRequest request =
         AggregatedListReservationsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListReservations(request);
@@ -188,20 +196,31 @@ public class ReservationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationClient reservationClient = ReservationClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (ReservationsScopedList element : reservationClient.aggregatedListReservations(project.toString()).iterateAll()) {
+   *   for (ReservationsScopedList element : reservationClient.aggregatedListReservations(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListReservationsPagedResponse aggregatedListReservations(String project) {
+  public final AggregatedListReservationsPagedResponse aggregatedListReservations(
+      Boolean includeAllScopes, String project) {
     AggregatedListReservationsHttpRequest request =
-        AggregatedListReservationsHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListReservationsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListReservations(request);
   }
 
@@ -213,8 +232,10 @@ public class ReservationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationClient reservationClient = ReservationClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListReservationsHttpRequest request = AggregatedListReservationsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (ReservationsScopedList element : reservationClient.aggregatedListReservations(request).iterateAll()) {
@@ -240,8 +261,10 @@ public class ReservationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationClient reservationClient = ReservationClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListReservationsHttpRequest request = AggregatedListReservationsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListReservationsPagedResponse&gt; future = reservationClient.aggregatedListReservationsPagedCallable().futureCall(request);
@@ -267,8 +290,10 @@ public class ReservationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationClient reservationClient = ReservationClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListReservationsHttpRequest request = AggregatedListReservationsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {

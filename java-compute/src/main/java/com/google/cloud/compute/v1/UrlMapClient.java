@@ -160,20 +160,29 @@ public class UrlMapClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (UrlMapsScopedList element : urlMapClient.aggregatedListUrlMaps(project).iterateAll()) {
+   *   for (UrlMapsScopedList element : urlMapClient.aggregatedListUrlMaps(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListUrlMapsPagedResponse aggregatedListUrlMaps(ProjectName project) {
+  public final AggregatedListUrlMapsPagedResponse aggregatedListUrlMaps(
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListUrlMapsHttpRequest request =
         AggregatedListUrlMapsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListUrlMaps(request);
@@ -188,20 +197,31 @@ public class UrlMapClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (UrlMapsScopedList element : urlMapClient.aggregatedListUrlMaps(project.toString()).iterateAll()) {
+   *   for (UrlMapsScopedList element : urlMapClient.aggregatedListUrlMaps(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListUrlMapsPagedResponse aggregatedListUrlMaps(String project) {
+  public final AggregatedListUrlMapsPagedResponse aggregatedListUrlMaps(
+      Boolean includeAllScopes, String project) {
     AggregatedListUrlMapsHttpRequest request =
-        AggregatedListUrlMapsHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListUrlMapsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListUrlMaps(request);
   }
 
@@ -214,8 +234,10 @@ public class UrlMapClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListUrlMapsHttpRequest request = AggregatedListUrlMapsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (UrlMapsScopedList element : urlMapClient.aggregatedListUrlMaps(request).iterateAll()) {
@@ -242,8 +264,10 @@ public class UrlMapClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListUrlMapsHttpRequest request = AggregatedListUrlMapsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListUrlMapsPagedResponse&gt; future = urlMapClient.aggregatedListUrlMapsPagedCallable().futureCall(request);
@@ -269,8 +293,10 @@ public class UrlMapClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListUrlMapsHttpRequest request = AggregatedListUrlMapsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
@@ -504,8 +530,8 @@ public class UrlMapClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param urlMapResource Represents a URL Map resource.
    *     <p>Google Compute Engine has two URL Map resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
    *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
    *     Director.
    *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
@@ -545,8 +571,8 @@ public class UrlMapClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param urlMapResource Represents a URL Map resource.
    *     <p>Google Compute Engine has two URL Map resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
    *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
    *     Director.
    *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
@@ -889,8 +915,8 @@ public class UrlMapClient implements BackgroundResource {
    * @param urlMap Name of the UrlMap resource to patch.
    * @param urlMapResource Represents a URL Map resource.
    *     <p>Google Compute Engine has two URL Map resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
    *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
    *     Director.
    *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
@@ -938,8 +964,8 @@ public class UrlMapClient implements BackgroundResource {
    * @param urlMap Name of the UrlMap resource to patch.
    * @param urlMapResource Represents a URL Map resource.
    *     <p>Google Compute Engine has two URL Map resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
    *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
    *     Director.
    *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
@@ -1042,8 +1068,8 @@ public class UrlMapClient implements BackgroundResource {
    * @param urlMap Name of the UrlMap resource to update.
    * @param urlMapResource Represents a URL Map resource.
    *     <p>Google Compute Engine has two URL Map resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
    *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
    *     Director.
    *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
@@ -1090,8 +1116,8 @@ public class UrlMapClient implements BackgroundResource {
    * @param urlMap Name of the UrlMap resource to update.
    * @param urlMapResource Represents a URL Map resource.
    *     <p>Google Compute Engine has two URL Map resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
    *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
    *     Director.
    *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;

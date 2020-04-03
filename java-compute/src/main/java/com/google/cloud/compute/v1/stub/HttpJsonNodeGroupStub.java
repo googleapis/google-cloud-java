@@ -46,6 +46,7 @@ import com.google.cloud.compute.v1.NodeGroupAggregatedList;
 import com.google.cloud.compute.v1.NodeGroupList;
 import com.google.cloud.compute.v1.NodeGroupsListNodes;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectZoneName;
@@ -102,7 +103,8 @@ public class HttpJsonNodeGroupStub extends NodeGroupStub {
                   ApiMessageHttpRequestFormatter.<AggregatedListNodeGroupsHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/nodeGroups"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())
@@ -256,6 +258,26 @@ public class HttpJsonNodeGroupStub extends NodeGroupStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<PatchNodeGroupHttpRequest, Operation>
+      patchNodeGroupMethodDescriptor =
+          ApiMethodDescriptor.<PatchNodeGroupHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.nodeGroups.patch")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<PatchNodeGroupHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/zones/{zone}/nodeGroups/{nodeGroup}"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectZoneNodeGroupName.newFactory())
+                      .setResourceNameField("nodeGroup")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<SetIamPolicyNodeGroupHttpRequest, Policy>
       setIamPolicyNodeGroupMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyNodeGroupHttpRequest, Policy>newBuilder()
@@ -343,6 +365,7 @@ public class HttpJsonNodeGroupStub extends NodeGroupStub {
       listNodesNodeGroupsCallable;
   private final UnaryCallable<ListNodesNodeGroupsHttpRequest, ListNodesNodeGroupsPagedResponse>
       listNodesNodeGroupsPagedCallable;
+  private final UnaryCallable<PatchNodeGroupHttpRequest, Operation> patchNodeGroupCallable;
   private final UnaryCallable<SetIamPolicyNodeGroupHttpRequest, Policy>
       setIamPolicyNodeGroupCallable;
   private final UnaryCallable<SetNodeTemplateNodeGroupHttpRequest, Operation>
@@ -431,6 +454,10 @@ public class HttpJsonNodeGroupStub extends NodeGroupStub {
             HttpJsonCallSettings.<ListNodesNodeGroupsHttpRequest, NodeGroupsListNodes>newBuilder()
                 .setMethodDescriptor(listNodesNodeGroupsMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<PatchNodeGroupHttpRequest, Operation> patchNodeGroupTransportSettings =
+        HttpJsonCallSettings.<PatchNodeGroupHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(patchNodeGroupMethodDescriptor)
+            .build();
     HttpJsonCallSettings<SetIamPolicyNodeGroupHttpRequest, Policy>
         setIamPolicyNodeGroupTransportSettings =
             HttpJsonCallSettings.<SetIamPolicyNodeGroupHttpRequest, Policy>newBuilder()
@@ -498,6 +525,9 @@ public class HttpJsonNodeGroupStub extends NodeGroupStub {
             listNodesNodeGroupsTransportSettings,
             settings.listNodesNodeGroupsSettings(),
             clientContext);
+    this.patchNodeGroupCallable =
+        callableFactory.createUnaryCallable(
+            patchNodeGroupTransportSettings, settings.patchNodeGroupSettings(), clientContext);
     this.setIamPolicyNodeGroupCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyNodeGroupTransportSettings,
@@ -580,6 +610,11 @@ public class HttpJsonNodeGroupStub extends NodeGroupStub {
   public UnaryCallable<ListNodesNodeGroupsHttpRequest, NodeGroupsListNodes>
       listNodesNodeGroupsCallable() {
     return listNodesNodeGroupsCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchNodeGroupHttpRequest, Operation> patchNodeGroupCallable() {
+    return patchNodeGroupCallable;
   }
 
   @BetaApi

@@ -159,20 +159,29 @@ public class AddressClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (AddressesScopedList element : addressClient.aggregatedListAddresses(project).iterateAll()) {
+   *   for (AddressesScopedList element : addressClient.aggregatedListAddresses(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListAddressesPagedResponse aggregatedListAddresses(ProjectName project) {
+  public final AggregatedListAddressesPagedResponse aggregatedListAddresses(
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListAddressesHttpRequest request =
         AggregatedListAddressesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListAddresses(request);
@@ -186,20 +195,31 @@ public class AddressClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (AddressesScopedList element : addressClient.aggregatedListAddresses(project.toString()).iterateAll()) {
+   *   for (AddressesScopedList element : addressClient.aggregatedListAddresses(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListAddressesPagedResponse aggregatedListAddresses(String project) {
+  public final AggregatedListAddressesPagedResponse aggregatedListAddresses(
+      Boolean includeAllScopes, String project) {
     AggregatedListAddressesHttpRequest request =
-        AggregatedListAddressesHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListAddressesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListAddresses(request);
   }
 
@@ -211,8 +231,10 @@ public class AddressClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListAddressesHttpRequest request = AggregatedListAddressesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (AddressesScopedList element : addressClient.aggregatedListAddresses(request).iterateAll()) {
@@ -238,8 +260,10 @@ public class AddressClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListAddressesHttpRequest request = AggregatedListAddressesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListAddressesPagedResponse&gt; future = addressClient.aggregatedListAddressesPagedCallable().futureCall(request);
@@ -265,8 +289,10 @@ public class AddressClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListAddressesHttpRequest request = AggregatedListAddressesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {

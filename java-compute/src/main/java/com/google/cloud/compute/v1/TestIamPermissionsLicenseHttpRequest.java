@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.licenses.testIamPermissions. Returns permissions that a caller
- * has on the specified resource.
+ * has on the specified resource. Caution This resource is intended for use only by third-party
+ * partners who are creating Cloud Marketplace images.
  */
 public final class TestIamPermissionsLicenseHttpRequest implements ApiMessage {
   private final String access_token;

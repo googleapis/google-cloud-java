@@ -119,9 +119,11 @@ public class RouterClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
-    AggregatedListRoutersPagedResponse pagedListResponse = client.aggregatedListRouters(project);
+    AggregatedListRoutersPagedResponse pagedListResponse =
+        client.aggregatedListRouters(includeAllScopes, project);
 
     List<RoutersScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -152,9 +154,10 @@ public class RouterClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListRouters(project);
+      client.aggregatedListRouters(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

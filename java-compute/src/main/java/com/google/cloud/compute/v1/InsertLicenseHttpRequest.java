@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.licenses.insert. Create a License resource in the specified
- * project.
+ * project. Caution This resource is intended for use only by third-party partners who are creating
+ * Cloud Marketplace images.
  */
 public final class InsertLicenseHttpRequest implements ApiMessage {
   private final String access_token;
@@ -149,7 +150,13 @@ public final class InsertLicenseHttpRequest implements ApiMessage {
     return key;
   }
 
-  /** A license resource. */
+  /**
+   * Represents a License resource.
+   *
+   * <p>A License represents billing and aggregate usage data for public and marketplace images.
+   * Caution This resource is intended for use only by third-party partners who are creating Cloud
+   * Marketplace images. (== resource_for {$api_version}.licenses ==)
+   */
   public License getLicenseResource() {
     return licenseResource;
   }
@@ -325,12 +332,24 @@ public final class InsertLicenseHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** A license resource. */
+    /**
+     * Represents a License resource.
+     *
+     * <p>A License represents billing and aggregate usage data for public and marketplace images.
+     * Caution This resource is intended for use only by third-party partners who are creating Cloud
+     * Marketplace images. (== resource_for {$api_version}.licenses ==)
+     */
     public License getLicenseResource() {
       return licenseResource;
     }
 
-    /** A license resource. */
+    /**
+     * Represents a License resource.
+     *
+     * <p>A License represents billing and aggregate usage data for public and marketplace images.
+     * Caution This resource is intended for use only by third-party partners who are creating Cloud
+     * Marketplace images. (== resource_for {$api_version}.licenses ==)
+     */
     public Builder setLicenseResource(License licenseResource) {
       this.licenseResource = licenseResource;
       return this;

@@ -278,21 +278,29 @@ public class BackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (BackendServicesScopedList element : backendServiceClient.aggregatedListBackendServices(project).iterateAll()) {
+   *   for (BackendServicesScopedList element : backendServiceClient.aggregatedListBackendServices(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListBackendServicesPagedResponse aggregatedListBackendServices(
-      ProjectName project) {
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListBackendServicesHttpRequest request =
         AggregatedListBackendServicesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListBackendServices(request);
@@ -307,21 +315,31 @@ public class BackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (BackendServicesScopedList element : backendServiceClient.aggregatedListBackendServices(project.toString()).iterateAll()) {
+   *   for (BackendServicesScopedList element : backendServiceClient.aggregatedListBackendServices(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListBackendServicesPagedResponse aggregatedListBackendServices(
-      String project) {
+      Boolean includeAllScopes, String project) {
     AggregatedListBackendServicesHttpRequest request =
-        AggregatedListBackendServicesHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListBackendServicesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListBackendServices(request);
   }
 
@@ -334,8 +352,10 @@ public class BackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListBackendServicesHttpRequest request = AggregatedListBackendServicesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (BackendServicesScopedList element : backendServiceClient.aggregatedListBackendServices(request).iterateAll()) {
@@ -362,8 +382,10 @@ public class BackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListBackendServicesHttpRequest request = AggregatedListBackendServicesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListBackendServicesPagedResponse&gt; future = backendServiceClient.aggregatedListBackendServicesPagedCallable().futureCall(request);
@@ -390,8 +412,10 @@ public class BackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListBackendServicesHttpRequest request = AggregatedListBackendServicesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
@@ -837,7 +861,7 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Creates a BackendService resource in the specified project using the data included in the
    * request. There are several restrictions and guidelines to keep in mind when creating a backend
-   * service. Read Restrictions and Guidelines for more information.
+   * service. Read Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -854,8 +878,8 @@ public class BackendServiceClient implements BackgroundResource {
    *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
    *     services.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *     <p>For more information, read Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -875,7 +899,7 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Creates a BackendService resource in the specified project using the data included in the
    * request. There are several restrictions and guidelines to keep in mind when creating a backend
-   * service. Read Restrictions and Guidelines for more information.
+   * service. Read Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -892,8 +916,8 @@ public class BackendServiceClient implements BackgroundResource {
    *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
    *     services.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *     <p>For more information, read Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -913,7 +937,7 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Creates a BackendService resource in the specified project using the data included in the
    * request. There are several restrictions and guidelines to keep in mind when creating a backend
-   * service. Read Restrictions and Guidelines for more information.
+   * service. Read Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -941,7 +965,7 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Creates a BackendService resource in the specified project using the data included in the
    * request. There are several restrictions and guidelines to keep in mind when creating a backend
-   * service. Read Restrictions and Guidelines for more information.
+   * service. Read Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -1106,9 +1130,9 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified BackendService resource with the data included in the request. There are
-   * several restrictions and guidelines to keep in mind when updating a backend service. Read
-   * Restrictions and Guidelines for more information. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules.
+   * several Understanding backend services to keep in mind when updating a backend service. Read
+   * Understanding backend services for more information. This method supports PATCH semantics and
+   * uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1126,8 +1150,8 @@ public class BackendServiceClient implements BackgroundResource {
    *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
    *     services.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *     <p>For more information, read Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
@@ -1153,9 +1177,9 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified BackendService resource with the data included in the request. There are
-   * several restrictions and guidelines to keep in mind when updating a backend service. Read
-   * Restrictions and Guidelines for more information. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules.
+   * several Understanding backend services to keep in mind when updating a backend service. Read
+   * Understanding backend services for more information. This method supports PATCH semantics and
+   * uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1173,8 +1197,8 @@ public class BackendServiceClient implements BackgroundResource {
    *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
    *     services.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *     <p>For more information, read Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
@@ -1198,9 +1222,9 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified BackendService resource with the data included in the request. There are
-   * several restrictions and guidelines to keep in mind when updating a backend service. Read
-   * Restrictions and Guidelines for more information. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules.
+   * several Understanding backend services to keep in mind when updating a backend service. Read
+   * Understanding backend services for more information. This method supports PATCH semantics and
+   * uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1229,9 +1253,9 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified BackendService resource with the data included in the request. There are
-   * several restrictions and guidelines to keep in mind when updating a backend service. Read
-   * Restrictions and Guidelines for more information. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules.
+   * several Understanding backend services to keep in mind when updating a backend service. Read
+   * Understanding backend services for more information. This method supports PATCH semantics and
+   * uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1374,8 +1398,8 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified BackendService resource with the data included in the request. There are
-   * several restrictions and guidelines to keep in mind when updating a backend service. Read
-   * Restrictions and Guidelines for more information.
+   * several Understanding backend services to keep in mind when updating a backend service. Read
+   * Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -1393,8 +1417,8 @@ public class BackendServiceClient implements BackgroundResource {
    *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
    *     services.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *     <p>For more information, read Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
@@ -1420,8 +1444,8 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified BackendService resource with the data included in the request. There are
-   * several restrictions and guidelines to keep in mind when updating a backend service. Read
-   * Restrictions and Guidelines for more information.
+   * several Understanding backend services to keep in mind when updating a backend service. Read
+   * Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -1439,8 +1463,8 @@ public class BackendServiceClient implements BackgroundResource {
    *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
    *     services.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *     <p>For more information, read Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
@@ -1464,8 +1488,8 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified BackendService resource with the data included in the request. There are
-   * several restrictions and guidelines to keep in mind when updating a backend service. Read
-   * Restrictions and Guidelines for more information.
+   * several Understanding backend services to keep in mind when updating a backend service. Read
+   * Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -1494,8 +1518,8 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified BackendService resource with the data included in the request. There are
-   * several restrictions and guidelines to keep in mind when updating a backend service. Read
-   * Restrictions and Guidelines for more information.
+   * several Understanding backend services to keep in mind when updating a backend service. Read
+   * Understanding backend services for more information.
    *
    * <p>Sample code:
    *

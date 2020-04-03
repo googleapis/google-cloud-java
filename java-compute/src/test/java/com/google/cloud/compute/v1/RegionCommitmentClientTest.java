@@ -105,10 +105,11 @@ public class RegionCommitmentClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListRegionCommitmentsPagedResponse pagedListResponse =
-        client.aggregatedListRegionCommitments(project);
+        client.aggregatedListRegionCommitments(includeAllScopes, project);
 
     List<CommitmentsScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -139,9 +140,10 @@ public class RegionCommitmentClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListRegionCommitments(project);
+      client.aggregatedListRegionCommitments(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

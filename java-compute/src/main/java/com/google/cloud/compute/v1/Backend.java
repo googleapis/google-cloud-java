@@ -29,6 +29,7 @@ public final class Backend implements ApiMessage {
   private final String balancingMode;
   private final Float capacityScaler;
   private final String description;
+  private final Boolean failover;
   private final String group;
   private final Integer maxConnections;
   private final Integer maxConnectionsPerEndpoint;
@@ -42,6 +43,7 @@ public final class Backend implements ApiMessage {
     this.balancingMode = null;
     this.capacityScaler = null;
     this.description = null;
+    this.failover = null;
     this.group = null;
     this.maxConnections = null;
     this.maxConnectionsPerEndpoint = null;
@@ -56,6 +58,7 @@ public final class Backend implements ApiMessage {
       String balancingMode,
       Float capacityScaler,
       String description,
+      Boolean failover,
       String group,
       Integer maxConnections,
       Integer maxConnectionsPerEndpoint,
@@ -67,6 +70,7 @@ public final class Backend implements ApiMessage {
     this.balancingMode = balancingMode;
     this.capacityScaler = capacityScaler;
     this.description = description;
+    this.failover = failover;
     this.group = group;
     this.maxConnections = maxConnections;
     this.maxConnectionsPerEndpoint = maxConnectionsPerEndpoint;
@@ -87,6 +91,9 @@ public final class Backend implements ApiMessage {
     }
     if ("description".equals(fieldName)) {
       return description;
+    }
+    if ("failover".equals(fieldName)) {
+      return failover;
     }
     if ("group".equals(fieldName)) {
       return group;
@@ -144,20 +151,21 @@ public final class Backend implements ApiMessage {
    * protocol for the backend service is SSL, TCP, or UDP.
    *
    * <p>If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load
-   * balancers), you must also specify exactly one of the following parameters: maxConnections,
-   * maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
+   * balancers), you must also specify exactly one of the following parameters: maxConnections
+   * (except for regional managed instance groups), maxConnectionsPerInstance, or
+   * maxConnectionsPerEndpoint.
    *
    * <p>If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP load
    * balancers), you cannot specify any additional parameters.
    *
    * <p>- If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests
    * per second (RPS). You can use the RATE balancing mode if the protocol for the backend service
-   * is HTTP or HTTPS. You must specify exactly one of the following parameters: maxRate,
-   * maxRatePerInstance, or maxRatePerEndpoint.
+   * is HTTP or HTTPS. You must specify exactly one of the following parameters: maxRate (except for
+   * regional managed instance groups), maxRatePerInstance, or maxRatePerEndpoint.
    *
-   * <p>- If the load balancing mode is UTILIZATION, the load is spread based on the CPU utilization
-   * of instances in an instance group. You can use the UTILIZATION balancing mode if the
-   * loadBalancingScheme of the backend service is EXTERNAL, INTERNAL_SELF_MANAGED, or
+   * <p>- If the load balancing mode is UTILIZATION, the load is spread based on the backend
+   * utilization of instances in an instance group. You can use the UTILIZATION balancing mode if
+   * the loadBalancingScheme of the backend service is EXTERNAL, INTERNAL_SELF_MANAGED, or
    * INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend
    * service protocol.
    */
@@ -185,6 +193,14 @@ public final class Backend implements ApiMessage {
   }
 
   /**
+   * This field designates whether this is a failover backend. More than one failover backend can be
+   * configured for a given BackendService.
+   */
+  public Boolean getFailover() {
+    return failover;
+  }
+
+  /**
    * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. The type
    * of backend that a backend service supports depends on the backend service's
    * loadBalancingScheme.
@@ -205,8 +221,9 @@ public final class Backend implements ApiMessage {
   }
 
   /**
-   * Defines a maximum target for simultaneous connections for the entire backend (instance group or
-   * NEG). If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the
+   * Defines a target maximum number of simultaneous connections that the backend can handle. Valid
+   * for network endpoint group and instance group backends (except for regional managed instance
+   * groups). If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the
    * backend's balancingMode is CONNECTION, and backend is attached to a backend service whose
    * loadBalancingScheme is EXTERNAL, you must specify either this parameter,
    * maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
@@ -220,7 +237,7 @@ public final class Backend implements ApiMessage {
   }
 
   /**
-   * Defines a maximum target for simultaneous connections for an endpoint of a NEG. This is
+   * Defines a target maximum number of simultaneous connections for an endpoint of a NEG. This is
    * multiplied by the number of endpoints in the NEG to implicitly calculate a maximum number of
    * target maximum simultaneous connections for the NEG. If the backend's balancingMode is
    * CONNECTION, and the backend is attached to a backend service whose loadBalancingScheme is
@@ -235,11 +252,11 @@ public final class Backend implements ApiMessage {
   }
 
   /**
-   * Defines a maximum target for simultaneous connections for a single VM in a backend instance
-   * group. This is multiplied by the number of instances in the instance group to implicitly
-   * calculate a target maximum number of simultaneous connections for the whole instance group. If
-   * the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's
-   * balancingMode is CONNECTION, and backend is attached to a backend service whose
+   * Defines a target maximum number of simultaneous connections for a single VM in a backend
+   * instance group. This is multiplied by the number of instances in the instance group to
+   * implicitly calculate a target maximum number of simultaneous connections for the whole instance
+   * group. If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the
+   * backend's balancingMode is CONNECTION, and backend is attached to a backend service whose
    * loadBalancingScheme is EXTERNAL, you must specify either this parameter, maxConnections, or
    * maxConnectionsPerEndpoint.
    *
@@ -252,11 +269,16 @@ public final class Backend implements ApiMessage {
   }
 
   /**
-   * The max requests per second (RPS) of the group. Can be used with either RATE or UTILIZATION
-   * balancing modes, but required if RATE mode. For RATE mode, either maxRate or maxRatePerInstance
-   * must be set.
+   * Defines a maximum number of HTTP requests per second (RPS) that the backend can handle. Valid
+   * for network endpoint group and instance group backends (except for regional managed instance
+   * groups). Must not be defined if the backend is a managed instance group that uses autoscaling
+   * based on load balancing.
    *
-   * <p>This cannot be used for internal load balancing.
+   * <p>If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the
+   * backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or
+   * maxRatePerEndpoint.
+   *
+   * <p>Not available if the backend's balancingMode is CONNECTION.
    */
   public Integer getMaxRate() {
     return maxRate;
@@ -267,8 +289,8 @@ public final class Backend implements ApiMessage {
    * multiplied by the number of endpoints in the NEG to implicitly calculate a target maximum rate
    * for the NEG.
    *
-   * <p>If the backend's balancingMode is RATE, you must specify either this parameter, maxRate, or
-   * maxRatePerInstance.
+   * <p>If the backend's balancingMode is RATE, you must specify either this parameter, maxRate
+   * (except for regional managed instance groups), or maxRatePerInstance.
    *
    * <p>Not available if the backend's balancingMode is CONNECTION.
    */
@@ -282,8 +304,8 @@ public final class Backend implements ApiMessage {
    * calculate a target maximum rate for the whole instance group.
    *
    * <p>If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the
-   * backend's balancingMode is RATE, you must specify either this parameter, maxRate, or
-   * maxRatePerEndpoint.
+   * backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for
+   * regional managed instance groups), or maxRatePerEndpoint.
    *
    * <p>Not available if the backend's balancingMode is CONNECTION.
    */
@@ -292,12 +314,12 @@ public final class Backend implements ApiMessage {
   }
 
   /**
-   * Defines the maximum average CPU utilization of a backend VM in an instance group. The valid
+   * Defines the maximum average backend utilization of a backend VM in an instance group. The valid
    * range is [0.0, 1.0]. This is an optional parameter if the backend's balancingMode is
    * UTILIZATION.
    *
-   * <p>This parameter can be used in conjunction with maxRate, maxRatePerInstance, maxConnections,
-   * or maxConnectionsPerInstance.
+   * <p>This parameter can be used in conjunction with maxRate, maxRatePerInstance, maxConnections
+   * (except for regional managed instance groups), or maxConnectionsPerInstance.
    */
   public Float getMaxUtilization() {
     return maxUtilization;
@@ -329,6 +351,7 @@ public final class Backend implements ApiMessage {
     private String balancingMode;
     private Float capacityScaler;
     private String description;
+    private Boolean failover;
     private String group;
     private Integer maxConnections;
     private Integer maxConnectionsPerEndpoint;
@@ -350,6 +373,9 @@ public final class Backend implements ApiMessage {
       }
       if (other.getDescription() != null) {
         this.description = other.description;
+      }
+      if (other.getFailover() != null) {
+        this.failover = other.failover;
       }
       if (other.getGroup() != null) {
         this.group = other.group;
@@ -382,6 +408,7 @@ public final class Backend implements ApiMessage {
       this.balancingMode = source.balancingMode;
       this.capacityScaler = source.capacityScaler;
       this.description = source.description;
+      this.failover = source.failover;
       this.group = source.group;
       this.maxConnections = source.maxConnections;
       this.maxConnectionsPerEndpoint = source.maxConnectionsPerEndpoint;
@@ -404,7 +431,8 @@ public final class Backend implements ApiMessage {
      *
      * <p>If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy
      * load balancers), you must also specify exactly one of the following parameters:
-     * maxConnections, maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
+     * maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or
+     * maxConnectionsPerEndpoint.
      *
      * <p>If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP load
      * balancers), you cannot specify any additional parameters.
@@ -412,9 +440,10 @@ public final class Backend implements ApiMessage {
      * <p>- If the load balancing mode is RATE, the load is spread based on the rate of HTTP
      * requests per second (RPS). You can use the RATE balancing mode if the protocol for the
      * backend service is HTTP or HTTPS. You must specify exactly one of the following parameters:
-     * maxRate, maxRatePerInstance, or maxRatePerEndpoint.
+     * maxRate (except for regional managed instance groups), maxRatePerInstance, or
+     * maxRatePerEndpoint.
      *
-     * <p>- If the load balancing mode is UTILIZATION, the load is spread based on the CPU
+     * <p>- If the load balancing mode is UTILIZATION, the load is spread based on the backend
      * utilization of instances in an instance group. You can use the UTILIZATION balancing mode if
      * the loadBalancingScheme of the backend service is EXTERNAL, INTERNAL_SELF_MANAGED, or
      * INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the
@@ -436,7 +465,8 @@ public final class Backend implements ApiMessage {
      *
      * <p>If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy
      * load balancers), you must also specify exactly one of the following parameters:
-     * maxConnections, maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
+     * maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or
+     * maxConnectionsPerEndpoint.
      *
      * <p>If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP load
      * balancers), you cannot specify any additional parameters.
@@ -444,9 +474,10 @@ public final class Backend implements ApiMessage {
      * <p>- If the load balancing mode is RATE, the load is spread based on the rate of HTTP
      * requests per second (RPS). You can use the RATE balancing mode if the protocol for the
      * backend service is HTTP or HTTPS. You must specify exactly one of the following parameters:
-     * maxRate, maxRatePerInstance, or maxRatePerEndpoint.
+     * maxRate (except for regional managed instance groups), maxRatePerInstance, or
+     * maxRatePerEndpoint.
      *
-     * <p>- If the load balancing mode is UTILIZATION, the load is spread based on the CPU
+     * <p>- If the load balancing mode is UTILIZATION, the load is spread based on the backend
      * utilization of instances in an instance group. You can use the UTILIZATION balancing mode if
      * the loadBalancingScheme of the backend service is EXTERNAL, INTERNAL_SELF_MANAGED, or
      * INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the
@@ -498,6 +529,23 @@ public final class Backend implements ApiMessage {
     }
 
     /**
+     * This field designates whether this is a failover backend. More than one failover backend can
+     * be configured for a given BackendService.
+     */
+    public Boolean getFailover() {
+      return failover;
+    }
+
+    /**
+     * This field designates whether this is a failover backend. More than one failover backend can
+     * be configured for a given BackendService.
+     */
+    public Builder setFailover(Boolean failover) {
+      this.failover = failover;
+      return this;
+    }
+
+    /**
      * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. The
      * type of backend that a backend service supports depends on the backend service's
      * loadBalancingScheme.
@@ -539,10 +587,11 @@ public final class Backend implements ApiMessage {
     }
 
     /**
-     * Defines a maximum target for simultaneous connections for the entire backend (instance group
-     * or NEG). If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the
-     * backend's balancingMode is CONNECTION, and backend is attached to a backend service whose
-     * loadBalancingScheme is EXTERNAL, you must specify either this parameter,
+     * Defines a target maximum number of simultaneous connections that the backend can handle.
+     * Valid for network endpoint group and instance group backends (except for regional managed
+     * instance groups). If the backend's balancingMode is UTILIZATION, this is an optional
+     * parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend
+     * service whose loadBalancingScheme is EXTERNAL, you must specify either this parameter,
      * maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
      *
      * <p>Not available if the backend's balancingMode is RATE. If the loadBalancingScheme is
@@ -554,10 +603,11 @@ public final class Backend implements ApiMessage {
     }
 
     /**
-     * Defines a maximum target for simultaneous connections for the entire backend (instance group
-     * or NEG). If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the
-     * backend's balancingMode is CONNECTION, and backend is attached to a backend service whose
-     * loadBalancingScheme is EXTERNAL, you must specify either this parameter,
+     * Defines a target maximum number of simultaneous connections that the backend can handle.
+     * Valid for network endpoint group and instance group backends (except for regional managed
+     * instance groups). If the backend's balancingMode is UTILIZATION, this is an optional
+     * parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend
+     * service whose loadBalancingScheme is EXTERNAL, you must specify either this parameter,
      * maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
      *
      * <p>Not available if the backend's balancingMode is RATE. If the loadBalancingScheme is
@@ -570,7 +620,7 @@ public final class Backend implements ApiMessage {
     }
 
     /**
-     * Defines a maximum target for simultaneous connections for an endpoint of a NEG. This is
+     * Defines a target maximum number of simultaneous connections for an endpoint of a NEG. This is
      * multiplied by the number of endpoints in the NEG to implicitly calculate a maximum number of
      * target maximum simultaneous connections for the NEG. If the backend's balancingMode is
      * CONNECTION, and the backend is attached to a backend service whose loadBalancingScheme is
@@ -586,7 +636,7 @@ public final class Backend implements ApiMessage {
     }
 
     /**
-     * Defines a maximum target for simultaneous connections for an endpoint of a NEG. This is
+     * Defines a target maximum number of simultaneous connections for an endpoint of a NEG. This is
      * multiplied by the number of endpoints in the NEG to implicitly calculate a maximum number of
      * target maximum simultaneous connections for the NEG. If the backend's balancingMode is
      * CONNECTION, and the backend is attached to a backend service whose loadBalancingScheme is
@@ -603,13 +653,13 @@ public final class Backend implements ApiMessage {
     }
 
     /**
-     * Defines a maximum target for simultaneous connections for a single VM in a backend instance
-     * group. This is multiplied by the number of instances in the instance group to implicitly
-     * calculate a target maximum number of simultaneous connections for the whole instance group.
-     * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the
-     * backend's balancingMode is CONNECTION, and backend is attached to a backend service whose
-     * loadBalancingScheme is EXTERNAL, you must specify either this parameter, maxConnections, or
-     * maxConnectionsPerEndpoint.
+     * Defines a target maximum number of simultaneous connections for a single VM in a backend
+     * instance group. This is multiplied by the number of instances in the instance group to
+     * implicitly calculate a target maximum number of simultaneous connections for the whole
+     * instance group. If the backend's balancingMode is UTILIZATION, this is an optional parameter.
+     * If the backend's balancingMode is CONNECTION, and backend is attached to a backend service
+     * whose loadBalancingScheme is EXTERNAL, you must specify either this parameter,
+     * maxConnections, or maxConnectionsPerEndpoint.
      *
      * <p>Not available if the backend's balancingMode is RATE. Internal TCP/UDP load balancing does
      * not support setting maxConnectionsPerInstance even though its backends require a balancing
@@ -620,13 +670,13 @@ public final class Backend implements ApiMessage {
     }
 
     /**
-     * Defines a maximum target for simultaneous connections for a single VM in a backend instance
-     * group. This is multiplied by the number of instances in the instance group to implicitly
-     * calculate a target maximum number of simultaneous connections for the whole instance group.
-     * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the
-     * backend's balancingMode is CONNECTION, and backend is attached to a backend service whose
-     * loadBalancingScheme is EXTERNAL, you must specify either this parameter, maxConnections, or
-     * maxConnectionsPerEndpoint.
+     * Defines a target maximum number of simultaneous connections for a single VM in a backend
+     * instance group. This is multiplied by the number of instances in the instance group to
+     * implicitly calculate a target maximum number of simultaneous connections for the whole
+     * instance group. If the backend's balancingMode is UTILIZATION, this is an optional parameter.
+     * If the backend's balancingMode is CONNECTION, and backend is attached to a backend service
+     * whose loadBalancingScheme is EXTERNAL, you must specify either this parameter,
+     * maxConnections, or maxConnectionsPerEndpoint.
      *
      * <p>Not available if the backend's balancingMode is RATE. Internal TCP/UDP load balancing does
      * not support setting maxConnectionsPerInstance even though its backends require a balancing
@@ -638,22 +688,32 @@ public final class Backend implements ApiMessage {
     }
 
     /**
-     * The max requests per second (RPS) of the group. Can be used with either RATE or UTILIZATION
-     * balancing modes, but required if RATE mode. For RATE mode, either maxRate or
-     * maxRatePerInstance must be set.
+     * Defines a maximum number of HTTP requests per second (RPS) that the backend can handle. Valid
+     * for network endpoint group and instance group backends (except for regional managed instance
+     * groups). Must not be defined if the backend is a managed instance group that uses autoscaling
+     * based on load balancing.
      *
-     * <p>This cannot be used for internal load balancing.
+     * <p>If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the
+     * backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or
+     * maxRatePerEndpoint.
+     *
+     * <p>Not available if the backend's balancingMode is CONNECTION.
      */
     public Integer getMaxRate() {
       return maxRate;
     }
 
     /**
-     * The max requests per second (RPS) of the group. Can be used with either RATE or UTILIZATION
-     * balancing modes, but required if RATE mode. For RATE mode, either maxRate or
-     * maxRatePerInstance must be set.
+     * Defines a maximum number of HTTP requests per second (RPS) that the backend can handle. Valid
+     * for network endpoint group and instance group backends (except for regional managed instance
+     * groups). Must not be defined if the backend is a managed instance group that uses autoscaling
+     * based on load balancing.
      *
-     * <p>This cannot be used for internal load balancing.
+     * <p>If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the
+     * backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or
+     * maxRatePerEndpoint.
+     *
+     * <p>Not available if the backend's balancingMode is CONNECTION.
      */
     public Builder setMaxRate(Integer maxRate) {
       this.maxRate = maxRate;
@@ -665,8 +725,8 @@ public final class Backend implements ApiMessage {
      * multiplied by the number of endpoints in the NEG to implicitly calculate a target maximum
      * rate for the NEG.
      *
-     * <p>If the backend's balancingMode is RATE, you must specify either this parameter, maxRate,
-     * or maxRatePerInstance.
+     * <p>If the backend's balancingMode is RATE, you must specify either this parameter, maxRate
+     * (except for regional managed instance groups), or maxRatePerInstance.
      *
      * <p>Not available if the backend's balancingMode is CONNECTION.
      */
@@ -679,8 +739,8 @@ public final class Backend implements ApiMessage {
      * multiplied by the number of endpoints in the NEG to implicitly calculate a target maximum
      * rate for the NEG.
      *
-     * <p>If the backend's balancingMode is RATE, you must specify either this parameter, maxRate,
-     * or maxRatePerInstance.
+     * <p>If the backend's balancingMode is RATE, you must specify either this parameter, maxRate
+     * (except for regional managed instance groups), or maxRatePerInstance.
      *
      * <p>Not available if the backend's balancingMode is CONNECTION.
      */
@@ -695,8 +755,8 @@ public final class Backend implements ApiMessage {
      * calculate a target maximum rate for the whole instance group.
      *
      * <p>If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the
-     * backend's balancingMode is RATE, you must specify either this parameter, maxRate, or
-     * maxRatePerEndpoint.
+     * backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for
+     * regional managed instance groups), or maxRatePerEndpoint.
      *
      * <p>Not available if the backend's balancingMode is CONNECTION.
      */
@@ -710,8 +770,8 @@ public final class Backend implements ApiMessage {
      * calculate a target maximum rate for the whole instance group.
      *
      * <p>If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the
-     * backend's balancingMode is RATE, you must specify either this parameter, maxRate, or
-     * maxRatePerEndpoint.
+     * backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for
+     * regional managed instance groups), or maxRatePerEndpoint.
      *
      * <p>Not available if the backend's balancingMode is CONNECTION.
      */
@@ -721,24 +781,24 @@ public final class Backend implements ApiMessage {
     }
 
     /**
-     * Defines the maximum average CPU utilization of a backend VM in an instance group. The valid
-     * range is [0.0, 1.0]. This is an optional parameter if the backend's balancingMode is
+     * Defines the maximum average backend utilization of a backend VM in an instance group. The
+     * valid range is [0.0, 1.0]. This is an optional parameter if the backend's balancingMode is
      * UTILIZATION.
      *
-     * <p>This parameter can be used in conjunction with maxRate, maxRatePerInstance,
-     * maxConnections, or maxConnectionsPerInstance.
+     * <p>This parameter can be used in conjunction with maxRate, maxRatePerInstance, maxConnections
+     * (except for regional managed instance groups), or maxConnectionsPerInstance.
      */
     public Float getMaxUtilization() {
       return maxUtilization;
     }
 
     /**
-     * Defines the maximum average CPU utilization of a backend VM in an instance group. The valid
-     * range is [0.0, 1.0]. This is an optional parameter if the backend's balancingMode is
+     * Defines the maximum average backend utilization of a backend VM in an instance group. The
+     * valid range is [0.0, 1.0]. This is an optional parameter if the backend's balancingMode is
      * UTILIZATION.
      *
-     * <p>This parameter can be used in conjunction with maxRate, maxRatePerInstance,
-     * maxConnections, or maxConnectionsPerInstance.
+     * <p>This parameter can be used in conjunction with maxRate, maxRatePerInstance, maxConnections
+     * (except for regional managed instance groups), or maxConnectionsPerInstance.
      */
     public Builder setMaxUtilization(Float maxUtilization) {
       this.maxUtilization = maxUtilization;
@@ -751,6 +811,7 @@ public final class Backend implements ApiMessage {
           balancingMode,
           capacityScaler,
           description,
+          failover,
           group,
           maxConnections,
           maxConnectionsPerEndpoint,
@@ -766,6 +827,7 @@ public final class Backend implements ApiMessage {
       newBuilder.setBalancingMode(this.balancingMode);
       newBuilder.setCapacityScaler(this.capacityScaler);
       newBuilder.setDescription(this.description);
+      newBuilder.setFailover(this.failover);
       newBuilder.setGroup(this.group);
       newBuilder.setMaxConnections(this.maxConnections);
       newBuilder.setMaxConnectionsPerEndpoint(this.maxConnectionsPerEndpoint);
@@ -789,6 +851,9 @@ public final class Backend implements ApiMessage {
         + ", "
         + "description="
         + description
+        + ", "
+        + "failover="
+        + failover
         + ", "
         + "group="
         + group
@@ -826,6 +891,7 @@ public final class Backend implements ApiMessage {
       return Objects.equals(this.balancingMode, that.getBalancingMode())
           && Objects.equals(this.capacityScaler, that.getCapacityScaler())
           && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.failover, that.getFailover())
           && Objects.equals(this.group, that.getGroup())
           && Objects.equals(this.maxConnections, that.getMaxConnections())
           && Objects.equals(this.maxConnectionsPerEndpoint, that.getMaxConnectionsPerEndpoint())
@@ -844,6 +910,7 @@ public final class Backend implements ApiMessage {
         balancingMode,
         capacityScaler,
         description,
+        failover,
         group,
         maxConnections,
         maxConnectionsPerEndpoint,

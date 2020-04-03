@@ -66,7 +66,8 @@ public class HttpJsonMachineTypeStub extends MachineTypeStub {
                   ApiMessageHttpRequestFormatter.<AggregatedListMachineTypesHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/machineTypes"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())

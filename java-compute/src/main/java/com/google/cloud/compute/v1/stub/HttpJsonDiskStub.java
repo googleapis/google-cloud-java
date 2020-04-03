@@ -99,7 +99,8 @@ public class HttpJsonDiskStub extends DiskStub {
                   ApiMessageHttpRequestFormatter.<AggregatedListDisksHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/disks"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())

@@ -112,10 +112,11 @@ public class InterconnectAttachmentClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListInterconnectAttachmentsPagedResponse pagedListResponse =
-        client.aggregatedListInterconnectAttachments(project);
+        client.aggregatedListInterconnectAttachments(includeAllScopes, project);
 
     List<InterconnectAttachmentsScopedList> resources =
         Lists.newArrayList(pagedListResponse.iterateAll());
@@ -147,9 +148,10 @@ public class InterconnectAttachmentClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListInterconnectAttachments(project);
+      client.aggregatedListInterconnectAttachments(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

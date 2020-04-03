@@ -213,10 +213,11 @@ public class BackendServiceClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListBackendServicesPagedResponse pagedListResponse =
-        client.aggregatedListBackendServices(project);
+        client.aggregatedListBackendServices(includeAllScopes, project);
 
     List<BackendServicesScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -247,9 +248,10 @@ public class BackendServiceClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListBackendServices(project);
+      client.aggregatedListBackendServices(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

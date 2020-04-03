@@ -184,6 +184,13 @@ public final class InsertResourcePolicyHttpRequest implements ApiMessage {
     return requestId;
   }
 
+  /**
+   * Represents a Resource Policy resource. You can use resource policies to schedule actions for
+   * some Compute Engine resources. For example, you can use them to schedule persistent disk
+   * snapshots.
+   *
+   * <p>(== resource_for {$api_version}.resourcePolicies ==)
+   */
   public ResourcePolicy getResourcePolicyResource() {
     return resourcePolicyResource;
   }
@@ -401,10 +408,24 @@ public final class InsertResourcePolicyHttpRequest implements ApiMessage {
       return this;
     }
 
+    /**
+     * Represents a Resource Policy resource. You can use resource policies to schedule actions for
+     * some Compute Engine resources. For example, you can use them to schedule persistent disk
+     * snapshots.
+     *
+     * <p>(== resource_for {$api_version}.resourcePolicies ==)
+     */
     public ResourcePolicy getResourcePolicyResource() {
       return resourcePolicyResource;
     }
 
+    /**
+     * Represents a Resource Policy resource. You can use resource policies to schedule actions for
+     * some Compute Engine resources. For example, you can use them to schedule persistent disk
+     * snapshots.
+     *
+     * <p>(== resource_for {$api_version}.resourcePolicies ==)
+     */
     public Builder setResourcePolicyResource(ResourcePolicy resourcePolicyResource) {
       this.resourcePolicyResource = resourcePolicyResource;
       return this;

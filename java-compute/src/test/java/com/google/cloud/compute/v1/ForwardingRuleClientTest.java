@@ -112,10 +112,11 @@ public class ForwardingRuleClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListForwardingRulesPagedResponse pagedListResponse =
-        client.aggregatedListForwardingRules(project);
+        client.aggregatedListForwardingRules(includeAllScopes, project);
 
     List<ForwardingRulesScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -146,9 +147,10 @@ public class ForwardingRuleClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListForwardingRules(project);
+      client.aggregatedListForwardingRules(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

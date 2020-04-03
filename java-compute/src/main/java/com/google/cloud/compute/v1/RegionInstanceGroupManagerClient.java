@@ -325,6 +325,127 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Apply updates to selected instances the managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagersApplyUpdatesRequest regionInstanceGroupManagersApplyUpdatesRequestResource = RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
+   *   Operation response = regionInstanceGroupManagerClient.applyUpdatesToInstancesRegionInstanceGroupManager(instanceGroupManager, regionInstanceGroupManagersApplyUpdatesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group, should conform to RFC1035.
+   * @param regionInstanceGroupManagersApplyUpdatesRequestResource
+   *     InstanceGroupManagers.applyUpdatesToInstances
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation applyUpdatesToInstancesRegionInstanceGroupManager(
+      ProjectRegionInstanceGroupManagerName instanceGroupManager,
+      RegionInstanceGroupManagersApplyUpdatesRequest
+          regionInstanceGroupManagersApplyUpdatesRequestResource) {
+    ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest request =
+        ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .setRegionInstanceGroupManagersApplyUpdatesRequestResource(
+                regionInstanceGroupManagersApplyUpdatesRequestResource)
+            .build();
+    return applyUpdatesToInstancesRegionInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Apply updates to selected instances the managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagersApplyUpdatesRequest regionInstanceGroupManagersApplyUpdatesRequestResource = RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
+   *   Operation response = regionInstanceGroupManagerClient.applyUpdatesToInstancesRegionInstanceGroupManager(instanceGroupManager.toString(), regionInstanceGroupManagersApplyUpdatesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group, should conform to RFC1035.
+   * @param regionInstanceGroupManagersApplyUpdatesRequestResource
+   *     InstanceGroupManagers.applyUpdatesToInstances
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation applyUpdatesToInstancesRegionInstanceGroupManager(
+      String instanceGroupManager,
+      RegionInstanceGroupManagersApplyUpdatesRequest
+          regionInstanceGroupManagersApplyUpdatesRequestResource) {
+    ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest request =
+        ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(instanceGroupManager)
+            .setRegionInstanceGroupManagersApplyUpdatesRequestResource(
+                regionInstanceGroupManagersApplyUpdatesRequestResource)
+            .build();
+    return applyUpdatesToInstancesRegionInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Apply updates to selected instances the managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagersApplyUpdatesRequest regionInstanceGroupManagersApplyUpdatesRequestResource = RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
+   *   ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest request = ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .setRegionInstanceGroupManagersApplyUpdatesRequestResource(regionInstanceGroupManagersApplyUpdatesRequestResource)
+   *     .build();
+   *   Operation response = regionInstanceGroupManagerClient.applyUpdatesToInstancesRegionInstanceGroupManager(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation applyUpdatesToInstancesRegionInstanceGroupManager(
+      ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest request) {
+    return applyUpdatesToInstancesRegionInstanceGroupManagerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Apply updates to selected instances the managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagersApplyUpdatesRequest regionInstanceGroupManagersApplyUpdatesRequestResource = RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
+   *   ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest request = ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .setRegionInstanceGroupManagersApplyUpdatesRequestResource(regionInstanceGroupManagersApplyUpdatesRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagerClient.applyUpdatesToInstancesRegionInstanceGroupManagerCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      applyUpdatesToInstancesRegionInstanceGroupManagerCallable() {
+    return stub.applyUpdatesToInstancesRegionInstanceGroupManagerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates instances with per-instance configs in this regional managed instance group. Instances
    * are created using the current instance template. The create instances operation is marked DONE
    * if the createInstances request is successful. The underlying actions take additional time. You
@@ -1112,6 +1233,159 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
           ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList>
       listRegionInstanceGroupManagersCallable() {
     return stub.listRegionInstanceGroupManagersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all errors thrown by actions on instances for a given regional managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   for (InstanceManagedByIgmError element : regionInstanceGroupManagerClient.listErrorsRegionInstanceGroupManagers(instanceGroupManager).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group. It must be a string that
+   *     meets the requirements in RFC1035, or an unsigned long integer: must match regexp pattern:
+   *     (?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)|[1-9][0-9]{0,19}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListErrorsRegionInstanceGroupManagersPagedResponse
+      listErrorsRegionInstanceGroupManagers(
+          ProjectRegionInstanceGroupManagerName instanceGroupManager) {
+    ListErrorsRegionInstanceGroupManagersHttpRequest request =
+        ListErrorsRegionInstanceGroupManagersHttpRequest.newBuilder()
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .build();
+    return listErrorsRegionInstanceGroupManagers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all errors thrown by actions on instances for a given regional managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   for (InstanceManagedByIgmError element : regionInstanceGroupManagerClient.listErrorsRegionInstanceGroupManagers(instanceGroupManager.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group. It must be a string that
+   *     meets the requirements in RFC1035, or an unsigned long integer: must match regexp pattern:
+   *     (?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)|[1-9][0-9]{0,19}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListErrorsRegionInstanceGroupManagersPagedResponse
+      listErrorsRegionInstanceGroupManagers(String instanceGroupManager) {
+    ListErrorsRegionInstanceGroupManagersHttpRequest request =
+        ListErrorsRegionInstanceGroupManagersHttpRequest.newBuilder()
+            .setInstanceGroupManager(instanceGroupManager)
+            .build();
+    return listErrorsRegionInstanceGroupManagers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all errors thrown by actions on instances for a given regional managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   ListErrorsRegionInstanceGroupManagersHttpRequest request = ListErrorsRegionInstanceGroupManagersHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .build();
+   *   for (InstanceManagedByIgmError element : regionInstanceGroupManagerClient.listErrorsRegionInstanceGroupManagers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListErrorsRegionInstanceGroupManagersPagedResponse
+      listErrorsRegionInstanceGroupManagers(
+          ListErrorsRegionInstanceGroupManagersHttpRequest request) {
+    return listErrorsRegionInstanceGroupManagersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all errors thrown by actions on instances for a given regional managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   ListErrorsRegionInstanceGroupManagersHttpRequest request = ListErrorsRegionInstanceGroupManagersHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .build();
+   *   ApiFuture&lt;ListErrorsRegionInstanceGroupManagersPagedResponse&gt; future = regionInstanceGroupManagerClient.listErrorsRegionInstanceGroupManagersPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (InstanceManagedByIgmError element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          ListErrorsRegionInstanceGroupManagersPagedResponse>
+      listErrorsRegionInstanceGroupManagersPagedCallable() {
+    return stub.listErrorsRegionInstanceGroupManagersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all errors thrown by actions on instances for a given regional managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   ListErrorsRegionInstanceGroupManagersHttpRequest request = ListErrorsRegionInstanceGroupManagersHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .build();
+   *   while (true) {
+   *     RegionInstanceGroupManagersListErrorsResponse response = regionInstanceGroupManagerClient.listErrorsRegionInstanceGroupManagersCallable().call(request);
+   *     for (InstanceManagedByIgmError element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListErrorsResponse>
+      listErrorsRegionInstanceGroupManagersCallable() {
+    return stub.listErrorsRegionInstanceGroupManagersCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -2069,6 +2343,113 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
     protected ListRegionInstanceGroupManagersFixedSizeCollection createCollection(
         List<ListRegionInstanceGroupManagersPage> pages, int collectionSize) {
       return new ListRegionInstanceGroupManagersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListErrorsRegionInstanceGroupManagersPagedResponse
+      extends AbstractPagedListResponse<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListErrorsResponse,
+          InstanceManagedByIgmError,
+          ListErrorsRegionInstanceGroupManagersPage,
+          ListErrorsRegionInstanceGroupManagersFixedSizeCollection> {
+
+    public static ApiFuture<ListErrorsRegionInstanceGroupManagersPagedResponse> createAsync(
+        PageContext<
+                ListErrorsRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagersListErrorsResponse,
+                InstanceManagedByIgmError>
+            context,
+        ApiFuture<RegionInstanceGroupManagersListErrorsResponse> futureResponse) {
+      ApiFuture<ListErrorsRegionInstanceGroupManagersPage> futurePage =
+          ListErrorsRegionInstanceGroupManagersPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<
+              ListErrorsRegionInstanceGroupManagersPage,
+              ListErrorsRegionInstanceGroupManagersPagedResponse>() {
+            @Override
+            public ListErrorsRegionInstanceGroupManagersPagedResponse apply(
+                ListErrorsRegionInstanceGroupManagersPage input) {
+              return new ListErrorsRegionInstanceGroupManagersPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListErrorsRegionInstanceGroupManagersPagedResponse(
+        ListErrorsRegionInstanceGroupManagersPage page) {
+      super(page, ListErrorsRegionInstanceGroupManagersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListErrorsRegionInstanceGroupManagersPage
+      extends AbstractPage<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListErrorsResponse,
+          InstanceManagedByIgmError,
+          ListErrorsRegionInstanceGroupManagersPage> {
+
+    private ListErrorsRegionInstanceGroupManagersPage(
+        PageContext<
+                ListErrorsRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagersListErrorsResponse,
+                InstanceManagedByIgmError>
+            context,
+        RegionInstanceGroupManagersListErrorsResponse response) {
+      super(context, response);
+    }
+
+    private static ListErrorsRegionInstanceGroupManagersPage createEmptyPage() {
+      return new ListErrorsRegionInstanceGroupManagersPage(null, null);
+    }
+
+    @Override
+    protected ListErrorsRegionInstanceGroupManagersPage createPage(
+        PageContext<
+                ListErrorsRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagersListErrorsResponse,
+                InstanceManagedByIgmError>
+            context,
+        RegionInstanceGroupManagersListErrorsResponse response) {
+      return new ListErrorsRegionInstanceGroupManagersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListErrorsRegionInstanceGroupManagersPage> createPageAsync(
+        PageContext<
+                ListErrorsRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagersListErrorsResponse,
+                InstanceManagedByIgmError>
+            context,
+        ApiFuture<RegionInstanceGroupManagersListErrorsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListErrorsRegionInstanceGroupManagersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListErrorsResponse,
+          InstanceManagedByIgmError,
+          ListErrorsRegionInstanceGroupManagersPage,
+          ListErrorsRegionInstanceGroupManagersFixedSizeCollection> {
+
+    private ListErrorsRegionInstanceGroupManagersFixedSizeCollection(
+        List<ListErrorsRegionInstanceGroupManagersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListErrorsRegionInstanceGroupManagersFixedSizeCollection
+        createEmptyCollection() {
+      return new ListErrorsRegionInstanceGroupManagersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListErrorsRegionInstanceGroupManagersFixedSizeCollection createCollection(
+        List<ListErrorsRegionInstanceGroupManagersPage> pages, int collectionSize) {
+      return new ListErrorsRegionInstanceGroupManagersFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -20,20 +20,22 @@ import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-gapic = gcp.DiscoGAPICGenerator()
+gapic = gcp.GAPICBazel()
 
 service = 'compute'
 versions = ['v1']
-config_pattern = '/gapic/google/compute/artman_compute.yaml'
 
 for version in versions:
   library = gapic.java_library(
       service=service,
       version=version,
-      config_path=config_pattern.format(version=version),
-      artman_output_name='')
+      bazel_target=f'//gapic/google/{service}/{version}:google-cloud-{service}-{version}-java',
+      discogapic = True,
+  )
 
-  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
+  library = library / f'google-cloud-{service}-{version}-java'
+
+  s.copy(library / f'gapic-google-cloud-{service}-{version}-java/src', 'src')
 
   java.format_code('./src')
 

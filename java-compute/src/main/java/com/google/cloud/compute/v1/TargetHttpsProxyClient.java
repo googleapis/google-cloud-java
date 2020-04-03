@@ -163,21 +163,29 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (TargetHttpsProxiesScopedList element : targetHttpsProxyClient.aggregatedListTargetHttpsProxies(project).iterateAll()) {
+   *   for (TargetHttpsProxiesScopedList element : targetHttpsProxyClient.aggregatedListTargetHttpsProxies(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListTargetHttpsProxiesPagedResponse aggregatedListTargetHttpsProxies(
-      ProjectName project) {
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListTargetHttpsProxiesHttpRequest request =
         AggregatedListTargetHttpsProxiesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListTargetHttpsProxies(request);
@@ -192,21 +200,31 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (TargetHttpsProxiesScopedList element : targetHttpsProxyClient.aggregatedListTargetHttpsProxies(project.toString()).iterateAll()) {
+   *   for (TargetHttpsProxiesScopedList element : targetHttpsProxyClient.aggregatedListTargetHttpsProxies(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListTargetHttpsProxiesPagedResponse aggregatedListTargetHttpsProxies(
-      String project) {
+      Boolean includeAllScopes, String project) {
     AggregatedListTargetHttpsProxiesHttpRequest request =
-        AggregatedListTargetHttpsProxiesHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListTargetHttpsProxiesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListTargetHttpsProxies(request);
   }
 
@@ -219,8 +237,10 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListTargetHttpsProxiesHttpRequest request = AggregatedListTargetHttpsProxiesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (TargetHttpsProxiesScopedList element : targetHttpsProxyClient.aggregatedListTargetHttpsProxies(request).iterateAll()) {
@@ -247,8 +267,10 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListTargetHttpsProxiesHttpRequest request = AggregatedListTargetHttpsProxiesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListTargetHttpsProxiesPagedResponse&gt; future = targetHttpsProxyClient.aggregatedListTargetHttpsProxiesPagedCallable().futureCall(request);
@@ -276,8 +298,10 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListTargetHttpsProxiesHttpRequest request = AggregatedListTargetHttpsProxiesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
@@ -520,8 +544,8 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param targetHttpsProxyResource Represents a Target HTTPS Proxy resource.
    *     <p>Google Compute Engine has two Target HTTPS Proxy resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/targetHttpsProxies) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionTargetHttpsProxies)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/targetHttpsProxies) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionTargetHttpsProxies)
    *     <p>A target HTTPS proxy is a component of GCP HTTPS load balancers.
    *     <p>&#42; targetHttpsProxies are used by external HTTPS load balancers. &#42;
    *     regionTargetHttpsProxies are used by internal HTTPS load balancers.
@@ -560,8 +584,8 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param targetHttpsProxyResource Represents a Target HTTPS Proxy resource.
    *     <p>Google Compute Engine has two Target HTTPS Proxy resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/targetHttpsProxies) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionTargetHttpsProxies)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/targetHttpsProxies) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionTargetHttpsProxies)
    *     <p>A target HTTPS proxy is a component of GCP HTTPS load balancers.
    *     <p>&#42; targetHttpsProxies are used by external HTTPS load balancers. &#42;
    *     regionTargetHttpsProxies are used by internal HTTPS load balancers.

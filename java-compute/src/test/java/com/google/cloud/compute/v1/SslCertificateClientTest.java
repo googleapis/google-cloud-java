@@ -107,10 +107,11 @@ public class SslCertificateClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListSslCertificatesPagedResponse pagedListResponse =
-        client.aggregatedListSslCertificates(project);
+        client.aggregatedListSslCertificates(includeAllScopes, project);
 
     List<SslCertificatesScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -141,9 +142,10 @@ public class SslCertificateClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListSslCertificates(project);
+      client.aggregatedListSslCertificates(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -357,9 +359,8 @@ public class SslCertificateClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
-    SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
 
-    Operation actualResponse = client.insertSslCertificate(project, sslCertificateResource);
+    Operation actualResponse = client.insertSslCertificate(project);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -387,9 +388,8 @@ public class SslCertificateClientTest {
 
     try {
       ProjectName project = ProjectName.of("[PROJECT]");
-      SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
 
-      client.insertSslCertificate(project, sslCertificateResource);
+      client.insertSslCertificate(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

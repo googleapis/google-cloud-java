@@ -161,21 +161,29 @@ public class HealthCheckClient implements BackgroundResource {
    *
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (HealthChecksScopedList element : healthCheckClient.aggregatedListHealthChecks(project).iterateAll()) {
+   *   for (HealthChecksScopedList element : healthCheckClient.aggregatedListHealthChecks(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListHealthChecksPagedResponse aggregatedListHealthChecks(
-      ProjectName project) {
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListHealthChecksHttpRequest request =
         AggregatedListHealthChecksHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListHealthChecks(request);
@@ -190,20 +198,31 @@ public class HealthCheckClient implements BackgroundResource {
    *
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (HealthChecksScopedList element : healthCheckClient.aggregatedListHealthChecks(project.toString()).iterateAll()) {
+   *   for (HealthChecksScopedList element : healthCheckClient.aggregatedListHealthChecks(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListHealthChecksPagedResponse aggregatedListHealthChecks(String project) {
+  public final AggregatedListHealthChecksPagedResponse aggregatedListHealthChecks(
+      Boolean includeAllScopes, String project) {
     AggregatedListHealthChecksHttpRequest request =
-        AggregatedListHealthChecksHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListHealthChecksHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListHealthChecks(request);
   }
 
@@ -216,8 +235,10 @@ public class HealthCheckClient implements BackgroundResource {
    *
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListHealthChecksHttpRequest request = AggregatedListHealthChecksHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (HealthChecksScopedList element : healthCheckClient.aggregatedListHealthChecks(request).iterateAll()) {
@@ -244,8 +265,10 @@ public class HealthCheckClient implements BackgroundResource {
    *
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListHealthChecksHttpRequest request = AggregatedListHealthChecksHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListHealthChecksPagedResponse&gt; future = healthCheckClient.aggregatedListHealthChecksPagedCallable().futureCall(request);
@@ -272,8 +295,10 @@ public class HealthCheckClient implements BackgroundResource {
    *
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListHealthChecksHttpRequest request = AggregatedListHealthChecksHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
@@ -508,8 +533,8 @@ public class HealthCheckClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param healthCheckResource Represents a Health Check resource.
    *     <p>Google Compute Engine has two Health Check resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
    *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
    *     balancers and managed instance group auto-healing use global health checks. For more
    *     information, read Health Check Concepts.
@@ -544,8 +569,8 @@ public class HealthCheckClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param healthCheckResource Represents a Health Check resource.
    *     <p>Google Compute Engine has two Health Check resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
    *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
    *     balancers and managed instance group auto-healing use global health checks. For more
    *     information, read Health Check Concepts.
@@ -770,8 +795,8 @@ public class HealthCheckClient implements BackgroundResource {
    * @param healthCheck Name of the HealthCheck resource to patch.
    * @param healthCheckResource Represents a Health Check resource.
    *     <p>Google Compute Engine has two Health Check resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
    *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
    *     balancers and managed instance group auto-healing use global health checks. For more
    *     information, read Health Check Concepts.
@@ -816,8 +841,8 @@ public class HealthCheckClient implements BackgroundResource {
    * @param healthCheck Name of the HealthCheck resource to patch.
    * @param healthCheckResource Represents a Health Check resource.
    *     <p>Google Compute Engine has two Health Check resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
    *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
    *     balancers and managed instance group auto-healing use global health checks. For more
    *     information, read Health Check Concepts.
@@ -916,8 +941,8 @@ public class HealthCheckClient implements BackgroundResource {
    * @param healthCheck Name of the HealthCheck resource to update.
    * @param healthCheckResource Represents a Health Check resource.
    *     <p>Google Compute Engine has two Health Check resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
    *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
    *     balancers and managed instance group auto-healing use global health checks. For more
    *     information, read Health Check Concepts.
@@ -961,8 +986,8 @@ public class HealthCheckClient implements BackgroundResource {
    * @param healthCheck Name of the HealthCheck resource to update.
    * @param healthCheckResource Represents a Health Check resource.
    *     <p>Google Compute Engine has two Health Check resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
    *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
    *     balancers and managed instance group auto-healing use global health checks. For more
    *     information, read Health Check Concepts.

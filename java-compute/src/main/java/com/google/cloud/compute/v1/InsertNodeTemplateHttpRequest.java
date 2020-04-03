@@ -154,7 +154,7 @@ public final class InsertNodeTemplateHttpRequest implements ApiMessage {
    *
    * <p>You can use a template to define properties for nodes in a node group. For more information,
    * read Creating node groups and instances. (== resource_for {$api_version}.nodeTemplates ==) (==
-   * NextID: 18 ==)
+   * NextID: 19 ==)
    */
   public NodeTemplate getNodeTemplateResource() {
     return nodeTemplateResource;
@@ -336,7 +336,7 @@ public final class InsertNodeTemplateHttpRequest implements ApiMessage {
      *
      * <p>You can use a template to define properties for nodes in a node group. For more
      * information, read Creating node groups and instances. (== resource_for
-     * {$api_version}.nodeTemplates ==) (== NextID: 18 ==)
+     * {$api_version}.nodeTemplates ==) (== NextID: 19 ==)
      */
     public NodeTemplate getNodeTemplateResource() {
       return nodeTemplateResource;
@@ -347,7 +347,7 @@ public final class InsertNodeTemplateHttpRequest implements ApiMessage {
      *
      * <p>You can use a template to define properties for nodes in a node group. For more
      * information, read Creating node groups and instances. (== resource_for
-     * {$api_version}.nodeTemplates ==) (== NextID: 18 ==)
+     * {$api_version}.nodeTemplates ==) (== NextID: 19 ==)
      */
     public Builder setNodeTemplateResource(NodeTemplate nodeTemplateResource) {
       this.nodeTemplateResource = nodeTemplateResource;

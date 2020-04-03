@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddAccessConfigInstanceHttpRequest;
+import com.google.cloud.compute.v1.AddResourcePoliciesInstanceHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListInstancesHttpRequest;
 import com.google.cloud.compute.v1.AttachDiskInstanceHttpRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceHttpRequest;
@@ -57,6 +58,7 @@ import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectZoneInstanceName;
 import com.google.cloud.compute.v1.ProjectZoneInstanceResourceName;
 import com.google.cloud.compute.v1.ProjectZoneName;
+import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceHttpRequest;
 import com.google.cloud.compute.v1.ResetInstanceHttpRequest;
 import com.google.cloud.compute.v1.SerialPortOutput;
 import com.google.cloud.compute.v1.SetDeletionProtectionInstanceHttpRequest;
@@ -80,6 +82,7 @@ import com.google.cloud.compute.v1.TestIamPermissionsInstanceHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateDisplayDeviceInstanceHttpRequest;
+import com.google.cloud.compute.v1.UpdateInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceHttpRequest;
 import com.google.common.collect.Sets;
@@ -118,6 +121,28 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<AddResourcePoliciesInstanceHttpRequest, Operation>
+      addResourcePoliciesInstanceMethodDescriptor =
+          ApiMethodDescriptor.<AddResourcePoliciesInstanceHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.instances.addResourcePolicies")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<AddResourcePoliciesInstanceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instances/{instance}/addResourcePolicies"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
+                      .setResourceNameField("instance")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<
           AggregatedListInstancesHttpRequest, InstanceAggregatedList>
       aggregatedListInstancesMethodDescriptor =
@@ -129,7 +154,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   ApiMessageHttpRequestFormatter.<AggregatedListInstancesHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/instances"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())
@@ -391,6 +417,28 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setResponseParser(
                   ApiMessageHttpResponseParser.<InstanceListReferrers>newBuilder()
                       .setResponseInstance(InstanceListReferrers.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<RemoveResourcePoliciesInstanceHttpRequest, Operation>
+      removeResourcePoliciesInstanceMethodDescriptor =
+          ApiMethodDescriptor.<RemoveResourcePoliciesInstanceHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.instances.removeResourcePolicies")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<RemoveResourcePoliciesInstanceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instances/{instance}/removeResourcePolicies"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
+                      .setResourceNameField("instance")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
                       .build())
               .build();
 
@@ -780,6 +828,28 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<UpdateInstanceHttpRequest, Operation>
+      updateInstanceMethodDescriptor =
+          ApiMethodDescriptor.<UpdateInstanceHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.instances.update")
+              .setHttpMethod(HttpMethods.PUT)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<UpdateInstanceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/zones/{zone}/instances/{instance}"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet(
+                              "minimalAction", "mostDisruptiveAllowedAction", "requestId"))
+                      .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
+                      .setResourceNameField("instance")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<UpdateAccessConfigInstanceHttpRequest, Operation>
       updateAccessConfigInstanceMethodDescriptor =
           ApiMethodDescriptor.<UpdateAccessConfigInstanceHttpRequest, Operation>newBuilder()
@@ -872,6 +942,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
 
   private final UnaryCallable<AddAccessConfigInstanceHttpRequest, Operation>
       addAccessConfigInstanceCallable;
+  private final UnaryCallable<AddResourcePoliciesInstanceHttpRequest, Operation>
+      addResourcePoliciesInstanceCallable;
   private final UnaryCallable<AggregatedListInstancesHttpRequest, InstanceAggregatedList>
       aggregatedListInstancesCallable;
   private final UnaryCallable<
@@ -900,6 +972,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
   private final UnaryCallable<
           ListReferrersInstancesHttpRequest, ListReferrersInstancesPagedResponse>
       listReferrersInstancesPagedCallable;
+  private final UnaryCallable<RemoveResourcePoliciesInstanceHttpRequest, Operation>
+      removeResourcePoliciesInstanceCallable;
   private final UnaryCallable<ResetInstanceHttpRequest, Operation> resetInstanceCallable;
   private final UnaryCallable<SetDeletionProtectionInstanceHttpRequest, Operation>
       setDeletionProtectionInstanceCallable;
@@ -930,6 +1004,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
   private final UnaryCallable<StopInstanceHttpRequest, Operation> stopInstanceCallable;
   private final UnaryCallable<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
       testIamPermissionsInstanceCallable;
+  private final UnaryCallable<UpdateInstanceHttpRequest, Operation> updateInstanceCallable;
   private final UnaryCallable<UpdateAccessConfigInstanceHttpRequest, Operation>
       updateAccessConfigInstanceCallable;
   private final UnaryCallable<UpdateDisplayDeviceInstanceHttpRequest, Operation>
@@ -982,6 +1057,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
         addAccessConfigInstanceTransportSettings =
             HttpJsonCallSettings.<AddAccessConfigInstanceHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(addAccessConfigInstanceMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<AddResourcePoliciesInstanceHttpRequest, Operation>
+        addResourcePoliciesInstanceTransportSettings =
+            HttpJsonCallSettings.<AddResourcePoliciesInstanceHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(addResourcePoliciesInstanceMethodDescriptor)
                 .build();
     HttpJsonCallSettings<AggregatedListInstancesHttpRequest, InstanceAggregatedList>
         aggregatedListInstancesTransportSettings =
@@ -1049,6 +1129,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
             HttpJsonCallSettings
                 .<ListReferrersInstancesHttpRequest, InstanceListReferrers>newBuilder()
                 .setMethodDescriptor(listReferrersInstancesMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<RemoveResourcePoliciesInstanceHttpRequest, Operation>
+        removeResourcePoliciesInstanceTransportSettings =
+            HttpJsonCallSettings.<RemoveResourcePoliciesInstanceHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(removeResourcePoliciesInstanceMethodDescriptor)
                 .build();
     HttpJsonCallSettings<ResetInstanceHttpRequest, Operation> resetInstanceTransportSettings =
         HttpJsonCallSettings.<ResetInstanceHttpRequest, Operation>newBuilder()
@@ -1139,6 +1224,10 @@ public class HttpJsonInstanceStub extends InstanceStub {
                 .<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsInstanceMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<UpdateInstanceHttpRequest, Operation> updateInstanceTransportSettings =
+        HttpJsonCallSettings.<UpdateInstanceHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateInstanceMethodDescriptor)
+            .build();
     HttpJsonCallSettings<UpdateAccessConfigInstanceHttpRequest, Operation>
         updateAccessConfigInstanceTransportSettings =
             HttpJsonCallSettings.<UpdateAccessConfigInstanceHttpRequest, Operation>newBuilder()
@@ -1165,6 +1254,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
         callableFactory.createUnaryCallable(
             addAccessConfigInstanceTransportSettings,
             settings.addAccessConfigInstanceSettings(),
+            clientContext);
+    this.addResourcePoliciesInstanceCallable =
+        callableFactory.createUnaryCallable(
+            addResourcePoliciesInstanceTransportSettings,
+            settings.addResourcePoliciesInstanceSettings(),
             clientContext);
     this.aggregatedListInstancesCallable =
         callableFactory.createUnaryCallable(
@@ -1235,6 +1329,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
         callableFactory.createPagedCallable(
             listReferrersInstancesTransportSettings,
             settings.listReferrersInstancesSettings(),
+            clientContext);
+    this.removeResourcePoliciesInstanceCallable =
+        callableFactory.createUnaryCallable(
+            removeResourcePoliciesInstanceTransportSettings,
+            settings.removeResourcePoliciesInstanceSettings(),
             clientContext);
     this.resetInstanceCallable =
         callableFactory.createUnaryCallable(
@@ -1318,6 +1417,9 @@ public class HttpJsonInstanceStub extends InstanceStub {
             testIamPermissionsInstanceTransportSettings,
             settings.testIamPermissionsInstanceSettings(),
             clientContext);
+    this.updateInstanceCallable =
+        callableFactory.createUnaryCallable(
+            updateInstanceTransportSettings, settings.updateInstanceSettings(), clientContext);
     this.updateAccessConfigInstanceCallable =
         callableFactory.createUnaryCallable(
             updateAccessConfigInstanceTransportSettings,
@@ -1346,6 +1448,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
   public UnaryCallable<AddAccessConfigInstanceHttpRequest, Operation>
       addAccessConfigInstanceCallable() {
     return addAccessConfigInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<AddResourcePoliciesInstanceHttpRequest, Operation>
+      addResourcePoliciesInstanceCallable() {
+    return addResourcePoliciesInstanceCallable;
   }
 
   @BetaApi
@@ -1435,6 +1543,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
   public UnaryCallable<ListReferrersInstancesHttpRequest, InstanceListReferrers>
       listReferrersInstancesCallable() {
     return listReferrersInstancesCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<RemoveResourcePoliciesInstanceHttpRequest, Operation>
+      removeResourcePoliciesInstanceCallable() {
+    return removeResourcePoliciesInstanceCallable;
   }
 
   @BetaApi
@@ -1536,6 +1650,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
   public UnaryCallable<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
       testIamPermissionsInstanceCallable() {
     return testIamPermissionsInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<UpdateInstanceHttpRequest, Operation> updateInstanceCallable() {
+    return updateInstanceCallable;
   }
 
   @BetaApi

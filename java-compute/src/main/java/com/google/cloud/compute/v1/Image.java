@@ -50,6 +50,7 @@ public final class Image implements ApiMessage {
   private final String name;
   private final RawDisk rawDisk;
   private final String selfLink;
+  private final InitialStateConfig shieldedInstanceInitialState;
   private final String sourceDisk;
   private final CustomerEncryptionKey sourceDiskEncryptionKey;
   private final String sourceDiskId;
@@ -81,6 +82,7 @@ public final class Image implements ApiMessage {
     this.name = null;
     this.rawDisk = null;
     this.selfLink = null;
+    this.shieldedInstanceInitialState = null;
     this.sourceDisk = null;
     this.sourceDiskEncryptionKey = null;
     this.sourceDiskId = null;
@@ -113,6 +115,7 @@ public final class Image implements ApiMessage {
       String name,
       RawDisk rawDisk,
       String selfLink,
+      InitialStateConfig shieldedInstanceInitialState,
       String sourceDisk,
       CustomerEncryptionKey sourceDiskEncryptionKey,
       String sourceDiskId,
@@ -142,6 +145,7 @@ public final class Image implements ApiMessage {
     this.name = name;
     this.rawDisk = rawDisk;
     this.selfLink = selfLink;
+    this.shieldedInstanceInitialState = shieldedInstanceInitialState;
     this.sourceDisk = sourceDisk;
     this.sourceDiskEncryptionKey = sourceDiskEncryptionKey;
     this.sourceDiskId = sourceDiskId;
@@ -208,6 +212,9 @@ public final class Image implements ApiMessage {
     }
     if ("selfLink".equals(fieldName)) {
       return selfLink;
+    }
+    if ("shieldedInstanceInitialState".equals(fieldName)) {
+      return shieldedInstanceInitialState;
     }
     if ("sourceDisk".equals(fieldName)) {
       return sourceDisk;
@@ -387,6 +394,11 @@ public final class Image implements ApiMessage {
     return selfLink;
   }
 
+  /** Set the secure boot keys of shielded instance. */
+  public InitialStateConfig getShieldedInstanceInitialState() {
+    return shieldedInstanceInitialState;
+  }
+
   /**
    * URL of the source disk used to create this image. This can be a full or valid partial URL. You
    * must provide either this property or the rawDisk.source property but not both to create an
@@ -526,6 +538,7 @@ public final class Image implements ApiMessage {
     private String name;
     private RawDisk rawDisk;
     private String selfLink;
+    private InitialStateConfig shieldedInstanceInitialState;
     private String sourceDisk;
     private CustomerEncryptionKey sourceDiskEncryptionKey;
     private String sourceDiskId;
@@ -594,6 +607,9 @@ public final class Image implements ApiMessage {
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
+      if (other.getShieldedInstanceInitialState() != null) {
+        this.shieldedInstanceInitialState = other.shieldedInstanceInitialState;
+      }
       if (other.getSourceDisk() != null) {
         this.sourceDisk = other.sourceDisk;
       }
@@ -651,6 +667,7 @@ public final class Image implements ApiMessage {
       this.name = source.name;
       this.rawDisk = source.rawDisk;
       this.selfLink = source.selfLink;
+      this.shieldedInstanceInitialState = source.shieldedInstanceInitialState;
       this.sourceDisk = source.sourceDisk;
       this.sourceDiskEncryptionKey = source.sourceDiskEncryptionKey;
       this.sourceDiskId = source.sourceDiskId;
@@ -965,6 +982,18 @@ public final class Image implements ApiMessage {
       return this;
     }
 
+    /** Set the secure boot keys of shielded instance. */
+    public InitialStateConfig getShieldedInstanceInitialState() {
+      return shieldedInstanceInitialState;
+    }
+
+    /** Set the secure boot keys of shielded instance. */
+    public Builder setShieldedInstanceInitialState(
+        InitialStateConfig shieldedInstanceInitialState) {
+      this.shieldedInstanceInitialState = shieldedInstanceInitialState;
+      return this;
+    }
+
     /**
      * URL of the source disk used to create this image. This can be a full or valid partial URL.
      * You must provide either this property or the rawDisk.source property but not both to create
@@ -1208,6 +1237,7 @@ public final class Image implements ApiMessage {
           name,
           rawDisk,
           selfLink,
+          shieldedInstanceInitialState,
           sourceDisk,
           sourceDiskEncryptionKey,
           sourceDiskId,
@@ -1241,6 +1271,7 @@ public final class Image implements ApiMessage {
       newBuilder.setName(this.name);
       newBuilder.setRawDisk(this.rawDisk);
       newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setShieldedInstanceInitialState(this.shieldedInstanceInitialState);
       newBuilder.setSourceDisk(this.sourceDisk);
       newBuilder.setSourceDiskEncryptionKey(this.sourceDiskEncryptionKey);
       newBuilder.setSourceDiskId(this.sourceDiskId);
@@ -1311,6 +1342,9 @@ public final class Image implements ApiMessage {
         + "selfLink="
         + selfLink
         + ", "
+        + "shieldedInstanceInitialState="
+        + shieldedInstanceInitialState
+        + ", "
         + "sourceDisk="
         + sourceDisk
         + ", "
@@ -1373,6 +1407,8 @@ public final class Image implements ApiMessage {
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.rawDisk, that.getRawDisk())
           && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(
+              this.shieldedInstanceInitialState, that.getShieldedInstanceInitialState())
           && Objects.equals(this.sourceDisk, that.getSourceDisk())
           && Objects.equals(this.sourceDiskEncryptionKey, that.getSourceDiskEncryptionKey())
           && Objects.equals(this.sourceDiskId, that.getSourceDiskId())
@@ -1409,6 +1445,7 @@ public final class Image implements ApiMessage {
         name,
         rawDisk,
         selfLink,
+        shieldedInstanceInitialState,
         sourceDisk,
         sourceDiskEncryptionKey,
         sourceDiskId,

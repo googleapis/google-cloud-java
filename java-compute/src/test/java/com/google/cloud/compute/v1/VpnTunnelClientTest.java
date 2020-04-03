@@ -107,10 +107,11 @@ public class VpnTunnelClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListVpnTunnelsPagedResponse pagedListResponse =
-        client.aggregatedListVpnTunnels(project);
+        client.aggregatedListVpnTunnels(includeAllScopes, project);
 
     List<VpnTunnelsScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -141,9 +142,10 @@ public class VpnTunnelClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListVpnTunnels(project);
+      client.aggregatedListVpnTunnels(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

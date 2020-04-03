@@ -279,26 +279,154 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Adds existing resource policies to an instance. You can only add one policy right now which
+   * will be applied to this instance for scheduling live migrations.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource = InstancesAddResourcePoliciesRequest.newBuilder().build();
+   *   Operation response = instanceClient.addResourcePoliciesInstance(instance, instancesAddResourcePoliciesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance The instance name for this request.
+   * @param instancesAddResourcePoliciesRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation addResourcePoliciesInstance(
+      ProjectZoneInstanceName instance,
+      InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource) {
+    AddResourcePoliciesInstanceHttpRequest request =
+        AddResourcePoliciesInstanceHttpRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .setInstancesAddResourcePoliciesRequestResource(
+                instancesAddResourcePoliciesRequestResource)
+            .build();
+    return addResourcePoliciesInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds existing resource policies to an instance. You can only add one policy right now which
+   * will be applied to this instance for scheduling live migrations.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource = InstancesAddResourcePoliciesRequest.newBuilder().build();
+   *   Operation response = instanceClient.addResourcePoliciesInstance(instance.toString(), instancesAddResourcePoliciesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance The instance name for this request.
+   * @param instancesAddResourcePoliciesRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation addResourcePoliciesInstance(
+      String instance,
+      InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource) {
+    AddResourcePoliciesInstanceHttpRequest request =
+        AddResourcePoliciesInstanceHttpRequest.newBuilder()
+            .setInstance(instance)
+            .setInstancesAddResourcePoliciesRequestResource(
+                instancesAddResourcePoliciesRequestResource)
+            .build();
+    return addResourcePoliciesInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds existing resource policies to an instance. You can only add one policy right now which
+   * will be applied to this instance for scheduling live migrations.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource = InstancesAddResourcePoliciesRequest.newBuilder().build();
+   *   AddResourcePoliciesInstanceHttpRequest request = AddResourcePoliciesInstanceHttpRequest.newBuilder()
+   *     .setInstance(formattedInstance)
+   *     .setInstancesAddResourcePoliciesRequestResource(instancesAddResourcePoliciesRequestResource)
+   *     .build();
+   *   Operation response = instanceClient.addResourcePoliciesInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation addResourcePoliciesInstance(
+      AddResourcePoliciesInstanceHttpRequest request) {
+    return addResourcePoliciesInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds existing resource policies to an instance. You can only add one policy right now which
+   * will be applied to this instance for scheduling live migrations.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource = InstancesAddResourcePoliciesRequest.newBuilder().build();
+   *   AddResourcePoliciesInstanceHttpRequest request = AddResourcePoliciesInstanceHttpRequest.newBuilder()
+   *     .setInstance(formattedInstance)
+   *     .setInstancesAddResourcePoliciesRequestResource(instancesAddResourcePoliciesRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceClient.addResourcePoliciesInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<AddResourcePoliciesInstanceHttpRequest, Operation>
+      addResourcePoliciesInstanceCallable() {
+    return stub.addResourcePoliciesInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Retrieves aggregated list of all of the instances in your project across all regions and zones.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (InstancesScopedList element : instanceClient.aggregatedListInstances(project).iterateAll()) {
+   *   for (InstancesScopedList element : instanceClient.aggregatedListInstances(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListInstancesPagedResponse aggregatedListInstances(ProjectName project) {
+  public final AggregatedListInstancesPagedResponse aggregatedListInstances(
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListInstancesHttpRequest request =
         AggregatedListInstancesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListInstances(request);
@@ -312,20 +440,31 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (InstancesScopedList element : instanceClient.aggregatedListInstances(project.toString()).iterateAll()) {
+   *   for (InstancesScopedList element : instanceClient.aggregatedListInstances(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListInstancesPagedResponse aggregatedListInstances(String project) {
+  public final AggregatedListInstancesPagedResponse aggregatedListInstances(
+      Boolean includeAllScopes, String project) {
     AggregatedListInstancesHttpRequest request =
-        AggregatedListInstancesHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListInstancesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListInstances(request);
   }
 
@@ -337,8 +476,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInstancesHttpRequest request = AggregatedListInstancesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (InstancesScopedList element : instanceClient.aggregatedListInstances(request).iterateAll()) {
@@ -364,8 +505,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInstancesHttpRequest request = AggregatedListInstancesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListInstancesPagedResponse&gt; future = instanceClient.aggregatedListInstancesPagedCallable().futureCall(request);
@@ -391,8 +534,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInstancesHttpRequest request = AggregatedListInstancesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
@@ -1815,6 +1960,121 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Removes resource policies from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource = InstancesRemoveResourcePoliciesRequest.newBuilder().build();
+   *   Operation response = instanceClient.removeResourcePoliciesInstance(instance, instancesRemoveResourcePoliciesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance The instance name for this request.
+   * @param instancesRemoveResourcePoliciesRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation removeResourcePoliciesInstance(
+      ProjectZoneInstanceName instance,
+      InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource) {
+    RemoveResourcePoliciesInstanceHttpRequest request =
+        RemoveResourcePoliciesInstanceHttpRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .setInstancesRemoveResourcePoliciesRequestResource(
+                instancesRemoveResourcePoliciesRequestResource)
+            .build();
+    return removeResourcePoliciesInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Removes resource policies from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource = InstancesRemoveResourcePoliciesRequest.newBuilder().build();
+   *   Operation response = instanceClient.removeResourcePoliciesInstance(instance.toString(), instancesRemoveResourcePoliciesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance The instance name for this request.
+   * @param instancesRemoveResourcePoliciesRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation removeResourcePoliciesInstance(
+      String instance,
+      InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource) {
+    RemoveResourcePoliciesInstanceHttpRequest request =
+        RemoveResourcePoliciesInstanceHttpRequest.newBuilder()
+            .setInstance(instance)
+            .setInstancesRemoveResourcePoliciesRequestResource(
+                instancesRemoveResourcePoliciesRequestResource)
+            .build();
+    return removeResourcePoliciesInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Removes resource policies from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource = InstancesRemoveResourcePoliciesRequest.newBuilder().build();
+   *   RemoveResourcePoliciesInstanceHttpRequest request = RemoveResourcePoliciesInstanceHttpRequest.newBuilder()
+   *     .setInstance(formattedInstance)
+   *     .setInstancesRemoveResourcePoliciesRequestResource(instancesRemoveResourcePoliciesRequestResource)
+   *     .build();
+   *   Operation response = instanceClient.removeResourcePoliciesInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation removeResourcePoliciesInstance(
+      RemoveResourcePoliciesInstanceHttpRequest request) {
+    return removeResourcePoliciesInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Removes resource policies from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource = InstancesRemoveResourcePoliciesRequest.newBuilder().build();
+   *   RemoveResourcePoliciesInstanceHttpRequest request = RemoveResourcePoliciesInstanceHttpRequest.newBuilder()
+   *     .setInstance(formattedInstance)
+   *     .setInstancesRemoveResourcePoliciesRequestResource(instancesRemoveResourcePoliciesRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceClient.removeResourcePoliciesInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<RemoveResourcePoliciesInstanceHttpRequest, Operation>
+      removeResourcePoliciesInstanceCallable() {
+    return stub.removeResourcePoliciesInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
    * For more information, see Resetting an instance.
    *
@@ -2839,7 +3099,7 @@ public class InstanceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param instance Instance name for this request.
-   * @param schedulingResource Sets the scheduling options for an Instance. NextID: 9
+   * @param schedulingResource Sets the scheduling options for an Instance. NextID: 10
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -2868,7 +3128,7 @@ public class InstanceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param instance Instance name for this request.
-   * @param schedulingResource Sets the scheduling options for an Instance. NextID: 9
+   * @param schedulingResource Sets the scheduling options for an Instance. NextID: 10
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -3829,6 +4089,181 @@ public class InstanceClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
       testIamPermissionsInstanceCallable() {
     return stub.testIamPermissionsInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an instance only if the necessary resources are available. This method can update only
+   * a specific set of instance properties. See Updating a running instance for a list of updatable
+   * instance properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String mostDisruptiveAllowedAction = "";
+   *   String minimalAction = "";
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   Instance instanceResource = Instance.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceClient.updateInstance(mostDisruptiveAllowedAction, minimalAction, instance, instanceResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param mostDisruptiveAllowedAction Specifies the most disruptive action that can be taken on
+   *     the instance as part of the update. Compute Engine returns an error if the instance
+   *     properties require a more disruptive action as part of the instance update. Valid options
+   *     from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+   * @param minimalAction Specifies the action to take when updating an instance even if the updated
+   *     properties do not require it. If not specified, then Compute Engine acts based on the
+   *     minimum action that the updated properties require.
+   * @param instance Name of the instance resource to update.
+   * @param instanceResource Represents an Instance resource.
+   *     <p>An instance is a virtual machine that is hosted on Google Cloud Platform. For more
+   *     information, read Virtual Machine Instances. (== resource_for {$api_version}.instances ==)
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateInstance(
+      String mostDisruptiveAllowedAction,
+      String minimalAction,
+      ProjectZoneInstanceName instance,
+      Instance instanceResource,
+      List<String> fieldMask) {
+    UpdateInstanceHttpRequest request =
+        UpdateInstanceHttpRequest.newBuilder()
+            .setMostDisruptiveAllowedAction(mostDisruptiveAllowedAction)
+            .setMinimalAction(minimalAction)
+            .setInstance(instance == null ? null : instance.toString())
+            .setInstanceResource(instanceResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return updateInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an instance only if the necessary resources are available. This method can update only
+   * a specific set of instance properties. See Updating a running instance for a list of updatable
+   * instance properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String mostDisruptiveAllowedAction = "";
+   *   String minimalAction = "";
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   Instance instanceResource = Instance.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceClient.updateInstance(mostDisruptiveAllowedAction, minimalAction, instance.toString(), instanceResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param mostDisruptiveAllowedAction Specifies the most disruptive action that can be taken on
+   *     the instance as part of the update. Compute Engine returns an error if the instance
+   *     properties require a more disruptive action as part of the instance update. Valid options
+   *     from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+   * @param minimalAction Specifies the action to take when updating an instance even if the updated
+   *     properties do not require it. If not specified, then Compute Engine acts based on the
+   *     minimum action that the updated properties require.
+   * @param instance Name of the instance resource to update.
+   * @param instanceResource Represents an Instance resource.
+   *     <p>An instance is a virtual machine that is hosted on Google Cloud Platform. For more
+   *     information, read Virtual Machine Instances. (== resource_for {$api_version}.instances ==)
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateInstance(
+      String mostDisruptiveAllowedAction,
+      String minimalAction,
+      String instance,
+      Instance instanceResource,
+      List<String> fieldMask) {
+    UpdateInstanceHttpRequest request =
+        UpdateInstanceHttpRequest.newBuilder()
+            .setMostDisruptiveAllowedAction(mostDisruptiveAllowedAction)
+            .setMinimalAction(minimalAction)
+            .setInstance(instance)
+            .setInstanceResource(instanceResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return updateInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an instance only if the necessary resources are available. This method can update only
+   * a specific set of instance properties. See Updating a running instance for a list of updatable
+   * instance properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String mostDisruptiveAllowedAction = "";
+   *   String minimalAction = "";
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   Instance instanceResource = Instance.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   UpdateInstanceHttpRequest request = UpdateInstanceHttpRequest.newBuilder()
+   *     .setMostDisruptiveAllowedAction(mostDisruptiveAllowedAction)
+   *     .setMinimalAction(minimalAction)
+   *     .setInstance(formattedInstance)
+   *     .setInstanceResource(instanceResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   Operation response = instanceClient.updateInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateInstance(UpdateInstanceHttpRequest request) {
+    return updateInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an instance only if the necessary resources are available. This method can update only
+   * a specific set of instance properties. See Updating a running instance for a list of updatable
+   * instance properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String mostDisruptiveAllowedAction = "";
+   *   String minimalAction = "";
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   Instance instanceResource = Instance.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   UpdateInstanceHttpRequest request = UpdateInstanceHttpRequest.newBuilder()
+   *     .setMostDisruptiveAllowedAction(mostDisruptiveAllowedAction)
+   *     .setMinimalAction(minimalAction)
+   *     .setInstance(formattedInstance)
+   *     .setInstanceResource(instanceResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceClient.updateInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<UpdateInstanceHttpRequest, Operation> updateInstanceCallable() {
+    return stub.updateInstanceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

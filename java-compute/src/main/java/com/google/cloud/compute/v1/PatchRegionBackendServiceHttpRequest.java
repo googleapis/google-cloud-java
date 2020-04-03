@@ -27,10 +27,10 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionBackendServices.patch. Updates the specified regional
- * BackendService resource with the data included in the request. There are several restrictions and
- * guidelines to keep in mind when updating a backend service. Read Restrictions and Guidelines for
- * more information. This method supports PATCH semantics and uses the JSON merge patch format and
- * processing rules.
+ * BackendService resource with the data included in the request. There are several Understanding
+ * backend services to keep in mind when updating a backend service. Read Understanding backend
+ * services for more information. This method supports PATCH semantics and uses the JSON merge patch
+ * format and processing rules.
  */
 public final class PatchRegionBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;
@@ -153,8 +153,8 @@ public final class PatchRegionBackendServiceHttpRequest implements ApiMessage {
    *
    * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
    *
-   * <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   * [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *
    * <p>For more information, read Backend Services.
    *
@@ -354,8 +354,8 @@ public final class PatchRegionBackendServiceHttpRequest implements ApiMessage {
      *
      * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
      *
      * <p>For more information, read Backend Services.
      *
@@ -373,8 +373,8 @@ public final class PatchRegionBackendServiceHttpRequest implements ApiMessage {
      *
      * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
      *
      * <p>For more information, read Backend Services.
      *

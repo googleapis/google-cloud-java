@@ -16,14 +16,17 @@
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedListInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListErrorsInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceGroupManagerStub.abandonInstancesInstanceGroupManagerMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceGroupManagerStub.aggregatedListInstanceGroupManagersMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInstanceGroupManagerStub.applyUpdatesToInstancesInstanceGroupManagerMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceGroupManagerStub.createInstancesInstanceGroupManagerMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceGroupManagerStub.deleteInstanceGroupManagerMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceGroupManagerStub.deleteInstancesInstanceGroupManagerMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceGroupManagerStub.getInstanceGroupManagerMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceGroupManagerStub.insertInstanceGroupManagerMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInstanceGroupManagerStub.listErrorsInstanceGroupManagersMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceGroupManagerStub.listInstanceGroupManagersMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceGroupManagerStub.listManagedInstancesInstanceGroupManagersMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceGroupManagerStub.patchInstanceGroupManagerMethodDescriptor;
@@ -65,12 +68,14 @@ public class InstanceGroupManagerClientTest {
           Lists.<ApiMethodDescriptor>newArrayList(
               abandonInstancesInstanceGroupManagerMethodDescriptor,
               aggregatedListInstanceGroupManagersMethodDescriptor,
+              applyUpdatesToInstancesInstanceGroupManagerMethodDescriptor,
               createInstancesInstanceGroupManagerMethodDescriptor,
               deleteInstanceGroupManagerMethodDescriptor,
               deleteInstancesInstanceGroupManagerMethodDescriptor,
               getInstanceGroupManagerMethodDescriptor,
               insertInstanceGroupManagerMethodDescriptor,
               listInstanceGroupManagersMethodDescriptor,
+              listErrorsInstanceGroupManagersMethodDescriptor,
               listManagedInstancesInstanceGroupManagersMethodDescriptor,
               patchInstanceGroupManagerMethodDescriptor,
               recreateInstancesInstanceGroupManagerMethodDescriptor,
@@ -227,10 +232,11 @@ public class InstanceGroupManagerClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListInstanceGroupManagersPagedResponse pagedListResponse =
-        client.aggregatedListInstanceGroupManagers(project);
+        client.aggregatedListInstanceGroupManagers(includeAllScopes, project);
 
     List<InstanceGroupManagersScopedList> resources =
         Lists.newArrayList(pagedListResponse.iterateAll());
@@ -262,9 +268,107 @@ public class InstanceGroupManagerClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListInstanceGroupManagers(project);
+      client.aggregatedListInstanceGroupManagers(includeAllScopes, project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void applyUpdatesToInstancesInstanceGroupManagerTest() {
+    String clientOperationId = "clientOperationId-239630617";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
+    String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId(clientOperationId)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
+            .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneInstanceGroupManagerName instanceGroupManager =
+        ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+    InstanceGroupManagersApplyUpdatesRequest instanceGroupManagersApplyUpdatesRequestResource =
+        InstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.applyUpdatesToInstancesInstanceGroupManager(
+            instanceGroupManager, instanceGroupManagersApplyUpdatesRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void applyUpdatesToInstancesInstanceGroupManagerExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneInstanceGroupManagerName instanceGroupManager =
+          ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+      InstanceGroupManagersApplyUpdatesRequest instanceGroupManagersApplyUpdatesRequestResource =
+          InstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
+
+      client.applyUpdatesToInstancesInstanceGroupManager(
+          instanceGroupManager, instanceGroupManagersApplyUpdatesRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -781,6 +885,63 @@ public class InstanceGroupManagerClientTest {
       ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
       client.listInstanceGroupManagers(zone);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listErrorsInstanceGroupManagersTest() {
+    String nextPageToken = "";
+    InstanceManagedByIgmError itemsElement = InstanceManagedByIgmError.newBuilder().build();
+    List<InstanceManagedByIgmError> items = Arrays.asList(itemsElement);
+    InstanceGroupManagersListErrorsResponse expectedResponse =
+        InstanceGroupManagersListErrorsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllItems(items)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneInstanceGroupManagerName instanceGroupManager =
+        ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+
+    ListErrorsInstanceGroupManagersPagedResponse pagedListResponse =
+        client.listErrorsInstanceGroupManagers(instanceGroupManager);
+
+    List<InstanceManagedByIgmError> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listErrorsInstanceGroupManagersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneInstanceGroupManagerName instanceGroupManager =
+          ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+
+      client.listErrorsInstanceGroupManagers(instanceGroupManager);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

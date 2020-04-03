@@ -22,4 +22,19 @@
     <className>com/google/cloud/compute/v1/SubnetworkClient</className>
     <method>com.google.cloud.compute.v1.Operation patchSubnetwork(java.lang.String, com.google.cloud.compute.v1.Subnetwork, java.util.List)</method>
   </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/compute/v1/RegionSslCertificateClient</className>
+    <method>* insertRegionSslCertificate*</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/compute/v1/SslCertificateClient</className>
+    <method>* insertSslCertificate*</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/compute/v1/*Client</className>
+    <method>* aggregatedList*</method>
+  </difference>
 </differences>

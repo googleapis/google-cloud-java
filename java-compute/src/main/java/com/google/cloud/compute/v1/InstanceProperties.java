@@ -37,6 +37,7 @@ public final class InstanceProperties implements ApiMessage {
   private final String minCpuPlatform;
   private final List<NetworkInterface> networkInterfaces;
   private final ReservationAffinity reservationAffinity;
+  private final List<String> resourcePolicies;
   private final Scheduling scheduling;
   private final List<ServiceAccount> serviceAccounts;
   private final ShieldedInstanceConfig shieldedInstanceConfig;
@@ -53,6 +54,7 @@ public final class InstanceProperties implements ApiMessage {
     this.minCpuPlatform = null;
     this.networkInterfaces = null;
     this.reservationAffinity = null;
+    this.resourcePolicies = null;
     this.scheduling = null;
     this.serviceAccounts = null;
     this.shieldedInstanceConfig = null;
@@ -70,6 +72,7 @@ public final class InstanceProperties implements ApiMessage {
       String minCpuPlatform,
       List<NetworkInterface> networkInterfaces,
       ReservationAffinity reservationAffinity,
+      List<String> resourcePolicies,
       Scheduling scheduling,
       List<ServiceAccount> serviceAccounts,
       ShieldedInstanceConfig shieldedInstanceConfig,
@@ -84,6 +87,7 @@ public final class InstanceProperties implements ApiMessage {
     this.minCpuPlatform = minCpuPlatform;
     this.networkInterfaces = networkInterfaces;
     this.reservationAffinity = reservationAffinity;
+    this.resourcePolicies = resourcePolicies;
     this.scheduling = scheduling;
     this.serviceAccounts = serviceAccounts;
     this.shieldedInstanceConfig = shieldedInstanceConfig;
@@ -121,6 +125,9 @@ public final class InstanceProperties implements ApiMessage {
     }
     if ("reservationAffinity".equals(fieldName)) {
       return reservationAffinity;
+    }
+    if ("resourcePolicies".equals(fieldName)) {
+      return resourcePolicies;
     }
     if ("scheduling".equals(fieldName)) {
       return scheduling;
@@ -227,6 +234,11 @@ public final class InstanceProperties implements ApiMessage {
     return reservationAffinity;
   }
 
+  /** Resource policies (names, not ULRs) applied to instances created from this template. */
+  public List<String> getResourcePoliciesList() {
+    return resourcePolicies;
+  }
+
   /** Specifies the scheduling options for the instances that are created from this template. */
   public Scheduling getScheduling() {
     return scheduling;
@@ -287,6 +299,7 @@ public final class InstanceProperties implements ApiMessage {
     private String minCpuPlatform;
     private List<NetworkInterface> networkInterfaces;
     private ReservationAffinity reservationAffinity;
+    private List<String> resourcePolicies;
     private Scheduling scheduling;
     private List<ServiceAccount> serviceAccounts;
     private ShieldedInstanceConfig shieldedInstanceConfig;
@@ -326,6 +339,9 @@ public final class InstanceProperties implements ApiMessage {
       if (other.getReservationAffinity() != null) {
         this.reservationAffinity = other.reservationAffinity;
       }
+      if (other.getResourcePoliciesList() != null) {
+        this.resourcePolicies = other.resourcePolicies;
+      }
       if (other.getScheduling() != null) {
         this.scheduling = other.scheduling;
       }
@@ -352,6 +368,7 @@ public final class InstanceProperties implements ApiMessage {
       this.minCpuPlatform = source.minCpuPlatform;
       this.networkInterfaces = source.networkInterfaces;
       this.reservationAffinity = source.reservationAffinity;
+      this.resourcePolicies = source.resourcePolicies;
       this.scheduling = source.scheduling;
       this.serviceAccounts = source.serviceAccounts;
       this.shieldedInstanceConfig = source.shieldedInstanceConfig;
@@ -553,6 +570,29 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
+    /** Resource policies (names, not ULRs) applied to instances created from this template. */
+    public List<String> getResourcePoliciesList() {
+      return resourcePolicies;
+    }
+
+    /** Resource policies (names, not ULRs) applied to instances created from this template. */
+    public Builder addAllResourcePolicies(List<String> resourcePolicies) {
+      if (this.resourcePolicies == null) {
+        this.resourcePolicies = new LinkedList<>();
+      }
+      this.resourcePolicies.addAll(resourcePolicies);
+      return this;
+    }
+
+    /** Resource policies (names, not ULRs) applied to instances created from this template. */
+    public Builder addResourcePolicies(String resourcePolicies) {
+      if (this.resourcePolicies == null) {
+        this.resourcePolicies = new LinkedList<>();
+      }
+      this.resourcePolicies.add(resourcePolicies);
+      return this;
+    }
+
     /** Specifies the scheduling options for the instances that are created from this template. */
     public Scheduling getScheduling() {
       return scheduling;
@@ -640,6 +680,7 @@ public final class InstanceProperties implements ApiMessage {
           minCpuPlatform,
           networkInterfaces,
           reservationAffinity,
+          resourcePolicies,
           scheduling,
           serviceAccounts,
           shieldedInstanceConfig,
@@ -658,6 +699,7 @@ public final class InstanceProperties implements ApiMessage {
       newBuilder.setMinCpuPlatform(this.minCpuPlatform);
       newBuilder.addAllNetworkInterfaces(this.networkInterfaces);
       newBuilder.setReservationAffinity(this.reservationAffinity);
+      newBuilder.addAllResourcePolicies(this.resourcePolicies);
       newBuilder.setScheduling(this.scheduling);
       newBuilder.addAllServiceAccounts(this.serviceAccounts);
       newBuilder.setShieldedInstanceConfig(this.shieldedInstanceConfig);
@@ -699,6 +741,9 @@ public final class InstanceProperties implements ApiMessage {
         + "reservationAffinity="
         + reservationAffinity
         + ", "
+        + "resourcePolicies="
+        + resourcePolicies
+        + ", "
         + "scheduling="
         + scheduling
         + ", "
@@ -730,6 +775,7 @@ public final class InstanceProperties implements ApiMessage {
           && Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform())
           && Objects.equals(this.networkInterfaces, that.getNetworkInterfacesList())
           && Objects.equals(this.reservationAffinity, that.getReservationAffinity())
+          && Objects.equals(this.resourcePolicies, that.getResourcePoliciesList())
           && Objects.equals(this.scheduling, that.getScheduling())
           && Objects.equals(this.serviceAccounts, that.getServiceAccountsList())
           && Objects.equals(this.shieldedInstanceConfig, that.getShieldedInstanceConfig())
@@ -751,6 +797,7 @@ public final class InstanceProperties implements ApiMessage {
         minCpuPlatform,
         networkInterfaces,
         reservationAffinity,
+        resourcePolicies,
         scheduling,
         serviceAccounts,
         shieldedInstanceConfig,

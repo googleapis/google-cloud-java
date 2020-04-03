@@ -159,20 +159,29 @@ public class VpnTunnelClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (VpnTunnelsScopedList element : vpnTunnelClient.aggregatedListVpnTunnels(project).iterateAll()) {
+   *   for (VpnTunnelsScopedList element : vpnTunnelClient.aggregatedListVpnTunnels(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListVpnTunnelsPagedResponse aggregatedListVpnTunnels(ProjectName project) {
+  public final AggregatedListVpnTunnelsPagedResponse aggregatedListVpnTunnels(
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListVpnTunnelsHttpRequest request =
         AggregatedListVpnTunnelsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListVpnTunnels(request);
@@ -186,20 +195,31 @@ public class VpnTunnelClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (VpnTunnelsScopedList element : vpnTunnelClient.aggregatedListVpnTunnels(project.toString()).iterateAll()) {
+   *   for (VpnTunnelsScopedList element : vpnTunnelClient.aggregatedListVpnTunnels(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListVpnTunnelsPagedResponse aggregatedListVpnTunnels(String project) {
+  public final AggregatedListVpnTunnelsPagedResponse aggregatedListVpnTunnels(
+      Boolean includeAllScopes, String project) {
     AggregatedListVpnTunnelsHttpRequest request =
-        AggregatedListVpnTunnelsHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListVpnTunnelsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListVpnTunnels(request);
   }
 
@@ -211,8 +231,10 @@ public class VpnTunnelClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListVpnTunnelsHttpRequest request = AggregatedListVpnTunnelsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (VpnTunnelsScopedList element : vpnTunnelClient.aggregatedListVpnTunnels(request).iterateAll()) {
@@ -238,8 +260,10 @@ public class VpnTunnelClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListVpnTunnelsHttpRequest request = AggregatedListVpnTunnelsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListVpnTunnelsPagedResponse&gt; future = vpnTunnelClient.aggregatedListVpnTunnelsPagedCallable().futureCall(request);
@@ -265,8 +289,10 @@ public class VpnTunnelClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListVpnTunnelsHttpRequest request = AggregatedListVpnTunnelsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {

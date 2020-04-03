@@ -30,16 +30,16 @@ import javax.annotation.Nullable;
  *
  * <p>Google Compute Engine has three Operation resources:
  *
- * <p>&#42; [Global](/compute/docs/reference/rest/latest/globalOperations) &#42;
- * [Regional](/compute/docs/reference/rest/latest/regionOperations) &#42;
- * [Zonal](/compute/docs/reference/rest/latest/zoneOperations)
+ * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/globalOperations) &#42;
+ * [Regional](/compute/docs/reference/rest/{$api_version}/regionOperations) &#42;
+ * [Zonal](/compute/docs/reference/rest/{$api_version}/zoneOperations)
  *
  * <p>You can use an operation resource to manage asynchronous API requests. For more information,
  * read Handling API responses.
  *
  * <p>Operations can be global, regional or zonal. - For global operations, use the globalOperations
  * resource. - For regional operations, use the regionOperations resource. - For zonal operations,
- * use the zonalOperations resource.
+ * use the zoneOperations resource.
  *
  * <p>For more information, read Global, Regional, and Zonal Resources. (== resource_for
  * {$api_version}.globalOperations ==) (== resource_for {$api_version}.regionOperations ==) (==

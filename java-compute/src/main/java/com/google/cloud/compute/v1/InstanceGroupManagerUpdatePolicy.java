@@ -29,6 +29,7 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
   private final FixedOrPercent maxSurge;
   private final FixedOrPercent maxUnavailable;
   private final String minimalAction;
+  private final String replacementMethod;
   private final String type;
 
   private InstanceGroupManagerUpdatePolicy() {
@@ -36,6 +37,7 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
     this.maxSurge = null;
     this.maxUnavailable = null;
     this.minimalAction = null;
+    this.replacementMethod = null;
     this.type = null;
   }
 
@@ -44,11 +46,13 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
       FixedOrPercent maxSurge,
       FixedOrPercent maxUnavailable,
       String minimalAction,
+      String replacementMethod,
       String type) {
     this.instanceRedistributionType = instanceRedistributionType;
     this.maxSurge = maxSurge;
     this.maxUnavailable = maxUnavailable;
     this.minimalAction = minimalAction;
+    this.replacementMethod = replacementMethod;
     this.type = type;
   }
 
@@ -65,6 +69,9 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
     }
     if ("minimalAction".equals(fieldName)) {
       return minimalAction;
+    }
+    if ("replacementMethod".equals(fieldName)) {
+      return replacementMethod;
     }
     if ("type".equals(fieldName)) {
       return type;
@@ -141,6 +148,11 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
     return minimalAction;
   }
 
+  /** What action should be used to replace instances. See minimal_action.REPLACE */
+  public String getReplacementMethod() {
+    return replacementMethod;
+  }
+
   /**
    * The type of update process. You can specify either PROACTIVE so that the instance group manager
    * proactively executes actions in order to bring instances to their target versions or
@@ -178,6 +190,7 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
     private FixedOrPercent maxSurge;
     private FixedOrPercent maxUnavailable;
     private String minimalAction;
+    private String replacementMethod;
     private String type;
 
     Builder() {}
@@ -196,6 +209,9 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
       if (other.getMinimalAction() != null) {
         this.minimalAction = other.minimalAction;
       }
+      if (other.getReplacementMethod() != null) {
+        this.replacementMethod = other.replacementMethod;
+      }
       if (other.getType() != null) {
         this.type = other.type;
       }
@@ -207,6 +223,7 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
       this.maxSurge = source.maxSurge;
       this.maxUnavailable = source.maxUnavailable;
       this.minimalAction = source.minimalAction;
+      this.replacementMethod = source.replacementMethod;
       this.type = source.type;
     }
 
@@ -318,6 +335,17 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
       return this;
     }
 
+    /** What action should be used to replace instances. See minimal_action.REPLACE */
+    public String getReplacementMethod() {
+      return replacementMethod;
+    }
+
+    /** What action should be used to replace instances. See minimal_action.REPLACE */
+    public Builder setReplacementMethod(String replacementMethod) {
+      this.replacementMethod = replacementMethod;
+      return this;
+    }
+
     /**
      * The type of update process. You can specify either PROACTIVE so that the instance group
      * manager proactively executes actions in order to bring instances to their target versions or
@@ -342,7 +370,12 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
     public InstanceGroupManagerUpdatePolicy build() {
 
       return new InstanceGroupManagerUpdatePolicy(
-          instanceRedistributionType, maxSurge, maxUnavailable, minimalAction, type);
+          instanceRedistributionType,
+          maxSurge,
+          maxUnavailable,
+          minimalAction,
+          replacementMethod,
+          type);
     }
 
     public Builder clone() {
@@ -351,6 +384,7 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
       newBuilder.setMaxSurge(this.maxSurge);
       newBuilder.setMaxUnavailable(this.maxUnavailable);
       newBuilder.setMinimalAction(this.minimalAction);
+      newBuilder.setReplacementMethod(this.replacementMethod);
       newBuilder.setType(this.type);
       return newBuilder;
     }
@@ -371,6 +405,9 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
         + "minimalAction="
         + minimalAction
         + ", "
+        + "replacementMethod="
+        + replacementMethod
+        + ", "
         + "type="
         + type
         + "}";
@@ -387,6 +424,7 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
           && Objects.equals(this.maxSurge, that.getMaxSurge())
           && Objects.equals(this.maxUnavailable, that.getMaxUnavailable())
           && Objects.equals(this.minimalAction, that.getMinimalAction())
+          && Objects.equals(this.replacementMethod, that.getReplacementMethod())
           && Objects.equals(this.type, that.getType());
     }
     return false;
@@ -394,6 +432,12 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(instanceRedistributionType, maxSurge, maxUnavailable, minimalAction, type);
+    return Objects.hash(
+        instanceRedistributionType,
+        maxSurge,
+        maxUnavailable,
+        minimalAction,
+        replacementMethod,
+        type);
   }
 }

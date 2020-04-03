@@ -152,8 +152,8 @@ public final class InsertNetworkEndpointGroupHttpRequest implements ApiMessage {
   /**
    * Represents a collection of network endpoints.
    *
-   * <p>For more information read Setting up network endpoint groups in load balancing. (==
-   * resource_for {$api_version}.networkEndpointGroups ==) Next ID: 21
+   * <p>For more information read Network endpoint groups overview. (== resource_for
+   * {$api_version}.networkEndpointGroups ==) Next ID: 21
    */
   public NetworkEndpointGroup getNetworkEndpointGroupResource() {
     return networkEndpointGroupResource;
@@ -334,8 +334,8 @@ public final class InsertNetworkEndpointGroupHttpRequest implements ApiMessage {
     /**
      * Represents a collection of network endpoints.
      *
-     * <p>For more information read Setting up network endpoint groups in load balancing. (==
-     * resource_for {$api_version}.networkEndpointGroups ==) Next ID: 21
+     * <p>For more information read Network endpoint groups overview. (== resource_for
+     * {$api_version}.networkEndpointGroups ==) Next ID: 21
      */
     public NetworkEndpointGroup getNetworkEndpointGroupResource() {
       return networkEndpointGroupResource;
@@ -344,8 +344,8 @@ public final class InsertNetworkEndpointGroupHttpRequest implements ApiMessage {
     /**
      * Represents a collection of network endpoints.
      *
-     * <p>For more information read Setting up network endpoint groups in load balancing. (==
-     * resource_for {$api_version}.networkEndpointGroups ==) Next ID: 21
+     * <p>For more information read Network endpoint groups overview. (== resource_for
+     * {$api_version}.networkEndpointGroups ==) Next ID: 21
      */
     public Builder setNetworkEndpointGroupResource(
         NetworkEndpointGroup networkEndpointGroupResource) {

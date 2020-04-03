@@ -36,6 +36,7 @@ import com.google.cloud.compute.v1.NodeGroupAggregatedList;
 import com.google.cloud.compute.v1.NodeGroupList;
 import com.google.cloud.compute.v1.NodeGroupsListNodes;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.SetNodeTemplateNodeGroupHttpRequest;
@@ -117,6 +118,11 @@ public abstract class NodeGroupStub implements BackgroundResource {
   public UnaryCallable<ListNodesNodeGroupsHttpRequest, NodeGroupsListNodes>
       listNodesNodeGroupsCallable() {
     throw new UnsupportedOperationException("Not implemented: listNodesNodeGroupsCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchNodeGroupHttpRequest, Operation> patchNodeGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchNodeGroupCallable()");
   }
 
   @BetaApi

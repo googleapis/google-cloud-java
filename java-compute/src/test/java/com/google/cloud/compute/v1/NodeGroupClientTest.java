@@ -27,6 +27,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.getNodeGrou
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.insertNodeGroupMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.listNodeGroupsMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.listNodesNodeGroupsMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.patchNodeGroupMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.setIamPolicyNodeGroupMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.setNodeTemplateNodeGroupMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.testIamPermissionsNodeGroupMethodDescriptor;
@@ -45,6 +46,7 @@ import com.google.cloud.compute.v1.stub.NodeGroupStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -70,6 +72,7 @@ public class NodeGroupClientTest {
               insertNodeGroupMethodDescriptor,
               listNodeGroupsMethodDescriptor,
               listNodesNodeGroupsMethodDescriptor,
+              patchNodeGroupMethodDescriptor,
               setIamPolicyNodeGroupMethodDescriptor,
               setNodeTemplateNodeGroupMethodDescriptor,
               testIamPermissionsNodeGroupMethodDescriptor));
@@ -217,10 +220,11 @@ public class NodeGroupClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListNodeGroupsPagedResponse pagedListResponse =
-        client.aggregatedListNodeGroups(project);
+        client.aggregatedListNodeGroups(includeAllScopes, project);
 
     List<NodeGroupsScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -251,9 +255,10 @@ public class NodeGroupClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListNodeGroups(project);
+      client.aggregatedListNodeGroups(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -450,8 +455,10 @@ public class NodeGroupClientTest {
   public void getNodeGroupTest() {
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
+    String fingerprint = "fingerprint-1375934236";
     String id = "id3355";
     String kind = "kind3292052";
+    String maintenancePolicy = "maintenancePolicy1065198558";
     String name = "name3373707";
     ProjectRegionNodeTemplateName nodeTemplate =
         ProjectRegionNodeTemplateName.of("[PROJECT]", "[REGION]", "[NODE_TEMPLATE]");
@@ -463,8 +470,10 @@ public class NodeGroupClientTest {
         NodeGroup.newBuilder()
             .setCreationTimestamp(creationTimestamp)
             .setDescription(description)
+            .setFingerprint(fingerprint)
             .setId(id)
             .setKind(kind)
+            .setMaintenancePolicy(maintenancePolicy)
             .setName(name)
             .setNodeTemplate(nodeTemplate.toString())
             .setSelfLink(selfLink)
@@ -772,6 +781,100 @@ public class NodeGroupClientTest {
           ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
 
       client.listNodesNodeGroups(nodeGroup);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void patchNodeGroupTest() {
+    String clientOperationId = "clientOperationId-239630617";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
+    String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId(clientOperationId)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
+            .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneNodeGroupName nodeGroup =
+        ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+    NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
+
+    Operation actualResponse = client.patchNodeGroup(nodeGroup, nodeGroupResource, fieldMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void patchNodeGroupExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneNodeGroupName nodeGroup =
+          ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+      NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
+
+      client.patchNodeGroup(nodeGroup, nodeGroupResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

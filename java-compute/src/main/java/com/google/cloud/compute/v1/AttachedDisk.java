@@ -43,6 +43,7 @@ public final class AttachedDisk implements ApiMessage {
   private final String kind;
   private final List<String> licenses;
   private final String mode;
+  private final InitialStateConfig shieldedInstanceInitialState;
   private final String source;
   private final String type;
 
@@ -59,6 +60,7 @@ public final class AttachedDisk implements ApiMessage {
     this.kind = null;
     this.licenses = null;
     this.mode = null;
+    this.shieldedInstanceInitialState = null;
     this.source = null;
     this.type = null;
   }
@@ -76,6 +78,7 @@ public final class AttachedDisk implements ApiMessage {
       String kind,
       List<String> licenses,
       String mode,
+      InitialStateConfig shieldedInstanceInitialState,
       String source,
       String type) {
     this.autoDelete = autoDelete;
@@ -90,6 +93,7 @@ public final class AttachedDisk implements ApiMessage {
     this.kind = kind;
     this.licenses = licenses;
     this.mode = mode;
+    this.shieldedInstanceInitialState = shieldedInstanceInitialState;
     this.source = source;
     this.type = type;
   }
@@ -131,6 +135,9 @@ public final class AttachedDisk implements ApiMessage {
     }
     if ("mode".equals(fieldName)) {
       return mode;
+    }
+    if ("shieldedInstanceInitialState".equals(fieldName)) {
+      return shieldedInstanceInitialState;
     }
     if ("source".equals(fieldName)) {
       return source;
@@ -273,6 +280,11 @@ public final class AttachedDisk implements ApiMessage {
     return mode;
   }
 
+  /** [Output Only] shielded vm initial state stored on disk */
+  public InitialStateConfig getShieldedInstanceInitialState() {
+    return shieldedInstanceInitialState;
+  }
+
   /**
    * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a
    * new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or
@@ -330,6 +342,7 @@ public final class AttachedDisk implements ApiMessage {
     private String kind;
     private List<String> licenses;
     private String mode;
+    private InitialStateConfig shieldedInstanceInitialState;
     private String source;
     private String type;
 
@@ -373,6 +386,9 @@ public final class AttachedDisk implements ApiMessage {
       if (other.getMode() != null) {
         this.mode = other.mode;
       }
+      if (other.getShieldedInstanceInitialState() != null) {
+        this.shieldedInstanceInitialState = other.shieldedInstanceInitialState;
+      }
       if (other.getSource() != null) {
         this.source = other.source;
       }
@@ -395,6 +411,7 @@ public final class AttachedDisk implements ApiMessage {
       this.kind = source.kind;
       this.licenses = source.licenses;
       this.mode = source.mode;
+      this.shieldedInstanceInitialState = source.shieldedInstanceInitialState;
       this.source = source.source;
       this.type = source.type;
     }
@@ -666,6 +683,18 @@ public final class AttachedDisk implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] shielded vm initial state stored on disk */
+    public InitialStateConfig getShieldedInstanceInitialState() {
+      return shieldedInstanceInitialState;
+    }
+
+    /** [Output Only] shielded vm initial state stored on disk */
+    public Builder setShieldedInstanceInitialState(
+        InitialStateConfig shieldedInstanceInitialState) {
+      this.shieldedInstanceInitialState = shieldedInstanceInitialState;
+      return this;
+    }
+
     /**
      * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating
      * a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or
@@ -727,6 +756,7 @@ public final class AttachedDisk implements ApiMessage {
           kind,
           licenses,
           mode,
+          shieldedInstanceInitialState,
           source,
           type);
     }
@@ -745,6 +775,7 @@ public final class AttachedDisk implements ApiMessage {
       newBuilder.setKind(this.kind);
       newBuilder.addAllLicenses(this.licenses);
       newBuilder.setMode(this.mode);
+      newBuilder.setShieldedInstanceInitialState(this.shieldedInstanceInitialState);
       newBuilder.setSource(this.source);
       newBuilder.setType(this.type);
       return newBuilder;
@@ -790,6 +821,9 @@ public final class AttachedDisk implements ApiMessage {
         + "mode="
         + mode
         + ", "
+        + "shieldedInstanceInitialState="
+        + shieldedInstanceInitialState
+        + ", "
         + "source="
         + source
         + ", "
@@ -817,6 +851,8 @@ public final class AttachedDisk implements ApiMessage {
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.licenses, that.getLicensesList())
           && Objects.equals(this.mode, that.getMode())
+          && Objects.equals(
+              this.shieldedInstanceInitialState, that.getShieldedInstanceInitialState())
           && Objects.equals(this.source, that.getSource())
           && Objects.equals(this.type, that.getType());
     }
@@ -838,6 +874,7 @@ public final class AttachedDisk implements ApiMessage {
         kind,
         licenses,
         mode,
+        shieldedInstanceInitialState,
         source,
         type);
   }

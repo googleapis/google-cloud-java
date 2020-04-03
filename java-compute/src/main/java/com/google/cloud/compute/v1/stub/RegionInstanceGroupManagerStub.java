@@ -15,24 +15,28 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListErrorsRegionInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AbandonInstancesRegionInstanceGroupManagerHttpRequest;
+import com.google.cloud.compute.v1.ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.CreateInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.GetRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InsertRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InstanceGroupManager;
+import com.google.cloud.compute.v1.ListErrorsRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RecreateInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagerList;
+import com.google.cloud.compute.v1.RegionInstanceGroupManagersListErrorsResponse;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstancesResponse;
 import com.google.cloud.compute.v1.ResizeRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateRegionInstanceGroupManagerHttpRequest;
@@ -54,6 +58,13 @@ public abstract class RegionInstanceGroupManagerStub implements BackgroundResour
       abandonInstancesRegionInstanceGroupManagerCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: abandonInstancesRegionInstanceGroupManagerCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      applyUpdatesToInstancesRegionInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: applyUpdatesToInstancesRegionInstanceGroupManagerCallable()");
   }
 
   @BetaApi
@@ -104,6 +115,24 @@ public abstract class RegionInstanceGroupManagerStub implements BackgroundResour
       listRegionInstanceGroupManagersCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listRegionInstanceGroupManagersCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          ListErrorsRegionInstanceGroupManagersPagedResponse>
+      listErrorsRegionInstanceGroupManagersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listErrorsRegionInstanceGroupManagersPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListErrorsResponse>
+      listErrorsRegionInstanceGroupManagersCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listErrorsRegionInstanceGroupManagersCallable()");
   }
 
   @BetaApi

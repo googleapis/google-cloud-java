@@ -162,21 +162,29 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (CommitmentsScopedList element : regionCommitmentClient.aggregatedListRegionCommitments(project).iterateAll()) {
+   *   for (CommitmentsScopedList element : regionCommitmentClient.aggregatedListRegionCommitments(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListRegionCommitmentsPagedResponse aggregatedListRegionCommitments(
-      ProjectName project) {
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListRegionCommitmentsHttpRequest request =
         AggregatedListRegionCommitmentsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListRegionCommitments(request);
@@ -190,21 +198,31 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (CommitmentsScopedList element : regionCommitmentClient.aggregatedListRegionCommitments(project.toString()).iterateAll()) {
+   *   for (CommitmentsScopedList element : regionCommitmentClient.aggregatedListRegionCommitments(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListRegionCommitmentsPagedResponse aggregatedListRegionCommitments(
-      String project) {
+      Boolean includeAllScopes, String project) {
     AggregatedListRegionCommitmentsHttpRequest request =
-        AggregatedListRegionCommitmentsHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListRegionCommitmentsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListRegionCommitments(request);
   }
 
@@ -216,8 +234,10 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListRegionCommitmentsHttpRequest request = AggregatedListRegionCommitmentsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (CommitmentsScopedList element : regionCommitmentClient.aggregatedListRegionCommitments(request).iterateAll()) {
@@ -243,8 +263,10 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListRegionCommitmentsHttpRequest request = AggregatedListRegionCommitmentsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListRegionCommitmentsPagedResponse&gt; future = regionCommitmentClient.aggregatedListRegionCommitmentsPagedCallable().futureCall(request);
@@ -270,8 +292,10 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListRegionCommitmentsHttpRequest request = AggregatedListRegionCommitmentsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {

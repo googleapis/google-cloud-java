@@ -30,6 +30,7 @@ public final class NodeGroupNode implements ApiMessage {
   private final String name;
   private final String nodeType;
   private final ServerBinding serverBinding;
+  private final String serverId;
   private final String status;
 
   private NodeGroupNode() {
@@ -37,6 +38,7 @@ public final class NodeGroupNode implements ApiMessage {
     this.name = null;
     this.nodeType = null;
     this.serverBinding = null;
+    this.serverId = null;
     this.status = null;
   }
 
@@ -45,11 +47,13 @@ public final class NodeGroupNode implements ApiMessage {
       String name,
       String nodeType,
       ServerBinding serverBinding,
+      String serverId,
       String status) {
     this.instances = instances;
     this.name = name;
     this.nodeType = nodeType;
     this.serverBinding = serverBinding;
+    this.serverId = serverId;
     this.status = status;
   }
 
@@ -66,6 +70,9 @@ public final class NodeGroupNode implements ApiMessage {
     }
     if ("serverBinding".equals(fieldName)) {
       return serverBinding;
+    }
+    if ("serverId".equals(fieldName)) {
+      return serverId;
     }
     if ("status".equals(fieldName)) {
       return status;
@@ -111,6 +118,11 @@ public final class NodeGroupNode implements ApiMessage {
     return serverBinding;
   }
 
+  /** Server ID associated with this node. */
+  public String getServerId() {
+    return serverId;
+  }
+
   public String getStatus() {
     return status;
   }
@@ -142,6 +154,7 @@ public final class NodeGroupNode implements ApiMessage {
     private String name;
     private String nodeType;
     private ServerBinding serverBinding;
+    private String serverId;
     private String status;
 
     Builder() {}
@@ -160,6 +173,9 @@ public final class NodeGroupNode implements ApiMessage {
       if (other.getServerBinding() != null) {
         this.serverBinding = other.serverBinding;
       }
+      if (other.getServerId() != null) {
+        this.serverId = other.serverId;
+      }
       if (other.getStatus() != null) {
         this.status = other.status;
       }
@@ -171,6 +187,7 @@ public final class NodeGroupNode implements ApiMessage {
       this.name = source.name;
       this.nodeType = source.nodeType;
       this.serverBinding = source.serverBinding;
+      this.serverId = source.serverId;
       this.status = source.status;
     }
 
@@ -230,6 +247,17 @@ public final class NodeGroupNode implements ApiMessage {
       return this;
     }
 
+    /** Server ID associated with this node. */
+    public String getServerId() {
+      return serverId;
+    }
+
+    /** Server ID associated with this node. */
+    public Builder setServerId(String serverId) {
+      this.serverId = serverId;
+      return this;
+    }
+
     public String getStatus() {
       return status;
     }
@@ -241,7 +269,7 @@ public final class NodeGroupNode implements ApiMessage {
 
     public NodeGroupNode build() {
 
-      return new NodeGroupNode(instances, name, nodeType, serverBinding, status);
+      return new NodeGroupNode(instances, name, nodeType, serverBinding, serverId, status);
     }
 
     public Builder clone() {
@@ -250,6 +278,7 @@ public final class NodeGroupNode implements ApiMessage {
       newBuilder.setName(this.name);
       newBuilder.setNodeType(this.nodeType);
       newBuilder.setServerBinding(this.serverBinding);
+      newBuilder.setServerId(this.serverId);
       newBuilder.setStatus(this.status);
       return newBuilder;
     }
@@ -270,6 +299,9 @@ public final class NodeGroupNode implements ApiMessage {
         + "serverBinding="
         + serverBinding
         + ", "
+        + "serverId="
+        + serverId
+        + ", "
         + "status="
         + status
         + "}";
@@ -286,6 +318,7 @@ public final class NodeGroupNode implements ApiMessage {
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.nodeType, that.getNodeType())
           && Objects.equals(this.serverBinding, that.getServerBinding())
+          && Objects.equals(this.serverId, that.getServerId())
           && Objects.equals(this.status, that.getStatus());
     }
     return false;
@@ -293,6 +326,6 @@ public final class NodeGroupNode implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(instances, name, nodeType, serverBinding, status);
+    return Objects.hash(instances, name, nodeType, serverBinding, serverId, status);
   }
 }

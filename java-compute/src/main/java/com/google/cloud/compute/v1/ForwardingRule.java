@@ -31,8 +31,8 @@ import javax.annotation.Nullable;
  *
  * <p>Forwarding rule resources in GCP can be either regional or global in scope:
  *
- * <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
- * [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+ * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) &#42;
+ * [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
  *
  * <p>A forwarding rule and its corresponding IP address represent the frontend configuration of a
  * Google Cloud Platform load balancer. Forwarding rules can also reference target instances and
@@ -388,7 +388,7 @@ public final class ForwardingRule implements ApiMessage {
    * external IP address - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network
    * TCP/UDP - INTERNAL is used for: - Protocol forwarding to VMs from an internal IP address -
    * Internal TCP/UDP load balancers - INTERNAL_MANAGED is used for: - Internal HTTP(S) load
-   * balancers - &gt;INTERNAL_SELF_MANAGED is used for: - Traffic Director
+   * balancers - INTERNAL_SELF_MANAGED is used for: - Traffic Director
    *
    * <p>For more information about forwarding rules, refer to Forwarding rule concepts.
    */
@@ -437,7 +437,7 @@ public final class ForwardingRule implements ApiMessage {
 
   /**
    * This signifies the networking tier used for configuring this load balancer and can only take
-   * the following values: PREMIUM , STANDARD.
+   * the following values: PREMIUM, STANDARD.
    *
    * <p>For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For
    * GlobalForwardingRule, the valid value is PREMIUM.
@@ -982,7 +982,7 @@ public final class ForwardingRule implements ApiMessage {
      * external IP address - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and
      * Network TCP/UDP - INTERNAL is used for: - Protocol forwarding to VMs from an internal IP
      * address - Internal TCP/UDP load balancers - INTERNAL_MANAGED is used for: - Internal HTTP(S)
-     * load balancers - &gt;INTERNAL_SELF_MANAGED is used for: - Traffic Director
+     * load balancers - INTERNAL_SELF_MANAGED is used for: - Traffic Director
      *
      * <p>For more information about forwarding rules, refer to Forwarding rule concepts.
      */
@@ -997,7 +997,7 @@ public final class ForwardingRule implements ApiMessage {
      * external IP address - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and
      * Network TCP/UDP - INTERNAL is used for: - Protocol forwarding to VMs from an internal IP
      * address - Internal TCP/UDP load balancers - INTERNAL_MANAGED is used for: - Internal HTTP(S)
-     * load balancers - &gt;INTERNAL_SELF_MANAGED is used for: - Traffic Director
+     * load balancers - INTERNAL_SELF_MANAGED is used for: - Traffic Director
      *
      * <p>For more information about forwarding rules, refer to Forwarding rule concepts.
      */
@@ -1113,7 +1113,7 @@ public final class ForwardingRule implements ApiMessage {
 
     /**
      * This signifies the networking tier used for configuring this load balancer and can only take
-     * the following values: PREMIUM , STANDARD.
+     * the following values: PREMIUM, STANDARD.
      *
      * <p>For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For
      * GlobalForwardingRule, the valid value is PREMIUM.
@@ -1127,7 +1127,7 @@ public final class ForwardingRule implements ApiMessage {
 
     /**
      * This signifies the networking tier used for configuring this load balancer and can only take
-     * the following values: PREMIUM , STANDARD.
+     * the following values: PREMIUM, STANDARD.
      *
      * <p>For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For
      * GlobalForwardingRule, the valid value is PREMIUM.

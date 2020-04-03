@@ -76,7 +76,8 @@ public class HttpJsonRouterStub extends RouterStub {
                   ApiMessageHttpRequestFormatter.<AggregatedListRoutersHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/routers"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())

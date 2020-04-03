@@ -116,9 +116,11 @@ public class UrlMapClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
-    AggregatedListUrlMapsPagedResponse pagedListResponse = client.aggregatedListUrlMaps(project);
+    AggregatedListUrlMapsPagedResponse pagedListResponse =
+        client.aggregatedListUrlMaps(includeAllScopes, project);
 
     List<UrlMapsScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -149,9 +151,10 @@ public class UrlMapClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListUrlMaps(project);
+      client.aggregatedListUrlMaps(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

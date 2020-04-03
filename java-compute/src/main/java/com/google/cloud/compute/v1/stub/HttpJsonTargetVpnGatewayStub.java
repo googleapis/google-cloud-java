@@ -72,7 +72,8 @@ public class HttpJsonTargetVpnGatewayStub extends TargetVpnGatewayStub {
                       .setPathTemplate(
                           PathTemplate.create("{project}/aggregated/targetVpnGateways"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())

@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -28,22 +29,33 @@ import javax.annotation.Nullable;
 public final class SubnetworkLogConfig implements ApiMessage {
   private final String aggregationInterval;
   private final Boolean enable;
+  private final String filterExpr;
   private final Float flowSampling;
   private final String metadata;
+  private final List<String> metadataFields;
 
   private SubnetworkLogConfig() {
     this.aggregationInterval = null;
     this.enable = null;
+    this.filterExpr = null;
     this.flowSampling = null;
     this.metadata = null;
+    this.metadataFields = null;
   }
 
   private SubnetworkLogConfig(
-      String aggregationInterval, Boolean enable, Float flowSampling, String metadata) {
+      String aggregationInterval,
+      Boolean enable,
+      String filterExpr,
+      Float flowSampling,
+      String metadata,
+      List<String> metadataFields) {
     this.aggregationInterval = aggregationInterval;
     this.enable = enable;
+    this.filterExpr = filterExpr;
     this.flowSampling = flowSampling;
     this.metadata = metadata;
+    this.metadataFields = metadataFields;
   }
 
   @Override
@@ -54,11 +66,17 @@ public final class SubnetworkLogConfig implements ApiMessage {
     if ("enable".equals(fieldName)) {
       return enable;
     }
+    if ("filterExpr".equals(fieldName)) {
+      return filterExpr;
+    }
     if ("flowSampling".equals(fieldName)) {
       return flowSampling;
     }
     if ("metadata".equals(fieldName)) {
       return metadata;
+    }
+    if ("metadataFields".equals(fieldName)) {
+      return metadataFields;
     }
     return null;
   }
@@ -100,6 +118,14 @@ public final class SubnetworkLogConfig implements ApiMessage {
   }
 
   /**
+   * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to
+   * define which VPC flow logs should be logged.
+   */
+  public String getFilterExpr() {
+    return filterExpr;
+  }
+
+  /**
    * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the
    * field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0
    * means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which
@@ -116,6 +142,14 @@ public final class SubnetworkLogConfig implements ApiMessage {
    */
   public String getMetadata() {
     return metadata;
+  }
+
+  /**
+   * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to
+   * CUSTOM_METADATA.
+   */
+  public List<String> getMetadataFieldsList() {
+    return metadataFields;
   }
 
   public static Builder newBuilder() {
@@ -143,8 +177,10 @@ public final class SubnetworkLogConfig implements ApiMessage {
   public static class Builder {
     private String aggregationInterval;
     private Boolean enable;
+    private String filterExpr;
     private Float flowSampling;
     private String metadata;
+    private List<String> metadataFields;
 
     Builder() {}
 
@@ -156,11 +192,17 @@ public final class SubnetworkLogConfig implements ApiMessage {
       if (other.getEnable() != null) {
         this.enable = other.enable;
       }
+      if (other.getFilterExpr() != null) {
+        this.filterExpr = other.filterExpr;
+      }
       if (other.getFlowSampling() != null) {
         this.flowSampling = other.flowSampling;
       }
       if (other.getMetadata() != null) {
         this.metadata = other.metadata;
+      }
+      if (other.getMetadataFieldsList() != null) {
+        this.metadataFields = other.metadataFields;
       }
       return this;
     }
@@ -168,8 +210,10 @@ public final class SubnetworkLogConfig implements ApiMessage {
     Builder(SubnetworkLogConfig source) {
       this.aggregationInterval = source.aggregationInterval;
       this.enable = source.enable;
+      this.filterExpr = source.filterExpr;
       this.flowSampling = source.flowSampling;
       this.metadata = source.metadata;
+      this.metadataFields = source.metadataFields;
     }
 
     /**
@@ -207,6 +251,23 @@ public final class SubnetworkLogConfig implements ApiMessage {
      */
     public Builder setEnable(Boolean enable) {
       this.enable = enable;
+      return this;
+    }
+
+    /**
+     * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to
+     * define which VPC flow logs should be logged.
+     */
+    public String getFilterExpr() {
+      return filterExpr;
+    }
+
+    /**
+     * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to
+     * define which VPC flow logs should be logged.
+     */
+    public Builder setFilterExpr(String filterExpr) {
+      this.filterExpr = filterExpr;
       return this;
     }
 
@@ -250,17 +311,52 @@ public final class SubnetworkLogConfig implements ApiMessage {
       return this;
     }
 
+    /**
+     * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set
+     * to CUSTOM_METADATA.
+     */
+    public List<String> getMetadataFieldsList() {
+      return metadataFields;
+    }
+
+    /**
+     * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set
+     * to CUSTOM_METADATA.
+     */
+    public Builder addAllMetadataFields(List<String> metadataFields) {
+      if (this.metadataFields == null) {
+        this.metadataFields = new LinkedList<>();
+      }
+      this.metadataFields.addAll(metadataFields);
+      return this;
+    }
+
+    /**
+     * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set
+     * to CUSTOM_METADATA.
+     */
+    public Builder addMetadataFields(String metadataFields) {
+      if (this.metadataFields == null) {
+        this.metadataFields = new LinkedList<>();
+      }
+      this.metadataFields.add(metadataFields);
+      return this;
+    }
+
     public SubnetworkLogConfig build() {
 
-      return new SubnetworkLogConfig(aggregationInterval, enable, flowSampling, metadata);
+      return new SubnetworkLogConfig(
+          aggregationInterval, enable, filterExpr, flowSampling, metadata, metadataFields);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setAggregationInterval(this.aggregationInterval);
       newBuilder.setEnable(this.enable);
+      newBuilder.setFilterExpr(this.filterExpr);
       newBuilder.setFlowSampling(this.flowSampling);
       newBuilder.setMetadata(this.metadata);
+      newBuilder.addAllMetadataFields(this.metadataFields);
       return newBuilder;
     }
   }
@@ -274,11 +370,17 @@ public final class SubnetworkLogConfig implements ApiMessage {
         + "enable="
         + enable
         + ", "
+        + "filterExpr="
+        + filterExpr
+        + ", "
         + "flowSampling="
         + flowSampling
         + ", "
         + "metadata="
         + metadata
+        + ", "
+        + "metadataFields="
+        + metadataFields
         + "}";
   }
 
@@ -291,14 +393,17 @@ public final class SubnetworkLogConfig implements ApiMessage {
       SubnetworkLogConfig that = (SubnetworkLogConfig) o;
       return Objects.equals(this.aggregationInterval, that.getAggregationInterval())
           && Objects.equals(this.enable, that.getEnable())
+          && Objects.equals(this.filterExpr, that.getFilterExpr())
           && Objects.equals(this.flowSampling, that.getFlowSampling())
-          && Objects.equals(this.metadata, that.getMetadata());
+          && Objects.equals(this.metadata, that.getMetadata())
+          && Objects.equals(this.metadataFields, that.getMetadataFieldsList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(aggregationInterval, enable, flowSampling, metadata);
+    return Objects.hash(
+        aggregationInterval, enable, filterExpr, flowSampling, metadata, metadataFields);
   }
 }

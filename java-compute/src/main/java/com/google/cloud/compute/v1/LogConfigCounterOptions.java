@@ -42,9 +42,6 @@ import javax.annotation.Nullable;
  *
  * <p>Examples: counter { metric: "/debug_access_count" field: "iam_principal" } ==&gt; increment
  * counter /iam/policy/debug_access_count {iam_principal=[value of IAMContext.principal]}
- *
- * <p>TODO(b/141846426): Consider supporting "authority" and "iam_principal" fields in the same
- * counter.
  */
 public final class LogConfigCounterOptions implements ApiMessage {
   private final List<LogConfigCounterOptionsCustomField> customFields;

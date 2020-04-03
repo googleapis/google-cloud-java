@@ -25,6 +25,13 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Represents a License Code resource.
+ *
+ * <p>A License Code is a unique identifier used to represent a license resource. Caution This
+ * resource is intended for use only by third-party partners who are creating Cloud Marketplace
+ * images. (== resource_for {$api_version}.licenseCodes ==)
+ */
 public final class LicenseCode implements ApiMessage {
   private final String creationTimestamp;
   private final String description;

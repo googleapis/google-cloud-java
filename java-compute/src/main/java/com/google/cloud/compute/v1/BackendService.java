@@ -33,8 +33,8 @@ import javax.annotation.Nullable;
  *
  * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
  *
- * <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
- * [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+ * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+ * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
  *
  * <p>For more information, read Backend Services.
  *
@@ -51,6 +51,7 @@ public final class BackendService implements ApiMessage {
   private final List<String> customRequestHeaders;
   private final String description;
   private final Boolean enableCDN;
+  private final BackendServiceFailoverPolicy failoverPolicy;
   private final String fingerprint;
   private final List<String> healthChecks;
   private final BackendServiceIAP iap;
@@ -82,6 +83,7 @@ public final class BackendService implements ApiMessage {
     this.customRequestHeaders = null;
     this.description = null;
     this.enableCDN = null;
+    this.failoverPolicy = null;
     this.fingerprint = null;
     this.healthChecks = null;
     this.iap = null;
@@ -114,6 +116,7 @@ public final class BackendService implements ApiMessage {
       List<String> customRequestHeaders,
       String description,
       Boolean enableCDN,
+      BackendServiceFailoverPolicy failoverPolicy,
       String fingerprint,
       List<String> healthChecks,
       BackendServiceIAP iap,
@@ -143,6 +146,7 @@ public final class BackendService implements ApiMessage {
     this.customRequestHeaders = customRequestHeaders;
     this.description = description;
     this.enableCDN = enableCDN;
+    this.failoverPolicy = failoverPolicy;
     this.fingerprint = fingerprint;
     this.healthChecks = healthChecks;
     this.iap = iap;
@@ -195,6 +199,9 @@ public final class BackendService implements ApiMessage {
     }
     if ("enableCDN".equals(fieldName)) {
       return enableCDN;
+    }
+    if ("failoverPolicy".equals(fieldName)) {
+      return failoverPolicy;
     }
     if ("fingerprint".equals(fieldName)) {
       return fingerprint;
@@ -350,6 +357,14 @@ public final class BackendService implements ApiMessage {
   }
 
   /**
+   * Applicable only to Failover for Internal TCP/UDP Load Balancing. Requires at least one backend
+   * instance group to be defined as a backup (failover) backend.
+   */
+  public BackendServiceFailoverPolicy getFailoverPolicy() {
+    return failoverPolicy;
+  }
+
+  /**
    * Fingerprint of this resource. A hash of the contents stored in this object. This field is used
    * in optimistic locking. This field will be ignored when inserting a BackendService. An
    * up-to-date fingerprint must be provided in order to update the BackendService, otherwise the
@@ -362,13 +377,11 @@ public final class BackendService implements ApiMessage {
   }
 
   /**
-   * The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this
-   * BackendService. Currently at most one health check can be specified. Health check is optional
-   * for Compute Engine backend services if there is no backend. A health check must not be
-   * specified when adding Internet Network Endpoint Group or Serverless Network Endpoint Group as
-   * backends. In all other cases, a health check is required for Compute Engine backend services.
-   *
-   * <p>For internal load balancing, a URL to a HealthCheck resource must be specified instead.
+   * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy)
+   * resource for health checking this backend service. Not all backend services support legacy
+   * health checks. See Load balancer guide. Currently at most one health check can be specified.
+   * Backend services with instance group or zonal NEG backends must have a health check. Backend
+   * services with internet NEG backends must not have a health check. A health check must
    */
   public List<String> getHealthChecksList() {
     return healthChecks;
@@ -479,9 +492,9 @@ public final class BackendService implements ApiMessage {
 
   /**
    * A named port on a backend instance group representing the port for communication to the backend
-   * VMs in that group. Required when the loadBalancingScheme is EXTERNAL and the backends are
-   * instance groups. The named port must be defined on each backend instance group. This parameter
-   * has no meaning if the backends are NEGs.
+   * VMs in that group. Required when the loadBalancingScheme is EXTERNAL, INTERNAL_MANAGED, or
+   * INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on
+   * each backend instance group. This parameter has no meaning if the backends are NEGs.
    *
    * <p>Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Blaancing).
    */
@@ -492,7 +505,7 @@ public final class BackendService implements ApiMessage {
   /**
    * The protocol this BackendService uses to communicate with backends.
    *
-   * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP, depending on the chosen load
+   * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP. depending on the chosen load
    * balancer or Traffic Director configuration. Refer to the documentation for the load balancer or
    * for Traffic Director for more information.
    */
@@ -579,6 +592,7 @@ public final class BackendService implements ApiMessage {
     private List<String> customRequestHeaders;
     private String description;
     private Boolean enableCDN;
+    private BackendServiceFailoverPolicy failoverPolicy;
     private String fingerprint;
     private List<String> healthChecks;
     private BackendServiceIAP iap;
@@ -632,6 +646,9 @@ public final class BackendService implements ApiMessage {
       }
       if (other.getEnableCDN() != null) {
         this.enableCDN = other.enableCDN;
+      }
+      if (other.getFailoverPolicy() != null) {
+        this.failoverPolicy = other.failoverPolicy;
       }
       if (other.getFingerprint() != null) {
         this.fingerprint = other.fingerprint;
@@ -704,6 +721,7 @@ public final class BackendService implements ApiMessage {
       this.customRequestHeaders = source.customRequestHeaders;
       this.description = source.description;
       this.enableCDN = source.enableCDN;
+      this.failoverPolicy = source.failoverPolicy;
       this.fingerprint = source.fingerprint;
       this.healthChecks = source.healthChecks;
       this.iap = source.iap;
@@ -910,6 +928,23 @@ public final class BackendService implements ApiMessage {
     }
 
     /**
+     * Applicable only to Failover for Internal TCP/UDP Load Balancing. Requires at least one
+     * backend instance group to be defined as a backup (failover) backend.
+     */
+    public BackendServiceFailoverPolicy getFailoverPolicy() {
+      return failoverPolicy;
+    }
+
+    /**
+     * Applicable only to Failover for Internal TCP/UDP Load Balancing. Requires at least one
+     * backend instance group to be defined as a backup (failover) backend.
+     */
+    public Builder setFailoverPolicy(BackendServiceFailoverPolicy failoverPolicy) {
+      this.failoverPolicy = failoverPolicy;
+      return this;
+    }
+
+    /**
      * Fingerprint of this resource. A hash of the contents stored in this object. This field is
      * used in optimistic locking. This field will be ignored when inserting a BackendService. An
      * up-to-date fingerprint must be provided in order to update the BackendService, otherwise the
@@ -935,26 +970,24 @@ public final class BackendService implements ApiMessage {
     }
 
     /**
-     * The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this
-     * BackendService. Currently at most one health check can be specified. Health check is optional
-     * for Compute Engine backend services if there is no backend. A health check must not be
-     * specified when adding Internet Network Endpoint Group or Serverless Network Endpoint Group as
-     * backends. In all other cases, a health check is required for Compute Engine backend services.
-     *
-     * <p>For internal load balancing, a URL to a HealthCheck resource must be specified instead.
+     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks
+     * (legacy) resource for health checking this backend service. Not all backend services support
+     * legacy health checks. See Load balancer guide. Currently at most one health check can be
+     * specified. Backend services with instance group or zonal NEG backends must have a health
+     * check. Backend services with internet NEG backends must not have a health check. A health
+     * check must
      */
     public List<String> getHealthChecksList() {
       return healthChecks;
     }
 
     /**
-     * The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this
-     * BackendService. Currently at most one health check can be specified. Health check is optional
-     * for Compute Engine backend services if there is no backend. A health check must not be
-     * specified when adding Internet Network Endpoint Group or Serverless Network Endpoint Group as
-     * backends. In all other cases, a health check is required for Compute Engine backend services.
-     *
-     * <p>For internal load balancing, a URL to a HealthCheck resource must be specified instead.
+     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks
+     * (legacy) resource for health checking this backend service. Not all backend services support
+     * legacy health checks. See Load balancer guide. Currently at most one health check can be
+     * specified. Backend services with instance group or zonal NEG backends must have a health
+     * check. Backend services with internet NEG backends must not have a health check. A health
+     * check must
      */
     public Builder addAllHealthChecks(List<String> healthChecks) {
       if (this.healthChecks == null) {
@@ -965,13 +998,12 @@ public final class BackendService implements ApiMessage {
     }
 
     /**
-     * The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this
-     * BackendService. Currently at most one health check can be specified. Health check is optional
-     * for Compute Engine backend services if there is no backend. A health check must not be
-     * specified when adding Internet Network Endpoint Group or Serverless Network Endpoint Group as
-     * backends. In all other cases, a health check is required for Compute Engine backend services.
-     *
-     * <p>For internal load balancing, a URL to a HealthCheck resource must be specified instead.
+     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks
+     * (legacy) resource for health checking this backend service. Not all backend services support
+     * legacy health checks. See Load balancer guide. Currently at most one health check can be
+     * specified. Backend services with instance group or zonal NEG backends must have a health
+     * check. Backend services with internet NEG backends must not have a health check. A health
+     * check must
      */
     public Builder addHealthChecks(String healthChecks) {
       if (this.healthChecks == null) {
@@ -1201,9 +1233,10 @@ public final class BackendService implements ApiMessage {
 
     /**
      * A named port on a backend instance group representing the port for communication to the
-     * backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL and the backends
-     * are instance groups. The named port must be defined on each backend instance group. This
-     * parameter has no meaning if the backends are NEGs.
+     * backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL,
+     * INTERNAL_MANAGED, or INTERNAL_SELF_MANAGED and the backends are instance groups. The named
+     * port must be defined on each backend instance group. This parameter has no meaning if the
+     * backends are NEGs.
      *
      * <p>Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load
      * Blaancing).
@@ -1214,9 +1247,10 @@ public final class BackendService implements ApiMessage {
 
     /**
      * A named port on a backend instance group representing the port for communication to the
-     * backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL and the backends
-     * are instance groups. The named port must be defined on each backend instance group. This
-     * parameter has no meaning if the backends are NEGs.
+     * backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL,
+     * INTERNAL_MANAGED, or INTERNAL_SELF_MANAGED and the backends are instance groups. The named
+     * port must be defined on each backend instance group. This parameter has no meaning if the
+     * backends are NEGs.
      *
      * <p>Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load
      * Blaancing).
@@ -1229,7 +1263,7 @@ public final class BackendService implements ApiMessage {
     /**
      * The protocol this BackendService uses to communicate with backends.
      *
-     * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP, depending on the chosen load
+     * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP. depending on the chosen load
      * balancer or Traffic Director configuration. Refer to the documentation for the load balancer
      * or for Traffic Director for more information.
      */
@@ -1240,7 +1274,7 @@ public final class BackendService implements ApiMessage {
     /**
      * The protocol this BackendService uses to communicate with backends.
      *
-     * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP, depending on the chosen load
+     * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP. depending on the chosen load
      * balancer or Traffic Director configuration. Refer to the documentation for the load balancer
      * or for Traffic Director for more information.
      */
@@ -1359,6 +1393,7 @@ public final class BackendService implements ApiMessage {
           customRequestHeaders,
           description,
           enableCDN,
+          failoverPolicy,
           fingerprint,
           healthChecks,
           iap,
@@ -1392,6 +1427,7 @@ public final class BackendService implements ApiMessage {
       newBuilder.addAllCustomRequestHeaders(this.customRequestHeaders);
       newBuilder.setDescription(this.description);
       newBuilder.setEnableCDN(this.enableCDN);
+      newBuilder.setFailoverPolicy(this.failoverPolicy);
       newBuilder.setFingerprint(this.fingerprint);
       newBuilder.addAllHealthChecks(this.healthChecks);
       newBuilder.setIap(this.iap);
@@ -1447,6 +1483,9 @@ public final class BackendService implements ApiMessage {
         + ", "
         + "enableCDN="
         + enableCDN
+        + ", "
+        + "failoverPolicy="
+        + failoverPolicy
         + ", "
         + "fingerprint="
         + fingerprint
@@ -1524,6 +1563,7 @@ public final class BackendService implements ApiMessage {
           && Objects.equals(this.customRequestHeaders, that.getCustomRequestHeadersList())
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.enableCDN, that.getEnableCDN())
+          && Objects.equals(this.failoverPolicy, that.getFailoverPolicy())
           && Objects.equals(this.fingerprint, that.getFingerprint())
           && Objects.equals(this.healthChecks, that.getHealthChecksList())
           && Objects.equals(this.iap, that.getIap())
@@ -1560,6 +1600,7 @@ public final class BackendService implements ApiMessage {
         customRequestHeaders,
         description,
         enableCDN,
+        failoverPolicy,
         fingerprint,
         healthChecks,
         iap,

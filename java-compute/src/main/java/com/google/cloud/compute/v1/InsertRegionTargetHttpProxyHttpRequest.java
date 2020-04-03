@@ -192,8 +192,8 @@ public final class InsertRegionTargetHttpProxyHttpRequest implements ApiMessage 
    *
    * <p>Google Compute Engine has two Target HTTP Proxy resources:
    *
-   * <p>&#42; [Global](/compute/docs/reference/rest/latest/targetHttpProxies) &#42;
-   * [Regional](/compute/docs/reference/rest/latest/regionTargetHttpProxies)
+   * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/targetHttpProxies) &#42;
+   * [Regional](/compute/docs/reference/rest/{$api_version}/regionTargetHttpProxies)
    *
    * <p>A target HTTP proxy is a component of GCP HTTP load balancers.
    *
@@ -427,8 +427,8 @@ public final class InsertRegionTargetHttpProxyHttpRequest implements ApiMessage 
      *
      * <p>Google Compute Engine has two Target HTTP Proxy resources:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/targetHttpProxies) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionTargetHttpProxies)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/targetHttpProxies) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionTargetHttpProxies)
      *
      * <p>A target HTTP proxy is a component of GCP HTTP load balancers.
      *
@@ -449,8 +449,8 @@ public final class InsertRegionTargetHttpProxyHttpRequest implements ApiMessage 
      *
      * <p>Google Compute Engine has two Target HTTP Proxy resources:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/targetHttpProxies) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionTargetHttpProxies)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/targetHttpProxies) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionTargetHttpProxies)
      *
      * <p>A target HTTP proxy is a component of GCP HTTP load balancers.
      *

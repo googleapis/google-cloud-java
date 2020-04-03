@@ -76,7 +76,8 @@ public class HttpJsonReservationStub extends ReservationStub {
                   ApiMessageHttpRequestFormatter.<AggregatedListReservationsHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/reservations"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())

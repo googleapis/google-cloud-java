@@ -466,7 +466,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Restrictions and Guidelines for more information.
+   * regional backend service. Read Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -483,8 +483,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
    *     services.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *     <p>For more information, read Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -504,7 +504,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Restrictions and Guidelines for more information.
+   * regional backend service. Read Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -521,8 +521,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
    *     services.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *     <p>For more information, read Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -542,7 +542,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Restrictions and Guidelines for more information.
+   * regional backend service. Read Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -570,7 +570,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Restrictions and Guidelines for more information.
+   * regional backend service. Read Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -742,9 +742,9 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information. This method supports PATCH semantics and
-   * uses the JSON merge patch format and processing rules.
+   * There are several Understanding backend services to keep in mind when updating a backend
+   * service. Read Understanding backend services for more information. This method supports PATCH
+   * semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -762,8 +762,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
    *     services.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *     <p>For more information, read Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
@@ -789,9 +789,9 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information. This method supports PATCH semantics and
-   * uses the JSON merge patch format and processing rules.
+   * There are several Understanding backend services to keep in mind when updating a backend
+   * service. Read Understanding backend services for more information. This method supports PATCH
+   * semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -809,8 +809,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
    *     services.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *     <p>For more information, read Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
@@ -834,9 +834,9 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information. This method supports PATCH semantics and
-   * uses the JSON merge patch format and processing rules.
+   * There are several Understanding backend services to keep in mind when updating a backend
+   * service. Read Understanding backend services for more information. This method supports PATCH
+   * semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -865,9 +865,9 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information. This method supports PATCH semantics and
-   * uses the JSON merge patch format and processing rules.
+   * There are several Understanding backend services to keep in mind when updating a backend
+   * service. Read Understanding backend services for more information. This method supports PATCH
+   * semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -896,8 +896,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information.
+   * There are several Understanding backend services to keep in mind when updating a backend
+   * service. Read Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -915,8 +915,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
    *     services.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *     <p>For more information, read Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
@@ -942,8 +942,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information.
+   * There are several Understanding backend services to keep in mind when updating a backend
+   * service. Read Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -961,8 +961,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
    *     services.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *     <p>For more information, read Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
@@ -986,8 +986,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information.
+   * There are several Understanding backend services to keep in mind when updating a backend
+   * service. Read Understanding backend services for more information.
    *
    * <p>Sample code:
    *
@@ -1016,8 +1016,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information.
+   * There are several Understanding backend services to keep in mind when updating a backend
+   * service. Read Understanding backend services for more information.
    *
    * <p>Sample code:
    *

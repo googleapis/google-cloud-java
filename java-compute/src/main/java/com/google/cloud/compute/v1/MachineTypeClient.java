@@ -160,21 +160,29 @@ public class MachineTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (MachineTypesScopedList element : machineTypeClient.aggregatedListMachineTypes(project).iterateAll()) {
+   *   for (MachineTypesScopedList element : machineTypeClient.aggregatedListMachineTypes(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListMachineTypesPagedResponse aggregatedListMachineTypes(
-      ProjectName project) {
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListMachineTypesHttpRequest request =
         AggregatedListMachineTypesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListMachineTypes(request);
@@ -188,20 +196,31 @@ public class MachineTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (MachineTypesScopedList element : machineTypeClient.aggregatedListMachineTypes(project.toString()).iterateAll()) {
+   *   for (MachineTypesScopedList element : machineTypeClient.aggregatedListMachineTypes(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListMachineTypesPagedResponse aggregatedListMachineTypes(String project) {
+  public final AggregatedListMachineTypesPagedResponse aggregatedListMachineTypes(
+      Boolean includeAllScopes, String project) {
     AggregatedListMachineTypesHttpRequest request =
-        AggregatedListMachineTypesHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListMachineTypesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListMachineTypes(request);
   }
 
@@ -213,8 +232,10 @@ public class MachineTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListMachineTypesHttpRequest request = AggregatedListMachineTypesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (MachineTypesScopedList element : machineTypeClient.aggregatedListMachineTypes(request).iterateAll()) {
@@ -240,8 +261,10 @@ public class MachineTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListMachineTypesHttpRequest request = AggregatedListMachineTypesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListMachineTypesPagedResponse&gt; future = machineTypeClient.aggregatedListMachineTypesPagedCallable().futureCall(request);
@@ -267,8 +290,10 @@ public class MachineTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListMachineTypesHttpRequest request = AggregatedListMachineTypesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {

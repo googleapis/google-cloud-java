@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * Request object for method compute.regionBackendServices.insert. Creates a regional BackendService
  * resource in the specified project using the data included in the request. There are several
  * restrictions and guidelines to keep in mind when creating a regional backend service. Read
- * Restrictions and Guidelines for more information.
+ * Understanding backend services for more information.
  */
 public final class InsertRegionBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;
@@ -144,8 +144,8 @@ public final class InsertRegionBackendServiceHttpRequest implements ApiMessage {
    *
    * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
    *
-   * <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-   * [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+   * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+   * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *
    * <p>For more information, read Backend Services.
    *
@@ -316,8 +316,8 @@ public final class InsertRegionBackendServiceHttpRequest implements ApiMessage {
      *
      * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
      *
      * <p>For more information, read Backend Services.
      *
@@ -335,8 +335,8 @@ public final class InsertRegionBackendServiceHttpRequest implements ApiMessage {
      *
      * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/backendServices) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
      *
      * <p>For more information, read Backend Services.
      *

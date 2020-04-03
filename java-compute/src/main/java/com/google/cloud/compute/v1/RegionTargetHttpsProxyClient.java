@@ -377,8 +377,8 @@ public class RegionTargetHttpsProxyClient implements BackgroundResource {
    * @param region Name of the region scoping this request.
    * @param targetHttpsProxyResource Represents a Target HTTPS Proxy resource.
    *     <p>Google Compute Engine has two Target HTTPS Proxy resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/targetHttpsProxies) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionTargetHttpsProxies)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/targetHttpsProxies) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionTargetHttpsProxies)
    *     <p>A target HTTPS proxy is a component of GCP HTTPS load balancers.
    *     <p>&#42; targetHttpsProxies are used by external HTTPS load balancers. &#42;
    *     regionTargetHttpsProxies are used by internal HTTPS load balancers.
@@ -417,8 +417,8 @@ public class RegionTargetHttpsProxyClient implements BackgroundResource {
    * @param region Name of the region scoping this request.
    * @param targetHttpsProxyResource Represents a Target HTTPS Proxy resource.
    *     <p>Google Compute Engine has two Target HTTPS Proxy resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/targetHttpsProxies) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionTargetHttpsProxies)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/targetHttpsProxies) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionTargetHttpsProxies)
    *     <p>A target HTTPS proxy is a component of GCP HTTPS load balancers.
    *     <p>&#42; targetHttpsProxies are used by external HTTPS load balancers. &#42;
    *     regionTargetHttpsProxies are used by internal HTTPS load balancers.

@@ -24,7 +24,13 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** A license resource. */
+/**
+ * Represents a License resource.
+ *
+ * <p>A License represents billing and aggregate usage data for public and marketplace images.
+ * Caution This resource is intended for use only by third-party partners who are creating Cloud
+ * Marketplace images. (== resource_for {$api_version}.licenses ==)
+ */
 public final class License implements ApiMessage {
   private final Boolean chargesUseFee;
   private final String creationTimestamp;

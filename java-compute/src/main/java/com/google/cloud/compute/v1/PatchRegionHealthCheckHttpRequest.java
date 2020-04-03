@@ -168,8 +168,8 @@ public final class PatchRegionHealthCheckHttpRequest implements ApiMessage {
    *
    * <p>Google Compute Engine has two Health Check resources:
    *
-   * <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
-   * [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+   * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
+   * [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
    *
    * <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
    * balancers and managed instance group auto-healing use global health checks. For more
@@ -409,8 +409,8 @@ public final class PatchRegionHealthCheckHttpRequest implements ApiMessage {
      *
      * <p>Google Compute Engine has two Health Check resources:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
      *
      * <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
      * balancers and managed instance group auto-healing use global health checks. For more
@@ -428,8 +428,8 @@ public final class PatchRegionHealthCheckHttpRequest implements ApiMessage {
      *
      * <p>Google Compute Engine has two Health Check resources:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/healthChecks) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionHealthChecks)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
      *
      * <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
      * balancers and managed instance group auto-healing use global health checks. For more

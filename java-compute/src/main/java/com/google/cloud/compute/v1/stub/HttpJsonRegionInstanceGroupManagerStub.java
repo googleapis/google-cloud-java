@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListErrorsRegionInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
 
 import com.google.api.client.http.HttpMethods;
@@ -31,12 +32,14 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AbandonInstancesRegionInstanceGroupManagerHttpRequest;
+import com.google.cloud.compute.v1.ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.CreateInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.GetRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InsertRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InstanceGroupManager;
+import com.google.cloud.compute.v1.ListErrorsRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
@@ -45,6 +48,7 @@ import com.google.cloud.compute.v1.ProjectRegionInstanceGroupManagerName;
 import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.RecreateInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagerList;
+import com.google.cloud.compute.v1.RegionInstanceGroupManagersListErrorsResponse;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstancesResponse;
 import com.google.cloud.compute.v1.ResizeRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateRegionInstanceGroupManagerHttpRequest;
@@ -78,6 +82,30 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/abandonInstances"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
+                      .setResourceNameField("instanceGroupManager")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      applyUpdatesToInstancesRegionInstanceGroupManagerMethodDescriptor =
+          ApiMethodDescriptor
+              .<ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.regionInstanceGroupManagers.applyUpdatesToInstances")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/applyUpdatesToInstances"))
+                      .setQueryParams(Sets.<String>newHashSet())
                       .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
                       .setResourceNameField("instanceGroupManager")
                       .build())
@@ -229,6 +257,36 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
 
   @InternalApi
   public static final ApiMethodDescriptor<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListErrorsResponse>
+      listErrorsRegionInstanceGroupManagersMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListErrorsRegionInstanceGroupManagersHttpRequest,
+                  RegionInstanceGroupManagersListErrorsResponse>
+                  newBuilder()
+              .setFullMethodName("compute.regionInstanceGroupManagers.listErrors")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<ListErrorsRegionInstanceGroupManagersHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/listErrors"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
+                      .setResourceNameField("instanceGroupManager")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser
+                      .<RegionInstanceGroupManagersListErrorsResponse>newBuilder()
+                      .setResponseInstance(
+                          RegionInstanceGroupManagersListErrorsResponse.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<
           ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
           RegionInstanceGroupManagersListInstancesResponse>
       listManagedInstancesRegionInstanceGroupManagersMethodDescriptor =
@@ -245,7 +303,7 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/listManagedInstances"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "order_by", "pageToken"))
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
                       .setResourceNameField("instanceGroupManager")
                       .build())
@@ -377,6 +435,9 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
 
   private final UnaryCallable<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
       abandonInstancesRegionInstanceGroupManagerCallable;
+  private final UnaryCallable<
+          ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      applyUpdatesToInstancesRegionInstanceGroupManagerCallable;
   private final UnaryCallable<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
       createInstancesRegionInstanceGroupManagerCallable;
   private final UnaryCallable<DeleteRegionInstanceGroupManagerHttpRequest, Operation>
@@ -393,6 +454,14 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
   private final UnaryCallable<
           ListRegionInstanceGroupManagersHttpRequest, ListRegionInstanceGroupManagersPagedResponse>
       listRegionInstanceGroupManagersPagedCallable;
+  private final UnaryCallable<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListErrorsResponse>
+      listErrorsRegionInstanceGroupManagersCallable;
+  private final UnaryCallable<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          ListErrorsRegionInstanceGroupManagersPagedResponse>
+      listErrorsRegionInstanceGroupManagersPagedCallable;
   private final UnaryCallable<
           ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
           RegionInstanceGroupManagersListInstancesResponse>
@@ -458,6 +527,14 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                 .<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(abandonInstancesRegionInstanceGroupManagerMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+        applyUpdatesToInstancesRegionInstanceGroupManagerTransportSettings =
+            HttpJsonCallSettings
+                .<ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+                    newBuilder()
+                .setMethodDescriptor(
+                    applyUpdatesToInstancesRegionInstanceGroupManagerMethodDescriptor)
+                .build();
     HttpJsonCallSettings<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
         createInstancesRegionInstanceGroupManagerTransportSettings =
             HttpJsonCallSettings
@@ -494,6 +571,16 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                 .<ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList>
                     newBuilder()
                 .setMethodDescriptor(listRegionInstanceGroupManagersMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<
+            ListErrorsRegionInstanceGroupManagersHttpRequest,
+            RegionInstanceGroupManagersListErrorsResponse>
+        listErrorsRegionInstanceGroupManagersTransportSettings =
+            HttpJsonCallSettings
+                .<ListErrorsRegionInstanceGroupManagersHttpRequest,
+                    RegionInstanceGroupManagersListErrorsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listErrorsRegionInstanceGroupManagersMethodDescriptor)
                 .build();
     HttpJsonCallSettings<
             ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
@@ -541,6 +628,11 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
             abandonInstancesRegionInstanceGroupManagerTransportSettings,
             settings.abandonInstancesRegionInstanceGroupManagerSettings(),
             clientContext);
+    this.applyUpdatesToInstancesRegionInstanceGroupManagerCallable =
+        callableFactory.createUnaryCallable(
+            applyUpdatesToInstancesRegionInstanceGroupManagerTransportSettings,
+            settings.applyUpdatesToInstancesRegionInstanceGroupManagerSettings(),
+            clientContext);
     this.createInstancesRegionInstanceGroupManagerCallable =
         callableFactory.createUnaryCallable(
             createInstancesRegionInstanceGroupManagerTransportSettings,
@@ -575,6 +667,16 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
         callableFactory.createPagedCallable(
             listRegionInstanceGroupManagersTransportSettings,
             settings.listRegionInstanceGroupManagersSettings(),
+            clientContext);
+    this.listErrorsRegionInstanceGroupManagersCallable =
+        callableFactory.createUnaryCallable(
+            listErrorsRegionInstanceGroupManagersTransportSettings,
+            settings.listErrorsRegionInstanceGroupManagersSettings(),
+            clientContext);
+    this.listErrorsRegionInstanceGroupManagersPagedCallable =
+        callableFactory.createPagedCallable(
+            listErrorsRegionInstanceGroupManagersTransportSettings,
+            settings.listErrorsRegionInstanceGroupManagersSettings(),
             clientContext);
     this.listManagedInstancesRegionInstanceGroupManagersCallable =
         callableFactory.createUnaryCallable(
@@ -614,6 +716,12 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
   public UnaryCallable<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
       abandonInstancesRegionInstanceGroupManagerCallable() {
     return abandonInstancesRegionInstanceGroupManagerCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      applyUpdatesToInstancesRegionInstanceGroupManagerCallable() {
+    return applyUpdatesToInstancesRegionInstanceGroupManagerCallable;
   }
 
   @BetaApi
@@ -657,6 +765,22 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
   public UnaryCallable<ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList>
       listRegionInstanceGroupManagersCallable() {
     return listRegionInstanceGroupManagersCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          ListErrorsRegionInstanceGroupManagersPagedResponse>
+      listErrorsRegionInstanceGroupManagersPagedCallable() {
+    return listErrorsRegionInstanceGroupManagersPagedCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListErrorsResponse>
+      listErrorsRegionInstanceGroupManagersCallable() {
+    return listErrorsRegionInstanceGroupManagersCallable;
   }
 
   @BetaApi

@@ -159,20 +159,29 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (RoutersScopedList element : routerClient.aggregatedListRouters(project).iterateAll()) {
+   *   for (RoutersScopedList element : routerClient.aggregatedListRouters(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListRoutersPagedResponse aggregatedListRouters(ProjectName project) {
+  public final AggregatedListRoutersPagedResponse aggregatedListRouters(
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListRoutersHttpRequest request =
         AggregatedListRoutersHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListRouters(request);
@@ -186,20 +195,31 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (RoutersScopedList element : routerClient.aggregatedListRouters(project.toString()).iterateAll()) {
+   *   for (RoutersScopedList element : routerClient.aggregatedListRouters(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListRoutersPagedResponse aggregatedListRouters(String project) {
+  public final AggregatedListRoutersPagedResponse aggregatedListRouters(
+      Boolean includeAllScopes, String project) {
     AggregatedListRoutersHttpRequest request =
-        AggregatedListRoutersHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListRoutersHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListRouters(request);
   }
 
@@ -211,8 +231,10 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListRoutersHttpRequest request = AggregatedListRoutersHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (RoutersScopedList element : routerClient.aggregatedListRouters(request).iterateAll()) {
@@ -238,8 +260,10 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListRoutersHttpRequest request = AggregatedListRoutersHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListRoutersPagedResponse&gt; future = routerClient.aggregatedListRoutersPagedCallable().futureCall(request);
@@ -264,8 +288,10 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListRoutersHttpRequest request = AggregatedListRoutersHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {

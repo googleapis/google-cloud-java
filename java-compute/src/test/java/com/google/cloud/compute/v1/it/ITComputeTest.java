@@ -971,7 +971,7 @@ public class ITComputeTest {
   public void aggregatedListAcceleratorTypesTest() {
     List<AcceleratorTypesScopedList> typesScopedLists =
         Lists.newArrayList(
-            acceleratorTypeClient.aggregatedListAcceleratorTypes(PROJECT_NAME).iterateAll());
+            acceleratorTypeClient.aggregatedListAcceleratorTypes(true, PROJECT_NAME).iterateAll());
     assertThat(typesScopedLists).isNotNull();
     assertThat(typesScopedLists.size()).isGreaterThan(0);
     assertThat(typesScopedLists.contains(null)).isFalse();
@@ -1011,7 +1011,7 @@ public class ITComputeTest {
   @Test
   public void aggregatedListAddressesTest() {
     List<AddressesScopedList> addressesScopedLists =
-        Lists.newArrayList(addressClient.aggregatedListAddresses(PROJECT_NAME).iterateAll());
+        Lists.newArrayList(addressClient.aggregatedListAddresses(true, PROJECT_NAME).iterateAll());
     for (AddressesScopedList addressesScopedList : addressesScopedLists) {
       List<Address> addresses = addressesScopedList.getAddressesList();
       if (addresses != null) {
@@ -1039,7 +1039,8 @@ public class ITComputeTest {
   @Test
   public void aggregatedListAutoscalersTest() {
     List<AutoscalersScopedList> autoscalersScopedLists =
-        Lists.newArrayList(autoscalerClient.aggregatedListAutoscalers(PROJECT_NAME).iterateAll());
+        Lists.newArrayList(
+            autoscalerClient.aggregatedListAutoscalers(true, PROJECT_NAME).iterateAll());
     assertNotNull(autoscalersScopedLists);
     assertThat(autoscalersScopedLists.size()).isGreaterThan(0);
     assertThat(autoscalersScopedLists.contains(null)).isFalse();
@@ -1101,7 +1102,7 @@ public class ITComputeTest {
   @Test
   public void aggregatedListDisksTest() {
     List<DisksScopedList> disksScopedLists =
-        Lists.newArrayList(diskClient.aggregatedListDisks(PROJECT_NAME).iterateAll());
+        Lists.newArrayList(diskClient.aggregatedListDisks(true, PROJECT_NAME).iterateAll());
     for (DisksScopedList disksScopedList : disksScopedLists) {
       List<Disk> disks = disksScopedList.getDisksList();
       if (null != disks && disks.size() > 0) {
@@ -1289,7 +1290,7 @@ public class ITComputeTest {
   public void aggregatedListForwardingRulesTest() {
     List<ForwardingRulesScopedList> forwardingRulesScopedLists =
         Lists.newArrayList(
-            forwardingRuleClient.aggregatedListForwardingRules(PROJECT_NAME).iterateAll());
+            forwardingRuleClient.aggregatedListForwardingRules(true, PROJECT_NAME).iterateAll());
     assertThat(forwardingRulesScopedLists).isNotNull();
     assertThat(forwardingRulesScopedLists.size()).isGreaterThan(0);
     assertThat(forwardingRulesScopedLists.contains(null)).isFalse();
@@ -1334,7 +1335,7 @@ public class ITComputeTest {
   public void aggregatedListGlobalOperationsTest() {
     List<OperationsScopedList> operationsScopedLists =
         Lists.newArrayList(
-            globalOperationClient.aggregatedListGlobalOperations(PROJECT_NAME).iterateAll());
+            globalOperationClient.aggregatedListGlobalOperations(true, PROJECT_NAME).iterateAll());
     assertThat(operationsScopedLists).isNotNull();
     assertThat(operationsScopedLists.size()).isGreaterThan(0);
     assertThat(operationsScopedLists.contains(null)).isFalse();
@@ -1357,7 +1358,8 @@ public class ITComputeTest {
   @Test
   public void aggregatedListHealthChecksTest() {
     List<HealthChecksScopedList> scopedLists =
-        Lists.newArrayList(healthCheckClient.aggregatedListHealthChecks(PROJECT_NAME).iterateAll());
+        Lists.newArrayList(
+            healthCheckClient.aggregatedListHealthChecks(true, PROJECT_NAME).iterateAll());
     Iterator<HealthChecksScopedList> iterator = scopedLists.iterator();
     while (iterator.hasNext()) {
       List<HealthCheck> checkList = iterator.next().getHealthChecksList();
@@ -1541,11 +1543,12 @@ public class ITComputeTest {
   @Test
   public void testAggregatedListDiskTypes() {
     AggregatedListDiskTypesPagedResponse pagedListResponse =
-        diskTypeClient.aggregatedListDiskTypes(PROJECT_NAME);
+        diskTypeClient.aggregatedListDiskTypes(false, PROJECT_NAME);
     List<DiskTypesScopedList> diskTypeScopedListIterator =
         Lists.newArrayList(pagedListResponse.iterateAll());
     List<DiskType> diskTypeIterator = new LinkedList<>();
     for (DiskTypesScopedList scopedList : diskTypeScopedListIterator) {
+      assertThat(scopedList.getDiskTypesList()).isNotNull();
       diskTypeIterator.addAll(scopedList.getDiskTypesList());
     }
     assertThat(diskTypeIterator.size()).isGreaterThan(0);
@@ -1610,7 +1613,7 @@ public class ITComputeTest {
   public void aggregatedListInstanceGroupsTest() {
     List<InstanceGroupsScopedList> scopedLists =
         Lists.newArrayList(
-            instanceGroupClient.aggregatedListInstanceGroups(PROJECT_NAME).iterateAll());
+            instanceGroupClient.aggregatedListInstanceGroups(true, PROJECT_NAME).iterateAll());
     for (InstanceGroupsScopedList instanceGroupsScopedList : scopedLists) {
       List<InstanceGroup> instanceGroups = instanceGroupsScopedList.getInstanceGroupsList();
       if (null != instanceGroups && instanceGroups.size() > 0) {
@@ -1662,7 +1665,7 @@ public class ITComputeTest {
   public void aggregatedListTargetHttpProxiesTest() {
     List<TargetHttpProxiesScopedList> targetHttpProxiesScopedLists =
         Lists.newArrayList(
-            targetHttpProxyClient.aggregatedListTargetHttpProxies(PROJECT_NAME).iterateAll());
+            targetHttpProxyClient.aggregatedListTargetHttpProxies(true, PROJECT_NAME).iterateAll());
     assertThat(targetHttpProxiesScopedLists).isNotNull();
     assertThat(targetHttpProxiesScopedLists.size()).isGreaterThan(0);
     assertThat(targetHttpProxiesScopedLists.contains(null)).isFalse();
@@ -1692,7 +1695,7 @@ public class ITComputeTest {
   public void aggregatedListTargetInstancesTest() {
     List<TargetInstancesScopedList> targetInstancesScopedLists =
         Lists.newArrayList(
-            targetInstanceClient.aggregatedListTargetInstances(PROJECT_NAME).iterateAll());
+            targetInstanceClient.aggregatedListTargetInstances(true, PROJECT_NAME).iterateAll());
     assertNotNull(targetInstancesScopedLists);
     assertThat(targetInstancesScopedLists.size()).isGreaterThan(0);
     assertThat(targetInstancesScopedLists.contains(null)).isFalse();
@@ -1761,7 +1764,8 @@ public class ITComputeTest {
   @Test
   public void aggregatedListTargetPoolsTest() {
     List<TargetPoolsScopedList> targetPoolsScopedLists =
-        Lists.newArrayList(targetPoolClient.aggregatedListTargetPools(PROJECT_NAME).iterateAll());
+        Lists.newArrayList(
+            targetPoolClient.aggregatedListTargetPools(true, PROJECT_NAME).iterateAll());
     for (TargetPoolsScopedList targetPoolsScopedList : targetPoolsScopedLists) {
       List<TargetPool> targetPools = targetPoolsScopedList.getTargetPoolsList();
       if (targetPools != null) {
@@ -1821,7 +1825,7 @@ public class ITComputeTest {
   @Test
   public void aggregatedListUrlMapsTest() {
     List<UrlMapsScopedList> urlMapsScopedLists =
-        Lists.newArrayList(urlMapClient.aggregatedListUrlMaps(PROJECT_NAME).iterateAll());
+        Lists.newArrayList(urlMapClient.aggregatedListUrlMaps(true, PROJECT_NAME).iterateAll());
     assertThat(urlMapsScopedLists).isNotNull();
     assertThat(urlMapsScopedLists.size()).isGreaterThan(0);
     assertThat(urlMapsScopedLists.contains(null)).isFalse();
@@ -1890,7 +1894,7 @@ public class ITComputeTest {
     List<InstanceGroupManagersScopedList> managersScopedLists =
         Lists.newArrayList(
             instanceGroupManagerClient
-                .aggregatedListInstanceGroupManagers(PROJECT_NAME)
+                .aggregatedListInstanceGroupManagers(true, PROJECT_NAME)
                 .iterateAll());
     assertThat(managersScopedLists).isNotNull();
     assertThat(managersScopedLists.size()).isGreaterThan(0);
@@ -1999,7 +2003,8 @@ public class ITComputeTest {
   @Test
   public void aggregatedListMachineTypesTest() {
     List<MachineTypesScopedList> scopedLists =
-        Lists.newArrayList(machineTypeClient.aggregatedListMachineTypes(PROJECT_NAME).iterateAll());
+        Lists.newArrayList(
+            machineTypeClient.aggregatedListMachineTypes(true, PROJECT_NAME).iterateAll());
     for (MachineTypesScopedList scopedList : scopedLists) {
       List<MachineType> machineTypes = scopedList.getMachineTypesList();
       if (null != machineTypes && machineTypes.size() > 0) {
@@ -2043,7 +2048,7 @@ public class ITComputeTest {
   @Test
   public void aggregatedListNodeTypesTest() {
     List<NodeTypesScopedList> nodeTypesScopedLists =
-        Lists.newArrayList(nodeTypeClient.aggregatedListNodeTypes(PROJECT_NAME).iterateAll());
+        Lists.newArrayList(nodeTypeClient.aggregatedListNodeTypes(true, PROJECT_NAME).iterateAll());
     assertThat(nodeTypesScopedLists).isNotNull();
     assertThat(nodeTypesScopedLists.size()).isGreaterThan(0);
     assertThat(nodeTypesScopedLists.contains(null)).isFalse();
@@ -2062,7 +2067,7 @@ public class ITComputeTest {
   public void aggregatedListNodeTemplatesTest() {
     List<NodeTemplatesScopedList> nodeTemplatesScopedLists =
         Lists.newArrayList(
-            nodeTemplateClient.aggregatedListNodeTemplates(PROJECT_NAME).iterateAll());
+            nodeTemplateClient.aggregatedListNodeTemplates(true, PROJECT_NAME).iterateAll());
     assertThat(nodeTemplatesScopedLists).isNotNull();
     assertThat(nodeTemplatesScopedLists.size()).isGreaterThan(0);
     assertThat(nodeTemplatesScopedLists.contains(null)).isFalse();
@@ -2080,7 +2085,8 @@ public class ITComputeTest {
   @Test
   public void aggregatedListNodeGroupsTest() {
     List<NodeGroupsScopedList> nodeGroupsScopedLists =
-        Lists.newArrayList(nodeGroupClient.aggregatedListNodeGroups(PROJECT_NAME).iterateAll());
+        Lists.newArrayList(
+            nodeGroupClient.aggregatedListNodeGroups(true, PROJECT_NAME).iterateAll());
     assertThat(nodeGroupsScopedLists).isNotNull();
     assertThat(nodeGroupsScopedLists.size()).isGreaterThan(0);
     assertThat(nodeGroupsScopedLists.contains(null)).isFalse();

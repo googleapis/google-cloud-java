@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedListInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListErrorsInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
 
 import com.google.api.client.http.HttpMethods;
@@ -33,6 +34,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AbandonInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListInstanceGroupManagersHttpRequest;
+import com.google.cloud.compute.v1.ApplyUpdatesToInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.CreateInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstancesInstanceGroupManagerHttpRequest;
@@ -41,7 +43,9 @@ import com.google.cloud.compute.v1.InsertInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InstanceGroupManager;
 import com.google.cloud.compute.v1.InstanceGroupManagerAggregatedList;
 import com.google.cloud.compute.v1.InstanceGroupManagerList;
+import com.google.cloud.compute.v1.InstanceGroupManagersListErrorsResponse;
 import com.google.cloud.compute.v1.InstanceGroupManagersListManagedInstancesResponse;
+import com.google.cloud.compute.v1.ListErrorsInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
@@ -106,13 +110,38 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                       .setPathTemplate(
                           PathTemplate.create("{project}/aggregated/instanceGroupManagers"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())
               .setResponseParser(
                   ApiMessageHttpResponseParser.<InstanceGroupManagerAggregatedList>newBuilder()
                       .setResponseInstance(InstanceGroupManagerAggregatedList.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          ApplyUpdatesToInstancesInstanceGroupManagerHttpRequest, Operation>
+      applyUpdatesToInstancesInstanceGroupManagerMethodDescriptor =
+          ApiMethodDescriptor
+              .<ApplyUpdatesToInstancesInstanceGroupManagerHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.instanceGroupManagers.applyUpdatesToInstances")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<ApplyUpdatesToInstancesInstanceGroupManagerHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/applyUpdatesToInstances"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneInstanceGroupManagerName.newFactory())
+                      .setResourceNameField("instanceGroupManager")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
                       .build())
               .build();
 
@@ -249,6 +278,33 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
 
   @InternalApi
   public static final ApiMethodDescriptor<
+          ListErrorsInstanceGroupManagersHttpRequest, InstanceGroupManagersListErrorsResponse>
+      listErrorsInstanceGroupManagersMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListErrorsInstanceGroupManagersHttpRequest, InstanceGroupManagersListErrorsResponse>
+                  newBuilder()
+              .setFullMethodName("compute.instanceGroupManagers.listErrors")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<ListErrorsInstanceGroupManagersHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/listErrors"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectZoneInstanceGroupManagerName.newFactory())
+                      .setResourceNameField("instanceGroupManager")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<InstanceGroupManagersListErrorsResponse>newBuilder()
+                      .setResponseInstance(
+                          InstanceGroupManagersListErrorsResponse.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<
           ListManagedInstancesInstanceGroupManagersHttpRequest,
           InstanceGroupManagersListManagedInstancesResponse>
       listManagedInstancesInstanceGroupManagersMethodDescriptor =
@@ -265,7 +321,7 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/listManagedInstances"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "order_by", "pageToken"))
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectZoneInstanceGroupManagerName.newFactory())
                       .setResourceNameField("instanceGroupManager")
                       .build())
@@ -400,6 +456,8 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
           AggregatedListInstanceGroupManagersHttpRequest,
           AggregatedListInstanceGroupManagersPagedResponse>
       aggregatedListInstanceGroupManagersPagedCallable;
+  private final UnaryCallable<ApplyUpdatesToInstancesInstanceGroupManagerHttpRequest, Operation>
+      applyUpdatesToInstancesInstanceGroupManagerCallable;
   private final UnaryCallable<CreateInstancesInstanceGroupManagerHttpRequest, Operation>
       createInstancesInstanceGroupManagerCallable;
   private final UnaryCallable<DeleteInstanceGroupManagerHttpRequest, Operation>
@@ -415,6 +473,12 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
   private final UnaryCallable<
           ListInstanceGroupManagersHttpRequest, ListInstanceGroupManagersPagedResponse>
       listInstanceGroupManagersPagedCallable;
+  private final UnaryCallable<
+          ListErrorsInstanceGroupManagersHttpRequest, InstanceGroupManagersListErrorsResponse>
+      listErrorsInstanceGroupManagersCallable;
+  private final UnaryCallable<
+          ListErrorsInstanceGroupManagersHttpRequest, ListErrorsInstanceGroupManagersPagedResponse>
+      listErrorsInstanceGroupManagersPagedCallable;
   private final UnaryCallable<
           ListManagedInstancesInstanceGroupManagersHttpRequest,
           InstanceGroupManagersListManagedInstancesResponse>
@@ -486,6 +550,12 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                     newBuilder()
                 .setMethodDescriptor(aggregatedListInstanceGroupManagersMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<ApplyUpdatesToInstancesInstanceGroupManagerHttpRequest, Operation>
+        applyUpdatesToInstancesInstanceGroupManagerTransportSettings =
+            HttpJsonCallSettings
+                .<ApplyUpdatesToInstancesInstanceGroupManagerHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(applyUpdatesToInstancesInstanceGroupManagerMethodDescriptor)
+                .build();
     HttpJsonCallSettings<CreateInstancesInstanceGroupManagerHttpRequest, Operation>
         createInstancesInstanceGroupManagerTransportSettings =
             HttpJsonCallSettings
@@ -519,6 +589,15 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
             HttpJsonCallSettings
                 .<ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList>newBuilder()
                 .setMethodDescriptor(listInstanceGroupManagersMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<
+            ListErrorsInstanceGroupManagersHttpRequest, InstanceGroupManagersListErrorsResponse>
+        listErrorsInstanceGroupManagersTransportSettings =
+            HttpJsonCallSettings
+                .<ListErrorsInstanceGroupManagersHttpRequest,
+                    InstanceGroupManagersListErrorsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listErrorsInstanceGroupManagersMethodDescriptor)
                 .build();
     HttpJsonCallSettings<
             ListManagedInstancesInstanceGroupManagersHttpRequest,
@@ -574,6 +653,11 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
             aggregatedListInstanceGroupManagersTransportSettings,
             settings.aggregatedListInstanceGroupManagersSettings(),
             clientContext);
+    this.applyUpdatesToInstancesInstanceGroupManagerCallable =
+        callableFactory.createUnaryCallable(
+            applyUpdatesToInstancesInstanceGroupManagerTransportSettings,
+            settings.applyUpdatesToInstancesInstanceGroupManagerSettings(),
+            clientContext);
     this.createInstancesInstanceGroupManagerCallable =
         callableFactory.createUnaryCallable(
             createInstancesInstanceGroupManagerTransportSettings,
@@ -608,6 +692,16 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
         callableFactory.createPagedCallable(
             listInstanceGroupManagersTransportSettings,
             settings.listInstanceGroupManagersSettings(),
+            clientContext);
+    this.listErrorsInstanceGroupManagersCallable =
+        callableFactory.createUnaryCallable(
+            listErrorsInstanceGroupManagersTransportSettings,
+            settings.listErrorsInstanceGroupManagersSettings(),
+            clientContext);
+    this.listErrorsInstanceGroupManagersPagedCallable =
+        callableFactory.createPagedCallable(
+            listErrorsInstanceGroupManagersTransportSettings,
+            settings.listErrorsInstanceGroupManagersSettings(),
             clientContext);
     this.listManagedInstancesInstanceGroupManagersCallable =
         callableFactory.createUnaryCallable(
@@ -665,6 +759,12 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
   }
 
   @BetaApi
+  public UnaryCallable<ApplyUpdatesToInstancesInstanceGroupManagerHttpRequest, Operation>
+      applyUpdatesToInstancesInstanceGroupManagerCallable() {
+    return applyUpdatesToInstancesInstanceGroupManagerCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<CreateInstancesInstanceGroupManagerHttpRequest, Operation>
       createInstancesInstanceGroupManagerCallable() {
     return createInstancesInstanceGroupManagerCallable;
@@ -704,6 +804,20 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
   public UnaryCallable<ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList>
       listInstanceGroupManagersCallable() {
     return listInstanceGroupManagersCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListErrorsInstanceGroupManagersHttpRequest, ListErrorsInstanceGroupManagersPagedResponse>
+      listErrorsInstanceGroupManagersPagedCallable() {
+    return listErrorsInstanceGroupManagersPagedCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListErrorsInstanceGroupManagersHttpRequest, InstanceGroupManagersListErrorsResponse>
+      listErrorsInstanceGroupManagersCallable() {
+    return listErrorsInstanceGroupManagersCallable;
   }
 
   @BetaApi

@@ -198,8 +198,8 @@ public final class UpdateUrlMapHttpRequest implements ApiMessage {
    *
    * <p>Google Compute Engine has two URL Map resources:
    *
-   * <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-   * [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+   * [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
    *
    * <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
    * Director.
@@ -480,8 +480,8 @@ public final class UpdateUrlMapHttpRequest implements ApiMessage {
      *
      * <p>Google Compute Engine has two URL Map resources:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
      *
      * <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
      * Director.
@@ -506,8 +506,8 @@ public final class UpdateUrlMapHttpRequest implements ApiMessage {
      *
      * <p>Google Compute Engine has two URL Map resources:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
      *
      * <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
      * Director.

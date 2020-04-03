@@ -162,21 +162,29 @@ public class SslCertificateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (SslCertificatesScopedList element : sslCertificateClient.aggregatedListSslCertificates(project).iterateAll()) {
+   *   for (SslCertificatesScopedList element : sslCertificateClient.aggregatedListSslCertificates(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListSslCertificatesPagedResponse aggregatedListSslCertificates(
-      ProjectName project) {
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListSslCertificatesHttpRequest request =
         AggregatedListSslCertificatesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListSslCertificates(request);
@@ -191,21 +199,31 @@ public class SslCertificateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (SslCertificatesScopedList element : sslCertificateClient.aggregatedListSslCertificates(project.toString()).iterateAll()) {
+   *   for (SslCertificatesScopedList element : sslCertificateClient.aggregatedListSslCertificates(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListSslCertificatesPagedResponse aggregatedListSslCertificates(
-      String project) {
+      Boolean includeAllScopes, String project) {
     AggregatedListSslCertificatesHttpRequest request =
-        AggregatedListSslCertificatesHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListSslCertificatesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListSslCertificates(request);
   }
 
@@ -218,8 +236,10 @@ public class SslCertificateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListSslCertificatesHttpRequest request = AggregatedListSslCertificatesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (SslCertificatesScopedList element : sslCertificateClient.aggregatedListSslCertificates(request).iterateAll()) {
@@ -246,8 +266,10 @@ public class SslCertificateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListSslCertificatesHttpRequest request = AggregatedListSslCertificatesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListSslCertificatesPagedResponse&gt; future = sslCertificateClient.aggregatedListSslCertificatesPagedCallable().futureCall(request);
@@ -274,8 +296,10 @@ public class SslCertificateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListSslCertificatesHttpRequest request = AggregatedListSslCertificatesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
@@ -505,32 +529,18 @@ public class SslCertificateClient implements BackgroundResource {
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
-   *   Operation response = sslCertificateClient.insertSslCertificate(project, sslCertificateResource);
+   *   Operation response = sslCertificateClient.insertSslCertificate(project);
    * }
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param sslCertificateResource Represents an SSL Certificate resource.
-   *     <p>Google Compute Engine has two SSL Certificate resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/sslCertificates) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionSslCertificates)
-   *     <p>- sslCertificates are used by: - external HTTPS load balancers - SSL proxy load
-   *     balancers
-   *     <p>- regionSslCertificates are used by: - internal HTTPS load balancers
-   *     <p>This SSL certificate resource also contains a private key. You can use SSL keys and
-   *     certificates to secure connections to a load balancer. For more information, read Creating
-   *     and Using SSL Certificates. (== resource_for {$api_version}.sslCertificates ==) (==
-   *     resource_for {$api_version}.regionSslCertificates ==) Next ID: 17
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertSslCertificate(
-      ProjectName project, SslCertificate sslCertificateResource) {
+  public final Operation insertSslCertificate(ProjectName project) {
     InsertSslCertificateHttpRequest request =
         InsertSslCertificateHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
-            .setSslCertificateResource(sslCertificateResource)
             .build();
     return insertSslCertificate(request);
   }
@@ -545,33 +555,17 @@ public class SslCertificateClient implements BackgroundResource {
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
-   *   Operation response = sslCertificateClient.insertSslCertificate(project.toString(), sslCertificateResource);
+   *   Operation response = sslCertificateClient.insertSslCertificate(project.toString());
    * }
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param sslCertificateResource Represents an SSL Certificate resource.
-   *     <p>Google Compute Engine has two SSL Certificate resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/sslCertificates) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionSslCertificates)
-   *     <p>- sslCertificates are used by: - external HTTPS load balancers - SSL proxy load
-   *     balancers
-   *     <p>- regionSslCertificates are used by: - internal HTTPS load balancers
-   *     <p>This SSL certificate resource also contains a private key. You can use SSL keys and
-   *     certificates to secure connections to a load balancer. For more information, read Creating
-   *     and Using SSL Certificates. (== resource_for {$api_version}.sslCertificates ==) (==
-   *     resource_for {$api_version}.regionSslCertificates ==) Next ID: 17
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertSslCertificate(
-      String project, SslCertificate sslCertificateResource) {
+  public final Operation insertSslCertificate(String project) {
     InsertSslCertificateHttpRequest request =
-        InsertSslCertificateHttpRequest.newBuilder()
-            .setProject(project)
-            .setSslCertificateResource(sslCertificateResource)
-            .build();
+        InsertSslCertificateHttpRequest.newBuilder().setProject(project).build();
     return insertSslCertificate(request);
   }
 
@@ -585,10 +579,8 @@ public class SslCertificateClient implements BackgroundResource {
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
    *   String formattedProject = ProjectName.format("[PROJECT]");
-   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
    *   InsertSslCertificateHttpRequest request = InsertSslCertificateHttpRequest.newBuilder()
    *     .setProject(formattedProject)
-   *     .setSslCertificateResource(sslCertificateResource)
    *     .build();
    *   Operation response = sslCertificateClient.insertSslCertificate(request);
    * }
@@ -612,10 +604,8 @@ public class SslCertificateClient implements BackgroundResource {
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
    *   String formattedProject = ProjectName.format("[PROJECT]");
-   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
    *   InsertSslCertificateHttpRequest request = InsertSslCertificateHttpRequest.newBuilder()
    *     .setProject(formattedProject)
-   *     .setSslCertificateResource(sslCertificateResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = sslCertificateClient.insertSslCertificateCallable().futureCall(request);
    *   // Do something

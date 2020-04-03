@@ -309,10 +309,11 @@ public class TargetPoolClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListTargetPoolsPagedResponse pagedListResponse =
-        client.aggregatedListTargetPools(project);
+        client.aggregatedListTargetPools(includeAllScopes, project);
 
     List<TargetPoolsScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -343,9 +344,10 @@ public class TargetPoolClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListTargetPools(project);
+      client.aggregatedListTargetPools(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

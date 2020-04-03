@@ -372,8 +372,8 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param forwardingRuleResource Represents a Forwarding Rule resource.
    *     <p>Forwarding rule resources in GCP can be either regional or global in scope:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
    *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
    *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
    *     instances and Cloud VPN Classic gateways (targetVpnGateway).
@@ -412,8 +412,8 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param forwardingRuleResource Represents a Forwarding Rule resource.
    *     <p>Forwarding rule resources in GCP can be either regional or global in scope:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
    *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
    *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
    *     instances and Cloud VPN Classic gateways (targetVpnGateway).
@@ -648,8 +648,8 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    * @param forwardingRule Name of the ForwardingRule resource to patch.
    * @param forwardingRuleResource Represents a Forwarding Rule resource.
    *     <p>Forwarding rule resources in GCP can be either regional or global in scope:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
    *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
    *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
    *     instances and Cloud VPN Classic gateways (targetVpnGateway).
@@ -697,8 +697,8 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    * @param forwardingRule Name of the ForwardingRule resource to patch.
    * @param forwardingRuleResource Represents a Forwarding Rule resource.
    *     <p>Forwarding rule resources in GCP can be either regional or global in scope:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
    *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
    *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
    *     instances and Cloud VPN Classic gateways (targetVpnGateway).

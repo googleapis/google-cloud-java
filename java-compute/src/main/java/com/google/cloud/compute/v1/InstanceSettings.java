@@ -76,6 +76,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     return ((InstanceStubSettings) getStubSettings()).addAccessConfigInstanceSettings();
   }
 
+  /** Returns the object with the settings used for calls to addResourcePoliciesInstance. */
+  public UnaryCallSettings<AddResourcePoliciesInstanceHttpRequest, Operation>
+      addResourcePoliciesInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).addResourcePoliciesInstanceSettings();
+  }
+
   /** Returns the object with the settings used for calls to aggregatedListInstances. */
   public PagedCallSettings<
           AggregatedListInstancesHttpRequest,
@@ -152,6 +158,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
           ListReferrersInstancesPagedResponse>
       listReferrersInstancesSettings() {
     return ((InstanceStubSettings) getStubSettings()).listReferrersInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeResourcePoliciesInstance. */
+  public UnaryCallSettings<RemoveResourcePoliciesInstanceHttpRequest, Operation>
+      removeResourcePoliciesInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).removeResourcePoliciesInstanceSettings();
   }
 
   /** Returns the object with the settings used for calls to resetInstance. */
@@ -258,6 +270,11 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
   public UnaryCallSettings<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
       testIamPermissionsInstanceSettings() {
     return ((InstanceStubSettings) getStubSettings()).testIamPermissionsInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateInstance. */
+  public UnaryCallSettings<UpdateInstanceHttpRequest, Operation> updateInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).updateInstanceSettings();
   }
 
   /** Returns the object with the settings used for calls to updateAccessConfigInstance. */
@@ -394,6 +411,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
       return getStubSettingsBuilder().addAccessConfigInstanceSettings();
     }
 
+    /** Returns the builder for the settings used for calls to addResourcePoliciesInstance. */
+    public UnaryCallSettings.Builder<AddResourcePoliciesInstanceHttpRequest, Operation>
+        addResourcePoliciesInstanceSettings() {
+      return getStubSettingsBuilder().addResourcePoliciesInstanceSettings();
+    }
+
     /** Returns the builder for the settings used for calls to aggregatedListInstances. */
     public PagedCallSettings.Builder<
             AggregatedListInstancesHttpRequest,
@@ -479,6 +502,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
             ListReferrersInstancesPagedResponse>
         listReferrersInstancesSettings() {
       return getStubSettingsBuilder().listReferrersInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeResourcePoliciesInstance. */
+    public UnaryCallSettings.Builder<RemoveResourcePoliciesInstanceHttpRequest, Operation>
+        removeResourcePoliciesInstanceSettings() {
+      return getStubSettingsBuilder().removeResourcePoliciesInstanceSettings();
     }
 
     /** Returns the builder for the settings used for calls to resetInstance. */
@@ -588,6 +617,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
         testIamPermissionsInstanceSettings() {
       return getStubSettingsBuilder().testIamPermissionsInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateInstance. */
+    public UnaryCallSettings.Builder<UpdateInstanceHttpRequest, Operation>
+        updateInstanceSettings() {
+      return getStubSettingsBuilder().updateInstanceSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateAccessConfigInstance. */

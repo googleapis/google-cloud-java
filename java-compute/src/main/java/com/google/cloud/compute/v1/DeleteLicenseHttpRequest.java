@@ -24,7 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Request object for method compute.licenses.delete. Deletes the specified license. */
+/**
+ * Request object for method compute.licenses.delete. Deletes the specified license. Caution This
+ * resource is intended for use only by third-party partners who are creating Cloud Marketplace
+ * images.
+ */
 public final class DeleteLicenseHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

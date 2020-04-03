@@ -103,10 +103,11 @@ public class AcceleratorTypeClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListAcceleratorTypesPagedResponse pagedListResponse =
-        client.aggregatedListAcceleratorTypes(project);
+        client.aggregatedListAcceleratorTypes(includeAllScopes, project);
 
     List<AcceleratorTypesScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -137,9 +138,10 @@ public class AcceleratorTypeClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListAcceleratorTypes(project);
+      client.aggregatedListAcceleratorTypes(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

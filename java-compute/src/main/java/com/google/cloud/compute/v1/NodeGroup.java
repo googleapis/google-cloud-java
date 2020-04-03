@@ -33,10 +33,13 @@ import javax.annotation.Nullable;
  * more information, read Sole-tenant nodes. (== resource_for {$api_version}.nodeGroups ==)
  */
 public final class NodeGroup implements ApiMessage {
+  private final NodeGroupAutoscalingPolicy autoscalingPolicy;
   private final String creationTimestamp;
   private final String description;
+  private final String fingerprint;
   private final String id;
   private final String kind;
+  private final String maintenancePolicy;
   private final String name;
   private final String nodeTemplate;
   private final String selfLink;
@@ -45,10 +48,13 @@ public final class NodeGroup implements ApiMessage {
   private final String zone;
 
   private NodeGroup() {
+    this.autoscalingPolicy = null;
     this.creationTimestamp = null;
     this.description = null;
+    this.fingerprint = null;
     this.id = null;
     this.kind = null;
+    this.maintenancePolicy = null;
     this.name = null;
     this.nodeTemplate = null;
     this.selfLink = null;
@@ -58,20 +64,26 @@ public final class NodeGroup implements ApiMessage {
   }
 
   private NodeGroup(
+      NodeGroupAutoscalingPolicy autoscalingPolicy,
       String creationTimestamp,
       String description,
+      String fingerprint,
       String id,
       String kind,
+      String maintenancePolicy,
       String name,
       String nodeTemplate,
       String selfLink,
       Integer size,
       String status,
       String zone) {
+    this.autoscalingPolicy = autoscalingPolicy;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
+    this.fingerprint = fingerprint;
     this.id = id;
     this.kind = kind;
+    this.maintenancePolicy = maintenancePolicy;
     this.name = name;
     this.nodeTemplate = nodeTemplate;
     this.selfLink = selfLink;
@@ -82,17 +94,26 @@ public final class NodeGroup implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("autoscalingPolicy".equals(fieldName)) {
+      return autoscalingPolicy;
+    }
     if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
     if ("description".equals(fieldName)) {
       return description;
     }
+    if ("fingerprint".equals(fieldName)) {
+      return fingerprint;
+    }
     if ("id".equals(fieldName)) {
       return id;
     }
     if ("kind".equals(fieldName)) {
       return kind;
+    }
+    if ("maintenancePolicy".equals(fieldName)) {
+      return maintenancePolicy;
     }
     if ("name".equals(fieldName)) {
       return name;
@@ -133,6 +154,11 @@ public final class NodeGroup implements ApiMessage {
     return null;
   }
 
+  /** Specifies how autoscaling should behave. */
+  public NodeGroupAutoscalingPolicy getAutoscalingPolicy() {
+    return autoscalingPolicy;
+  }
+
   /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
@@ -145,6 +171,10 @@ public final class NodeGroup implements ApiMessage {
     return description;
   }
 
+  public String getFingerprint() {
+    return fingerprint;
+  }
+
   /**
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    */
@@ -155,6 +185,11 @@ public final class NodeGroup implements ApiMessage {
   /** [Output Only] The type of the resource. Always compute#nodeGroup for node group. */
   public String getKind() {
     return kind;
+  }
+
+  /** Specifies how to handle instances when a node in the group undergoes maintenance. */
+  public String getMaintenancePolicy() {
+    return maintenancePolicy;
   }
 
   /**
@@ -215,10 +250,13 @@ public final class NodeGroup implements ApiMessage {
   }
 
   public static class Builder {
+    private NodeGroupAutoscalingPolicy autoscalingPolicy;
     private String creationTimestamp;
     private String description;
+    private String fingerprint;
     private String id;
     private String kind;
+    private String maintenancePolicy;
     private String name;
     private String nodeTemplate;
     private String selfLink;
@@ -230,17 +268,26 @@ public final class NodeGroup implements ApiMessage {
 
     public Builder mergeFrom(NodeGroup other) {
       if (other == NodeGroup.getDefaultInstance()) return this;
+      if (other.getAutoscalingPolicy() != null) {
+        this.autoscalingPolicy = other.autoscalingPolicy;
+      }
       if (other.getCreationTimestamp() != null) {
         this.creationTimestamp = other.creationTimestamp;
       }
       if (other.getDescription() != null) {
         this.description = other.description;
       }
+      if (other.getFingerprint() != null) {
+        this.fingerprint = other.fingerprint;
+      }
       if (other.getId() != null) {
         this.id = other.id;
       }
       if (other.getKind() != null) {
         this.kind = other.kind;
+      }
+      if (other.getMaintenancePolicy() != null) {
+        this.maintenancePolicy = other.maintenancePolicy;
       }
       if (other.getName() != null) {
         this.name = other.name;
@@ -264,16 +311,30 @@ public final class NodeGroup implements ApiMessage {
     }
 
     Builder(NodeGroup source) {
+      this.autoscalingPolicy = source.autoscalingPolicy;
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
+      this.fingerprint = source.fingerprint;
       this.id = source.id;
       this.kind = source.kind;
+      this.maintenancePolicy = source.maintenancePolicy;
       this.name = source.name;
       this.nodeTemplate = source.nodeTemplate;
       this.selfLink = source.selfLink;
       this.size = source.size;
       this.status = source.status;
       this.zone = source.zone;
+    }
+
+    /** Specifies how autoscaling should behave. */
+    public NodeGroupAutoscalingPolicy getAutoscalingPolicy() {
+      return autoscalingPolicy;
+    }
+
+    /** Specifies how autoscaling should behave. */
+    public Builder setAutoscalingPolicy(NodeGroupAutoscalingPolicy autoscalingPolicy) {
+      this.autoscalingPolicy = autoscalingPolicy;
+      return this;
     }
 
     /** [Output Only] Creation timestamp in RFC3339 text format. */
@@ -302,6 +363,15 @@ public final class NodeGroup implements ApiMessage {
       return this;
     }
 
+    public String getFingerprint() {
+      return fingerprint;
+    }
+
+    public Builder setFingerprint(String fingerprint) {
+      this.fingerprint = fingerprint;
+      return this;
+    }
+
     /**
      * [Output Only] The unique identifier for the resource. This identifier is defined by the
      * server.
@@ -327,6 +397,17 @@ public final class NodeGroup implements ApiMessage {
     /** [Output Only] The type of the resource. Always compute#nodeGroup for node group. */
     public Builder setKind(String kind) {
       this.kind = kind;
+      return this;
+    }
+
+    /** Specifies how to handle instances when a node in the group undergoes maintenance. */
+    public String getMaintenancePolicy() {
+      return maintenancePolicy;
+    }
+
+    /** Specifies how to handle instances when a node in the group undergoes maintenance. */
+    public Builder setMaintenancePolicy(String maintenancePolicy) {
+      this.maintenancePolicy = maintenancePolicy;
       return this;
     }
 
@@ -411,10 +492,13 @@ public final class NodeGroup implements ApiMessage {
     public NodeGroup build() {
 
       return new NodeGroup(
+          autoscalingPolicy,
           creationTimestamp,
           description,
+          fingerprint,
           id,
           kind,
+          maintenancePolicy,
           name,
           nodeTemplate,
           selfLink,
@@ -425,10 +509,13 @@ public final class NodeGroup implements ApiMessage {
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setAutoscalingPolicy(this.autoscalingPolicy);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDescription(this.description);
+      newBuilder.setFingerprint(this.fingerprint);
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
+      newBuilder.setMaintenancePolicy(this.maintenancePolicy);
       newBuilder.setName(this.name);
       newBuilder.setNodeTemplate(this.nodeTemplate);
       newBuilder.setSelfLink(this.selfLink);
@@ -442,17 +529,26 @@ public final class NodeGroup implements ApiMessage {
   @Override
   public String toString() {
     return "NodeGroup{"
+        + "autoscalingPolicy="
+        + autoscalingPolicy
+        + ", "
         + "creationTimestamp="
         + creationTimestamp
         + ", "
         + "description="
         + description
         + ", "
+        + "fingerprint="
+        + fingerprint
+        + ", "
         + "id="
         + id
         + ", "
         + "kind="
         + kind
+        + ", "
+        + "maintenancePolicy="
+        + maintenancePolicy
         + ", "
         + "name="
         + name
@@ -481,10 +577,13 @@ public final class NodeGroup implements ApiMessage {
     }
     if (o instanceof NodeGroup) {
       NodeGroup that = (NodeGroup) o;
-      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+      return Objects.equals(this.autoscalingPolicy, that.getAutoscalingPolicy())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.fingerprint, that.getFingerprint())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.maintenancePolicy, that.getMaintenancePolicy())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.nodeTemplate, that.getNodeTemplate())
           && Objects.equals(this.selfLink, that.getSelfLink())
@@ -498,6 +597,18 @@ public final class NodeGroup implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        creationTimestamp, description, id, kind, name, nodeTemplate, selfLink, size, status, zone);
+        autoscalingPolicy,
+        creationTimestamp,
+        description,
+        fingerprint,
+        id,
+        kind,
+        maintenancePolicy,
+        name,
+        nodeTemplate,
+        selfLink,
+        size,
+        status,
+        zone);
   }
 }

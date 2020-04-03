@@ -69,7 +69,8 @@ public class HttpJsonSslCertificateStub extends SslCertificateStub {
                       .<AggregatedListSslCertificatesHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/sslCertificates"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())

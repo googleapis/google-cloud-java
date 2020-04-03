@@ -124,6 +124,11 @@ public class NodeGroupSettings extends ClientSettings<NodeGroupSettings> {
     return ((NodeGroupStubSettings) getStubSettings()).listNodesNodeGroupsSettings();
   }
 
+  /** Returns the object with the settings used for calls to patchNodeGroup. */
+  public UnaryCallSettings<PatchNodeGroupHttpRequest, Operation> patchNodeGroupSettings() {
+    return ((NodeGroupStubSettings) getStubSettings()).patchNodeGroupSettings();
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicyNodeGroup. */
   public UnaryCallSettings<SetIamPolicyNodeGroupHttpRequest, Policy>
       setIamPolicyNodeGroupSettings() {
@@ -299,6 +304,12 @@ public class NodeGroupSettings extends ClientSettings<NodeGroupSettings> {
             ListNodesNodeGroupsHttpRequest, NodeGroupsListNodes, ListNodesNodeGroupsPagedResponse>
         listNodesNodeGroupsSettings() {
       return getStubSettingsBuilder().listNodesNodeGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchNodeGroup. */
+    public UnaryCallSettings.Builder<PatchNodeGroupHttpRequest, Operation>
+        patchNodeGroupSettings() {
+      return getStubSettingsBuilder().patchNodeGroupSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicyNodeGroup. */

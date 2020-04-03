@@ -161,21 +161,29 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (ForwardingRulesScopedList element : forwardingRuleClient.aggregatedListForwardingRules(project).iterateAll()) {
+   *   for (ForwardingRulesScopedList element : forwardingRuleClient.aggregatedListForwardingRules(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListForwardingRulesPagedResponse aggregatedListForwardingRules(
-      ProjectName project) {
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListForwardingRulesHttpRequest request =
         AggregatedListForwardingRulesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListForwardingRules(request);
@@ -189,21 +197,31 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (ForwardingRulesScopedList element : forwardingRuleClient.aggregatedListForwardingRules(project.toString()).iterateAll()) {
+   *   for (ForwardingRulesScopedList element : forwardingRuleClient.aggregatedListForwardingRules(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListForwardingRulesPagedResponse aggregatedListForwardingRules(
-      String project) {
+      Boolean includeAllScopes, String project) {
     AggregatedListForwardingRulesHttpRequest request =
-        AggregatedListForwardingRulesHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListForwardingRulesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListForwardingRules(request);
   }
 
@@ -215,8 +233,10 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListForwardingRulesHttpRequest request = AggregatedListForwardingRulesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (ForwardingRulesScopedList element : forwardingRuleClient.aggregatedListForwardingRules(request).iterateAll()) {
@@ -242,8 +262,10 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListForwardingRulesHttpRequest request = AggregatedListForwardingRulesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListForwardingRulesPagedResponse&gt; future = forwardingRuleClient.aggregatedListForwardingRulesPagedCallable().futureCall(request);
@@ -269,8 +291,10 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListForwardingRulesHttpRequest request = AggregatedListForwardingRulesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
@@ -504,8 +528,8 @@ public class ForwardingRuleClient implements BackgroundResource {
    * @param region Name of the region scoping this request.
    * @param forwardingRuleResource Represents a Forwarding Rule resource.
    *     <p>Forwarding rule resources in GCP can be either regional or global in scope:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
    *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
    *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
    *     instances and Cloud VPN Classic gateways (targetVpnGateway).
@@ -544,8 +568,8 @@ public class ForwardingRuleClient implements BackgroundResource {
    * @param region Name of the region scoping this request.
    * @param forwardingRuleResource Represents a Forwarding Rule resource.
    *     <p>Forwarding rule resources in GCP can be either regional or global in scope:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
    *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
    *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
    *     instances and Cloud VPN Classic gateways (targetVpnGateway).
@@ -778,8 +802,8 @@ public class ForwardingRuleClient implements BackgroundResource {
    * @param forwardingRule Name of the ForwardingRule resource to patch.
    * @param forwardingRuleResource Represents a Forwarding Rule resource.
    *     <p>Forwarding rule resources in GCP can be either regional or global in scope:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
    *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
    *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
    *     instances and Cloud VPN Classic gateways (targetVpnGateway).
@@ -827,8 +851,8 @@ public class ForwardingRuleClient implements BackgroundResource {
    * @param forwardingRule Name of the ForwardingRule resource to patch.
    * @param forwardingRuleResource Represents a Forwarding Rule resource.
    *     <p>Forwarding rule resources in GCP can be either regional or global in scope:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
    *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
    *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
    *     instances and Cloud VPN Classic gateways (targetVpnGateway).

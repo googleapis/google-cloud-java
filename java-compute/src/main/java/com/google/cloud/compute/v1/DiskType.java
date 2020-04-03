@@ -29,8 +29,8 @@ import javax.annotation.Nullable;
  *
  * <p>Google Compute Engine has two Disk Type resources:
  *
- * <p>&#42; [Global](/compute/docs/reference/rest/latest/diskTypes) &#42;
- * [Regional](/compute/docs/reference/rest/latest/regionDiskTypes)
+ * <p>&#42; [Regional](/compute/docs/reference/rest/{$api_version}/regionDiskTypes) &#42;
+ * [Zonal](/compute/docs/reference/rest/{$api_version}/diskTypes)
  *
  * <p>You can choose from a variety of disk types based on your needs. For more information, read
  * Storage options.

@@ -382,8 +382,8 @@ public class RegionUrlMapClient implements BackgroundResource {
    * @param region Name of the region scoping this request.
    * @param urlMapResource Represents a URL Map resource.
    *     <p>Google Compute Engine has two URL Map resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
    *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
    *     Director.
    *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
@@ -428,8 +428,8 @@ public class RegionUrlMapClient implements BackgroundResource {
    * @param region Name of the region scoping this request.
    * @param urlMapResource Represents a URL Map resource.
    *     <p>Google Compute Engine has two URL Map resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
    *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
    *     Director.
    *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
@@ -674,8 +674,8 @@ public class RegionUrlMapClient implements BackgroundResource {
    *     idempotency.
    * @param urlMapResource Represents a URL Map resource.
    *     <p>Google Compute Engine has two URL Map resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
    *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
    *     Director.
    *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
@@ -730,8 +730,8 @@ public class RegionUrlMapClient implements BackgroundResource {
    *     idempotency.
    * @param urlMapResource Represents a URL Map resource.
    *     <p>Google Compute Engine has two URL Map resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
    *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
    *     Director.
    *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
@@ -843,8 +843,8 @@ public class RegionUrlMapClient implements BackgroundResource {
    *     idempotency.
    * @param urlMapResource Represents a URL Map resource.
    *     <p>Google Compute Engine has two URL Map resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
    *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
    *     Director.
    *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;
@@ -898,8 +898,8 @@ public class RegionUrlMapClient implements BackgroundResource {
    *     idempotency.
    * @param urlMapResource Represents a URL Map resource.
    *     <p>Google Compute Engine has two URL Map resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/urlMaps) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
    *     <p>A URL map resource is a component of certain types of GCP load balancers and Traffic
    *     Director.
    *     <p>&#42; urlMaps are used by external HTTP(S) load balancers and Traffic Director. &#42;

@@ -163,21 +163,29 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkEndpointGroupClient networkEndpointGroupClient = NetworkEndpointGroupClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (NetworkEndpointGroupsScopedList element : networkEndpointGroupClient.aggregatedListNetworkEndpointGroups(project).iterateAll()) {
+   *   for (NetworkEndpointGroupsScopedList element : networkEndpointGroupClient.aggregatedListNetworkEndpointGroups(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListNetworkEndpointGroupsPagedResponse aggregatedListNetworkEndpointGroups(
-      ProjectName project) {
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListNetworkEndpointGroupsHttpRequest request =
         AggregatedListNetworkEndpointGroupsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListNetworkEndpointGroups(request);
@@ -191,21 +199,31 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkEndpointGroupClient networkEndpointGroupClient = NetworkEndpointGroupClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (NetworkEndpointGroupsScopedList element : networkEndpointGroupClient.aggregatedListNetworkEndpointGroups(project.toString()).iterateAll()) {
+   *   for (NetworkEndpointGroupsScopedList element : networkEndpointGroupClient.aggregatedListNetworkEndpointGroups(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListNetworkEndpointGroupsPagedResponse aggregatedListNetworkEndpointGroups(
-      String project) {
+      Boolean includeAllScopes, String project) {
     AggregatedListNetworkEndpointGroupsHttpRequest request =
-        AggregatedListNetworkEndpointGroupsHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListNetworkEndpointGroupsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListNetworkEndpointGroups(request);
   }
 
@@ -217,8 +235,10 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkEndpointGroupClient networkEndpointGroupClient = NetworkEndpointGroupClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNetworkEndpointGroupsHttpRequest request = AggregatedListNetworkEndpointGroupsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (NetworkEndpointGroupsScopedList element : networkEndpointGroupClient.aggregatedListNetworkEndpointGroups(request).iterateAll()) {
@@ -244,8 +264,10 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkEndpointGroupClient networkEndpointGroupClient = NetworkEndpointGroupClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNetworkEndpointGroupsHttpRequest request = AggregatedListNetworkEndpointGroupsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListNetworkEndpointGroupsPagedResponse&gt; future = networkEndpointGroupClient.aggregatedListNetworkEndpointGroupsPagedCallable().futureCall(request);
@@ -272,8 +294,10 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkEndpointGroupClient networkEndpointGroupClient = NetworkEndpointGroupClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNetworkEndpointGroupsHttpRequest request = AggregatedListNetworkEndpointGroupsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
@@ -773,8 +797,8 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    * @param zone The name of the zone where you want to create the network endpoint group. It should
    *     comply with RFC1035.
    * @param networkEndpointGroupResource Represents a collection of network endpoints.
-   *     <p>For more information read Setting up network endpoint groups in load balancing. (==
-   *     resource_for {$api_version}.networkEndpointGroups ==) Next ID: 21
+   *     <p>For more information read Network endpoint groups overview. (== resource_for
+   *     {$api_version}.networkEndpointGroups ==) Next ID: 21
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -806,8 +830,8 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    * @param zone The name of the zone where you want to create the network endpoint group. It should
    *     comply with RFC1035.
    * @param networkEndpointGroupResource Represents a collection of network endpoints.
-   *     <p>For more information read Setting up network endpoint groups in load balancing. (==
-   *     resource_for {$api_version}.networkEndpointGroups ==) Next ID: 21
+   *     <p>For more information read Network endpoint groups overview. (== resource_for
+   *     {$api_version}.networkEndpointGroups ==) Next ID: 21
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

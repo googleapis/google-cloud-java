@@ -73,7 +73,11 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek implements ApiMessage {
     return null;
   }
 
-  /** Allows to define schedule that runs specified day of the week. */
+  /**
+   * Defines a schedule that runs on specific days of the week. Specify one or more days. The
+   * following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY,
+   * SUNDAY.
+   */
   public String getDay() {
     return day;
   }
@@ -143,12 +147,20 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek implements ApiMessage {
       this.startTime = source.startTime;
     }
 
-    /** Allows to define schedule that runs specified day of the week. */
+    /**
+     * Defines a schedule that runs on specific days of the week. Specify one or more days. The
+     * following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY,
+     * SUNDAY.
+     */
     public String getDay() {
       return day;
     }
 
-    /** Allows to define schedule that runs specified day of the week. */
+    /**
+     * Defines a schedule that runs on specific days of the week. Specify one or more days. The
+     * following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY,
+     * SUNDAY.
+     */
     public Builder setDay(String day) {
       this.day = day;
       return this;

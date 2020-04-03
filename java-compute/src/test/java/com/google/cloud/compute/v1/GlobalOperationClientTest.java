@@ -107,10 +107,11 @@ public class GlobalOperationClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListGlobalOperationsPagedResponse pagedListResponse =
-        client.aggregatedListGlobalOperations(project);
+        client.aggregatedListGlobalOperations(includeAllScopes, project);
 
     List<OperationsScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -141,9 +142,10 @@ public class GlobalOperationClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListGlobalOperations(project);
+      client.aggregatedListGlobalOperations(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

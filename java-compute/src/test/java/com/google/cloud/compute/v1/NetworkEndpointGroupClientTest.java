@@ -118,10 +118,11 @@ public class NetworkEndpointGroupClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListNetworkEndpointGroupsPagedResponse pagedListResponse =
-        client.aggregatedListNetworkEndpointGroups(project);
+        client.aggregatedListNetworkEndpointGroups(includeAllScopes, project);
 
     List<NetworkEndpointGroupsScopedList> resources =
         Lists.newArrayList(pagedListResponse.iterateAll());
@@ -153,9 +154,10 @@ public class NetworkEndpointGroupClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListNetworkEndpointGroups(project);
+      client.aggregatedListNetworkEndpointGroups(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

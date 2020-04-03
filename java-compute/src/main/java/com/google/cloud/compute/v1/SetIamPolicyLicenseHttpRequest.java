@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.licenses.setIamPolicy. Sets the access control policy on the
- * specified resource. Replaces any existing policy.
+ * specified resource. Replaces any existing policy. Caution This resource is intended for use only
+ * by third-party partners who are creating Cloud Marketplace images.
  */
 public final class SetIamPolicyLicenseHttpRequest implements ApiMessage {
   private final String access_token;

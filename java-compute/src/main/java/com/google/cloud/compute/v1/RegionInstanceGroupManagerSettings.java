@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListErrorsRegionInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -82,6 +83,16 @@ public class RegionInstanceGroupManagerSettings
 
   /**
    * Returns the object with the settings used for calls to
+   * applyUpdatesToInstancesRegionInstanceGroupManager.
+   */
+  public UnaryCallSettings<ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      applyUpdatesToInstancesRegionInstanceGroupManagerSettings() {
+    return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
+        .applyUpdatesToInstancesRegionInstanceGroupManagerSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
    * createInstancesRegionInstanceGroupManager.
    */
   public UnaryCallSettings<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
@@ -129,6 +140,18 @@ public class RegionInstanceGroupManagerSettings
       listRegionInstanceGroupManagersSettings() {
     return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
         .listRegionInstanceGroupManagersSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to listErrorsRegionInstanceGroupManagers.
+   */
+  public PagedCallSettings<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListErrorsResponse,
+          ListErrorsRegionInstanceGroupManagersPagedResponse>
+      listErrorsRegionInstanceGroupManagersSettings() {
+    return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
+        .listErrorsRegionInstanceGroupManagersSettings();
   }
 
   /**
@@ -302,6 +325,16 @@ public class RegionInstanceGroupManagerSettings
 
     /**
      * Returns the builder for the settings used for calls to
+     * applyUpdatesToInstancesRegionInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+        applyUpdatesToInstancesRegionInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().applyUpdatesToInstancesRegionInstanceGroupManagerSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
      * createInstancesRegionInstanceGroupManager.
      */
     public UnaryCallSettings.Builder<
@@ -345,6 +378,17 @@ public class RegionInstanceGroupManagerSettings
             ListRegionInstanceGroupManagersPagedResponse>
         listRegionInstanceGroupManagersSettings() {
       return getStubSettingsBuilder().listRegionInstanceGroupManagersSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listErrorsRegionInstanceGroupManagers.
+     */
+    public PagedCallSettings.Builder<
+            ListErrorsRegionInstanceGroupManagersHttpRequest,
+            RegionInstanceGroupManagersListErrorsResponse,
+            ListErrorsRegionInstanceGroupManagersPagedResponse>
+        listErrorsRegionInstanceGroupManagersSettings() {
+      return getStubSettingsBuilder().listErrorsRegionInstanceGroupManagersSettings();
     }
 
     /**

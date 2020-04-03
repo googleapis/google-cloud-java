@@ -33,6 +33,7 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
   private final String callback;
   private final String fields;
   private final String filter;
+  private final Boolean includeAllScopes;
   private final String key;
   private final Integer maxResults;
   private final String orderBy;
@@ -47,6 +48,7 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
     this.callback = null;
     this.fields = null;
     this.filter = null;
+    this.includeAllScopes = null;
     this.key = null;
     this.maxResults = null;
     this.orderBy = null;
@@ -62,6 +64,7 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
       String callback,
       String fields,
       String filter,
+      Boolean includeAllScopes,
       String key,
       Integer maxResults,
       String orderBy,
@@ -74,6 +77,7 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
     this.callback = callback;
     this.fields = fields;
     this.filter = filter;
+    this.includeAllScopes = includeAllScopes;
     this.key = key;
     this.maxResults = maxResults;
     this.orderBy = orderBy;
@@ -97,6 +101,9 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
     }
     if ("filter".equals(fieldName)) {
       return filter;
+    }
+    if ("includeAllScopes".equals(fieldName)) {
+      return includeAllScopes;
     }
     if ("key".equals(fieldName)) {
       return key;
@@ -179,6 +186,17 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
    */
   public String getFilter() {
     return filter;
+  }
+
+  /**
+   * Indicates whether every visible scope for each scope type (zone, region, global) should be
+   * included in the response. For new resource types added after this field, the flag has no effect
+   * as new resource types will always include every visible scope for each scope type in response.
+   * For resource types which predate this field, if this flag is omitted or false, only scopes of
+   * the scope types where the resource type is expected to be found will be included.
+   */
+  public Boolean getIncludeAllScopes() {
+    return includeAllScopes;
   }
 
   /** API key. Required unless you provide an OAuth 2.0 token. */
@@ -272,6 +290,7 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
     private String callback;
     private String fields;
     private String filter;
+    private Boolean includeAllScopes;
     private String key;
     private Integer maxResults;
     private String orderBy;
@@ -296,6 +315,9 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
       }
       if (other.getFilter() != null) {
         this.filter = other.filter;
+      }
+      if (other.getIncludeAllScopes() != null) {
+        this.includeAllScopes = other.includeAllScopes;
       }
       if (other.getKey() != null) {
         this.key = other.key;
@@ -329,6 +351,7 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
       this.callback = source.callback;
       this.fields = source.fields;
       this.filter = source.filter;
+      this.includeAllScopes = source.includeAllScopes;
       this.key = source.key;
       this.maxResults = source.maxResults;
       this.orderBy = source.orderBy;
@@ -418,6 +441,29 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
      */
     public Builder setFilter(String filter) {
       this.filter = filter;
+      return this;
+    }
+
+    /**
+     * Indicates whether every visible scope for each scope type (zone, region, global) should be
+     * included in the response. For new resource types added after this field, the flag has no
+     * effect as new resource types will always include every visible scope for each scope type in
+     * response. For resource types which predate this field, if this flag is omitted or false, only
+     * scopes of the scope types where the resource type is expected to be found will be included.
+     */
+    public Boolean getIncludeAllScopes() {
+      return includeAllScopes;
+    }
+
+    /**
+     * Indicates whether every visible scope for each scope type (zone, region, global) should be
+     * included in the response. For new resource types added after this field, the flag has no
+     * effect as new resource types will always include every visible scope for each scope type in
+     * response. For resource types which predate this field, if this flag is omitted or false, only
+     * scopes of the scope types where the resource type is expected to be found will be included.
+     */
+    public Builder setIncludeAllScopes(Boolean includeAllScopes) {
+      this.includeAllScopes = includeAllScopes;
       return this;
     }
 
@@ -572,6 +618,7 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
           callback,
           fields,
           filter,
+          includeAllScopes,
           key,
           maxResults,
           orderBy,
@@ -588,6 +635,7 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
       newBuilder.setCallback(this.callback);
       newBuilder.setFields(this.fields);
       newBuilder.setFilter(this.filter);
+      newBuilder.setIncludeAllScopes(this.includeAllScopes);
       newBuilder.setKey(this.key);
       newBuilder.setMaxResults(this.maxResults);
       newBuilder.setOrderBy(this.orderBy);
@@ -614,6 +662,9 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
         + ", "
         + "filter="
         + filter
+        + ", "
+        + "includeAllScopes="
+        + includeAllScopes
         + ", "
         + "key="
         + key
@@ -653,6 +704,7 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
           && Objects.equals(this.callback, that.getCallback())
           && Objects.equals(this.fields, that.getFields())
           && Objects.equals(this.filter, that.getFilter())
+          && Objects.equals(this.includeAllScopes, that.getIncludeAllScopes())
           && Objects.equals(this.key, that.getKey())
           && Objects.equals(this.maxResults, that.getMaxResults())
           && Objects.equals(this.orderBy, that.getOrderBy())
@@ -672,6 +724,7 @@ public final class AggregatedListPacketMirroringsHttpRequest implements ApiMessa
         callback,
         fields,
         filter,
+        includeAllScopes,
         key,
         maxResults,
         orderBy,

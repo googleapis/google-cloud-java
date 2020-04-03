@@ -159,20 +159,29 @@ public class NodeTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (NodeTypesScopedList element : nodeTypeClient.aggregatedListNodeTypes(project).iterateAll()) {
+   *   for (NodeTypesScopedList element : nodeTypeClient.aggregatedListNodeTypes(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListNodeTypesPagedResponse aggregatedListNodeTypes(ProjectName project) {
+  public final AggregatedListNodeTypesPagedResponse aggregatedListNodeTypes(
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListNodeTypesHttpRequest request =
         AggregatedListNodeTypesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListNodeTypes(request);
@@ -186,20 +195,31 @@ public class NodeTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (NodeTypesScopedList element : nodeTypeClient.aggregatedListNodeTypes(project.toString()).iterateAll()) {
+   *   for (NodeTypesScopedList element : nodeTypeClient.aggregatedListNodeTypes(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListNodeTypesPagedResponse aggregatedListNodeTypes(String project) {
+  public final AggregatedListNodeTypesPagedResponse aggregatedListNodeTypes(
+      Boolean includeAllScopes, String project) {
     AggregatedListNodeTypesHttpRequest request =
-        AggregatedListNodeTypesHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListNodeTypesHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListNodeTypes(request);
   }
 
@@ -211,8 +231,10 @@ public class NodeTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeTypesHttpRequest request = AggregatedListNodeTypesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (NodeTypesScopedList element : nodeTypeClient.aggregatedListNodeTypes(request).iterateAll()) {
@@ -238,8 +260,10 @@ public class NodeTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeTypesHttpRequest request = AggregatedListNodeTypesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListNodeTypesPagedResponse&gt; future = nodeTypeClient.aggregatedListNodeTypesPagedCallable().futureCall(request);
@@ -265,8 +289,10 @@ public class NodeTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeTypesHttpRequest request = AggregatedListNodeTypesHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {

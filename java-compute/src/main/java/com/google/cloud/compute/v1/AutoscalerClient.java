@@ -159,21 +159,29 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (AutoscalersScopedList element : autoscalerClient.aggregatedListAutoscalers(project).iterateAll()) {
+   *   for (AutoscalersScopedList element : autoscalerClient.aggregatedListAutoscalers(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListAutoscalersPagedResponse aggregatedListAutoscalers(
-      ProjectName project) {
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListAutoscalersHttpRequest request =
         AggregatedListAutoscalersHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListAutoscalers(request);
@@ -187,20 +195,31 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (AutoscalersScopedList element : autoscalerClient.aggregatedListAutoscalers(project.toString()).iterateAll()) {
+   *   for (AutoscalersScopedList element : autoscalerClient.aggregatedListAutoscalers(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListAutoscalersPagedResponse aggregatedListAutoscalers(String project) {
+  public final AggregatedListAutoscalersPagedResponse aggregatedListAutoscalers(
+      Boolean includeAllScopes, String project) {
     AggregatedListAutoscalersHttpRequest request =
-        AggregatedListAutoscalersHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListAutoscalersHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListAutoscalers(request);
   }
 
@@ -212,8 +231,10 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListAutoscalersHttpRequest request = AggregatedListAutoscalersHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (AutoscalersScopedList element : autoscalerClient.aggregatedListAutoscalers(request).iterateAll()) {
@@ -239,8 +260,10 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListAutoscalersHttpRequest request = AggregatedListAutoscalersHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListAutoscalersPagedResponse&gt; future = autoscalerClient.aggregatedListAutoscalersPagedCallable().futureCall(request);
@@ -266,8 +289,10 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListAutoscalersHttpRequest request = AggregatedListAutoscalersHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
@@ -502,8 +527,8 @@ public class AutoscalerClient implements BackgroundResource {
    * @param zone Name of the zone for this request.
    * @param autoscalerResource Represents an Autoscaler resource.
    *     <p>Google Compute Engine has two Autoscaler resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/autoscalers) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
    *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
    *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
    *     of Instances.
@@ -540,8 +565,8 @@ public class AutoscalerClient implements BackgroundResource {
    * @param zone Name of the zone for this request.
    * @param autoscalerResource Represents an Autoscaler resource.
    *     <p>Google Compute Engine has two Autoscaler resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/autoscalers) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
    *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
    *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
    *     of Instances.
@@ -769,8 +794,8 @@ public class AutoscalerClient implements BackgroundResource {
    * @param zone Name of the zone for this request.
    * @param autoscalerResource Represents an Autoscaler resource.
    *     <p>Google Compute Engine has two Autoscaler resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/autoscalers) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
    *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
    *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
    *     of Instances.
@@ -821,8 +846,8 @@ public class AutoscalerClient implements BackgroundResource {
    * @param zone Name of the zone for this request.
    * @param autoscalerResource Represents an Autoscaler resource.
    *     <p>Google Compute Engine has two Autoscaler resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/autoscalers) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
    *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
    *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
    *     of Instances.
@@ -930,8 +955,8 @@ public class AutoscalerClient implements BackgroundResource {
    * @param zone Name of the zone for this request.
    * @param autoscalerResource Represents an Autoscaler resource.
    *     <p>Google Compute Engine has two Autoscaler resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/autoscalers) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
    *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
    *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
    *     of Instances.
@@ -981,8 +1006,8 @@ public class AutoscalerClient implements BackgroundResource {
    * @param zone Name of the zone for this request.
    * @param autoscalerResource Represents an Autoscaler resource.
    *     <p>Google Compute Engine has two Autoscaler resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/autoscalers) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/autoscalers) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
    *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
    *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
    *     of Instances.

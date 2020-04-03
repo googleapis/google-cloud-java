@@ -146,7 +146,8 @@ public class LicenseCodeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Return a specified license code. License codes are mirrored across all projects that have
-   * permissions to read the License Code.
+   * permissions to read the License Code. Caution This resource is intended for use only by
+   * third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -172,7 +173,8 @@ public class LicenseCodeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Return a specified license code. License codes are mirrored across all projects that have
-   * permissions to read the License Code.
+   * permissions to read the License Code. Caution This resource is intended for use only by
+   * third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -196,7 +198,8 @@ public class LicenseCodeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Return a specified license code. License codes are mirrored across all projects that have
-   * permissions to read the License Code.
+   * permissions to read the License Code. Caution This resource is intended for use only by
+   * third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -221,7 +224,8 @@ public class LicenseCodeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Return a specified license code. License codes are mirrored across all projects that have
-   * permissions to read the License Code.
+   * permissions to read the License Code. Caution This resource is intended for use only by
+   * third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -244,7 +248,8 @@ public class LicenseCodeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. Caution This resource is
+   * intended for use only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -274,7 +279,8 @@ public class LicenseCodeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. Caution This resource is
+   * intended for use only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -303,7 +309,8 @@ public class LicenseCodeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. Caution This resource is
+   * intended for use only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -330,7 +337,8 @@ public class LicenseCodeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. Caution This resource is
+   * intended for use only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *

@@ -103,10 +103,11 @@ public class MachineTypeClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListMachineTypesPagedResponse pagedListResponse =
-        client.aggregatedListMachineTypes(project);
+        client.aggregatedListMachineTypes(includeAllScopes, project);
 
     List<MachineTypesScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -137,9 +138,10 @@ public class MachineTypeClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListMachineTypes(project);
+      client.aggregatedListMachineTypes(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

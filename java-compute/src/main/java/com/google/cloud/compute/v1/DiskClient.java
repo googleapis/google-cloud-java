@@ -275,20 +275,29 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (DisksScopedList element : diskClient.aggregatedListDisks(project).iterateAll()) {
+   *   for (DisksScopedList element : diskClient.aggregatedListDisks(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListDisksPagedResponse aggregatedListDisks(ProjectName project) {
+  public final AggregatedListDisksPagedResponse aggregatedListDisks(
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListDisksHttpRequest request =
         AggregatedListDisksHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListDisks(request);
@@ -302,20 +311,31 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (DisksScopedList element : diskClient.aggregatedListDisks(project.toString()).iterateAll()) {
+   *   for (DisksScopedList element : diskClient.aggregatedListDisks(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListDisksPagedResponse aggregatedListDisks(String project) {
+  public final AggregatedListDisksPagedResponse aggregatedListDisks(
+      Boolean includeAllScopes, String project) {
     AggregatedListDisksHttpRequest request =
-        AggregatedListDisksHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListDisksHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListDisks(request);
   }
 
@@ -327,8 +347,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListDisksHttpRequest request = AggregatedListDisksHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (DisksScopedList element : diskClient.aggregatedListDisks(request).iterateAll()) {
@@ -354,8 +376,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListDisksHttpRequest request = AggregatedListDisksHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListDisksPagedResponse&gt; future = diskClient.aggregatedListDisksPagedCallable().futureCall(request);
@@ -380,8 +404,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListDisksHttpRequest request = AggregatedListDisksHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
@@ -848,8 +874,8 @@ public class DiskClient implements BackgroundResource {
    * @param zone The name of the zone for this request.
    * @param diskResource Represents a Persistent Disk resource.
    *     <p>Google Compute Engine has two Disk resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/disks) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionDisks)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/disks) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
    *     <p>Persistent disks are required for running your VM instances. Create both boot and
    *     non-boot (data) persistent disks. For more information, read Persistent Disks. For more
    *     storage options, read Storage options.
@@ -890,8 +916,8 @@ public class DiskClient implements BackgroundResource {
    * @param zone The name of the zone for this request.
    * @param diskResource Represents a Persistent Disk resource.
    *     <p>Google Compute Engine has two Disk resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/disks) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionDisks)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/disks) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
    *     <p>Persistent disks are required for running your VM instances. Create both boot and
    *     non-boot (data) persistent disks. For more information, read Persistent Disks. For more
    *     storage options, read Storage options.

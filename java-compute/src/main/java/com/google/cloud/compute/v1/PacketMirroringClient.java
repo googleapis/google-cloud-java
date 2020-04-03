@@ -162,21 +162,29 @@ public class PacketMirroringClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PacketMirroringClient packetMirroringClient = PacketMirroringClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (PacketMirroringsScopedList element : packetMirroringClient.aggregatedListPacketMirrorings(project).iterateAll()) {
+   *   for (PacketMirroringsScopedList element : packetMirroringClient.aggregatedListPacketMirrorings(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListPacketMirroringsPagedResponse aggregatedListPacketMirrorings(
-      ProjectName project) {
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListPacketMirroringsHttpRequest request =
         AggregatedListPacketMirroringsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListPacketMirrorings(request);
@@ -190,21 +198,31 @@ public class PacketMirroringClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PacketMirroringClient packetMirroringClient = PacketMirroringClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (PacketMirroringsScopedList element : packetMirroringClient.aggregatedListPacketMirrorings(project.toString()).iterateAll()) {
+   *   for (PacketMirroringsScopedList element : packetMirroringClient.aggregatedListPacketMirrorings(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListPacketMirroringsPagedResponse aggregatedListPacketMirrorings(
-      String project) {
+      Boolean includeAllScopes, String project) {
     AggregatedListPacketMirroringsHttpRequest request =
-        AggregatedListPacketMirroringsHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListPacketMirroringsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListPacketMirrorings(request);
   }
 
@@ -216,8 +234,10 @@ public class PacketMirroringClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PacketMirroringClient packetMirroringClient = PacketMirroringClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListPacketMirroringsHttpRequest request = AggregatedListPacketMirroringsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (PacketMirroringsScopedList element : packetMirroringClient.aggregatedListPacketMirrorings(request).iterateAll()) {
@@ -243,8 +263,10 @@ public class PacketMirroringClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PacketMirroringClient packetMirroringClient = PacketMirroringClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListPacketMirroringsHttpRequest request = AggregatedListPacketMirroringsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListPacketMirroringsPagedResponse&gt; future = packetMirroringClient.aggregatedListPacketMirroringsPagedCallable().futureCall(request);
@@ -270,8 +292,10 @@ public class PacketMirroringClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PacketMirroringClient packetMirroringClient = PacketMirroringClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListPacketMirroringsHttpRequest request = AggregatedListPacketMirroringsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {

@@ -115,10 +115,11 @@ public class ReservationClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListReservationsPagedResponse pagedListResponse =
-        client.aggregatedListReservations(project);
+        client.aggregatedListReservations(includeAllScopes, project);
 
     List<ReservationsScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -149,9 +150,10 @@ public class ReservationClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListReservations(project);
+      client.aggregatedListReservations(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

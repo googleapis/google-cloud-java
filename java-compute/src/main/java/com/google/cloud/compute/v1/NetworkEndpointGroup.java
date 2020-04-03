@@ -27,8 +27,8 @@ import javax.annotation.Nullable;
 /**
  * Represents a collection of network endpoints.
  *
- * <p>For more information read Setting up network endpoint groups in load balancing. (==
- * resource_for {$api_version}.networkEndpointGroups ==) Next ID: 21
+ * <p>For more information read Network endpoint groups overview. (== resource_for
+ * {$api_version}.networkEndpointGroups ==) Next ID: 21
  */
 public final class NetworkEndpointGroup implements ApiMessage {
   private final String creationTimestamp;
@@ -196,10 +196,7 @@ public final class NetworkEndpointGroup implements ApiMessage {
     return network;
   }
 
-  /**
-   * Type of network endpoints in this network endpoint group. Currently the only supported value is
-   * GCE_VM_IP_PORT.
-   */
+  /** Type of network endpoints in this network endpoint group. */
   public String getNetworkEndpointType() {
     return networkEndpointType;
   }
@@ -429,18 +426,12 @@ public final class NetworkEndpointGroup implements ApiMessage {
       return this;
     }
 
-    /**
-     * Type of network endpoints in this network endpoint group. Currently the only supported value
-     * is GCE_VM_IP_PORT.
-     */
+    /** Type of network endpoints in this network endpoint group. */
     public String getNetworkEndpointType() {
       return networkEndpointType;
     }
 
-    /**
-     * Type of network endpoints in this network endpoint group. Currently the only supported value
-     * is GCE_VM_IP_PORT.
-     */
+    /** Type of network endpoints in this network endpoint group. */
     public Builder setNetworkEndpointType(String networkEndpointType) {
       this.networkEndpointType = networkEndpointType;
       return this;

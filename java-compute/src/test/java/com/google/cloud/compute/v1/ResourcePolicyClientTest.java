@@ -115,10 +115,11 @@ public class ResourcePolicyClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListResourcePoliciesPagedResponse pagedListResponse =
-        client.aggregatedListResourcePolicies(project);
+        client.aggregatedListResourcePolicies(includeAllScopes, project);
 
     List<ResourcePoliciesScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -149,9 +150,10 @@ public class ResourcePolicyClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListResourcePolicies(project);
+      client.aggregatedListResourcePolicies(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

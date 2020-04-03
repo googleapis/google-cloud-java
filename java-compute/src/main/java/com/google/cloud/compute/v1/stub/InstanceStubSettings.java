@@ -42,6 +42,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAccessConfigInstanceHttpRequest;
+import com.google.cloud.compute.v1.AddResourcePoliciesInstanceHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListInstancesHttpRequest;
 import com.google.cloud.compute.v1.AttachDiskInstanceHttpRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceHttpRequest;
@@ -64,6 +65,7 @@ import com.google.cloud.compute.v1.ListReferrersInstancesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.Reference;
+import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceHttpRequest;
 import com.google.cloud.compute.v1.ResetInstanceHttpRequest;
 import com.google.cloud.compute.v1.SerialPortOutput;
 import com.google.cloud.compute.v1.SetDeletionProtectionInstanceHttpRequest;
@@ -87,6 +89,7 @@ import com.google.cloud.compute.v1.TestIamPermissionsInstanceHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateDisplayDeviceInstanceHttpRequest;
+import com.google.cloud.compute.v1.UpdateInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceHttpRequest;
 import com.google.common.collect.ImmutableList;
@@ -146,6 +149,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
   private final UnaryCallSettings<AddAccessConfigInstanceHttpRequest, Operation>
       addAccessConfigInstanceSettings;
+  private final UnaryCallSettings<AddResourcePoliciesInstanceHttpRequest, Operation>
+      addResourcePoliciesInstanceSettings;
   private final PagedCallSettings<
           AggregatedListInstancesHttpRequest,
           InstanceAggregatedList,
@@ -177,6 +182,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           InstanceListReferrers,
           ListReferrersInstancesPagedResponse>
       listReferrersInstancesSettings;
+  private final UnaryCallSettings<RemoveResourcePoliciesInstanceHttpRequest, Operation>
+      removeResourcePoliciesInstanceSettings;
   private final UnaryCallSettings<ResetInstanceHttpRequest, Operation> resetInstanceSettings;
   private final UnaryCallSettings<SetDeletionProtectionInstanceHttpRequest, Operation>
       setDeletionProtectionInstanceSettings;
@@ -209,6 +216,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
   private final UnaryCallSettings<StopInstanceHttpRequest, Operation> stopInstanceSettings;
   private final UnaryCallSettings<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
       testIamPermissionsInstanceSettings;
+  private final UnaryCallSettings<UpdateInstanceHttpRequest, Operation> updateInstanceSettings;
   private final UnaryCallSettings<UpdateAccessConfigInstanceHttpRequest, Operation>
       updateAccessConfigInstanceSettings;
   private final UnaryCallSettings<UpdateDisplayDeviceInstanceHttpRequest, Operation>
@@ -222,6 +230,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
   public UnaryCallSettings<AddAccessConfigInstanceHttpRequest, Operation>
       addAccessConfigInstanceSettings() {
     return addAccessConfigInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addResourcePoliciesInstance. */
+  public UnaryCallSettings<AddResourcePoliciesInstanceHttpRequest, Operation>
+      addResourcePoliciesInstanceSettings() {
+    return addResourcePoliciesInstanceSettings;
   }
 
   /** Returns the object with the settings used for calls to aggregatedListInstances. */
@@ -300,6 +314,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           ListReferrersInstancesPagedResponse>
       listReferrersInstancesSettings() {
     return listReferrersInstancesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeResourcePoliciesInstance. */
+  public UnaryCallSettings<RemoveResourcePoliciesInstanceHttpRequest, Operation>
+      removeResourcePoliciesInstanceSettings() {
+    return removeResourcePoliciesInstanceSettings;
   }
 
   /** Returns the object with the settings used for calls to resetInstance. */
@@ -407,6 +427,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     return testIamPermissionsInstanceSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateInstance. */
+  public UnaryCallSettings<UpdateInstanceHttpRequest, Operation> updateInstanceSettings() {
+    return updateInstanceSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateAccessConfigInstance. */
   public UnaryCallSettings<UpdateAccessConfigInstanceHttpRequest, Operation>
       updateAccessConfigInstanceSettings() {
@@ -508,6 +533,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     super(settingsBuilder);
 
     addAccessConfigInstanceSettings = settingsBuilder.addAccessConfigInstanceSettings().build();
+    addResourcePoliciesInstanceSettings =
+        settingsBuilder.addResourcePoliciesInstanceSettings().build();
     aggregatedListInstancesSettings = settingsBuilder.aggregatedListInstancesSettings().build();
     attachDiskInstanceSettings = settingsBuilder.attachDiskInstanceSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
@@ -525,6 +552,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     insertInstanceSettings = settingsBuilder.insertInstanceSettings().build();
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
     listReferrersInstancesSettings = settingsBuilder.listReferrersInstancesSettings().build();
+    removeResourcePoliciesInstanceSettings =
+        settingsBuilder.removeResourcePoliciesInstanceSettings().build();
     resetInstanceSettings = settingsBuilder.resetInstanceSettings().build();
     setDeletionProtectionInstanceSettings =
         settingsBuilder.setDeletionProtectionInstanceSettings().build();
@@ -549,6 +578,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     stopInstanceSettings = settingsBuilder.stopInstanceSettings().build();
     testIamPermissionsInstanceSettings =
         settingsBuilder.testIamPermissionsInstanceSettings().build();
+    updateInstanceSettings = settingsBuilder.updateInstanceSettings().build();
     updateAccessConfigInstanceSettings =
         settingsBuilder.updateAccessConfigInstanceSettings().build();
     updateDisplayDeviceInstanceSettings =
@@ -757,6 +787,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
     private final UnaryCallSettings.Builder<AddAccessConfigInstanceHttpRequest, Operation>
         addAccessConfigInstanceSettings;
+    private final UnaryCallSettings.Builder<AddResourcePoliciesInstanceHttpRequest, Operation>
+        addResourcePoliciesInstanceSettings;
     private final PagedCallSettings.Builder<
             AggregatedListInstancesHttpRequest,
             InstanceAggregatedList,
@@ -791,6 +823,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
             InstanceListReferrers,
             ListReferrersInstancesPagedResponse>
         listReferrersInstancesSettings;
+    private final UnaryCallSettings.Builder<RemoveResourcePoliciesInstanceHttpRequest, Operation>
+        removeResourcePoliciesInstanceSettings;
     private final UnaryCallSettings.Builder<ResetInstanceHttpRequest, Operation>
         resetInstanceSettings;
     private final UnaryCallSettings.Builder<SetDeletionProtectionInstanceHttpRequest, Operation>
@@ -829,6 +863,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     private final UnaryCallSettings.Builder<
             TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
         testIamPermissionsInstanceSettings;
+    private final UnaryCallSettings.Builder<UpdateInstanceHttpRequest, Operation>
+        updateInstanceSettings;
     private final UnaryCallSettings.Builder<UpdateAccessConfigInstanceHttpRequest, Operation>
         updateAccessConfigInstanceSettings;
     private final UnaryCallSettings.Builder<UpdateDisplayDeviceInstanceHttpRequest, Operation>
@@ -882,6 +918,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
       addAccessConfigInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      addResourcePoliciesInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       aggregatedListInstancesSettings =
           PagedCallSettings.newBuilder(AGGREGATED_LIST_INSTANCES_PAGE_STR_FACT);
 
@@ -909,6 +947,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
       listReferrersInstancesSettings =
           PagedCallSettings.newBuilder(LIST_REFERRERS_INSTANCES_PAGE_STR_FACT);
+
+      removeResourcePoliciesInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       resetInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -947,6 +987,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
       testIamPermissionsInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      updateInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       updateAccessConfigInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateDisplayDeviceInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -959,6 +1001,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addAccessConfigInstanceSettings,
+              addResourcePoliciesInstanceSettings,
               aggregatedListInstancesSettings,
               attachDiskInstanceSettings,
               deleteInstanceSettings,
@@ -972,6 +1015,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               insertInstanceSettings,
               listInstancesSettings,
               listReferrersInstancesSettings,
+              removeResourcePoliciesInstanceSettings,
               resetInstanceSettings,
               setDeletionProtectionInstanceSettings,
               setDiskAutoDeleteInstanceSettings,
@@ -990,6 +1034,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               startWithEncryptionKeyInstanceSettings,
               stopInstanceSettings,
               testIamPermissionsInstanceSettings,
+              updateInstanceSettings,
               updateAccessConfigInstanceSettings,
               updateDisplayDeviceInstanceSettings,
               updateNetworkInterfaceInstanceSettings,
@@ -1011,6 +1056,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
       builder
           .addAccessConfigInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .addResourcePoliciesInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -1077,6 +1127,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       builder
           .listReferrersInstancesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .removeResourcePoliciesInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -1170,6 +1225,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .updateInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .updateAccessConfigInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -1196,6 +1256,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       super(settings);
 
       addAccessConfigInstanceSettings = settings.addAccessConfigInstanceSettings.toBuilder();
+      addResourcePoliciesInstanceSettings =
+          settings.addResourcePoliciesInstanceSettings.toBuilder();
       aggregatedListInstancesSettings = settings.aggregatedListInstancesSettings.toBuilder();
       attachDiskInstanceSettings = settings.attachDiskInstanceSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
@@ -1211,6 +1273,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       insertInstanceSettings = settings.insertInstanceSettings.toBuilder();
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
       listReferrersInstancesSettings = settings.listReferrersInstancesSettings.toBuilder();
+      removeResourcePoliciesInstanceSettings =
+          settings.removeResourcePoliciesInstanceSettings.toBuilder();
       resetInstanceSettings = settings.resetInstanceSettings.toBuilder();
       setDeletionProtectionInstanceSettings =
           settings.setDeletionProtectionInstanceSettings.toBuilder();
@@ -1234,6 +1298,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           settings.startWithEncryptionKeyInstanceSettings.toBuilder();
       stopInstanceSettings = settings.stopInstanceSettings.toBuilder();
       testIamPermissionsInstanceSettings = settings.testIamPermissionsInstanceSettings.toBuilder();
+      updateInstanceSettings = settings.updateInstanceSettings.toBuilder();
       updateAccessConfigInstanceSettings = settings.updateAccessConfigInstanceSettings.toBuilder();
       updateDisplayDeviceInstanceSettings =
           settings.updateDisplayDeviceInstanceSettings.toBuilder();
@@ -1245,6 +1310,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addAccessConfigInstanceSettings,
+              addResourcePoliciesInstanceSettings,
               aggregatedListInstancesSettings,
               attachDiskInstanceSettings,
               deleteInstanceSettings,
@@ -1258,6 +1324,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               insertInstanceSettings,
               listInstancesSettings,
               listReferrersInstancesSettings,
+              removeResourcePoliciesInstanceSettings,
               resetInstanceSettings,
               setDeletionProtectionInstanceSettings,
               setDiskAutoDeleteInstanceSettings,
@@ -1276,6 +1343,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               startWithEncryptionKeyInstanceSettings,
               stopInstanceSettings,
               testIamPermissionsInstanceSettings,
+              updateInstanceSettings,
               updateAccessConfigInstanceSettings,
               updateDisplayDeviceInstanceSettings,
               updateNetworkInterfaceInstanceSettings,
@@ -1302,6 +1370,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     public UnaryCallSettings.Builder<AddAccessConfigInstanceHttpRequest, Operation>
         addAccessConfigInstanceSettings() {
       return addAccessConfigInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addResourcePoliciesInstance. */
+    public UnaryCallSettings.Builder<AddResourcePoliciesInstanceHttpRequest, Operation>
+        addResourcePoliciesInstanceSettings() {
+      return addResourcePoliciesInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to aggregatedListInstances. */
@@ -1389,6 +1463,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
             ListReferrersInstancesPagedResponse>
         listReferrersInstancesSettings() {
       return listReferrersInstancesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeResourcePoliciesInstance. */
+    public UnaryCallSettings.Builder<RemoveResourcePoliciesInstanceHttpRequest, Operation>
+        removeResourcePoliciesInstanceSettings() {
+      return removeResourcePoliciesInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to resetInstance. */
@@ -1498,6 +1578,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
         testIamPermissionsInstanceSettings() {
       return testIamPermissionsInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateInstance. */
+    public UnaryCallSettings.Builder<UpdateInstanceHttpRequest, Operation>
+        updateInstanceSettings() {
+      return updateInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateAccessConfigInstance. */

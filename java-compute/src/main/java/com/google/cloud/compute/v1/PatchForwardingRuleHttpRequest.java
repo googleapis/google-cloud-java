@@ -168,8 +168,8 @@ public final class PatchForwardingRuleHttpRequest implements ApiMessage {
    *
    * <p>Forwarding rule resources in GCP can be either regional or global in scope:
    *
-   * <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
-   * [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+   * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) &#42;
+   * [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
    *
    * <p>A forwarding rule and its corresponding IP address represent the frontend configuration of a
    * Google Cloud Platform load balancer. Forwarding rules can also reference target instances and
@@ -412,8 +412,8 @@ public final class PatchForwardingRuleHttpRequest implements ApiMessage {
      *
      * <p>Forwarding rule resources in GCP can be either regional or global in scope:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
      *
      * <p>A forwarding rule and its corresponding IP address represent the frontend configuration of
      * a Google Cloud Platform load balancer. Forwarding rules can also reference target instances
@@ -434,8 +434,8 @@ public final class PatchForwardingRuleHttpRequest implements ApiMessage {
      *
      * <p>Forwarding rule resources in GCP can be either regional or global in scope:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/globalForwardingRules) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
      *
      * <p>A forwarding rule and its corresponding IP address represent the frontend configuration of
      * a Google Cloud Platform load balancer. Forwarding rules can also reference target instances

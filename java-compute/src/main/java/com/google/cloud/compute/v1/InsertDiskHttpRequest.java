@@ -153,8 +153,8 @@ public final class InsertDiskHttpRequest implements ApiMessage {
    *
    * <p>Google Compute Engine has two Disk resources:
    *
-   * <p>&#42; [Global](/compute/docs/reference/rest/latest/disks) &#42;
-   * [Regional](/compute/docs/reference/rest/latest/regionDisks)
+   * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/disks) &#42;
+   * [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
    *
    * <p>Persistent disks are required for running your VM instances. Create both boot and non-boot
    * (data) persistent disks. For more information, read Persistent Disks. For more storage options,
@@ -345,8 +345,8 @@ public final class InsertDiskHttpRequest implements ApiMessage {
      *
      * <p>Google Compute Engine has two Disk resources:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/disks) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionDisks)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/disks) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
      *
      * <p>Persistent disks are required for running your VM instances. Create both boot and non-boot
      * (data) persistent disks. For more information, read Persistent Disks. For more storage
@@ -368,8 +368,8 @@ public final class InsertDiskHttpRequest implements ApiMessage {
      *
      * <p>Google Compute Engine has two Disk resources:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/disks) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionDisks)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/disks) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
      *
      * <p>Persistent disks are required for running your VM instances. Create both boot and non-boot
      * (data) persistent disks. For more information, read Persistent Disks. For more storage

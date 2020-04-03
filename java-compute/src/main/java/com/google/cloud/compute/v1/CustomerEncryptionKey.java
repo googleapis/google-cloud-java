@@ -27,17 +27,21 @@ import javax.annotation.Nullable;
 /** Represents a customer-supplied encryption key */
 public final class CustomerEncryptionKey implements ApiMessage {
   private final String kmsKeyName;
+  private final String kmsKeyServiceAccount;
   private final String rawKey;
   private final String sha256;
 
   private CustomerEncryptionKey() {
     this.kmsKeyName = null;
+    this.kmsKeyServiceAccount = null;
     this.rawKey = null;
     this.sha256 = null;
   }
 
-  private CustomerEncryptionKey(String kmsKeyName, String rawKey, String sha256) {
+  private CustomerEncryptionKey(
+      String kmsKeyName, String kmsKeyServiceAccount, String rawKey, String sha256) {
     this.kmsKeyName = kmsKeyName;
+    this.kmsKeyServiceAccount = kmsKeyServiceAccount;
     this.rawKey = rawKey;
     this.sha256 = sha256;
   }
@@ -46,6 +50,9 @@ public final class CustomerEncryptionKey implements ApiMessage {
   public Object getFieldValue(String fieldName) {
     if ("kmsKeyName".equals(fieldName)) {
       return kmsKeyName;
+    }
+    if ("kmsKeyServiceAccount".equals(fieldName)) {
+      return kmsKeyServiceAccount;
     }
     if ("rawKey".equals(fieldName)) {
       return rawKey;
@@ -77,6 +84,14 @@ public final class CustomerEncryptionKey implements ApiMessage {
   /** The name of the encryption key that is stored in Google Cloud KMS. */
   public String getKmsKeyName() {
     return kmsKeyName;
+  }
+
+  /**
+   * The service account being used for the encryption request for the given KMS key. If absent, the
+   * Compute Engine default service account is used.
+   */
+  public String getKmsKeyServiceAccount() {
+    return kmsKeyServiceAccount;
   }
 
   /**
@@ -119,6 +134,7 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
   public static class Builder {
     private String kmsKeyName;
+    private String kmsKeyServiceAccount;
     private String rawKey;
     private String sha256;
 
@@ -128,6 +144,9 @@ public final class CustomerEncryptionKey implements ApiMessage {
       if (other == CustomerEncryptionKey.getDefaultInstance()) return this;
       if (other.getKmsKeyName() != null) {
         this.kmsKeyName = other.kmsKeyName;
+      }
+      if (other.getKmsKeyServiceAccount() != null) {
+        this.kmsKeyServiceAccount = other.kmsKeyServiceAccount;
       }
       if (other.getRawKey() != null) {
         this.rawKey = other.rawKey;
@@ -140,6 +159,7 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
     Builder(CustomerEncryptionKey source) {
       this.kmsKeyName = source.kmsKeyName;
+      this.kmsKeyServiceAccount = source.kmsKeyServiceAccount;
       this.rawKey = source.rawKey;
       this.sha256 = source.sha256;
     }
@@ -152,6 +172,23 @@ public final class CustomerEncryptionKey implements ApiMessage {
     /** The name of the encryption key that is stored in Google Cloud KMS. */
     public Builder setKmsKeyName(String kmsKeyName) {
       this.kmsKeyName = kmsKeyName;
+      return this;
+    }
+
+    /**
+     * The service account being used for the encryption request for the given KMS key. If absent,
+     * the Compute Engine default service account is used.
+     */
+    public String getKmsKeyServiceAccount() {
+      return kmsKeyServiceAccount;
+    }
+
+    /**
+     * The service account being used for the encryption request for the given KMS key. If absent,
+     * the Compute Engine default service account is used.
+     */
+    public Builder setKmsKeyServiceAccount(String kmsKeyServiceAccount) {
+      this.kmsKeyServiceAccount = kmsKeyServiceAccount;
       return this;
     }
 
@@ -191,12 +228,13 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
     public CustomerEncryptionKey build() {
 
-      return new CustomerEncryptionKey(kmsKeyName, rawKey, sha256);
+      return new CustomerEncryptionKey(kmsKeyName, kmsKeyServiceAccount, rawKey, sha256);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setKmsKeyName(this.kmsKeyName);
+      newBuilder.setKmsKeyServiceAccount(this.kmsKeyServiceAccount);
       newBuilder.setRawKey(this.rawKey);
       newBuilder.setSha256(this.sha256);
       return newBuilder;
@@ -208,6 +246,9 @@ public final class CustomerEncryptionKey implements ApiMessage {
     return "CustomerEncryptionKey{"
         + "kmsKeyName="
         + kmsKeyName
+        + ", "
+        + "kmsKeyServiceAccount="
+        + kmsKeyServiceAccount
         + ", "
         + "rawKey="
         + rawKey
@@ -225,6 +266,7 @@ public final class CustomerEncryptionKey implements ApiMessage {
     if (o instanceof CustomerEncryptionKey) {
       CustomerEncryptionKey that = (CustomerEncryptionKey) o;
       return Objects.equals(this.kmsKeyName, that.getKmsKeyName())
+          && Objects.equals(this.kmsKeyServiceAccount, that.getKmsKeyServiceAccount())
           && Objects.equals(this.rawKey, that.getRawKey())
           && Objects.equals(this.sha256, that.getSha256());
     }
@@ -233,6 +275,6 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(kmsKeyName, rawKey, sha256);
+    return Objects.hash(kmsKeyName, kmsKeyServiceAccount, rawKey, sha256);
   }
 }

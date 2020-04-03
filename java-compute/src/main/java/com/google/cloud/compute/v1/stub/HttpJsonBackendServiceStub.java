@@ -98,7 +98,8 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
                       .<AggregatedListBackendServicesHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/backendServices"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())

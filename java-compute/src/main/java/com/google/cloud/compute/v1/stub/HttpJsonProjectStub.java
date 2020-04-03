@@ -189,7 +189,7 @@ public class HttpJsonProjectStub extends ProjectStub {
                   ApiMessageHttpRequestFormatter.<GetXpnResourcesProjectsHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/getXpnResources"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "order_by", "pageToken"))
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())
@@ -209,7 +209,7 @@ public class HttpJsonProjectStub extends ProjectStub {
                   ApiMessageHttpRequestFormatter.<ListXpnHostsProjectsHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/listXpnHosts"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "order_by", "pageToken"))
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())

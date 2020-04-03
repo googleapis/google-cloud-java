@@ -86,9 +86,9 @@ public final class HostRule implements ApiMessage {
   }
 
   /**
-   * The list of host patterns to match. They must be valid hostnames, except &#42; will match any
-   * string of ([a-z0-9-.]&#42;). In that case, &#42; must be the first character and must be
-   * followed in the pattern by either - or ..
+   * The list of host patterns to match. They must be valid hostnames with optional port numbers in
+   * the format host:port. &#42; matches any string of ([a-z0-9-.]&#42;). In that case, &#42; must
+   * be the first character and must be followed in the pattern by either - or ..
    */
   public List<String> getHostsList() {
     return hosts;
@@ -167,18 +167,18 @@ public final class HostRule implements ApiMessage {
     }
 
     /**
-     * The list of host patterns to match. They must be valid hostnames, except &#42; will match any
-     * string of ([a-z0-9-.]&#42;). In that case, &#42; must be the first character and must be
-     * followed in the pattern by either - or ..
+     * The list of host patterns to match. They must be valid hostnames with optional port numbers
+     * in the format host:port. &#42; matches any string of ([a-z0-9-.]&#42;). In that case, &#42;
+     * must be the first character and must be followed in the pattern by either - or ..
      */
     public List<String> getHostsList() {
       return hosts;
     }
 
     /**
-     * The list of host patterns to match. They must be valid hostnames, except &#42; will match any
-     * string of ([a-z0-9-.]&#42;). In that case, &#42; must be the first character and must be
-     * followed in the pattern by either - or ..
+     * The list of host patterns to match. They must be valid hostnames with optional port numbers
+     * in the format host:port. &#42; matches any string of ([a-z0-9-.]&#42;). In that case, &#42;
+     * must be the first character and must be followed in the pattern by either - or ..
      */
     public Builder addAllHosts(List<String> hosts) {
       if (this.hosts == null) {
@@ -189,9 +189,9 @@ public final class HostRule implements ApiMessage {
     }
 
     /**
-     * The list of host patterns to match. They must be valid hostnames, except &#42; will match any
-     * string of ([a-z0-9-.]&#42;). In that case, &#42; must be the first character and must be
-     * followed in the pattern by either - or ..
+     * The list of host patterns to match. They must be valid hostnames with optional port numbers
+     * in the format host:port. &#42; matches any string of ([a-z0-9-.]&#42;). In that case, &#42;
+     * must be the first character and must be followed in the pattern by either - or ..
      */
     public Builder addHosts(String hosts) {
       if (this.hosts == null) {

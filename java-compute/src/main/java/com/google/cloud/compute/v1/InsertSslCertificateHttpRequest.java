@@ -192,17 +192,19 @@ public final class InsertSslCertificateHttpRequest implements ApiMessage {
    *
    * <p>Google Compute Engine has two SSL Certificate resources:
    *
-   * <p>&#42; [Global](/compute/docs/reference/rest/latest/sslCertificates) &#42;
-   * [Regional](/compute/docs/reference/rest/latest/regionSslCertificates)
+   * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/sslCertificates) &#42;
+   * [Regional](/compute/docs/reference/rest/{$api_version}/regionSslCertificates)
    *
-   * <p>- sslCertificates are used by: - external HTTPS load balancers - SSL proxy load balancers
+   * <p>The sslCertificates are used by: - external HTTPS load balancers - SSL proxy load balancers
    *
-   * <p>- regionSslCertificates are used by: - internal HTTPS load balancers
+   * <p>The regionSslCertificates are used by internal HTTPS load balancers.
    *
-   * <p>This SSL certificate resource also contains a private key. You can use SSL keys and
-   * certificates to secure connections to a load balancer. For more information, read Creating and
-   * Using SSL Certificates. (== resource_for {$api_version}.sslCertificates ==) (== resource_for
-   * {$api_version}.regionSslCertificates ==) Next ID: 17
+   * <p>Optionally, certificate file contents that you upload can contain a set of up to five
+   * PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this data.
+   * You can use SSL keys and certificates to secure connections to a load balancer. For more
+   * information, read Creating and using SSL certificates and SSL certificates quotas and limits.
+   * (== resource_for {$api_version}.sslCertificates ==) (== resource_for
+   * {$api_version}.regionSslCertificates ==)
    */
   public SslCertificate getSslCertificateResource() {
     return sslCertificateResource;
@@ -426,17 +428,20 @@ public final class InsertSslCertificateHttpRequest implements ApiMessage {
      *
      * <p>Google Compute Engine has two SSL Certificate resources:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/sslCertificates) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionSslCertificates)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/sslCertificates) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionSslCertificates)
      *
-     * <p>- sslCertificates are used by: - external HTTPS load balancers - SSL proxy load balancers
+     * <p>The sslCertificates are used by: - external HTTPS load balancers - SSL proxy load
+     * balancers
      *
-     * <p>- regionSslCertificates are used by: - internal HTTPS load balancers
+     * <p>The regionSslCertificates are used by internal HTTPS load balancers.
      *
-     * <p>This SSL certificate resource also contains a private key. You can use SSL keys and
-     * certificates to secure connections to a load balancer. For more information, read Creating
-     * and Using SSL Certificates. (== resource_for {$api_version}.sslCertificates ==) (==
-     * resource_for {$api_version}.regionSslCertificates ==) Next ID: 17
+     * <p>Optionally, certificate file contents that you upload can contain a set of up to five
+     * PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this
+     * data. You can use SSL keys and certificates to secure connections to a load balancer. For
+     * more information, read Creating and using SSL certificates and SSL certificates quotas and
+     * limits. (== resource_for {$api_version}.sslCertificates ==) (== resource_for
+     * {$api_version}.regionSslCertificates ==)
      */
     public SslCertificate getSslCertificateResource() {
       return sslCertificateResource;
@@ -447,17 +452,20 @@ public final class InsertSslCertificateHttpRequest implements ApiMessage {
      *
      * <p>Google Compute Engine has two SSL Certificate resources:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/latest/sslCertificates) &#42;
-     * [Regional](/compute/docs/reference/rest/latest/regionSslCertificates)
+     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/sslCertificates) &#42;
+     * [Regional](/compute/docs/reference/rest/{$api_version}/regionSslCertificates)
      *
-     * <p>- sslCertificates are used by: - external HTTPS load balancers - SSL proxy load balancers
+     * <p>The sslCertificates are used by: - external HTTPS load balancers - SSL proxy load
+     * balancers
      *
-     * <p>- regionSslCertificates are used by: - internal HTTPS load balancers
+     * <p>The regionSslCertificates are used by internal HTTPS load balancers.
      *
-     * <p>This SSL certificate resource also contains a private key. You can use SSL keys and
-     * certificates to secure connections to a load balancer. For more information, read Creating
-     * and Using SSL Certificates. (== resource_for {$api_version}.sslCertificates ==) (==
-     * resource_for {$api_version}.regionSslCertificates ==) Next ID: 17
+     * <p>Optionally, certificate file contents that you upload can contain a set of up to five
+     * PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this
+     * data. You can use SSL keys and certificates to secure connections to a load balancer. For
+     * more information, read Creating and using SSL certificates and SSL certificates quotas and
+     * limits. (== resource_for {$api_version}.sslCertificates ==) (== resource_for
+     * {$api_version}.regionSslCertificates ==)
      */
     public Builder setSslCertificateResource(SslCertificate sslCertificateResource) {
       this.sslCertificateResource = sslCertificateResource;

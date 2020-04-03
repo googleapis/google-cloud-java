@@ -25,22 +25,28 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 public final class InstanceGroupManagerStatus implements ApiMessage {
+  private final String autoscaler;
   private final Boolean isStable;
   private final InstanceGroupManagerStatusVersionTarget versionTarget;
 
   private InstanceGroupManagerStatus() {
+    this.autoscaler = null;
     this.isStable = null;
     this.versionTarget = null;
   }
 
   private InstanceGroupManagerStatus(
-      Boolean isStable, InstanceGroupManagerStatusVersionTarget versionTarget) {
+      String autoscaler, Boolean isStable, InstanceGroupManagerStatusVersionTarget versionTarget) {
+    this.autoscaler = autoscaler;
     this.isStable = isStable;
     this.versionTarget = versionTarget;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("autoscaler".equals(fieldName)) {
+      return autoscaler;
+    }
     if ("isStable".equals(fieldName)) {
       return isStable;
     }
@@ -66,6 +72,11 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /** [Output Only] The URL of the Autoscaler that targets this instance group manager. */
+  public String getAutoscaler() {
+    return autoscaler;
   }
 
   /**
@@ -110,6 +121,7 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
   }
 
   public static class Builder {
+    private String autoscaler;
     private Boolean isStable;
     private InstanceGroupManagerStatusVersionTarget versionTarget;
 
@@ -117,6 +129,9 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
 
     public Builder mergeFrom(InstanceGroupManagerStatus other) {
       if (other == InstanceGroupManagerStatus.getDefaultInstance()) return this;
+      if (other.getAutoscaler() != null) {
+        this.autoscaler = other.autoscaler;
+      }
       if (other.getIsStable() != null) {
         this.isStable = other.isStable;
       }
@@ -127,8 +142,20 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
     }
 
     Builder(InstanceGroupManagerStatus source) {
+      this.autoscaler = source.autoscaler;
       this.isStable = source.isStable;
       this.versionTarget = source.versionTarget;
+    }
+
+    /** [Output Only] The URL of the Autoscaler that targets this instance group manager. */
+    public String getAutoscaler() {
+      return autoscaler;
+    }
+
+    /** [Output Only] The URL of the Autoscaler that targets this instance group manager. */
+    public Builder setAutoscaler(String autoscaler) {
+      this.autoscaler = autoscaler;
+      return this;
     }
 
     /**
@@ -173,11 +200,12 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
 
     public InstanceGroupManagerStatus build() {
 
-      return new InstanceGroupManagerStatus(isStable, versionTarget);
+      return new InstanceGroupManagerStatus(autoscaler, isStable, versionTarget);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setAutoscaler(this.autoscaler);
       newBuilder.setIsStable(this.isStable);
       newBuilder.setVersionTarget(this.versionTarget);
       return newBuilder;
@@ -187,6 +215,9 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
   @Override
   public String toString() {
     return "InstanceGroupManagerStatus{"
+        + "autoscaler="
+        + autoscaler
+        + ", "
         + "isStable="
         + isStable
         + ", "
@@ -202,7 +233,8 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
     }
     if (o instanceof InstanceGroupManagerStatus) {
       InstanceGroupManagerStatus that = (InstanceGroupManagerStatus) o;
-      return Objects.equals(this.isStable, that.getIsStable())
+      return Objects.equals(this.autoscaler, that.getAutoscaler())
+          && Objects.equals(this.isStable, that.getIsStable())
           && Objects.equals(this.versionTarget, that.getVersionTarget());
     }
     return false;
@@ -210,6 +242,6 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(isStable, versionTarget);
+    return Objects.hash(autoscaler, isStable, versionTarget);
   }
 }

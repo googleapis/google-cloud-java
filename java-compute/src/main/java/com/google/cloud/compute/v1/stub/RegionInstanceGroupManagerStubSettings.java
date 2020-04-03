@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListErrorsRegionInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -40,18 +41,22 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AbandonInstancesRegionInstanceGroupManagerHttpRequest;
+import com.google.cloud.compute.v1.ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.CreateInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.GetRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InsertRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InstanceGroupManager;
+import com.google.cloud.compute.v1.InstanceManagedByIgmError;
+import com.google.cloud.compute.v1.ListErrorsRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RecreateInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagerList;
+import com.google.cloud.compute.v1.RegionInstanceGroupManagersListErrorsResponse;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstancesResponse;
 import com.google.cloud.compute.v1.ResizeRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateRegionInstanceGroupManagerHttpRequest;
@@ -115,6 +120,9 @@ public class RegionInstanceGroupManagerStubSettings
 
   private final UnaryCallSettings<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
       abandonInstancesRegionInstanceGroupManagerSettings;
+  private final UnaryCallSettings<
+          ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      applyUpdatesToInstancesRegionInstanceGroupManagerSettings;
   private final UnaryCallSettings<CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
       createInstancesRegionInstanceGroupManagerSettings;
   private final UnaryCallSettings<DeleteRegionInstanceGroupManagerHttpRequest, Operation>
@@ -130,6 +138,11 @@ public class RegionInstanceGroupManagerStubSettings
           RegionInstanceGroupManagerList,
           ListRegionInstanceGroupManagersPagedResponse>
       listRegionInstanceGroupManagersSettings;
+  private final PagedCallSettings<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListErrorsResponse,
+          ListErrorsRegionInstanceGroupManagersPagedResponse>
+      listErrorsRegionInstanceGroupManagersSettings;
   private final UnaryCallSettings<
           ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
           RegionInstanceGroupManagersListInstancesResponse>
@@ -153,6 +166,15 @@ public class RegionInstanceGroupManagerStubSettings
   public UnaryCallSettings<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
       abandonInstancesRegionInstanceGroupManagerSettings() {
     return abandonInstancesRegionInstanceGroupManagerSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * applyUpdatesToInstancesRegionInstanceGroupManager.
+   */
+  public UnaryCallSettings<ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      applyUpdatesToInstancesRegionInstanceGroupManagerSettings() {
+    return applyUpdatesToInstancesRegionInstanceGroupManagerSettings;
   }
 
   /**
@@ -198,6 +220,17 @@ public class RegionInstanceGroupManagerStubSettings
           ListRegionInstanceGroupManagersPagedResponse>
       listRegionInstanceGroupManagersSettings() {
     return listRegionInstanceGroupManagersSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to listErrorsRegionInstanceGroupManagers.
+   */
+  public PagedCallSettings<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListErrorsResponse,
+          ListErrorsRegionInstanceGroupManagersPagedResponse>
+      listErrorsRegionInstanceGroupManagersSettings() {
+    return listErrorsRegionInstanceGroupManagersSettings;
   }
 
   /**
@@ -327,6 +360,8 @@ public class RegionInstanceGroupManagerStubSettings
 
     abandonInstancesRegionInstanceGroupManagerSettings =
         settingsBuilder.abandonInstancesRegionInstanceGroupManagerSettings().build();
+    applyUpdatesToInstancesRegionInstanceGroupManagerSettings =
+        settingsBuilder.applyUpdatesToInstancesRegionInstanceGroupManagerSettings().build();
     createInstancesRegionInstanceGroupManagerSettings =
         settingsBuilder.createInstancesRegionInstanceGroupManagerSettings().build();
     deleteRegionInstanceGroupManagerSettings =
@@ -339,6 +374,8 @@ public class RegionInstanceGroupManagerStubSettings
         settingsBuilder.insertRegionInstanceGroupManagerSettings().build();
     listRegionInstanceGroupManagersSettings =
         settingsBuilder.listRegionInstanceGroupManagersSettings().build();
+    listErrorsRegionInstanceGroupManagersSettings =
+        settingsBuilder.listErrorsRegionInstanceGroupManagersSettings().build();
     listManagedInstancesRegionInstanceGroupManagersSettings =
         settingsBuilder.listManagedInstancesRegionInstanceGroupManagersSettings().build();
     patchRegionInstanceGroupManagerSettings =
@@ -402,6 +439,56 @@ public class RegionInstanceGroupManagerStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListErrorsResponse,
+          InstanceManagedByIgmError>
+      LIST_ERRORS_REGION_INSTANCE_GROUP_MANAGERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListErrorsRegionInstanceGroupManagersHttpRequest,
+              RegionInstanceGroupManagersListErrorsResponse,
+              InstanceManagedByIgmError>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListErrorsRegionInstanceGroupManagersHttpRequest injectToken(
+                ListErrorsRegionInstanceGroupManagersHttpRequest payload, String token) {
+              return ListErrorsRegionInstanceGroupManagersHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListErrorsRegionInstanceGroupManagersHttpRequest injectPageSize(
+                ListErrorsRegionInstanceGroupManagersHttpRequest payload, int pageSize) {
+              return ListErrorsRegionInstanceGroupManagersHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                ListErrorsRegionInstanceGroupManagersHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(RegionInstanceGroupManagersListErrorsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<InstanceManagedByIgmError> extractResources(
+                RegionInstanceGroupManagersListErrorsResponse payload) {
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<InstanceManagedByIgmError>of();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListRegionInstanceGroupManagersHttpRequest,
           RegionInstanceGroupManagerList,
@@ -434,6 +521,40 @@ public class RegionInstanceGroupManagerStubSettings
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListErrorsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListErrorsResponse,
+          ListErrorsRegionInstanceGroupManagersPagedResponse>
+      LIST_ERRORS_REGION_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListErrorsRegionInstanceGroupManagersHttpRequest,
+              RegionInstanceGroupManagersListErrorsResponse,
+              ListErrorsRegionInstanceGroupManagersPagedResponse>() {
+            @Override
+            public ApiFuture<ListErrorsRegionInstanceGroupManagersPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListErrorsRegionInstanceGroupManagersHttpRequest,
+                            RegionInstanceGroupManagersListErrorsResponse>
+                        callable,
+                    ListErrorsRegionInstanceGroupManagersHttpRequest request,
+                    ApiCallContext context,
+                    ApiFuture<RegionInstanceGroupManagersListErrorsResponse> futureResponse) {
+              PageContext<
+                      ListErrorsRegionInstanceGroupManagersHttpRequest,
+                      RegionInstanceGroupManagersListErrorsResponse,
+                      InstanceManagedByIgmError>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_ERRORS_REGION_INSTANCE_GROUP_MANAGERS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListErrorsRegionInstanceGroupManagersPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
   /** Builder for RegionInstanceGroupManagerStubSettings. */
   public static class Builder
       extends StubSettings.Builder<RegionInstanceGroupManagerStubSettings, Builder> {
@@ -442,6 +563,9 @@ public class RegionInstanceGroupManagerStubSettings
     private final UnaryCallSettings.Builder<
             AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
         abandonInstancesRegionInstanceGroupManagerSettings;
+    private final UnaryCallSettings.Builder<
+            ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+        applyUpdatesToInstancesRegionInstanceGroupManagerSettings;
     private final UnaryCallSettings.Builder<
             CreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
         createInstancesRegionInstanceGroupManagerSettings;
@@ -460,6 +584,11 @@ public class RegionInstanceGroupManagerStubSettings
             RegionInstanceGroupManagerList,
             ListRegionInstanceGroupManagersPagedResponse>
         listRegionInstanceGroupManagersSettings;
+    private final PagedCallSettings.Builder<
+            ListErrorsRegionInstanceGroupManagersHttpRequest,
+            RegionInstanceGroupManagersListErrorsResponse,
+            ListErrorsRegionInstanceGroupManagersPagedResponse>
+        listErrorsRegionInstanceGroupManagersSettings;
     private final UnaryCallSettings.Builder<
             ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
             RegionInstanceGroupManagersListInstancesResponse>
@@ -522,6 +651,9 @@ public class RegionInstanceGroupManagerStubSettings
       abandonInstancesRegionInstanceGroupManagerSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      applyUpdatesToInstancesRegionInstanceGroupManagerSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createInstancesRegionInstanceGroupManagerSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -536,6 +668,9 @@ public class RegionInstanceGroupManagerStubSettings
 
       listRegionInstanceGroupManagersSettings =
           PagedCallSettings.newBuilder(LIST_REGION_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT);
+
+      listErrorsRegionInstanceGroupManagersSettings =
+          PagedCallSettings.newBuilder(LIST_ERRORS_REGION_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT);
 
       listManagedInstancesRegionInstanceGroupManagersSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -556,12 +691,14 @@ public class RegionInstanceGroupManagerStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               abandonInstancesRegionInstanceGroupManagerSettings,
+              applyUpdatesToInstancesRegionInstanceGroupManagerSettings,
               createInstancesRegionInstanceGroupManagerSettings,
               deleteRegionInstanceGroupManagerSettings,
               deleteInstancesRegionInstanceGroupManagerSettings,
               getRegionInstanceGroupManagerSettings,
               insertRegionInstanceGroupManagerSettings,
               listRegionInstanceGroupManagersSettings,
+              listErrorsRegionInstanceGroupManagersSettings,
               listManagedInstancesRegionInstanceGroupManagersSettings,
               patchRegionInstanceGroupManagerSettings,
               recreateInstancesRegionInstanceGroupManagerSettings,
@@ -585,6 +722,11 @@ public class RegionInstanceGroupManagerStubSettings
 
       builder
           .abandonInstancesRegionInstanceGroupManagerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .applyUpdatesToInstancesRegionInstanceGroupManagerSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -615,6 +757,11 @@ public class RegionInstanceGroupManagerStubSettings
 
       builder
           .listRegionInstanceGroupManagersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listErrorsRegionInstanceGroupManagersSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -656,6 +803,8 @@ public class RegionInstanceGroupManagerStubSettings
 
       abandonInstancesRegionInstanceGroupManagerSettings =
           settings.abandonInstancesRegionInstanceGroupManagerSettings.toBuilder();
+      applyUpdatesToInstancesRegionInstanceGroupManagerSettings =
+          settings.applyUpdatesToInstancesRegionInstanceGroupManagerSettings.toBuilder();
       createInstancesRegionInstanceGroupManagerSettings =
           settings.createInstancesRegionInstanceGroupManagerSettings.toBuilder();
       deleteRegionInstanceGroupManagerSettings =
@@ -668,6 +817,8 @@ public class RegionInstanceGroupManagerStubSettings
           settings.insertRegionInstanceGroupManagerSettings.toBuilder();
       listRegionInstanceGroupManagersSettings =
           settings.listRegionInstanceGroupManagersSettings.toBuilder();
+      listErrorsRegionInstanceGroupManagersSettings =
+          settings.listErrorsRegionInstanceGroupManagersSettings.toBuilder();
       listManagedInstancesRegionInstanceGroupManagersSettings =
           settings.listManagedInstancesRegionInstanceGroupManagersSettings.toBuilder();
       patchRegionInstanceGroupManagerSettings =
@@ -684,12 +835,14 @@ public class RegionInstanceGroupManagerStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               abandonInstancesRegionInstanceGroupManagerSettings,
+              applyUpdatesToInstancesRegionInstanceGroupManagerSettings,
               createInstancesRegionInstanceGroupManagerSettings,
               deleteRegionInstanceGroupManagerSettings,
               deleteInstancesRegionInstanceGroupManagerSettings,
               getRegionInstanceGroupManagerSettings,
               insertRegionInstanceGroupManagerSettings,
               listRegionInstanceGroupManagersSettings,
+              listErrorsRegionInstanceGroupManagersSettings,
               listManagedInstancesRegionInstanceGroupManagersSettings,
               patchRegionInstanceGroupManagerSettings,
               recreateInstancesRegionInstanceGroupManagerSettings,
@@ -722,6 +875,16 @@ public class RegionInstanceGroupManagerStubSettings
             AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
         abandonInstancesRegionInstanceGroupManagerSettings() {
       return abandonInstancesRegionInstanceGroupManagerSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * applyUpdatesToInstancesRegionInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            ApplyUpdatesToInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+        applyUpdatesToInstancesRegionInstanceGroupManagerSettings() {
+      return applyUpdatesToInstancesRegionInstanceGroupManagerSettings;
     }
 
     /**
@@ -769,6 +932,17 @@ public class RegionInstanceGroupManagerStubSettings
             ListRegionInstanceGroupManagersPagedResponse>
         listRegionInstanceGroupManagersSettings() {
       return listRegionInstanceGroupManagersSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listErrorsRegionInstanceGroupManagers.
+     */
+    public PagedCallSettings.Builder<
+            ListErrorsRegionInstanceGroupManagersHttpRequest,
+            RegionInstanceGroupManagersListErrorsResponse,
+            ListErrorsRegionInstanceGroupManagersPagedResponse>
+        listErrorsRegionInstanceGroupManagersSettings() {
+      return listErrorsRegionInstanceGroupManagersSettings;
     }
 
     /**

@@ -74,7 +74,10 @@ public final class ResourcePolicyDailyCycle implements ApiMessage {
     return null;
   }
 
-  /** Defines a schedule that runs every nth day of the month. */
+  /**
+   * Defines a schedule with units measured in months. The value determines how many months pass
+   * between the start of each cycle.
+   */
   public Integer getDaysInCycle() {
     return daysInCycle;
   }
@@ -144,12 +147,18 @@ public final class ResourcePolicyDailyCycle implements ApiMessage {
       this.startTime = source.startTime;
     }
 
-    /** Defines a schedule that runs every nth day of the month. */
+    /**
+     * Defines a schedule with units measured in months. The value determines how many months pass
+     * between the start of each cycle.
+     */
     public Integer getDaysInCycle() {
       return daysInCycle;
     }
 
-    /** Defines a schedule that runs every nth day of the month. */
+    /**
+     * Defines a schedule with units measured in months. The value determines how many months pass
+     * between the start of each cycle.
+     */
     public Builder setDaysInCycle(Integer daysInCycle) {
       this.daysInCycle = daysInCycle;
       return this;

@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedListInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListErrorsInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -88,6 +89,16 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
         .aggregatedListInstanceGroupManagersSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * applyUpdatesToInstancesInstanceGroupManager.
+   */
+  public UnaryCallSettings<ApplyUpdatesToInstancesInstanceGroupManagerHttpRequest, Operation>
+      applyUpdatesToInstancesInstanceGroupManagerSettings() {
+    return ((InstanceGroupManagerStubSettings) getStubSettings())
+        .applyUpdatesToInstancesInstanceGroupManagerSettings();
+  }
+
   /** Returns the object with the settings used for calls to createInstancesInstanceGroupManager. */
   public UnaryCallSettings<CreateInstancesInstanceGroupManagerHttpRequest, Operation>
       createInstancesInstanceGroupManagerSettings() {
@@ -130,6 +141,16 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
       listInstanceGroupManagersSettings() {
     return ((InstanceGroupManagerStubSettings) getStubSettings())
         .listInstanceGroupManagersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listErrorsInstanceGroupManagers. */
+  public PagedCallSettings<
+          ListErrorsInstanceGroupManagersHttpRequest,
+          InstanceGroupManagersListErrorsResponse,
+          ListErrorsInstanceGroupManagersPagedResponse>
+      listErrorsInstanceGroupManagersSettings() {
+    return ((InstanceGroupManagerStubSettings) getStubSettings())
+        .listErrorsInstanceGroupManagersSettings();
   }
 
   /**
@@ -306,6 +327,16 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
     }
 
     /**
+     * Returns the builder for the settings used for calls to
+     * applyUpdatesToInstancesInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            ApplyUpdatesToInstancesInstanceGroupManagerHttpRequest, Operation>
+        applyUpdatesToInstancesInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().applyUpdatesToInstancesInstanceGroupManagerSettings();
+    }
+
+    /**
      * Returns the builder for the settings used for calls to createInstancesInstanceGroupManager.
      */
     public UnaryCallSettings.Builder<CreateInstancesInstanceGroupManagerHttpRequest, Operation>
@@ -346,6 +377,15 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
             ListInstanceGroupManagersPagedResponse>
         listInstanceGroupManagersSettings() {
       return getStubSettingsBuilder().listInstanceGroupManagersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listErrorsInstanceGroupManagers. */
+    public PagedCallSettings.Builder<
+            ListErrorsInstanceGroupManagersHttpRequest,
+            InstanceGroupManagersListErrorsResponse,
+            ListErrorsInstanceGroupManagersPagedResponse>
+        listErrorsInstanceGroupManagersSettings() {
+      return getStubSettingsBuilder().listErrorsInstanceGroupManagersSettings();
     }
 
     /**

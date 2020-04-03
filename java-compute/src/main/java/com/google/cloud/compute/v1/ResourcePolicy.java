@@ -24,9 +24,16 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Represents a Resource Policy resource. You can use resource policies to schedule actions for some
+ * Compute Engine resources. For example, you can use them to schedule persistent disk snapshots.
+ *
+ * <p>(== resource_for {$api_version}.resourcePolicies ==)
+ */
 public final class ResourcePolicy implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
+  private final ResourcePolicyGroupPlacementPolicy groupPlacementPolicy;
   private final String id;
   private final String kind;
   private final String name;
@@ -38,6 +45,7 @@ public final class ResourcePolicy implements ApiMessage {
   private ResourcePolicy() {
     this.creationTimestamp = null;
     this.description = null;
+    this.groupPlacementPolicy = null;
     this.id = null;
     this.kind = null;
     this.name = null;
@@ -50,6 +58,7 @@ public final class ResourcePolicy implements ApiMessage {
   private ResourcePolicy(
       String creationTimestamp,
       String description,
+      ResourcePolicyGroupPlacementPolicy groupPlacementPolicy,
       String id,
       String kind,
       String name,
@@ -59,6 +68,7 @@ public final class ResourcePolicy implements ApiMessage {
       String status) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
+    this.groupPlacementPolicy = groupPlacementPolicy;
     this.id = id;
     this.kind = kind;
     this.name = name;
@@ -75,6 +85,9 @@ public final class ResourcePolicy implements ApiMessage {
     }
     if ("description".equals(fieldName)) {
       return description;
+    }
+    if ("groupPlacementPolicy".equals(fieldName)) {
+      return groupPlacementPolicy;
     }
     if ("id".equals(fieldName)) {
       return id;
@@ -125,6 +138,11 @@ public final class ResourcePolicy implements ApiMessage {
 
   public String getDescription() {
     return description;
+  }
+
+  /** Resource policy for instacnes for placement configuration. */
+  public ResourcePolicyGroupPlacementPolicy getGroupPlacementPolicy() {
+    return groupPlacementPolicy;
   }
 
   /**
@@ -194,6 +212,7 @@ public final class ResourcePolicy implements ApiMessage {
   public static class Builder {
     private String creationTimestamp;
     private String description;
+    private ResourcePolicyGroupPlacementPolicy groupPlacementPolicy;
     private String id;
     private String kind;
     private String name;
@@ -211,6 +230,9 @@ public final class ResourcePolicy implements ApiMessage {
       }
       if (other.getDescription() != null) {
         this.description = other.description;
+      }
+      if (other.getGroupPlacementPolicy() != null) {
+        this.groupPlacementPolicy = other.groupPlacementPolicy;
       }
       if (other.getId() != null) {
         this.id = other.id;
@@ -239,6 +261,7 @@ public final class ResourcePolicy implements ApiMessage {
     Builder(ResourcePolicy source) {
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
+      this.groupPlacementPolicy = source.groupPlacementPolicy;
       this.id = source.id;
       this.kind = source.kind;
       this.name = source.name;
@@ -265,6 +288,18 @@ public final class ResourcePolicy implements ApiMessage {
 
     public Builder setDescription(String description) {
       this.description = description;
+      return this;
+    }
+
+    /** Resource policy for instacnes for placement configuration. */
+    public ResourcePolicyGroupPlacementPolicy getGroupPlacementPolicy() {
+      return groupPlacementPolicy;
+    }
+
+    /** Resource policy for instacnes for placement configuration. */
+    public Builder setGroupPlacementPolicy(
+        ResourcePolicyGroupPlacementPolicy groupPlacementPolicy) {
+      this.groupPlacementPolicy = groupPlacementPolicy;
       return this;
     }
 
@@ -373,6 +408,7 @@ public final class ResourcePolicy implements ApiMessage {
       return new ResourcePolicy(
           creationTimestamp,
           description,
+          groupPlacementPolicy,
           id,
           kind,
           name,
@@ -386,6 +422,7 @@ public final class ResourcePolicy implements ApiMessage {
       Builder newBuilder = new Builder();
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDescription(this.description);
+      newBuilder.setGroupPlacementPolicy(this.groupPlacementPolicy);
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
@@ -405,6 +442,9 @@ public final class ResourcePolicy implements ApiMessage {
         + ", "
         + "description="
         + description
+        + ", "
+        + "groupPlacementPolicy="
+        + groupPlacementPolicy
         + ", "
         + "id="
         + id
@@ -438,6 +478,7 @@ public final class ResourcePolicy implements ApiMessage {
       ResourcePolicy that = (ResourcePolicy) o;
       return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.groupPlacementPolicy, that.getGroupPlacementPolicy())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
@@ -454,6 +495,7 @@ public final class ResourcePolicy implements ApiMessage {
     return Objects.hash(
         creationTimestamp,
         description,
+        groupPlacementPolicy,
         id,
         kind,
         name,

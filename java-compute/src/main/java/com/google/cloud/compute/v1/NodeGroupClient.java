@@ -271,20 +271,29 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (NodeGroupsScopedList element : nodeGroupClient.aggregatedListNodeGroups(project).iterateAll()) {
+   *   for (NodeGroupsScopedList element : nodeGroupClient.aggregatedListNodeGroups(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListNodeGroupsPagedResponse aggregatedListNodeGroups(ProjectName project) {
+  public final AggregatedListNodeGroupsPagedResponse aggregatedListNodeGroups(
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListNodeGroupsHttpRequest request =
         AggregatedListNodeGroupsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListNodeGroups(request);
@@ -299,20 +308,31 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (NodeGroupsScopedList element : nodeGroupClient.aggregatedListNodeGroups(project.toString()).iterateAll()) {
+   *   for (NodeGroupsScopedList element : nodeGroupClient.aggregatedListNodeGroups(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListNodeGroupsPagedResponse aggregatedListNodeGroups(String project) {
+  public final AggregatedListNodeGroupsPagedResponse aggregatedListNodeGroups(
+      Boolean includeAllScopes, String project) {
     AggregatedListNodeGroupsHttpRequest request =
-        AggregatedListNodeGroupsHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListNodeGroupsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListNodeGroups(request);
   }
 
@@ -325,8 +345,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeGroupsHttpRequest request = AggregatedListNodeGroupsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (NodeGroupsScopedList element : nodeGroupClient.aggregatedListNodeGroups(request).iterateAll()) {
@@ -353,8 +375,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeGroupsHttpRequest request = AggregatedListNodeGroupsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListNodeGroupsPagedResponse&gt; future = nodeGroupClient.aggregatedListNodeGroupsPagedCallable().futureCall(request);
@@ -381,8 +405,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeGroupsHttpRequest request = AggregatedListNodeGroupsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
@@ -1218,6 +1244,141 @@ public class NodeGroupClient implements BackgroundResource {
   public final UnaryCallable<ListNodesNodeGroupsHttpRequest, NodeGroupsListNodes>
       listNodesNodeGroupsCallable() {
     return stub.listNodesNodeGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Patch the node group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = nodeGroupClient.patchNodeGroup(nodeGroup, nodeGroupResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param nodeGroup Name of the NodeGroup resource to update.
+   * @param nodeGroupResource Represent a sole-tenant Node Group resource.
+   *     <p>A sole-tenant node is a physical server that is dedicated to hosting VM instances only
+   *     for your specific project. Use sole-tenant nodes to keep your instances physically
+   *     separated from instances in other projects, or to group your instances together on the same
+   *     host hardware. For more information, read Sole-tenant nodes. (== resource_for
+   *     {$api_version}.nodeGroups ==)
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchNodeGroup(
+      ProjectZoneNodeGroupName nodeGroup, NodeGroup nodeGroupResource, List<String> fieldMask) {
+    PatchNodeGroupHttpRequest request =
+        PatchNodeGroupHttpRequest.newBuilder()
+            .setNodeGroup(nodeGroup == null ? null : nodeGroup.toString())
+            .setNodeGroupResource(nodeGroupResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return patchNodeGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Patch the node group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = nodeGroupClient.patchNodeGroup(nodeGroup.toString(), nodeGroupResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param nodeGroup Name of the NodeGroup resource to update.
+   * @param nodeGroupResource Represent a sole-tenant Node Group resource.
+   *     <p>A sole-tenant node is a physical server that is dedicated to hosting VM instances only
+   *     for your specific project. Use sole-tenant nodes to keep your instances physically
+   *     separated from instances in other projects, or to group your instances together on the same
+   *     host hardware. For more information, read Sole-tenant nodes. (== resource_for
+   *     {$api_version}.nodeGroups ==)
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchNodeGroup(
+      String nodeGroup, NodeGroup nodeGroupResource, List<String> fieldMask) {
+    PatchNodeGroupHttpRequest request =
+        PatchNodeGroupHttpRequest.newBuilder()
+            .setNodeGroup(nodeGroup)
+            .setNodeGroupResource(nodeGroupResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return patchNodeGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Patch the node group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   PatchNodeGroupHttpRequest request = PatchNodeGroupHttpRequest.newBuilder()
+   *     .setNodeGroup(formattedNodeGroup)
+   *     .setNodeGroupResource(nodeGroupResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   Operation response = nodeGroupClient.patchNodeGroup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchNodeGroup(PatchNodeGroupHttpRequest request) {
+    return patchNodeGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Patch the node group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   PatchNodeGroupHttpRequest request = PatchNodeGroupHttpRequest.newBuilder()
+   *     .setNodeGroup(formattedNodeGroup)
+   *     .setNodeGroupResource(nodeGroupResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = nodeGroupClient.patchNodeGroupCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<PatchNodeGroupHttpRequest, Operation> patchNodeGroupCallable() {
+    return stub.patchNodeGroupCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

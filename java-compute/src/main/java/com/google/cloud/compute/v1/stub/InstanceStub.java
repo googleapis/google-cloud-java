@@ -23,6 +23,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAccessConfigInstanceHttpRequest;
+import com.google.cloud.compute.v1.AddResourcePoliciesInstanceHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListInstancesHttpRequest;
 import com.google.cloud.compute.v1.AttachDiskInstanceHttpRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceHttpRequest;
@@ -43,6 +44,7 @@ import com.google.cloud.compute.v1.ListInstancesHttpRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceHttpRequest;
 import com.google.cloud.compute.v1.ResetInstanceHttpRequest;
 import com.google.cloud.compute.v1.SerialPortOutput;
 import com.google.cloud.compute.v1.SetDeletionProtectionInstanceHttpRequest;
@@ -66,6 +68,7 @@ import com.google.cloud.compute.v1.TestIamPermissionsInstanceHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateDisplayDeviceInstanceHttpRequest;
+import com.google.cloud.compute.v1.UpdateInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceHttpRequest;
 import javax.annotation.Generated;
@@ -84,6 +87,13 @@ public abstract class InstanceStub implements BackgroundResource {
   public UnaryCallable<AddAccessConfigInstanceHttpRequest, Operation>
       addAccessConfigInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: addAccessConfigInstanceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<AddResourcePoliciesInstanceHttpRequest, Operation>
+      addResourcePoliciesInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addResourcePoliciesInstanceCallable()");
   }
 
   @BetaApi
@@ -179,6 +189,13 @@ public abstract class InstanceStub implements BackgroundResource {
   public UnaryCallable<ListReferrersInstancesHttpRequest, InstanceListReferrers>
       listReferrersInstancesCallable() {
     throw new UnsupportedOperationException("Not implemented: listReferrersInstancesCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<RemoveResourcePoliciesInstanceHttpRequest, Operation>
+      removeResourcePoliciesInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeResourcePoliciesInstanceCallable()");
   }
 
   @BetaApi
@@ -286,6 +303,11 @@ public abstract class InstanceStub implements BackgroundResource {
       testIamPermissionsInstanceCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: testIamPermissionsInstanceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<UpdateInstanceHttpRequest, Operation> updateInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateInstanceCallable()");
   }
 
   @BetaApi

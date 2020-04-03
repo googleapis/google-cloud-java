@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Sets the scheduling options for an Instance. NextID: 9 */
+/** Sets the scheduling options for an Instance. NextID: 10 */
 public final class Scheduling implements ApiMessage {
   private final Boolean automaticRestart;
   private final List<SchedulingNodeAffinity> nodeAffinities;
@@ -99,7 +99,7 @@ public final class Scheduling implements ApiMessage {
 
   /**
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for
-   * more information.
+   * more information. Overrides reservationAffinity.
    */
   public List<SchedulingNodeAffinity> getNodeAffinitiesList() {
     return nodeAffinities;
@@ -203,7 +203,7 @@ public final class Scheduling implements ApiMessage {
 
     /**
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity
-     * for more information.
+     * for more information. Overrides reservationAffinity.
      */
     public List<SchedulingNodeAffinity> getNodeAffinitiesList() {
       return nodeAffinities;
@@ -211,7 +211,7 @@ public final class Scheduling implements ApiMessage {
 
     /**
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity
-     * for more information.
+     * for more information. Overrides reservationAffinity.
      */
     public Builder addAllNodeAffinities(List<SchedulingNodeAffinity> nodeAffinities) {
       if (this.nodeAffinities == null) {
@@ -223,7 +223,7 @@ public final class Scheduling implements ApiMessage {
 
     /**
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity
-     * for more information.
+     * for more information. Overrides reservationAffinity.
      */
     public Builder addNodeAffinities(SchedulingNodeAffinity nodeAffinities) {
       if (this.nodeAffinities == null) {

@@ -76,7 +76,8 @@ public class HttpJsonResourcePolicyStub extends ResourcePolicyStub {
                       .<AggregatedListResourcePoliciesHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/resourcePolicies"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())

@@ -202,6 +202,23 @@
  * </code>
  * </pre>
  *
+ * ================================ GlobalNetworkEndpointGroupClient
+ * ================================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for GlobalNetworkEndpointGroupClient:
+ *
+ * <pre>
+ * <code>
+ * try (GlobalNetworkEndpointGroupClient globalNetworkEndpointGroupClient = GlobalNetworkEndpointGroupClient.create()) {
+ *   ProjectGlobalNetworkEndpointGroupName networkEndpointGroup = ProjectGlobalNetworkEndpointGroupName.of("[PROJECT]", "[NETWORK_ENDPOINT_GROUP]");
+ *   GlobalNetworkEndpointGroupsAttachEndpointsRequest globalNetworkEndpointGroupsAttachEndpointsRequestResource = GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
+ *   Operation response = globalNetworkEndpointGroupClient.attachNetworkEndpointsGlobalNetworkEndpointGroup(networkEndpointGroup, globalNetworkEndpointGroupsAttachEndpointsRequestResource);
+ * }
+ * </code>
+ * </pre>
+ *
  * ===================== GlobalOperationClient =====================
  *
  * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.

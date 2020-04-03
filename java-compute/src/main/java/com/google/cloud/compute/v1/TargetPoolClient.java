@@ -383,21 +383,29 @@ public class TargetPoolClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (TargetPoolsScopedList element : targetPoolClient.aggregatedListTargetPools(project).iterateAll()) {
+   *   for (TargetPoolsScopedList element : targetPoolClient.aggregatedListTargetPools(includeAllScopes, project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final AggregatedListTargetPoolsPagedResponse aggregatedListTargetPools(
-      ProjectName project) {
+      Boolean includeAllScopes, ProjectName project) {
     AggregatedListTargetPoolsHttpRequest request =
         AggregatedListTargetPoolsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
             .setProject(project == null ? null : project.toString())
             .build();
     return aggregatedListTargetPools(request);
@@ -411,20 +419,31 @@ public class TargetPoolClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (TargetPoolsScopedList element : targetPoolClient.aggregatedListTargetPools(project.toString()).iterateAll()) {
+   *   for (TargetPoolsScopedList element : targetPoolClient.aggregatedListTargetPools(includeAllScopes, project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
+   * @param includeAllScopes Indicates whether every visible scope for each scope type (zone,
+   *     region, global) should be included in the response. For new resource types added after this
+   *     field, the flag has no effect as new resource types will always include every visible scope
+   *     for each scope type in response. For resource types which predate this field, if this flag
+   *     is omitted or false, only scopes of the scope types where the resource type is expected to
+   *     be found will be included.
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListTargetPoolsPagedResponse aggregatedListTargetPools(String project) {
+  public final AggregatedListTargetPoolsPagedResponse aggregatedListTargetPools(
+      Boolean includeAllScopes, String project) {
     AggregatedListTargetPoolsHttpRequest request =
-        AggregatedListTargetPoolsHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListTargetPoolsHttpRequest.newBuilder()
+            .setIncludeAllScopes(includeAllScopes)
+            .setProject(project)
+            .build();
     return aggregatedListTargetPools(request);
   }
 
@@ -436,8 +455,10 @@ public class TargetPoolClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListTargetPoolsHttpRequest request = AggregatedListTargetPoolsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   for (TargetPoolsScopedList element : targetPoolClient.aggregatedListTargetPools(request).iterateAll()) {
@@ -463,8 +484,10 @@ public class TargetPoolClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListTargetPoolsHttpRequest request = AggregatedListTargetPoolsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListTargetPoolsPagedResponse&gt; future = targetPoolClient.aggregatedListTargetPoolsPagedCallable().futureCall(request);
@@ -490,8 +513,10 @@ public class TargetPoolClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
+   *   Boolean includeAllScopes = false;
    *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListTargetPoolsHttpRequest request = AggregatedListTargetPoolsHttpRequest.newBuilder()
+   *     .setIncludeAllScopes(includeAllScopes)
    *     .setProject(formattedProject)
    *     .build();
    *   while (true) {

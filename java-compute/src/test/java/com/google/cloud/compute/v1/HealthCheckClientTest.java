@@ -112,10 +112,11 @@ public class HealthCheckClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
     AggregatedListHealthChecksPagedResponse pagedListResponse =
-        client.aggregatedListHealthChecks(project);
+        client.aggregatedListHealthChecks(includeAllScopes, project);
 
     List<HealthChecksScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -146,9 +147,10 @@ public class HealthCheckClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListHealthChecks(project);
+      client.aggregatedListHealthChecks(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

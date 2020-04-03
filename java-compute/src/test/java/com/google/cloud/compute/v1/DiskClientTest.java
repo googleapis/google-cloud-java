@@ -216,9 +216,11 @@ public class DiskClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean includeAllScopes = true;
     ProjectName project = ProjectName.of("[PROJECT]");
 
-    AggregatedListDisksPagedResponse pagedListResponse = client.aggregatedListDisks(project);
+    AggregatedListDisksPagedResponse pagedListResponse =
+        client.aggregatedListDisks(includeAllScopes, project);
 
     List<DisksScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -249,9 +251,10 @@ public class DiskClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean includeAllScopes = true;
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.aggregatedListDisks(project);
+      client.aggregatedListDisks(includeAllScopes, project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

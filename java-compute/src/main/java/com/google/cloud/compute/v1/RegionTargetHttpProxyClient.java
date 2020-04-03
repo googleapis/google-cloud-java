@@ -376,8 +376,8 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
    * @param region Name of the region scoping this request.
    * @param targetHttpProxyResource Represents a Target HTTP Proxy resource.
    *     <p>Google Compute Engine has two Target HTTP Proxy resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/targetHttpProxies) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionTargetHttpProxies)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/targetHttpProxies) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionTargetHttpProxies)
    *     <p>A target HTTP proxy is a component of GCP HTTP load balancers.
    *     <p>&#42; targetHttpProxies are used by external HTTP load balancers and Traffic Director.
    *     &#42; regionTargetHttpProxies are used by internal HTTP load balancers.
@@ -416,8 +416,8 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
    * @param region Name of the region scoping this request.
    * @param targetHttpProxyResource Represents a Target HTTP Proxy resource.
    *     <p>Google Compute Engine has two Target HTTP Proxy resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/targetHttpProxies) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionTargetHttpProxies)
+   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/targetHttpProxies) &#42;
+   *     [Regional](/compute/docs/reference/rest/{$api_version}/regionTargetHttpProxies)
    *     <p>A target HTTP proxy is a component of GCP HTTP load balancers.
    *     <p>&#42; targetHttpProxies are used by external HTTP load balancers and Traffic Director.
    *     &#42; regionTargetHttpProxies are used by internal HTTP load balancers.

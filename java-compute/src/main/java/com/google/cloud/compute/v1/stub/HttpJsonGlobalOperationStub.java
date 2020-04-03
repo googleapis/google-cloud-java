@@ -68,7 +68,8 @@ public class HttpJsonGlobalOperationStub extends GlobalOperationStub {
                       .<AggregatedListGlobalOperationsHttpRequest>newBuilder()
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/operations"))
                       .setQueryParams(
-                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                          Sets.<String>newHashSet(
+                              "filter", "includeAllScopes", "maxResults", "orderBy", "pageToken"))
                       .setResourceNameFactory(ProjectName.newFactory())
                       .setResourceNameField("project")
                       .build())

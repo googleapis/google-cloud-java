@@ -290,9 +290,8 @@ public class RegionSslCertificateClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
 
-    Operation actualResponse = client.insertRegionSslCertificate(region, sslCertificateResource);
+    Operation actualResponse = client.insertRegionSslCertificate(region);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -320,9 +319,8 @@ public class RegionSslCertificateClientTest {
 
     try {
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-      SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
 
-      client.insertRegionSslCertificate(region, sslCertificateResource);
+      client.insertRegionSslCertificate(region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

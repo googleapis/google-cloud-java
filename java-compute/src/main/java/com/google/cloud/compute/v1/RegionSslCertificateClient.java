@@ -364,32 +364,18 @@ public class RegionSslCertificateClient implements BackgroundResource {
    * <pre><code>
    * try (RegionSslCertificateClient regionSslCertificateClient = RegionSslCertificateClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
-   *   Operation response = regionSslCertificateClient.insertRegionSslCertificate(region, sslCertificateResource);
+   *   Operation response = regionSslCertificateClient.insertRegionSslCertificate(region);
    * }
    * </code></pre>
    *
    * @param region Name of the region scoping this request.
-   * @param sslCertificateResource Represents an SSL Certificate resource.
-   *     <p>Google Compute Engine has two SSL Certificate resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/sslCertificates) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionSslCertificates)
-   *     <p>- sslCertificates are used by: - external HTTPS load balancers - SSL proxy load
-   *     balancers
-   *     <p>- regionSslCertificates are used by: - internal HTTPS load balancers
-   *     <p>This SSL certificate resource also contains a private key. You can use SSL keys and
-   *     certificates to secure connections to a load balancer. For more information, read Creating
-   *     and Using SSL Certificates. (== resource_for {$api_version}.sslCertificates ==) (==
-   *     resource_for {$api_version}.regionSslCertificates ==) Next ID: 17
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRegionSslCertificate(
-      ProjectRegionName region, SslCertificate sslCertificateResource) {
+  public final Operation insertRegionSslCertificate(ProjectRegionName region) {
     InsertRegionSslCertificateHttpRequest request =
         InsertRegionSslCertificateHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
-            .setSslCertificateResource(sslCertificateResource)
             .build();
     return insertRegionSslCertificate(request);
   }
@@ -404,33 +390,17 @@ public class RegionSslCertificateClient implements BackgroundResource {
    * <pre><code>
    * try (RegionSslCertificateClient regionSslCertificateClient = RegionSslCertificateClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
-   *   Operation response = regionSslCertificateClient.insertRegionSslCertificate(region.toString(), sslCertificateResource);
+   *   Operation response = regionSslCertificateClient.insertRegionSslCertificate(region.toString());
    * }
    * </code></pre>
    *
    * @param region Name of the region scoping this request.
-   * @param sslCertificateResource Represents an SSL Certificate resource.
-   *     <p>Google Compute Engine has two SSL Certificate resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/latest/sslCertificates) &#42;
-   *     [Regional](/compute/docs/reference/rest/latest/regionSslCertificates)
-   *     <p>- sslCertificates are used by: - external HTTPS load balancers - SSL proxy load
-   *     balancers
-   *     <p>- regionSslCertificates are used by: - internal HTTPS load balancers
-   *     <p>This SSL certificate resource also contains a private key. You can use SSL keys and
-   *     certificates to secure connections to a load balancer. For more information, read Creating
-   *     and Using SSL Certificates. (== resource_for {$api_version}.sslCertificates ==) (==
-   *     resource_for {$api_version}.regionSslCertificates ==) Next ID: 17
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRegionSslCertificate(
-      String region, SslCertificate sslCertificateResource) {
+  public final Operation insertRegionSslCertificate(String region) {
     InsertRegionSslCertificateHttpRequest request =
-        InsertRegionSslCertificateHttpRequest.newBuilder()
-            .setRegion(region)
-            .setSslCertificateResource(sslCertificateResource)
-            .build();
+        InsertRegionSslCertificateHttpRequest.newBuilder().setRegion(region).build();
     return insertRegionSslCertificate(request);
   }
 
@@ -444,10 +414,8 @@ public class RegionSslCertificateClient implements BackgroundResource {
    * <pre><code>
    * try (RegionSslCertificateClient regionSslCertificateClient = RegionSslCertificateClient.create()) {
    *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
-   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
    *   InsertRegionSslCertificateHttpRequest request = InsertRegionSslCertificateHttpRequest.newBuilder()
    *     .setRegion(formattedRegion)
-   *     .setSslCertificateResource(sslCertificateResource)
    *     .build();
    *   Operation response = regionSslCertificateClient.insertRegionSslCertificate(request);
    * }
@@ -471,10 +439,8 @@ public class RegionSslCertificateClient implements BackgroundResource {
    * <pre><code>
    * try (RegionSslCertificateClient regionSslCertificateClient = RegionSslCertificateClient.create()) {
    *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
-   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
    *   InsertRegionSslCertificateHttpRequest request = InsertRegionSslCertificateHttpRequest.newBuilder()
    *     .setRegion(formattedRegion)
-   *     .setSslCertificateResource(sslCertificateResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionSslCertificateClient.insertRegionSslCertificateCallable().futureCall(request);
    *   // Do something
