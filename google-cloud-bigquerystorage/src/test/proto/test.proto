@@ -17,8 +17,6 @@ syntax = "proto2";
 
 package com.google.cloud.bigquery.storage.test;
 
-import "google/protobuf/descriptor.proto";
-
 enum TestEnum {
   TestEnum0 = 0;
   TestEnum1 = 1;
@@ -39,6 +37,7 @@ message AllSupportedTypes {
 message InnerType {
   repeated string value = 1;
 }
+
 message NestedType {
   repeated InnerType inner_type = 1;
 }
@@ -51,6 +50,11 @@ message ComplicateType {
 message ContainsRecursive {
   optional RecursiveType field = 1;
 }
+
 message RecursiveType {
   optional ContainsRecursive field = 2;
+}
+
+message FooType {
+  optional string foo = 1;
 }
