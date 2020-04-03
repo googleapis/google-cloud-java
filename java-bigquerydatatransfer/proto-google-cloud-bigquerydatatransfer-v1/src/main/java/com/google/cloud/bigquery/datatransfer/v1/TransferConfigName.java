@@ -22,8 +22,6 @@ import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -151,28 +149,6 @@ public class TransferConfigName implements ResourceName {
           matchMap.get("project"), matchMap.get("location"), matchMap.get("transfer_config"));
     }
     throw new ValidationException("JobName.parse: formattedString not in valid format");
-  }
-
-  @BetaApi("The method will be renamed to parseList after subclasses of this class are removed.")
-  public static List<TransferConfigName> parse(List<String> formattedStrings) {
-    List<TransferConfigName> list = new ArrayList<>(formattedStrings.size());
-    for (String formattedString : formattedStrings) {
-      list.add(parse(formattedString));
-    }
-    return list;
-  }
-
-  @BetaApi("The method will be renamed to toStringList after subclasses of this class are removed.")
-  public static List<String> toStrings(List<TransferConfigName> values) {
-    List<String> list = new ArrayList<>(values.size());
-    for (TransferConfigName value : values) {
-      if (value == null) {
-        list.add("");
-      } else {
-        list.add(value.toString());
-      }
-    }
-    return list;
   }
 
   public static boolean isParsableFrom(String formattedString) {

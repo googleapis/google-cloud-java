@@ -29,4 +29,34 @@
     <className>com/google/cloud/bigquery/datatransfer/v1/LocationName</className>
     <to>com/google/cloud/bigquery/datatransfer/v1/ParentName</to>
   </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/datatransfer/v1/DataSourceName</className>
+    <method>*parse(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/datatransfer/v1/DataSourceName</className>
+    <method>*toStrings(*)</method>
+  </difference>
+    <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/datatransfer/v1/RunName</className>
+    <method>*parse(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/datatransfer/v1/RunName</className>
+    <method>*toStrings(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/datatransfer/v1/TransferConfigName</className>
+    <method>*parse(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/datatransfer/v1/TransferConfigName</className>
+    <method>*toStrings(*)</method>
+  </difference>
 </differences>
