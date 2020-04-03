@@ -252,7 +252,7 @@
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-storage</artifactId>
-    <version>1.105.1</version>
+    <version>1.106.0</version>
     <scope>test</scope>
   </dependency>
 </dependencies>
