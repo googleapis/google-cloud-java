@@ -61,14 +61,15 @@ public final class PhishingProtectionProto {
           + "ta1/{parent=projects/*}/phishing:report:"
           + "\001*\332A\nparent,uri\032U\312A!phishingprotection.g"
           + "oogleapis.com\322A.https://www.googleapis.c"
-          + "om/auth/cloud-platformB\370\001\n%com.google.ph"
+          + "om/auth/cloud-platformB\245\002\n%com.google.ph"
           + "ishingprotection.v1beta1B\027PhishingProtec"
           + "tionProtoP\001ZYgoogle.golang.org/genproto/"
           + "googleapis/cloud/phishingprotection/v1be"
           + "ta1;phishingprotection\242\002\004GCPP\252\002\'Google.C"
           + "loud.PhishingProtection.V1Beta1\312\002\'Google"
-          + "\\Cloud\\PhishingProtection\\V1beta1b\006proto"
-          + "3"
+          + "\\Cloud\\PhishingProtection\\V1beta1\352\002*Goog"
+          + "le::Cloud::PhishingProtection::V1beta1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
