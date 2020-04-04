@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.128.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.127.0...v0.128.0) (2020-04-04)
+
+
+### Features
+
+* add flatten plugin ([#117](https://www.github.com/googleapis/java-bigquerystorage/issues/117)) ([c01bbc7](https://www.github.com/googleapis/java-bigquerystorage/commit/c01bbc7df8d89c6b0b5b3e7f53b541c4575ed119))
+* re-generated  to pick up changes in the API or client library generator. ([#134](https://www.github.com/googleapis/java-bigquerystorage/issues/134)) ([0541775](https://www.github.com/googleapis/java-bigquerystorage/commit/054177514fc63f5c84bcca8d71b953f06b1807ca)), closes [#112](https://www.github.com/googleapis/java-bigquerystorage/issues/112) [#112](https://www.github.com/googleapis/java-bigquerystorage/issues/112) [#132](https://www.github.com/googleapis/java-bigquerystorage/issues/132) [#132](https://www.github.com/googleapis/java-bigquerystorage/issues/132) [#122](https://www.github.com/googleapis/java-bigquerystorage/issues/122) [#122](https://www.github.com/googleapis/java-bigquerystorage/issues/122)
+
 ## [0.127.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.126.0...v0.127.0) (2020-04-03)
 
 
