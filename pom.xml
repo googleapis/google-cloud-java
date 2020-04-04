@@ -241,8 +241,79 @@
             <ignoredUnusedDeclaredDependencies>org.objenesis:objenesis</ignoredUnusedDeclaredDependencies>
           </configuration>
         </plugin>
+
+        <!-- flatten maven plugin -->
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>flatten-maven-plugin</artifactId>
+          <version>1.2.2</version>
+          <executions>
+            <!-- enable flattening -->
+            <execution>
+              <id>flatten</id>
+              <phase>process-resources</phase>
+              <goals>
+                <goal>flatten</goal>
+              </goals>
+            </execution>
+            <!-- ensure proper cleanup -->
+            <execution>
+              <id>flatten.clean</id>
+              <phase>clean</phase>
+              <goals>
+                <goal>clean</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <flattenMode>oss</flattenMode>
+            <flattenDependencyMode>all</flattenDependencyMode>
+            <pomElements>
+              <build>remove</build>
+            </pomElements>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
+
+    <plugins>
+      <!-- ban duplicate class -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.0.0-M3</version> <!-- find the latest version at http://maven.apache.org/plugins/maven-enforcer-plugin/ -->
+        <executions>
+          <execution>
+            <id>enforce-ban-duplicate-classes</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <!-- add this to shared-config -->
+                <banDuplicateClasses>
+                  <scopes>
+                    <scope>compile</scope>
+                    <scope>provided</scope>
+                  </scopes>
+                  <findAllDuplicates>true</findAllDuplicates>
+                  <ignoreWhenIdentical>true</ignoreWhenIdentical>
+                </banDuplicateClasses>
+                <!-- add this to shared-config -->
+              </rules>
+              <fail>true</fail>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>extra-enforcer-rules</artifactId>
+            <version>1.2</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
   </build>
 
   <modules>
