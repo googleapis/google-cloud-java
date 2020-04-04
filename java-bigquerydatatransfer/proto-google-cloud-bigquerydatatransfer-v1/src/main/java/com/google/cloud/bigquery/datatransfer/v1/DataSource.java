@@ -299,6 +299,18 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>GOOGLE_PLUS_AUTHORIZATION_CODE = 2;</code>
      */
     GOOGLE_PLUS_AUTHORIZATION_CODE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Use First Party Client OAuth. First Party Client OAuth doesn't require a
+     * refresh token to get an offline access token. Instead, it uses a
+     * client-signed JWT assertion to retrieve an access token.
+     * </pre>
+     *
+     * <code>FIRST_PARTY_OAUTH = 3;</code>
+     */
+    FIRST_PARTY_OAUTH(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -334,6 +346,18 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>GOOGLE_PLUS_AUTHORIZATION_CODE = 2;</code>
      */
     public static final int GOOGLE_PLUS_AUTHORIZATION_CODE_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Use First Party Client OAuth. First Party Client OAuth doesn't require a
+     * refresh token to get an offline access token. Instead, it uses a
+     * client-signed JWT assertion to retrieve an access token.
+     * </pre>
+     *
+     * <code>FIRST_PARTY_OAUTH = 3;</code>
+     */
+    public static final int FIRST_PARTY_OAUTH_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -365,6 +389,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           return AUTHORIZATION_CODE;
         case 2:
           return GOOGLE_PLUS_AUTHORIZATION_CODE;
+        case 3:
+          return FIRST_PARTY_OAUTH;
         default:
           return null;
       }
