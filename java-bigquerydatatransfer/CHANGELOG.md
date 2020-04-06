@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.126.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.125.2...v0.126.0) (2020-04-05)
+
+
+### Features
+
+* re-generated  to pick up changes in the API or client library generator. ([#105](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/105)) ([52060f3](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/52060f3900c501311e3c97c1c4c30795061751e2))
+
+
+### Dependencies
+
+* update core dependencies ([#100](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/100)) ([8a836b9](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/8a836b902e4755d848cdb2f5df2e3b4fb1fd1c13))
+* update dependency com.google.api:api-common to v1.9.0 ([#98](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/98)) ([174da35](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/174da35eba40739c7a3cdfda6f1149b1e253af90))
+* update dependency com.google.cloud:google-cloud-bigquerydatatransfer to v0.125.2-beta ([#87](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/87)) ([259e39e](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/259e39ed5df94b429f6e17d620bac5f9e4ff160a))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#107](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/107)) ([a7174fc](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/a7174fce744dc3b51aff5d2e971c9ea1b809cf94))
+
 ### [0.125.2](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.125.1...v0.125.2) (2020-03-20)
 
 
