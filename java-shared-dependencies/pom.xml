@@ -55,8 +55,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <site.installationModule>${project.artifactId}</site.installationModule>
 
-    <grpc.version>1.27.2</grpc.version>
-    <gax.version>1.55.0</gax.version>
+    <grpc.version>1.28.1</grpc.version>
+    <gax.version>1.56.0</gax.version>
     <guava.version>28.2-android</guava.version>
     <protobuf.version>3.11.4</protobuf.version>
     <google.api-common.version>1.9.0</google.api-common.version>
