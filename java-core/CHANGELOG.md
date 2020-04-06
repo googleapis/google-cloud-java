@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.93.4](https://www.github.com/googleapis/java-core/compare/v1.93.3...v1.93.4) (2020-04-06)
+
+
+### Dependencies
+
+* update core dependencies ([#198](https://www.github.com/googleapis/java-core/issues/198)) ([129b3f8](https://www.github.com/googleapis/java-core/commit/129b3f8b03e6809bcae9545a6c2484aa8acc2447))
+* update dependency com.google.api:api-common to v1.9.0 ([#195](https://www.github.com/googleapis/java-core/issues/195)) ([ac19258](https://www.github.com/googleapis/java-core/commit/ac192586f086b91f479e85e4677ac2d10f10968a))
+* update dependency com.google.api:gax-bom to v1.56.0 ([#201](https://www.github.com/googleapis/java-core/issues/201)) ([875c4ed](https://www.github.com/googleapis/java-core/commit/875c4ed001193dfe2c301ad7f163395a568bcb10))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#192](https://www.github.com/googleapis/java-core/issues/192)) ([ce6ec17](https://www.github.com/googleapis/java-core/commit/ce6ec179e4024264c0aee09f85f6f60218d46138))
+
 ### [1.93.3](https://www.github.com/googleapis/java-core/compare/v1.93.2...v1.93.3) (2020-03-16)
 
 
