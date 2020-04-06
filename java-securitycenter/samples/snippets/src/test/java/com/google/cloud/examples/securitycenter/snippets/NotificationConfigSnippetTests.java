@@ -20,6 +20,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
+import java.util.UUID;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -30,51 +31,56 @@ public class NotificationConfigSnippetTests {
 
   @Test
   public void testCreateNotificationConfig() throws IOException {
+    String configId = String.format("java-config-%s", UUID.randomUUID().toString());
     assertNotNull(
         CreateNotificationConfigSnippets.createNotificationConfig(
-            getOrganizationId(), "java-notification-config-create", getProject(), getTopicName()));
+            getOrganizationId(), configId, getProject(), getTopicName()));
 
-    deleteConfig("java-notification-config-create");
+    deleteConfig(configId);
   }
 
   @Test
   public void testDeleteNotificationConfig() throws IOException {
-    createConfig("java-notification-config-delete");
+    String configId = String.format("java-config-%s", UUID.randomUUID().toString());
+    createConfig(configId);
 
     assertTrue(
         DeleteNotificationConfigSnippets.deleteNotificationConfig(
-            getOrganizationId(), "java-notification-config-delete"));
+            getOrganizationId(), configId));
   }
 
   @Test
   public void testListNotificationConfig() throws IOException {
-    createConfig("java-notification-config-list");
+    String configId = String.format("java-config-%s", UUID.randomUUID().toString());
+    createConfig(configId);
 
     assertNotNull(ListNotificationConfigSnippets.listNotificationConfigs(getOrganizationId()));
 
-    deleteConfig("java-notification-config-list");
+    deleteConfig(configId);
   }
 
   @Test
   public void testGetNotificationConfig() throws IOException {
-    createConfig("java-notification-config-get");
+    String configId = String.format("java-config-%s", UUID.randomUUID().toString());
+    createConfig(configId);
 
     assertNotNull(
         GetNotificationConfigSnippets.getNotificationConfig(
-            getOrganizationId(), "java-notification-config-get"));
+            getOrganizationId(), configId));
 
-    deleteConfig("java-notification-config-get");
+    deleteConfig(configId);
   }
 
   @Test
   public void testUpdateNotificationConfig() throws IOException {
-    createConfig("java-notification-config-update");
+    String configId = String.format("java-config-%s", UUID.randomUUID().toString());
+    createConfig(configId);
 
     assertNotNull(
         UpdateNotificationConfigSnippets.updateNotificationConfig(
-            getOrganizationId(), "java-notification-config-update", getProject(), getTopicName()));
+            getOrganizationId(), configId, getProject(), getTopicName()));
 
-    deleteConfig("java-notification-config-update");
+    deleteConfig(configId);
   }
 
   private static void createConfig(String configId) throws IOException {
