@@ -49,8 +49,8 @@ Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
-[product-docs]: TODO
-[javadocs]: https://googleapis.dev/java/google-cloud-accesscontextmanager/latest/index.html
+[product-docs]: https://cloud.google.com/access-context-manager/docs
+[javadocs]: https://googleapis.dev/java/proto-google-identity-accesscontextmanager-v1/latest/index.html
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-accesscontextmanager/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-accesscontextmanager/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-accesscontextmanager/java8.svg
@@ -62,8 +62,8 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-accesscontextmanager/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-accesscontextmanager/java11.html
 [stability-image]: https://img.shields.io/badge/stability-beta-yellow
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-accesscontextmanager.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-accesscontextmanager&core=gav
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.api.grpc/proto-google-identity-accesscontextmanager-v1.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.api.grpc%20AND%20a:proto-google-identity-accesscontextmanager-v1&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
