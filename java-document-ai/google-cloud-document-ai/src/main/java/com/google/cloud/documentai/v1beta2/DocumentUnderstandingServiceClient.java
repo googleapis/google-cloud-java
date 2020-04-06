@@ -41,7 +41,10 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (DocumentUnderstandingServiceClient documentUnderstandingServiceClient = DocumentUnderstandingServiceClient.create()) {
- *   ProcessDocumentRequest request = ProcessDocumentRequest.newBuilder().build();
+ *   InputConfig inputConfig = InputConfig.newBuilder().build();
+ *   ProcessDocumentRequest request = ProcessDocumentRequest.newBuilder()
+ *     .setInputConfig(inputConfig)
+ *     .build();
  *   Document response = documentUnderstandingServiceClient.processDocument(request);
  * }
  * </code>
@@ -280,7 +283,10 @@ public class DocumentUnderstandingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DocumentUnderstandingServiceClient documentUnderstandingServiceClient = DocumentUnderstandingServiceClient.create()) {
-   *   ProcessDocumentRequest request = ProcessDocumentRequest.newBuilder().build();
+   *   InputConfig inputConfig = InputConfig.newBuilder().build();
+   *   ProcessDocumentRequest request = ProcessDocumentRequest.newBuilder()
+   *     .setInputConfig(inputConfig)
+   *     .build();
    *   Document response = documentUnderstandingServiceClient.processDocument(request);
    * }
    * </code></pre>
@@ -300,7 +306,10 @@ public class DocumentUnderstandingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DocumentUnderstandingServiceClient documentUnderstandingServiceClient = DocumentUnderstandingServiceClient.create()) {
-   *   ProcessDocumentRequest request = ProcessDocumentRequest.newBuilder().build();
+   *   InputConfig inputConfig = InputConfig.newBuilder().build();
+   *   ProcessDocumentRequest request = ProcessDocumentRequest.newBuilder()
+   *     .setInputConfig(inputConfig)
+   *     .build();
    *   ApiFuture&lt;Document&gt; future = documentUnderstandingServiceClient.processDocumentCallable().futureCall(request);
    *   // Do something
    *   Document response = future.get();

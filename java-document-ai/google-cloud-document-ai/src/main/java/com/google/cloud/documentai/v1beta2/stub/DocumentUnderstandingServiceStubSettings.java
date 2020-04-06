@@ -56,7 +56,7 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (documentai.googleapis.com) and default port (443) are used.
+ *   <li>The default service address (us-documentai.googleapis.com) and default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
@@ -133,7 +133,7 @@ public class DocumentUnderstandingServiceStubSettings
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "documentai.googleapis.com:443";
+    return "us-documentai.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -293,13 +293,13 @@ public class DocumentUnderstandingServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(86400000L))
+                      .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;

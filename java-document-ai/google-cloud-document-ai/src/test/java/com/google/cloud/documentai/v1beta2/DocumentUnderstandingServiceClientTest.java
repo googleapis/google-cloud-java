@@ -139,7 +139,9 @@ public class DocumentUnderstandingServiceClientTest {
         Document.newBuilder().setUri(uri).setMimeType(mimeType).setText(text).build();
     mockDocumentUnderstandingService.addResponse(expectedResponse);
 
-    ProcessDocumentRequest request = ProcessDocumentRequest.newBuilder().build();
+    InputConfig inputConfig = InputConfig.newBuilder().build();
+    ProcessDocumentRequest request =
+        ProcessDocumentRequest.newBuilder().setInputConfig(inputConfig).build();
 
     Document actualResponse = client.processDocument(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -148,6 +150,7 @@ public class DocumentUnderstandingServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ProcessDocumentRequest actualRequest = (ProcessDocumentRequest) actualRequests.get(0);
 
+    Assert.assertEquals(inputConfig, actualRequest.getInputConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -161,7 +164,9 @@ public class DocumentUnderstandingServiceClientTest {
     mockDocumentUnderstandingService.addException(exception);
 
     try {
-      ProcessDocumentRequest request = ProcessDocumentRequest.newBuilder().build();
+      InputConfig inputConfig = InputConfig.newBuilder().build();
+      ProcessDocumentRequest request =
+          ProcessDocumentRequest.newBuilder().setInputConfig(inputConfig).build();
 
       client.processDocument(request);
       Assert.fail("No exception raised");
