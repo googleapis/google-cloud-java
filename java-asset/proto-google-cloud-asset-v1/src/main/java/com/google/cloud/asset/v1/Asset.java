@@ -22,8 +22,11 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * Cloud asset. This includes all Google Cloud Platform resources,
- * Cloud IAM policies, and other non-GCP assets.
+ * An asset in Google Cloud. An asset can be any resource in the Google Cloud
+ * [resource
+ * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+ * a resource outside the Google Cloud resource hierarchy (such as Google
+ * Kubernetes Engine clusters and objects), or a Cloud IAM policy.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.Asset}
@@ -41,6 +44,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   private Asset() {
     name_ = "";
     assetType_ = "";
+    orgPolicy_ = java.util.Collections.emptyList();
     ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -117,12 +121,88 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 50:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                orgPolicy_ = new java.util.ArrayList<com.google.cloud.orgpolicy.v1.Policy>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              orgPolicy_.add(
+                  input.readMessage(
+                      com.google.cloud.orgpolicy.v1.Policy.parser(), extensionRegistry));
+              break;
+            }
+          case 58:
+            {
+              com.google.identity.accesscontextmanager.v1.AccessPolicy.Builder subBuilder = null;
+              if (accessContextPolicyCase_ == 7) {
+                subBuilder =
+                    ((com.google.identity.accesscontextmanager.v1.AccessPolicy)
+                            accessContextPolicy_)
+                        .toBuilder();
+              }
+              accessContextPolicy_ =
+                  input.readMessage(
+                      com.google.identity.accesscontextmanager.v1.AccessPolicy.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.identity.accesscontextmanager.v1.AccessPolicy)
+                        accessContextPolicy_);
+                accessContextPolicy_ = subBuilder.buildPartial();
+              }
+              accessContextPolicyCase_ = 7;
+              break;
+            }
+          case 66:
+            {
+              com.google.identity.accesscontextmanager.v1.AccessLevel.Builder subBuilder = null;
+              if (accessContextPolicyCase_ == 8) {
+                subBuilder =
+                    ((com.google.identity.accesscontextmanager.v1.AccessLevel) accessContextPolicy_)
+                        .toBuilder();
+              }
+              accessContextPolicy_ =
+                  input.readMessage(
+                      com.google.identity.accesscontextmanager.v1.AccessLevel.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.identity.accesscontextmanager.v1.AccessLevel) accessContextPolicy_);
+                accessContextPolicy_ = subBuilder.buildPartial();
+              }
+              accessContextPolicyCase_ = 8;
+              break;
+            }
+          case 74:
+            {
+              com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder subBuilder =
+                  null;
+              if (accessContextPolicyCase_ == 9) {
+                subBuilder =
+                    ((com.google.identity.accesscontextmanager.v1.ServicePerimeter)
+                            accessContextPolicy_)
+                        .toBuilder();
+              }
+              accessContextPolicy_ =
+                  input.readMessage(
+                      com.google.identity.accesscontextmanager.v1.ServicePerimeter.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.identity.accesscontextmanager.v1.ServicePerimeter)
+                        accessContextPolicy_);
+                accessContextPolicy_ = subBuilder.buildPartial();
+              }
+              accessContextPolicyCase_ = 9;
+              break;
+            }
           case 82:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 ancestors_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               ancestors_.add(s);
               break;
@@ -142,6 +222,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        orgPolicy_ = java.util.Collections.unmodifiableList(orgPolicy_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         ancestors_ = ancestors_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -163,6 +246,56 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.asset.v1.Asset.class, com.google.cloud.asset.v1.Asset.Builder.class);
   }
 
+  private int accessContextPolicyCase_ = 0;
+  private java.lang.Object accessContextPolicy_;
+
+  public enum AccessContextPolicyCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    ACCESS_POLICY(7),
+    ACCESS_LEVEL(8),
+    SERVICE_PERIMETER(9),
+    ACCESSCONTEXTPOLICY_NOT_SET(0);
+    private final int value;
+
+    private AccessContextPolicyCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AccessContextPolicyCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static AccessContextPolicyCase forNumber(int value) {
+      switch (value) {
+        case 7:
+          return ACCESS_POLICY;
+        case 8:
+          return ACCESS_LEVEL;
+        case 9:
+          return SERVICE_PERIMETER;
+        case 0:
+          return ACCESSCONTEXTPOLICY_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public AccessContextPolicyCase getAccessContextPolicyCase() {
+    return AccessContextPolicyCase.forNumber(accessContextPolicyCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -170,9 +303,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The full name of the asset. For example:
-   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1"
    * See [Resource
-   * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * </pre>
    *
@@ -196,9 +329,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The full name of the asset. For example:
-   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1"
    * See [Resource
-   * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * </pre>
    *
@@ -224,7 +357,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of the asset. Example: "compute.googleapis.com/Disk".
+   * The type of the asset. For example: "compute.googleapis.com/Disk"
+   * See [Supported asset
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+   * for more information.
    * </pre>
    *
    * <code>string asset_type = 2;</code>
@@ -246,7 +382,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of the asset. Example: "compute.googleapis.com/Disk".
+   * The type of the asset. For example: "compute.googleapis.com/Disk"
+   * See [Supported asset
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+   * for more information.
    * </pre>
    *
    * <code>string asset_type = 2;</code>
@@ -271,7 +410,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Representation of the resource.
+   * A representation of the resource.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
@@ -285,7 +424,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Representation of the resource.
+   * A representation of the resource.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
@@ -299,7 +438,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Representation of the resource.
+   * A representation of the resource.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
@@ -314,8 +453,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For
-   * each resource, there must be at most one Cloud IAM policy set on it.
+   * A representation of the Cloud IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one Cloud IAM policy set on any given resource.
+   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * policies set on parent resources in the resource hierarchy. Therefore, the
+   * effectively policy is the union of both the policy set on this resource
+   * and each policy set on all of the resource's ancestry resource levels in
+   * the hierarchy. See
+   * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
+   * more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -329,8 +475,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For
-   * each resource, there must be at most one Cloud IAM policy set on it.
+   * A representation of the Cloud IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one Cloud IAM policy set on any given resource.
+   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * policies set on parent resources in the resource hierarchy. Therefore, the
+   * effectively policy is the union of both the policy set on this resource
+   * and each policy set on all of the resource's ancestry resource levels in
+   * the hierarchy. See
+   * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
+   * more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -344,8 +497,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For
-   * each resource, there must be at most one Cloud IAM policy set on it.
+   * A representation of the Cloud IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one Cloud IAM policy set on any given resource.
+   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * policies set on parent resources in the resource hierarchy. Therefore, the
+   * effectively policy is the union of both the policy set on this resource
+   * and each policy set on all of the resource's ancestry resource levels in
+   * the hierarchy. See
+   * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
+   * more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -354,17 +514,187 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     return getIamPolicy();
   }
 
+  public static final int ORG_POLICY_FIELD_NUMBER = 6;
+  private java.util.List<com.google.cloud.orgpolicy.v1.Policy> orgPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * A representation of an [organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+   * There can be more than one organization policy with different constraints
+   * set on a given resource.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+   */
+  public java.util.List<com.google.cloud.orgpolicy.v1.Policy> getOrgPolicyList() {
+    return orgPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A representation of an [organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+   * There can be more than one organization policy with different constraints
+   * set on a given resource.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+   */
+  public java.util.List<? extends com.google.cloud.orgpolicy.v1.PolicyOrBuilder>
+      getOrgPolicyOrBuilderList() {
+    return orgPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A representation of an [organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+   * There can be more than one organization policy with different constraints
+   * set on a given resource.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+   */
+  public int getOrgPolicyCount() {
+    return orgPolicy_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A representation of an [organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+   * There can be more than one organization policy with different constraints
+   * set on a given resource.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+   */
+  public com.google.cloud.orgpolicy.v1.Policy getOrgPolicy(int index) {
+    return orgPolicy_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A representation of an [organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+   * There can be more than one organization policy with different constraints
+   * set on a given resource.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+   */
+  public com.google.cloud.orgpolicy.v1.PolicyOrBuilder getOrgPolicyOrBuilder(int index) {
+    return orgPolicy_.get(index);
+  }
+
+  public static final int ACCESS_POLICY_FIELD_NUMBER = 7;
+  /**
+   * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+   *
+   * @return Whether the accessPolicy field is set.
+   */
+  public boolean hasAccessPolicy() {
+    return accessContextPolicyCase_ == 7;
+  }
+  /**
+   * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+   *
+   * @return The accessPolicy.
+   */
+  public com.google.identity.accesscontextmanager.v1.AccessPolicy getAccessPolicy() {
+    if (accessContextPolicyCase_ == 7) {
+      return (com.google.identity.accesscontextmanager.v1.AccessPolicy) accessContextPolicy_;
+    }
+    return com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance();
+  }
+  /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+  public com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder
+      getAccessPolicyOrBuilder() {
+    if (accessContextPolicyCase_ == 7) {
+      return (com.google.identity.accesscontextmanager.v1.AccessPolicy) accessContextPolicy_;
+    }
+    return com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance();
+  }
+
+  public static final int ACCESS_LEVEL_FIELD_NUMBER = 8;
+  /**
+   * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+   *
+   * @return Whether the accessLevel field is set.
+   */
+  public boolean hasAccessLevel() {
+    return accessContextPolicyCase_ == 8;
+  }
+  /**
+   * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+   *
+   * @return The accessLevel.
+   */
+  public com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevel() {
+    if (accessContextPolicyCase_ == 8) {
+      return (com.google.identity.accesscontextmanager.v1.AccessLevel) accessContextPolicy_;
+    }
+    return com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance();
+  }
+  /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+  public com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder
+      getAccessLevelOrBuilder() {
+    if (accessContextPolicyCase_ == 8) {
+      return (com.google.identity.accesscontextmanager.v1.AccessLevel) accessContextPolicy_;
+    }
+    return com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance();
+  }
+
+  public static final int SERVICE_PERIMETER_FIELD_NUMBER = 9;
+  /**
+   * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+   *
+   * @return Whether the servicePerimeter field is set.
+   */
+  public boolean hasServicePerimeter() {
+    return accessContextPolicyCase_ == 9;
+  }
+  /**
+   * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+   *
+   * @return The servicePerimeter.
+   */
+  public com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeter() {
+    if (accessContextPolicyCase_ == 9) {
+      return (com.google.identity.accesscontextmanager.v1.ServicePerimeter) accessContextPolicy_;
+    }
+    return com.google.identity.accesscontextmanager.v1.ServicePerimeter.getDefaultInstance();
+  }
+  /**
+   * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+   */
+  public com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder
+      getServicePerimeterOrBuilder() {
+    if (accessContextPolicyCase_ == 9) {
+      return (com.google.identity.accesscontextmanager.v1.ServicePerimeter) accessContextPolicy_;
+    }
+    return com.google.identity.accesscontextmanager.v1.ServicePerimeter.getDefaultInstance();
+  }
+
   public static final int ANCESTORS_FIELD_NUMBER = 10;
   private com.google.protobuf.LazyStringList ancestors_;
   /**
    *
    *
    * <pre>
-   * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-   * represented as a list of relative resource names. Ancestry path starts with
-   * the closest CRM ancestor and ends at root. If the asset is a CRM
-   * project/folder/organization, this starts from the asset itself.
-   * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+   * The ancestry path of an asset in Google Cloud [resource
+   * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+   * represented as a list of relative resource names. An ancestry path starts
+   * with the closest ancestor in the hierarchy and ends at root. If the asset
+   * is a project, folder, or organization, the ancestry path starts from the
+   * asset itself.
+   * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 10;</code>
@@ -378,11 +708,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-   * represented as a list of relative resource names. Ancestry path starts with
-   * the closest CRM ancestor and ends at root. If the asset is a CRM
-   * project/folder/organization, this starts from the asset itself.
-   * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+   * The ancestry path of an asset in Google Cloud [resource
+   * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+   * represented as a list of relative resource names. An ancestry path starts
+   * with the closest ancestor in the hierarchy and ends at root. If the asset
+   * is a project, folder, or organization, the ancestry path starts from the
+   * asset itself.
+   * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 10;</code>
@@ -396,11 +728,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-   * represented as a list of relative resource names. Ancestry path starts with
-   * the closest CRM ancestor and ends at root. If the asset is a CRM
-   * project/folder/organization, this starts from the asset itself.
-   * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+   * The ancestry path of an asset in Google Cloud [resource
+   * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+   * represented as a list of relative resource names. An ancestry path starts
+   * with the closest ancestor in the hierarchy and ends at root. If the asset
+   * is a project, folder, or organization, the ancestry path starts from the
+   * asset itself.
+   * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 10;</code>
@@ -415,11 +749,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-   * represented as a list of relative resource names. Ancestry path starts with
-   * the closest CRM ancestor and ends at root. If the asset is a CRM
-   * project/folder/organization, this starts from the asset itself.
-   * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+   * The ancestry path of an asset in Google Cloud [resource
+   * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+   * represented as a list of relative resource names. An ancestry path starts
+   * with the closest ancestor in the hierarchy and ends at root. If the asset
+   * is a project, folder, or organization, the ancestry path starts from the
+   * asset itself.
+   * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 10;</code>
@@ -457,6 +793,21 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (iamPolicy_ != null) {
       output.writeMessage(4, getIamPolicy());
     }
+    for (int i = 0; i < orgPolicy_.size(); i++) {
+      output.writeMessage(6, orgPolicy_.get(i));
+    }
+    if (accessContextPolicyCase_ == 7) {
+      output.writeMessage(
+          7, (com.google.identity.accesscontextmanager.v1.AccessPolicy) accessContextPolicy_);
+    }
+    if (accessContextPolicyCase_ == 8) {
+      output.writeMessage(
+          8, (com.google.identity.accesscontextmanager.v1.AccessLevel) accessContextPolicy_);
+    }
+    if (accessContextPolicyCase_ == 9) {
+      output.writeMessage(
+          9, (com.google.identity.accesscontextmanager.v1.ServicePerimeter) accessContextPolicy_);
+    }
     for (int i = 0; i < ancestors_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, ancestors_.getRaw(i));
     }
@@ -480,6 +831,25 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
     if (iamPolicy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getIamPolicy());
+    }
+    for (int i = 0; i < orgPolicy_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, orgPolicy_.get(i));
+    }
+    if (accessContextPolicyCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.identity.accesscontextmanager.v1.AccessPolicy) accessContextPolicy_);
+    }
+    if (accessContextPolicyCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.identity.accesscontextmanager.v1.AccessLevel) accessContextPolicy_);
+    }
+    if (accessContextPolicyCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9,
+              (com.google.identity.accesscontextmanager.v1.ServicePerimeter) accessContextPolicy_);
     }
     {
       int dataSize = 0;
@@ -514,7 +884,22 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (hasIamPolicy()) {
       if (!getIamPolicy().equals(other.getIamPolicy())) return false;
     }
+    if (!getOrgPolicyList().equals(other.getOrgPolicyList())) return false;
     if (!getAncestorsList().equals(other.getAncestorsList())) return false;
+    if (!getAccessContextPolicyCase().equals(other.getAccessContextPolicyCase())) return false;
+    switch (accessContextPolicyCase_) {
+      case 7:
+        if (!getAccessPolicy().equals(other.getAccessPolicy())) return false;
+        break;
+      case 8:
+        if (!getAccessLevel().equals(other.getAccessLevel())) return false;
+        break;
+      case 9:
+        if (!getServicePerimeter().equals(other.getServicePerimeter())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -538,9 +923,29 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + IAM_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getIamPolicy().hashCode();
     }
+    if (getOrgPolicyCount() > 0) {
+      hash = (37 * hash) + ORG_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getOrgPolicyList().hashCode();
+    }
     if (getAncestorsCount() > 0) {
       hash = (37 * hash) + ANCESTORS_FIELD_NUMBER;
       hash = (53 * hash) + getAncestorsList().hashCode();
+    }
+    switch (accessContextPolicyCase_) {
+      case 7:
+        hash = (37 * hash) + ACCESS_POLICY_FIELD_NUMBER;
+        hash = (53 * hash) + getAccessPolicy().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + ACCESS_LEVEL_FIELD_NUMBER;
+        hash = (53 * hash) + getAccessLevel().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + SERVICE_PERIMETER_FIELD_NUMBER;
+        hash = (53 * hash) + getServicePerimeter().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -645,8 +1050,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud asset. This includes all Google Cloud Platform resources,
-   * Cloud IAM policies, and other non-GCP assets.
+   * An asset in Google Cloud. An asset can be any resource in the Google Cloud
+   * [resource
+   * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+   * a resource outside the Google Cloud resource hierarchy (such as Google
+   * Kubernetes Engine clusters and objects), or a Cloud IAM policy.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.Asset}
@@ -680,7 +1088,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getOrgPolicyFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -702,8 +1112,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         iamPolicy_ = null;
         iamPolicyBuilder_ = null;
       }
+      if (orgPolicyBuilder_ == null) {
+        orgPolicy_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        orgPolicyBuilder_.clear();
+      }
       ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
+      accessContextPolicyCase_ = 0;
+      accessContextPolicy_ = null;
       return this;
     }
 
@@ -743,11 +1161,42 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.iamPolicy_ = iamPolicyBuilder_.build();
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (orgPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          orgPolicy_ = java.util.Collections.unmodifiableList(orgPolicy_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.orgPolicy_ = orgPolicy_;
+      } else {
+        result.orgPolicy_ = orgPolicyBuilder_.build();
+      }
+      if (accessContextPolicyCase_ == 7) {
+        if (accessPolicyBuilder_ == null) {
+          result.accessContextPolicy_ = accessContextPolicy_;
+        } else {
+          result.accessContextPolicy_ = accessPolicyBuilder_.build();
+        }
+      }
+      if (accessContextPolicyCase_ == 8) {
+        if (accessLevelBuilder_ == null) {
+          result.accessContextPolicy_ = accessContextPolicy_;
+        } else {
+          result.accessContextPolicy_ = accessLevelBuilder_.build();
+        }
+      }
+      if (accessContextPolicyCase_ == 9) {
+        if (servicePerimeterBuilder_ == null) {
+          result.accessContextPolicy_ = accessContextPolicy_;
+        } else {
+          result.accessContextPolicy_ = servicePerimeterBuilder_.build();
+        }
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
         ancestors_ = ancestors_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.ancestors_ = ancestors_;
+      result.accessContextPolicyCase_ = accessContextPolicyCase_;
       onBuilt();
       return result;
     }
@@ -811,15 +1260,63 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       if (other.hasIamPolicy()) {
         mergeIamPolicy(other.getIamPolicy());
       }
+      if (orgPolicyBuilder_ == null) {
+        if (!other.orgPolicy_.isEmpty()) {
+          if (orgPolicy_.isEmpty()) {
+            orgPolicy_ = other.orgPolicy_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureOrgPolicyIsMutable();
+            orgPolicy_.addAll(other.orgPolicy_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.orgPolicy_.isEmpty()) {
+          if (orgPolicyBuilder_.isEmpty()) {
+            orgPolicyBuilder_.dispose();
+            orgPolicyBuilder_ = null;
+            orgPolicy_ = other.orgPolicy_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            orgPolicyBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getOrgPolicyFieldBuilder()
+                    : null;
+          } else {
+            orgPolicyBuilder_.addAllMessages(other.orgPolicy_);
+          }
+        }
+      }
       if (!other.ancestors_.isEmpty()) {
         if (ancestors_.isEmpty()) {
           ancestors_ = other.ancestors_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureAncestorsIsMutable();
           ancestors_.addAll(other.ancestors_);
         }
         onChanged();
+      }
+      switch (other.getAccessContextPolicyCase()) {
+        case ACCESS_POLICY:
+          {
+            mergeAccessPolicy(other.getAccessPolicy());
+            break;
+          }
+        case ACCESS_LEVEL:
+          {
+            mergeAccessLevel(other.getAccessLevel());
+            break;
+          }
+        case SERVICE_PERIMETER:
+          {
+            mergeServicePerimeter(other.getServicePerimeter());
+            break;
+          }
+        case ACCESSCONTEXTPOLICY_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -850,6 +1347,20 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int accessContextPolicyCase_ = 0;
+    private java.lang.Object accessContextPolicy_;
+
+    public AccessContextPolicyCase getAccessContextPolicyCase() {
+      return AccessContextPolicyCase.forNumber(accessContextPolicyCase_);
+    }
+
+    public Builder clearAccessContextPolicy() {
+      accessContextPolicyCase_ = 0;
+      accessContextPolicy_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
@@ -858,9 +1369,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The full name of the asset. For example:
-     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1"
      * See [Resource
-     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * </pre>
      *
@@ -884,9 +1395,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The full name of the asset. For example:
-     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1"
      * See [Resource
-     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * </pre>
      *
@@ -910,9 +1421,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The full name of the asset. For example:
-     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1"
      * See [Resource
-     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * </pre>
      *
@@ -935,9 +1446,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The full name of the asset. For example:
-     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1"
      * See [Resource
-     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * </pre>
      *
@@ -956,9 +1467,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The full name of the asset. For example:
-     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1"
      * See [Resource
-     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * </pre>
      *
@@ -983,7 +1494,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the asset. Example: "compute.googleapis.com/Disk".
+     * The type of the asset. For example: "compute.googleapis.com/Disk"
+     * See [Supported asset
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+     * for more information.
      * </pre>
      *
      * <code>string asset_type = 2;</code>
@@ -1005,7 +1519,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the asset. Example: "compute.googleapis.com/Disk".
+     * The type of the asset. For example: "compute.googleapis.com/Disk"
+     * See [Supported asset
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+     * for more information.
      * </pre>
      *
      * <code>string asset_type = 2;</code>
@@ -1027,7 +1544,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the asset. Example: "compute.googleapis.com/Disk".
+     * The type of the asset. For example: "compute.googleapis.com/Disk"
+     * See [Supported asset
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+     * for more information.
      * </pre>
      *
      * <code>string asset_type = 2;</code>
@@ -1048,7 +1568,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the asset. Example: "compute.googleapis.com/Disk".
+     * The type of the asset. For example: "compute.googleapis.com/Disk"
+     * See [Supported asset
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+     * for more information.
      * </pre>
      *
      * <code>string asset_type = 2;</code>
@@ -1065,7 +1588,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the asset. Example: "compute.googleapis.com/Disk".
+     * The type of the asset. For example: "compute.googleapis.com/Disk"
+     * See [Supported asset
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+     * for more information.
      * </pre>
      *
      * <code>string asset_type = 2;</code>
@@ -1094,7 +1620,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the resource.
+     * A representation of the resource.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
@@ -1108,7 +1634,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the resource.
+     * A representation of the resource.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
@@ -1128,7 +1654,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the resource.
+     * A representation of the resource.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
@@ -1150,7 +1676,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the resource.
+     * A representation of the resource.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
@@ -1169,7 +1695,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the resource.
+     * A representation of the resource.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
@@ -1195,7 +1721,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the resource.
+     * A representation of the resource.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
@@ -1215,7 +1741,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the resource.
+     * A representation of the resource.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
@@ -1229,7 +1755,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the resource.
+     * A representation of the resource.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
@@ -1247,7 +1773,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the resource.
+     * A representation of the resource.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
@@ -1279,8 +1805,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
+     * more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1294,8 +1827,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
+     * more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1313,8 +1853,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
+     * more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1336,8 +1883,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
+     * more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1356,8 +1910,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
+     * more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1381,8 +1942,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
+     * more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1402,8 +1970,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
+     * more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1417,8 +1992,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
+     * more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1434,8 +2016,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
+     * more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1457,24 +2046,876 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return iamPolicyBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList ancestors_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private java.util.List<com.google.cloud.orgpolicy.v1.Policy> orgPolicy_ =
+        java.util.Collections.emptyList();
 
-    private void ensureAncestorsIsMutable() {
+    private void ensureOrgPolicyIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        ancestors_ = new com.google.protobuf.LazyStringArrayList(ancestors_);
+        orgPolicy_ = new java.util.ArrayList<com.google.cloud.orgpolicy.v1.Policy>(orgPolicy_);
         bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.orgpolicy.v1.Policy,
+            com.google.cloud.orgpolicy.v1.Policy.Builder,
+            com.google.cloud.orgpolicy.v1.PolicyOrBuilder>
+        orgPolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public java.util.List<com.google.cloud.orgpolicy.v1.Policy> getOrgPolicyList() {
+      if (orgPolicyBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(orgPolicy_);
+      } else {
+        return orgPolicyBuilder_.getMessageList();
       }
     }
     /**
      *
      *
      * <pre>
-     * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-     * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ends at root. If the asset is a CRM
-     * project/folder/organization, this starts from the asset itself.
-     * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public int getOrgPolicyCount() {
+      if (orgPolicyBuilder_ == null) {
+        return orgPolicy_.size();
+      } else {
+        return orgPolicyBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public com.google.cloud.orgpolicy.v1.Policy getOrgPolicy(int index) {
+      if (orgPolicyBuilder_ == null) {
+        return orgPolicy_.get(index);
+      } else {
+        return orgPolicyBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public Builder setOrgPolicy(int index, com.google.cloud.orgpolicy.v1.Policy value) {
+      if (orgPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOrgPolicyIsMutable();
+        orgPolicy_.set(index, value);
+        onChanged();
+      } else {
+        orgPolicyBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public Builder setOrgPolicy(
+        int index, com.google.cloud.orgpolicy.v1.Policy.Builder builderForValue) {
+      if (orgPolicyBuilder_ == null) {
+        ensureOrgPolicyIsMutable();
+        orgPolicy_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        orgPolicyBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public Builder addOrgPolicy(com.google.cloud.orgpolicy.v1.Policy value) {
+      if (orgPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOrgPolicyIsMutable();
+        orgPolicy_.add(value);
+        onChanged();
+      } else {
+        orgPolicyBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public Builder addOrgPolicy(int index, com.google.cloud.orgpolicy.v1.Policy value) {
+      if (orgPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOrgPolicyIsMutable();
+        orgPolicy_.add(index, value);
+        onChanged();
+      } else {
+        orgPolicyBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public Builder addOrgPolicy(com.google.cloud.orgpolicy.v1.Policy.Builder builderForValue) {
+      if (orgPolicyBuilder_ == null) {
+        ensureOrgPolicyIsMutable();
+        orgPolicy_.add(builderForValue.build());
+        onChanged();
+      } else {
+        orgPolicyBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public Builder addOrgPolicy(
+        int index, com.google.cloud.orgpolicy.v1.Policy.Builder builderForValue) {
+      if (orgPolicyBuilder_ == null) {
+        ensureOrgPolicyIsMutable();
+        orgPolicy_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        orgPolicyBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public Builder addAllOrgPolicy(
+        java.lang.Iterable<? extends com.google.cloud.orgpolicy.v1.Policy> values) {
+      if (orgPolicyBuilder_ == null) {
+        ensureOrgPolicyIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, orgPolicy_);
+        onChanged();
+      } else {
+        orgPolicyBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public Builder clearOrgPolicy() {
+      if (orgPolicyBuilder_ == null) {
+        orgPolicy_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        orgPolicyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public Builder removeOrgPolicy(int index) {
+      if (orgPolicyBuilder_ == null) {
+        ensureOrgPolicyIsMutable();
+        orgPolicy_.remove(index);
+        onChanged();
+      } else {
+        orgPolicyBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public com.google.cloud.orgpolicy.v1.Policy.Builder getOrgPolicyBuilder(int index) {
+      return getOrgPolicyFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public com.google.cloud.orgpolicy.v1.PolicyOrBuilder getOrgPolicyOrBuilder(int index) {
+      if (orgPolicyBuilder_ == null) {
+        return orgPolicy_.get(index);
+      } else {
+        return orgPolicyBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public java.util.List<? extends com.google.cloud.orgpolicy.v1.PolicyOrBuilder>
+        getOrgPolicyOrBuilderList() {
+      if (orgPolicyBuilder_ != null) {
+        return orgPolicyBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(orgPolicy_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public com.google.cloud.orgpolicy.v1.Policy.Builder addOrgPolicyBuilder() {
+      return getOrgPolicyFieldBuilder()
+          .addBuilder(com.google.cloud.orgpolicy.v1.Policy.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public com.google.cloud.orgpolicy.v1.Policy.Builder addOrgPolicyBuilder(int index) {
+      return getOrgPolicyFieldBuilder()
+          .addBuilder(index, com.google.cloud.orgpolicy.v1.Policy.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of an [organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+     * There can be more than one organization policy with different constraints
+     * set on a given resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+     */
+    public java.util.List<com.google.cloud.orgpolicy.v1.Policy.Builder> getOrgPolicyBuilderList() {
+      return getOrgPolicyFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.orgpolicy.v1.Policy,
+            com.google.cloud.orgpolicy.v1.Policy.Builder,
+            com.google.cloud.orgpolicy.v1.PolicyOrBuilder>
+        getOrgPolicyFieldBuilder() {
+      if (orgPolicyBuilder_ == null) {
+        orgPolicyBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.orgpolicy.v1.Policy,
+                com.google.cloud.orgpolicy.v1.Policy.Builder,
+                com.google.cloud.orgpolicy.v1.PolicyOrBuilder>(
+                orgPolicy_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        orgPolicy_ = null;
+      }
+      return orgPolicyBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.identity.accesscontextmanager.v1.AccessPolicy,
+            com.google.identity.accesscontextmanager.v1.AccessPolicy.Builder,
+            com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder>
+        accessPolicyBuilder_;
+    /**
+     * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+     *
+     * @return Whether the accessPolicy field is set.
+     */
+    public boolean hasAccessPolicy() {
+      return accessContextPolicyCase_ == 7;
+    }
+    /**
+     * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+     *
+     * @return The accessPolicy.
+     */
+    public com.google.identity.accesscontextmanager.v1.AccessPolicy getAccessPolicy() {
+      if (accessPolicyBuilder_ == null) {
+        if (accessContextPolicyCase_ == 7) {
+          return (com.google.identity.accesscontextmanager.v1.AccessPolicy) accessContextPolicy_;
+        }
+        return com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance();
+      } else {
+        if (accessContextPolicyCase_ == 7) {
+          return accessPolicyBuilder_.getMessage();
+        }
+        return com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance();
+      }
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    public Builder setAccessPolicy(com.google.identity.accesscontextmanager.v1.AccessPolicy value) {
+      if (accessPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        accessContextPolicy_ = value;
+        onChanged();
+      } else {
+        accessPolicyBuilder_.setMessage(value);
+      }
+      accessContextPolicyCase_ = 7;
+      return this;
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    public Builder setAccessPolicy(
+        com.google.identity.accesscontextmanager.v1.AccessPolicy.Builder builderForValue) {
+      if (accessPolicyBuilder_ == null) {
+        accessContextPolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        accessPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      accessContextPolicyCase_ = 7;
+      return this;
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    public Builder mergeAccessPolicy(
+        com.google.identity.accesscontextmanager.v1.AccessPolicy value) {
+      if (accessPolicyBuilder_ == null) {
+        if (accessContextPolicyCase_ == 7
+            && accessContextPolicy_
+                != com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance()) {
+          accessContextPolicy_ =
+              com.google.identity.accesscontextmanager.v1.AccessPolicy.newBuilder(
+                      (com.google.identity.accesscontextmanager.v1.AccessPolicy)
+                          accessContextPolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          accessContextPolicy_ = value;
+        }
+        onChanged();
+      } else {
+        if (accessContextPolicyCase_ == 7) {
+          accessPolicyBuilder_.mergeFrom(value);
+        }
+        accessPolicyBuilder_.setMessage(value);
+      }
+      accessContextPolicyCase_ = 7;
+      return this;
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    public Builder clearAccessPolicy() {
+      if (accessPolicyBuilder_ == null) {
+        if (accessContextPolicyCase_ == 7) {
+          accessContextPolicyCase_ = 0;
+          accessContextPolicy_ = null;
+          onChanged();
+        }
+      } else {
+        if (accessContextPolicyCase_ == 7) {
+          accessContextPolicyCase_ = 0;
+          accessContextPolicy_ = null;
+        }
+        accessPolicyBuilder_.clear();
+      }
+      return this;
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    public com.google.identity.accesscontextmanager.v1.AccessPolicy.Builder
+        getAccessPolicyBuilder() {
+      return getAccessPolicyFieldBuilder().getBuilder();
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    public com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder
+        getAccessPolicyOrBuilder() {
+      if ((accessContextPolicyCase_ == 7) && (accessPolicyBuilder_ != null)) {
+        return accessPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        if (accessContextPolicyCase_ == 7) {
+          return (com.google.identity.accesscontextmanager.v1.AccessPolicy) accessContextPolicy_;
+        }
+        return com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance();
+      }
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.identity.accesscontextmanager.v1.AccessPolicy,
+            com.google.identity.accesscontextmanager.v1.AccessPolicy.Builder,
+            com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder>
+        getAccessPolicyFieldBuilder() {
+      if (accessPolicyBuilder_ == null) {
+        if (!(accessContextPolicyCase_ == 7)) {
+          accessContextPolicy_ =
+              com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance();
+        }
+        accessPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.identity.accesscontextmanager.v1.AccessPolicy,
+                com.google.identity.accesscontextmanager.v1.AccessPolicy.Builder,
+                com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder>(
+                (com.google.identity.accesscontextmanager.v1.AccessPolicy) accessContextPolicy_,
+                getParentForChildren(),
+                isClean());
+        accessContextPolicy_ = null;
+      }
+      accessContextPolicyCase_ = 7;
+      onChanged();
+      ;
+      return accessPolicyBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.identity.accesscontextmanager.v1.AccessLevel,
+            com.google.identity.accesscontextmanager.v1.AccessLevel.Builder,
+            com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder>
+        accessLevelBuilder_;
+    /**
+     * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+     *
+     * @return Whether the accessLevel field is set.
+     */
+    public boolean hasAccessLevel() {
+      return accessContextPolicyCase_ == 8;
+    }
+    /**
+     * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+     *
+     * @return The accessLevel.
+     */
+    public com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevel() {
+      if (accessLevelBuilder_ == null) {
+        if (accessContextPolicyCase_ == 8) {
+          return (com.google.identity.accesscontextmanager.v1.AccessLevel) accessContextPolicy_;
+        }
+        return com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance();
+      } else {
+        if (accessContextPolicyCase_ == 8) {
+          return accessLevelBuilder_.getMessage();
+        }
+        return com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance();
+      }
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    public Builder setAccessLevel(com.google.identity.accesscontextmanager.v1.AccessLevel value) {
+      if (accessLevelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        accessContextPolicy_ = value;
+        onChanged();
+      } else {
+        accessLevelBuilder_.setMessage(value);
+      }
+      accessContextPolicyCase_ = 8;
+      return this;
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    public Builder setAccessLevel(
+        com.google.identity.accesscontextmanager.v1.AccessLevel.Builder builderForValue) {
+      if (accessLevelBuilder_ == null) {
+        accessContextPolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        accessLevelBuilder_.setMessage(builderForValue.build());
+      }
+      accessContextPolicyCase_ = 8;
+      return this;
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    public Builder mergeAccessLevel(com.google.identity.accesscontextmanager.v1.AccessLevel value) {
+      if (accessLevelBuilder_ == null) {
+        if (accessContextPolicyCase_ == 8
+            && accessContextPolicy_
+                != com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance()) {
+          accessContextPolicy_ =
+              com.google.identity.accesscontextmanager.v1.AccessLevel.newBuilder(
+                      (com.google.identity.accesscontextmanager.v1.AccessLevel)
+                          accessContextPolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          accessContextPolicy_ = value;
+        }
+        onChanged();
+      } else {
+        if (accessContextPolicyCase_ == 8) {
+          accessLevelBuilder_.mergeFrom(value);
+        }
+        accessLevelBuilder_.setMessage(value);
+      }
+      accessContextPolicyCase_ = 8;
+      return this;
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    public Builder clearAccessLevel() {
+      if (accessLevelBuilder_ == null) {
+        if (accessContextPolicyCase_ == 8) {
+          accessContextPolicyCase_ = 0;
+          accessContextPolicy_ = null;
+          onChanged();
+        }
+      } else {
+        if (accessContextPolicyCase_ == 8) {
+          accessContextPolicyCase_ = 0;
+          accessContextPolicy_ = null;
+        }
+        accessLevelBuilder_.clear();
+      }
+      return this;
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    public com.google.identity.accesscontextmanager.v1.AccessLevel.Builder getAccessLevelBuilder() {
+      return getAccessLevelFieldBuilder().getBuilder();
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    public com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder
+        getAccessLevelOrBuilder() {
+      if ((accessContextPolicyCase_ == 8) && (accessLevelBuilder_ != null)) {
+        return accessLevelBuilder_.getMessageOrBuilder();
+      } else {
+        if (accessContextPolicyCase_ == 8) {
+          return (com.google.identity.accesscontextmanager.v1.AccessLevel) accessContextPolicy_;
+        }
+        return com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance();
+      }
+    }
+    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.identity.accesscontextmanager.v1.AccessLevel,
+            com.google.identity.accesscontextmanager.v1.AccessLevel.Builder,
+            com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder>
+        getAccessLevelFieldBuilder() {
+      if (accessLevelBuilder_ == null) {
+        if (!(accessContextPolicyCase_ == 8)) {
+          accessContextPolicy_ =
+              com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance();
+        }
+        accessLevelBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.identity.accesscontextmanager.v1.AccessLevel,
+                com.google.identity.accesscontextmanager.v1.AccessLevel.Builder,
+                com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder>(
+                (com.google.identity.accesscontextmanager.v1.AccessLevel) accessContextPolicy_,
+                getParentForChildren(),
+                isClean());
+        accessContextPolicy_ = null;
+      }
+      accessContextPolicyCase_ = 8;
+      onChanged();
+      ;
+      return accessLevelBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.identity.accesscontextmanager.v1.ServicePerimeter,
+            com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder,
+            com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder>
+        servicePerimeterBuilder_;
+    /**
+     * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+     *
+     * @return Whether the servicePerimeter field is set.
+     */
+    public boolean hasServicePerimeter() {
+      return accessContextPolicyCase_ == 9;
+    }
+    /**
+     * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+     *
+     * @return The servicePerimeter.
+     */
+    public com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeter() {
+      if (servicePerimeterBuilder_ == null) {
+        if (accessContextPolicyCase_ == 9) {
+          return (com.google.identity.accesscontextmanager.v1.ServicePerimeter)
+              accessContextPolicy_;
+        }
+        return com.google.identity.accesscontextmanager.v1.ServicePerimeter.getDefaultInstance();
+      } else {
+        if (accessContextPolicyCase_ == 9) {
+          return servicePerimeterBuilder_.getMessage();
+        }
+        return com.google.identity.accesscontextmanager.v1.ServicePerimeter.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+     */
+    public Builder setServicePerimeter(
+        com.google.identity.accesscontextmanager.v1.ServicePerimeter value) {
+      if (servicePerimeterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        accessContextPolicy_ = value;
+        onChanged();
+      } else {
+        servicePerimeterBuilder_.setMessage(value);
+      }
+      accessContextPolicyCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+     */
+    public Builder setServicePerimeter(
+        com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder builderForValue) {
+      if (servicePerimeterBuilder_ == null) {
+        accessContextPolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        servicePerimeterBuilder_.setMessage(builderForValue.build());
+      }
+      accessContextPolicyCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+     */
+    public Builder mergeServicePerimeter(
+        com.google.identity.accesscontextmanager.v1.ServicePerimeter value) {
+      if (servicePerimeterBuilder_ == null) {
+        if (accessContextPolicyCase_ == 9
+            && accessContextPolicy_
+                != com.google.identity.accesscontextmanager.v1.ServicePerimeter
+                    .getDefaultInstance()) {
+          accessContextPolicy_ =
+              com.google.identity.accesscontextmanager.v1.ServicePerimeter.newBuilder(
+                      (com.google.identity.accesscontextmanager.v1.ServicePerimeter)
+                          accessContextPolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          accessContextPolicy_ = value;
+        }
+        onChanged();
+      } else {
+        if (accessContextPolicyCase_ == 9) {
+          servicePerimeterBuilder_.mergeFrom(value);
+        }
+        servicePerimeterBuilder_.setMessage(value);
+      }
+      accessContextPolicyCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+     */
+    public Builder clearServicePerimeter() {
+      if (servicePerimeterBuilder_ == null) {
+        if (accessContextPolicyCase_ == 9) {
+          accessContextPolicyCase_ = 0;
+          accessContextPolicy_ = null;
+          onChanged();
+        }
+      } else {
+        if (accessContextPolicyCase_ == 9) {
+          accessContextPolicyCase_ = 0;
+          accessContextPolicy_ = null;
+        }
+        servicePerimeterBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+     */
+    public com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder
+        getServicePerimeterBuilder() {
+      return getServicePerimeterFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+     */
+    public com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder
+        getServicePerimeterOrBuilder() {
+      if ((accessContextPolicyCase_ == 9) && (servicePerimeterBuilder_ != null)) {
+        return servicePerimeterBuilder_.getMessageOrBuilder();
+      } else {
+        if (accessContextPolicyCase_ == 9) {
+          return (com.google.identity.accesscontextmanager.v1.ServicePerimeter)
+              accessContextPolicy_;
+        }
+        return com.google.identity.accesscontextmanager.v1.ServicePerimeter.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.identity.accesscontextmanager.v1.ServicePerimeter,
+            com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder,
+            com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder>
+        getServicePerimeterFieldBuilder() {
+      if (servicePerimeterBuilder_ == null) {
+        if (!(accessContextPolicyCase_ == 9)) {
+          accessContextPolicy_ =
+              com.google.identity.accesscontextmanager.v1.ServicePerimeter.getDefaultInstance();
+        }
+        servicePerimeterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.identity.accesscontextmanager.v1.ServicePerimeter,
+                com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder,
+                com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder>(
+                (com.google.identity.accesscontextmanager.v1.ServicePerimeter) accessContextPolicy_,
+                getParentForChildren(),
+                isClean());
+        accessContextPolicy_ = null;
+      }
+      accessContextPolicyCase_ = 9;
+      onChanged();
+      ;
+      return servicePerimeterBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList ancestors_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureAncestorsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        ancestors_ = new com.google.protobuf.LazyStringArrayList(ancestors_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ancestry path of an asset in Google Cloud [resource
+     * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+     * represented as a list of relative resource names. An ancestry path starts
+     * with the closest ancestor in the hierarchy and ends at root. If the asset
+     * is a project, folder, or organization, the ancestry path starts from the
+     * asset itself.
+     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -1488,11 +2929,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-     * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ends at root. If the asset is a CRM
-     * project/folder/organization, this starts from the asset itself.
-     * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+     * The ancestry path of an asset in Google Cloud [resource
+     * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+     * represented as a list of relative resource names. An ancestry path starts
+     * with the closest ancestor in the hierarchy and ends at root. If the asset
+     * is a project, folder, or organization, the ancestry path starts from the
+     * asset itself.
+     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -1506,11 +2949,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-     * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ends at root. If the asset is a CRM
-     * project/folder/organization, this starts from the asset itself.
-     * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+     * The ancestry path of an asset in Google Cloud [resource
+     * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+     * represented as a list of relative resource names. An ancestry path starts
+     * with the closest ancestor in the hierarchy and ends at root. If the asset
+     * is a project, folder, or organization, the ancestry path starts from the
+     * asset itself.
+     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -1525,11 +2970,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-     * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ends at root. If the asset is a CRM
-     * project/folder/organization, this starts from the asset itself.
-     * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+     * The ancestry path of an asset in Google Cloud [resource
+     * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+     * represented as a list of relative resource names. An ancestry path starts
+     * with the closest ancestor in the hierarchy and ends at root. If the asset
+     * is a project, folder, or organization, the ancestry path starts from the
+     * asset itself.
+     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -1544,11 +2991,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-     * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ends at root. If the asset is a CRM
-     * project/folder/organization, this starts from the asset itself.
-     * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+     * The ancestry path of an asset in Google Cloud [resource
+     * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+     * represented as a list of relative resource names. An ancestry path starts
+     * with the closest ancestor in the hierarchy and ends at root. If the asset
+     * is a project, folder, or organization, the ancestry path starts from the
+     * asset itself.
+     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -1570,11 +3019,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-     * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ends at root. If the asset is a CRM
-     * project/folder/organization, this starts from the asset itself.
-     * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+     * The ancestry path of an asset in Google Cloud [resource
+     * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+     * represented as a list of relative resource names. An ancestry path starts
+     * with the closest ancestor in the hierarchy and ends at root. If the asset
+     * is a project, folder, or organization, the ancestry path starts from the
+     * asset itself.
+     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -1595,11 +3046,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-     * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ends at root. If the asset is a CRM
-     * project/folder/organization, this starts from the asset itself.
-     * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+     * The ancestry path of an asset in Google Cloud [resource
+     * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+     * represented as a list of relative resource names. An ancestry path starts
+     * with the closest ancestor in the hierarchy and ends at root. If the asset
+     * is a project, folder, or organization, the ancestry path starts from the
+     * asset itself.
+     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -1617,11 +3070,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-     * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ends at root. If the asset is a CRM
-     * project/folder/organization, this starts from the asset itself.
-     * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+     * The ancestry path of an asset in Google Cloud [resource
+     * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+     * represented as a list of relative resource names. An ancestry path starts
+     * with the closest ancestor in the hierarchy and ends at root. If the asset
+     * is a project, folder, or organization, the ancestry path starts from the
+     * asset itself.
+     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -1630,7 +3085,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAncestors() {
       ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1638,11 +3093,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-     * represented as a list of relative resource names. Ancestry path starts with
-     * the closest CRM ancestor and ends at root. If the asset is a CRM
-     * project/folder/organization, this starts from the asset itself.
-     * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+     * The ancestry path of an asset in Google Cloud [resource
+     * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+     * represented as a list of relative resource names. An ancestry path starts
+     * with the closest ancestor in the hierarchy and ends at root. If the asset
+     * is a project, folder, or organization, the ancestry path starts from the
+     * asset itself.
+     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>

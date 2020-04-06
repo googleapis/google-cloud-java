@@ -62,8 +62,8 @@ public interface TimeWindowOrBuilder
    *
    *
    * <pre>
-   * End time of the time window (inclusive).
-   * Current timestamp if not specified.
+   * End time of the time window (inclusive). If not specified, the current
+   * timestamp is used instead.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -75,8 +75,8 @@ public interface TimeWindowOrBuilder
    *
    *
    * <pre>
-   * End time of the time window (inclusive).
-   * Current timestamp if not specified.
+   * End time of the time window (inclusive). If not specified, the current
+   * timestamp is used instead.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -88,8 +88,8 @@ public interface TimeWindowOrBuilder
    *
    *
    * <pre>
-   * End time of the time window (inclusive).
-   * Current timestamp if not specified.
+   * End time of the time window (inclusive). If not specified, the current
+   * timestamp is used instead.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>

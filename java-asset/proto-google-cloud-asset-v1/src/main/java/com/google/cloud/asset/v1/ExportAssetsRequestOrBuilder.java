@@ -63,10 +63,10 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * Timestamp to take an asset snapshot. This can only be set to a timestamp
-   * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-   * the current time will be used. Due to delays in resource data collection
-   * and indexing, there is a volatile window during which running the same
-   * query may get different results.
+   * between the current time and the current time minus 35 days (inclusive).
+   * If not specified, the current time will be used. Due to delays in resource
+   * data collection and indexing, there is a volatile window during which
+   * running the same query may get different results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -79,10 +79,10 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * Timestamp to take an asset snapshot. This can only be set to a timestamp
-   * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-   * the current time will be used. Due to delays in resource data collection
-   * and indexing, there is a volatile window during which running the same
-   * query may get different results.
+   * between the current time and the current time minus 35 days (inclusive).
+   * If not specified, the current time will be used. Due to delays in resource
+   * data collection and indexing, there is a volatile window during which
+   * running the same query may get different results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -95,10 +95,10 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * Timestamp to take an asset snapshot. This can only be set to a timestamp
-   * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-   * the current time will be used. Due to delays in resource data collection
-   * and indexing, there is a volatile window during which running the same
-   * query may get different results.
+   * between the current time and the current time minus 35 days (inclusive).
+   * If not specified, the current time will be used. Due to delays in resource
+   * data collection and indexing, there is a volatile window during which
+   * running the same query may get different results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>

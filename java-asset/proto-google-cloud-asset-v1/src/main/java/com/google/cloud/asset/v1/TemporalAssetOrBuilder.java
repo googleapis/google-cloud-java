@@ -62,7 +62,7 @@ public interface TemporalAssetOrBuilder
    *
    *
    * <pre>
-   * If the asset is deleted or not.
+   * Whether the asset has been deleted or not.
    * </pre>
    *
    * <code>bool deleted = 2;</code>
@@ -75,7 +75,7 @@ public interface TemporalAssetOrBuilder
    *
    *
    * <pre>
-   * Asset.
+   * An asset in Google Cloud.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -87,7 +87,7 @@ public interface TemporalAssetOrBuilder
    *
    *
    * <pre>
-   * Asset.
+   * An asset in Google Cloud.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -99,7 +99,7 @@ public interface TemporalAssetOrBuilder
    *
    *
    * <pre>
-   * Asset.
+   * An asset in Google Cloud.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>

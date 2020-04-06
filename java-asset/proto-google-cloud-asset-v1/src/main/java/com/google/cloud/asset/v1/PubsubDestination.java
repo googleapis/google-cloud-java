@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * A Cloud Pubsub destination.
+ * A Pub/Sub destination.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.PubsubDestination}
@@ -117,7 +117,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The name of the Cloud Pub/Sub topic to publish to.
+   * The name of the Pub/Sub topic to publish to.
    * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
    * </pre>
    *
@@ -140,7 +140,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The name of the Cloud Pub/Sub topic to publish to.
+   * The name of the Pub/Sub topic to publish to.
    * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
    * </pre>
    *
@@ -323,7 +323,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A Cloud Pubsub destination.
+   * A Pub/Sub destination.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.PubsubDestination}
@@ -481,7 +481,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the Cloud Pub/Sub topic to publish to.
+     * The name of the Pub/Sub topic to publish to.
      * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
      * </pre>
      *
@@ -504,7 +504,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the Cloud Pub/Sub topic to publish to.
+     * The name of the Pub/Sub topic to publish to.
      * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
      * </pre>
      *
@@ -527,7 +527,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the Cloud Pub/Sub topic to publish to.
+     * The name of the Pub/Sub topic to publish to.
      * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
      * </pre>
      *
@@ -549,7 +549,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the Cloud Pub/Sub topic to publish to.
+     * The name of the Pub/Sub topic to publish to.
      * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
      * </pre>
      *
@@ -567,7 +567,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the Cloud Pub/Sub topic to publish to.
+     * The name of the Pub/Sub topic to publish to.
      * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
      * </pre>
      *

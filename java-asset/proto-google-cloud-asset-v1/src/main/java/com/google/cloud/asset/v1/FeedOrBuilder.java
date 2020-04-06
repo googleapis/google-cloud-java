@@ -144,10 +144,10 @@ public interface FeedOrBuilder
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
    * specified asset_names and asset_types are exported to the feed.
-   * For example:
-   * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
-   * for all supported asset types.
+   * For example: `"compute.googleapis.com/Disk"`
+   * See [this
+   * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+   * for a list of all supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
@@ -162,10 +162,10 @@ public interface FeedOrBuilder
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
    * specified asset_names and asset_types are exported to the feed.
-   * For example:
-   * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
-   * for all supported asset types.
+   * For example: `"compute.googleapis.com/Disk"`
+   * See [this
+   * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+   * for a list of all supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
@@ -180,10 +180,10 @@ public interface FeedOrBuilder
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
    * specified asset_names and asset_types are exported to the feed.
-   * For example:
-   * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
-   * for all supported asset types.
+   * For example: `"compute.googleapis.com/Disk"`
+   * See [this
+   * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+   * for a list of all supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
@@ -199,10 +199,10 @@ public interface FeedOrBuilder
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
    * specified asset_names and asset_types are exported to the feed.
-   * For example:
-   * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
-   * for all supported asset types.
+   * For example: `"compute.googleapis.com/Disk"`
+   * See [this
+   * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+   * for a list of all supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>

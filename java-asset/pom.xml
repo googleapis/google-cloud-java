@@ -197,6 +197,16 @@
         <artifactId>animal-sniffer-annotations</artifactId>
         <version>${animal-sniffer.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-orgpolicy-v1</artifactId>
+        <version>0.1.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-identity-accesscontextmanager-v1</artifactId>
+        <version>0.1.0</version>
+      </dependency>
 
       <dependency>
         <groupId>junit</groupId>

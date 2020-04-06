@@ -54,36 +54,54 @@ public final class AssetProto {
     java.lang.String[] descriptorData = {
       "\n\"google/cloud/asset/v1/assets.proto\022\025go"
           + "ogle.cloud.asset.v1\032\031google/api/resource"
-          + ".proto\032\032google/iam/v1/policy.proto\032\031goog"
-          + "le/protobuf/any.proto\032\034google/protobuf/s"
-          + "truct.proto\032\037google/protobuf/timestamp.p"
-          + "roto\032\034google/api/annotations.proto\"\200\001\n\rT"
-          + "emporalAsset\0221\n\006window\030\001 \001(\0132!.google.cl"
-          + "oud.asset.v1.TimeWindow\022\017\n\007deleted\030\002 \001(\010"
-          + "\022+\n\005asset\030\003 \001(\0132\034.google.cloud.asset.v1."
-          + "Asset\"j\n\nTimeWindow\022.\n\nstart_time\030\001 \001(\0132"
-          + "\032.google.protobuf.Timestamp\022,\n\010end_time\030"
-          + "\002 \001(\0132\032.google.protobuf.Timestamp\"\303\001\n\005As"
-          + "set\022\014\n\004name\030\001 \001(\t\022\022\n\nasset_type\030\002 \001(\t\0221\n"
-          + "\010resource\030\003 \001(\0132\037.google.cloud.asset.v1."
-          + "Resource\022)\n\niam_policy\030\004 \001(\0132\025.google.ia"
-          + "m.v1.Policy\022\021\n\tancestors\030\n \003(\t:\'\352A$\n\037clo"
-          + "udasset.googleapis.com/Asset\022\001*\"\240\001\n\010Reso"
-          + "urce\022\017\n\007version\030\001 \001(\t\022\036\n\026discovery_docum"
-          + "ent_uri\030\002 \001(\t\022\026\n\016discovery_name\030\003 \001(\t\022\024\n"
-          + "\014resource_url\030\004 \001(\t\022\016\n\006parent\030\005 \001(\t\022%\n\004d"
-          + "ata\030\006 \001(\0132\027.google.protobuf.StructB\230\001\n\031c"
-          + "om.google.cloud.asset.v1B\nAssetProtoP\001Z:"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/asset/v1;asset\370\001\001\252\002\025Google.Cloud.Ass"
-          + "et.V1\312\002\025Google\\Cloud\\Asset\\V1b\006proto3"
+          + ".proto\032)google/cloud/orgpolicy/v1/orgpol"
+          + "icy.proto\032\032google/iam/v1/policy.proto\032:g"
+          + "oogle/identity/accesscontextmanager/v1/a"
+          + "ccess_level.proto\032;google/identity/acces"
+          + "scontextmanager/v1/access_policy.proto\032?"
+          + "google/identity/accesscontextmanager/v1/"
+          + "service_perimeter.proto\032\031google/protobuf"
+          + "/any.proto\032\034google/protobuf/struct.proto"
+          + "\032\037google/protobuf/timestamp.proto\032\034googl"
+          + "e/api/annotations.proto\"\200\001\n\rTemporalAsse"
+          + "t\0221\n\006window\030\001 \001(\0132!.google.cloud.asset.v"
+          + "1.TimeWindow\022\017\n\007deleted\030\002 \001(\010\022+\n\005asset\030\003"
+          + " \001(\0132\034.google.cloud.asset.v1.Asset\"j\n\nTi"
+          + "meWindow\022.\n\nstart_time\030\001 \001(\0132\032.google.pr"
+          + "otobuf.Timestamp\022,\n\010end_time\030\002 \001(\0132\032.goo"
+          + "gle.protobuf.Timestamp\"\211\004\n\005Asset\022\014\n\004name"
+          + "\030\001 \001(\t\022\022\n\nasset_type\030\002 \001(\t\0221\n\010resource\030\003"
+          + " \001(\0132\037.google.cloud.asset.v1.Resource\022)\n"
+          + "\niam_policy\030\004 \001(\0132\025.google.iam.v1.Policy"
+          + "\0225\n\norg_policy\030\006 \003(\0132!.google.cloud.orgp"
+          + "olicy.v1.Policy\022N\n\raccess_policy\030\007 \001(\01325"
+          + ".google.identity.accesscontextmanager.v1"
+          + ".AccessPolicyH\000\022L\n\014access_level\030\010 \001(\01324."
+          + "google.identity.accesscontextmanager.v1."
+          + "AccessLevelH\000\022V\n\021service_perimeter\030\t \001(\013"
+          + "29.google.identity.accesscontextmanager."
+          + "v1.ServicePerimeterH\000\022\021\n\tancestors\030\n \003(\t"
+          + ":\'\352A$\n\037cloudasset.googleapis.com/Asset\022\001"
+          + "*B\027\n\025access_context_policy\"\240\001\n\010Resource\022"
+          + "\017\n\007version\030\001 \001(\t\022\036\n\026discovery_document_u"
+          + "ri\030\002 \001(\t\022\026\n\016discovery_name\030\003 \001(\t\022\024\n\014reso"
+          + "urce_url\030\004 \001(\t\022\016\n\006parent\030\005 \001(\t\022%\n\004data\030\006"
+          + " \001(\0132\027.google.protobuf.StructB\230\001\n\031com.go"
+          + "ogle.cloud.asset.v1B\nAssetProtoP\001Z:googl"
+          + "e.golang.org/genproto/googleapis/cloud/a"
+          + "sset/v1;asset\370\001\001\252\002\025Google.Cloud.Asset.V1"
+          + "\312\002\025Google\\Cloud\\Asset\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.orgpolicy.v1.OrgPolicyProto.getDescriptor(),
               com.google.iam.v1.PolicyProto.getDescriptor(),
+              com.google.identity.accesscontextmanager.v1.AccessLevelProto.getDescriptor(),
+              com.google.identity.accesscontextmanager.v1.PolicyProto.getDescriptor(),
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterProto.getDescriptor(),
               com.google.protobuf.AnyProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -111,7 +129,16 @@ public final class AssetProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_asset_v1_Asset_descriptor,
             new java.lang.String[] {
-              "Name", "AssetType", "Resource", "IamPolicy", "Ancestors",
+              "Name",
+              "AssetType",
+              "Resource",
+              "IamPolicy",
+              "OrgPolicy",
+              "AccessPolicy",
+              "AccessLevel",
+              "ServicePerimeter",
+              "Ancestors",
+              "AccessContextPolicy",
             });
     internal_static_google_cloud_asset_v1_Resource_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -127,7 +154,11 @@ public final class AssetProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.orgpolicy.v1.OrgPolicyProto.getDescriptor();
     com.google.iam.v1.PolicyProto.getDescriptor();
+    com.google.identity.accesscontextmanager.v1.AccessLevelProto.getDescriptor();
+    com.google.identity.accesscontextmanager.v1.PolicyProto.getDescriptor();
+    com.google.identity.accesscontextmanager.v1.ServicePerimeterProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

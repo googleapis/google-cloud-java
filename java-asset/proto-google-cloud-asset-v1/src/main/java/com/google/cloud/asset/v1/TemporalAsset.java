@@ -22,8 +22,8 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * Temporal asset. In addition to the asset, the temporal asset includes the
- * status of the asset and valid from and to time of it.
+ * An asset in Google Cloud and its temporal metadata, including the time window
+ * when it was observed and its status during that window.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.TemporalAsset}
@@ -188,7 +188,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If the asset is deleted or not.
+   * Whether the asset has been deleted or not.
    * </pre>
    *
    * <code>bool deleted = 2;</code>
@@ -205,7 +205,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Asset.
+   * An asset in Google Cloud.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -219,7 +219,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Asset.
+   * An asset in Google Cloud.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -233,7 +233,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Asset.
+   * An asset in Google Cloud.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -432,8 +432,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Temporal asset. In addition to the asset, the temporal asset includes the
-   * status of the asset and valid from and to time of it.
+   * An asset in Google Cloud and its temporal metadata, including the time window
+   * when it was observed and its status during that window.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.TemporalAsset}
@@ -803,7 +803,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If the asset is deleted or not.
+     * Whether the asset has been deleted or not.
      * </pre>
      *
      * <code>bool deleted = 2;</code>
@@ -817,7 +817,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If the asset is deleted or not.
+     * Whether the asset has been deleted or not.
      * </pre>
      *
      * <code>bool deleted = 2;</code>
@@ -835,7 +835,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If the asset is deleted or not.
+     * Whether the asset has been deleted or not.
      * </pre>
      *
      * <code>bool deleted = 2;</code>
@@ -859,7 +859,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset.
+     * An asset in Google Cloud.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -873,7 +873,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset.
+     * An asset in Google Cloud.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -891,7 +891,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset.
+     * An asset in Google Cloud.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -913,7 +913,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset.
+     * An asset in Google Cloud.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -932,7 +932,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset.
+     * An asset in Google Cloud.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -956,7 +956,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset.
+     * An asset in Google Cloud.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -976,7 +976,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset.
+     * An asset in Google Cloud.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -990,7 +990,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset.
+     * An asset in Google Cloud.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -1006,7 +1006,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Asset.
+     * An asset in Google Cloud.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>

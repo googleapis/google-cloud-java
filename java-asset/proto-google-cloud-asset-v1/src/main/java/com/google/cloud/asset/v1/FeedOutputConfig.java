@@ -168,7 +168,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Destination on Cloud Pubsub.
+   * Destination on Pub/Sub.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>
@@ -182,7 +182,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Destination on Cloud Pubsub.
+   * Destination on Pub/Sub.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>
@@ -199,7 +199,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Destination on Cloud Pubsub.
+   * Destination on Pub/Sub.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>
@@ -579,7 +579,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Destination on Cloud Pubsub.
+     * Destination on Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>
@@ -593,7 +593,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Destination on Cloud Pubsub.
+     * Destination on Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>
@@ -617,7 +617,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Destination on Cloud Pubsub.
+     * Destination on Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>
@@ -639,7 +639,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Destination on Cloud Pubsub.
+     * Destination on Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>
@@ -659,7 +659,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Destination on Cloud Pubsub.
+     * Destination on Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>
@@ -690,7 +690,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Destination on Cloud Pubsub.
+     * Destination on Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>
@@ -715,7 +715,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Destination on Cloud Pubsub.
+     * Destination on Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>
@@ -727,7 +727,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Destination on Cloud Pubsub.
+     * Destination on Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>
@@ -746,7 +746,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Destination on Cloud Pubsub.
+     * Destination on Pub/Sub.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>

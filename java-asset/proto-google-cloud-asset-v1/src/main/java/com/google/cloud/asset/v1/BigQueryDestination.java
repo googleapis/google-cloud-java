@@ -133,7 +133,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * Required. The BigQuery dataset in format
    * "projects/projectId/datasets/datasetId", to which the snapshot result
    * should be exported. If this dataset does not exist, the export call returns
-   * an error.
+   * an INVALID_ARGUMENT error.
    * </pre>
    *
    * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -158,7 +158,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * Required. The BigQuery dataset in format
    * "projects/projectId/datasets/datasetId", to which the snapshot result
    * should be exported. If this dataset does not exist, the export call returns
-   * an error.
+   * an INVALID_ARGUMENT error.
    * </pre>
    *
    * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -236,8 +236,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * <pre>
    * If the destination table already exists and this flag is `TRUE`, the
    * table will be overwritten by the contents of assets snapshot. If the flag
-   * is not set and the destination table already exists, the export call
-   * returns an error.
+   * is `FALSE` or unset and the destination table already exists, the export
+   * call returns an INVALID_ARGUMEMT error.
    * </pre>
    *
    * <code>bool force = 3;</code>
@@ -603,7 +603,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * Required. The BigQuery dataset in format
      * "projects/projectId/datasets/datasetId", to which the snapshot result
      * should be exported. If this dataset does not exist, the export call returns
-     * an error.
+     * an INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -628,7 +628,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * Required. The BigQuery dataset in format
      * "projects/projectId/datasets/datasetId", to which the snapshot result
      * should be exported. If this dataset does not exist, the export call returns
-     * an error.
+     * an INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -653,7 +653,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * Required. The BigQuery dataset in format
      * "projects/projectId/datasets/datasetId", to which the snapshot result
      * should be exported. If this dataset does not exist, the export call returns
-     * an error.
+     * an INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -677,7 +677,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * Required. The BigQuery dataset in format
      * "projects/projectId/datasets/datasetId", to which the snapshot result
      * should be exported. If this dataset does not exist, the export call returns
-     * an error.
+     * an INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -697,7 +697,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * Required. The BigQuery dataset in format
      * "projects/projectId/datasets/datasetId", to which the snapshot result
      * should be exported. If this dataset does not exist, the export call returns
-     * an error.
+     * an INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -839,8 +839,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * If the destination table already exists and this flag is `TRUE`, the
      * table will be overwritten by the contents of assets snapshot. If the flag
-     * is not set and the destination table already exists, the export call
-     * returns an error.
+     * is `FALSE` or unset and the destination table already exists, the export
+     * call returns an INVALID_ARGUMEMT error.
      * </pre>
      *
      * <code>bool force = 3;</code>
@@ -856,8 +856,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * If the destination table already exists and this flag is `TRUE`, the
      * table will be overwritten by the contents of assets snapshot. If the flag
-     * is not set and the destination table already exists, the export call
-     * returns an error.
+     * is `FALSE` or unset and the destination table already exists, the export
+     * call returns an INVALID_ARGUMEMT error.
      * </pre>
      *
      * <code>bool force = 3;</code>
@@ -877,8 +877,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * If the destination table already exists and this flag is `TRUE`, the
      * table will be overwritten by the contents of assets snapshot. If the flag
-     * is not set and the destination table already exists, the export call
-     * returns an error.
+     * is `FALSE` or unset and the destination table already exists, the export
+     * call returns an INVALID_ARGUMEMT error.
      * </pre>
      *
      * <code>bool force = 3;</code>

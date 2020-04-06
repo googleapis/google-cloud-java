@@ -173,11 +173,11 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    *
    * <pre>
    * Optional. The time window for the asset history. Both start_time and
-   * end_time are optional and if set, it must be after 2018-10-02 UTC. If
-   * end_time is not set, it is default to current timestamp. If start_time is
-   * not set, the snapshot of the assets at end_time will be returned. The
-   * returned results contain all temporal assets whose time window overlap with
-   * read_time_window.
+   * end_time are optional and if set, it must be after the current time minus
+   * 35 days. If end_time is not set, it is default to current timestamp.
+   * If start_time is not set, the snapshot of the assets at end_time will be
+   * returned. The returned results contain all temporal assets whose time
+   * window overlap with read_time_window.
    * </pre>
    *
    * <code>
@@ -192,11 +192,11 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    *
    * <pre>
    * Optional. The time window for the asset history. Both start_time and
-   * end_time are optional and if set, it must be after 2018-10-02 UTC. If
-   * end_time is not set, it is default to current timestamp. If start_time is
-   * not set, the snapshot of the assets at end_time will be returned. The
-   * returned results contain all temporal assets whose time window overlap with
-   * read_time_window.
+   * end_time are optional and if set, it must be after the current time minus
+   * 35 days. If end_time is not set, it is default to current timestamp.
+   * If start_time is not set, the snapshot of the assets at end_time will be
+   * returned. The returned results contain all temporal assets whose time
+   * window overlap with read_time_window.
    * </pre>
    *
    * <code>
@@ -211,11 +211,11 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    *
    * <pre>
    * Optional. The time window for the asset history. Both start_time and
-   * end_time are optional and if set, it must be after 2018-10-02 UTC. If
-   * end_time is not set, it is default to current timestamp. If start_time is
-   * not set, the snapshot of the assets at end_time will be returned. The
-   * returned results contain all temporal assets whose time window overlap with
-   * read_time_window.
+   * end_time are optional and if set, it must be after the current time minus
+   * 35 days. If end_time is not set, it is default to current timestamp.
+   * If start_time is not set, the snapshot of the assets at end_time will be
+   * returned. The returned results contain all temporal assets whose time
+   * window overlap with read_time_window.
    * </pre>
    *
    * <code>
