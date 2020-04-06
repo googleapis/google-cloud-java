@@ -236,13 +236,14 @@ public final class RecaptchaEnterpriseProto {
           + ".protobuf.Empty\"$\202\323\344\223\002\036*\034/v1/{name=proje"
           + "cts/*/keys/*}\032V\312A\"recaptchaenterprise.go"
           + "ogleapis.com\322A.https://www.googleapis.co"
-          + "m/auth/cloud-platformB\352\001\n!com.google.rec"
+          + "m/auth/cloud-platformB\223\002\n!com.google.rec"
           + "aptchaenterprise.v1B\030RecaptchaEnterprise"
           + "ProtoP\001ZVgoogle.golang.org/genproto/goog"
           + "leapis/cloud/recaptchaenterprise/v1;reca"
           + "ptchaenterprise\242\002\004GCRE\252\002#Google.Cloud.Re"
           + "captchaEnterprise.V1\312\002#Google\\Cloud\\Reca"
-          + "ptchaEnterprise\\V1b\006proto3"
+          + "ptchaEnterprise\\V1\352\002&Google::Cloud::Reca"
+          + "ptchaEnterprise::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
