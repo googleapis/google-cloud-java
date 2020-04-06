@@ -3753,13 +3753,14 @@ public final class OsLoginProto {
           + "n.googleapis.com/SshPublicKey\022(users/{us"
           + "er}/sshPublicKeys/{fingerprint}*T\n\023Opera"
           + "tingSystemType\022%\n!OPERATING_SYSTEM_TYPE_"
-          + "UNSPECIFIED\020\000\022\t\n\005LINUX\020\001\022\013\n\007WINDOWS\020\002B\334\001"
+          + "UNSPECIFIED\020\000\022\t\n\005LINUX\020\001\022\013\n\007WINDOWS\020\002B\375\001"
           + "\n\037com.google.cloud.oslogin.commonB\014OsLog"
           + "inProtoZAgoogle.golang.org/genproto/goog"
           + "leapis/cloud/oslogin/common;common\252\002\033Goo"
           + "gle.Cloud.OsLogin.Common\312\002\033Google\\Cloud\\"
-          + "OsLogin\\Common\352A+\n\033oslogin.googleapis.co"
-          + "m/User\022\014users/{user}b\006proto3"
+          + "OsLogin\\Common\352\002\036Google::Cloud::OsLogin:"
+          + ":Common\352A+\n\033oslogin.googleapis.com/User\022"
+          + "\014users/{user}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
