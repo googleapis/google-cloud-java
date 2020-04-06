@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-03-28T21:50:48.224907Z",
+  "updateTime": "2020-04-06T21:54:08.093158Z",
   "sources": [
     {
       "git": {
@@ -38,8 +38,7 @@
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
         "sha": "b655808b3481a92f478ae2f828a6ce8220e40f32",
-        "internalRef": "303527638",
-        "log": "b655808b3481a92f478ae2f828a6ce8220e40f32\ncloudasset: add org policy and access context manager protos to client libraries.\n\nPiperOrigin-RevId: 303527638\n\nd8c5da9a9471659b51d5862dd2ea7ad3c4bc49ef\nPopulate BAZEL.build files for AccessContextManager.\n\nPiperOrigin-RevId: 303526825\n\ncf9db7161cb9d4dbef06cd8bf5354ec485e51e2d\nPopulate BAZEL.build files for OrgPolicy.\n\nPiperOrigin-RevId: 303526702\n\n558b800ed594acc02555cc560fbb39c0e42bc438\nchore: turn on gapic v2 for Dataproc API.\nfix:\n- add missing method signatures\n- remove resource_reference not on a string field\n- adjust resource name pattern orders\n\nPiperOrigin-RevId: 303431167\n\n8eb444cf5ff63f68d826acbb37b2ac3da58655fb\nAdd logging protos for Recommender v1beta1.\n\nPiperOrigin-RevId: 303426030\n\n48a166ce9f6e2a88b10947341b37336fe9dd3478\nPush of PHP, C# and Ruby namespaces\n\nPiperOrigin-RevId: 303302813\n\n42f77489b300df2e27c84a7b65c4e8f04da20981\nThis is first release of the API protos and Bazel BUILD files for the Analytics Management API V1alpha.\n\nPiperOrigin-RevId: 303241805\n\n8bea81bfa461698981b3d3a488a95633d2f6e9ff\nchore: use latest protoc-java-resource-name-plugin in bazel WORKSPACE.\nnew commits:\n- fix: stop generating `parseList` and `toStringList` if a multi-pattern resource name has subclasses (#79)\n\ncommitter: @hzyi-google\nPiperOrigin-RevId: 303197602\n\nb14af92e565264675d6b12cd2c0ded6c94ddd7f8\nfix talent API incorrect placeholders in two resource name patterns.\ncommitter: @hzyi-google\n\nPiperOrigin-RevId: 303189497\n\n8e22db908ae09e1f7e2802c03b4563fd6b524e0e\nchore(google/maps): Update postprocessing script for Java.\n\n- Update root build.gradle to load local plugin\n- Change com.google.api.grpc group to com.google.maps\n\nPiperOrigin-RevId: 303176850\n\n65816afa71e588252b7119dc723592abe51ea106\nbazel: update gapic-generator-go to v0.12.5 and gapic-generator hash\n\nChanges to gapic-generator-go include:\n* feat: strip invalid link references in comments\n* chore: updating Go deps in bazel repositories\n\nChanges to gapic-generator include:\n* fix: bazel go build gen check for cloud in proto pkg name\n* Revert \"feat: allow static substitution for group name\"\n\nPiperOrigin-RevId: 303150338\n\nd4aa417ed2bba89c2d216900282bddfdafef6128\nFix incorrect retry config in gapic v2 for kms.\n\nPiperOrigin-RevId: 303010132\n\nfd08334533204fdd1b33f79fcb263dbb5bf13de0\nfix: osconfig/v1 update go_gapic_library target to microgen interface\n\nPiperOrigin-RevId: 303007866\n\ne2c0f2a0e06d86b50aba98f67f9f291587d986b3\nUpdate comments for google/rpc/error_details.proto.\n\nPiperOrigin-RevId: 303002528\n\nf786c7586748e78a286b1620ff3ddbf7b4dcab92\nfeat: Add OsConfigService v1 patch APIs.\n\nPiperOrigin-RevId: 302999346\n\n0341fa3fc2f4073a1b1f260d37b2ce620799f545\nTurn on gapic config v2 for kms.\n\nCommitter: @hzyi-google\nPiperOrigin-RevId: 302980301\n\n"
+        "internalRef": "303527638"
       }
     },
     {
