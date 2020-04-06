@@ -266,10 +266,10 @@ public class IntentsClient implements BackgroundResource {
    *
    * @param parent Required. The agent to list all intents from. Format: `projects/&lt;Project
    *     ID&gt;/agent`.
-   * @param languageCode Optional. The language to list training phrases, parameters and rich
-   *     messages for. If not specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListIntentsPagedResponse listIntents(ProjectAgentName parent, String languageCode) {
@@ -299,10 +299,10 @@ public class IntentsClient implements BackgroundResource {
    *
    * @param parent Required. The agent to list all intents from. Format: `projects/&lt;Project
    *     ID&gt;/agent`.
-   * @param languageCode Optional. The language to list training phrases, parameters and rich
-   *     messages for. If not specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListIntentsPagedResponse listIntents(String parent, String languageCode) {
@@ -453,10 +453,10 @@ public class IntentsClient implements BackgroundResource {
    *
    * @param name Required. The name of the intent. Format: `projects/&lt;Project
    *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
-   * @param languageCode Optional. The language to retrieve training phrases, parameters and rich
-   *     messages for. If not specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent getIntent(IntentName name, String languageCode) {
@@ -484,10 +484,10 @@ public class IntentsClient implements BackgroundResource {
    *
    * @param name Required. The name of the intent. Format: `projects/&lt;Project
    *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
-   * @param languageCode Optional. The language to retrieve training phrases, parameters and rich
-   *     messages for. If not specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent getIntent(String name, String languageCode) {
@@ -612,10 +612,10 @@ public class IntentsClient implements BackgroundResource {
    * @param parent Required. The agent to create a intent for. Format: `projects/&lt;Project
    *     ID&gt;/agent`.
    * @param intent Required. The intent to create.
-   * @param languageCode Optional. The language of training phrases, parameters and rich messages
-   *     defined in `intent`. If not specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent createIntent(ProjectAgentName parent, Intent intent, String languageCode) {
@@ -646,10 +646,10 @@ public class IntentsClient implements BackgroundResource {
    * @param parent Required. The agent to create a intent for. Format: `projects/&lt;Project
    *     ID&gt;/agent`.
    * @param intent Required. The intent to create.
-   * @param languageCode Optional. The language of training phrases, parameters and rich messages
-   *     defined in `intent`. If not specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent createIntent(String parent, Intent intent, String languageCode) {
@@ -726,10 +726,10 @@ public class IntentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param intent Required. The intent to update.
-   * @param languageCode Optional. The language of training phrases, parameters and rich messages
-   *     defined in `intent`. If not specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent updateIntent(Intent intent, String languageCode) {
@@ -754,10 +754,10 @@ public class IntentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param intent Required. The intent to update.
-   * @param languageCode Optional. The language of training phrases, parameters and rich messages
-   *     defined in `intent`. If not specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @param updateMask Optional. The mask to control which fields get updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

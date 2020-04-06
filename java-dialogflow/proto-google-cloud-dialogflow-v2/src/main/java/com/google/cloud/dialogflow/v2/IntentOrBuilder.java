@@ -27,13 +27,13 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of this intent.
+   * Optional. The unique identifier of this intent.
    * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
    * methods.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -42,13 +42,13 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of this intent.
+   * Optional. The unique identifier of this intent.
    * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
    * methods.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */

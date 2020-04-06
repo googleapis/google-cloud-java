@@ -18,15 +18,7 @@
 
 package com.google.cloud.dialogflow.v2;
 
-/**
- *
- *
- * <pre>
- * The request message for [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents].
- * </pre>
- *
- * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateIntentsRequest}
- */
+/** Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateIntentsRequest} */
 public final class BatchUpdateIntentsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.BatchUpdateIntentsRequest)
@@ -380,12 +372,11 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The language of training phrases, parameters and rich messages
-   * defined in `intents`. If not specified, the agent's default language is
-   * used. [Many
-   * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-   * are supported. Note: languages must be enabled in the agent before they can
-   * be used.
+   * Optional. The language used to access language-specific data.
+   * If not specified, the agent's default language is used.
+   * For more information, see
+   * [Multilingual intent and entity
+   * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * </pre>
    *
    * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -407,12 +398,11 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The language of training phrases, parameters and rich messages
-   * defined in `intents`. If not specified, the agent's default language is
-   * used. [Many
-   * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-   * are supported. Note: languages must be enabled in the agent before they can
-   * be used.
+   * Optional. The language used to access language-specific data.
+   * If not specified, the agent's default language is used.
+   * For more information, see
+   * [Multilingual intent and entity
+   * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * </pre>
    *
    * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -746,15 +736,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   *
-   *
-   * <pre>
-   * The request message for [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents].
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateIntentsRequest}
-   */
+  /** Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateIntentsRequest} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.BatchUpdateIntentsRequest)
@@ -1436,12 +1418,11 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The language of training phrases, parameters and rich messages
-     * defined in `intents`. If not specified, the agent's default language is
-     * used. [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The language used to access language-specific data.
+     * If not specified, the agent's default language is used.
+     * For more information, see
+     * [Multilingual intent and entity
+     * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
      * </pre>
      *
      * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1463,12 +1444,11 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The language of training phrases, parameters and rich messages
-     * defined in `intents`. If not specified, the agent's default language is
-     * used. [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The language used to access language-specific data.
+     * If not specified, the agent's default language is used.
+     * For more information, see
+     * [Multilingual intent and entity
+     * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
      * </pre>
      *
      * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1490,12 +1470,11 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The language of training phrases, parameters and rich messages
-     * defined in `intents`. If not specified, the agent's default language is
-     * used. [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The language used to access language-specific data.
+     * If not specified, the agent's default language is used.
+     * For more information, see
+     * [Multilingual intent and entity
+     * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
      * </pre>
      *
      * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1516,12 +1495,11 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The language of training phrases, parameters and rich messages
-     * defined in `intents`. If not specified, the agent's default language is
-     * used. [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The language used to access language-specific data.
+     * If not specified, the agent's default language is used.
+     * For more information, see
+     * [Multilingual intent and entity
+     * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
      * </pre>
      *
      * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1538,12 +1516,11 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The language of training phrases, parameters and rich messages
-     * defined in `intents`. If not specified, the agent's default language is
-     * used. [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The language used to access language-specific data.
+     * If not specified, the agent's default language is used.
+     * For more information, see
+     * [Multilingual intent and entity
+     * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
      * </pre>
      *
      * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -6036,9 +6036,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Returns a response containing a custom, platform-specific payload.
-     * See the Intent.Message.Platform type for a description of the
-     * structure that may be required for your platform.
+     * A custom platform-specific response.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 5;</code>
@@ -6050,9 +6048,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Returns a response containing a custom, platform-specific payload.
-     * See the Intent.Message.Platform type for a description of the
-     * structure that may be required for your platform.
+     * A custom platform-specific response.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 5;</code>
@@ -6064,9 +6060,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Returns a response containing a custom, platform-specific payload.
-     * See the Intent.Message.Platform type for a description of the
-     * structure that may be required for your platform.
+     * A custom platform-specific response.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 5;</code>
@@ -6436,7 +6430,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Corresponds to the `Response` field in the Dialogflow console.
+   * A rich response message.
+   * Corresponds to the intent `Response` field in the Dialogflow console.
+   * For more information, see
+   * [Rich response
+   * messages](https://cloud.google.com/dialogflow/docs/intents-rich-messages).
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.Intent.Message}
@@ -6807,7 +6805,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents different platforms that a rich message can be intended for.
+     * The rich response message integration platform. See
+     * [Integrations](https://cloud.google.com/dialogflow/docs/integrations).
      * </pre>
      *
      * Protobuf enum {@code google.cloud.dialogflow.v2.Intent.Message.Platform}
@@ -6817,7 +6816,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Not specified.
+       * Default platform.
        * </pre>
        *
        * <code>PLATFORM_UNSPECIFIED = 0;</code>
@@ -6897,67 +6896,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Actions on Google.
-       * When using Actions on Google, you can choose one of the specific
-       * Intent.Message types that mention support for Actions on Google,
-       * or you can use the advanced Intent.Message.payload field.
-       * The payload field provides access to AoG features not available in the
-       * specific message types.
-       * If using the Intent.Message.payload field, it should have a structure
-       * similar to the JSON message shown here. For more information, see
-       * [Actions on Google Webhook
-       * Format](https://developers.google.com/actions/dialogflow/webhook)
-       * &lt;pre&gt;{
-       *   "expectUserResponse": true,
-       *   "isSsml": false,
-       *   "noInputPrompts": [],
-       *   "richResponse": {
-       *     "items": [
-       *       {
-       *         "simpleResponse": {
-       *           "displayText": "hi",
-       *           "textToSpeech": "hello"
-       *         }
-       *       }
-       *     ],
-       *     "suggestions": [
-       *       {
-       *         "title": "Say this"
-       *       },
-       *       {
-       *         "title": "or this"
-       *       }
-       *     ]
-       *   },
-       *   "systemIntent": {
-       *     "data": {
-       *       "&#64;type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
-       *       "listSelect": {
-       *         "items": [
-       *           {
-       *             "optionInfo": {
-       *               "key": "key1",
-       *               "synonyms": [
-       *                 "key one"
-       *               ]
-       *             },
-       *             "title": "must not be empty, but unique"
-       *           },
-       *           {
-       *             "optionInfo": {
-       *               "key": "key2",
-       *               "synonyms": [
-       *                 "key two"
-       *               ]
-       *             },
-       *             "title": "must not be empty, but unique"
-       *           }
-       *         ]
-       *       }
-       *     },
-       *     "intent": "actions.intent.OPTION"
-       *   }
-       * }&lt;/pre&gt;
+       * Google Assistant
+       * See [Dialogflow webhook
+       * format](https://developers.google.com/assistant/actions/build/json/dialogflow-webhook-json)
        * </pre>
        *
        * <code>ACTIONS_ON_GOOGLE = 8;</code>
@@ -6980,7 +6921,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Not specified.
+       * Default platform.
        * </pre>
        *
        * <code>PLATFORM_UNSPECIFIED = 0;</code>
@@ -7060,67 +7001,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Actions on Google.
-       * When using Actions on Google, you can choose one of the specific
-       * Intent.Message types that mention support for Actions on Google,
-       * or you can use the advanced Intent.Message.payload field.
-       * The payload field provides access to AoG features not available in the
-       * specific message types.
-       * If using the Intent.Message.payload field, it should have a structure
-       * similar to the JSON message shown here. For more information, see
-       * [Actions on Google Webhook
-       * Format](https://developers.google.com/actions/dialogflow/webhook)
-       * &lt;pre&gt;{
-       *   "expectUserResponse": true,
-       *   "isSsml": false,
-       *   "noInputPrompts": [],
-       *   "richResponse": {
-       *     "items": [
-       *       {
-       *         "simpleResponse": {
-       *           "displayText": "hi",
-       *           "textToSpeech": "hello"
-       *         }
-       *       }
-       *     ],
-       *     "suggestions": [
-       *       {
-       *         "title": "Say this"
-       *       },
-       *       {
-       *         "title": "or this"
-       *       }
-       *     ]
-       *   },
-       *   "systemIntent": {
-       *     "data": {
-       *       "&#64;type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
-       *       "listSelect": {
-       *         "items": [
-       *           {
-       *             "optionInfo": {
-       *               "key": "key1",
-       *               "synonyms": [
-       *                 "key one"
-       *               ]
-       *             },
-       *             "title": "must not be empty, but unique"
-       *           },
-       *           {
-       *             "optionInfo": {
-       *               "key": "key2",
-       *               "synonyms": [
-       *                 "key two"
-       *               ]
-       *             },
-       *             "title": "must not be empty, but unique"
-       *           }
-       *         ]
-       *       }
-       *     },
-       *     "intent": "actions.intent.OPTION"
-       *   }
-       * }&lt;/pre&gt;
+       * Google Assistant
+       * See [Dialogflow webhook
+       * format](https://developers.google.com/assistant/actions/build/json/dialogflow-webhook-json)
        * </pre>
        *
        * <code>ACTIONS_ON_GOOGLE = 8;</code>
@@ -41894,9 +41777,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Returns a response containing a custom, platform-specific payload.
-     * See the Intent.Message.Platform type for a description of the
-     * structure that may be required for your platform.
+     * A custom platform-specific response.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 5;</code>
@@ -41910,9 +41791,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Returns a response containing a custom, platform-specific payload.
-     * See the Intent.Message.Platform type for a description of the
-     * structure that may be required for your platform.
+     * A custom platform-specific response.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 5;</code>
@@ -41929,9 +41808,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Returns a response containing a custom, platform-specific payload.
-     * See the Intent.Message.Platform type for a description of the
-     * structure that may be required for your platform.
+     * A custom platform-specific response.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 5;</code>
@@ -42829,7 +42706,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Corresponds to the `Response` field in the Dialogflow console.
+     * A rich response message.
+     * Corresponds to the intent `Response` field in the Dialogflow console.
+     * For more information, see
+     * [Rich response
+     * messages](https://cloud.google.com/dialogflow/docs/intents-rich-messages).
      * </pre>
      *
      * Protobuf type {@code google.cloud.dialogflow.v2.Intent.Message}
@@ -44019,9 +43900,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Returns a response containing a custom, platform-specific payload.
-       * See the Intent.Message.Platform type for a description of the
-       * structure that may be required for your platform.
+       * A custom platform-specific response.
        * </pre>
        *
        * <code>.google.protobuf.Struct payload = 5;</code>
@@ -44035,9 +43914,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Returns a response containing a custom, platform-specific payload.
-       * See the Intent.Message.Platform type for a description of the
-       * structure that may be required for your platform.
+       * A custom platform-specific response.
        * </pre>
        *
        * <code>.google.protobuf.Struct payload = 5;</code>
@@ -44061,9 +43938,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Returns a response containing a custom, platform-specific payload.
-       * See the Intent.Message.Platform type for a description of the
-       * structure that may be required for your platform.
+       * A custom platform-specific response.
        * </pre>
        *
        * <code>.google.protobuf.Struct payload = 5;</code>
@@ -44085,9 +43960,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Returns a response containing a custom, platform-specific payload.
-       * See the Intent.Message.Platform type for a description of the
-       * structure that may be required for your platform.
+       * A custom platform-specific response.
        * </pre>
        *
        * <code>.google.protobuf.Struct payload = 5;</code>
@@ -44106,9 +43979,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Returns a response containing a custom, platform-specific payload.
-       * See the Intent.Message.Platform type for a description of the
-       * structure that may be required for your platform.
+       * A custom platform-specific response.
        * </pre>
        *
        * <code>.google.protobuf.Struct payload = 5;</code>
@@ -44137,9 +44008,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Returns a response containing a custom, platform-specific payload.
-       * See the Intent.Message.Platform type for a description of the
-       * structure that may be required for your platform.
+       * A custom platform-specific response.
        * </pre>
        *
        * <code>.google.protobuf.Struct payload = 5;</code>
@@ -44164,9 +44033,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Returns a response containing a custom, platform-specific payload.
-       * See the Intent.Message.Platform type for a description of the
-       * structure that may be required for your platform.
+       * A custom platform-specific response.
        * </pre>
        *
        * <code>.google.protobuf.Struct payload = 5;</code>
@@ -44178,9 +44045,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Returns a response containing a custom, platform-specific payload.
-       * See the Intent.Message.Platform type for a description of the
-       * structure that may be required for your platform.
+       * A custom platform-specific response.
        * </pre>
        *
        * <code>.google.protobuf.Struct payload = 5;</code>
@@ -44199,9 +44064,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Returns a response containing a custom, platform-specific payload.
-       * See the Intent.Message.Platform type for a description of the
-       * structure that may be required for your platform.
+       * A custom platform-specific response.
        * </pre>
        *
        * <code>.google.protobuf.Struct payload = 5;</code>
@@ -47230,13 +47093,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The unique identifier of this intent.
+   * Optional. The unique identifier of this intent.
    * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
    * methods.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -47255,13 +47118,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The unique identifier of this intent.
+   * Optional. The unique identifier of this intent.
    * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
    * methods.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -49113,13 +48976,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -49138,13 +49001,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -49163,13 +49026,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -49187,13 +49050,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -49207,13 +49070,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

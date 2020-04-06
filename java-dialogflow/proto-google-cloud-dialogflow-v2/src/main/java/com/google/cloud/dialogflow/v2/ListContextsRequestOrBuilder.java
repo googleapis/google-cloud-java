@@ -35,7 +35,9 @@ public interface ListContextsRequestOrBuilder
    * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -52,7 +54,9 @@ public interface ListContextsRequestOrBuilder
    * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

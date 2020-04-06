@@ -200,15 +200,15 @@ public final class SessionProto {
           + "entResponse\"\000(\0010\001\032x\312A\031dialogflow.googlea"
           + "pis.com\322AYhttps://www.googleapis.com/aut"
           + "h/cloud-platform,https://www.googleapis."
-          + "com/auth/dialogflowB\261\002\n\036com.google.cloud"
+          + "com/auth/dialogflowB\304\002\n\036com.google.cloud"
           + ".dialogflow.v2B\014SessionProtoP\001ZDgoogle.g"
           + "olang.org/genproto/googleapis/cloud/dial"
           + "ogflow/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Google.Cl"
-          + "oud.Dialogflow.V2\352A\222\001\n!dialogflow.google"
-          + "apis.com/Session\022@projects/{project}/loc"
-          + "ations/{location}/agent/sessions/{sessio"
-          + "n}\022+projects/{project}/agent/sessions/{s"
-          + "ession}b\006proto3"
+          + "oud.Dialogflow.V2\352A\245\001\n!dialogflow.google"
+          + "apis.com/Session\022+projects/{project}/age"
+          + "nt/sessions/{session}\022Sprojects/{project"
+          + "}/agent/environments/{environment}/users"
+          + "/{user}/sessions/{session}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
