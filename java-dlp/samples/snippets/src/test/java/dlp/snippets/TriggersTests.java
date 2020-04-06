@@ -22,9 +22,11 @@ import static org.junit.Assert.assertThat;
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.CloudStorageOptions;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
+import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectJobConfig;
 import com.google.privacy.dlp.v2.JobTrigger;
+import com.google.privacy.dlp.v2.ListJobTriggersRequest;
 import com.google.privacy.dlp.v2.ProjectName;
 import com.google.privacy.dlp.v2.Schedule;
 import com.google.privacy.dlp.v2.StorageConfig;
@@ -36,6 +38,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -104,17 +107,27 @@ public class TriggersTests {
     System.setOut(new PrintStream(bout));
   }
 
+
   @After
   public void tearDown() {
     System.setOut(null);
     bout.reset();
   }
 
+
   @Test
   public void testCreateTrigger() throws Exception {
     TriggersCreate.createTrigger(PROJECT_ID, GCS_PATH);
     String output = bout.toString();
     assertThat(output, CoreMatchers.containsString("Created Trigger:"));
+
+    // Delete the created trigger
+    String triggerId = output.split("Created Trigger: ")[1].split("\n")[0];
+    DeleteJobTriggerRequest deleteJobTriggerRequest =
+        DeleteJobTriggerRequest.newBuilder().setName(triggerId).build();
+    try (DlpServiceClient client = DlpServiceClient.create()) {
+      client.deleteJobTrigger(deleteJobTriggerRequest);
+    }
   }
 
   @Test
@@ -127,7 +140,7 @@ public class TriggersTests {
   @Test
   public void testDeleteTrigger() throws Exception {
     JobTrigger trigger = createTrigger();
-    String triggerName = createTrigger().getName();
+    String triggerName = trigger.getName();
     String triggerId;
 
     Matcher matcher = Pattern.compile("jobTriggers/").matcher(triggerName);

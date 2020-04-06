@@ -21,10 +21,13 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 import com.google.cloud.dlp.v2.DlpServiceClient;
+import com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
+import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.InfoType;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectTemplate;
+import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
 import com.google.privacy.dlp.v2.ProjectName;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -35,6 +38,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -88,6 +92,7 @@ public class TemplatesTests {
     System.setOut(new PrintStream(bout));
   }
 
+
   @After
   public void tearDown() {
     System.setOut(null);
@@ -99,10 +104,19 @@ public class TemplatesTests {
     TemplatesCreate.createInspectTemplate(PROJECT_ID);
     String output = bout.toString();
     assertThat(output, containsString("Template created: "));
+
+
+    // Delete the created template
+    String templateId = output.split("Template created: ")[1].split("\n")[0];
+    DeleteInspectTemplateRequest deleteInspectTemplateRequest =
+        DeleteInspectTemplateRequest.newBuilder().setName(templateId).build();
+    try (DlpServiceClient client = DlpServiceClient.create()) {
+      client.deleteInspectTemplate(deleteInspectTemplateRequest);
+    }
   }
 
   @Test
-  public void testListInspectemplate() throws Exception {
+  public void testListInspectTemplate() throws Exception {
     TemplatesList.listInspectTemplates(PROJECT_ID);
     String output = bout.toString();
     assertThat(output, containsString("Templates found:"));

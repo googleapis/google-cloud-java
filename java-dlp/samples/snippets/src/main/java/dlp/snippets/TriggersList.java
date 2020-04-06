@@ -44,7 +44,7 @@ class TriggersList {
       DlpServiceClient.ListJobTriggersPagedResponse response =
           dlpServiceClient.listJobTriggers(listJobTriggersRequest);
 
-      // Parse the response and prpcess the results
+      // Parse the response and process the results
       System.out.println("DLP triggers found:");
       for (JobTrigger trigger : response.getPage().getValues()) {
         System.out.println("Trigger: " + trigger.getName());
