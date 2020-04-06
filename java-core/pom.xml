@@ -153,7 +153,7 @@
     <site.installationModule>google-cloud-core-parent</site.installationModule>
     <auto-value.version>1.7</auto-value.version>
     <auto-value-annotations.version>1.7</auto-value-annotations.version>
-    <gax.version>1.55.0</gax.version>
+    <gax.version>1.56.0</gax.version>
     <google.api-common.version>1.9.0</google.api-common.version>
     <google.common-protos.version>1.17.0</google.common-protos.version>
     <google.iam.version>0.13.0</google.iam.version>
