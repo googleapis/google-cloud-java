@@ -458,4 +458,52 @@ public interface CryptoKeyVersionOrBuilder
    * @return The bytes for importFailureReason.
    */
   com.google.protobuf.ByteString getImportFailureReasonBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * ExternalProtectionLevelOptions stores a group of additional fields for
+   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+   * </code>
+   *
+   * @return Whether the externalProtectionLevelOptions field is set.
+   */
+  boolean hasExternalProtectionLevelOptions();
+  /**
+   *
+   *
+   * <pre>
+   * ExternalProtectionLevelOptions stores a group of additional fields for
+   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+   * </code>
+   *
+   * @return The externalProtectionLevelOptions.
+   */
+  com.google.cloud.kms.v1.ExternalProtectionLevelOptions getExternalProtectionLevelOptions();
+  /**
+   *
+   *
+   * <pre>
+   * ExternalProtectionLevelOptions stores a group of additional fields for
+   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+   * </code>
+   */
+  com.google.cloud.kms.v1.ExternalProtectionLevelOptionsOrBuilder
+      getExternalProtectionLevelOptionsOrBuilder();
 }

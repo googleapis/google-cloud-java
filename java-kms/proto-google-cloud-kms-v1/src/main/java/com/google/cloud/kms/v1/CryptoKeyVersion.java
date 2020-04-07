@@ -215,6 +215,23 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
               importFailureReason_ = s;
               break;
             }
+          case 138:
+            {
+              com.google.cloud.kms.v1.ExternalProtectionLevelOptions.Builder subBuilder = null;
+              if (externalProtectionLevelOptions_ != null) {
+                subBuilder = externalProtectionLevelOptions_.toBuilder();
+              }
+              externalProtectionLevelOptions_ =
+                  input.readMessage(
+                      com.google.cloud.kms.v1.ExternalProtectionLevelOptions.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(externalProtectionLevelOptions_);
+                externalProtectionLevelOptions_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -443,6 +460,16 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>EC_SIGN_P384_SHA384 = 13;</code>
      */
     EC_SIGN_P384_SHA384(13),
+    /**
+     *
+     *
+     * <pre>
+     * Algorithm representing symmetric encryption by an external key manager.
+     * </pre>
+     *
+     * <code>EXTERNAL_SYMMETRIC_ENCRYPTION = 18;</code>
+     */
+    EXTERNAL_SYMMETRIC_ENCRYPTION(18),
     UNRECOGNIZED(-1),
     ;
 
@@ -606,6 +633,16 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>EC_SIGN_P384_SHA384 = 13;</code>
      */
     public static final int EC_SIGN_P384_SHA384_VALUE = 13;
+    /**
+     *
+     *
+     * <pre>
+     * Algorithm representing symmetric encryption by an external key manager.
+     * </pre>
+     *
+     * <code>EXTERNAL_SYMMETRIC_ENCRYPTION = 18;</code>
+     */
+    public static final int EXTERNAL_SYMMETRIC_ENCRYPTION_VALUE = 18;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -663,6 +700,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return EC_SIGN_P256_SHA256;
         case 13:
           return EC_SIGN_P384_SHA384;
+        case 18:
+          return EXTERNAL_SYMMETRIC_ENCRYPTION;
         default:
           return null;
       }
@@ -1733,6 +1772,65 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int EXTERNAL_PROTECTION_LEVEL_OPTIONS_FIELD_NUMBER = 17;
+  private com.google.cloud.kms.v1.ExternalProtectionLevelOptions externalProtectionLevelOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * ExternalProtectionLevelOptions stores a group of additional fields for
+   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+   * </code>
+   *
+   * @return Whether the externalProtectionLevelOptions field is set.
+   */
+  public boolean hasExternalProtectionLevelOptions() {
+    return externalProtectionLevelOptions_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ExternalProtectionLevelOptions stores a group of additional fields for
+   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+   * </code>
+   *
+   * @return The externalProtectionLevelOptions.
+   */
+  public com.google.cloud.kms.v1.ExternalProtectionLevelOptions
+      getExternalProtectionLevelOptions() {
+    return externalProtectionLevelOptions_ == null
+        ? com.google.cloud.kms.v1.ExternalProtectionLevelOptions.getDefaultInstance()
+        : externalProtectionLevelOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ExternalProtectionLevelOptions stores a group of additional fields for
+   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+   * </code>
+   */
+  public com.google.cloud.kms.v1.ExternalProtectionLevelOptionsOrBuilder
+      getExternalProtectionLevelOptionsOrBuilder() {
+    return getExternalProtectionLevelOptions();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1790,6 +1888,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (!getImportFailureReasonBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, importFailureReason_);
     }
+    if (externalProtectionLevelOptions_ != null) {
+      output.writeMessage(17, getExternalProtectionLevelOptions());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1842,6 +1943,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (!getImportFailureReasonBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, importFailureReason_);
     }
+    if (externalProtectionLevelOptions_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, getExternalProtectionLevelOptions());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1887,6 +1993,12 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       if (!getImportTime().equals(other.getImportTime())) return false;
     }
     if (!getImportFailureReason().equals(other.getImportFailureReason())) return false;
+    if (hasExternalProtectionLevelOptions() != other.hasExternalProtectionLevelOptions())
+      return false;
+    if (hasExternalProtectionLevelOptions()) {
+      if (!getExternalProtectionLevelOptions().equals(other.getExternalProtectionLevelOptions()))
+        return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1934,6 +2046,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + IMPORT_FAILURE_REASON_FIELD_NUMBER;
     hash = (53 * hash) + getImportFailureReason().hashCode();
+    if (hasExternalProtectionLevelOptions()) {
+      hash = (37 * hash) + EXTERNAL_PROTECTION_LEVEL_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalProtectionLevelOptions().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2134,6 +2250,12 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       }
       importFailureReason_ = "";
 
+      if (externalProtectionLevelOptionsBuilder_ == null) {
+        externalProtectionLevelOptions_ = null;
+      } else {
+        externalProtectionLevelOptions_ = null;
+        externalProtectionLevelOptionsBuilder_ = null;
+      }
       return this;
     }
 
@@ -2197,6 +2319,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         result.importTime_ = importTimeBuilder_.build();
       }
       result.importFailureReason_ = importFailureReason_;
+      if (externalProtectionLevelOptionsBuilder_ == null) {
+        result.externalProtectionLevelOptions_ = externalProtectionLevelOptions_;
+      } else {
+        result.externalProtectionLevelOptions_ = externalProtectionLevelOptionsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -2284,6 +2411,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       if (!other.getImportFailureReason().isEmpty()) {
         importFailureReason_ = other.importFailureReason_;
         onChanged();
+      }
+      if (other.hasExternalProtectionLevelOptions()) {
+        mergeExternalProtectionLevelOptions(other.getExternalProtectionLevelOptions());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4250,6 +4380,235 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       importFailureReason_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.kms.v1.ExternalProtectionLevelOptions externalProtectionLevelOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.kms.v1.ExternalProtectionLevelOptions,
+            com.google.cloud.kms.v1.ExternalProtectionLevelOptions.Builder,
+            com.google.cloud.kms.v1.ExternalProtectionLevelOptionsOrBuilder>
+        externalProtectionLevelOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * ExternalProtectionLevelOptions stores a group of additional fields for
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+     * </code>
+     *
+     * @return Whether the externalProtectionLevelOptions field is set.
+     */
+    public boolean hasExternalProtectionLevelOptions() {
+      return externalProtectionLevelOptionsBuilder_ != null
+          || externalProtectionLevelOptions_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ExternalProtectionLevelOptions stores a group of additional fields for
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+     * </code>
+     *
+     * @return The externalProtectionLevelOptions.
+     */
+    public com.google.cloud.kms.v1.ExternalProtectionLevelOptions
+        getExternalProtectionLevelOptions() {
+      if (externalProtectionLevelOptionsBuilder_ == null) {
+        return externalProtectionLevelOptions_ == null
+            ? com.google.cloud.kms.v1.ExternalProtectionLevelOptions.getDefaultInstance()
+            : externalProtectionLevelOptions_;
+      } else {
+        return externalProtectionLevelOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ExternalProtectionLevelOptions stores a group of additional fields for
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+     * </code>
+     */
+    public Builder setExternalProtectionLevelOptions(
+        com.google.cloud.kms.v1.ExternalProtectionLevelOptions value) {
+      if (externalProtectionLevelOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        externalProtectionLevelOptions_ = value;
+        onChanged();
+      } else {
+        externalProtectionLevelOptionsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ExternalProtectionLevelOptions stores a group of additional fields for
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+     * </code>
+     */
+    public Builder setExternalProtectionLevelOptions(
+        com.google.cloud.kms.v1.ExternalProtectionLevelOptions.Builder builderForValue) {
+      if (externalProtectionLevelOptionsBuilder_ == null) {
+        externalProtectionLevelOptions_ = builderForValue.build();
+        onChanged();
+      } else {
+        externalProtectionLevelOptionsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ExternalProtectionLevelOptions stores a group of additional fields for
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+     * </code>
+     */
+    public Builder mergeExternalProtectionLevelOptions(
+        com.google.cloud.kms.v1.ExternalProtectionLevelOptions value) {
+      if (externalProtectionLevelOptionsBuilder_ == null) {
+        if (externalProtectionLevelOptions_ != null) {
+          externalProtectionLevelOptions_ =
+              com.google.cloud.kms.v1.ExternalProtectionLevelOptions.newBuilder(
+                      externalProtectionLevelOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          externalProtectionLevelOptions_ = value;
+        }
+        onChanged();
+      } else {
+        externalProtectionLevelOptionsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ExternalProtectionLevelOptions stores a group of additional fields for
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+     * </code>
+     */
+    public Builder clearExternalProtectionLevelOptions() {
+      if (externalProtectionLevelOptionsBuilder_ == null) {
+        externalProtectionLevelOptions_ = null;
+        onChanged();
+      } else {
+        externalProtectionLevelOptions_ = null;
+        externalProtectionLevelOptionsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ExternalProtectionLevelOptions stores a group of additional fields for
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+     * </code>
+     */
+    public com.google.cloud.kms.v1.ExternalProtectionLevelOptions.Builder
+        getExternalProtectionLevelOptionsBuilder() {
+
+      onChanged();
+      return getExternalProtectionLevelOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ExternalProtectionLevelOptions stores a group of additional fields for
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+     * </code>
+     */
+    public com.google.cloud.kms.v1.ExternalProtectionLevelOptionsOrBuilder
+        getExternalProtectionLevelOptionsOrBuilder() {
+      if (externalProtectionLevelOptionsBuilder_ != null) {
+        return externalProtectionLevelOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return externalProtectionLevelOptions_ == null
+            ? com.google.cloud.kms.v1.ExternalProtectionLevelOptions.getDefaultInstance()
+            : externalProtectionLevelOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ExternalProtectionLevelOptions stores a group of additional fields for
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.kms.v1.ExternalProtectionLevelOptions,
+            com.google.cloud.kms.v1.ExternalProtectionLevelOptions.Builder,
+            com.google.cloud.kms.v1.ExternalProtectionLevelOptionsOrBuilder>
+        getExternalProtectionLevelOptionsFieldBuilder() {
+      if (externalProtectionLevelOptionsBuilder_ == null) {
+        externalProtectionLevelOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.kms.v1.ExternalProtectionLevelOptions,
+                com.google.cloud.kms.v1.ExternalProtectionLevelOptions.Builder,
+                com.google.cloud.kms.v1.ExternalProtectionLevelOptionsOrBuilder>(
+                getExternalProtectionLevelOptions(), getParentForChildren(), isClean());
+        externalProtectionLevelOptions_ = null;
+      }
+      return externalProtectionLevelOptionsBuilder_;
     }
 
     @java.lang.Override
