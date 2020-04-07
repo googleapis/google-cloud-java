@@ -21,6 +21,7 @@ import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.Tuple;
 import com.google.cloud.resourcemanager.ResourceManagerException;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -124,5 +125,12 @@ public interface ResourceManagerRpc extends ServiceRpc {
    */
   List<Boolean> testPermissions(String projectId, List<String> permissions);
 
-  // TODO(ajaykannan): implement "Organization" functionality when available (issue #319)
+  /**
+   * Tests whether the caller has the given permissions on the specified Organization. Returns the
+   * permissions and their results.
+   *
+   * @throws ResourceManagerException upon failure
+   */
+  Map<String, Boolean> testOrgPermissions(String resource, List<String> permissions)
+      throws IOException;
 }

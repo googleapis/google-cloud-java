@@ -32,6 +32,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -263,6 +264,25 @@ final class ResourceManagerImpl extends BaseService<ResourceManagerOptions>
             @Override
             public List<Boolean> call() {
               return resourceManagerRpc.testPermissions(projectId, permissions);
+            }
+          },
+          getOptions().getRetrySettings(),
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
+    } catch (RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
+    }
+  }
+
+  @Override
+  public Map<String, Boolean> testOrgPermissions(
+      final String resource, final List<String> permissions) {
+    try {
+      return runWithRetries(
+          new Callable<Map<String, Boolean>>() {
+            @Override
+            public Map<String, Boolean> call() throws IOException {
+              return resourceManagerRpc.testOrgPermissions(resource, permissions);
             }
           },
           getOptions().getRetrySettings(),

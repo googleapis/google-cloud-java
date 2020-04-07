@@ -40,6 +40,7 @@ import com.google.api.services.cloudresourcemanager.model.Status;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsResponse;
 import com.google.api.services.cloudresourcemanager.model.UndeleteProjectRequest;
+import com.google.cloud.RetryHelper;
 import com.google.cloud.Tuple;
 import com.google.cloud.http.BaseHttpServiceException;
 import com.google.cloud.http.HttpTransportOptions;
@@ -299,6 +300,28 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
       return answer.build();
     } catch (IOException ex) {
       throw translate(ex);
+    }
+  }
+
+  @Override
+  public Map<String, Boolean> testOrgPermissions(String resource, List<String> permissions)
+      throws IOException {
+    try {
+      TestIamPermissionsResponse response =
+          resourceManager
+              .organizations()
+              .testIamPermissions(
+                  resource, new TestIamPermissionsRequest().setPermissions(permissions))
+              .execute();
+      Set<String> permissionsOwned =
+          ImmutableSet.copyOf(firstNonNull(response.getPermissions(), ImmutableList.<String>of()));
+      ImmutableMap.Builder<String, Boolean> answer = ImmutableMap.builder();
+      for (String permission : permissions) {
+        answer.put(permission, permissionsOwned.contains(permission));
+      }
+      return answer.build();
+    } catch (RetryHelper.RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
     }
   }
 }

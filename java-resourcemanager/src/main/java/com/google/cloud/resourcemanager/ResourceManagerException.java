@@ -66,7 +66,7 @@ public final class ResourceManagerException extends BaseHttpServiceException {
    * @throws ResourceManagerException when {@code ex} was caused by a {@code
    *     ResourceManagerException}
    */
-  static ResourceManagerException translateAndThrow(RetryHelperException ex) {
+  public static ResourceManagerException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translate(ex);
     throw new ResourceManagerException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }

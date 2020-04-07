@@ -24,6 +24,9 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.Identity;
@@ -38,6 +41,7 @@ import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.testing.LocalResourceManagerHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -46,7 +50,11 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
 
+@RunWith(MockitoJUnitRunner.class)
 public class ResourceManagerImplTest {
 
   private static final LocalResourceManagerHelper RESOURCE_MANAGER_HELPER =
@@ -74,6 +82,9 @@ public class ResourceManagerImplTest {
           .addIdentity(Role.owner(), Identity.user("me@gmail.com"))
           .addIdentity(Role.editor(), Identity.serviceAccount("serviceaccount@gmail.com"))
           .build();
+
+  private ResourceManagerRpcFactory rpcFactoryMock = Mockito.mock(ResourceManagerRpcFactory.class);
+  private ResourceManagerRpc resourceManagerRpcMock = Mockito.mock(ResourceManagerRpc.class);
 
   @BeforeClass
   public static void beforeClass() {
@@ -454,6 +465,56 @@ public class ResourceManagerImplTest {
       fail();
     } catch (ResourceManagerException exception) {
       assertEquals(exceptionMessage, exception.getCause().getMessage());
+    }
+  }
+
+  @Test
+  public void testTestOrgPermissions() throws IOException {
+    String organization = "organization/12345";
+    List<String> permissions =
+        ImmutableList.of(
+            "resourcemanager.organizations.get", "resourcemanager.organizations.getIamPolicy");
+    Map<String, Boolean> expected =
+        ImmutableMap.of(
+            "resourcemanager.organizations.get",
+            true,
+            "resourcemanager.organizations.getIamPolicy",
+            false);
+    when(rpcFactoryMock.create(Mockito.any(ResourceManagerOptions.class)))
+        .thenReturn(resourceManagerRpcMock);
+    ResourceManager resourceManager =
+        ResourceManagerOptions.newBuilder()
+            .setServiceRpcFactory(rpcFactoryMock)
+            .build()
+            .getService();
+    when(resourceManagerRpcMock.testOrgPermissions(organization, permissions)).thenReturn(expected);
+    Map<String, Boolean> actual = resourceManager.testOrgPermissions(organization, permissions);
+    assertEquals(expected, actual);
+    verify(resourceManagerRpcMock).testOrgPermissions(organization, permissions);
+  }
+
+  @Test
+  public void testTestOrgPermissionsWithResourceManagerException() throws IOException {
+    String organization = "organizations/12345";
+    String exceptionMessage = "Not Found";
+    List<String> permissions =
+        ImmutableList.of(
+            "resourcemanager.organizations.get", "resourcemanager.organizations.getIamPolicy");
+    when(rpcFactoryMock.create(Mockito.any(ResourceManagerOptions.class)))
+        .thenReturn(resourceManagerRpcMock);
+    ResourceManager resourceManager =
+        ResourceManagerOptions.newBuilder()
+            .setServiceRpcFactory(rpcFactoryMock)
+            .build()
+            .getService();
+    doThrow(new ResourceManagerException(404, exceptionMessage))
+        .when(resourceManagerRpcMock)
+        .testOrgPermissions(organization, permissions);
+    try {
+      resourceManager.testOrgPermissions(organization, permissions);
+    } catch (ResourceManagerException expected) {
+      assertEquals(404, expected.getCode());
+      assertEquals(exceptionMessage, expected.getMessage());
     }
   }
 }

@@ -24,6 +24,7 @@ import com.google.cloud.Service;
 import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * An interface for Google Cloud Resource Manager.
@@ -337,4 +338,20 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    *     Platform Services</a>
    */
   List<Boolean> testPermissions(String projectId, List<String> permissions);
+
+  /**
+   * Returns the permissions and their results representing whether the caller has the permissions
+   * on the specified Organization.
+   *
+   * @param resource the organization's resource name, e.g. "organizations/123"
+   * @param permissions the set of permissions to check for the resource. Permissions with wildcards
+   *     (such as '*' or 'storage.*') are not allowed.
+   * @return the permissions and their results representing whether the caller has the permissions
+   *     on the specified Organization.
+   * @throws ResourceManagerException upon failure
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1/organizations/testIamPermissions">
+   *     Resource Manager testIamPermissions</a>
+   */
+  Map<String, Boolean> testOrgPermissions(String resource, List<String> permissions);
 }
