@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.101.1](https://www.github.com/googleapis/java-logging/compare/v1.101.0...v1.101.1) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#115](https://www.github.com/googleapis/java-logging/issues/115)) ([cc89e00](https://www.github.com/googleapis/java-logging/commit/cc89e00a7a3d6b1339c73f4de7651da0eebdf411))
+* update core dependencies to v1.93.4 ([#131](https://www.github.com/googleapis/java-logging/issues/131)) ([77c5cf6](https://www.github.com/googleapis/java-logging/commit/77c5cf6175936c51acaa3e441baf91e629475ae2))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#117](https://www.github.com/googleapis/java-logging/issues/117)) ([1a4ad46](https://www.github.com/googleapis/java-logging/commit/1a4ad461f5e2ac3252b9e287bbc9015eae00e0fa))
+
 ## [1.101.0](https://www.github.com/googleapis/java-logging/compare/v1.100.0...v1.101.0) (2020-03-25)
 
 
