@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/googleapis/java-automl/compare/v1.1.0...v1.1.1) (2020-04-06)
+
+
+### Dependencies
+
+* update core dependencies ([#123](https://www.github.com/googleapis/java-automl/issues/123)) ([8ef0b33](https://www.github.com/googleapis/java-automl/commit/8ef0b33ef8d7cd6893272857d11b27072f7258a1))
+* update dependency com.google.api:api-common to v1.9.0 ([#143](https://www.github.com/googleapis/java-automl/issues/143)) ([de84e8f](https://www.github.com/googleapis/java-automl/commit/de84e8fc8dafa7159557bf37eea18705b2861229))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#134](https://www.github.com/googleapis/java-automl/issues/134)) ([3b08f08](https://www.github.com/googleapis/java-automl/commit/3b08f085636e58ec0adde2c30ab768ce90fbd3c6))
+
 ## [1.1.0](https://www.github.com/googleapis/java-automl/compare/v1.0.1...v1.1.0) (2020-03-05)
 
 
