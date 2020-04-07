@@ -1,5 +1,14 @@
 # Changelog
 
+### [0.36.1](https://www.github.com/googleapis/java-talent/compare/v0.36.0...v0.36.1) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#85](https://www.github.com/googleapis/java-talent/issues/85)) ([5b4c2b0](https://www.github.com/googleapis/java-talent/commit/5b4c2b0717b551043d348c1d45369dc13b79be23))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#124](https://www.github.com/googleapis/java-talent/issues/124)) ([27af148](https://www.github.com/googleapis/java-talent/commit/27af1488441347441a98ac857a34b63d9dacf34b))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#101](https://www.github.com/googleapis/java-talent/issues/101)) ([d51ce92](https://www.github.com/googleapis/java-talent/commit/d51ce925a7c33c868a2de26df16b1b6c4dd67c22))
+
 ## [0.36.0](https://www.github.com/googleapis/java-talent/compare/v0.35.2...v0.36.0) (2020-03-27)
 
 
