@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.94.5](https://www.github.com/googleapis/java-translate/compare/v1.94.4...v1.94.5) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#108](https://www.github.com/googleapis/java-translate/issues/108)) ([1e13f1e](https://www.github.com/googleapis/java-translate/commit/1e13f1e5662c07dd5039b79e891ead9376bdd01a))
+* update core dependencies to v1.93.4 ([#132](https://www.github.com/googleapis/java-translate/issues/132)) ([3e06897](https://www.github.com/googleapis/java-translate/commit/3e0689719c951159557e1623b6b109ad87766d75))
+* update dependency com.google.api:api-common to v1.9.0 ([#124](https://www.github.com/googleapis/java-translate/issues/124)) ([b943de4](https://www.github.com/googleapis/java-translate/commit/b943de4c6fdbd185bb60339407d884e6caf0fadc))
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.13 ([#123](https://www.github.com/googleapis/java-translate/issues/123)) ([2d5310e](https://www.github.com/googleapis/java-translate/commit/2d5310ebabfde09044d8e9291c05cab6cdf26152))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#117](https://www.github.com/googleapis/java-translate/issues/117)) ([89eec93](https://www.github.com/googleapis/java-translate/commit/89eec93f57fe1b21307a5e6d8876b16ec7b660df))
+
 ### [1.94.4](https://www.github.com/googleapis/java-translate/compare/v1.94.3...v1.94.4) (2020-03-06)
 
 
