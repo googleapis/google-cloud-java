@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-shared-config/compare/v0.4.0...v0.5.0) (2020-04-07)
+
+
+### Features
+
+* add ban duplicate classes rule ([#126](https://www.github.com/googleapis/java-shared-config/issues/126)) ([e38a7cc](https://www.github.com/googleapis/java-shared-config/commit/e38a7cc949396f8f5696e62cd060e0c076047b8d))
+* add devsite javadoc profile ([#121](https://www.github.com/googleapis/java-shared-config/issues/121)) ([7f452fb](https://www.github.com/googleapis/java-shared-config/commit/7f452fb6c5704f6ce0f731085479a28fb99ebcb9))
+* add maven flatten plugin ([#127](https://www.github.com/googleapis/java-shared-config/issues/127)) ([fb00799](https://www.github.com/googleapis/java-shared-config/commit/fb00799c416d324d68da5b660a26f7ef595c26d9))
+
+
+### Bug Fixes
+
+* declare com.coveo:fmt-maven-plugin version/configuration ([#90](https://www.github.com/googleapis/java-shared-config/issues/90)) ([5cf71a6](https://www.github.com/googleapis/java-shared-config/commit/5cf71a6ed699907082756e70c2fdee6ad3632f38))
+
+
+### Dependencies
+
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.13 ([#118](https://www.github.com/googleapis/java-shared-config/issues/118)) ([58ae69e](https://www.github.com/googleapis/java-shared-config/commit/58ae69eb5ba037963cdaed0c2b0e30663bc873eb))
+* update dependency com.puppycrawl.tools:checkstyle to v8.29 ([f62292d](https://www.github.com/googleapis/java-shared-config/commit/f62292dab75699a75f8a7d499fe2ccfb7ee93783))
+* update dependency org.apache.maven.plugins:maven-antrun-plugin to v1.8 ([#124](https://www.github.com/googleapis/java-shared-config/issues/124)) ([a681536](https://www.github.com/googleapis/java-shared-config/commit/a68153643400c3f3b5c5959cda4dc3b552336427))
+* update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.1.2 ([#107](https://www.github.com/googleapis/java-shared-config/issues/107)) ([c9b096b](https://www.github.com/googleapis/java-shared-config/commit/c9b096b81b1f4f8dc2d1302f259f0321722e1ca5))
+* update dependency org.apache.maven.plugins:maven-site-plugin to v3.9.0 ([#103](https://www.github.com/googleapis/java-shared-config/issues/103)) ([abe7140](https://www.github.com/googleapis/java-shared-config/commit/abe714060e858c70a83888fb34438c45d97b1168))
+* update dependency org.codehaus.mojo:build-helper-maven-plugin to v3.1.0 ([#101](https://www.github.com/googleapis/java-shared-config/issues/101)) ([ac69572](https://www.github.com/googleapis/java-shared-config/commit/ac69572be76e4462fdf65fa6e7f0935c3d51d827))
+
 ## [0.4.0](https://www.github.com/googleapis/java-shared-config/compare/v0.3.1...v0.4.0) (2020-01-08)
 
 
