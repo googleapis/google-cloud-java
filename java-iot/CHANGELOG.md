@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-iot/compare/v1.0.0...v1.0.1) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#85](https://www.github.com/googleapis/java-iot/issues/85)) ([c9ab329](https://www.github.com/googleapis/java-iot/commit/c9ab3290f357f136f9aa4f50b9c31dad8492c7a2))
+* update dependency com.google.api:api-common to v1.9.0 ([#95](https://www.github.com/googleapis/java-iot/issues/95)) ([bcbce5c](https://www.github.com/googleapis/java-iot/commit/bcbce5c4c0ae318dc0723f2a6e72284ba62c1055))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#104](https://www.github.com/googleapis/java-iot/issues/104)) ([2769135](https://www.github.com/googleapis/java-iot/commit/2769135a7ac9d57d702dd332d14babd7a75d15f5))
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.13 ([#94](https://www.github.com/googleapis/java-iot/issues/94)) ([9a8d54d](https://www.github.com/googleapis/java-iot/commit/9a8d54dd36319642a36f6a50d3739b1335d8a939))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#91](https://www.github.com/googleapis/java-iot/issues/91)) ([d41fc82](https://www.github.com/googleapis/java-iot/commit/d41fc8267dd59020b3de34d47f1eaeae928b9209))
+
 ## [1.0.0](https://www.github.com/googleapis/java-iot/compare/v0.117.1...v1.0.0) (2020-03-03)
 
 
