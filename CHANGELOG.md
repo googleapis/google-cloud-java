@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.110.1](https://www.github.com/googleapis/java-bigquery/compare/v1.110.0...v1.110.1) (2020-04-06)
+
+
+### Dependencies
+
+* update core dependencies to v1.55.0 ([#250](https://www.github.com/googleapis/java-bigquery/issues/250)) ([caeaebf](https://www.github.com/googleapis/java-bigquery/commit/caeaebfcaa804e70c9a13370339509d7a1b281c7))
+* update core dependencies to v1.56.0 ([#258](https://www.github.com/googleapis/java-bigquery/issues/258)) ([1c85a6b](https://www.github.com/googleapis/java-bigquery/commit/1c85a6b3d7c64bd5d774b78a182baf728fc110b5))
+* update core dependencies to v1.93.4 ([#259](https://www.github.com/googleapis/java-bigquery/issues/259)) ([07b3091](https://www.github.com/googleapis/java-bigquery/commit/07b30916f8ab2b8680eedea14f73c94a4329343c))
+* update dependency com.google.api:api-common to v1.9.0 ([#246](https://www.github.com/googleapis/java-bigquery/issues/246)) ([783f1ad](https://www.github.com/googleapis/java-bigquery/commit/783f1ade581b3930f5585a30b4c1c278762e0d9d))
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20200324-1.30.9 ([#252](https://www.github.com/googleapis/java-bigquery/issues/252)) ([0570d13](https://www.github.com/googleapis/java-bigquery/commit/0570d13c4c168842480b8f83c03d4b19ed88050d))
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.13 ([#243](https://www.github.com/googleapis/java-bigquery/issues/243)) ([4c62001](https://www.github.com/googleapis/java-bigquery/commit/4c620018288b36d7e8743c0ace37ef25397d1060))
+* update dependency io.grpc:grpc-bom to v1.28.1 ([#254](https://www.github.com/googleapis/java-bigquery/issues/254)) ([546861d](https://www.github.com/googleapis/java-bigquery/commit/546861d5e73624efe18b6ca04286720ef74ceed5))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#256](https://www.github.com/googleapis/java-bigquery/issues/256)) ([b0457f0](https://www.github.com/googleapis/java-bigquery/commit/b0457f04bbf2a2528b2672d4ea5889d064a123b2))
+
 ## [1.110.0](https://www.github.com/googleapis/java-bigquery/compare/v1.109.0...v1.110.0) (2020-03-20)
 
 
