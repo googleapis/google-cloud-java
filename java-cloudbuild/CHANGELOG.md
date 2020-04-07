@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/googleapis/java-cloudbuild/compare/v1.1.0...v1.1.1) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#91](https://www.github.com/googleapis/java-cloudbuild/issues/91)) ([bf9e89b](https://www.github.com/googleapis/java-cloudbuild/commit/bf9e89bd289c3f0d1fc04fde59bfc18c1999c3e6))
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.93.4 ([#123](https://www.github.com/googleapis/java-cloudbuild/issues/123)) ([53ee168](https://www.github.com/googleapis/java-cloudbuild/commit/53ee168a8ae66757696a0c00531cf245b98c6ca2))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#104](https://www.github.com/googleapis/java-cloudbuild/issues/104)) ([857dfbe](https://www.github.com/googleapis/java-cloudbuild/commit/857dfbe177714417c832e5a917b94756e8f69d7e))
+
 ## [1.1.0](https://www.github.com/googleapis/java-cloudbuild/compare/v1.0.3...v1.1.0) (2020-03-30)
 
 
