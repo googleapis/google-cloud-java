@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.29.1](https://www.github.com/googleapis/java-tasks/compare/v1.29.0...v1.29.1) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#85](https://www.github.com/googleapis/java-tasks/issues/85)) ([1e11179](https://www.github.com/googleapis/java-tasks/commit/1e1117928283eae2cea43f4c790d4746428b06a1))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#112](https://www.github.com/googleapis/java-tasks/issues/112)) ([fc45f81](https://www.github.com/googleapis/java-tasks/commit/fc45f81f40df4ab5f92d2bd35804b7161becad55))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#94](https://www.github.com/googleapis/java-tasks/issues/94)) ([5015798](https://www.github.com/googleapis/java-tasks/commit/5015798f9ef98aa6f698fd600ed2911a490283d3))
+
 ## [1.29.0](https://www.github.com/googleapis/java-tasks/compare/v1.28.2...v1.29.0) (2020-03-30)
 
 
