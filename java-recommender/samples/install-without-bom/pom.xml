@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-recommender</artifactId>
-      <version>0.4.0</version>
+      <version>0.4.1</version>
     </dependency>
     <!-- [END google-cloud-recommender_install_without_bom] -->
 
