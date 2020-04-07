@@ -1,21 +1,12 @@
 {
-  "updateTime": "2020-03-25T17:26:35.704489Z",
+  "updateTime": "2020-04-03T21:45:30.394733Z",
   "sources": [
-    {
-      "git": {
-        "name": "googleapis",
-        "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "fd83ab212176a1042e8d45ea90766b3bf59ac679",
-        "internalRef": "302913609",
-        "log": "fd83ab212176a1042e8d45ea90766b3bf59ac679\nfix: migrate osconfig/agentendpoint/v1 go_gapic_library target to microgen impl\n\nPiperOrigin-RevId: 302913609\n\n0e07113e776bdd8fcc0783372e08bb6e76cb1b5b\ndocs: Update documentation with links to smart home developer guides and reference pages. Remove outdated authorization instructions.\n\nPiperOrigin-RevId: 302892245\n\n"
-      }
-    },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "e36822bfa0acb355502dab391b8ef9c4f30208d8",
-        "log": "e36822bfa0acb355502dab391b8ef9c4f30208d8\nchore(java): treat samples shared configuration dependency update as chore (#457)\n\n\n1b4cc80a7aaf164f6241937dd87f3bd1f4149e0c\nfix: do not run node 8 CI (#456)\n\n\n"
+        "sha": "99820243d348191bc9c634f2b48ddf65096285ed",
+        "log": "99820243d348191bc9c634f2b48ddf65096285ed\nfix: update template files for Node.js libraries (#463)\n\n\n3cbe6bcd5623139ac9834c43818424ddca5430cb\nfix(ruby): remove dead troubleshooting link from generated auth guide (#462)\n\n\na003d8655d3ebec2bbbd5fc3898e91e152265c67\ndocs: remove \"install stable\" instructions (#461)\n\nThe package hasn't been released to PyPI in some time\nf5e8c88d9870d8aa4eb43fa0b39f07e02bfbe4df\nchore(python): add license headers to config files; make small tweaks to templates (#458)\n\n\n"
       }
     }
   ],

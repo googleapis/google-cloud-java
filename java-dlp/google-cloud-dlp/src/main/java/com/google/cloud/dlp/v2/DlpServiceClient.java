@@ -37,12 +37,14 @@ import com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
+import com.google.privacy.dlp.v2.DeidentifyTemplateName;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.DlpJobName;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
@@ -54,8 +56,11 @@ import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
 import com.google.privacy.dlp.v2.HybridInspectResponse;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
+import com.google.privacy.dlp.v2.InspectJobConfig;
 import com.google.privacy.dlp.v2.InspectTemplate;
+import com.google.privacy.dlp.v2.InspectTemplateName;
 import com.google.privacy.dlp.v2.JobTrigger;
+import com.google.privacy.dlp.v2.JobTriggerName;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
@@ -68,16 +73,24 @@ import com.google.privacy.dlp.v2.ListJobTriggersRequest;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesResponse;
+import com.google.privacy.dlp.v2.LocationName;
+import com.google.privacy.dlp.v2.OrganizationLocationName;
+import com.google.privacy.dlp.v2.OrganizationName;
+import com.google.privacy.dlp.v2.ProjectName;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.RiskAnalysisJobConfig;
 import com.google.privacy.dlp.v2.StoredInfoType;
+import com.google.privacy.dlp.v2.StoredInfoTypeConfig;
+import com.google.privacy.dlp.v2.StoredInfoTypeName;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
 import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -99,11 +112,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   InspectContentRequest request = InspectContentRequest.newBuilder()
- *     .setParent(parent.toString())
- *     .build();
- *   InspectContentResponse response = dlpServiceClient.inspectContent(request);
+ *   String locationId = "";
+ *   ListInfoTypesResponse response = dlpServiceClient.listInfoTypes(locationId);
  * }
  * </code>
  * </pre>
@@ -226,10 +236,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   InspectContentRequest request = InspectContentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
+   *   InspectContentRequest request = InspectContentRequest.newBuilder().build();
    *   InspectContentResponse response = dlpServiceClient.inspectContent(request);
    * }
    * </code></pre>
@@ -257,10 +264,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   InspectContentRequest request = InspectContentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
+   *   InspectContentRequest request = InspectContentRequest.newBuilder().build();
    *   ApiFuture&lt;InspectContentResponse&gt; future = dlpServiceClient.inspectContentCallable().futureCall(request);
    *   // Do something
    *   InspectContentResponse response = future.get();
@@ -286,10 +290,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   RedactImageRequest request = RedactImageRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
+   *   RedactImageRequest request = RedactImageRequest.newBuilder().build();
    *   RedactImageResponse response = dlpServiceClient.redactImage(request);
    * }
    * </code></pre>
@@ -315,10 +316,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   RedactImageRequest request = RedactImageRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
+   *   RedactImageRequest request = RedactImageRequest.newBuilder().build();
    *   ApiFuture&lt;RedactImageResponse&gt; future = dlpServiceClient.redactImageCallable().futureCall(request);
    *   // Do something
    *   RedactImageResponse response = future.get();
@@ -343,10 +341,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   DeidentifyContentRequest request = DeidentifyContentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
+   *   DeidentifyContentRequest request = DeidentifyContentRequest.newBuilder().build();
    *   DeidentifyContentResponse response = dlpServiceClient.deidentifyContent(request);
    * }
    * </code></pre>
@@ -372,10 +367,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   DeidentifyContentRequest request = DeidentifyContentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
+   *   DeidentifyContentRequest request = DeidentifyContentRequest.newBuilder().build();
    *   ApiFuture&lt;DeidentifyContentResponse&gt; future = dlpServiceClient.deidentifyContentCallable().futureCall(request);
    *   // Do something
    *   DeidentifyContentResponse response = future.get();
@@ -446,6 +438,29 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String locationId = "";
+   *   ListInfoTypesResponse response = dlpServiceClient.listInfoTypes(locationId);
+   * }
+   * </code></pre>
+   *
+   * @param locationId The geographic location to list info types. Reserved for future extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInfoTypesResponse listInfoTypes(String locationId) {
+    ListInfoTypesRequest request =
+        ListInfoTypesRequest.newBuilder().setLocationId(locationId).build();
+    return listInfoTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns a list of the sensitive information types that the DLP API supports. See
+   * https://cloud.google.com/dlp/docs/infotypes-reference to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListInfoTypesRequest request = ListInfoTypesRequest.newBuilder().build();
    *   ListInfoTypesResponse response = dlpServiceClient.listInfoTypes(request);
    * }
@@ -487,9 +502,331 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
+   *   InspectTemplate response = dlpServiceClient.createInspectTemplate(parent, inspectTemplate);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param inspectTemplate Required. The InspectTemplate to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate createInspectTemplate(
+      OrganizationLocationName parent, InspectTemplate inspectTemplate) {
+    CreateInspectTemplateRequest request =
+        CreateInspectTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInspectTemplate(inspectTemplate)
+            .build();
+    return createInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
+   *   InspectTemplate response = dlpServiceClient.createInspectTemplate(parent, inspectTemplate);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param inspectTemplate Required. The InspectTemplate to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate createInspectTemplate(
+      ProjectName parent, InspectTemplate inspectTemplate) {
+    CreateInspectTemplateRequest request =
+        CreateInspectTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInspectTemplate(inspectTemplate)
+            .build();
+    return createInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
+   *   InspectTemplate response = dlpServiceClient.createInspectTemplate(parent, inspectTemplate);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param inspectTemplate Required. The InspectTemplate to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate createInspectTemplate(
+      OrganizationName parent, InspectTemplate inspectTemplate) {
+    CreateInspectTemplateRequest request =
+        CreateInspectTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInspectTemplate(inspectTemplate)
+            .build();
+    return createInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
+   *   InspectTemplate response = dlpServiceClient.createInspectTemplate(parent, inspectTemplate);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param inspectTemplate Required. The InspectTemplate to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate createInspectTemplate(
+      LocationName parent, InspectTemplate inspectTemplate) {
+    CreateInspectTemplateRequest request =
+        CreateInspectTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInspectTemplate(inspectTemplate)
+            .build();
+    return createInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
+   *   InspectTemplate response = dlpServiceClient.createInspectTemplate(parent.toString(), inspectTemplate);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param inspectTemplate Required. The InspectTemplate to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate createInspectTemplate(
+      String parent, InspectTemplate inspectTemplate) {
+    CreateInspectTemplateRequest request =
+        CreateInspectTemplateRequest.newBuilder()
+            .setParent(parent)
+            .setInspectTemplate(inspectTemplate)
+            .build();
+    return createInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
+   *   String locationId = "";
+   *   InspectTemplate response = dlpServiceClient.createInspectTemplate(parent, inspectTemplate, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param inspectTemplate Required. The InspectTemplate to create.
+   * @param locationId The geographic location to store the inspection template. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate createInspectTemplate(
+      OrganizationLocationName parent, InspectTemplate inspectTemplate, String locationId) {
+    CreateInspectTemplateRequest request =
+        CreateInspectTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInspectTemplate(inspectTemplate)
+            .setLocationId(locationId)
+            .build();
+    return createInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
+   *   String locationId = "";
+   *   InspectTemplate response = dlpServiceClient.createInspectTemplate(parent, inspectTemplate, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param inspectTemplate Required. The InspectTemplate to create.
+   * @param locationId The geographic location to store the inspection template. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate createInspectTemplate(
+      ProjectName parent, InspectTemplate inspectTemplate, String locationId) {
+    CreateInspectTemplateRequest request =
+        CreateInspectTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInspectTemplate(inspectTemplate)
+            .setLocationId(locationId)
+            .build();
+    return createInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
+   *   String locationId = "";
+   *   InspectTemplate response = dlpServiceClient.createInspectTemplate(parent, inspectTemplate, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param inspectTemplate Required. The InspectTemplate to create.
+   * @param locationId The geographic location to store the inspection template. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate createInspectTemplate(
+      OrganizationName parent, InspectTemplate inspectTemplate, String locationId) {
+    CreateInspectTemplateRequest request =
+        CreateInspectTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInspectTemplate(inspectTemplate)
+            .setLocationId(locationId)
+            .build();
+    return createInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
+   *   String locationId = "";
+   *   InspectTemplate response = dlpServiceClient.createInspectTemplate(parent, inspectTemplate, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param inspectTemplate Required. The InspectTemplate to create.
+   * @param locationId The geographic location to store the inspection template. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate createInspectTemplate(
+      LocationName parent, InspectTemplate inspectTemplate, String locationId) {
+    CreateInspectTemplateRequest request =
+        CreateInspectTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInspectTemplate(inspectTemplate)
+            .setLocationId(locationId)
+            .build();
+    return createInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
+   *   String locationId = "";
+   *   InspectTemplate response = dlpServiceClient.createInspectTemplate(parent.toString(), inspectTemplate, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param inspectTemplate Required. The InspectTemplate to create.
+   * @param locationId The geographic location to store the inspection template. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate createInspectTemplate(
+      String parent, InspectTemplate inspectTemplate, String locationId) {
+    CreateInspectTemplateRequest request =
+        CreateInspectTemplateRequest.newBuilder()
+            .setParent(parent)
+            .setInspectTemplate(inspectTemplate)
+            .setLocationId(locationId)
+            .build();
+    return createInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
    *   CreateInspectTemplateRequest request = CreateInspectTemplateRequest.newBuilder()
    *     .setParent(parent.toString())
+   *     .setInspectTemplate(inspectTemplate)
    *     .build();
    *   InspectTemplate response = dlpServiceClient.createInspectTemplate(request);
    * }
@@ -511,9 +848,11 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
    *   CreateInspectTemplateRequest request = CreateInspectTemplateRequest.newBuilder()
    *     .setParent(parent.toString())
+   *     .setInspectTemplate(inspectTemplate)
    *     .build();
    *   ApiFuture&lt;InspectTemplate&gt; future = dlpServiceClient.createInspectTemplateCallable().futureCall(request);
    *   // Do something
@@ -535,7 +874,75 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   InspectTemplateName name = OrganizationInspectTemplateName.of("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *   InspectTemplateName name = InspectTemplateName.ofOrganizationInspectTemplateName("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   InspectTemplate response = dlpServiceClient.updateInspectTemplate(name, inspectTemplate, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of organization and inspectTemplate to be updated, for
+   *     example `organizations/433245324/inspectTemplates/432452342` or
+   *     projects/project-id/inspectTemplates/432452342.
+   * @param inspectTemplate New InspectTemplate value.
+   * @param updateMask Mask to control which fields get updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate updateInspectTemplate(
+      InspectTemplateName name, InspectTemplate inspectTemplate, FieldMask updateMask) {
+    UpdateInspectTemplateRequest request =
+        UpdateInspectTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setInspectTemplate(inspectTemplate)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   InspectTemplateName name = InspectTemplateName.ofOrganizationInspectTemplateName("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   InspectTemplate response = dlpServiceClient.updateInspectTemplate(name.toString(), inspectTemplate, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of organization and inspectTemplate to be updated, for
+   *     example `organizations/433245324/inspectTemplates/432452342` or
+   *     projects/project-id/inspectTemplates/432452342.
+   * @param inspectTemplate New InspectTemplate value.
+   * @param updateMask Mask to control which fields get updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate updateInspectTemplate(
+      String name, InspectTemplate inspectTemplate, FieldMask updateMask) {
+    UpdateInspectTemplateRequest request =
+        UpdateInspectTemplateRequest.newBuilder()
+            .setName(name)
+            .setInspectTemplate(inspectTemplate)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   InspectTemplateName name = InspectTemplateName.ofOrganizationInspectTemplateName("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
    *   UpdateInspectTemplateRequest request = UpdateInspectTemplateRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -559,7 +966,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   InspectTemplateName name = OrganizationInspectTemplateName.of("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *   InspectTemplateName name = InspectTemplateName.ofOrganizationInspectTemplateName("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
    *   UpdateInspectTemplateRequest request = UpdateInspectTemplateRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -583,7 +990,62 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   GetInspectTemplateRequest request = GetInspectTemplateRequest.newBuilder().build();
+   *   InspectTemplateName name = InspectTemplateName.ofOrganizationInspectTemplateName("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *   InspectTemplate response = dlpServiceClient.getInspectTemplate(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the organization and inspectTemplate to be read, for
+   *     example `organizations/433245324/inspectTemplates/432452342` or
+   *     projects/project-id/inspectTemplates/432452342.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate getInspectTemplate(InspectTemplateName name) {
+    GetInspectTemplateRequest request =
+        GetInspectTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   InspectTemplateName name = InspectTemplateName.ofOrganizationInspectTemplateName("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *   InspectTemplate response = dlpServiceClient.getInspectTemplate(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the organization and inspectTemplate to be read, for
+   *     example `organizations/433245324/inspectTemplates/432452342` or
+   *     projects/project-id/inspectTemplates/432452342.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectTemplate getInspectTemplate(String name) {
+    GetInspectTemplateRequest request =
+        GetInspectTemplateRequest.newBuilder().setName(name).build();
+    return getInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   InspectTemplateName name = InspectTemplateName.ofOrganizationInspectTemplateName("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *   GetInspectTemplateRequest request = GetInspectTemplateRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   InspectTemplate response = dlpServiceClient.getInspectTemplate(request);
    * }
    * </code></pre>
@@ -604,7 +1066,10 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   GetInspectTemplateRequest request = GetInspectTemplateRequest.newBuilder().build();
+   *   InspectTemplateName name = InspectTemplateName.ofOrganizationInspectTemplateName("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *   GetInspectTemplateRequest request = GetInspectTemplateRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ApiFuture&lt;InspectTemplate&gt; future = dlpServiceClient.getInspectTemplateCallable().futureCall(request);
    *   // Do something
    *   InspectTemplate response = future.get();
@@ -624,7 +1089,141 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (InspectTemplate element : dlpServiceClient.listInspectTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInspectTemplatesPagedResponse listInspectTemplates(
+      OrganizationLocationName parent) {
+    ListInspectTemplatesRequest request =
+        ListInspectTemplatesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listInspectTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (InspectTemplate element : dlpServiceClient.listInspectTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInspectTemplatesPagedResponse listInspectTemplates(ProjectName parent) {
+    ListInspectTemplatesRequest request =
+        ListInspectTemplatesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listInspectTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (InspectTemplate element : dlpServiceClient.listInspectTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInspectTemplatesPagedResponse listInspectTemplates(OrganizationName parent) {
+    ListInspectTemplatesRequest request =
+        ListInspectTemplatesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listInspectTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (InspectTemplate element : dlpServiceClient.listInspectTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInspectTemplatesPagedResponse listInspectTemplates(LocationName parent) {
+    ListInspectTemplatesRequest request =
+        ListInspectTemplatesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listInspectTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (InspectTemplate element : dlpServiceClient.listInspectTemplates(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInspectTemplatesPagedResponse listInspectTemplates(String parent) {
+    ListInspectTemplatesRequest request =
+        ListInspectTemplatesRequest.newBuilder().setParent(parent).build();
+    return listInspectTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   ListInspectTemplatesRequest request = ListInspectTemplatesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -650,7 +1249,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   ListInspectTemplatesRequest request = ListInspectTemplatesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -675,7 +1274,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   ListInspectTemplatesRequest request = ListInspectTemplatesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -708,7 +1307,59 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   InspectTemplateName name = OrganizationInspectTemplateName.of("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *   InspectTemplateName name = InspectTemplateName.ofOrganizationInspectTemplateName("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *   dlpServiceClient.deleteInspectTemplate(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the organization and inspectTemplate to be deleted, for
+   *     example `organizations/433245324/inspectTemplates/432452342` or
+   *     projects/project-id/inspectTemplates/432452342.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteInspectTemplate(InspectTemplateName name) {
+    DeleteInspectTemplateRequest request =
+        DeleteInspectTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   InspectTemplateName name = InspectTemplateName.ofOrganizationInspectTemplateName("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *   dlpServiceClient.deleteInspectTemplate(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the organization and inspectTemplate to be deleted, for
+   *     example `organizations/433245324/inspectTemplates/432452342` or
+   *     projects/project-id/inspectTemplates/432452342.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteInspectTemplate(String name) {
+    DeleteInspectTemplateRequest request =
+        DeleteInspectTemplateRequest.newBuilder().setName(name).build();
+    deleteInspectTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   InspectTemplateName name = InspectTemplateName.ofOrganizationInspectTemplateName("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
    *   DeleteInspectTemplateRequest request = DeleteInspectTemplateRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -732,7 +1383,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   InspectTemplateName name = OrganizationInspectTemplateName.of("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *   InspectTemplateName name = InspectTemplateName.ofOrganizationInspectTemplateName("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
    *   DeleteInspectTemplateRequest request = DeleteInspectTemplateRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -756,9 +1407,341 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
+   *   DeidentifyTemplate response = dlpServiceClient.createDeidentifyTemplate(parent, deidentifyTemplate);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate createDeidentifyTemplate(
+      OrganizationLocationName parent, DeidentifyTemplate deidentifyTemplate) {
+    CreateDeidentifyTemplateRequest request =
+        CreateDeidentifyTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDeidentifyTemplate(deidentifyTemplate)
+            .build();
+    return createDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
+   *   DeidentifyTemplate response = dlpServiceClient.createDeidentifyTemplate(parent, deidentifyTemplate);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate createDeidentifyTemplate(
+      ProjectName parent, DeidentifyTemplate deidentifyTemplate) {
+    CreateDeidentifyTemplateRequest request =
+        CreateDeidentifyTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDeidentifyTemplate(deidentifyTemplate)
+            .build();
+    return createDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
+   *   DeidentifyTemplate response = dlpServiceClient.createDeidentifyTemplate(parent, deidentifyTemplate);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate createDeidentifyTemplate(
+      OrganizationName parent, DeidentifyTemplate deidentifyTemplate) {
+    CreateDeidentifyTemplateRequest request =
+        CreateDeidentifyTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDeidentifyTemplate(deidentifyTemplate)
+            .build();
+    return createDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
+   *   DeidentifyTemplate response = dlpServiceClient.createDeidentifyTemplate(parent, deidentifyTemplate);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate createDeidentifyTemplate(
+      LocationName parent, DeidentifyTemplate deidentifyTemplate) {
+    CreateDeidentifyTemplateRequest request =
+        CreateDeidentifyTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDeidentifyTemplate(deidentifyTemplate)
+            .build();
+    return createDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
+   *   DeidentifyTemplate response = dlpServiceClient.createDeidentifyTemplate(parent.toString(), deidentifyTemplate);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate createDeidentifyTemplate(
+      String parent, DeidentifyTemplate deidentifyTemplate) {
+    CreateDeidentifyTemplateRequest request =
+        CreateDeidentifyTemplateRequest.newBuilder()
+            .setParent(parent)
+            .setDeidentifyTemplate(deidentifyTemplate)
+            .build();
+    return createDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
+   *   String locationId = "";
+   *   DeidentifyTemplate response = dlpServiceClient.createDeidentifyTemplate(parent, deidentifyTemplate, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
+   * @param locationId The geographic location to store the deidentification template. Reserved for
+   *     future extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate createDeidentifyTemplate(
+      OrganizationLocationName parent, DeidentifyTemplate deidentifyTemplate, String locationId) {
+    CreateDeidentifyTemplateRequest request =
+        CreateDeidentifyTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDeidentifyTemplate(deidentifyTemplate)
+            .setLocationId(locationId)
+            .build();
+    return createDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
+   *   String locationId = "";
+   *   DeidentifyTemplate response = dlpServiceClient.createDeidentifyTemplate(parent, deidentifyTemplate, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
+   * @param locationId The geographic location to store the deidentification template. Reserved for
+   *     future extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate createDeidentifyTemplate(
+      ProjectName parent, DeidentifyTemplate deidentifyTemplate, String locationId) {
+    CreateDeidentifyTemplateRequest request =
+        CreateDeidentifyTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDeidentifyTemplate(deidentifyTemplate)
+            .setLocationId(locationId)
+            .build();
+    return createDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
+   *   String locationId = "";
+   *   DeidentifyTemplate response = dlpServiceClient.createDeidentifyTemplate(parent, deidentifyTemplate, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
+   * @param locationId The geographic location to store the deidentification template. Reserved for
+   *     future extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate createDeidentifyTemplate(
+      OrganizationName parent, DeidentifyTemplate deidentifyTemplate, String locationId) {
+    CreateDeidentifyTemplateRequest request =
+        CreateDeidentifyTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDeidentifyTemplate(deidentifyTemplate)
+            .setLocationId(locationId)
+            .build();
+    return createDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
+   *   String locationId = "";
+   *   DeidentifyTemplate response = dlpServiceClient.createDeidentifyTemplate(parent, deidentifyTemplate, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
+   * @param locationId The geographic location to store the deidentification template. Reserved for
+   *     future extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate createDeidentifyTemplate(
+      LocationName parent, DeidentifyTemplate deidentifyTemplate, String locationId) {
+    CreateDeidentifyTemplateRequest request =
+        CreateDeidentifyTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDeidentifyTemplate(deidentifyTemplate)
+            .setLocationId(locationId)
+            .build();
+    return createDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
+   *   String locationId = "";
+   *   DeidentifyTemplate response = dlpServiceClient.createDeidentifyTemplate(parent.toString(), deidentifyTemplate, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
+   * @param locationId The geographic location to store the deidentification template. Reserved for
+   *     future extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate createDeidentifyTemplate(
+      String parent, DeidentifyTemplate deidentifyTemplate, String locationId) {
+    CreateDeidentifyTemplateRequest request =
+        CreateDeidentifyTemplateRequest.newBuilder()
+            .setParent(parent)
+            .setDeidentifyTemplate(deidentifyTemplate)
+            .setLocationId(locationId)
+            .build();
+    return createDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
    *   CreateDeidentifyTemplateRequest request = CreateDeidentifyTemplateRequest.newBuilder()
    *     .setParent(parent.toString())
+   *     .setDeidentifyTemplate(deidentifyTemplate)
    *     .build();
    *   DeidentifyTemplate response = dlpServiceClient.createDeidentifyTemplate(request);
    * }
@@ -782,9 +1765,11 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
    *   CreateDeidentifyTemplateRequest request = CreateDeidentifyTemplateRequest.newBuilder()
    *     .setParent(parent.toString())
+   *     .setDeidentifyTemplate(deidentifyTemplate)
    *     .build();
    *   ApiFuture&lt;DeidentifyTemplate&gt; future = dlpServiceClient.createDeidentifyTemplateCallable().futureCall(request);
    *   // Do something
@@ -806,7 +1791,75 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DeidentifyTemplateName name = OrganizationDeidentifyTemplateName.of("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
+   *   DeidentifyTemplateName name = DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DeidentifyTemplate response = dlpServiceClient.updateDeidentifyTemplate(name, deidentifyTemplate, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of organization and deidentify template to be updated, for
+   *     example `organizations/433245324/deidentifyTemplates/432452342` or
+   *     projects/project-id/deidentifyTemplates/432452342.
+   * @param deidentifyTemplate New DeidentifyTemplate value.
+   * @param updateMask Mask to control which fields get updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate updateDeidentifyTemplate(
+      DeidentifyTemplateName name, DeidentifyTemplate deidentifyTemplate, FieldMask updateMask) {
+    UpdateDeidentifyTemplateRequest request =
+        UpdateDeidentifyTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setDeidentifyTemplate(deidentifyTemplate)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid
+   * to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeidentifyTemplateName name = DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
+   *   DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DeidentifyTemplate response = dlpServiceClient.updateDeidentifyTemplate(name.toString(), deidentifyTemplate, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of organization and deidentify template to be updated, for
+   *     example `organizations/433245324/deidentifyTemplates/432452342` or
+   *     projects/project-id/deidentifyTemplates/432452342.
+   * @param deidentifyTemplate New DeidentifyTemplate value.
+   * @param updateMask Mask to control which fields get updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate updateDeidentifyTemplate(
+      String name, DeidentifyTemplate deidentifyTemplate, FieldMask updateMask) {
+    UpdateDeidentifyTemplateRequest request =
+        UpdateDeidentifyTemplateRequest.newBuilder()
+            .setName(name)
+            .setDeidentifyTemplate(deidentifyTemplate)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid
+   * to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeidentifyTemplateName name = DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
    *   UpdateDeidentifyTemplateRequest request = UpdateDeidentifyTemplateRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -831,7 +1884,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DeidentifyTemplateName name = OrganizationDeidentifyTemplateName.of("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
+   *   DeidentifyTemplateName name = DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
    *   UpdateDeidentifyTemplateRequest request = UpdateDeidentifyTemplateRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -855,7 +1908,59 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DeidentifyTemplateName name = OrganizationDeidentifyTemplateName.of("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
+   *   DeidentifyTemplateName name = DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
+   *   DeidentifyTemplate response = dlpServiceClient.getDeidentifyTemplate(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the organization and deidentify template to be read, for
+   *     example `organizations/433245324/deidentifyTemplates/432452342` or
+   *     projects/project-id/deidentifyTemplates/432452342.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate getDeidentifyTemplate(DeidentifyTemplateName name) {
+    GetDeidentifyTemplateRequest request =
+        GetDeidentifyTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeidentifyTemplateName name = DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
+   *   DeidentifyTemplate response = dlpServiceClient.getDeidentifyTemplate(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the organization and deidentify template to be read, for
+   *     example `organizations/433245324/deidentifyTemplates/432452342` or
+   *     projects/project-id/deidentifyTemplates/432452342.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeidentifyTemplate getDeidentifyTemplate(String name) {
+    GetDeidentifyTemplateRequest request =
+        GetDeidentifyTemplateRequest.newBuilder().setName(name).build();
+    return getDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeidentifyTemplateName name = DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
    *   GetDeidentifyTemplateRequest request = GetDeidentifyTemplateRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -879,7 +1984,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DeidentifyTemplateName name = OrganizationDeidentifyTemplateName.of("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
+   *   DeidentifyTemplateName name = DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
    *   GetDeidentifyTemplateRequest request = GetDeidentifyTemplateRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -903,7 +2008,147 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (DeidentifyTemplate element : dlpServiceClient.listDeidentifyTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(
+      OrganizationLocationName parent) {
+    ListDeidentifyTemplatesRequest request =
+        ListDeidentifyTemplatesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDeidentifyTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (DeidentifyTemplate element : dlpServiceClient.listDeidentifyTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(ProjectName parent) {
+    ListDeidentifyTemplatesRequest request =
+        ListDeidentifyTemplatesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDeidentifyTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (DeidentifyTemplate element : dlpServiceClient.listDeidentifyTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(
+      OrganizationName parent) {
+    ListDeidentifyTemplatesRequest request =
+        ListDeidentifyTemplatesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDeidentifyTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (DeidentifyTemplate element : dlpServiceClient.listDeidentifyTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(LocationName parent) {
+    ListDeidentifyTemplatesRequest request =
+        ListDeidentifyTemplatesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDeidentifyTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (DeidentifyTemplate element : dlpServiceClient.listDeidentifyTemplates(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(String parent) {
+    ListDeidentifyTemplatesRequest request =
+        ListDeidentifyTemplatesRequest.newBuilder().setParent(parent).build();
+    return listDeidentifyTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   ListDeidentifyTemplatesRequest request = ListDeidentifyTemplatesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -930,7 +2175,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   ListDeidentifyTemplatesRequest request = ListDeidentifyTemplatesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -956,7 +2201,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   ListDeidentifyTemplatesRequest request = ListDeidentifyTemplatesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -989,7 +2234,59 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DeidentifyTemplateName name = OrganizationDeidentifyTemplateName.of("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
+   *   DeidentifyTemplateName name = DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
+   *   dlpServiceClient.deleteDeidentifyTemplate(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the organization and deidentify template to be deleted,
+   *     for example `organizations/433245324/deidentifyTemplates/432452342` or
+   *     projects/project-id/deidentifyTemplates/432452342.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDeidentifyTemplate(DeidentifyTemplateName name) {
+    DeleteDeidentifyTemplateRequest request =
+        DeleteDeidentifyTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeidentifyTemplateName name = DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
+   *   dlpServiceClient.deleteDeidentifyTemplate(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the organization and deidentify template to be deleted,
+   *     for example `organizations/433245324/deidentifyTemplates/432452342` or
+   *     projects/project-id/deidentifyTemplates/432452342.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDeidentifyTemplate(String name) {
+    DeleteDeidentifyTemplateRequest request =
+        DeleteDeidentifyTemplateRequest.newBuilder().setName(name).build();
+    deleteDeidentifyTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeidentifyTemplateName name = DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
    *   DeleteDeidentifyTemplateRequest request = DeleteDeidentifyTemplateRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1013,7 +2310,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DeidentifyTemplateName name = OrganizationDeidentifyTemplateName.of("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
+   *   DeidentifyTemplateName name = DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName("[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
    *   DeleteDeidentifyTemplateRequest request = DeleteDeidentifyTemplateRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1026,6 +2323,988 @@ public class DlpServiceClient implements BackgroundResource {
   public final UnaryCallable<DeleteDeidentifyTemplateRequest, Empty>
       deleteDeidentifyTemplateCallable() {
     return stub.deleteDeidentifyTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   JobTrigger response = dlpServiceClient.createJobTrigger(parent, jobTrigger);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param jobTrigger Required. The JobTrigger to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger createJobTrigger(ProjectName parent, JobTrigger jobTrigger) {
+    CreateJobTriggerRequest request =
+        CreateJobTriggerRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setJobTrigger(jobTrigger)
+            .build();
+    return createJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   JobTrigger response = dlpServiceClient.createJobTrigger(parent.toString(), jobTrigger);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param jobTrigger Required. The JobTrigger to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger createJobTrigger(String parent, JobTrigger jobTrigger) {
+    CreateJobTriggerRequest request =
+        CreateJobTriggerRequest.newBuilder().setParent(parent).setJobTrigger(jobTrigger).build();
+    return createJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   String locationId = "";
+   *   JobTrigger response = dlpServiceClient.createJobTrigger(parent, jobTrigger, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param jobTrigger Required. The JobTrigger to create.
+   * @param locationId The geographic location to store the job trigger. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger createJobTrigger(
+      ProjectName parent, JobTrigger jobTrigger, String locationId) {
+    CreateJobTriggerRequest request =
+        CreateJobTriggerRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setJobTrigger(jobTrigger)
+            .setLocationId(locationId)
+            .build();
+    return createJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   String locationId = "";
+   *   JobTrigger response = dlpServiceClient.createJobTrigger(parent.toString(), jobTrigger, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param jobTrigger Required. The JobTrigger to create.
+   * @param locationId The geographic location to store the job trigger. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger createJobTrigger(
+      String parent, JobTrigger jobTrigger, String locationId) {
+    CreateJobTriggerRequest request =
+        CreateJobTriggerRequest.newBuilder()
+            .setParent(parent)
+            .setJobTrigger(jobTrigger)
+            .setLocationId(locationId)
+            .build();
+    return createJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   CreateJobTriggerRequest request = CreateJobTriggerRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setJobTrigger(jobTrigger)
+   *     .build();
+   *   JobTrigger response = dlpServiceClient.createJobTrigger(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger createJobTrigger(CreateJobTriggerRequest request) {
+    return createJobTriggerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   CreateJobTriggerRequest request = CreateJobTriggerRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setJobTrigger(jobTrigger)
+   *     .build();
+   *   ApiFuture&lt;JobTrigger&gt; future = dlpServiceClient.createJobTriggerCallable().futureCall(request);
+   *   // Do something
+   *   JobTrigger response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateJobTriggerRequest, JobTrigger> createJobTriggerCallable() {
+    return stub.createJobTriggerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   JobTrigger response = dlpServiceClient.updateJobTrigger(name, jobTrigger, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the project and the triggeredJob, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @param jobTrigger New JobTrigger value.
+   * @param updateMask Mask to control which fields get updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger updateJobTrigger(
+      JobTriggerName name, JobTrigger jobTrigger, FieldMask updateMask) {
+    UpdateJobTriggerRequest request =
+        UpdateJobTriggerRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setJobTrigger(jobTrigger)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   JobTrigger response = dlpServiceClient.updateJobTrigger(name.toString(), jobTrigger, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the project and the triggeredJob, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @param jobTrigger New JobTrigger value.
+   * @param updateMask Mask to control which fields get updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger updateJobTrigger(
+      String name, JobTrigger jobTrigger, FieldMask updateMask) {
+    UpdateJobTriggerRequest request =
+        UpdateJobTriggerRequest.newBuilder()
+            .setName(name)
+            .setJobTrigger(jobTrigger)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   UpdateJobTriggerRequest request = UpdateJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   JobTrigger response = dlpServiceClient.updateJobTrigger(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger updateJobTrigger(UpdateJobTriggerRequest request) {
+    return updateJobTriggerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   UpdateJobTriggerRequest request = UpdateJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;JobTrigger&gt; future = dlpServiceClient.updateJobTriggerCallable().futureCall(request);
+   *   // Do something
+   *   JobTrigger response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerCallable() {
+    return stub.updateJobTriggerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
+   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
+   * feature is in a pre-release state and might change or have limited support. For more
+   * information, see https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectJobTrigger(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the trigger to execute a hybrid inspect on, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectJobTrigger(JobTriggerName name) {
+    HybridInspectJobTriggerRequest request =
+        HybridInspectJobTriggerRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return hybridInspectJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
+   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
+   * feature is in a pre-release state and might change or have limited support. For more
+   * information, see https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectJobTrigger(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the trigger to execute a hybrid inspect on, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectJobTrigger(String name) {
+    HybridInspectJobTriggerRequest request =
+        HybridInspectJobTriggerRequest.newBuilder().setName(name).build();
+    return hybridInspectJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
+   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
+   * feature is in a pre-release state and might change or have limited support. For more
+   * information, see https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   HybridInspectJobTriggerRequest request = HybridInspectJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectJobTrigger(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectJobTrigger(
+      HybridInspectJobTriggerRequest request) {
+    return hybridInspectJobTriggerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
+   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
+   * feature is in a pre-release state and might change or have limited support. For more
+   * information, see https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   HybridInspectJobTriggerRequest request = HybridInspectJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;HybridInspectResponse&gt; future = dlpServiceClient.hybridInspectJobTriggerCallable().futureCall(request);
+   *   // Do something
+   *   HybridInspectResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<HybridInspectJobTriggerRequest, HybridInspectResponse>
+      hybridInspectJobTriggerCallable() {
+    return stub.hybridInspectJobTriggerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   JobTrigger response = dlpServiceClient.getJobTrigger(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the project and the triggeredJob, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger getJobTrigger(JobTriggerName name) {
+    GetJobTriggerRequest request =
+        GetJobTriggerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   JobTrigger response = dlpServiceClient.getJobTrigger(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the project and the triggeredJob, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger getJobTrigger(String name) {
+    GetJobTriggerRequest request = GetJobTriggerRequest.newBuilder().setName(name).build();
+    return getJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   GetJobTriggerRequest request = GetJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   JobTrigger response = dlpServiceClient.getJobTrigger(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger getJobTrigger(GetJobTriggerRequest request) {
+    return getJobTriggerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   GetJobTriggerRequest request = GetJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;JobTrigger&gt; future = dlpServiceClient.getJobTriggerCallable().futureCall(request);
+   *   // Do something
+   *   JobTrigger response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetJobTriggerRequest, JobTrigger> getJobTriggerCallable() {
+    return stub.getJobTriggerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (JobTrigger element : dlpServiceClient.listJobTriggers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example `projects/my-project-id`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListJobTriggersPagedResponse listJobTriggers(ProjectName parent) {
+    ListJobTriggersRequest request =
+        ListJobTriggersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listJobTriggers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (JobTrigger element : dlpServiceClient.listJobTriggers(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example `projects/my-project-id`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListJobTriggersPagedResponse listJobTriggers(String parent) {
+    ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder().setParent(parent).build();
+    return listJobTriggers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (JobTrigger element : dlpServiceClient.listJobTriggers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListJobTriggersPagedResponse listJobTriggers(ListJobTriggersRequest request) {
+    return listJobTriggersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListJobTriggersPagedResponse&gt; future = dlpServiceClient.listJobTriggersPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (JobTrigger element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListJobTriggersRequest, ListJobTriggersPagedResponse>
+      listJobTriggersPagedCallable() {
+    return stub.listJobTriggersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListJobTriggersResponse response = dlpServiceClient.listJobTriggersCallable().call(request);
+   *     for (JobTrigger element : response.getJobTriggersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse>
+      listJobTriggersCallable() {
+    return stub.listJobTriggersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   dlpServiceClient.deleteJobTrigger(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the project and the triggeredJob, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJobTrigger(JobTriggerName name) {
+    DeleteJobTriggerRequest request =
+        DeleteJobTriggerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   dlpServiceClient.deleteJobTrigger(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the project and the triggeredJob, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJobTrigger(String name) {
+    DeleteJobTriggerRequest request = DeleteJobTriggerRequest.newBuilder().setName(name).build();
+    deleteJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   DeleteJobTriggerRequest request = DeleteJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dlpServiceClient.deleteJobTrigger(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJobTrigger(DeleteJobTriggerRequest request) {
+    deleteJobTriggerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   DeleteJobTriggerRequest request = DeleteJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dlpServiceClient.deleteJobTriggerCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable() {
+    return stub.deleteJobTriggerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new job to inspect storage or calculate risk metrics. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   InspectJobConfig inspectJob = InspectJobConfig.newBuilder().build();
+   *   DlpJob response = dlpServiceClient.createDlpJob(parent, inspectJob);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param inspectJob Set to control what and how to inspect.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DlpJob createDlpJob(ProjectName parent, InspectJobConfig inspectJob) {
+    CreateDlpJobRequest request =
+        CreateDlpJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInspectJob(inspectJob)
+            .build();
+    return createDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new job to inspect storage or calculate risk metrics. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   InspectJobConfig inspectJob = InspectJobConfig.newBuilder().build();
+   *   DlpJob response = dlpServiceClient.createDlpJob(parent.toString(), inspectJob);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param inspectJob Set to control what and how to inspect.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DlpJob createDlpJob(String parent, InspectJobConfig inspectJob) {
+    CreateDlpJobRequest request =
+        CreateDlpJobRequest.newBuilder().setParent(parent).setInspectJob(inspectJob).build();
+    return createDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new job to inspect storage or calculate risk metrics. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   InspectJobConfig inspectJob = InspectJobConfig.newBuilder().build();
+   *   String locationId = "";
+   *   DlpJob response = dlpServiceClient.createDlpJob(parent, inspectJob, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param inspectJob Set to control what and how to inspect.
+   * @param locationId The geographic location to store and process the job. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DlpJob createDlpJob(
+      ProjectName parent, InspectJobConfig inspectJob, String locationId) {
+    CreateDlpJobRequest request =
+        CreateDlpJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInspectJob(inspectJob)
+            .setLocationId(locationId)
+            .build();
+    return createDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new job to inspect storage or calculate risk metrics. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   InspectJobConfig inspectJob = InspectJobConfig.newBuilder().build();
+   *   String locationId = "";
+   *   DlpJob response = dlpServiceClient.createDlpJob(parent.toString(), inspectJob, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param inspectJob Set to control what and how to inspect.
+   * @param locationId The geographic location to store and process the job. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DlpJob createDlpJob(String parent, InspectJobConfig inspectJob, String locationId) {
+    CreateDlpJobRequest request =
+        CreateDlpJobRequest.newBuilder()
+            .setParent(parent)
+            .setInspectJob(inspectJob)
+            .setLocationId(locationId)
+            .build();
+    return createDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new job to inspect storage or calculate risk metrics. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   RiskAnalysisJobConfig riskJob = RiskAnalysisJobConfig.newBuilder().build();
+   *   DlpJob response = dlpServiceClient.createDlpJob(parent, riskJob);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param riskJob Set to choose what metric to calculate.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DlpJob createDlpJob(ProjectName parent, RiskAnalysisJobConfig riskJob) {
+    CreateDlpJobRequest request =
+        CreateDlpJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRiskJob(riskJob)
+            .build();
+    return createDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new job to inspect storage or calculate risk metrics. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   RiskAnalysisJobConfig riskJob = RiskAnalysisJobConfig.newBuilder().build();
+   *   DlpJob response = dlpServiceClient.createDlpJob(parent.toString(), riskJob);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param riskJob Set to choose what metric to calculate.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DlpJob createDlpJob(String parent, RiskAnalysisJobConfig riskJob) {
+    CreateDlpJobRequest request =
+        CreateDlpJobRequest.newBuilder().setParent(parent).setRiskJob(riskJob).build();
+    return createDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new job to inspect storage or calculate risk metrics. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   RiskAnalysisJobConfig riskJob = RiskAnalysisJobConfig.newBuilder().build();
+   *   String locationId = "";
+   *   DlpJob response = dlpServiceClient.createDlpJob(parent, riskJob, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param riskJob Set to choose what metric to calculate.
+   * @param locationId The geographic location to store and process the job. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DlpJob createDlpJob(
+      ProjectName parent, RiskAnalysisJobConfig riskJob, String locationId) {
+    CreateDlpJobRequest request =
+        CreateDlpJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRiskJob(riskJob)
+            .setLocationId(locationId)
+            .build();
+    return createDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new job to inspect storage or calculate risk metrics. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   RiskAnalysisJobConfig riskJob = RiskAnalysisJobConfig.newBuilder().build();
+   *   String locationId = "";
+   *   DlpJob response = dlpServiceClient.createDlpJob(parent.toString(), riskJob, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param riskJob Set to choose what metric to calculate.
+   * @param locationId The geographic location to store and process the job. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DlpJob createDlpJob(
+      String parent, RiskAnalysisJobConfig riskJob, String locationId) {
+    CreateDlpJobRequest request =
+        CreateDlpJobRequest.newBuilder()
+            .setParent(parent)
+            .setRiskJob(riskJob)
+            .setLocationId(locationId)
+            .build();
+    return createDlpJob(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1083,6 +3362,59 @@ public class DlpServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateDlpJobRequest, DlpJob> createDlpJobCallable() {
     return stub.createDlpJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists DlpJobs that match the specified filter in the request. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (DlpJob element : dlpServiceClient.listDlpJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDlpJobsPagedResponse listDlpJobs(ProjectName parent) {
+    ListDlpJobsRequest request =
+        ListDlpJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDlpJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists DlpJobs that match the specified filter in the request. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (DlpJob element : dlpServiceClient.listDlpJobs(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDlpJobsPagedResponse listDlpJobs(String parent) {
+    ListDlpJobsRequest request = ListDlpJobsRequest.newBuilder().setParent(parent).build();
+    return listDlpJobs(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1182,7 +3514,54 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.of("[PROJECT]", "[DLP_JOB]");
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   DlpJob response = dlpServiceClient.getDlpJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the DlpJob resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DlpJob getDlpJob(DlpJobName name) {
+    GetDlpJobRequest request =
+        GetDlpJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the latest state of a long-running DlpJob. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   DlpJob response = dlpServiceClient.getDlpJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the DlpJob resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DlpJob getDlpJob(String name) {
+    GetDlpJobRequest request = GetDlpJobRequest.newBuilder().setName(name).build();
+    return getDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the latest state of a long-running DlpJob. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
    *   GetDlpJobRequest request = GetDlpJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1207,7 +3586,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.of("[PROJECT]", "[DLP_JOB]");
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
    *   GetDlpJobRequest request = GetDlpJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1232,7 +3611,56 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.of("[PROJECT]", "[DLP_JOB]");
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   dlpServiceClient.deleteDlpJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the DlpJob resource to be deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDlpJob(DlpJobName name) {
+    DeleteDlpJobRequest request =
+        DeleteDlpJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a long-running DlpJob. This method indicates that the client is no longer interested in
+   * the DlpJob result. The job will be cancelled if possible. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   dlpServiceClient.deleteDlpJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the DlpJob resource to be deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDlpJob(String name) {
+    DeleteDlpJobRequest request = DeleteDlpJobRequest.newBuilder().setName(name).build();
+    deleteDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a long-running DlpJob. This method indicates that the client is no longer interested in
+   * the DlpJob result. The job will be cancelled if possible. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
    *   DeleteDlpJobRequest request = DeleteDlpJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1258,7 +3686,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.of("[PROJECT]", "[DLP_JOB]");
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
    *   DeleteDlpJobRequest request = DeleteDlpJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1283,7 +3711,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.of("[PROJECT]", "[DLP_JOB]");
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
    *   CancelDlpJobRequest request = CancelDlpJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1309,7 +3737,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.of("[PROJECT]", "[DLP_JOB]");
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
    *   CancelDlpJobRequest request = CancelDlpJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1325,426 +3753,62 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Finish a running hybrid DlpJob. Triggers the finalization steps and running of any enabled
-   * actions that have not yet run. Early access feature is in a pre-release state and might change
-   * or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
+   * Creates a pre-built stored infoType to be used for inspection. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.of("[PROJECT]", "[DLP_JOB]");
-   *   FinishDlpJobRequest request = FinishDlpJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   dlpServiceClient.finishDlpJob(request);
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
+   *   StoredInfoType response = dlpServiceClient.createStoredInfoType(parent, config);
    * }
    * </code></pre>
    *
-   * @param request The request object containing all of the parameters for the API call.
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param config Required. Configuration of the storedInfoType to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void finishDlpJob(FinishDlpJobRequest request) {
-    finishDlpJobCallable().call(request);
+  public final StoredInfoType createStoredInfoType(
+      OrganizationLocationName parent, StoredInfoTypeConfig config) {
+    CreateStoredInfoTypeRequest request =
+        CreateStoredInfoTypeRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConfig(config)
+            .build();
+    return createStoredInfoType(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Finish a running hybrid DlpJob. Triggers the finalization steps and running of any enabled
-   * actions that have not yet run. Early access feature is in a pre-release state and might change
-   * or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.of("[PROJECT]", "[DLP_JOB]");
-   *   FinishDlpJobRequest request = FinishDlpJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = dlpServiceClient.finishDlpJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
-    return stub.finishDlpJobCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
-   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
-   * change or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String name = "";
-   *   HybridInspectDlpJobRequest request = HybridInspectDlpJobRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   HybridInspectResponse response = dlpServiceClient.hybridInspectDlpJob(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final HybridInspectResponse hybridInspectDlpJob(HybridInspectDlpJobRequest request) {
-    return hybridInspectDlpJobCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
-   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
-   * change or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String name = "";
-   *   HybridInspectDlpJobRequest request = HybridInspectDlpJobRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   ApiFuture&lt;HybridInspectResponse&gt; future = dlpServiceClient.hybridInspectDlpJobCallable().futureCall(request);
-   *   // Do something
-   *   HybridInspectResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
-      hybridInspectDlpJobCallable() {
-    return stub.hybridInspectDlpJobCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * Creates a pre-built stored infoType to be used for inspection. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (JobTrigger element : dlpServiceClient.listJobTriggers(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
+   *   StoredInfoType response = dlpServiceClient.createStoredInfoType(parent, config);
    * }
    * </code></pre>
    *
-   * @param request The request object containing all of the parameters for the API call.
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param config Required. Configuration of the storedInfoType to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListJobTriggersPagedResponse listJobTriggers(ListJobTriggersRequest request) {
-    return listJobTriggersPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListJobTriggersPagedResponse&gt; future = dlpServiceClient.listJobTriggersPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (JobTrigger element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListJobTriggersRequest, ListJobTriggersPagedResponse>
-      listJobTriggersPagedCallable() {
-    return stub.listJobTriggersPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListJobTriggersResponse response = dlpServiceClient.listJobTriggersCallable().call(request);
-   *     for (JobTrigger element : response.getJobTriggersList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse>
-      listJobTriggersCallable() {
-    return stub.listJobTriggersCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectJobTriggerName name = ProjectJobTriggerName.of("[PROJECT]", "[JOB_TRIGGER]");
-   *   GetJobTriggerRequest request = GetJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   JobTrigger response = dlpServiceClient.getJobTrigger(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger getJobTrigger(GetJobTriggerRequest request) {
-    return getJobTriggerCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectJobTriggerName name = ProjectJobTriggerName.of("[PROJECT]", "[JOB_TRIGGER]");
-   *   GetJobTriggerRequest request = GetJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;JobTrigger&gt; future = dlpServiceClient.getJobTriggerCallable().futureCall(request);
-   *   // Do something
-   *   JobTrigger response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetJobTriggerRequest, JobTrigger> getJobTriggerCallable() {
-    return stub.getJobTriggerCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectJobTriggerName name = ProjectJobTriggerName.of("[PROJECT]", "[JOB_TRIGGER]");
-   *   DeleteJobTriggerRequest request = DeleteJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   dlpServiceClient.deleteJobTrigger(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteJobTrigger(DeleteJobTriggerRequest request) {
-    deleteJobTriggerCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectJobTriggerName name = ProjectJobTriggerName.of("[PROJECT]", "[JOB_TRIGGER]");
-   *   DeleteJobTriggerRequest request = DeleteJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = dlpServiceClient.deleteJobTriggerCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable() {
-    return stub.deleteJobTriggerCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
-   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
-   * feature is in a pre-release state and might change or have limited support. For more
-   * information, see https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String name = "";
-   *   HybridInspectJobTriggerRequest request = HybridInspectJobTriggerRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   HybridInspectResponse response = dlpServiceClient.hybridInspectJobTrigger(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final HybridInspectResponse hybridInspectJobTrigger(
-      HybridInspectJobTriggerRequest request) {
-    return hybridInspectJobTriggerCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
-   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
-   * feature is in a pre-release state and might change or have limited support. For more
-   * information, see https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String name = "";
-   *   HybridInspectJobTriggerRequest request = HybridInspectJobTriggerRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   ApiFuture&lt;HybridInspectResponse&gt; future = dlpServiceClient.hybridInspectJobTriggerCallable().futureCall(request);
-   *   // Do something
-   *   HybridInspectResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<HybridInspectJobTriggerRequest, HybridInspectResponse>
-      hybridInspectJobTriggerCallable() {
-    return stub.hybridInspectJobTriggerCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectJobTriggerName name = ProjectJobTriggerName.of("[PROJECT]", "[JOB_TRIGGER]");
-   *   UpdateJobTriggerRequest request = UpdateJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   JobTrigger response = dlpServiceClient.updateJobTrigger(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger updateJobTrigger(UpdateJobTriggerRequest request) {
-    return updateJobTriggerCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectJobTriggerName name = ProjectJobTriggerName.of("[PROJECT]", "[JOB_TRIGGER]");
-   *   UpdateJobTriggerRequest request = UpdateJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;JobTrigger&gt; future = dlpServiceClient.updateJobTriggerCallable().futureCall(request);
-   *   // Do something
-   *   JobTrigger response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerCallable() {
-    return stub.updateJobTriggerCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   CreateJobTriggerRequest request = CreateJobTriggerRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   JobTrigger response = dlpServiceClient.createJobTrigger(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger createJobTrigger(CreateJobTriggerRequest request) {
-    return createJobTriggerCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   CreateJobTriggerRequest request = CreateJobTriggerRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;JobTrigger&gt; future = dlpServiceClient.createJobTriggerCallable().futureCall(request);
-   *   // Do something
-   *   JobTrigger response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<CreateJobTriggerRequest, JobTrigger> createJobTriggerCallable() {
-    return stub.createJobTriggerCallable();
+  public final StoredInfoType createStoredInfoType(
+      ProjectName parent, StoredInfoTypeConfig config) {
+    CreateStoredInfoTypeRequest request =
+        CreateStoredInfoTypeRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConfig(config)
+            .build();
+    return createStoredInfoType(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1757,8 +3821,266 @@ public class DlpServiceClient implements BackgroundResource {
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
+   *   StoredInfoType response = dlpServiceClient.createStoredInfoType(parent, config);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param config Required. Configuration of the storedInfoType to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType createStoredInfoType(
+      OrganizationName parent, StoredInfoTypeConfig config) {
+    CreateStoredInfoTypeRequest request =
+        CreateStoredInfoTypeRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConfig(config)
+            .build();
+    return createStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a pre-built stored infoType to be used for inspection. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
+   *   StoredInfoType response = dlpServiceClient.createStoredInfoType(parent, config);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param config Required. Configuration of the storedInfoType to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType createStoredInfoType(
+      LocationName parent, StoredInfoTypeConfig config) {
+    CreateStoredInfoTypeRequest request =
+        CreateStoredInfoTypeRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConfig(config)
+            .build();
+    return createStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a pre-built stored infoType to be used for inspection. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
+   *   StoredInfoType response = dlpServiceClient.createStoredInfoType(parent.toString(), config);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param config Required. Configuration of the storedInfoType to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType createStoredInfoType(String parent, StoredInfoTypeConfig config) {
+    CreateStoredInfoTypeRequest request =
+        CreateStoredInfoTypeRequest.newBuilder().setParent(parent).setConfig(config).build();
+    return createStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a pre-built stored infoType to be used for inspection. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
+   *   String locationId = "";
+   *   StoredInfoType response = dlpServiceClient.createStoredInfoType(parent, config, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param config Required. Configuration of the storedInfoType to create.
+   * @param locationId The geographic location to store the stored infoType. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType createStoredInfoType(
+      OrganizationLocationName parent, StoredInfoTypeConfig config, String locationId) {
+    CreateStoredInfoTypeRequest request =
+        CreateStoredInfoTypeRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConfig(config)
+            .setLocationId(locationId)
+            .build();
+    return createStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a pre-built stored infoType to be used for inspection. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
+   *   String locationId = "";
+   *   StoredInfoType response = dlpServiceClient.createStoredInfoType(parent, config, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param config Required. Configuration of the storedInfoType to create.
+   * @param locationId The geographic location to store the stored infoType. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType createStoredInfoType(
+      ProjectName parent, StoredInfoTypeConfig config, String locationId) {
+    CreateStoredInfoTypeRequest request =
+        CreateStoredInfoTypeRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConfig(config)
+            .setLocationId(locationId)
+            .build();
+    return createStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a pre-built stored infoType to be used for inspection. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
+   *   String locationId = "";
+   *   StoredInfoType response = dlpServiceClient.createStoredInfoType(parent, config, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param config Required. Configuration of the storedInfoType to create.
+   * @param locationId The geographic location to store the stored infoType. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType createStoredInfoType(
+      OrganizationName parent, StoredInfoTypeConfig config, String locationId) {
+    CreateStoredInfoTypeRequest request =
+        CreateStoredInfoTypeRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConfig(config)
+            .setLocationId(locationId)
+            .build();
+    return createStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a pre-built stored infoType to be used for inspection. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
+   *   String locationId = "";
+   *   StoredInfoType response = dlpServiceClient.createStoredInfoType(parent, config, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param config Required. Configuration of the storedInfoType to create.
+   * @param locationId The geographic location to store the stored infoType. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType createStoredInfoType(
+      LocationName parent, StoredInfoTypeConfig config, String locationId) {
+    CreateStoredInfoTypeRequest request =
+        CreateStoredInfoTypeRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConfig(config)
+            .setLocationId(locationId)
+            .build();
+    return createStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a pre-built stored infoType to be used for inspection. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
+   *   String locationId = "";
+   *   StoredInfoType response = dlpServiceClient.createStoredInfoType(parent.toString(), config, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @param config Required. Configuration of the storedInfoType to create.
+   * @param locationId The geographic location to store the stored infoType. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType createStoredInfoType(
+      String parent, StoredInfoTypeConfig config, String locationId) {
+    CreateStoredInfoTypeRequest request =
+        CreateStoredInfoTypeRequest.newBuilder()
+            .setParent(parent)
+            .setConfig(config)
+            .setLocationId(locationId)
+            .build();
+    return createStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a pre-built stored infoType to be used for inspection. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
    *   CreateStoredInfoTypeRequest request = CreateStoredInfoTypeRequest.newBuilder()
    *     .setParent(parent.toString())
+   *     .setConfig(config)
    *     .build();
    *   StoredInfoType response = dlpServiceClient.createStoredInfoType(request);
    * }
@@ -1780,9 +4102,11 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
    *   CreateStoredInfoTypeRequest request = CreateStoredInfoTypeRequest.newBuilder()
    *     .setParent(parent.toString())
+   *     .setConfig(config)
    *     .build();
    *   ApiFuture&lt;StoredInfoType&gt; future = dlpServiceClient.createStoredInfoTypeCallable().futureCall(request);
    *   // Do something
@@ -1805,7 +4129,79 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   StoredInfoTypeName name = OrganizationStoredInfoTypeName.of("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   StoredInfoTypeName name = StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   StoredInfoType response = dlpServiceClient.updateStoredInfoType(name, config, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of organization and storedInfoType to be updated, for
+   *     example `organizations/433245324/storedInfoTypes/432452342` or
+   *     projects/project-id/storedInfoTypes/432452342.
+   * @param config Updated configuration for the storedInfoType. If not provided, a new version of
+   *     the storedInfoType will be created with the existing configuration.
+   * @param updateMask Mask to control which fields get updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType updateStoredInfoType(
+      StoredInfoTypeName name, StoredInfoTypeConfig config, FieldMask updateMask) {
+    UpdateStoredInfoTypeRequest request =
+        UpdateStoredInfoTypeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setConfig(config)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the stored infoType by creating a new version. The existing version will continue to be
+   * used until the new version is ready. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   StoredInfoTypeName name = StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   StoredInfoType response = dlpServiceClient.updateStoredInfoType(name.toString(), config, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of organization and storedInfoType to be updated, for
+   *     example `organizations/433245324/storedInfoTypes/432452342` or
+   *     projects/project-id/storedInfoTypes/432452342.
+   * @param config Updated configuration for the storedInfoType. If not provided, a new version of
+   *     the storedInfoType will be created with the existing configuration.
+   * @param updateMask Mask to control which fields get updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType updateStoredInfoType(
+      String name, StoredInfoTypeConfig config, FieldMask updateMask) {
+    UpdateStoredInfoTypeRequest request =
+        UpdateStoredInfoTypeRequest.newBuilder()
+            .setName(name)
+            .setConfig(config)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the stored infoType by creating a new version. The existing version will continue to be
+   * used until the new version is ready. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   StoredInfoTypeName name = StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
    *   UpdateStoredInfoTypeRequest request = UpdateStoredInfoTypeRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1830,7 +4226,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   StoredInfoTypeName name = OrganizationStoredInfoTypeName.of("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   StoredInfoTypeName name = StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
    *   UpdateStoredInfoTypeRequest request = UpdateStoredInfoTypeRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1854,7 +4250,58 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   StoredInfoTypeName name = OrganizationStoredInfoTypeName.of("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   StoredInfoTypeName name = StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   StoredInfoType response = dlpServiceClient.getStoredInfoType(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the organization and storedInfoType to be read, for
+   *     example `organizations/433245324/storedInfoTypes/432452342` or
+   *     projects/project-id/storedInfoTypes/432452342.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType getStoredInfoType(StoredInfoTypeName name) {
+    GetStoredInfoTypeRequest request =
+        GetStoredInfoTypeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   StoredInfoTypeName name = StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   StoredInfoType response = dlpServiceClient.getStoredInfoType(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the organization and storedInfoType to be read, for
+   *     example `organizations/433245324/storedInfoTypes/432452342` or
+   *     projects/project-id/storedInfoTypes/432452342.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType getStoredInfoType(String name) {
+    GetStoredInfoTypeRequest request = GetStoredInfoTypeRequest.newBuilder().setName(name).build();
+    return getStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   StoredInfoTypeName name = StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
    *   GetStoredInfoTypeRequest request = GetStoredInfoTypeRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1878,7 +4325,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   StoredInfoTypeName name = OrganizationStoredInfoTypeName.of("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   StoredInfoTypeName name = StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
    *   GetStoredInfoTypeRequest request = GetStoredInfoTypeRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1901,7 +4348,146 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (StoredInfoType element : dlpServiceClient.listStoredInfoTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(
+      OrganizationLocationName parent) {
+    ListStoredInfoTypesRequest request =
+        ListStoredInfoTypesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listStoredInfoTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (StoredInfoType element : dlpServiceClient.listStoredInfoTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(ProjectName parent) {
+    ListStoredInfoTypesRequest request =
+        ListStoredInfoTypesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listStoredInfoTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (StoredInfoType element : dlpServiceClient.listStoredInfoTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(OrganizationName parent) {
+    ListStoredInfoTypesRequest request =
+        ListStoredInfoTypesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listStoredInfoTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (StoredInfoType element : dlpServiceClient.listStoredInfoTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(LocationName parent) {
+    ListStoredInfoTypesRequest request =
+        ListStoredInfoTypesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listStoredInfoTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (StoredInfoType element : dlpServiceClient.listStoredInfoTypes(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id or
+   *     organizations/my-org-id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(String parent) {
+    ListStoredInfoTypesRequest request =
+        ListStoredInfoTypesRequest.newBuilder().setParent(parent).build();
+    return listStoredInfoTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   ListStoredInfoTypesRequest request = ListStoredInfoTypesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -1928,7 +4514,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   ListStoredInfoTypesRequest request = ListStoredInfoTypesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -1954,7 +4540,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   ListStoredInfoTypesRequest request = ListStoredInfoTypesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -1987,7 +4573,59 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   StoredInfoTypeName name = OrganizationStoredInfoTypeName.of("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   StoredInfoTypeName name = StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   dlpServiceClient.deleteStoredInfoType(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the organization and storedInfoType to be deleted, for
+   *     example `organizations/433245324/storedInfoTypes/432452342` or
+   *     projects/project-id/storedInfoTypes/432452342.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteStoredInfoType(StoredInfoTypeName name) {
+    DeleteStoredInfoTypeRequest request =
+        DeleteStoredInfoTypeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   StoredInfoTypeName name = StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   dlpServiceClient.deleteStoredInfoType(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the organization and storedInfoType to be deleted, for
+   *     example `organizations/433245324/storedInfoTypes/432452342` or
+   *     projects/project-id/storedInfoTypes/432452342.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteStoredInfoType(String name) {
+    DeleteStoredInfoTypeRequest request =
+        DeleteStoredInfoTypeRequest.newBuilder().setName(name).build();
+    deleteStoredInfoType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   StoredInfoTypeName name = StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
    *   DeleteStoredInfoTypeRequest request = DeleteStoredInfoTypeRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -2011,7 +4649,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   StoredInfoTypeName name = OrganizationStoredInfoTypeName.of("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   StoredInfoTypeName name = StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
    *   DeleteStoredInfoTypeRequest request = DeleteStoredInfoTypeRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -2023,6 +4661,163 @@ public class DlpServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeCallable() {
     return stub.deleteStoredInfoTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
+   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
+   * change or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectDlpJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the job to execute a hybrid inspect on, for example
+   *     `projects/dlp-test-project/dlpJob/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectDlpJob(DlpJobName name) {
+    HybridInspectDlpJobRequest request =
+        HybridInspectDlpJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return hybridInspectDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
+   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
+   * change or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectDlpJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the job to execute a hybrid inspect on, for example
+   *     `projects/dlp-test-project/dlpJob/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectDlpJob(String name) {
+    HybridInspectDlpJobRequest request =
+        HybridInspectDlpJobRequest.newBuilder().setName(name).build();
+    return hybridInspectDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
+   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
+   * change or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   HybridInspectDlpJobRequest request = HybridInspectDlpJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectDlpJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectDlpJob(HybridInspectDlpJobRequest request) {
+    return hybridInspectDlpJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
+   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
+   * change or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   HybridInspectDlpJobRequest request = HybridInspectDlpJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;HybridInspectResponse&gt; future = dlpServiceClient.hybridInspectDlpJobCallable().futureCall(request);
+   *   // Do something
+   *   HybridInspectResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
+      hybridInspectDlpJobCallable() {
+    return stub.hybridInspectDlpJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finish a running hybrid DlpJob. Triggers the finalization steps and running of any enabled
+   * actions that have not yet run. Early access feature is in a pre-release state and might change
+   * or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   FinishDlpJobRequest request = FinishDlpJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dlpServiceClient.finishDlpJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void finishDlpJob(FinishDlpJobRequest request) {
+    finishDlpJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finish a running hybrid DlpJob. Triggers the finalization steps and running of any enabled
+   * actions that have not yet run. Early access feature is in a pre-release state and might change
+   * or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   FinishDlpJobRequest request = FinishDlpJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dlpServiceClient.finishDlpJobCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
+    return stub.finishDlpJobCallable();
   }
 
   @Override
@@ -2237,86 +5032,6 @@ public class DlpServiceClient implements BackgroundResource {
     }
   }
 
-  public static class ListDlpJobsPagedResponse
-      extends AbstractPagedListResponse<
-          ListDlpJobsRequest,
-          ListDlpJobsResponse,
-          DlpJob,
-          ListDlpJobsPage,
-          ListDlpJobsFixedSizeCollection> {
-
-    public static ApiFuture<ListDlpJobsPagedResponse> createAsync(
-        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
-        ApiFuture<ListDlpJobsResponse> futureResponse) {
-      ApiFuture<ListDlpJobsPage> futurePage =
-          ListDlpJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListDlpJobsPage, ListDlpJobsPagedResponse>() {
-            @Override
-            public ListDlpJobsPagedResponse apply(ListDlpJobsPage input) {
-              return new ListDlpJobsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
-    }
-
-    private ListDlpJobsPagedResponse(ListDlpJobsPage page) {
-      super(page, ListDlpJobsFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class ListDlpJobsPage
-      extends AbstractPage<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob, ListDlpJobsPage> {
-
-    private ListDlpJobsPage(
-        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
-        ListDlpJobsResponse response) {
-      super(context, response);
-    }
-
-    private static ListDlpJobsPage createEmptyPage() {
-      return new ListDlpJobsPage(null, null);
-    }
-
-    @Override
-    protected ListDlpJobsPage createPage(
-        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
-        ListDlpJobsResponse response) {
-      return new ListDlpJobsPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<ListDlpJobsPage> createPageAsync(
-        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
-        ApiFuture<ListDlpJobsResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class ListDlpJobsFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          ListDlpJobsRequest,
-          ListDlpJobsResponse,
-          DlpJob,
-          ListDlpJobsPage,
-          ListDlpJobsFixedSizeCollection> {
-
-    private ListDlpJobsFixedSizeCollection(List<ListDlpJobsPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static ListDlpJobsFixedSizeCollection createEmptyCollection() {
-      return new ListDlpJobsFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected ListDlpJobsFixedSizeCollection createCollection(
-        List<ListDlpJobsPage> pages, int collectionSize) {
-      return new ListDlpJobsFixedSizeCollection(pages, collectionSize);
-    }
-  }
-
   public static class ListJobTriggersPagedResponse
       extends AbstractPagedListResponse<
           ListJobTriggersRequest,
@@ -2396,6 +5111,86 @@ public class DlpServiceClient implements BackgroundResource {
     protected ListJobTriggersFixedSizeCollection createCollection(
         List<ListJobTriggersPage> pages, int collectionSize) {
       return new ListJobTriggersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDlpJobsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDlpJobsRequest,
+          ListDlpJobsResponse,
+          DlpJob,
+          ListDlpJobsPage,
+          ListDlpJobsFixedSizeCollection> {
+
+    public static ApiFuture<ListDlpJobsPagedResponse> createAsync(
+        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
+        ApiFuture<ListDlpJobsResponse> futureResponse) {
+      ApiFuture<ListDlpJobsPage> futurePage =
+          ListDlpJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListDlpJobsPage, ListDlpJobsPagedResponse>() {
+            @Override
+            public ListDlpJobsPagedResponse apply(ListDlpJobsPage input) {
+              return new ListDlpJobsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDlpJobsPagedResponse(ListDlpJobsPage page) {
+      super(page, ListDlpJobsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDlpJobsPage
+      extends AbstractPage<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob, ListDlpJobsPage> {
+
+    private ListDlpJobsPage(
+        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
+        ListDlpJobsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDlpJobsPage createEmptyPage() {
+      return new ListDlpJobsPage(null, null);
+    }
+
+    @Override
+    protected ListDlpJobsPage createPage(
+        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
+        ListDlpJobsResponse response) {
+      return new ListDlpJobsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDlpJobsPage> createPageAsync(
+        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
+        ApiFuture<ListDlpJobsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDlpJobsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDlpJobsRequest,
+          ListDlpJobsResponse,
+          DlpJob,
+          ListDlpJobsPage,
+          ListDlpJobsFixedSizeCollection> {
+
+    private ListDlpJobsFixedSizeCollection(List<ListDlpJobsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDlpJobsFixedSizeCollection createEmptyCollection() {
+      return new ListDlpJobsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDlpJobsFixedSizeCollection createCollection(
+        List<ListDlpJobsPage> pages, int collectionSize) {
+      return new ListDlpJobsFixedSizeCollection(pages, collectionSize);
     }
   }
 

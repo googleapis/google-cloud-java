@@ -17,6 +17,7 @@
 package com.google.privacy.dlp.v2;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
@@ -25,23 +26,22 @@ import java.util.Map;
 
 /** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-public class OrganizationStoredInfoTypeName extends StoredInfoTypeName {
+public class OrganizationLocationName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "organizations/{organization}/storedInfoTypes/{stored_info_type}");
+      PathTemplate.createWithoutUrlEncoding("organizations/{organization}/locations/{location}");
 
   private volatile Map<String, String> fieldValuesMap;
 
   private final String organization;
-  private final String storedInfoType;
+  private final String location;
 
   public String getOrganization() {
     return organization;
   }
 
-  public String getStoredInfoType() {
-    return storedInfoType;
+  public String getLocation() {
+    return location;
   }
 
   public static Builder newBuilder() {
@@ -52,45 +52,40 @@ public class OrganizationStoredInfoTypeName extends StoredInfoTypeName {
     return new Builder(this);
   }
 
-  private OrganizationStoredInfoTypeName(Builder builder) {
+  private OrganizationLocationName(Builder builder) {
     organization = Preconditions.checkNotNull(builder.getOrganization());
-    storedInfoType = Preconditions.checkNotNull(builder.getStoredInfoType());
+    location = Preconditions.checkNotNull(builder.getLocation());
   }
 
-  public static OrganizationStoredInfoTypeName of(String organization, String storedInfoType) {
-    return newBuilder().setOrganization(organization).setStoredInfoType(storedInfoType).build();
+  public static OrganizationLocationName of(String organization, String location) {
+    return newBuilder().setOrganization(organization).setLocation(location).build();
   }
 
-  public static String format(String organization, String storedInfoType) {
-    return newBuilder()
-        .setOrganization(organization)
-        .setStoredInfoType(storedInfoType)
-        .build()
-        .toString();
+  public static String format(String organization, String location) {
+    return newBuilder().setOrganization(organization).setLocation(location).build().toString();
   }
 
-  public static OrganizationStoredInfoTypeName parse(String formattedString) {
+  public static OrganizationLocationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
         PATH_TEMPLATE.validatedMatch(
-            formattedString,
-            "OrganizationStoredInfoTypeName.parse: formattedString not in valid format");
-    return of(matchMap.get("organization"), matchMap.get("stored_info_type"));
+            formattedString, "OrganizationLocationName.parse: formattedString not in valid format");
+    return of(matchMap.get("organization"), matchMap.get("location"));
   }
 
-  public static List<OrganizationStoredInfoTypeName> parseList(List<String> formattedStrings) {
-    List<OrganizationStoredInfoTypeName> list = new ArrayList<>(formattedStrings.size());
+  public static List<OrganizationLocationName> parseList(List<String> formattedStrings) {
+    List<OrganizationLocationName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<OrganizationStoredInfoTypeName> values) {
+  public static List<String> toStringList(List<OrganizationLocationName> values) {
     List<String> list = new ArrayList<String>(values.size());
-    for (OrganizationStoredInfoTypeName value : values) {
+    for (OrganizationLocationName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -110,7 +105,7 @@ public class OrganizationStoredInfoTypeName extends StoredInfoTypeName {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
           fieldMapBuilder.put("organization", organization);
-          fieldMapBuilder.put("storedInfoType", storedInfoType);
+          fieldMapBuilder.put("location", location);
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -124,22 +119,21 @@ public class OrganizationStoredInfoTypeName extends StoredInfoTypeName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "organization", organization, "stored_info_type", storedInfoType);
+    return PATH_TEMPLATE.instantiate("organization", organization, "location", location);
   }
 
-  /** Builder for OrganizationStoredInfoTypeName. */
-  public static class Builder extends StoredInfoTypeName.Builder {
+  /** Builder for OrganizationLocationName. */
+  public static class Builder {
 
     private String organization;
-    private String storedInfoType;
+    private String location;
 
     public String getOrganization() {
       return organization;
     }
 
-    public String getStoredInfoType() {
-      return storedInfoType;
+    public String getLocation() {
+      return location;
     }
 
     public Builder setOrganization(String organization) {
@@ -147,20 +141,20 @@ public class OrganizationStoredInfoTypeName extends StoredInfoTypeName {
       return this;
     }
 
-    public Builder setStoredInfoType(String storedInfoType) {
-      this.storedInfoType = storedInfoType;
+    public Builder setLocation(String location) {
+      this.location = location;
       return this;
     }
 
     private Builder() {}
 
-    private Builder(OrganizationStoredInfoTypeName organizationStoredInfoTypeName) {
-      organization = organizationStoredInfoTypeName.organization;
-      storedInfoType = organizationStoredInfoTypeName.storedInfoType;
+    private Builder(OrganizationLocationName organizationLocationName) {
+      organization = organizationLocationName.organization;
+      location = organizationLocationName.location;
     }
 
-    public OrganizationStoredInfoTypeName build() {
-      return new OrganizationStoredInfoTypeName(this);
+    public OrganizationLocationName build() {
+      return new OrganizationLocationName(this);
     }
   }
 
@@ -169,10 +163,9 @@ public class OrganizationStoredInfoTypeName extends StoredInfoTypeName {
     if (o == this) {
       return true;
     }
-    if (o instanceof OrganizationStoredInfoTypeName) {
-      OrganizationStoredInfoTypeName that = (OrganizationStoredInfoTypeName) o;
-      return (this.organization.equals(that.organization))
-          && (this.storedInfoType.equals(that.storedInfoType));
+    if (o instanceof OrganizationLocationName) {
+      OrganizationLocationName that = (OrganizationLocationName) o;
+      return (this.organization.equals(that.organization)) && (this.location.equals(that.location));
     }
     return false;
   }
@@ -183,7 +176,7 @@ public class OrganizationStoredInfoTypeName extends StoredInfoTypeName {
     h *= 1000003;
     h ^= organization.hashCode();
     h *= 1000003;
-    h ^= storedInfoType.hashCode();
+    h ^= location.hashCode();
     return h;
   }
 }

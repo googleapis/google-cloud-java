@@ -133,7 +133,7 @@ public class OrganizationDeidentifyTemplateName extends DeidentifyTemplateName {
   }
 
   /** Builder for OrganizationDeidentifyTemplateName. */
-  public static class Builder {
+  public static class Builder extends DeidentifyTemplateName.Builder {
 
     private String organization;
     private String deidentifyTemplate;

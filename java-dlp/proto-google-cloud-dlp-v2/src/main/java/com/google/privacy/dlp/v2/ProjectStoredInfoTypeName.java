@@ -124,7 +124,7 @@ public class ProjectStoredInfoTypeName extends StoredInfoTypeName {
   }
 
   /** Builder for ProjectStoredInfoTypeName. */
-  public static class Builder {
+  public static class Builder extends StoredInfoTypeName.Builder {
 
     private String project;
     private String storedInfoType;

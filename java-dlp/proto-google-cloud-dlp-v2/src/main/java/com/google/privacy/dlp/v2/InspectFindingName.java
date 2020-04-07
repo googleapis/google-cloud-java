@@ -17,6 +17,7 @@
 package com.google.privacy.dlp.v2;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
@@ -25,23 +26,28 @@ import java.util.Map;
 
 /** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-public class ProjectDeidentifyTemplateName extends DeidentifyTemplateName {
+public class InspectFindingName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/deidentifyTemplates/{deidentify_template}");
+          "projects/{project}/locations/{location}/findings/{finding}");
 
   private volatile Map<String, String> fieldValuesMap;
 
   private final String project;
-  private final String deidentifyTemplate;
+  private final String location;
+  private final String finding;
 
   public String getProject() {
     return project;
   }
 
-  public String getDeidentifyTemplate() {
-    return deidentifyTemplate;
+  public String getLocation() {
+    return location;
+  }
+
+  public String getFinding() {
+    return finding;
   }
 
   public static Builder newBuilder() {
@@ -52,45 +58,46 @@ public class ProjectDeidentifyTemplateName extends DeidentifyTemplateName {
     return new Builder(this);
   }
 
-  private ProjectDeidentifyTemplateName(Builder builder) {
+  private InspectFindingName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    deidentifyTemplate = Preconditions.checkNotNull(builder.getDeidentifyTemplate());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    finding = Preconditions.checkNotNull(builder.getFinding());
   }
 
-  public static ProjectDeidentifyTemplateName of(String project, String deidentifyTemplate) {
-    return newBuilder().setProject(project).setDeidentifyTemplate(deidentifyTemplate).build();
+  public static InspectFindingName of(String project, String location, String finding) {
+    return newBuilder().setProject(project).setLocation(location).setFinding(finding).build();
   }
 
-  public static String format(String project, String deidentifyTemplate) {
+  public static String format(String project, String location, String finding) {
     return newBuilder()
         .setProject(project)
-        .setDeidentifyTemplate(deidentifyTemplate)
+        .setLocation(location)
+        .setFinding(finding)
         .build()
         .toString();
   }
 
-  public static ProjectDeidentifyTemplateName parse(String formattedString) {
+  public static InspectFindingName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
         PATH_TEMPLATE.validatedMatch(
-            formattedString,
-            "ProjectDeidentifyTemplateName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("deidentify_template"));
+            formattedString, "InspectFindingName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("finding"));
   }
 
-  public static List<ProjectDeidentifyTemplateName> parseList(List<String> formattedStrings) {
-    List<ProjectDeidentifyTemplateName> list = new ArrayList<>(formattedStrings.size());
+  public static List<InspectFindingName> parseList(List<String> formattedStrings) {
+    List<InspectFindingName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<ProjectDeidentifyTemplateName> values) {
+  public static List<String> toStringList(List<InspectFindingName> values) {
     List<String> list = new ArrayList<String>(values.size());
-    for (ProjectDeidentifyTemplateName value : values) {
+    for (InspectFindingName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -110,7 +117,8 @@ public class ProjectDeidentifyTemplateName extends DeidentifyTemplateName {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
           fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("deidentifyTemplate", deidentifyTemplate);
+          fieldMapBuilder.put("location", location);
+          fieldMapBuilder.put("finding", finding);
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -124,21 +132,26 @@ public class ProjectDeidentifyTemplateName extends DeidentifyTemplateName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "deidentify_template", deidentifyTemplate);
+    return PATH_TEMPLATE.instantiate("project", project, "location", location, "finding", finding);
   }
 
-  /** Builder for ProjectDeidentifyTemplateName. */
-  public static class Builder extends DeidentifyTemplateName.Builder {
+  /** Builder for InspectFindingName. */
+  public static class Builder {
 
     private String project;
-    private String deidentifyTemplate;
+    private String location;
+    private String finding;
 
     public String getProject() {
       return project;
     }
 
-    public String getDeidentifyTemplate() {
-      return deidentifyTemplate;
+    public String getLocation() {
+      return location;
+    }
+
+    public String getFinding() {
+      return finding;
     }
 
     public Builder setProject(String project) {
@@ -146,20 +159,26 @@ public class ProjectDeidentifyTemplateName extends DeidentifyTemplateName {
       return this;
     }
 
-    public Builder setDeidentifyTemplate(String deidentifyTemplate) {
-      this.deidentifyTemplate = deidentifyTemplate;
+    public Builder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public Builder setFinding(String finding) {
+      this.finding = finding;
       return this;
     }
 
     private Builder() {}
 
-    private Builder(ProjectDeidentifyTemplateName projectDeidentifyTemplateName) {
-      project = projectDeidentifyTemplateName.project;
-      deidentifyTemplate = projectDeidentifyTemplateName.deidentifyTemplate;
+    private Builder(InspectFindingName inspectFindingName) {
+      project = inspectFindingName.project;
+      location = inspectFindingName.location;
+      finding = inspectFindingName.finding;
     }
 
-    public ProjectDeidentifyTemplateName build() {
-      return new ProjectDeidentifyTemplateName(this);
+    public InspectFindingName build() {
+      return new InspectFindingName(this);
     }
   }
 
@@ -168,10 +187,11 @@ public class ProjectDeidentifyTemplateName extends DeidentifyTemplateName {
     if (o == this) {
       return true;
     }
-    if (o instanceof ProjectDeidentifyTemplateName) {
-      ProjectDeidentifyTemplateName that = (ProjectDeidentifyTemplateName) o;
+    if (o instanceof InspectFindingName) {
+      InspectFindingName that = (InspectFindingName) o;
       return (this.project.equals(that.project))
-          && (this.deidentifyTemplate.equals(that.deidentifyTemplate));
+          && (this.location.equals(that.location))
+          && (this.finding.equals(that.finding));
     }
     return false;
   }
@@ -182,7 +202,9 @@ public class ProjectDeidentifyTemplateName extends DeidentifyTemplateName {
     h *= 1000003;
     h ^= project.hashCode();
     h *= 1000003;
-    h ^= deidentifyTemplate.hashCode();
+    h ^= location.hashCode();
+    h *= 1000003;
+    h ^= finding.hashCode();
     return h;
   }
 }

@@ -124,7 +124,7 @@ public class ProjectInspectTemplateName extends InspectTemplateName {
   }
 
   /** Builder for ProjectInspectTemplateName. */
-  public static class Builder {
+  public static class Builder extends InspectTemplateName.Builder {
 
     private String project;
     private String inspectTemplate;

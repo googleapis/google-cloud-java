@@ -34,11 +34,8 @@
  * <pre>
  * <code>
  * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   InspectContentRequest request = InspectContentRequest.newBuilder()
- *     .setParent(parent.toString())
- *     .build();
- *   InspectContentResponse response = dlpServiceClient.inspectContent(request);
+ *   String locationId = "";
+ *   ListInfoTypesResponse response = dlpServiceClient.listInfoTypes(locationId);
  * }
  * </code>
  * </pre>

@@ -22,55 +22,53 @@ import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 /** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-public class DlpJobName implements ResourceName {
+public class JobTriggerName implements ResourceName {
 
   @Deprecated
-  protected DlpJobName() {}
+  protected JobTriggerName() {}
 
-  private static final PathTemplate PROJECT_DLP_JOB_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/dlpJobs/{dlp_job}");
-  private static final PathTemplate PROJECT_LOCATION_DLP_JOB_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_JOB_TRIGGER_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/jobTriggers/{job_trigger}");
+  private static final PathTemplate PROJECT_LOCATION_JOB_TRIGGER_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/dlpJobs/{dlp_job}");
+          "projects/{project}/locations/{location}/jobTriggers/{job_trigger}");
 
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
 
   private String project;
-  private String dlpJob;
+  private String jobTrigger;
   private String location;
 
   public String getProject() {
     return project;
   }
 
-  public String getDlpJob() {
-    return dlpJob;
+  public String getJobTrigger() {
+    return jobTrigger;
   }
 
   public String getLocation() {
     return location;
   }
 
-  private DlpJobName(Builder builder) {
+  private JobTriggerName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    dlpJob = Preconditions.checkNotNull(builder.getDlpJob());
-    pathTemplate = PROJECT_DLP_JOB_PATH_TEMPLATE;
+    jobTrigger = Preconditions.checkNotNull(builder.getJobTrigger());
+    pathTemplate = PROJECT_JOB_TRIGGER_PATH_TEMPLATE;
   }
 
-  private DlpJobName(ProjectLocationDlpJobBuilder builder) {
+  private JobTriggerName(ProjectLocationJobTriggerBuilder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
-    dlpJob = Preconditions.checkNotNull(builder.getDlpJob());
-    pathTemplate = PROJECT_LOCATION_DLP_JOB_PATH_TEMPLATE;
+    jobTrigger = Preconditions.checkNotNull(builder.getJobTrigger());
+    pathTemplate = PROJECT_LOCATION_JOB_TRIGGER_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -78,96 +76,77 @@ public class DlpJobName implements ResourceName {
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static Builder newProjectDlpJobBuilder() {
+  public static Builder newProjectJobTriggerBuilder() {
     return new Builder();
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static ProjectLocationDlpJobBuilder newProjectLocationDlpJobBuilder() {
-    return new ProjectLocationDlpJobBuilder();
+  public static ProjectLocationJobTriggerBuilder newProjectLocationJobTriggerBuilder() {
+    return new ProjectLocationJobTriggerBuilder();
   }
 
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-  public static DlpJobName of(String project, String dlpJob) {
-    return newProjectDlpJobBuilder().setProject(project).setDlpJob(dlpJob).build();
+  public static JobTriggerName of(String project, String jobTrigger) {
+    return newProjectJobTriggerBuilder().setProject(project).setJobTrigger(jobTrigger).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static DlpJobName ofProjectDlpJobName(String project, String dlpJob) {
-    return newProjectDlpJobBuilder().setProject(project).setDlpJob(dlpJob).build();
+  public static JobTriggerName ofProjectJobTriggerName(String project, String jobTrigger) {
+    return newProjectJobTriggerBuilder().setProject(project).setJobTrigger(jobTrigger).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static DlpJobName ofProjectLocationDlpJobName(
-      String project, String location, String dlpJob) {
-    return newProjectLocationDlpJobBuilder()
+  public static JobTriggerName ofProjectLocationJobTriggerName(
+      String project, String location, String jobTrigger) {
+    return newProjectLocationJobTriggerBuilder()
         .setProject(project)
         .setLocation(location)
-        .setDlpJob(dlpJob)
+        .setJobTrigger(jobTrigger)
         .build();
   }
 
-  public static String format(String project, String dlpJob) {
-    return newBuilder().setProject(project).setDlpJob(dlpJob).build().toString();
+  public static String format(String project, String jobTrigger) {
+    return newBuilder().setProject(project).setJobTrigger(jobTrigger).build().toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatProjectDlpJobName(String project, String dlpJob) {
-    return newBuilder().setProject(project).setDlpJob(dlpJob).build().toString();
+  public static String formatProjectJobTriggerName(String project, String jobTrigger) {
+    return newBuilder().setProject(project).setJobTrigger(jobTrigger).build().toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatProjectLocationDlpJobName(
-      String project, String location, String dlpJob) {
-    return newProjectLocationDlpJobBuilder()
+  public static String formatProjectLocationJobTriggerName(
+      String project, String location, String jobTrigger) {
+    return newProjectLocationJobTriggerBuilder()
         .setProject(project)
         .setLocation(location)
-        .setDlpJob(dlpJob)
+        .setJobTrigger(jobTrigger)
         .build()
         .toString();
   }
 
-  public static DlpJobName parse(String formattedString) {
+  public static JobTriggerName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_DLP_JOB_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_DLP_JOB_PATH_TEMPLATE.match(formattedString);
-      return ofProjectDlpJobName(matchMap.get("project"), matchMap.get("dlp_job"));
-    } else if (PROJECT_LOCATION_DLP_JOB_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_LOCATION_DLP_JOB_PATH_TEMPLATE.match(formattedString);
-      return ofProjectLocationDlpJobName(
-          matchMap.get("project"), matchMap.get("location"), matchMap.get("dlp_job"));
+    if (PROJECT_JOB_TRIGGER_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_JOB_TRIGGER_PATH_TEMPLATE.match(formattedString);
+      return ofProjectJobTriggerName(matchMap.get("project"), matchMap.get("job_trigger"));
+    } else if (PROJECT_LOCATION_JOB_TRIGGER_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_JOB_TRIGGER_PATH_TEMPLATE.match(formattedString);
+      return ofProjectLocationJobTriggerName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("job_trigger"));
     }
     throw new ValidationException("JobName.parse: formattedString not in valid format");
   }
 
-  public static List<DlpJobName> parseList(List<String> formattedStrings) {
-    List<DlpJobName> list = new ArrayList<>(formattedStrings.size());
-    for (String formattedString : formattedStrings) {
-      list.add(parse(formattedString));
-    }
-    return list;
-  }
-
-  public static List<String> toStringList(List<DlpJobName> values) {
-    List<String> list = new ArrayList<>(values.size());
-    for (DlpJobName value : values) {
-      if (value == null) {
-        list.add("");
-      } else {
-        list.add(value.toString());
-      }
-    }
-    return list;
-  }
-
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_DLP_JOB_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_LOCATION_DLP_JOB_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_JOB_TRIGGER_PATH_TEMPLATE.matches(formattedString)
+        || PROJECT_LOCATION_JOB_TRIGGER_PATH_TEMPLATE.matches(formattedString);
   }
 
   @Override
@@ -179,8 +158,8 @@ public class DlpJobName implements ResourceName {
           if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (dlpJob != null) {
-            fieldMapBuilder.put("dlp_job", dlpJob);
+          if (jobTrigger != null) {
+            fieldMapBuilder.put("job_trigger", jobTrigger);
           }
           if (location != null) {
             fieldMapBuilder.put("location", location);
@@ -201,11 +180,11 @@ public class DlpJobName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
-  /** Builder for projects/{project}/dlpJobs/{dlp_job}. */
+  /** Builder for projects/{project}/jobTriggers/{job_trigger}. */
   public static class Builder {
 
     private String project;
-    private String dlpJob;
+    private String jobTrigger;
 
     protected Builder() {}
 
@@ -213,8 +192,8 @@ public class DlpJobName implements ResourceName {
       return project;
     }
 
-    public String getDlpJob() {
-      return dlpJob;
+    public String getJobTrigger() {
+      return jobTrigger;
     }
 
     public Builder setProject(String project) {
@@ -222,34 +201,34 @@ public class DlpJobName implements ResourceName {
       return this;
     }
 
-    public Builder setDlpJob(String dlpJob) {
-      this.dlpJob = dlpJob;
+    public Builder setJobTrigger(String jobTrigger) {
+      this.jobTrigger = jobTrigger;
       return this;
     }
 
-    private Builder(DlpJobName dlpJobName) {
+    private Builder(JobTriggerName jobTriggerName) {
       Preconditions.checkArgument(
-          dlpJobName.pathTemplate == PROJECT_DLP_JOB_PATH_TEMPLATE,
-          "toBuilder is only supported when DlpJobName has the pattern of "
-              + "projects/{project}/dlpJobs/{dlp_job}.");
-      project = dlpJobName.project;
-      dlpJob = dlpJobName.dlpJob;
+          jobTriggerName.pathTemplate == PROJECT_JOB_TRIGGER_PATH_TEMPLATE,
+          "toBuilder is only supported when JobTriggerName has the pattern of "
+              + "projects/{project}/jobTriggers/{job_trigger}.");
+      project = jobTriggerName.project;
+      jobTrigger = jobTriggerName.jobTrigger;
     }
 
-    public DlpJobName build() {
-      return new DlpJobName(this);
+    public JobTriggerName build() {
+      return new JobTriggerName(this);
     }
   }
 
-  /** Builder for projects/{project}/locations/{location}/dlpJobs/{dlp_job}. */
+  /** Builder for projects/{project}/locations/{location}/jobTriggers/{job_trigger}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class ProjectLocationDlpJobBuilder {
+  public static class ProjectLocationJobTriggerBuilder {
 
     private String project;
     private String location;
-    private String dlpJob;
+    private String jobTrigger;
 
-    private ProjectLocationDlpJobBuilder() {}
+    private ProjectLocationJobTriggerBuilder() {}
 
     public String getProject() {
       return project;
@@ -259,27 +238,27 @@ public class DlpJobName implements ResourceName {
       return location;
     }
 
-    public String getDlpJob() {
-      return dlpJob;
+    public String getJobTrigger() {
+      return jobTrigger;
     }
 
-    public ProjectLocationDlpJobBuilder setProject(String project) {
+    public ProjectLocationJobTriggerBuilder setProject(String project) {
       this.project = project;
       return this;
     }
 
-    public ProjectLocationDlpJobBuilder setLocation(String location) {
+    public ProjectLocationJobTriggerBuilder setLocation(String location) {
       this.location = location;
       return this;
     }
 
-    public ProjectLocationDlpJobBuilder setDlpJob(String dlpJob) {
-      this.dlpJob = dlpJob;
+    public ProjectLocationJobTriggerBuilder setJobTrigger(String jobTrigger) {
+      this.jobTrigger = jobTrigger;
       return this;
     }
 
-    public DlpJobName build() {
-      return new DlpJobName(this);
+    public JobTriggerName build() {
+      return new JobTriggerName(this);
     }
   }
 
@@ -289,9 +268,9 @@ public class DlpJobName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      DlpJobName that = (DlpJobName) o;
+      JobTriggerName that = (JobTriggerName) o;
       return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.dlpJob, that.dlpJob))
+          && (Objects.equals(this.jobTrigger, that.jobTrigger))
           && (Objects.equals(this.location, that.location));
     }
     return false;
@@ -305,7 +284,7 @@ public class DlpJobName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
-    h ^= Objects.hashCode(dlpJob);
+    h ^= Objects.hashCode(jobTrigger);
     h *= 1000003;
     h ^= Objects.hashCode(location);
     return h;

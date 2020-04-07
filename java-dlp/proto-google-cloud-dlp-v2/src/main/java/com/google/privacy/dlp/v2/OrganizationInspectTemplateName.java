@@ -129,7 +129,7 @@ public class OrganizationInspectTemplateName extends InspectTemplateName {
   }
 
   /** Builder for OrganizationInspectTemplateName. */
-  public static class Builder {
+  public static class Builder extends InspectTemplateName.Builder {
 
     private String organization;
     private String inspectTemplate;
