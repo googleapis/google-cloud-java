@@ -1,5 +1,14 @@
 # Changelog
 
+### [0.34.1](https://www.github.com/googleapis/java-datacatalog/compare/v0.34.0...v0.34.1) (2020-04-06)
+
+
+### Dependencies
+
+* update core dependencies ([#107](https://www.github.com/googleapis/java-datacatalog/issues/107)) ([c838397](https://www.github.com/googleapis/java-datacatalog/commit/c83839703fca58af8f2e7de6dd0923bfa36973b4))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#142](https://www.github.com/googleapis/java-datacatalog/issues/142)) ([eb81de4](https://www.github.com/googleapis/java-datacatalog/commit/eb81de4fc8b6e7b0bd6cbab70e703c486b744223))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#121](https://www.github.com/googleapis/java-datacatalog/issues/121)) ([c8a249b](https://www.github.com/googleapis/java-datacatalog/commit/c8a249ba3cba770094ec363f43d543ab9f87e617))
+
 ## [0.34.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.33.0...v0.34.0) (2020-03-31)
 
 
