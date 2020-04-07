@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-iamcredentials/compare/v1.0.0...v1.0.1) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#83](https://www.github.com/googleapis/java-iamcredentials/issues/83)) ([37bc22a](https://www.github.com/googleapis/java-iamcredentials/commit/37bc22a74b7823dce6987c5db04ed9653989cea6))
+* update dependency com.google.api:api-common to v1.9.0 ([#101](https://www.github.com/googleapis/java-iamcredentials/issues/101)) ([6840f87](https://www.github.com/googleapis/java-iamcredentials/commit/6840f87b8c961c8d3e6bffd58605adde51aa8105))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#93](https://www.github.com/googleapis/java-iamcredentials/issues/93)) ([2e841b1](https://www.github.com/googleapis/java-iamcredentials/commit/2e841b112d4dd13de0cb9b76aae69a9dc5557fbe))
+
 ## [1.0.0](https://www.github.com/googleapis/java-iamcredentials/compare/v0.44.1...v1.0.0) (2020-03-02)
 
 
