@@ -548,18 +548,17 @@ public class EnhancedBigtableStubSettingsTest {
 
     assertThat(builder.checkAndMutateRowSettings().getRetryableCodes())
         .containsAtLeast(Code.ABORTED, Code.DEADLINE_EXCEEDED);
-    assertThat(builder.checkAndMutateRowSettings().getRetrySettings())
-        .isSameInstanceAs(retrySettings);
+    assertThat(builder.checkAndMutateRowSettings().getRetrySettings()).isEqualTo(retrySettings);
 
     assertThat(builder.build().checkAndMutateRowSettings().getRetryableCodes())
         .containsAtLeast(Code.ABORTED, Code.DEADLINE_EXCEEDED);
     assertThat(builder.build().checkAndMutateRowSettings().getRetrySettings())
-        .isSameInstanceAs(retrySettings);
+        .isEqualTo(retrySettings);
 
     assertThat(builder.build().toBuilder().checkAndMutateRowSettings().getRetryableCodes())
         .containsAtLeast(Code.ABORTED, Code.DEADLINE_EXCEEDED);
     assertThat(builder.build().toBuilder().checkAndMutateRowSettings().getRetrySettings())
-        .isSameInstanceAs(retrySettings);
+        .isEqualTo(retrySettings);
   }
 
   @Test
