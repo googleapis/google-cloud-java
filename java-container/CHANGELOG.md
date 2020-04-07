@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-container/compare/v1.0.0...v1.0.1) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#99](https://www.github.com/googleapis/java-container/issues/99)) ([2b4af5b](https://www.github.com/googleapis/java-container/commit/2b4af5b6b9204cede271095d5e677d432ef6c9fc))
+* update dependency com.google.api:api-common to v1.9.0 ([#106](https://www.github.com/googleapis/java-container/issues/106)) ([3953dd4](https://www.github.com/googleapis/java-container/commit/3953dd4d13236219c45b48bd3ed2f6760c73273d))
+* update dependency com.google.cloud:google-cloud-core to v1.93.1 ([#80](https://www.github.com/googleapis/java-container/issues/80)) ([00fee0a](https://www.github.com/googleapis/java-container/commit/00fee0aca2e6cc5c23fa96be968daa759bd46631))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#113](https://www.github.com/googleapis/java-container/issues/113)) ([086d78e](https://www.github.com/googleapis/java-container/commit/086d78e62879de5991af8789f3597b1754918b6a))
+* update dependency org.threeten:threetenbp to v1.4.2 ([#95](https://www.github.com/googleapis/java-container/issues/95)) ([e5746bb](https://www.github.com/googleapis/java-container/commit/e5746bb4194716f2e6229f8c1bf36f64d8fd8953))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#111](https://www.github.com/googleapis/java-container/issues/111)) ([1f34ca1](https://www.github.com/googleapis/java-container/commit/1f34ca1b5ec5f31728c0537ef91106678efb8dbd))
+
 ## [1.0.0](https://www.github.com/googleapis/java-container/compare/v0.119.1...v1.0.0) (2020-02-27)
 
 
