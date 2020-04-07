@@ -199,10 +199,6 @@ public class ITBigQueryWriteManualClientTest {
     assertEquals("ccc", iter.next().get(0).getStringValue());
     assertEquals("ddd", iter.next().get(0).getStringValue());
     assertEquals(false, iter.hasNext());
-
-    LOG.info("Waiting for termination");
-    // The awaitTermination always returns false.
-    // assertEquals(true, streamWriter.awaitTermination(10, TimeUnit.SECONDS));
   }
 
   @Test
@@ -229,7 +225,6 @@ public class ITBigQueryWriteManualClientTest {
                   .setOffset(Int64Value.of(1L))
                   .build());
       assertEquals(1, response2.get().getOffset());
-    } finally {
     }
 
     // Nothing showed up since rows are not committed.
@@ -333,7 +328,6 @@ public class ITBigQueryWriteManualClientTest {
                   .setOffset(Int64Value.of(0L))
                   .build());
       assertEquals(0L, response.get().getOffset());
-    } finally {
     }
 
     try (StreamWriter streamWriter = StreamWriter.newBuilder(writeStream.getName()).build()) {
@@ -345,7 +339,6 @@ public class ITBigQueryWriteManualClientTest {
                   .setOffset(Int64Value.of(1L))
                   .build());
       assertEquals(1L, response.get().getOffset());
-    } finally {
     }
   }
 }

@@ -282,9 +282,10 @@ public class StreamWriter implements AutoCloseable {
   @Override
   public void close() {
     shutdown();
-    // There is some problem waiting for resource to shutdown. So comment this statement out since
-    // it will cause a minute hang.
-    // awaitTermination(1, TimeUnit.MINUTES);
+    try {
+      awaitTermination(1, TimeUnit.MINUTES);
+    } catch (InterruptedException ignored) {
+    }
   }
 
   // The batch of messages that is being sent/processed.
@@ -423,6 +424,9 @@ public class StreamWriter implements AutoCloseable {
     }
     writeAllOutstanding();
     messagesWaiter.waitComplete();
+    if (clientStream.isSendReady()) {
+      clientStream.closeSend();
+    }
     backgroundResources.shutdown();
   }
 
@@ -735,7 +739,7 @@ public class StreamWriter implements AutoCloseable {
 
     @Override
     public void onError(Throwable t) {
-      LOG.info("OnError called");
+      LOG.fine("OnError called");
       if (streamWriter.shutdown.get()) {
         return;
       }
@@ -747,39 +751,33 @@ public class StreamWriter implements AutoCloseable {
         }
         inflightBatch = this.inflightBatches.poll();
       }
-      if (isRecoverableError(t)) {
-        try {
-          if (streamWriter.currentRetries < streamWriter.getRetrySettings().getMaxAttempts()
-              && !streamWriter.shutdown.get()) {
-            streamWriter.refreshAppend();
-            // Currently there is a bug that it took reconnected stream 5 seconds to pick up
-            // stream count. So wait at least 5 seconds before sending a new request.
-            Thread.sleep(
-                Math.min(
-                    streamWriter.getRetrySettings().getInitialRetryDelay().toMillis(),
-                    Duration.ofSeconds(5).toMillis()));
-            streamWriter.writeBatch(inflightBatch);
-            synchronized (streamWriter.currentRetries) {
-              streamWriter.currentRetries++;
+      try {
+        if (isRecoverableError(t)) {
+          try {
+            if (streamWriter.currentRetries < streamWriter.getRetrySettings().getMaxAttempts()
+                && !streamWriter.shutdown.get()) {
+              streamWriter.refreshAppend();
+              // Currently there is a bug that it took reconnected stream 5 seconds to pick up
+              // stream count. So wait at least 5 seconds before sending a new request.
+              Thread.sleep(
+                  Math.min(
+                      streamWriter.getRetrySettings().getInitialRetryDelay().toMillis(),
+                      Duration.ofSeconds(5).toMillis()));
+              streamWriter.writeBatch(inflightBatch);
+              synchronized (streamWriter.currentRetries) {
+                streamWriter.currentRetries++;
+              }
+            } else {
+              synchronized (streamWriter.currentRetries) {
+                streamWriter.currentRetries = 0;
+              }
+              inflightBatch.onFailure(t);
             }
-          } else {
-            synchronized (streamWriter.currentRetries) {
-              streamWriter.currentRetries = 0;
-            }
-            inflightBatch.onFailure(t);
+          } catch (IOException | InterruptedException e) {
+            streamWriter.currentRetries = 0;
+            inflightBatch.onFailure(e);
           }
-        } catch (IOException | InterruptedException e) {
-          streamWriter.currentRetries = 0;
-          inflightBatch.onFailure(e);
-          synchronized (streamWriter.messagesWaiter) {
-            streamWriter.messagesWaiter.incrementPendingCount(-1);
-            streamWriter.messagesWaiter.incrementPendingSize(0 - inflightBatch.getByteSize());
-            streamWriter.messagesWaiter.notifyAll();
-          }
-        }
-      } else {
-        LOG.info("Set error response");
-        try {
+        } else {
           synchronized (streamWriter.currentRetries) {
             streamWriter.currentRetries = 0;
           }
@@ -788,15 +786,14 @@ public class StreamWriter implements AutoCloseable {
             // Establish a new connection.
             streamWriter.refreshAppend();
           } catch (IOException e) {
-            LOG.info("Failed to establish a new connection, shutdown writer");
-            streamWriter.shutdown();
+            LOG.info("Failed to establish a new connection");
           }
-        } finally {
-          synchronized (streamWriter.messagesWaiter) {
-            streamWriter.messagesWaiter.incrementPendingCount(-1);
-            streamWriter.messagesWaiter.incrementPendingSize(0 - inflightBatch.getByteSize());
-            streamWriter.messagesWaiter.notifyAll();
-          }
+        }
+      } finally {
+        synchronized (streamWriter.messagesWaiter) {
+          streamWriter.messagesWaiter.incrementPendingCount(-1);
+          streamWriter.messagesWaiter.incrementPendingSize(0 - inflightBatch.getByteSize());
+          streamWriter.messagesWaiter.notifyAll();
         }
       }
     }
