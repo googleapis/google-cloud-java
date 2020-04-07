@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/googleapis/java-dlp/compare/v1.1.0...v1.1.1) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#94](https://www.github.com/googleapis/java-dlp/issues/94)) ([88d8307](https://www.github.com/googleapis/java-dlp/commit/88d83071de1ce2251af5c69691221e26c9526618))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#105](https://www.github.com/googleapis/java-dlp/issues/105)) ([b636547](https://www.github.com/googleapis/java-dlp/commit/b63654725c1e22a3c1e0ee46b33bfbd71a65c99c))
+
 ## [1.1.0](https://www.github.com/googleapis/java-dlp/compare/v1.0.1...v1.1.0) (2020-03-30)
 
 
