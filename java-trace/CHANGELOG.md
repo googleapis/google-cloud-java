@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.0.3](https://www.github.com/googleapis/java-trace/compare/v1.0.2...v1.0.3) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#120](https://www.github.com/googleapis/java-trace/issues/120)) ([f07ecec](https://www.github.com/googleapis/java-trace/commit/f07ecec16ee91db6c73014aa700cee9c42cf87dc))
+* update dependency com.google.api:api-common to v1.9.0 ([#133](https://www.github.com/googleapis/java-trace/issues/133)) ([65a1967](https://www.github.com/googleapis/java-trace/commit/65a19677978f4a2ec8a8f0f06207f21d53502394))
+* update dependency com.google.cloud:google-cloud-core to v1.93.1 ([#118](https://www.github.com/googleapis/java-trace/issues/118)) ([30c46c4](https://www.github.com/googleapis/java-trace/commit/30c46c43ff4e993d98ac449bdd3ac71749eaca8f))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#141](https://www.github.com/googleapis/java-trace/issues/141)) ([aaad4b1](https://www.github.com/googleapis/java-trace/commit/aaad4b15f82bf9c3d2a67ebfa19fa8fb7d1097cf))
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.13 ([#132](https://www.github.com/googleapis/java-trace/issues/132)) ([47cb12c](https://www.github.com/googleapis/java-trace/commit/47cb12c696591f6601c8248c22059b95aba8002e))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#126](https://www.github.com/googleapis/java-trace/issues/126)) ([57e3c8c](https://www.github.com/googleapis/java-trace/commit/57e3c8ca70de02af6ff87a77dce102d9a48efbda))
+
 ### [1.0.2](https://www.github.com/googleapis/java-trace/compare/v1.0.1...v1.0.2) (2020-03-02)
 
 
