@@ -36,6 +36,7 @@
   </properties>
 
   <!-- [START bigquery_install_with_bom] -->
+  <!-- [START bigquery_java_dependencies] -->
   <!--  Using libraries-bom to manage versions.
   See https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM -->
   <dependencyManagement>
@@ -55,6 +56,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
     </dependency>
+    <!-- [END bigquery_java_dependencies] -->
     <!-- [END bigquery_install_with_bom] -->
 
     <!-- Test dependencies -->
