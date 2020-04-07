@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-os-login/compare/v1.0.0...v1.0.1) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#88](https://www.github.com/googleapis/java-os-login/issues/88)) ([b4a03a2](https://www.github.com/googleapis/java-os-login/commit/b4a03a2f7cb5c4fc257b637f3d7aef32c5882b3b))
+* update dependency com.google.api:api-common to v1.9.0 ([#107](https://www.github.com/googleapis/java-os-login/issues/107)) ([06e9270](https://www.github.com/googleapis/java-os-login/commit/06e927081a36f431ab24811f5d97c3cedd80e9b4))
+* update dependency com.google.cloud:google-cloud-core-bom to v1.93.1 ([#86](https://www.github.com/googleapis/java-os-login/issues/86)) ([7ff38ce](https://www.github.com/googleapis/java-os-login/commit/7ff38ce33fb67adcc4416d192bb608404c8ba738))
+* update dependency com.google.cloud:google-cloud-core-bom to v1.93.4 ([#116](https://www.github.com/googleapis/java-os-login/issues/116)) ([fc856bf](https://www.github.com/googleapis/java-os-login/commit/fc856bf765a1da8c22766555e1bde770f354e618))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#98](https://www.github.com/googleapis/java-os-login/issues/98)) ([3352579](https://www.github.com/googleapis/java-os-login/commit/335257942a64501eff95348fdfd11b70a17817b9))
+
 ## [1.0.0](https://www.github.com/googleapis/java-os-login/compare/v0.118.1...v1.0.0) (2020-02-28)
 
 
