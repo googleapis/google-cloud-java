@@ -17,6 +17,7 @@
 import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
+AUTOSYNTH_MULTIPLE_PRS = True
 
 service = 'dataproc'
 versions = ['v1', 'v1beta2']
