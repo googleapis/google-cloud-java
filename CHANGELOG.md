@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.128.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.128.0...v0.128.1) (2020-04-07)
+
+
+### Bug Fixes
+
+* waitForTermination in the manual client [#140](https://www.github.com/googleapis/java-bigquerystorage/issues/140) ([#141](https://www.github.com/googleapis/java-bigquerystorage/issues/141)) ([bdb8e0f](https://www.github.com/googleapis/java-bigquerystorage/commit/bdb8e0f6b0b8ab9b1e2e92d6e41ea3298964dd3e))
+
+
+### Dependencies
+
+* update core dependencies ([#149](https://www.github.com/googleapis/java-bigquerystorage/issues/149)) ([dbe270f](https://www.github.com/googleapis/java-bigquerystorage/commit/dbe270fb3b1ff28d231e5d401ce2b140bec4f68d))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#144](https://www.github.com/googleapis/java-bigquerystorage/issues/144)) ([c1f2731](https://www.github.com/googleapis/java-bigquerystorage/commit/c1f27318ebb127980ff8ced2551610095dcfdf9e))
+
 ## [0.128.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.127.0...v0.128.0) (2020-04-04)
 
 
