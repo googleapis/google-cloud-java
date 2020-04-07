@@ -1,5 +1,15 @@
 # Changelog
 
+### [0.4.1](https://www.github.com/googleapis/java-recommender/compare/v0.4.0...v0.4.1) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#112](https://www.github.com/googleapis/java-recommender/issues/112)) ([c2b57d0](https://www.github.com/googleapis/java-recommender/commit/c2b57d0c5c5842631dbf818d44ec8e0461fe5d8f))
+* update dependency com.google.api:api-common to v1.9.0 ([#131](https://www.github.com/googleapis/java-recommender/issues/131)) ([726fd1c](https://www.github.com/googleapis/java-recommender/commit/726fd1c4058f2e50b0fbabe6befee0a99da80394))
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.93.4 ([#138](https://www.github.com/googleapis/java-recommender/issues/138)) ([40a375c](https://www.github.com/googleapis/java-recommender/commit/40a375ce7941f6204ccba3e69ceafd5a6546b101))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#123](https://www.github.com/googleapis/java-recommender/issues/123)) ([894fc25](https://www.github.com/googleapis/java-recommender/commit/894fc25ae4e5829b8f54868b3f2a0dcb56d947c3))
+
 ## [0.4.0](https://www.github.com/googleapis/java-recommender/compare/v0.3.1...v0.4.0) (2020-03-13)
 
 
