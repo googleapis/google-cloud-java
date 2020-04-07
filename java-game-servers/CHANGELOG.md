@@ -1,5 +1,23 @@
 # Changelog
 
+### [0.19.1](https://www.github.com/googleapis/java-gameservices/compare/v0.19.0...v0.19.1) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#76](https://www.github.com/googleapis/java-gameservices/issues/76)) ([b9dfc85](https://www.github.com/googleapis/java-gameservices/commit/b9dfc8525ca9ef3487deedde9539e4ecf7aa65e0))
+* update core dependencies to v1.54.0 ([#72](https://www.github.com/googleapis/java-gameservices/issues/72)) ([9c449af](https://www.github.com/googleapis/java-gameservices/commit/9c449afea1f7fd1b2fb44be195776885419739fc))
+* update dependency com.google.api:api-common to v1.9.0 ([#94](https://www.github.com/googleapis/java-gameservices/issues/94)) ([103e32f](https://www.github.com/googleapis/java-gameservices/commit/103e32f96a8e26fcdb0a9aae6011c73fbebb162e))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([f720e0f](https://www.github.com/googleapis/java-gameservices/commit/f720e0f3bc3265e3856c3c6ade9b5a1b05121eef))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([7307dc4](https://www.github.com/googleapis/java-gameservices/commit/7307dc46cb6fb508b2b1f0f625fed283bb1462ea))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([16c1fb3](https://www.github.com/googleapis/java-gameservices/commit/16c1fb306fe9fcc286305b2bc80359efa4484ed5))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#85](https://www.github.com/googleapis/java-gameservices/issues/85)) ([024a3e4](https://www.github.com/googleapis/java-gameservices/commit/024a3e41ceb83f391da73fd9c03def3eb9a8c0c6))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([5e6527e](https://www.github.com/googleapis/java-gameservices/commit/5e6527e276775896087917f61776ffcf09878ded))
+
 ## [0.19.0](https://www.github.com/googleapis/java-gameservices/compare/v0.18.1...v0.19.0) (2020-02-04)
 
 
