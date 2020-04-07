@@ -1,5 +1,25 @@
 # Changelog
 
+### [0.116.3](https://www.github.com/googleapis/java-websecurityscanner/compare/v0.116.2...v0.116.3) (2020-04-06)
+
+
+### Dependencies
+
+* update core dependencies ([#73](https://www.github.com/googleapis/java-websecurityscanner/issues/73)) ([553bb82](https://www.github.com/googleapis/java-websecurityscanner/commit/553bb82db048ba7d0dbf64265ea8ebf96862b79b))
+* update core dependencies to v1.54.0 ([#70](https://www.github.com/googleapis/java-websecurityscanner/issues/70)) ([30970d8](https://www.github.com/googleapis/java-websecurityscanner/commit/30970d8ded7daf9206196f1ff18b5772d5f4ce5b))
+* update dependency com.google.api:api-common to v1.9.0 ([#90](https://www.github.com/googleapis/java-websecurityscanner/issues/90)) ([64b753a](https://www.github.com/googleapis/java-websecurityscanner/commit/64b753ae1694632be3734f78170c130386266593))
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.13 ([#89](https://www.github.com/googleapis/java-websecurityscanner/issues/89)) ([9836ad7](https://www.github.com/googleapis/java-websecurityscanner/commit/9836ad7092f2d068fef4222cd5467905eb3a3dbf))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([a46c3a6](https://www.github.com/googleapis/java-websecurityscanner/commit/a46c3a62d98b4a6d17932e36c16757c2918a91e0))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([b6cba28](https://www.github.com/googleapis/java-websecurityscanner/commit/b6cba28f5ed9f047e7b0845a89e2420107d104e4))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([a36651f](https://www.github.com/googleapis/java-websecurityscanner/commit/a36651fbf72861134ccc6b661c035f0314f782c1))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#83](https://www.github.com/googleapis/java-websecurityscanner/issues/83)) ([6d35df9](https://www.github.com/googleapis/java-websecurityscanner/commit/6d35df9eacf874c82b6e765e299c79664bb54eb5))
+* update google-core ([#72](https://www.github.com/googleapis/java-websecurityscanner/issues/72)) ([7c3b17f](https://www.github.com/googleapis/java-websecurityscanner/commit/7c3b17fb1fcbec7b9e664fd94269543febd47165))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([8a15cf6](https://www.github.com/googleapis/java-websecurityscanner/commit/8a15cf639e2cd5e051e772d269828dc6eed043d0))
+
 ### [0.116.2](https://www.github.com/googleapis/java-websecurityscanner/compare/v0.116.1...v0.116.2) (2020-02-04)
 
 
