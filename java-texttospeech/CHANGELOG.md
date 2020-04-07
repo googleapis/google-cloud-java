@@ -1,5 +1,24 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/googleapis/java-texttospeech/compare/v1.0.1...v1.0.2) (2020-04-06)
+
+
+### Dependencies
+
+* update core dependencies ([#82](https://www.github.com/googleapis/java-texttospeech/issues/82)) ([e81655c](https://www.github.com/googleapis/java-texttospeech/commit/e81655c27cc3d2b84546ca8d3ecf3525da138f50))
+* update core dependencies to v1.54.0 ([#78](https://www.github.com/googleapis/java-texttospeech/issues/78)) ([3b7064f](https://www.github.com/googleapis/java-texttospeech/commit/3b7064fe44d8dec3873146142fb4caa2f2e0dc7e))
+* update dependency com.google.api:api-common to v1.9.0 ([#98](https://www.github.com/googleapis/java-texttospeech/issues/98)) ([0f85c9d](https://www.github.com/googleapis/java-texttospeech/commit/0f85c9daf9c80c6dc30ed0eaddfec7c67d86aed2))
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.13 ([#97](https://www.github.com/googleapis/java-texttospeech/issues/97)) ([2f3009d](https://www.github.com/googleapis/java-texttospeech/commit/2f3009d19afcdbbc9b7238f194086782cd740d9e))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([c2bcea8](https://www.github.com/googleapis/java-texttospeech/commit/c2bcea899301fd176e453c32d7937e342f23df49))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([8590191](https://www.github.com/googleapis/java-texttospeech/commit/859019194bf4f8cb48eef213e13ae65fac29d863))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([89d84ab](https://www.github.com/googleapis/java-texttospeech/commit/89d84ab096c69bba457b8227d8fa190690293022))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#91](https://www.github.com/googleapis/java-texttospeech/issues/91)) ([ef6b7ec](https://www.github.com/googleapis/java-texttospeech/commit/ef6b7eca26540a128acf3602db1824dd9ecf1384))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([1763988](https://www.github.com/googleapis/java-texttospeech/commit/1763988e39ac6ed999afefa741e5e0e74032a815))
+
 ### [1.0.1](https://www.github.com/googleapis/java-texttospeech/compare/v1.0.0...v1.0.1) (2020-02-04)
 
 
