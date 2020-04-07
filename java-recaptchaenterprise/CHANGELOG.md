@@ -1,5 +1,15 @@
 # Changelog
 
+### [0.30.1](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v0.30.0...v0.30.1) (2020-04-06)
+
+
+### Dependencies
+
+* update core dependencies ([#72](https://www.github.com/googleapis/java-recaptchaenterprise/issues/72)) ([23a0286](https://www.github.com/googleapis/java-recaptchaenterprise/commit/23a02861e216d2957b75912cc06834e1dee08f45))
+* update dependency com.google.api:api-common to v1.9.0 ([#93](https://www.github.com/googleapis/java-recaptchaenterprise/issues/93)) ([ad67623](https://www.github.com/googleapis/java-recaptchaenterprise/commit/ad67623eee8e0590602004458a1304f56fdaf131))
+* update dependency com.google.cloud:google-cloud-recaptchaenterprise to v0.30.0 ([#87](https://www.github.com/googleapis/java-recaptchaenterprise/issues/87)) ([cf6eb8d](https://www.github.com/googleapis/java-recaptchaenterprise/commit/cf6eb8dd2059deaf15d35842aed914bc6d00dca5))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#82](https://www.github.com/googleapis/java-recaptchaenterprise/issues/82)) ([d41f780](https://www.github.com/googleapis/java-recaptchaenterprise/commit/d41f78082fbf4047fa23855687fe9fd21a2b9c24))
+
 ## [0.30.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v0.29.1...v0.30.0) (2020-03-23)
 
 
