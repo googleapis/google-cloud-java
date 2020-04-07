@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-servicedirectory-v1beta1:0.1.0:0.1.1-SNAPSHOT
-grpc-google-cloud-servicedirectory-v1beta1:0.1.0:0.1.1-SNAPSHOT
-google-cloud-servicedirectory:0.1.0:0.1.1-SNAPSHOT
+proto-google-cloud-servicedirectory-v1beta1:0.1.1:0.1.1
+grpc-google-cloud-servicedirectory-v1beta1:0.1.1:0.1.1
+google-cloud-servicedirectory:0.1.1:0.1.1
