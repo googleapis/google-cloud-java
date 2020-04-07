@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.22.6](https://www.github.com/googleapis/java-speech/compare/v1.22.5...v1.22.6) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#113](https://www.github.com/googleapis/java-speech/issues/113)) ([38aec43](https://www.github.com/googleapis/java-speech/commit/38aec43b19ff0587ea316b41434349402d52f4c6))
+* update dependency com.google.api:api-common to v1.9.0 ([#128](https://www.github.com/googleapis/java-speech/issues/128)) ([9591116](https://www.github.com/googleapis/java-speech/commit/9591116696d9f6bc0017898987f3cf67fe5f3dc4))
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.93.4 ([#135](https://www.github.com/googleapis/java-speech/issues/135)) ([59b076a](https://www.github.com/googleapis/java-speech/commit/59b076a9aa4b79e902c7171903e664c135385da0))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#121](https://www.github.com/googleapis/java-speech/issues/121)) ([8753cde](https://www.github.com/googleapis/java-speech/commit/8753cde2b9fa8231e55eed09c5833390c6c8c20f))
+
 ### [1.22.5](https://www.github.com/googleapis/java-speech/compare/v1.22.4...v1.22.5) (2020-03-05)
 
 
