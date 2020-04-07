@@ -1,5 +1,25 @@
 # Changelog
 
+### [0.119.2](https://www.github.com/googleapis/java-errorreporting/compare/v0.119.1...v0.119.2) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#78](https://www.github.com/googleapis/java-errorreporting/issues/78)) ([34a7c5a](https://www.github.com/googleapis/java-errorreporting/commit/34a7c5a426d3ee3cb67557c21ed9d7948135e8c6))
+* update core deps ([#76](https://www.github.com/googleapis/java-errorreporting/issues/76)) ([0378e83](https://www.github.com/googleapis/java-errorreporting/commit/0378e8327118eeec40a6cefbdda36f8327844aee))
+* update dependency com.google.api:api-common to v1.9.0 ([#98](https://www.github.com/googleapis/java-errorreporting/issues/98)) ([32c5dc2](https://www.github.com/googleapis/java-errorreporting/commit/32c5dc20b4126aeb1debd5b285b278fddb063e2d))
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([ab1947a](https://www.github.com/googleapis/java-errorreporting/commit/ab1947a3d0d4accaa9e54b4be55e758be0734812))
+* update dependency com.google.cloud:google-cloud-core to v1.93.1 ([#77](https://www.github.com/googleapis/java-errorreporting/issues/77)) ([fd0f6c0](https://www.github.com/googleapis/java-errorreporting/commit/fd0f6c05efbea57862d67b1d47c4eef6555398f0))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#105](https://www.github.com/googleapis/java-errorreporting/issues/105)) ([fefb2f3](https://www.github.com/googleapis/java-errorreporting/commit/fefb2f3b4ccb28e9e751bd740c148e250efcd01d))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([ddf45ec](https://www.github.com/googleapis/java-errorreporting/commit/ddf45ecc9e2918fb26d6e0ccee97eb4b972b68c9))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([6e1c13b](https://www.github.com/googleapis/java-errorreporting/commit/6e1c13ba72dc626dcb3bdd93192bba6116e255f0))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#88](https://www.github.com/googleapis/java-errorreporting/issues/88)) ([d3181de](https://www.github.com/googleapis/java-errorreporting/commit/d3181de3168f0de639b285a3c1b1c0314282e2e5))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([a59054f](https://www.github.com/googleapis/java-errorreporting/commit/a59054f653cf7a22f9c9c104aa774fbaa30ad504))
+
 ### [0.119.1](https://www.github.com/googleapis/java-errorreporting/compare/v0.119.0...v0.119.1) (2020-02-04)
 
 
