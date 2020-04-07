@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-secretmanager/compare/v1.0.0...v1.0.1) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#62](https://www.github.com/googleapis/java-secretmanager/issues/62)) ([addf294](https://www.github.com/googleapis/java-secretmanager/commit/addf2940bc09ffed46af424ebc63e7cb87d2d771))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#92](https://www.github.com/googleapis/java-secretmanager/issues/92)) ([6c32f4c](https://www.github.com/googleapis/java-secretmanager/commit/6c32f4c32fc88bbc913a89edef8d4fa6618bee86))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#72](https://www.github.com/googleapis/java-secretmanager/issues/72)) ([7451bb4](https://www.github.com/googleapis/java-secretmanager/commit/7451bb42b935b0c44b3ec2695a443f0212d87251))
+
+
+### Documentation
+
+* **v1:** regenerated docs from protos ([#86](https://www.github.com/googleapis/java-secretmanager/issues/86)) ([61f5bf9](https://www.github.com/googleapis/java-secretmanager/commit/61f5bf9e00aa483485897321aa14406d91c0640b))
+
 ## [1.0.0](https://www.github.com/googleapis/java-secretmanager/compare/v0.3.0...v1.0.0) (2020-03-31)
 
 
