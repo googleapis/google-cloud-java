@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.38.0](https://www.github.com/googleapis/java-kms/compare/v1.37.0...v1.38.0) (2020-04-07)
+
+
+### Features
+
+* **v1:** add support for Cloud EKM ([#128](https://www.github.com/googleapis/java-kms/issues/128)) ([c23c77f](https://www.github.com/googleapis/java-kms/commit/c23c77fe7403e3a7c9a549c5db9b8adeeed4be33))
+
+
+### Dependencies
+
+* update core dependencies ([#93](https://www.github.com/googleapis/java-kms/issues/93)) ([5595e99](https://www.github.com/googleapis/java-kms/commit/5595e99ee0c15fbb664a8c1566be6c15ffd80b84))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#127](https://www.github.com/googleapis/java-kms/issues/127)) ([7782bb0](https://www.github.com/googleapis/java-kms/commit/7782bb09241547c2c1289f13039414d54086d71f))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#105](https://www.github.com/googleapis/java-kms/issues/105)) ([f20607c](https://www.github.com/googleapis/java-kms/commit/f20607ce271b8dc5716ab7b90ed903353f3c43cc))
+
 ## [1.37.0](https://www.github.com/googleapis/java-kms/compare/v1.36.1...v1.37.0) (2020-04-01)
 
 
