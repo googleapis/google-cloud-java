@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.33.2](https://www.github.com/googleapis/java-webrisk/compare/v0.33.1...v0.33.2) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#81](https://www.github.com/googleapis/java-webrisk/issues/81)) ([a9a0671](https://www.github.com/googleapis/java-webrisk/commit/a9a06713e897b8a23c98ec3bfcc392b6654a0b51))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#94](https://www.github.com/googleapis/java-webrisk/issues/94)) ([c91bd93](https://www.github.com/googleapis/java-webrisk/commit/c91bd93d762c8d84445b0c43d6c0bbfd354109e0))
+
 ### [0.33.1](https://www.github.com/googleapis/java-webrisk/compare/v0.33.0...v0.33.1) (2020-03-30)
 
 
