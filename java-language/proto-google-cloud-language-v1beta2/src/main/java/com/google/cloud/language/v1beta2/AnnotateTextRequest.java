@@ -209,7 +209,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Classify the full document into categories. If this is true,
      * the API will use the default model which classifies into a
-     * [predefined taxonomy](/natural-language/docs/categories).
+     * [predefined
+     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
      * </pre>
      *
      * <code>bool classify_text = 6;</code>
@@ -405,7 +406,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Classify the full document into categories. If this is true,
      * the API will use the default model which classifies into a
-     * [predefined taxonomy](/natural-language/docs/categories).
+     * [predefined
+     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
      * </pre>
      *
      * <code>bool classify_text = 6;</code>
@@ -1015,7 +1017,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * <pre>
        * Classify the full document into categories. If this is true,
        * the API will use the default model which classifies into a
-       * [predefined taxonomy](/natural-language/docs/categories).
+       * [predefined
+       * taxonomy](https://cloud.google.com/natural-language/docs/categories).
        * </pre>
        *
        * <code>bool classify_text = 6;</code>
@@ -1031,7 +1034,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * <pre>
        * Classify the full document into categories. If this is true,
        * the API will use the default model which classifies into a
-       * [predefined taxonomy](/natural-language/docs/categories).
+       * [predefined
+       * taxonomy](https://cloud.google.com/natural-language/docs/categories).
        * </pre>
        *
        * <code>bool classify_text = 6;</code>
@@ -1051,7 +1055,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * <pre>
        * Classify the full document into categories. If this is true,
        * the API will use the default model which classifies into a
-       * [predefined taxonomy](/natural-language/docs/categories).
+       * [predefined
+       * taxonomy](https://cloud.google.com/natural-language/docs/categories).
        * </pre>
        *
        * <code>bool classify_text = 6;</code>

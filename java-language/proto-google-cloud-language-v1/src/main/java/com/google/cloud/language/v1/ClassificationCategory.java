@@ -123,7 +123,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The name of the category representing the document, from the [predefined
-   * taxonomy](/natural-language/docs/categories).
+   * taxonomy](https://cloud.google.com/natural-language/docs/categories).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -146,7 +146,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The name of the category representing the document, from the [predefined
-   * taxonomy](/natural-language/docs/categories).
+   * taxonomy](https://cloud.google.com/natural-language/docs/categories).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -523,7 +523,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name of the category representing the document, from the [predefined
-     * taxonomy](/natural-language/docs/categories).
+     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -546,7 +546,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name of the category representing the document, from the [predefined
-     * taxonomy](/natural-language/docs/categories).
+     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -569,7 +569,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name of the category representing the document, from the [predefined
-     * taxonomy](/natural-language/docs/categories).
+     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -591,7 +591,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name of the category representing the document, from the [predefined
-     * taxonomy](/natural-language/docs/categories).
+     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -609,7 +609,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name of the category representing the document, from the [predefined
-     * taxonomy](/natural-language/docs/categories).
+     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
      * </pre>
      *
      * <code>string name = 1;</code>
