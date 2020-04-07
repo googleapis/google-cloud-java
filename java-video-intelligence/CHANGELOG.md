@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.2.1](https://www.github.com/googleapis/java-video-intelligence/compare/v1.2.0...v1.2.1) (2020-04-06)
+
+
+### Dependencies
+
+* update core dependencies ([#95](https://www.github.com/googleapis/java-video-intelligence/issues/95)) ([d17985c](https://www.github.com/googleapis/java-video-intelligence/commit/d17985c07bb3fe794cb83ba0c00f17a8dc7d6aaf))
+* update dependency com.google.api:api-common to v1.9.0 ([#111](https://www.github.com/googleapis/java-video-intelligence/issues/111)) ([ae85753](https://www.github.com/googleapis/java-video-intelligence/commit/ae857538aecb701e002a6d0e17738a0cbdae71e4))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#105](https://www.github.com/googleapis/java-video-intelligence/issues/105)) ([e8660f9](https://www.github.com/googleapis/java-video-intelligence/commit/e8660f938b35a0a8a90c69d080175fd56abd0d7e))
+
 ## [1.2.0](https://www.github.com/googleapis/java-video-intelligence/compare/v1.1.0...v1.2.0) (2020-03-10)
 
 
