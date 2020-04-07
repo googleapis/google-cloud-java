@@ -1,5 +1,14 @@
 # Changelog
 
+### [0.1.3](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v0.1.2...v0.1.3) (2020-04-06)
+
+
+### Dependencies
+
+* update core dependencies ([#50](https://www.github.com/googleapis/java-monitoring-dashboards/issues/50)) ([409aa3f](https://www.github.com/googleapis/java-monitoring-dashboards/commit/409aa3f4cc44239998c79a2d82a8a453121d6d03))
+* update dependency com.google.api:api-common to v1.9.0 ([#69](https://www.github.com/googleapis/java-monitoring-dashboards/issues/69)) ([8632a8b](https://www.github.com/googleapis/java-monitoring-dashboards/commit/8632a8bb8ec474940d2e88940b4bbb756879e355))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#61](https://www.github.com/googleapis/java-monitoring-dashboards/issues/61)) ([3ad4e0b](https://www.github.com/googleapis/java-monitoring-dashboards/commit/3ad4e0b19273d7565ae0e80e6cabdfc55eae530e))
+
 ### [0.1.2](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v0.1.1...v0.1.2) (2020-02-28)
 
 
