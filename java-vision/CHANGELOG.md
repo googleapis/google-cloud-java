@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.99.3](https://www.github.com/googleapis/java-vision/compare/v1.99.2...v1.99.3) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#78](https://www.github.com/googleapis/java-vision/issues/78)) ([716f3e4](https://www.github.com/googleapis/java-vision/commit/716f3e4e98c94407d808f5cf907036a5cb07e64d))
+* update dependency com.google.api:api-common to v1.9.0 ([#93](https://www.github.com/googleapis/java-vision/issues/93)) ([1a9fd23](https://www.github.com/googleapis/java-vision/commit/1a9fd23278ae97aac7331ca1d69388a0f48f4365))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#86](https://www.github.com/googleapis/java-vision/issues/86)) ([587f530](https://www.github.com/googleapis/java-vision/commit/587f5301e363102006a93e6e57a848de0b3300e5))
+
+
+### Documentation
+
+* change a relative URL to an absolute URL to fix broken links. ([#99](https://www.github.com/googleapis/java-vision/issues/99)) ([485b00b](https://www.github.com/googleapis/java-vision/commit/485b00b915a479d3f58043d8df15a578f0c78ec5))
+
 ### [1.99.2](https://www.github.com/googleapis/java-vision/compare/v1.99.1...v1.99.2) (2020-03-09)
 
 
