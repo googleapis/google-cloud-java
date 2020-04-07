@@ -1,5 +1,26 @@
 # Changelog
 
+### [0.118.1](https://www.github.com/googleapis/java-datalabeling/compare/v0.118.0...v0.118.1) (2020-04-07)
+
+
+### Dependencies
+
+* update core dependencies ([#93](https://www.github.com/googleapis/java-datalabeling/issues/93)) ([13d750b](https://www.github.com/googleapis/java-datalabeling/commit/13d750ba021a47e52d112537c36cd1e4261d991f))
+* update core dependencies ([#96](https://www.github.com/googleapis/java-datalabeling/issues/96)) ([2f8e67a](https://www.github.com/googleapis/java-datalabeling/commit/2f8e67a10962577aee7d7d280a275da8dd140159))
+* update dependency com.google.api:api-common to v1.9.0 ([#118](https://www.github.com/googleapis/java-datalabeling/issues/118)) ([6a8c389](https://www.github.com/googleapis/java-datalabeling/commit/6a8c38926ed226d066bc7c37336d1ce81a0994ca))
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([f491d5a](https://www.github.com/googleapis/java-datalabeling/commit/f491d5a9b574e194530c96d2581ab3b204e2f60e))
+* update dependency com.google.cloud:google-cloud-core to v1.93.1 ([#95](https://www.github.com/googleapis/java-datalabeling/issues/95)) ([1618d08](https://www.github.com/googleapis/java-datalabeling/commit/1618d08eca662df8a4cc7e39c690fc0d79779c64))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#124](https://www.github.com/googleapis/java-datalabeling/issues/124)) ([b5ab5b2](https://www.github.com/googleapis/java-datalabeling/commit/b5ab5b22f13b8b1cb8712bfc8f0357ceccafd502))
+* update dependency com.google.protobuf:protobuf-java to v3.11.4 ([9e45077](https://www.github.com/googleapis/java-datalabeling/commit/9e4507736dab50e5f7a21b02e0add16c47315fb4))
+* update dependency io.grpc:grpc-bom to v1.27.1 ([c8a88dd](https://www.github.com/googleapis/java-datalabeling/commit/c8a88dd0bed5be51e4ce5b2b07a2043aa8551ca0))
+* update dependency io.grpc:grpc-bom to v1.27.2 ([ad64fd6](https://www.github.com/googleapis/java-datalabeling/commit/ad64fd67f04b059ae9d32d83f96e353cd14f4db1))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#109](https://www.github.com/googleapis/java-datalabeling/issues/109)) ([dd8d4da](https://www.github.com/googleapis/java-datalabeling/commit/dd8d4dabe303bbc55e7a982e5de1d64e91c0532e))
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([e6857db](https://www.github.com/googleapis/java-datalabeling/commit/e6857db966f94598bb40322c681679691c2b9d1b))
+
 ## [0.118.0](https://www.github.com/googleapis/java-datalabeling/compare/v0.117.0...v0.118.0) (2020-02-04)
 
 
