@@ -203,7 +203,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
@@ -229,7 +229,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
@@ -911,7 +911,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](/compute/docs/zones#available) in which the cluster
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
@@ -937,7 +937,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](/compute/docs/zones#available) in which the cluster
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
@@ -963,7 +963,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](/compute/docs/zones#available) in which the cluster
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
@@ -988,7 +988,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](/compute/docs/zones#available) in which the cluster
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
@@ -1009,7 +1009,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](/compute/docs/zones#available) in which the cluster
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>

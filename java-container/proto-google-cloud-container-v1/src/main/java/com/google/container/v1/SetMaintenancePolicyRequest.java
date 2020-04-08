@@ -207,7 +207,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
    * resides.
    * </pre>
    *
@@ -231,7 +231,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
    * resides.
    * </pre>
    *
@@ -914,7 +914,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the Google Compute Engine
-     * [zone](/compute/docs/zones#available) in which the cluster
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
      * resides.
      * </pre>
      *
@@ -938,7 +938,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the Google Compute Engine
-     * [zone](/compute/docs/zones#available) in which the cluster
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
      * resides.
      * </pre>
      *
@@ -962,7 +962,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the Google Compute Engine
-     * [zone](/compute/docs/zones#available) in which the cluster
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
      * resides.
      * </pre>
      *
@@ -985,7 +985,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the Google Compute Engine
-     * [zone](/compute/docs/zones#available) in which the cluster
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
      * resides.
      * </pre>
      *
@@ -1004,7 +1004,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the Google Compute Engine
-     * [zone](/compute/docs/zones#available) in which the cluster
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
      * resides.
      * </pre>
      *

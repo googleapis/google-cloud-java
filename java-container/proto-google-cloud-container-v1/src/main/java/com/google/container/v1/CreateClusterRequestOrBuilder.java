@@ -59,7 +59,7 @@ public interface CreateClusterRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the parent field.
    * </pre>
@@ -75,7 +75,7 @@ public interface CreateClusterRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the parent field.
    * </pre>
@@ -92,7 +92,7 @@ public interface CreateClusterRequestOrBuilder
    *
    * <pre>
    * Required. A [cluster
-   * resource](/container-engine/reference/rest/v1/projects.zones.clusters)
+   * resource](https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters)
    * </pre>
    *
    * <code>.google.container.v1.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -106,7 +106,7 @@ public interface CreateClusterRequestOrBuilder
    *
    * <pre>
    * Required. A [cluster
-   * resource](/container-engine/reference/rest/v1/projects.zones.clusters)
+   * resource](https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters)
    * </pre>
    *
    * <code>.google.container.v1.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -120,7 +120,7 @@ public interface CreateClusterRequestOrBuilder
    *
    * <pre>
    * Required. A [cluster
-   * resource](/container-engine/reference/rest/v1/projects.zones.clusters)
+   * resource](https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters)
    * </pre>
    *
    * <code>.google.container.v1.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];

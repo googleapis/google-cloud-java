@@ -154,7 +154,7 @@ public interface NodePoolOrBuilder
    *
    * <pre>
    * [Output only] The resource URLs of the [managed instance
-   * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
+   * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
    * </pre>
    *
@@ -168,7 +168,7 @@ public interface NodePoolOrBuilder
    *
    * <pre>
    * [Output only] The resource URLs of the [managed instance
-   * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
+   * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
    * </pre>
    *
@@ -182,7 +182,7 @@ public interface NodePoolOrBuilder
    *
    * <pre>
    * [Output only] The resource URLs of the [managed instance
-   * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
+   * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
    * </pre>
    *
@@ -197,7 +197,7 @@ public interface NodePoolOrBuilder
    *
    * <pre>
    * [Output only] The resource URLs of the [managed instance
-   * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
+   * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
    * </pre>
    *

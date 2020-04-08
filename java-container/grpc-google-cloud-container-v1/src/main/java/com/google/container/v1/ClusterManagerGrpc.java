@@ -1461,7 +1461,7 @@ public final class ClusterManagerGrpc {
      * Creates a cluster, consisting of the specified number and type of Google
      * Compute Engine instances.
      * By default, the cluster is created in the project's
-     * [default network](/compute/docs/networks-and-firewalls#networks).
+     * [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
      * the Kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
@@ -2106,7 +2106,7 @@ public final class ClusterManagerGrpc {
      * Creates a cluster, consisting of the specified number and type of Google
      * Compute Engine instances.
      * By default, the cluster is created in the project's
-     * [default network](/compute/docs/networks-and-firewalls#networks).
+     * [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
      * the Kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
@@ -2634,7 +2634,7 @@ public final class ClusterManagerGrpc {
      * Creates a cluster, consisting of the specified number and type of Google
      * Compute Engine instances.
      * By default, the cluster is created in the project's
-     * [default network](/compute/docs/networks-and-firewalls#networks).
+     * [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
      * the Kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
@@ -3057,7 +3057,7 @@ public final class ClusterManagerGrpc {
      * Creates a cluster, consisting of the specified number and type of Google
      * Compute Engine instances.
      * By default, the cluster is created in the project's
-     * [default network](/compute/docs/networks-and-firewalls#networks).
+     * [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
      * the Kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the

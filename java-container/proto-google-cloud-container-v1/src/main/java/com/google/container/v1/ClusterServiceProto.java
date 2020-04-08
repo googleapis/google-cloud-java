@@ -1001,12 +1001,13 @@ public final class ClusterServiceProto {
           + "tworksResponse\"<\202\323\344\223\0026\0224/v1/{parent=proj"
           + "ects/*}/aggregated/usableSubnetworks\032L\312A"
           + "\030container.googleapis.com\322A.https://www."
-          + "googleapis.com/auth/cloud-platformB\246\001\n\027c"
+          + "googleapis.com/auth/cloud-platformB\305\001\n\027c"
           + "om.google.container.v1B\023ClusterServicePr"
           + "otoP\001Z<google.golang.org/genproto/google"
           + "apis/container/v1;container\252\002\031Google.Clo"
           + "ud.Container.V1\312\002\031Google\\Cloud\\Container"
-          + "\\V1b\006proto3"
+          + "\\V1\352\002\034Google::Cloud::Container::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

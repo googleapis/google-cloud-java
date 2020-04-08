@@ -292,7 +292,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [network](/compute/docs/networks-and-firewalls#networks) to which the
+   * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the
    * cluster is connected. If left unspecified, the `default` network
    * will be used.
    * </pre>
@@ -307,7 +307,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [network](/compute/docs/networks-and-firewalls#networks) to which the
+   * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the
    * cluster is connected. If left unspecified, the `default` network
    * will be used.
    * </pre>
@@ -389,7 +389,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [subnetwork](/compute/docs/subnetworks) to which the
+   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the
    * cluster is connected.
    * </pre>
    *
@@ -403,7 +403,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [subnetwork](/compute/docs/subnetworks) to which the
+   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the
    * cluster is connected.
    * </pre>
    *
@@ -479,7 +479,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](/compute/docs/zones#available) in which the cluster's nodes
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
    * should be located.
    * </pre>
    *
@@ -493,7 +493,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](/compute/docs/zones#available) in which the cluster's nodes
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
    * should be located.
    * </pre>
    *
@@ -507,7 +507,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](/compute/docs/zones#available) in which the cluster's nodes
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
    * should be located.
    * </pre>
    *
@@ -522,7 +522,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](/compute/docs/zones#available) in which the cluster's nodes
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
    * should be located.
    * </pre>
    *
@@ -1173,7 +1173,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
    * resides.
    * This field is deprecated, use location instead.
    * </pre>
@@ -1189,7 +1189,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
    * resides.
    * This field is deprecated, use location instead.
    * </pre>
@@ -1309,7 +1309,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * [Output only] Deprecated, use
-   * [NodePools.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
+   * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
    * instead. The current version of the node software components. If they are
    * currently at multiple versions because they're in the process of being
    * upgraded, this reflects the minimum version of all nodes.
@@ -1326,7 +1326,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * [Output only] Deprecated, use
-   * [NodePools.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
+   * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
    * instead. The current version of the node software components. If they are
    * currently at multiple versions because they're in the process of being
    * upgraded, this reflects the minimum version of all nodes.
@@ -1569,8 +1569,8 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](/compute/docs/regions-zones/regions-zones#available) or
-   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
+   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
    * the cluster resides.
    * </pre>
    *
@@ -1584,8 +1584,8 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](/compute/docs/regions-zones/regions-zones#available) or
-   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
+   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
    * the cluster resides.
    * </pre>
    *

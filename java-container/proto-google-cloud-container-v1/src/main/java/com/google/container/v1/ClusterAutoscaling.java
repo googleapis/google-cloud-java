@@ -307,7 +307,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The list of Google Compute Engine [zones](/compute/docs/zones#available)
+   * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
    * in which the NodePool's nodes can be created by NAP.
    * </pre>
    *
@@ -322,7 +322,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The list of Google Compute Engine [zones](/compute/docs/zones#available)
+   * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
    * in which the NodePool's nodes can be created by NAP.
    * </pre>
    *
@@ -337,7 +337,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The list of Google Compute Engine [zones](/compute/docs/zones#available)
+   * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
    * in which the NodePool's nodes can be created by NAP.
    * </pre>
    *
@@ -353,7 +353,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The list of Google Compute Engine [zones](/compute/docs/zones#available)
+   * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
    * in which the NodePool's nodes can be created by NAP.
    * </pre>
    *
@@ -1467,7 +1467,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The list of Google Compute Engine [zones](/compute/docs/zones#available)
+     * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
      * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
@@ -1482,7 +1482,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The list of Google Compute Engine [zones](/compute/docs/zones#available)
+     * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
      * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
@@ -1497,7 +1497,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The list of Google Compute Engine [zones](/compute/docs/zones#available)
+     * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
      * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
@@ -1513,7 +1513,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The list of Google Compute Engine [zones](/compute/docs/zones#available)
+     * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
      * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
@@ -1529,7 +1529,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The list of Google Compute Engine [zones](/compute/docs/zones#available)
+     * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
      * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
@@ -1552,7 +1552,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The list of Google Compute Engine [zones](/compute/docs/zones#available)
+     * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
      * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
@@ -1574,7 +1574,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The list of Google Compute Engine [zones](/compute/docs/zones#available)
+     * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
      * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
@@ -1593,7 +1593,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The list of Google Compute Engine [zones](/compute/docs/zones#available)
+     * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
      * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
@@ -1611,7 +1611,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The list of Google Compute Engine [zones](/compute/docs/zones#available)
+     * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
      * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *

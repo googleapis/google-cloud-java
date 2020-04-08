@@ -28,7 +28,7 @@ public interface NetworkConfigOrBuilder
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [network][google.container.v1.NetworkConfig.network](/compute/docs/networks-and-firewalls#networks) to which
+   * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which
    * the cluster is connected.
    * Example: projects/my-project/global/networks/my-network
    * </pre>
@@ -43,7 +43,7 @@ public interface NetworkConfigOrBuilder
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [network][google.container.v1.NetworkConfig.network](/compute/docs/networks-and-firewalls#networks) to which
+   * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which
    * the cluster is connected.
    * Example: projects/my-project/global/networks/my-network
    * </pre>
@@ -59,7 +59,7 @@ public interface NetworkConfigOrBuilder
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [subnetwork](/compute/docs/vpc) to which the cluster is connected.
+   * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected.
    * Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
    * </pre>
    *
@@ -73,7 +73,7 @@ public interface NetworkConfigOrBuilder
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [subnetwork](/compute/docs/vpc) to which the cluster is connected.
+   * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected.
    * Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
    * </pre>
    *

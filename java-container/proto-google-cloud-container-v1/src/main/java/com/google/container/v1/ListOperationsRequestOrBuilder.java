@@ -59,7 +59,7 @@ public interface ListOperationsRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) to return operations for, or `-` for
+   * [zone](https://cloud.google.com/compute/docs/zones#available) to return operations for, or `-` for
    * all zones. This field has been deprecated and replaced by the parent field.
    * </pre>
    *
@@ -74,7 +74,7 @@ public interface ListOperationsRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) to return operations for, or `-` for
+   * [zone](https://cloud.google.com/compute/docs/zones#available) to return operations for, or `-` for
    * all zones. This field has been deprecated and replaced by the parent field.
    * </pre>
    *

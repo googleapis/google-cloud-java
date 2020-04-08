@@ -28,7 +28,7 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * The name of a Google Compute Engine [machine
-   * type](/compute/docs/machine-types) (e.g.
+   * type](https://cloud.google.com/compute/docs/machine-types) (e.g.
    * `n1-standard-1`).
    * If unspecified, the default machine type is
    * `n1-standard-1`.
@@ -44,7 +44,7 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * The name of a Google Compute Engine [machine
-   * type](/compute/docs/machine-types) (e.g.
+   * type](https://cloud.google.com/compute/docs/machine-types) (e.g.
    * `n1-standard-1`).
    * If unspecified, the default machine type is
    * `n1-standard-1`.
@@ -83,7 +83,7 @@ public interface NodeConfigOrBuilder
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container Registry](/container-registry/)).
+   * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -105,7 +105,7 @@ public interface NodeConfigOrBuilder
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container Registry](/container-registry/)).
+   * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -127,7 +127,7 @@ public interface NodeConfigOrBuilder
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container Registry](/container-registry/)).
+   * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -150,7 +150,7 @@ public interface NodeConfigOrBuilder
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container Registry](/container-registry/)).
+   * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>

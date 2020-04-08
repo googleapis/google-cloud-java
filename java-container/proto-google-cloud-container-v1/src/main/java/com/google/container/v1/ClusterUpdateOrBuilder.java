@@ -276,7 +276,7 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](/compute/docs/zones#available) in which the cluster's nodes
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
    * should be located. Changing the locations a cluster is in will result
    * in nodes being either created or removed from the cluster, depending on
    * whether locations are being added or removed.
@@ -293,7 +293,7 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](/compute/docs/zones#available) in which the cluster's nodes
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
    * should be located. Changing the locations a cluster is in will result
    * in nodes being either created or removed from the cluster, depending on
    * whether locations are being added or removed.
@@ -310,7 +310,7 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](/compute/docs/zones#available) in which the cluster's nodes
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
    * should be located. Changing the locations a cluster is in will result
    * in nodes being either created or removed from the cluster, depending on
    * whether locations are being added or removed.
@@ -328,7 +328,7 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](/compute/docs/zones#available) in which the cluster's nodes
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
    * should be located. Changing the locations a cluster is in will result
    * in nodes being either created or removed from the cluster, depending on
    * whether locations are being added or removed.

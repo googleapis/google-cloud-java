@@ -53,7 +53,7 @@ public interface OperationOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the operation
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation
    * is taking place.
    * This field is deprecated, use location instead.
    * </pre>
@@ -69,7 +69,7 @@ public interface OperationOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the operation
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation
    * is taking place.
    * This field is deprecated, use location instead.
    * </pre>
@@ -236,8 +236,8 @@ public interface OperationOrBuilder
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](/compute/docs/regions-zones/regions-zones#available) or
-   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
+   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
    * the cluster resides.
    * </pre>
    *
@@ -251,8 +251,8 @@ public interface OperationOrBuilder
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](/compute/docs/regions-zones/regions-zones#available) or
-   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
+   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
    * the cluster resides.
    * </pre>
    *

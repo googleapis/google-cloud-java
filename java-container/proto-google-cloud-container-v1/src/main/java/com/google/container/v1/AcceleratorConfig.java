@@ -140,7 +140,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The accelerator type resource name. List of supported accelerators
-   * [here](/compute/docs/gpus)
+   * [here](https://cloud.google.com/compute/docs/gpus)
    * </pre>
    *
    * <code>string accelerator_type = 2;</code>
@@ -163,7 +163,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The accelerator type resource name. List of supported accelerators
-   * [here](/compute/docs/gpus)
+   * [here](https://cloud.google.com/compute/docs/gpus)
    * </pre>
    *
    * <code>string accelerator_type = 2;</code>
@@ -570,7 +570,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The accelerator type resource name. List of supported accelerators
-     * [here](/compute/docs/gpus)
+     * [here](https://cloud.google.com/compute/docs/gpus)
      * </pre>
      *
      * <code>string accelerator_type = 2;</code>
@@ -593,7 +593,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The accelerator type resource name. List of supported accelerators
-     * [here](/compute/docs/gpus)
+     * [here](https://cloud.google.com/compute/docs/gpus)
      * </pre>
      *
      * <code>string accelerator_type = 2;</code>
@@ -616,7 +616,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The accelerator type resource name. List of supported accelerators
-     * [here](/compute/docs/gpus)
+     * [here](https://cloud.google.com/compute/docs/gpus)
      * </pre>
      *
      * <code>string accelerator_type = 2;</code>
@@ -638,7 +638,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The accelerator type resource name. List of supported accelerators
-     * [here](/compute/docs/gpus)
+     * [here](https://cloud.google.com/compute/docs/gpus)
      * </pre>
      *
      * <code>string accelerator_type = 2;</code>
@@ -656,7 +656,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The accelerator type resource name. List of supported accelerators
-     * [here](/compute/docs/gpus)
+     * [here](https://cloud.google.com/compute/docs/gpus)
      * </pre>
      *
      * <code>string accelerator_type = 2;</code>
