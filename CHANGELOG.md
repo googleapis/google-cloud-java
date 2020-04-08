@@ -1,5 +1,21 @@
 # Changelog
 
+### [1.101.4](https://www.github.com/googleapis/java-datastore/compare/v1.101.3...v1.101.4) (2020-04-08)
+
+
+### Dependencies
+
+* update core dependencies ([#64](https://www.github.com/googleapis/java-datastore/issues/64)) ([ce0fd11](https://www.github.com/googleapis/java-datastore/commit/ce0fd116dbc5de69ae4526d95cd8014eaf2da1a0))
+* update core dependencies ([#86](https://www.github.com/googleapis/java-datastore/issues/86)) ([8394595](https://www.github.com/googleapis/java-datastore/commit/83945955b6bc6f915d321d190a2b6349fa52b597))
+* update core dependencies to v1.93.3 ([#67](https://www.github.com/googleapis/java-datastore/issues/67)) ([3286a38](https://www.github.com/googleapis/java-datastore/commit/3286a38b3f4176f0b83a9a4230fba2c431c86047))
+* update core dependencies to v1.93.4 ([#90](https://www.github.com/googleapis/java-datastore/issues/90)) ([9707cd4](https://www.github.com/googleapis/java-datastore/commit/9707cd41ac0b43bee048bb2386ab2484ced0e57b))
+* update dependency com.google.api:api-common to v1.9.0 ([#80](https://www.github.com/googleapis/java-datastore/issues/80)) ([ce0726b](https://www.github.com/googleapis/java-datastore/commit/ce0726ba9ded67f48c4c11403f4f59b0dc30a5b7))
+* update dependency com.google.api:gax-bom to v1.55.0 ([#83](https://www.github.com/googleapis/java-datastore/issues/83)) ([b67b962](https://www.github.com/googleapis/java-datastore/commit/b67b962d0883433ae9aea909886aa5b5d988e78c))
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.13 ([#76](https://www.github.com/googleapis/java-datastore/issues/76)) ([1ecf942](https://www.github.com/googleapis/java-datastore/commit/1ecf942228f963b947732381e44b0a25a4d24d6b))
+* update dependency com.google.oauth-client:google-oauth-client to v1.30.6 ([#60](https://www.github.com/googleapis/java-datastore/issues/60)) ([e355d0f](https://www.github.com/googleapis/java-datastore/commit/e355d0f8ac86601099d8d3570f786d5a3880b968))
+* update dependency org.threeten:threetenbp to v1.4.2 ([#73](https://www.github.com/googleapis/java-datastore/issues/73)) ([13c867a](https://www.github.com/googleapis/java-datastore/commit/13c867a4135ae024d0eb6af602ee50daf8ad30ff))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#88](https://www.github.com/googleapis/java-datastore/issues/88)) ([75a7254](https://www.github.com/googleapis/java-datastore/commit/75a7254a65e1d97a7bc8fae0f812ffebea060b60))
+
 ### [1.101.3](https://www.github.com/googleapis/java-datastore/compare/v1.101.2...v1.101.3) (2020-02-28)
 
 
