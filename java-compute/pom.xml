@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
   <packaging>jar</packaging>
-  <version>0.117.0-alpha</version><!-- {x-version-update:google-cloud-compute:current} -->
+  <version>0.117.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
   <name>Google Cloud Compute</name>
   <url>https://github.com/googleapis/java-compute</url>
   <description>
