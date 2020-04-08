@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-asset/compare/v1.1.0...v1.2.0) (2020-04-07)
+
+
+### Features
+
+* **v1:** add org policy and access context manager protos to client libraries ([#130](https://www.github.com/googleapis/java-asset/issues/130)) ([cba4acc](https://www.github.com/googleapis/java-asset/commit/cba4acca5f48faebda05187285f33854bc8c96fa))
+
+
+### Dependencies
+
+* update core dependencies ([#133](https://www.github.com/googleapis/java-asset/issues/133)) ([880d5eb](https://www.github.com/googleapis/java-asset/commit/880d5eb731f7f606f7af88386fc8f02ee53cb652))
+* update dependency com.google.api:api-common to v1.9.0 ([#128](https://www.github.com/googleapis/java-asset/issues/128)) ([e896fa9](https://www.github.com/googleapis/java-asset/commit/e896fa9b869e48f122401820cbd00db40f79a71e))
+* update dependency com.google.cloud:google-cloud-core to v1.93.3 ([#113](https://www.github.com/googleapis/java-asset/issues/113)) ([db775b5](https://www.github.com/googleapis/java-asset/commit/db775b5a0795314ef00cde8383be45d12a547438))
+* update dependency com.google.cloud:google-cloud-resourcemanager to v0.117.2-alpha ([#98](https://www.github.com/googleapis/java-asset/issues/98)) ([4c5cbd1](https://www.github.com/googleapis/java-asset/commit/4c5cbd12c9780dde0ea00f231e1adedfa6c192ef))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#121](https://www.github.com/googleapis/java-asset/issues/121)) ([9bafdad](https://www.github.com/googleapis/java-asset/commit/9bafdade6410b42293d7cbcdf2128eabd01df7c7))
+* update gax to v1.55.0 ([#129](https://www.github.com/googleapis/java-asset/issues/129)) ([ebcdaa3](https://www.github.com/googleapis/java-asset/commit/ebcdaa31cd4aca581ac682c3912aaa06f1d3ef15))
+
 ## [1.1.0](https://www.github.com/googleapis/java-asset/compare/v1.0.0...v1.1.0) (2020-03-13)
 
 
