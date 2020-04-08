@@ -16,13 +16,16 @@
     <className>com/google/cloud/securitycenter/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+
+  <!-- TODO: remove after 0.121.0 -->
   <difference>
-    <differenceType>5001</differenceType>
-    <className>com/google/cloud/securitycenter/v1/*Name</className>
-    <to>com/google/cloud/securitycenter/v1/*Name</to>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName</className>
+    <method>java.util.List parse(java.util.List)</method>
   </difference>
   <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/securitycenter/v1/*Name*</className>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName</className>
+    <method>java.util.List toStrings(java.util.List)</method>
   </difference>
 </differences>

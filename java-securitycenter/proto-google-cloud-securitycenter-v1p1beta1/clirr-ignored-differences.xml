@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/securitycenter/v1p1beta1/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/securitycenter/v1p1beta1/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/securitycenter/v1p1beta1/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>
+
+  <!-- TODO: remove after 0.121.0 -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/securitycenter/v1p1beta1/SecurityMarksName</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1p1beta1/SecurityMarksNames</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1p1beta1/UntypedSecurityMarksName</className>
+  </difference>
+</differences>
