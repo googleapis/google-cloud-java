@@ -211,6 +211,7 @@
     <groupId>org.easymock</groupId>
     <artifactId>easymock</artifactId>
     <version>${easymock.version}</version>
+    <scope>test</scope>
     <exclusions>
       <exclusion>
         <groupId>org.objenesis</groupId>
