@@ -292,8 +292,7 @@ public class SettingsName implements ResourceName {
     throw new ValidationException("JobName.parse: formattedString not in valid format");
   }
 
-  @BetaApi("The method will be renamed to parseList after subclasses of this class are removed.")
-  public static List<SettingsName> parse(List<String> formattedStrings) {
+  public static List<SettingsName> parseList(List<String> formattedStrings) {
     List<SettingsName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
@@ -301,8 +300,7 @@ public class SettingsName implements ResourceName {
     return list;
   }
 
-  @BetaApi("The method will be renamed to toStringList after subclasses of this class are removed.")
-  public static List<String> toStrings(List<SettingsName> values) {
+  public static List<String> toStringList(List<SettingsName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (SettingsName value : values) {
       if (value == null) {

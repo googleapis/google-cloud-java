@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/securitycenter/settings/v1beta1/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/securitycenter/settings/v1beta1/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/securitycenter/settings/v1beta1/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>
+
+  <!-- TODO: remove after 0.121.0 -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/securitycenter/settings/v1beta1/*SettingsName</className>
+    <method>java.util.List parse(java.util.List)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/securitycenter/settings/v1beta1/*SettingsName</className>
+    <method>java.util.List toStrings(java.util.List)</method>
+  </difference>
+</differences>
