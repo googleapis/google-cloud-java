@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-billing/compare/v1.0.0...v1.0.1) (2020-04-08)
+
+
+### Dependencies
+
+* update core dependencies ([#35](https://www.github.com/googleapis/java-billing/issues/35)) ([786a990](https://www.github.com/googleapis/java-billing/commit/786a990da7631ed593da390451f9d7789871d86d))
+* update core dependencies ([#37](https://www.github.com/googleapis/java-billing/issues/37)) ([aa4e69e](https://www.github.com/googleapis/java-billing/commit/aa4e69ee5b1fa0f2012346b932d107cac914fd2d))
+* update dependency com.google.api:api-common to v1.9.0 ([#55](https://www.github.com/googleapis/java-billing/issues/55)) ([1e10269](https://www.github.com/googleapis/java-billing/commit/1e10269e561576eff869f960e0ceb695b6e94008))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#62](https://www.github.com/googleapis/java-billing/issues/62)) ([a5d1152](https://www.github.com/googleapis/java-billing/commit/a5d1152e094942225ec33ec7a888fac572b33cbc))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#46](https://www.github.com/googleapis/java-billing/issues/46)) ([dd501d5](https://www.github.com/googleapis/java-billing/commit/dd501d5cdff1ca9e930c92abc56209da44e45af3))
+
 ## [1.0.0](https://www.github.com/googleapis/java-billing/compare/v0.1.0...v1.0.0) (2020-03-06)
 
 
