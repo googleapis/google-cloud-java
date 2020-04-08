@@ -122,13 +122,14 @@ public final class TransferProto {
           + "STREAMING\020\002\032\002\030\001*s\n\rTransferState\022\036\n\032TRAN"
           + "SFER_STATE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\002\022\013\n"
           + "\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006FAILED\020\005\022\r\n"
-          + "\tCANCELLED\020\006B\347\001\n)com.google.cloud.bigque"
+          + "\tCANCELLED\020\006B\223\002\n)com.google.cloud.bigque"
           + "ry.datatransfer.v1B\rTransferProtoP\001ZQgoo"
           + "gle.golang.org/genproto/googleapis/cloud"
           + "/bigquery/datatransfer/v1;datatransfer\242\002"
           + "\005GCBDT\252\002%Google.Cloud.BigQuery.DataTrans"
           + "fer.V1\312\002%Google\\Cloud\\BigQuery\\DataTrans"
-          + "fer\\V1b\006proto3"
+          + "fer\\V1\352\002)Google::Cloud::Bigquery::DataTr"
+          + "ansfer::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
