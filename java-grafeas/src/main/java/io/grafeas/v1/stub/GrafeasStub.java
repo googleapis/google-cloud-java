@@ -56,6 +56,14 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class GrafeasStub implements BackgroundResource {
 
+  public UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOccurrenceCallable()");
+  }
+
+  public UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteNoteCallable()");
+  }
+
   public UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable() {
     throw new UnsupportedOperationException("Not implemented: getOccurrenceCallable()");
   }
@@ -67,10 +75,6 @@ public abstract class GrafeasStub implements BackgroundResource {
 
   public UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse> listOccurrencesCallable() {
     throw new UnsupportedOperationException("Not implemented: listOccurrencesCallable()");
-  }
-
-  public UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteOccurrenceCallable()");
   }
 
   public UnaryCallable<CreateOccurrenceRequest, Occurrence> createOccurrenceCallable() {
@@ -100,10 +104,6 @@ public abstract class GrafeasStub implements BackgroundResource {
 
   public UnaryCallable<ListNotesRequest, ListNotesResponse> listNotesCallable() {
     throw new UnsupportedOperationException("Not implemented: listNotesCallable()");
-  }
-
-  public UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteNoteCallable()");
   }
 
   public UnaryCallable<CreateNoteRequest, Note> createNoteCallable() {

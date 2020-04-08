@@ -86,16 +86,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getOccurrence to 30 seconds:
+ * <p>For example, to set the total timeout of deleteOccurrence to 30 seconds:
  *
  * <pre>
  * <code>
  * GrafeasStubSettings.Builder grafeasSettingsBuilder =
  *     GrafeasStubSettings.newBuilder();
  * grafeasSettingsBuilder
- *     .getOccurrenceSettings()
+ *     .deleteOccurrenceSettings()
  *     .setRetrySettings(
- *         grafeasSettingsBuilder.getOccurrenceSettings().getRetrySettings().toBuilder()
+ *         grafeasSettingsBuilder.deleteOccurrenceSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GrafeasStubSettings grafeasSettings = grafeasSettingsBuilder.build();
@@ -108,11 +108,12 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES = ImmutableList.of();
 
+  private final UnaryCallSettings<DeleteOccurrenceRequest, Empty> deleteOccurrenceSettings;
+  private final UnaryCallSettings<DeleteNoteRequest, Empty> deleteNoteSettings;
   private final UnaryCallSettings<GetOccurrenceRequest, Occurrence> getOccurrenceSettings;
   private final PagedCallSettings<
           ListOccurrencesRequest, ListOccurrencesResponse, ListOccurrencesPagedResponse>
       listOccurrencesSettings;
-  private final UnaryCallSettings<DeleteOccurrenceRequest, Empty> deleteOccurrenceSettings;
   private final UnaryCallSettings<CreateOccurrenceRequest, Occurrence> createOccurrenceSettings;
   private final UnaryCallSettings<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
       batchCreateOccurrencesSettings;
@@ -121,7 +122,6 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
   private final UnaryCallSettings<GetNoteRequest, Note> getNoteSettings;
   private final PagedCallSettings<ListNotesRequest, ListNotesResponse, ListNotesPagedResponse>
       listNotesSettings;
-  private final UnaryCallSettings<DeleteNoteRequest, Empty> deleteNoteSettings;
   private final UnaryCallSettings<CreateNoteRequest, Note> createNoteSettings;
   private final UnaryCallSettings<BatchCreateNotesRequest, BatchCreateNotesResponse>
       batchCreateNotesSettings;
@@ -129,6 +129,16 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
   private final PagedCallSettings<
           ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, ListNoteOccurrencesPagedResponse>
       listNoteOccurrencesSettings;
+
+  /** Returns the object with the settings used for calls to deleteOccurrence. */
+  public UnaryCallSettings<DeleteOccurrenceRequest, Empty> deleteOccurrenceSettings() {
+    return deleteOccurrenceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteNote. */
+  public UnaryCallSettings<DeleteNoteRequest, Empty> deleteNoteSettings() {
+    return deleteNoteSettings;
+  }
 
   /** Returns the object with the settings used for calls to getOccurrence. */
   public UnaryCallSettings<GetOccurrenceRequest, Occurrence> getOccurrenceSettings() {
@@ -140,11 +150,6 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
           ListOccurrencesRequest, ListOccurrencesResponse, ListOccurrencesPagedResponse>
       listOccurrencesSettings() {
     return listOccurrencesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteOccurrence. */
-  public UnaryCallSettings<DeleteOccurrenceRequest, Empty> deleteOccurrenceSettings() {
-    return deleteOccurrenceSettings;
   }
 
   /** Returns the object with the settings used for calls to createOccurrence. */
@@ -177,11 +182,6 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
   public PagedCallSettings<ListNotesRequest, ListNotesResponse, ListNotesPagedResponse>
       listNotesSettings() {
     return listNotesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteNote. */
-  public UnaryCallSettings<DeleteNoteRequest, Empty> deleteNoteSettings() {
-    return deleteNoteSettings;
   }
 
   /** Returns the object with the settings used for calls to createNote. */
@@ -275,16 +275,16 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
   protected GrafeasStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteOccurrenceSettings = settingsBuilder.deleteOccurrenceSettings().build();
+    deleteNoteSettings = settingsBuilder.deleteNoteSettings().build();
     getOccurrenceSettings = settingsBuilder.getOccurrenceSettings().build();
     listOccurrencesSettings = settingsBuilder.listOccurrencesSettings().build();
-    deleteOccurrenceSettings = settingsBuilder.deleteOccurrenceSettings().build();
     createOccurrenceSettings = settingsBuilder.createOccurrenceSettings().build();
     batchCreateOccurrencesSettings = settingsBuilder.batchCreateOccurrencesSettings().build();
     updateOccurrenceSettings = settingsBuilder.updateOccurrenceSettings().build();
     getOccurrenceNoteSettings = settingsBuilder.getOccurrenceNoteSettings().build();
     getNoteSettings = settingsBuilder.getNoteSettings().build();
     listNotesSettings = settingsBuilder.listNotesSettings().build();
-    deleteNoteSettings = settingsBuilder.deleteNoteSettings().build();
     createNoteSettings = settingsBuilder.createNoteSettings().build();
     batchCreateNotesSettings = settingsBuilder.batchCreateNotesSettings().build();
     updateNoteSettings = settingsBuilder.updateNoteSettings().build();
@@ -465,12 +465,13 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
   public static class Builder extends StubSettings.Builder<GrafeasStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteOccurrenceRequest, Empty>
+        deleteOccurrenceSettings;
+    private final UnaryCallSettings.Builder<DeleteNoteRequest, Empty> deleteNoteSettings;
     private final UnaryCallSettings.Builder<GetOccurrenceRequest, Occurrence> getOccurrenceSettings;
     private final PagedCallSettings.Builder<
             ListOccurrencesRequest, ListOccurrencesResponse, ListOccurrencesPagedResponse>
         listOccurrencesSettings;
-    private final UnaryCallSettings.Builder<DeleteOccurrenceRequest, Empty>
-        deleteOccurrenceSettings;
     private final UnaryCallSettings.Builder<CreateOccurrenceRequest, Occurrence>
         createOccurrenceSettings;
     private final UnaryCallSettings.Builder<
@@ -484,7 +485,6 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
     private final PagedCallSettings.Builder<
             ListNotesRequest, ListNotesResponse, ListNotesPagedResponse>
         listNotesSettings;
-    private final UnaryCallSettings.Builder<DeleteNoteRequest, Empty> deleteNoteSettings;
     private final UnaryCallSettings.Builder<CreateNoteRequest, Note> createNoteSettings;
     private final UnaryCallSettings.Builder<BatchCreateNotesRequest, BatchCreateNotesResponse>
         batchCreateNotesSettings;
@@ -536,11 +536,13 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteOccurrenceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteNoteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       getOccurrenceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listOccurrencesSettings = PagedCallSettings.newBuilder(LIST_OCCURRENCES_PAGE_STR_FACT);
-
-      deleteOccurrenceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createOccurrenceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -554,8 +556,6 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
 
       listNotesSettings = PagedCallSettings.newBuilder(LIST_NOTES_PAGE_STR_FACT);
 
-      deleteNoteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createNoteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       batchCreateNotesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -567,16 +567,16 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteOccurrenceSettings,
+              deleteNoteSettings,
               getOccurrenceSettings,
               listOccurrencesSettings,
-              deleteOccurrenceSettings,
               createOccurrenceSettings,
               batchCreateOccurrencesSettings,
               updateOccurrenceSettings,
               getOccurrenceNoteSettings,
               getNoteSettings,
               listNotesSettings,
-              deleteNoteSettings,
               createNoteSettings,
               batchCreateNotesSettings,
               updateNoteSettings,
@@ -597,17 +597,22 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
     private static Builder initDefaults(Builder builder) {
 
       builder
+          .deleteOccurrenceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteNoteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .getOccurrenceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listOccurrencesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteOccurrenceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -642,11 +647,6 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .deleteNoteSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .createNoteSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -672,16 +672,16 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
     protected Builder(GrafeasStubSettings settings) {
       super(settings);
 
+      deleteOccurrenceSettings = settings.deleteOccurrenceSettings.toBuilder();
+      deleteNoteSettings = settings.deleteNoteSettings.toBuilder();
       getOccurrenceSettings = settings.getOccurrenceSettings.toBuilder();
       listOccurrencesSettings = settings.listOccurrencesSettings.toBuilder();
-      deleteOccurrenceSettings = settings.deleteOccurrenceSettings.toBuilder();
       createOccurrenceSettings = settings.createOccurrenceSettings.toBuilder();
       batchCreateOccurrencesSettings = settings.batchCreateOccurrencesSettings.toBuilder();
       updateOccurrenceSettings = settings.updateOccurrenceSettings.toBuilder();
       getOccurrenceNoteSettings = settings.getOccurrenceNoteSettings.toBuilder();
       getNoteSettings = settings.getNoteSettings.toBuilder();
       listNotesSettings = settings.listNotesSettings.toBuilder();
-      deleteNoteSettings = settings.deleteNoteSettings.toBuilder();
       createNoteSettings = settings.createNoteSettings.toBuilder();
       batchCreateNotesSettings = settings.batchCreateNotesSettings.toBuilder();
       updateNoteSettings = settings.updateNoteSettings.toBuilder();
@@ -689,16 +689,16 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteOccurrenceSettings,
+              deleteNoteSettings,
               getOccurrenceSettings,
               listOccurrencesSettings,
-              deleteOccurrenceSettings,
               createOccurrenceSettings,
               batchCreateOccurrencesSettings,
               updateOccurrenceSettings,
               getOccurrenceNoteSettings,
               getNoteSettings,
               listNotesSettings,
-              deleteNoteSettings,
               createNoteSettings,
               batchCreateNotesSettings,
               updateNoteSettings,
@@ -721,6 +721,16 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to deleteOccurrence. */
+    public UnaryCallSettings.Builder<DeleteOccurrenceRequest, Empty> deleteOccurrenceSettings() {
+      return deleteOccurrenceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNote. */
+    public UnaryCallSettings.Builder<DeleteNoteRequest, Empty> deleteNoteSettings() {
+      return deleteNoteSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getOccurrence. */
     public UnaryCallSettings.Builder<GetOccurrenceRequest, Occurrence> getOccurrenceSettings() {
       return getOccurrenceSettings;
@@ -731,11 +741,6 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
             ListOccurrencesRequest, ListOccurrencesResponse, ListOccurrencesPagedResponse>
         listOccurrencesSettings() {
       return listOccurrencesSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteOccurrence. */
-    public UnaryCallSettings.Builder<DeleteOccurrenceRequest, Empty> deleteOccurrenceSettings() {
-      return deleteOccurrenceSettings;
     }
 
     /** Returns the builder for the settings used for calls to createOccurrence. */
@@ -770,11 +775,6 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
     public PagedCallSettings.Builder<ListNotesRequest, ListNotesResponse, ListNotesPagedResponse>
         listNotesSettings() {
       return listNotesSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteNote. */
-    public UnaryCallSettings.Builder<DeleteNoteRequest, Empty> deleteNoteSettings() {
-      return deleteNoteSettings;
     }
 
     /** Returns the builder for the settings used for calls to createNote. */

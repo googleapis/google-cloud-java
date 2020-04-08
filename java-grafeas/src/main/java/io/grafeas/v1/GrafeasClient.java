@@ -58,7 +58,7 @@ import javax.annotation.Generated;
  * <code>
  * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
  *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
- *   Occurrence response = grafeasClient.getOccurrence(name);
+ *   grafeasClient.deleteOccurrence(name);
  * }
  * </code>
  * </pre>
@@ -163,6 +163,188 @@ public class GrafeasClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GrafeasStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
+   * occurrence is no longer applicable for the given resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
+   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
+   *   grafeasClient.deleteOccurrence(name);
+   * }
+   * </code></pre>
+   *
+   * @param name The name of the occurrence in the form of
+   *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteOccurrence(OccurrenceName name) {
+    DeleteOccurrenceRequest request =
+        DeleteOccurrenceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteOccurrence(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
+   * occurrence is no longer applicable for the given resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
+   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
+   *   grafeasClient.deleteOccurrence(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name The name of the occurrence in the form of
+   *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteOccurrence(String name) {
+    DeleteOccurrenceRequest request = DeleteOccurrenceRequest.newBuilder().setName(name).build();
+    deleteOccurrence(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
+   * occurrence is no longer applicable for the given resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
+   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
+   *   DeleteOccurrenceRequest request = DeleteOccurrenceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   grafeasClient.deleteOccurrence(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteOccurrence(DeleteOccurrenceRequest request) {
+    deleteOccurrenceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
+   * occurrence is no longer applicable for the given resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
+   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
+   *   DeleteOccurrenceRequest request = DeleteOccurrenceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = grafeasClient.deleteOccurrenceCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable() {
+    return stub.deleteOccurrenceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified note.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
+   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
+   *   grafeasClient.deleteNote(name);
+   * }
+   * </code></pre>
+   *
+   * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteNote(NoteName name) {
+    DeleteNoteRequest request =
+        DeleteNoteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteNote(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified note.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
+   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
+   *   grafeasClient.deleteNote(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteNote(String name) {
+    DeleteNoteRequest request = DeleteNoteRequest.newBuilder().setName(name).build();
+    deleteNote(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified note.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
+   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
+   *   DeleteNoteRequest request = DeleteNoteRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   grafeasClient.deleteNote(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteNote(DeleteNoteRequest request) {
+    deleteNoteCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified note.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
+   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
+   *   DeleteNoteRequest request = DeleteNoteRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = grafeasClient.deleteNoteCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable() {
+    return stub.deleteNoteCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -392,100 +574,6 @@ public class GrafeasClient implements BackgroundResource {
   public final UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse>
       listOccurrencesCallable() {
     return stub.listOccurrencesCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
-   * occurrence is no longer applicable for the given resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   grafeasClient.deleteOccurrence(name);
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the occurrence in the form of
-   *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteOccurrence(OccurrenceName name) {
-    DeleteOccurrenceRequest request =
-        DeleteOccurrenceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteOccurrence(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
-   * occurrence is no longer applicable for the given resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   grafeasClient.deleteOccurrence(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the occurrence in the form of
-   *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteOccurrence(String name) {
-    DeleteOccurrenceRequest request = DeleteOccurrenceRequest.newBuilder().setName(name).build();
-    deleteOccurrence(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
-   * occurrence is no longer applicable for the given resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   DeleteOccurrenceRequest request = DeleteOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   grafeasClient.deleteOccurrence(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteOccurrence(DeleteOccurrenceRequest request) {
-    deleteOccurrenceCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
-   * occurrence is no longer applicable for the given resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   DeleteOccurrenceRequest request = DeleteOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = grafeasClient.deleteOccurrenceCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable() {
-    return stub.deleteOccurrenceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1129,94 +1217,6 @@ public class GrafeasClient implements BackgroundResource {
    */
   public final UnaryCallable<ListNotesRequest, ListNotesResponse> listNotesCallable() {
     return stub.listNotesCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   grafeasClient.deleteNote(name);
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteNote(NoteName name) {
-    DeleteNoteRequest request =
-        DeleteNoteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteNote(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   grafeasClient.deleteNote(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteNote(String name) {
-    DeleteNoteRequest request = DeleteNoteRequest.newBuilder().setName(name).build();
-    deleteNote(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   DeleteNoteRequest request = DeleteNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   grafeasClient.deleteNote(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteNote(DeleteNoteRequest request) {
-    deleteNoteCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   DeleteNoteRequest request = DeleteNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = grafeasClient.deleteNoteCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable() {
-    return stub.deleteNoteCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

@@ -67,6 +67,22 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcGrafeasStub extends GrafeasStub {
 
+  private static final MethodDescriptor<DeleteOccurrenceRequest, Empty>
+      deleteOccurrenceMethodDescriptor =
+          MethodDescriptor.<DeleteOccurrenceRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("grafeas.v1.Grafeas/DeleteOccurrence")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteOccurrenceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteNoteRequest, Empty> deleteNoteMethodDescriptor =
+      MethodDescriptor.<DeleteNoteRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("grafeas.v1.Grafeas/DeleteNote")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteNoteRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<GetOccurrenceRequest, Occurrence>
       getOccurrenceMethodDescriptor =
           MethodDescriptor.<GetOccurrenceRequest, Occurrence>newBuilder()
@@ -85,15 +101,6 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(ListOccurrencesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOccurrencesResponse.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteOccurrenceRequest, Empty>
-      deleteOccurrenceMethodDescriptor =
-          MethodDescriptor.<DeleteOccurrenceRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("grafeas.v1.Grafeas/DeleteOccurrence")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteOccurrenceRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<CreateOccurrenceRequest, Occurrence>
       createOccurrenceMethodDescriptor =
@@ -149,13 +156,6 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListNotesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListNotesResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteNoteRequest, Empty> deleteNoteMethodDescriptor =
-      MethodDescriptor.<DeleteNoteRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("grafeas.v1.Grafeas/DeleteNote")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteNoteRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<CreateNoteRequest, Note> createNoteMethodDescriptor =
       MethodDescriptor.<CreateNoteRequest, Note>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -193,12 +193,13 @@ public class GrpcGrafeasStub extends GrafeasStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable;
+  private final UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable;
   private final UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable;
   private final UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse>
       listOccurrencesCallable;
   private final UnaryCallable<ListOccurrencesRequest, ListOccurrencesPagedResponse>
       listOccurrencesPagedCallable;
-  private final UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable;
   private final UnaryCallable<CreateOccurrenceRequest, Occurrence> createOccurrenceCallable;
   private final UnaryCallable<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
       batchCreateOccurrencesCallable;
@@ -207,7 +208,6 @@ public class GrpcGrafeasStub extends GrafeasStub {
   private final UnaryCallable<GetNoteRequest, Note> getNoteCallable;
   private final UnaryCallable<ListNotesRequest, ListNotesResponse> listNotesCallable;
   private final UnaryCallable<ListNotesRequest, ListNotesPagedResponse> listNotesPagedCallable;
-  private final UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable;
   private final UnaryCallable<CreateNoteRequest, Note> createNoteCallable;
   private final UnaryCallable<BatchCreateNotesRequest, BatchCreateNotesResponse>
       batchCreateNotesCallable;
@@ -253,6 +253,32 @@ public class GrpcGrafeasStub extends GrafeasStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<DeleteOccurrenceRequest, Empty> deleteOccurrenceTransportSettings =
+        GrpcCallSettings.<DeleteOccurrenceRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteOccurrenceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteOccurrenceRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteOccurrenceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteNoteRequest, Empty> deleteNoteTransportSettings =
+        GrpcCallSettings.<DeleteNoteRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteNoteMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteNoteRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteNoteRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<GetOccurrenceRequest, Occurrence> getOccurrenceTransportSettings =
         GrpcCallSettings.<GetOccurrenceRequest, Occurrence>newBuilder()
             .setMethodDescriptor(getOccurrenceMethodDescriptor)
@@ -280,19 +306,6 @@ public class GrpcGrafeasStub extends GrafeasStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<DeleteOccurrenceRequest, Empty> deleteOccurrenceTransportSettings =
-        GrpcCallSettings.<DeleteOccurrenceRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteOccurrenceMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteOccurrenceRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteOccurrenceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<CreateOccurrenceRequest, Occurrence> createOccurrenceTransportSettings =
         GrpcCallSettings.<CreateOccurrenceRequest, Occurrence>newBuilder()
             .setMethodDescriptor(createOccurrenceMethodDescriptor)
@@ -373,19 +386,6 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteNoteRequest, Empty> deleteNoteTransportSettings =
-        GrpcCallSettings.<DeleteNoteRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteNoteMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteNoteRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteNoteRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<CreateNoteRequest, Note> createNoteTransportSettings =
         GrpcCallSettings.<CreateNoteRequest, Note>newBuilder()
             .setMethodDescriptor(createNoteMethodDescriptor)
@@ -441,6 +441,12 @@ public class GrpcGrafeasStub extends GrafeasStub {
                     })
                 .build();
 
+    this.deleteOccurrenceCallable =
+        callableFactory.createUnaryCallable(
+            deleteOccurrenceTransportSettings, settings.deleteOccurrenceSettings(), clientContext);
+    this.deleteNoteCallable =
+        callableFactory.createUnaryCallable(
+            deleteNoteTransportSettings, settings.deleteNoteSettings(), clientContext);
     this.getOccurrenceCallable =
         callableFactory.createUnaryCallable(
             getOccurrenceTransportSettings, settings.getOccurrenceSettings(), clientContext);
@@ -450,9 +456,6 @@ public class GrpcGrafeasStub extends GrafeasStub {
     this.listOccurrencesPagedCallable =
         callableFactory.createPagedCallable(
             listOccurrencesTransportSettings, settings.listOccurrencesSettings(), clientContext);
-    this.deleteOccurrenceCallable =
-        callableFactory.createUnaryCallable(
-            deleteOccurrenceTransportSettings, settings.deleteOccurrenceSettings(), clientContext);
     this.createOccurrenceCallable =
         callableFactory.createUnaryCallable(
             createOccurrenceTransportSettings, settings.createOccurrenceSettings(), clientContext);
@@ -478,9 +481,6 @@ public class GrpcGrafeasStub extends GrafeasStub {
     this.listNotesPagedCallable =
         callableFactory.createPagedCallable(
             listNotesTransportSettings, settings.listNotesSettings(), clientContext);
-    this.deleteNoteCallable =
-        callableFactory.createUnaryCallable(
-            deleteNoteTransportSettings, settings.deleteNoteSettings(), clientContext);
     this.createNoteCallable =
         callableFactory.createUnaryCallable(
             createNoteTransportSettings, settings.createNoteSettings(), clientContext);
@@ -504,6 +504,14 @@ public class GrpcGrafeasStub extends GrafeasStub {
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  public UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable() {
+    return deleteOccurrenceCallable;
+  }
+
+  public UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable() {
+    return deleteNoteCallable;
+  }
+
   public UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable() {
     return getOccurrenceCallable;
   }
@@ -515,10 +523,6 @@ public class GrpcGrafeasStub extends GrafeasStub {
 
   public UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse> listOccurrencesCallable() {
     return listOccurrencesCallable;
-  }
-
-  public UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable() {
-    return deleteOccurrenceCallable;
   }
 
   public UnaryCallable<CreateOccurrenceRequest, Occurrence> createOccurrenceCallable() {
@@ -548,10 +552,6 @@ public class GrpcGrafeasStub extends GrafeasStub {
 
   public UnaryCallable<ListNotesRequest, ListNotesResponse> listNotesCallable() {
     return listNotesCallable;
-  }
-
-  public UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable() {
-    return deleteNoteCallable;
   }
 
   public UnaryCallable<CreateNoteRequest, Note> createNoteCallable() {
