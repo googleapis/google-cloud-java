@@ -44,11 +44,13 @@ import com.google.cloud.compute.v1.DeleteSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.GetRuleSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.GetSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.InsertSecurityPolicyHttpRequest;
+import com.google.cloud.compute.v1.ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest;
 import com.google.cloud.compute.v1.ListSecurityPoliciesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRuleSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.PatchSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.RemoveRuleSecurityPolicyHttpRequest;
+import com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse;
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
 import com.google.cloud.compute.v1.SecurityPolicyRule;
@@ -120,6 +122,10 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
   private final PagedCallSettings<
           ListSecurityPoliciesHttpRequest, SecurityPolicyList, ListSecurityPoliciesPagedResponse>
       listSecurityPoliciesSettings;
+  private final UnaryCallSettings<
+          ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+          SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+      listPreconfiguredExpressionSetsSecurityPoliciesSettings;
   private final UnaryCallSettings<PatchSecurityPolicyHttpRequest, Operation>
       patchSecurityPolicySettings;
   private final UnaryCallSettings<PatchRuleSecurityPolicyHttpRequest, Operation>
@@ -162,6 +168,17 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
           ListSecurityPoliciesHttpRequest, SecurityPolicyList, ListSecurityPoliciesPagedResponse>
       listSecurityPoliciesSettings() {
     return listSecurityPoliciesSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * listPreconfiguredExpressionSetsSecurityPolicies.
+   */
+  public UnaryCallSettings<
+          ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+          SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+      listPreconfiguredExpressionSetsSecurityPoliciesSettings() {
+    return listPreconfiguredExpressionSetsSecurityPoliciesSettings;
   }
 
   /** Returns the object with the settings used for calls to patchSecurityPolicy. */
@@ -263,6 +280,8 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
     getRuleSecurityPolicySettings = settingsBuilder.getRuleSecurityPolicySettings().build();
     insertSecurityPolicySettings = settingsBuilder.insertSecurityPolicySettings().build();
     listSecurityPoliciesSettings = settingsBuilder.listSecurityPoliciesSettings().build();
+    listPreconfiguredExpressionSetsSecurityPoliciesSettings =
+        settingsBuilder.listPreconfiguredExpressionSetsSecurityPoliciesSettings().build();
     patchSecurityPolicySettings = settingsBuilder.patchSecurityPolicySettings().build();
     patchRuleSecurityPolicySettings = settingsBuilder.patchRuleSecurityPolicySettings().build();
     removeRuleSecurityPolicySettings = settingsBuilder.removeRuleSecurityPolicySettings().build();
@@ -350,6 +369,10 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
     private final PagedCallSettings.Builder<
             ListSecurityPoliciesHttpRequest, SecurityPolicyList, ListSecurityPoliciesPagedResponse>
         listSecurityPoliciesSettings;
+    private final UnaryCallSettings.Builder<
+            ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+            SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+        listPreconfiguredExpressionSetsSecurityPoliciesSettings;
     private final UnaryCallSettings.Builder<PatchSecurityPolicyHttpRequest, Operation>
         patchSecurityPolicySettings;
     private final UnaryCallSettings.Builder<PatchRuleSecurityPolicyHttpRequest, Operation>
@@ -411,6 +434,9 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
       listSecurityPoliciesSettings =
           PagedCallSettings.newBuilder(LIST_SECURITY_POLICIES_PAGE_STR_FACT);
 
+      listPreconfiguredExpressionSetsSecurityPoliciesSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       patchSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       patchRuleSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -425,6 +451,7 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
               getRuleSecurityPolicySettings,
               insertSecurityPolicySettings,
               listSecurityPoliciesSettings,
+              listPreconfiguredExpressionSetsSecurityPoliciesSettings,
               patchSecurityPolicySettings,
               patchRuleSecurityPolicySettings,
               removeRuleSecurityPolicySettings);
@@ -474,6 +501,11 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .listPreconfiguredExpressionSetsSecurityPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .patchSecurityPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -500,6 +532,8 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
       getRuleSecurityPolicySettings = settings.getRuleSecurityPolicySettings.toBuilder();
       insertSecurityPolicySettings = settings.insertSecurityPolicySettings.toBuilder();
       listSecurityPoliciesSettings = settings.listSecurityPoliciesSettings.toBuilder();
+      listPreconfiguredExpressionSetsSecurityPoliciesSettings =
+          settings.listPreconfiguredExpressionSetsSecurityPoliciesSettings.toBuilder();
       patchSecurityPolicySettings = settings.patchSecurityPolicySettings.toBuilder();
       patchRuleSecurityPolicySettings = settings.patchRuleSecurityPolicySettings.toBuilder();
       removeRuleSecurityPolicySettings = settings.removeRuleSecurityPolicySettings.toBuilder();
@@ -512,6 +546,7 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
               getRuleSecurityPolicySettings,
               insertSecurityPolicySettings,
               listSecurityPoliciesSettings,
+              listPreconfiguredExpressionSetsSecurityPoliciesSettings,
               patchSecurityPolicySettings,
               patchRuleSecurityPolicySettings,
               removeRuleSecurityPolicySettings);
@@ -568,6 +603,17 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
             ListSecurityPoliciesHttpRequest, SecurityPolicyList, ListSecurityPoliciesPagedResponse>
         listSecurityPoliciesSettings() {
       return listSecurityPoliciesSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listPreconfiguredExpressionSetsSecurityPolicies.
+     */
+    public UnaryCallSettings.Builder<
+            ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+            SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+        listPreconfiguredExpressionSetsSecurityPoliciesSettings() {
+      return listPreconfiguredExpressionSetsSecurityPoliciesSettings;
     }
 
     /** Returns the builder for the settings used for calls to patchSecurityPolicy. */

@@ -25,11 +25,13 @@ import com.google.cloud.compute.v1.DeleteSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.GetRuleSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.GetSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.InsertSecurityPolicyHttpRequest;
+import com.google.cloud.compute.v1.ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest;
 import com.google.cloud.compute.v1.ListSecurityPoliciesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRuleSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.PatchSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.RemoveRuleSecurityPolicyHttpRequest;
+import com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse;
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
 import com.google.cloud.compute.v1.SecurityPolicyRule;
@@ -82,6 +84,15 @@ public abstract class SecurityPolicyStub implements BackgroundResource {
   public UnaryCallable<ListSecurityPoliciesHttpRequest, SecurityPolicyList>
       listSecurityPoliciesCallable() {
     throw new UnsupportedOperationException("Not implemented: listSecurityPoliciesCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+          SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+      listPreconfiguredExpressionSetsSecurityPoliciesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listPreconfiguredExpressionSetsSecurityPoliciesCallable()");
   }
 
   @BetaApi

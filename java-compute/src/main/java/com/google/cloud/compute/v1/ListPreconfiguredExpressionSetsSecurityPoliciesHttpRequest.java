@@ -25,15 +25,15 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * Request object for method compute.globalOperations.aggregatedList. Retrieves an aggregated list
- * of all operations.
+ * Request object for method compute.securityPolicies.listPreconfiguredExpressionSets. Gets the
+ * current list of preconfigured Web Application Firewall (WAF) expressions.
  */
-public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessage {
+public final class ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest
+    implements ApiMessage {
   private final String access_token;
   private final String callback;
   private final String fields;
   private final String filter;
-  private final Boolean includeAllScopes;
   private final String key;
   private final Integer maxResults;
   private final String orderBy;
@@ -43,12 +43,11 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
   private final String quotaUser;
   private final String userIp;
 
-  private AggregatedListGlobalOperationsHttpRequest() {
+  private ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest() {
     this.access_token = null;
     this.callback = null;
     this.fields = null;
     this.filter = null;
-    this.includeAllScopes = null;
     this.key = null;
     this.maxResults = null;
     this.orderBy = null;
@@ -59,12 +58,11 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
     this.userIp = null;
   }
 
-  private AggregatedListGlobalOperationsHttpRequest(
+  private ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest(
       String access_token,
       String callback,
       String fields,
       String filter,
-      Boolean includeAllScopes,
       String key,
       Integer maxResults,
       String orderBy,
@@ -77,7 +75,6 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
     this.callback = callback;
     this.fields = fields;
     this.filter = filter;
-    this.includeAllScopes = includeAllScopes;
     this.key = key;
     this.maxResults = maxResults;
     this.orderBy = orderBy;
@@ -101,9 +98,6 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
     }
     if ("filter".equals(fieldName)) {
       return filter;
-    }
-    if ("includeAllScopes".equals(fieldName)) {
-      return includeAllScopes;
     }
     if ("key".equals(fieldName)) {
       return key;
@@ -188,17 +182,6 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
     return filter;
   }
 
-  /**
-   * Indicates whether every visible scope for each scope type (zone, region, global) should be
-   * included in the response. For new resource types added after this field, the flag has no effect
-   * as new resource types will always include every visible scope for each scope type in response.
-   * For resource types which predate this field, if this flag is omitted or false, only scopes of
-   * the scope types where the resource type is expected to be found will be included.
-   */
-  public Boolean getIncludeAllScopes() {
-    return includeAllScopes;
-  }
-
   /** API key. Required unless you provide an OAuth 2.0 token. */
   public String getKey() {
     return key;
@@ -243,11 +226,12 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
   }
 
   /**
-   * Project ID for this request. It must have the format `{project}/aggregated/operations`.
-   * \`{project}\` must start with a letter, and contain only letters (\`[A-Za-z]\`), numbers
-   * (\`[0-9]\`), dashes (\`-\`), &#42; underscores (\`_\`), periods (\`.\`), tildes (\`~\`), plus
-   * (\`+\`) or percent &#42; signs (\`%\`). It must be between 3 and 255 characters in length, and
-   * it &#42; must not start with \`"goog"\`.
+   * Project ID for this request. It must have the format
+   * `{project}/global/securityPolicies/listPreconfiguredExpressionSets`. \`{project}\` must start
+   * with a letter, and contain only letters (\`[A-Za-z]\`), numbers (\`[0-9]\`), dashes (\`-\`),
+   * &#42; underscores (\`_\`), periods (\`.\`), tildes (\`~\`), plus (\`+\`) or percent &#42; signs
+   * (\`%\`). It must be between 3 and 255 characters in length, and it &#42; must not start with
+   * \`"goog"\`.
    */
   public String getProject() {
     return project;
@@ -267,7 +251,8 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(AggregatedListGlobalOperationsHttpRequest prototype) {
+  public static Builder newBuilder(
+      ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -275,14 +260,14 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
     return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  public static AggregatedListGlobalOperationsHttpRequest getDefaultInstance() {
+  public static ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final AggregatedListGlobalOperationsHttpRequest DEFAULT_INSTANCE;
+  private static final ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new AggregatedListGlobalOperationsHttpRequest();
+    DEFAULT_INSTANCE = new ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest();
   }
 
   public static class Builder {
@@ -290,7 +275,6 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
     private String callback;
     private String fields;
     private String filter;
-    private Boolean includeAllScopes;
     private String key;
     private Integer maxResults;
     private String orderBy;
@@ -302,8 +286,9 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
 
     Builder() {}
 
-    public Builder mergeFrom(AggregatedListGlobalOperationsHttpRequest other) {
-      if (other == AggregatedListGlobalOperationsHttpRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest other) {
+      if (other == ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest.getDefaultInstance())
+        return this;
       if (other.getAccessToken() != null) {
         this.access_token = other.access_token;
       }
@@ -315,9 +300,6 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
       }
       if (other.getFilter() != null) {
         this.filter = other.filter;
-      }
-      if (other.getIncludeAllScopes() != null) {
-        this.includeAllScopes = other.includeAllScopes;
       }
       if (other.getKey() != null) {
         this.key = other.key;
@@ -346,12 +328,11 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
       return this;
     }
 
-    Builder(AggregatedListGlobalOperationsHttpRequest source) {
+    Builder(ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest source) {
       this.access_token = source.access_token;
       this.callback = source.callback;
       this.fields = source.fields;
       this.filter = source.filter;
-      this.includeAllScopes = source.includeAllScopes;
       this.key = source.key;
       this.maxResults = source.maxResults;
       this.orderBy = source.orderBy;
@@ -441,29 +422,6 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
      */
     public Builder setFilter(String filter) {
       this.filter = filter;
-      return this;
-    }
-
-    /**
-     * Indicates whether every visible scope for each scope type (zone, region, global) should be
-     * included in the response. For new resource types added after this field, the flag has no
-     * effect as new resource types will always include every visible scope for each scope type in
-     * response. For resource types which predate this field, if this flag is omitted or false, only
-     * scopes of the scope types where the resource type is expected to be found will be included.
-     */
-    public Boolean getIncludeAllScopes() {
-      return includeAllScopes;
-    }
-
-    /**
-     * Indicates whether every visible scope for each scope type (zone, region, global) should be
-     * included in the response. For new resource types added after this field, the flag has no
-     * effect as new resource types will always include every visible scope for each scope type in
-     * response. For resource types which predate this field, if this flag is omitted or false, only
-     * scopes of the scope types where the resource type is expected to be found will be included.
-     */
-    public Builder setIncludeAllScopes(Boolean includeAllScopes) {
-      this.includeAllScopes = includeAllScopes;
       return this;
     }
 
@@ -559,22 +517,24 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
     }
 
     /**
-     * Project ID for this request. It must have the format `{project}/aggregated/operations`.
-     * \`{project}\` must start with a letter, and contain only letters (\`[A-Za-z]\`), numbers
-     * (\`[0-9]\`), dashes (\`-\`), &#42; underscores (\`_\`), periods (\`.\`), tildes (\`~\`), plus
-     * (\`+\`) or percent &#42; signs (\`%\`). It must be between 3 and 255 characters in length,
-     * and it &#42; must not start with \`"goog"\`.
+     * Project ID for this request. It must have the format
+     * `{project}/global/securityPolicies/listPreconfiguredExpressionSets`. \`{project}\` must start
+     * with a letter, and contain only letters (\`[A-Za-z]\`), numbers (\`[0-9]\`), dashes (\`-\`),
+     * &#42; underscores (\`_\`), periods (\`.\`), tildes (\`~\`), plus (\`+\`) or percent &#42;
+     * signs (\`%\`). It must be between 3 and 255 characters in length, and it &#42; must not start
+     * with \`"goog"\`.
      */
     public String getProject() {
       return project;
     }
 
     /**
-     * Project ID for this request. It must have the format `{project}/aggregated/operations`.
-     * \`{project}\` must start with a letter, and contain only letters (\`[A-Za-z]\`), numbers
-     * (\`[0-9]\`), dashes (\`-\`), &#42; underscores (\`_\`), periods (\`.\`), tildes (\`~\`), plus
-     * (\`+\`) or percent &#42; signs (\`%\`). It must be between 3 and 255 characters in length,
-     * and it &#42; must not start with \`"goog"\`.
+     * Project ID for this request. It must have the format
+     * `{project}/global/securityPolicies/listPreconfiguredExpressionSets`. \`{project}\` must start
+     * with a letter, and contain only letters (\`[A-Za-z]\`), numbers (\`[0-9]\`), dashes (\`-\`),
+     * &#42; underscores (\`_\`), periods (\`.\`), tildes (\`~\`), plus (\`+\`) or percent &#42;
+     * signs (\`%\`). It must be between 3 and 255 characters in length, and it &#42; must not start
+     * with \`"goog"\`.
      */
     public Builder setProject(String project) {
       this.project = project;
@@ -603,7 +563,7 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
       return this;
     }
 
-    public AggregatedListGlobalOperationsHttpRequest build() {
+    public ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest build() {
       String missing = "";
 
       if (project == null) {
@@ -613,12 +573,11 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
-      return new AggregatedListGlobalOperationsHttpRequest(
+      return new ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest(
           access_token,
           callback,
           fields,
           filter,
-          includeAllScopes,
           key,
           maxResults,
           orderBy,
@@ -635,7 +594,6 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
       newBuilder.setCallback(this.callback);
       newBuilder.setFields(this.fields);
       newBuilder.setFilter(this.filter);
-      newBuilder.setIncludeAllScopes(this.includeAllScopes);
       newBuilder.setKey(this.key);
       newBuilder.setMaxResults(this.maxResults);
       newBuilder.setOrderBy(this.orderBy);
@@ -650,7 +608,7 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
 
   @Override
   public String toString() {
-    return "AggregatedListGlobalOperationsHttpRequest{"
+    return "ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest{"
         + "access_token="
         + access_token
         + ", "
@@ -662,9 +620,6 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
         + ", "
         + "filter="
         + filter
-        + ", "
-        + "includeAllScopes="
-        + includeAllScopes
         + ", "
         + "key="
         + key
@@ -697,14 +652,13 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
     if (o == this) {
       return true;
     }
-    if (o instanceof AggregatedListGlobalOperationsHttpRequest) {
-      AggregatedListGlobalOperationsHttpRequest that =
-          (AggregatedListGlobalOperationsHttpRequest) o;
+    if (o instanceof ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest) {
+      ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest that =
+          (ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest) o;
       return Objects.equals(this.access_token, that.getAccessToken())
           && Objects.equals(this.callback, that.getCallback())
           && Objects.equals(this.fields, that.getFields())
           && Objects.equals(this.filter, that.getFilter())
-          && Objects.equals(this.includeAllScopes, that.getIncludeAllScopes())
           && Objects.equals(this.key, that.getKey())
           && Objects.equals(this.maxResults, that.getMaxResults())
           && Objects.equals(this.orderBy, that.getOrderBy())
@@ -724,7 +678,6 @@ public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessa
         callback,
         fields,
         filter,
-        includeAllScopes,
         key,
         maxResults,
         orderBy,

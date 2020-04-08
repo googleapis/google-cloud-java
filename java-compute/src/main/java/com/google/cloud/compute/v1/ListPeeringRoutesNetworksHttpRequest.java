@@ -187,21 +187,21 @@ public final class ListPeeringRoutesNetworksHttpRequest implements ApiMessage {
   /**
    * A filter expression that filters resources listed in the response. The expression must specify
    * the field name, a comparison operator, and the value that you want to use for filtering. The
-   * value must be a string, a number, or a boolean. The comparison operator must be either =, !=,
-   * &gt;, or &lt;.
+   * value must be a string, a number, or a boolean. The comparison operator must be either `=`,
+   * `!=`, `&gt;`, or `&lt;`.
    *
    * <p>For example, if you are filtering Compute Engine instances, you can exclude instances named
-   * example-instance by specifying name != example-instance.
+   * `example-instance` by specifying `name != example-instance`.
    *
    * <p>You can also filter nested fields. For example, you could specify
-   * scheduling.automaticRestart = false to include instances only if they are not scheduled for
+   * `scheduling.automaticRestart = false` to include instances only if they are not scheduled for
    * automatic restarts. You can use filtering on nested fields to filter based on resource labels.
    *
    * <p>To filter on multiple expressions, provide each separate expression within parentheses. For
-   * example, (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake"). By default, each
-   * expression is an AND expression. However, you can include AND and OR expressions explicitly.
-   * For example, (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND
-   * (scheduling.automaticRestart = true).
+   * example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By
+   * default, each expression is an `AND` expression. However, you can include `AND` and `OR`
+   * expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform =
+   * "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    */
   public String getFilter() {
     return filter;
@@ -214,9 +214,9 @@ public final class ListPeeringRoutesNetworksHttpRequest implements ApiMessage {
 
   /**
    * The maximum number of results per page that should be returned. If the number of available
-   * results is larger than maxResults, Compute Engine returns a nextPageToken that can be used to
-   * get the next page of results in subsequent list requests. Acceptable values are 0 to 500,
-   * inclusive. (Default: 500)
+   * results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used
+   * to get the next page of results in subsequent list requests. Acceptable values are `0` to
+   * `500`, inclusive. (Default: `500`)
    */
   public Integer getMaxResults() {
     return maxResults;
@@ -239,19 +239,19 @@ public final class ListPeeringRoutesNetworksHttpRequest implements ApiMessage {
    * based on the resource name.
    *
    * <p>You can also sort results in descending order based on the creation timestamp using
-   * orderBy="creationTimestamp desc". This sorts results based on the creationTimestamp field in
-   * reverse chronological order (newest result first). Use this to sort resources like operations
-   * so that the newest operation is returned first.
+   * `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field
+   * in reverse chronological order (newest result first). Use this to sort resources like
+   * operations so that the newest operation is returned first.
    *
-   * <p>Currently, only sorting by name or creationTimestamp desc is supported.
+   * <p>Currently, only sorting by `name` or `creationTimestamp desc` is supported.
    */
   public String getOrderBy() {
     return orderBy;
   }
 
   /**
-   * Specifies a page token to use. Set pageToken to the nextPageToken returned by a previous list
-   * request to get the next page of results.
+   * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous
+   * list request to get the next page of results.
    */
   public String getPageToken() {
     return pageToken;
@@ -442,21 +442,21 @@ public final class ListPeeringRoutesNetworksHttpRequest implements ApiMessage {
      * A filter expression that filters resources listed in the response. The expression must
      * specify the field name, a comparison operator, and the value that you want to use for
      * filtering. The value must be a string, a number, or a boolean. The comparison operator must
-     * be either =, !=, &gt;, or &lt;.
+     * be either `=`, `!=`, `&gt;`, or `&lt;`.
      *
      * <p>For example, if you are filtering Compute Engine instances, you can exclude instances
-     * named example-instance by specifying name != example-instance.
+     * named `example-instance` by specifying `name != example-instance`.
      *
      * <p>You can also filter nested fields. For example, you could specify
-     * scheduling.automaticRestart = false to include instances only if they are not scheduled for
+     * `scheduling.automaticRestart = false` to include instances only if they are not scheduled for
      * automatic restarts. You can use filtering on nested fields to filter based on resource
      * labels.
      *
      * <p>To filter on multiple expressions, provide each separate expression within parentheses.
-     * For example, (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake"). By
-     * default, each expression is an AND expression. However, you can include AND and OR
-     * expressions explicitly. For example, (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel
-     * Broadwell") AND (scheduling.automaticRestart = true).
+     * For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By
+     * default, each expression is an `AND` expression. However, you can include `AND` and `OR`
+     * expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform =
+     * "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      */
     public String getFilter() {
       return filter;
@@ -466,21 +466,21 @@ public final class ListPeeringRoutesNetworksHttpRequest implements ApiMessage {
      * A filter expression that filters resources listed in the response. The expression must
      * specify the field name, a comparison operator, and the value that you want to use for
      * filtering. The value must be a string, a number, or a boolean. The comparison operator must
-     * be either =, !=, &gt;, or &lt;.
+     * be either `=`, `!=`, `&gt;`, or `&lt;`.
      *
      * <p>For example, if you are filtering Compute Engine instances, you can exclude instances
-     * named example-instance by specifying name != example-instance.
+     * named `example-instance` by specifying `name != example-instance`.
      *
      * <p>You can also filter nested fields. For example, you could specify
-     * scheduling.automaticRestart = false to include instances only if they are not scheduled for
+     * `scheduling.automaticRestart = false` to include instances only if they are not scheduled for
      * automatic restarts. You can use filtering on nested fields to filter based on resource
      * labels.
      *
      * <p>To filter on multiple expressions, provide each separate expression within parentheses.
-     * For example, (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake"). By
-     * default, each expression is an AND expression. However, you can include AND and OR
-     * expressions explicitly. For example, (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel
-     * Broadwell") AND (scheduling.automaticRestart = true).
+     * For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By
+     * default, each expression is an `AND` expression. However, you can include `AND` and `OR`
+     * expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform =
+     * "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      */
     public Builder setFilter(String filter) {
       this.filter = filter;
@@ -500,9 +500,9 @@ public final class ListPeeringRoutesNetworksHttpRequest implements ApiMessage {
 
     /**
      * The maximum number of results per page that should be returned. If the number of available
-     * results is larger than maxResults, Compute Engine returns a nextPageToken that can be used to
-     * get the next page of results in subsequent list requests. Acceptable values are 0 to 500,
-     * inclusive. (Default: 500)
+     * results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be
+     * used to get the next page of results in subsequent list requests. Acceptable values are `0`
+     * to `500`, inclusive. (Default: `500`)
      */
     public Integer getMaxResults() {
       return maxResults;
@@ -510,9 +510,9 @@ public final class ListPeeringRoutesNetworksHttpRequest implements ApiMessage {
 
     /**
      * The maximum number of results per page that should be returned. If the number of available
-     * results is larger than maxResults, Compute Engine returns a nextPageToken that can be used to
-     * get the next page of results in subsequent list requests. Acceptable values are 0 to 500,
-     * inclusive. (Default: 500)
+     * results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be
+     * used to get the next page of results in subsequent list requests. Acceptable values are `0`
+     * to `500`, inclusive. (Default: `500`)
      */
     public Builder setMaxResults(Integer maxResults) {
       this.maxResults = maxResults;
@@ -549,11 +549,11 @@ public final class ListPeeringRoutesNetworksHttpRequest implements ApiMessage {
      * order based on the resource name.
      *
      * <p>You can also sort results in descending order based on the creation timestamp using
-     * orderBy="creationTimestamp desc". This sorts results based on the creationTimestamp field in
-     * reverse chronological order (newest result first). Use this to sort resources like operations
-     * so that the newest operation is returned first.
+     * `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field
+     * in reverse chronological order (newest result first). Use this to sort resources like
+     * operations so that the newest operation is returned first.
      *
-     * <p>Currently, only sorting by name or creationTimestamp desc is supported.
+     * <p>Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      */
     public String getOrderBy() {
       return orderBy;
@@ -564,11 +564,11 @@ public final class ListPeeringRoutesNetworksHttpRequest implements ApiMessage {
      * order based on the resource name.
      *
      * <p>You can also sort results in descending order based on the creation timestamp using
-     * orderBy="creationTimestamp desc". This sorts results based on the creationTimestamp field in
-     * reverse chronological order (newest result first). Use this to sort resources like operations
-     * so that the newest operation is returned first.
+     * `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field
+     * in reverse chronological order (newest result first). Use this to sort resources like
+     * operations so that the newest operation is returned first.
      *
-     * <p>Currently, only sorting by name or creationTimestamp desc is supported.
+     * <p>Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      */
     public Builder setOrderBy(String orderBy) {
       this.orderBy = orderBy;
@@ -576,16 +576,16 @@ public final class ListPeeringRoutesNetworksHttpRequest implements ApiMessage {
     }
 
     /**
-     * Specifies a page token to use. Set pageToken to the nextPageToken returned by a previous list
-     * request to get the next page of results.
+     * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous
+     * list request to get the next page of results.
      */
     public String getPageToken() {
       return pageToken;
     }
 
     /**
-     * Specifies a page token to use. Set pageToken to the nextPageToken returned by a previous list
-     * request to get the next page of results.
+     * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous
+     * list request to get the next page of results.
      */
     public Builder setPageToken(String pageToken) {
       this.pageToken = pageToken;

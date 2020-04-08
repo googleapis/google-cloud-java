@@ -18,6 +18,7 @@ package com.google.cloud.compute.v1;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedListInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListErrorsInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListManagedInstancesInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -157,9 +158,10 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
    * Returns the object with the settings used for calls to
    * listManagedInstancesInstanceGroupManagers.
    */
-  public UnaryCallSettings<
+  public PagedCallSettings<
           ListManagedInstancesInstanceGroupManagersHttpRequest,
-          InstanceGroupManagersListManagedInstancesResponse>
+          InstanceGroupManagersListManagedInstancesResponse,
+          ListManagedInstancesInstanceGroupManagersPagedResponse>
       listManagedInstancesInstanceGroupManagersSettings() {
     return ((InstanceGroupManagerStubSettings) getStubSettings())
         .listManagedInstancesInstanceGroupManagersSettings();
@@ -392,9 +394,10 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
      * Returns the builder for the settings used for calls to
      * listManagedInstancesInstanceGroupManagers.
      */
-    public UnaryCallSettings.Builder<
+    public PagedCallSettings.Builder<
             ListManagedInstancesInstanceGroupManagersHttpRequest,
-            InstanceGroupManagersListManagedInstancesResponse>
+            InstanceGroupManagersListManagedInstancesResponse,
+            ListManagedInstancesInstanceGroupManagersPagedResponse>
         listManagedInstancesInstanceGroupManagersSettings() {
       return getStubSettingsBuilder().listManagedInstancesInstanceGroupManagersSettings();
     }

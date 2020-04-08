@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListErrorsRegionInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListManagedInstancesRegionInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
 
 import com.google.api.client.http.HttpMethods;
@@ -466,6 +467,10 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
           ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
           RegionInstanceGroupManagersListInstancesResponse>
       listManagedInstancesRegionInstanceGroupManagersCallable;
+  private final UnaryCallable<
+          ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
+          ListManagedInstancesRegionInstanceGroupManagersPagedResponse>
+      listManagedInstancesRegionInstanceGroupManagersPagedCallable;
   private final UnaryCallable<PatchRegionInstanceGroupManagerHttpRequest, Operation>
       patchRegionInstanceGroupManagerCallable;
   private final UnaryCallable<RecreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
@@ -683,6 +688,11 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
             listManagedInstancesRegionInstanceGroupManagersTransportSettings,
             settings.listManagedInstancesRegionInstanceGroupManagersSettings(),
             clientContext);
+    this.listManagedInstancesRegionInstanceGroupManagersPagedCallable =
+        callableFactory.createPagedCallable(
+            listManagedInstancesRegionInstanceGroupManagersTransportSettings,
+            settings.listManagedInstancesRegionInstanceGroupManagersSettings(),
+            clientContext);
     this.patchRegionInstanceGroupManagerCallable =
         callableFactory.createUnaryCallable(
             patchRegionInstanceGroupManagerTransportSettings,
@@ -781,6 +791,14 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
           RegionInstanceGroupManagersListErrorsResponse>
       listErrorsRegionInstanceGroupManagersCallable() {
     return listErrorsRegionInstanceGroupManagersCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
+          ListManagedInstancesRegionInstanceGroupManagersPagedResponse>
+      listManagedInstancesRegionInstanceGroupManagersPagedCallable() {
+    return listManagedInstancesRegionInstanceGroupManagersPagedCallable;
   }
 
   @BetaApi

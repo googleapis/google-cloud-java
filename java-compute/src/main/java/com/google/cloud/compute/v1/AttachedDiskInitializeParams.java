@@ -148,9 +148,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   }
 
   /**
-   * Specifies the disk name. If not specified, the default is to use the name of the instance. If
-   * the disk with the instance name exists already in the given zone/region, a new name will be
-   * automatically generated.
+   * Specifies the disk name. If not specified, the default is to use the name of the instance. If a
+   * disk with the same name already exists in the given region, the existing disk is attached to
+   * the new instance and the new disk is not created.
    */
   public String getDiskName() {
     return diskName;
@@ -362,8 +362,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
 
     /**
      * Specifies the disk name. If not specified, the default is to use the name of the instance. If
-     * the disk with the instance name exists already in the given zone/region, a new name will be
-     * automatically generated.
+     * a disk with the same name already exists in the given region, the existing disk is attached
+     * to the new instance and the new disk is not created.
      */
     public String getDiskName() {
       return diskName;
@@ -371,8 +371,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
 
     /**
      * Specifies the disk name. If not specified, the default is to use the name of the instance. If
-     * the disk with the instance name exists already in the given zone/region, a new name will be
-     * automatically generated.
+     * a disk with the same name already exists in the given region, the existing disk is attached
+     * to the new instance and the new disk is not created.
      */
     public Builder setDiskName(String diskName) {
       this.diskName = diskName;

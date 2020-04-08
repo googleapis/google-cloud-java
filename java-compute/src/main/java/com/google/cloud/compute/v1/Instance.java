@@ -53,6 +53,7 @@ public final class Instance implements ApiMessage {
   private final String name;
   private final List<NetworkInterface> networkInterfaces;
   private final ReservationAffinity reservationAffinity;
+  private final List<String> resourcePolicies;
   private final Scheduling scheduling;
   private final String selfLink;
   private final List<ServiceAccount> serviceAccounts;
@@ -85,6 +86,7 @@ public final class Instance implements ApiMessage {
     this.name = null;
     this.networkInterfaces = null;
     this.reservationAffinity = null;
+    this.resourcePolicies = null;
     this.scheduling = null;
     this.selfLink = null;
     this.serviceAccounts = null;
@@ -118,6 +120,7 @@ public final class Instance implements ApiMessage {
       String name,
       List<NetworkInterface> networkInterfaces,
       ReservationAffinity reservationAffinity,
+      List<String> resourcePolicies,
       Scheduling scheduling,
       String selfLink,
       List<ServiceAccount> serviceAccounts,
@@ -148,6 +151,7 @@ public final class Instance implements ApiMessage {
     this.name = name;
     this.networkInterfaces = networkInterfaces;
     this.reservationAffinity = reservationAffinity;
+    this.resourcePolicies = resourcePolicies;
     this.scheduling = scheduling;
     this.selfLink = selfLink;
     this.serviceAccounts = serviceAccounts;
@@ -221,6 +225,9 @@ public final class Instance implements ApiMessage {
     }
     if ("reservationAffinity".equals(fieldName)) {
       return reservationAffinity;
+    }
+    if ("resourcePolicies".equals(fieldName)) {
+      return resourcePolicies;
     }
     if ("scheduling".equals(fieldName)) {
       return scheduling;
@@ -433,6 +440,11 @@ public final class Instance implements ApiMessage {
     return reservationAffinity;
   }
 
+  /** Resource policies applied to this instance. */
+  public List<String> getResourcePoliciesList() {
+    return resourcePolicies;
+  }
+
   /** Sets the scheduling options for this instance. */
   public Scheduling getScheduling() {
     return scheduling;
@@ -544,6 +556,7 @@ public final class Instance implements ApiMessage {
     private String name;
     private List<NetworkInterface> networkInterfaces;
     private ReservationAffinity reservationAffinity;
+    private List<String> resourcePolicies;
     private Scheduling scheduling;
     private String selfLink;
     private List<ServiceAccount> serviceAccounts;
@@ -619,6 +632,9 @@ public final class Instance implements ApiMessage {
       if (other.getReservationAffinity() != null) {
         this.reservationAffinity = other.reservationAffinity;
       }
+      if (other.getResourcePoliciesList() != null) {
+        this.resourcePolicies = other.resourcePolicies;
+      }
       if (other.getScheduling() != null) {
         this.scheduling = other.scheduling;
       }
@@ -673,6 +689,7 @@ public final class Instance implements ApiMessage {
       this.name = source.name;
       this.networkInterfaces = source.networkInterfaces;
       this.reservationAffinity = source.reservationAffinity;
+      this.resourcePolicies = source.resourcePolicies;
       this.scheduling = source.scheduling;
       this.selfLink = source.selfLink;
       this.serviceAccounts = source.serviceAccounts;
@@ -1074,6 +1091,29 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    /** Resource policies applied to this instance. */
+    public List<String> getResourcePoliciesList() {
+      return resourcePolicies;
+    }
+
+    /** Resource policies applied to this instance. */
+    public Builder addAllResourcePolicies(List<String> resourcePolicies) {
+      if (this.resourcePolicies == null) {
+        this.resourcePolicies = new LinkedList<>();
+      }
+      this.resourcePolicies.addAll(resourcePolicies);
+      return this;
+    }
+
+    /** Resource policies applied to this instance. */
+    public Builder addResourcePolicies(String resourcePolicies) {
+      if (this.resourcePolicies == null) {
+        this.resourcePolicies = new LinkedList<>();
+      }
+      this.resourcePolicies.add(resourcePolicies);
+      return this;
+    }
+
     /** Sets the scheduling options for this instance. */
     public Scheduling getScheduling() {
       return scheduling;
@@ -1265,6 +1305,7 @@ public final class Instance implements ApiMessage {
           name,
           networkInterfaces,
           reservationAffinity,
+          resourcePolicies,
           scheduling,
           selfLink,
           serviceAccounts,
@@ -1299,6 +1340,7 @@ public final class Instance implements ApiMessage {
       newBuilder.setName(this.name);
       newBuilder.addAllNetworkInterfaces(this.networkInterfaces);
       newBuilder.setReservationAffinity(this.reservationAffinity);
+      newBuilder.addAllResourcePolicies(this.resourcePolicies);
       newBuilder.setScheduling(this.scheduling);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.addAllServiceAccounts(this.serviceAccounts);
@@ -1376,6 +1418,9 @@ public final class Instance implements ApiMessage {
         + "reservationAffinity="
         + reservationAffinity
         + ", "
+        + "resourcePolicies="
+        + resourcePolicies
+        + ", "
         + "scheduling="
         + scheduling
         + ", "
@@ -1435,6 +1480,7 @@ public final class Instance implements ApiMessage {
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.networkInterfaces, that.getNetworkInterfacesList())
           && Objects.equals(this.reservationAffinity, that.getReservationAffinity())
+          && Objects.equals(this.resourcePolicies, that.getResourcePoliciesList())
           && Objects.equals(this.scheduling, that.getScheduling())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.serviceAccounts, that.getServiceAccountsList())
@@ -1473,6 +1519,7 @@ public final class Instance implements ApiMessage {
         name,
         networkInterfaces,
         reservationAffinity,
+        resourcePolicies,
         scheduling,
         selfLink,
         serviceAccounts,

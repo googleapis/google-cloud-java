@@ -105,6 +105,18 @@ public class SecurityPolicySettings extends ClientSettings<SecurityPolicySetting
     return ((SecurityPolicyStubSettings) getStubSettings()).listSecurityPoliciesSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * listPreconfiguredExpressionSetsSecurityPolicies.
+   */
+  public UnaryCallSettings<
+          ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+          SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+      listPreconfiguredExpressionSetsSecurityPoliciesSettings() {
+    return ((SecurityPolicyStubSettings) getStubSettings())
+        .listPreconfiguredExpressionSetsSecurityPoliciesSettings();
+  }
+
   /** Returns the object with the settings used for calls to patchSecurityPolicy. */
   public UnaryCallSettings<PatchSecurityPolicyHttpRequest, Operation>
       patchSecurityPolicySettings() {
@@ -260,6 +272,17 @@ public class SecurityPolicySettings extends ClientSettings<SecurityPolicySetting
             ListSecurityPoliciesHttpRequest, SecurityPolicyList, ListSecurityPoliciesPagedResponse>
         listSecurityPoliciesSettings() {
       return getStubSettingsBuilder().listSecurityPoliciesSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listPreconfiguredExpressionSetsSecurityPolicies.
+     */
+    public UnaryCallSettings.Builder<
+            ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+            SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+        listPreconfiguredExpressionSetsSecurityPoliciesSettings() {
+      return getStubSettingsBuilder().listPreconfiguredExpressionSetsSecurityPoliciesSettings();
     }
 
     /** Returns the builder for the settings used for calls to patchSecurityPolicy. */

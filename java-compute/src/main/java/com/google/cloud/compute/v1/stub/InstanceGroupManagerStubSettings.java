@@ -18,6 +18,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedListInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListErrorsInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListManagedInstancesInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -59,6 +60,7 @@ import com.google.cloud.compute.v1.InstanceManagedByIgmError;
 import com.google.cloud.compute.v1.ListErrorsInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersHttpRequest;
+import com.google.cloud.compute.v1.ManagedInstance;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RecreateInstancesInstanceGroupManagerHttpRequest;
@@ -150,9 +152,10 @@ public class InstanceGroupManagerStubSettings
           InstanceGroupManagersListErrorsResponse,
           ListErrorsInstanceGroupManagersPagedResponse>
       listErrorsInstanceGroupManagersSettings;
-  private final UnaryCallSettings<
+  private final PagedCallSettings<
           ListManagedInstancesInstanceGroupManagersHttpRequest,
-          InstanceGroupManagersListManagedInstancesResponse>
+          InstanceGroupManagersListManagedInstancesResponse,
+          ListManagedInstancesInstanceGroupManagersPagedResponse>
       listManagedInstancesInstanceGroupManagersSettings;
   private final UnaryCallSettings<PatchInstanceGroupManagerHttpRequest, Operation>
       patchInstanceGroupManagerSettings;
@@ -243,9 +246,10 @@ public class InstanceGroupManagerStubSettings
    * Returns the object with the settings used for calls to
    * listManagedInstancesInstanceGroupManagers.
    */
-  public UnaryCallSettings<
+  public PagedCallSettings<
           ListManagedInstancesInstanceGroupManagersHttpRequest,
-          InstanceGroupManagersListManagedInstancesResponse>
+          InstanceGroupManagersListManagedInstancesResponse,
+          ListManagedInstancesInstanceGroupManagersPagedResponse>
       listManagedInstancesInstanceGroupManagersSettings() {
     return listManagedInstancesInstanceGroupManagersSettings;
   }
@@ -535,6 +539,57 @@ public class InstanceGroupManagerStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListManagedInstancesInstanceGroupManagersHttpRequest,
+          InstanceGroupManagersListManagedInstancesResponse,
+          ManagedInstance>
+      LIST_MANAGED_INSTANCES_INSTANCE_GROUP_MANAGERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListManagedInstancesInstanceGroupManagersHttpRequest,
+              InstanceGroupManagersListManagedInstancesResponse,
+              ManagedInstance>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListManagedInstancesInstanceGroupManagersHttpRequest injectToken(
+                ListManagedInstancesInstanceGroupManagersHttpRequest payload, String token) {
+              return ListManagedInstancesInstanceGroupManagersHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListManagedInstancesInstanceGroupManagersHttpRequest injectPageSize(
+                ListManagedInstancesInstanceGroupManagersHttpRequest payload, int pageSize) {
+              return ListManagedInstancesInstanceGroupManagersHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                ListManagedInstancesInstanceGroupManagersHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(
+                InstanceGroupManagersListManagedInstancesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ManagedInstance> extractResources(
+                InstanceGroupManagersListManagedInstancesResponse payload) {
+              return payload.getManagedInstancesList() != null
+                  ? payload.getManagedInstancesList()
+                  : ImmutableList.<ManagedInstance>of();
+            }
+          };
+
   private static final PagedListResponseFactory<
           AggregatedListInstanceGroupManagersHttpRequest,
           InstanceGroupManagerAggregatedList,
@@ -630,6 +685,40 @@ public class InstanceGroupManagerStubSettings
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListManagedInstancesInstanceGroupManagersHttpRequest,
+          InstanceGroupManagersListManagedInstancesResponse,
+          ListManagedInstancesInstanceGroupManagersPagedResponse>
+      LIST_MANAGED_INSTANCES_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListManagedInstancesInstanceGroupManagersHttpRequest,
+              InstanceGroupManagersListManagedInstancesResponse,
+              ListManagedInstancesInstanceGroupManagersPagedResponse>() {
+            @Override
+            public ApiFuture<ListManagedInstancesInstanceGroupManagersPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListManagedInstancesInstanceGroupManagersHttpRequest,
+                            InstanceGroupManagersListManagedInstancesResponse>
+                        callable,
+                    ListManagedInstancesInstanceGroupManagersHttpRequest request,
+                    ApiCallContext context,
+                    ApiFuture<InstanceGroupManagersListManagedInstancesResponse> futureResponse) {
+              PageContext<
+                      ListManagedInstancesInstanceGroupManagersHttpRequest,
+                      InstanceGroupManagersListManagedInstancesResponse,
+                      ManagedInstance>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_MANAGED_INSTANCES_INSTANCE_GROUP_MANAGERS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListManagedInstancesInstanceGroupManagersPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
   /** Builder for InstanceGroupManagerStubSettings. */
   public static class Builder
       extends StubSettings.Builder<InstanceGroupManagerStubSettings, Builder> {
@@ -669,9 +758,10 @@ public class InstanceGroupManagerStubSettings
             InstanceGroupManagersListErrorsResponse,
             ListErrorsInstanceGroupManagersPagedResponse>
         listErrorsInstanceGroupManagersSettings;
-    private final UnaryCallSettings.Builder<
+    private final PagedCallSettings.Builder<
             ListManagedInstancesInstanceGroupManagersHttpRequest,
-            InstanceGroupManagersListManagedInstancesResponse>
+            InstanceGroupManagersListManagedInstancesResponse,
+            ListManagedInstancesInstanceGroupManagersPagedResponse>
         listManagedInstancesInstanceGroupManagersSettings;
     private final UnaryCallSettings.Builder<PatchInstanceGroupManagerHttpRequest, Operation>
         patchInstanceGroupManagerSettings;
@@ -754,7 +844,8 @@ public class InstanceGroupManagerStubSettings
           PagedCallSettings.newBuilder(LIST_ERRORS_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT);
 
       listManagedInstancesInstanceGroupManagersSettings =
-          UnaryCallSettings.newUnaryCallSettingsBuilder();
+          PagedCallSettings.newBuilder(
+              LIST_MANAGED_INSTANCES_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT);
 
       patchInstanceGroupManagerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1035,9 +1126,10 @@ public class InstanceGroupManagerStubSettings
      * Returns the builder for the settings used for calls to
      * listManagedInstancesInstanceGroupManagers.
      */
-    public UnaryCallSettings.Builder<
+    public PagedCallSettings.Builder<
             ListManagedInstancesInstanceGroupManagersHttpRequest,
-            InstanceGroupManagersListManagedInstancesResponse>
+            InstanceGroupManagersListManagedInstancesResponse,
+            ListManagedInstancesInstanceGroupManagersPagedResponse>
         listManagedInstancesInstanceGroupManagersSettings() {
       return listManagedInstancesInstanceGroupManagersSettings;
     }

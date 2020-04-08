@@ -35,6 +35,7 @@ import com.google.cloud.compute.v1.DeleteSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.GetRuleSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.GetSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.InsertSecurityPolicyHttpRequest;
+import com.google.cloud.compute.v1.ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest;
 import com.google.cloud.compute.v1.ListSecurityPoliciesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRuleSecurityPolicyHttpRequest;
@@ -42,6 +43,7 @@ import com.google.cloud.compute.v1.PatchSecurityPolicyHttpRequest;
 import com.google.cloud.compute.v1.ProjectGlobalSecurityPolicyName;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.RemoveRuleSecurityPolicyHttpRequest;
+import com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse;
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
 import com.google.cloud.compute.v1.SecurityPolicyRule;
@@ -181,6 +183,37 @@ public class HttpJsonSecurityPolicyStub extends SecurityPolicyStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<
+          ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+          SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+      listPreconfiguredExpressionSetsSecurityPoliciesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+                  SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+                  newBuilder()
+              .setFullMethodName("compute.securityPolicies.listPreconfiguredExpressionSets")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/securityPolicies/listPreconfiguredExpressionSets"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser
+                      .<SecurityPoliciesListPreconfiguredExpressionSetsResponse>newBuilder()
+                      .setResponseInstance(
+                          SecurityPoliciesListPreconfiguredExpressionSetsResponse
+                              .getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<PatchSecurityPolicyHttpRequest, Operation>
       patchSecurityPolicyMethodDescriptor =
           ApiMethodDescriptor.<PatchSecurityPolicyHttpRequest, Operation>newBuilder()
@@ -258,6 +291,10 @@ public class HttpJsonSecurityPolicyStub extends SecurityPolicyStub {
       listSecurityPoliciesCallable;
   private final UnaryCallable<ListSecurityPoliciesHttpRequest, ListSecurityPoliciesPagedResponse>
       listSecurityPoliciesPagedCallable;
+  private final UnaryCallable<
+          ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+          SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+      listPreconfiguredExpressionSetsSecurityPoliciesCallable;
   private final UnaryCallable<PatchSecurityPolicyHttpRequest, Operation>
       patchSecurityPolicyCallable;
   private final UnaryCallable<PatchRuleSecurityPolicyHttpRequest, Operation>
@@ -336,6 +373,17 @@ public class HttpJsonSecurityPolicyStub extends SecurityPolicyStub {
             HttpJsonCallSettings.<ListSecurityPoliciesHttpRequest, SecurityPolicyList>newBuilder()
                 .setMethodDescriptor(listSecurityPoliciesMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<
+            ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+            SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+        listPreconfiguredExpressionSetsSecurityPoliciesTransportSettings =
+            HttpJsonCallSettings
+                .<ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+                    SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+                    newBuilder()
+                .setMethodDescriptor(
+                    listPreconfiguredExpressionSetsSecurityPoliciesMethodDescriptor)
+                .build();
     HttpJsonCallSettings<PatchSecurityPolicyHttpRequest, Operation>
         patchSecurityPolicyTransportSettings =
             HttpJsonCallSettings.<PatchSecurityPolicyHttpRequest, Operation>newBuilder()
@@ -386,6 +434,11 @@ public class HttpJsonSecurityPolicyStub extends SecurityPolicyStub {
         callableFactory.createPagedCallable(
             listSecurityPoliciesTransportSettings,
             settings.listSecurityPoliciesSettings(),
+            clientContext);
+    this.listPreconfiguredExpressionSetsSecurityPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listPreconfiguredExpressionSetsSecurityPoliciesTransportSettings,
+            settings.listPreconfiguredExpressionSetsSecurityPoliciesSettings(),
             clientContext);
     this.patchSecurityPolicyCallable =
         callableFactory.createUnaryCallable(
@@ -443,6 +496,14 @@ public class HttpJsonSecurityPolicyStub extends SecurityPolicyStub {
   public UnaryCallable<ListSecurityPoliciesHttpRequest, SecurityPolicyList>
       listSecurityPoliciesCallable() {
     return listSecurityPoliciesCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+          SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+      listPreconfiguredExpressionSetsSecurityPoliciesCallable() {
+    return listPreconfiguredExpressionSetsSecurityPoliciesCallable;
   }
 
   @BetaApi

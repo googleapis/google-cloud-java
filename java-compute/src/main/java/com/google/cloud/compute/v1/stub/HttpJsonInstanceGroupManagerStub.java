@@ -18,6 +18,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedListInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListErrorsInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListManagedInstancesInstanceGroupManagersPagedResponse;
 
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
@@ -483,6 +484,10 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
           ListManagedInstancesInstanceGroupManagersHttpRequest,
           InstanceGroupManagersListManagedInstancesResponse>
       listManagedInstancesInstanceGroupManagersCallable;
+  private final UnaryCallable<
+          ListManagedInstancesInstanceGroupManagersHttpRequest,
+          ListManagedInstancesInstanceGroupManagersPagedResponse>
+      listManagedInstancesInstanceGroupManagersPagedCallable;
   private final UnaryCallable<PatchInstanceGroupManagerHttpRequest, Operation>
       patchInstanceGroupManagerCallable;
   private final UnaryCallable<RecreateInstancesInstanceGroupManagerHttpRequest, Operation>
@@ -708,6 +713,11 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
             listManagedInstancesInstanceGroupManagersTransportSettings,
             settings.listManagedInstancesInstanceGroupManagersSettings(),
             clientContext);
+    this.listManagedInstancesInstanceGroupManagersPagedCallable =
+        callableFactory.createPagedCallable(
+            listManagedInstancesInstanceGroupManagersTransportSettings,
+            settings.listManagedInstancesInstanceGroupManagersSettings(),
+            clientContext);
     this.patchInstanceGroupManagerCallable =
         callableFactory.createUnaryCallable(
             patchInstanceGroupManagerTransportSettings,
@@ -818,6 +828,14 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
           ListErrorsInstanceGroupManagersHttpRequest, InstanceGroupManagersListErrorsResponse>
       listErrorsInstanceGroupManagersCallable() {
     return listErrorsInstanceGroupManagersCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListManagedInstancesInstanceGroupManagersHttpRequest,
+          ListManagedInstancesInstanceGroupManagersPagedResponse>
+      listManagedInstancesInstanceGroupManagersPagedCallable() {
+    return listManagedInstancesInstanceGroupManagersPagedCallable;
   }
 
   @BetaApi

@@ -18,6 +18,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedListInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListErrorsInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListManagedInstancesInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -148,6 +149,15 @@ public abstract class InstanceGroupManagerStub implements BackgroundResource {
       listErrorsInstanceGroupManagersCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listErrorsInstanceGroupManagersCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListManagedInstancesInstanceGroupManagersHttpRequest,
+          ListManagedInstancesInstanceGroupManagersPagedResponse>
+      listManagedInstancesInstanceGroupManagersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listManagedInstancesInstanceGroupManagersPagedCallable()");
   }
 
   @BetaApi

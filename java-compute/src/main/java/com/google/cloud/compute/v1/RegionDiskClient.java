@@ -599,7 +599,7 @@ public class RegionDiskClient implements BackgroundResource {
    * @param region Name of the region for this request.
    * @param diskResource Represents a Persistent Disk resource.
    *     <p>Google Compute Engine has two Disk resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/disks) &#42;
+   *     <p>&#42; [Zonal](/compute/docs/reference/rest/{$api_version}/disks) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
    *     <p>Persistent disks are required for running your VM instances. Create both boot and
    *     non-boot (data) persistent disks. For more information, read Persistent Disks. For more
@@ -639,7 +639,7 @@ public class RegionDiskClient implements BackgroundResource {
    * @param region Name of the region for this request.
    * @param diskResource Represents a Persistent Disk resource.
    *     <p>Google Compute Engine has two Disk resources:
-   *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/disks) &#42;
+   *     <p>&#42; [Zonal](/compute/docs/reference/rest/{$api_version}/disks) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
    *     <p>Persistent disks are required for running your VM instances. Create both boot and
    *     non-boot (data) persistent disks. For more information, read Persistent Disks. For more

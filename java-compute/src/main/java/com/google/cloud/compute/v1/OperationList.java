@@ -111,16 +111,16 @@ public final class OperationList implements ApiMessage {
     return items;
   }
 
-  /** [Output Only] Type of resource. Always compute#operations for Operations resource. */
+  /** [Output Only] Type of resource. Always `compute#operations` for Operations resource. */
   public String getKind() {
     return kind;
   }
 
   /**
    * [Output Only] This token allows you to get the next page of results for list requests. If the
-   * number of results is larger than maxResults, use the nextPageToken as a value for the query
-   * parameter pageToken in the next list request. Subsequent list requests will have their own
-   * nextPageToken to continue paging through the results.
+   * number of results is larger than `maxResults`, use the `nextPageToken` as a value for the query
+   * parameter `pageToken` in the next list request. Subsequent list requests will have their own
+   * `nextPageToken` to continue paging through the results.
    */
   public String getNextPageToken() {
     return nextPageToken;
@@ -240,12 +240,12 @@ public final class OperationList implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] Type of resource. Always compute#operations for Operations resource. */
+    /** [Output Only] Type of resource. Always `compute#operations` for Operations resource. */
     public String getKind() {
       return kind;
     }
 
-    /** [Output Only] Type of resource. Always compute#operations for Operations resource. */
+    /** [Output Only] Type of resource. Always `compute#operations` for Operations resource. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
@@ -253,9 +253,9 @@ public final class OperationList implements ApiMessage {
 
     /**
      * [Output Only] This token allows you to get the next page of results for list requests. If the
-     * number of results is larger than maxResults, use the nextPageToken as a value for the query
-     * parameter pageToken in the next list request. Subsequent list requests will have their own
-     * nextPageToken to continue paging through the results.
+     * number of results is larger than `maxResults`, use the `nextPageToken` as a value for the
+     * query parameter `pageToken` in the next list request. Subsequent list requests will have
+     * their own `nextPageToken` to continue paging through the results.
      */
     public String getNextPageToken() {
       return nextPageToken;
@@ -263,9 +263,9 @@ public final class OperationList implements ApiMessage {
 
     /**
      * [Output Only] This token allows you to get the next page of results for list requests. If the
-     * number of results is larger than maxResults, use the nextPageToken as a value for the query
-     * parameter pageToken in the next list request. Subsequent list requests will have their own
-     * nextPageToken to continue paging through the results.
+     * number of results is larger than `maxResults`, use the `nextPageToken` as a value for the
+     * query parameter `pageToken` in the next list request. Subsequent list requests will have
+     * their own `nextPageToken` to continue paging through the results.
      */
     public Builder setNextPageToken(String nextPageToken) {
       this.nextPageToken = nextPageToken;

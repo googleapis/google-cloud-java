@@ -153,7 +153,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
    *
    * <p>Google Compute Engine has two Disk resources:
    *
-   * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/disks) &#42;
+   * <p>&#42; [Zonal](/compute/docs/reference/rest/{$api_version}/disks) &#42;
    * [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
    *
    * <p>Persistent disks are required for running your VM instances. Create both boot and non-boot
@@ -345,7 +345,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
      *
      * <p>Google Compute Engine has two Disk resources:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/disks) &#42;
+     * <p>&#42; [Zonal](/compute/docs/reference/rest/{$api_version}/disks) &#42;
      * [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
      *
      * <p>Persistent disks are required for running your VM instances. Create both boot and non-boot
@@ -368,7 +368,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
      *
      * <p>Google Compute Engine has two Disk resources:
      *
-     * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/disks) &#42;
+     * <p>&#42; [Zonal](/compute/docs/reference/rest/{$api_version}/disks) &#42;
      * [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
      *
      * <p>Persistent disks are required for running your VM instances. Create both boot and non-boot

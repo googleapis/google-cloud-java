@@ -37,4 +37,22 @@
     <className>com/google/cloud/compute/v1/*Client</className>
     <method>* aggregatedList*</method>
   </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/compute/v1/*InstanceGroupManagerClient</className>
+    <method>com.google.cloud.compute.v1.*InstanceGroupManagersList*InstancesResponse listManagedInstances*InstanceGroupManagers(*)</method>
+    <to>com.google.cloud.compute.v1.*InstanceGroupManagerClient$ListManagedInstances*InstanceGroupManagersPagedResponse</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/compute/v1/*InstanceGroupManagerSettings*</className>
+    <method>com.google.api.gax.rpc.UnaryCallSettings* listManagedInstances*InstanceGroupManagersSettings()</method>
+    <to>com.google.api.gax.rpc.PagedCallSettings*</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/compute/v1/stub/*InstanceGroupManagerStubSettings*</className>
+    <method>com.google.api.gax.rpc.UnaryCallSettings* listManagedInstances*InstanceGroupManagersSettings()</method>
+    <to>com.google.api.gax.rpc.PagedCallSettings*</to>
+  </difference>
 </differences>

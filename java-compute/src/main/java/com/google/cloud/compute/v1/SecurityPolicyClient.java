@@ -824,6 +824,110 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Gets the current list of preconfigured Web Application Firewall (WAF) expressions.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   SecurityPoliciesListPreconfiguredExpressionSetsResponse response = securityPolicyClient.listPreconfiguredExpressionSetsSecurityPolicies(project);
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final SecurityPoliciesListPreconfiguredExpressionSetsResponse
+      listPreconfiguredExpressionSetsSecurityPolicies(ProjectName project) {
+    ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest request =
+        ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest.newBuilder()
+            .setProject(project == null ? null : project.toString())
+            .build();
+    return listPreconfiguredExpressionSetsSecurityPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the current list of preconfigured Web Application Firewall (WAF) expressions.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   SecurityPoliciesListPreconfiguredExpressionSetsResponse response = securityPolicyClient.listPreconfiguredExpressionSetsSecurityPolicies(project.toString());
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final SecurityPoliciesListPreconfiguredExpressionSetsResponse
+      listPreconfiguredExpressionSetsSecurityPolicies(String project) {
+    ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest request =
+        ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest.newBuilder()
+            .setProject(project)
+            .build();
+    return listPreconfiguredExpressionSetsSecurityPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the current list of preconfigured Web Application Firewall (WAF) expressions.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
+   *   String formattedProject = ProjectName.format("[PROJECT]");
+   *   ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest request = ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest.newBuilder()
+   *     .setProject(formattedProject)
+   *     .build();
+   *   SecurityPoliciesListPreconfiguredExpressionSetsResponse response = securityPolicyClient.listPreconfiguredExpressionSetsSecurityPolicies(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final SecurityPoliciesListPreconfiguredExpressionSetsResponse
+      listPreconfiguredExpressionSetsSecurityPolicies(
+          ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest request) {
+    return listPreconfiguredExpressionSetsSecurityPoliciesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the current list of preconfigured Web Application Firewall (WAF) expressions.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
+   *   String formattedProject = ProjectName.format("[PROJECT]");
+   *   ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest request = ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest.newBuilder()
+   *     .setProject(formattedProject)
+   *     .build();
+   *   ApiFuture&lt;SecurityPoliciesListPreconfiguredExpressionSetsResponse&gt; future = securityPolicyClient.listPreconfiguredExpressionSetsSecurityPoliciesCallable().futureCall(request);
+   *   // Do something
+   *   SecurityPoliciesListPreconfiguredExpressionSetsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          ListPreconfiguredExpressionSetsSecurityPoliciesHttpRequest,
+          SecurityPoliciesListPreconfiguredExpressionSetsResponse>
+      listPreconfiguredExpressionSetsSecurityPoliciesCallable() {
+    return stub.listPreconfiguredExpressionSetsSecurityPoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Patches the specified policy with the data included in the request.
    *
    * <p>Sample code:

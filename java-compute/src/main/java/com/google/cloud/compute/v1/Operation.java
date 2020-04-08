@@ -37,9 +37,9 @@ import javax.annotation.Nullable;
  * <p>You can use an operation resource to manage asynchronous API requests. For more information,
  * read Handling API responses.
  *
- * <p>Operations can be global, regional or zonal. - For global operations, use the globalOperations
- * resource. - For regional operations, use the regionOperations resource. - For zonal operations,
- * use the zoneOperations resource.
+ * <p>Operations can be global, regional or zonal. - For global operations, use the
+ * `globalOperations` resource. - For regional operations, use the `regionOperations` resource. -
+ * For zonal operations, use the `zonalOperations` resource.
  *
  * <p>For more information, read Global, Regional, and Zonal Resources. (== resource_for
  * {$api_version}.globalOperations ==) (== resource_for {$api_version}.regionOperations ==) (==
@@ -275,7 +275,7 @@ public final class Operation implements ApiMessage {
 
   /**
    * [Output Only] If the operation fails, this field contains the HTTP error message that was
-   * returned, such as NOT FOUND.
+   * returned, such as `NOT FOUND`.
    */
   public String getHttpErrorMessage() {
     return httpErrorMessage;
@@ -283,7 +283,7 @@ public final class Operation implements ApiMessage {
 
   /**
    * [Output Only] If the operation fails, this field contains the HTTP error status code that was
-   * returned. For example, a 404 means the resource was not found.
+   * returned. For example, a `404` means the resource was not found.
    */
   public Integer getHttpErrorStatusCode() {
     return httpErrorStatusCode;
@@ -304,7 +304,7 @@ public final class Operation implements ApiMessage {
     return insertTime;
   }
 
-  /** [Output Only] Type of the resource. Always compute#operation for Operation resources. */
+  /** [Output Only] Type of the resource. Always `compute#operation` for Operation resources. */
   public String getKind() {
     return kind;
   }
@@ -314,7 +314,7 @@ public final class Operation implements ApiMessage {
     return name;
   }
 
-  /** [Output Only] The type of operation, such as insert, update, or delete, and so on. */
+  /** [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on. */
   public String getOperationType() {
     return operationType;
   }
@@ -351,8 +351,8 @@ public final class Operation implements ApiMessage {
   }
 
   /**
-   * [Output Only] The status of the operation, which can be one of the following: PENDING, RUNNING,
-   * or DONE.
+   * [Output Only] The status of the operation, which can be one of the following: `PENDING`,
+   * `RUNNING`, or `DONE`.
    */
   public String getStatus() {
     return status;
@@ -379,7 +379,7 @@ public final class Operation implements ApiMessage {
     return targetLink;
   }
 
-  /** [Output Only] User who requested the operation, for example: user{@literal @}example.com. */
+  /** [Output Only] User who requested the operation, for example: `user{@literal @}example.com`. */
   public String getUser() {
     return user;
   }
@@ -630,7 +630,7 @@ public final class Operation implements ApiMessage {
 
     /**
      * [Output Only] If the operation fails, this field contains the HTTP error message that was
-     * returned, such as NOT FOUND.
+     * returned, such as `NOT FOUND`.
      */
     public String getHttpErrorMessage() {
       return httpErrorMessage;
@@ -638,7 +638,7 @@ public final class Operation implements ApiMessage {
 
     /**
      * [Output Only] If the operation fails, this field contains the HTTP error message that was
-     * returned, such as NOT FOUND.
+     * returned, such as `NOT FOUND`.
      */
     public Builder setHttpErrorMessage(String httpErrorMessage) {
       this.httpErrorMessage = httpErrorMessage;
@@ -647,7 +647,7 @@ public final class Operation implements ApiMessage {
 
     /**
      * [Output Only] If the operation fails, this field contains the HTTP error status code that was
-     * returned. For example, a 404 means the resource was not found.
+     * returned. For example, a `404` means the resource was not found.
      */
     public Integer getHttpErrorStatusCode() {
       return httpErrorStatusCode;
@@ -655,7 +655,7 @@ public final class Operation implements ApiMessage {
 
     /**
      * [Output Only] If the operation fails, this field contains the HTTP error status code that was
-     * returned. For example, a 404 means the resource was not found.
+     * returned. For example, a `404` means the resource was not found.
      */
     public Builder setHttpErrorStatusCode(Integer httpErrorStatusCode) {
       this.httpErrorStatusCode = httpErrorStatusCode;
@@ -696,12 +696,12 @@ public final class Operation implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] Type of the resource. Always compute#operation for Operation resources. */
+    /** [Output Only] Type of the resource. Always `compute#operation` for Operation resources. */
     public String getKind() {
       return kind;
     }
 
-    /** [Output Only] Type of the resource. Always compute#operation for Operation resources. */
+    /** [Output Only] Type of the resource. Always `compute#operation` for Operation resources. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
@@ -718,12 +718,12 @@ public final class Operation implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] The type of operation, such as insert, update, or delete, and so on. */
+    /** [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on. */
     public String getOperationType() {
       return operationType;
     }
 
-    /** [Output Only] The type of operation, such as insert, update, or delete, and so on. */
+    /** [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on. */
     public Builder setOperationType(String operationType) {
       this.operationType = operationType;
       return this;
@@ -796,16 +796,16 @@ public final class Operation implements ApiMessage {
     }
 
     /**
-     * [Output Only] The status of the operation, which can be one of the following: PENDING,
-     * RUNNING, or DONE.
+     * [Output Only] The status of the operation, which can be one of the following: `PENDING`,
+     * `RUNNING`, or `DONE`.
      */
     public String getStatus() {
       return status;
     }
 
     /**
-     * [Output Only] The status of the operation, which can be one of the following: PENDING,
-     * RUNNING, or DONE.
+     * [Output Only] The status of the operation, which can be one of the following: `PENDING`,
+     * `RUNNING`, or `DONE`.
      */
     public Builder setStatus(String status) {
       this.status = status;
@@ -857,12 +857,16 @@ public final class Operation implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] User who requested the operation, for example: user{@literal @}example.com. */
+    /**
+     * [Output Only] User who requested the operation, for example: `user{@literal @}example.com`.
+     */
     public String getUser() {
       return user;
     }
 
-    /** [Output Only] User who requested the operation, for example: user{@literal @}example.com. */
+    /**
+     * [Output Only] User who requested the operation, for example: `user{@literal @}example.com`.
+     */
     public Builder setUser(String user) {
       this.user = user;
       return this;

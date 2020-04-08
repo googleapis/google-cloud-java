@@ -101,8 +101,8 @@ public final class RouterInterface implements ApiMessage {
 
   /**
    * URI of the linked Interconnect attachment. It must be in the same region as the router. Each
-   * interface can have one linked resource, which can be either be a VPN tunnel or an Interconnect
-   * attachment.
+   * interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment,
+   * or a virtual machine instance.
    */
   public String getLinkedInterconnectAttachment() {
     return linkedInterconnectAttachment;
@@ -110,7 +110,8 @@ public final class RouterInterface implements ApiMessage {
 
   /**
    * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface
-   * can have one linked resource, which can be either a VPN tunnel or an Interconnect attachment.
+   * can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a
+   * virtual machine instance.
    */
   public String getLinkedVpnTunnel() {
     return linkedVpnTunnel;
@@ -218,8 +219,8 @@ public final class RouterInterface implements ApiMessage {
 
     /**
      * URI of the linked Interconnect attachment. It must be in the same region as the router. Each
-     * interface can have one linked resource, which can be either be a VPN tunnel or an
-     * Interconnect attachment.
+     * interface can have one linked resource, which can be a VPN tunnel, an Interconnect
+     * attachment, or a virtual machine instance.
      */
     public String getLinkedInterconnectAttachment() {
       return linkedInterconnectAttachment;
@@ -227,8 +228,8 @@ public final class RouterInterface implements ApiMessage {
 
     /**
      * URI of the linked Interconnect attachment. It must be in the same region as the router. Each
-     * interface can have one linked resource, which can be either be a VPN tunnel or an
-     * Interconnect attachment.
+     * interface can have one linked resource, which can be a VPN tunnel, an Interconnect
+     * attachment, or a virtual machine instance.
      */
     public Builder setLinkedInterconnectAttachment(String linkedInterconnectAttachment) {
       this.linkedInterconnectAttachment = linkedInterconnectAttachment;
@@ -237,7 +238,8 @@ public final class RouterInterface implements ApiMessage {
 
     /**
      * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface
-     * can have one linked resource, which can be either a VPN tunnel or an Interconnect attachment.
+     * can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a
+     * virtual machine instance.
      */
     public String getLinkedVpnTunnel() {
       return linkedVpnTunnel;
@@ -245,7 +247,8 @@ public final class RouterInterface implements ApiMessage {
 
     /**
      * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface
-     * can have one linked resource, which can be either a VPN tunnel or an Interconnect attachment.
+     * can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a
+     * virtual machine instance.
      */
     public Builder setLinkedVpnTunnel(String linkedVpnTunnel) {
       this.linkedVpnTunnel = linkedVpnTunnel;

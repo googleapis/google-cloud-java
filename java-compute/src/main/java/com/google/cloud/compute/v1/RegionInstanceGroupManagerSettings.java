@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListErrorsRegionInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListManagedInstancesRegionInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -158,9 +159,10 @@ public class RegionInstanceGroupManagerSettings
    * Returns the object with the settings used for calls to
    * listManagedInstancesRegionInstanceGroupManagers.
    */
-  public UnaryCallSettings<
+  public PagedCallSettings<
           ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
-          RegionInstanceGroupManagersListInstancesResponse>
+          RegionInstanceGroupManagersListInstancesResponse,
+          ListManagedInstancesRegionInstanceGroupManagersPagedResponse>
       listManagedInstancesRegionInstanceGroupManagersSettings() {
     return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
         .listManagedInstancesRegionInstanceGroupManagersSettings();
@@ -395,9 +397,10 @@ public class RegionInstanceGroupManagerSettings
      * Returns the builder for the settings used for calls to
      * listManagedInstancesRegionInstanceGroupManagers.
      */
-    public UnaryCallSettings.Builder<
+    public PagedCallSettings.Builder<
             ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
-            RegionInstanceGroupManagersListInstancesResponse>
+            RegionInstanceGroupManagersListInstancesResponse,
+            ListManagedInstancesRegionInstanceGroupManagersPagedResponse>
         listManagedInstancesRegionInstanceGroupManagersSettings() {
       return getStubSettingsBuilder().listManagedInstancesRegionInstanceGroupManagersSettings();
     }

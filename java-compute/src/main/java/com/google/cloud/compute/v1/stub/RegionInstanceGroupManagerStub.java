@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListErrorsRegionInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListManagedInstancesRegionInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -133,6 +134,15 @@ public abstract class RegionInstanceGroupManagerStub implements BackgroundResour
       listErrorsRegionInstanceGroupManagersCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listErrorsRegionInstanceGroupManagersCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
+          ListManagedInstancesRegionInstanceGroupManagersPagedResponse>
+      listManagedInstancesRegionInstanceGroupManagersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listManagedInstancesRegionInstanceGroupManagersPagedCallable()");
   }
 
   @BetaApi

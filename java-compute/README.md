@@ -20,18 +20,19 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>4.3.0</version>
+      <version>4.4.1</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
   </dependencies>
 </dependencyManagement>
+
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-compute</artifactId>
   </dependency>
-</dependencies>
+
 ```
 
 [//]: # ({x-version-update-start:google-cloud-compute:released})
@@ -44,6 +45,7 @@ If you are using Maven without BOM, add this to your dependencies:
   <artifactId>google-cloud-compute</artifactId>
   <version>0.117.0-alpha</version>
 </dependency>
+
 ```
 
 If you are using Gradle, add this to your dependencies

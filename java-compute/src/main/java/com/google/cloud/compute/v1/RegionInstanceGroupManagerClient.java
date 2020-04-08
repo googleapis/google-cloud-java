@@ -1398,7 +1398,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
-   *   RegionInstanceGroupManagersListInstancesResponse response = regionInstanceGroupManagerClient.listManagedInstancesRegionInstanceGroupManagers(instanceGroupManager);
+   *   for (ManagedInstance element : regionInstanceGroupManagerClient.listManagedInstancesRegionInstanceGroupManagers(instanceGroupManager).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
    * }
    * </code></pre>
    *
@@ -1406,7 +1408,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final RegionInstanceGroupManagersListInstancesResponse
+  public final ListManagedInstancesRegionInstanceGroupManagersPagedResponse
       listManagedInstancesRegionInstanceGroupManagers(
           ProjectRegionInstanceGroupManagerName instanceGroupManager) {
     ListManagedInstancesRegionInstanceGroupManagersHttpRequest request =
@@ -1427,7 +1429,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
-   *   RegionInstanceGroupManagersListInstancesResponse response = regionInstanceGroupManagerClient.listManagedInstancesRegionInstanceGroupManagers(instanceGroupManager.toString());
+   *   for (ManagedInstance element : regionInstanceGroupManagerClient.listManagedInstancesRegionInstanceGroupManagers(instanceGroupManager.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
    * }
    * </code></pre>
    *
@@ -1435,7 +1439,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final RegionInstanceGroupManagersListInstancesResponse
+  public final ListManagedInstancesRegionInstanceGroupManagersPagedResponse
       listManagedInstancesRegionInstanceGroupManagers(String instanceGroupManager) {
     ListManagedInstancesRegionInstanceGroupManagersHttpRequest request =
         ListManagedInstancesRegionInstanceGroupManagersHttpRequest.newBuilder()
@@ -1457,7 +1461,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *   ListManagedInstancesRegionInstanceGroupManagersHttpRequest request = ListManagedInstancesRegionInstanceGroupManagersHttpRequest.newBuilder()
    *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .build();
-   *   RegionInstanceGroupManagersListInstancesResponse response = regionInstanceGroupManagerClient.listManagedInstancesRegionInstanceGroupManagers(request);
+   *   for (ManagedInstance element : regionInstanceGroupManagerClient.listManagedInstancesRegionInstanceGroupManagers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
    * }
    * </code></pre>
    *
@@ -1465,10 +1471,10 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final RegionInstanceGroupManagersListInstancesResponse
+  public final ListManagedInstancesRegionInstanceGroupManagersPagedResponse
       listManagedInstancesRegionInstanceGroupManagers(
           ListManagedInstancesRegionInstanceGroupManagersHttpRequest request) {
-    return listManagedInstancesRegionInstanceGroupManagersCallable().call(request);
+    return listManagedInstancesRegionInstanceGroupManagersPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1484,9 +1490,47 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *   ListManagedInstancesRegionInstanceGroupManagersHttpRequest request = ListManagedInstancesRegionInstanceGroupManagersHttpRequest.newBuilder()
    *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .build();
-   *   ApiFuture&lt;RegionInstanceGroupManagersListInstancesResponse&gt; future = regionInstanceGroupManagerClient.listManagedInstancesRegionInstanceGroupManagersCallable().futureCall(request);
+   *   ApiFuture&lt;ListManagedInstancesRegionInstanceGroupManagersPagedResponse&gt; future = regionInstanceGroupManagerClient.listManagedInstancesRegionInstanceGroupManagersPagedCallable().futureCall(request);
    *   // Do something
-   *   RegionInstanceGroupManagersListInstancesResponse response = future.get();
+   *   for (ManagedInstance element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
+          ListManagedInstancesRegionInstanceGroupManagersPagedResponse>
+      listManagedInstancesRegionInstanceGroupManagersPagedCallable() {
+    return stub.listManagedInstancesRegionInstanceGroupManagersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the instances in the managed instance group and instances that are scheduled to be
+   * created. The list includes any current actions that the group has scheduled for its instances.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   ListManagedInstancesRegionInstanceGroupManagersHttpRequest request = ListManagedInstancesRegionInstanceGroupManagersHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .build();
+   *   while (true) {
+   *     RegionInstanceGroupManagersListInstancesResponse response = regionInstanceGroupManagerClient.listManagedInstancesRegionInstanceGroupManagersCallable().call(request);
+   *     for (ManagedInstance element : response.getManagedInstancesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
    * }
    * </code></pre>
    */
@@ -2450,6 +2494,118 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
     protected ListErrorsRegionInstanceGroupManagersFixedSizeCollection createCollection(
         List<ListErrorsRegionInstanceGroupManagersPage> pages, int collectionSize) {
       return new ListErrorsRegionInstanceGroupManagersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListManagedInstancesRegionInstanceGroupManagersPagedResponse
+      extends AbstractPagedListResponse<
+          ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListInstancesResponse,
+          ManagedInstance,
+          ListManagedInstancesRegionInstanceGroupManagersPage,
+          ListManagedInstancesRegionInstanceGroupManagersFixedSizeCollection> {
+
+    public static ApiFuture<ListManagedInstancesRegionInstanceGroupManagersPagedResponse>
+        createAsync(
+            PageContext<
+                    ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
+                    RegionInstanceGroupManagersListInstancesResponse,
+                    ManagedInstance>
+                context,
+            ApiFuture<RegionInstanceGroupManagersListInstancesResponse> futureResponse) {
+      ApiFuture<ListManagedInstancesRegionInstanceGroupManagersPage> futurePage =
+          ListManagedInstancesRegionInstanceGroupManagersPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<
+              ListManagedInstancesRegionInstanceGroupManagersPage,
+              ListManagedInstancesRegionInstanceGroupManagersPagedResponse>() {
+            @Override
+            public ListManagedInstancesRegionInstanceGroupManagersPagedResponse apply(
+                ListManagedInstancesRegionInstanceGroupManagersPage input) {
+              return new ListManagedInstancesRegionInstanceGroupManagersPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListManagedInstancesRegionInstanceGroupManagersPagedResponse(
+        ListManagedInstancesRegionInstanceGroupManagersPage page) {
+      super(
+          page,
+          ListManagedInstancesRegionInstanceGroupManagersFixedSizeCollection
+              .createEmptyCollection());
+    }
+  }
+
+  public static class ListManagedInstancesRegionInstanceGroupManagersPage
+      extends AbstractPage<
+          ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListInstancesResponse,
+          ManagedInstance,
+          ListManagedInstancesRegionInstanceGroupManagersPage> {
+
+    private ListManagedInstancesRegionInstanceGroupManagersPage(
+        PageContext<
+                ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagersListInstancesResponse,
+                ManagedInstance>
+            context,
+        RegionInstanceGroupManagersListInstancesResponse response) {
+      super(context, response);
+    }
+
+    private static ListManagedInstancesRegionInstanceGroupManagersPage createEmptyPage() {
+      return new ListManagedInstancesRegionInstanceGroupManagersPage(null, null);
+    }
+
+    @Override
+    protected ListManagedInstancesRegionInstanceGroupManagersPage createPage(
+        PageContext<
+                ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagersListInstancesResponse,
+                ManagedInstance>
+            context,
+        RegionInstanceGroupManagersListInstancesResponse response) {
+      return new ListManagedInstancesRegionInstanceGroupManagersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListManagedInstancesRegionInstanceGroupManagersPage> createPageAsync(
+        PageContext<
+                ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagersListInstancesResponse,
+                ManagedInstance>
+            context,
+        ApiFuture<RegionInstanceGroupManagersListInstancesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListManagedInstancesRegionInstanceGroupManagersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListInstancesResponse,
+          ManagedInstance,
+          ListManagedInstancesRegionInstanceGroupManagersPage,
+          ListManagedInstancesRegionInstanceGroupManagersFixedSizeCollection> {
+
+    private ListManagedInstancesRegionInstanceGroupManagersFixedSizeCollection(
+        List<ListManagedInstancesRegionInstanceGroupManagersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListManagedInstancesRegionInstanceGroupManagersFixedSizeCollection
+        createEmptyCollection() {
+      return new ListManagedInstancesRegionInstanceGroupManagersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListManagedInstancesRegionInstanceGroupManagersFixedSizeCollection createCollection(
+        List<ListManagedInstancesRegionInstanceGroupManagersPage> pages, int collectionSize) {
+      return new ListManagedInstancesRegionInstanceGroupManagersFixedSizeCollection(
+          pages, collectionSize);
     }
   }
 }

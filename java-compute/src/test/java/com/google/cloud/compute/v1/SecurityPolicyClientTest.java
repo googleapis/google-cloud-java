@@ -21,6 +21,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.delete
 import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.getRuleSecurityPolicyMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.getSecurityPolicyMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.insertSecurityPolicyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.listPreconfiguredExpressionSetsSecurityPoliciesMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.listSecurityPoliciesMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.patchRuleSecurityPolicyMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.patchSecurityPolicyMethodDescriptor;
@@ -61,6 +62,7 @@ public class SecurityPolicyClientTest {
               getRuleSecurityPolicyMethodDescriptor,
               insertSecurityPolicyMethodDescriptor,
               listSecurityPoliciesMethodDescriptor,
+              listPreconfiguredExpressionSetsSecurityPoliciesMethodDescriptor,
               patchSecurityPolicyMethodDescriptor,
               patchRuleSecurityPolicyMethodDescriptor,
               removeRuleSecurityPolicyMethodDescriptor));
@@ -540,6 +542,52 @@ public class SecurityPolicyClientTest {
       ProjectName project = ProjectName.of("[PROJECT]");
 
       client.listSecurityPolicies(project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listPreconfiguredExpressionSetsSecurityPoliciesTest() {
+    SecurityPoliciesListPreconfiguredExpressionSetsResponse expectedResponse =
+        SecurityPoliciesListPreconfiguredExpressionSetsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectName project = ProjectName.of("[PROJECT]");
+
+    SecurityPoliciesListPreconfiguredExpressionSetsResponse actualResponse =
+        client.listPreconfiguredExpressionSetsSecurityPolicies(project);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listPreconfiguredExpressionSetsSecurityPoliciesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName project = ProjectName.of("[PROJECT]");
+
+      client.listPreconfiguredExpressionSetsSecurityPolicies(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

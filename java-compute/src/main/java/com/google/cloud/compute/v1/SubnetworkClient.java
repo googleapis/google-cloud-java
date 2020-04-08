@@ -1124,7 +1124,7 @@ public class SubnetworkClient implements BackgroundResource {
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
    * up updated with a patch request as indicated in the field descriptions. You must specify the
-   * current fingeprint of the subnetwork resource being patched.
+   * current fingerprint of the subnetwork resource being patched.
    *
    * <p>Sample code:
    *
@@ -1177,7 +1177,7 @@ public class SubnetworkClient implements BackgroundResource {
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
    * up updated with a patch request as indicated in the field descriptions. You must specify the
-   * current fingeprint of the subnetwork resource being patched.
+   * current fingerprint of the subnetwork resource being patched.
    *
    * <p>Sample code:
    *
@@ -1230,7 +1230,7 @@ public class SubnetworkClient implements BackgroundResource {
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
    * up updated with a patch request as indicated in the field descriptions. You must specify the
-   * current fingeprint of the subnetwork resource being patched.
+   * current fingerprint of the subnetwork resource being patched.
    *
    * <p>Sample code:
    *
@@ -1262,7 +1262,7 @@ public class SubnetworkClient implements BackgroundResource {
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
    * up updated with a patch request as indicated in the field descriptions. You must specify the
-   * current fingeprint of the subnetwork resource being patched.
+   * current fingerprint of the subnetwork resource being patched.
    *
    * <p>Sample code:
    *

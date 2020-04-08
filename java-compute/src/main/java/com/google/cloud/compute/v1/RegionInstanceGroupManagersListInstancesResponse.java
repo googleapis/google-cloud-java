@@ -27,19 +27,26 @@ import javax.annotation.Nullable;
 @BetaApi
 public final class RegionInstanceGroupManagersListInstancesResponse implements ApiMessage {
   private final List<ManagedInstance> managedInstances;
+  private final String nextPageToken;
 
   private RegionInstanceGroupManagersListInstancesResponse() {
     this.managedInstances = null;
+    this.nextPageToken = null;
   }
 
-  private RegionInstanceGroupManagersListInstancesResponse(List<ManagedInstance> managedInstances) {
+  private RegionInstanceGroupManagersListInstancesResponse(
+      List<ManagedInstance> managedInstances, String nextPageToken) {
     this.managedInstances = managedInstances;
+    this.nextPageToken = nextPageToken;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
     if ("managedInstances".equals(fieldName)) {
       return managedInstances;
+    }
+    if ("nextPageToken".equals(fieldName)) {
+      return nextPageToken;
     }
     return null;
   }
@@ -67,6 +74,16 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
     return managedInstances;
   }
 
+  /**
+   * [Output Only] This token allows you to get the next page of results for list requests. If the
+   * number of results is larger than maxResults, use the nextPageToken as a value for the query
+   * parameter pageToken in the next list request. Subsequent list requests will have their own
+   * nextPageToken to continue paging through the results.
+   */
+  public String getNextPageToken() {
+    return nextPageToken;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -91,6 +108,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
 
   public static class Builder {
     private List<ManagedInstance> managedInstances;
+    private String nextPageToken;
 
     Builder() {}
 
@@ -100,11 +118,15 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
       if (other.getManagedInstancesList() != null) {
         this.managedInstances = other.managedInstances;
       }
+      if (other.getNextPageToken() != null) {
+        this.nextPageToken = other.nextPageToken;
+      }
       return this;
     }
 
     Builder(RegionInstanceGroupManagersListInstancesResponse source) {
       this.managedInstances = source.managedInstances;
+      this.nextPageToken = source.nextPageToken;
     }
 
     /** A list of managed instances. */
@@ -130,13 +152,36 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
       return this;
     }
 
+    /**
+     * [Output Only] This token allows you to get the next page of results for list requests. If the
+     * number of results is larger than maxResults, use the nextPageToken as a value for the query
+     * parameter pageToken in the next list request. Subsequent list requests will have their own
+     * nextPageToken to continue paging through the results.
+     */
+    public String getNextPageToken() {
+      return nextPageToken;
+    }
+
+    /**
+     * [Output Only] This token allows you to get the next page of results for list requests. If the
+     * number of results is larger than maxResults, use the nextPageToken as a value for the query
+     * parameter pageToken in the next list request. Subsequent list requests will have their own
+     * nextPageToken to continue paging through the results.
+     */
+    public Builder setNextPageToken(String nextPageToken) {
+      this.nextPageToken = nextPageToken;
+      return this;
+    }
+
     public RegionInstanceGroupManagersListInstancesResponse build() {
-      return new RegionInstanceGroupManagersListInstancesResponse(managedInstances);
+
+      return new RegionInstanceGroupManagersListInstancesResponse(managedInstances, nextPageToken);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.addAllManagedInstances(this.managedInstances);
+      newBuilder.setNextPageToken(this.nextPageToken);
       return newBuilder;
     }
   }
@@ -146,6 +191,9 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
     return "RegionInstanceGroupManagersListInstancesResponse{"
         + "managedInstances="
         + managedInstances
+        + ", "
+        + "nextPageToken="
+        + nextPageToken
         + "}";
   }
 
@@ -157,13 +205,14 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
     if (o instanceof RegionInstanceGroupManagersListInstancesResponse) {
       RegionInstanceGroupManagersListInstancesResponse that =
           (RegionInstanceGroupManagersListInstancesResponse) o;
-      return Objects.equals(this.managedInstances, that.getManagedInstancesList());
+      return Objects.equals(this.managedInstances, that.getManagedInstancesList())
+          && Objects.equals(this.nextPageToken, that.getNextPageToken());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(managedInstances);
+    return Objects.hash(managedInstances, nextPageToken);
   }
 }

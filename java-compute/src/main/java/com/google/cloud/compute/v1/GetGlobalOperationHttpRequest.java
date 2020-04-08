@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.globalOperations.get. Retrieves the specified Operations
- * resource. Gets a list of operations by making a list() request.
+ * resource. Gets a list of operations by making a `list()` request.
  */
 public final class GetGlobalOperationHttpRequest implements ApiMessage {
   private final String access_token;

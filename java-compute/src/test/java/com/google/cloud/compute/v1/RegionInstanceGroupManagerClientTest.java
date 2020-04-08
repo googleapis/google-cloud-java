@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListErrorsRegionInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListManagedInstancesRegionInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionInstanceGroupManagerStub.abandonInstancesRegionInstanceGroupManagerMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionInstanceGroupManagerStub.applyUpdatesToInstancesRegionInstanceGroupManagerMethodDescriptor;
@@ -896,17 +897,26 @@ public class RegionInstanceGroupManagerClientTest {
   @Test
   @SuppressWarnings("all")
   public void listManagedInstancesRegionInstanceGroupManagersTest() {
+    String nextPageToken = "";
+    ManagedInstance managedInstancesElement = ManagedInstance.newBuilder().build();
+    List<ManagedInstance> managedInstances = Arrays.asList(managedInstancesElement);
     RegionInstanceGroupManagersListInstancesResponse expectedResponse =
-        RegionInstanceGroupManagersListInstancesResponse.newBuilder().build();
+        RegionInstanceGroupManagersListInstancesResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllManagedInstances(managedInstances)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectRegionInstanceGroupManagerName instanceGroupManager =
         ProjectRegionInstanceGroupManagerName.of(
             "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
 
-    RegionInstanceGroupManagersListInstancesResponse actualResponse =
+    ListManagedInstancesRegionInstanceGroupManagersPagedResponse pagedListResponse =
         client.listManagedInstancesRegionInstanceGroupManagers(instanceGroupManager);
-    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<ManagedInstance> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getManagedInstancesList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
