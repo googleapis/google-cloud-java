@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-datastore</artifactId>
-      <version>1.102.3</version>
+      <version>1.102.4</version>
     </dependency>
     <!-- [END datastore_install_without_bom] -->
 
