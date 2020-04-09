@@ -16,9 +16,9 @@
 
 package com.example.datacatalog;
 
-import com.google.cloud.datacatalog.v1beta1.DataCatalogClient;
-import com.google.cloud.datacatalog.v1beta1.Entry;
-import com.google.cloud.datacatalog.v1beta1.LookupEntryRequest;
+import com.google.cloud.datacatalog.v1.DataCatalogClient;
+import com.google.cloud.datacatalog.v1.Entry;
+import com.google.cloud.datacatalog.v1.LookupEntryRequest;
 
 public class LookupEntryBigQueryTable {
 
