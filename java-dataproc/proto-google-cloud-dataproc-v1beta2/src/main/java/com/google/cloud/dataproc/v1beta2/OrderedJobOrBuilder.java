@@ -31,14 +31,14 @@ public interface OrderedJobOrBuilder
    * within the template.
    * The step id is used as prefix for job id, as job
    * `goog-dataproc-workflow-step-id` label, and in
-   * [prerequisiteStepIds][google.cloud.dataproc.v1beta2.OrderedJob.prerequisite_step_ids]
-   * field from other steps.
+   * [prerequisiteStepIds][google.cloud.dataproc.v1beta2.OrderedJob.prerequisite_step_ids] field from other
+   * steps.
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
    * </pre>
    *
-   * <code>string step_id = 1;</code>
+   * <code>string step_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The stepId.
    */
@@ -51,14 +51,14 @@ public interface OrderedJobOrBuilder
    * within the template.
    * The step id is used as prefix for job id, as job
    * `goog-dataproc-workflow-step-id` label, and in
-   * [prerequisiteStepIds][google.cloud.dataproc.v1beta2.OrderedJob.prerequisite_step_ids]
-   * field from other steps.
+   * [prerequisiteStepIds][google.cloud.dataproc.v1beta2.OrderedJob.prerequisite_step_ids] field from other
+   * steps.
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
    * </pre>
    *
-   * <code>string step_id = 1;</code>
+   * <code>string step_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for stepId.
    */
@@ -140,6 +140,41 @@ public interface OrderedJobOrBuilder
   com.google.cloud.dataproc.v1beta2.PigJobOrBuilder getPigJobOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Spark R job
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 11;</code>
+   *
+   * @return Whether the sparkRJob field is set.
+   */
+  boolean hasSparkRJob();
+  /**
+   *
+   *
+   * <pre>
+   * Spark R job
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 11;</code>
+   *
+   * @return The sparkRJob.
+   */
+  com.google.cloud.dataproc.v1beta2.SparkRJob getSparkRJob();
+  /**
+   *
+   *
+   * <pre>
+   * Spark R job
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 11;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.SparkRJobOrBuilder getSparkRJobOrBuilder();
+
+  /**
    * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
    *
    * @return Whether the sparkSqlJob field is set.
@@ -158,6 +193,41 @@ public interface OrderedJobOrBuilder
    *
    *
    * <pre>
+   * Presto job
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.PrestoJob presto_job = 12;</code>
+   *
+   * @return Whether the prestoJob field is set.
+   */
+  boolean hasPrestoJob();
+  /**
+   *
+   *
+   * <pre>
+   * Presto job
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.PrestoJob presto_job = 12;</code>
+   *
+   * @return The prestoJob.
+   */
+  com.google.cloud.dataproc.v1beta2.PrestoJob getPrestoJob();
+  /**
+   *
+   *
+   * <pre>
+   * Presto job
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.PrestoJob presto_job = 12;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.PrestoJobOrBuilder getPrestoJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The labels to associate with this job.
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following regular expression:
@@ -167,7 +237,7 @@ public interface OrderedJobOrBuilder
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
@@ -183,7 +253,7 @@ public interface OrderedJobOrBuilder
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -202,7 +272,7 @@ public interface OrderedJobOrBuilder
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -218,7 +288,7 @@ public interface OrderedJobOrBuilder
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -234,7 +304,7 @@ public interface OrderedJobOrBuilder
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -245,7 +315,9 @@ public interface OrderedJobOrBuilder
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the scheduling field is set.
    */
@@ -257,7 +329,9 @@ public interface OrderedJobOrBuilder
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The scheduling.
    */
@@ -269,7 +343,9 @@ public interface OrderedJobOrBuilder
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.JobSchedulingOrBuilder getSchedulingOrBuilder();
 
@@ -281,7 +357,8 @@ public interface OrderedJobOrBuilder
    * If not specified, the job will start at the beginning of workflow.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 10;</code>
+   * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the prerequisiteStepIds.
    */
@@ -294,7 +371,8 @@ public interface OrderedJobOrBuilder
    * If not specified, the job will start at the beginning of workflow.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 10;</code>
+   * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of prerequisiteStepIds.
    */
@@ -307,7 +385,8 @@ public interface OrderedJobOrBuilder
    * If not specified, the job will start at the beginning of workflow.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 10;</code>
+   * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The prerequisiteStepIds at the given index.
@@ -321,7 +400,8 @@ public interface OrderedJobOrBuilder
    * If not specified, the job will start at the beginning of workflow.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 10;</code>
+   * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the prerequisiteStepIds at the given index.

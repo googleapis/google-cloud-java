@@ -318,6 +318,27 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
               jobUuid_ = s;
               break;
             }
+          case 186:
+            {
+              com.google.cloud.dataproc.v1beta2.PrestoJob.Builder subBuilder = null;
+              if (typeJobCase_ == 23) {
+                subBuilder = ((com.google.cloud.dataproc.v1beta2.PrestoJob) typeJob_).toBuilder();
+              }
+              typeJob_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.PrestoJob.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.PrestoJob) typeJob_);
+                typeJob_ = subBuilder.buildPartial();
+              }
+              typeJobCase_ = 23;
+              break;
+            }
+          case 192:
+            {
+              done_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -383,6 +404,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     PIG_JOB(7),
     SPARK_R_JOB(21),
     SPARK_SQL_JOB(12),
+    PRESTO_JOB(23),
     TYPEJOB_NOT_SET(0);
     private final int value;
 
@@ -415,6 +437,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           return SPARK_R_JOB;
         case 12:
           return SPARK_SQL_JOB;
+        case 23:
+          return PRESTO_JOB;
         case 0:
           return TYPEJOB_NOT_SET;
         default:
@@ -547,7 +571,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HADOOP_JOB_FIELD_NUMBER = 3;
   /**
-   * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Hadoop job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the hadoopJob field is set.
    */
@@ -555,7 +587,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return typeJobCase_ == 3;
   }
   /**
-   * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Hadoop job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The hadoopJob.
    */
@@ -565,7 +605,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataproc.v1beta2.HadoopJob.getDefaultInstance();
   }
-  /** <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Hadoop job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   public com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder getHadoopJobOrBuilder() {
     if (typeJobCase_ == 3) {
       return (com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_;
@@ -575,7 +625,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPARK_JOB_FIELD_NUMBER = 4;
   /**
-   * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Spark job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the sparkJob field is set.
    */
@@ -583,7 +641,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return typeJobCase_ == 4;
   }
   /**
-   * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Spark job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The sparkJob.
    */
@@ -593,7 +659,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataproc.v1beta2.SparkJob.getDefaultInstance();
   }
-  /** <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Spark job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   public com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder getSparkJobOrBuilder() {
     if (typeJobCase_ == 4) {
       return (com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_;
@@ -603,7 +679,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PYSPARK_JOB_FIELD_NUMBER = 5;
   /**
-   * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a PySpark job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the pysparkJob field is set.
    */
@@ -611,7 +695,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return typeJobCase_ == 5;
   }
   /**
-   * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a PySpark job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The pysparkJob.
    */
@@ -621,7 +713,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataproc.v1beta2.PySparkJob.getDefaultInstance();
   }
-  /** <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a PySpark job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   public com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder getPysparkJobOrBuilder() {
     if (typeJobCase_ == 5) {
       return (com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_;
@@ -631,7 +733,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HIVE_JOB_FIELD_NUMBER = 6;
   /**
-   * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Hive job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the hiveJob field is set.
    */
@@ -639,7 +749,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return typeJobCase_ == 6;
   }
   /**
-   * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Hive job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The hiveJob.
    */
@@ -649,7 +767,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataproc.v1beta2.HiveJob.getDefaultInstance();
   }
-  /** <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Hive job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   public com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder getHiveJobOrBuilder() {
     if (typeJobCase_ == 6) {
       return (com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_;
@@ -659,7 +787,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PIG_JOB_FIELD_NUMBER = 7;
   /**
-   * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Pig job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PigJob pig_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the pigJob field is set.
    */
@@ -667,7 +803,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return typeJobCase_ == 7;
   }
   /**
-   * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Pig job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PigJob pig_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The pigJob.
    */
@@ -677,7 +821,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataproc.v1beta2.PigJob.getDefaultInstance();
   }
-  /** <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Pig job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PigJob pig_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   public com.google.cloud.dataproc.v1beta2.PigJobOrBuilder getPigJobOrBuilder() {
     if (typeJobCase_ == 7) {
       return (com.google.cloud.dataproc.v1beta2.PigJob) typeJob_;
@@ -687,7 +841,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPARK_R_JOB_FIELD_NUMBER = 21;
   /**
-   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a SparkR job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the sparkRJob field is set.
    */
@@ -695,7 +857,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return typeJobCase_ == 21;
   }
   /**
-   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a SparkR job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The sparkRJob.
    */
@@ -705,7 +875,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataproc.v1beta2.SparkRJob.getDefaultInstance();
   }
-  /** <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a SparkR job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   public com.google.cloud.dataproc.v1beta2.SparkRJobOrBuilder getSparkRJobOrBuilder() {
     if (typeJobCase_ == 21) {
       return (com.google.cloud.dataproc.v1beta2.SparkRJob) typeJob_;
@@ -715,7 +895,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPARK_SQL_JOB_FIELD_NUMBER = 12;
   /**
-   * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a SparkSql job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the sparkSqlJob field is set.
    */
@@ -723,7 +911,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return typeJobCase_ == 12;
   }
   /**
-   * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a SparkSql job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The sparkSqlJob.
    */
@@ -733,12 +929,76 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataproc.v1beta2.SparkSqlJob.getDefaultInstance();
   }
-  /** <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a SparkSql job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   public com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder getSparkSqlJobOrBuilder() {
     if (typeJobCase_ == 12) {
       return (com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.SparkSqlJob.getDefaultInstance();
+  }
+
+  public static final int PRESTO_JOB_FIELD_NUMBER = 23;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Presto job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the prestoJob field is set.
+   */
+  public boolean hasPrestoJob() {
+    return typeJobCase_ == 23;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Presto job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The prestoJob.
+   */
+  public com.google.cloud.dataproc.v1beta2.PrestoJob getPrestoJob() {
+    if (typeJobCase_ == 23) {
+      return (com.google.cloud.dataproc.v1beta2.PrestoJob) typeJob_;
+    }
+    return com.google.cloud.dataproc.v1beta2.PrestoJob.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Presto job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  public com.google.cloud.dataproc.v1beta2.PrestoJobOrBuilder getPrestoJobOrBuilder() {
+    if (typeJobCase_ == 23) {
+      return (com.google.cloud.dataproc.v1beta2.PrestoJob) typeJob_;
+    }
+    return com.google.cloud.dataproc.v1beta2.PrestoJob.getDefaultInstance();
   }
 
   public static final int STATUS_FIELD_NUMBER = 8;
@@ -1328,6 +1588,26 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DONE_FIELD_NUMBER = 24;
+  private boolean done_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the job is completed. If the value is `false`,
+   * the job is still in progress. If `true`, the job is completed, and
+   * `status.state` field will indicate if it was successful, failed,
+   * or cancelled.
+   * </pre>
+   *
+   * <code>bool done = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The done.
+   */
+  public boolean getDone() {
+    return done_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1394,6 +1674,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getJobUuidBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 22, jobUuid_);
+    }
+    if (typeJobCase_ == 23) {
+      output.writeMessage(23, (com.google.cloud.dataproc.v1beta2.PrestoJob) typeJob_);
+    }
+    if (done_ != false) {
+      output.writeBool(24, done_);
     }
     unknownFields.writeTo(output);
   }
@@ -1480,6 +1766,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (!getJobUuidBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, jobUuid_);
     }
+    if (typeJobCase_ == 23) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23, (com.google.cloud.dataproc.v1beta2.PrestoJob) typeJob_);
+    }
+    if (done_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, done_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1518,6 +1812,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (!getScheduling().equals(other.getScheduling())) return false;
     }
     if (!getJobUuid().equals(other.getJobUuid())) return false;
+    if (getDone() != other.getDone()) return false;
     if (!getTypeJobCase().equals(other.getTypeJobCase())) return false;
     switch (typeJobCase_) {
       case 3:
@@ -1540,6 +1835,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         break;
       case 12:
         if (!getSparkSqlJob().equals(other.getSparkSqlJob())) return false;
+        break;
+      case 23:
+        if (!getPrestoJob().equals(other.getPrestoJob())) return false;
         break;
       case 0:
       default:
@@ -1591,6 +1889,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + JOB_UUID_FIELD_NUMBER;
     hash = (53 * hash) + getJobUuid().hashCode();
+    hash = (37 * hash) + DONE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDone());
     switch (typeJobCase_) {
       case 3:
         hash = (37 * hash) + HADOOP_JOB_FIELD_NUMBER;
@@ -1619,6 +1919,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       case 12:
         hash = (37 * hash) + SPARK_SQL_JOB_FIELD_NUMBER;
         hash = (53 * hash) + getSparkSqlJob().hashCode();
+        break;
+      case 23:
+        hash = (37 * hash) + PRESTO_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getPrestoJob().hashCode();
         break;
       case 0:
       default:
@@ -1835,6 +2139,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       jobUuid_ = "";
 
+      done_ = false;
+
       typeJobCase_ = 0;
       typeJob_ = null;
       return this;
@@ -1924,6 +2230,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           result.typeJob_ = sparkSqlJobBuilder_.build();
         }
       }
+      if (typeJobCase_ == 23) {
+        if (prestoJobBuilder_ == null) {
+          result.typeJob_ = typeJob_;
+        } else {
+          result.typeJob_ = prestoJobBuilder_.build();
+        }
+      }
       if (statusBuilder_ == null) {
         result.status_ = status_;
       } else {
@@ -1958,6 +2271,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         result.scheduling_ = schedulingBuilder_.build();
       }
       result.jobUuid_ = jobUuid_;
+      result.done_ = done_;
       result.typeJobCase_ = typeJobCase_;
       onBuilt();
       return result;
@@ -2091,6 +2405,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         jobUuid_ = other.jobUuid_;
         onChanged();
       }
+      if (other.getDone() != false) {
+        setDone(other.getDone());
+      }
       switch (other.getTypeJobCase()) {
         case HADOOP_JOB:
           {
@@ -2125,6 +2442,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         case SPARK_SQL_JOB:
           {
             mergeSparkSqlJob(other.getSparkSqlJob());
+            break;
+          }
+        case PRESTO_JOB:
+          {
+            mergePrestoJob(other.getPrestoJob());
             break;
           }
         case TYPEJOB_NOT_SET:
@@ -2627,7 +2949,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder>
         hadoopJobBuilder_;
     /**
-     * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hadoop job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the hadoopJob field is set.
      */
@@ -2635,7 +2965,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return typeJobCase_ == 3;
     }
     /**
-     * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hadoop job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The hadoopJob.
      */
@@ -2652,7 +2990,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.HadoopJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hadoop job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setHadoopJob(com.google.cloud.dataproc.v1beta2.HadoopJob value) {
       if (hadoopJobBuilder_ == null) {
         if (value == null) {
@@ -2666,7 +3014,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 3;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hadoop job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setHadoopJob(
         com.google.cloud.dataproc.v1beta2.HadoopJob.Builder builderForValue) {
       if (hadoopJobBuilder_ == null) {
@@ -2678,7 +3036,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 3;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hadoop job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder mergeHadoopJob(com.google.cloud.dataproc.v1beta2.HadoopJob value) {
       if (hadoopJobBuilder_ == null) {
         if (typeJobCase_ == 3
@@ -2701,7 +3069,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 3;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hadoop job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder clearHadoopJob() {
       if (hadoopJobBuilder_ == null) {
         if (typeJobCase_ == 3) {
@@ -2718,11 +3096,31 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hadoop job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.HadoopJob.Builder getHadoopJobBuilder() {
       return getHadoopJobFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hadoop job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder getHadoopJobOrBuilder() {
       if ((typeJobCase_ == 3) && (hadoopJobBuilder_ != null)) {
         return hadoopJobBuilder_.getMessageOrBuilder();
@@ -2733,7 +3131,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.HadoopJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hadoop job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.HadoopJob,
             com.google.cloud.dataproc.v1beta2.HadoopJob.Builder,
@@ -2765,7 +3173,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder>
         sparkJobBuilder_;
     /**
-     * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a Spark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the sparkJob field is set.
      */
@@ -2773,7 +3189,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return typeJobCase_ == 4;
     }
     /**
-     * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a Spark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The sparkJob.
      */
@@ -2790,7 +3214,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.SparkJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Spark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setSparkJob(com.google.cloud.dataproc.v1beta2.SparkJob value) {
       if (sparkJobBuilder_ == null) {
         if (value == null) {
@@ -2804,7 +3238,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 4;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Spark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setSparkJob(com.google.cloud.dataproc.v1beta2.SparkJob.Builder builderForValue) {
       if (sparkJobBuilder_ == null) {
         typeJob_ = builderForValue.build();
@@ -2815,7 +3259,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 4;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Spark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder mergeSparkJob(com.google.cloud.dataproc.v1beta2.SparkJob value) {
       if (sparkJobBuilder_ == null) {
         if (typeJobCase_ == 4
@@ -2838,7 +3292,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 4;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Spark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder clearSparkJob() {
       if (sparkJobBuilder_ == null) {
         if (typeJobCase_ == 4) {
@@ -2855,11 +3319,31 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Spark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.SparkJob.Builder getSparkJobBuilder() {
       return getSparkJobFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Spark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder getSparkJobOrBuilder() {
       if ((typeJobCase_ == 4) && (sparkJobBuilder_ != null)) {
         return sparkJobBuilder_.getMessageOrBuilder();
@@ -2870,7 +3354,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.SparkJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Spark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.SparkJob,
             com.google.cloud.dataproc.v1beta2.SparkJob.Builder,
@@ -2902,7 +3396,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder>
         pysparkJobBuilder_;
     /**
-     * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a PySpark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the pysparkJob field is set.
      */
@@ -2910,7 +3412,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return typeJobCase_ == 5;
     }
     /**
-     * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a PySpark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The pysparkJob.
      */
@@ -2927,7 +3437,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.PySparkJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a PySpark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setPysparkJob(com.google.cloud.dataproc.v1beta2.PySparkJob value) {
       if (pysparkJobBuilder_ == null) {
         if (value == null) {
@@ -2941,7 +3461,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 5;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a PySpark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setPysparkJob(
         com.google.cloud.dataproc.v1beta2.PySparkJob.Builder builderForValue) {
       if (pysparkJobBuilder_ == null) {
@@ -2953,7 +3483,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 5;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a PySpark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder mergePysparkJob(com.google.cloud.dataproc.v1beta2.PySparkJob value) {
       if (pysparkJobBuilder_ == null) {
         if (typeJobCase_ == 5
@@ -2976,7 +3516,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 5;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a PySpark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder clearPysparkJob() {
       if (pysparkJobBuilder_ == null) {
         if (typeJobCase_ == 5) {
@@ -2993,11 +3543,31 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a PySpark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.PySparkJob.Builder getPysparkJobBuilder() {
       return getPysparkJobFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a PySpark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder getPysparkJobOrBuilder() {
       if ((typeJobCase_ == 5) && (pysparkJobBuilder_ != null)) {
         return pysparkJobBuilder_.getMessageOrBuilder();
@@ -3008,7 +3578,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.PySparkJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a PySpark job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.PySparkJob,
             com.google.cloud.dataproc.v1beta2.PySparkJob.Builder,
@@ -3040,7 +3620,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder>
         hiveJobBuilder_;
     /**
-     * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hive job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the hiveJob field is set.
      */
@@ -3048,7 +3636,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return typeJobCase_ == 6;
     }
     /**
-     * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hive job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The hiveJob.
      */
@@ -3065,7 +3661,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.HiveJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hive job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setHiveJob(com.google.cloud.dataproc.v1beta2.HiveJob value) {
       if (hiveJobBuilder_ == null) {
         if (value == null) {
@@ -3079,7 +3685,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 6;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hive job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setHiveJob(com.google.cloud.dataproc.v1beta2.HiveJob.Builder builderForValue) {
       if (hiveJobBuilder_ == null) {
         typeJob_ = builderForValue.build();
@@ -3090,7 +3706,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 6;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hive job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder mergeHiveJob(com.google.cloud.dataproc.v1beta2.HiveJob value) {
       if (hiveJobBuilder_ == null) {
         if (typeJobCase_ == 6
@@ -3113,7 +3739,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 6;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hive job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder clearHiveJob() {
       if (hiveJobBuilder_ == null) {
         if (typeJobCase_ == 6) {
@@ -3130,11 +3766,31 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hive job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.HiveJob.Builder getHiveJobBuilder() {
       return getHiveJobFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hive job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder getHiveJobOrBuilder() {
       if ((typeJobCase_ == 6) && (hiveJobBuilder_ != null)) {
         return hiveJobBuilder_.getMessageOrBuilder();
@@ -3145,7 +3801,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.HiveJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Hive job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.HiveJob,
             com.google.cloud.dataproc.v1beta2.HiveJob.Builder,
@@ -3177,7 +3843,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.PigJobOrBuilder>
         pigJobBuilder_;
     /**
-     * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a Pig job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PigJob pig_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the pigJob field is set.
      */
@@ -3185,7 +3859,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return typeJobCase_ == 7;
     }
     /**
-     * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a Pig job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PigJob pig_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The pigJob.
      */
@@ -3202,7 +3884,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.PigJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Pig job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PigJob pig_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setPigJob(com.google.cloud.dataproc.v1beta2.PigJob value) {
       if (pigJobBuilder_ == null) {
         if (value == null) {
@@ -3216,7 +3908,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 7;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Pig job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PigJob pig_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setPigJob(com.google.cloud.dataproc.v1beta2.PigJob.Builder builderForValue) {
       if (pigJobBuilder_ == null) {
         typeJob_ = builderForValue.build();
@@ -3227,7 +3929,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 7;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Pig job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PigJob pig_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder mergePigJob(com.google.cloud.dataproc.v1beta2.PigJob value) {
       if (pigJobBuilder_ == null) {
         if (typeJobCase_ == 7
@@ -3250,7 +3962,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 7;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Pig job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PigJob pig_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder clearPigJob() {
       if (pigJobBuilder_ == null) {
         if (typeJobCase_ == 7) {
@@ -3267,11 +3989,31 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Pig job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PigJob pig_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.PigJob.Builder getPigJobBuilder() {
       return getPigJobFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Pig job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PigJob pig_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.PigJobOrBuilder getPigJobOrBuilder() {
       if ((typeJobCase_ == 7) && (pigJobBuilder_ != null)) {
         return pigJobBuilder_.getMessageOrBuilder();
@@ -3282,7 +4024,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.PigJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Pig job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PigJob pig_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.PigJob,
             com.google.cloud.dataproc.v1beta2.PigJob.Builder,
@@ -3314,7 +4066,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.SparkRJobOrBuilder>
         sparkRJobBuilder_;
     /**
-     * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkR job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the sparkRJob field is set.
      */
@@ -3322,7 +4082,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return typeJobCase_ == 21;
     }
     /**
-     * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkR job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The sparkRJob.
      */
@@ -3339,7 +4107,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.SparkRJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkR job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setSparkRJob(com.google.cloud.dataproc.v1beta2.SparkRJob value) {
       if (sparkRJobBuilder_ == null) {
         if (value == null) {
@@ -3353,7 +4131,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 21;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkR job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setSparkRJob(
         com.google.cloud.dataproc.v1beta2.SparkRJob.Builder builderForValue) {
       if (sparkRJobBuilder_ == null) {
@@ -3365,7 +4153,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 21;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkR job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder mergeSparkRJob(com.google.cloud.dataproc.v1beta2.SparkRJob value) {
       if (sparkRJobBuilder_ == null) {
         if (typeJobCase_ == 21
@@ -3388,7 +4186,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 21;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkR job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder clearSparkRJob() {
       if (sparkRJobBuilder_ == null) {
         if (typeJobCase_ == 21) {
@@ -3405,11 +4213,31 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkR job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.SparkRJob.Builder getSparkRJobBuilder() {
       return getSparkRJobFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkR job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.SparkRJobOrBuilder getSparkRJobOrBuilder() {
       if ((typeJobCase_ == 21) && (sparkRJobBuilder_ != null)) {
         return sparkRJobBuilder_.getMessageOrBuilder();
@@ -3420,7 +4248,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.SparkRJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkR job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.SparkRJob,
             com.google.cloud.dataproc.v1beta2.SparkRJob.Builder,
@@ -3452,7 +4290,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder>
         sparkSqlJobBuilder_;
     /**
-     * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkSql job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the sparkSqlJob field is set.
      */
@@ -3460,7 +4306,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return typeJobCase_ == 12;
     }
     /**
-     * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code>
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkSql job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The sparkSqlJob.
      */
@@ -3477,7 +4331,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.SparkSqlJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkSql job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setSparkSqlJob(com.google.cloud.dataproc.v1beta2.SparkSqlJob value) {
       if (sparkSqlJobBuilder_ == null) {
         if (value == null) {
@@ -3491,7 +4355,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 12;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkSql job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder setSparkSqlJob(
         com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder builderForValue) {
       if (sparkSqlJobBuilder_ == null) {
@@ -3503,7 +4377,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 12;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkSql job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder mergeSparkSqlJob(com.google.cloud.dataproc.v1beta2.SparkSqlJob value) {
       if (sparkSqlJobBuilder_ == null) {
         if (typeJobCase_ == 12
@@ -3526,7 +4410,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       typeJobCase_ = 12;
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkSql job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder clearSparkSqlJob() {
       if (sparkSqlJobBuilder_ == null) {
         if (typeJobCase_ == 12) {
@@ -3543,11 +4437,31 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkSql job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder getSparkSqlJobBuilder() {
       return getSparkSqlJobFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkSql job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder getSparkSqlJobOrBuilder() {
       if ((typeJobCase_ == 12) && (sparkSqlJobBuilder_ != null)) {
         return sparkSqlJobBuilder_.getMessageOrBuilder();
@@ -3558,7 +4472,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1beta2.SparkSqlJob.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a SparkSql job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.SparkSqlJob,
             com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder,
@@ -3582,6 +4506,230 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return sparkSqlJobBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1beta2.PrestoJob,
+            com.google.cloud.dataproc.v1beta2.PrestoJob.Builder,
+            com.google.cloud.dataproc.v1beta2.PrestoJobOrBuilder>
+        prestoJobBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Presto job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the prestoJob field is set.
+     */
+    public boolean hasPrestoJob() {
+      return typeJobCase_ == 23;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Presto job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The prestoJob.
+     */
+    public com.google.cloud.dataproc.v1beta2.PrestoJob getPrestoJob() {
+      if (prestoJobBuilder_ == null) {
+        if (typeJobCase_ == 23) {
+          return (com.google.cloud.dataproc.v1beta2.PrestoJob) typeJob_;
+        }
+        return com.google.cloud.dataproc.v1beta2.PrestoJob.getDefaultInstance();
+      } else {
+        if (typeJobCase_ == 23) {
+          return prestoJobBuilder_.getMessage();
+        }
+        return com.google.cloud.dataproc.v1beta2.PrestoJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Presto job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPrestoJob(com.google.cloud.dataproc.v1beta2.PrestoJob value) {
+      if (prestoJobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        typeJob_ = value;
+        onChanged();
+      } else {
+        prestoJobBuilder_.setMessage(value);
+      }
+      typeJobCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Presto job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPrestoJob(
+        com.google.cloud.dataproc.v1beta2.PrestoJob.Builder builderForValue) {
+      if (prestoJobBuilder_ == null) {
+        typeJob_ = builderForValue.build();
+        onChanged();
+      } else {
+        prestoJobBuilder_.setMessage(builderForValue.build());
+      }
+      typeJobCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Presto job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePrestoJob(com.google.cloud.dataproc.v1beta2.PrestoJob value) {
+      if (prestoJobBuilder_ == null) {
+        if (typeJobCase_ == 23
+            && typeJob_ != com.google.cloud.dataproc.v1beta2.PrestoJob.getDefaultInstance()) {
+          typeJob_ =
+              com.google.cloud.dataproc.v1beta2.PrestoJob.newBuilder(
+                      (com.google.cloud.dataproc.v1beta2.PrestoJob) typeJob_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          typeJob_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeJobCase_ == 23) {
+          prestoJobBuilder_.mergeFrom(value);
+        }
+        prestoJobBuilder_.setMessage(value);
+      }
+      typeJobCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Presto job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPrestoJob() {
+      if (prestoJobBuilder_ == null) {
+        if (typeJobCase_ == 23) {
+          typeJobCase_ = 0;
+          typeJob_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeJobCase_ == 23) {
+          typeJobCase_ = 0;
+          typeJob_ = null;
+        }
+        prestoJobBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Presto job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1beta2.PrestoJob.Builder getPrestoJobBuilder() {
+      return getPrestoJobFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Presto job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1beta2.PrestoJobOrBuilder getPrestoJobOrBuilder() {
+      if ((typeJobCase_ == 23) && (prestoJobBuilder_ != null)) {
+        return prestoJobBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeJobCase_ == 23) {
+          return (com.google.cloud.dataproc.v1beta2.PrestoJob) typeJob_;
+        }
+        return com.google.cloud.dataproc.v1beta2.PrestoJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Presto job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1beta2.PrestoJob,
+            com.google.cloud.dataproc.v1beta2.PrestoJob.Builder,
+            com.google.cloud.dataproc.v1beta2.PrestoJobOrBuilder>
+        getPrestoJobFieldBuilder() {
+      if (prestoJobBuilder_ == null) {
+        if (!(typeJobCase_ == 23)) {
+          typeJob_ = com.google.cloud.dataproc.v1beta2.PrestoJob.getDefaultInstance();
+        }
+        prestoJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.PrestoJob,
+                com.google.cloud.dataproc.v1beta2.PrestoJob.Builder,
+                com.google.cloud.dataproc.v1beta2.PrestoJobOrBuilder>(
+                (com.google.cloud.dataproc.v1beta2.PrestoJob) typeJob_,
+                getParentForChildren(),
+                isClean());
+        typeJob_ = null;
+      }
+      typeJobCase_ = 23;
+      onChanged();
+      ;
+      return prestoJobBuilder_;
     }
 
     private com.google.cloud.dataproc.v1beta2.JobStatus status_;
@@ -5488,6 +6636,66 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       jobUuid_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean done_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the job is completed. If the value is `false`,
+     * the job is still in progress. If `true`, the job is completed, and
+     * `status.state` field will indicate if it was successful, failed,
+     * or cancelled.
+     * </pre>
+     *
+     * <code>bool done = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The done.
+     */
+    public boolean getDone() {
+      return done_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the job is completed. If the value is `false`,
+     * the job is still in progress. If `true`, the job is completed, and
+     * `status.state` field will indicate if it was successful, failed,
+     * or cancelled.
+     * </pre>
+     *
+     * <code>bool done = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The done to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDone(boolean value) {
+
+      done_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the job is completed. If the value is `false`,
+     * the job is still in progress. If `true`, the job is completed, and
+     * `status.state` field will indicate if it was successful, failed,
+     * or cancelled.
+     * </pre>
+     *
+     * <code>bool done = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDone() {
+
+      done_ = false;
       onChanged();
       return this;
     }

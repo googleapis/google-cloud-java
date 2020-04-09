@@ -25,10 +25,12 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dataproc.v1.stub.JobControllerStubSettings;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -97,6 +99,19 @@ public class JobControllerSettings extends ClientSettings<JobControllerSettings>
   /** Returns the object with the settings used for calls to deleteJob. */
   public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
     return ((JobControllerStubSettings) getStubSettings()).deleteJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to submitJobAsOperation. */
+  public UnaryCallSettings<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
+    return ((JobControllerStubSettings) getStubSettings()).submitJobAsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to submitJobAsOperation. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<SubmitJobRequest, Job, JobMetadata>
+      submitJobAsOperationOperationSettings() {
+    return ((JobControllerStubSettings) getStubSettings()).submitJobAsOperationOperationSettings();
   }
 
   public static final JobControllerSettings create(JobControllerStubSettings stub)
@@ -225,6 +240,19 @@ public class JobControllerSettings extends ClientSettings<JobControllerSettings>
     /** Returns the builder for the settings used for calls to deleteJob. */
     public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
       return getStubSettingsBuilder().deleteJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
+    public UnaryCallSettings.Builder<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
+      return getStubSettingsBuilder().submitJobAsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SubmitJobRequest, Job, JobMetadata>
+        submitJobAsOperationOperationSettings() {
+      return getStubSettingsBuilder().submitJobAsOperationOperationSettings();
     }
 
     @Override

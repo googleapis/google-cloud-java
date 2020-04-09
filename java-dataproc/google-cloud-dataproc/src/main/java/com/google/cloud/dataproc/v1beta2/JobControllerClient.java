@@ -20,14 +20,18 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1beta2.stub.JobControllerStub;
 import com.google.cloud.dataproc.v1beta2.stub.JobControllerStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.longrunning.Operation;
+import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -107,6 +111,7 @@ import javax.annotation.Generated;
 public class JobControllerClient implements BackgroundResource {
   private final JobControllerSettings settings;
   private final JobControllerStub stub;
+  private final OperationsClient operationsClient;
 
   /** Constructs an instance of JobControllerClient with default settings. */
   public static final JobControllerClient create() throws IOException {
@@ -139,12 +144,14 @@ public class JobControllerClient implements BackgroundResource {
   protected JobControllerClient(JobControllerSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((JobControllerStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected JobControllerClient(JobControllerStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final JobControllerSettings getSettings() {
@@ -154,6 +161,16 @@ public class JobControllerClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public JobControllerStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationsClient getOperationsClient() {
+    return operationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -707,6 +724,119 @@ public class JobControllerClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
     return stub.deleteJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Submits job to a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   String projectId = "";
+   *   String region = "";
+   *   Job job = Job.newBuilder().build();
+   *   Job response = jobControllerClient.submitJobAsOperationAsync(projectId, region, job).get();
+   * }
+   * </code></pre>
+   *
+   * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
+   * @param region Required. The Dataproc region in which to handle the request.
+   * @param job Required. The job resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Job, JobMetadata> submitJobAsOperationAsync(
+      String projectId, String region, Job job) {
+    SubmitJobRequest request =
+        SubmitJobRequest.newBuilder().setProjectId(projectId).setRegion(region).setJob(job).build();
+    return submitJobAsOperationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Submits job to a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   String projectId = "";
+   *   String region = "";
+   *   Job job = Job.newBuilder().build();
+   *   SubmitJobRequest request = SubmitJobRequest.newBuilder()
+   *     .setProjectId(projectId)
+   *     .setRegion(region)
+   *     .setJob(job)
+   *     .build();
+   *   Job response = jobControllerClient.submitJobAsOperationAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Job, JobMetadata> submitJobAsOperationAsync(
+      SubmitJobRequest request) {
+    return submitJobAsOperationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Submits job to a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   String projectId = "";
+   *   String region = "";
+   *   Job job = Job.newBuilder().build();
+   *   SubmitJobRequest request = SubmitJobRequest.newBuilder()
+   *     .setProjectId(projectId)
+   *     .setRegion(region)
+   *     .setJob(job)
+   *     .build();
+   *   OperationFuture&lt;Job, JobMetadata&gt; future = jobControllerClient.submitJobAsOperationOperationCallable().futureCall(request);
+   *   // Do something
+   *   Job response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<SubmitJobRequest, Job, JobMetadata>
+      submitJobAsOperationOperationCallable() {
+    return stub.submitJobAsOperationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Submits job to a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   String projectId = "";
+   *   String region = "";
+   *   Job job = Job.newBuilder().build();
+   *   SubmitJobRequest request = SubmitJobRequest.newBuilder()
+   *     .setProjectId(projectId)
+   *     .setRegion(region)
+   *     .setJob(job)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = jobControllerClient.submitJobAsOperationCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SubmitJobRequest, Operation> submitJobAsOperationCallable() {
+    return stub.submitJobAsOperationCallable();
   }
 
   @Override

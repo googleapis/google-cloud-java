@@ -19,15 +19,19 @@ import static com.google.cloud.dataproc.v1.JobControllerClient.ListJobsPagedResp
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1.CancelJobRequest;
 import com.google.cloud.dataproc.v1.DeleteJobRequest;
 import com.google.cloud.dataproc.v1.GetJobRequest;
 import com.google.cloud.dataproc.v1.Job;
+import com.google.cloud.dataproc.v1.JobMetadata;
 import com.google.cloud.dataproc.v1.ListJobsRequest;
 import com.google.cloud.dataproc.v1.ListJobsResponse;
 import com.google.cloud.dataproc.v1.SubmitJobRequest;
 import com.google.cloud.dataproc.v1.UpdateJobRequest;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -40,6 +44,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class JobControllerStub implements BackgroundResource {
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationsStub getOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
 
   public UnaryCallable<SubmitJobRequest, Job> submitJobCallable() {
     throw new UnsupportedOperationException("Not implemented: submitJobCallable()");
@@ -67,6 +76,17 @@ public abstract class JobControllerStub implements BackgroundResource {
 
   public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteJobCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<SubmitJobRequest, Job, JobMetadata>
+      submitJobAsOperationOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: submitJobAsOperationOperationCallable()");
+  }
+
+  public UnaryCallable<SubmitJobRequest, Operation> submitJobAsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: submitJobAsOperationCallable()");
   }
 
   @Override

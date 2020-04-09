@@ -26,10 +26,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -43,6 +47,7 @@ import com.google.cloud.dataproc.v1beta2.CancelJobRequest;
 import com.google.cloud.dataproc.v1beta2.DeleteJobRequest;
 import com.google.cloud.dataproc.v1beta2.GetJobRequest;
 import com.google.cloud.dataproc.v1beta2.Job;
+import com.google.cloud.dataproc.v1beta2.JobMetadata;
 import com.google.cloud.dataproc.v1beta2.ListJobsRequest;
 import com.google.cloud.dataproc.v1beta2.ListJobsResponse;
 import com.google.cloud.dataproc.v1beta2.SubmitJobRequest;
@@ -51,6 +56,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -102,6 +108,9 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
   private final UnaryCallSettings<UpdateJobRequest, Job> updateJobSettings;
   private final UnaryCallSettings<CancelJobRequest, Job> cancelJobSettings;
   private final UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings;
+  private final UnaryCallSettings<SubmitJobRequest, Operation> submitJobAsOperationSettings;
+  private final OperationCallSettings<SubmitJobRequest, Job, JobMetadata>
+      submitJobAsOperationOperationSettings;
 
   /** Returns the object with the settings used for calls to submitJob. */
   public UnaryCallSettings<SubmitJobRequest, Job> submitJobSettings() {
@@ -132,6 +141,18 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
   /** Returns the object with the settings used for calls to deleteJob. */
   public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
     return deleteJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to submitJobAsOperation. */
+  public UnaryCallSettings<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
+    return submitJobAsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to submitJobAsOperation. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<SubmitJobRequest, Job, JobMetadata>
+      submitJobAsOperationOperationSettings() {
+    return submitJobAsOperationOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -209,6 +230,9 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     updateJobSettings = settingsBuilder.updateJobSettings().build();
     cancelJobSettings = settingsBuilder.cancelJobSettings().build();
     deleteJobSettings = settingsBuilder.deleteJobSettings().build();
+    submitJobAsOperationSettings = settingsBuilder.submitJobAsOperationSettings().build();
+    submitJobAsOperationOperationSettings =
+        settingsBuilder.submitJobAsOperationOperationSettings().build();
   }
 
   private static final PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>
@@ -275,6 +299,10 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     private final UnaryCallSettings.Builder<UpdateJobRequest, Job> updateJobSettings;
     private final UnaryCallSettings.Builder<CancelJobRequest, Job> cancelJobSettings;
     private final UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings;
+    private final UnaryCallSettings.Builder<SubmitJobRequest, Operation>
+        submitJobAsOperationSettings;
+    private final OperationCallSettings.Builder<SubmitJobRequest, Job, JobMetadata>
+        submitJobAsOperationOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -289,6 +317,8 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
                   StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "non_idempotent2", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "non_idempotent",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
@@ -333,6 +363,10 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
 
       deleteJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      submitJobAsOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      submitJobAsOperationOperationSettings = OperationCallSettings.newBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               submitJobSettings,
@@ -340,7 +374,8 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
               listJobsSettings,
               updateJobSettings,
               cancelJobSettings,
-              deleteJobSettings);
+              deleteJobSettings,
+              submitJobAsOperationSettings);
 
       initDefaults(this);
     }
@@ -386,6 +421,32 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .submitJobAsOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+      builder
+          .submitJobAsOperationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<SubmitJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(ProtoOperationTransformers.ResponseTransformer.create(Job.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(JobMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -398,6 +459,9 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
       updateJobSettings = settings.updateJobSettings.toBuilder();
       cancelJobSettings = settings.cancelJobSettings.toBuilder();
       deleteJobSettings = settings.deleteJobSettings.toBuilder();
+      submitJobAsOperationSettings = settings.submitJobAsOperationSettings.toBuilder();
+      submitJobAsOperationOperationSettings =
+          settings.submitJobAsOperationOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -406,7 +470,8 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
               listJobsSettings,
               updateJobSettings,
               cancelJobSettings,
-              deleteJobSettings);
+              deleteJobSettings,
+              submitJobAsOperationSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -454,6 +519,19 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     /** Returns the builder for the settings used for calls to deleteJob. */
     public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
       return deleteJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
+    public UnaryCallSettings.Builder<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
+      return submitJobAsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SubmitJobRequest, Job, JobMetadata>
+        submitJobAsOperationOperationSettings() {
+      return submitJobAsOperationOperationSettings;
     }
 
     @Override

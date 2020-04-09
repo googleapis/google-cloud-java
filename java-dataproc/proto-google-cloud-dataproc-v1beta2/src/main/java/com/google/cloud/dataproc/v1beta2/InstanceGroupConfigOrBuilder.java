@@ -96,9 +96,18 @@ public interface InstanceGroupConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The Compute Engine image resource used for cluster
-   * instances. It can be specified or may be inferred from
-   * `SoftwareConfig.image_version`.
+   * Optional. The Compute Engine image resource used for cluster instances.
+   * The URI can represent an image or image family.
+   * Image examples:
+   * * `https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/[image-id]`
+   * * `projects/[project_id]/global/images/[image-id]`
+   * * `image-id`
+   * Image family examples. Dataproc will use the most recent
+   * image from the family:
+   * * `https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/family/[custom-image-family-name]`
+   * * `projects/[project_id]/global/images/family/[custom-image-family-name]`
+   * If the URI is unspecified, it will be inferred from
+   * `SoftwareConfig.image_version` or the system default.
    * </pre>
    *
    * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -110,9 +119,18 @@ public interface InstanceGroupConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The Compute Engine image resource used for cluster
-   * instances. It can be specified or may be inferred from
-   * `SoftwareConfig.image_version`.
+   * Optional. The Compute Engine image resource used for cluster instances.
+   * The URI can represent an image or image family.
+   * Image examples:
+   * * `https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/[image-id]`
+   * * `projects/[project_id]/global/images/[image-id]`
+   * * `image-id`
+   * Image family examples. Dataproc will use the most recent
+   * image from the family:
+   * * `https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/family/[custom-image-family-name]`
+   * * `projects/[project_id]/global/images/family/[custom-image-family-name]`
+   * If the URI is unspecified, it will be inferred from
+   * `SoftwareConfig.image_version` or the system default.
    * </pre>
    *
    * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -132,7 +150,7 @@ public interface InstanceGroupConfigOrBuilder
    * * `n1-standard-2`
    * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
-   * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
+   * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the machine type
    * resource, for example, `n1-standard-2`.
    * </pre>
@@ -153,7 +171,7 @@ public interface InstanceGroupConfigOrBuilder
    * * `n1-standard-2`
    * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
-   * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
+   * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the machine type
    * resource, for example, `n1-standard-2`.
    * </pre>
@@ -209,11 +227,11 @@ public interface InstanceGroupConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies that this instance group contains preemptible
+   * Output only. Specifies that this instance group contains preemptible
    * instances.
    * </pre>
    *
-   * <code>bool is_preemptible = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool is_preemptible = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The isPreemptible.
    */
@@ -338,8 +356,8 @@ public interface InstanceGroupConfigOrBuilder
    *
    * <pre>
    * Specifies the minimum cpu platform for the Instance Group.
-   * See [Dataproc&amp;rarr;Minimum CPU Platform]
-   * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
+   * See [Dataproc -&gt; Minimum CPU
+   * Platform](https://cloud.google.com/dataproc/docs/concepts/compute/dataproc-min-cpu).
    * </pre>
    *
    * <code>string min_cpu_platform = 9;</code>
@@ -352,8 +370,8 @@ public interface InstanceGroupConfigOrBuilder
    *
    * <pre>
    * Specifies the minimum cpu platform for the Instance Group.
-   * See [Dataproc&amp;rarr;Minimum CPU Platform]
-   * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
+   * See [Dataproc -&gt; Minimum CPU
+   * Platform](https://cloud.google.com/dataproc/docs/concepts/compute/dataproc-min-cpu).
    * </pre>
    *
    * <code>string min_cpu_platform = 9;</code>

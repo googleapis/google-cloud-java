@@ -664,12 +664,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Contains cluster daemon metrics such as HDFS and YARN stats.
+   * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
    * **Beta Feature**: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the metrics field is set.
    */
@@ -680,12 +682,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Contains cluster daemon metrics such as HDFS and YARN stats.
+   * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
    * **Beta Feature**: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The metrics.
    */
@@ -698,12 +702,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Contains cluster daemon metrics such as HDFS and YARN stats.
+   * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
    * **Beta Feature**: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.ClusterMetricsOrBuilder getMetricsOrBuilder() {
     return getMetrics();
@@ -2576,12 +2582,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains cluster daemon metrics such as HDFS and YARN stats.
+     * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the metrics field is set.
      */
@@ -2592,12 +2600,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains cluster daemon metrics such as HDFS and YARN stats.
+     * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The metrics.
      */
@@ -2614,12 +2624,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains cluster daemon metrics such as HDFS and YARN stats.
+     * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setMetrics(com.google.cloud.dataproc.v1.ClusterMetrics value) {
       if (metricsBuilder_ == null) {
@@ -2638,12 +2650,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains cluster daemon metrics such as HDFS and YARN stats.
+     * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setMetrics(com.google.cloud.dataproc.v1.ClusterMetrics.Builder builderForValue) {
       if (metricsBuilder_ == null) {
@@ -2659,12 +2673,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains cluster daemon metrics such as HDFS and YARN stats.
+     * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeMetrics(com.google.cloud.dataproc.v1.ClusterMetrics value) {
       if (metricsBuilder_ == null) {
@@ -2687,12 +2703,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains cluster daemon metrics such as HDFS and YARN stats.
+     * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
@@ -2709,12 +2727,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains cluster daemon metrics such as HDFS and YARN stats.
+     * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterMetrics.Builder getMetricsBuilder() {
 
@@ -2725,12 +2745,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains cluster daemon metrics such as HDFS and YARN stats.
+     * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterMetricsOrBuilder getMetricsOrBuilder() {
       if (metricsBuilder_ != null) {
@@ -2745,12 +2767,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains cluster daemon metrics such as HDFS and YARN stats.
+     * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.ClusterMetrics,

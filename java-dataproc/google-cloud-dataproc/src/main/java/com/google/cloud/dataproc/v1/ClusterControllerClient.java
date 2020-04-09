@@ -677,7 +677,7 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all regions/{region}/clusters in a project.
+   * Lists all regions/{region}/clusters in a project alphabetically.
    *
    * <p>Sample code:
    *
@@ -704,7 +704,7 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all regions/{region}/clusters in a project.
+   * Lists all regions/{region}/clusters in a project alphabetically.
    *
    * <p>Sample code:
    *
@@ -751,7 +751,7 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all regions/{region}/clusters in a project.
+   * Lists all regions/{region}/clusters in a project alphabetically.
    *
    * <p>Sample code:
    *
@@ -778,7 +778,7 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all regions/{region}/clusters in a project.
+   * Lists all regions/{region}/clusters in a project alphabetically.
    *
    * <p>Sample code:
    *
@@ -805,7 +805,7 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all regions/{region}/clusters in a project.
+   * Lists all regions/{region}/clusters in a project alphabetically.
    *
    * <p>Sample code:
    *

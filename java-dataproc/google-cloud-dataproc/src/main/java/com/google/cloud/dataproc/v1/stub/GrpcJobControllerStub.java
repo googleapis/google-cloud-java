@@ -23,15 +23,19 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1.CancelJobRequest;
 import com.google.cloud.dataproc.v1.DeleteJobRequest;
 import com.google.cloud.dataproc.v1.GetJobRequest;
 import com.google.cloud.dataproc.v1.Job;
+import com.google.cloud.dataproc.v1.JobMetadata;
 import com.google.cloud.dataproc.v1.ListJobsRequest;
 import com.google.cloud.dataproc.v1.ListJobsResponse;
 import com.google.cloud.dataproc.v1.SubmitJobRequest;
 import com.google.cloud.dataproc.v1.UpdateJobRequest;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -92,8 +96,17 @@ public class GrpcJobControllerStub extends JobControllerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<SubmitJobRequest, Operation>
+      submitJobAsOperationMethodDescriptor =
+          MethodDescriptor.<SubmitJobRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataproc.v1.JobController/SubmitJobAsOperation")
+              .setRequestMarshaller(ProtoUtils.marshaller(SubmitJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<SubmitJobRequest, Job> submitJobCallable;
   private final UnaryCallable<GetJobRequest, Job> getJobCallable;
@@ -102,6 +115,9 @@ public class GrpcJobControllerStub extends JobControllerStub {
   private final UnaryCallable<UpdateJobRequest, Job> updateJobCallable;
   private final UnaryCallable<CancelJobRequest, Job> cancelJobCallable;
   private final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable;
+  private final UnaryCallable<SubmitJobRequest, Operation> submitJobAsOperationCallable;
+  private final OperationCallable<SubmitJobRequest, Job, JobMetadata>
+      submitJobAsOperationOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -141,6 +157,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<SubmitJobRequest, Job> submitJobTransportSettings =
         GrpcCallSettings.<SubmitJobRequest, Job>newBuilder()
@@ -166,6 +183,10 @@ public class GrpcJobControllerStub extends JobControllerStub {
         GrpcCallSettings.<DeleteJobRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteJobMethodDescriptor)
             .build();
+    GrpcCallSettings<SubmitJobRequest, Operation> submitJobAsOperationTransportSettings =
+        GrpcCallSettings.<SubmitJobRequest, Operation>newBuilder()
+            .setMethodDescriptor(submitJobAsOperationMethodDescriptor)
+            .build();
 
     this.submitJobCallable =
         callableFactory.createUnaryCallable(
@@ -188,8 +209,24 @@ public class GrpcJobControllerStub extends JobControllerStub {
     this.deleteJobCallable =
         callableFactory.createUnaryCallable(
             deleteJobTransportSettings, settings.deleteJobSettings(), clientContext);
+    this.submitJobAsOperationCallable =
+        callableFactory.createUnaryCallable(
+            submitJobAsOperationTransportSettings,
+            settings.submitJobAsOperationSettings(),
+            clientContext);
+    this.submitJobAsOperationOperationCallable =
+        callableFactory.createOperationCallable(
+            submitJobAsOperationTransportSettings,
+            settings.submitJobAsOperationOperationSettings(),
+            clientContext,
+            this.operationsStub);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<SubmitJobRequest, Job> submitJobCallable() {
@@ -218,6 +255,16 @@ public class GrpcJobControllerStub extends JobControllerStub {
 
   public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
     return deleteJobCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<SubmitJobRequest, Job, JobMetadata>
+      submitJobAsOperationOperationCallable() {
+    return submitJobAsOperationOperationCallable;
+  }
+
+  public UnaryCallable<SubmitJobRequest, Operation> submitJobAsOperationCallable() {
+    return submitJobAsOperationCallable;
   }
 
   @Override

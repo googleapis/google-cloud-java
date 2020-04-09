@@ -35,7 +35,7 @@ public interface ClusterConfigOrBuilder
    * Compute Engine zone where your cluster is deployed, and then create
    * and manage this project-level, per-location bucket (see
    * [Dataproc staging
-   * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+   * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -55,7 +55,7 @@ public interface ClusterConfigOrBuilder
    * Compute Engine zone where your cluster is deployed, and then create
    * and manage this project-level, per-location bucket (see
    * [Dataproc staging
-   * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+   * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -608,4 +608,54 @@ public interface ClusterConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1beta2.SecurityConfigOrBuilder getSecurityConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
+   * Setting this is considered mutually exclusive with Compute Engine-based
+   * options such as `gce_cluster_config`, `master_config`, `worker_config`,
+   * `secondary_worker_config`, and `autoscaling_config`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.GkeClusterConfig gke_cluster_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gkeClusterConfig field is set.
+   */
+  boolean hasGkeClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
+   * Setting this is considered mutually exclusive with Compute Engine-based
+   * options such as `gce_cluster_config`, `master_config`, `worker_config`,
+   * `secondary_worker_config`, and `autoscaling_config`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.GkeClusterConfig gke_cluster_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gkeClusterConfig.
+   */
+  com.google.cloud.dataproc.v1beta2.GkeClusterConfig getGkeClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
+   * Setting this is considered mutually exclusive with Compute Engine-based
+   * options such as `gce_cluster_config`, `master_config`, `worker_config`,
+   * `secondary_worker_config`, and `autoscaling_config`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.GkeClusterConfig gke_cluster_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1beta2.GkeClusterConfigOrBuilder getGkeClusterConfigOrBuilder();
 }

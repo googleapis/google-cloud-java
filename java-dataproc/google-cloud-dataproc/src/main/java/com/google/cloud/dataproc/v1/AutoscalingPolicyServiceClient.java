@@ -251,7 +251,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    *     has the following format: `projects/{project_id}/regions/{region}`
    *     <p>&#42; For `projects.locations.autoscalingPolicies.create`, the resource name of the
    *     location has the following format: `projects/{project_id}/locations/{location}`
-   * @param policy The autoscaling policy to create.
+   * @param policy Required. The autoscaling policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy createAutoscalingPolicy(
@@ -284,7 +284,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    *     has the following format: `projects/{project_id}/regions/{region}`
    *     <p>&#42; For `projects.locations.autoscalingPolicies.create`, the resource name of the
    *     location has the following format: `projects/{project_id}/locations/{location}`
-   * @param policy The autoscaling policy to create.
+   * @param policy Required. The autoscaling policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy createAutoscalingPolicy(
@@ -317,7 +317,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    *     has the following format: `projects/{project_id}/regions/{region}`
    *     <p>&#42; For `projects.locations.autoscalingPolicies.create`, the resource name of the
    *     location has the following format: `projects/{project_id}/locations/{location}`
-   * @param policy The autoscaling policy to create.
+   * @param policy Required. The autoscaling policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy createAutoscalingPolicy(String parent, AutoscalingPolicy policy) {
@@ -335,8 +335,10 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <pre><code>
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
    *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+   *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
    *   CreateAutoscalingPolicyRequest request = CreateAutoscalingPolicyRequest.newBuilder()
    *     .setParent(parent.toString())
+   *     .setPolicy(policy)
    *     .build();
    *   AutoscalingPolicy response = autoscalingPolicyServiceClient.createAutoscalingPolicy(request);
    * }
@@ -358,8 +360,10 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <pre><code>
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
    *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+   *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
    *   CreateAutoscalingPolicyRequest request = CreateAutoscalingPolicyRequest.newBuilder()
    *     .setParent(parent.toString())
+   *     .setPolicy(policy)
    *     .build();
    *   ApiFuture&lt;AutoscalingPolicy&gt; future = autoscalingPolicyServiceClient.createAutoscalingPolicyCallable().futureCall(request);
    *   // Do something

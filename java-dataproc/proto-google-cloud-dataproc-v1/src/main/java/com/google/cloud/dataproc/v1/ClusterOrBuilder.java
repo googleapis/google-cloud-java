@@ -337,12 +337,14 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Contains cluster daemon metrics such as HDFS and YARN stats.
+   * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
    * **Beta Feature**: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the metrics field is set.
    */
@@ -351,12 +353,14 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Contains cluster daemon metrics such as HDFS and YARN stats.
+   * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
    * **Beta Feature**: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The metrics.
    */
@@ -365,12 +369,14 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Contains cluster daemon metrics such as HDFS and YARN stats.
+   * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
    * **Beta Feature**: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ClusterMetricsOrBuilder getMetricsOrBuilder();
 }

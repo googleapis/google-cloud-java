@@ -70,10 +70,12 @@ public interface CreateAutoscalingPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The autoscaling policy to create.
+   * Required. The autoscaling policy to create.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.AutoscalingPolicy policy = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the policy field is set.
    */
@@ -82,10 +84,12 @@ public interface CreateAutoscalingPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The autoscaling policy to create.
+   * Required. The autoscaling policy to create.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.AutoscalingPolicy policy = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The policy.
    */
@@ -94,10 +98,12 @@ public interface CreateAutoscalingPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The autoscaling policy to create.
+   * Required. The autoscaling policy to create.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.AutoscalingPolicy policy = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1.AutoscalingPolicyOrBuilder getPolicyOrBuilder();
 }

@@ -324,6 +324,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
               typeJobCase_ = 23;
               break;
             }
+          case 192:
+            {
+              done_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1514,6 +1519,26 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DONE_FIELD_NUMBER = 24;
+  private boolean done_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the job is completed. If the value is `false`,
+   * the job is still in progress. If `true`, the job is completed, and
+   * `status.state` field will indicate if it was successful, failed,
+   * or cancelled.
+   * </pre>
+   *
+   * <code>bool done = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The done.
+   */
+  public boolean getDone() {
+    return done_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1580,6 +1605,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     if (typeJobCase_ == 23) {
       output.writeMessage(23, (com.google.cloud.dataproc.v1.PrestoJob) typeJob_);
+    }
+    if (done_ != false) {
+      output.writeBool(24, done_);
     }
     unknownFields.writeTo(output);
   }
@@ -1668,6 +1696,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               23, (com.google.cloud.dataproc.v1.PrestoJob) typeJob_);
     }
+    if (done_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, done_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1705,6 +1736,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (!getScheduling().equals(other.getScheduling())) return false;
     }
     if (!getJobUuid().equals(other.getJobUuid())) return false;
+    if (getDone() != other.getDone()) return false;
     if (!getTypeJobCase().equals(other.getTypeJobCase())) return false;
     switch (typeJobCase_) {
       case 3:
@@ -1779,6 +1811,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + JOB_UUID_FIELD_NUMBER;
     hash = (53 * hash) + getJobUuid().hashCode();
+    hash = (37 * hash) + DONE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDone());
     switch (typeJobCase_) {
       case 3:
         hash = (37 * hash) + HADOOP_JOB_FIELD_NUMBER;
@@ -2025,6 +2059,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       jobUuid_ = "";
 
+      done_ = false;
+
       typeJobCase_ = 0;
       typeJob_ = null;
       return this;
@@ -2153,6 +2189,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         result.scheduling_ = schedulingBuilder_.build();
       }
       result.jobUuid_ = jobUuid_;
+      result.done_ = done_;
       result.typeJobCase_ = typeJobCase_;
       onBuilt();
       return result;
@@ -2281,6 +2318,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (!other.getJobUuid().isEmpty()) {
         jobUuid_ = other.jobUuid_;
         onChanged();
+      }
+      if (other.getDone() != false) {
+        setDone(other.getDone());
       }
       switch (other.getTypeJobCase()) {
         case HADOOP_JOB:
@@ -6377,6 +6417,66 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       jobUuid_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean done_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the job is completed. If the value is `false`,
+     * the job is still in progress. If `true`, the job is completed, and
+     * `status.state` field will indicate if it was successful, failed,
+     * or cancelled.
+     * </pre>
+     *
+     * <code>bool done = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The done.
+     */
+    public boolean getDone() {
+      return done_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the job is completed. If the value is `false`,
+     * the job is still in progress. If `true`, the job is completed, and
+     * `status.state` field will indicate if it was successful, failed,
+     * or cancelled.
+     * </pre>
+     *
+     * <code>bool done = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The done to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDone(boolean value) {
+
+      done_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the job is completed. If the value is `false`,
+     * the job is still in progress. If `true`, the job is completed, and
+     * `status.state` field will indicate if it was successful, failed,
+     * or cancelled.
+     * </pre>
+     *
+     * <code>bool done = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDone() {
+
+      done_ = false;
       onChanged();
       return this;
     }

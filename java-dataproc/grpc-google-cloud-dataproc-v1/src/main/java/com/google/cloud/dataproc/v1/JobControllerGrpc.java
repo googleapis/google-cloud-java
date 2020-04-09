@@ -81,6 +81,50 @@ public final class JobControllerGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataproc.v1.SubmitJobRequest, com.google.longrunning.Operation>
+      getSubmitJobAsOperationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SubmitJobAsOperation",
+      requestType = com.google.cloud.dataproc.v1.SubmitJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataproc.v1.SubmitJobRequest, com.google.longrunning.Operation>
+      getSubmitJobAsOperationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataproc.v1.SubmitJobRequest, com.google.longrunning.Operation>
+        getSubmitJobAsOperationMethod;
+    if ((getSubmitJobAsOperationMethod = JobControllerGrpc.getSubmitJobAsOperationMethod) == null) {
+      synchronized (JobControllerGrpc.class) {
+        if ((getSubmitJobAsOperationMethod = JobControllerGrpc.getSubmitJobAsOperationMethod)
+            == null) {
+          JobControllerGrpc.getSubmitJobAsOperationMethod =
+              getSubmitJobAsOperationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataproc.v1.SubmitJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SubmitJobAsOperation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataproc.v1.SubmitJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobControllerMethodDescriptorSupplier("SubmitJobAsOperation"))
+                      .build();
+        }
+      }
+    }
+    return getSubmitJobAsOperationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.GetJobRequest, com.google.cloud.dataproc.v1.Job>
       getGetJobMethod;
 
@@ -354,6 +398,19 @@ public final class JobControllerGrpc {
      *
      *
      * <pre>
+     * Submits job to a cluster.
+     * </pre>
+     */
+    public void submitJobAsOperation(
+        com.google.cloud.dataproc.v1.SubmitJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getSubmitJobAsOperationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the resource representation for a job in a project.
      * </pre>
      */
@@ -431,6 +488,12 @@ public final class JobControllerGrpc {
                       com.google.cloud.dataproc.v1.SubmitJobRequest,
                       com.google.cloud.dataproc.v1.Job>(this, METHODID_SUBMIT_JOB)))
           .addMethod(
+              getSubmitJobAsOperationMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dataproc.v1.SubmitJobRequest,
+                      com.google.longrunning.Operation>(this, METHODID_SUBMIT_JOB_AS_OPERATION)))
+          .addMethod(
               getGetJobMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -494,6 +557,22 @@ public final class JobControllerGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.Job> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSubmitJobMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits job to a cluster.
+     * </pre>
+     */
+    public void submitJobAsOperation(
+        com.google.cloud.dataproc.v1.SubmitJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSubmitJobAsOperationMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -608,6 +687,19 @@ public final class JobControllerGrpc {
      *
      *
      * <pre>
+     * Submits job to a cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation submitJobAsOperation(
+        com.google.cloud.dataproc.v1.SubmitJobRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSubmitJobAsOperationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the resource representation for a job in a project.
      * </pre>
      */
@@ -705,6 +797,19 @@ public final class JobControllerGrpc {
      *
      *
      * <pre>
+     * Submits job to a cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        submitJobAsOperation(com.google.cloud.dataproc.v1.SubmitJobRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSubmitJobAsOperationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the resource representation for a job in a project.
      * </pre>
      */
@@ -769,11 +874,12 @@ public final class JobControllerGrpc {
   }
 
   private static final int METHODID_SUBMIT_JOB = 0;
-  private static final int METHODID_GET_JOB = 1;
-  private static final int METHODID_LIST_JOBS = 2;
-  private static final int METHODID_UPDATE_JOB = 3;
-  private static final int METHODID_CANCEL_JOB = 4;
-  private static final int METHODID_DELETE_JOB = 5;
+  private static final int METHODID_SUBMIT_JOB_AS_OPERATION = 1;
+  private static final int METHODID_GET_JOB = 2;
+  private static final int METHODID_LIST_JOBS = 3;
+  private static final int METHODID_UPDATE_JOB = 4;
+  private static final int METHODID_CANCEL_JOB = 5;
+  private static final int METHODID_DELETE_JOB = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -796,6 +902,11 @@ public final class JobControllerGrpc {
           serviceImpl.submitJob(
               (com.google.cloud.dataproc.v1.SubmitJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.Job>) responseObserver);
+          break;
+        case METHODID_SUBMIT_JOB_AS_OPERATION:
+          serviceImpl.submitJobAsOperation(
+              (com.google.cloud.dataproc.v1.SubmitJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_JOB:
           serviceImpl.getJob(
@@ -888,6 +999,7 @@ public final class JobControllerGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new JobControllerFileDescriptorSupplier())
                       .addMethod(getSubmitJobMethod())
+                      .addMethod(getSubmitJobAsOperationMethod())
                       .addMethod(getGetJobMethod())
                       .addMethod(getListJobsMethod())
                       .addMethod(getUpdateJobMethod())

@@ -175,10 +175,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The version of software inside the cluster. It must be one of the
    * supported [Dataproc
-   * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+   * Versions](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
    * such as "1.2" (including a subminor version, such as "1.2.29"), or the
    * ["preview"
-   * version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+   * version](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
    * If unspecified, it defaults to the latest Debian version.
    * </pre>
    *
@@ -203,10 +203,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The version of software inside the cluster. It must be one of the
    * supported [Dataproc
-   * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+   * Versions](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
    * such as "1.2" (including a subminor version, such as "1.2.29"), or the
    * ["preview"
-   * version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+   * version](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
    * If unspecified, it defaults to the latest Debian version.
    * </pre>
    *
@@ -268,8 +268,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * * pig:    `pig.properties`
    * * spark:  `spark-defaults.conf`
    * * yarn:   `yarn-site.xml`
-   * For more information, see
-   * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
+   * For more information, see [Cluster
+   * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -303,8 +303,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * * pig:    `pig.properties`
    * * spark:  `spark-defaults.conf`
    * * yarn:   `yarn-site.xml`
-   * For more information, see
-   * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
+   * For more information, see [Cluster
+   * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -330,8 +330,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * * pig:    `pig.properties`
    * * spark:  `spark-defaults.conf`
    * * yarn:   `yarn-site.xml`
-   * For more information, see
-   * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
+   * For more information, see [Cluster
+   * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -362,8 +362,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * * pig:    `pig.properties`
    * * spark:  `spark-defaults.conf`
    * * yarn:   `yarn-site.xml`
-   * For more information, see
-   * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
+   * For more information, see [Cluster
+   * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -884,10 +884,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The version of software inside the cluster. It must be one of the
      * supported [Dataproc
-     * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+     * Versions](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
      * such as "1.2" (including a subminor version, such as "1.2.29"), or the
      * ["preview"
-     * version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+     * version](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
@@ -912,10 +912,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The version of software inside the cluster. It must be one of the
      * supported [Dataproc
-     * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+     * Versions](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
      * such as "1.2" (including a subminor version, such as "1.2.29"), or the
      * ["preview"
-     * version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+     * version](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
@@ -940,10 +940,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The version of software inside the cluster. It must be one of the
      * supported [Dataproc
-     * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+     * Versions](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
      * such as "1.2" (including a subminor version, such as "1.2.29"), or the
      * ["preview"
-     * version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+     * version](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
@@ -967,10 +967,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The version of software inside the cluster. It must be one of the
      * supported [Dataproc
-     * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+     * Versions](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
      * such as "1.2" (including a subminor version, such as "1.2.29"), or the
      * ["preview"
-     * version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+     * version](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
@@ -990,10 +990,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The version of software inside the cluster. It must be one of the
      * supported [Dataproc
-     * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+     * Versions](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
      * such as "1.2" (including a subminor version, such as "1.2.29"), or the
      * ["preview"
-     * version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+     * version](https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
@@ -1058,8 +1058,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
-     * For more information, see
-     * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
+     * For more information, see [Cluster
+     * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1093,8 +1093,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
-     * For more information, see
-     * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
+     * For more information, see [Cluster
+     * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1120,8 +1120,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
-     * For more information, see
-     * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
+     * For more information, see [Cluster
+     * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1152,8 +1152,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
-     * For more information, see
-     * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
+     * For more information, see [Cluster
+     * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1191,8 +1191,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
-     * For more information, see
-     * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
+     * For more information, see [Cluster
+     * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1227,8 +1227,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
-     * For more information, see
-     * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
+     * For more information, see [Cluster
+     * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1261,8 +1261,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
-     * For more information, see
-     * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
+     * For more information, see [Cluster
+     * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];

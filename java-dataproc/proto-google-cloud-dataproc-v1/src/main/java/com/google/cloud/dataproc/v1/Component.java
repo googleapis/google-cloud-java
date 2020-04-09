@@ -72,12 +72,32 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * The Presto query engine.
+   * </pre>
+   *
+   * <code>PRESTO = 6;</code>
+   */
+  PRESTO(6),
+  /**
+   *
+   *
+   * <pre>
    * The Zeppelin notebook.
    * </pre>
    *
    * <code>ZEPPELIN = 4;</code>
    */
   ZEPPELIN(4),
+  /**
+   *
+   *
+   * <pre>
+   * The Zookeeper service.
+   * </pre>
+   *
+   * <code>ZOOKEEPER = 8;</code>
+   */
+  ZOOKEEPER(8),
   UNRECOGNIZED(-1),
   ;
 
@@ -125,12 +145,32 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * The Presto query engine.
+   * </pre>
+   *
+   * <code>PRESTO = 6;</code>
+   */
+  public static final int PRESTO_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
    * The Zeppelin notebook.
    * </pre>
    *
    * <code>ZEPPELIN = 4;</code>
    */
   public static final int ZEPPELIN_VALUE = 4;
+  /**
+   *
+   *
+   * <pre>
+   * The Zookeeper service.
+   * </pre>
+   *
+   * <code>ZOOKEEPER = 8;</code>
+   */
+  public static final int ZOOKEEPER_VALUE = 8;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -164,8 +204,12 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
         return HIVE_WEBHCAT;
       case 1:
         return JUPYTER;
+      case 6:
+        return PRESTO;
       case 4:
         return ZEPPELIN;
+      case 8:
+        return ZOOKEEPER;
       default:
         return null;
     }

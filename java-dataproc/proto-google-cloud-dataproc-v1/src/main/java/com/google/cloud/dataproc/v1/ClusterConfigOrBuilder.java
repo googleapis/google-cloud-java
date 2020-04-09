@@ -35,7 +35,7 @@ public interface ClusterConfigOrBuilder
    * Compute Engine zone where your cluster is deployed, and then create
    * and manage this project-level, per-location bucket (see
    * [Dataproc staging
-   * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+   * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -55,7 +55,7 @@ public interface ClusterConfigOrBuilder
    * Compute Engine zone where your cluster is deployed, and then create
    * and manage this project-level, per-location bucket (see
    * [Dataproc staging
-   * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+   * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

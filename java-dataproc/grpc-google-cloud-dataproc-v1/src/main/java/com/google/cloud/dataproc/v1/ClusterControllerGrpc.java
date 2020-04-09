@@ -414,7 +414,7 @@ public final class ClusterControllerGrpc {
      *
      *
      * <pre>
-     * Lists all regions/{region}/clusters in a project.
+     * Lists all regions/{region}/clusters in a project alphabetically.
      * </pre>
      */
     public void listClusters(
@@ -579,7 +579,7 @@ public final class ClusterControllerGrpc {
      *
      *
      * <pre>
-     * Lists all regions/{region}/clusters in a project.
+     * Lists all regions/{region}/clusters in a project alphabetically.
      * </pre>
      */
     public void listClusters(
@@ -694,7 +694,7 @@ public final class ClusterControllerGrpc {
      *
      *
      * <pre>
-     * Lists all regions/{region}/clusters in a project.
+     * Lists all regions/{region}/clusters in a project alphabetically.
      * </pre>
      */
     public com.google.cloud.dataproc.v1.ListClustersResponse listClusters(
@@ -803,7 +803,7 @@ public final class ClusterControllerGrpc {
      *
      *
      * <pre>
-     * Lists all regions/{region}/clusters in a project.
+     * Lists all regions/{region}/clusters in a project alphabetically.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

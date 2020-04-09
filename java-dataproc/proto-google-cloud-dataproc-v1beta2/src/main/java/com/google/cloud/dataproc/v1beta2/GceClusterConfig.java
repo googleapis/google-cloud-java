@@ -286,7 +286,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * communications. Cannot be specified with subnetwork_uri. If neither
    * `network_uri` nor `subnetwork_uri` is specified, the "default" network of
    * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
-   * [Using Subnetworks](/compute/docs/subnetworks) for more information).
+   * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
+   * more information).
    * A full URL, partial URI, or short name are valid. Examples:
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/global/default`
    * * `projects/[project_id]/regions/global/default`
@@ -316,7 +317,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * communications. Cannot be specified with subnetwork_uri. If neither
    * `network_uri` nor `subnetwork_uri` is specified, the "default" network of
    * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
-   * [Using Subnetworks](/compute/docs/subnetworks) for more information).
+   * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
+   * more information).
    * A full URL, partial URI, or short name are valid. Examples:
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/global/default`
    * * `projects/[project_id]/regions/global/default`
@@ -425,14 +427,14 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The [Dataproc service
-   * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+   * account](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
    * (also see [VM Data Plane
-   * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+   * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
    * used by Dataproc cluster VM instances to access Google Cloud Platform
    * services.
    * If not specified, the
    * [Compute Engine default service
-   * account](/compute/docs/access/service-accounts#default_service_account)
+   * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
    * is used.
    * </pre>
    *
@@ -456,14 +458,14 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The [Dataproc service
-   * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+   * account](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
    * (also see [VM Data Plane
-   * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+   * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
    * used by Dataproc cluster VM instances to access Google Cloud Platform
    * services.
    * If not specified, the
    * [Compute Engine default service
-   * account](/compute/docs/access/service-accounts#default_service_account)
+   * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
    * is used.
    * </pre>
    *
@@ -594,8 +596,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Compute Engine tags to add to all instances (see
-   * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
+   * The Compute Engine tags to add to all instances (see [Tagging
+   * instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
    * </pre>
    *
    * <code>repeated string tags = 4;</code>
@@ -609,8 +611,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Compute Engine tags to add to all instances (see
-   * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
+   * The Compute Engine tags to add to all instances (see [Tagging
+   * instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
    * </pre>
    *
    * <code>repeated string tags = 4;</code>
@@ -624,8 +626,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Compute Engine tags to add to all instances (see
-   * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
+   * The Compute Engine tags to add to all instances (see [Tagging
+   * instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
    * </pre>
    *
    * <code>repeated string tags = 4;</code>
@@ -640,8 +642,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Compute Engine tags to add to all instances (see
-   * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
+   * The Compute Engine tags to add to all instances (see [Tagging
+   * instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
    * </pre>
    *
    * <code>repeated string tags = 4;</code>
@@ -1484,7 +1486,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * communications. Cannot be specified with subnetwork_uri. If neither
      * `network_uri` nor `subnetwork_uri` is specified, the "default" network of
      * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
-     * [Using Subnetworks](/compute/docs/subnetworks) for more information).
+     * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
+     * more information).
      * A full URL, partial URI, or short name are valid. Examples:
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/global/default`
      * * `projects/[project_id]/regions/global/default`
@@ -1514,7 +1517,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * communications. Cannot be specified with subnetwork_uri. If neither
      * `network_uri` nor `subnetwork_uri` is specified, the "default" network of
      * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
-     * [Using Subnetworks](/compute/docs/subnetworks) for more information).
+     * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
+     * more information).
      * A full URL, partial URI, or short name are valid. Examples:
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/global/default`
      * * `projects/[project_id]/regions/global/default`
@@ -1544,7 +1548,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * communications. Cannot be specified with subnetwork_uri. If neither
      * `network_uri` nor `subnetwork_uri` is specified, the "default" network of
      * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
-     * [Using Subnetworks](/compute/docs/subnetworks) for more information).
+     * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
+     * more information).
      * A full URL, partial URI, or short name are valid. Examples:
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/global/default`
      * * `projects/[project_id]/regions/global/default`
@@ -1573,7 +1578,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * communications. Cannot be specified with subnetwork_uri. If neither
      * `network_uri` nor `subnetwork_uri` is specified, the "default" network of
      * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
-     * [Using Subnetworks](/compute/docs/subnetworks) for more information).
+     * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
+     * more information).
      * A full URL, partial URI, or short name are valid. Examples:
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/global/default`
      * * `projects/[project_id]/regions/global/default`
@@ -1598,7 +1604,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * communications. Cannot be specified with subnetwork_uri. If neither
      * `network_uri` nor `subnetwork_uri` is specified, the "default" network of
      * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
-     * [Using Subnetworks](/compute/docs/subnetworks) for more information).
+     * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
+     * more information).
      * A full URL, partial URI, or short name are valid. Examples:
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/global/default`
      * * `projects/[project_id]/regions/global/default`
@@ -1824,14 +1831,14 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The [Dataproc service
-     * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+     * account](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
      * (also see [VM Data Plane
-     * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+     * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
      * used by Dataproc cluster VM instances to access Google Cloud Platform
      * services.
      * If not specified, the
      * [Compute Engine default service
-     * account](/compute/docs/access/service-accounts#default_service_account)
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
      * </pre>
      *
@@ -1855,14 +1862,14 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The [Dataproc service
-     * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+     * account](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
      * (also see [VM Data Plane
-     * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+     * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
      * used by Dataproc cluster VM instances to access Google Cloud Platform
      * services.
      * If not specified, the
      * [Compute Engine default service
-     * account](/compute/docs/access/service-accounts#default_service_account)
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
      * </pre>
      *
@@ -1886,14 +1893,14 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The [Dataproc service
-     * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+     * account](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
      * (also see [VM Data Plane
-     * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+     * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
      * used by Dataproc cluster VM instances to access Google Cloud Platform
      * services.
      * If not specified, the
      * [Compute Engine default service
-     * account](/compute/docs/access/service-accounts#default_service_account)
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
      * </pre>
      *
@@ -1916,14 +1923,14 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The [Dataproc service
-     * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+     * account](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
      * (also see [VM Data Plane
-     * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+     * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
      * used by Dataproc cluster VM instances to access Google Cloud Platform
      * services.
      * If not specified, the
      * [Compute Engine default service
-     * account](/compute/docs/access/service-accounts#default_service_account)
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
      * </pre>
      *
@@ -1942,14 +1949,14 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The [Dataproc service
-     * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+     * account](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
      * (also see [VM Data Plane
-     * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+     * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
      * used by Dataproc cluster VM instances to access Google Cloud Platform
      * services.
      * If not specified, the
      * [Compute Engine default service
-     * account](/compute/docs/access/service-accounts#default_service_account)
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
      * </pre>
      *
@@ -2249,8 +2256,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine tags to add to all instances (see
-     * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
+     * The Compute Engine tags to add to all instances (see [Tagging
+     * instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
@@ -2264,8 +2271,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine tags to add to all instances (see
-     * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
+     * The Compute Engine tags to add to all instances (see [Tagging
+     * instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
@@ -2279,8 +2286,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine tags to add to all instances (see
-     * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
+     * The Compute Engine tags to add to all instances (see [Tagging
+     * instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
@@ -2295,8 +2302,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine tags to add to all instances (see
-     * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
+     * The Compute Engine tags to add to all instances (see [Tagging
+     * instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
@@ -2311,8 +2318,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine tags to add to all instances (see
-     * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
+     * The Compute Engine tags to add to all instances (see [Tagging
+     * instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
@@ -2334,8 +2341,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine tags to add to all instances (see
-     * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
+     * The Compute Engine tags to add to all instances (see [Tagging
+     * instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
@@ -2356,8 +2363,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine tags to add to all instances (see
-     * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
+     * The Compute Engine tags to add to all instances (see [Tagging
+     * instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
@@ -2375,8 +2382,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine tags to add to all instances (see
-     * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
+     * The Compute Engine tags to add to all instances (see [Tagging
+     * instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
@@ -2393,8 +2400,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine tags to add to all instances (see
-     * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
+     * The Compute Engine tags to add to all instances (see [Tagging
+     * instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
      * </pre>
      *
      * <code>repeated string tags = 4;</code>

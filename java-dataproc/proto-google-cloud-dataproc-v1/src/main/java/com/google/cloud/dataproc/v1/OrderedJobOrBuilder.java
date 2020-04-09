@@ -140,6 +140,41 @@ public interface OrderedJobOrBuilder
   com.google.cloud.dataproc.v1.PigJobOrBuilder getPigJobOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Spark R job
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.SparkRJob spark_r_job = 11;</code>
+   *
+   * @return Whether the sparkRJob field is set.
+   */
+  boolean hasSparkRJob();
+  /**
+   *
+   *
+   * <pre>
+   * Spark R job
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.SparkRJob spark_r_job = 11;</code>
+   *
+   * @return The sparkRJob.
+   */
+  com.google.cloud.dataproc.v1.SparkRJob getSparkRJob();
+  /**
+   *
+   *
+   * <pre>
+   * Spark R job
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.SparkRJob spark_r_job = 11;</code>
+   */
+  com.google.cloud.dataproc.v1.SparkRJobOrBuilder getSparkRJobOrBuilder();
+
+  /**
    * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 7;</code>
    *
    * @return Whether the sparkSqlJob field is set.
@@ -153,6 +188,41 @@ public interface OrderedJobOrBuilder
   com.google.cloud.dataproc.v1.SparkSqlJob getSparkSqlJob();
   /** <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 7;</code> */
   com.google.cloud.dataproc.v1.SparkSqlJobOrBuilder getSparkSqlJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Presto job
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.PrestoJob presto_job = 12;</code>
+   *
+   * @return Whether the prestoJob field is set.
+   */
+  boolean hasPrestoJob();
+  /**
+   *
+   *
+   * <pre>
+   * Presto job
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.PrestoJob presto_job = 12;</code>
+   *
+   * @return The prestoJob.
+   */
+  com.google.cloud.dataproc.v1.PrestoJob getPrestoJob();
+  /**
+   *
+   *
+   * <pre>
+   * Presto job
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.PrestoJob presto_job = 12;</code>
+   */
+  com.google.cloud.dataproc.v1.PrestoJobOrBuilder getPrestoJobOrBuilder();
 
   /**
    *

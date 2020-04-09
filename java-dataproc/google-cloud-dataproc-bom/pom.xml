@@ -11,7 +11,7 @@
     <version>0.5.0</version>
   </parent>
 
-  <name>Google Cloud dataproc BOM</name>
+  <name>Google Cloud Dataproc BOM</name>
   <url>https://github.com/googleapis/java-dataproc</url>
   <description>
     BOM for Google Cloud Dataproc

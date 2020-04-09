@@ -37,12 +37,13 @@ public final class SharedProto {
     java.lang.String[] descriptorData = {
       "\n%google/cloud/dataproc/v1/shared.proto\022"
           + "\030google.cloud.dataproc.v1\032\034google/api/an"
-          + "notations.proto*a\n\tComponent\022\031\n\025COMPONEN"
+          + "notations.proto*|\n\tComponent\022\031\n\025COMPONEN"
           + "T_UNSPECIFIED\020\000\022\014\n\010ANACONDA\020\005\022\020\n\014HIVE_WE"
-          + "BHCAT\020\003\022\013\n\007JUPYTER\020\001\022\014\n\010ZEPPELIN\020\004Bo\n\034co"
-          + "m.google.cloud.dataproc.v1B\013SharedProtoP"
-          + "\001Z@google.golang.org/genproto/googleapis"
-          + "/cloud/dataproc/v1;dataprocb\006proto3"
+          + "BHCAT\020\003\022\013\n\007JUPYTER\020\001\022\n\n\006PRESTO\020\006\022\014\n\010ZEPP"
+          + "ELIN\020\004\022\r\n\tZOOKEEPER\020\010Bo\n\034com.google.clou"
+          + "d.dataproc.v1B\013SharedProtoP\001Z@google.gol"
+          + "ang.org/genproto/googleapis/cloud/datapr"
+          + "oc/v1;dataprocb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

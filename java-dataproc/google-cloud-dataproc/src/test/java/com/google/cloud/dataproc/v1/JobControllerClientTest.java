@@ -24,8 +24,11 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import io.grpc.Status;
@@ -34,6 +37,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -96,11 +100,13 @@ public class JobControllerClientTest {
     String driverOutputResourceUri = "driverOutputResourceUri-542229086";
     String driverControlFilesUri = "driverControlFilesUri207057643";
     String jobUuid = "jobUuid-1615012099";
+    boolean done = true;
     Job expectedResponse =
         Job.newBuilder()
             .setDriverOutputResourceUri(driverOutputResourceUri)
             .setDriverControlFilesUri(driverControlFilesUri)
             .setJobUuid(jobUuid)
+            .setDone(done)
             .build();
     mockJobController.addResponse(expectedResponse);
 
@@ -148,11 +154,13 @@ public class JobControllerClientTest {
     String driverOutputResourceUri = "driverOutputResourceUri-542229086";
     String driverControlFilesUri = "driverControlFilesUri207057643";
     String jobUuid = "jobUuid-1615012099";
+    boolean done = true;
     Job expectedResponse =
         Job.newBuilder()
             .setDriverOutputResourceUri(driverOutputResourceUri)
             .setDriverControlFilesUri(driverControlFilesUri)
             .setJobUuid(jobUuid)
+            .setDone(done)
             .build();
     mockJobController.addResponse(expectedResponse);
 
@@ -296,11 +304,13 @@ public class JobControllerClientTest {
     String driverOutputResourceUri = "driverOutputResourceUri-542229086";
     String driverControlFilesUri = "driverControlFilesUri207057643";
     String jobUuid = "jobUuid-1615012099";
+    boolean done = true;
     Job expectedResponse =
         Job.newBuilder()
             .setDriverOutputResourceUri(driverOutputResourceUri)
             .setDriverControlFilesUri(driverControlFilesUri)
             .setJobUuid(jobUuid)
+            .setDone(done)
             .build();
     mockJobController.addResponse(expectedResponse);
 
@@ -370,11 +380,13 @@ public class JobControllerClientTest {
     String driverOutputResourceUri = "driverOutputResourceUri-542229086";
     String driverControlFilesUri = "driverControlFilesUri207057643";
     String jobUuid = "jobUuid-1615012099";
+    boolean done = true;
     Job expectedResponse =
         Job.newBuilder()
             .setDriverOutputResourceUri(driverOutputResourceUri)
             .setDriverControlFilesUri(driverControlFilesUri)
             .setJobUuid(jobUuid)
+            .setDone(done)
             .build();
     mockJobController.addResponse(expectedResponse);
 
@@ -456,6 +468,68 @@ public class JobControllerClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void submitJobAsOperationTest() throws Exception {
+    String driverOutputResourceUri = "driverOutputResourceUri-542229086";
+    String driverControlFilesUri = "driverControlFilesUri207057643";
+    String jobUuid = "jobUuid-1615012099";
+    boolean done = true;
+    Job expectedResponse =
+        Job.newBuilder()
+            .setDriverOutputResourceUri(driverOutputResourceUri)
+            .setDriverControlFilesUri(driverControlFilesUri)
+            .setJobUuid(jobUuid)
+            .setDone(done)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("submitJobAsOperationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockJobController.addResponse(resultOperation);
+
+    String projectId = "projectId-1969970175";
+    String region = "region-934795532";
+    Job job = Job.newBuilder().build();
+
+    Job actualResponse = client.submitJobAsOperationAsync(projectId, region, job).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobController.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SubmitJobRequest actualRequest = (SubmitJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(region, actualRequest.getRegion());
+    Assert.assertEquals(job, actualRequest.getJob());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void submitJobAsOperationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockJobController.addException(exception);
+
+    try {
+      String projectId = "projectId-1969970175";
+      String region = "region-934795532";
+      Job job = Job.newBuilder().build();
+
+      client.submitJobAsOperationAsync(projectId, region, job).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

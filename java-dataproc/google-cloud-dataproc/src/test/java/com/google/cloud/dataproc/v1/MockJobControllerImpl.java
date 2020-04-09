@@ -17,6 +17,7 @@ package com.google.cloud.dataproc.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.dataproc.v1.JobControllerGrpc.JobControllerImplBase;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
@@ -63,6 +64,21 @@ public class MockJobControllerImpl extends JobControllerImplBase {
     if (response instanceof Job) {
       requests.add(request);
       responseObserver.onNext((Job) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void submitJobAsOperation(
+      SubmitJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext((Operation) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

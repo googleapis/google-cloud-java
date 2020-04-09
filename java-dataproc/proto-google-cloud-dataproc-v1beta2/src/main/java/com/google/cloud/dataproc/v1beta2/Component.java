@@ -52,12 +52,32 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Docker
+   * </pre>
+   *
+   * <code>DOCKER = 13;</code>
+   */
+  DOCKER(13),
+  /**
+   *
+   *
+   * <pre>
    * The Druid query engine.
    * </pre>
    *
    * <code>DRUID = 9;</code>
    */
   DRUID(9),
+  /**
+   *
+   *
+   * <pre>
+   * Flink
+   * </pre>
+   *
+   * <code>FLINK = 14;</code>
+   */
+  FLINK(14),
   /**
    *
    *
@@ -98,6 +118,26 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRESTO = 6;</code>
    */
   PRESTO(6),
+  /**
+   *
+   *
+   * <pre>
+   * The Ranger service.
+   * </pre>
+   *
+   * <code>RANGER = 12;</code>
+   */
+  RANGER(12),
+  /**
+   *
+   *
+   * <pre>
+   * The Solr service.
+   * </pre>
+   *
+   * <code>SOLR = 10;</code>
+   */
+  SOLR(10),
   /**
    *
    *
@@ -145,12 +185,32 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Docker
+   * </pre>
+   *
+   * <code>DOCKER = 13;</code>
+   */
+  public static final int DOCKER_VALUE = 13;
+  /**
+   *
+   *
+   * <pre>
    * The Druid query engine.
    * </pre>
    *
    * <code>DRUID = 9;</code>
    */
   public static final int DRUID_VALUE = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Flink
+   * </pre>
+   *
+   * <code>FLINK = 14;</code>
+   */
+  public static final int FLINK_VALUE = 14;
   /**
    *
    *
@@ -191,6 +251,26 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRESTO = 6;</code>
    */
   public static final int PRESTO_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
+   * The Ranger service.
+   * </pre>
+   *
+   * <code>RANGER = 12;</code>
+   */
+  public static final int RANGER_VALUE = 12;
+  /**
+   *
+   *
+   * <pre>
+   * The Solr service.
+   * </pre>
+   *
+   * <code>SOLR = 10;</code>
+   */
+  public static final int SOLR_VALUE = 10;
   /**
    *
    *
@@ -240,8 +320,12 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
         return COMPONENT_UNSPECIFIED;
       case 5:
         return ANACONDA;
+      case 13:
+        return DOCKER;
       case 9:
         return DRUID;
+      case 14:
+        return FLINK;
       case 3:
         return HIVE_WEBHCAT;
       case 1:
@@ -250,6 +334,10 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
         return KERBEROS;
       case 6:
         return PRESTO;
+      case 12:
+        return RANGER;
+      case 10:
+        return SOLR;
       case 4:
         return ZEPPELIN;
       case 8:
