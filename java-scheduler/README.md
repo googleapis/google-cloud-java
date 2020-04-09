@@ -32,8 +32,6 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 
 ```
 
-[//]: # ({x-version-update-start:google-cloud-scheduler:released})
-
 If you are using Maven without BOM, add this to your dependencies:
 
 ```xml
@@ -44,6 +42,8 @@ If you are using Maven without BOM, add this to your dependencies:
 </dependency>
 
 ```
+
+[//]: # ({x-version-update-start:google-cloud-scheduler:released})
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
