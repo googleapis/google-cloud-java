@@ -1,4 +1,4 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-compute:0.117.0-alpha:0.117.1-alpha-SNAPSHOT
+google-cloud-compute:0.118.0-alpha:0.118.0-alpha
