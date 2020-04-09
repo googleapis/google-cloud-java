@@ -121,7 +121,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
    * creating a CustomInfoType, or one of the names listed
    * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
    * a built-in type. InfoType names should conform to the pattern
-   * [a-zA-Z0-9_]{1,64}.
+   * `[a-zA-Z0-9_]{1,64}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -147,7 +147,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
    * creating a CustomInfoType, or one of the names listed
    * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
    * a built-in type. InfoType names should conform to the pattern
-   * [a-zA-Z0-9_]{1,64}.
+   * `[a-zA-Z0-9_]{1,64}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -488,7 +488,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
      * a built-in type. InfoType names should conform to the pattern
-     * [a-zA-Z0-9_]{1,64}.
+     * `[a-zA-Z0-9_]{1,64}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -514,7 +514,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
      * a built-in type. InfoType names should conform to the pattern
-     * [a-zA-Z0-9_]{1,64}.
+     * `[a-zA-Z0-9_]{1,64}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -540,7 +540,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
      * a built-in type. InfoType names should conform to the pattern
-     * [a-zA-Z0-9_]{1,64}.
+     * `[a-zA-Z0-9_]{1,64}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -565,7 +565,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
      * a built-in type. InfoType names should conform to the pattern
-     * [a-zA-Z0-9_]{1,64}.
+     * `[a-zA-Z0-9_]{1,64}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -586,7 +586,7 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
      * a built-in type. InfoType names should conform to the pattern
-     * [a-zA-Z0-9_]{1,64}.
+     * `[a-zA-Z0-9_]{1,64}`.
      * </pre>
      *
      * <code>string name = 1;</code>

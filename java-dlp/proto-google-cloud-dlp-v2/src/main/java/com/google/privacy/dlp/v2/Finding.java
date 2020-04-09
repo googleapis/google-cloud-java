@@ -708,12 +708,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The labels associated with this `InspectFinding`.
    * Label keys must be between 1 and 63 characters long and must conform
-   * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+   * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
    * Label values must be between 0 and 63 characters long and must conform
-   * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+   * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
    * No more than 10 labels can be associated with a given finding.
-   * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
-   * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+   * Examples:
+   * * `"environment" : "production"`
+   * * `"pipeline" : "etl"`
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -735,12 +736,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The labels associated with this `InspectFinding`.
    * Label keys must be between 1 and 63 characters long and must conform
-   * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+   * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
    * Label values must be between 0 and 63 characters long and must conform
-   * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+   * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
    * No more than 10 labels can be associated with a given finding.
-   * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
-   * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+   * Examples:
+   * * `"environment" : "production"`
+   * * `"pipeline" : "etl"`
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -754,12 +756,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The labels associated with this `InspectFinding`.
    * Label keys must be between 1 and 63 characters long and must conform
-   * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+   * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
    * Label values must be between 0 and 63 characters long and must conform
-   * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+   * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
    * No more than 10 labels can be associated with a given finding.
-   * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
-   * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+   * Examples:
+   * * `"environment" : "production"`
+   * * `"pipeline" : "etl"`
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -777,12 +780,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The labels associated with this `InspectFinding`.
    * Label keys must be between 1 and 63 characters long and must conform
-   * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+   * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
    * Label values must be between 0 and 63 characters long and must conform
-   * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+   * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
    * No more than 10 labels can be associated with a given finding.
-   * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
-   * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+   * Examples:
+   * * `"environment" : "production"`
+   * * `"pipeline" : "etl"`
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -2832,12 +2836,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The labels associated with this `InspectFinding`.
      * Label keys must be between 1 and 63 characters long and must conform
-     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
-     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
      * No more than 10 labels can be associated with a given finding.
-     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
-     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * Examples:
+     * * `"environment" : "production"`
+     * * `"pipeline" : "etl"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -2859,12 +2864,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The labels associated with this `InspectFinding`.
      * Label keys must be between 1 and 63 characters long and must conform
-     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
-     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
      * No more than 10 labels can be associated with a given finding.
-     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
-     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * Examples:
+     * * `"environment" : "production"`
+     * * `"pipeline" : "etl"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -2878,12 +2884,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The labels associated with this `InspectFinding`.
      * Label keys must be between 1 and 63 characters long and must conform
-     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
-     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
      * No more than 10 labels can be associated with a given finding.
-     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
-     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * Examples:
+     * * `"environment" : "production"`
+     * * `"pipeline" : "etl"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -2902,12 +2909,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The labels associated with this `InspectFinding`.
      * Label keys must be between 1 and 63 characters long and must conform
-     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
-     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
      * No more than 10 labels can be associated with a given finding.
-     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
-     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * Examples:
+     * * `"environment" : "production"`
+     * * `"pipeline" : "etl"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -2933,12 +2941,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The labels associated with this `InspectFinding`.
      * Label keys must be between 1 and 63 characters long and must conform
-     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
-     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
      * No more than 10 labels can be associated with a given finding.
-     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
-     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * Examples:
+     * * `"environment" : "production"`
+     * * `"pipeline" : "etl"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -2961,12 +2970,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The labels associated with this `InspectFinding`.
      * Label keys must be between 1 and 63 characters long and must conform
-     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
-     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
      * No more than 10 labels can be associated with a given finding.
-     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
-     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * Examples:
+     * * `"environment" : "production"`
+     * * `"pipeline" : "etl"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -2987,12 +2997,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The labels associated with this `InspectFinding`.
      * Label keys must be between 1 and 63 characters long and must conform
-     * to the following regular expression: &#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?.
+     * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
-     * to the regular expression (&#92;[a-z&#92;](&#92;[-a-z0-9&#92;]*&#92;[a-z0-9&#92;])?)?.
+     * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
      * No more than 10 labels can be associated with a given finding.
-     * Example: &lt;code&gt;"environment" : "production"&lt;/code&gt;
-     * Example: &lt;code&gt;"pipeline" : "etl"&lt;/code&gt;
+     * Examples:
+     * * `"environment" : "production"`
+     * * `"pipeline" : "etl"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>

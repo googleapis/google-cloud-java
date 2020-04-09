@@ -294,11 +294,12 @@ public final class DlpStorage {
           + "LIKELY\020\001\022\014\n\010UNLIKELY\020\002\022\014\n\010POSSIBLE\020\003\022\n\n\006"
           + "LIKELY\020\004\022\017\n\013VERY_LIKELY\020\005*Z\n\010FileType\022\031\n"
           + "\025FILE_TYPE_UNSPECIFIED\020\000\022\017\n\013BINARY_FILE\020"
-          + "\001\022\r\n\tTEXT_FILE\020\002\022\t\n\005IMAGE\020\003\022\010\n\004AVRO\020\007B\217\001"
+          + "\001\022\r\n\tTEXT_FILE\020\002\022\t\n\005IMAGE\020\003\022\010\n\004AVRO\020\007B\250\001"
           + "\n\031com.google.privacy.dlp.v2B\nDlpStorageP"
           + "\001Z8google.golang.org/genproto/googleapis"
           + "/privacy/dlp/v2;dlp\252\002\023Google.Cloud.Dlp.V"
-          + "2\312\002\023Google\\Cloud\\Dlp\\V2b\006proto3"
+          + "2\312\002\023Google\\Cloud\\Dlp\\V2\352\002\026Google::Cloud:"
+          + ":Dlp::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1785,13 +1785,13 @@ public final class DlpProto {
           + "/{name=projects/*/locations/*/dlpJobs/*}"
           + ":finish:\001*\032F\312A\022dlp.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmB\354\001\n\031com.google.privacy.dlp.v2B\010DlpPro"
+          + "rmB\205\002\n\031com.google.privacy.dlp.v2B\010DlpPro"
           + "toP\001Z8google.golang.org/genproto/googlea"
           + "pis/privacy/dlp/v2;dlp\252\002\023Google.Cloud.Dl"
-          + "p.V2\312\002\023Google\\Cloud\\Dlp\\V2\352A\\\n\'dlp.googl"
-          + "eapis.com/OrganizationLocation\0221organiza"
-          + "tions/{organization}/locations/{location"
-          + "}b\006proto3"
+          + "p.V2\312\002\023Google\\Cloud\\Dlp\\V2\352\002\026Google::Clo"
+          + "ud::Dlp::V2\352A\\\n\'dlp.googleapis.com/Organ"
+          + "izationLocation\0221organizations/{organiza"
+          + "tion}/locations/{location}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
