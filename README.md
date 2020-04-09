@@ -35,18 +35,18 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 
 ```
 
-[//]: # ({x-version-update-start:google-cloud-bigquerystorage:released})
-
 If you are using Maven without BOM, add this to your dependencies:
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerystorage</artifactId>
-  <version>0.128.0-beta</version>
+  <version>0.128.1-beta</version>
 </dependency>
 
 ```
+
+[//]: # ({x-version-update-start:google-cloud-bigquerystorage:released})
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
