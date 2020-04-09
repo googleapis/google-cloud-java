@@ -32,18 +32,18 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 
 ```
 
-[//]: # ({x-version-update-start:google-cloud-kms:released})
-
 If you are using Maven without BOM, add this to your dependencies:
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kms</artifactId>
-  <version>1.38.0</version>
+  <version>1.37.0</version>
 </dependency>
 
 ```
+
+[//]: # ({x-version-update-start:google-cloud-kms:released})
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
