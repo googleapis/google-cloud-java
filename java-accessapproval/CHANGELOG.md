@@ -1,5 +1,21 @@
 # Changelog
 
+### [0.1.2](https://www.github.com/googleapis/java-accessapproval/compare/v0.1.1...v0.1.2) (2020-04-08)
+
+
+### Dependencies
+
+* update core dependencies ([#25](https://www.github.com/googleapis/java-accessapproval/issues/25)) ([852acf7](https://www.github.com/googleapis/java-accessapproval/commit/852acf76a85745bf4952b5df514a98640219aed9))
+* update core dependencies ([#27](https://www.github.com/googleapis/java-accessapproval/issues/27)) ([555893c](https://www.github.com/googleapis/java-accessapproval/commit/555893cea5e5757678b38bddb4337383fa4cafee))
+* update dependency com.google.api:api-common to v1.9.0 ([#45](https://www.github.com/googleapis/java-accessapproval/issues/45)) ([04f9120](https://www.github.com/googleapis/java-accessapproval/commit/04f91202c23983b9fc12bfab30d23bed485a7e0d))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#53](https://www.github.com/googleapis/java-accessapproval/issues/53)) ([502f0b1](https://www.github.com/googleapis/java-accessapproval/commit/502f0b142e4e382031dd8109f5b5f572bae82140))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#36](https://www.github.com/googleapis/java-accessapproval/issues/36)) ([ae4b623](https://www.github.com/googleapis/java-accessapproval/commit/ae4b623991174d8cffa74561207488b96c51ce3a))
+
+
+### Documentation
+
+* remove an internal lint declaration ([#44](https://www.github.com/googleapis/java-accessapproval/issues/44)) ([b633aac](https://www.github.com/googleapis/java-accessapproval/commit/b633aaca5b2178af837a22bc8512b85b8964584d))
+
 ### [0.1.1](https://www.github.com/googleapis/java-accessapproval/compare/v0.1.0...v0.1.1) (2020-03-03)
 
 
