@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.104.1](https://www.github.com/googleapis/java-pubsub/compare/v1.104.0...v1.104.1) (2020-04-08)
+
+
+### Dependencies
+
+* update core dependencies ([#127](https://www.github.com/googleapis/java-pubsub/issues/127)) ([33c9293](https://www.github.com/googleapis/java-pubsub/commit/33c9293fbb7de6de6861c4b2c3e3e79fb9e57e7b))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#129](https://www.github.com/googleapis/java-pubsub/issues/129)) ([78c0216](https://www.github.com/googleapis/java-pubsub/commit/78c021628c86317d3893f2797ccc5039cffd453a))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#128](https://www.github.com/googleapis/java-pubsub/issues/128)) ([54650dd](https://www.github.com/googleapis/java-pubsub/commit/54650dd6115f055d8a66c164017d1a038552dfac))
+
 ## [1.104.0](https://www.github.com/googleapis/java-pubsub/compare/v1.103.1...v1.104.0) (2020-04-02)
 
 
