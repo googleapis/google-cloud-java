@@ -1,11 +1,10 @@
 {
-  "updateTime": "2020-04-09T10:16:23.329858Z",
   "sources": [
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-monitoring.git",
-        "sha": "66ee3566447e6e27b47f56e1502486141fcd8c8b"
+        "sha": "1a7b7f5860a69df5750400ae73d2ce9fdc1c8d06"
       }
     },
     {
