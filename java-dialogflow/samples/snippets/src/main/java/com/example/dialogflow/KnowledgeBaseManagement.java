@@ -19,35 +19,9 @@ package com.example.dialogflow;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
 import com.google.cloud.dialogflow.v2beta1.ProjectName;
-import com.google.common.collect.Lists;
-import java.util.List;
+
 
 public class KnowledgeBaseManagement {
-  // [START dialogflow_list_knowledge_base]
-
-  /**
-   * List Knowledge bases
-   *
-   * @param projectId Project/agent id.
-   * @return The KnowledgeBases found in projectId.
-   */
-  public static List<KnowledgeBase> listKnowledgeBases(String projectId) throws Exception {
-    List<KnowledgeBase> knowledgeBases = Lists.newArrayList();
-    // Instantiates a client
-    try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-      // Set the entity type name using the projectID (my-project-id) and entityTypeId (KIND_LIST)
-      ProjectName projectName = ProjectName.of(projectId);
-      for (KnowledgeBase knowledgeBase :
-          knowledgeBasesClient.listKnowledgeBases(projectName).iterateAll()) {
-        System.out.format(" - Display Name: %s\n", knowledgeBase.getDisplayName());
-        System.out.format(" - Knowledge ID: %s\n", knowledgeBase.getName());
-        knowledgeBases.add(knowledgeBase);
-      }
-    }
-    return knowledgeBases;
-  }
-  // [END dialogflow_list_knowledge_base]
-
   // [START dialogflow_create_knowledge_base]
 
   /**
@@ -73,35 +47,4 @@ public class KnowledgeBaseManagement {
   }
   // [END dialogflow_create_knowledge_base]
 
-  // [START dialogflow_get_knowledge_base]
-
-  /**
-   * @param knowledgeBaseName Knowledge base id.
-   * @return The retrieved KnowledgeBase.
-   */
-  public static KnowledgeBase getKnowledgeBase(String knowledgeBaseName) throws Exception {
-    // Instantiates a client
-    try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-      KnowledgeBase response = knowledgeBasesClient.getKnowledgeBase(knowledgeBaseName);
-      System.out.format("Got Knowledge Base:\n");
-      System.out.format(" - Display Name: %s\n", response.getDisplayName());
-      System.out.format(" - Knowledge ID: %s\n", response.getName());
-      return response;
-    }
-  }
-  // [END dialogflow_get_knowledge_base]
-
-  // [START dialogflow_delete_knowledge_base]
-
-  /**
-   * @param knowledgeBaseName Knowledge base id.
-   */
-  public static void deleteKnowledgeBase(String knowledgeBaseName) throws Exception {
-    // Instantiates a client
-    try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-      knowledgeBasesClient.deleteKnowledgeBase(knowledgeBaseName);
-      System.out.format("KnowledgeBase has been deleted.\n");
-    }
-  }
-  // [END dialogflow_delete_knowledge_base]
 }
