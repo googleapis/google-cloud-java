@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-compute</artifactId>
-      <version>0.117.0-alpha</version>
+      <version>0.118.0-alpha</version>
     </dependency>
 
     <dependency>
