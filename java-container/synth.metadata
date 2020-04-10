@@ -1,5 +1,4 @@
 {
-  "updateTime": "2020-04-09T09:11:17.260224Z",
   "sources": [
     {
       "git": {
@@ -12,8 +11,9 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d741cd976975c745d0199987aff0e908b8352992",
-        "internalRef": "305561906"
+        "sha": "9af7212bc2cba8a7184f032e1ab6662ccf604b3a",
+        "internalRef": "305751417",
+        "log": "9af7212bc2cba8a7184f032e1ab6662ccf604b3a\ndocs: display resource name patterns in code font.\n\nPiperOrigin-RevId: 305751417\n\nc451a4457f38e5582e9794a0094c773355a9eaad\nBigQuery Connection API v1.\nBreaking changes:\n  Removed UpdateConnectionCredential method.\n  Removed ListConnectionsRequest.max_results, added ListConnectionsRequest.page_size.\n\nPiperOrigin-RevId: 305738384\n\naf71ea52236b05ce73253f6bc935fcf35c866664\nchore: enable gapicv2 for vision/v1p2beta1 API\n\nCommitter: @miraleung\nPiperOrigin-RevId: 305730427\n\n6114e2d30c0792522720d1c2cf8f5e111be7545b\nchore: enable gapicv2 for vision/v1p1beta1 API\n\nCommitter: @miraleung\nPiperOrigin-RevId: 305729994\n\nee4ea76504aa60c2bff9b7c11269c155d8c21e0d\ngapic-generator:\n- feat: Support extra plugin_args for php bazel rules rules (#3165)\n- feat: support '*' in resource definition (#3163)\n- fix: add null check and better error message when referenced resource is not found (#3169)\n\nresource name plugin:\n- support * annotation in resource def (#84)\n\nPiperOrigin-RevId: 305619145\n\ne4f4b23e07315492b533746e6a9255a1e6b3e748\nosconfig v1beta: fix the incorrect pattern for GuestPolicy resource and remove the obsolete history field.\n\nPiperOrigin-RevId: 305617619\n\n"
       }
     },
     {

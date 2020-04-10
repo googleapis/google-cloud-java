@@ -299,7 +299,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The name (project, location, operation id) of the operation to cancel.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
    * </pre>
    *
    * <code>string name = 4;</code>
@@ -322,7 +322,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The name (project, location, operation id) of the operation to cancel.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
    * </pre>
    *
    * <code>string name = 4;</code>
@@ -1069,7 +1069,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name (project, location, operation id) of the operation to cancel.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
      * </pre>
      *
      * <code>string name = 4;</code>
@@ -1092,7 +1092,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name (project, location, operation id) of the operation to cancel.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
      * </pre>
      *
      * <code>string name = 4;</code>
@@ -1115,7 +1115,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name (project, location, operation id) of the operation to cancel.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
      * </pre>
      *
      * <code>string name = 4;</code>
@@ -1137,7 +1137,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name (project, location, operation id) of the operation to cancel.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
      * </pre>
      *
      * <code>string name = 4;</code>
@@ -1155,7 +1155,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name (project, location, operation id) of the operation to cancel.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
      * </pre>
      *
      * <code>string name = 4;</code>

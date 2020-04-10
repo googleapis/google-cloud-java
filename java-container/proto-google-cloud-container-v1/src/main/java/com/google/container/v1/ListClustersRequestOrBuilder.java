@@ -92,7 +92,7 @@ public interface ListClustersRequestOrBuilder
    *
    * <pre>
    * The parent (project and location) where the clusters will be listed.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * Location "-" matches all zones and all regions.
    * </pre>
    *
@@ -106,7 +106,7 @@ public interface ListClustersRequestOrBuilder
    *
    * <pre>
    * The parent (project and location) where the clusters will be listed.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * Location "-" matches all zones and all regions.
    * </pre>
    *

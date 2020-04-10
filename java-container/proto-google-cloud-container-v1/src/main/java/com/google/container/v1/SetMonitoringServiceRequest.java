@@ -366,7 +366,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * The name (project, location, cluster) of the cluster to set monitoring.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
@@ -389,7 +389,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * The name (project, location, cluster) of the cluster to set monitoring.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
@@ -1290,7 +1290,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * The name (project, location, cluster) of the cluster to set monitoring.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1313,7 +1313,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * The name (project, location, cluster) of the cluster to set monitoring.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1336,7 +1336,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * The name (project, location, cluster) of the cluster to set monitoring.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1358,7 +1358,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * The name (project, location, cluster) of the cluster to set monitoring.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1376,7 +1376,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * The name (project, location, cluster) of the cluster to set monitoring.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>

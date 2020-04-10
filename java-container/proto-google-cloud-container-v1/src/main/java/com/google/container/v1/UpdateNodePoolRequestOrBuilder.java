@@ -217,7 +217,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <pre>
    * The name (project, location, cluster, node pool) of the node pool to
    * update. Specified in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
    * </pre>
    *
    * <code>string name = 8;</code>
@@ -231,7 +231,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <pre>
    * The name (project, location, cluster, node pool) of the node pool to
    * update. Specified in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
    * </pre>
    *
    * <code>string name = 8;</code>

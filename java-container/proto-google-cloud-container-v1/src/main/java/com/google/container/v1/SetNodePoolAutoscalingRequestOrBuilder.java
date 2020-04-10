@@ -192,7 +192,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    * <pre>
    * The name (project, location, cluster, node pool) of the node pool to set
    * autoscaler settings. Specified in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
@@ -206,7 +206,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    * <pre>
    * The name (project, location, cluster, node pool) of the node pool to set
    * autoscaler settings. Specified in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>

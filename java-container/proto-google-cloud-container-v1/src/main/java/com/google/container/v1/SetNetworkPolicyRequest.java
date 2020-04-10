@@ -368,7 +368,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The name (project, location, cluster id) of the cluster to set networking
-   * policy. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * policy. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
@@ -391,7 +391,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The name (project, location, cluster id) of the cluster to set networking
-   * policy. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * policy. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
@@ -1375,7 +1375,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The name (project, location, cluster id) of the cluster to set networking
-     * policy. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * policy. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1398,7 +1398,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The name (project, location, cluster id) of the cluster to set networking
-     * policy. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * policy. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1421,7 +1421,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The name (project, location, cluster id) of the cluster to set networking
-     * policy. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * policy. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1443,7 +1443,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The name (project, location, cluster id) of the cluster to set networking
-     * policy. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * policy. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1461,7 +1461,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The name (project, location, cluster id) of the cluster to set networking
-     * policy. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * policy. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>

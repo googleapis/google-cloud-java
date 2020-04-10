@@ -361,7 +361,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The name (project, location, cluster, node pool id) of the node pool to
    * delete. Specified in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
@@ -385,7 +385,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The name (project, location, cluster, node pool id) of the node pool to
    * delete. Specified in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
@@ -1270,7 +1270,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The name (project, location, cluster, node pool id) of the node pool to
      * delete. Specified in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1294,7 +1294,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The name (project, location, cluster, node pool id) of the node pool to
      * delete. Specified in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1318,7 +1318,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The name (project, location, cluster, node pool id) of the node pool to
      * delete. Specified in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1341,7 +1341,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The name (project, location, cluster, node pool id) of the node pool to
      * delete. Specified in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1360,7 +1360,7 @@ public final class DeleteNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The name (project, location, cluster, node pool id) of the node pool to
      * delete. Specified in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>

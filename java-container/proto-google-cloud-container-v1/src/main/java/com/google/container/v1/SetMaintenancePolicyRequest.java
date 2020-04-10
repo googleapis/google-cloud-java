@@ -360,7 +360,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    * <pre>
    * The name (project, location, cluster id) of the cluster to set maintenance
    * policy.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 5;</code>
@@ -384,7 +384,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    * <pre>
    * The name (project, location, cluster id) of the cluster to set maintenance
    * policy.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 5;</code>
@@ -1350,7 +1350,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      * <pre>
      * The name (project, location, cluster id) of the cluster to set maintenance
      * policy.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 5;</code>
@@ -1374,7 +1374,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      * <pre>
      * The name (project, location, cluster id) of the cluster to set maintenance
      * policy.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 5;</code>
@@ -1398,7 +1398,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      * <pre>
      * The name (project, location, cluster id) of the cluster to set maintenance
      * policy.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 5;</code>
@@ -1421,7 +1421,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      * <pre>
      * The name (project, location, cluster id) of the cluster to set maintenance
      * policy.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 5;</code>
@@ -1440,7 +1440,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      * <pre>
      * The name (project, location, cluster id) of the cluster to set maintenance
      * policy.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string name = 5;</code>

@@ -151,7 +151,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    * <pre>
    * The name (project, location, cluster, node pool id) of the node poll to
    * rollback upgrade.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
@@ -165,7 +165,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    * <pre>
    * The name (project, location, cluster, node pool id) of the node poll to
    * rollback upgrade.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>

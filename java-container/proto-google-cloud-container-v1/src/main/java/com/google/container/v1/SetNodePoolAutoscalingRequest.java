@@ -428,7 +428,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    * <pre>
    * The name (project, location, cluster, node pool) of the node pool to set
    * autoscaler settings. Specified in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
@@ -452,7 +452,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    * <pre>
    * The name (project, location, cluster, node pool) of the node pool to set
    * autoscaler settings. Specified in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
@@ -1572,7 +1572,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <pre>
      * The name (project, location, cluster, node pool) of the node pool to set
      * autoscaler settings. Specified in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1596,7 +1596,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <pre>
      * The name (project, location, cluster, node pool) of the node pool to set
      * autoscaler settings. Specified in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1620,7 +1620,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <pre>
      * The name (project, location, cluster, node pool) of the node pool to set
      * autoscaler settings. Specified in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1643,7 +1643,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <pre>
      * The name (project, location, cluster, node pool) of the node pool to set
      * autoscaler settings. Specified in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>
@@ -1662,7 +1662,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <pre>
      * The name (project, location, cluster, node pool) of the node pool to set
      * autoscaler settings. Specified in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
      * </pre>
      *
      * <code>string name = 6;</code>

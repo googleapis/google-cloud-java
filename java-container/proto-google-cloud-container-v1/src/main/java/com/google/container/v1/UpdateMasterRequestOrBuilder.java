@@ -160,7 +160,7 @@ public interface UpdateMasterRequestOrBuilder
    *
    * <pre>
    * The name (project, location, cluster) of the cluster to update.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 7;</code>
@@ -173,7 +173,7 @@ public interface UpdateMasterRequestOrBuilder
    *
    * <pre>
    * The name (project, location, cluster) of the cluster to update.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 7;</code>

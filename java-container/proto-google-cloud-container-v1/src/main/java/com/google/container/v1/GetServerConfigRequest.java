@@ -240,7 +240,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The name (project and location) of the server config to get,
-   * specified in the format 'projects/&#42;&#47;locations/&#42;'.
+   * specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>string name = 4;</code>
@@ -263,7 +263,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The name (project and location) of the server config to get,
-   * specified in the format 'projects/&#42;&#47;locations/&#42;'.
+   * specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>string name = 4;</code>
@@ -878,7 +878,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name (project and location) of the server config to get,
-     * specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>string name = 4;</code>
@@ -901,7 +901,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name (project and location) of the server config to get,
-     * specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>string name = 4;</code>
@@ -924,7 +924,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name (project and location) of the server config to get,
-     * specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>string name = 4;</code>
@@ -946,7 +946,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name (project and location) of the server config to get,
-     * specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>string name = 4;</code>
@@ -964,7 +964,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The name (project and location) of the server config to get,
-     * specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>string name = 4;</code>

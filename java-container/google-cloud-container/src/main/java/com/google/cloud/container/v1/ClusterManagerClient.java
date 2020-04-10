@@ -241,7 +241,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent The parent (project and location) where the clusters will be listed. Specified in
-   *     the format 'projects/&#42;/locations/&#42;'. Location "-" matches all zones and all
+   *     the format `projects/&#42;/locations/&#42;`. Location "-" matches all zones and all
    *     regions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -338,7 +338,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster) of the cluster to retrieve. Specified in the
-   *     format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Cluster getCluster(String name) {
@@ -457,7 +457,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent The parent (project and location) where the cluster will be created. Specified in
-   *     the format 'projects/&#42;/locations/&#42;'.
+   *     the format `projects/&#42;/locations/&#42;`.
    * @param cluster Required. A [cluster
    *     resource](https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -589,7 +589,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster) of the cluster to update. Specified in the
-   *     format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @param update Required. A description of the update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -796,7 +796,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster) of the cluster to set logging. Specified in
-   *     the format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @param loggingService Required. The logging service the cluster should use to write metrics.
    *     Currently available options:
    *     <p>&#42; "logging.googleapis.com" - the Google Cloud Logging service &#42; "none" - no
@@ -915,7 +915,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster) of the cluster to set monitoring. Specified
-   *     in the format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @param monitoringService Required. The monitoring service the cluster should use to write
    *     metrics. Currently available options:
    *     <p>&#42; "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring service with
@@ -1033,7 +1033,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster) of the cluster to set addons. Specified in
-   *     the format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @param addonsConfig Required. The desired configurations for the various addons available to
    *     run in the cluster.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1148,7 +1148,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster) of the cluster to set locations. Specified in
-   *     the format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @param locations Required. The desired list of Google Compute Engine
    *     [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
    *     should be located. Changing the locations a cluster is in will result in nodes being either
@@ -1268,7 +1268,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster) of the cluster to update. Specified in the
-   *     format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @param masterVersion Required. The Kubernetes version to change the master to.
    *     <p>Users may specify either explicit versions offered by Kubernetes Engine or version
    *     aliases, which have the following behavior:
@@ -1441,7 +1441,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster) of the cluster to delete. Specified in the
-   *     format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation deleteCluster(String name) {
@@ -1691,7 +1691,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, operation id) of the operation to cancel. Specified in
-   *     the format 'projects/&#42;/locations/&#42;/operations/&#42;'.
+   *     the format `projects/&#42;/locations/&#42;/operations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelOperation(String name) {
@@ -1780,7 +1780,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project and location) of the server config to get, specified in the
-   *     format 'projects/&#42;/locations/&#42;'.
+   *     format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServerConfig getServerConfig(String name) {
@@ -1877,7 +1877,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent The parent (project, location, cluster id) where the node pools will be listed.
-   *     Specified in the format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNodePoolsResponse listNodePools(String parent) {
@@ -1978,7 +1978,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster, node pool id) of the node pool to get.
-   *     Specified in the format 'projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/&#42;'.
+   *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NodePool getNodePool(String name) {
@@ -2079,7 +2079,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent The parent (project, location, cluster id) where the node pool will be created.
-   *     Specified in the format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @param nodePool Required. The node pool to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2188,7 +2188,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster, node pool id) of the node pool to delete.
-   *     Specified in the format 'projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/&#42;'.
+   *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation deleteNodePool(String name) {
@@ -2292,7 +2292,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *
    * @param name The name (project, location, cluster, node pool id) of the node poll to rollback
    *     upgrade. Specified in the format
-   *     'projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/&#42;'.
+   *     `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation rollbackNodePoolUpgrade(String name) {
@@ -2492,7 +2492,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster id) of the cluster to set legacy abac.
-   *     Specified in the format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @param enabled Required. Whether ABAC authorization will be enabled in the cluster.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2596,7 +2596,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster id) of the cluster to start IP rotation.
-   *     Specified in the format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation startIPRotation(String name) {
@@ -2692,7 +2692,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster id) of the cluster to complete IP rotation.
-   *     Specified in the format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation completeIPRotation(String name) {
@@ -2839,7 +2839,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster id) of the cluster to set networking policy.
-   *     Specified in the format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @param networkPolicy Required. Configuration options for the NetworkPolicy feature.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2946,7 +2946,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The name (project, location, cluster id) of the cluster to set maintenance policy.
-   *     Specified in the format 'projects/&#42;/locations/&#42;/clusters/&#42;'.
+   *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @param maintenancePolicy Required. The maintenance policy to be set for the cluster. An empty
    *     field clears the existing maintenance policy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

@@ -160,7 +160,7 @@ public interface CreateNodePoolRequestOrBuilder
    * <pre>
    * The parent (project, location, cluster id) where the node pool will be
    * created. Specified in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string parent = 6;</code>
@@ -174,7 +174,7 @@ public interface CreateNodePoolRequestOrBuilder
    * <pre>
    * The parent (project, location, cluster id) where the node pool will be
    * created. Specified in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string parent = 6;</code>

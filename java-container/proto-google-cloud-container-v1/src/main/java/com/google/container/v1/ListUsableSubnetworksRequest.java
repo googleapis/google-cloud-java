@@ -140,7 +140,7 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * The parent project where subnetworks are usable.
-   * Specified in the format 'projects/&#42;'.
+   * Specified in the format `projects/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -163,7 +163,7 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * The parent project where subnetworks are usable.
-   * Specified in the format 'projects/&#42;'.
+   * Specified in the format `projects/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -676,7 +676,7 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * The parent project where subnetworks are usable.
-     * Specified in the format 'projects/&#42;'.
+     * Specified in the format `projects/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -699,7 +699,7 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * The parent project where subnetworks are usable.
-     * Specified in the format 'projects/&#42;'.
+     * Specified in the format `projects/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -722,7 +722,7 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * The parent project where subnetworks are usable.
-     * Specified in the format 'projects/&#42;'.
+     * Specified in the format `projects/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -744,7 +744,7 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * The parent project where subnetworks are usable.
-     * Specified in the format 'projects/&#42;'.
+     * Specified in the format `projects/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -762,7 +762,7 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * The parent project where subnetworks are usable.
-     * Specified in the format 'projects/&#42;'.
+     * Specified in the format `projects/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>

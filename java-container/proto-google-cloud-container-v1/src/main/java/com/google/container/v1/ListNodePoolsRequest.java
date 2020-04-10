@@ -301,7 +301,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The parent (project, location, cluster id) where the node pools will be
-   * listed. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string parent = 5;</code>
@@ -324,7 +324,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The parent (project, location, cluster id) where the node pools will be
-   * listed. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string parent = 5;</code>
@@ -1076,7 +1076,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The parent (project, location, cluster id) where the node pools will be
-     * listed. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string parent = 5;</code>
@@ -1099,7 +1099,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The parent (project, location, cluster id) where the node pools will be
-     * listed. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string parent = 5;</code>
@@ -1122,7 +1122,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The parent (project, location, cluster id) where the node pools will be
-     * listed. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string parent = 5;</code>
@@ -1144,7 +1144,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The parent (project, location, cluster id) where the node pools will be
-     * listed. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string parent = 5;</code>
@@ -1162,7 +1162,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The parent (project, location, cluster id) where the node pools will be
-     * listed. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
      * <code>string parent = 5;</code>

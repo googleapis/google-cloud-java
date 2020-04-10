@@ -301,7 +301,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The name (project, location, operation id) of the operation to get.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
    * </pre>
    *
    * <code>string name = 5;</code>
@@ -324,7 +324,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The name (project, location, operation id) of the operation to get.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
    * </pre>
    *
    * <code>string name = 5;</code>
@@ -1076,7 +1076,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The name (project, location, operation id) of the operation to get.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
      * </pre>
      *
      * <code>string name = 5;</code>
@@ -1099,7 +1099,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The name (project, location, operation id) of the operation to get.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
      * </pre>
      *
      * <code>string name = 5;</code>
@@ -1122,7 +1122,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The name (project, location, operation id) of the operation to get.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
      * </pre>
      *
      * <code>string name = 5;</code>
@@ -1144,7 +1144,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The name (project, location, operation id) of the operation to get.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
      * </pre>
      *
      * <code>string name = 5;</code>
@@ -1162,7 +1162,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The name (project, location, operation id) of the operation to get.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;operations/&#42;`.
      * </pre>
      *
      * <code>string name = 5;</code>

@@ -242,7 +242,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The parent (project and location) where the clusters will be listed.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * Location "-" matches all zones and all regions.
    * </pre>
    *
@@ -266,7 +266,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The parent (project and location) where the clusters will be listed.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * Location "-" matches all zones and all regions.
    * </pre>
    *
@@ -887,7 +887,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The parent (project and location) where the clusters will be listed.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * Location "-" matches all zones and all regions.
      * </pre>
      *
@@ -911,7 +911,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The parent (project and location) where the clusters will be listed.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * Location "-" matches all zones and all regions.
      * </pre>
      *
@@ -935,7 +935,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The parent (project and location) where the clusters will be listed.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * Location "-" matches all zones and all regions.
      * </pre>
      *
@@ -958,7 +958,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The parent (project and location) where the clusters will be listed.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * Location "-" matches all zones and all regions.
      * </pre>
      *
@@ -977,7 +977,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The parent (project and location) where the clusters will be listed.
-     * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * Location "-" matches all zones and all regions.
      * </pre>
      *

@@ -134,7 +134,7 @@ public interface SetLegacyAbacRequestOrBuilder
    *
    * <pre>
    * The name (project, location, cluster id) of the cluster to set legacy abac.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
@@ -147,7 +147,7 @@ public interface SetLegacyAbacRequestOrBuilder
    *
    * <pre>
    * The name (project, location, cluster id) of the cluster to set legacy abac.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>

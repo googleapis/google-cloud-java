@@ -133,7 +133,7 @@ public interface CreateClusterRequestOrBuilder
    *
    * <pre>
    * The parent (project and location) where the cluster will be created.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>string parent = 5;</code>
@@ -146,7 +146,7 @@ public interface CreateClusterRequestOrBuilder
    *
    * <pre>
    * The parent (project and location) where the cluster will be created.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>string parent = 5;</code>

@@ -165,7 +165,7 @@ public interface SetAddonsConfigRequestOrBuilder
    *
    * <pre>
    * The name (project, location, cluster) of the cluster to set addons.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
@@ -178,7 +178,7 @@ public interface SetAddonsConfigRequestOrBuilder
    *
    * <pre>
    * The name (project, location, cluster) of the cluster to set addons.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
