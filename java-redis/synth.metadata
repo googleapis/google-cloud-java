@@ -1,6 +1,12 @@
 {
-  "updateTime": "2020-04-02T00:04:17.068017Z",
   "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-redis.git",
+        "sha": "253b0c24891496141c410783b2e533338fb9e557"
+      }
+    },
     {
       "git": {
         "name": "googleapis",
