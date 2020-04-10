@@ -85,7 +85,7 @@ import org.threeten.bp.Duration;
  * <p>{@link Publisher} will use the credentials set on the channel, which uses application default
  * credentials through {@link GoogleCredentials#getApplicationDefault} by default.
  */
-public class Publisher {
+public class Publisher implements PublisherInterface {
   private static final Logger logger = Logger.getLogger(Publisher.class.getName());
 
   private final String topicName;
@@ -226,6 +226,7 @@ public class Publisher {
    * @param message the message to publish.
    * @return the message ID wrapped in a future.
    */
+  @Override
   public ApiFuture<String> publish(PubsubMessage message) {
     Preconditions.checkState(!shutdown.get(), "Cannot publish on a shut-down publisher.");
 

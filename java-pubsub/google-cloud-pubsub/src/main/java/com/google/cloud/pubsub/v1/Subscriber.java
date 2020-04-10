@@ -90,7 +90,7 @@ import org.threeten.bp.Duration;
  * href="https://github.com/google/guava/wiki/ServiceExplained">Guava documentation</a> for more
  * details.
  */
-public class Subscriber extends AbstractApiService {
+public class Subscriber extends AbstractApiService implements SubscriberInterface {
   private static final int THREADS_PER_CHANNEL = 5;
   private static final int MAX_INBOUND_MESSAGE_SIZE =
       20 * 1024 * 1024; // 20MB API maximum message size.
