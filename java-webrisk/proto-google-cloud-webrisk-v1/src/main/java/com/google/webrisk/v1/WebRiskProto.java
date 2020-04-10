@@ -190,12 +190,12 @@ public final class WebRiskProto {
           + "K\202\323\344\223\0021\"#/v1/{parent=projects/*}/submiss"
           + "ions:\nsubmission\332A\021parent,submission\032J\312A"
           + "\026webrisk.googleapis.com\322A.https://www.go"
-          + "ogleapis.com/auth/cloud-platformB\242\001\n\025com"
+          + "ogleapis.com/auth/cloud-platformB\277\001\n\025com"
           + ".google.webrisk.v1B\014WebRiskProtoP\001Z>goog"
           + "le.golang.org/genproto/googleapis/cloud/"
           + "webrisk/v1;webrisk\242\002\004GCWR\252\002\027Google.Cloud"
-          + ".WebRisk.V1\312\002\027Google\\Cloud\\WebRisk\\V1b\006p"
-          + "roto3"
+          + ".WebRisk.V1\312\002\027Google\\Cloud\\WebRisk\\V1\352\002\032"
+          + "Google::Cloud::WebRisk::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
