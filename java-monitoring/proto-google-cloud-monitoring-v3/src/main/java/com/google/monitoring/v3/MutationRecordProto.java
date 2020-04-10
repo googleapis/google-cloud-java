@@ -44,12 +44,12 @@ public final class MutationRecordProto {
           + "roto\022\024google.monitoring.v3\032\037google/proto"
           + "buf/timestamp.proto\"U\n\016MutationRecord\022/\n"
           + "\013mutate_time\030\001 \001(\0132\032.google.protobuf.Tim"
-          + "estamp\022\022\n\nmutated_by\030\002 \001(\tB\253\001\n\030com.googl"
+          + "estamp\022\022\n\nmutated_by\030\002 \001(\tB\313\001\n\030com.googl"
           + "e.monitoring.v3B\023MutationRecordProtoP\001Z>"
           + "google.golang.org/genproto/googleapis/mo"
           + "nitoring/v3;monitoring\252\002\032Google.Cloud.Mo"
           + "nitoring.V3\312\002\032Google\\Cloud\\Monitoring\\V3"
-          + "b\006proto3"
+          + "\352\002\035Google::Cloud::Monitoring::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

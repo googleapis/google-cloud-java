@@ -111,12 +111,13 @@ public final class AlertServiceProto {
           + ".googleapis.com\322A\211\001https://www.googleapi"
           + "s.com/auth/cloud-platform,https://www.go"
           + "ogleapis.com/auth/monitoring,https://www"
-          + ".googleapis.com/auth/monitoring.readB\251\001\n"
+          + ".googleapis.com/auth/monitoring.readB\311\001\n"
           + "\030com.google.monitoring.v3B\021AlertServiceP"
           + "rotoP\001Z>google.golang.org/genproto/googl"
           + "eapis/monitoring/v3;monitoring\252\002\032Google."
           + "Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Monit"
-          + "oring\\V3b\006proto3"
+          + "oring\\V3\352\002\035Google::Cloud::Monitoring::V3"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

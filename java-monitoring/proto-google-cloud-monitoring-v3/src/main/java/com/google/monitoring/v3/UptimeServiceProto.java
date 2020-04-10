@@ -134,12 +134,13 @@ public final class UptimeServiceProto {
           + "eapis.com\322A\211\001https://www.googleapis.com/"
           + "auth/cloud-platform,https://www.googleap"
           + "is.com/auth/monitoring,https://www.googl"
-          + "eapis.com/auth/monitoring.readB\252\001\n\030com.g"
+          + "eapis.com/auth/monitoring.readB\312\001\n\030com.g"
           + "oogle.monitoring.v3B\022UptimeServiceProtoP"
           + "\001Z>google.golang.org/genproto/googleapis"
           + "/monitoring/v3;monitoring\252\002\032Google.Cloud"
           + ".Monitoring.V3\312\002\032Google\\Cloud\\Monitoring"
-          + "\\V3b\006proto3"
+          + "\\V3\352\002\035Google::Cloud::Monitoring::V3b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

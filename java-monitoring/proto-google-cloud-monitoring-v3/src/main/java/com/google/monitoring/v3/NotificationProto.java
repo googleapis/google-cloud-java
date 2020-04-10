@@ -91,12 +91,13 @@ public final class NotificationProto {
           + "on_channel}\022Horganizations/{organization"
           + "}/notificationChannels/{notification_cha"
           + "nnel}\022<folders/{folder}/notificationChan"
-          + "nels/{notification_channel}\022\001*B\251\001\n\030com.g"
+          + "nels/{notification_channel}\022\001*B\311\001\n\030com.g"
           + "oogle.monitoring.v3B\021NotificationProtoP\001"
           + "Z>google.golang.org/genproto/googleapis/"
           + "monitoring/v3;monitoring\252\002\032Google.Cloud."
           + "Monitoring.V3\312\002\032Google\\Cloud\\Monitoring\\"
-          + "V3b\006proto3"
+          + "V3\352\002\035Google::Cloud::Monitoring::V3b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

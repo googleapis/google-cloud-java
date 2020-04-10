@@ -42,11 +42,12 @@ public final class SpanContextProto {
     java.lang.String[] descriptorData = {
       "\n\'google/monitoring/v3/span_context.prot"
           + "o\022\024google.monitoring.v3\" \n\013SpanContext\022\021"
-          + "\n\tspan_name\030\001 \001(\tB\250\001\n\030com.google.monitor"
+          + "\n\tspan_name\030\001 \001(\tB\310\001\n\030com.google.monitor"
           + "ing.v3B\020SpanContextProtoP\001Z>google.golan"
           + "g.org/genproto/googleapis/monitoring/v3;"
           + "monitoring\252\002\032Google.Cloud.Monitoring.V3\312"
-          + "\002\032Google\\Cloud\\Monitoring\\V3b\006proto3"
+          + "\002\032Google\\Cloud\\Monitoring\\V3\352\002\035Google::C"
+          + "loud::Monitoring::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

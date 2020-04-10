@@ -89,11 +89,12 @@ public final class CommonProto {
           + "\020\005\022\021\n\rCOMPARISON_NE\020\006*a\n\013ServiceTier\022\034\n\030"
           + "SERVICE_TIER_UNSPECIFIED\020\000\022\026\n\022SERVICE_TI"
           + "ER_BASIC\020\001\022\030\n\024SERVICE_TIER_PREMIUM\020\002\032\002\030\001"
-          + "B\243\001\n\030com.google.monitoring.v3B\013CommonPro"
+          + "B\303\001\n\030com.google.monitoring.v3B\013CommonPro"
           + "toP\001Z>google.golang.org/genproto/googlea"
           + "pis/monitoring/v3;monitoring\252\002\032Google.Cl"
           + "oud.Monitoring.V3\312\002\032Google\\Cloud\\Monitor"
-          + "ing\\V3b\006proto3"
+          + "ing\\V3\352\002\035Google::Cloud::Monitoring::V3b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

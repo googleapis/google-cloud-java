@@ -119,11 +119,12 @@ public final class MetricProto {
           + "sition\0229\n\016nested_locator\030\004 \001(\0132!.google."
           + "monitoring.v3.TextLocator\022\026\n\016nesting_rea"
           + "son\030\005 \001(\t\032(\n\010Position\022\014\n\004line\030\001 \001(\005\022\016\n\006c"
-          + "olumn\030\002 \001(\005B\243\001\n\030com.google.monitoring.v3"
+          + "olumn\030\002 \001(\005B\303\001\n\030com.google.monitoring.v3"
           + "B\013MetricProtoP\001Z>google.golang.org/genpr"
           + "oto/googleapis/monitoring/v3;monitoring\252"
           + "\002\032Google.Cloud.Monitoring.V3\312\002\032Google\\Cl"
-          + "oud\\Monitoring\\V3b\006proto3"
+          + "oud\\Monitoring\\V3\352\002\035Google::Cloud::Monit"
+          + "oring::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

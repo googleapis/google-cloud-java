@@ -48,11 +48,12 @@ public final class GroupProto {
           + "oring.googleapis.com/Group\022!projects/{pr"
           + "oject}/groups/{group}\022+organizations/{or"
           + "ganization}/groups/{group}\022\037folders/{fol"
-          + "der}/groups/{group}\022\001*B\242\001\n\030com.google.mo"
+          + "der}/groups/{group}\022\001*B\302\001\n\030com.google.mo"
           + "nitoring.v3B\nGroupProtoP\001Z>google.golang"
           + ".org/genproto/googleapis/monitoring/v3;m"
           + "onitoring\252\002\032Google.Cloud.Monitoring.V3\312\002"
-          + "\032Google\\Cloud\\Monitoring\\V3b\006proto3"
+          + "\032Google\\Cloud\\Monitoring\\V3\352\002\035Google::Cl"
+          + "oud::Monitoring::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -196,11 +196,12 @@ public final class ServiceMonitoringProto {
           + "sicSliH\000\022\021\n\tthreshold\030\002 \001(\001B\006\n\004type\032N\n\013M"
           + "etricRange\022\023\n\013time_series\030\001 \001(\t\022*\n\005range"
           + "\030\004 \001(\0132\033.google.monitoring.v3.RangeB\022\n\020w"
-          + "indow_criterionB\256\001\n\030com.google.monitorin"
+          + "indow_criterionB\316\001\n\030com.google.monitorin"
           + "g.v3B\026ServiceMonitoringProtoP\001Z>google.g"
           + "olang.org/genproto/googleapis/monitoring"
           + "/v3;monitoring\252\002\032Google.Cloud.Monitoring"
-          + ".V3\312\002\032Google\\Cloud\\Monitoring\\V3b\006proto3"
+          + ".V3\312\002\032Google\\Cloud\\Monitoring\\V3\352\002\035Googl"
+          + "e::Cloud::Monitoring::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

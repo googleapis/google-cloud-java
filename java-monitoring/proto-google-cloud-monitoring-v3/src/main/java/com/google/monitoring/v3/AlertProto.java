@@ -133,11 +133,12 @@ public final class AlertProto {
           + "lert_policy}\0229organizations/{organizatio"
           + "n}/alertPolicies/{alert_policy}\022-folders"
           + "/{folder}/alertPolicies/{alert_policy}\022\001"
-          + "*B\242\001\n\030com.google.monitoring.v3B\nAlertPro"
+          + "*B\302\001\n\030com.google.monitoring.v3B\nAlertPro"
           + "toP\001Z>google.golang.org/genproto/googlea"
           + "pis/monitoring/v3;monitoring\252\002\032Google.Cl"
           + "oud.Monitoring.V3\312\002\032Google\\Cloud\\Monitor"
-          + "ing\\V3b\006proto3"
+          + "ing\\V3\352\002\035Google::Cloud::Monitoring::V3b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

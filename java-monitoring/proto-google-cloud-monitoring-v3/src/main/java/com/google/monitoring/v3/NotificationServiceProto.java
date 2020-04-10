@@ -203,12 +203,12 @@ public final class NotificationServiceProto {
           + "ps://www.googleapis.com/auth/cloud-platf"
           + "orm,https://www.googleapis.com/auth/moni"
           + "toring,https://www.googleapis.com/auth/m"
-          + "onitoring.readB\260\001\n\030com.google.monitoring"
+          + "onitoring.readB\320\001\n\030com.google.monitoring"
           + ".v3B\030NotificationServiceProtoP\001Z>google."
           + "golang.org/genproto/googleapis/monitorin"
           + "g/v3;monitoring\252\002\032Google.Cloud.Monitorin"
-          + "g.V3\312\002\032Google\\Cloud\\Monitoring\\V3b\006proto"
-          + "3"
+          + "g.V3\312\002\032Google\\Cloud\\Monitoring\\V3\352\002\035Goog"
+          + "le::Cloud::Monitoring::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
