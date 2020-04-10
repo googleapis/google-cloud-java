@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.99.4](https://www.github.com/googleapis/java-language/compare/v1.99.3...v1.99.4) (2020-04-09)
+
+
+### Documentation
+
+* change relative URLs to absolute URLs to fix broken links ([#100](https://www.github.com/googleapis/java-language/issues/100)) ([32e8447](https://www.github.com/googleapis/java-language/commit/32e8447e9d37a44f58204decf5dcdc0684786651))
+
+
+### Dependencies
+
+* update core dependencies ([#75](https://www.github.com/googleapis/java-language/issues/75)) ([480275f](https://www.github.com/googleapis/java-language/commit/480275fbaf5f97dc28ddaaa489d038cf7f0328cb))
+* update dependency com.google.api:api-common to v1.9.0 ([#94](https://www.github.com/googleapis/java-language/issues/94)) ([dc4a66f](https://www.github.com/googleapis/java-language/commit/dc4a66f0cc2b1af2760126269fdbb4c6ec776aa2))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#84](https://www.github.com/googleapis/java-language/issues/84)) ([576eb7c](https://www.github.com/googleapis/java-language/commit/576eb7c7e43fe70ae129fa1a40eee22b59181c6b))
+
 ### [1.99.3](https://www.github.com/googleapis/java-language/compare/v1.99.2...v1.99.3) (2020-03-10)
 
 
