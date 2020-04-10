@@ -112,12 +112,13 @@ public final class TextToSpeechProto {
           + "ponse\"9\202\323\344\223\002\030\"\023/v1/text:synthesize:\001*\332A\030"
           + "input,voice,audio_config\032O\312A\033texttospeec"
           + "h.googleapis.com\322A.https://www.googleapi"
-          + "s.com/auth/cloud-platformB\302\001\n com.google"
+          + "s.com/auth/cloud-platformB\344\001\n com.google"
           + ".cloud.texttospeech.v1B\021TextToSpeechProt"
           + "oP\001ZHgoogle.golang.org/genproto/googleap"
           + "is/cloud/texttospeech/v1;texttospeech\370\001\001"
           + "\252\002\034Google.Cloud.TextToSpeech.V1\312\002\034Google"
-          + "\\Cloud\\TextToSpeech\\V1b\006proto3"
+          + "\\Cloud\\TextToSpeech\\V1\352\002\037Google::Cloud::"
+          + "TextToSpeech::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
