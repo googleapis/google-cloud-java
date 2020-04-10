@@ -49,20 +49,20 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class AutoMlClientTest {
-  private static MockAutoMl mockAutoMl;
   private static MockPredictionService mockPredictionService;
+  private static MockAutoMl mockAutoMl;
   private static MockServiceHelper serviceHelper;
   private AutoMlClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockAutoMl = new MockAutoMl();
     mockPredictionService = new MockPredictionService();
+    mockAutoMl = new MockAutoMl();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockAutoMl, mockPredictionService));
+            Arrays.<MockGrpcService>asList(mockPredictionService, mockAutoMl));
     serviceHelper.start();
   }
 
@@ -90,15 +90,107 @@ public class AutoMlClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteDatasetTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAutoMl.addResponse(resultOperation);
+
+    DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    Empty actualResponse = client.deleteDatasetAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDatasetRequest actualRequest = (DeleteDatasetRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAutoMl.addException(exception);
+
+    try {
+      DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+      client.deleteDatasetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteModelTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAutoMl.addResponse(resultOperation);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    Empty actualResponse = client.deleteModelAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteModelRequest actualRequest = (DeleteModelRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ModelName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteModelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAutoMl.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+      client.deleteModelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createDatasetTest() throws Exception {
-    String name = "name3373707";
+    DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     int exampleCount = 1517063674;
     String etag = "etag3123477";
     Dataset expectedResponse =
         Dataset.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setExampleCount(exampleCount)
@@ -151,68 +243,15 @@ public class AutoMlClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void updateDatasetTest() {
-    String name = "name3373707";
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    int exampleCount = 1517063674;
-    String etag = "etag3123477";
-    Dataset expectedResponse =
-        Dataset.newBuilder()
-            .setName(name)
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .setExampleCount(exampleCount)
-            .setEtag(etag)
-            .build();
-    mockAutoMl.addResponse(expectedResponse);
-
-    Dataset dataset = Dataset.newBuilder().build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
-
-    Dataset actualResponse = client.updateDataset(dataset, updateMask);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    UpdateDatasetRequest actualRequest = (UpdateDatasetRequest) actualRequests.get(0);
-
-    Assert.assertEquals(dataset, actualRequest.getDataset());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void updateDatasetExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAutoMl.addException(exception);
-
-    try {
-      Dataset dataset = Dataset.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-
-      client.updateDataset(dataset, updateMask);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void getDatasetTest() {
-    String name2 = "name2-1052831874";
+    DatasetName name2 = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     int exampleCount = 1517063674;
     String etag = "etag3123477";
     Dataset expectedResponse =
         Dataset.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setExampleCount(exampleCount)
@@ -302,26 +341,34 @@ public class AutoMlClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteDatasetTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("deleteDatasetTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockAutoMl.addResponse(resultOperation);
-
+  public void updateDatasetTest() {
     DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+    String displayName = "displayName1615086568";
+    String description = "description-1724546052";
+    int exampleCount = 1517063674;
+    String etag = "etag3123477";
+    Dataset expectedResponse =
+        Dataset.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setDescription(description)
+            .setExampleCount(exampleCount)
+            .setEtag(etag)
+            .build();
+    mockAutoMl.addResponse(expectedResponse);
 
-    Empty actualResponse = client.deleteDatasetAsync(name).get();
+    Dataset dataset = Dataset.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Dataset actualResponse = client.updateDataset(dataset, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteDatasetRequest actualRequest = (DeleteDatasetRequest) actualRequests.get(0);
+    UpdateDatasetRequest actualRequest = (UpdateDatasetRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
+    Assert.assertEquals(dataset, actualRequest.getDataset());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -330,19 +377,18 @@ public class AutoMlClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteDatasetExceptionTest() throws Exception {
+  public void updateDatasetExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockAutoMl.addException(exception);
 
     try {
-      DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      Dataset dataset = Dataset.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
 
-      client.deleteDatasetAsync(name).get();
+      client.updateDataset(dataset, updateMask);
       Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -447,12 +493,13 @@ public class AutoMlClientTest {
   @Test
   @SuppressWarnings("all")
   public void getAnnotationSpecTest() {
-    String name2 = "name2-1052831874";
+    AnnotationSpecName name2 =
+        AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
     String displayName = "displayName1615086568";
     int exampleCount = 1517063674;
     AnnotationSpec expectedResponse =
         AnnotationSpec.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setExampleCount(exampleCount)
             .build();
@@ -495,13 +542,13 @@ public class AutoMlClientTest {
   @Test
   @SuppressWarnings("all")
   public void createModelTest() throws Exception {
-    String name = "name3373707";
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
     String displayName = "displayName1615086568";
     String datasetId = "datasetId-2115646910";
     String etag = "etag3123477";
     Model expectedResponse =
         Model.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDatasetId(datasetId)
             .setEtag(etag)
@@ -554,13 +601,13 @@ public class AutoMlClientTest {
   @Test
   @SuppressWarnings("all")
   public void getModelTest() {
-    String name2 = "name2-1052831874";
+    ModelName name2 = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
     String displayName = "displayName1615086568";
     String datasetId = "datasetId-2115646910";
     String etag = "etag3123477";
     Model expectedResponse =
         Model.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDatasetId(datasetId)
             .setEtag(etag)
@@ -593,57 +640,6 @@ public class AutoMlClientTest {
       ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
 
       client.getModel(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void updateModelTest() {
-    String name = "name3373707";
-    String displayName = "displayName1615086568";
-    String datasetId = "datasetId-2115646910";
-    String etag = "etag3123477";
-    Model expectedResponse =
-        Model.newBuilder()
-            .setName(name)
-            .setDisplayName(displayName)
-            .setDatasetId(datasetId)
-            .setEtag(etag)
-            .build();
-    mockAutoMl.addResponse(expectedResponse);
-
-    Model model = Model.newBuilder().build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
-
-    Model actualResponse = client.updateModel(model, updateMask);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    UpdateModelRequest actualRequest = (UpdateModelRequest) actualRequests.get(0);
-
-    Assert.assertEquals(model, actualRequest.getModel());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void updateModelExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAutoMl.addException(exception);
-
-    try {
-      Model model = Model.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-
-      client.updateModel(model, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -697,26 +693,32 @@ public class AutoMlClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteModelTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("deleteModelTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockAutoMl.addResponse(resultOperation);
-
+  public void updateModelTest() {
     ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+    String displayName = "displayName1615086568";
+    String datasetId = "datasetId-2115646910";
+    String etag = "etag3123477";
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setDatasetId(datasetId)
+            .setEtag(etag)
+            .build();
+    mockAutoMl.addResponse(expectedResponse);
 
-    Empty actualResponse = client.deleteModelAsync(name).get();
+    Model model = Model.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Model actualResponse = client.updateModel(model, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteModelRequest actualRequest = (DeleteModelRequest) actualRequests.get(0);
+    UpdateModelRequest actualRequest = (UpdateModelRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, ModelName.parse(actualRequest.getName()));
+    Assert.assertEquals(model, actualRequest.getModel());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -725,19 +727,18 @@ public class AutoMlClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteModelExceptionTest() throws Exception {
+  public void updateModelExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockAutoMl.addException(exception);
 
     try {
-      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      Model model = Model.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
 
-      client.deleteModelAsync(name).get();
+      client.updateModel(model, updateMask);
       Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -847,13 +848,8 @@ public class AutoMlClientTest {
 
     ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
     ModelExportOutputConfig outputConfig = ModelExportOutputConfig.newBuilder().build();
-    ExportModelRequest request =
-        ExportModelRequest.newBuilder()
-            .setName(name.toString())
-            .setOutputConfig(outputConfig)
-            .build();
 
-    Empty actualResponse = client.exportModelAsync(request).get();
+    Empty actualResponse = client.exportModelAsync(name, outputConfig).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
@@ -877,13 +873,8 @@ public class AutoMlClientTest {
     try {
       ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
       ModelExportOutputConfig outputConfig = ModelExportOutputConfig.newBuilder().build();
-      ExportModelRequest request =
-          ExportModelRequest.newBuilder()
-              .setName(name.toString())
-              .setOutputConfig(outputConfig)
-              .build();
 
-      client.exportModelAsync(request).get();
+      client.exportModelAsync(name, outputConfig).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -895,13 +886,14 @@ public class AutoMlClientTest {
   @Test
   @SuppressWarnings("all")
   public void getModelEvaluationTest() {
-    String name2 = "name2-1052831874";
+    ModelEvaluationName name2 =
+        ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[MODEL_EVALUATION]");
     String annotationSpecId = "annotationSpecId60690191";
     String displayName = "displayName1615086568";
     int evaluatedExampleCount = 277565350;
     ModelEvaluation expectedResponse =
         ModelEvaluation.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setAnnotationSpecId(annotationSpecId)
             .setDisplayName(displayName)
             .setEvaluatedExampleCount(evaluatedExampleCount)

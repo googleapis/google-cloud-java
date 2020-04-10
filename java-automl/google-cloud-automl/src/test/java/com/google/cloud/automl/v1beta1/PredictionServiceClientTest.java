@@ -44,20 +44,20 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class PredictionServiceClientTest {
-  private static MockAutoMl mockAutoMl;
   private static MockPredictionService mockPredictionService;
+  private static MockAutoMl mockAutoMl;
   private static MockServiceHelper serviceHelper;
   private PredictionServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockAutoMl = new MockAutoMl();
     mockPredictionService = new MockPredictionService();
+    mockAutoMl = new MockAutoMl();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockAutoMl, mockPredictionService));
+            Arrays.<MockGrpcService>asList(mockPredictionService, mockAutoMl));
     serviceHelper.start();
   }
 

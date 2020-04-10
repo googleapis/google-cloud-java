@@ -70,6 +70,26 @@ public abstract class AutoMlStub implements BackgroundResource {
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DeleteDatasetRequest, Empty, OperationMetadata>
+      deleteDatasetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDatasetOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteDatasetRequest, Operation> deleteDatasetCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDatasetCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
+      deleteModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteModelOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteModelCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateDatasetRequest, Dataset, OperationMetadata>
       createDatasetOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createDatasetOperationCallable()");
@@ -77,10 +97,6 @@ public abstract class AutoMlStub implements BackgroundResource {
 
   public UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable() {
     throw new UnsupportedOperationException("Not implemented: createDatasetCallable()");
-  }
-
-  public UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateDatasetCallable()");
   }
 
   public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
@@ -95,14 +111,8 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listDatasetsCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteDatasetRequest, Empty, OperationMetadata>
-      deleteDatasetOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteDatasetOperationCallable()");
-  }
-
-  public UnaryCallable<DeleteDatasetRequest, Operation> deleteDatasetCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteDatasetCallable()");
+  public UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDatasetCallable()");
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
@@ -143,10 +153,6 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getModelCallable()");
   }
 
-  public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateModelCallable()");
-  }
-
   public UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listModelsPagedCallable()");
   }
@@ -155,14 +161,8 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listModelsCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
-      deleteModelOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteModelOperationCallable()");
-  }
-
-  public UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteModelCallable()");
+  public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateModelCallable()");
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")

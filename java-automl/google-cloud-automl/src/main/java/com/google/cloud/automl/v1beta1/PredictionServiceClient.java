@@ -546,10 +546,12 @@ public class PredictionServiceClient implements BackgroundResource {
    *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
    *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
    *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
+   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
    *   BatchPredictRequest request = BatchPredictRequest.newBuilder()
    *     .setName(name.toString())
    *     .setInputConfig(inputConfig)
    *     .setOutputConfig(outputConfig)
+   *     .putAllParams(params)
    *     .build();
    *   BatchPredictResult response = predictionServiceClient.batchPredictAsync(request).get();
    * }
@@ -584,10 +586,12 @@ public class PredictionServiceClient implements BackgroundResource {
    *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
    *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
    *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
+   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
    *   BatchPredictRequest request = BatchPredictRequest.newBuilder()
    *     .setName(name.toString())
    *     .setInputConfig(inputConfig)
    *     .setOutputConfig(outputConfig)
+   *     .putAllParams(params)
    *     .build();
    *   OperationFuture&lt;BatchPredictResult, OperationMetadata&gt; future = predictionServiceClient.batchPredictOperationCallable().futureCall(request);
    *   // Do something
@@ -620,10 +624,12 @@ public class PredictionServiceClient implements BackgroundResource {
    *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
    *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
    *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
+   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
    *   BatchPredictRequest request = BatchPredictRequest.newBuilder()
    *     .setName(name.toString())
    *     .setInputConfig(inputConfig)
    *     .setOutputConfig(outputConfig)
+   *     .putAllParams(params)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = predictionServiceClient.batchPredictCallable().futureCall(request);
    *   // Do something

@@ -287,7 +287,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(86400000L))
+                      .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;

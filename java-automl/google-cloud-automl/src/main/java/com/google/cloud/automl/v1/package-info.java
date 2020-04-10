@@ -19,7 +19,27 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>============ AutoMlClient ============
+ * <p>======================= PredictionServiceClient =======================
+ *
+ * <p>Service Description: AutoML Prediction API.
+ *
+ * <p>On any input that is documented to expect a string parameter in snake_case or kebab-case,
+ * either of those cases is accepted.
+ *
+ * <p>Sample for PredictionServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+ *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+ *   ExamplePayload payload = ExamplePayload.newBuilder().build();
+ *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
+ *   PredictResponse response = predictionServiceClient.predict(name, payload, params);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ============ AutoMlClient ============
  *
  * <p>Service Description: AutoML Server API.
  *
@@ -40,29 +60,8 @@
  * <pre>
  * <code>
  * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
- *   Dataset dataset = Dataset.newBuilder().build();
- *   FieldMask updateMask = FieldMask.newBuilder().build();
- *   Dataset response = autoMlClient.updateDataset(dataset, updateMask);
- * }
- * </code>
- * </pre>
- *
- * ======================= PredictionServiceClient =======================
- *
- * <p>Service Description: AutoML Prediction API.
- *
- * <p>On any input that is documented to expect a string parameter in snake_case or kebab-case,
- * either of those cases is accepted.
- *
- * <p>Sample for PredictionServiceClient:
- *
- * <pre>
- * <code>
- * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
- *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
- *   ExamplePayload payload = ExamplePayload.newBuilder().build();
- *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
- *   PredictResponse response = predictionServiceClient.predict(name, payload, params);
+ *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+ *   Dataset response = autoMlClient.getDataset(name);
  * }
  * </code>
  * </pre>
