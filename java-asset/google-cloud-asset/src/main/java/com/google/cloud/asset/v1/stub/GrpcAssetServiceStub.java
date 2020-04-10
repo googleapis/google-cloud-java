@@ -56,6 +56,13 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcAssetServiceStub extends AssetServiceStub {
 
+  private static final MethodDescriptor<DeleteFeedRequest, Empty> deleteFeedMethodDescriptor =
+      MethodDescriptor.<DeleteFeedRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.asset.v1.AssetService/DeleteFeed")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteFeedRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<ExportAssetsRequest, Operation>
       exportAssetsMethodDescriptor =
           MethodDescriptor.<ExportAssetsRequest, Operation>newBuilder()
@@ -103,17 +110,11 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateFeedRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feed.getDefaultInstance()))
           .build();
-  private static final MethodDescriptor<DeleteFeedRequest, Empty> deleteFeedMethodDescriptor =
-      MethodDescriptor.<DeleteFeedRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.asset.v1.AssetService/DeleteFeed")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteFeedRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
+  private final UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable;
   private final UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable;
   private final OperationCallable<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
       exportAssetsOperationCallable;
@@ -123,7 +124,6 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
   private final UnaryCallable<GetFeedRequest, Feed> getFeedCallable;
   private final UnaryCallable<ListFeedsRequest, ListFeedsResponse> listFeedsCallable;
   private final UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable;
-  private final UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -165,6 +165,19 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<DeleteFeedRequest, Empty> deleteFeedTransportSettings =
+        GrpcCallSettings.<DeleteFeedRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteFeedMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteFeedRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteFeedRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ExportAssetsRequest, Operation> exportAssetsTransportSettings =
         GrpcCallSettings.<ExportAssetsRequest, Operation>newBuilder()
             .setMethodDescriptor(exportAssetsMethodDescriptor)
@@ -245,20 +258,10 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteFeedRequest, Empty> deleteFeedTransportSettings =
-        GrpcCallSettings.<DeleteFeedRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteFeedMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteFeedRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteFeedRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
 
+    this.deleteFeedCallable =
+        callableFactory.createUnaryCallable(
+            deleteFeedTransportSettings, settings.deleteFeedSettings(), clientContext);
     this.exportAssetsCallable =
         callableFactory.createUnaryCallable(
             exportAssetsTransportSettings, settings.exportAssetsSettings(), clientContext);
@@ -285,9 +288,6 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     this.updateFeedCallable =
         callableFactory.createUnaryCallable(
             updateFeedTransportSettings, settings.updateFeedSettings(), clientContext);
-    this.deleteFeedCallable =
-        callableFactory.createUnaryCallable(
-            deleteFeedTransportSettings, settings.deleteFeedSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -295,6 +295,10 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  public UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
+    return deleteFeedCallable;
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
@@ -326,10 +330,6 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
 
   public UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable() {
     return updateFeedCallable;
-  }
-
-  public UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
-    return deleteFeedCallable;
   }
 
   @Override
