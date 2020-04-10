@@ -84,12 +84,53 @@ public class WebSecurityScannerClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteScanConfigTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockWebSecurityScanner.addResponse(expectedResponse);
+
+    ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+
+    client.deleteScanConfig(name);
+
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteScanConfigRequest actualRequest = (DeleteScanConfigRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ScanConfigName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteScanConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockWebSecurityScanner.addException(exception);
+
+    try {
+      ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+
+      client.deleteScanConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createScanConfigTest() {
-    String name = "name3373707";
+    ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
     String displayName = "displayName1615086568";
     int maxQps = 844445913;
     ScanConfig expectedResponse =
-        ScanConfig.newBuilder().setName(name).setDisplayName(displayName).setMaxQps(maxQps).build();
+        ScanConfig.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setMaxQps(maxQps)
+            .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
     ProjectName parent = ProjectName.of("[PROJECT]");
@@ -129,50 +170,13 @@ public class WebSecurityScannerClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteScanConfigTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockWebSecurityScanner.addResponse(expectedResponse);
-
-    ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-
-    client.deleteScanConfig(name);
-
-    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteScanConfigRequest actualRequest = (DeleteScanConfigRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ScanConfigName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteScanConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockWebSecurityScanner.addException(exception);
-
-    try {
-      ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-
-      client.deleteScanConfig(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void getScanConfigTest() {
-    String name2 = "name2-1052831874";
+    ScanConfigName name2 = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
     String displayName = "displayName1615086568";
     int maxQps = 844445913;
     ScanConfig expectedResponse =
         ScanConfig.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setMaxQps(maxQps)
             .build();
@@ -261,11 +265,15 @@ public class WebSecurityScannerClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateScanConfigTest() {
-    String name = "name3373707";
+    ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
     String displayName = "displayName1615086568";
     int maxQps = 844445913;
     ScanConfig expectedResponse =
-        ScanConfig.newBuilder().setName(name).setDisplayName(displayName).setMaxQps(maxQps).build();
+        ScanConfig.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setMaxQps(maxQps)
+            .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
     ScanConfig scanConfig = ScanConfig.newBuilder().build();
@@ -306,14 +314,14 @@ public class WebSecurityScannerClientTest {
   @Test
   @SuppressWarnings("all")
   public void startScanRunTest() {
-    String name2 = "name2-1052831874";
+    ScanRunName name2 = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
     long urlsCrawledCount = 1749797253L;
     long urlsTestedCount = 1498664068L;
     boolean hasVulnerabilities = false;
     int progressPercent = 2137894861;
     ScanRun expectedResponse =
         ScanRun.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setUrlsCrawledCount(urlsCrawledCount)
             .setUrlsTestedCount(urlsTestedCount)
             .setHasVulnerabilities(hasVulnerabilities)
@@ -356,14 +364,14 @@ public class WebSecurityScannerClientTest {
   @Test
   @SuppressWarnings("all")
   public void getScanRunTest() {
-    String name2 = "name2-1052831874";
+    ScanRunName name2 = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
     long urlsCrawledCount = 1749797253L;
     long urlsTestedCount = 1498664068L;
     boolean hasVulnerabilities = false;
     int progressPercent = 2137894861;
     ScanRun expectedResponse =
         ScanRun.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setUrlsCrawledCount(urlsCrawledCount)
             .setUrlsTestedCount(urlsTestedCount)
             .setHasVulnerabilities(hasVulnerabilities)
@@ -454,14 +462,14 @@ public class WebSecurityScannerClientTest {
   @Test
   @SuppressWarnings("all")
   public void stopScanRunTest() {
-    String name2 = "name2-1052831874";
+    ScanRunName name2 = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
     long urlsCrawledCount = 1749797253L;
     long urlsTestedCount = 1498664068L;
     boolean hasVulnerabilities = false;
     int progressPercent = 2137894861;
     ScanRun expectedResponse =
         ScanRun.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setUrlsCrawledCount(urlsCrawledCount)
             .setUrlsTestedCount(urlsTestedCount)
             .setHasVulnerabilities(hasVulnerabilities)
@@ -552,7 +560,7 @@ public class WebSecurityScannerClientTest {
   @Test
   @SuppressWarnings("all")
   public void getFindingTest() {
-    String name2 = "name2-1052831874";
+    FindingName name2 = FindingName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
     String httpMethod = "httpMethod820747384";
     String fuzzedUrl = "fuzzedUrl-2120677666";
     String body = "body3029410";
@@ -563,7 +571,7 @@ public class WebSecurityScannerClientTest {
     String trackingId = "trackingId1878901667";
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setHttpMethod(httpMethod)
             .setFuzzedUrl(fuzzedUrl)
             .setBody(body)

@@ -53,16 +53,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createScanConfig to 30 seconds:
+ * <p>For example, to set the total timeout of deleteScanConfig to 30 seconds:
  *
  * <pre>
  * <code>
  * WebSecurityScannerSettings.Builder webSecurityScannerSettingsBuilder =
  *     WebSecurityScannerSettings.newBuilder();
  * webSecurityScannerSettingsBuilder
- *     .createScanConfigSettings()
+ *     .deleteScanConfigSettings()
  *     .setRetrySettings(
- *         webSecurityScannerSettingsBuilder.createScanConfigSettings().getRetrySettings().toBuilder()
+ *         webSecurityScannerSettingsBuilder.deleteScanConfigSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * WebSecurityScannerSettings webSecurityScannerSettings = webSecurityScannerSettingsBuilder.build();
@@ -72,14 +72,14 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class WebSecurityScannerSettings extends ClientSettings<WebSecurityScannerSettings> {
-  /** Returns the object with the settings used for calls to createScanConfig. */
-  public UnaryCallSettings<CreateScanConfigRequest, ScanConfig> createScanConfigSettings() {
-    return ((WebSecurityScannerStubSettings) getStubSettings()).createScanConfigSettings();
-  }
-
   /** Returns the object with the settings used for calls to deleteScanConfig. */
   public UnaryCallSettings<DeleteScanConfigRequest, Empty> deleteScanConfigSettings() {
     return ((WebSecurityScannerStubSettings) getStubSettings()).deleteScanConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createScanConfig. */
+  public UnaryCallSettings<CreateScanConfigRequest, ScanConfig> createScanConfigSettings() {
+    return ((WebSecurityScannerStubSettings) getStubSettings()).createScanConfigSettings();
   }
 
   /** Returns the object with the settings used for calls to getScanConfig. */
@@ -241,15 +241,15 @@ public class WebSecurityScannerSettings extends ClientSettings<WebSecurityScanne
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteScanConfig. */
+    public UnaryCallSettings.Builder<DeleteScanConfigRequest, Empty> deleteScanConfigSettings() {
+      return getStubSettingsBuilder().deleteScanConfigSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createScanConfig. */
     public UnaryCallSettings.Builder<CreateScanConfigRequest, ScanConfig>
         createScanConfigSettings() {
       return getStubSettingsBuilder().createScanConfigSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteScanConfig. */
-    public UnaryCallSettings.Builder<DeleteScanConfigRequest, Empty> deleteScanConfigSettings() {
-      return getStubSettingsBuilder().deleteScanConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to getScanConfig. */

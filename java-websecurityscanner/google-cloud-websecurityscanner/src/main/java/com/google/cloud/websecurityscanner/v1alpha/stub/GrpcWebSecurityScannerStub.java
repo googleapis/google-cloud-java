@@ -68,16 +68,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
 
-  private static final MethodDescriptor<CreateScanConfigRequest, ScanConfig>
-      createScanConfigMethodDescriptor =
-          MethodDescriptor.<CreateScanConfigRequest, ScanConfig>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner/CreateScanConfig")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateScanConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(ScanConfig.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<DeleteScanConfigRequest, Empty>
       deleteScanConfigMethodDescriptor =
           MethodDescriptor.<DeleteScanConfigRequest, Empty>newBuilder()
@@ -87,6 +77,16 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteScanConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateScanConfigRequest, ScanConfig>
+      createScanConfigMethodDescriptor =
+          MethodDescriptor.<CreateScanConfigRequest, ScanConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner/CreateScanConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateScanConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ScanConfig.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<GetScanConfigRequest, ScanConfig>
       getScanConfigMethodDescriptor =
@@ -196,8 +196,8 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<CreateScanConfigRequest, ScanConfig> createScanConfigCallable;
   private final UnaryCallable<DeleteScanConfigRequest, Empty> deleteScanConfigCallable;
+  private final UnaryCallable<CreateScanConfigRequest, ScanConfig> createScanConfigCallable;
   private final UnaryCallable<GetScanConfigRequest, ScanConfig> getScanConfigCallable;
   private final UnaryCallable<ListScanConfigsRequest, ListScanConfigsResponse>
       listScanConfigsCallable;
@@ -262,19 +262,6 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<CreateScanConfigRequest, ScanConfig> createScanConfigTransportSettings =
-        GrpcCallSettings.<CreateScanConfigRequest, ScanConfig>newBuilder()
-            .setMethodDescriptor(createScanConfigMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<CreateScanConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateScanConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<DeleteScanConfigRequest, Empty> deleteScanConfigTransportSettings =
         GrpcCallSettings.<DeleteScanConfigRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteScanConfigMethodDescriptor)
@@ -284,6 +271,19 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   public Map<String, String> extract(DeleteScanConfigRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<CreateScanConfigRequest, ScanConfig> createScanConfigTransportSettings =
+        GrpcCallSettings.<CreateScanConfigRequest, ScanConfig>newBuilder()
+            .setMethodDescriptor(createScanConfigMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateScanConfigRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateScanConfigRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
                     return params.build();
                   }
                 })
@@ -436,12 +436,12 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                     })
                 .build();
 
-    this.createScanConfigCallable =
-        callableFactory.createUnaryCallable(
-            createScanConfigTransportSettings, settings.createScanConfigSettings(), clientContext);
     this.deleteScanConfigCallable =
         callableFactory.createUnaryCallable(
             deleteScanConfigTransportSettings, settings.deleteScanConfigSettings(), clientContext);
+    this.createScanConfigCallable =
+        callableFactory.createUnaryCallable(
+            createScanConfigTransportSettings, settings.createScanConfigSettings(), clientContext);
     this.getScanConfigCallable =
         callableFactory.createUnaryCallable(
             getScanConfigTransportSettings, settings.getScanConfigSettings(), clientContext);
@@ -493,12 +493,12 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<CreateScanConfigRequest, ScanConfig> createScanConfigCallable() {
-    return createScanConfigCallable;
-  }
-
   public UnaryCallable<DeleteScanConfigRequest, Empty> deleteScanConfigCallable() {
     return deleteScanConfigCallable;
+  }
+
+  public UnaryCallable<CreateScanConfigRequest, ScanConfig> createScanConfigCallable() {
+    return createScanConfigCallable;
   }
 
   public UnaryCallable<GetScanConfigRequest, ScanConfig> getScanConfigCallable() {
