@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.2](https://www.github.com/googleapis/java-dlp/compare/v1.1.1...v1.1.2) (2020-04-10)
+
+
+### Documentation
+
+* **v2:** regenerate documentation from protos ([#129](https://www.github.com/googleapis/java-dlp/issues/129)) ([69517fc](https://www.github.com/googleapis/java-dlp/commit/69517fc9587b91ba970d49c6afd620aabf6ce2c7)), closes [#123](https://www.github.com/googleapis/java-dlp/issues/123) [#123](https://www.github.com/googleapis/java-dlp/issues/123) [#94](https://www.github.com/googleapis/java-dlp/issues/94) [#105](https://www.github.com/googleapis/java-dlp/issues/105) [#475](https://www.github.com/googleapis/java-dlp/issues/475) [#475](https://www.github.com/googleapis/java-dlp/issues/475) [#465](https://www.github.com/googleapis/java-dlp/issues/465) [#465](https://www.github.com/googleapis/java-dlp/issues/465) [#476](https://www.github.com/googleapis/java-dlp/issues/476) [#476](https://www.github.com/googleapis/java-dlp/issues/476)
+
 ### [1.1.1](https://www.github.com/googleapis/java-dlp/compare/v1.1.0...v1.1.1) (2020-04-07)
 
 
