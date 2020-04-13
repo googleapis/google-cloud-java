@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.22.4](https://www.github.com/googleapis/java-scheduler/compare/v1.22.3...v1.22.4) (2020-04-10)
+
+
+### Dependencies
+
+* update core dependencies ([#81](https://www.github.com/googleapis/java-scheduler/issues/81)) ([e76656b](https://www.github.com/googleapis/java-scheduler/commit/e76656b96a7cde9c2b779b216b9d751bb5177e87))
+* update dependency com.google.api:api-common to v1.9.0 ([#100](https://www.github.com/googleapis/java-scheduler/issues/100)) ([039bbba](https://www.github.com/googleapis/java-scheduler/commit/039bbba036ef9913a1d6cc834799569cd165b0f9))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#107](https://www.github.com/googleapis/java-scheduler/issues/107)) ([b47b84c](https://www.github.com/googleapis/java-scheduler/commit/b47b84cbd4638fafb52c49b17853c7677b23d943))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#92](https://www.github.com/googleapis/java-scheduler/issues/92)) ([b21a9bb](https://www.github.com/googleapis/java-scheduler/commit/b21a9bb65dfcebf30303e1484693685ad9c0146a))
+
 ### [1.22.3](https://www.github.com/googleapis/java-scheduler/compare/v1.22.2...v1.22.3) (2020-03-09)
 
 
