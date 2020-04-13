@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.3](https://www.github.com/googleapis/java-container/compare/v1.0.2...v1.0.3) (2020-04-13)
+
+
+### Documentation
+
+* display resource name patterns in code font. ([#125](https://www.github.com/googleapis/java-container/issues/125)) ([acc4ab7](https://www.github.com/googleapis/java-container/commit/acc4ab75166c7738d557fe1977a4fc185660b814))
+
 ### [1.0.2](https://www.github.com/googleapis/java-container/compare/v1.0.1...v1.0.2) (2020-04-09)
 
 
