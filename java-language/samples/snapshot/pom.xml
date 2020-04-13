@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-language</artifactId>
-      <version>1.99.3</version>
+      <version>1.99.4</version>
     </dependency>
 
     <dependency>
