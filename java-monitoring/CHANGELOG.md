@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.100.1](https://www.github.com/googleapis/java-monitoring/compare/v1.100.0...v1.100.1) (2020-04-10)
+
+
+### Dependencies
+
+* update core dependencies ([#87](https://www.github.com/googleapis/java-monitoring/issues/87)) ([5308b22](https://www.github.com/googleapis/java-monitoring/commit/5308b22f05eb23e6780bda032bd94721ca9cce94))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#98](https://www.github.com/googleapis/java-monitoring/issues/98)) ([c32949f](https://www.github.com/googleapis/java-monitoring/commit/c32949f943479d441701160f29a6e4df63fc4855))
+
+
+### Documentation
+
+* regenerate updated javadoc comments and links ([#115](https://www.github.com/googleapis/java-monitoring/issues/115)) ([8a14f90](https://www.github.com/googleapis/java-monitoring/commit/8a14f9085ca1af5b4e7a77ce641368cf29aeef55))
+
 ## [1.100.0](https://www.github.com/googleapis/java-monitoring/compare/v1.99.2...v1.100.0) (2020-03-26)
 
 
