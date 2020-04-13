@@ -82,10 +82,11 @@ public final class XyChartProto {
           + "ChartOptions\022?\n\004mode\030\001 \001(\01621.google.moni"
           + "toring.dashboard.v1.ChartOptions.Mode\"=\n"
           + "\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\t\n\005COLOR\020\001\022\t"
-          + "\n\005X_RAY\020\002\022\t\n\005STATS\020\003B}\n\"com.google.monit"
-          + "oring.dashboard.v1B\014XyChartProtoP\001ZGgoog"
-          + "le.golang.org/genproto/googleapis/monito"
-          + "ring/dashboard/v1;dashboardb\006proto3"
+          + "\n\005X_RAY\020\002\022\t\n\005STATS\020\003B\250\001\n\"com.google.moni"
+          + "toring.dashboard.v1B\014XyChartProtoP\001ZGgoo"
+          + "gle.golang.org/genproto/googleapis/monit"
+          + "oring/dashboard/v1;dashboard\352\002(Google::C"
+          + "loud::Monitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

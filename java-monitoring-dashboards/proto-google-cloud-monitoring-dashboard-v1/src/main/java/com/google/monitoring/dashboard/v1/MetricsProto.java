@@ -97,10 +97,11 @@ public final class MetricsProto {
           + "tion\022\031\n\025DIRECTION_UNSPECIFIED\020\000\022\t\n\005ABOVE"
           + "\020\001\022\t\n\005BELOW\020\002*Q\n\016SparkChartType\022 \n\034SPARK"
           + "_CHART_TYPE_UNSPECIFIED\020\000\022\016\n\nSPARK_LINE\020"
-          + "\001\022\r\n\tSPARK_BAR\020\002B}\n\"com.google.monitorin"
-          + "g.dashboard.v1B\014MetricsProtoP\001ZGgoogle.g"
-          + "olang.org/genproto/googleapis/monitoring"
-          + "/dashboard/v1;dashboardb\006proto3"
+          + "\001\022\r\n\tSPARK_BAR\020\002B\250\001\n\"com.google.monitori"
+          + "ng.dashboard.v1B\014MetricsProtoP\001ZGgoogle."
+          + "golang.org/genproto/googleapis/monitorin"
+          + "g/dashboard/v1;dashboard\352\002(Google::Cloud"
+          + "::Monitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

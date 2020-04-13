@@ -37,10 +37,11 @@ public final class DrilldownsProto {
     java.lang.String[] descriptorData = {
       "\n/google/monitoring/dashboard/v1/drilldo"
           + "wns.proto\022\036google.monitoring.dashboard.v"
-          + "1B\200\001\n\"com.google.monitoring.dashboard.v1"
+          + "1B\253\001\n\"com.google.monitoring.dashboard.v1"
           + "B\017DrilldownsProtoP\001ZGgoogle.golang.org/g"
           + "enproto/googleapis/monitoring/dashboard/"
-          + "v1;dashboardb\006proto3"
+          + "v1;dashboard\352\002(Google::Cloud::Monitoring"
+          + "::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

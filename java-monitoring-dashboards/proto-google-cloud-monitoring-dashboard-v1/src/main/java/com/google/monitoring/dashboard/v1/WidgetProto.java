@@ -53,10 +53,11 @@ public final class WidgetProto {
           + "itoring.dashboard.v1.ScorecardH\000\0224\n\004text"
           + "\030\004 \001(\0132$.google.monitoring.dashboard.v1."
           + "TextH\000\022\'\n\005blank\030\005 \001(\0132\026.google.protobuf."
-          + "EmptyH\000B\t\n\007contentB|\n\"com.google.monitor"
-          + "ing.dashboard.v1B\013WidgetProtoP\001ZGgoogle."
-          + "golang.org/genproto/googleapis/monitorin"
-          + "g/dashboard/v1;dashboardb\006proto3"
+          + "EmptyH\000B\t\n\007contentB\247\001\n\"com.google.monito"
+          + "ring.dashboard.v1B\013WidgetProtoP\001ZGgoogle"
+          + ".golang.org/genproto/googleapis/monitori"
+          + "ng/dashboard/v1;dashboard\352\002(Google::Clou"
+          + "d::Monitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

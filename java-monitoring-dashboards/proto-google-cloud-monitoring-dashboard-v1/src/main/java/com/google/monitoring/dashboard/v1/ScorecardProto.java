@@ -65,10 +65,11 @@ public final class ScorecardProto {
           + "t_type\030\001 \001(\0162..google.monitoring.dashboa"
           + "rd.v1.SparkChartType\0227\n\024min_alignment_pe"
           + "riod\030\002 \001(\0132\031.google.protobuf.DurationB\013\n"
-          + "\tdata_viewB\177\n\"com.google.monitoring.dash"
-          + "board.v1B\016ScorecardProtoP\001ZGgoogle.golan"
-          + "g.org/genproto/googleapis/monitoring/das"
-          + "hboard/v1;dashboardb\006proto3"
+          + "\tdata_viewB\252\001\n\"com.google.monitoring.das"
+          + "hboard.v1B\016ScorecardProtoP\001ZGgoogle.gola"
+          + "ng.org/genproto/googleapis/monitoring/da"
+          + "shboard/v1;dashboard\352\002(Google::Cloud::Mo"
+          + "nitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

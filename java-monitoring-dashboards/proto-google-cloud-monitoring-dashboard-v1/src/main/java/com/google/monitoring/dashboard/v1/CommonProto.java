@@ -90,10 +90,11 @@ public final class CommonProto {
           + "StatisticalTimeSeriesFilter.Method\022\027\n\017nu"
           + "m_time_series\030\002 \001(\005\"<\n\006Method\022\026\n\022METHOD_"
           + "UNSPECIFIED\020\000\022\032\n\026METHOD_CLUSTER_OUTLIER\020"
-          + "\001B|\n\"com.google.monitoring.dashboard.v1B"
-          + "\013CommonProtoP\001ZGgoogle.golang.org/genpro"
-          + "to/googleapis/monitoring/dashboard/v1;da"
-          + "shboardb\006proto3"
+          + "\001B\247\001\n\"com.google.monitoring.dashboard.v1"
+          + "B\013CommonProtoP\001ZGgoogle.golang.org/genpr"
+          + "oto/googleapis/monitoring/dashboard/v1;d"
+          + "ashboard\352\002(Google::Cloud::Monitoring::Da"
+          + "shboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

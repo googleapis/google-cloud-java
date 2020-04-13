@@ -50,10 +50,11 @@ public final class DashboardsProto {
           + "google.monitoring.dashboard.v1.RowLayout"
           + "H\000\022E\n\rcolumn_layout\030\t \001(\0132,.google.monit"
           + "oring.dashboard.v1.ColumnLayoutH\000B\010\n\006lay"
-          + "outB\200\001\n\"com.google.monitoring.dashboard."
+          + "outB\253\001\n\"com.google.monitoring.dashboard."
           + "v1B\017DashboardsProtoP\001ZGgoogle.golang.org"
           + "/genproto/googleapis/monitoring/dashboar"
-          + "d/v1;dashboardb\006proto3"
+          + "d/v1;dashboard\352\002(Google::Cloud::Monitori"
+          + "ng::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

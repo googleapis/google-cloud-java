@@ -36,11 +36,12 @@ public final class ServiceMonitoringProto {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/monitoring/dashboard/v1/service"
-          + ".proto\022\036google.monitoring.dashboard.v1B\207"
+          + ".proto\022\036google.monitoring.dashboard.v1B\262"
           + "\001\n\"com.google.monitoring.dashboard.v1B\026S"
           + "erviceMonitoringProtoP\001ZGgoogle.golang.o"
           + "rg/genproto/googleapis/monitoring/dashbo"
-          + "ard/v1;dashboardb\006proto3"
+          + "ard/v1;dashboard\352\002(Google::Cloud::Monito"
+          + "ring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

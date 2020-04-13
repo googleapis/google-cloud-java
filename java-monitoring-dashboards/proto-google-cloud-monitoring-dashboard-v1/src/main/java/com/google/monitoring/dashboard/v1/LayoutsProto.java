@@ -69,10 +69,11 @@ public final class LayoutsProto {
           + "23.google.monitoring.dashboard.v1.Column"
           + "Layout.Column\032Q\n\006Column\022\016\n\006weight\030\001 \001(\003\022"
           + "7\n\007widgets\030\002 \003(\0132&.google.monitoring.das"
-          + "hboard.v1.WidgetB}\n\"com.google.monitorin"
-          + "g.dashboard.v1B\014LayoutsProtoP\001ZGgoogle.g"
-          + "olang.org/genproto/googleapis/monitoring"
-          + "/dashboard/v1;dashboardb\006proto3"
+          + "hboard.v1.WidgetB\250\001\n\"com.google.monitori"
+          + "ng.dashboard.v1B\014LayoutsProtoP\001ZGgoogle."
+          + "golang.org/genproto/googleapis/monitorin"
+          + "g/dashboard/v1;dashboard\352\002(Google::Cloud"
+          + "::Monitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

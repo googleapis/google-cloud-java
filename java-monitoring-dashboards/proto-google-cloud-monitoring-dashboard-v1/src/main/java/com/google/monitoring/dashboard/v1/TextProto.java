@@ -45,10 +45,11 @@ public final class TextProto {
           + "Text\022\017\n\007content\030\001 \001(\t\022;\n\006format\030\002 \001(\0162+."
           + "google.monitoring.dashboard.v1.Text.Form"
           + "at\"7\n\006Format\022\026\n\022FORMAT_UNSPECIFIED\020\000\022\014\n\010"
-          + "MARKDOWN\020\001\022\007\n\003RAW\020\002Bz\n\"com.google.monito"
-          + "ring.dashboard.v1B\tTextProtoP\001ZGgoogle.g"
-          + "olang.org/genproto/googleapis/monitoring"
-          + "/dashboard/v1;dashboardb\006proto3"
+          + "MARKDOWN\020\001\022\007\n\003RAW\020\002B\245\001\n\"com.google.monit"
+          + "oring.dashboard.v1B\tTextProtoP\001ZGgoogle."
+          + "golang.org/genproto/googleapis/monitorin"
+          + "g/dashboard/v1;dashboard\352\002(Google::Cloud"
+          + "::Monitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
