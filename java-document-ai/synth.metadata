@@ -1,5 +1,4 @@
 {
-  "updateTime": "2020-04-09T09:56:42.809085Z",
   "sources": [
     {
       "git": {
@@ -12,16 +11,17 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d741cd976975c745d0199987aff0e908b8352992",
-        "internalRef": "305561906"
+        "sha": "f9d76ac088f5d444b16d5e17fe58a9eea57b7a99",
+        "internalRef": "305961792"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d741cd976975c745d0199987aff0e908b8352992",
-        "internalRef": "305561906"
+        "sha": "f9d76ac088f5d444b16d5e17fe58a9eea57b7a99",
+        "internalRef": "305961792",
+        "log": "f9d76ac088f5d444b16d5e17fe58a9eea57b7a99\nchore: enable gapic v2 and proto annotation for Documentai API.\n\ncommitter: @summer-ji-eng\nPiperOrigin-RevId: 305961792\n\n13736ead90e0fa65103eb03fea775a1c010564af\nUpdate bazel version for kokoro build to 3.0.0.\n(Hoping that will help with java 11 failures)\n\nPiperOrigin-RevId: 305950091\n\nab869e90c6ced0ef30fcc8e8fbe8e527a695d3cb\nchore: enable gapicv2 for longrunning API\n\nCommitter: @miraleung\nPiperOrigin-RevId: 305942456\n\ncf18ab5200e41e9d0cfef88c6c4bcdd394faf1ca\nfeat: Adding OS Config AgentEndpointService V1 RegisterAgent rpc\n\nPiperOrigin-RevId: 305925954\n\n1e92c343790ae63f88817afde60bd2d5bc775f36\nDialogflow weekly v2/v2beta1 library update:\n- Update comments on Contexts and Sessions resources.\n\nPiperOrigin-RevId: 305919798\n\n1df336ab4a989e7b0bc363baa9fc91eb66b0625e\nfeat: Adding OS Config AgentEndpointService V1Beta RegisterAgent rpc\n\nPiperOrigin-RevId: 305900738\n\n1692c3d51ee7d4366ce81892df1b9ca9846480d3\nchore: enable gapic v2 and proto annotation for automl API.\n\ncommitter: @xiaozhenliu\nPiperOrigin-RevId: 305894083\n\n801c3fb47b1a533989a1fe5af4aedf02af5f2eae\ndocs: Update documentation to clarify naming.\n\nPiperOrigin-RevId: 305814814\n\n41d5dee23527df3fc9127838a027df393d79ff3c\nDialogflow weekly v2/v2beta1 library update:\n- Update documentation on various resources.\n- Add LRO info to CreateDocument method.\n\nPiperOrigin-RevId: 305810283\n\nb21bc9b46e3263cd4ebe50f60c61589e3fe797f2\nchore: set Ruby namespace in proto options\n\nPiperOrigin-RevId: 305797556\n\nb8c7c4e8da56547fc32bee9b563d306fadabdb6f\nchore: set Ruby namespace in proto options\n\nPiperOrigin-RevId: 305789382\n\n96c0db42dbcb3bb0116cfa55c054dd139ffb3912\nchore: enable gapicv2 for videointelligence/v1p2beta1\n\nCommitter: @miraleung\nPiperOrigin-RevId: 305779873\n\nfd35dc6865fa9f47f283d5a6c37c4901162007cf\nmigrate Asset v1 API to gapic v2.\n\ncommitter: @hzyi-google\nPiperOrigin-RevId: 305774392\n\nfe8b17aff5b419ffb418a77228fa049190488233\nbuild(google/maps): update python postprocessing\n\n- modify python versions. see https://github.com/googleapis/gapic-generator/pull/3128\n- use markdown readme instead of rst\n- remove enum34\n- fix namespace google.cloud -> google.maps. see https://github.com/googleapis/gapic-generator/issues/3166\n\nPiperOrigin-RevId: 305773355\n\nac1f904979899bc598fb0567cf7a367f08b40b43\nfix (breaking change): reorder Company and Job resources in talent API to be consistent with old gapic config.\n\ncommitter: @hzyi-google\nPiperOrigin-RevId: 305760190\n\n9af7212bc2cba8a7184f032e1ab6662ccf604b3a\ndocs: display resource name patterns in code font.\n\nPiperOrigin-RevId: 305751417\n\nc451a4457f38e5582e9794a0094c773355a9eaad\nBigQuery Connection API v1.\nBreaking changes:\n  Removed UpdateConnectionCredential method.\n  Removed ListConnectionsRequest.max_results, added ListConnectionsRequest.page_size.\n\nPiperOrigin-RevId: 305738384\n\naf71ea52236b05ce73253f6bc935fcf35c866664\nchore: enable gapicv2 for vision/v1p2beta1 API\n\nCommitter: @miraleung\nPiperOrigin-RevId: 305730427\n\n6114e2d30c0792522720d1c2cf8f5e111be7545b\nchore: enable gapicv2 for vision/v1p1beta1 API\n\nCommitter: @miraleung\nPiperOrigin-RevId: 305729994\n\nee4ea76504aa60c2bff9b7c11269c155d8c21e0d\ngapic-generator:\n- feat: Support extra plugin_args for php bazel rules rules (#3165)\n- feat: support '*' in resource definition (#3163)\n- fix: add null check and better error message when referenced resource is not found (#3169)\n\nresource name plugin:\n- support * annotation in resource def (#84)\n\nPiperOrigin-RevId: 305619145\n\ne4f4b23e07315492b533746e6a9255a1e6b3e748\nosconfig v1beta: fix the incorrect pattern for GuestPolicy resource and remove the obsolete history field.\n\nPiperOrigin-RevId: 305617619\n\n"
       }
     },
     {
