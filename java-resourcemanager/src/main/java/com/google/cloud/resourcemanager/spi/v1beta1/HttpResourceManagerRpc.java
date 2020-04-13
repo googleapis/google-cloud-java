@@ -30,12 +30,22 @@ import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.services.cloudresourcemanager.CloudResourceManager;
+import com.google.api.services.cloudresourcemanager.model.ClearOrgPolicyRequest;
+import com.google.api.services.cloudresourcemanager.model.Constraint;
+import com.google.api.services.cloudresourcemanager.model.GetEffectiveOrgPolicyRequest;
 import com.google.api.services.cloudresourcemanager.model.GetIamPolicyRequest;
+import com.google.api.services.cloudresourcemanager.model.GetOrgPolicyRequest;
+import com.google.api.services.cloudresourcemanager.model.ListAvailableOrgPolicyConstraintsRequest;
+import com.google.api.services.cloudresourcemanager.model.ListAvailableOrgPolicyConstraintsResponse;
+import com.google.api.services.cloudresourcemanager.model.ListOrgPoliciesRequest;
+import com.google.api.services.cloudresourcemanager.model.ListOrgPoliciesResponse;
 import com.google.api.services.cloudresourcemanager.model.ListProjectsResponse;
 import com.google.api.services.cloudresourcemanager.model.Operation;
+import com.google.api.services.cloudresourcemanager.model.OrgPolicy;
 import com.google.api.services.cloudresourcemanager.model.Policy;
 import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.api.services.cloudresourcemanager.model.SetIamPolicyRequest;
+import com.google.api.services.cloudresourcemanager.model.SetOrgPolicyRequest;
 import com.google.api.services.cloudresourcemanager.model.Status;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsResponse;
@@ -320,6 +330,97 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
         answer.put(permission, permissionsOwned.contains(permission));
       }
       return answer.build();
+    } catch (RetryHelper.RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
+    }
+  }
+
+  @Override
+  public void clearOrgPolicy(String resource, OrgPolicy orgPolicy) throws IOException {
+    try {
+      resourceManager
+          .folders()
+          .clearOrgPolicy(
+              resource,
+              new ClearOrgPolicyRequest()
+                  .setConstraint(orgPolicy.getConstraint())
+                  .setEtag(orgPolicy.getEtag()))
+          .execute();
+    } catch (RetryHelper.RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
+    }
+  }
+
+  @Override
+  public OrgPolicy getEffectiveOrgPolicy(String resource, String constraint) throws IOException {
+    try {
+      return resourceManager
+          .folders()
+          .getEffectiveOrgPolicy(
+              resource, new GetEffectiveOrgPolicyRequest().setConstraint(constraint))
+          .execute();
+    } catch (RetryHelper.RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
+    }
+  }
+
+  @Override
+  public OrgPolicy getOrgPolicy(String resource, String constraint) throws IOException {
+    try {
+      return resourceManager
+          .folders()
+          .getOrgPolicy(resource, new GetOrgPolicyRequest().setConstraint(constraint))
+          .execute();
+    } catch (RetryHelper.RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
+    }
+  }
+
+  @Override
+  public ListResult<Constraint> listAvailableOrgPolicyConstraints(
+      String resource, Map<Option, ?> options) throws IOException {
+    try {
+      ListAvailableOrgPolicyConstraintsResponse response =
+          resourceManager
+              .folders()
+              .listAvailableOrgPolicyConstraints(
+                  resource,
+                  new ListAvailableOrgPolicyConstraintsRequest()
+                      .setPageSize(Option.PAGE_SIZE.getInt(options))
+                      .setPageToken(Option.PAGE_TOKEN.getString(options)))
+              .execute();
+      return ListResult.of(response.getNextPageToken(), response.getConstraints());
+    } catch (RetryHelper.RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
+    }
+  }
+
+  @Override
+  public ListResult<OrgPolicy> listOrgPolicies(String resource, Map<Option, ?> options)
+      throws IOException {
+    try {
+      ListOrgPoliciesResponse response =
+          resourceManager
+              .folders()
+              .listOrgPolicies(
+                  resource,
+                  new ListOrgPoliciesRequest()
+                      .setPageSize(Option.PAGE_SIZE.getInt(options))
+                      .setPageToken(Option.PAGE_TOKEN.getString(options)))
+              .execute();
+      return ListResult.of(response.getNextPageToken(), response.getPolicies());
+    } catch (RetryHelper.RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
+    }
+  }
+
+  @Override
+  public OrgPolicy replaceOrgPolicy(String resource, OrgPolicy orgPolicy) throws IOException {
+    try {
+      return resourceManager
+          .folders()
+          .setOrgPolicy(resource, new SetOrgPolicyRequest().setPolicy(orgPolicy))
+          .execute();
     } catch (RetryHelper.RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }

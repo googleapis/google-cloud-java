@@ -339,6 +339,33 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    */
   List<Boolean> testPermissions(String projectId, List<String> permissions);
 
+  /** Class for specifying project list options. */
+  class ListOption extends Option {
+
+    private ListOption(ResourceManagerRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a page token.
+     *
+     * <p>The page token (returned from a previous call to list) indicates from where listing should
+     * continue.
+     */
+    public static ListOption pageToken(String pageToken) {
+      return new ListOption(ResourceManagerRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    /**
+     * The maximum number of records to return per RPC.
+     *
+     * <p>The server can return fewer records than requested. When there are more results than the
+     * page size, the server will return a page token that can be used to fetch other results.
+     */
+    public static ListOption pageSize(int pageSize) {
+      return new ListOption(ResourceManagerRpc.Option.PAGE_SIZE, pageSize);
+    }
+  }
   /**
    * Returns the permissions and their results representing whether the caller has the permissions
    * on the specified Organization.
@@ -354,4 +381,75 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    *     Resource Manager testIamPermissions</a>
    */
   Map<String, Boolean> testOrgPermissions(String resource, List<String> permissions);
+
+  /**
+   * Clears a Policy from a resource.
+   *
+   * @throws ResourceManagerException upon failure
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1/folders/clearOrgPolicy">Resource
+   *     Manager clearOrgPolicy</a>
+   */
+  void clearOrgPolicy(String resource, OrgPolicyInfo orgPolicy);
+
+  /**
+   * Gets the effective Policy on a resource.
+   *
+   * <p>This is the result of merging Policies in the resource hierarchy. The returned Policy will
+   * not have an etag set because it is a computed Policy across multiple resources. Subtrees of
+   * Resource Manager resource hierarchy with 'under:' prefix are not expanded.
+   *
+   * @throws ResourceManagerException upon failure
+   * @see <a
+   *     href="https://cloud.google.com/resource-manager/reference/rest/v1/folders/getEffectiveOrgPolicy">Resource
+   *     Manager getEffectiveOrgPolicy</a>
+   */
+  OrgPolicyInfo getEffectiveOrgPolicy(String resource, String constraint);
+
+  /**
+   * Gets the Policy on a resource.
+   *
+   * <p>If no Policy is set on the resource, a Policy is returned with default values including
+   * POLICY_TYPE_NOT_SET for the policy_type one of. The etag value can be used with
+   * projects.setOrgPolicy() to create or update a Policy during read-modify-write.
+   *
+   * @throws ResourceManagerException upon failure
+   * @see <a
+   *     href="https://cloud.google.com/resource-manager/reference/rest/v1/folders/getOrgPolicy">Resource
+   *     Manager getOrgPolicy</a>
+   */
+  OrgPolicyInfo getOrgPolicy(String resource, String constraint);
+
+  /**
+   * Lists the Constraints that could be applied on the specified resource.
+   *
+   * @throws ResourceManagerException upon failure
+   * @see <a
+   *     href="https://cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints">Resource
+   *     Manager listAvailableOrgPolicyConstraints</a>
+   */
+  Page<ConstraintInfo> listAvailableOrgPolicyConstraints(String resource, ListOption... options);
+
+  /**
+   * Lists the Policies set for a particular resource.
+   *
+   * @throws ResourceManagerException upon failure
+   * @see <a
+   *     href="https://cloud.google.com/resource-manager/reference/rest/v1/folders/listOrgPolicies">Resource
+   *     Manager listOrgPolicies</a>
+   */
+  Page<OrgPolicyInfo> listOrgPolicies(String resource, ListOption... options);
+
+  /**
+   * Updates the specified Policy on the resource. Creates a new Policy for that Constraint on the
+   * resource if one does not exist.
+   *
+   * <p>Not supplying an etag on the request Policy results in an unconditional write of the Policy.
+   *
+   * @throws ResourceManagerException upon failure
+   * @see <a
+   *     href="https://cloud.google.com/resource-manager/reference/rest/v1/folders/setOrgPolicy">Resource
+   *     Manager setOrgPolicy</a>
+   */
+  OrgPolicyInfo replaceOrgPolicy(String resource, OrgPolicyInfo orgPolicy);
 }
