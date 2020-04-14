@@ -19,7 +19,7 @@
     <truth.version>1.0.1</truth.version>
     <gson.version>2.8.6</gson.version>
     <logging.version>1.101.0</logging.version>
-    <guava.version>28.2-android</guava.version>
+    <guava.version>29.0-android</guava.version>
     <slf4j.version>1.7.30</slf4j.version>
     <google.auth.version>0.20.0</google.auth.version>
     <junit.version>4.13</junit.version>
