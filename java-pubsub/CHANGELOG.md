@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.105.0](https://www.github.com/googleapis/java-pubsub/compare/v1.104.1...v1.105.0) (2020-04-13)
+
+
+### Features
+
+* add interfaces for cloud pubsub publishers and subscribers ([#134](https://www.github.com/googleapis/java-pubsub/issues/134)) ([89fcc88](https://www.github.com/googleapis/java-pubsub/commit/89fcc8848cc7d421e8dde9b7dca28a6940d8386f))
+
+
+### Documentation
+
+* update libraries-bom ([#140](https://www.github.com/googleapis/java-pubsub/issues/140)) ([d8239bd](https://www.github.com/googleapis/java-pubsub/commit/d8239bdc080d0ef595bac90451485b1d3d50f266))
+
 ### [1.104.1](https://www.github.com/googleapis/java-pubsub/compare/v1.104.0...v1.104.1) (2020-04-08)
 
 
