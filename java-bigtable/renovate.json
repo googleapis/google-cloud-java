@@ -56,7 +56,9 @@
     },
     {
       "packagePatterns": [
-        "^com.google.cloud:libraries-bom"
+        "^com.google.cloud:google-cloud-bigtable",
+        "^com.google.cloud:libraries-bom",
+        "^com.google.cloud.samples:shared-configuration"
       ],
       "semanticCommitType": "chore",
       "semanticCommitScope": "deps"

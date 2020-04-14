@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <!-- TODO: remove after 1.11.1 released -->
+    <differenceType>6001</differenceType>
+    <className>com/google/bigtable/admin/v2/*Grpc</className>
+    <field>METHOD_*</field>
+  </difference>
+</differences>
