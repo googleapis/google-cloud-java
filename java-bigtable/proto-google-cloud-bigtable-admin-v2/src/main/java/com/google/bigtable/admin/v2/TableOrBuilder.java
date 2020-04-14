@@ -231,4 +231,42 @@ public interface TableOrBuilder
    * @return The granularity.
    */
   com.google.bigtable.admin.v2.Table.TimestampGranularity getGranularity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this table was restored from another data source (e.g. a
+   * backup), this field will be populated with information about the restore.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+   *
+   * @return Whether the restoreInfo field is set.
+   */
+  boolean hasRestoreInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this table was restored from another data source (e.g. a
+   * backup), this field will be populated with information about the restore.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+   *
+   * @return The restoreInfo.
+   */
+  com.google.bigtable.admin.v2.RestoreInfo getRestoreInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this table was restored from another data source (e.g. a
+   * backup), this field will be populated with information about the restore.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+   */
+  com.google.bigtable.admin.v2.RestoreInfoOrBuilder getRestoreInfoOrBuilder();
 }

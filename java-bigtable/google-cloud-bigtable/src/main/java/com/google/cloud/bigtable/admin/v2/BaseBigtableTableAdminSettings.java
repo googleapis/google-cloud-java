@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
@@ -31,27 +32,37 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
+import com.google.bigtable.admin.v2.CreateBackupMetadata;
+import com.google.bigtable.admin.v2.CreateBackupRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.GetBackupRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListBackupsRequest;
+import com.google.bigtable.admin.v2.ListBackupsResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
 import com.google.bigtable.admin.v2.ListSnapshotsResponse;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
+import com.google.bigtable.admin.v2.RestoreTableMetadata;
+import com.google.bigtable.admin.v2.RestoreTableRequest;
 import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
+import com.google.bigtable.admin.v2.UpdateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -171,6 +182,53 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
   /** Returns the object with the settings used for calls to deleteSnapshot. */
   public UnaryCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).deleteSnapshotSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  public UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).createBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<CreateBackupRequest, Backup, CreateBackupMetadata>
+      createBackupOperationSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).createBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).getBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).listBackupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackup. */
+  public UnaryCallSettings<UpdateBackupRequest, Backup> updateBackupSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).updateBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Empty> deleteBackupSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).deleteBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreTable. */
+  public UnaryCallSettings<RestoreTableRequest, Operation> restoreTableSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).restoreTableSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreTable. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<RestoreTableRequest, Table, RestoreTableMetadata>
+      restoreTableOperationSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).restoreTableOperationSettings();
   }
 
   public static final BaseBigtableTableAdminSettings create(BigtableTableAdminStubSettings stub)
@@ -375,6 +433,54 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
     /** Returns the builder for the settings used for calls to deleteSnapshot. */
     public UnaryCallSettings.Builder<DeleteSnapshotRequest, Empty> deleteSnapshotSettings() {
       return getStubSettingsBuilder().deleteSnapshotSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    public UnaryCallSettings.Builder<CreateBackupRequest, Operation> createBackupSettings() {
+      return getStubSettingsBuilder().createBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateBackupRequest, Backup, CreateBackupMetadata>
+        createBackupOperationSettings() {
+      return getStubSettingsBuilder().createBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getStubSettingsBuilder().getBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return getStubSettingsBuilder().listBackupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackup. */
+    public UnaryCallSettings.Builder<UpdateBackupRequest, Backup> updateBackupSettings() {
+      return getStubSettingsBuilder().updateBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Empty> deleteBackupSettings() {
+      return getStubSettingsBuilder().deleteBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreTable. */
+    public UnaryCallSettings.Builder<RestoreTableRequest, Operation> restoreTableSettings() {
+      return getStubSettingsBuilder().restoreTableSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreTable. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<RestoreTableRequest, Table, RestoreTableMetadata>
+        restoreTableOperationSettings() {
+      return getStubSettingsBuilder().restoreTableOperationSettings();
     }
 
     @Override

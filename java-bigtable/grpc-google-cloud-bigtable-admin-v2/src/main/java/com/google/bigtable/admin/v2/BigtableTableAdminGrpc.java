@@ -771,6 +771,327 @@ public final class BigtableTableAdminGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateBackupMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CreateBackupRequest, com.google.longrunning.Operation>
+      METHOD_CREATE_BACKUP = getCreateBackupMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CreateBackupRequest, com.google.longrunning.Operation>
+      getCreateBackupMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CreateBackupRequest, com.google.longrunning.Operation>
+      getCreateBackupMethod() {
+    return getCreateBackupMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CreateBackupRequest, com.google.longrunning.Operation>
+      getCreateBackupMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.CreateBackupRequest, com.google.longrunning.Operation>
+        getCreateBackupMethod;
+    if ((getCreateBackupMethod = BigtableTableAdminGrpc.getCreateBackupMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getCreateBackupMethod = BigtableTableAdminGrpc.getCreateBackupMethod) == null) {
+          BigtableTableAdminGrpc.getCreateBackupMethod =
+              getCreateBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.CreateBackupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.bigtable.admin.v2.BigtableTableAdmin", "CreateBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.CreateBackupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("CreateBackup"))
+                      .build();
+        }
+      }
+    }
+    return getCreateBackupMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetBackupMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetBackupRequest, com.google.bigtable.admin.v2.Backup>
+      METHOD_GET_BACKUP = getGetBackupMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetBackupRequest, com.google.bigtable.admin.v2.Backup>
+      getGetBackupMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetBackupRequest, com.google.bigtable.admin.v2.Backup>
+      getGetBackupMethod() {
+    return getGetBackupMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetBackupRequest, com.google.bigtable.admin.v2.Backup>
+      getGetBackupMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.GetBackupRequest, com.google.bigtable.admin.v2.Backup>
+        getGetBackupMethod;
+    if ((getGetBackupMethod = BigtableTableAdminGrpc.getGetBackupMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getGetBackupMethod = BigtableTableAdminGrpc.getGetBackupMethod) == null) {
+          BigtableTableAdminGrpc.getGetBackupMethod =
+              getGetBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.GetBackupRequest,
+                          com.google.bigtable.admin.v2.Backup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.bigtable.admin.v2.BigtableTableAdmin", "GetBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.GetBackupRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.Backup.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("GetBackup"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUpdateBackupMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateBackupRequest, com.google.bigtable.admin.v2.Backup>
+      METHOD_UPDATE_BACKUP = getUpdateBackupMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateBackupRequest, com.google.bigtable.admin.v2.Backup>
+      getUpdateBackupMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateBackupRequest, com.google.bigtable.admin.v2.Backup>
+      getUpdateBackupMethod() {
+    return getUpdateBackupMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateBackupRequest, com.google.bigtable.admin.v2.Backup>
+      getUpdateBackupMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.UpdateBackupRequest, com.google.bigtable.admin.v2.Backup>
+        getUpdateBackupMethod;
+    if ((getUpdateBackupMethod = BigtableTableAdminGrpc.getUpdateBackupMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getUpdateBackupMethod = BigtableTableAdminGrpc.getUpdateBackupMethod) == null) {
+          BigtableTableAdminGrpc.getUpdateBackupMethod =
+              getUpdateBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.UpdateBackupRequest,
+                          com.google.bigtable.admin.v2.Backup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.bigtable.admin.v2.BigtableTableAdmin", "UpdateBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.UpdateBackupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.Backup.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("UpdateBackup"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBackupMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getDeleteBackupMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.DeleteBackupRequest, com.google.protobuf.Empty>
+      METHOD_DELETE_BACKUP = getDeleteBackupMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.DeleteBackupRequest, com.google.protobuf.Empty>
+      getDeleteBackupMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.DeleteBackupRequest, com.google.protobuf.Empty>
+      getDeleteBackupMethod() {
+    return getDeleteBackupMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.DeleteBackupRequest, com.google.protobuf.Empty>
+      getDeleteBackupMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.DeleteBackupRequest, com.google.protobuf.Empty>
+        getDeleteBackupMethod;
+    if ((getDeleteBackupMethod = BigtableTableAdminGrpc.getDeleteBackupMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getDeleteBackupMethod = BigtableTableAdminGrpc.getDeleteBackupMethod) == null) {
+          BigtableTableAdminGrpc.getDeleteBackupMethod =
+              getDeleteBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.DeleteBackupRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.bigtable.admin.v2.BigtableTableAdmin", "DeleteBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.DeleteBackupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("DeleteBackup"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteBackupMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getListBackupsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListBackupsRequest,
+          com.google.bigtable.admin.v2.ListBackupsResponse>
+      METHOD_LIST_BACKUPS = getListBackupsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListBackupsRequest,
+          com.google.bigtable.admin.v2.ListBackupsResponse>
+      getListBackupsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListBackupsRequest,
+          com.google.bigtable.admin.v2.ListBackupsResponse>
+      getListBackupsMethod() {
+    return getListBackupsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListBackupsRequest,
+          com.google.bigtable.admin.v2.ListBackupsResponse>
+      getListBackupsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.ListBackupsRequest,
+            com.google.bigtable.admin.v2.ListBackupsResponse>
+        getListBackupsMethod;
+    if ((getListBackupsMethod = BigtableTableAdminGrpc.getListBackupsMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getListBackupsMethod = BigtableTableAdminGrpc.getListBackupsMethod) == null) {
+          BigtableTableAdminGrpc.getListBackupsMethod =
+              getListBackupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.ListBackupsRequest,
+                          com.google.bigtable.admin.v2.ListBackupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.bigtable.admin.v2.BigtableTableAdmin", "ListBackups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListBackupsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListBackupsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("ListBackups"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getRestoreTableMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.RestoreTableRequest, com.google.longrunning.Operation>
+      METHOD_RESTORE_TABLE = getRestoreTableMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.RestoreTableRequest, com.google.longrunning.Operation>
+      getRestoreTableMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.RestoreTableRequest, com.google.longrunning.Operation>
+      getRestoreTableMethod() {
+    return getRestoreTableMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.RestoreTableRequest, com.google.longrunning.Operation>
+      getRestoreTableMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.RestoreTableRequest, com.google.longrunning.Operation>
+        getRestoreTableMethod;
+    if ((getRestoreTableMethod = BigtableTableAdminGrpc.getRestoreTableMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getRestoreTableMethod = BigtableTableAdminGrpc.getRestoreTableMethod) == null) {
+          BigtableTableAdminGrpc.getRestoreTableMethod =
+              getRestoreTableMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.RestoreTableRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.bigtable.admin.v2.BigtableTableAdmin", "RestoreTable"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.RestoreTableRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("RestoreTable"))
+                      .build();
+        }
+      }
+    }
+    return getRestoreTableMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getGetIamPolicyMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
@@ -1167,6 +1488,100 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
+     * Starts creating a new Cloud Bigtable Backup. The returned backup
+     * [long-running operation][google.longrunning.Operation] can be used to
+     * track creation of the backup. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
+     * [response][google.longrunning.Operation.response] field type is
+     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the
+     * returned operation will stop the creation and delete the backup.
+     * </pre>
+     */
+    public void createBackup(
+        com.google.bigtable.admin.v2.CreateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateBackupMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata on a pending or completed Cloud Bigtable Backup.
+     * </pre>
+     */
+    public void getBackup(
+        com.google.bigtable.admin.v2.GetBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.Backup> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetBackupMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pending or completed Cloud Bigtable Backup.
+     * </pre>
+     */
+    public void updateBackup(
+        com.google.bigtable.admin.v2.UpdateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.Backup> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateBackupMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a pending or completed Cloud Bigtable backup.
+     * </pre>
+     */
+    public void deleteBackup(
+        com.google.bigtable.admin.v2.DeleteBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteBackupMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Cloud Bigtable backups. Returns both completed and pending
+     * backups.
+     * </pre>
+     */
+    public void listBackups(
+        com.google.bigtable.admin.v2.ListBackupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListBackupsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListBackupsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new table by restoring from a completed backup. The new table
+     * must be in the same instance as the instance containing the backup. The
+     * returned table [long-running operation][google.longrunning.Operation] can
+     * be used to track the progress of the operation, and to cancel it. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+     * [response][google.longrunning.Operation.response] type is
+     * [Table][google.bigtable.admin.v2.Table], if successful.
+     * </pre>
+     */
+    public void restoreTable(
+        com.google.bigtable.admin.v2.RestoreTableRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getRestoreTableMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the access control policy for a resource.
      * Returns an empty policy if the resource exists but does not have a policy
      * set.
@@ -1290,6 +1705,43 @@ public final class BigtableTableAdminGrpc {
                   new MethodHandlers<
                       com.google.bigtable.admin.v2.DeleteSnapshotRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_SNAPSHOT)))
+          .addMethod(
+              getCreateBackupMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.bigtable.admin.v2.CreateBackupRequest,
+                      com.google.longrunning.Operation>(this, METHODID_CREATE_BACKUP)))
+          .addMethod(
+              getGetBackupMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.bigtable.admin.v2.GetBackupRequest,
+                      com.google.bigtable.admin.v2.Backup>(this, METHODID_GET_BACKUP)))
+          .addMethod(
+              getUpdateBackupMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.bigtable.admin.v2.UpdateBackupRequest,
+                      com.google.bigtable.admin.v2.Backup>(this, METHODID_UPDATE_BACKUP)))
+          .addMethod(
+              getDeleteBackupMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.bigtable.admin.v2.DeleteBackupRequest, com.google.protobuf.Empty>(
+                      this, METHODID_DELETE_BACKUP)))
+          .addMethod(
+              getListBackupsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.bigtable.admin.v2.ListBackupsRequest,
+                      com.google.bigtable.admin.v2.ListBackupsResponse>(
+                      this, METHODID_LIST_BACKUPS)))
+          .addMethod(
+              getRestoreTableMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.bigtable.admin.v2.RestoreTableRequest,
+                      com.google.longrunning.Operation>(this, METHODID_RESTORE_TABLE)))
           .addMethod(
               getGetIamPolicyMethodHelper(),
               asyncUnaryCall(
@@ -1593,6 +2045,118 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
+     * Starts creating a new Cloud Bigtable Backup. The returned backup
+     * [long-running operation][google.longrunning.Operation] can be used to
+     * track creation of the backup. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
+     * [response][google.longrunning.Operation.response] field type is
+     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the
+     * returned operation will stop the creation and delete the backup.
+     * </pre>
+     */
+    public void createBackup(
+        com.google.bigtable.admin.v2.CreateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateBackupMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata on a pending or completed Cloud Bigtable Backup.
+     * </pre>
+     */
+    public void getBackup(
+        com.google.bigtable.admin.v2.GetBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.Backup> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetBackupMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pending or completed Cloud Bigtable Backup.
+     * </pre>
+     */
+    public void updateBackup(
+        com.google.bigtable.admin.v2.UpdateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.Backup> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateBackupMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a pending or completed Cloud Bigtable backup.
+     * </pre>
+     */
+    public void deleteBackup(
+        com.google.bigtable.admin.v2.DeleteBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteBackupMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Cloud Bigtable backups. Returns both completed and pending
+     * backups.
+     * </pre>
+     */
+    public void listBackups(
+        com.google.bigtable.admin.v2.ListBackupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListBackupsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListBackupsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new table by restoring from a completed backup. The new table
+     * must be in the same instance as the instance containing the backup. The
+     * returned table [long-running operation][google.longrunning.Operation] can
+     * be used to track the progress of the operation, and to cancel it. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+     * [response][google.longrunning.Operation.response] type is
+     * [Table][google.bigtable.admin.v2.Table], if successful.
+     * </pre>
+     */
+    public void restoreTable(
+        com.google.bigtable.admin.v2.RestoreTableRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getRestoreTableMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the access control policy for a resource.
      * Returns an empty policy if the resource exists but does not have a policy
      * set.
@@ -1873,6 +2437,98 @@ public final class BigtableTableAdminGrpc {
         com.google.bigtable.admin.v2.DeleteSnapshotRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteSnapshotMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts creating a new Cloud Bigtable Backup. The returned backup
+     * [long-running operation][google.longrunning.Operation] can be used to
+     * track creation of the backup. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
+     * [response][google.longrunning.Operation.response] field type is
+     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the
+     * returned operation will stop the creation and delete the backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackup(
+        com.google.bigtable.admin.v2.CreateBackupRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateBackupMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata on a pending or completed Cloud Bigtable Backup.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.Backup getBackup(
+        com.google.bigtable.admin.v2.GetBackupRequest request) {
+      return blockingUnaryCall(getChannel(), getGetBackupMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pending or completed Cloud Bigtable Backup.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.Backup updateBackup(
+        com.google.bigtable.admin.v2.UpdateBackupRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateBackupMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a pending or completed Cloud Bigtable backup.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBackup(
+        com.google.bigtable.admin.v2.DeleteBackupRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteBackupMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Cloud Bigtable backups. Returns both completed and pending
+     * backups.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListBackupsResponse listBackups(
+        com.google.bigtable.admin.v2.ListBackupsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListBackupsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new table by restoring from a completed backup. The new table
+     * must be in the same instance as the instance containing the backup. The
+     * returned table [long-running operation][google.longrunning.Operation] can
+     * be used to track the progress of the operation, and to cancel it. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+     * [response][google.longrunning.Operation.response] type is
+     * [Table][google.bigtable.admin.v2.Table], if successful.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreTable(
+        com.google.bigtable.admin.v2.RestoreTableRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getRestoreTableMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -2161,6 +2817,100 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
+     * Starts creating a new Cloud Bigtable Backup. The returned backup
+     * [long-running operation][google.longrunning.Operation] can be used to
+     * track creation of the backup. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
+     * [response][google.longrunning.Operation.response] field type is
+     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the
+     * returned operation will stop the creation and delete the backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createBackup(com.google.bigtable.admin.v2.CreateBackupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateBackupMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata on a pending or completed Cloud Bigtable Backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.bigtable.admin.v2.Backup>
+        getBackup(com.google.bigtable.admin.v2.GetBackupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetBackupMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pending or completed Cloud Bigtable Backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.bigtable.admin.v2.Backup>
+        updateBackup(com.google.bigtable.admin.v2.UpdateBackupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateBackupMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a pending or completed Cloud Bigtable backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteBackup(com.google.bigtable.admin.v2.DeleteBackupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteBackupMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Cloud Bigtable backups. Returns both completed and pending
+     * backups.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.admin.v2.ListBackupsResponse>
+        listBackups(com.google.bigtable.admin.v2.ListBackupsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListBackupsMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new table by restoring from a completed backup. The new table
+     * must be in the same instance as the instance containing the backup. The
+     * returned table [long-running operation][google.longrunning.Operation] can
+     * be used to track the progress of the operation, and to cancel it. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+     * [response][google.longrunning.Operation.response] type is
+     * [Table][google.bigtable.admin.v2.Table], if successful.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        restoreTable(com.google.bigtable.admin.v2.RestoreTableRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getRestoreTableMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the access control policy for a resource.
      * Returns an empty policy if the resource exists but does not have a policy
      * set.
@@ -2214,9 +2964,15 @@ public final class BigtableTableAdminGrpc {
   private static final int METHODID_GET_SNAPSHOT = 10;
   private static final int METHODID_LIST_SNAPSHOTS = 11;
   private static final int METHODID_DELETE_SNAPSHOT = 12;
-  private static final int METHODID_GET_IAM_POLICY = 13;
-  private static final int METHODID_SET_IAM_POLICY = 14;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 15;
+  private static final int METHODID_CREATE_BACKUP = 13;
+  private static final int METHODID_GET_BACKUP = 14;
+  private static final int METHODID_UPDATE_BACKUP = 15;
+  private static final int METHODID_DELETE_BACKUP = 16;
+  private static final int METHODID_LIST_BACKUPS = 17;
+  private static final int METHODID_RESTORE_TABLE = 18;
+  private static final int METHODID_GET_IAM_POLICY = 19;
+  private static final int METHODID_SET_IAM_POLICY = 20;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 21;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2305,6 +3061,37 @@ public final class BigtableTableAdminGrpc {
           serviceImpl.deleteSnapshot(
               (com.google.bigtable.admin.v2.DeleteSnapshotRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_BACKUP:
+          serviceImpl.createBackup(
+              (com.google.bigtable.admin.v2.CreateBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_BACKUP:
+          serviceImpl.getBackup(
+              (com.google.bigtable.admin.v2.GetBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.Backup>) responseObserver);
+          break;
+        case METHODID_UPDATE_BACKUP:
+          serviceImpl.updateBackup(
+              (com.google.bigtable.admin.v2.UpdateBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.Backup>) responseObserver);
+          break;
+        case METHODID_DELETE_BACKUP:
+          serviceImpl.deleteBackup(
+              (com.google.bigtable.admin.v2.DeleteBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_BACKUPS:
+          serviceImpl.listBackups(
+              (com.google.bigtable.admin.v2.ListBackupsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListBackupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_RESTORE_TABLE:
+          serviceImpl.restoreTable(
+              (com.google.bigtable.admin.v2.RestoreTableRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_IAM_POLICY:
           serviceImpl.getIamPolicy(
@@ -2399,6 +3186,12 @@ public final class BigtableTableAdminGrpc {
                       .addMethod(getGetSnapshotMethodHelper())
                       .addMethod(getListSnapshotsMethodHelper())
                       .addMethod(getDeleteSnapshotMethodHelper())
+                      .addMethod(getCreateBackupMethodHelper())
+                      .addMethod(getGetBackupMethodHelper())
+                      .addMethod(getUpdateBackupMethodHelper())
+                      .addMethod(getDeleteBackupMethodHelper())
+                      .addMethod(getListBackupsMethodHelper())
+                      .addMethod(getRestoreTableMethodHelper())
                       .addMethod(getGetIamPolicyMethodHelper())
                       .addMethod(getSetIamPolicyMethodHelper())
                       .addMethod(getTestIamPermissionsMethodHelper())

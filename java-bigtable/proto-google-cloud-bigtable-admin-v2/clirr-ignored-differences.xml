@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/bigtable/admin/v2/TableOrBuilder</className>
+        <method>*Restore*</method>
+    </difference>
+</differences>

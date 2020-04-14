@@ -135,8 +135,8 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The unique name of the cluster for which snapshots should be listed.
-   * Values are of the form
+   * Required. The unique name of the cluster for which snapshots should be
+   * listed. Values are of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
    * e.g., `projects/{project}/instances/{instance}/clusters/-`.
@@ -163,8 +163,8 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The unique name of the cluster for which snapshots should be listed.
-   * Values are of the form
+   * Required. The unique name of the cluster for which snapshots should be
+   * listed. Values are of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
    * e.g., `projects/{project}/instances/{instance}/clusters/-`.
@@ -612,8 +612,8 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the cluster for which snapshots should be listed.
-     * Values are of the form
+     * Required. The unique name of the cluster for which snapshots should be
+     * listed. Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
      * e.g., `projects/{project}/instances/{instance}/clusters/-`.
@@ -640,8 +640,8 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the cluster for which snapshots should be listed.
-     * Values are of the form
+     * Required. The unique name of the cluster for which snapshots should be
+     * listed. Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
      * e.g., `projects/{project}/instances/{instance}/clusters/-`.
@@ -668,8 +668,8 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the cluster for which snapshots should be listed.
-     * Values are of the form
+     * Required. The unique name of the cluster for which snapshots should be
+     * listed. Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
      * e.g., `projects/{project}/instances/{instance}/clusters/-`.
@@ -695,8 +695,8 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the cluster for which snapshots should be listed.
-     * Values are of the form
+     * Required. The unique name of the cluster for which snapshots should be
+     * listed. Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
      * e.g., `projects/{project}/instances/{instance}/clusters/-`.
@@ -718,8 +718,8 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the cluster for which snapshots should be listed.
-     * Values are of the form
+     * Required. The unique name of the cluster for which snapshots should be
+     * listed. Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * Use `{cluster} = '-'` to list snapshots for all clusters in an instance,
      * e.g., `projects/{project}/instances/{instance}/clusters/-`.

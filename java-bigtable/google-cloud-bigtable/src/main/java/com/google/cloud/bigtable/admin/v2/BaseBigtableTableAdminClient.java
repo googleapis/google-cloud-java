@@ -28,31 +28,42 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.admin.v2.Backup;
+import com.google.bigtable.admin.v2.BackupName;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.ClusterName;
+import com.google.bigtable.admin.v2.CreateBackupMetadata;
+import com.google.bigtable.admin.v2.CreateBackupRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.GetBackupRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.InstanceName;
+import com.google.bigtable.admin.v2.ListBackupsRequest;
+import com.google.bigtable.admin.v2.ListBackupsResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
 import com.google.bigtable.admin.v2.ListSnapshotsResponse;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
+import com.google.bigtable.admin.v2.RestoreTableMetadata;
+import com.google.bigtable.admin.v2.RestoreTableRequest;
 import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotName;
 import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.bigtable.admin.v2.UpdateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -64,6 +75,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1391,13 +1403,13 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the table to have the snapshot taken. Values are of the form
-   *     `projects/{project}/instances/{instance}/tables/{table}`.
-   * @param cluster The name of the cluster where the snapshot will be created in. Values are of the
-   *     form `projects/{project}/instances/{instance}/clusters/{cluster}`.
-   * @param snapshotId The ID by which the new snapshot should be referred to within the parent
-   *     cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]&#42;` rather than
-   *     `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
+   * @param name Required. The unique name of the table to have the snapshot taken. Values are of
+   *     the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @param cluster Required. The name of the cluster where the snapshot will be created in. Values
+   *     are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
+   * @param snapshotId Required. The ID by which the new snapshot should be referred to within the
+   *     parent cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]&#42;` rather
+   *     than `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * @param description Description of the snapshot.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1437,13 +1449,13 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique name of the table to have the snapshot taken. Values are of the form
-   *     `projects/{project}/instances/{instance}/tables/{table}`.
-   * @param cluster The name of the cluster where the snapshot will be created in. Values are of the
-   *     form `projects/{project}/instances/{instance}/clusters/{cluster}`.
-   * @param snapshotId The ID by which the new snapshot should be referred to within the parent
-   *     cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]&#42;` rather than
-   *     `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
+   * @param name Required. The unique name of the table to have the snapshot taken. Values are of
+   *     the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @param cluster Required. The name of the cluster where the snapshot will be created in. Values
+   *     are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
+   * @param snapshotId Required. The ID by which the new snapshot should be referred to within the
+   *     parent cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]&#42;` rather
+   *     than `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * @param description Description of the snapshot.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1950,6 +1962,684 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
     return stub.deleteSnapshotCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Starts creating a new Cloud Bigtable Backup. The returned backup [long-running
+   * operation][google.longrunning.Operation] can be used to track creation of the backup. The
+   * [metadata][google.longrunning.Operation.metadata] field type is
+   * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
+   * [response][google.longrunning.Operation.response] field type is
+   * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation
+   * will stop the creation and delete the backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   String backupId = "";
+   *   Backup backup = Backup.newBuilder().build();
+   *   Backup response = baseBigtableTableAdminClient.createBackupAsync(parent, backupId, backup).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. This must be one of the clusters in the instance in which this table is
+   *     located. The backup will be stored in this cluster. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}`.
+   * @param backupId Required. The id of the backup to be created. The `backup_id` along with the
+   *     parent `parent` are combined as {parent}/backups/{backup_id} to create the full backup
+   *     name, of the form:
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup_id}`. This
+   *     string must be between 1 and 50 characters in length and match the regex
+   *     [_a-zA-Z0-9][-_.a-zA-Z0-9]&#42;.
+   * @param backup Required. The backup to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Backup, CreateBackupMetadata> createBackupAsync(
+      ClusterName parent, String backupId, Backup backup) {
+    CreateBackupRequest request =
+        CreateBackupRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setBackupId(backupId)
+            .setBackup(backup)
+            .build();
+    return createBackupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Starts creating a new Cloud Bigtable Backup. The returned backup [long-running
+   * operation][google.longrunning.Operation] can be used to track creation of the backup. The
+   * [metadata][google.longrunning.Operation.metadata] field type is
+   * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
+   * [response][google.longrunning.Operation.response] field type is
+   * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation
+   * will stop the creation and delete the backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   String backupId = "";
+   *   Backup backup = Backup.newBuilder().build();
+   *   Backup response = baseBigtableTableAdminClient.createBackupAsync(parent.toString(), backupId, backup).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. This must be one of the clusters in the instance in which this table is
+   *     located. The backup will be stored in this cluster. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}`.
+   * @param backupId Required. The id of the backup to be created. The `backup_id` along with the
+   *     parent `parent` are combined as {parent}/backups/{backup_id} to create the full backup
+   *     name, of the form:
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup_id}`. This
+   *     string must be between 1 and 50 characters in length and match the regex
+   *     [_a-zA-Z0-9][-_.a-zA-Z0-9]&#42;.
+   * @param backup Required. The backup to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Backup, CreateBackupMetadata> createBackupAsync(
+      String parent, String backupId, Backup backup) {
+    CreateBackupRequest request =
+        CreateBackupRequest.newBuilder()
+            .setParent(parent)
+            .setBackupId(backupId)
+            .setBackup(backup)
+            .build();
+    return createBackupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Starts creating a new Cloud Bigtable Backup. The returned backup [long-running
+   * operation][google.longrunning.Operation] can be used to track creation of the backup. The
+   * [metadata][google.longrunning.Operation.metadata] field type is
+   * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
+   * [response][google.longrunning.Operation.response] field type is
+   * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation
+   * will stop the creation and delete the backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   String backupId = "";
+   *   Backup backup = Backup.newBuilder().build();
+   *   CreateBackupRequest request = CreateBackupRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setBackupId(backupId)
+   *     .setBackup(backup)
+   *     .build();
+   *   Backup response = baseBigtableTableAdminClient.createBackupAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Backup, CreateBackupMetadata> createBackupAsync(
+      CreateBackupRequest request) {
+    return createBackupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Starts creating a new Cloud Bigtable Backup. The returned backup [long-running
+   * operation][google.longrunning.Operation] can be used to track creation of the backup. The
+   * [metadata][google.longrunning.Operation.metadata] field type is
+   * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
+   * [response][google.longrunning.Operation.response] field type is
+   * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation
+   * will stop the creation and delete the backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   String backupId = "";
+   *   Backup backup = Backup.newBuilder().build();
+   *   CreateBackupRequest request = CreateBackupRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setBackupId(backupId)
+   *     .setBackup(backup)
+   *     .build();
+   *   OperationFuture&lt;Backup, CreateBackupMetadata&gt; future = baseBigtableTableAdminClient.createBackupOperationCallable().futureCall(request);
+   *   // Do something
+   *   Backup response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<CreateBackupRequest, Backup, CreateBackupMetadata>
+      createBackupOperationCallable() {
+    return stub.createBackupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Starts creating a new Cloud Bigtable Backup. The returned backup [long-running
+   * operation][google.longrunning.Operation] can be used to track creation of the backup. The
+   * [metadata][google.longrunning.Operation.metadata] field type is
+   * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
+   * [response][google.longrunning.Operation.response] field type is
+   * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation
+   * will stop the creation and delete the backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   String backupId = "";
+   *   Backup backup = Backup.newBuilder().build();
+   *   CreateBackupRequest request = CreateBackupRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setBackupId(backupId)
+   *     .setBackup(backup)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = baseBigtableTableAdminClient.createBackupCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateBackupRequest, Operation> createBackupCallable() {
+    return stub.createBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets metadata on a pending or completed Cloud Bigtable Backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   BackupName name = BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]");
+   *   Backup response = baseBigtableTableAdminClient.getBackup(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the backup. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup getBackup(BackupName name) {
+    GetBackupRequest request =
+        GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getBackup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets metadata on a pending or completed Cloud Bigtable Backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   BackupName name = BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]");
+   *   Backup response = baseBigtableTableAdminClient.getBackup(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the backup. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup getBackup(String name) {
+    GetBackupRequest request = GetBackupRequest.newBuilder().setName(name).build();
+    return getBackup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets metadata on a pending or completed Cloud Bigtable Backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   BackupName name = BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]");
+   *   GetBackupRequest request = GetBackupRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   Backup response = baseBigtableTableAdminClient.getBackup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup getBackup(GetBackupRequest request) {
+    return getBackupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets metadata on a pending or completed Cloud Bigtable Backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   BackupName name = BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]");
+   *   GetBackupRequest request = GetBackupRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Backup&gt; future = baseBigtableTableAdminClient.getBackupCallable().futureCall(request);
+   *   // Do something
+   *   Backup response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    return stub.getBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists Cloud Bigtable backups. Returns both completed and pending backups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   for (Backup element : baseBigtableTableAdminClient.listBackups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The cluster to list backups from. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}`. Use `{cluster} = '-'` to list
+   *     backups for all clusters in an instance, e.g.,
+   *     `projects/{project}/instances/{instance}/clusters/-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupsPagedResponse listBackups(ClusterName parent) {
+    ListBackupsRequest request =
+        ListBackupsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBackups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists Cloud Bigtable backups. Returns both completed and pending backups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   for (Backup element : baseBigtableTableAdminClient.listBackups(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The cluster to list backups from. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}`. Use `{cluster} = '-'` to list
+   *     backups for all clusters in an instance, e.g.,
+   *     `projects/{project}/instances/{instance}/clusters/-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupsPagedResponse listBackups(String parent) {
+    ListBackupsRequest request = ListBackupsRequest.newBuilder().setParent(parent).build();
+    return listBackups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists Cloud Bigtable backups. Returns both completed and pending backups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   ListBackupsRequest request = ListBackupsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (Backup element : baseBigtableTableAdminClient.listBackups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupsPagedResponse listBackups(ListBackupsRequest request) {
+    return listBackupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists Cloud Bigtable backups. Returns both completed and pending backups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   ListBackupsRequest request = ListBackupsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListBackupsPagedResponse&gt; future = baseBigtableTableAdminClient.listBackupsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (Backup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
+      listBackupsPagedCallable() {
+    return stub.listBackupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists Cloud Bigtable backups. Returns both completed and pending backups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   ListBackupsRequest request = ListBackupsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListBackupsResponse response = baseBigtableTableAdminClient.listBackupsCallable().call(request);
+   *     for (Backup element : response.getBackupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    return stub.listBackupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a pending or completed Cloud Bigtable Backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   Backup backup = Backup.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Backup response = baseBigtableTableAdminClient.updateBackup(backup, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param backup Required. The backup to update. `backup.name`, and the fields to be updated as
+   *     specified by `update_mask` are required. Other fields are ignored. Update is only supported
+   *     for the following fields: &#42; `backup.expire_time`.
+   * @param updateMask Required. A mask specifying which fields (e.g. `expire_time`) in the Backup
+   *     resource should be updated. This mask is relative to the Backup resource, not to the
+   *     request message. The field mask must always be specified; this prevents any future fields
+   *     from being erased accidentally by clients that do not know about them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup updateBackup(Backup backup, FieldMask updateMask) {
+    UpdateBackupRequest request =
+        UpdateBackupRequest.newBuilder().setBackup(backup).setUpdateMask(updateMask).build();
+    return updateBackup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a pending or completed Cloud Bigtable Backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   Backup backup = Backup.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateBackupRequest request = UpdateBackupRequest.newBuilder()
+   *     .setBackup(backup)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   Backup response = baseBigtableTableAdminClient.updateBackup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup updateBackup(UpdateBackupRequest request) {
+    return updateBackupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a pending or completed Cloud Bigtable Backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   Backup backup = Backup.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateBackupRequest request = UpdateBackupRequest.newBuilder()
+   *     .setBackup(backup)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   ApiFuture&lt;Backup&gt; future = baseBigtableTableAdminClient.updateBackupCallable().futureCall(request);
+   *   // Do something
+   *   Backup response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateBackupRequest, Backup> updateBackupCallable() {
+    return stub.updateBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a pending or completed Cloud Bigtable backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   BackupName name = BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]");
+   *   baseBigtableTableAdminClient.deleteBackup(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the backup to delete. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteBackup(BackupName name) {
+    DeleteBackupRequest request =
+        DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteBackup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a pending or completed Cloud Bigtable backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   BackupName name = BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]");
+   *   baseBigtableTableAdminClient.deleteBackup(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the backup to delete. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteBackup(String name) {
+    DeleteBackupRequest request = DeleteBackupRequest.newBuilder().setName(name).build();
+    deleteBackup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a pending or completed Cloud Bigtable backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   BackupName name = BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]");
+   *   DeleteBackupRequest request = DeleteBackupRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   baseBigtableTableAdminClient.deleteBackup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteBackup(DeleteBackupRequest request) {
+    deleteBackupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a pending or completed Cloud Bigtable backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   BackupName name = BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]");
+   *   DeleteBackupRequest request = DeleteBackupRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = baseBigtableTableAdminClient.deleteBackupCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteBackupRequest, Empty> deleteBackupCallable() {
+    return stub.deleteBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Create a new table by restoring from a completed backup. The new table must be in the same
+   * instance as the instance containing the backup. The returned table [long-running
+   * operation][google.longrunning.Operation] can be used to track the progress of the operation,
+   * and to cancel it. The [metadata][google.longrunning.Operation.metadata] field type is
+   * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+   * [response][google.longrunning.Operation.response] type is
+   * [Table][google.bigtable.admin.v2.Table], if successful.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   String parent = "";
+   *   RestoreTableRequest request = RestoreTableRequest.newBuilder()
+   *     .setParent(parent)
+   *     .build();
+   *   Table response = baseBigtableTableAdminClient.restoreTableAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Table, RestoreTableMetadata> restoreTableAsync(
+      RestoreTableRequest request) {
+    return restoreTableOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Create a new table by restoring from a completed backup. The new table must be in the same
+   * instance as the instance containing the backup. The returned table [long-running
+   * operation][google.longrunning.Operation] can be used to track the progress of the operation,
+   * and to cancel it. The [metadata][google.longrunning.Operation.metadata] field type is
+   * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+   * [response][google.longrunning.Operation.response] type is
+   * [Table][google.bigtable.admin.v2.Table], if successful.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   String parent = "";
+   *   RestoreTableRequest request = RestoreTableRequest.newBuilder()
+   *     .setParent(parent)
+   *     .build();
+   *   OperationFuture&lt;Table, RestoreTableMetadata&gt; future = baseBigtableTableAdminClient.restoreTableOperationCallable().futureCall(request);
+   *   // Do something
+   *   Table response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<RestoreTableRequest, Table, RestoreTableMetadata>
+      restoreTableOperationCallable() {
+    return stub.restoreTableOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Create a new table by restoring from a completed backup. The new table must be in the same
+   * instance as the instance containing the backup. The returned table [long-running
+   * operation][google.longrunning.Operation] can be used to track the progress of the operation,
+   * and to cancel it. The [metadata][google.longrunning.Operation.metadata] field type is
+   * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+   * [response][google.longrunning.Operation.response] type is
+   * [Table][google.bigtable.admin.v2.Table], if successful.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   String parent = "";
+   *   RestoreTableRequest request = RestoreTableRequest.newBuilder()
+   *     .setParent(parent)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = baseBigtableTableAdminClient.restoreTableCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<RestoreTableRequest, Operation> restoreTableCallable() {
+    return stub.restoreTableCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -2138,6 +2828,86 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
     protected ListSnapshotsFixedSizeCollection createCollection(
         List<ListSnapshotsPage> pages, int collectionSize) {
       return new ListSnapshotsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBackupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListBackupsRequest,
+          ListBackupsResponse,
+          Backup,
+          ListBackupsPage,
+          ListBackupsFixedSizeCollection> {
+
+    public static ApiFuture<ListBackupsPagedResponse> createAsync(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ApiFuture<ListBackupsResponse> futureResponse) {
+      ApiFuture<ListBackupsPage> futurePage =
+          ListBackupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListBackupsPage, ListBackupsPagedResponse>() {
+            @Override
+            public ListBackupsPagedResponse apply(ListBackupsPage input) {
+              return new ListBackupsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBackupsPagedResponse(ListBackupsPage page) {
+      super(page, ListBackupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBackupsPage
+      extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
+
+    private ListBackupsPage(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ListBackupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListBackupsPage createEmptyPage() {
+      return new ListBackupsPage(null, null);
+    }
+
+    @Override
+    protected ListBackupsPage createPage(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ListBackupsResponse response) {
+      return new ListBackupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBackupsPage> createPageAsync(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ApiFuture<ListBackupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBackupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBackupsRequest,
+          ListBackupsResponse,
+          Backup,
+          ListBackupsPage,
+          ListBackupsFixedSizeCollection> {
+
+    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBackupsFixedSizeCollection createEmptyCollection() {
+      return new ListBackupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBackupsFixedSizeCollection createCollection(
+        List<ListBackupsPage> pages, int collectionSize) {
+      return new ListBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

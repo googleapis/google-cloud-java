@@ -1758,10 +1758,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Modifications to be atomically applied to the specified table's families.
-   * Entries are applied in order, meaning that earlier modifications can be
-   * masked by later ones (in the case of repeated updates to the same family,
-   * for example).
+   * Required. Modifications to be atomically applied to the specified table's
+   * families. Entries are applied in order, meaning that earlier modifications
+   * can be masked by later ones (in the case of repeated updates to the same
+   * family, for example).
    * </pre>
    *
    * <code>
@@ -1776,10 +1776,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Modifications to be atomically applied to the specified table's families.
-   * Entries are applied in order, meaning that earlier modifications can be
-   * masked by later ones (in the case of repeated updates to the same family,
-   * for example).
+   * Required. Modifications to be atomically applied to the specified table's
+   * families. Entries are applied in order, meaning that earlier modifications
+   * can be masked by later ones (in the case of repeated updates to the same
+   * family, for example).
    * </pre>
    *
    * <code>
@@ -1795,10 +1795,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Modifications to be atomically applied to the specified table's families.
-   * Entries are applied in order, meaning that earlier modifications can be
-   * masked by later ones (in the case of repeated updates to the same family,
-   * for example).
+   * Required. Modifications to be atomically applied to the specified table's
+   * families. Entries are applied in order, meaning that earlier modifications
+   * can be masked by later ones (in the case of repeated updates to the same
+   * family, for example).
    * </pre>
    *
    * <code>
@@ -1812,10 +1812,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Modifications to be atomically applied to the specified table's families.
-   * Entries are applied in order, meaning that earlier modifications can be
-   * masked by later ones (in the case of repeated updates to the same family,
-   * for example).
+   * Required. Modifications to be atomically applied to the specified table's
+   * families. Entries are applied in order, meaning that earlier modifications
+   * can be masked by later ones (in the case of repeated updates to the same
+   * family, for example).
    * </pre>
    *
    * <code>
@@ -1830,10 +1830,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Modifications to be atomically applied to the specified table's families.
-   * Entries are applied in order, meaning that earlier modifications can be
-   * masked by later ones (in the case of repeated updates to the same family,
-   * for example).
+   * Required. Modifications to be atomically applied to the specified table's
+   * families. Entries are applied in order, meaning that earlier modifications
+   * can be masked by later ones (in the case of repeated updates to the same
+   * family, for example).
    * </pre>
    *
    * <code>
@@ -2372,10 +2372,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2394,10 +2394,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2415,10 +2415,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2437,10 +2437,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2465,10 +2465,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2492,10 +2492,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2520,10 +2520,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2548,10 +2548,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2574,10 +2574,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2601,10 +2601,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2628,10 +2628,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2652,10 +2652,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2676,10 +2676,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2694,10 +2694,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2716,10 +2716,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2740,10 +2740,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2761,10 +2761,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>
@@ -2783,10 +2783,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Modifications to be atomically applied to the specified table's families.
-     * Entries are applied in order, meaning that earlier modifications can be
-     * masked by later ones (in the case of repeated updates to the same family,
-     * for example).
+     * Required. Modifications to be atomically applied to the specified table's
+     * families. Entries are applied in order, meaning that earlier modifications
+     * can be masked by later ones (in the case of repeated updates to the same
+     * family, for example).
      * </pre>
      *
      * <code>

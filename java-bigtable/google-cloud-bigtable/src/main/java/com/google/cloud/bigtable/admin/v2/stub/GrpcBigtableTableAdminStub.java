@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2.stub;
 
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
@@ -28,27 +29,37 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
+import com.google.bigtable.admin.v2.CreateBackupMetadata;
+import com.google.bigtable.admin.v2.CreateBackupRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.GetBackupRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListBackupsRequest;
+import com.google.bigtable.admin.v2.ListBackupsResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
 import com.google.bigtable.admin.v2.ListSnapshotsResponse;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
+import com.google.bigtable.admin.v2.RestoreTableMetadata;
+import com.google.bigtable.admin.v2.RestoreTableRequest;
 import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
+import com.google.bigtable.admin.v2.UpdateBackupRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -208,6 +219,52 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                   ProtoUtils.marshaller(DeleteSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<CreateBackupRequest, Operation>
+      createBackupMethodDescriptor =
+          MethodDescriptor.<CreateBackupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/CreateBackup")
+              .setRequestMarshaller(ProtoUtils.marshaller(CreateBackupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
+      MethodDescriptor.<GetBackupRequest, Backup>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/GetBackup")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
+      listBackupsMethodDescriptor =
+          MethodDescriptor.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/ListBackups")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateBackupRequest, Backup> updateBackupMethodDescriptor =
+      MethodDescriptor.<UpdateBackupRequest, Backup>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/UpdateBackup")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateBackupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteBackupRequest, Empty> deleteBackupMethodDescriptor =
+      MethodDescriptor.<DeleteBackupRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/DeleteBackup")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<RestoreTableRequest, Operation>
+      restoreTableMethodDescriptor =
+          MethodDescriptor.<RestoreTableRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/RestoreTable")
+              .setRequestMarshaller(ProtoUtils.marshaller(RestoreTableRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -240,6 +297,18 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
       listSnapshotsPagedCallable;
   private final UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable;
+  private final UnaryCallable<CreateBackupRequest, Operation> createBackupCallable;
+  private final OperationCallable<CreateBackupRequest, Backup, CreateBackupMetadata>
+      createBackupOperationCallable;
+  private final UnaryCallable<GetBackupRequest, Backup> getBackupCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
+      listBackupsPagedCallable;
+  private final UnaryCallable<UpdateBackupRequest, Backup> updateBackupCallable;
+  private final UnaryCallable<DeleteBackupRequest, Empty> deleteBackupCallable;
+  private final UnaryCallable<RestoreTableRequest, Operation> restoreTableCallable;
+  private final OperationCallable<RestoreTableRequest, Table, RestoreTableMetadata>
+      restoreTableOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -496,6 +565,84 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                   }
                 })
             .build();
+    GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
+        GrpcCallSettings.<CreateBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(createBackupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateBackupRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateBackupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
+        GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
+            .setMethodDescriptor(getBackupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetBackupRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetBackupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
+        GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+            .setMethodDescriptor(listBackupsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListBackupsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListBackupsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UpdateBackupRequest, Backup> updateBackupTransportSettings =
+        GrpcCallSettings.<UpdateBackupRequest, Backup>newBuilder()
+            .setMethodDescriptor(updateBackupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateBackupRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateBackupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("backup.name", String.valueOf(request.getBackup().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteBackupRequest, Empty> deleteBackupTransportSettings =
+        GrpcCallSettings.<DeleteBackupRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteBackupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteBackupRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteBackupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<RestoreTableRequest, Operation> restoreTableTransportSettings =
+        GrpcCallSettings.<RestoreTableRequest, Operation>newBuilder()
+            .setMethodDescriptor(restoreTableMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<RestoreTableRequest>() {
+                  @Override
+                  public Map<String, String> extract(RestoreTableRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.createTableCallable =
         callableFactory.createUnaryCallable(
@@ -571,6 +718,39 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
     this.deleteSnapshotCallable =
         callableFactory.createUnaryCallable(
             deleteSnapshotTransportSettings, settings.deleteSnapshotSettings(), clientContext);
+    this.createBackupCallable =
+        callableFactory.createUnaryCallable(
+            createBackupTransportSettings, settings.createBackupSettings(), clientContext);
+    this.createBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            createBackupTransportSettings,
+            settings.createBackupOperationSettings(),
+            clientContext,
+            this.operationsStub);
+    this.getBackupCallable =
+        callableFactory.createUnaryCallable(
+            getBackupTransportSettings, settings.getBackupSettings(), clientContext);
+    this.listBackupsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.listBackupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.updateBackupCallable =
+        callableFactory.createUnaryCallable(
+            updateBackupTransportSettings, settings.updateBackupSettings(), clientContext);
+    this.deleteBackupCallable =
+        callableFactory.createUnaryCallable(
+            deleteBackupTransportSettings, settings.deleteBackupSettings(), clientContext);
+    this.restoreTableCallable =
+        callableFactory.createUnaryCallable(
+            restoreTableTransportSettings, settings.restoreTableSettings(), clientContext);
+    this.restoreTableOperationCallable =
+        callableFactory.createOperationCallable(
+            restoreTableTransportSettings,
+            settings.restoreTableOperationSettings(),
+            clientContext,
+            this.operationsStub);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -667,6 +847,46 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
 
   public UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable() {
     return deleteSnapshotCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<CreateBackupRequest, Backup, CreateBackupMetadata>
+      createBackupOperationCallable() {
+    return createBackupOperationCallable;
+  }
+
+  public UnaryCallable<CreateBackupRequest, Operation> createBackupCallable() {
+    return createBackupCallable;
+  }
+
+  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    return getBackupCallable;
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    return listBackupsPagedCallable;
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    return listBackupsCallable;
+  }
+
+  public UnaryCallable<UpdateBackupRequest, Backup> updateBackupCallable() {
+    return updateBackupCallable;
+  }
+
+  public UnaryCallable<DeleteBackupRequest, Empty> deleteBackupCallable() {
+    return deleteBackupCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<RestoreTableRequest, Table, RestoreTableMetadata>
+      restoreTableOperationCallable() {
+    return restoreTableOperationCallable;
+  }
+
+  public UnaryCallable<RestoreTableRequest, Operation> restoreTableCallable() {
+    return restoreTableCallable;
   }
 
   @Override

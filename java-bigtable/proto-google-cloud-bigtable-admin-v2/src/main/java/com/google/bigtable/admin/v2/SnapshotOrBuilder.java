@@ -91,9 +91,10 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. The size of the data in the source table at the time the snapshot was
-   * taken. In some cases, this value may be computed asynchronously via a
-   * background process and a placeholder of 0 will be used in the meantime.
+   * Output only. The size of the data in the source table at the time the
+   * snapshot was taken. In some cases, this value may be computed
+   * asynchronously via a background process and a placeholder of 0 will be used
+   * in the meantime.
    * </pre>
    *
    * <code>int64 data_size_bytes = 3;</code>
@@ -141,8 +142,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the snapshot will be deleted. The maximum amount of time a
-   * snapshot can stay active is 365 days. If 'ttl' is not specified,
+   * Output only. The time when the snapshot will be deleted. The maximum amount
+   * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
    * the default maximum of 365 days will be used.
    * </pre>
    *
@@ -155,8 +156,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the snapshot will be deleted. The maximum amount of time a
-   * snapshot can stay active is 365 days. If 'ttl' is not specified,
+   * Output only. The time when the snapshot will be deleted. The maximum amount
+   * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
    * the default maximum of 365 days will be used.
    * </pre>
    *
@@ -169,8 +170,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the snapshot will be deleted. The maximum amount of time a
-   * snapshot can stay active is 365 days. If 'ttl' is not specified,
+   * Output only. The time when the snapshot will be deleted. The maximum amount
+   * of time a snapshot can stay active is 365 days. If 'ttl' is not specified,
    * the default maximum of 365 days will be used.
    * </pre>
    *

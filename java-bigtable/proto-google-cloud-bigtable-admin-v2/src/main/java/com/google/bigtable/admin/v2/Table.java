@@ -125,6 +125,22 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
               granularity_ = rawValue;
               break;
             }
+          case 50:
+            {
+              com.google.bigtable.admin.v2.RestoreInfo.Builder subBuilder = null;
+              if (restoreInfo_ != null) {
+                subBuilder = restoreInfo_.toBuilder();
+              }
+              restoreInfo_ =
+                  input.readMessage(
+                      com.google.bigtable.admin.v2.RestoreInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(restoreInfo_);
+                restoreInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -699,6 +715,18 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        * <code>READY = 4;</code>
        */
       READY(4),
+      /**
+       *
+       *
+       * <pre>
+       * The table is fully created and ready for use after a restore, and is
+       * being optimized for performance. When optimizations are complete, the
+       * table will transition to `READY` state.
+       * </pre>
+       *
+       * <code>READY_OPTIMIZING = 5;</code>
+       */
+      READY_OPTIMIZING(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -758,6 +786,18 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        * <code>READY = 4;</code>
        */
       public static final int READY_VALUE = 4;
+      /**
+       *
+       *
+       * <pre>
+       * The table is fully created and ready for use after a restore, and is
+       * being optimized for performance. When optimizations are complete, the
+       * table will transition to `READY` state.
+       * </pre>
+       *
+       * <code>READY_OPTIMIZING = 5;</code>
+       */
+      public static final int READY_OPTIMIZING_VALUE = 5;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -793,6 +833,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             return UNPLANNED_MAINTENANCE;
           case 4:
             return READY;
+          case 5:
+            return READY_OPTIMIZING;
           default:
             return null;
         }
@@ -1696,6 +1738,54 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int RESTORE_INFO_FIELD_NUMBER = 6;
+  private com.google.bigtable.admin.v2.RestoreInfo restoreInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this table was restored from another data source (e.g. a
+   * backup), this field will be populated with information about the restore.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+   *
+   * @return Whether the restoreInfo field is set.
+   */
+  public boolean hasRestoreInfo() {
+    return restoreInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this table was restored from another data source (e.g. a
+   * backup), this field will be populated with information about the restore.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+   *
+   * @return The restoreInfo.
+   */
+  public com.google.bigtable.admin.v2.RestoreInfo getRestoreInfo() {
+    return restoreInfo_ == null
+        ? com.google.bigtable.admin.v2.RestoreInfo.getDefaultInstance()
+        : restoreInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this table was restored from another data source (e.g. a
+   * backup), this field will be populated with information about the restore.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+   */
+  public com.google.bigtable.admin.v2.RestoreInfoOrBuilder getRestoreInfoOrBuilder() {
+    return getRestoreInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1721,6 +1811,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         != com.google.bigtable.admin.v2.Table.TimestampGranularity.TIMESTAMP_GRANULARITY_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(4, granularity_);
+    }
+    if (restoreInfo_ != null) {
+      output.writeMessage(6, getRestoreInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -1762,6 +1855,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, granularity_);
     }
+    if (restoreInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getRestoreInfo());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1781,6 +1877,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetClusterStates().equals(other.internalGetClusterStates())) return false;
     if (!internalGetColumnFamilies().equals(other.internalGetColumnFamilies())) return false;
     if (granularity_ != other.granularity_) return false;
+    if (hasRestoreInfo() != other.hasRestoreInfo()) return false;
+    if (hasRestoreInfo()) {
+      if (!getRestoreInfo().equals(other.getRestoreInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1804,6 +1904,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + GRANULARITY_FIELD_NUMBER;
     hash = (53 * hash) + granularity_;
+    if (hasRestoreInfo()) {
+      hash = (37 * hash) + RESTORE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getRestoreInfo().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1979,6 +2083,12 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableColumnFamilies().clear();
       granularity_ = 0;
 
+      if (restoreInfoBuilder_ == null) {
+        restoreInfo_ = null;
+      } else {
+        restoreInfo_ = null;
+        restoreInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -2012,6 +2122,11 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       result.columnFamilies_ = internalGetColumnFamilies();
       result.columnFamilies_.makeImmutable();
       result.granularity_ = granularity_;
+      if (restoreInfoBuilder_ == null) {
+        result.restoreInfo_ = restoreInfo_;
+      } else {
+        result.restoreInfo_ = restoreInfoBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -2069,6 +2184,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableColumnFamilies().mergeFrom(other.internalGetColumnFamilies());
       if (other.granularity_ != 0) {
         setGranularityValue(other.getGranularityValue());
+      }
+      if (other.hasRestoreInfo()) {
+        mergeRestoreInfo(other.getRestoreInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2708,6 +2826,201 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       granularity_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.bigtable.admin.v2.RestoreInfo restoreInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.RestoreInfo,
+            com.google.bigtable.admin.v2.RestoreInfo.Builder,
+            com.google.bigtable.admin.v2.RestoreInfoOrBuilder>
+        restoreInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this table was restored from another data source (e.g. a
+     * backup), this field will be populated with information about the restore.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     *
+     * @return Whether the restoreInfo field is set.
+     */
+    public boolean hasRestoreInfo() {
+      return restoreInfoBuilder_ != null || restoreInfo_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this table was restored from another data source (e.g. a
+     * backup), this field will be populated with information about the restore.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     *
+     * @return The restoreInfo.
+     */
+    public com.google.bigtable.admin.v2.RestoreInfo getRestoreInfo() {
+      if (restoreInfoBuilder_ == null) {
+        return restoreInfo_ == null
+            ? com.google.bigtable.admin.v2.RestoreInfo.getDefaultInstance()
+            : restoreInfo_;
+      } else {
+        return restoreInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this table was restored from another data source (e.g. a
+     * backup), this field will be populated with information about the restore.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     */
+    public Builder setRestoreInfo(com.google.bigtable.admin.v2.RestoreInfo value) {
+      if (restoreInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        restoreInfo_ = value;
+        onChanged();
+      } else {
+        restoreInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this table was restored from another data source (e.g. a
+     * backup), this field will be populated with information about the restore.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     */
+    public Builder setRestoreInfo(
+        com.google.bigtable.admin.v2.RestoreInfo.Builder builderForValue) {
+      if (restoreInfoBuilder_ == null) {
+        restoreInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        restoreInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this table was restored from another data source (e.g. a
+     * backup), this field will be populated with information about the restore.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     */
+    public Builder mergeRestoreInfo(com.google.bigtable.admin.v2.RestoreInfo value) {
+      if (restoreInfoBuilder_ == null) {
+        if (restoreInfo_ != null) {
+          restoreInfo_ =
+              com.google.bigtable.admin.v2.RestoreInfo.newBuilder(restoreInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          restoreInfo_ = value;
+        }
+        onChanged();
+      } else {
+        restoreInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this table was restored from another data source (e.g. a
+     * backup), this field will be populated with information about the restore.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     */
+    public Builder clearRestoreInfo() {
+      if (restoreInfoBuilder_ == null) {
+        restoreInfo_ = null;
+        onChanged();
+      } else {
+        restoreInfo_ = null;
+        restoreInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this table was restored from another data source (e.g. a
+     * backup), this field will be populated with information about the restore.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     */
+    public com.google.bigtable.admin.v2.RestoreInfo.Builder getRestoreInfoBuilder() {
+
+      onChanged();
+      return getRestoreInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this table was restored from another data source (e.g. a
+     * backup), this field will be populated with information about the restore.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     */
+    public com.google.bigtable.admin.v2.RestoreInfoOrBuilder getRestoreInfoOrBuilder() {
+      if (restoreInfoBuilder_ != null) {
+        return restoreInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return restoreInfo_ == null
+            ? com.google.bigtable.admin.v2.RestoreInfo.getDefaultInstance()
+            : restoreInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this table was restored from another data source (e.g. a
+     * backup), this field will be populated with information about the restore.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.RestoreInfo,
+            com.google.bigtable.admin.v2.RestoreInfo.Builder,
+            com.google.bigtable.admin.v2.RestoreInfoOrBuilder>
+        getRestoreInfoFieldBuilder() {
+      if (restoreInfoBuilder_ == null) {
+        restoreInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.RestoreInfo,
+                com.google.bigtable.admin.v2.RestoreInfo.Builder,
+                com.google.bigtable.admin.v2.RestoreInfoOrBuilder>(
+                getRestoreInfo(), getParentForChildren(), isClean());
+        restoreInfo_ = null;
+      }
+      return restoreInfoBuilder_;
     }
 
     @java.lang.Override

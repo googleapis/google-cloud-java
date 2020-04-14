@@ -160,7 +160,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The unique name of the table to have the snapshot taken.
+   * Required. The unique name of the table to have the snapshot taken.
    * Values are of the form
    * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
@@ -186,7 +186,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The unique name of the table to have the snapshot taken.
+   * Required. The unique name of the table to have the snapshot taken.
    * Values are of the form
    * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
@@ -215,7 +215,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The name of the cluster where the snapshot will be created in.
+   * Required. The name of the cluster where the snapshot will be created in.
    * Values are of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
@@ -241,7 +241,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The name of the cluster where the snapshot will be created in.
+   * Required. The name of the cluster where the snapshot will be created in.
    * Values are of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
@@ -270,9 +270,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The ID by which the new snapshot should be referred to within the parent
-   * cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
-   * rather than
+   * Required. The ID by which the new snapshot should be referred to within the
+   * parent cluster, e.g., `mysnapshot` of the form:
+   * `[_a-zA-Z0-9][-_.a-zA-Z0-9]*` rather than
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * </pre>
    *
@@ -295,9 +295,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The ID by which the new snapshot should be referred to within the parent
-   * cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
-   * rather than
+   * Required. The ID by which the new snapshot should be referred to within the
+   * parent cluster, e.g., `mysnapshot` of the form:
+   * `[_a-zA-Z0-9][-_.a-zA-Z0-9]*` rather than
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * </pre>
    *
@@ -820,7 +820,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the table to have the snapshot taken.
+     * Required. The unique name of the table to have the snapshot taken.
      * Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
@@ -846,7 +846,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the table to have the snapshot taken.
+     * Required. The unique name of the table to have the snapshot taken.
      * Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
@@ -872,7 +872,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the table to have the snapshot taken.
+     * Required. The unique name of the table to have the snapshot taken.
      * Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
@@ -897,7 +897,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the table to have the snapshot taken.
+     * Required. The unique name of the table to have the snapshot taken.
      * Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
@@ -918,7 +918,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the table to have the snapshot taken.
+     * Required. The unique name of the table to have the snapshot taken.
      * Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
@@ -946,7 +946,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The name of the cluster where the snapshot will be created in.
+     * Required. The name of the cluster where the snapshot will be created in.
      * Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
@@ -972,7 +972,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The name of the cluster where the snapshot will be created in.
+     * Required. The name of the cluster where the snapshot will be created in.
      * Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
@@ -998,7 +998,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The name of the cluster where the snapshot will be created in.
+     * Required. The name of the cluster where the snapshot will be created in.
      * Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
@@ -1023,7 +1023,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The name of the cluster where the snapshot will be created in.
+     * Required. The name of the cluster where the snapshot will be created in.
      * Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
@@ -1044,7 +1044,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The name of the cluster where the snapshot will be created in.
+     * Required. The name of the cluster where the snapshot will be created in.
      * Values are of the form
      * `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
@@ -1072,9 +1072,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The ID by which the new snapshot should be referred to within the parent
-     * cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
-     * rather than
+     * Required. The ID by which the new snapshot should be referred to within the
+     * parent cluster, e.g., `mysnapshot` of the form:
+     * `[_a-zA-Z0-9][-_.a-zA-Z0-9]*` rather than
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
      * </pre>
      *
@@ -1097,9 +1097,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The ID by which the new snapshot should be referred to within the parent
-     * cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
-     * rather than
+     * Required. The ID by which the new snapshot should be referred to within the
+     * parent cluster, e.g., `mysnapshot` of the form:
+     * `[_a-zA-Z0-9][-_.a-zA-Z0-9]*` rather than
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
      * </pre>
      *
@@ -1122,9 +1122,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The ID by which the new snapshot should be referred to within the parent
-     * cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
-     * rather than
+     * Required. The ID by which the new snapshot should be referred to within the
+     * parent cluster, e.g., `mysnapshot` of the form:
+     * `[_a-zA-Z0-9][-_.a-zA-Z0-9]*` rather than
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
      * </pre>
      *
@@ -1146,9 +1146,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The ID by which the new snapshot should be referred to within the parent
-     * cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
-     * rather than
+     * Required. The ID by which the new snapshot should be referred to within the
+     * parent cluster, e.g., `mysnapshot` of the form:
+     * `[_a-zA-Z0-9][-_.a-zA-Z0-9]*` rather than
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
      * </pre>
      *
@@ -1166,9 +1166,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The ID by which the new snapshot should be referred to within the parent
-     * cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
-     * rather than
+     * Required. The ID by which the new snapshot should be referred to within the
+     * parent cluster, e.g., `mysnapshot` of the form:
+     * `[_a-zA-Z0-9][-_.a-zA-Z0-9]*` rather than
      * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
      * </pre>
      *

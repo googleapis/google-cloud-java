@@ -28,6 +28,10 @@ public final class TableProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_RestoreInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_RestoreInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_admin_v2_Table_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_Table_fieldAccessorTable;
@@ -63,6 +67,14 @@ public final class TableProto {
       internal_static_google_bigtable_admin_v2_Snapshot_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_Snapshot_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_Backup_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_Backup_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_BackupInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_BackupInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -77,57 +89,81 @@ public final class TableProto {
           + "otations.proto\032\037google/api/field_behavio"
           + "r.proto\032\031google/api/resource.proto\032\036goog"
           + "le/protobuf/duration.proto\032\037google/proto"
-          + "buf/timestamp.proto\"\247\007\n\005Table\022\014\n\004name\030\001 "
-          + "\001(\t\022J\n\016cluster_states\030\002 \003(\01322.google.big"
-          + "table.admin.v2.Table.ClusterStatesEntry\022"
-          + "L\n\017column_families\030\003 \003(\01323.google.bigtab"
-          + "le.admin.v2.Table.ColumnFamiliesEntry\022I\n"
-          + "\013granularity\030\004 \001(\01624.google.bigtable.adm"
-          + "in.v2.Table.TimestampGranularity\032\342\001\n\014Clu"
-          + "sterState\022X\n\021replication_state\030\001 \001(\0162=.g"
-          + "oogle.bigtable.admin.v2.Table.ClusterSta"
-          + "te.ReplicationState\"x\n\020ReplicationState\022"
-          + "\023\n\017STATE_NOT_KNOWN\020\000\022\020\n\014INITIALIZING\020\001\022\027"
-          + "\n\023PLANNED_MAINTENANCE\020\002\022\031\n\025UNPLANNED_MAI"
-          + "NTENANCE\020\003\022\t\n\005READY\020\004\032b\n\022ClusterStatesEn"
-          + "try\022\013\n\003key\030\001 \001(\t\022;\n\005value\030\002 \001(\0132,.google"
-          + ".bigtable.admin.v2.Table.ClusterState:\0028"
-          + "\001\032]\n\023ColumnFamiliesEntry\022\013\n\003key\030\001 \001(\t\0225\n"
-          + "\005value\030\002 \001(\0132&.google.bigtable.admin.v2."
-          + "ColumnFamily:\0028\001\"I\n\024TimestampGranularity"
-          + "\022%\n!TIMESTAMP_GRANULARITY_UNSPECIFIED\020\000\022"
-          + "\n\n\006MILLIS\020\001\"\\\n\004View\022\024\n\020VIEW_UNSPECIFIED\020"
-          + "\000\022\r\n\tNAME_ONLY\020\001\022\017\n\013SCHEMA_VIEW\020\002\022\024\n\020REP"
-          + "LICATION_VIEW\020\003\022\010\n\004FULL\020\004:Z\352AW\n\035bigtable"
-          + ".googleapis.com/Table\0226projects/{project"
-          + "}/instances/{instance}/tables/{table}\"A\n"
-          + "\014ColumnFamily\0221\n\007gc_rule\030\001 \001(\0132 .google."
-          + "bigtable.admin.v2.GcRule\"\325\002\n\006GcRule\022\032\n\020m"
-          + "ax_num_versions\030\001 \001(\005H\000\022,\n\007max_age\030\002 \001(\013"
-          + "2\031.google.protobuf.DurationH\000\022E\n\014interse"
-          + "ction\030\003 \001(\0132-.google.bigtable.admin.v2.G"
-          + "cRule.IntersectionH\000\0227\n\005union\030\004 \001(\0132&.go"
-          + "ogle.bigtable.admin.v2.GcRule.UnionH\000\032?\n"
-          + "\014Intersection\022/\n\005rules\030\001 \003(\0132 .google.bi"
-          + "gtable.admin.v2.GcRule\0328\n\005Union\022/\n\005rules"
-          + "\030\001 \003(\0132 .google.bigtable.admin.v2.GcRule"
-          + "B\006\n\004rule\"\307\003\n\010Snapshot\022\014\n\004name\030\001 \001(\t\0225\n\014s"
-          + "ource_table\030\002 \001(\0132\037.google.bigtable.admi"
-          + "n.v2.Table\022\027\n\017data_size_bytes\030\003 \001(\003\022/\n\013c"
-          + "reate_time\030\004 \001(\0132\032.google.protobuf.Times"
-          + "tamp\022/\n\013delete_time\030\005 \001(\0132\032.google.proto"
-          + "buf.Timestamp\0227\n\005state\030\006 \001(\0162(.google.bi"
-          + "gtable.admin.v2.Snapshot.State\022\023\n\013descri"
-          + "ption\030\007 \001(\t\"5\n\005State\022\023\n\017STATE_NOT_KNOWN\020"
-          + "\000\022\t\n\005READY\020\001\022\014\n\010CREATING\020\002:v\352As\n bigtabl"
-          + "e.googleapis.com/Snapshot\022Oprojects/{pro"
+          + "buf/timestamp.proto\"\233\001\n\013RestoreInfo\022@\n\013s"
+          + "ource_type\030\001 \001(\0162+.google.bigtable.admin"
+          + ".v2.RestoreSourceType\022;\n\013backup_info\030\002 \001"
+          + "(\0132$.google.bigtable.admin.v2.BackupInfo"
+          + "H\000B\r\n\013source_info\"\373\007\n\005Table\022\014\n\004name\030\001 \001("
+          + "\t\022J\n\016cluster_states\030\002 \003(\01322.google.bigta"
+          + "ble.admin.v2.Table.ClusterStatesEntry\022L\n"
+          + "\017column_families\030\003 \003(\01323.google.bigtable"
+          + ".admin.v2.Table.ColumnFamiliesEntry\022I\n\013g"
+          + "ranularity\030\004 \001(\01624.google.bigtable.admin"
+          + ".v2.Table.TimestampGranularity\022;\n\014restor"
+          + "e_info\030\006 \001(\0132%.google.bigtable.admin.v2."
+          + "RestoreInfo\032\371\001\n\014ClusterState\022X\n\021replicat"
+          + "ion_state\030\001 \001(\0162=.google.bigtable.admin."
+          + "v2.Table.ClusterState.ReplicationState\"\216"
+          + "\001\n\020ReplicationState\022\023\n\017STATE_NOT_KNOWN\020\000"
+          + "\022\020\n\014INITIALIZING\020\001\022\027\n\023PLANNED_MAINTENANC"
+          + "E\020\002\022\031\n\025UNPLANNED_MAINTENANCE\020\003\022\t\n\005READY\020"
+          + "\004\022\024\n\020READY_OPTIMIZING\020\005\032b\n\022ClusterStates"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022;\n\005value\030\002 \001(\0132,.goog"
+          + "le.bigtable.admin.v2.Table.ClusterState:"
+          + "\0028\001\032]\n\023ColumnFamiliesEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "5\n\005value\030\002 \001(\0132&.google.bigtable.admin.v"
+          + "2.ColumnFamily:\0028\001\"I\n\024TimestampGranulari"
+          + "ty\022%\n!TIMESTAMP_GRANULARITY_UNSPECIFIED\020"
+          + "\000\022\n\n\006MILLIS\020\001\"\\\n\004View\022\024\n\020VIEW_UNSPECIFIE"
+          + "D\020\000\022\r\n\tNAME_ONLY\020\001\022\017\n\013SCHEMA_VIEW\020\002\022\024\n\020R"
+          + "EPLICATION_VIEW\020\003\022\010\n\004FULL\020\004:Z\352AW\n\035bigtab"
+          + "le.googleapis.com/Table\0226projects/{proje"
+          + "ct}/instances/{instance}/tables/{table}\""
+          + "A\n\014ColumnFamily\0221\n\007gc_rule\030\001 \001(\0132 .googl"
+          + "e.bigtable.admin.v2.GcRule\"\325\002\n\006GcRule\022\032\n"
+          + "\020max_num_versions\030\001 \001(\005H\000\022,\n\007max_age\030\002 \001"
+          + "(\0132\031.google.protobuf.DurationH\000\022E\n\014inter"
+          + "section\030\003 \001(\0132-.google.bigtable.admin.v2"
+          + ".GcRule.IntersectionH\000\0227\n\005union\030\004 \001(\0132&."
+          + "google.bigtable.admin.v2.GcRule.UnionH\000\032"
+          + "?\n\014Intersection\022/\n\005rules\030\001 \003(\0132 .google."
+          + "bigtable.admin.v2.GcRule\0328\n\005Union\022/\n\005rul"
+          + "es\030\001 \003(\0132 .google.bigtable.admin.v2.GcRu"
+          + "leB\006\n\004rule\"\307\003\n\010Snapshot\022\014\n\004name\030\001 \001(\t\0225\n"
+          + "\014source_table\030\002 \001(\0132\037.google.bigtable.ad"
+          + "min.v2.Table\022\027\n\017data_size_bytes\030\003 \001(\003\022/\n"
+          + "\013create_time\030\004 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\022/\n\013delete_time\030\005 \001(\0132\032.google.pro"
+          + "tobuf.Timestamp\0227\n\005state\030\006 \001(\0162(.google."
+          + "bigtable.admin.v2.Snapshot.State\022\023\n\013desc"
+          + "ription\030\007 \001(\t\"5\n\005State\022\023\n\017STATE_NOT_KNOW"
+          + "N\020\000\022\t\n\005READY\020\001\022\014\n\010CREATING\020\002:v\352As\n bigta"
+          + "ble.googleapis.com/Snapshot\022Oprojects/{p"
+          + "roject}/instances/{instance}/clusters/{c"
+          + "luster}/snapshots/{snapshot}\"\327\003\n\006Backup\022"
+          + "\021\n\004name\030\001 \001(\tB\003\340A\003\022\034\n\014source_table\030\002 \001(\t"
+          + "B\006\340A\005\340A\002\0224\n\013expire_time\030\003 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\003\340A\002\0223\n\nstart_time\030\004 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n\010e"
+          + "nd_time\030\005 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\003\022\027\n\nsize_bytes\030\006 \001(\003B\003\340A\003\022:\n\005state"
+          + "\030\007 \001(\0162&.google.bigtable.admin.v2.Backup"
+          + ".StateB\003\340A\003\"7\n\005State\022\025\n\021STATE_UNSPECIFIE"
+          + "D\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\002:p\352Am\n\036bigta"
+          + "ble.googleapis.com/Backup\022Kprojects/{pro"
           + "ject}/instances/{instance}/clusters/{clu"
-          + "ster}/snapshots/{snapshot}B\255\001\n\034com.googl"
-          + "e.bigtable.admin.v2B\nTableProtoP\001Z=googl"
-          + "e.golang.org/genproto/googleapis/bigtabl"
-          + "e/admin/v2;admin\252\002\036Google.Cloud.Bigtable"
-          + ".Admin.V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\"
-          + "V2b\006proto3"
+          + "ster}/backups/{backup}\"\244\001\n\nBackupInfo\022\023\n"
+          + "\006backup\030\001 \001(\tB\003\340A\003\0223\n\nstart_time\030\002 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\0221\n\010end_t"
+          + "ime\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\022\031\n\014source_table\030\004 \001(\tB\003\340A\003*D\n\021Restore"
+          + "SourceType\022#\n\037RESTORE_SOURCE_TYPE_UNSPEC"
+          + "IFIED\020\000\022\n\n\006BACKUP\020\001B\255\001\n\034com.google.bigta"
+          + "ble.admin.v2B\nTableProtoP\001Z=google.golan"
+          + "g.org/genproto/googleapis/bigtable/admin"
+          + "/v2;admin\252\002\036Google.Cloud.Bigtable.Admin."
+          + "V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -139,13 +175,21 @@ public final class TableProto {
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
-    internal_static_google_bigtable_admin_v2_Table_descriptor =
+    internal_static_google_bigtable_admin_v2_RestoreInfo_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_bigtable_admin_v2_RestoreInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_RestoreInfo_descriptor,
+            new java.lang.String[] {
+              "SourceType", "BackupInfo", "SourceInfo",
+            });
+    internal_static_google_bigtable_admin_v2_Table_descriptor =
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_bigtable_admin_v2_Table_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_Table_descriptor,
             new java.lang.String[] {
-              "Name", "ClusterStates", "ColumnFamilies", "Granularity",
+              "Name", "ClusterStates", "ColumnFamilies", "Granularity", "RestoreInfo",
             });
     internal_static_google_bigtable_admin_v2_Table_ClusterState_descriptor =
         internal_static_google_bigtable_admin_v2_Table_descriptor.getNestedTypes().get(0);
@@ -172,7 +216,7 @@ public final class TableProto {
               "Key", "Value",
             });
     internal_static_google_bigtable_admin_v2_ColumnFamily_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_bigtable_admin_v2_ColumnFamily_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_ColumnFamily_descriptor,
@@ -180,7 +224,7 @@ public final class TableProto {
               "GcRule",
             });
     internal_static_google_bigtable_admin_v2_GcRule_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_bigtable_admin_v2_GcRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_GcRule_descriptor,
@@ -204,7 +248,7 @@ public final class TableProto {
               "Rules",
             });
     internal_static_google_bigtable_admin_v2_Snapshot_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_bigtable_admin_v2_Snapshot_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_Snapshot_descriptor,
@@ -217,8 +261,25 @@ public final class TableProto {
               "State",
               "Description",
             });
+    internal_static_google_bigtable_admin_v2_Backup_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_bigtable_admin_v2_Backup_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_Backup_descriptor,
+            new java.lang.String[] {
+              "Name", "SourceTable", "ExpireTime", "StartTime", "EndTime", "SizeBytes", "State",
+            });
+    internal_static_google_bigtable_admin_v2_BackupInfo_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_bigtable_admin_v2_BackupInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_BackupInfo_descriptor,
+            new java.lang.String[] {
+              "Backup", "StartTime", "EndTime", "SourceTable",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
