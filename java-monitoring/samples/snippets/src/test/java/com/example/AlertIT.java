@@ -96,8 +96,22 @@ public class AlertIT {
   @Test
   public void testDisableEnablePolicies() throws IOException {
     AlertSample.main(new String[] {"enable", "-d", "display_name='test-policy'"});
-    assertTrue(bout.toString().contains("enabled"));
-    AlertSample.main(new String[] {"disable", "-d", "display_name='test-policy'"});
-    assertTrue(bout.toString().contains("disabled"));
+    
+    // check the current state of policy to make sure
+    // not to enable the policy that is already enabled.
+    boolean isEnabled = bout.toString().contains("already");
+    if (isEnabled) {
+      AlertSample.main(new String[] {"disable", "-d", "display_name='test-policy'"});
+      assertTrue(bout.toString().contains("disabled"));
+
+      AlertSample.main(new String[] {"enable", "-d", "display_name='test-policy'"});
+      assertTrue(bout.toString().contains("enabled"));
+    } else {
+      AlertSample.main(new String[] {"enable", "-d", "display_name='test-policy'"});
+      assertTrue(bout.toString().contains("enabled"));
+
+      AlertSample.main(new String[] {"disable", "-d", "display_name='test-policy'"});
+      assertTrue(bout.toString().contains("disabled"));
+    }
   }
 }
