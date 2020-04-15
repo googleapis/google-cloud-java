@@ -95,9 +95,9 @@ public class AlertIT {
 
   @Test
   public void testDisableEnablePolicies() throws IOException {
-    AlertSample.main(new String[] {"disable", "-d", "display_name='test-policy'"});
-    assertTrue(bout.toString().contains("disabled"));
     AlertSample.main(new String[] {"enable", "-d", "display_name='test-policy'"});
     assertTrue(bout.toString().contains("enabled"));
+    AlertSample.main(new String[] {"disable", "-d", "display_name='test-policy'"});
+    assertTrue(bout.toString().contains("disabled"));
   }
 }
