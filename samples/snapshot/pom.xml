@@ -39,8 +39,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- {x-version-update-start::current} -->
   <dependencies>
+    <!-- {x-version-update-start:google-cloud-bigquery:current} -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
