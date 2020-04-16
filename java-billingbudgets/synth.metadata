@@ -1,11 +1,10 @@
 {
-  "updateTime": "2020-04-09T08:54:59.312543Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "1.2.0",
-        "dockerImage": "googleapis/artman@sha256:ef1a5b367dbe1e37cea1c7c814c801a638473e8dd66f87f4a2b8c2a146013673"
+        "version": "2.0.0",
+        "dockerImage": "googleapis/artman@sha256:b3b47805231a305d0f40c4bf069df20f6a2635574e6d4259fac651d3f9f6e098"
       }
     },
     {
@@ -27,7 +26,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "7f8e62aa3edd225f76347a16f92e400661fdfb52"
+        "sha": "52638600f387deb98efb5f9c85fec39e82aa9052"
       }
     }
   ],
