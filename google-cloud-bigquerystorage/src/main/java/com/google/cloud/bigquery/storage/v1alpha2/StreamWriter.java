@@ -46,10 +46,17 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.threeten.bp.Duration;
+import org.threeten.bp.Instant;
 
 /**
  * A BigQuery Stream Writer that can be used to write data into BigQuery Table.
+ *
+ * <p>This is to be used to managed streaming write when you are working with PENDING streams or
+ * want to explicitly manage offset. In that most common cases when writing with COMMITTED stream
+ * without offset, please use a simpler writer {@code DirectWriter}.
  *
  * <p>A {@link StreamWrier} provides built-in capabilities to: handle batching of messages;
  * controlling memory utilization (through flow control); automatic connection re-establishment and
@@ -68,7 +75,13 @@ import org.threeten.bp.Duration;
 public class StreamWriter implements AutoCloseable {
   private static final Logger LOG = Logger.getLogger(StreamWriter.class.getName());
 
+  private static String streamPatternString =
+      "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/streams/[^/]+";
+
+  private static Pattern streamPattern = Pattern.compile(streamPatternString);
+
   private final String streamName;
+  private final String tableName;
 
   private final BatchingSettings batchingSettings;
   private final RetrySettings retrySettings;
@@ -92,6 +105,9 @@ public class StreamWriter implements AutoCloseable {
   private final AtomicBoolean activeAlarm;
   private ScheduledFuture<?> currentAlarmFuture;
 
+  private Instant createTime;
+  private Duration streamTTL = Duration.ofDays(1);
+
   private Integer currentRetries = 0;
 
   /** The maximum size of one request. Defined by the API. */
@@ -104,12 +120,18 @@ public class StreamWriter implements AutoCloseable {
     return 5000L;
   }
 
-  private StreamWriter(Builder builder) throws IOException {
+  private StreamWriter(Builder builder)
+      throws IllegalArgumentException, IOException, InterruptedException {
+    Matcher matcher = streamPattern.matcher(builder.streamName);
+    if (!matcher.matches()) {
+      throw new IllegalArgumentException("Invalid stream name: " + builder.streamName);
+    }
     streamName = builder.streamName;
+    tableName = matcher.group(1);
 
     this.batchingSettings = builder.batchingSettings;
     this.retrySettings = builder.retrySettings;
-    this.messagesBatch = new MessagesBatch(batchingSettings);
+    this.messagesBatch = new MessagesBatch(batchingSettings, this.streamName);
     messagesBatchLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
     executor = builder.executorProvider.getExecutor();
@@ -129,11 +151,34 @@ public class StreamWriter implements AutoCloseable {
             .build();
     shutdown = new AtomicBoolean(false);
     refreshAppend();
+    Stream.WriteStream stream =
+        stub.getWriteStream(Storage.GetWriteStreamRequest.newBuilder().setName(streamName).build());
+    createTime =
+        Instant.ofEpochSecond(
+            stream.getCreateTime().getSeconds(), stream.getCreateTime().getNanos());
+    if (stream.getType() == Stream.WriteStream.Type.PENDING && stream.hasCommitTime()) {
+      throw new IllegalStateException(
+          "Cannot write to a stream that is already committed: " + streamName);
+    }
+    if (createTime.plus(streamTTL).compareTo(Instant.now()) < 0) {
+      throw new IllegalStateException(
+          "Cannot write to a stream that is already expired: " + streamName);
+    }
   }
 
   /** Stream name we are writing to. */
   public String getStreamNameString() {
     return streamName;
+  }
+
+  /** Table name we are writing to. */
+  public String getTableNameString() {
+    return tableName;
+  }
+
+  /** Returns if a stream has expired. */
+  public Boolean expired() {
+    return createTime.plus(streamTTL).compareTo(Instant.now()) < 0;
   }
 
   /**
@@ -192,11 +237,13 @@ public class StreamWriter implements AutoCloseable {
    *
    * @throws IOException
    */
-  private void refreshAppend() throws IOException {
+  public void refreshAppend() throws IOException, InterruptedException {
     synchronized (this) {
       Preconditions.checkState(!shutdown.get(), "Cannot append on a shut-down writer.");
       if (stub != null) {
+        clientStream.closeSend();
         stub.shutdown();
+        stub.awaitTermination(1, TimeUnit.MINUTES);
       }
       backgroundResourceList.remove(stub);
       stub = BigQueryWriteClient.create(stubSettings);
@@ -212,13 +259,14 @@ public class StreamWriter implements AutoCloseable {
       }
     } catch (InterruptedException expected) {
     }
+    LOG.info("Write Stream " + streamName + " connection established");
   }
 
   private void setupAlarm() {
     if (!messagesBatch.isEmpty()) {
       if (!activeAlarm.getAndSet(true)) {
         long delayThresholdMs = getBatchingSettings().getDelayThreshold().toMillis();
-        LOG.log(Level.INFO, "Setting up alarm for the next {0} ms.", delayThresholdMs);
+        LOG.log(Level.FINE, "Setting up alarm for the next {0} ms.", delayThresholdMs);
         currentAlarmFuture =
             executor.schedule(
                 new Runnable() {
@@ -281,6 +329,7 @@ public class StreamWriter implements AutoCloseable {
   /** Close the stream writer. Shut down all resources. */
   @Override
   public void close() {
+    LOG.info("Closing stream writer");
     shutdown();
     try {
       awaitTermination(1, TimeUnit.MINUTES);
@@ -300,10 +349,12 @@ public class StreamWriter implements AutoCloseable {
     int batchSizeBytes;
     long expectedOffset;
     Boolean attachSchema;
+    String streamName;
 
     InflightBatch(
         List<AppendRequestAndFutureResponse> inflightRequests,
         int batchSizeBytes,
+        String streamName,
         Boolean attachSchema) {
       this.inflightRequests = inflightRequests;
       this.offsetList = new ArrayList<Long>(inflightRequests.size());
@@ -319,6 +370,7 @@ public class StreamWriter implements AutoCloseable {
       creationTime = System.currentTimeMillis();
       this.batchSizeBytes = batchSizeBytes;
       this.attachSchema = attachSchema;
+      this.streamName = streamName;
     }
 
     int count() {
@@ -345,15 +397,18 @@ public class StreamWriter implements AutoCloseable {
       }
       AppendRowsRequest.ProtoData.Builder data =
           inflightRequests.get(0).message.getProtoRows().toBuilder().setRows(rowsBuilder.build());
+      AppendRowsRequest.Builder requestBuilder = inflightRequests.get(0).message.toBuilder();
       if (!attachSchema) {
         data.clearWriterSchema();
+        requestBuilder.clearWriteStream();
       } else {
         if (!data.hasWriterSchema()) {
           throw new IllegalStateException(
               "The first message on the connection must have writer schema set");
         }
+        requestBuilder.setWriteStream(streamName);
       }
-      return inflightRequests.get(0).message.toBuilder().setProtoRows(data.build()).build();
+      return requestBuilder.setProtoRows(data.build()).build();
     }
 
     private void onFailure(Throwable t) {
@@ -453,13 +508,8 @@ public class StreamWriter implements AutoCloseable {
    *     WriteStream response = bigQueryWriteClient.createWriteStream(request);
    *     stream = response.getName();
    * }
-   * WriteStream writer = WriteStream.newBuilder(stream).build();
-   * try {
-   *   // ...
-   * } finally {
-   *   // When finished with the writer, make sure to shutdown to free up resources.
-   *   writer.shutdown();
-   *   writer.awaitTermination(1, TimeUnit.MINUTES);
+   * try (WriteStream writer = WriteStream.newBuilder(stream).build()) {
+   *   //...
    * }
    * }</pre>
    */
@@ -467,7 +517,7 @@ public class StreamWriter implements AutoCloseable {
     return new Builder(streamName);
   }
 
-  /** A builder of {@link Publisher}s. */
+  /** A builder of {@link StreamWriter}s. */
   public static final class Builder {
     static final Duration MIN_TOTAL_TIMEOUT = Duration.ofSeconds(10);
     static final Duration MIN_RPC_TIMEOUT = Duration.ofMillis(10);
@@ -475,7 +525,7 @@ public class StreamWriter implements AutoCloseable {
     // Meaningful defaults.
     static final long DEFAULT_ELEMENT_COUNT_THRESHOLD = 100L;
     static final long DEFAULT_REQUEST_BYTES_THRESHOLD = 100 * 1024L; // 100 kB
-    static final Duration DEFAULT_DELAY_THRESHOLD = Duration.ofMillis(1);
+    static final Duration DEFAULT_DELAY_THRESHOLD = Duration.ofMillis(10);
     static final FlowControlSettings DEFAULT_FLOW_CONTROL_SETTINGS =
         FlowControlSettings.newBuilder()
             .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Block)
@@ -515,9 +565,6 @@ public class StreamWriter implements AutoCloseable {
     private TransportChannelProvider channelProvider =
         BigQueryWriteSettings.defaultGrpcTransportProviderBuilder().setChannelsPerCpu(1).build();
 
-    private HeaderProvider headerProvider = new NoHeaderProvider();
-    private HeaderProvider internalHeaderProvider =
-        BigQueryWriteSettings.defaultApiClientHeaderProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     private CredentialsProvider credentialsProvider =
         BigQueryWriteSettings.defaultCredentialsProviderBuilder().build();
@@ -647,7 +694,7 @@ public class StreamWriter implements AutoCloseable {
     }
 
     /** Builds the {@code StreamWriter}. */
-    public StreamWriter build() throws IOException {
+    public StreamWriter build() throws IllegalArgumentException, IOException, InterruptedException {
       return new StreamWriter(this);
     }
   }
@@ -785,7 +832,7 @@ public class StreamWriter implements AutoCloseable {
           try {
             // Establish a new connection.
             streamWriter.refreshAppend();
-          } catch (IOException e) {
+          } catch (IOException | InterruptedException e) {
             LOG.info("Failed to establish a new connection");
           }
         }
@@ -805,15 +852,18 @@ public class StreamWriter implements AutoCloseable {
     private int batchedBytes;
     private final BatchingSettings batchingSettings;
     private Boolean attachSchema = true;
+    private final String streamName;
 
-    private MessagesBatch(BatchingSettings batchingSettings) {
+    private MessagesBatch(BatchingSettings batchingSettings, String streamName) {
       this.batchingSettings = batchingSettings;
+      this.streamName = streamName;
       reset();
     }
 
     // Get all the messages out in a batch.
     private InflightBatch popBatch() {
-      InflightBatch batch = new InflightBatch(messages, batchedBytes, this.attachSchema);
+      InflightBatch batch =
+          new InflightBatch(messages, batchedBytes, this.streamName, this.attachSchema);
       this.attachSchema = false;
       reset();
       return batch;

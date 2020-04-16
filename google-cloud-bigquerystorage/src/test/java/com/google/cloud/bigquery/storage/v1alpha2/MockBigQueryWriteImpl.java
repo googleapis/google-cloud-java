@@ -83,11 +83,12 @@ public class MockBigQueryWriteImpl extends BigQueryWriteImplBase {
   @Override
   public StreamObserver<AppendRowsRequest> appendRows(
       final StreamObserver<AppendRowsResponse> responseObserver) {
-    final Object response = responses.remove();
     StreamObserver<AppendRowsRequest> requestObserver =
         new StreamObserver<AppendRowsRequest>() {
           @Override
           public void onNext(AppendRowsRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
             if (response instanceof AppendRowsResponse) {
               responseObserver.onNext((AppendRowsResponse) response);
             } else if (response instanceof Exception) {

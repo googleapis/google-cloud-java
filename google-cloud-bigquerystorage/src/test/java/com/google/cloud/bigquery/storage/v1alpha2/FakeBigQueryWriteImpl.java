@@ -36,7 +36,11 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
   private static final Logger LOG = Logger.getLogger(FakeBigQueryWriteImpl.class.getName());
 
   private final LinkedBlockingQueue<AppendRowsRequest> requests = new LinkedBlockingQueue<>();
+  private final LinkedBlockingQueue<GetWriteStreamRequest> writeRequests =
+      new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<Response> responses = new LinkedBlockingQueue<>();
+  private final LinkedBlockingQueue<Stream.WriteStream> writeResponses =
+      new LinkedBlockingQueue<>();
   private final AtomicInteger nextMessageId = new AtomicInteger(1);
   private boolean autoPublishResponse;
   private ScheduledExecutorService executor = null;
@@ -75,6 +79,21 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
         return error.get().toString();
       }
       return appendResponse.get().toString();
+    }
+  }
+
+  @Override
+  public void getWriteStream(
+      GetWriteStreamRequest request, StreamObserver<Stream.WriteStream> responseObserver) {
+    Object response = writeResponses.remove();
+    if (response instanceof Stream.WriteStream) {
+      writeRequests.add(request);
+      responseObserver.onNext((Stream.WriteStream) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
   }
 
@@ -149,6 +168,11 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
     return addResponse(appendResponseBuilder.build());
   }
 
+  public FakeBigQueryWriteImpl addWriteStreamResponse(Stream.WriteStream response) {
+    writeResponses.add(response);
+    return this;
+  }
+
   public FakeBigQueryWriteImpl addConnectionError(Throwable error) {
     responses.add(new Response(error));
     return this;
@@ -156,6 +180,10 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
 
   public List<AppendRowsRequest> getCapturedRequests() {
     return new ArrayList<AppendRowsRequest>(requests);
+  }
+
+  public List<GetWriteStreamRequest> getCapturedWriteRequests() {
+    return new ArrayList<GetWriteStreamRequest>(writeRequests);
   }
 
   public void reset() {

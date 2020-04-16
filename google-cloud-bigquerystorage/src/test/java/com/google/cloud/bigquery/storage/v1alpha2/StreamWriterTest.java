@@ -38,6 +38,7 @@ import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.*;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Int64Value;
+import com.google.protobuf.Timestamp;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.util.Arrays;
@@ -53,6 +54,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.threeten.bp.Duration;
+import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class StreamWriterTest {
@@ -75,6 +77,14 @@ public class StreamWriterTest {
     channelProvider = serviceHelper.createChannelProvider();
     fakeExecutor = new FakeScheduledExecutorService();
     testBigQueryWrite.setExecutor(fakeExecutor);
+    Instant time = Instant.now();
+    Timestamp timestamp =
+        Timestamp.newBuilder().setSeconds(time.getEpochSecond()).setNanos(time.getNano()).build();
+    // Add enough GetWriteStream response.
+    for (int i = 0; i < 4; i++) {
+      testBigQueryWrite.addResponse(
+          Stream.WriteStream.newBuilder().setName(TEST_STREAM).setCreateTime(timestamp).build());
+    }
   }
 
   @After
@@ -121,6 +131,12 @@ public class StreamWriterTest {
 
   private ApiFuture<AppendRowsResponse> sendTestMessage(StreamWriter writer, String[] messages) {
     return writer.append(createAppendRequest(messages, -1));
+  }
+
+  @Test
+  public void testTableName() throws Exception {
+    StreamWriter writer = getTestStreamWriterBuilder().build();
+    assertEquals("projects/p/datasets/d/tables/t", writer.getTableNameString());
   }
 
   @Test
