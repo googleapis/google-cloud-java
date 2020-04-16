@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.111.0](https://www.github.com/googleapis/java-bigquery/compare/v1.110.1...v1.111.0) (2020-04-16)
+
+
+### Features
+
+* add flatten plugin ([#276](https://www.github.com/googleapis/java-bigquery/issues/276)) ([f7e89ab](https://www.github.com/googleapis/java-bigquery/commit/f7e89abe440b27bf05adea7ec0a89d8eec6ceac5))
+
+
+### Bug Fixes
+
+* fieldvalue gettimestamp ([#279](https://www.github.com/googleapis/java-bigquery/issues/279)) ([4478a23](https://www.github.com/googleapis/java-bigquery/commit/4478a230a130cab45735e198a204fc9163b5a00e)), closes [#16](https://www.github.com/googleapis/java-bigquery/issues/16)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v1.107.0 ([#273](https://www.github.com/googleapis/java-bigquery/issues/273)) ([6ef0502](https://www.github.com/googleapis/java-bigquery/commit/6ef0502ebb9ba56c896e028ca884efadbdce3303))
+* update dependency com.google.guava:guava-bom to v29 ([#267](https://www.github.com/googleapis/java-bigquery/issues/267)) ([a115c6b](https://www.github.com/googleapis/java-bigquery/commit/a115c6b5ed2c391f4837936f28467b67f323900a))
+
 ### [1.110.1](https://www.github.com/googleapis/java-bigquery/compare/v1.110.0...v1.110.1) (2020-04-06)
 
 
