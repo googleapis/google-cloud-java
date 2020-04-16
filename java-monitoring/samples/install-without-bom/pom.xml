@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-monitoring</artifactId>
-      <version>1.100.1</version>
+      <version>1.100.2-SNAPSHOT</version>
     </dependency>
     <!-- [END monitoring_install_without_bom] -->
   </dependencies>
