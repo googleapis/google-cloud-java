@@ -36,6 +36,7 @@ def main():
     '.gitignore',
     'README.md',
     '.kokoro/presubmit/integration.cfg',
+    '.kokoro/nightly/integration.cfg',
     # todo remove once template is updated
     '.github/ISSUE_TEMPLATE/bug_report.md',
     'CONTRIBUTING.md',
