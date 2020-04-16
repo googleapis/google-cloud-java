@@ -52,3 +52,8 @@ function retry_with_backoff {
 
     return $exit_code
 }
+
+## Helper functionss
+function now() { date +"%Y-%m-%d %H:%M:%S" | tr -d '\n'; }
+function msg() { println "$*" >&2; }
+function println() { printf '%s\n' "$(now) $*"; }
