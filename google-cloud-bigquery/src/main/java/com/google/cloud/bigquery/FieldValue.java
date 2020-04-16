@@ -182,7 +182,9 @@ public class FieldValue implements Serializable {
   public long getTimestampValue() {
     // timestamps are encoded in the format 1408452095.22 where the integer part is seconds since
     // epoch (e.g. 1408452095.22 == 2014-08-19 07:41:35.220 -05:00)
-    return new Double(Double.valueOf(getStringValue()) * MICROSECONDS).longValue();
+    BigDecimal secondsWithMicro = new BigDecimal(getStringValue());
+    BigDecimal scaled = secondsWithMicro.scaleByPowerOfTen(6);
+    return scaled.longValue();
   }
 
   /**
