@@ -45,7 +45,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
-      <version>1.110.1</version>
+      <version>1.111.0</version>
     </dependency>
     <!-- [END bigquery_install_without_bom] -->
 
