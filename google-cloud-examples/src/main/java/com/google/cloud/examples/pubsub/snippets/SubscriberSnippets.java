@@ -217,7 +217,6 @@ public class SubscriberSnippets {
       PullRequest pullRequest =
           PullRequest.newBuilder()
               .setMaxMessages(numOfMessages)
-              .setReturnImmediately(false) // return immediately if messages are not available
               .setSubscription(subscriptionName)
               .build();
 
