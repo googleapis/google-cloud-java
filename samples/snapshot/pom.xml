@@ -44,7 +44,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
-      <version>1.111.0</version>
+      <version>1.111.1-SNAPSHOT</version>
     </dependency>
 
     <!-- Test dependencies -->
@@ -57,7 +57,7 @@
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
-      <version>1.111.0</version>
+      <version>1.111.1-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
     <!-- {x-version-update-end} -->
