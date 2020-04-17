@@ -89,6 +89,22 @@ use this Service Directory Client Library.
 
 
 
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-servicedirectory/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Endpoints Create | [source code](https://github.com/googleapis/java-servicedirectory/blob/master/samples/snippets/src/main/java/com/example/servicedirectory/EndpointsCreate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-servicedirectory&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/servicedirectory/EndpointsCreate.java) |
+| Endpoints Delete | [source code](https://github.com/googleapis/java-servicedirectory/blob/master/samples/snippets/src/main/java/com/example/servicedirectory/EndpointsDelete.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-servicedirectory&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/servicedirectory/EndpointsDelete.java) |
+| Namespaces Create | [source code](https://github.com/googleapis/java-servicedirectory/blob/master/samples/snippets/src/main/java/com/example/servicedirectory/NamespacesCreate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-servicedirectory&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/servicedirectory/NamespacesCreate.java) |
+| Namespaces Delete | [source code](https://github.com/googleapis/java-servicedirectory/blob/master/samples/snippets/src/main/java/com/example/servicedirectory/NamespacesDelete.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-servicedirectory&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/servicedirectory/NamespacesDelete.java) |
+| Services Create | [source code](https://github.com/googleapis/java-servicedirectory/blob/master/samples/snippets/src/main/java/com/example/servicedirectory/ServicesCreate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-servicedirectory&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/servicedirectory/ServicesCreate.java) |
+| Services Delete | [source code](https://github.com/googleapis/java-servicedirectory/blob/master/samples/snippets/src/main/java/com/example/servicedirectory/ServicesDelete.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-servicedirectory&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/servicedirectory/ServicesDelete.java) |
+| Services Resolve | [source code](https://github.com/googleapis/java-servicedirectory/blob/master/samples/snippets/src/main/java/com/example/servicedirectory/ServicesResolve.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-servicedirectory&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/servicedirectory/ServicesResolve.java) |
+
+
 
 ## Troubleshooting
 
