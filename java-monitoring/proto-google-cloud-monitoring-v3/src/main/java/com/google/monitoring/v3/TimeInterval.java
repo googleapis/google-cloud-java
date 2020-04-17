@@ -32,7 +32,7 @@ package com.google.monitoring.v3;
  * * For `DELTA` and `CUMULATIVE` metrics, the start time must be earlier
  *   than the end time.
  * * In all cases, the start time of the next interval must be
- *   at least a microsecond after the end time of the previous interval.
+ *   at least a millisecond after the end time of the previous interval.
  *   Because the interval is closed, if the start time of a new interval
  *   is the same as the end time of the previous interval, data written
  *   at the new start time could overwrite data written at the previous
@@ -428,7 +428,7 @@ public final class TimeInterval extends com.google.protobuf.GeneratedMessageV3
    * * For `DELTA` and `CUMULATIVE` metrics, the start time must be earlier
    *   than the end time.
    * * In all cases, the start time of the next interval must be
-   *   at least a microsecond after the end time of the previous interval.
+   *   at least a millisecond after the end time of the previous interval.
    *   Because the interval is closed, if the start time of a new interval
    *   is the same as the end time of the previous interval, data written
    *   at the new start time could overwrite data written at the previous
