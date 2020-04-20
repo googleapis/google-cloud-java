@@ -25,13 +25,13 @@
 
 
   <dependencies>
-    <!-- [START google-cloud-bigtable_install_without_bom] -->
+    <!-- [START bigtable_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigtable</artifactId>
       <version>1.11.0</version>
     </dependency>
-    <!-- [END google-cloud-bigtable_install_without_bom] -->
+    <!-- [END bigtable_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>

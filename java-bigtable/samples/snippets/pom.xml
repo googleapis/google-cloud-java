@@ -24,7 +24,7 @@
   </properties>
 
 
-  <!-- [START google-cloud-bigtable_install_with_bom] -->
+  <!-- [START bigtable_install_with_bom] -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -42,7 +42,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigtable</artifactId>
     </dependency>
-    <!-- [END google-cloud-bigtable_install_with_bom] -->
+    <!-- [END bigtable_install_with_bom] -->
 
     <dependency>
       <groupId>junit</groupId>

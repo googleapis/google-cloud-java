@@ -23,7 +23,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- {x-version-update-start::current} -->
+  <!-- {x-version-update-start:google-cloud-bigtable:current} -->
   <dependencies>
     <dependency>
       <groupId>com.google.cloud</groupId>
