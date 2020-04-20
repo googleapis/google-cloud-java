@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/googleapis/java-os-login/compare/v1.0.1...v1.0.2) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#123](https://www.github.com/googleapis/java-os-login/issues/123)) ([245cc76](https://www.github.com/googleapis/java-os-login/commit/245cc76d5bc5899f593673a9c4345565c4a9a9db))
+
 ### [1.0.1](https://www.github.com/googleapis/java-os-login/compare/v1.0.0...v1.0.1) (2020-04-07)
 
 
