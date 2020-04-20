@@ -29,7 +29,6 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-monitoring</artifactId>
   </dependency>
-</dependencies>
 
 ```
 
@@ -39,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring</artifactId>
-  <version>1.100.1</version>
+  <version>1.100.2-SNAPSHOT</version>
 </dependency>
 
 ```
@@ -94,8 +93,7 @@ has instructions for running the samples.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
-| Quickstart Sample | [source code](https://github.com/googleapis/java-monitoring/blob/master/samples/install-with-bom/src/main/java/com/example/monitoring/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/install-with-bom/src/main/java/com/example/monitoring/QuickstartSample.java) |
-| Quickstart Sample | [source code](https://github.com/googleapis/java-monitoring/blob/master/samples/install-without-bom/src/main/java/com/example/monitoring/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/install-without-bom/src/main/java/com/example/monitoring/QuickstartSample.java) |
+| Quickstart Sample | [source code](https://github.com/googleapis/java-monitoring/blob/master/samples/snippets/src/main/java/com/example/monitoring/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/QuickstartSample.java) |
 
 
 
@@ -113,8 +111,8 @@ Java 7 or above is required for using this client.
 
 ## Versioning
 
-This library follows [Semantic Versioning](http://semver.org/).
 
+This library follows [Semantic Versioning](http://semver.org/).
 
 
 ## Contributing
