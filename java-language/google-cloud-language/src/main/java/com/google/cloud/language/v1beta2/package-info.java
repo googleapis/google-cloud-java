@@ -30,7 +30,8 @@
  * <code>
  * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
  *   Document document = Document.newBuilder().build();
- *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
+ *   EncodingType encodingType = EncodingType.NONE;
+ *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document, encodingType);
  * }
  * </code>
  * </pre>

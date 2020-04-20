@@ -47,8 +47,9 @@ public class LanguageServiceSmokeTest {
       String content = "Hello, world!";
       Document.Type type = Document.Type.PLAIN_TEXT;
       Document document = Document.newBuilder().setContent(content).setType(type).build();
+      EncodingType encodingType = EncodingType.NONE;
 
-      AnalyzeSentimentResponse response = client.analyzeSentiment(document);
+      AnalyzeSentimentResponse response = client.analyzeSentiment(document, encodingType);
     }
   }
 
