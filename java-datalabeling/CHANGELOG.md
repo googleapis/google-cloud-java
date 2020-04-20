@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.118.2](https://www.github.com/googleapis/java-datalabeling/compare/v0.118.1...v0.118.2) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#135](https://www.github.com/googleapis/java-datalabeling/issues/135)) ([bc366e8](https://www.github.com/googleapis/java-datalabeling/commit/bc366e85f4814e94eb703453fe868e940c6ebc7a))
+
 ### [0.118.1](https://www.github.com/googleapis/java-datalabeling/compare/v0.118.0...v0.118.1) (2020-04-07)
 
 
