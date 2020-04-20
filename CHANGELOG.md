@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.130.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.129.0...v0.130.0) (2020-04-20)
+
+
+### Features
+
+* use shared-dependencies bom and add flatten to grpc and proto modules ([#186](https://www.github.com/googleapis/java-bigquerystorage/issues/186)) ([532a698](https://www.github.com/googleapis/java-bigquerystorage/commit/532a698193542b0a5db03d2e29a415082f2de95b))
+
 ## [0.129.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.128.1...v0.129.0) (2020-04-16)
 
 
