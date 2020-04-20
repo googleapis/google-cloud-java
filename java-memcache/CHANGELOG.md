@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.2](https://www.github.com/googleapis/java-memcache/compare/v0.1.1...v0.1.2) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#36](https://www.github.com/googleapis/java-memcache/issues/36)) ([aab1bee](https://www.github.com/googleapis/java-memcache/commit/aab1bee18b683d500b7fb4e6761806f59729e03a))
+
 ### [0.1.1](https://www.github.com/googleapis/java-memcache/compare/v0.1.0...v0.1.1) (2020-04-07)
 
 
