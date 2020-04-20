@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.4](https://www.github.com/googleapis/java-container/compare/v1.0.3...v1.0.4) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#130](https://www.github.com/googleapis/java-container/issues/130)) ([bd004cd](https://www.github.com/googleapis/java-container/commit/bd004cdee266b0bc50e915ff3990e7041f5d2e19))
+
 ### [1.0.3](https://www.github.com/googleapis/java-container/compare/v1.0.2...v1.0.3) (2020-04-13)
 
 
