@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/googleapis/java-billing/compare/v1.0.1...v1.0.2) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#67](https://www.github.com/googleapis/java-billing/issues/67)) ([754d4f6](https://www.github.com/googleapis/java-billing/commit/754d4f68b20316332f4e674f6d6d20e95b973845))
+
 ### [1.0.1](https://www.github.com/googleapis/java-billing/compare/v1.0.0...v1.0.1) (2020-04-08)
 
 
