@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.122.1](https://www.github.com/googleapis/java-dataproc/compare/v0.122.0...v0.122.1) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#147](https://www.github.com/googleapis/java-dataproc/issues/147)) ([dae5b3d](https://www.github.com/googleapis/java-dataproc/commit/dae5b3dee3213d309e6dd8adc92cd29bffadae2c))
+
 ## [0.122.0](https://www.github.com/googleapis/java-dataproc/compare/v0.121.0...v0.122.0) (2020-04-09)
 
 
