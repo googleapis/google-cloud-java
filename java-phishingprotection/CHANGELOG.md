@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.28.4](https://www.github.com/googleapis/java-phishingprotection/compare/v0.28.3...v0.28.4) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#104](https://www.github.com/googleapis/java-phishingprotection/issues/104)) ([52a09f1](https://www.github.com/googleapis/java-phishingprotection/commit/52a09f12cabd53ae69e06738ff18b61bdaee6c74))
+
 ### [0.28.3](https://www.github.com/googleapis/java-phishingprotection/compare/v0.28.2...v0.28.3) (2020-04-07)
 
 
