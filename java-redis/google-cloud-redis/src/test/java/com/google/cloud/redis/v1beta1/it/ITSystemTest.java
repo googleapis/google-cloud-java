@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.redis.v1beta1.CloudRedisClient;
+import com.google.cloud.redis.v1beta1.CloudRedisSettings;
 import com.google.cloud.redis.v1beta1.Instance;
 import com.google.cloud.redis.v1beta1.InstanceName;
 import com.google.cloud.redis.v1beta1.LocationName;
@@ -34,6 +35,7 @@ import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.threeten.bp.Duration;
 
 public class ITSystemTest {
 
@@ -53,7 +55,18 @@ public class ITSystemTest {
 
   @BeforeClass
   public static void setUp() throws Exception {
-    client = CloudRedisClient.create();
+    CloudRedisSettings.Builder cloudRedisSettingsBuilder = CloudRedisSettings.newBuilder();
+    cloudRedisSettingsBuilder
+        .getInstanceSettings()
+        .setRetrySettings(
+            cloudRedisSettingsBuilder
+                .getInstanceSettings()
+                .getRetrySettings()
+                .toBuilder()
+                .setTotalTimeout(Duration.ofSeconds(900))
+                .build());
+    CloudRedisSettings cloudRedisSettings = cloudRedisSettingsBuilder.build();
+    client = CloudRedisClient.create(cloudRedisSettings);
     /* Creates a Redis instance based on the specified tier and memory size. */
     Instance instance =
         Instance.newBuilder()
