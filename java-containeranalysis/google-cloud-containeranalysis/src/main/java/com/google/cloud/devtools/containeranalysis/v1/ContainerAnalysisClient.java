@@ -18,9 +18,9 @@ package com.google.cloud.devtools.containeranalysis.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.devtools.containeranalysis.v1.stub.ContainerAnalysisStub;
 import com.google.cloud.devtools.containeranalysis.v1.stub.ContainerAnalysisStubSettings;
-import com.google.containeranalysis.v1.IamResourceName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
- *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+ *   String resource = "";
  *   Policy policy = Policy.newBuilder().build();
  *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
  * }
@@ -185,7 +185,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   *   String resource = "";
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
    * }
@@ -198,7 +198,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(IamResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -220,7 +220,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   *   String resource = "";
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = containerAnalysisClient.setIamPolicy(resource.toString(), policy);
    * }
@@ -252,7 +252,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   ResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   *   String resource = "";
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -282,7 +282,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   ResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   *   String resource = "";
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -311,7 +311,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   *   String resource = "";
    *   Policy response = containerAnalysisClient.getIamPolicy(resource);
    * }
    * </code></pre>
@@ -320,7 +320,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(IamResourceName resource) {
+  public final Policy getIamPolicy(ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -341,7 +341,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   *   String resource = "";
    *   Policy response = containerAnalysisClient.getIamPolicy(resource.toString());
    * }
    * </code></pre>
@@ -368,7 +368,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   ResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   *   String resource = "";
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
    *     .build();
@@ -396,7 +396,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   ResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   *   String resource = "";
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
    *     .build();
@@ -422,7 +422,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   *   String resource = "";
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsResponse response = containerAnalysisClient.testIamPermissions(resource, permissions);
    * }
@@ -436,7 +436,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      IamResourceName resource, List<String> permissions) {
+      ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -457,7 +457,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   *   String resource = "";
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsResponse response = containerAnalysisClient.testIamPermissions(resource.toString(), permissions);
    * }
@@ -492,7 +492,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   ResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   *   String resource = "";
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -521,7 +521,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   ResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   *   String resource = "";
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())

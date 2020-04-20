@@ -3,31 +3,31 @@
     {
       "git": {
         "name": ".",
-        "remote": "https://github.com/googleapis/java-containeranalysis.git",
-        "sha": "4962d7de12b02f57cb4b3caeee9d9b57ce09ba78"
+        "remote": "git@github.com:googleapis/java-containeranalysis.git",
+        "sha": "e1cb830688e4c1efd3f1be1cbae49cd8a5a326ee"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0e07113e776bdd8fcc0783372e08bb6e76cb1b5b",
-        "internalRef": "302892245"
+        "sha": "42ee97c1b93a0e3759bbba3013da309f670a90ab",
+        "internalRef": "307114445"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0e07113e776bdd8fcc0783372e08bb6e76cb1b5b",
-        "internalRef": "302892245"
+        "sha": "42ee97c1b93a0e3759bbba3013da309f670a90ab",
+        "internalRef": "307114445"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "f8a9933e5e98202b04ef427f28d1d79221190fa4"
+        "sha": "f5e4c17dc78a966dbf29961dd01f9bbd63e20a04"
       }
     }
   ],

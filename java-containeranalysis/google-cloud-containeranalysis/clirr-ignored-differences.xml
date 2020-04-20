@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- TODO: remove after 0.120.0 -->
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisClient</className>
+    <method>com.google.iam.v1.* *Iam*(com.google.containeranalysis.v1.IamResourceName*)</method>
+    <to>com.google.iam.v1.* *Iam*(com.google.api.resourcenames.ResourceName*)</to>
+  </difference>
+</differences>

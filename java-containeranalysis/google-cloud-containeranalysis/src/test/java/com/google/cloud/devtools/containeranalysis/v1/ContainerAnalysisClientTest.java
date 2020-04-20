@@ -22,8 +22,6 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.containeranalysis.v1.IamResourceName;
-import com.google.containeranalysis.v1.NoteName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -92,7 +90,7 @@ public class ContainerAnalysisClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockContainerAnalysis.addResponse(expectedResponse);
 
-    IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+    String resource = "resource-341064690";
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -117,7 +115,7 @@ public class ContainerAnalysisClientTest {
     mockContainerAnalysis.addException(exception);
 
     try {
-      IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+      String resource = "resource-341064690";
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(resource, policy);
@@ -135,7 +133,7 @@ public class ContainerAnalysisClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockContainerAnalysis.addResponse(expectedResponse);
 
-    IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+    String resource = "resource-341064690";
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -158,7 +156,7 @@ public class ContainerAnalysisClientTest {
     mockContainerAnalysis.addException(exception);
 
     try {
-      IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+      String resource = "resource-341064690";
 
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
@@ -173,7 +171,7 @@ public class ContainerAnalysisClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockContainerAnalysis.addResponse(expectedResponse);
 
-    IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+    String resource = "resource-341064690";
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -198,7 +196,7 @@ public class ContainerAnalysisClientTest {
     mockContainerAnalysis.addException(exception);
 
     try {
-      IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+      String resource = "resource-341064690";
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(resource, permissions);
