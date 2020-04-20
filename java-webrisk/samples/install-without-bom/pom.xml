@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-webrisk</artifactId>
-      <version>0.33.2</version>
+      <version>0.33.3</version>
     </dependency>
     <!-- [END webrisk_install_without_bom] -->
 
