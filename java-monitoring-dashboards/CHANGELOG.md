@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.4](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v0.1.3...v0.1.4) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#82](https://www.github.com/googleapis/java-monitoring-dashboards/issues/82)) ([a961509](https://www.github.com/googleapis/java-monitoring-dashboards/commit/a9615097bc08bec996708ea4d2778e55b67ff246))
+
 ### [0.1.3](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v0.1.2...v0.1.3) (2020-04-06)
 
 
