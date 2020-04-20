@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.2](https://www.github.com/googleapis/java-automl/compare/v1.1.1...v1.1.2) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#157](https://www.github.com/googleapis/java-automl/issues/157)) ([46e0315](https://www.github.com/googleapis/java-automl/commit/46e03156ee40949f3ce35d679a2589229f263b2d))
+
 ### [1.1.1](https://www.github.com/googleapis/java-automl/compare/v1.1.0...v1.1.1) (2020-04-06)
 
 
