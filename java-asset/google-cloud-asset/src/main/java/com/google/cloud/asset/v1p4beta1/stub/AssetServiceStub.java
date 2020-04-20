@@ -42,11 +42,6 @@ public abstract class AssetServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-      analyzeIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: analyzeIamPolicyCallable()");
-  }
-
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
           ExportIamPolicyAnalysisRequest,
@@ -60,6 +55,11 @@ public abstract class AssetServiceStub implements BackgroundResource {
   public UnaryCallable<ExportIamPolicyAnalysisRequest, Operation>
       exportIamPolicyAnalysisCallable() {
     throw new UnsupportedOperationException("Not implemented: exportIamPolicyAnalysisCallable()");
+  }
+
+  public UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+      analyzeIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: analyzeIamPolicyCallable()");
   }
 
   @Override

@@ -28,13 +28,9 @@
  * <pre>
  * <code>
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
- *   TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
+ *   String parent = "";
  *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
  *     .setParent(parent.toString())
- *     .setContentType(contentType)
- *     .setReadTimeWindow(readTimeWindow)
  *     .build();
  *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(request);
  * }

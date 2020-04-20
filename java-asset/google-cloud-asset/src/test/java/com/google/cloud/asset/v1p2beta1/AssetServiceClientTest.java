@@ -77,9 +77,46 @@ public class AssetServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteFeedTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAssetService.addResponse(expectedResponse);
+
+    FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+
+    client.deleteFeed(name);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFeedRequest actualRequest = (DeleteFeedRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, FeedName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteFeedExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+
+      client.deleteFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createFeedTest() {
-    String name = "name3373707";
-    Feed expectedResponse = Feed.newBuilder().setName(name).build();
+    FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+    Feed expectedResponse = Feed.newBuilder().setName(name.toString()).build();
     mockAssetService.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
@@ -117,20 +154,20 @@ public class AssetServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getFeedTest() {
-    String name2 = "name2-1052831874";
-    Feed expectedResponse = Feed.newBuilder().setName(name2).build();
+    FeedName name2 = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+    Feed expectedResponse = Feed.newBuilder().setName(name2.toString()).build();
     mockAssetService.addResponse(expectedResponse);
 
-    String formattedName = AssetServiceClient.formatFeedName("[PROJECT]", "[FEED]");
+    FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
 
-    Feed actualResponse = client.getFeed(formattedName);
+    Feed actualResponse = client.getFeed(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockAssetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetFeedRequest actualRequest = (GetFeedRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, FeedName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -144,9 +181,9 @@ public class AssetServiceClientTest {
     mockAssetService.addException(exception);
 
     try {
-      String formattedName = AssetServiceClient.formatFeedName("[PROJECT]", "[FEED]");
+      FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
 
-      client.getFeed(formattedName);
+      client.getFeed(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -194,8 +231,8 @@ public class AssetServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateFeedTest() {
-    String name = "name3373707";
-    Feed expectedResponse = Feed.newBuilder().setName(name).build();
+    FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+    Feed expectedResponse = Feed.newBuilder().setName(name.toString()).build();
     mockAssetService.addResponse(expectedResponse);
 
     Feed feed = Feed.newBuilder().build();
@@ -224,43 +261,6 @@ public class AssetServiceClientTest {
       Feed feed = Feed.newBuilder().build();
 
       client.updateFeed(feed);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteFeedTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockAssetService.addResponse(expectedResponse);
-
-    String formattedName = AssetServiceClient.formatFeedName("[PROJECT]", "[FEED]");
-
-    client.deleteFeed(formattedName);
-
-    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteFeedRequest actualRequest = (DeleteFeedRequest) actualRequests.get(0);
-
-    Assert.assertEquals(formattedName, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteFeedExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAssetService.addException(exception);
-
-    try {
-      String formattedName = AssetServiceClient.formatFeedName("[PROJECT]", "[FEED]");
-
-      client.deleteFeed(formattedName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

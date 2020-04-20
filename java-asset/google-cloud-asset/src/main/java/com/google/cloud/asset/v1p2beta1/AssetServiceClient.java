@@ -18,7 +18,6 @@ package com.google.cloud.asset.v1p2beta1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.asset.v1p2beta1.stub.AssetServiceStub;
 import com.google.cloud.asset.v1p2beta1.stub.AssetServiceStubSettings;
 import com.google.protobuf.Empty;
@@ -36,8 +35,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   String parent = "";
- *   Feed response = assetServiceClient.createFeed(parent);
+ *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+ *   assetServiceClient.deleteFeed(name);
  * }
  * </code>
  * </pre>
@@ -98,41 +97,6 @@ public class AssetServiceClient implements BackgroundResource {
   private final AssetServiceSettings settings;
   private final AssetServiceStub stub;
 
-  private static final PathTemplate FEED_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/feeds/{feed}");
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a feed resource.
-   *
-   * @deprecated Use the {@link FeedName} class instead.
-   */
-  @Deprecated
-  public static final String formatFeedName(String project, String feed) {
-    return FEED_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "feed", feed);
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a feed resource.
-   *
-   * @deprecated Use the {@link FeedName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromFeedName(String feedName) {
-    return FEED_PATH_TEMPLATE.parse(feedName).get("project");
-  }
-
-  /**
-   * Parses the feed from the given fully-qualified path which represents a feed resource.
-   *
-   * @deprecated Use the {@link FeedName} class instead.
-   */
-  @Deprecated
-  public static final String parseFeedFromFeedName(String feedName) {
-    return FEED_PATH_TEMPLATE.parse(feedName).get("feed");
-  }
-
   /** Constructs an instance of AssetServiceClient with default settings. */
   public static final AssetServiceClient create() throws IOException {
     return create(AssetServiceSettings.newBuilder().build());
@@ -178,6 +142,98 @@ public class AssetServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AssetServiceStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an asset feed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+   *   assetServiceClient.deleteFeed(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the feed and it must be in the format of:
+   *     projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id
+   *     organizations/organization_number/feeds/feed_id
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFeed(FeedName name) {
+    DeleteFeedRequest request =
+        DeleteFeedRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteFeed(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an asset feed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+   *   assetServiceClient.deleteFeed(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the feed and it must be in the format of:
+   *     projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id
+   *     organizations/organization_number/feeds/feed_id
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFeed(String name) {
+    DeleteFeedRequest request = DeleteFeedRequest.newBuilder().setName(name).build();
+    deleteFeed(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an asset feed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+   *   DeleteFeedRequest request = DeleteFeedRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   assetServiceClient.deleteFeed(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFeed(DeleteFeedRequest request) {
+    deleteFeedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an asset feed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+   *   DeleteFeedRequest request = DeleteFeedRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = assetServiceClient.deleteFeedCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
+    return stub.deleteFeedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -265,8 +321,32 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String formattedName = AssetServiceClient.formatFeedName("[PROJECT]", "[FEED]");
-   *   Feed response = assetServiceClient.getFeed(formattedName);
+   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+   *   Feed response = assetServiceClient.getFeed(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the Feed and it must be in the format of:
+   *     projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id
+   *     organizations/organization_number/feeds/feed_id
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Feed getFeed(FeedName name) {
+    GetFeedRequest request =
+        GetFeedRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getFeed(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets details about an asset feed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+   *   Feed response = assetServiceClient.getFeed(name.toString());
    * }
    * </code></pre>
    *
@@ -276,7 +356,6 @@ public class AssetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Feed getFeed(String name) {
-    FEED_PATH_TEMPLATE.validate(name, "getFeed");
     GetFeedRequest request = GetFeedRequest.newBuilder().setName(name).build();
     return getFeed(request);
   }
@@ -289,9 +368,9 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String formattedName = AssetServiceClient.formatFeedName("[PROJECT]", "[FEED]");
+   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
    *   GetFeedRequest request = GetFeedRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Feed response = assetServiceClient.getFeed(request);
    * }
@@ -312,9 +391,9 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String formattedName = AssetServiceClient.formatFeedName("[PROJECT]", "[FEED]");
+   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
    *   GetFeedRequest request = GetFeedRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Feed&gt; future = assetServiceClient.getFeedCallable().futureCall(request);
    *   // Do something
@@ -464,75 +543,6 @@ public class AssetServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable() {
     return stub.updateFeedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an asset feed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String formattedName = AssetServiceClient.formatFeedName("[PROJECT]", "[FEED]");
-   *   assetServiceClient.deleteFeed(formattedName);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the feed and it must be in the format of:
-   *     projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id
-   *     organizations/organization_number/feeds/feed_id
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteFeed(String name) {
-    FEED_PATH_TEMPLATE.validate(name, "deleteFeed");
-    DeleteFeedRequest request = DeleteFeedRequest.newBuilder().setName(name).build();
-    deleteFeed(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an asset feed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String formattedName = AssetServiceClient.formatFeedName("[PROJECT]", "[FEED]");
-   *   DeleteFeedRequest request = DeleteFeedRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .build();
-   *   assetServiceClient.deleteFeed(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteFeed(DeleteFeedRequest request) {
-    deleteFeedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an asset feed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String formattedName = AssetServiceClient.formatFeedName("[PROJECT]", "[FEED]");
-   *   DeleteFeedRequest request = DeleteFeedRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = assetServiceClient.deleteFeedCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
-    return stub.deleteFeedCallable();
   }
 
   @Override

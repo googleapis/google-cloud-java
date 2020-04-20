@@ -31,6 +31,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
@@ -90,7 +91,7 @@ public class AssetServiceClientTest {
             .build();
     mockAssetService.addResponse(resultOperation);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    String parent = "parent-995424086";
     OutputConfig outputConfig = OutputConfig.newBuilder().build();
     ExportAssetsRequest request =
         ExportAssetsRequest.newBuilder()
@@ -105,7 +106,7 @@ public class AssetServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ExportAssetsRequest actualRequest = (ExportAssetsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(Objects.toString(parent), Objects.toString(actualRequest.getParent()));
     Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -120,7 +121,7 @@ public class AssetServiceClientTest {
     mockAssetService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      String parent = "parent-995424086";
       OutputConfig outputConfig = OutputConfig.newBuilder().build();
       ExportAssetsRequest request =
           ExportAssetsRequest.newBuilder()
@@ -144,15 +145,9 @@ public class AssetServiceClientTest {
         BatchGetAssetsHistoryResponse.newBuilder().build();
     mockAssetService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
-    ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
-    TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
+    String parent = "parent-995424086";
     BatchGetAssetsHistoryRequest request =
-        BatchGetAssetsHistoryRequest.newBuilder()
-            .setParent(parent.toString())
-            .setContentType(contentType)
-            .setReadTimeWindow(readTimeWindow)
-            .build();
+        BatchGetAssetsHistoryRequest.newBuilder().setParent(parent.toString()).build();
 
     BatchGetAssetsHistoryResponse actualResponse = client.batchGetAssetsHistory(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -162,9 +157,7 @@ public class AssetServiceClientTest {
     BatchGetAssetsHistoryRequest actualRequest =
         (BatchGetAssetsHistoryRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
-    Assert.assertEquals(contentType, actualRequest.getContentType());
-    Assert.assertEquals(readTimeWindow, actualRequest.getReadTimeWindow());
+    Assert.assertEquals(Objects.toString(parent), Objects.toString(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -178,15 +171,9 @@ public class AssetServiceClientTest {
     mockAssetService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-      ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
-      TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
+      String parent = "parent-995424086";
       BatchGetAssetsHistoryRequest request =
-          BatchGetAssetsHistoryRequest.newBuilder()
-              .setParent(parent.toString())
-              .setContentType(contentType)
-              .setReadTimeWindow(readTimeWindow)
-              .build();
+          BatchGetAssetsHistoryRequest.newBuilder().setParent(parent.toString()).build();
 
       client.batchGetAssetsHistory(request);
       Assert.fail("No exception raised");

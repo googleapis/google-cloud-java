@@ -165,56 +165,6 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Analyzes IAM policies based on the specified request. Returns a list of
-   * [IamPolicyAnalysisResult][google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult] matching the
-   * request.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-   *   AnalyzeIamPolicyRequest request = AnalyzeIamPolicyRequest.newBuilder()
-   *     .setAnalysisQuery(analysisQuery)
-   *     .build();
-   *   AnalyzeIamPolicyResponse response = assetServiceClient.analyzeIamPolicy(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AnalyzeIamPolicyResponse analyzeIamPolicy(AnalyzeIamPolicyRequest request) {
-    return analyzeIamPolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Analyzes IAM policies based on the specified request. Returns a list of
-   * [IamPolicyAnalysisResult][google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult] matching the
-   * request.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-   *   AnalyzeIamPolicyRequest request = AnalyzeIamPolicyRequest.newBuilder()
-   *     .setAnalysisQuery(analysisQuery)
-   *     .build();
-   *   ApiFuture&lt;AnalyzeIamPolicyResponse&gt; future = assetServiceClient.analyzeIamPolicyCallable().futureCall(request);
-   *   // Do something
-   *   AnalyzeIamPolicyResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-      analyzeIamPolicyCallable() {
-    return stub.analyzeIamPolicyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Exports IAM policy analysis based on the specified request. This API implements the
    * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
    * the export. The metadata contains the request to help callers to map responses to requests.
@@ -299,6 +249,56 @@ public class AssetServiceClient implements BackgroundResource {
   public final UnaryCallable<ExportIamPolicyAnalysisRequest, Operation>
       exportIamPolicyAnalysisCallable() {
     return stub.exportIamPolicyAnalysisCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Analyzes IAM policies based on the specified request. Returns a list of
+   * [IamPolicyAnalysisResult][google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult] matching the
+   * request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
+   *   AnalyzeIamPolicyRequest request = AnalyzeIamPolicyRequest.newBuilder()
+   *     .setAnalysisQuery(analysisQuery)
+   *     .build();
+   *   AnalyzeIamPolicyResponse response = assetServiceClient.analyzeIamPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeIamPolicyResponse analyzeIamPolicy(AnalyzeIamPolicyRequest request) {
+    return analyzeIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Analyzes IAM policies based on the specified request. Returns a list of
+   * [IamPolicyAnalysisResult][google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult] matching the
+   * request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
+   *   AnalyzeIamPolicyRequest request = AnalyzeIamPolicyRequest.newBuilder()
+   *     .setAnalysisQuery(analysisQuery)
+   *     .build();
+   *   ApiFuture&lt;AnalyzeIamPolicyResponse&gt; future = assetServiceClient.analyzeIamPolicyCallable().futureCall(request);
+   *   // Do something
+   *   AnalyzeIamPolicyResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+      analyzeIamPolicyCallable() {
+    return stub.analyzeIamPolicyCallable();
   }
 
   @Override

@@ -66,12 +66,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
-  /** Returns the object with the settings used for calls to analyzeIamPolicy. */
-  public UnaryCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-      analyzeIamPolicySettings() {
-    return ((AssetServiceStubSettings) getStubSettings()).analyzeIamPolicySettings();
-  }
-
   /** Returns the object with the settings used for calls to exportIamPolicyAnalysis. */
   public UnaryCallSettings<ExportIamPolicyAnalysisRequest, Operation>
       exportIamPolicyAnalysisSettings() {
@@ -88,6 +82,12 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
       exportIamPolicyAnalysisOperationSettings() {
     return ((AssetServiceStubSettings) getStubSettings())
         .exportIamPolicyAnalysisOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to analyzeIamPolicy. */
+  public UnaryCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+      analyzeIamPolicySettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).analyzeIamPolicySettings();
   }
 
   public static final AssetServiceSettings create(AssetServiceStubSettings stub)
@@ -187,12 +187,6 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to analyzeIamPolicy. */
-    public UnaryCallSettings.Builder<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-        analyzeIamPolicySettings() {
-      return getStubSettingsBuilder().analyzeIamPolicySettings();
-    }
-
     /** Returns the builder for the settings used for calls to exportIamPolicyAnalysis. */
     public UnaryCallSettings.Builder<ExportIamPolicyAnalysisRequest, Operation>
         exportIamPolicyAnalysisSettings() {
@@ -208,6 +202,12 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
             ExportIamPolicyAnalysisRequest>
         exportIamPolicyAnalysisOperationSettings() {
       return getStubSettingsBuilder().exportIamPolicyAnalysisOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeIamPolicy. */
+    public UnaryCallSettings.Builder<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+        analyzeIamPolicySettings() {
+      return getStubSettingsBuilder().analyzeIamPolicySettings();
     }
 
     @Override

@@ -38,6 +38,10 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class AssetServiceStub implements BackgroundResource {
 
+  public UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteFeedCallable()");
+  }
+
   public UnaryCallable<CreateFeedRequest, Feed> createFeedCallable() {
     throw new UnsupportedOperationException("Not implemented: createFeedCallable()");
   }
@@ -52,10 +56,6 @@ public abstract class AssetServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable() {
     throw new UnsupportedOperationException("Not implemented: updateFeedCallable()");
-  }
-
-  public UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteFeedCallable()");
   }
 
   @Override

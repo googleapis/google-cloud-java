@@ -86,8 +86,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-      analyzeIamPolicySettings;
   private final UnaryCallSettings<ExportIamPolicyAnalysisRequest, Operation>
       exportIamPolicyAnalysisSettings;
   private final OperationCallSettings<
@@ -95,12 +93,8 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           ExportIamPolicyAnalysisResponse,
           ExportIamPolicyAnalysisRequest>
       exportIamPolicyAnalysisOperationSettings;
-
-  /** Returns the object with the settings used for calls to analyzeIamPolicy. */
-  public UnaryCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-      analyzeIamPolicySettings() {
-    return analyzeIamPolicySettings;
-  }
+  private final UnaryCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+      analyzeIamPolicySettings;
 
   /** Returns the object with the settings used for calls to exportIamPolicyAnalysis. */
   public UnaryCallSettings<ExportIamPolicyAnalysisRequest, Operation>
@@ -116,6 +110,12 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           ExportIamPolicyAnalysisRequest>
       exportIamPolicyAnalysisOperationSettings() {
     return exportIamPolicyAnalysisOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to analyzeIamPolicy. */
+  public UnaryCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+      analyzeIamPolicySettings() {
+    return analyzeIamPolicySettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -187,18 +187,16 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
   protected AssetServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    analyzeIamPolicySettings = settingsBuilder.analyzeIamPolicySettings().build();
     exportIamPolicyAnalysisSettings = settingsBuilder.exportIamPolicyAnalysisSettings().build();
     exportIamPolicyAnalysisOperationSettings =
         settingsBuilder.exportIamPolicyAnalysisOperationSettings().build();
+    analyzeIamPolicySettings = settingsBuilder.analyzeIamPolicySettings().build();
   }
 
   /** Builder for AssetServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<AssetServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-        analyzeIamPolicySettings;
     private final UnaryCallSettings.Builder<ExportIamPolicyAnalysisRequest, Operation>
         exportIamPolicyAnalysisSettings;
     private final OperationCallSettings.Builder<
@@ -206,6 +204,8 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
             ExportIamPolicyAnalysisResponse,
             ExportIamPolicyAnalysisRequest>
         exportIamPolicyAnalysisOperationSettings;
+    private final UnaryCallSettings.Builder<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+        analyzeIamPolicySettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -248,15 +248,15 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      analyzeIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       exportIamPolicyAnalysisSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       exportIamPolicyAnalysisOperationSettings = OperationCallSettings.newBuilder();
 
+      analyzeIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              analyzeIamPolicySettings, exportIamPolicyAnalysisSettings);
+              exportIamPolicyAnalysisSettings, analyzeIamPolicySettings);
 
       initDefaults(this);
     }
@@ -273,13 +273,13 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .analyzeIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .exportIamPolicyAnalysisSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .exportIamPolicyAnalysisSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .analyzeIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .exportIamPolicyAnalysisOperationSettings()
@@ -313,14 +313,14 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     protected Builder(AssetServiceStubSettings settings) {
       super(settings);
 
-      analyzeIamPolicySettings = settings.analyzeIamPolicySettings.toBuilder();
       exportIamPolicyAnalysisSettings = settings.exportIamPolicyAnalysisSettings.toBuilder();
       exportIamPolicyAnalysisOperationSettings =
           settings.exportIamPolicyAnalysisOperationSettings.toBuilder();
+      analyzeIamPolicySettings = settings.analyzeIamPolicySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              analyzeIamPolicySettings, exportIamPolicyAnalysisSettings);
+              exportIamPolicyAnalysisSettings, analyzeIamPolicySettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -339,12 +339,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to analyzeIamPolicy. */
-    public UnaryCallSettings.Builder<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-        analyzeIamPolicySettings() {
-      return analyzeIamPolicySettings;
-    }
-
     /** Returns the builder for the settings used for calls to exportIamPolicyAnalysis. */
     public UnaryCallSettings.Builder<ExportIamPolicyAnalysisRequest, Operation>
         exportIamPolicyAnalysisSettings() {
@@ -360,6 +354,12 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
             ExportIamPolicyAnalysisRequest>
         exportIamPolicyAnalysisOperationSettings() {
       return exportIamPolicyAnalysisOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeIamPolicy. */
+    public UnaryCallSettings.Builder<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+        analyzeIamPolicySettings() {
+      return analyzeIamPolicySettings;
     }
 
     @Override

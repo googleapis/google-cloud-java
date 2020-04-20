@@ -62,16 +62,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createFeed to 30 seconds:
+ * <p>For example, to set the total timeout of deleteFeed to 30 seconds:
  *
  * <pre>
  * <code>
  * AssetServiceStubSettings.Builder assetServiceSettingsBuilder =
  *     AssetServiceStubSettings.newBuilder();
  * assetServiceSettingsBuilder
- *     .createFeedSettings()
+ *     .deleteFeedSettings()
  *     .setRetrySettings(
- *         assetServiceSettingsBuilder.createFeedSettings().getRetrySettings().toBuilder()
+ *         assetServiceSettingsBuilder.deleteFeedSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AssetServiceStubSettings assetServiceSettings = assetServiceSettingsBuilder.build();
@@ -85,11 +85,16 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
+  private final UnaryCallSettings<DeleteFeedRequest, Empty> deleteFeedSettings;
   private final UnaryCallSettings<CreateFeedRequest, Feed> createFeedSettings;
   private final UnaryCallSettings<GetFeedRequest, Feed> getFeedSettings;
   private final UnaryCallSettings<ListFeedsRequest, ListFeedsResponse> listFeedsSettings;
   private final UnaryCallSettings<UpdateFeedRequest, Feed> updateFeedSettings;
-  private final UnaryCallSettings<DeleteFeedRequest, Empty> deleteFeedSettings;
+
+  /** Returns the object with the settings used for calls to deleteFeed. */
+  public UnaryCallSettings<DeleteFeedRequest, Empty> deleteFeedSettings() {
+    return deleteFeedSettings;
+  }
 
   /** Returns the object with the settings used for calls to createFeed. */
   public UnaryCallSettings<CreateFeedRequest, Feed> createFeedSettings() {
@@ -109,11 +114,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
   /** Returns the object with the settings used for calls to updateFeed. */
   public UnaryCallSettings<UpdateFeedRequest, Feed> updateFeedSettings() {
     return updateFeedSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteFeed. */
-  public UnaryCallSettings<DeleteFeedRequest, Empty> deleteFeedSettings() {
-    return deleteFeedSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -185,22 +185,22 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
   protected AssetServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteFeedSettings = settingsBuilder.deleteFeedSettings().build();
     createFeedSettings = settingsBuilder.createFeedSettings().build();
     getFeedSettings = settingsBuilder.getFeedSettings().build();
     listFeedsSettings = settingsBuilder.listFeedsSettings().build();
     updateFeedSettings = settingsBuilder.updateFeedSettings().build();
-    deleteFeedSettings = settingsBuilder.deleteFeedSettings().build();
   }
 
   /** Builder for AssetServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<AssetServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteFeedRequest, Empty> deleteFeedSettings;
     private final UnaryCallSettings.Builder<CreateFeedRequest, Feed> createFeedSettings;
     private final UnaryCallSettings.Builder<GetFeedRequest, Feed> getFeedSettings;
     private final UnaryCallSettings.Builder<ListFeedsRequest, ListFeedsResponse> listFeedsSettings;
     private final UnaryCallSettings.Builder<UpdateFeedRequest, Feed> updateFeedSettings;
-    private final UnaryCallSettings.Builder<DeleteFeedRequest, Empty> deleteFeedSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -243,6 +243,8 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -251,15 +253,13 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
       updateFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteFeedSettings,
               createFeedSettings,
               getFeedSettings,
               listFeedsSettings,
-              updateFeedSettings,
-              deleteFeedSettings);
+              updateFeedSettings);
 
       initDefaults(this);
     }
@@ -274,6 +274,11 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .deleteFeedSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .createFeedSettings()
@@ -295,30 +300,25 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .deleteFeedSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
       return builder;
     }
 
     protected Builder(AssetServiceStubSettings settings) {
       super(settings);
 
+      deleteFeedSettings = settings.deleteFeedSettings.toBuilder();
       createFeedSettings = settings.createFeedSettings.toBuilder();
       getFeedSettings = settings.getFeedSettings.toBuilder();
       listFeedsSettings = settings.listFeedsSettings.toBuilder();
       updateFeedSettings = settings.updateFeedSettings.toBuilder();
-      deleteFeedSettings = settings.deleteFeedSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteFeedSettings,
               createFeedSettings,
               getFeedSettings,
               listFeedsSettings,
-              updateFeedSettings,
-              deleteFeedSettings);
+              updateFeedSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -335,6 +335,11 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFeed. */
+    public UnaryCallSettings.Builder<DeleteFeedRequest, Empty> deleteFeedSettings() {
+      return deleteFeedSettings;
     }
 
     /** Returns the builder for the settings used for calls to createFeed. */
@@ -355,11 +360,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     /** Returns the builder for the settings used for calls to updateFeed. */
     public UnaryCallSettings.Builder<UpdateFeedRequest, Feed> updateFeedSettings() {
       return updateFeedSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteFeed. */
-    public UnaryCallSettings.Builder<DeleteFeedRequest, Empty> deleteFeedSettings() {
-      return deleteFeedSettings;
     }
 
     @Override
