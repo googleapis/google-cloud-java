@@ -84,7 +84,8 @@ public interface SearchCatalogRequestOrBuilder
    * * description:y
    * Note: Query tokens need to have a minimum of 3 characters for substring
    * matching to work correctly. See [Data Catalog Search
-   * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
+   * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
+   * for more information.
    * </pre>
    *
    * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -103,7 +104,8 @@ public interface SearchCatalogRequestOrBuilder
    * * description:y
    * Note: Query tokens need to have a minimum of 3 characters for substring
    * matching to work correctly. See [Data Catalog Search
-   * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
+   * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
+   * for more information.
    * </pre>
    *
    * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>

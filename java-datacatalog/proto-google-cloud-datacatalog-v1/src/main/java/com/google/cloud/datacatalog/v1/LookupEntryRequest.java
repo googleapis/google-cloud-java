@@ -239,7 +239,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
    * Examples:
-   *   * `cloud_pubsub.project_id.topic_id`
+   *   * `pubsub.project_id.topic_id`
    *   * ``pubsub.project_id.`topic.id.with.dots` ``
    *   * `bigquery.table.project_id.dataset_id.table_id`
    *   * `bigquery.dataset.project_id.dataset_id`
@@ -274,7 +274,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
    * Examples:
-   *   * `cloud_pubsub.project_id.topic_id`
+   *   * `pubsub.project_id.topic_id`
    *   * ``pubsub.project_id.`topic.id.with.dots` ``
    *   * `bigquery.table.project_id.dataset_id.table_id`
    *   * `bigquery.dataset.project_id.dataset_id`
@@ -838,7 +838,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     *   * `cloud_pubsub.project_id.topic_id`
+     *   * `pubsub.project_id.topic_id`
      *   * ``pubsub.project_id.`topic.id.with.dots` ``
      *   * `bigquery.table.project_id.dataset_id.table_id`
      *   * `bigquery.dataset.project_id.dataset_id`
@@ -873,7 +873,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     *   * `cloud_pubsub.project_id.topic_id`
+     *   * `pubsub.project_id.topic_id`
      *   * ``pubsub.project_id.`topic.id.with.dots` ``
      *   * `bigquery.table.project_id.dataset_id.table_id`
      *   * `bigquery.dataset.project_id.dataset_id`
@@ -908,7 +908,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     *   * `cloud_pubsub.project_id.topic_id`
+     *   * `pubsub.project_id.topic_id`
      *   * ``pubsub.project_id.`topic.id.with.dots` ``
      *   * `bigquery.table.project_id.dataset_id.table_id`
      *   * `bigquery.dataset.project_id.dataset_id`
@@ -937,7 +937,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     *   * `cloud_pubsub.project_id.topic_id`
+     *   * `pubsub.project_id.topic_id`
      *   * ``pubsub.project_id.`topic.id.with.dots` ``
      *   * `bigquery.table.project_id.dataset_id.table_id`
      *   * `bigquery.dataset.project_id.dataset_id`
@@ -964,7 +964,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     *   * `cloud_pubsub.project_id.topic_id`
+     *   * `pubsub.project_id.topic_id`
      *   * ``pubsub.project_id.`topic.id.with.dots` ``
      *   * `bigquery.table.project_id.dataset_id.table_id`
      *   * `bigquery.dataset.project_id.dataset_id`

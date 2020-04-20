@@ -99,4 +99,67 @@ public interface SearchCatalogResponseOrBuilder
    * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable locations. Search result does not include data from those
+   * locations. Users can get additional information on the error by repeating
+   * the search request with a more restrictive parameter -- setting the value
+   * for `SearchDataCatalogRequest.scope.include_locations`.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 6;</code>
+   *
+   * @return A list containing the unreachable.
+   */
+  java.util.List<java.lang.String> getUnreachableList();
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable locations. Search result does not include data from those
+   * locations. Users can get additional information on the error by repeating
+   * the search request with a more restrictive parameter -- setting the value
+   * for `SearchDataCatalogRequest.scope.include_locations`.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 6;</code>
+   *
+   * @return The count of unreachable.
+   */
+  int getUnreachableCount();
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable locations. Search result does not include data from those
+   * locations. Users can get additional information on the error by repeating
+   * the search request with a more restrictive parameter -- setting the value
+   * for `SearchDataCatalogRequest.scope.include_locations`.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The unreachable at the given index.
+   */
+  java.lang.String getUnreachable(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable locations. Search result does not include data from those
+   * locations. Users can get additional information on the error by repeating
+   * the search request with a more restrictive parameter -- setting the value
+   * for `SearchDataCatalogRequest.scope.include_locations`.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the unreachable at the given index.
+   */
+  com.google.protobuf.ByteString getUnreachableBytes(int index);
 }

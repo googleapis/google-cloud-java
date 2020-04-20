@@ -1303,7 +1303,8 @@ public final class DataCatalogGrpc {
      * result pages. Also note that results returned (and not returned) can vary
      * across repeated search queries.
      * See [Data Catalog Search
-     * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
+     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
+     * for more information.
      * </pre>
      */
     public void searchCatalog(
@@ -1330,7 +1331,8 @@ public final class DataCatalogGrpc {
      * locations.
      * Users should enable the Data Catalog API in the project identified by
      * the `parent` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void createEntryGroup(
@@ -1358,8 +1360,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Updates an EntryGroup. The user should enable the Data Catalog API in the
      * project identified by the `entry_group.name` parameter (see [Data Catalog
-     * Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Resource Project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void updateEntryGroup(
@@ -1375,7 +1378,8 @@ public final class DataCatalogGrpc {
      * Deletes an EntryGroup. Only entry groups that do not contain entries can be
      * deleted. Users should enable the Data Catalog API in the project
      * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void deleteEntryGroup(
@@ -1406,7 +1410,8 @@ public final class DataCatalogGrpc {
      * be created.
      * Users should enable the Data Catalog API in the project identified by
      * the `parent` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * A maximum of 100,000 entries may be created per entry group.
      * </pre>
      */
@@ -1423,7 +1428,8 @@ public final class DataCatalogGrpc {
      * Updates an existing entry.
      * Users should enable the Data Catalog API in the project identified by
      * the `entry.name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void updateEntry(
@@ -1441,7 +1447,8 @@ public final class DataCatalogGrpc {
      * method can be deleted.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void deleteEntry(
@@ -1498,8 +1505,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag template. The user should enable the Data Catalog API in
      * the project identified by the `parent` parameter (see [Data Catalog
-     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Resource
+     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+     * for more information).
      * </pre>
      */
     public void createTagTemplate(
@@ -1530,7 +1538,8 @@ public final class DataCatalogGrpc {
      * and should be updated using their own create/update/delete methods.
      * Users should enable the Data Catalog API in the project identified by
      * the `tag_template.name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void updateTagTemplate(
@@ -1546,7 +1555,8 @@ public final class DataCatalogGrpc {
      * Deletes a tag template and all tags using the template.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void deleteTagTemplate(
@@ -1562,8 +1572,8 @@ public final class DataCatalogGrpc {
      * Creates a field in a tag template. The user should enable the Data Catalog
      * API in the project identified by the `parent` parameter (see
      * [Data Catalog Resource
-     * Project](/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+     * for more information).
      * </pre>
      */
     public void createTagTemplateField(
@@ -1580,7 +1590,8 @@ public final class DataCatalogGrpc {
      * Updates a field in a tag template. This method cannot be used to update the
      * field type. Users should enable the Data Catalog API in the project
      * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void updateTagTemplateField(
@@ -1596,8 +1607,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Renames a field in a tag template. The user should enable the Data Catalog
      * API in the project identified by the `name` parameter (see [Data Catalog
-     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Resource
+     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+     * for more information).
      * </pre>
      */
     public void renameTagTemplateField(
@@ -1614,7 +1626,8 @@ public final class DataCatalogGrpc {
      * Deletes a field in a tag template and all uses of that field.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void deleteTagTemplateField(
@@ -1629,10 +1642,10 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag on an [Entry][google.cloud.datacatalog.v1.Entry].
      * Note: The project identified by the `parent` parameter for the
-     * [tag](/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
      * and the
      * [tag
-     * template](/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
+     * template](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
      * used to create the tag must be from the same organization.
      * </pre>
      */
@@ -1972,7 +1985,8 @@ public final class DataCatalogGrpc {
      * result pages. Also note that results returned (and not returned) can vary
      * across repeated search queries.
      * See [Data Catalog Search
-     * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
+     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
+     * for more information.
      * </pre>
      */
     public void searchCatalog(
@@ -2002,7 +2016,8 @@ public final class DataCatalogGrpc {
      * locations.
      * Users should enable the Data Catalog API in the project identified by
      * the `parent` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void createEntryGroup(
@@ -2036,8 +2051,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Updates an EntryGroup. The user should enable the Data Catalog API in the
      * project identified by the `entry_group.name` parameter (see [Data Catalog
-     * Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Resource Project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void updateEntryGroup(
@@ -2056,7 +2072,8 @@ public final class DataCatalogGrpc {
      * Deletes an EntryGroup. Only entry groups that do not contain entries can be
      * deleted. Users should enable the Data Catalog API in the project
      * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void deleteEntryGroup(
@@ -2093,7 +2110,8 @@ public final class DataCatalogGrpc {
      * be created.
      * Users should enable the Data Catalog API in the project identified by
      * the `parent` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * A maximum of 100,000 entries may be created per entry group.
      * </pre>
      */
@@ -2113,7 +2131,8 @@ public final class DataCatalogGrpc {
      * Updates an existing entry.
      * Users should enable the Data Catalog API in the project identified by
      * the `entry.name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void updateEntry(
@@ -2134,7 +2153,8 @@ public final class DataCatalogGrpc {
      * method can be deleted.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void deleteEntry(
@@ -2201,8 +2221,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag template. The user should enable the Data Catalog API in
      * the project identified by the `parent` parameter (see [Data Catalog
-     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Resource
+     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+     * for more information).
      * </pre>
      */
     public void createTagTemplate(
@@ -2239,7 +2260,8 @@ public final class DataCatalogGrpc {
      * and should be updated using their own create/update/delete methods.
      * Users should enable the Data Catalog API in the project identified by
      * the `tag_template.name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void updateTagTemplate(
@@ -2258,7 +2280,8 @@ public final class DataCatalogGrpc {
      * Deletes a tag template and all tags using the template.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void deleteTagTemplate(
@@ -2277,8 +2300,8 @@ public final class DataCatalogGrpc {
      * Creates a field in a tag template. The user should enable the Data Catalog
      * API in the project identified by the `parent` parameter (see
      * [Data Catalog Resource
-     * Project](/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+     * for more information).
      * </pre>
      */
     public void createTagTemplateField(
@@ -2298,7 +2321,8 @@ public final class DataCatalogGrpc {
      * Updates a field in a tag template. This method cannot be used to update the
      * field type. Users should enable the Data Catalog API in the project
      * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void updateTagTemplateField(
@@ -2317,8 +2341,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Renames a field in a tag template. The user should enable the Data Catalog
      * API in the project identified by the `name` parameter (see [Data Catalog
-     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Resource
+     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+     * for more information).
      * </pre>
      */
     public void renameTagTemplateField(
@@ -2338,7 +2363,8 @@ public final class DataCatalogGrpc {
      * Deletes a field in a tag template and all uses of that field.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public void deleteTagTemplateField(
@@ -2356,10 +2382,10 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag on an [Entry][google.cloud.datacatalog.v1.Entry].
      * Note: The project identified by the `parent` parameter for the
-     * [tag](/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
      * and the
      * [tag
-     * template](/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
+     * template](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
      * used to create the tag must be from the same organization.
      * </pre>
      */
@@ -2533,7 +2559,8 @@ public final class DataCatalogGrpc {
      * result pages. Also note that results returned (and not returned) can vary
      * across repeated search queries.
      * See [Data Catalog Search
-     * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
+     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
+     * for more information.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.SearchCatalogResponse searchCatalog(
@@ -2558,7 +2585,8 @@ public final class DataCatalogGrpc {
      * locations.
      * Users should enable the Data Catalog API in the project identified by
      * the `parent` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.EntryGroup createEntryGroup(
@@ -2585,8 +2613,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Updates an EntryGroup. The user should enable the Data Catalog API in the
      * project identified by the `entry_group.name` parameter (see [Data Catalog
-     * Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Resource Project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.EntryGroup updateEntryGroup(
@@ -2602,7 +2631,8 @@ public final class DataCatalogGrpc {
      * Deletes an EntryGroup. Only entry groups that do not contain entries can be
      * deleted. Users should enable the Data Catalog API in the project
      * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.protobuf.Empty deleteEntryGroup(
@@ -2631,7 +2661,8 @@ public final class DataCatalogGrpc {
      * be created.
      * Users should enable the Data Catalog API in the project identified by
      * the `parent` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * A maximum of 100,000 entries may be created per entry group.
      * </pre>
      */
@@ -2647,7 +2678,8 @@ public final class DataCatalogGrpc {
      * Updates an existing entry.
      * Users should enable the Data Catalog API in the project identified by
      * the `entry.name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.Entry updateEntry(
@@ -2664,7 +2696,8 @@ public final class DataCatalogGrpc {
      * method can be deleted.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.protobuf.Empty deleteEntry(
@@ -2716,8 +2749,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag template. The user should enable the Data Catalog API in
      * the project identified by the `parent` parameter (see [Data Catalog
-     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Resource
+     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+     * for more information).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.TagTemplate createTagTemplate(
@@ -2747,7 +2781,8 @@ public final class DataCatalogGrpc {
      * and should be updated using their own create/update/delete methods.
      * Users should enable the Data Catalog API in the project identified by
      * the `tag_template.name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.TagTemplate updateTagTemplate(
@@ -2763,7 +2798,8 @@ public final class DataCatalogGrpc {
      * Deletes a tag template and all tags using the template.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.protobuf.Empty deleteTagTemplate(
@@ -2779,8 +2815,8 @@ public final class DataCatalogGrpc {
      * Creates a field in a tag template. The user should enable the Data Catalog
      * API in the project identified by the `parent` parameter (see
      * [Data Catalog Resource
-     * Project](/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+     * for more information).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.TagTemplateField createTagTemplateField(
@@ -2796,7 +2832,8 @@ public final class DataCatalogGrpc {
      * Updates a field in a tag template. This method cannot be used to update the
      * field type. Users should enable the Data Catalog API in the project
      * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.TagTemplateField updateTagTemplateField(
@@ -2811,8 +2848,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Renames a field in a tag template. The user should enable the Data Catalog
      * API in the project identified by the `name` parameter (see [Data Catalog
-     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Resource
+     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+     * for more information).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.TagTemplateField renameTagTemplateField(
@@ -2828,7 +2866,8 @@ public final class DataCatalogGrpc {
      * Deletes a field in a tag template and all uses of that field.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.protobuf.Empty deleteTagTemplateField(
@@ -2843,10 +2882,10 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag on an [Entry][google.cloud.datacatalog.v1.Entry].
      * Note: The project identified by the `parent` parameter for the
-     * [tag](/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
      * and the
      * [tag
-     * template](/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
+     * template](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
      * used to create the tag must be from the same organization.
      * </pre>
      */
@@ -2997,7 +3036,8 @@ public final class DataCatalogGrpc {
      * result pages. Also note that results returned (and not returned) can vary
      * across repeated search queries.
      * See [Data Catalog Search
-     * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
+     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
+     * for more information.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3024,7 +3064,8 @@ public final class DataCatalogGrpc {
      * locations.
      * Users should enable the Data Catalog API in the project identified by
      * the `parent` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3054,8 +3095,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Updates an EntryGroup. The user should enable the Data Catalog API in the
      * project identified by the `entry_group.name` parameter (see [Data Catalog
-     * Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Resource Project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3072,7 +3114,8 @@ public final class DataCatalogGrpc {
      * Deletes an EntryGroup. Only entry groups that do not contain entries can be
      * deleted. Users should enable the Data Catalog API in the project
      * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -3103,7 +3146,8 @@ public final class DataCatalogGrpc {
      * be created.
      * Users should enable the Data Catalog API in the project identified by
      * the `parent` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * A maximum of 100,000 entries may be created per entry group.
      * </pre>
      */
@@ -3120,7 +3164,8 @@ public final class DataCatalogGrpc {
      * Updates an existing entry.
      * Users should enable the Data Catalog API in the project identified by
      * the `entry.name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.Entry>
@@ -3138,7 +3183,8 @@ public final class DataCatalogGrpc {
      * method can be deleted.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -3194,8 +3240,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag template. The user should enable the Data Catalog API in
      * the project identified by the `parent` parameter (see [Data Catalog
-     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Resource
+     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+     * for more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3228,7 +3275,8 @@ public final class DataCatalogGrpc {
      * and should be updated using their own create/update/delete methods.
      * Users should enable the Data Catalog API in the project identified by
      * the `tag_template.name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3245,7 +3293,8 @@ public final class DataCatalogGrpc {
      * Deletes a tag template and all tags using the template.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -3261,8 +3310,8 @@ public final class DataCatalogGrpc {
      * Creates a field in a tag template. The user should enable the Data Catalog
      * API in the project identified by the `parent` parameter (see
      * [Data Catalog Resource
-     * Project](/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+     * for more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3280,7 +3329,8 @@ public final class DataCatalogGrpc {
      * Updates a field in a tag template. This method cannot be used to update the
      * field type. Users should enable the Data Catalog API in the project
      * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3297,8 +3347,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Renames a field in a tag template. The user should enable the Data Catalog
      * API in the project identified by the `name` parameter (see [Data Catalog
-     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
-     * information).
+     * Resource
+     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+     * for more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3316,7 +3367,8 @@ public final class DataCatalogGrpc {
      * Deletes a field in a tag template and all uses of that field.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
-     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+     * more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -3332,10 +3384,10 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag on an [Entry][google.cloud.datacatalog.v1.Entry].
      * Note: The project identified by the `parent` parameter for the
-     * [tag](/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
      * and the
      * [tag
-     * template](/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
+     * template](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
      * used to create the tag must be from the same organization.
      * </pre>
      */

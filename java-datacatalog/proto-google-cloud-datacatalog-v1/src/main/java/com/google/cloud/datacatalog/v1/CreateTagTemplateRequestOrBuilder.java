@@ -28,8 +28,7 @@ public interface CreateTagTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project and the template location
-   * [region](/compute/docs/regions-zones/#available).
-   * NOTE: Currently, only the `us-central1 region` is supported.
+   * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
    * Example:
    * * projects/{project_id}/locations/us-central1
    * </pre>
@@ -46,8 +45,7 @@ public interface CreateTagTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project and the template location
-   * [region](/compute/docs/regions-zones/#available).
-   * NOTE: Currently, only the `us-central1 region` is supported.
+   * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
    * Example:
    * * projects/{project_id}/locations/us-central1
    * </pre>
