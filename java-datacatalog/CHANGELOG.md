@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.35.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.34.1...v0.35.0) (2020-04-20)
+
+
+### Features
+
+* add `order` field to `TagField` and `TagTemplateField` message in tags.proto ([#166](https://www.github.com/googleapis/java-datacatalog/issues/166)) ([ed46c97](https://www.github.com/googleapis/java-datacatalog/commit/ed46c976307dca364155e4e380a22db85f1cdb42))
+* add support for Search Partial Response ([#161](https://www.github.com/googleapis/java-datacatalog/issues/161)) ([7d5dd43](https://www.github.com/googleapis/java-datacatalog/commit/7d5dd431fdcbe6078ef86e81e2859738d484781f))
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#149](https://www.github.com/googleapis/java-datacatalog/issues/149)) ([4ab8c7d](https://www.github.com/googleapis/java-datacatalog/commit/4ab8c7d6dac9b9820187c0ebad749fa095ec6660))
+
 ### [0.34.1](https://www.github.com/googleapis/java-datacatalog/compare/v0.34.0...v0.34.1) (2020-04-06)
 
 
