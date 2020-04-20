@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.100.0](https://www.github.com/googleapis/java-language/compare/v1.99.4...v1.100.0) (2020-04-20)
+
+
+### Features
+
+* add method overloads for Document+EncodingType for analyze methods ([#120](https://www.github.com/googleapis/java-language/issues/120)) ([60ef073](https://www.github.com/googleapis/java-language/commit/60ef07316809ba0deb03bf16b56f58e522874c09))
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#107](https://www.github.com/googleapis/java-language/issues/107)) ([587f83b](https://www.github.com/googleapis/java-language/commit/587f83b52db60ced3854748a17def39524c1d346))
+
 ### [1.99.4](https://www.github.com/googleapis/java-language/compare/v1.99.3...v1.99.4) (2020-04-09)
 
 
