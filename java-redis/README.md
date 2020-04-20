@@ -17,7 +17,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>4.4.1</version>
+      <version>5.1.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
