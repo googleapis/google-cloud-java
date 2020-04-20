@@ -25,13 +25,13 @@
 
 
   <dependencies>
-    <!-- [START google-cloud-speech_install_without_bom] -->
+    <!-- [START speech_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-speech</artifactId>
       <version>1.22.6</version>
     </dependency>
-    <!-- [END google-cloud-speech_install_without_bom] -->
+    <!-- [END speech_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>

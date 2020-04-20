@@ -1,5 +1,5 @@
 {
-  "name": "google-cloud-speech",
+  "name": "speech",
   "name_pretty": "Cloud Speech",
   "release_level": "ga",
   "language": "java",

@@ -24,7 +24,7 @@
   </properties>
 
 
-  <!-- [START google-cloud-speech_install_with_bom] -->
+  <!-- [START speech_install_with_bom] -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -42,7 +42,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-speech</artifactId>
     </dependency>
-    <!-- [END google-cloud-speech_install_with_bom] -->
+    <!-- [END speech_install_with_bom] -->
 
     <dependency>
       <groupId>junit</groupId>

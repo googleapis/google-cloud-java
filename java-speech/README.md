@@ -23,12 +23,13 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     </dependency>
   </dependencies>
 </dependencyManagement>
+
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-speech</artifactId>
   </dependency>
-</dependencies>
+
 ```
 
 If you are using Maven without BOM, add this to your dependencies:
@@ -39,6 +40,7 @@ If you are using Maven without BOM, add this to your dependencies:
   <artifactId>google-cloud-speech</artifactId>
   <version>1.22.6</version>
 </dependency>
+
 ```
 
 [//]: # ({x-version-update-start:google-cloud-speech:released})
@@ -162,8 +164,8 @@ Java 7 or above is required for using this client.
 
 ## Versioning
 
-This library follows [Semantic Versioning](http://semver.org/).
 
+This library follows [Semantic Versioning](http://semver.org/).
 
 
 ## Contributing
