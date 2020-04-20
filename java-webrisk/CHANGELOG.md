@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.33.3](https://www.github.com/googleapis/java-webrisk/compare/v0.33.2...v0.33.3) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#121](https://www.github.com/googleapis/java-webrisk/issues/121)) ([78e1a5f](https://www.github.com/googleapis/java-webrisk/commit/78e1a5f9971f5f41a47168ccb3437beaa1845044))
+
 ### [0.33.2](https://www.github.com/googleapis/java-webrisk/compare/v0.33.1...v0.33.2) (2020-04-07)
 
 
