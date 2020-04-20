@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/googleapis/java-iamcredentials/compare/v1.0.1...v1.0.2) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#114](https://www.github.com/googleapis/java-iamcredentials/issues/114)) ([903bef6](https://www.github.com/googleapis/java-iamcredentials/commit/903bef647037a1d90f1b729b35da4f02f0536a65))
+
 ### [1.0.1](https://www.github.com/googleapis/java-iamcredentials/compare/v1.0.0...v1.0.1) (2020-04-07)
 
 
