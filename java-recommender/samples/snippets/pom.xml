@@ -24,7 +24,7 @@
   </properties>
 
 
-  <!-- [START google-cloud-recommender_install_with_bom] -->
+  <!-- [START recommender_install_with_bom] -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -42,7 +42,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-recommender</artifactId>
     </dependency>
-    <!-- [END google-cloud-recommender_install_with_bom] -->
+    <!-- [END recommender_install_with_bom] -->
 
     <dependency>
       <groupId>junit</groupId>

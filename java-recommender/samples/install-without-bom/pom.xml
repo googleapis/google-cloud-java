@@ -25,13 +25,13 @@
 
 
   <dependencies>
-    <!-- [START google-cloud-recommender_install_without_bom] -->
+    <!-- [START recommender_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-recommender</artifactId>
       <version>0.4.1</version>
     </dependency>
-    <!-- [END google-cloud-recommender_install_without_bom] -->
+    <!-- [END recommender_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>

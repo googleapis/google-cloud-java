@@ -1,5 +1,5 @@
 {
-  "name": "google-cloud-recommender",
+  "name": "recommender",
   "name_pretty": "Recommender",
   "product_documentation": "https://cloud.google.com/recommendations/",
   "client_documentation": "https://googleapis.dev/java/google-cloud-recommender/latest/",
