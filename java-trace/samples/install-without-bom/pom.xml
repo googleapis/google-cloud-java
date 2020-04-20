@@ -25,13 +25,13 @@
 
 
   <dependencies>
-    <!-- [START google-cloud-trace_install_without_bom] -->
+    <!-- [START cloudtrace_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-trace</artifactId>
       <version>1.0.3</version>
     </dependency>
-    <!-- [END google-cloud-trace_install_without_bom] -->
+    <!-- [END cloudtrace_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>

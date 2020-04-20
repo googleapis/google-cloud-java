@@ -23,12 +23,13 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     </dependency>
   </dependencies>
 </dependencyManagement>
+
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-trace</artifactId>
   </dependency>
-</dependencies>
+
 ```
 
 If you are using Maven without BOM, add this to your dependencies:
@@ -39,6 +40,7 @@ If you are using Maven without BOM, add this to your dependencies:
   <artifactId>google-cloud-trace</artifactId>
   <version>1.0.3</version>
 </dependency>
+
 ```
 
 [//]: # ({x-version-update-start:google-cloud-trace:released})
@@ -99,8 +101,8 @@ Java 7 or above is required for using this client.
 
 ## Versioning
 
-This library follows [Semantic Versioning](http://semver.org/).
 
+This library follows [Semantic Versioning](http://semver.org/).
 
 
 ## Contributing
