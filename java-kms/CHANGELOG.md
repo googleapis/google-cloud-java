@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.38.1](https://www.github.com/googleapis/java-kms/compare/v1.38.0...v1.38.1) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#135](https://www.github.com/googleapis/java-kms/issues/135)) ([8e61429](https://www.github.com/googleapis/java-kms/commit/8e61429cfd5bb5cd4985e5858569b77368777f61))
+
 ## [1.38.0](https://www.github.com/googleapis/java-kms/compare/v1.37.0...v1.38.0) (2020-04-07)
 
 
