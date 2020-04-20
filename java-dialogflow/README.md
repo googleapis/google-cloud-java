@@ -101,8 +101,8 @@ Java 7 or above is required for using this client.
 
 ## Versioning
 
-This library follows [Semantic Versioning](http://semver.org/).
 
+This library follows [Semantic Versioning](http://semver.org/).
 
 
 ## Contributing
