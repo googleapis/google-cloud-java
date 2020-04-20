@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.3](https://www.github.com/googleapis/java-dlp/compare/v1.1.2...v1.1.3) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#134](https://www.github.com/googleapis/java-dlp/issues/134)) ([02c8daf](https://www.github.com/googleapis/java-dlp/commit/02c8dafce8ba362db32a2d26a5b8ad3f5c0b272d))
+
 ### [1.1.2](https://www.github.com/googleapis/java-dlp/compare/v1.1.1...v1.1.2) (2020-04-10)
 
 
