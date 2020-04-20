@@ -70,10 +70,13 @@ public final class TableSpecOuterClass {
           + "\014table_prefix\030\002 \001(\tB\003\340A\003\022\030\n\013shard_count\030"
           + "\003 \001(\003B\003\340A\003*[\n\017TableSourceType\022!\n\035TABLE_S"
           + "OURCE_TYPE_UNSPECIFIED\020\000\022\021\n\rBIGQUERY_VIE"
-          + "W\020\002\022\022\n\016BIGQUERY_TABLE\020\005Bx\n$com.google.cl"
-          + "oud.datacatalog.v1beta1P\001ZKgoogle.golang"
-          + ".org/genproto/googleapis/cloud/datacatal"
-          + "og/v1beta1;datacatalog\370\001\001b\006proto3"
+          + "W\020\002\022\022\n\016BIGQUERY_TABLE\020\005B\344\001\n$com.google.c"
+          + "loud.datacatalog.v1beta1P\001ZKgoogle.golan"
+          + "g.org/genproto/googleapis/cloud/datacata"
+          + "log/v1beta1;datacatalog\370\001\001\252\002 Google.Clou"
+          + "d.DataCatalog.V1Beta1\312\002 Google\\Cloud\\Dat"
+          + "aCatalog\\V1beta1\352\002#Google::Cloud::DataCa"
+          + "talog::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

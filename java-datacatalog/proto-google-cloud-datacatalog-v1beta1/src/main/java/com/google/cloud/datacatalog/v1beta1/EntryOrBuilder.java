@@ -167,8 +167,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. This field indicates the entry's source system that Data
-   * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>
@@ -182,8 +182,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. This field indicates the entry's source system that Data
-   * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>
@@ -446,10 +446,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying resource, not about this Data
-   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-   * entries with user_specified_type, this field is optional and defaults to an
-   * empty timestamp.
+   * Output only. Timestamps about the underlying resource, not about this Data Catalog
+   * entry. Output only when Entry is of type in the EntryType enum. For entries
+   * with user_specified_type, this field is optional and defaults to an empty
+   * timestamp.
    * </pre>
    *
    * <code>
@@ -463,10 +463,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying resource, not about this Data
-   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-   * entries with user_specified_type, this field is optional and defaults to an
-   * empty timestamp.
+   * Output only. Timestamps about the underlying resource, not about this Data Catalog
+   * entry. Output only when Entry is of type in the EntryType enum. For entries
+   * with user_specified_type, this field is optional and defaults to an empty
+   * timestamp.
    * </pre>
    *
    * <code>
@@ -480,10 +480,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying resource, not about this Data
-   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-   * entries with user_specified_type, this field is optional and defaults to an
-   * empty timestamp.
+   * Output only. Timestamps about the underlying resource, not about this Data Catalog
+   * entry. Output only when Entry is of type in the EntryType enum. For entries
+   * with user_specified_type, this field is optional and defaults to an empty
+   * timestamp.
    * </pre>
    *
    * <code>

@@ -34,7 +34,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Default unknown type
+   * Default unknown type.
    * </pre>
    *
    * <code>ENTRY_TYPE_UNSPECIFIED = 0;</code>
@@ -56,6 +56,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Output only. The type of models.
+   * https://cloud.google.com/bigquery-ml/docs/bigqueryml-intro
    * </pre>
    *
    * <code>MODEL = 5;</code>
@@ -66,7 +67,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Output only. An entry type which is used for streaming entries. Example:
-   * Cloud Pub/Sub topic.
+   * Pub/Sub topic.
    * </pre>
    *
    * <code>DATA_STREAM = 3;</code>
@@ -90,7 +91,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Default unknown type
+   * Default unknown type.
    * </pre>
    *
    * <code>ENTRY_TYPE_UNSPECIFIED = 0;</code>
@@ -112,6 +113,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Output only. The type of models.
+   * https://cloud.google.com/bigquery-ml/docs/bigqueryml-intro
    * </pre>
    *
    * <code>MODEL = 5;</code>
@@ -122,7 +124,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Output only. An entry type which is used for streaming entries. Example:
-   * Cloud Pub/Sub topic.
+   * Pub/Sub topic.
    * </pre>
    *
    * <code>DATA_STREAM = 3;</code>

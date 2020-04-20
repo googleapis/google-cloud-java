@@ -466,10 +466,13 @@ public final class Datacatalog {
           + "cts/*/locations/*/entryGroups/*/entries/"
           + "*}:testIamPermissions:\001*\032N\312A\032datacatalog"
           + ".googleapis.com\322A.https://www.googleapis"
-          + ".com/auth/cloud-platformBx\n$com.google.c"
-          + "loud.datacatalog.v1beta1P\001ZKgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/datacata"
-          + "log/v1beta1;datacatalog\370\001\001b\006proto3"
+          + ".com/auth/cloud-platformB\344\001\n$com.google."
+          + "cloud.datacatalog.v1beta1P\001ZKgoogle.gola"
+          + "ng.org/genproto/googleapis/cloud/datacat"
+          + "alog/v1beta1;datacatalog\370\001\001\252\002 Google.Clo"
+          + "ud.DataCatalog.V1Beta1\312\002 Google\\Cloud\\Da"
+          + "taCatalog\\V1beta1\352\002#Google::Cloud::DataC"
+          + "atalog::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

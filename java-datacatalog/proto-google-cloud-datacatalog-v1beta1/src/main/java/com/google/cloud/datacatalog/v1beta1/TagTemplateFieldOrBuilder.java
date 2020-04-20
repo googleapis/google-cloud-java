@@ -132,4 +132,20 @@ public interface TagTemplateFieldOrBuilder
    * @return The isRequired.
    */
   boolean getIsRequired();
+
+  /**
+   *
+   *
+   * <pre>
+   * The order of this field with respect to other fields in this tag
+   * template.  A higher value indicates a more important field. The value can
+   * be negative. Multiple fields can have the same order, and field orders
+   * within a tag do not have to be sequential.
+   * </pre>
+   *
+   * <code>int32 order = 5;</code>
+   *
+   * @return The order.
+   */
+  int getOrder();
 }

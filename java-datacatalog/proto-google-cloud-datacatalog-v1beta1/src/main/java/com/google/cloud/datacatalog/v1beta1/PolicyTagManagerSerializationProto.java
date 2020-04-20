@@ -109,11 +109,13 @@ public final class PolicyTagManagerSerializationProto {
           + "projects/*/locations/*}/taxonomies:expor"
           + "t\032N\312A\032datacatalog.googleapis.com\322A.https"
           + "://www.googleapis.com/auth/cloud-platfor"
-          + "mB\234\001\n$com.google.cloud.datacatalog.v1bet"
+          + "mB\210\002\n$com.google.cloud.datacatalog.v1bet"
           + "a1B\"PolicyTagManagerSerializationProtoP\001"
           + "ZKgoogle.golang.org/genproto/googleapis/"
           + "cloud/datacatalog/v1beta1;datacatalog\370\001\001"
-          + "b\006proto3"
+          + "\252\002 Google.Cloud.DataCatalog.V1Beta1\312\002 Go"
+          + "ogle\\Cloud\\DataCatalog\\V1beta1\352\002#Google:"
+          + ":Cloud::DataCatalog::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

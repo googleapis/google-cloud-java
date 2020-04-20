@@ -172,5 +172,22 @@ public interface TagFieldOrBuilder
    */
   com.google.cloud.datacatalog.v1beta1.TagField.EnumValueOrBuilder getEnumValueOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The order of this field with respect to other fields in this tag. It can be
+   * set in [Tag][google.cloud.datacatalog.v1beta1.TagTemplateField.order]. For
+   * example, a higher value can indicate a more important field. The value can
+   * be negative. Multiple fields can have the same order, and field orders
+   * within a tag do not have to be sequential.
+   * </pre>
+   *
+   * <code>int32 order = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The order.
+   */
+  int getOrder();
+
   public com.google.cloud.datacatalog.v1beta1.TagField.KindCase getKindCase();
 }

@@ -499,7 +499,8 @@ public class DataCatalogClient implements BackgroundResource {
    * your query may not be returned, even in subsequent result pages. Also note that results
    * returned (and not returned) can vary across repeated search queries.
    *
-   * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference) for more
+   * <p>See [Data Catalog Search
+   * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference) for more
    * information.
    *
    * <p>Sample code:
@@ -515,13 +516,16 @@ public class DataCatalogClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param scope Required. The scope of this search request.
+   * @param scope Required. The scope of this search request. A `scope` that has empty
+   *     `include_org_ids`, `include_project_ids` AND false `include_gcp_public_datasets` is
+   *     considered invalid. Data Catalog will return an error in such a case.
    * @param query Required. The query string in search query syntax. The query must be non-empty.
    *     <p>Query strings can be simple as "x" or more qualified as:
    *     <p>&#42; name:x &#42; column:x &#42; description:y
    *     <p>Note: Query tokens need to have a minimum of 3 characters for substring matching to work
-   *     correctly. See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference) for
-   *     more information.
+   *     correctly. See [Data Catalog Search
+   *     Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference) for more
+   *     information.
    * @param orderBy Specifies the ordering of results, currently supported case-sensitive choices
    *     are:
    *     <p>&#42; `relevance`, only supports descending &#42; `last_modified_timestamp [asc|desc]`,
@@ -552,7 +556,8 @@ public class DataCatalogClient implements BackgroundResource {
    * your query may not be returned, even in subsequent result pages. Also note that results
    * returned (and not returned) can vary across repeated search queries.
    *
-   * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference) for more
+   * <p>See [Data Catalog Search
+   * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference) for more
    * information.
    *
    * <p>Sample code:
@@ -590,7 +595,8 @@ public class DataCatalogClient implements BackgroundResource {
    * your query may not be returned, even in subsequent result pages. Also note that results
    * returned (and not returned) can vary across repeated search queries.
    *
-   * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference) for more
+   * <p>See [Data Catalog Search
+   * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference) for more
    * information.
    *
    * <p>Sample code:
@@ -628,7 +634,8 @@ public class DataCatalogClient implements BackgroundResource {
    * your query may not be returned, even in subsequent result pages. Also note that results
    * returned (and not returned) can vary across repeated search queries.
    *
-   * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference) for more
+   * <p>See [Data Catalog Search
+   * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference) for more
    * information.
    *
    * <p>Sample code:
@@ -662,22 +669,11 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an EntryGroup.
-   *
-   * <p>An entry group contains logically related entries together with Cloud Identity and Access
-   * Management policies that specify the users who can create, edit, and view entries within the
-   * entry group.
-   *
-   * <p>Data Catalog automatically creates an entry group for BigQuery entries
-   * ("{@literal @}bigquery") and Pub/Sub topics ("{@literal @}pubsub"). Users create their own
-   * entry group to contain Cloud Storage fileset entries or custom type entries, and the IAM
-   * policies associated with those entries. Entry groups, like entries, can be searched.
-   *
-   * <p>A maximum of 10,000 entry groups may be created per organization across all locations.
+   * A maximum of 10,000 entry groups may be created per organization across all locations.
    *
    * <p>Users should enable the Data Catalog API in the project identified by the `parent` parameter
-   * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-   * information).
+   * (see [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -714,22 +710,11 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an EntryGroup.
-   *
-   * <p>An entry group contains logically related entries together with Cloud Identity and Access
-   * Management policies that specify the users who can create, edit, and view entries within the
-   * entry group.
-   *
-   * <p>Data Catalog automatically creates an entry group for BigQuery entries
-   * ("{@literal @}bigquery") and Pub/Sub topics ("{@literal @}pubsub"). Users create their own
-   * entry group to contain Cloud Storage fileset entries or custom type entries, and the IAM
-   * policies associated with those entries. Entry groups, like entries, can be searched.
-   *
-   * <p>A maximum of 10,000 entry groups may be created per organization across all locations.
+   * A maximum of 10,000 entry groups may be created per organization across all locations.
    *
    * <p>Users should enable the Data Catalog API in the project identified by the `parent` parameter
-   * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-   * information).
+   * (see [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -756,22 +741,11 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an EntryGroup.
-   *
-   * <p>An entry group contains logically related entries together with Cloud Identity and Access
-   * Management policies that specify the users who can create, edit, and view entries within the
-   * entry group.
-   *
-   * <p>Data Catalog automatically creates an entry group for BigQuery entries
-   * ("{@literal @}bigquery") and Pub/Sub topics ("{@literal @}pubsub"). Users create their own
-   * entry group to contain Cloud Storage fileset entries or custom type entries, and the IAM
-   * policies associated with those entries. Entry groups, like entries, can be searched.
-   *
-   * <p>A maximum of 10,000 entry groups may be created per organization across all locations.
+   * A maximum of 10,000 entry groups may be created per organization across all locations.
    *
    * <p>Users should enable the Data Catalog API in the project identified by the `parent` parameter
-   * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-   * information).
+   * (see [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -870,7 +844,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
    * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
-   * Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more information).
+   * Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -895,7 +870,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
    * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
-   * Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more information).
+   * Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -920,7 +896,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
    * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
-   * Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more information).
+   * Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -945,8 +922,8 @@ public class DataCatalogClient implements BackgroundResource {
    * Creates an entry. Only entries of 'FILESET' type or user-specified type can be created.
    *
    * <p>Users should enable the Data Catalog API in the project identified by the `parent` parameter
-   * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-   * information).
+   * (see [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>A maximum of 100,000 entries may be created per entry group.
    *
@@ -985,8 +962,8 @@ public class DataCatalogClient implements BackgroundResource {
    * Creates an entry. Only entries of 'FILESET' type or user-specified type can be created.
    *
    * <p>Users should enable the Data Catalog API in the project identified by the `parent` parameter
-   * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-   * information).
+   * (see [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>A maximum of 100,000 entries may be created per entry group.
    *
@@ -1018,8 +995,8 @@ public class DataCatalogClient implements BackgroundResource {
    * Creates an entry. Only entries of 'FILESET' type or user-specified type can be created.
    *
    * <p>Users should enable the Data Catalog API in the project identified by the `parent` parameter
-   * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-   * information).
+   * (see [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>A maximum of 100,000 entries may be created per entry group.
    *
@@ -1049,7 +1026,7 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Updates an existing entry. Users should enable the Data Catalog API in the project identified
    * by the `entry.name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1082,7 +1059,7 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Updates an existing entry. Users should enable the Data Catalog API in the project identified
    * by the `entry.name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1107,7 +1084,7 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Updates an existing entry. Users should enable the Data Catalog API in the project identified
    * by the `entry.name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1132,8 +1109,8 @@ public class DataCatalogClient implements BackgroundResource {
    * Deletes an existing entry. Only entries created through
    * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
    * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
-   * [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-   * information).
+   * [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1160,8 +1137,8 @@ public class DataCatalogClient implements BackgroundResource {
    * Deletes an existing entry. Only entries created through
    * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
    * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
-   * [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-   * information).
+   * [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1187,8 +1164,8 @@ public class DataCatalogClient implements BackgroundResource {
    * Deletes an existing entry. Only entries created through
    * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
    * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
-   * [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-   * information).
+   * [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1461,7 +1438,7 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Updates an EntryGroup. The user should enable the Data Catalog API in the project identified by
    * the `entry_group.name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1485,7 +1462,7 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Updates an EntryGroup. The user should enable the Data Catalog API in the project identified by
    * the `entry_group.name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1515,7 +1492,7 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Updates an EntryGroup. The user should enable the Data Catalog API in the project identified by
    * the `entry_group.name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1540,7 +1517,7 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Updates an EntryGroup. The user should enable the Data Catalog API in the project identified by
    * the `entry_group.name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1564,7 +1541,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Creates a tag template. The user should enable the Data Catalog API in the project identified
    * by the `parent` parameter (see [Data Catalog Resource
-   * Project](/data-catalog/docs/concepts/resource-project) for more information).
+   * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -1578,8 +1556,7 @@ public class DataCatalogClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The name of the project and the template location
-   *     [region](/compute/docs/regions-zones/#available). NOTE: Currently, only the `us-central1
-   *     region` is supported.
+   *     [region](https://cloud.google.com/data-catalog/docs/concepts/regions.
    *     <p>Example:
    *     <p>&#42; projects/{project_id}/locations/us-central1
    * @param tagTemplateId Required. The id of the tag template to create.
@@ -1602,7 +1579,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Creates a tag template. The user should enable the Data Catalog API in the project identified
    * by the `parent` parameter (see [Data Catalog Resource
-   * Project](/data-catalog/docs/concepts/resource-project) for more information).
+   * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -1631,7 +1609,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Creates a tag template. The user should enable the Data Catalog API in the project identified
    * by the `parent` parameter (see [Data Catalog Resource
-   * Project](/data-catalog/docs/concepts/resource-project) for more information).
+   * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -1729,7 +1708,7 @@ public class DataCatalogClient implements BackgroundResource {
    * template fields are represented as separate resources and should be updated using their own
    * create/update/delete methods. Users should enable the Data Catalog API in the project
    * identified by the `tag_template.name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1763,7 +1742,7 @@ public class DataCatalogClient implements BackgroundResource {
    * template fields are represented as separate resources and should be updated using their own
    * create/update/delete methods. Users should enable the Data Catalog API in the project
    * identified by the `tag_template.name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1790,7 +1769,7 @@ public class DataCatalogClient implements BackgroundResource {
    * template fields are represented as separate resources and should be updated using their own
    * create/update/delete methods. Users should enable the Data Catalog API in the project
    * identified by the `tag_template.name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1814,7 +1793,7 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
    * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1844,7 +1823,7 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
    * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1871,7 +1850,7 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
    * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1897,7 +1876,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Creates a field in a tag template. The user should enable the Data Catalog API in the project
    * identified by the `parent` parameter (see [Data Catalog Resource
-   * Project](/data-catalog/docs/concepts/resource-project) for more information).
+   * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -1911,8 +1891,7 @@ public class DataCatalogClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The name of the project and the template location
-   *     [region](/compute/docs/regions-zones/#available). NOTE: Currently, only the `us-central1
-   *     region` is supported.
+   *     [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
    *     <p>Example:
    *     <p>&#42; projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
    * @param tagTemplateFieldId Required. The ID of the tag template field to create. Field ids can
@@ -1938,7 +1917,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Creates a field in a tag template. The user should enable the Data Catalog API in the project
    * identified by the `parent` parameter (see [Data Catalog Resource
-   * Project](/data-catalog/docs/concepts/resource-project) for more information).
+   * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -1967,7 +1947,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Creates a field in a tag template. The user should enable the Data Catalog API in the project
    * identified by the `parent` parameter (see [Data Catalog Resource
-   * Project](/data-catalog/docs/concepts/resource-project) for more information).
+   * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -1996,7 +1977,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Updates a field in a tag template. This method cannot be used to update the field type. Users
    * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
-   * Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more information).
+   * Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -2038,7 +2020,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Updates a field in a tag template. This method cannot be used to update the field type. Users
    * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
-   * Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more information).
+   * Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -2065,7 +2048,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Updates a field in a tag template. This method cannot be used to update the field type. Users
    * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
-   * Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more information).
+   * Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -2092,7 +2076,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Renames a field in a tag template. The user should enable the Data Catalog API in the project
    * identified by the `name` parameter (see [Data Catalog Resource
-   * Project](/data-catalog/docs/concepts/resource-project) for more information).
+   * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -2125,7 +2110,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Renames a field in a tag template. The user should enable the Data Catalog API in the project
    * identified by the `name` parameter (see [Data Catalog Resource
-   * Project](/data-catalog/docs/concepts/resource-project) for more information).
+   * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -2152,7 +2138,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Renames a field in a tag template. The user should enable the Data Catalog API in the project
    * identified by the `name` parameter (see [Data Catalog Resource
-   * Project](/data-catalog/docs/concepts/resource-project) for more information).
+   * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -2179,7 +2166,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Deletes a field in a tag template and all uses of that field. Users should enable the Data
    * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
-   * Project] (/data-catalog/docs/concepts/resource-project) for more information).
+   * Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -2210,7 +2198,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Deletes a field in a tag template and all uses of that field. Users should enable the Data
    * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
-   * Project] (/data-catalog/docs/concepts/resource-project) for more information).
+   * Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -2237,7 +2226,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Deletes a field in a tag template and all uses of that field. Users should enable the Data
    * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
-   * Project] (/data-catalog/docs/concepts/resource-project) for more information).
+   * Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -2264,9 +2254,9 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Creates a tag on an [Entry][google.cloud.datacatalog.v1beta1.Entry]. Note: The project
    * identified by the `parent` parameter for the
-   * [tag](/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+   * [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
    * and the [tag
-   * template](/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
+   * template](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
    * used to create the tag must be from the same organization.
    *
    * <p>Sample code:
@@ -2298,9 +2288,9 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Creates a tag on an [Entry][google.cloud.datacatalog.v1beta1.Entry]. Note: The project
    * identified by the `parent` parameter for the
-   * [tag](/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+   * [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
    * and the [tag
-   * template](/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
+   * template](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
    * used to create the tag must be from the same organization.
    *
    * <p>Sample code:
@@ -2328,9 +2318,9 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Creates a tag on an [Entry][google.cloud.datacatalog.v1beta1.Entry]. Note: The project
    * identified by the `parent` parameter for the
-   * [tag](/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+   * [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
    * and the [tag
-   * template](/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
+   * template](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
    * used to create the tag must be from the same organization.
    *
    * <p>Sample code:
@@ -2605,8 +2595,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Sets the access control policy for a resource. Replaces any existing policy. Supported
    * resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to
-   * manage policies for BigQuery, Cloud Pub/Sub and any external Google Cloud Platform resources
-   * synced to Cloud Data Catalog.
+   * manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced
+   * to Data Catalog.
    *
    * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.setIamPolicy`
    * to set policies on tag templates. - `datacatalog.entries.setIamPolicy` to set policies on
@@ -2640,8 +2630,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Sets the access control policy for a resource. Replaces any existing policy. Supported
    * resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to
-   * manage policies for BigQuery, Cloud Pub/Sub and any external Google Cloud Platform resources
-   * synced to Cloud Data Catalog.
+   * manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced
+   * to Data Catalog.
    *
    * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.setIamPolicy`
    * to set policies on tag templates. - `datacatalog.entries.setIamPolicy` to set policies on
@@ -2672,8 +2662,8 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Sets the access control policy for a resource. Replaces any existing policy. Supported
    * resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to
-   * manage policies for BigQuery, Cloud Pub/Sub and any external Google Cloud Platform resources
-   * synced to Cloud Data Catalog.
+   * manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced
+   * to Data Catalog.
    *
    * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.setIamPolicy`
    * to set policies on tag templates. - `datacatalog.entries.setIamPolicy` to set policies on
@@ -2706,8 +2696,8 @@ public class DataCatalogClient implements BackgroundResource {
    * set on it.
    *
    * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
-   * cannot be used to manage policies for BigQuery, Cloud Pub/Sub and any external Google Cloud
-   * Platform resources synced to Cloud Data Catalog.
+   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
+   * resources synced to Data Catalog.
    *
    * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy`
    * to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on
@@ -2739,8 +2729,8 @@ public class DataCatalogClient implements BackgroundResource {
    * set on it.
    *
    * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
-   * cannot be used to manage policies for BigQuery, Cloud Pub/Sub and any external Google Cloud
-   * Platform resources synced to Cloud Data Catalog.
+   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
+   * resources synced to Data Catalog.
    *
    * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy`
    * to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on
@@ -2772,8 +2762,8 @@ public class DataCatalogClient implements BackgroundResource {
    * set on it.
    *
    * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
-   * cannot be used to manage policies for BigQuery, Cloud Pub/Sub and any external Google Cloud
-   * Platform resources synced to Cloud Data Catalog.
+   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
+   * resources synced to Data Catalog.
    *
    * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy`
    * to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on
@@ -2803,8 +2793,8 @@ public class DataCatalogClient implements BackgroundResource {
    * permissions is returned (We don't return a `NOT_FOUND` error).
    *
    * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
-   * cannot be used to manage policies for BigQuery, Cloud Pub/Sub and any external Google Cloud
-   * Platform resources synced to Cloud Data Catalog.
+   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
+   * resources synced to Data Catalog.
    *
    * <p>A caller is not required to have Google IAM permission to make this request.
    *
@@ -2842,8 +2832,8 @@ public class DataCatalogClient implements BackgroundResource {
    * permissions is returned (We don't return a `NOT_FOUND` error).
    *
    * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
-   * cannot be used to manage policies for BigQuery, Cloud Pub/Sub and any external Google Cloud
-   * Platform resources synced to Cloud Data Catalog.
+   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
+   * resources synced to Data Catalog.
    *
    * <p>A caller is not required to have Google IAM permission to make this request.
    *
@@ -2874,8 +2864,8 @@ public class DataCatalogClient implements BackgroundResource {
    * permissions is returned (We don't return a `NOT_FOUND` error).
    *
    * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
-   * cannot be used to manage policies for BigQuery, Cloud Pub/Sub and any external Google Cloud
-   * Platform resources synced to Cloud Data Catalog.
+   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
+   * resources synced to Data Catalog.
    *
    * <p>A caller is not required to have Google IAM permission to make this request.
    *

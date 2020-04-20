@@ -99,6 +99,11 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
               isRequired_ = input.readBool();
               break;
             }
+          case 40:
+            {
+              order_ = input.readInt32();
+              break;
+            }
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -308,6 +313,26 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     return isRequired_;
   }
 
+  public static final int ORDER_FIELD_NUMBER = 5;
+  private int order_;
+  /**
+   *
+   *
+   * <pre>
+   * The order of this field with respect to other fields in this tag
+   * template.  A higher value indicates a more important field. The value can
+   * be negative. Multiple fields can have the same order, and field orders
+   * within a tag do not have to be sequential.
+   * </pre>
+   *
+   * <code>int32 order = 5;</code>
+   *
+   * @return The order.
+   */
+  public int getOrder() {
+    return order_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -331,6 +356,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     if (isRequired_ != false) {
       output.writeBool(3, isRequired_);
     }
+    if (order_ != 0) {
+      output.writeInt32(5, order_);
+    }
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
     }
@@ -351,6 +379,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     }
     if (isRequired_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, isRequired_);
+    }
+    if (order_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, order_);
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
@@ -378,6 +409,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       if (!getType().equals(other.getType())) return false;
     }
     if (getIsRequired() != other.getIsRequired()) return false;
+    if (getOrder() != other.getOrder()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -399,6 +431,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + IS_REQUIRED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsRequired());
+    hash = (37 * hash) + ORDER_FIELD_NUMBER;
+    hash = (53 * hash) + getOrder();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -557,6 +591,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       }
       isRequired_ = false;
 
+      order_ = 0;
+
       return this;
     }
 
@@ -592,6 +628,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
         result.type_ = typeBuilder_.build();
       }
       result.isRequired_ = isRequired_;
+      result.order_ = order_;
       onBuilt();
       return result;
     }
@@ -655,6 +692,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       }
       if (other.getIsRequired() != false) {
         setIsRequired(other.getIsRequired());
+      }
+      if (other.getOrder() != 0) {
+        setOrder(other.getOrder());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1163,6 +1203,66 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     public Builder clearIsRequired() {
 
       isRequired_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int order_;
+    /**
+     *
+     *
+     * <pre>
+     * The order of this field with respect to other fields in this tag
+     * template.  A higher value indicates a more important field. The value can
+     * be negative. Multiple fields can have the same order, and field orders
+     * within a tag do not have to be sequential.
+     * </pre>
+     *
+     * <code>int32 order = 5;</code>
+     *
+     * @return The order.
+     */
+    public int getOrder() {
+      return order_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The order of this field with respect to other fields in this tag
+     * template.  A higher value indicates a more important field. The value can
+     * be negative. Multiple fields can have the same order, and field orders
+     * within a tag do not have to be sequential.
+     * </pre>
+     *
+     * <code>int32 order = 5;</code>
+     *
+     * @param value The order to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrder(int value) {
+
+      order_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The order of this field with respect to other fields in this tag
+     * template.  A higher value indicates a more important field. The value can
+     * be negative. Multiple fields can have the same order, and field orders
+     * within a tag do not have to be sequential.
+     * </pre>
+     *
+     * <code>int32 order = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrder() {
+
+      order_ = 0;
       onChanged();
       return this;
     }

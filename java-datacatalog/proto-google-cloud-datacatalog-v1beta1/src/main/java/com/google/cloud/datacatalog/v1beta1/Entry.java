@@ -24,7 +24,7 @@ package com.google.cloud.datacatalog.v1beta1;
  * <pre>
  * Entry Metadata.
  * A Data Catalog Entry resource represents another resource in Google
- * Cloud Platform (such as a BigQuery dataset or a Cloud Pub/Sub topic), or
+ * Cloud Platform (such as a BigQuery dataset or a Pub/Sub topic), or
  * outside of Google Cloud Platform. Clients can use the `linked_resource` field
  * in the Entry resource to refer to the original resource ID of the source
  * system.
@@ -642,8 +642,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This field indicates the entry's source system that Data
-   * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>
@@ -662,8 +662,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This field indicates the entry's source system that Data
-   * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>
@@ -1064,10 +1064,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying resource, not about this Data
-   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-   * entries with user_specified_type, this field is optional and defaults to an
-   * empty timestamp.
+   * Output only. Timestamps about the underlying resource, not about this Data Catalog
+   * entry. Output only when Entry is of type in the EntryType enum. For entries
+   * with user_specified_type, this field is optional and defaults to an empty
+   * timestamp.
    * </pre>
    *
    * <code>
@@ -1083,10 +1083,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying resource, not about this Data
-   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-   * entries with user_specified_type, this field is optional and defaults to an
-   * empty timestamp.
+   * Output only. Timestamps about the underlying resource, not about this Data Catalog
+   * entry. Output only when Entry is of type in the EntryType enum. For entries
+   * with user_specified_type, this field is optional and defaults to an empty
+   * timestamp.
    * </pre>
    *
    * <code>
@@ -1104,10 +1104,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying resource, not about this Data
-   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-   * entries with user_specified_type, this field is optional and defaults to an
-   * empty timestamp.
+   * Output only. Timestamps about the underlying resource, not about this Data Catalog
+   * entry. Output only when Entry is of type in the EntryType enum. For entries
+   * with user_specified_type, this field is optional and defaults to an empty
+   * timestamp.
    * </pre>
    *
    * <code>
@@ -1468,7 +1468,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Entry Metadata.
    * A Data Catalog Entry resource represents another resource in Google
-   * Cloud Platform (such as a BigQuery dataset or a Cloud Pub/Sub topic), or
+   * Cloud Platform (such as a BigQuery dataset or a Pub/Sub topic), or
    * outside of Google Cloud Platform. Clients can use the `linked_resource` field
    * in the Entry resource to refer to the original resource ID of the source
    * system.
@@ -2348,8 +2348,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This field indicates the entry's source system that Data
-     * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>
@@ -2368,8 +2368,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This field indicates the entry's source system that Data
-     * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>
@@ -2389,8 +2389,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This field indicates the entry's source system that Data
-     * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>
@@ -2415,8 +2415,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This field indicates the entry's source system that Data
-     * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>
@@ -2440,8 +2440,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This field indicates the entry's source system that Data
-     * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>
@@ -3705,10 +3705,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data
-     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-     * entries with user_specified_type, this field is optional and defaults to an
-     * empty timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data Catalog
+     * entry. Output only when Entry is of type in the EntryType enum. For entries
+     * with user_specified_type, this field is optional and defaults to an empty
+     * timestamp.
      * </pre>
      *
      * <code>
@@ -3724,10 +3724,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data
-     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-     * entries with user_specified_type, this field is optional and defaults to an
-     * empty timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data Catalog
+     * entry. Output only when Entry is of type in the EntryType enum. For entries
+     * with user_specified_type, this field is optional and defaults to an empty
+     * timestamp.
      * </pre>
      *
      * <code>
@@ -3749,10 +3749,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data
-     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-     * entries with user_specified_type, this field is optional and defaults to an
-     * empty timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data Catalog
+     * entry. Output only when Entry is of type in the EntryType enum. For entries
+     * with user_specified_type, this field is optional and defaults to an empty
+     * timestamp.
      * </pre>
      *
      * <code>
@@ -3777,10 +3777,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data
-     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-     * entries with user_specified_type, this field is optional and defaults to an
-     * empty timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data Catalog
+     * entry. Output only when Entry is of type in the EntryType enum. For entries
+     * with user_specified_type, this field is optional and defaults to an empty
+     * timestamp.
      * </pre>
      *
      * <code>
@@ -3802,10 +3802,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data
-     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-     * entries with user_specified_type, this field is optional and defaults to an
-     * empty timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data Catalog
+     * entry. Output only when Entry is of type in the EntryType enum. For entries
+     * with user_specified_type, this field is optional and defaults to an empty
+     * timestamp.
      * </pre>
      *
      * <code>
@@ -3835,10 +3835,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data
-     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-     * entries with user_specified_type, this field is optional and defaults to an
-     * empty timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data Catalog
+     * entry. Output only when Entry is of type in the EntryType enum. For entries
+     * with user_specified_type, this field is optional and defaults to an empty
+     * timestamp.
      * </pre>
      *
      * <code>
@@ -3860,10 +3860,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data
-     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-     * entries with user_specified_type, this field is optional and defaults to an
-     * empty timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data Catalog
+     * entry. Output only when Entry is of type in the EntryType enum. For entries
+     * with user_specified_type, this field is optional and defaults to an empty
+     * timestamp.
      * </pre>
      *
      * <code>
@@ -3880,10 +3880,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data
-     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-     * entries with user_specified_type, this field is optional and defaults to an
-     * empty timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data Catalog
+     * entry. Output only when Entry is of type in the EntryType enum. For entries
+     * with user_specified_type, this field is optional and defaults to an empty
+     * timestamp.
      * </pre>
      *
      * <code>
@@ -3904,10 +3904,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data
-     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
-     * entries with user_specified_type, this field is optional and defaults to an
-     * empty timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data Catalog
+     * entry. Output only when Entry is of type in the EntryType enum. For entries
+     * with user_specified_type, this field is optional and defaults to an empty
+     * timestamp.
      * </pre>
      *
      * <code>

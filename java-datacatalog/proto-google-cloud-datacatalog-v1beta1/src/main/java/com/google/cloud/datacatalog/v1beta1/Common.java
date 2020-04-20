@@ -39,10 +39,13 @@ public final class Common {
           + "n.proto\022 google.cloud.datacatalog.v1beta"
           + "1*U\n\020IntegratedSystem\022!\n\035INTEGRATED_SYST"
           + "EM_UNSPECIFIED\020\000\022\014\n\010BIGQUERY\020\001\022\020\n\014CLOUD_"
-          + "PUBSUB\020\002Bx\n$com.google.cloud.datacatalog"
-          + ".v1beta1P\001ZKgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/datacatalog/v1beta1;data"
-          + "catalog\370\001\001b\006proto3"
+          + "PUBSUB\020\002B\344\001\n$com.google.cloud.datacatalo"
+          + "g.v1beta1P\001ZKgoogle.golang.org/genproto/"
+          + "googleapis/cloud/datacatalog/v1beta1;dat"
+          + "acatalog\370\001\001\252\002 Google.Cloud.DataCatalog.V"
+          + "1Beta1\312\002 Google\\Cloud\\DataCatalog\\V1beta"
+          + "1\352\002#Google::Cloud::DataCatalog::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

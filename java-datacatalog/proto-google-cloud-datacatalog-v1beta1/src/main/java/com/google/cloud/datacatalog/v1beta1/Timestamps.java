@@ -48,10 +48,13 @@ public final class Timestamps {
           + "le.protobuf.Timestamp\022/\n\013update_time\030\002 \001"
           + "(\0132\032.google.protobuf.Timestamp\0224\n\013expire"
           + "_time\030\003 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003Bx\n$com.google.cloud.datacatalog.v1b"
-          + "eta1P\001ZKgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/datacatalog/v1beta1;datacata"
-          + "log\370\001\001b\006proto3"
+          + "\003\340A\003B\344\001\n$com.google.cloud.datacatalog.v1"
+          + "beta1P\001ZKgoogle.golang.org/genproto/goog"
+          + "leapis/cloud/datacatalog/v1beta1;datacat"
+          + "alog\370\001\001\252\002 Google.Cloud.DataCatalog.V1Bet"
+          + "a1\312\002 Google\\Cloud\\DataCatalog\\V1beta1\352\002#"
+          + "Google::Cloud::DataCatalog::V1beta1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

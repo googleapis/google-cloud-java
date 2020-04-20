@@ -27,7 +27,10 @@ public interface SearchCatalogRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The scope of this search request.
+   * Required. The scope of this search request. A `scope` that has empty
+   * `include_org_ids`, `include_project_ids` AND false
+   * `include_gcp_public_datasets` is considered invalid. Data Catalog will
+   * return an error in such a case.
    * </pre>
    *
    * <code>
@@ -41,7 +44,10 @@ public interface SearchCatalogRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The scope of this search request.
+   * Required. The scope of this search request. A `scope` that has empty
+   * `include_org_ids`, `include_project_ids` AND false
+   * `include_gcp_public_datasets` is considered invalid. Data Catalog will
+   * return an error in such a case.
    * </pre>
    *
    * <code>
@@ -55,7 +61,10 @@ public interface SearchCatalogRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The scope of this search request.
+   * Required. The scope of this search request. A `scope` that has empty
+   * `include_org_ids`, `include_project_ids` AND false
+   * `include_gcp_public_datasets` is considered invalid. Data Catalog will
+   * return an error in such a case.
    * </pre>
    *
    * <code>
@@ -68,15 +77,15 @@ public interface SearchCatalogRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be
-   * non-empty.
+   * Required. The query string in search query syntax. The query must be non-empty.
    * Query strings can be simple as "x" or more qualified as:
    * * name:x
    * * column:x
    * * description:y
    * Note: Query tokens need to have a minimum of 3 characters for substring
    * matching to work correctly. See [Data Catalog Search
-   * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
+   * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
+   * for more information.
    * </pre>
    *
    * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -88,15 +97,15 @@ public interface SearchCatalogRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be
-   * non-empty.
+   * Required. The query string in search query syntax. The query must be non-empty.
    * Query strings can be simple as "x" or more qualified as:
    * * name:x
    * * column:x
    * * description:y
    * Note: Query tokens need to have a minimum of 3 characters for substring
    * matching to work correctly. See [Data Catalog Search
-   * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
+   * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
+   * for more information.
    * </pre>
    *
    * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -124,8 +133,8 @@ public interface SearchCatalogRequestOrBuilder
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
-   * which indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
+   * indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
@@ -141,8 +150,8 @@ public interface SearchCatalogRequestOrBuilder
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
-   * which indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
+   * indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.

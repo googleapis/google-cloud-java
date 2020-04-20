@@ -905,11 +905,13 @@ public class DataCatalogClientTest {
     String name = "name3373707";
     String displayName = "displayName1615086568";
     boolean isRequired = true;
+    int order = 106006350;
     TagTemplateField expectedResponse =
         TagTemplateField.newBuilder()
             .setName(name)
             .setDisplayName(displayName)
             .setIsRequired(isRequired)
+            .setOrder(order)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -961,11 +963,13 @@ public class DataCatalogClientTest {
     String name2 = "name2-1052831874";
     String displayName = "displayName1615086568";
     boolean isRequired = true;
+    int order = 106006350;
     TagTemplateField expectedResponse =
         TagTemplateField.newBuilder()
             .setName(name2)
             .setDisplayName(displayName)
             .setIsRequired(isRequired)
+            .setOrder(order)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -1017,11 +1021,13 @@ public class DataCatalogClientTest {
     String name2 = "name2-1052831874";
     String displayName = "displayName1615086568";
     boolean isRequired = true;
+    int order = 106006350;
     TagTemplateField expectedResponse =
         TagTemplateField.newBuilder()
             .setName(name2)
             .setDisplayName(displayName)
             .setIsRequired(isRequired)
+            .setOrder(order)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 

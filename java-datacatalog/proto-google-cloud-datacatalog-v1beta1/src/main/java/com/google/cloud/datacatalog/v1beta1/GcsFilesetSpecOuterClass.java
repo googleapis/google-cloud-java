@@ -55,10 +55,13 @@ public final class GcsFilesetSpecOuterClass {
           + "\022\026\n\tfile_path\030\001 \001(\tB\003\340A\002\022O\n\016gcs_timestam"
           + "ps\030\002 \001(\01322.google.cloud.datacatalog.v1be"
           + "ta1.SystemTimestampsB\003\340A\003\022\027\n\nsize_bytes\030"
-          + "\004 \001(\003B\003\340A\003Bx\n$com.google.cloud.datacatal"
-          + "og.v1beta1P\001ZKgoogle.golang.org/genproto"
-          + "/googleapis/cloud/datacatalog/v1beta1;da"
-          + "tacatalog\370\001\001b\006proto3"
+          + "\004 \001(\003B\003\340A\003B\344\001\n$com.google.cloud.datacata"
+          + "log.v1beta1P\001ZKgoogle.golang.org/genprot"
+          + "o/googleapis/cloud/datacatalog/v1beta1;d"
+          + "atacatalog\370\001\001\252\002 Google.Cloud.DataCatalog"
+          + ".V1Beta1\312\002 Google\\Cloud\\DataCatalog\\V1be"
+          + "ta1\352\002#Google::Cloud::DataCatalog::V1beta"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

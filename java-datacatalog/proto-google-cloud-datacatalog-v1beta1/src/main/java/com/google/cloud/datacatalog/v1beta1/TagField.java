@@ -130,6 +130,11 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
               kindCase_ = 6;
               break;
             }
+          case 56:
+            {
+              order_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1111,6 +1116,27 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.datacatalog.v1beta1.TagField.EnumValue.getDefaultInstance();
   }
 
+  public static final int ORDER_FIELD_NUMBER = 7;
+  private int order_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The order of this field with respect to other fields in this tag. It can be
+   * set in [Tag][google.cloud.datacatalog.v1beta1.TagTemplateField.order]. For
+   * example, a higher value can indicate a more important field. The value can
+   * be negative. Multiple fields can have the same order, and field orders
+   * within a tag do not have to be sequential.
+   * </pre>
+   *
+   * <code>int32 order = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The order.
+   */
+  public int getOrder() {
+    return order_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1142,6 +1168,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     }
     if (kindCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.datacatalog.v1beta1.TagField.EnumValue) kind_);
+    }
+    if (order_ != 0) {
+      output.writeInt32(7, order_);
     }
     unknownFields.writeTo(output);
   }
@@ -1178,6 +1207,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.datacatalog.v1beta1.TagField.EnumValue) kind_);
     }
+    if (order_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, order_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1195,6 +1227,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.datacatalog.v1beta1.TagField) obj;
 
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (getOrder() != other.getOrder()) return false;
     if (!getKindCase().equals(other.getKindCase())) return false;
     switch (kindCase_) {
       case 2:
@@ -1229,6 +1262,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + ORDER_FIELD_NUMBER;
+    hash = (53 * hash) + getOrder();
     switch (kindCase_) {
       case 2:
         hash = (37 * hash) + DOUBLE_VALUE_FIELD_NUMBER;
@@ -1404,6 +1439,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       displayName_ = "";
 
+      order_ = 0;
+
       kindCase_ = 0;
       kind_ = null;
       return this;
@@ -1457,6 +1494,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
           result.kind_ = enumValueBuilder_.build();
         }
       }
+      result.order_ = order_;
       result.kindCase_ = kindCase_;
       onBuilt();
       return result;
@@ -1510,6 +1548,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
         onChanged();
+      }
+      if (other.getOrder() != 0) {
+        setOrder(other.getOrder());
       }
       switch (other.getKindCase()) {
         case DOUBLE_VALUE:
@@ -2336,6 +2377,69 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return enumValueBuilder_;
+    }
+
+    private int order_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The order of this field with respect to other fields in this tag. It can be
+     * set in [Tag][google.cloud.datacatalog.v1beta1.TagTemplateField.order]. For
+     * example, a higher value can indicate a more important field. The value can
+     * be negative. Multiple fields can have the same order, and field orders
+     * within a tag do not have to be sequential.
+     * </pre>
+     *
+     * <code>int32 order = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The order.
+     */
+    public int getOrder() {
+      return order_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The order of this field with respect to other fields in this tag. It can be
+     * set in [Tag][google.cloud.datacatalog.v1beta1.TagTemplateField.order]. For
+     * example, a higher value can indicate a more important field. The value can
+     * be negative. Multiple fields can have the same order, and field orders
+     * within a tag do not have to be sequential.
+     * </pre>
+     *
+     * <code>int32 order = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The order to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrder(int value) {
+
+      order_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The order of this field with respect to other fields in this tag. It can be
+     * set in [Tag][google.cloud.datacatalog.v1beta1.TagTemplateField.order]. For
+     * example, a higher value can indicate a more important field. The value can
+     * be negative. Multiple fields can have the same order, and field orders
+     * within a tag do not have to be sequential.
+     * </pre>
+     *
+     * <code>int32 order = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrder() {
+
+      order_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
