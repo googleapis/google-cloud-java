@@ -1145,6 +1145,33 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * The HTTP request method to use for the check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for requestMethod.
+     */
+    int getRequestMethodValue();
+    /**
+     *
+     *
+     * <pre>
+     * The HTTP request method to use for the check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;
+     * </code>
+     *
+     * @return The requestMethod.
+     */
+    com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod getRequestMethod();
+
+    /**
+     *
+     *
+     * <pre>
      * If `true`, use HTTPS instead of HTTP to run the check.
      * </pre>
      *
@@ -1356,6 +1383,31 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * The content type to use for the check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;</code>
+     *
+     * @return The enum numeric value on the wire for contentType.
+     */
+    int getContentTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * The content type to use for the check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;</code>
+     *
+     * @return The contentType.
+     */
+    com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType getContentType();
+
+    /**
+     *
+     *
+     * <pre>
      * Boolean specifying whether to include SSL certificate validation as a
      * part of the Uptime check. Only applies to checks where
      * `monitored_resource` is set to `uptime_url`. If `use_ssl` is `false`,
@@ -1367,6 +1419,23 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * @return The validateSsl.
      */
     boolean getValidateSsl();
+
+    /**
+     *
+     *
+     * <pre>
+     * The request body associated with the HTTP request. If `content_type` is
+     * `URL_ENCODED`, the body passed in must be URL-encoded. Users can provide
+     * a `Content-Length` header via the `headers` field or the API will do
+     * so. The maximum byte size is 1 megabyte. Note: As with all `bytes` fields
+     * JSON representations are base64 encoded.
+     * </pre>
+     *
+     * <code>bytes body = 10;</code>
+     *
+     * @return The body.
+     */
+    com.google.protobuf.ByteString getBody();
   }
   /**
    *
@@ -1388,7 +1457,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private HttpCheck() {
+      requestMethod_ = 0;
       path_ = "";
+      contentType_ = 0;
+      body_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -1482,6 +1554,25 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 validateSsl_ = input.readBool();
                 break;
               }
+            case 64:
+              {
+                int rawValue = input.readEnum();
+
+                requestMethod_ = rawValue;
+                break;
+              }
+            case 72:
+              {
+                int rawValue = input.readEnum();
+
+                contentType_ = rawValue;
+                break;
+              }
+            case 82:
+              {
+                body_ = input.readBytes();
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1525,6 +1616,302 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           .ensureFieldAccessorsInitialized(
               com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.class,
               com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The HTTP request method options.
+     * </pre>
+     *
+     * Protobuf enum {@code google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod}
+     */
+    public enum RequestMethod implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * No request method specified.
+       * </pre>
+       *
+       * <code>METHOD_UNSPECIFIED = 0;</code>
+       */
+      METHOD_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * GET request.
+       * </pre>
+       *
+       * <code>GET = 1;</code>
+       */
+      GET(1),
+      /**
+       *
+       *
+       * <pre>
+       * POST request.
+       * </pre>
+       *
+       * <code>POST = 2;</code>
+       */
+      POST(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * No request method specified.
+       * </pre>
+       *
+       * <code>METHOD_UNSPECIFIED = 0;</code>
+       */
+      public static final int METHOD_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * GET request.
+       * </pre>
+       *
+       * <code>GET = 1;</code>
+       */
+      public static final int GET_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * POST request.
+       * </pre>
+       *
+       * <code>POST = 2;</code>
+       */
+      public static final int POST_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static RequestMethod valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static RequestMethod forNumber(int value) {
+        switch (value) {
+          case 0:
+            return METHOD_UNSPECIFIED;
+          case 1:
+            return GET;
+          case 2:
+            return POST;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<RequestMethod> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<RequestMethod>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<RequestMethod>() {
+                public RequestMethod findValueByNumber(int number) {
+                  return RequestMethod.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final RequestMethod[] VALUES = values();
+
+      public static RequestMethod valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private RequestMethod(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Header options corresponding to the Content-Type of the body in HTTP
+     * requests. Note that a `Content-Type` header cannot be present in the
+     * `headers` field if this field is specified.
+     * </pre>
+     *
+     * Protobuf enum {@code google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType}
+     */
+    public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * No content type specified. If the request method is POST, an
+       * unspecified content type results in a check creation rejection.
+       * </pre>
+       *
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * `body` is in URL-encoded form. Equivalent to setting the `Content-Type`
+       * to `application/x-www-form-urlencoded` in the HTTP request.
+       * </pre>
+       *
+       * <code>URL_ENCODED = 1;</code>
+       */
+      URL_ENCODED(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * No content type specified. If the request method is POST, an
+       * unspecified content type results in a check creation rejection.
+       * </pre>
+       *
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * `body` is in URL-encoded form. Equivalent to setting the `Content-Type`
+       * to `application/x-www-form-urlencoded` in the HTTP request.
+       * </pre>
+       *
+       * <code>URL_ENCODED = 1;</code>
+       */
+      public static final int URL_ENCODED_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ContentType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ContentType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return TYPE_UNSPECIFIED;
+          case 1:
+            return URL_ENCODED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ContentType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<ContentType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ContentType>() {
+            public ContentType findValueByNumber(int number) {
+              return ContentType.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final ContentType[] VALUES = values();
+
+      public static ContentType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ContentType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType)
     }
 
     public interface BasicAuthenticationOrBuilder
@@ -2413,6 +2800,45 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
     }
 
+    public static final int REQUEST_METHOD_FIELD_NUMBER = 8;
+    private int requestMethod_;
+    /**
+     *
+     *
+     * <pre>
+     * The HTTP request method to use for the check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for requestMethod.
+     */
+    public int getRequestMethodValue() {
+      return requestMethod_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The HTTP request method to use for the check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;
+     * </code>
+     *
+     * @return The requestMethod.
+     */
+    public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod getRequestMethod() {
+      @SuppressWarnings("deprecation")
+      com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod result =
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod.valueOf(
+              requestMethod_);
+      return result == null
+          ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod.UNRECOGNIZED
+          : result;
+    }
+
     public static final int USE_SSL_FIELD_NUMBER = 1;
     private boolean useSsl_;
     /**
@@ -2702,6 +3128,42 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       return map.get(key);
     }
 
+    public static final int CONTENT_TYPE_FIELD_NUMBER = 9;
+    private int contentType_;
+    /**
+     *
+     *
+     * <pre>
+     * The content type to use for the check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;</code>
+     *
+     * @return The enum numeric value on the wire for contentType.
+     */
+    public int getContentTypeValue() {
+      return contentType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The content type to use for the check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;</code>
+     *
+     * @return The contentType.
+     */
+    public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType getContentType() {
+      @SuppressWarnings("deprecation")
+      com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType result =
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType.valueOf(contentType_);
+      return result == null
+          ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType.UNRECOGNIZED
+          : result;
+    }
+
     public static final int VALIDATE_SSL_FIELD_NUMBER = 7;
     private boolean validateSsl_;
     /**
@@ -2720,6 +3182,27 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     public boolean getValidateSsl() {
       return validateSsl_;
+    }
+
+    public static final int BODY_FIELD_NUMBER = 10;
+    private com.google.protobuf.ByteString body_;
+    /**
+     *
+     *
+     * <pre>
+     * The request body associated with the HTTP request. If `content_type` is
+     * `URL_ENCODED`, the body passed in must be URL-encoded. Users can provide
+     * a `Content-Length` header via the `headers` field or the API will do
+     * so. The maximum byte size is 1 megabyte. Note: As with all `bytes` fields
+     * JSON representations are base64 encoded.
+     * </pre>
+     *
+     * <code>bytes body = 10;</code>
+     *
+     * @return The body.
+     */
+    public com.google.protobuf.ByteString getBody() {
+      return body_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2755,6 +3238,19 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           output, internalGetHeaders(), HeadersDefaultEntryHolder.defaultEntry, 6);
       if (validateSsl_ != false) {
         output.writeBool(7, validateSsl_);
+      }
+      if (requestMethod_
+          != com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod.METHOD_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(8, requestMethod_);
+      }
+      if (contentType_
+          != com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType.TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(9, contentType_);
+      }
+      if (!body_.isEmpty()) {
+        output.writeBytes(10, body_);
       }
       unknownFields.writeTo(output);
     }
@@ -2793,6 +3289,19 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (validateSsl_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, validateSsl_);
       }
+      if (requestMethod_
+          != com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod.METHOD_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, requestMethod_);
+      }
+      if (contentType_
+          != com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType.TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, contentType_);
+      }
+      if (!body_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(10, body_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2809,6 +3318,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       com.google.monitoring.v3.UptimeCheckConfig.HttpCheck other =
           (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) obj;
 
+      if (requestMethod_ != other.requestMethod_) return false;
       if (getUseSsl() != other.getUseSsl()) return false;
       if (!getPath().equals(other.getPath())) return false;
       if (getPort() != other.getPort()) return false;
@@ -2818,7 +3328,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       if (getMaskHeaders() != other.getMaskHeaders()) return false;
       if (!internalGetHeaders().equals(other.internalGetHeaders())) return false;
+      if (contentType_ != other.contentType_) return false;
       if (getValidateSsl() != other.getValidateSsl()) return false;
+      if (!getBody().equals(other.getBody())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2830,6 +3342,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REQUEST_METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + requestMethod_;
       hash = (37 * hash) + USE_SSL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseSsl());
       hash = (37 * hash) + PATH_FIELD_NUMBER;
@@ -2846,8 +3360,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         hash = (37 * hash) + HEADERS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetHeaders().hashCode();
       }
+      hash = (37 * hash) + CONTENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + contentType_;
       hash = (37 * hash) + VALIDATE_SSL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateSsl());
+      hash = (37 * hash) + BODY_FIELD_NUMBER;
+      hash = (53 * hash) + getBody().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3016,6 +3534,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        requestMethod_ = 0;
+
         useSsl_ = false;
 
         path_ = "";
@@ -3031,7 +3551,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         maskHeaders_ = false;
 
         internalGetMutableHeaders().clear();
+        contentType_ = 0;
+
         validateSsl_ = false;
+
+        body_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
       }
@@ -3061,6 +3585,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         com.google.monitoring.v3.UptimeCheckConfig.HttpCheck result =
             new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck(this);
         int from_bitField0_ = bitField0_;
+        result.requestMethod_ = requestMethod_;
         result.useSsl_ = useSsl_;
         result.path_ = path_;
         result.port_ = port_;
@@ -3072,7 +3597,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         result.maskHeaders_ = maskHeaders_;
         result.headers_ = internalGetHeaders();
         result.headers_.makeImmutable();
+        result.contentType_ = contentType_;
         result.validateSsl_ = validateSsl_;
+        result.body_ = body_;
         onBuilt();
         return result;
       }
@@ -3125,6 +3652,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public Builder mergeFrom(com.google.monitoring.v3.UptimeCheckConfig.HttpCheck other) {
         if (other == com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.getDefaultInstance())
           return this;
+        if (other.requestMethod_ != 0) {
+          setRequestMethodValue(other.getRequestMethodValue());
+        }
         if (other.getUseSsl() != false) {
           setUseSsl(other.getUseSsl());
         }
@@ -3142,8 +3672,14 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           setMaskHeaders(other.getMaskHeaders());
         }
         internalGetMutableHeaders().mergeFrom(other.internalGetHeaders());
+        if (other.contentType_ != 0) {
+          setContentTypeValue(other.getContentTypeValue());
+        }
         if (other.getValidateSsl() != false) {
           setValidateSsl(other.getValidateSsl());
+        }
+        if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
+          setBody(other.getBody());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3176,6 +3712,103 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
 
       private int bitField0_;
+
+      private int requestMethod_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The HTTP request method to use for the check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for requestMethod.
+       */
+      public int getRequestMethodValue() {
+        return requestMethod_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The HTTP request method to use for the check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for requestMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestMethodValue(int value) {
+        requestMethod_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The HTTP request method to use for the check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;
+       * </code>
+       *
+       * @return The requestMethod.
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod getRequestMethod() {
+        @SuppressWarnings("deprecation")
+        com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod result =
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod.valueOf(
+                requestMethod_);
+        return result == null
+            ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The HTTP request method to use for the check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;
+       * </code>
+       *
+       * @param value The requestMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestMethod(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        requestMethod_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The HTTP request method to use for the check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod request_method = 8;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRequestMethod() {
+
+        requestMethod_ = 0;
+        onChanged();
+        return this;
+      }
 
       private boolean useSsl_;
       /**
@@ -3897,6 +4530,102 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         return this;
       }
 
+      private int contentType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The content type to use for the check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for contentType.
+       */
+      public int getContentTypeValue() {
+        return contentType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The content type to use for the check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for contentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentTypeValue(int value) {
+        contentType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The content type to use for the check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;
+       * </code>
+       *
+       * @return The contentType.
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType getContentType() {
+        @SuppressWarnings("deprecation")
+        com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType result =
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType.valueOf(contentType_);
+        return result == null
+            ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The content type to use for the check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;
+       * </code>
+       *
+       * @param value The contentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentType(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        contentType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The content type to use for the check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType content_type = 9;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearContentType() {
+
+        contentType_ = 0;
+        onChanged();
+        return this;
+      }
+
       private boolean validateSsl_;
       /**
        *
@@ -3953,6 +4682,72 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public Builder clearValidateSsl() {
 
         validateSsl_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       *
+       *
+       * <pre>
+       * The request body associated with the HTTP request. If `content_type` is
+       * `URL_ENCODED`, the body passed in must be URL-encoded. Users can provide
+       * a `Content-Length` header via the `headers` field or the API will do
+       * so. The maximum byte size is 1 megabyte. Note: As with all `bytes` fields
+       * JSON representations are base64 encoded.
+       * </pre>
+       *
+       * <code>bytes body = 10;</code>
+       *
+       * @return The body.
+       */
+      public com.google.protobuf.ByteString getBody() {
+        return body_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The request body associated with the HTTP request. If `content_type` is
+       * `URL_ENCODED`, the body passed in must be URL-encoded. Users can provide
+       * a `Content-Length` header via the `headers` field or the API will do
+       * so. The maximum byte size is 1 megabyte. Note: As with all `bytes` fields
+       * JSON representations are base64 encoded.
+       * </pre>
+       *
+       * <code>bytes body = 10;</code>
+       *
+       * @param value The body to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBody(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        body_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The request body associated with the HTTP request. If `content_type` is
+       * `URL_ENCODED`, the body passed in must be URL-encoded. Users can provide
+       * a `Content-Length` header via the `headers` field or the API will do
+       * so. The maximum byte size is 1 megabyte. Note: As with all `bytes` fields
+       * JSON representations are base64 encoded.
+       * </pre>
+       *
+       * <code>bytes body = 10;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBody() {
+
+        body_ = getDefaultInstance().getBody();
         onChanged();
         return this;
       }

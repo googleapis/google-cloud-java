@@ -81,7 +81,7 @@ public final class UptimeProto {
           + " \001(\t\022\027\n\017peer_project_id\030\006 \001(\t\022:\n\005state\030\007"
           + " \001(\0162+.google.monitoring.v3.InternalChec"
           + "ker.State\"3\n\005State\022\017\n\013UNSPECIFIED\020\000\022\014\n\010C"
-          + "REATING\020\001\022\013\n\007RUNNING\020\002:\002\030\001\"\315\r\n\021UptimeChe"
+          + "REATING\020\001\022\013\n\007RUNNING\020\002:\002\030\001\"\373\017\n\021UptimeChe"
           + "ckConfig\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002"
           + " \001(\t\022;\n\022monitored_resource\030\003 \001(\0132\035.googl"
           + "e.api.MonitoredResourceH\000\022O\n\016resource_gr"
@@ -101,44 +101,51 @@ public final class UptimeProto {
           + "3.InternalCheckerB\002\030\001\032a\n\rResourceGroup\022\020"
           + "\n\010group_id\030\001 \001(\t\022>\n\rresource_type\030\002 \001(\0162"
           + "\'.google.monitoring.v3.GroupResourceType"
-          + "\032\372\002\n\tHttpCheck\022\017\n\007use_ssl\030\001 \001(\010\022\014\n\004path\030"
-          + "\002 \001(\t\022\014\n\004port\030\003 \001(\005\022X\n\tauth_info\030\004 \001(\0132E"
+          + "\032\250\005\n\tHttpCheck\022W\n\016request_method\030\010 \001(\0162?"
           + ".google.monitoring.v3.UptimeCheckConfig."
-          + "HttpCheck.BasicAuthentication\022\024\n\014mask_he"
-          + "aders\030\005 \001(\010\022O\n\007headers\030\006 \003(\0132>.google.mo"
-          + "nitoring.v3.UptimeCheckConfig.HttpCheck."
-          + "HeadersEntry\022\024\n\014validate_ssl\030\007 \001(\010\0329\n\023Ba"
-          + "sicAuthentication\022\020\n\010username\030\001 \001(\t\022\020\n\010p"
-          + "assword\030\002 \001(\t\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001"
-          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032\030\n\010TcpCheck\022\014\n\004por"
-          + "t\030\001 \001(\005\032\230\002\n\016ContentMatcher\022\017\n\007content\030\001 "
-          + "\001(\t\022\\\n\007matcher\030\002 \001(\0162K.google.monitoring"
-          + ".v3.UptimeCheckConfig.ContentMatcher.Con"
-          + "tentMatcherOption\"\226\001\n\024ContentMatcherOpti"
-          + "on\022&\n\"CONTENT_MATCHER_OPTION_UNSPECIFIED"
-          + "\020\000\022\023\n\017CONTAINS_STRING\020\001\022\027\n\023NOT_CONTAINS_"
-          + "STRING\020\002\022\021\n\rMATCHES_REGEX\020\003\022\025\n\021NOT_MATCH"
-          + "ES_REGEX\020\004:\363\001\352A\357\001\n+monitoring.googleapis"
-          + ".com/UptimeCheckConfig\022;projects/{projec"
-          + "t}/uptimeCheckConfigs/{uptime_check_conf"
-          + "ig}\022Eorganizations/{organization}/uptime"
-          + "CheckConfigs/{uptime_check_config}\0229fold"
-          + "ers/{folder}/uptimeCheckConfigs/{uptime_"
-          + "check_config}\022\001*B\n\n\010resourceB\024\n\022check_re"
-          + "quest_type\"n\n\rUptimeCheckIp\0227\n\006region\030\001 "
-          + "\001(\0162\'.google.monitoring.v3.UptimeCheckRe"
-          + "gion\022\020\n\010location\030\002 \001(\t\022\022\n\nip_address\030\003 \001"
-          + "(\t*e\n\021UptimeCheckRegion\022\026\n\022REGION_UNSPEC"
-          + "IFIED\020\000\022\007\n\003USA\020\001\022\n\n\006EUROPE\020\002\022\021\n\rSOUTH_AM"
-          + "ERICA\020\003\022\020\n\014ASIA_PACIFIC\020\004*[\n\021GroupResour"
-          + "ceType\022\035\n\031RESOURCE_TYPE_UNSPECIFIED\020\000\022\014\n"
-          + "\010INSTANCE\020\001\022\031\n\025AWS_ELB_LOAD_BALANCER\020\002B\303"
-          + "\001\n\030com.google.monitoring.v3B\013UptimeProto"
-          + "P\001Z>google.golang.org/genproto/googleapi"
-          + "s/monitoring/v3;monitoring\252\002\032Google.Clou"
-          + "d.Monitoring.V3\312\002\032Google\\Cloud\\Monitorin"
-          + "g\\V3\352\002\035Google::Cloud::Monitoring::V3b\006pr"
-          + "oto3"
+          + "HttpCheck.RequestMethod\022\017\n\007use_ssl\030\001 \001(\010"
+          + "\022\014\n\004path\030\002 \001(\t\022\014\n\004port\030\003 \001(\005\022X\n\tauth_inf"
+          + "o\030\004 \001(\0132E.google.monitoring.v3.UptimeChe"
+          + "ckConfig.HttpCheck.BasicAuthentication\022\024"
+          + "\n\014mask_headers\030\005 \001(\010\022O\n\007headers\030\006 \003(\0132>."
+          + "google.monitoring.v3.UptimeCheckConfig.H"
+          + "ttpCheck.HeadersEntry\022S\n\014content_type\030\t "
+          + "\001(\0162=.google.monitoring.v3.UptimeCheckCo"
+          + "nfig.HttpCheck.ContentType\022\024\n\014validate_s"
+          + "sl\030\007 \001(\010\022\014\n\004body\030\n \001(\014\0329\n\023BasicAuthentic"
+          + "ation\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001("
+          + "\t\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+          + "\002 \001(\t:\0028\001\":\n\rRequestMethod\022\026\n\022METHOD_UNS"
+          + "PECIFIED\020\000\022\007\n\003GET\020\001\022\010\n\004POST\020\002\"4\n\013Content"
+          + "Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\017\n\013URL_ENCODE"
+          + "D\020\001\032\030\n\010TcpCheck\022\014\n\004port\030\001 \001(\005\032\230\002\n\016Conten"
+          + "tMatcher\022\017\n\007content\030\001 \001(\t\022\\\n\007matcher\030\002 \001"
+          + "(\0162K.google.monitoring.v3.UptimeCheckCon"
+          + "fig.ContentMatcher.ContentMatcherOption\""
+          + "\226\001\n\024ContentMatcherOption\022&\n\"CONTENT_MATC"
+          + "HER_OPTION_UNSPECIFIED\020\000\022\023\n\017CONTAINS_STR"
+          + "ING\020\001\022\027\n\023NOT_CONTAINS_STRING\020\002\022\021\n\rMATCHE"
+          + "S_REGEX\020\003\022\025\n\021NOT_MATCHES_REGEX\020\004:\363\001\352A\357\001\n"
+          + "+monitoring.googleapis.com/UptimeCheckCo"
+          + "nfig\022;projects/{project}/uptimeCheckConf"
+          + "igs/{uptime_check_config}\022Eorganizations"
+          + "/{organization}/uptimeCheckConfigs/{upti"
+          + "me_check_config}\0229folders/{folder}/uptim"
+          + "eCheckConfigs/{uptime_check_config}\022\001*B\n"
+          + "\n\010resourceB\024\n\022check_request_type\"n\n\rUpti"
+          + "meCheckIp\0227\n\006region\030\001 \001(\0162\'.google.monit"
+          + "oring.v3.UptimeCheckRegion\022\020\n\010location\030\002"
+          + " \001(\t\022\022\n\nip_address\030\003 \001(\t*e\n\021UptimeCheckR"
+          + "egion\022\026\n\022REGION_UNSPECIFIED\020\000\022\007\n\003USA\020\001\022\n"
+          + "\n\006EUROPE\020\002\022\021\n\rSOUTH_AMERICA\020\003\022\020\n\014ASIA_PA"
+          + "CIFIC\020\004*[\n\021GroupResourceType\022\035\n\031RESOURCE"
+          + "_TYPE_UNSPECIFIED\020\000\022\014\n\010INSTANCE\020\001\022\031\n\025AWS"
+          + "_ELB_LOAD_BALANCER\020\002B\303\001\n\030com.google.moni"
+          + "toring.v3B\013UptimeProtoP\001Z>google.golang."
+          + "org/genproto/googleapis/monitoring/v3;mo"
+          + "nitoring\252\002\032Google.Cloud.Monitoring.V3\312\002\032"
+          + "Google\\Cloud\\Monitoring\\V3\352\002\035Google::Clo"
+          + "ud::Monitoring::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -191,7 +198,16 @@ public final class UptimeProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_descriptor,
             new java.lang.String[] {
-              "UseSsl", "Path", "Port", "AuthInfo", "MaskHeaders", "Headers", "ValidateSsl",
+              "RequestMethod",
+              "UseSsl",
+              "Path",
+              "Port",
+              "AuthInfo",
+              "MaskHeaders",
+              "Headers",
+              "ContentType",
+              "ValidateSsl",
+              "Body",
             });
     internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_BasicAuthentication_descriptor =
         internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_descriptor
