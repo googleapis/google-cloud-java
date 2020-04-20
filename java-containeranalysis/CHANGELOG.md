@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.120.0](https://www.github.com/googleapis/java-containeranalysis/compare/v0.119.2...v0.120.0) (2020-04-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* This is binary breaking change as the method signatures for the IAM methods have been relaxed from IamResourceName to com.google.api.resourcenames.ResourceName (its parent).
+
+### Features
+
+* switch to ResourceName for IAM methods ([#125](https://www.github.com/googleapis/java-containeranalysis/issues/125)) ([3946bd5](https://www.github.com/googleapis/java-containeranalysis/commit/3946bd5e5787bd2f8c3933b00c386b854def2f8b))
+
+
+### Dependencies
+
+* update core dependencies ([#87](https://www.github.com/googleapis/java-containeranalysis/issues/87)) ([3abbb33](https://www.github.com/googleapis/java-containeranalysis/commit/3abbb334894c342874d77d2b316f89869ab492c7))
+* update dependency com.google.api:api-common to v1.9.0 ([#106](https://www.github.com/googleapis/java-containeranalysis/issues/106)) ([af917ba](https://www.github.com/googleapis/java-containeranalysis/commit/af917ba80ee61970d2e682b20fd344f087181479))
+* update dependency com.google.guava:guava-bom to v29 ([#119](https://www.github.com/googleapis/java-containeranalysis/issues/119)) ([e620ae3](https://www.github.com/googleapis/java-containeranalysis/commit/e620ae3385573a6780f2b0433209645afbce2f85))
+* update dependency io.grafeas:grafeas to v0.24.1 ([#115](https://www.github.com/googleapis/java-containeranalysis/issues/115)) ([53d1a94](https://www.github.com/googleapis/java-containeranalysis/commit/53d1a94f3944ca396378cfaffdc7eb7d18f4a577))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#96](https://www.github.com/googleapis/java-containeranalysis/issues/96)) ([3056889](https://www.github.com/googleapis/java-containeranalysis/commit/3056889586566e2f72025cf4072b8516151f1381))
+
 ### [0.119.2](https://www.github.com/googleapis/java-containeranalysis/compare/v0.119.1...v0.119.2) (2020-03-11)
 
 
