@@ -44,7 +44,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
- *   CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+ *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
  *   companyServiceClient.deleteCompany(name);
  * }
  * </code>
@@ -162,7 +162,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
    *   companyServiceClient.deleteCompany(name);
    * }
    * </code></pre>
@@ -188,7 +188,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
    *   companyServiceClient.deleteCompany(name.toString());
    * }
    * </code></pre>
@@ -213,7 +213,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
    *   DeleteCompanyRequest request = DeleteCompanyRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -236,7 +236,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
    *   DeleteCompanyRequest request = DeleteCompanyRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -394,7 +394,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
    *   Company response = companyServiceClient.getCompany(name);
    * }
    * </code></pre>
@@ -420,7 +420,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
    *   Company response = companyServiceClient.getCompany(name.toString());
    * }
    * </code></pre>
@@ -445,7 +445,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
    *   GetCompanyRequest request = GetCompanyRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -468,7 +468,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
    *   GetCompanyRequest request = GetCompanyRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();

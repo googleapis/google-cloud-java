@@ -144,8 +144,9 @@ public class ApplicationServiceClientTest {
         ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
     String externalId = "externalId-1153075697";
     String profile = "profile-309425751";
-    JobName job = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
-    CompanyName company = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+    JobName job = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
+    CompanyName company =
+        CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
     String outcomeNotes = "outcomeNotes-355961964";
     String jobTitleSnippet = "jobTitleSnippet-1100512972";
     Application expectedResponse =
@@ -202,8 +203,9 @@ public class ApplicationServiceClientTest {
         ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
     String externalId = "externalId-1153075697";
     String profile = "profile-309425751";
-    JobName job = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
-    CompanyName company = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+    JobName job = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
+    CompanyName company =
+        CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
     String outcomeNotes = "outcomeNotes-355961964";
     String jobTitleSnippet = "jobTitleSnippet-1100512972";
     Application expectedResponse =
@@ -259,8 +261,9 @@ public class ApplicationServiceClientTest {
         ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
     String externalId = "externalId-1153075697";
     String profile = "profile-309425751";
-    JobName job = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
-    CompanyName company = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+    JobName job = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
+    CompanyName company =
+        CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
     String outcomeNotes = "outcomeNotes-355961964";
     String jobTitleSnippet = "jobTitleSnippet-1100512972";
     Application expectedResponse =

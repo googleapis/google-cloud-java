@@ -45,7 +45,7 @@
  * <pre>
  * <code>
  * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
- *   CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+ *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
  *   companyServiceClient.deleteCompany(name);
  * }
  * </code>
@@ -99,7 +99,7 @@
  * <pre>
  * <code>
  * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
- *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+ *   JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
  *   jobServiceClient.deleteJob(name);
  * }
  * </code>

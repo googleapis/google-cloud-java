@@ -32,42 +32,42 @@ public class JobName implements ResourceName {
   @Deprecated
   protected JobName() {}
 
-  private static final PathTemplate PROJECT_JOB_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/jobs/{job}");
   private static final PathTemplate PROJECT_TENANT_JOB_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/tenants/{tenant}/jobs/{job}");
+  private static final PathTemplate PROJECT_JOB_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/jobs/{job}");
 
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
 
   private String project;
-  private String job;
   private String tenant;
+  private String job;
 
   public String getProject() {
     return project;
-  }
-
-  public String getJob() {
-    return job;
   }
 
   public String getTenant() {
     return tenant;
   }
 
-  private JobName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    job = Preconditions.checkNotNull(builder.getJob());
-    pathTemplate = PROJECT_JOB_PATH_TEMPLATE;
+  public String getJob() {
+    return job;
   }
 
-  private JobName(ProjectTenantJobBuilder builder) {
+  private JobName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     tenant = Preconditions.checkNotNull(builder.getTenant());
     job = Preconditions.checkNotNull(builder.getJob());
     pathTemplate = PROJECT_TENANT_JOB_PATH_TEMPLATE;
+  }
+
+  private JobName(ProjectJobBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    job = Preconditions.checkNotNull(builder.getJob());
+    pathTemplate = PROJECT_JOB_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -75,26 +75,21 @@ public class JobName implements ResourceName {
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static Builder newProjectJobBuilder() {
+  public static Builder newProjectTenantJobBuilder() {
     return new Builder();
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static ProjectTenantJobBuilder newProjectTenantJobBuilder() {
-    return new ProjectTenantJobBuilder();
+  public static ProjectJobBuilder newProjectJobBuilder() {
+    return new ProjectJobBuilder();
   }
 
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-  public static JobName of(String project, String job) {
-    return newProjectJobBuilder().setProject(project).setJob(job).build();
-  }
-
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static JobName ofProjectJobName(String project, String job) {
-    return newProjectJobBuilder().setProject(project).setJob(job).build();
+  public static JobName of(String project, String tenant, String job) {
+    return newProjectTenantJobBuilder().setProject(project).setTenant(tenant).setJob(job).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -102,43 +97,43 @@ public class JobName implements ResourceName {
     return newProjectTenantJobBuilder().setProject(project).setTenant(tenant).setJob(job).build();
   }
 
-  public static String format(String project, String job) {
-    return newBuilder().setProject(project).setJob(job).build().toString();
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static JobName ofProjectJobName(String project, String job) {
+    return newProjectJobBuilder().setProject(project).setJob(job).build();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatProjectJobName(String project, String job) {
-    return newBuilder().setProject(project).setJob(job).build().toString();
+  public static String format(String project, String tenant, String job) {
+    return newBuilder().setProject(project).setTenant(tenant).setJob(job).build().toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectTenantJobName(String project, String tenant, String job) {
-    return newProjectTenantJobBuilder()
-        .setProject(project)
-        .setTenant(tenant)
-        .setJob(job)
-        .build()
-        .toString();
+    return newBuilder().setProject(project).setTenant(tenant).setJob(job).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectJobName(String project, String job) {
+    return newProjectJobBuilder().setProject(project).setJob(job).build().toString();
   }
 
   public static JobName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_JOB_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_JOB_PATH_TEMPLATE.match(formattedString);
-      return ofProjectJobName(matchMap.get("project"), matchMap.get("job"));
-    } else if (PROJECT_TENANT_JOB_PATH_TEMPLATE.matches(formattedString)) {
+    if (PROJECT_TENANT_JOB_PATH_TEMPLATE.matches(formattedString)) {
       Map<String, String> matchMap = PROJECT_TENANT_JOB_PATH_TEMPLATE.match(formattedString);
       return ofProjectTenantJobName(
           matchMap.get("project"), matchMap.get("tenant"), matchMap.get("job"));
+    } else if (PROJECT_JOB_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_JOB_PATH_TEMPLATE.match(formattedString);
+      return ofProjectJobName(matchMap.get("project"), matchMap.get("job"));
     }
     throw new ValidationException("JobName.parse: formattedString not in valid format");
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_JOB_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_TENANT_JOB_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_TENANT_JOB_PATH_TEMPLATE.matches(formattedString)
+        || PROJECT_JOB_PATH_TEMPLATE.matches(formattedString);
   }
 
   @Override
@@ -150,11 +145,11 @@ public class JobName implements ResourceName {
           if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (job != null) {
-            fieldMapBuilder.put("job", job);
-          }
           if (tenant != null) {
             fieldMapBuilder.put("tenant", tenant);
+          }
+          if (job != null) {
+            fieldMapBuilder.put("job", job);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -172,55 +167,14 @@ public class JobName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
-  /** Builder for projects/{project}/jobs/{job}. */
-  public static class Builder {
-
-    private String project;
-    private String job;
-
-    protected Builder() {}
-
-    public String getProject() {
-      return project;
-    }
-
-    public String getJob() {
-      return job;
-    }
-
-    public Builder setProject(String project) {
-      this.project = project;
-      return this;
-    }
-
-    public Builder setJob(String job) {
-      this.job = job;
-      return this;
-    }
-
-    private Builder(JobName jobName) {
-      Preconditions.checkArgument(
-          jobName.pathTemplate == PROJECT_JOB_PATH_TEMPLATE,
-          "toBuilder is only supported when JobName has the pattern of "
-              + "projects/{project}/jobs/{job}.");
-      project = jobName.project;
-      job = jobName.job;
-    }
-
-    public JobName build() {
-      return new JobName(this);
-    }
-  }
-
   /** Builder for projects/{project}/tenants/{tenant}/jobs/{job}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class ProjectTenantJobBuilder {
+  public static class Builder {
 
     private String project;
     private String tenant;
     private String job;
 
-    private ProjectTenantJobBuilder() {}
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -234,17 +188,59 @@ public class JobName implements ResourceName {
       return job;
     }
 
-    public ProjectTenantJobBuilder setProject(String project) {
+    public Builder setProject(String project) {
       this.project = project;
       return this;
     }
 
-    public ProjectTenantJobBuilder setTenant(String tenant) {
+    public Builder setTenant(String tenant) {
       this.tenant = tenant;
       return this;
     }
 
-    public ProjectTenantJobBuilder setJob(String job) {
+    public Builder setJob(String job) {
+      this.job = job;
+      return this;
+    }
+
+    private Builder(JobName jobName) {
+      Preconditions.checkArgument(
+          jobName.pathTemplate == PROJECT_TENANT_JOB_PATH_TEMPLATE,
+          "toBuilder is only supported when JobName has the pattern of "
+              + "projects/{project}/tenants/{tenant}/jobs/{job}.");
+      project = jobName.project;
+      tenant = jobName.tenant;
+      job = jobName.job;
+    }
+
+    public JobName build() {
+      return new JobName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/jobs/{job}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectJobBuilder {
+
+    private String project;
+    private String job;
+
+    private ProjectJobBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getJob() {
+      return job;
+    }
+
+    public ProjectJobBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectJobBuilder setJob(String job) {
       this.job = job;
       return this;
     }
@@ -262,8 +258,8 @@ public class JobName implements ResourceName {
     if (o != null || getClass() == o.getClass()) {
       JobName that = (JobName) o;
       return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.job, that.job))
-          && (Objects.equals(this.tenant, that.tenant));
+          && (Objects.equals(this.tenant, that.tenant))
+          && (Objects.equals(this.job, that.job));
     }
     return false;
   }
@@ -276,9 +272,9 @@ public class JobName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
-    h ^= Objects.hashCode(job);
-    h *= 1000003;
     h ^= Objects.hashCode(tenant);
+    h *= 1000003;
+    h ^= Objects.hashCode(job);
     return h;
   }
 }
