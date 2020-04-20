@@ -25,7 +25,7 @@
 
 
   <dependencies>
-    <!-- [START recaptcha-enterprise_install_without_bom] -->
+    <!-- [START recaptchaenterprise_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-recaptchaenterprise</artifactId>

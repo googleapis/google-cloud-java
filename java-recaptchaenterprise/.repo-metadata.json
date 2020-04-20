@@ -1,5 +1,5 @@
 {
-  "name": "recaptcha-enterprise",
+  "name": "recaptchaenterprise",
   "name_pretty": "reCAPTCHA Enterprise",
   "product_documentation": "https://cloud.google.com/recaptcha-enterprise/docs/",
   "client_documentation": "https://googleapis.dev/java/google-cloud-recaptchaenterprise/latest/",

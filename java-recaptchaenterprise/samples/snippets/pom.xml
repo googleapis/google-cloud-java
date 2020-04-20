@@ -24,7 +24,7 @@
   </properties>
 
 
-  <!-- [START recaptcha-enterprise_install_with_bom] -->
+  <!-- [START recaptchaenterprise_install_with_bom] -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -42,7 +42,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-recaptchaenterprise</artifactId>
     </dependency>
-    <!-- [END recaptcha-enterprise_install_with_bom] -->
+    <!-- [END recaptchaenterprise_install_with_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
