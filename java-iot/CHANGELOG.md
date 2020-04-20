@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/googleapis/java-iot/compare/v1.0.1...v1.0.2) (2020-04-17)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#111](https://www.github.com/googleapis/java-iot/issues/111)) ([dbf82b1](https://www.github.com/googleapis/java-iot/commit/dbf82b14cccab8bf59555fe8b5dca9ccf66a0860))
+
 ### [1.0.1](https://www.github.com/googleapis/java-iot/compare/v1.0.0...v1.0.1) (2020-04-07)
 
 
