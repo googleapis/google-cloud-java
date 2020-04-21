@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-containeranalysis</artifactId>
-      <version>0.119.2-beta</version>
+      <version>0.120.0-beta</version>
     </dependency>
     <!-- [END containeranalysis_install_without_bom] -->
 
