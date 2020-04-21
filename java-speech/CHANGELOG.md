@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.23.0](https://www.github.com/googleapis/java-speech/compare/v1.22.6...v1.23.0) (2020-04-21)
+
+
+### Features
+
+* **v1p1beta1:**  Add speech adaptation, phrase sets, and custom classes ([#156](https://www.github.com/googleapis/java-speech/issues/156)) ([ad9a2aa](https://www.github.com/googleapis/java-speech/commit/ad9a2aa98a1fee600ea9dfec6adca6ec64ec0ad5))
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#141](https://www.github.com/googleapis/java-speech/issues/141)) ([b3fdac9](https://www.github.com/googleapis/java-speech/commit/b3fdac93cef38cd62e74dbf5309f316791271ded))
+
 ### [1.22.6](https://www.github.com/googleapis/java-speech/compare/v1.22.5...v1.22.6) (2020-04-07)
 
 
