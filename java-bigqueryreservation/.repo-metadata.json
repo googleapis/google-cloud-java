@@ -1,0 +1,15 @@
+{
+  "name": "bigqueryreservations",
+  "name_pretty": "Cloud BigQuery Reservations",
+  "product_documentation": "https://cloud.google.com",
+  "api_description": "is about",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-bigqueryreservations/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-bigqueryreservations",
+  "repo_short": "java-bigqueryreservations",
+  "distribution_name": "com.google.cloud:google-cloud-bigqueryreservations",
+  "api_id": "bigqueryreservations.googleapis.com",
+  "requires_billing": true
+}
