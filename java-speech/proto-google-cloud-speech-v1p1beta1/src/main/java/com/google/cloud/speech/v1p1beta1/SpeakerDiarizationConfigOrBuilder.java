@@ -67,4 +67,19 @@ public interface SpeakerDiarizationConfigOrBuilder
    * @return The maxSpeakerCount.
    */
   int getMaxSpeakerCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unused.
+   * </pre>
+   *
+   * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The speakerTag.
+   */
+  @java.lang.Deprecated
+  int getSpeakerTag();
 }

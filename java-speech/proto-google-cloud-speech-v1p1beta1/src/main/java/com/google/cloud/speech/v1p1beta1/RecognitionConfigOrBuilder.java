@@ -29,7 +29,8 @@ public interface RecognitionConfigOrBuilder
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -43,7 +44,8 @@ public interface RecognitionConfigOrBuilder
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -62,7 +64,8 @@ public interface RecognitionConfigOrBuilder
    * source to 16000 Hz. If that's not possible, use the native sample rate of
    * the audio source (instead of re-sampling).
    * This field is optional for FLAC and WAV audio files, but is
-   * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * required for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -278,6 +281,53 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
+   * Speech adaptation configuration improves the accuracy of speech
+   * recognition. When speech adaptation is set it supersedes the
+   * `speech_contexts` field. For more information, see the [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+   * documentation.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+   *
+   * @return Whether the adaptation field is set.
+   */
+  boolean hasAdaptation();
+  /**
+   *
+   *
+   * <pre>
+   * Speech adaptation configuration improves the accuracy of speech
+   * recognition. When speech adaptation is set it supersedes the
+   * `speech_contexts` field. For more information, see the [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+   * documentation.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+   *
+   * @return The adaptation.
+   */
+  com.google.cloud.speech.v1p1beta1.SpeechAdaptation getAdaptation();
+  /**
+   *
+   *
+   * <pre>
+   * Speech adaptation configuration improves the accuracy of speech
+   * recognition. When speech adaptation is set it supersedes the
+   * `speech_contexts` field. For more information, see the [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+   * documentation.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+   */
+  com.google.cloud.speech.v1p1beta1.SpeechAdaptationOrBuilder getAdaptationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
    * information, see
@@ -385,9 +435,6 @@ public interface RecognitionConfigOrBuilder
    * This feature is only available in select languages. Setting this for
    * requests in other languages has no effect at all.
    * The default 'false' value does not add punctuation to result hypotheses.
-   * Note: This is currently offered as an experimental service, complimentary
-   * to all users. In the future this may be exclusively available as a
-   * premium feature.
    * </pre>
    *
    * <code>bool enable_automatic_punctuation = 11;</code>

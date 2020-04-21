@@ -106,4 +106,31 @@ public interface LongRunningRecognizeMetadataOrBuilder
    * <code>.google.protobuf.Timestamp last_update_time = 3;</code>
    */
   com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The URI of the audio file being transcribed. Empty if the audio was sent
+   * as byte content.
+   * </pre>
+   *
+   * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The uri.
+   */
+  java.lang.String getUri();
+  /**
+   *
+   *
+   * <pre>
+   * The URI of the audio file being transcribed. Empty if the audio was sent
+   * as byte content.
+   * </pre>
+   *
+   * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for uri.
+   */
+  com.google.protobuf.ByteString getUriBytes();
 }

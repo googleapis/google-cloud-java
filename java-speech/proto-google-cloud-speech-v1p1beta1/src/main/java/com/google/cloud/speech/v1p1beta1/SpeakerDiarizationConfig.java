@@ -83,6 +83,11 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
               maxSpeakerCount_ = input.readInt32();
               break;
             }
+          case 40:
+            {
+              speakerTag_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -174,6 +179,25 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     return maxSpeakerCount_;
   }
 
+  public static final int SPEAKER_TAG_FIELD_NUMBER = 5;
+  private int speakerTag_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unused.
+   * </pre>
+   *
+   * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The speakerTag.
+   */
+  @java.lang.Deprecated
+  public int getSpeakerTag() {
+    return speakerTag_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -197,6 +221,9 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     if (maxSpeakerCount_ != 0) {
       output.writeInt32(3, maxSpeakerCount_);
     }
+    if (speakerTag_ != 0) {
+      output.writeInt32(5, speakerTag_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -214,6 +241,9 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     }
     if (maxSpeakerCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, maxSpeakerCount_);
+    }
+    if (speakerTag_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, speakerTag_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -234,6 +264,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     if (getEnableSpeakerDiarization() != other.getEnableSpeakerDiarization()) return false;
     if (getMinSpeakerCount() != other.getMinSpeakerCount()) return false;
     if (getMaxSpeakerCount() != other.getMaxSpeakerCount()) return false;
+    if (getSpeakerTag() != other.getSpeakerTag()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -251,6 +282,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     hash = (53 * hash) + getMinSpeakerCount();
     hash = (37 * hash) + MAX_SPEAKER_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getMaxSpeakerCount();
+    hash = (37 * hash) + SPEAKER_TAG_FIELD_NUMBER;
+    hash = (53 * hash) + getSpeakerTag();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -403,6 +436,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
 
       maxSpeakerCount_ = 0;
 
+      speakerTag_ = 0;
+
       return this;
     }
 
@@ -433,6 +468,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
       result.enableSpeakerDiarization_ = enableSpeakerDiarization_;
       result.minSpeakerCount_ = minSpeakerCount_;
       result.maxSpeakerCount_ = maxSpeakerCount_;
+      result.speakerTag_ = speakerTag_;
       onBuilt();
       return result;
     }
@@ -491,6 +527,9 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
       }
       if (other.getMaxSpeakerCount() != 0) {
         setMaxSpeakerCount(other.getMaxSpeakerCount());
+      }
+      if (other.getSpeakerTag() != 0) {
+        setSpeakerTag(other.getSpeakerTag());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -689,6 +728,63 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public Builder clearMaxSpeakerCount() {
 
       maxSpeakerCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int speakerTag_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unused.
+     * </pre>
+     *
+     * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The speakerTag.
+     */
+    @java.lang.Deprecated
+    public int getSpeakerTag() {
+      return speakerTag_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unused.
+     * </pre>
+     *
+     * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The speakerTag to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder setSpeakerTag(int value) {
+
+      speakerTag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unused.
+     * </pre>
+     *
+     * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder clearSpeakerTag() {
+
+      speakerTag_ = 0;
       onChanged();
       return this;
     }

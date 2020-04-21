@@ -208,6 +208,23 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
               break;
             }
+          case 162:
+            {
+              com.google.cloud.speech.v1p1beta1.SpeechAdaptation.Builder subBuilder = null;
+              if (adaptation_ != null) {
+                subBuilder = adaptation_.toBuilder();
+              }
+              adaptation_ =
+                  input.readMessage(
+                      com.google.cloud.speech.v1p1beta1.SpeechAdaptation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(adaptation_);
+                adaptation_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -270,7 +287,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the
    * encoding configuration must match the encoding described in the audio
    * header; otherwise the request returns an
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error
+   * code.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding}
@@ -380,8 +398,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * MP3 audio. Support all standard MP3 bitrates (which range from 32-320
-     * kbps). When using this encoding, `sample_rate_hertz` can be optionally
-     * unset if not known.
+     * kbps). When using this encoding, `sample_rate_hertz` has to match the
+     * sample rate of the file being used.
      * </pre>
      *
      * <code>MP3 = 8;</code>
@@ -494,8 +512,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * MP3 audio. Support all standard MP3 bitrates (which range from 32-320
-     * kbps). When using this encoding, `sample_rate_hertz` can be optionally
-     * unset if not known.
+     * kbps). When using this encoding, `sample_rate_hertz` has to match the
+     * sample rate of the file being used.
      * </pre>
      *
      * <code>MP3 = 8;</code>
@@ -603,7 +621,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -619,7 +638,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -647,7 +667,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * source to 16000 Hz. If that's not possible, use the native sample rate of
    * the audio source (instead of re-sampling).
    * This field is optional for FLAC and WAV audio files, but is
-   * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * required for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -909,6 +930,63 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     return profanityFilter_;
   }
 
+  public static final int ADAPTATION_FIELD_NUMBER = 20;
+  private com.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation_;
+  /**
+   *
+   *
+   * <pre>
+   * Speech adaptation configuration improves the accuracy of speech
+   * recognition. When speech adaptation is set it supersedes the
+   * `speech_contexts` field. For more information, see the [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+   * documentation.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+   *
+   * @return Whether the adaptation field is set.
+   */
+  public boolean hasAdaptation() {
+    return adaptation_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Speech adaptation configuration improves the accuracy of speech
+   * recognition. When speech adaptation is set it supersedes the
+   * `speech_contexts` field. For more information, see the [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+   * documentation.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+   *
+   * @return The adaptation.
+   */
+  public com.google.cloud.speech.v1p1beta1.SpeechAdaptation getAdaptation() {
+    return adaptation_ == null
+        ? com.google.cloud.speech.v1p1beta1.SpeechAdaptation.getDefaultInstance()
+        : adaptation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Speech adaptation configuration improves the accuracy of speech
+   * recognition. When speech adaptation is set it supersedes the
+   * `speech_contexts` field. For more information, see the [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+   * documentation.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+   */
+  public com.google.cloud.speech.v1p1beta1.SpeechAdaptationOrBuilder getAdaptationOrBuilder() {
+    return getAdaptation();
+  }
+
   public static final int SPEECH_CONTEXTS_FIELD_NUMBER = 6;
   private java.util.List<com.google.cloud.speech.v1p1beta1.SpeechContext> speechContexts_;
   /**
@@ -1043,9 +1121,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * This feature is only available in select languages. Setting this for
    * requests in other languages has no effect at all.
    * The default 'false' value does not add punctuation to result hypotheses.
-   * Note: This is currently offered as an experimental service, complimentary
-   * to all users. In the future this may be exclusively available as a
-   * premium feature.
    * </pre>
    *
    * <code>bool enable_automatic_punctuation = 11;</code>
@@ -1412,6 +1487,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (diarizationConfig_ != null) {
       output.writeMessage(19, getDiarizationConfig());
     }
+    if (adaptation_ != null) {
+      output.writeMessage(20, getAdaptation());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1485,6 +1563,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (diarizationConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getDiarizationConfig());
     }
+    if (adaptation_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getAdaptation());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1511,6 +1592,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       return false;
     if (getMaxAlternatives() != other.getMaxAlternatives()) return false;
     if (getProfanityFilter() != other.getProfanityFilter()) return false;
+    if (hasAdaptation() != other.hasAdaptation()) return false;
+    if (hasAdaptation()) {
+      if (!getAdaptation().equals(other.getAdaptation())) return false;
+    }
     if (!getSpeechContextsList().equals(other.getSpeechContextsList())) return false;
     if (getEnableWordTimeOffsets() != other.getEnableWordTimeOffsets()) return false;
     if (getEnableWordConfidence() != other.getEnableWordConfidence()) return false;
@@ -1558,6 +1643,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getMaxAlternatives();
     hash = (37 * hash) + PROFANITY_FILTER_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getProfanityFilter());
+    if (hasAdaptation()) {
+      hash = (37 * hash) + ADAPTATION_FIELD_NUMBER;
+      hash = (53 * hash) + getAdaptation().hashCode();
+    }
     if (getSpeechContextsCount() > 0) {
       hash = (37 * hash) + SPEECH_CONTEXTS_FIELD_NUMBER;
       hash = (53 * hash) + getSpeechContextsList().hashCode();
@@ -1748,6 +1837,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
       profanityFilter_ = false;
 
+      if (adaptationBuilder_ == null) {
+        adaptation_ = null;
+      } else {
+        adaptation_ = null;
+        adaptationBuilder_ = null;
+      }
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -1820,6 +1915,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       result.alternativeLanguageCodes_ = alternativeLanguageCodes_;
       result.maxAlternatives_ = maxAlternatives_;
       result.profanityFilter_ = profanityFilter_;
+      if (adaptationBuilder_ == null) {
+        result.adaptation_ = adaptation_;
+      } else {
+        result.adaptation_ = adaptationBuilder_.build();
+      }
       if (speechContextsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
@@ -1928,6 +2028,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       if (other.getProfanityFilter() != false) {
         setProfanityFilter(other.getProfanityFilter());
       }
+      if (other.hasAdaptation()) {
+        mergeAdaptation(other.getAdaptation());
+      }
       if (speechContextsBuilder_ == null) {
         if (!other.speechContexts_.isEmpty()) {
           if (speechContexts_.isEmpty()) {
@@ -2022,7 +2125,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2038,7 +2142,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2057,7 +2162,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2078,7 +2184,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2102,7 +2209,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2127,7 +2235,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2147,7 +2256,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2171,7 +2281,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2851,6 +2962,228 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private com.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptation,
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptation.Builder,
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptationOrBuilder>
+        adaptationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. When speech adaptation is set it supersedes the
+     * `speech_contexts` field. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * documentation.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+     *
+     * @return Whether the adaptation field is set.
+     */
+    public boolean hasAdaptation() {
+      return adaptationBuilder_ != null || adaptation_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. When speech adaptation is set it supersedes the
+     * `speech_contexts` field. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * documentation.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+     *
+     * @return The adaptation.
+     */
+    public com.google.cloud.speech.v1p1beta1.SpeechAdaptation getAdaptation() {
+      if (adaptationBuilder_ == null) {
+        return adaptation_ == null
+            ? com.google.cloud.speech.v1p1beta1.SpeechAdaptation.getDefaultInstance()
+            : adaptation_;
+      } else {
+        return adaptationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. When speech adaptation is set it supersedes the
+     * `speech_contexts` field. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * documentation.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+     */
+    public Builder setAdaptation(com.google.cloud.speech.v1p1beta1.SpeechAdaptation value) {
+      if (adaptationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        adaptation_ = value;
+        onChanged();
+      } else {
+        adaptationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. When speech adaptation is set it supersedes the
+     * `speech_contexts` field. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * documentation.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+     */
+    public Builder setAdaptation(
+        com.google.cloud.speech.v1p1beta1.SpeechAdaptation.Builder builderForValue) {
+      if (adaptationBuilder_ == null) {
+        adaptation_ = builderForValue.build();
+        onChanged();
+      } else {
+        adaptationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. When speech adaptation is set it supersedes the
+     * `speech_contexts` field. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * documentation.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+     */
+    public Builder mergeAdaptation(com.google.cloud.speech.v1p1beta1.SpeechAdaptation value) {
+      if (adaptationBuilder_ == null) {
+        if (adaptation_ != null) {
+          adaptation_ =
+              com.google.cloud.speech.v1p1beta1.SpeechAdaptation.newBuilder(adaptation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          adaptation_ = value;
+        }
+        onChanged();
+      } else {
+        adaptationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. When speech adaptation is set it supersedes the
+     * `speech_contexts` field. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * documentation.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+     */
+    public Builder clearAdaptation() {
+      if (adaptationBuilder_ == null) {
+        adaptation_ = null;
+        onChanged();
+      } else {
+        adaptation_ = null;
+        adaptationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. When speech adaptation is set it supersedes the
+     * `speech_contexts` field. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * documentation.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+     */
+    public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.Builder getAdaptationBuilder() {
+
+      onChanged();
+      return getAdaptationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. When speech adaptation is set it supersedes the
+     * `speech_contexts` field. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * documentation.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+     */
+    public com.google.cloud.speech.v1p1beta1.SpeechAdaptationOrBuilder getAdaptationOrBuilder() {
+      if (adaptationBuilder_ != null) {
+        return adaptationBuilder_.getMessageOrBuilder();
+      } else {
+        return adaptation_ == null
+            ? com.google.cloud.speech.v1p1beta1.SpeechAdaptation.getDefaultInstance()
+            : adaptation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech adaptation configuration improves the accuracy of speech
+     * recognition. When speech adaptation is set it supersedes the
+     * `speech_contexts` field. For more information, see the [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+     * documentation.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptation,
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptation.Builder,
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptationOrBuilder>
+        getAdaptationFieldBuilder() {
+      if (adaptationBuilder_ == null) {
+        adaptationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v1p1beta1.SpeechAdaptation,
+                com.google.cloud.speech.v1p1beta1.SpeechAdaptation.Builder,
+                com.google.cloud.speech.v1p1beta1.SpeechAdaptationOrBuilder>(
+                getAdaptation(), getParentForChildren(), isClean());
+        adaptation_ = null;
+      }
+      return adaptationBuilder_;
+    }
+
     private java.util.List<com.google.cloud.speech.v1p1beta1.SpeechContext> speechContexts_ =
         java.util.Collections.emptyList();
 
@@ -3409,9 +3742,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all.
      * The default 'false' value does not add punctuation to result hypotheses.
-     * Note: This is currently offered as an experimental service, complimentary
-     * to all users. In the future this may be exclusively available as a
-     * premium feature.
      * </pre>
      *
      * <code>bool enable_automatic_punctuation = 11;</code>
@@ -3429,9 +3759,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all.
      * The default 'false' value does not add punctuation to result hypotheses.
-     * Note: This is currently offered as an experimental service, complimentary
-     * to all users. In the future this may be exclusively available as a
-     * premium feature.
      * </pre>
      *
      * <code>bool enable_automatic_punctuation = 11;</code>
@@ -3453,9 +3780,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all.
      * The default 'false' value does not add punctuation to result hypotheses.
-     * Note: This is currently offered as an experimental service, complimentary
-     * to all users. In the future this may be exclusively available as a
-     * premium feature.
      * </pre>
      *
      * <code>bool enable_automatic_punctuation = 11;</code>
