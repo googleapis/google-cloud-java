@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
-      <version>0.130.0-beta</version>
+      <version>0.130.1-beta-SNAPSHOT</version>
     </dependency>
 
     <dependency>
@@ -40,7 +40,7 @@
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
-      <version>1.0.1</version>
+      <version>0.130.1-beta-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
