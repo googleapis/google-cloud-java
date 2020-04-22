@@ -157,6 +157,8 @@
         <dependency>
           <groupId>javax.annotation</groupId>
           <artifactId>javax.annotation-api</artifactId>
+          <!-- Adding version here because flatten cannot interpret this -->
+          <version>${javax.annotations.version}</version>
         </dependency>
       </dependencies>
     </profile>

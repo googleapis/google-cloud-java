@@ -162,11 +162,6 @@
         <version>${threeten.version}</version>
       </dependency>
       <dependency>
-        <groupId>javax.annotation</groupId>
-        <artifactId>javax.annotation-api</artifactId>
-        <version>${javax.annotations.version}</version>
-      </dependency>
-      <dependency>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-annotations</artifactId>
         <version>${animal-sniffer.version}</version>

@@ -46,6 +46,7 @@
       <artifactId>google-cloud-bigquery</artifactId>
       <version>1.111.1-SNAPSHOT</version>
     </dependency>
+    <!-- {x-version-update-end} -->
 
     <!-- Test dependencies -->
     <dependency>
@@ -57,10 +58,10 @@
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
-      <version>1.111.1-SNAPSHOT</version>
+      <version>1.0.1</version>
       <scope>test</scope>
     </dependency>
-    <!-- {x-version-update-end} -->
+
   </dependencies>
 
   <!-- compile and run all snippet tests -->
