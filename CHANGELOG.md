@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.111.1](https://www.github.com/googleapis/java-bigquery/compare/v1.111.0...v1.111.1) (2020-04-22)
+
+
+### Dependencies
+
+* fix build errors ([#286](https://www.github.com/googleapis/java-bigquery/issues/286)) ([4b478b0](https://www.github.com/googleapis/java-bigquery/commit/4b478b0fc21d31472939dceece4ba059a8a0ea16))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#284](https://www.github.com/googleapis/java-bigquery/issues/284)) ([e72a99f](https://www.github.com/googleapis/java-bigquery/commit/e72a99f225176d18d308bef2c8cc69a18390a3ce))
+
 ## [1.111.0](https://www.github.com/googleapis/java-bigquery/compare/v1.110.1...v1.111.0) (2020-04-16)
 
 
