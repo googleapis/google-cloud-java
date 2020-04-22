@@ -73,6 +73,7 @@
     <findbugs.version>3.0.2</findbugs.version>
     <autovalue.version>1.7</autovalue.version>
     <junit.version>4.13</junit.version>
+    <truth.version>1.0.1</truth.version>
   </properties>
 
   <dependencyManagement>
@@ -236,6 +237,12 @@
         <artifactId>gax-grpc</artifactId>
         <version>${gax.version}</version>
         <classifier>testlib</classifier>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.truth</groupId>
+        <artifactId>truth</artifactId>
+        <version>${truth.version}</version>
         <scope>test</scope>
       </dependency>
     </dependencies>
