@@ -23,13 +23,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- {x-version-update-start:google-cloud-bigquerydatatransfer:current} -->
   <dependencies>
+    <!-- {x-version-update-start:google-cloud-bigquerydatatransfer:current} -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerydatatransfer</artifactId>
       <version>0.126.0-beta</version>
     </dependency>
+    <!-- {x-version-update-end} -->
 
     <dependency>
       <groupId>junit</groupId>
@@ -44,7 +45,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <!-- {x-version-update-end} -->
 
   <!-- compile and run all snippet tests -->
   <build>
