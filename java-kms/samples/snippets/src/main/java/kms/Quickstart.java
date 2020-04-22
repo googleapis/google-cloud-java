@@ -14,35 +14,40 @@
  * limitations under the License.
  */
 
-package com.example;
+package kms;
 
 // [START kms_quickstart]
-// Imports the Google Cloud client library
-
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
 import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.LocationName;
+import java.io.IOException;
 
 public class Quickstart {
 
-  public static void main(String... args) throws Exception {
-    String projectId = args[0];
-    // The location of the Key Rings
-    String location = args[1];
+  public void quickstart() throws IOException {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "your-project-id";
+    String locationId = "us-east1";
+    quickstart(projectId, locationId);
+  }
 
-    // Create the KeyManagementServiceClient using try-with-resources to manage client cleanup.
+  public void quickstart(String projectId, String locationId) throws IOException {
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
     try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
+      // Build the parent from the project and location.
+      LocationName parent = LocationName.of(projectId, locationId);
 
-      // The resource name of the location to search
-      String locationPath = LocationName.format(projectId, location);
+      // Call the API.
+      ListKeyRingsPagedResponse response = client.listKeyRings(parent);
 
-      // Make the RPC call
-      ListKeyRingsPagedResponse response = client.listKeyRings(locationPath);
-
-      // Iterate over all KeyRings (which may cause more result pages to be loaded automatically)
+      // Iterate over each key ring and print its name.
+      System.out.println("key rings:");
       for (KeyRing keyRing : response.iterateAll()) {
-        System.out.println("Found KeyRing: " + keyRing.getName());
+        System.out.printf("%s%n", keyRing.getName());
       }
     }
   }
