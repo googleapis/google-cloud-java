@@ -27,8 +27,6 @@ import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.Bucket;
-import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.StorageOptions;
@@ -45,33 +43,29 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class QuickStartIT {
-  private static final String bucketName = UUID.randomUUID().toString();
+  private static final String bucketName = "java-docs-samples-testing";
+  private static final String path = UUID.randomUUID().toString();
   private static final String datasetName = RemoteBigQueryHelper.generateDatasetName();
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private BigQuery bigquery;
 
-  private static final void deleteBucket(String bucketName) {
+  private static final void deleteObjects() {
     Storage storage = StorageOptions.getDefaultInstance().getService();
-    for (BlobInfo info : storage.list(bucketName, BlobListOption.versions(true)).getValues()) {
+    for (BlobInfo info :
+        storage
+            .list(
+                bucketName,
+                BlobListOption.versions(true),
+                BlobListOption.currentDirectory(),
+                BlobListOption.prefix(path + "/"))
+            .getValues()) {
       storage.delete(info.getBlobId());
     }
-    storage.delete(bucketName);
-  }
-
-  private static final void createBucket(String bucketName) {
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-    if (storage.get(bucketName) != null) {
-      // Bucket exists.
-      return;
-    }
-    Bucket bucket = storage.create(BucketInfo.of(bucketName));
-    assertThat(bucket).isNotNull();
   }
 
   @Before
   public void setUp() {
-    createBucket(bucketName);
     bigquery = BigQueryOptions.getDefaultInstance().getService();
     if (bigquery.getDataset(datasetName) == null) {
       Dataset dataset = bigquery.create(DatasetInfo.newBuilder(datasetName).build());
@@ -85,14 +79,14 @@ public class QuickStartIT {
   public void tearDown() {
     String consoleOutput = bout.toString();
     System.setOut(null);
-    deleteBucket(bucketName);
+    deleteObjects();
     DatasetId datasetId = DatasetId.of(bigquery.getOptions().getProjectId(), datasetName);
     bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
   }
 
   @Test
   public void testExportAssetExample() throws Exception {
-    String assetDumpPath = String.format("gs://%s/my-assets-dump.txt", bucketName);
+    String assetDumpPath = String.format("gs://%s/%s/my-assets-dump.txt", bucketName, path);
     ExportAssetsExample.main(assetDumpPath);
     String got = bout.toString();
     assertThat(got).contains(String.format("uri: \"%s\"", assetDumpPath));
