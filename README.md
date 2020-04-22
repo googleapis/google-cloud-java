@@ -50,11 +50,6 @@ libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "1.111.0"
 ```
 [//]: # ({x-version-update-end})
 
-Example Application
--------------------
-- [`BigQueryExample`](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
-Read more about using this application on the [`BigQueryExample` docs page](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/examples/bigquery/BigQueryExample.html).
-
 Authentication
 --------------
 
