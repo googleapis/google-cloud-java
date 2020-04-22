@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.1.1...v0.2.0) (2020-04-22)
+
+
+### Features
+
+* add truth as a managed test scope dependency ([#19](https://www.github.com/googleapis/java-shared-dependencies/issues/19)) ([36167bf](https://www.github.com/googleapis/java-shared-dependencies/commit/36167bfc19475425416316ede28e72db4d683db1))
+* import google-cloud-core-bom to include all google-cloud-core-* artifacts ([#18](https://www.github.com/googleapis/java-shared-dependencies/issues/18)) ([ed3850c](https://www.github.com/googleapis/java-shared-dependencies/commit/ed3850c6a6ea491b570c461a2108c124c9ef71da))
+* import protobuf-bom to manage all protobuf artifacts ([#21](https://www.github.com/googleapis/java-shared-dependencies/issues/21)) ([dc0f1e0](https://www.github.com/googleapis/java-shared-dependencies/commit/dc0f1e0be1be33f5bdf0426cad1cc2df45f5d10a))
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#16](https://www.github.com/googleapis/java-shared-dependencies/issues/16)) ([eac0d44](https://www.github.com/googleapis/java-shared-dependencies/commit/eac0d448b0701a3dd5788321ed0494eb2a618f9e))
+
 ### [0.1.1](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.1.0...v0.1.1) (2020-04-14)
 
 
