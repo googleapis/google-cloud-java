@@ -215,11 +215,12 @@ public class DatabaseClientSnippets {
     try (TransactionManager manager = dbClient.transactionManager()) {
       TransactionContext txn = manager.begin();
       while (true) {
-        String column = "FirstName";
-        Struct row = txn.readRow("Singers", Key.of(singerId), Collections.singleton(column));
-        String name = row.getString(column);
-        txn.buffer(Mutation.newUpdateBuilder("Singers").set(column).to(name.toUpperCase()).build());
         try {
+          String column = "FirstName";
+          Struct row = txn.readRow("Singers", Key.of(singerId), Collections.singleton(column));
+          String name = row.getString(column);
+          txn.buffer(
+              Mutation.newUpdateBuilder("Singers").set(column).to(name.toUpperCase()).build());
           manager.commit();
           break;
         } catch (AbortedException e) {
