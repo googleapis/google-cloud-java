@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.127.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.126.1...v0.127.0) (2020-04-22)
+
+
+### Features
+
+* implement flatten plugin in client, grpc, and proto modules ([#134](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/134)) ([f63619e](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/f63619e34f33845cbe14a8c23873e08f76c3add6))
+* replace parent pom deps with shared-deps ([#137](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/137)) ([74ae665](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/74ae6650a7ac2e24c1d8809db2531e63e99b0c86))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.2.0 ([#138](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/138)) ([aae6297](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/aae62971c9a90942b18df7fa67c00b6bf0931c7f))
+
 ## [0.126.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.125.2...v0.126.0) (2020-04-05)
 
 
