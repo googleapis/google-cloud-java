@@ -1,0 +1,15 @@
+{
+  "name": "bigquery-connection",
+  "name_pretty": "Cloud BigQuery Connections",
+  "product_documentation": "https://cloud.google.com",
+  "api_description": "is about",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-bigquery-connection/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-bigquery-connection",
+  "repo_short": "java-bigquery-connection",
+  "distribution_name": "com.google.cloud:google-cloud-bigquery-connection",
+  "api_id": "bigquery-connection.googleapis.com",
+  "requires_billing": true
+}
