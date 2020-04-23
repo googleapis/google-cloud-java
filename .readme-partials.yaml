@@ -1,0 +1,104 @@
+custom_content: |
+  #### Creating a dataset
+  With BigQuery you can create datasets. A dataset is a grouping mechanism that holds zero or more
+  tables. Add the following import at the top of your file:
+
+  ```java
+  import com.google.cloud.bigquery.DatasetInfo;
+  ```
+  Then, to create the dataset, use the following code:
+
+  ```java
+  // Create a dataset
+  String datasetId = "my_dataset_id";
+  bigquery.create(DatasetInfo.newBuilder(datasetId).build());
+  ```
+
+  #### Creating a table
+  With BigQuery you can create different types of tables: normal tables with an associated schema,
+  external tables backed by data stored on [Google Cloud Storage](https://cloud.google.com/storage/) and view tables that
+  are created from a BigQuery SQL query. In this code snippet we show how to create a normal table
+  with only one string field. Add the following imports at the top of your file:
+
+  ```java
+  import com.google.cloud.bigquery.Field;
+  import com.google.cloud.bigquery.Schema;
+  import com.google.cloud.bigquery.StandardTableDefinition;
+  import com.google.cloud.bigquery.Table;
+  import com.google.cloud.bigquery.TableId;
+  import com.google.cloud.bigquery.TableInfo;
+  ```
+  Then add the following code to create the table:
+
+  ```java
+  TableId tableId = TableId.of(datasetId, "my_table_id");
+  // Table field definition
+  Field stringField = Field.of("StringField", LegacySQLTypeName.STRING);
+  // Table schema definition
+  Schema schema = Schema.of(stringField);
+  // Create a table
+  StandardTableDefinition tableDefinition = StandardTableDefinition.of(schema);
+  Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+  ```
+
+  #### Loading data into a table
+  BigQuery provides several ways to load data into a table: streaming rows or loading data from a
+  Google Cloud Storage file. In this code snippet we show how to stream rows into a table.
+  Add the following imports at the top of your file:
+
+  ```java
+  import com.google.cloud.bigquery.InsertAllRequest;
+  import com.google.cloud.bigquery.InsertAllResponse;
+
+  import java.util.HashMap;
+  import java.util.Map;
+  ```
+  Then add the following code to insert data:
+
+  ```java
+  Map<String, Object> firstRow = new HashMap<>();
+  Map<String, Object> secondRow = new HashMap<>();
+  firstRow.put("StringField", "value1");
+  secondRow.put("StringField", "value2");
+  // Create an insert request
+  InsertAllRequest insertRequest = InsertAllRequest.newBuilder(tableId)
+      .addRow(firstRow)
+      .addRow(secondRow)
+      .build();
+  // Insert rows
+  InsertAllResponse insertResponse = bigquery.insertAll(insertRequest);
+  // Check if errors occurred
+  if (insertResponse.hasErrors()) {
+    System.out.println("Errors occurred while inserting rows");
+  }
+  ```
+
+  #### Querying data
+  BigQuery enables querying data by running queries and waiting for the result. Queries can be run
+  directly or through a Query Job. In this code snippet we show how to run a query directly and wait
+  for the result. Add the following imports at the top of your file:
+
+  ```java
+  import com.google.cloud.bigquery.FieldValueList;
+  import com.google.cloud.bigquery.QueryJobConfiguration;
+  ```
+  Then add the following code to run the query and wait for the result:
+
+  ```java
+  // Create a query request
+  QueryJobConfiguration queryConfig =
+      QueryJobConfiguration.newBuilder("SELECT my_column FROM my_dataset_id.my_table_id").build();
+  // Read rows
+  System.out.println("Table rows:");
+  for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
+    System.out.println(row);
+  }
+  ```
+  #### Complete source code
+
+  In
+  [InsertDataAndQueryTable.java](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/InsertDataAndQueryTable.java)
+  we put together all the code shown above into one program. The program assumes that you are
+  running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
+  the code from the main method to your application's servlet class and change the print statements to
+  display on your webpage.

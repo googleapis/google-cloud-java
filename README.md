@@ -1,45 +1,52 @@
-Google Cloud Java Client for BigQuery
-====================================
+# Google Cloud BigQuery Client for Java
 
-Java idiomatic client for [Google Cloud BigQuery][cloud-bigquery].
+Java idiomatic client for [Cloud BigQuery][product-docs].
 
-[![Kokoro CI](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.svg)](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.html)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
+[![Maven][maven-version-image]][maven-version-link]
+![Stability][stability-image]
 
-- [Product Documentation][bigquery-product-docs]
-- [Client Library Documentation][bigquery-client-lib-docs]
+- [Product Documentation][product-docs]
+- [Client Library Documentation][javadocs]
 
-Quickstart
-----------
-If you are using Maven with a BOM, add this to your pom.xml file.
+## Quickstart
+
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 ```xml
+<!--  Using libraries-bom to manage versions.
+See https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM -->
 <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>libraries-bom</artifactId>
-        <version>3.3.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-       </dependency>
-     </dependencies>
-  </dependencyManagement>
-  
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>5.1.0</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
   <dependency>
-     <groupId>com.google.cloud</groupId>
-     <artifactId>google-cloud-bigquery</artifactId>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-bigquery</artifactId>
   </dependency>
+
 ```
-[//]: # ({x-version-update-start:google-cloud-bigquery:released})
-If you are using Maven without a BOM, add this to your dependencies.
+
+If you are using Maven without BOM, add this to your dependencies:
+
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
   <version>1.111.1</version>
 </dependency>
+
 ```
+
+[//]: # ({x-version-update-start:google-cloud-bigquery:released})
+
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-bigquery:1.111.1'
@@ -50,57 +57,35 @@ libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "1.111.1"
 ```
 [//]: # ({x-version-update-end})
 
-Authentication
---------------
+## Authentication
 
-See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication) section in the base directory's README.
+See the [Authentication][authentication] section in the base directory's README.
 
-About Google Cloud BigQuery
---------------------------
+## Getting Started
 
-[Google Cloud BigQuery][cloud-bigquery] is a fully managed, NoOps, low cost data analytics service.
-Data can be streamed into BigQuery at millions of rows per second to enable real-time analysis.
-With BigQuery you can easily deploy Petabyte-scale Databases.
+### Prerequisites
 
-Be sure to activate the Google Cloud BigQuery API on the Developer's Console to use BigQuery from
-your project.
-
-See the [BigQuery client library docs][bigquery-client-lib-docs] to learn how to interact
-with Google Cloud BigQuery using this Client Library.
-
-Getting Started
----------------
-#### Prerequisites
-For this tutorial, you will need a
-[Google Developers Console](https://console.developers.google.com/) project with the BigQuery API
-enabled. You will need to [enable billing](https://support.google.com/cloud/answer/6158867?hl=en) to
-use Google Cloud BigQuery.
-[Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your
-project set up. You will also need to set up the local development environment by [installing the
-Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line:
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud BigQuery [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Cloud BigQuery.
+[Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
+[installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
-#### Installation and setup
+### Installation and setup
+
 You'll need to obtain the `google-cloud-bigquery` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-bigquery` as a dependency in your code.
 
-#### Creating an authorized service object
-To make authenticated requests to Google Cloud BigQuery, you must create a service object with
-credentials. You can then make API calls by calling methods on the BigQuery service object. The
-simplest way to authenticate is to use
-[Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
-These credentials are automatically inferred from your environment, so you only need the following
-code to create your service object:
+## About Cloud BigQuery
 
-```java
-import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
 
-BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-```
+[Cloud BigQuery][product-docs] is a fully managed, NoOps, low cost data analytics service.
+Data can be streamed into BigQuery at millions of rows per second to enable real-time analysis.
+With BigQuery you can easily deploy Petabyte-scale Databases.
 
-For other authentication options, see the
-[Authentication](https://github.com/googleapis/google-cloud-java#authentication) page.
+See the [Cloud BigQuery client library docs][javadocs] to learn how to
+use this Cloud BigQuery Client Library.
+
 
 #### Creating a dataset
 With BigQuery you can create datasets. A dataset is a grouping mechanism that holds zero or more
@@ -119,7 +104,7 @@ bigquery.create(DatasetInfo.newBuilder(datasetId).build());
 
 #### Creating a table
 With BigQuery you can create different types of tables: normal tables with an associated schema,
-external tables backed by data stored on [Google Cloud Storage][cloud-storage] and view tables that
+external tables backed by data stored on [Google Cloud Storage](https://cloud.google.com/storage/) and view tables that
 are created from a BigQuery SQL query. In this code snippet we show how to create a normal table
 with only one string field. Add the following imports at the top of your file:
 
@@ -206,53 +191,119 @@ running on Compute Engine or from your own desktop. To run the example on App En
 the code from the main method to your application's servlet class and change the print statements to
 display on your webpage.
 
-Troubleshooting
----------------
 
-To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
-Transport
----------
-BigQuery uses HTTP for the transport layer.
+## Samples
 
-Java Versions
--------------
+Samples are in the [`samples/`](https://github.com/googleapis/java-bigquery/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Add Column Load Append | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/AddColumnLoadAppend.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/AddColumnLoadAppend.java) |
+| Add Empty Column | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/AddEmptyColumn.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/AddEmptyColumn.java) |
+| Auth Drive Scope | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/AuthDriveScope.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/AuthDriveScope.java) |
+| Auth Snippets | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/AuthSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/AuthSnippets.java) |
+| Copy Multiple Tables | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/CopyMultipleTables.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/CopyMultipleTables.java) |
+| Create Clustered Table | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/CreateClusteredTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/CreateClusteredTable.java) |
+| Create Dataset | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/CreateDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/CreateDataset.java) |
+| Create Partitioned Table | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/CreatePartitionedTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/CreatePartitionedTable.java) |
+| Create Table | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/CreateTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/CreateTable.java) |
+| Delete Dataset | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/DeleteDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/DeleteDataset.java) |
+| Delete Table | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/DeleteTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/DeleteTable.java) |
+| Extract Table To Json | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/ExtractTableToJson.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/ExtractTableToJson.java) |
+| Get Dataset Info | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/GetDatasetInfo.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/GetDatasetInfo.java) |
+| Get Model | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/GetModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/GetModel.java) |
+| Get Table | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/GetTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/GetTable.java) |
+| List Datasets | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/ListDatasets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/ListDatasets.java) |
+| List Models | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/ListModels.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/ListModels.java) |
+| List Tables | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/ListTables.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/ListTables.java) |
+| Load Local File | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/LoadLocalFile.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/LoadLocalFile.java) |
+| Load Parquet | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/LoadParquet.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/LoadParquet.java) |
+| Load Parquet Replace Table | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/LoadParquetReplaceTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/LoadParquetReplaceTable.java) |
+| Load Partitioned Table | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/LoadPartitionedTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/LoadPartitionedTable.java) |
+| Load Table Clustered | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/LoadTableClustered.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/LoadTableClustered.java) |
+| Nested Repeated Schema | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/NestedRepeatedSchema.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/NestedRepeatedSchema.java) |
+| Query Clustered Table | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/QueryClusteredTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/QueryClusteredTable.java) |
+| Query With Named Parameters | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/QueryWithNamedParameters.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/QueryWithNamedParameters.java) |
+| Query With Positional Parameters | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/QueryWithPositionalParameters.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/QueryWithPositionalParameters.java) |
+| Query With Structs Parameters | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/QueryWithStructsParameters.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/QueryWithStructsParameters.java) |
+| Quickstart Sample | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/QuickstartSample.java) |
+| Relax Column Mode | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/RelaxColumnMode.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/RelaxColumnMode.java) |
+| Relax Table Query | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/RelaxTableQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/RelaxTableQuery.java) |
+| Run Legacy Query | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/RunLegacyQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/RunLegacyQuery.java) |
+| Simple App | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/SimpleApp.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/SimpleApp.java) |
+| Table Insert Rows | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/TableInsertRows.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/TableInsertRows.java) |
+| Update Dataset Access | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/UpdateDatasetAccess.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/UpdateDatasetAccess.java) |
+| Update Dataset Description | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/UpdateDatasetDescription.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/UpdateDatasetDescription.java) |
+| Update Dataset Expiration | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/UpdateDatasetExpiration.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/UpdateDatasetExpiration.java) |
+| Update Table Expiration | [source code](https://github.com/googleapis/java-bigquery/blob/master/samples/snippets/src/main/java/com/example/bigquery/UpdateTableExpiration.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquery&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquery/UpdateTableExpiration.java) |
+
+
+
+## Troubleshooting
+
+To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
+
+## Java Versions
 
 Java 7 or above is required for using this client.
 
-Testing
--------
+## Versioning
 
-This library has tools to help make tests for code using Cloud BigQuery.
-
-See [TESTING] to read more about testing.
-
-Versioning
-----------
 
 This library follows [Semantic Versioning](http://semver.org/).
 
-It is currently in major version one (``1.y.z``), which means that the public API should be considered stable.
 
-Contributing
-------------
+## Contributing
+
 
 Contributions to this library are always welcome and highly encouraged.
 
-See [CONTRIBUTING] for more information on how to get started.
+See [CONTRIBUTING][contributing] for more information how to get started.
 
-License
--------
+Please note that this project is released with a Contributor Code of Conduct. By participating in
+this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more
+information.
 
-Apache 2.0 - See [LICENSE] for more information.
+## License
 
+Apache 2.0 - See [LICENSE][license] for more information.
 
-[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
-[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-bigquery
-[cloud-platform]: https://cloud.google.com/
+## CI Status
 
-[cloud-bigquery]: https://cloud.google.com/bigquery/
-[cloud-storage]: https://cloud.google.com/storage/
-[bigquery-product-docs]: https://cloud.google.com/bigquery/docs/
-[bigquery-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/bigquery/package-summary.html
+Java Version | Status
+------------ | ------
+Java 7 | [![Kokoro CI][kokoro-badge-image-1]][kokoro-badge-link-1]
+Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
+Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
+Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
+Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
+
+[product-docs]: https://cloud.google.com/bigquery
+[javadocs]: https://googleapis.dev/java/google-cloud-bigquery/latest
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery/java11.html
+[stability-image]: https://img.shields.io/badge/stability-ga-green
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-bigquery&core=gav
+[authentication]: https://github.com/googleapis/google-cloud-java#authentication
+[developer-console]: https://console.developers.google.com/
+[create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
+[cloud-sdk]: https://cloud.google.com/sdk/
+[troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting
+[contributing]: https://github.com/googleapis/java-bigquery/blob/master/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-bigquery/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-bigquery/blob/master/LICENSE
+[enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=bigquery.googleapis.com
+[libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
