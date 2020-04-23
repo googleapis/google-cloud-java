@@ -58,6 +58,7 @@ public final class Field implements Serializable {
   private final FieldList subFields;
   private final String mode;
   private final String description;
+  private final PolicyTags policyTags;
 
   /**
    * Mode for a BigQuery Table field. {@link Mode#NULLABLE} fields can be set to {@code null},
@@ -77,6 +78,7 @@ public final class Field implements Serializable {
     private FieldList subFields;
     private String mode;
     private String description;
+    private PolicyTags policyTags;
 
     private Builder() {}
 
@@ -86,6 +88,7 @@ public final class Field implements Serializable {
       this.subFields = field.subFields;
       this.mode = field.mode;
       this.description = field.description;
+      this.policyTags = field.policyTags;
     }
 
     /**
@@ -190,6 +193,12 @@ public final class Field implements Serializable {
       return this;
     }
 
+    /** Sets the policy tags for the field. */
+    public Builder setPolicyTags(PolicyTags policyTags) {
+      this.policyTags = policyTags;
+      return this;
+    }
+
     /** Creates a {@code Field} object. */
     public Field build() {
       return new Field(this);
@@ -202,6 +211,7 @@ public final class Field implements Serializable {
     this.subFields = builder.subFields;
     this.mode = builder.mode;
     this.description = builder.description;
+    this.policyTags = builder.policyTags;
   }
 
   /** Returns the field name. */
@@ -229,6 +239,11 @@ public final class Field implements Serializable {
     return Data.isNull(description) ? null : description;
   }
 
+  /** Returns the policy tags for the field. */
+  public PolicyTags getPolicyTags() {
+    return policyTags;
+  }
+
   /**
    * Returns the list of sub-fields if {@link #getType()} is a {@link LegacySQLTypeName#RECORD}.
    * Returns {@code null} otherwise.
@@ -249,12 +264,13 @@ public final class Field implements Serializable {
         .add("type", type)
         .add("mode", mode)
         .add("description", description)
+        .add("policyTags", policyTags)
         .toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, mode, description);
+    return Objects.hash(name, type, mode, description, policyTags);
   }
 
   @Override
@@ -316,6 +332,9 @@ public final class Field implements Serializable {
     if (description != null) {
       fieldSchemaPb.setDescription(description);
     }
+    if (policyTags != null) {
+      fieldSchemaPb.setPolicyTags(policyTags.toPb());
+    }
     if (getSubFields() != null) {
       List<TableFieldSchema> fieldsPb = Lists.transform(getSubFields(), TO_PB_FUNCTION);
       fieldSchemaPb.setFields(fieldsPb);
@@ -331,6 +350,9 @@ public final class Field implements Serializable {
     }
     if (fieldSchemaPb.getDescription() != null) {
       fieldBuilder.setDescription(fieldSchemaPb.getDescription());
+    }
+    if (fieldSchemaPb.getPolicyTags() != null) {
+      fieldBuilder.setPolicyTags(PolicyTags.fromPb(fieldSchemaPb.getPolicyTags()));
     }
     FieldList subFields =
         fieldSchemaPb.getFields() != null

@@ -25,6 +25,9 @@ import org.junit.Test;
 
 public class SchemaTest {
 
+  private static PolicyTags POLICY_TAGS =
+      PolicyTags.newBuilder().setNames(ImmutableList.of("someTag")).build();
+
   private static final Field FIELD_SCHEMA1 =
       Field.newBuilder("StringField", LegacySQLTypeName.STRING)
           .setMode(Field.Mode.NULLABLE)
@@ -34,12 +37,14 @@ public class SchemaTest {
       Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
           .setMode(Field.Mode.REPEATED)
           .setDescription("FieldDescription2")
+          .setPolicyTags(POLICY_TAGS)
           .build();
   private static final Field FIELD_SCHEMA3 =
       Field.newBuilder("RecordField", LegacySQLTypeName.RECORD, FIELD_SCHEMA1, FIELD_SCHEMA2)
           .setMode(Field.Mode.REQUIRED)
           .setDescription("FieldDescription3")
           .build();
+
   private static final List<Field> FIELDS =
       ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final Schema TABLE_SCHEMA = Schema.of(FIELDS);

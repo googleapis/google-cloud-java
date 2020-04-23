@@ -70,6 +70,7 @@ import com.google.cloud.bigquery.MaterializedViewDefinition;
 import com.google.cloud.bigquery.Model;
 import com.google.cloud.bigquery.ModelId;
 import com.google.cloud.bigquery.ModelInfo;
+import com.google.cloud.bigquery.PolicyTags;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.RangePartitioning;
@@ -141,6 +142,10 @@ public class ITBigQueryTest {
       ImmutableMap.of(
           "example-label1", "example-value1",
           "example-label2", "example-value2");
+  private static final String sampleTag =
+      String.format("projects/%s/locations/us/taxonomies/1/policyTags/2", PROJECT_ID);
+  private static final PolicyTags POLICY_TAGS =
+      PolicyTags.newBuilder().setNames(ImmutableList.of(sampleTag)).build();
   private static final Field TIMESTAMP_FIELD_SCHEMA =
       Field.newBuilder("TimestampField", LegacySQLTypeName.TIMESTAMP)
           .setMode(Field.Mode.NULLABLE)
@@ -198,6 +203,12 @@ public class ITBigQueryTest {
           .setMode(Field.Mode.NULLABLE)
           .setDescription("NumericDescription")
           .build();
+  private static final Field STRING_FIELD_SCHEMA_WITH_POLICY =
+      Field.newBuilder("StringFieldWithPolicy", LegacySQLTypeName.STRING)
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("field has a policy")
+          .setPolicyTags(POLICY_TAGS)
+          .build();
   private static final Schema TABLE_SCHEMA =
       Schema.of(
           TIMESTAMP_FIELD_SCHEMA,
@@ -211,6 +222,8 @@ public class ITBigQueryTest {
           GEOGRAPHY_FIELD_SCHEMA,
           NUMERIC_FIELD_SCHEMA);
   private static final Schema SIMPLE_SCHEMA = Schema.of(STRING_FIELD_SCHEMA);
+  private static final Schema POLICY_SCHEMA =
+      Schema.of(STRING_FIELD_SCHEMA, STRING_FIELD_SCHEMA_WITH_POLICY, INTEGER_FIELD_SCHEMA);
   private static final Schema QUERY_RESULT_SCHEMA =
       Schema.of(
           Field.newBuilder("TimestampField", LegacySQLTypeName.TIMESTAMP)
@@ -509,6 +522,21 @@ public class ITBigQueryTest {
       assertEquals(
           RANGE_PARTITIONING,
           remoteTable.<StandardTableDefinition>getDefinition().getRangePartitioning());
+    } finally {
+      bigquery.delete(tableId);
+    }
+  }
+
+  public void testCreateTableWithPolicyTags() {
+    String tableName = "test_create_table_policytags";
+    TableId tableId = TableId.of(DATASET, tableName);
+    try {
+      StandardTableDefinition tableDefinition =
+          StandardTableDefinition.newBuilder().setSchema(POLICY_SCHEMA).build();
+      Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+      assertNotNull(createdTable);
+      Table remoteTable = bigquery.getTable(DATASET, tableName);
+      assertEquals(POLICY_SCHEMA, remoteTable.<StandardTableDefinition>getDefinition().getSchema());
     } finally {
       bigquery.delete(tableId);
     }
