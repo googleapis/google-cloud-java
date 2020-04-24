@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -83,7 +84,8 @@ public class ImportDatasetTest {
   }
 
   @Test
-  public void testImportDataset() throws IOException, ExecutionException, InterruptedException {
+  public void testImportDataset()
+      throws IOException, ExecutionException, InterruptedException, TimeoutException {
     ImportDataset.importDataset(PROJECT_ID, datasetId, BUCKET + "/entity-extraction/dataset.csv");
     String got = bout.toString();
     assertThat(got).contains("Dataset imported.");
