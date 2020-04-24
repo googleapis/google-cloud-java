@@ -33,6 +33,7 @@ import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.KeyRingName;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest;
 import com.google.cloud.kms.v1.LocationName;
+import com.google.cloud.kms.v1.ProtectionLevel;
 import com.google.cloud.kms.v1.PublicKey;
 import com.google.common.base.Strings;
 import com.google.protobuf.ByteString;
@@ -74,6 +75,7 @@ public class SnippetsIT {
   private static String ASYMMETRIC_DECRYPT_KEY_ID;
   private static String ASYMMETRIC_SIGN_EC_KEY_ID;
   private static String ASYMMETRIC_SIGN_RSA_KEY_ID;
+  private static String HSM_KEY_ID;
   private static String SYMMETRIC_KEY_ID;
 
   private ByteArrayOutputStream stdOut;
@@ -93,6 +95,9 @@ public class SnippetsIT {
 
     ASYMMETRIC_SIGN_RSA_KEY_ID = getRandomId();
     createAsymmetricSignRsaKey(ASYMMETRIC_SIGN_RSA_KEY_ID);
+
+    HSM_KEY_ID = getRandomId();
+    createHsmKey(HSM_KEY_ID);
 
     SYMMETRIC_KEY_ID = getRandomId();
     createSymmetricKey(SYMMETRIC_KEY_ID);
@@ -199,6 +204,24 @@ public class SnippetsIT {
               .setVersionTemplate(
                   CryptoKeyVersionTemplate.newBuilder()
                       .setAlgorithm(CryptoKeyVersionAlgorithm.RSA_SIGN_PSS_2048_SHA256)
+                      .build())
+              .putLabels("foo", "bar")
+              .putLabels("zip", "zap")
+              .build();
+      CryptoKey createdKey = client.createCryptoKey(getKeyRingName(), keyId, key);
+      return createdKey;
+    }
+  }
+
+  private static CryptoKey createHsmKey(String keyId) throws IOException {
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
+      CryptoKey key =
+          CryptoKey.newBuilder()
+              .setPurpose(CryptoKeyPurpose.ENCRYPT_DECRYPT)
+              .setVersionTemplate(
+                  CryptoKeyVersionTemplate.newBuilder()
+                      .setAlgorithm(CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION)
+                      .setProtectionLevel(ProtectionLevel.HSM)
                       .build())
               .putLabels("foo", "bar")
               .putLabels("zip", "zap")
@@ -410,6 +433,13 @@ public class SnippetsIT {
   }
 
   @Test
+  public void testGetKeyVersionAttestation() throws IOException {
+    new GetKeyVersionAttestation()
+        .getKeyVersionAttestation(PROJECT_ID, LOCATION_ID, KEY_RING_ID, HSM_KEY_ID, "1");
+    assertThat(stdOut.toString()).contains("CAVIUM");
+  }
+
+  @Test
   public void testGetKeyLabels() throws IOException {
     new GetKeyLabels().getKeyLabels(PROJECT_ID, LOCATION_ID, KEY_RING_ID, SYMMETRIC_KEY_ID);
     assertThat(stdOut.toString()).contains("foo=bar");
@@ -463,6 +493,13 @@ public class SnippetsIT {
   public void testUpdateKeyRemoveLabels() throws IOException {
     new UpdateKeyRemoveLabels()
         .updateKeyRemoveLabels(PROJECT_ID, LOCATION_ID, KEY_RING_ID, SYMMETRIC_KEY_ID);
+    assertThat(stdOut.toString()).contains("Updated key");
+  }
+
+  @Test
+  public void testUpdateKeyRemoveRotation() throws IOException {
+    new UpdateKeyRemoveRotation()
+        .updateKeyRemoveRotation(PROJECT_ID, LOCATION_ID, KEY_RING_ID, SYMMETRIC_KEY_ID);
     assertThat(stdOut.toString()).contains("Updated key");
   }
 

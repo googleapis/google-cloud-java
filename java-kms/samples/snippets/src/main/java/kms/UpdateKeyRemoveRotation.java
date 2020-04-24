@@ -16,7 +16,7 @@
 
 package kms;
 
-// [START kms_update_key_remove_labels]
+// [START kms_update_key_remove_rotation_schedule]
 import com.google.cloud.kms.v1.CryptoKey;
 import com.google.cloud.kms.v1.CryptoKeyName;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
@@ -24,19 +24,19 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.util.FieldMaskUtil;
 import java.io.IOException;
 
-public class UpdateKeyRemoveLabels {
+public class UpdateKeyRemoveRotation {
 
-  public void updateKeyRemoveLabels() throws IOException {
+  public void updateKeyRemoveRotation() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String locationId = "us-east1";
     String keyRingId = "my-key-ring";
     String keyId = "my-key";
-    updateKeyRemoveLabels(projectId, locationId, keyRingId, keyId);
+    updateKeyRemoveRotation(projectId, locationId, keyRingId, keyId);
   }
 
   // Update a key to remove all labels.
-  public void updateKeyRemoveLabels(
+  public void updateKeyRemoveRotation(
       String projectId, String locationId, String keyRingId, String keyId) throws IOException {
     // Initialize client that will be used to send requests. This client only
     // needs to be created once, and can be reused for multiple requests. After
@@ -47,10 +47,15 @@ public class UpdateKeyRemoveLabels {
       CryptoKeyName cryptoKeyName = CryptoKeyName.of(projectId, locationId, keyRingId, keyId);
 
       // Build an empty key with no labels.
-      CryptoKey key = CryptoKey.newBuilder().setName(cryptoKeyName.toString()).build();
+      CryptoKey key =
+          CryptoKey.newBuilder()
+              .setName(cryptoKeyName.toString())
+              .clearRotationPeriod()
+              .clearNextRotationTime()
+              .build();
 
       // Construct the field mask.
-      FieldMask fieldMask = FieldMaskUtil.fromString("labels");
+      FieldMask fieldMask = FieldMaskUtil.fromString("rotation_period,next_rotation_time");
 
       // Create the key.
       CryptoKey createdKey = client.updateCryptoKey(key, fieldMask);
@@ -58,4 +63,4 @@ public class UpdateKeyRemoveLabels {
     }
   }
 }
-// [END kms_update_key_remove_labels]
+// [END kms_update_key_remove_rotation_schedule]
