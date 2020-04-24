@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:stephaniewang526/java-bigquery.git",
-        "sha": "5992b8f263aefadb05a8e9f382374deea655f503"
+        "remote": "https://github.com/googleapis/java-bigquery.git",
+        "sha": "217c9643b117a64f5981490159c9f7d30c12650a"
       }
     },
     {
