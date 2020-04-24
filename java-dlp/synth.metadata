@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dlp.git",
-        "sha": "96f024b22bf7fa5f88a0ab6c03b81eddda96e896"
+        "sha": "e794691b5e404f9c50aa3f42bf3d9f378dc56d29"
       }
     },
     {
