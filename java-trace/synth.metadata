@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/java-trace.git",
-        "sha": "0e2caf2e9d992ea02c4118654d9d8c58e3b1f7a0"
+        "remote": "https://github.com/googleapis/java-trace.git",
+        "sha": "2f16950771719888dce449faf965fde245e2f374"
       }
     },
     {
