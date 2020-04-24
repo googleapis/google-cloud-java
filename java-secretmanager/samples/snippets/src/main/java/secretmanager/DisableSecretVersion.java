@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package com.example;
+package secretmanager;
 
 // [START secretmanager_disable_secret_version]
-import com.google.cloud.secretmanager.v1.DisableSecretVersionRequest;
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
 import com.google.cloud.secretmanager.v1.SecretVersion;
 import com.google.cloud.secretmanager.v1.SecretVersionName;
@@ -41,14 +40,10 @@ public class DisableSecretVersion {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
       // Build the name from the version.
-      SecretVersionName name = SecretVersionName.of(projectId, secretId, versionId);
-
-      // Create the request.
-      DisableSecretVersionRequest request =
-          DisableSecretVersionRequest.newBuilder().setName(name.toString()).build();
+      SecretVersionName secretVersionName = SecretVersionName.of(projectId, secretId, versionId);
 
       // Create the secret.
-      SecretVersion version = client.disableSecretVersion(request);
+      SecretVersion version = client.disableSecretVersion(secretVersionName);
       System.out.printf("Disabled secret version %s\n", version.getName());
     }
   }

@@ -14,48 +14,38 @@
  * limitations under the License.
  */
 
-package com.example;
+package secretmanager;
 
-// [START secretmanager_list_secret_versions]
-import com.google.cloud.secretmanager.v1.ListSecretVersionsRequest;
+// [START secretmanager_get_secret_version]
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1.SecretManagerServiceClient.ListSecretVersionsPagedResponse;
-import com.google.cloud.secretmanager.v1.SecretName;
+import com.google.cloud.secretmanager.v1.SecretVersion;
+import com.google.cloud.secretmanager.v1.SecretVersionName;
 import java.io.IOException;
 
-public class ListSecretVersions {
+public class GetSecretVersion {
 
-  public void listSecretVersions() throws IOException {
+  public void getSecretVersion() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String secretId = "your-secret-id";
-    listSecretVersions(projectId, secretId);
+    String versionId = "your-version-id";
+    getSecretVersion(projectId, secretId, versionId);
   }
 
-  // List all secret versions for a secret.
-  public void listSecretVersions(String projectId, String secretId) throws IOException {
+  // Get an existing secret version.
+  public void getSecretVersion(String projectId, String secretId, String versionId)
+      throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
-      // Build the parent name.
-      SecretName parent = SecretName.of(projectId, secretId);
+      // Build the name from the version.
+      SecretVersionName secretVersionName = SecretVersionName.of(projectId, secretId, versionId);
 
-      // Create the request.
-      ListSecretVersionsRequest request =
-          ListSecretVersionsRequest.newBuilder().setParent(parent.toString()).build();
-
-      // Get all versions.
-      ListSecretVersionsPagedResponse pagedResponse = client.listSecretVersions(request);
-
-      // List all versions and their state.
-      pagedResponse
-          .iterateAll()
-          .forEach(
-              version -> {
-                System.out.printf("Secret version %s, %s\n", version.getName(), version.getState());
-              });
+      // Create the secret.
+      SecretVersion version = client.getSecretVersion(secretVersionName);
+      System.out.printf("Secret version %s, state %s\n", version.getName(), version.getState());
     }
   }
 }
-// [END secretmanager_list_secret_versions]
+// [END secretmanager_get_secret_version]

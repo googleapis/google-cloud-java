@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package com.example;
+package secretmanager;
 
 // [START secretmanager_create_secret]
-import com.google.cloud.secretmanager.v1.CreateSecretRequest;
 import com.google.cloud.secretmanager.v1.ProjectName;
 import com.google.cloud.secretmanager.v1.Replication;
 import com.google.cloud.secretmanager.v1.Secret;
@@ -40,7 +39,7 @@ public class CreateSecret {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
       // Build the parent name from the project.
-      ProjectName parent = ProjectName.of(projectId);
+      ProjectName projectName = ProjectName.of(projectId);
 
       // Build the secret to create.
       Secret secret =
@@ -51,16 +50,8 @@ public class CreateSecret {
                       .build())
               .build();
 
-      // Create the request.
-      CreateSecretRequest request =
-          CreateSecretRequest.newBuilder()
-              .setParent(parent.toString())
-              .setSecretId(secretId)
-              .setSecret(secret)
-              .build();
-
       // Create the secret.
-      Secret createdSecret = client.createSecret(request);
+      Secret createdSecret = client.createSecret(projectName, secretId, secret);
       System.out.printf("Created secret %s\n", createdSecret.getName());
     }
   }

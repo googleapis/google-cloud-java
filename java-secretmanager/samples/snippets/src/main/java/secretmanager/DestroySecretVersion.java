@@ -14,51 +14,38 @@
  * limitations under the License.
  */
 
-package com.example;
+package secretmanager;
 
-// [START secretmanager_add_secret_version]
-import com.google.cloud.secretmanager.v1.AddSecretVersionRequest;
+// [START secretmanager_destroy_secret_version]
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1.SecretName;
-import com.google.cloud.secretmanager.v1.SecretPayload;
 import com.google.cloud.secretmanager.v1.SecretVersion;
-import com.google.protobuf.ByteString;
+import com.google.cloud.secretmanager.v1.SecretVersionName;
 import java.io.IOException;
 
-public class AddSecretVersion {
+public class DestroySecretVersion {
 
-  public void addSecretVersion() throws IOException {
+  public void destroySecretVersion() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String secretId = "your-secret-id";
-    addSecretVersion(projectId, secretId);
+    String versionId = "your-version-id";
+    destroySecretVersion(projectId, secretId, versionId);
   }
 
-  // Add a new version to the existing secret.
-  public void addSecretVersion(String projectId, String secretId) throws IOException {
+  // Destroy an existing secret version.
+  public void destroySecretVersion(String projectId, String secretId, String versionId)
+      throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
-      SecretName name = SecretName.of(projectId, secretId);
+      // Build the name from the version.
+      SecretVersionName secretVersionName = SecretVersionName.of(projectId, secretId, versionId);
 
-      // Create the secret payload.
-      SecretPayload payload =
-          SecretPayload.newBuilder()
-              .setData(ByteString.copyFromUtf8("my super secret data"))
-              .build();
-
-      // Create the request.
-      AddSecretVersionRequest request =
-          AddSecretVersionRequest.newBuilder()
-              .setParent(name.toString())
-              .setPayload(payload)
-              .build();
-
-      // Add the secret version.
-      SecretVersion version = client.addSecretVersion(request);
-      System.out.printf("Added secret version %s\n", version.getName());
+      // Create the secret.
+      SecretVersion version = client.destroySecretVersion(secretVersionName);
+      System.out.printf("Destroyed secret version %s\n", version.getName());
     }
   }
 }
-// [END secretmanager_add_secret_version]
+// [END secretmanager_destroy_secret_version]

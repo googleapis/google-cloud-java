@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example;
+package secretmanager;
 
 // [START secretmanager_iam_revoke_access]
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
@@ -42,14 +42,12 @@ public class IamRevokeAccess {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
       // Build the name from the version.
-      SecretName name = SecretName.of(projectId, secretId);
-
-      // Create a request to get the current IAM policy.
-      GetIamPolicyRequest getRequest =
-          GetIamPolicyRequest.newBuilder().setResource(name.toString()).build();
+      SecretName secretName = SecretName.of(projectId, secretId);
 
       // Request the current IAM policy.
-      Policy policy = client.getIamPolicy(getRequest);
+      Policy policy =
+          client.getIamPolicy(
+              GetIamPolicyRequest.newBuilder().setResource(secretName.toString()).build());
 
       // Search through bindings and remove matches.
       String roleToFind = "roles/secretmanager.secretAccessor";
@@ -59,12 +57,12 @@ public class IamRevokeAccess {
         }
       }
 
-      // Create a request to update the IAM policy.
-      SetIamPolicyRequest setRequest =
-          SetIamPolicyRequest.newBuilder().setResource(name.toString()).setPolicy(policy).build();
-
       // Save the updated IAM policy.
-      client.setIamPolicy(setRequest);
+      client.setIamPolicy(
+          SetIamPolicyRequest.newBuilder()
+              .setResource(secretName.toString())
+              .setPolicy(policy)
+              .build());
 
       System.out.printf("Updated IAM policy for %s\n", secretId);
     }

@@ -14,40 +14,42 @@
  * limitations under the License.
  */
 
-package com.example;
+package secretmanager;
 
-// [START secretmanager_delete_secret]
-import com.google.cloud.secretmanager.v1.DeleteSecretRequest;
+// [START secretmanager_list_secrets]
+import com.google.cloud.secretmanager.v1.ProjectName;
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1.SecretName;
+import com.google.cloud.secretmanager.v1.SecretManagerServiceClient.ListSecretsPagedResponse;
 import java.io.IOException;
 
-public class DeleteSecret {
+public class ListSecrets {
 
-  public void deleteSecret() throws IOException {
+  public void listSecrets() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
-    String secretId = "your-secret-id";
-    deleteSecret(projectId, secretId);
+    listSecrets(projectId);
   }
 
-  // Delete an existing secret with the given name.
-  public void deleteSecret(String projectId, String secretId) throws IOException {
+  // List all secrets for a project
+  public void listSecrets(String projectId) throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
-      // Build the secret name.
-      SecretName name = SecretName.of(projectId, secretId);
+      // Build the parent name.
+      ProjectName projectName = ProjectName.of(projectId);
 
-      // Create the request.
-      DeleteSecretRequest request =
-          DeleteSecretRequest.newBuilder().setName(name.toString()).build();
+      // Get all secrets.
+      ListSecretsPagedResponse pagedResponse = client.listSecrets(projectName);
 
-      // Create the secret.
-      client.deleteSecret(request);
-      System.out.printf("Deleted secret %s\n", secretId);
+      // List all secrets.
+      pagedResponse
+          .iterateAll()
+          .forEach(
+              secret -> {
+                System.out.printf("Secret %s\n", secret.getName());
+              });
     }
   }
 }
-// [END secretmanager_delete_secret]
+// [END secretmanager_list_secrets]

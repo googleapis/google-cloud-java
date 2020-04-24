@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package com.example;
+package secretmanager;
 
 // [START secretmanager_get_secret]
-import com.google.cloud.secretmanager.v1.GetSecretRequest;
 import com.google.cloud.secretmanager.v1.Secret;
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
 import com.google.cloud.secretmanager.v1.SecretName;
@@ -39,13 +38,10 @@ public class GetSecret {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
       // Build the name.
-      SecretName name = SecretName.of(projectId, secretId);
-
-      // Create the request.
-      GetSecretRequest request = GetSecretRequest.newBuilder().setName(name.toString()).build();
+      SecretName secretName = SecretName.of(projectId, secretId);
 
       // Create the secret.
-      Secret secret = client.getSecret(request);
+      Secret secret = client.getSecret(secretName);
 
       // Get the replication policy.
       String replication = "";

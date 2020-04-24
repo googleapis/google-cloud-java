@@ -14,47 +14,43 @@
  * limitations under the License.
  */
 
-package com.example;
+package secretmanager;
 
-// [START secretmanager_list_secrets]
-import com.google.cloud.secretmanager.v1.ListSecretsRequest;
-import com.google.cloud.secretmanager.v1.ProjectName;
+// [START secretmanager_add_secret_version]
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1.SecretManagerServiceClient.ListSecretsPagedResponse;
+import com.google.cloud.secretmanager.v1.SecretName;
+import com.google.cloud.secretmanager.v1.SecretPayload;
+import com.google.cloud.secretmanager.v1.SecretVersion;
+import com.google.protobuf.ByteString;
 import java.io.IOException;
 
-public class ListSecrets {
+public class AddSecretVersion {
 
-  public void listSecrets() throws IOException {
+  public void addSecretVersion() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
-    listSecrets(projectId);
+    String secretId = "your-secret-id";
+    addSecretVersion(projectId, secretId);
   }
 
-  // List all secrets for a project
-  public void listSecrets(String projectId) throws IOException {
+  // Add a new version to the existing secret.
+  public void addSecretVersion(String projectId, String secretId) throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
-      // Build the parent name.
-      ProjectName parent = ProjectName.of(projectId);
+      SecretName secretName = SecretName.of(projectId, secretId);
 
-      // Create the request.
-      ListSecretsRequest request =
-          ListSecretsRequest.newBuilder().setParent(parent.toString()).build();
+      // Create the secret payload.
+      SecretPayload payload =
+          SecretPayload.newBuilder()
+              .setData(ByteString.copyFromUtf8("my super secret data"))
+              .build();
 
-      // Get all secrets.
-      ListSecretsPagedResponse pagedResponse = client.listSecrets(request);
-
-      // List all secrets.
-      pagedResponse
-          .iterateAll()
-          .forEach(
-              secret -> {
-                System.out.printf("Secret %s\n", secret.getName());
-              });
+      // Add the secret version.
+      SecretVersion version = client.addSecretVersion(secretName, payload);
+      System.out.printf("Added secret version %s\n", version.getName());
     }
   }
 }
-// [END secretmanager_list_secrets]
+// [END secretmanager_add_secret_version]

@@ -14,13 +14,10 @@
  * limitations under the License.
  */
 
-package com.example;
+package secretmanager;
 
 // [START secretmanager_quickstart]
-import com.google.cloud.secretmanager.v1.AccessSecretVersionRequest;
 import com.google.cloud.secretmanager.v1.AccessSecretVersionResponse;
-import com.google.cloud.secretmanager.v1.AddSecretVersionRequest;
-import com.google.cloud.secretmanager.v1.CreateSecretRequest;
 import com.google.cloud.secretmanager.v1.ProjectName;
 import com.google.cloud.secretmanager.v1.Replication;
 import com.google.cloud.secretmanager.v1.Secret;
@@ -43,48 +40,34 @@ public class Quickstart {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
-
       // Build the parent name from the project.
-      ProjectName parent = ProjectName.of(projectId);
+      ProjectName projectName = ProjectName.of(projectId);
 
       // Create the parent secret.
-      CreateSecretRequest createRequest =
-          CreateSecretRequest.newBuilder()
-              .setParent(parent.toString())
-              .setSecretId(secretId)
-              .setSecret(
-                  Secret.newBuilder()
-                      .setReplication(
-                          Replication.newBuilder()
-                              .setAutomatic(Replication.Automatic.newBuilder().build())
-                              .build())
+      Secret secret =
+          Secret.newBuilder()
+              .setReplication(
+                  Replication.newBuilder()
+                      .setAutomatic(Replication.Automatic.newBuilder().build())
                       .build())
               .build();
 
-      Secret secret = client.createSecret(createRequest);
+      Secret createdSecret = client.createSecret(projectName, secretId, secret);
 
       // Add a secret version.
-      AddSecretVersionRequest addRequest =
-          AddSecretVersionRequest.newBuilder()
-              .setParent(secret.getName())
-              .setPayload(
-                  SecretPayload.newBuilder()
-                      .setData(ByteString.copyFromUtf8("hello world!"))
-                      .build())
-              .build();
-      SecretVersion version = client.addSecretVersion(addRequest);
+      SecretPayload payload =
+          SecretPayload.newBuilder().setData(ByteString.copyFromUtf8("hello world!")).build();
+      SecretVersion addedVersion = client.addSecretVersion(createdSecret.getName(), payload);
 
       // Access the secret version.
-      AccessSecretVersionRequest accessRequest =
-          AccessSecretVersionRequest.newBuilder().setName(version.getName()).build();
-      AccessSecretVersionResponse response = client.accessSecretVersion(accessRequest);
+      AccessSecretVersionResponse response = client.accessSecretVersion(addedVersion.getName());
 
       // Print the secret payload.
       //
       // WARNING: Do not print the secret in a production environment - this
       // snippet is showing how to access the secret material.
-      String payload = response.getPayload().getData().toStringUtf8();
-      System.out.printf("Plaintext: %s\n", payload);
+      String data = response.getPayload().getData().toStringUtf8();
+      System.out.printf("Plaintext: %s\n", data);
     }
   }
 }

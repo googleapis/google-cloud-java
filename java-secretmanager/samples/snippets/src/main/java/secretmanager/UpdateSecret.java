@@ -14,43 +14,48 @@
  * limitations under the License.
  */
 
-package com.example;
+package secretmanager;
 
-// [START secretmanager_destroy_secret_version]
-import com.google.cloud.secretmanager.v1.DestroySecretVersionRequest;
+// [START secretmanager_update_secret]
+import com.google.cloud.secretmanager.v1.Secret;
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1.SecretVersion;
-import com.google.cloud.secretmanager.v1.SecretVersionName;
+import com.google.cloud.secretmanager.v1.SecretName;
+import com.google.protobuf.FieldMask;
+import com.google.protobuf.util.FieldMaskUtil;
 import java.io.IOException;
 
-public class DestroySecretVersion {
+public class UpdateSecret {
 
-  public void destroySecretVersion() throws IOException {
+  public void updateSecret() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String secretId = "your-secret-id";
-    String versionId = "your-version-id";
-    destroySecretVersion(projectId, secretId, versionId);
+    updateSecret(projectId, secretId);
   }
 
-  // Destroy an existing secret version.
-  public void destroySecretVersion(String projectId, String secretId, String versionId)
-      throws IOException {
+  // Update an existing secret.
+  public void updateSecret(String projectId, String secretId) throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
-      // Build the name from the version.
-      SecretVersionName name = SecretVersionName.of(projectId, secretId, versionId);
+      // Build the name.
+      SecretName secretName = SecretName.of(projectId, secretId);
 
-      // Create the request.
-      DestroySecretVersionRequest request =
-          DestroySecretVersionRequest.newBuilder().setName(name.toString()).build();
+      // Build the updated secret.
+      Secret secret =
+          Secret.newBuilder()
+              .setName(secretName.toString())
+              .putLabels("secretmanager", "rocks")
+              .build();
+
+      // Build the field mask.
+      FieldMask fieldMask = FieldMaskUtil.fromString("labels");
 
       // Create the secret.
-      SecretVersion version = client.destroySecretVersion(request);
-      System.out.printf("Destroyed secret version %s\n", version.getName());
+      Secret updatedSecret = client.updateSecret(secret, fieldMask);
+      System.out.printf("Updated secret %s\n", updatedSecret.getName());
     }
   }
 }
-// [END secretmanager_destroy_secret_version]
+// [END secretmanager_update_secret]

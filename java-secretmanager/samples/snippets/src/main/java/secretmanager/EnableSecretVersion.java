@@ -14,47 +14,38 @@
  * limitations under the License.
  */
 
-package com.example;
+package secretmanager;
 
-// [START secretmanager_access_secret_version]
-import com.google.cloud.secretmanager.v1.AccessSecretVersionRequest;
-import com.google.cloud.secretmanager.v1.AccessSecretVersionResponse;
+// [START secretmanager_enable_secret_version]
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
+import com.google.cloud.secretmanager.v1.SecretVersion;
 import com.google.cloud.secretmanager.v1.SecretVersionName;
 import java.io.IOException;
 
-public class AccessSecretVersion {
+public class EnableSecretVersion {
 
-  public void accessSecretVersion() throws IOException {
+  public void enableSecretVersion() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String secretId = "your-secret-id";
     String versionId = "your-version-id";
-    accessSecretVersion(projectId, secretId, versionId);
+    enableSecretVersion(projectId, secretId, versionId);
   }
 
-  // Access the payload for the given secret version if one exists. The version
-  // can be a version number as a string (e.g. "5") or an alias (e.g. "latest").
-  public void accessSecretVersion(String projectId, String secretId, String versionId)
+  // Enable an existing secret version.
+  public void enableSecretVersion(String projectId, String secretId, String versionId)
       throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
-      SecretVersionName name = SecretVersionName.of(projectId, secretId, versionId);
+      // Build the name from the version.
+      SecretVersionName secretVersionName = SecretVersionName.of(projectId, secretId, versionId);
 
-      // Access the secret version.
-      AccessSecretVersionRequest request =
-          AccessSecretVersionRequest.newBuilder().setName(name.toString()).build();
-      AccessSecretVersionResponse response = client.accessSecretVersion(request);
-
-      // Print the secret payload.
-      //
-      // WARNING: Do not print the secret in a production environment - this
-      // snippet is showing how to access the secret material.
-      String payload = response.getPayload().getData().toStringUtf8();
-      System.out.printf("Plaintext: %s\n", payload);
+      // Create the secret.
+      SecretVersion version = client.enableSecretVersion(secretVersionName);
+      System.out.printf("Enabled secret version %s\n", version.getName());
     }
   }
 }
-// [END secretmanager_access_secret_version]
+// [END secretmanager_enable_secret_version]

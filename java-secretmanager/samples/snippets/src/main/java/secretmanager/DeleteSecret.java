@@ -14,49 +14,35 @@
  * limitations under the License.
  */
 
-package com.example;
+package secretmanager;
 
-// [START secretmanager_update_secret]
-import com.google.cloud.secretmanager.v1.Secret;
+// [START secretmanager_delete_secret]
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
 import com.google.cloud.secretmanager.v1.SecretName;
-import com.google.cloud.secretmanager.v1.UpdateSecretRequest;
-import com.google.protobuf.util.FieldMaskUtil;
 import java.io.IOException;
 
-public class UpdateSecret {
+public class DeleteSecret {
 
-  public void updateSecret() throws IOException {
+  public void deleteSecret() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String secretId = "your-secret-id";
-    updateSecret(projectId, secretId);
+    deleteSecret(projectId, secretId);
   }
 
-  // Update an existing secret.
-  public void updateSecret(String projectId, String secretId) throws IOException {
+  // Delete an existing secret with the given name.
+  public void deleteSecret(String projectId, String secretId) throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
-      // Build the name.
-      SecretName name = SecretName.of(projectId, secretId);
-
-      // Build the updated secret.
-      Secret secret =
-          Secret.newBuilder().setName(name.toString()).putLabels("secretmanager", "rocks").build();
-
-      // Create the request.
-      UpdateSecretRequest request =
-          UpdateSecretRequest.newBuilder()
-              .setSecret(secret)
-              .setUpdateMask(FieldMaskUtil.fromString("labels"))
-              .build();
+      // Build the secret name.
+      SecretName secretName = SecretName.of(projectId, secretId);
 
       // Create the secret.
-      Secret updatedSecret = client.updateSecret(request);
-      System.out.printf("Updated secret %s\n", updatedSecret.getName());
+      client.deleteSecret(secretName);
+      System.out.printf("Deleted secret %s\n", secretId);
     }
   }
 }
-// [END secretmanager_update_secret]
+// [END secretmanager_delete_secret]
