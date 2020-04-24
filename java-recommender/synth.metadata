@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/java-recommender.git",
-        "sha": "a81420675404e07cda3ec320f51424e0b2f1fd64"
+        "remote": "https://github.com/googleapis/java-recommender.git",
+        "sha": "7c1e062f041a975bcb327a7295e235fc650978f2"
       }
     },
     {
