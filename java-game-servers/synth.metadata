@@ -11,7 +11,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-gameservices.git",
-        "sha": "2643e577d6ebadfbe264d82060923f62b0eb1e45"
+        "sha": "c68fb8856791b78654c1dc254984a2706d27e5b7"
       }
     },
     {
