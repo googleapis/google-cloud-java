@@ -425,11 +425,12 @@ public class StreamWriterTest {
 
       testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(1L).build());
       ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+      ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
       try {
-        ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
+        appendFuture2.get();
         Assert.fail("This should fail");
-      } catch (IllegalStateException e) {
-        assertEquals("FlowControl limit exceeded: Element count", e.getMessage());
+      } catch (ExecutionException e) {
+        assertEquals("The maximum number of batch elements: 1 have been reached.", e.getMessage());
       }
       assertEquals(1L, appendFuture1.get().getOffset());
     }
@@ -453,7 +454,7 @@ public class StreamWriterTest {
     testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(0).build());
     ApiFuture<AppendRowsResponse> future1 = sendTestMessage(writer, new String[] {"m1"});
     assertEquals(false, future1.isDone());
-    // Retry is scheduled to be 5 seconds later.
+    // Retry is scheduled to be 7 seconds later.
     assertEquals(0L, future1.get().getOffset());
 
     LOG.info("======CASE II");
@@ -469,16 +470,6 @@ public class StreamWriterTest {
     }
 
     LOG.info("======CASE III");
-    // Writer needs to be recreated since the previous error is not recoverable.
-    writer =
-        getTestStreamWriterBuilder()
-            .setBatchingSettings(
-                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
-                    .toBuilder()
-                    .setDelayThreshold(Duration.ofSeconds(100000))
-                    .setElementCountThreshold(1L)
-                    .build())
-            .build();
     // Case 3: Failed after retried max retry times.
     testBigQueryWrite.addException(transientError);
     testBigQueryWrite.addException(transientError);
@@ -614,14 +605,9 @@ public class StreamWriterTest {
   public void testBuilderParametersAndDefaults() {
     StreamWriter.Builder builder = StreamWriter.newBuilder(TEST_STREAM);
     assertEquals(StreamWriter.Builder.DEFAULT_EXECUTOR_PROVIDER, builder.executorProvider);
-    assertEquals(
-        StreamWriter.Builder.DEFAULT_REQUEST_BYTES_THRESHOLD,
-        builder.batchingSettings.getRequestByteThreshold().longValue());
-    assertEquals(
-        StreamWriter.Builder.DEFAULT_DELAY_THRESHOLD, builder.batchingSettings.getDelayThreshold());
-    assertEquals(
-        StreamWriter.Builder.DEFAULT_ELEMENT_COUNT_THRESHOLD,
-        builder.batchingSettings.getElementCountThreshold().longValue());
+    assertEquals(100 * 1024L, builder.batchingSettings.getRequestByteThreshold().longValue());
+    assertEquals(Duration.ofMillis(10), builder.batchingSettings.getDelayThreshold());
+    assertEquals(100L, builder.batchingSettings.getElementCountThreshold().longValue());
     assertEquals(StreamWriter.Builder.DEFAULT_RETRY_SETTINGS, builder.retrySettings);
     assertEquals(Duration.ofMillis(100), builder.retrySettings.getInitialRetryDelay());
     assertEquals(3, builder.retrySettings.getMaxAttempts());
@@ -813,5 +799,18 @@ public class StreamWriterTest {
       LOG.info(e.toString());
       assertEquals("Cannot shut down a writer already shut-down.", e.getMessage());
     }
+  }
+
+  @Test
+  public void testExistingClient() throws Exception {
+    BigQueryWriteSettings settings =
+        BigQueryWriteSettings.newBuilder()
+            .setTransportChannelProvider(channelProvider)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    BigQueryWriteClient client = BigQueryWriteClient.create(settings);
+    StreamWriter writer = StreamWriter.newBuilder(TEST_STREAM, client).build();
+    writer.close();
+    assertFalse(client.isShutdown());
   }
 }

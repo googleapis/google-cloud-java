@@ -18,9 +18,11 @@ package com.google.cloud.bigquery.storage.v1alpha2;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.FlowControlSettings;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.rpc.UnimplementedException;
-import io.grpc.Status;
+import com.google.api.gax.batching.FlowController;
+import java.util.LinkedList;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Logger;
 
 /**
@@ -30,105 +32,146 @@ import java.util.logging.Logger;
 class Waiter {
   private static final Logger LOG = Logger.getLogger(Waiter.class.getName());
 
-  private int pendingCount;
-  private int pendingSize;
-  FlowControlSettings flowControlSettings;
+  private long pendingCount;
+  private long pendingSize;
+  private long countLimit;
+  private long sizeLimit;
+  private FlowController.LimitExceededBehavior behavior;
+  private LinkedList<CountDownLatch> awaitingMessageAcquires;
+  private LinkedList<CountDownLatch> awaitingBytesAcquires;
+  private final Lock lock;
 
   Waiter(FlowControlSettings flowControlSettings) {
     pendingCount = 0;
     pendingSize = 0;
-    this.flowControlSettings = flowControlSettings;
+    this.awaitingMessageAcquires = new LinkedList<CountDownLatch>();
+    this.awaitingBytesAcquires = new LinkedList<CountDownLatch>();
+    this.countLimit = flowControlSettings.getMaxOutstandingElementCount();
+    this.sizeLimit = flowControlSettings.getMaxOutstandingRequestBytes();
+    this.behavior = flowControlSettings.getLimitExceededBehavior();
+    this.lock = new ReentrantLock();
   }
 
-  public synchronized void incrementPendingCount(int delta) {
-    this.pendingCount += delta;
-    if (pendingCount == 0) {
-      notifyAll();
+  private void notifyNextAcquires() {
+    if (!awaitingMessageAcquires.isEmpty()) {
+      CountDownLatch awaitingAcquire = awaitingMessageAcquires.getFirst();
+      awaitingAcquire.countDown();
+    }
+    if (!awaitingBytesAcquires.isEmpty()) {
+      CountDownLatch awaitingAcquire = awaitingBytesAcquires.getFirst();
+      awaitingAcquire.countDown();
     }
   }
 
-  public synchronized void incrementPendingSize(int delta) {
-    this.pendingSize += delta;
+  public synchronized void release(long messageSize) {
+    lock.lock();
+    --pendingCount;
+    pendingSize -= messageSize;
+    notifyNextAcquires();
+    lock.unlock();
+    notifyAll();
   }
 
-  private void wait(String message) {
-    boolean interrupted = false;
+  public void acquire(long messageSize) throws FlowController.FlowControlException {
+    lock.lock();
     try {
-      LOG.fine("Wait on: " + message);
-      wait();
-    } catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-    }
-  }
+      if (pendingCount >= countLimit
+          && behavior == FlowController.LimitExceededBehavior.ThrowException) {
+        throw new FlowController.MaxOutstandingElementCountReachedException(countLimit);
+      }
+      if (pendingSize + messageSize >= sizeLimit
+          && behavior == FlowController.LimitExceededBehavior.ThrowException) {
+        throw new FlowController.MaxOutstandingRequestBytesReachedException(sizeLimit);
+      }
 
-  private void handleOverLimit(String message) {
-    boolean interrupted = false;
-    switch (this.flowControlSettings.getLimitExceededBehavior()) {
-      case Block:
-        wait(message);
-        break;
-      case ThrowException:
-        throw new IllegalStateException("FlowControl limit exceeded: " + message);
-      case Ignore:
-        return;
-      default:
-        throw new UnimplementedException(
-            "Unknown behavior setting: "
-                + this.flowControlSettings.getLimitExceededBehavior().toString(),
-            null,
-            GrpcStatusCode.of(Status.Code.UNIMPLEMENTED),
-            false);
-    }
-  }
+      CountDownLatch messageWaiter = null;
+      while (pendingCount >= countLimit) {
+        if (messageWaiter == null) {
+          messageWaiter = new CountDownLatch(1);
+          awaitingMessageAcquires.addLast(messageWaiter);
+        } else {
+          // This message already in line stays at the head of the line.
+          messageWaiter = new CountDownLatch(1);
+          awaitingMessageAcquires.set(0, messageWaiter);
+        }
+        lock.unlock();
+        try {
+          messageWaiter.await();
+        } catch (InterruptedException e) {
+          LOG.warning("Interrupted while waiting to acquire flow control tokens");
+        }
+        lock.lock();
+      }
+      ++pendingCount;
+      if (messageWaiter != null) {
+        awaitingMessageAcquires.removeFirst();
+      }
 
-  public synchronized void waitOnElementCount() {
-    LOG.finer(
-        "Waiting on element count "
-            + this.pendingCount
-            + " "
-            + this.flowControlSettings.getMaxOutstandingElementCount());
-    while (this.pendingCount >= this.flowControlSettings.getMaxOutstandingElementCount()) {
-      handleOverLimit("Element count");
-    }
-  }
+      if (!awaitingMessageAcquires.isEmpty() && pendingCount < countLimit) {
+        awaitingMessageAcquires.getFirst().countDown();
+      }
 
-  public synchronized void waitOnSizeLimit(int incomingSize) {
-    LOG.finer(
-        "Waiting on size limit "
-            + (this.pendingSize + incomingSize)
-            + " "
-            + this.flowControlSettings.getMaxOutstandingRequestBytes());
-    while (this.pendingSize + incomingSize
-        >= this.flowControlSettings.getMaxOutstandingRequestBytes()) {
-      handleOverLimit("Byte size");
+      // Now acquire space for bytes.
+      CountDownLatch bytesWaiter = null;
+      Long bytesRemaining = messageSize;
+      while (pendingSize + messageSize >= sizeLimit) {
+        if (bytesWaiter == null) {
+          // This message gets added to the back of the line.
+          bytesWaiter = new CountDownLatch(1);
+          awaitingBytesAcquires.addLast(bytesWaiter);
+        } else {
+          // This message already in line stays at the head of the line.
+          bytesWaiter = new CountDownLatch(1);
+          awaitingBytesAcquires.set(0, bytesWaiter);
+        }
+        lock.unlock();
+        try {
+          bytesWaiter.await();
+        } catch (InterruptedException e) {
+          LOG.warning("Interrupted while waiting to acquire flow control tokens");
+        }
+        lock.lock();
+      }
+
+      pendingSize += messageSize;
+      if (bytesWaiter != null) {
+        awaitingBytesAcquires.removeFirst();
+      }
+      // There may be some surplus bytes left; let the next message waiting for bytes have some.
+      if (!awaitingBytesAcquires.isEmpty() && pendingSize < sizeLimit) {
+        awaitingBytesAcquires.getFirst().countDown();
+      }
+    } finally {
+      lock.unlock();
     }
   }
 
   public synchronized void waitComplete() {
-    boolean interrupted = false;
+    lock.lock();
     try {
       while (pendingCount > 0) {
+        lock.unlock();
         try {
           wait();
         } catch (InterruptedException e) {
-          // Ignored, uninterruptibly.
-          interrupted = true;
+          LOG.warning("Interrupted while waiting for completion");
         }
+        lock.lock();
       }
+    } catch (Exception e) {
+      LOG.warning(e.toString());
     } finally {
-      if (interrupted) {
-        Thread.currentThread().interrupt();
-      }
+      lock.unlock();
     }
   }
 
   @InternalApi
-  public int pendingCount() {
+  public long pendingCount() {
     return pendingCount;
   }
 
   @InternalApi
-  public int pendingSize() {
+  public long pendingSize() {
     return pendingSize;
   }
 }
