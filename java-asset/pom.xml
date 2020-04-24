@@ -68,7 +68,7 @@
     <google.common-protos.version>1.17.0</google.common-protos.version>
     <google.iam.version>0.13.0</google.iam.version>
     <gax.version>1.56.0</gax.version>
-    <grpc.version>1.28.1</grpc.version>
+    <grpc.version>1.29.0</grpc.version>
     <protobuf.version>3.11.4</protobuf.version>
     <junit.version>4.13</junit.version>
     <guava.version>29.0-android</guava.version>
