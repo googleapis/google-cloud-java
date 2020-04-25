@@ -90,11 +90,12 @@ public class MockSpeechImpl extends SpeechImplBase {
   @Override
   public StreamObserver<StreamingRecognizeRequest> streamingRecognize(
       final StreamObserver<StreamingRecognizeResponse> responseObserver) {
-    final Object response = responses.remove();
     StreamObserver<StreamingRecognizeRequest> requestObserver =
         new StreamObserver<StreamingRecognizeRequest>() {
           @Override
           public void onNext(StreamingRecognizeRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
             if (response instanceof StreamingRecognizeResponse) {
               responseObserver.onNext((StreamingRecognizeResponse) response);
             } else if (response instanceof Exception) {
