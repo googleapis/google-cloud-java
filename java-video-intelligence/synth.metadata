@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-video-intelligence.git",
-        "sha": "1827e5dce4d41447ea50302e121047e767d12aed"
+        "sha": "a65905927826c82e7bdcca025e18021259e4dd1e"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "96c0db42dbcb3bb0116cfa55c054dd139ffb3912",
-        "internalRef": "305779873"
+        "sha": "28e76243c23cc282efbb288cb558c174e3e5e9ee",
+        "internalRef": "308294748"
       }
     },
     {

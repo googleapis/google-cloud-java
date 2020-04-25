@@ -60,11 +60,12 @@ public class MockStreamingVideoIntelligenceServiceImpl
   @Override
   public StreamObserver<StreamingAnnotateVideoRequest> streamingAnnotateVideo(
       final StreamObserver<StreamingAnnotateVideoResponse> responseObserver) {
-    final Object response = responses.remove();
     StreamObserver<StreamingAnnotateVideoRequest> requestObserver =
         new StreamObserver<StreamingAnnotateVideoRequest>() {
           @Override
           public void onNext(StreamingAnnotateVideoRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
             if (response instanceof StreamingAnnotateVideoResponse) {
               responseObserver.onNext((StreamingAnnotateVideoResponse) response);
             } else if (response instanceof Exception) {
