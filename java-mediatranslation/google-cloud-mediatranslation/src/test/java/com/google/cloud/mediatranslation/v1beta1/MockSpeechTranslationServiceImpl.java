@@ -59,11 +59,12 @@ public class MockSpeechTranslationServiceImpl extends SpeechTranslationServiceIm
   @Override
   public StreamObserver<StreamingTranslateSpeechRequest> streamingTranslateSpeech(
       final StreamObserver<StreamingTranslateSpeechResponse> responseObserver) {
-    final Object response = responses.remove();
     StreamObserver<StreamingTranslateSpeechRequest> requestObserver =
         new StreamObserver<StreamingTranslateSpeechRequest>() {
           @Override
           public void onNext(StreamingTranslateSpeechRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
             if (response instanceof StreamingTranslateSpeechResponse) {
               responseObserver.onNext((StreamingTranslateSpeechResponse) response);
             } else if (response instanceof Exception) {
