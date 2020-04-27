@@ -35,8 +35,8 @@
  * <code>
  * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
  *   String projectId = "";
- *   Build build = Build.newBuilder().build();
- *   Operation response = cloudBuildClient.createBuild(projectId, build);
+ *   String triggerId = "";
+ *   cloudBuildClient.deleteBuildTrigger(projectId, triggerId);
  * }
  * </code>
  * </pre>

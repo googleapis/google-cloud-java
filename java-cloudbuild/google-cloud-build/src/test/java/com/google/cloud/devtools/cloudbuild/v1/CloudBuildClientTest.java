@@ -15,6 +15,7 @@
  */
 package com.google.cloud.devtools.cloudbuild.v1;
 
+import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPagedResponse;
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -24,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloudbuild.v1.Build;
 import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.CancelBuildRequest;
@@ -50,6 +52,7 @@ import com.google.cloudbuild.v1.WorkerPool;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -57,6 +60,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -104,16 +108,125 @@ public class CloudBuildClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void createBuildTest() {
-    String name = "name3373707";
-    boolean done = true;
-    Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
+  public void listBuildsTest() {
+    String nextPageToken = "";
+    Build buildsElement = Build.newBuilder().build();
+    List<Build> builds = Arrays.asList(buildsElement);
+    ListBuildsResponse expectedResponse =
+        ListBuildsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllBuilds(builds)
+            .build();
     mockCloudBuild.addResponse(expectedResponse);
+
+    String projectId = "projectId-1969970175";
+    String filter = "filter-1274492040";
+
+    ListBuildsPagedResponse pagedListResponse = client.listBuilds(projectId, filter);
+
+    List<Build> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBuildsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBuildsRequest actualRequest = (ListBuildsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listBuildsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockCloudBuild.addException(exception);
+
+    try {
+      String projectId = "projectId-1969970175";
+      String filter = "filter-1274492040";
+
+      client.listBuilds(projectId, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteBuildTriggerTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCloudBuild.addResponse(expectedResponse);
+
+    String projectId = "projectId-1969970175";
+    String triggerId = "triggerId1363517698";
+
+    client.deleteBuildTrigger(projectId, triggerId);
+
+    List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteBuildTriggerRequest actualRequest = (DeleteBuildTriggerRequest) actualRequests.get(0);
+
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(triggerId, actualRequest.getTriggerId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteBuildTriggerExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockCloudBuild.addException(exception);
+
+    try {
+      String projectId = "projectId-1969970175";
+      String triggerId = "triggerId1363517698";
+
+      client.deleteBuildTrigger(projectId, triggerId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createBuildTest() throws Exception {
+    String id = "id3355";
+    String projectId2 = "projectId2939242356";
+    String statusDetail = "statusDetail2089931070";
+    String logsBucket = "logsBucket1565363834";
+    String buildTriggerId = "buildTriggerId1105559411";
+    String logUrl = "logUrl342054388";
+    Build expectedResponse =
+        Build.newBuilder()
+            .setId(id)
+            .setProjectId(projectId2)
+            .setStatusDetail(statusDetail)
+            .setLogsBucket(logsBucket)
+            .setBuildTriggerId(buildTriggerId)
+            .setLogUrl(logUrl)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBuildTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudBuild.addResponse(resultOperation);
 
     String projectId = "projectId-1969970175";
     Build build = Build.newBuilder().build();
 
-    Operation actualResponse = client.createBuild(projectId, build);
+    Build actualResponse = client.createBuildAsync(projectId, build).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
@@ -138,10 +251,12 @@ public class CloudBuildClientTest {
       String projectId = "projectId-1969970175";
       Build build = Build.newBuilder().build();
 
-      client.createBuild(projectId, build);
+      client.createBuildAsync(projectId, build).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -202,57 +317,6 @@ public class CloudBuildClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void listBuildsTest() {
-    String nextPageToken = "";
-    Build buildsElement = Build.newBuilder().build();
-    List<Build> builds = Arrays.asList(buildsElement);
-    ListBuildsResponse expectedResponse =
-        ListBuildsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllBuilds(builds)
-            .build();
-    mockCloudBuild.addResponse(expectedResponse);
-
-    String projectId = "projectId-1969970175";
-    String filter = "filter-1274492040";
-
-    ListBuildsPagedResponse pagedListResponse = client.listBuilds(projectId, filter);
-
-    List<Build> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getBuildsList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListBuildsRequest actualRequest = (ListBuildsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(filter, actualRequest.getFilter());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listBuildsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCloudBuild.addException(exception);
-
-    try {
-      String projectId = "projectId-1969970175";
-      String filter = "filter-1274492040";
-
-      client.listBuilds(projectId, filter);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void cancelBuildTest() {
     String id2 = "id23227150";
     String projectId2 = "projectId2939242356";
@@ -303,6 +367,69 @@ public class CloudBuildClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void retryBuildTest() throws Exception {
+    String id2 = "id23227150";
+    String projectId2 = "projectId2939242356";
+    String statusDetail = "statusDetail2089931070";
+    String logsBucket = "logsBucket1565363834";
+    String buildTriggerId = "buildTriggerId1105559411";
+    String logUrl = "logUrl342054388";
+    Build expectedResponse =
+        Build.newBuilder()
+            .setId(id2)
+            .setProjectId(projectId2)
+            .setStatusDetail(statusDetail)
+            .setLogsBucket(logsBucket)
+            .setBuildTriggerId(buildTriggerId)
+            .setLogUrl(logUrl)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("retryBuildTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudBuild.addResponse(resultOperation);
+
+    String projectId = "projectId-1969970175";
+    String id = "id3355";
+
+    Build actualResponse = client.retryBuildAsync(projectId, id).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RetryBuildRequest actualRequest = (RetryBuildRequest) actualRequests.get(0);
+
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(id, actualRequest.getId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void retryBuildExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockCloudBuild.addException(exception);
+
+    try {
+      String projectId = "projectId-1969970175";
+      String id = "id3355";
+
+      client.retryBuildAsync(projectId, id).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -415,15 +542,23 @@ public class CloudBuildClientTest {
   @Test
   @SuppressWarnings("all")
   public void listBuildTriggersTest() {
-    String nextPageToken = "nextPageToken-1530815211";
+    String nextPageToken = "";
+    BuildTrigger triggersElement = BuildTrigger.newBuilder().build();
+    List<BuildTrigger> triggers = Arrays.asList(triggersElement);
     ListBuildTriggersResponse expectedResponse =
-        ListBuildTriggersResponse.newBuilder().setNextPageToken(nextPageToken).build();
+        ListBuildTriggersResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllTriggers(triggers)
+            .build();
     mockCloudBuild.addResponse(expectedResponse);
 
     String projectId = "projectId-1969970175";
 
-    ListBuildTriggersResponse actualResponse = client.listBuildTriggers(projectId);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    ListBuildTriggersPagedResponse pagedListResponse = client.listBuildTriggers(projectId);
+
+    List<BuildTrigger> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTriggersList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -446,46 +581,6 @@ public class CloudBuildClientTest {
       String projectId = "projectId-1969970175";
 
       client.listBuildTriggers(projectId);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteBuildTriggerTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockCloudBuild.addResponse(expectedResponse);
-
-    String projectId = "projectId-1969970175";
-    String triggerId = "triggerId1363517698";
-
-    client.deleteBuildTrigger(projectId, triggerId);
-
-    List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteBuildTriggerRequest actualRequest = (DeleteBuildTriggerRequest) actualRequests.get(0);
-
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(triggerId, actualRequest.getTriggerId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteBuildTriggerExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCloudBuild.addException(exception);
-
-    try {
-      String projectId = "projectId-1969970175";
-      String triggerId = "triggerId1363517698";
-
-      client.deleteBuildTrigger(projectId, triggerId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -550,17 +645,35 @@ public class CloudBuildClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void runBuildTriggerTest() {
-    String name = "name3373707";
-    boolean done = true;
-    Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
-    mockCloudBuild.addResponse(expectedResponse);
+  public void runBuildTriggerTest() throws Exception {
+    String id = "id3355";
+    String projectId2 = "projectId2939242356";
+    String statusDetail = "statusDetail2089931070";
+    String logsBucket = "logsBucket1565363834";
+    String buildTriggerId = "buildTriggerId1105559411";
+    String logUrl = "logUrl342054388";
+    Build expectedResponse =
+        Build.newBuilder()
+            .setId(id)
+            .setProjectId(projectId2)
+            .setStatusDetail(statusDetail)
+            .setLogsBucket(logsBucket)
+            .setBuildTriggerId(buildTriggerId)
+            .setLogUrl(logUrl)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runBuildTriggerTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudBuild.addResponse(resultOperation);
 
     String projectId = "projectId-1969970175";
     String triggerId = "triggerId1363517698";
     RepoSource source = RepoSource.newBuilder().build();
 
-    Operation actualResponse = client.runBuildTrigger(projectId, triggerId, source);
+    Build actualResponse = client.runBuildTriggerAsync(projectId, triggerId, source).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
@@ -587,53 +700,12 @@ public class CloudBuildClientTest {
       String triggerId = "triggerId1363517698";
       RepoSource source = RepoSource.newBuilder().build();
 
-      client.runBuildTrigger(projectId, triggerId, source);
+      client.runBuildTriggerAsync(projectId, triggerId, source).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void retryBuildTest() {
-    String name = "name3373707";
-    boolean done = true;
-    Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
-    mockCloudBuild.addResponse(expectedResponse);
-
-    String projectId = "projectId-1969970175";
-    String id = "id3355";
-
-    Operation actualResponse = client.retryBuild(projectId, id);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    RetryBuildRequest actualRequest = (RetryBuildRequest) actualRequests.get(0);
-
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(id, actualRequest.getId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void retryBuildExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCloudBuild.addException(exception);
-
-    try {
-      String projectId = "projectId-1969970175";
-      String id = "id3355";
-
-      client.retryBuild(projectId, id);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
