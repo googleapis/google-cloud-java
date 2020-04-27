@@ -17,7 +17,7 @@
     <method>boolean has*(*)</method>
   </difference>
 
-  <!-- TODO: remove after 0.121.0 -->
+  <!-- TODO: remove after 0.122.0 -->
   <difference>
     <differenceType>7002</differenceType>
     <className>com/google/cloud/securitycenter/v1p1beta1/SecurityMarksName</className>
@@ -30,5 +30,9 @@
   <difference>
     <differenceType>8001</differenceType>
     <className>com/google/cloud/securitycenter/v1p1beta1/UntypedSecurityMarksName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1p1beta1/SecurityMarksName$OrganizationSourceFindingBuilder</className>
   </difference>
 </differences>

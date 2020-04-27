@@ -17,15 +17,55 @@
     <method>boolean has*(*)</method>
   </difference>
 
-  <!-- TODO: remove after 0.121.0 -->
+  <!-- TODO: remove after 0.122.0 -->
   <difference>
     <differenceType>7002</differenceType>
     <className>com/google/cloud/securitycenter/v1/SecurityMarksName</className>
-    <method>java.util.List parse(java.util.List)</method>
+    <method>java.lang.String formatOrganizationAssetName(java.lang.String, java.lang.String)</method>
   </difference>
   <difference>
     <differenceType>7002</differenceType>
     <className>com/google/cloud/securitycenter/v1/SecurityMarksName</className>
-    <method>java.util.List toStrings(java.util.List)</method>
+    <method>java.lang.String formatOrganizationSourceFindingName(java.lang.String, java.lang.String, java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName</className>
+    <method>com.google.cloud.securitycenter.v1.SecurityMarksName$Builder newOrganizationAssetBuilder()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName</className>
+    <method>com.google.cloud.securitycenter.v1.SecurityMarksName$OrganizationSourceFindingBuilder newOrganizationSourceFindingBuilder()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName</className>
+    <method>com.google.cloud.securitycenter.v1.SecurityMarksName ofOrganizationAssetName(java.lang.String, java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName</className>
+    <method>com.google.cloud.securitycenter.v1.SecurityMarksName ofOrganizationSourceFindingName(java.lang.String, java.lang.String, java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName$OrganizationSourceFindingBuilder</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/AssetSecurityMarksName*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/FindingSecurityMarksName*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksNames</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/UntypedSecurityMarksName</className>
   </difference>
 </differences>

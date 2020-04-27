@@ -34,10 +34,10 @@ public class SecurityMarksName implements ResourceName {
   @Deprecated
   protected SecurityMarksName() {}
 
-  private static final PathTemplate ORGANIZATION_ASSET_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_ASSET_SECURITY_MARKS_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/assets/{asset}/securityMarks");
-  private static final PathTemplate ORGANIZATION_SOURCE_FINDING_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_SOURCE_FINDING_SECURITY_MARKS_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/sources/{source}/findings/{finding}/securityMarks");
 
@@ -69,14 +69,14 @@ public class SecurityMarksName implements ResourceName {
   private SecurityMarksName(Builder builder) {
     organization = Preconditions.checkNotNull(builder.getOrganization());
     asset = Preconditions.checkNotNull(builder.getAsset());
-    pathTemplate = ORGANIZATION_ASSET_PATH_TEMPLATE;
+    pathTemplate = ORGANIZATION_ASSET_SECURITY_MARKS_PATH_TEMPLATE;
   }
 
-  private SecurityMarksName(OrganizationSourceFindingBuilder builder) {
+  private SecurityMarksName(OrganizationSourceFindingSecurityMarksBuilder builder) {
     organization = Preconditions.checkNotNull(builder.getOrganization());
     source = Preconditions.checkNotNull(builder.getSource());
     finding = Preconditions.checkNotNull(builder.getFinding());
-    pathTemplate = ORGANIZATION_SOURCE_FINDING_PATH_TEMPLATE;
+    pathTemplate = ORGANIZATION_SOURCE_FINDING_SECURITY_MARKS_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -84,13 +84,14 @@ public class SecurityMarksName implements ResourceName {
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static Builder newOrganizationAssetBuilder() {
+  public static Builder newOrganizationAssetSecurityMarksBuilder() {
     return new Builder();
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static OrganizationSourceFindingBuilder newOrganizationSourceFindingBuilder() {
-    return new OrganizationSourceFindingBuilder();
+  public static OrganizationSourceFindingSecurityMarksBuilder
+      newOrganizationSourceFindingSecurityMarksBuilder() {
+    return new OrganizationSourceFindingSecurityMarksBuilder();
   }
 
   public Builder toBuilder() {
@@ -98,18 +99,25 @@ public class SecurityMarksName implements ResourceName {
   }
 
   public static SecurityMarksName of(String organization, String asset) {
-    return newOrganizationAssetBuilder().setOrganization(organization).setAsset(asset).build();
+    return newOrganizationAssetSecurityMarksBuilder()
+        .setOrganization(organization)
+        .setAsset(asset)
+        .build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static SecurityMarksName ofOrganizationAssetName(String organization, String asset) {
-    return newOrganizationAssetBuilder().setOrganization(organization).setAsset(asset).build();
+  public static SecurityMarksName ofOrganizationAssetSecurityMarksName(
+      String organization, String asset) {
+    return newOrganizationAssetSecurityMarksBuilder()
+        .setOrganization(organization)
+        .setAsset(asset)
+        .build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static SecurityMarksName ofOrganizationSourceFindingName(
+  public static SecurityMarksName ofOrganizationSourceFindingSecurityMarksName(
       String organization, String source, String finding) {
-    return newOrganizationSourceFindingBuilder()
+    return newOrganizationSourceFindingSecurityMarksBuilder()
         .setOrganization(organization)
         .setSource(source)
         .setFinding(finding)
@@ -121,14 +129,14 @@ public class SecurityMarksName implements ResourceName {
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatOrganizationAssetName(String organization, String asset) {
+  public static String formatOrganizationAssetSecurityMarksName(String organization, String asset) {
     return newBuilder().setOrganization(organization).setAsset(asset).build().toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatOrganizationSourceFindingName(
+  public static String formatOrganizationSourceFindingSecurityMarksName(
       String organization, String source, String finding) {
-    return newOrganizationSourceFindingBuilder()
+    return newOrganizationSourceFindingSecurityMarksBuilder()
         .setOrganization(organization)
         .setSource(source)
         .setFinding(finding)
@@ -140,13 +148,15 @@ public class SecurityMarksName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (ORGANIZATION_ASSET_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = ORGANIZATION_ASSET_PATH_TEMPLATE.match(formattedString);
-      return ofOrganizationAssetName(matchMap.get("organization"), matchMap.get("asset"));
-    } else if (ORGANIZATION_SOURCE_FINDING_PATH_TEMPLATE.matches(formattedString)) {
+    if (ORGANIZATION_ASSET_SECURITY_MARKS_PATH_TEMPLATE.matches(formattedString)) {
       Map<String, String> matchMap =
-          ORGANIZATION_SOURCE_FINDING_PATH_TEMPLATE.match(formattedString);
-      return ofOrganizationSourceFindingName(
+          ORGANIZATION_ASSET_SECURITY_MARKS_PATH_TEMPLATE.match(formattedString);
+      return ofOrganizationAssetSecurityMarksName(
+          matchMap.get("organization"), matchMap.get("asset"));
+    } else if (ORGANIZATION_SOURCE_FINDING_SECURITY_MARKS_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          ORGANIZATION_SOURCE_FINDING_SECURITY_MARKS_PATH_TEMPLATE.match(formattedString);
+      return ofOrganizationSourceFindingSecurityMarksName(
           matchMap.get("organization"), matchMap.get("source"), matchMap.get("finding"));
     }
     throw new ValidationException("JobName.parse: formattedString not in valid format");
@@ -173,8 +183,8 @@ public class SecurityMarksName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ORGANIZATION_ASSET_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_SOURCE_FINDING_PATH_TEMPLATE.matches(formattedString);
+    return ORGANIZATION_ASSET_SECURITY_MARKS_PATH_TEMPLATE.matches(formattedString)
+        || ORGANIZATION_SOURCE_FINDING_SECURITY_MARKS_PATH_TEMPLATE.matches(formattedString);
   }
 
   @Override
@@ -239,7 +249,7 @@ public class SecurityMarksName implements ResourceName {
 
     private Builder(SecurityMarksName securityMarksName) {
       Preconditions.checkArgument(
-          securityMarksName.pathTemplate == ORGANIZATION_ASSET_PATH_TEMPLATE,
+          securityMarksName.pathTemplate == ORGANIZATION_ASSET_SECURITY_MARKS_PATH_TEMPLATE,
           "toBuilder is only supported when SecurityMarksName has the pattern of "
               + "organizations/{organization}/assets/{asset}/securityMarks.");
       organization = securityMarksName.organization;
@@ -253,13 +263,13 @@ public class SecurityMarksName implements ResourceName {
 
   /** Builder for organizations/{organization}/sources/{source}/findings/{finding}/securityMarks. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class OrganizationSourceFindingBuilder {
+  public static class OrganizationSourceFindingSecurityMarksBuilder {
 
     private String organization;
     private String source;
     private String finding;
 
-    private OrganizationSourceFindingBuilder() {}
+    private OrganizationSourceFindingSecurityMarksBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -273,17 +283,17 @@ public class SecurityMarksName implements ResourceName {
       return finding;
     }
 
-    public OrganizationSourceFindingBuilder setOrganization(String organization) {
+    public OrganizationSourceFindingSecurityMarksBuilder setOrganization(String organization) {
       this.organization = organization;
       return this;
     }
 
-    public OrganizationSourceFindingBuilder setSource(String source) {
+    public OrganizationSourceFindingSecurityMarksBuilder setSource(String source) {
       this.source = source;
       return this;
     }
 
-    public OrganizationSourceFindingBuilder setFinding(String finding) {
+    public OrganizationSourceFindingSecurityMarksBuilder setFinding(String finding) {
       this.finding = finding;
       return this;
     }

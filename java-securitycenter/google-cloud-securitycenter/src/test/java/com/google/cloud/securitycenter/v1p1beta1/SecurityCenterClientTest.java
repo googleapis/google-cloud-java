@@ -1374,7 +1374,8 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateSecurityMarksTest() {
-    SecurityMarksName name = SecurityMarksName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]");
+    SecurityMarksName name =
+        SecurityMarksName.ofOrganizationAssetSecurityMarksName("[ORGANIZATION]", "[ASSET]");
     SecurityMarks expectedResponse = SecurityMarks.newBuilder().setName(name.toString()).build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1413,7 +1414,8 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateSecurityMarksTest2() {
-    SecurityMarksName name = SecurityMarksName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]");
+    SecurityMarksName name =
+        SecurityMarksName.ofOrganizationAssetSecurityMarksName("[ORGANIZATION]", "[ASSET]");
     SecurityMarks expectedResponse = SecurityMarks.newBuilder().setName(name.toString()).build();
     mockSecurityCenter.addResponse(expectedResponse);
 
