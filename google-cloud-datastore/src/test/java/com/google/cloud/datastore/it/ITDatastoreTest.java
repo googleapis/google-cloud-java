@@ -154,6 +154,8 @@ public class ITDatastoreTest {
 
   @Rule public Timeout globalTimeout = Timeout.seconds(100);
 
+  @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
+
   @AfterClass
   public static void afterClass() {
     HELPER.deleteNamespace();
