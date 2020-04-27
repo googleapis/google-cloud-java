@@ -70,7 +70,7 @@
     <gax.version>1.56.0</gax.version>
     <junit.version>4.13</junit.version>
     <guava.version>29.0-android</guava.version>
-    <threeten.version>1.4.3</threeten.version>
+    <threeten.version>1.4.4</threeten.version>
     <animal-sniffer.version>1.18</animal-sniffer.version>
     <easymock.version>3.6</easymock.version>
     <errorprone.version>2.3.4</errorprone.version>
