@@ -4,47 +4,47 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-vision.git",
-        "sha": "cc5a2445a92ce3c1782b5ed2272dc9f91b980686"
+        "sha": "46d4b3178f767a3d2b9018e4850f5aeab0b6a49a"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4a6a01ce0ead505c245d11a2ce156de34800c58f",
-        "internalRef": "304633630"
+        "sha": "9ea892ebe8a7cd66da9bd62eb7086b8dc2ddd559",
+        "internalRef": "306281271"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4a6a01ce0ead505c245d11a2ce156de34800c58f",
-        "internalRef": "304633630"
+        "sha": "9ea892ebe8a7cd66da9bd62eb7086b8dc2ddd559",
+        "internalRef": "306281271"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4a6a01ce0ead505c245d11a2ce156de34800c58f",
-        "internalRef": "304633630"
+        "sha": "9ea892ebe8a7cd66da9bd62eb7086b8dc2ddd559",
+        "internalRef": "306281271"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4a6a01ce0ead505c245d11a2ce156de34800c58f",
-        "internalRef": "304633630"
+        "sha": "9ea892ebe8a7cd66da9bd62eb7086b8dc2ddd559",
+        "internalRef": "306281271"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4a6a01ce0ead505c245d11a2ce156de34800c58f",
-        "internalRef": "304633630"
+        "sha": "9ea892ebe8a7cd66da9bd62eb7086b8dc2ddd559",
+        "internalRef": "306281271"
       }
     },
     {

@@ -50,20 +50,20 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ProductSearchClientTest {
-  private static MockImageAnnotator mockImageAnnotator;
   private static MockProductSearch mockProductSearch;
+  private static MockImageAnnotator mockImageAnnotator;
   private static MockServiceHelper serviceHelper;
   private ProductSearchClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockImageAnnotator = new MockImageAnnotator();
     mockProductSearch = new MockProductSearch();
+    mockImageAnnotator = new MockImageAnnotator();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockImageAnnotator, mockProductSearch));
+            Arrays.<MockGrpcService>asList(mockProductSearch, mockImageAnnotator));
     serviceHelper.start();
   }
 

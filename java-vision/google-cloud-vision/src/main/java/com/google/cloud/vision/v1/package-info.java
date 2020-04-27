@@ -19,24 +19,7 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>==================== ImageAnnotatorClient ====================
- *
- * <p>Service Description: Service that performs Google Cloud Vision API detection tasks over client
- * images, such as face, landmark, logo, label, and text detection. The ImageAnnotator service
- * returns detected entities from the images.
- *
- * <p>Sample for ImageAnnotatorClient:
- *
- * <pre>
- * <code>
- * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
- *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
- *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
- * }
- * </code>
- * </pre>
- *
- * =================== ProductSearchClient ===================
+ * <p>=================== ProductSearchClient ===================
  *
  * <p>Service Description: Manages Products and ProductSets of reference images for use in product
  * search. It uses the following resource model:
@@ -63,6 +46,23 @@
  *   ProductSet productSet = ProductSet.newBuilder().build();
  *   String productSetId = "";
  *   ProductSet response = productSearchClient.createProductSet(parent, productSet, productSetId);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ==================== ImageAnnotatorClient ====================
+ *
+ * <p>Service Description: Service that performs Google Cloud Vision API detection tasks over client
+ * images, such as face, landmark, logo, label, and text detection. The ImageAnnotator service
+ * returns detected entities from the images.
+ *
+ * <p>Sample for ImageAnnotatorClient:
+ *
+ * <pre>
+ * <code>
+ * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+ *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
+ *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
  * }
  * </code>
  * </pre>
