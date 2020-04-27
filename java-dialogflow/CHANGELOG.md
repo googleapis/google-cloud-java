@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-dialogflow/compare/v1.0.0...v2.0.0) (2020-04-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* **v2:** Resource name usage has changed:
+
+### Features
+
+* **v2:** add ListEnvironments ([#167](https://www.github.com/googleapis/java-dialogflow/issues/167)) ([ed5bbf5](https://www.github.com/googleapis/java-dialogflow/commit/ed5bbf503cc6d00dbeebee057d87e5ae560bcd67))
+
+
+### Dependencies
+
+* import google-cloud-shared-dependencies and use flatten-maven-plugin ([#168](https://www.github.com/googleapis/java-dialogflow/issues/168)) ([a4b4758](https://www.github.com/googleapis/java-dialogflow/commit/a4b47585a60bfe5d5cadc670955ce56c26dafaa0))
+* update core dependencies ([#108](https://www.github.com/googleapis/java-dialogflow/issues/108)) ([58fe433](https://www.github.com/googleapis/java-dialogflow/commit/58fe433eefa2cae7ad06353dda5702968e161f84))
+* update dependency com.google.api:api-common to v1.9.0 ([#129](https://www.github.com/googleapis/java-dialogflow/issues/129)) ([adf469b](https://www.github.com/googleapis/java-dialogflow/commit/adf469b69fcfb837b30cb1f7bbfc559abb07f23d))
+* update dependency com.google.cloud:google-cloud-core to v1.93.1 ([#106](https://www.github.com/googleapis/java-dialogflow/issues/106)) ([6c1ffac](https://www.github.com/googleapis/java-dialogflow/commit/6c1ffac64ac9cd9d7cbb96389f38f78a66081c45))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#138](https://www.github.com/googleapis/java-dialogflow/issues/138)) ([cb6ed7a](https://www.github.com/googleapis/java-dialogflow/commit/cb6ed7aec331a9033804bfe2471240c370771306))
+* update dependency com.google.guava:guava-bom to v29 ([#145](https://www.github.com/googleapis/java-dialogflow/issues/145)) ([143b299](https://www.github.com/googleapis/java-dialogflow/commit/143b2993924b527e1a11835aa630be2b3265bc58))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#161](https://www.github.com/googleapis/java-dialogflow/issues/161)) ([6650bfc](https://www.github.com/googleapis/java-dialogflow/commit/6650bfcd74c189881752053db1c25975676fa40d))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#119](https://www.github.com/googleapis/java-dialogflow/issues/119)) ([7a6ddd2](https://www.github.com/googleapis/java-dialogflow/commit/7a6ddd2e6bb36198f0c870abb068fad2f91e1410))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#166](https://www.github.com/googleapis/java-dialogflow/issues/166)) ([58e9e2f](https://www.github.com/googleapis/java-dialogflow/commit/58e9e2f79a9b5dfb0811271480cbb8a94759463f))
+
+
+### Documentation
+
+* **v2:** update generated javadocs from proto annotations ([cc93b16](https://www.github.com/googleapis/java-dialogflow/commit/cc93b16e596e1f13164a3fde1050c6f9369d5f1f))
+
 ## [1.0.0](https://www.github.com/googleapis/java-dialogflow/compare/v0.120.2...v1.0.0) (2020-03-02)
 
 
