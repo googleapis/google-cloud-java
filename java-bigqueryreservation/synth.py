@@ -28,6 +28,7 @@ for version in versions:
       package_pattern='com.google.cloud.{service}.{version}',
       proto_path=f'google/cloud/bigquery/reservation/{version}',
       bazel_target=f'//google/cloud/bigquery/reservation/{version}:google-cloud-bigquery-reservation-{version}-java',
+      destination_name='bigqueryreservations'
   )
 
 java.common_templates()

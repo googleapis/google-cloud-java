@@ -74,13 +74,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-bigqueryreservations-v1beta1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigqueryreservations-v1beta1:current} -->
+        <artifactId>proto-google-cloud-bigqueryreservations-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigqueryreservations-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-bigqueryreservations-v1beta1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigqueryreservations-v1beta1:current} -->
+        <artifactId>grpc-google-cloud-bigqueryreservations-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigqueryreservations-v1:current} -->
       </dependency>
 
       <dependency>
@@ -93,24 +93,10 @@
     </dependencies>
   </dependencyManagement>
 
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>org.objenesis:objenesis</ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-
   <modules>
     <module>google-cloud-bigqueryreservations</module>
-    <module>proto-google-cloud-bigqueryreservations-v1beta1</module>
-    <module>grpc-google-cloud-bigqueryreservations-v1beta1</module>
+    <module>proto-google-cloud-bigqueryreservations-v1</module>
+    <module>grpc-google-cloud-bigqueryreservations-v1</module>
     <module>google-cloud-bigqueryreservations-bom</module>
   </modules>
 

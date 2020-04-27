@@ -3,23 +3,24 @@
     {
       "git": {
         "name": ".",
-        "remote": "sso://devrel/cloud/libraries/java/repo-splitter",
-        "sha": "7e3cf12eef6abffeac8067f0f100537aca3a1cdf"
+        "remote": "git@github.com:googleapis/java-bigqueryreservations.git",
+        "sha": "184a305690a58c454b068b3adb7d9aed98025f5c"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "2bf9f22da3f101aeb536e1e88fe036323b8e9188",
-        "internalRef": "307654927"
+        "sha": "5dca7f1079a4c127245c0f1dbb8293b434fbd0c8",
+        "internalRef": "308671886",
+        "log": "5dca7f1079a4c127245c0f1dbb8293b434fbd0c8\nSupport purchasing capacity commitments in the BigQuery Reservation v1 API.\n\nPiperOrigin-RevId: 308671886\n\n"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "21ce80f9d4785dc75aa36d26944bddd5a1b7e25b"
+        "sha": "01b6f23d24b27878b48667ce597876d66b59780e"
       }
     }
   ],
