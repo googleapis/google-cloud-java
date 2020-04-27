@@ -49,16 +49,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getSessionEntityType to 30 seconds:
+ * <p>For example, to set the total timeout of deleteSessionEntityType to 30 seconds:
  *
  * <pre>
  * <code>
  * SessionEntityTypesSettings.Builder sessionEntityTypesSettingsBuilder =
  *     SessionEntityTypesSettings.newBuilder();
  * sessionEntityTypesSettingsBuilder
- *     .getSessionEntityTypeSettings()
+ *     .deleteSessionEntityTypeSettings()
  *     .setRetrySettings(
- *         sessionEntityTypesSettingsBuilder.getSessionEntityTypeSettings().getRetrySettings().toBuilder()
+ *         sessionEntityTypesSettingsBuilder.deleteSessionEntityTypeSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SessionEntityTypesSettings sessionEntityTypesSettings = sessionEntityTypesSettingsBuilder.build();
@@ -68,6 +68,12 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class SessionEntityTypesSettings extends ClientSettings<SessionEntityTypesSettings> {
+  /** Returns the object with the settings used for calls to deleteSessionEntityType. */
+  public UnaryCallSettings<DeleteSessionEntityTypeRequest, Empty>
+      deleteSessionEntityTypeSettings() {
+    return ((SessionEntityTypesStubSettings) getStubSettings()).deleteSessionEntityTypeSettings();
+  }
+
   /** Returns the object with the settings used for calls to listSessionEntityTypes. */
   public PagedCallSettings<
           ListSessionEntityTypesRequest,
@@ -93,12 +99,6 @@ public class SessionEntityTypesSettings extends ClientSettings<SessionEntityType
   public UnaryCallSettings<UpdateSessionEntityTypeRequest, SessionEntityType>
       updateSessionEntityTypeSettings() {
     return ((SessionEntityTypesStubSettings) getStubSettings()).updateSessionEntityTypeSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteSessionEntityType. */
-  public UnaryCallSettings<DeleteSessionEntityTypeRequest, Empty>
-      deleteSessionEntityTypeSettings() {
-    return ((SessionEntityTypesStubSettings) getStubSettings()).deleteSessionEntityTypeSettings();
   }
 
   public static final SessionEntityTypesSettings create(SessionEntityTypesStubSettings stub)
@@ -198,6 +198,12 @@ public class SessionEntityTypesSettings extends ClientSettings<SessionEntityType
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteSessionEntityType. */
+    public UnaryCallSettings.Builder<DeleteSessionEntityTypeRequest, Empty>
+        deleteSessionEntityTypeSettings() {
+      return getStubSettingsBuilder().deleteSessionEntityTypeSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listSessionEntityTypes. */
     public PagedCallSettings.Builder<
             ListSessionEntityTypesRequest,
@@ -223,12 +229,6 @@ public class SessionEntityTypesSettings extends ClientSettings<SessionEntityType
     public UnaryCallSettings.Builder<UpdateSessionEntityTypeRequest, SessionEntityType>
         updateSessionEntityTypeSettings() {
       return getStubSettingsBuilder().updateSessionEntityTypeSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteSessionEntityType. */
-    public UnaryCallSettings.Builder<DeleteSessionEntityTypeRequest, Empty>
-        deleteSessionEntityTypeSettings() {
-      return getStubSettingsBuilder().deleteSessionEntityTypeSettings();
     }
 
     @Override

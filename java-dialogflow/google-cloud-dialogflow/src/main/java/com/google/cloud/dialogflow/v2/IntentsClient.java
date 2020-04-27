@@ -77,7 +77,7 @@ import javax.annotation.Generated;
  * <code>
  * try (IntentsClient intentsClient = IntentsClient.create()) {
  *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
- *   Intent response = intentsClient.getIntent(name);
+ *   intentsClient.deleteIntent(name);
  * }
  * </code>
  * </pre>
@@ -199,13 +199,254 @@ public class IntentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Deletes the specified intent and its direct or indirect followup intents.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+   *   intentsClient.deleteIntent(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the intent to delete. If this intent has direct or indirect
+   *     followup intents, we also delete them. Format: `projects/&lt;Project
+   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteIntent(IntentName name) {
+    DeleteIntentRequest request =
+        DeleteIntentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteIntent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified intent and its direct or indirect followup intents.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+   *   intentsClient.deleteIntent(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the intent to delete. If this intent has direct or indirect
+   *     followup intents, we also delete them. Format: `projects/&lt;Project
+   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteIntent(String name) {
+    DeleteIntentRequest request = DeleteIntentRequest.newBuilder().setName(name).build();
+    deleteIntent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified intent and its direct or indirect followup intents.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+   *   DeleteIntentRequest request = DeleteIntentRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   intentsClient.deleteIntent(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteIntent(DeleteIntentRequest request) {
+    deleteIntentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified intent and its direct or indirect followup intents.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+   *   DeleteIntentRequest request = DeleteIntentRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = intentsClient.deleteIntentCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable() {
+    return stub.deleteIntentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes intents in the specified agent.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
+   *   intentsClient.batchDeleteIntentsAsync(parent, intents).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the agent to delete all entities types for. Format:
+   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param intents Required. The collection of intents to delete. Only intent `name` must be filled
+   *     in.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
+      AgentName parent, List<Intent> intents) {
+    BatchDeleteIntentsRequest request =
+        BatchDeleteIntentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllIntents(intents)
+            .build();
+    return batchDeleteIntentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes intents in the specified agent.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
+   *   intentsClient.batchDeleteIntentsAsync(parent.toString(), intents).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the agent to delete all entities types for. Format:
+   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param intents Required. The collection of intents to delete. Only intent `name` must be filled
+   *     in.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
+      String parent, List<Intent> intents) {
+    BatchDeleteIntentsRequest request =
+        BatchDeleteIntentsRequest.newBuilder().setParent(parent).addAllIntents(intents).build();
+    return batchDeleteIntentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes intents in the specified agent.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
+   *   BatchDeleteIntentsRequest request = BatchDeleteIntentsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllIntents(intents)
+   *     .build();
+   *   intentsClient.batchDeleteIntentsAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
+      BatchDeleteIntentsRequest request) {
+    return batchDeleteIntentsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes intents in the specified agent.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
+   *   BatchDeleteIntentsRequest request = BatchDeleteIntentsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllIntents(intents)
+   *     .build();
+   *   OperationFuture&lt;Empty, Struct&gt; future = intentsClient.batchDeleteIntentsOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
+      batchDeleteIntentsOperationCallable() {
+    return stub.batchDeleteIntentsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes intents in the specified agent.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
+   *   BatchDeleteIntentsRequest request = BatchDeleteIntentsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllIntents(intents)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = intentsClient.batchDeleteIntentsCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsCallable() {
+    return stub.batchDeleteIntentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Returns the list of all intents in the specified agent.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   for (Intent element : intentsClient.listIntents(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -216,7 +457,7 @@ public class IntentsClient implements BackgroundResource {
    *     ID&gt;/agent`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIntentsPagedResponse listIntents(ProjectAgentName parent) {
+  public final ListIntentsPagedResponse listIntents(AgentName parent) {
     ListIntentsRequest request =
         ListIntentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -232,7 +473,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   for (Intent element : intentsClient.listIntents(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -256,7 +497,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   String languageCode = "";
    *   for (Intent element : intentsClient.listIntents(parent, languageCode).iterateAll()) {
    *     // doThingsWith(element);
@@ -272,7 +513,7 @@ public class IntentsClient implements BackgroundResource {
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIntentsPagedResponse listIntents(ProjectAgentName parent, String languageCode) {
+  public final ListIntentsPagedResponse listIntents(AgentName parent, String languageCode) {
     ListIntentsRequest request =
         ListIntentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -289,7 +530,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   String languageCode = "";
    *   for (Intent element : intentsClient.listIntents(parent.toString(), languageCode).iterateAll()) {
    *     // doThingsWith(element);
@@ -319,7 +560,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   ListIntentsRequest request = ListIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -344,7 +585,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   ListIntentsRequest request = ListIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -369,7 +610,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   ListIntentsRequest request = ListIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -549,7 +790,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   Intent intent = Intent.newBuilder().build();
    *   Intent response = intentsClient.createIntent(parent, intent);
    * }
@@ -560,7 +801,7 @@ public class IntentsClient implements BackgroundResource {
    * @param intent Required. The intent to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Intent createIntent(ProjectAgentName parent, Intent intent) {
+  public final Intent createIntent(AgentName parent, Intent intent) {
     CreateIntentRequest request =
         CreateIntentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -577,7 +818,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   Intent intent = Intent.newBuilder().build();
    *   Intent response = intentsClient.createIntent(parent.toString(), intent);
    * }
@@ -602,7 +843,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   Intent intent = Intent.newBuilder().build();
    *   String languageCode = "";
    *   Intent response = intentsClient.createIntent(parent, intent, languageCode);
@@ -618,7 +859,7 @@ public class IntentsClient implements BackgroundResource {
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Intent createIntent(ProjectAgentName parent, Intent intent, String languageCode) {
+  public final Intent createIntent(AgentName parent, Intent intent, String languageCode) {
     CreateIntentRequest request =
         CreateIntentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -636,7 +877,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   Intent intent = Intent.newBuilder().build();
    *   String languageCode = "";
    *   Intent response = intentsClient.createIntent(parent.toString(), intent, languageCode);
@@ -670,7 +911,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   Intent intent = Intent.newBuilder().build();
    *   CreateIntentRequest request = CreateIntentRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -695,7 +936,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   Intent intent = Intent.newBuilder().build();
    *   CreateIntentRequest request = CreateIntentRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -818,94 +1059,38 @@ public class IntentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified intent and its direct or indirect followup intents.
+   * Updates/Creates multiple intents in the specified agent.
+   *
+   * <p>Operation &lt;response:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
-   *   intentsClient.deleteIntent(name);
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   String intentBatchUri = "";
+   *   BatchUpdateIntentsResponse response = intentsClient.batchUpdateIntentsAsync(parent, intentBatchUri).get();
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the intent to delete. If this intent has direct or indirect
-   *     followup intents, we also delete them. Format: `projects/&lt;Project
-   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @param parent Required. The name of the agent to update or create intents in. Format:
+   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param intentBatchUri The URI to a Google Cloud Storage file containing intents to update or
+   *     create. The file format can either be a serialized proto (of IntentBatch type) or JSON
+   *     object. Note: The URI must start with "gs://".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteIntent(IntentName name) {
-    DeleteIntentRequest request =
-        DeleteIntentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteIntent(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified intent and its direct or indirect followup intents.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
-   *   intentsClient.deleteIntent(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the intent to delete. If this intent has direct or indirect
-   *     followup intents, we also delete them. Format: `projects/&lt;Project
-   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteIntent(String name) {
-    DeleteIntentRequest request = DeleteIntentRequest.newBuilder().setName(name).build();
-    deleteIntent(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified intent and its direct or indirect followup intents.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
-   *   DeleteIntentRequest request = DeleteIntentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   intentsClient.deleteIntent(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteIntent(DeleteIntentRequest request) {
-    deleteIntentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified intent and its direct or indirect followup intents.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
-   *   DeleteIntentRequest request = DeleteIntentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = intentsClient.deleteIntentCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable() {
-    return stub.deleteIntentCallable();
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<BatchUpdateIntentsResponse, Struct> batchUpdateIntentsAsync(
+      AgentName parent, String intentBatchUri) {
+    BatchUpdateIntentsRequest request =
+        BatchUpdateIntentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setIntentBatchUri(intentBatchUri)
+            .build();
+    return batchUpdateIntentsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -919,7 +1104,111 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   String intentBatchUri = "";
+   *   BatchUpdateIntentsResponse response = intentsClient.batchUpdateIntentsAsync(parent.toString(), intentBatchUri).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the agent to update or create intents in. Format:
+   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param intentBatchUri The URI to a Google Cloud Storage file containing intents to update or
+   *     create. The file format can either be a serialized proto (of IntentBatch type) or JSON
+   *     object. Note: The URI must start with "gs://".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<BatchUpdateIntentsResponse, Struct> batchUpdateIntentsAsync(
+      String parent, String intentBatchUri) {
+    BatchUpdateIntentsRequest request =
+        BatchUpdateIntentsRequest.newBuilder()
+            .setParent(parent)
+            .setIntentBatchUri(intentBatchUri)
+            .build();
+    return batchUpdateIntentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates/Creates multiple intents in the specified agent.
+   *
+   * <p>Operation &lt;response:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
+   *   BatchUpdateIntentsResponse response = intentsClient.batchUpdateIntentsAsync(parent, intentBatchInline).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the agent to update or create intents in. Format:
+   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param intentBatchInline The collection of intents to update or create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<BatchUpdateIntentsResponse, Struct> batchUpdateIntentsAsync(
+      AgentName parent, IntentBatch intentBatchInline) {
+    BatchUpdateIntentsRequest request =
+        BatchUpdateIntentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setIntentBatchInline(intentBatchInline)
+            .build();
+    return batchUpdateIntentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates/Creates multiple intents in the specified agent.
+   *
+   * <p>Operation &lt;response:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
+   *   BatchUpdateIntentsResponse response = intentsClient.batchUpdateIntentsAsync(parent.toString(), intentBatchInline).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the agent to update or create intents in. Format:
+   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param intentBatchInline The collection of intents to update or create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<BatchUpdateIntentsResponse, Struct> batchUpdateIntentsAsync(
+      String parent, IntentBatch intentBatchInline) {
+    BatchUpdateIntentsRequest request =
+        BatchUpdateIntentsRequest.newBuilder()
+            .setParent(parent)
+            .setIntentBatchInline(intentBatchInline)
+            .build();
+    return batchUpdateIntentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates/Creates multiple intents in the specified agent.
+   *
+   * <p>Operation &lt;response:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   BatchUpdateIntentsRequest request = BatchUpdateIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -948,7 +1237,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   BatchUpdateIntentsRequest request = BatchUpdateIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -975,7 +1264,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.of("[PROJECT]");
    *   BatchUpdateIntentsRequest request = BatchUpdateIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -987,155 +1276,6 @@ public class IntentsClient implements BackgroundResource {
    */
   public final UnaryCallable<BatchUpdateIntentsRequest, Operation> batchUpdateIntentsCallable() {
     return stub.batchUpdateIntentsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes intents in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
-   *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
-   *   intentsClient.batchDeleteIntentsAsync(parent, intents).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The name of the agent to delete all entities types for. Format:
-   *     `projects/&lt;Project ID&gt;/agent`.
-   * @param intents Required. The collection of intents to delete. Only intent `name` must be filled
-   *     in.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
-      ProjectAgentName parent, List<Intent> intents) {
-    BatchDeleteIntentsRequest request =
-        BatchDeleteIntentsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .addAllIntents(intents)
-            .build();
-    return batchDeleteIntentsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes intents in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
-   *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
-   *   intentsClient.batchDeleteIntentsAsync(parent.toString(), intents).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The name of the agent to delete all entities types for. Format:
-   *     `projects/&lt;Project ID&gt;/agent`.
-   * @param intents Required. The collection of intents to delete. Only intent `name` must be filled
-   *     in.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
-      String parent, List<Intent> intents) {
-    BatchDeleteIntentsRequest request =
-        BatchDeleteIntentsRequest.newBuilder().setParent(parent).addAllIntents(intents).build();
-    return batchDeleteIntentsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes intents in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
-   *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
-   *   BatchDeleteIntentsRequest request = BatchDeleteIntentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllIntents(intents)
-   *     .build();
-   *   intentsClient.batchDeleteIntentsAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
-      BatchDeleteIntentsRequest request) {
-    return batchDeleteIntentsOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes intents in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
-   *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
-   *   BatchDeleteIntentsRequest request = BatchDeleteIntentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllIntents(intents)
-   *     .build();
-   *   OperationFuture&lt;Empty, Struct&gt; future = intentsClient.batchDeleteIntentsOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
-      batchDeleteIntentsOperationCallable() {
-    return stub.batchDeleteIntentsOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes intents in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
-   *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
-   *   BatchDeleteIntentsRequest request = BatchDeleteIntentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllIntents(intents)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = intentsClient.batchDeleteIntentsCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsCallable() {
-    return stub.batchDeleteIntentsCallable();
   }
 
   @Override

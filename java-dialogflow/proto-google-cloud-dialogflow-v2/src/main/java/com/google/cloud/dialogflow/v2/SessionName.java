@@ -16,25 +16,38 @@
 
 package com.google.cloud.dialogflow.v2;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class SessionName implements ResourceName {
 
-  private static final PathTemplate PATH_TEMPLATE =
+  @Deprecated
+  protected SessionName() {}
+
+  private static final PathTemplate PROJECT_SESSION_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/sessions/{session}");
+  private static final PathTemplate PROJECT_ENVIRONMENT_USER_SESSION_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}");
 
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
 
-  private final String project;
-  private final String session;
+  private String project;
+  private String session;
+  private String environment;
+  private String user;
 
   public String getProject() {
     return project;
@@ -44,35 +57,104 @@ public class SessionName implements ResourceName {
     return session;
   }
 
+  public String getEnvironment() {
+    return environment;
+  }
+
+  public String getUser() {
+    return user;
+  }
+
+  private SessionName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    session = Preconditions.checkNotNull(builder.getSession());
+    pathTemplate = PROJECT_SESSION_PATH_TEMPLATE;
+  }
+
+  private SessionName(ProjectEnvironmentUserSessionBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    environment = Preconditions.checkNotNull(builder.getEnvironment());
+    user = Preconditions.checkNotNull(builder.getUser());
+    session = Preconditions.checkNotNull(builder.getSession());
+    pathTemplate = PROJECT_ENVIRONMENT_USER_SESSION_PATH_TEMPLATE;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectSessionBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectEnvironmentUserSessionBuilder newProjectEnvironmentUserSessionBuilder() {
+    return new ProjectEnvironmentUserSessionBuilder();
   }
 
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-  private SessionName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    session = Preconditions.checkNotNull(builder.getSession());
+  public static SessionName of(String project, String session) {
+    return newProjectSessionBuilder().setProject(project).setSession(session).build();
   }
 
-  public static SessionName of(String project, String session) {
-    return newBuilder().setProject(project).setSession(session).build();
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static SessionName ofProjectSessionName(String project, String session) {
+    return newProjectSessionBuilder().setProject(project).setSession(session).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static SessionName ofProjectEnvironmentUserSessionName(
+      String project, String environment, String user, String session) {
+    return newProjectEnvironmentUserSessionBuilder()
+        .setProject(project)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .build();
   }
 
   public static String format(String project, String session) {
     return newBuilder().setProject(project).setSession(session).build().toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectSessionName(String project, String session) {
+    return newBuilder().setProject(project).setSession(session).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectEnvironmentUserSessionName(
+      String project, String environment, String user, String session) {
+    return newProjectEnvironmentUserSessionBuilder()
+        .setProject(project)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .build()
+        .toString();
+  }
+
   public static SessionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
-            formattedString, "SessionName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("session"));
+    if (PROJECT_SESSION_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_SESSION_PATH_TEMPLATE.match(formattedString);
+      return ofProjectSessionName(matchMap.get("project"), matchMap.get("session"));
+    } else if (PROJECT_ENVIRONMENT_USER_SESSION_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_ENVIRONMENT_USER_SESSION_PATH_TEMPLATE.match(formattedString);
+      return ofProjectEnvironmentUserSessionName(
+          matchMap.get("project"),
+          matchMap.get("environment"),
+          matchMap.get("user"),
+          matchMap.get("session"));
+    }
+    throw new ValidationException("JobName.parse: formattedString not in valid format");
   }
 
   public static List<SessionName> parseList(List<String> formattedStrings) {
@@ -84,7 +166,7 @@ public class SessionName implements ResourceName {
   }
 
   public static List<String> toStringList(List<SessionName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (SessionName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +178,28 @@ public class SessionName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_SESSION_PATH_TEMPLATE.matches(formattedString)
+        || PROJECT_ENVIRONMENT_USER_SESSION_PATH_TEMPLATE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("session", session);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (session != null) {
+            fieldMapBuilder.put("session", session);
+          }
+          if (environment != null) {
+            fieldMapBuilder.put("environment", environment);
+          }
+          if (user != null) {
+            fieldMapBuilder.put("user", user);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +213,16 @@ public class SessionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "session", session);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
-  /** Builder for SessionName. */
+  /** Builder for projects/{project}/agent/sessions/{session}. */
   public static class Builder {
 
     private String project;
     private String session;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -146,11 +242,68 @@ public class SessionName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(SessionName sessionName) {
+      Preconditions.checkArgument(
+          sessionName.pathTemplate == PROJECT_SESSION_PATH_TEMPLATE,
+          "toBuilder is only supported when SessionName has the pattern of "
+              + "projects/{project}/agent/sessions/{session}.");
       project = sessionName.project;
       session = sessionName.session;
+    }
+
+    public SessionName build() {
+      return new SessionName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectEnvironmentUserSessionBuilder {
+
+    private String project;
+    private String environment;
+    private String user;
+    private String session;
+
+    private ProjectEnvironmentUserSessionBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getEnvironment() {
+      return environment;
+    }
+
+    public String getUser() {
+      return user;
+    }
+
+    public String getSession() {
+      return session;
+    }
+
+    public ProjectEnvironmentUserSessionBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectEnvironmentUserSessionBuilder setEnvironment(String environment) {
+      this.environment = environment;
+      return this;
+    }
+
+    public ProjectEnvironmentUserSessionBuilder setUser(String user) {
+      this.user = user;
+      return this;
+    }
+
+    public ProjectEnvironmentUserSessionBuilder setSession(String session) {
+      this.session = session;
+      return this;
     }
 
     public SessionName build() {
@@ -163,9 +316,12 @@ public class SessionName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o instanceof SessionName) {
+    if (o != null || getClass() == o.getClass()) {
       SessionName that = (SessionName) o;
-      return (this.project.equals(that.project)) && (this.session.equals(that.session));
+      return (Objects.equals(this.project, that.project))
+          && (Objects.equals(this.session, that.session))
+          && (Objects.equals(this.environment, that.environment))
+          && (Objects.equals(this.user, that.user));
     }
     return false;
   }
@@ -174,9 +330,15 @@ public class SessionName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
-    h ^= project.hashCode();
+    h ^= Objects.hashCode(fixedValue);
     h *= 1000003;
-    h ^= session.hashCode();
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(session);
+    h *= 1000003;
+    h ^= Objects.hashCode(environment);
+    h *= 1000003;
+    h ^= Objects.hashCode(user);
     return h;
   }
 }

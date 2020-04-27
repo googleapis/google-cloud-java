@@ -38,7 +38,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (SessionsClient sessionsClient = SessionsClient.create()) {
- *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
+ *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
  *   QueryInput queryInput = QueryInput.newBuilder().build();
  *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
  * }
@@ -157,7 +157,7 @@ public class SessionsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
    * }
@@ -197,7 +197,7 @@ public class SessionsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentResponse response = sessionsClient.detectIntent(session.toString(), queryInput);
    * }
@@ -234,7 +234,7 @@ public class SessionsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
    *     .setSession(session.toString())
@@ -261,7 +261,7 @@ public class SessionsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
    *     .setSession(session.toString())
@@ -290,10 +290,10 @@ public class SessionsClient implements BackgroundResource {
    *   BidiStream&lt;StreamingDetectIntentRequest, StreamingDetectIntentResponse&gt; bidiStream =
    *       sessionsClient.streamingDetectIntentCallable().call();
    *
-   *   String session = "";
+   *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   StreamingDetectIntentRequest request = StreamingDetectIntentRequest.newBuilder()
-   *     .setSession(session)
+   *     .setSession(session.toString())
    *     .setQueryInput(queryInput)
    *     .build();
    *   bidiStream.send(request);

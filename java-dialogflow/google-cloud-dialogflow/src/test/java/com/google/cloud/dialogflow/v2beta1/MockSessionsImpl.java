@@ -74,11 +74,12 @@ public class MockSessionsImpl extends SessionsImplBase {
   @Override
   public StreamObserver<StreamingDetectIntentRequest> streamingDetectIntent(
       final StreamObserver<StreamingDetectIntentResponse> responseObserver) {
-    final Object response = responses.remove();
     StreamObserver<StreamingDetectIntentRequest> requestObserver =
         new StreamObserver<StreamingDetectIntentRequest>() {
           @Override
           public void onNext(StreamingDetectIntentRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
             if (response instanceof StreamingDetectIntentResponse) {
               responseObserver.onNext((StreamingDetectIntentResponse) response);
             } else if (response instanceof Exception) {

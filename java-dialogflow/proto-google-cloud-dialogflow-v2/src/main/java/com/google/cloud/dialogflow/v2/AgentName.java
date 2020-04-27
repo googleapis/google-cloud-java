@@ -29,19 +29,14 @@ import java.util.Map;
 public class AgentName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/agents/{agent}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/agent");
 
   private volatile Map<String, String> fieldValuesMap;
 
   private final String project;
-  private final String agent;
 
   public String getProject() {
     return project;
-  }
-
-  public String getAgent() {
-    return agent;
   }
 
   public static Builder newBuilder() {
@@ -54,15 +49,14 @@ public class AgentName implements ResourceName {
 
   private AgentName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    agent = Preconditions.checkNotNull(builder.getAgent());
   }
 
-  public static AgentName of(String project, String agent) {
-    return newBuilder().setProject(project).setAgent(agent).build();
+  public static AgentName of(String project) {
+    return newBuilder().setProject(project).build();
   }
 
-  public static String format(String project, String agent) {
-    return newBuilder().setProject(project).setAgent(agent).build().toString();
+  public static String format(String project) {
+    return newBuilder().setProject(project).build().toString();
   }
 
   public static AgentName parse(String formattedString) {
@@ -72,7 +66,7 @@ public class AgentName implements ResourceName {
     Map<String, String> matchMap =
         PATH_TEMPLATE.validatedMatch(
             formattedString, "AgentName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("agent"));
+    return of(matchMap.get("project"));
   }
 
   public static List<AgentName> parseList(List<String> formattedStrings) {
@@ -105,7 +99,6 @@ public class AgentName implements ResourceName {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
           fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("agent", agent);
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,21 +112,16 @@ public class AgentName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "agent", agent);
+    return PATH_TEMPLATE.instantiate("project", project);
   }
 
   /** Builder for AgentName. */
   public static class Builder {
 
     private String project;
-    private String agent;
 
     public String getProject() {
       return project;
-    }
-
-    public String getAgent() {
-      return agent;
     }
 
     public Builder setProject(String project) {
@@ -141,16 +129,10 @@ public class AgentName implements ResourceName {
       return this;
     }
 
-    public Builder setAgent(String agent) {
-      this.agent = agent;
-      return this;
-    }
-
     private Builder() {}
 
     private Builder(AgentName agentName) {
       project = agentName.project;
-      agent = agentName.agent;
     }
 
     public AgentName build() {
@@ -165,7 +147,7 @@ public class AgentName implements ResourceName {
     }
     if (o instanceof AgentName) {
       AgentName that = (AgentName) o;
-      return (this.project.equals(that.project)) && (this.agent.equals(that.agent));
+      return (this.project.equals(that.project));
     }
     return false;
   }
@@ -175,8 +157,6 @@ public class AgentName implements ResourceName {
     int h = 1;
     h *= 1000003;
     h ^= project.hashCode();
-    h *= 1000003;
-    h ^= agent.hashCode();
     return h;
   }
 }

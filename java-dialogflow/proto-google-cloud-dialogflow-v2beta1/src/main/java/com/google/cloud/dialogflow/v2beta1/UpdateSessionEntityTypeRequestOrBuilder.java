@@ -27,12 +27,7 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entity type to update. Format:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
-   * Display Name&gt;` or `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment
-   * ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display
-   * Name&gt;`. If `Environment ID` is not specified, we assume default 'draft'
-   * environment. If `User ID` is not specified, we assume default '-' user.
+   * Required. The session entity type to update.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>
@@ -44,12 +39,7 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entity type to update. Format:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
-   * Display Name&gt;` or `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment
-   * ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display
-   * Name&gt;`. If `Environment ID` is not specified, we assume default 'draft'
-   * environment. If `User ID` is not specified, we assume default '-' user.
+   * Required. The session entity type to update.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>
@@ -61,12 +51,7 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entity type to update. Format:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
-   * Display Name&gt;` or `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment
-   * ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display
-   * Name&gt;`. If `Environment ID` is not specified, we assume default 'draft'
-   * environment. If `User ID` is not specified, we assume default '-' user.
+   * Required. The session entity type to update.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>

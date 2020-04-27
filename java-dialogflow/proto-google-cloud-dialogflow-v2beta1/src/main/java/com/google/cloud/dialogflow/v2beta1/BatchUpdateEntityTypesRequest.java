@@ -374,15 +374,14 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. The language of entity synonyms defined in `entity_types`. If not
-   * specified, the agent's default language is used.
-   * [Many
-   * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-   * are supported. Note: languages must be enabled in the agent before they can
-   * be used.
+   * Optional. The language used to access language-specific data.
+   * If not specified, the agent's default language is used.
+   * For more information, see
+   * [Multilingual intent and entity
+   * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * </pre>
    *
-   * <code>string language_code = 4;</code>
+   * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The languageCode.
    */
@@ -401,15 +400,14 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. The language of entity synonyms defined in `entity_types`. If not
-   * specified, the agent's default language is used.
-   * [Many
-   * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-   * are supported. Note: languages must be enabled in the agent before they can
-   * be used.
+   * Optional. The language used to access language-specific data.
+   * If not specified, the agent's default language is used.
+   * For more information, see
+   * [Multilingual intent and entity
+   * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * </pre>
    *
-   * <code>string language_code = 4;</code>
+   * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for languageCode.
    */
@@ -1380,15 +1378,14 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The language of entity synonyms defined in `entity_types`. If not
-     * specified, the agent's default language is used.
-     * [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The language used to access language-specific data.
+     * If not specified, the agent's default language is used.
+     * For more information, see
+     * [Multilingual intent and entity
+     * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
      * </pre>
      *
-     * <code>string language_code = 4;</code>
+     * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The languageCode.
      */
@@ -1407,15 +1404,14 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The language of entity synonyms defined in `entity_types`. If not
-     * specified, the agent's default language is used.
-     * [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The language used to access language-specific data.
+     * If not specified, the agent's default language is used.
+     * For more information, see
+     * [Multilingual intent and entity
+     * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
      * </pre>
      *
-     * <code>string language_code = 4;</code>
+     * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for languageCode.
      */
@@ -1434,15 +1430,14 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The language of entity synonyms defined in `entity_types`. If not
-     * specified, the agent's default language is used.
-     * [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The language used to access language-specific data.
+     * If not specified, the agent's default language is used.
+     * For more information, see
+     * [Multilingual intent and entity
+     * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
      * </pre>
      *
-     * <code>string language_code = 4;</code>
+     * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The languageCode to set.
      * @return This builder for chaining.
@@ -1460,15 +1455,14 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The language of entity synonyms defined in `entity_types`. If not
-     * specified, the agent's default language is used.
-     * [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The language used to access language-specific data.
+     * If not specified, the agent's default language is used.
+     * For more information, see
+     * [Multilingual intent and entity
+     * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
      * </pre>
      *
-     * <code>string language_code = 4;</code>
+     * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1482,15 +1476,14 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The language of entity synonyms defined in `entity_types`. If not
-     * specified, the agent's default language is used.
-     * [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
-     * are supported. Note: languages must be enabled in the agent before they can
-     * be used.
+     * Optional. The language used to access language-specific data.
+     * If not specified, the agent's default language is used.
+     * For more information, see
+     * [Multilingual intent and entity
+     * data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
      * </pre>
      *
-     * <code>string language_code = 4;</code>
+     * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for languageCode to set.
      * @return This builder for chaining.

@@ -52,16 +52,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getIntent to 30 seconds:
+ * <p>For example, to set the total timeout of deleteIntent to 30 seconds:
  *
  * <pre>
  * <code>
  * IntentsSettings.Builder intentsSettingsBuilder =
  *     IntentsSettings.newBuilder();
  * intentsSettingsBuilder
- *     .getIntentSettings()
+ *     .deleteIntentSettings()
  *     .setRetrySettings(
- *         intentsSettingsBuilder.getIntentSettings().getRetrySettings().toBuilder()
+ *         intentsSettingsBuilder.deleteIntentSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * IntentsSettings intentsSettings = intentsSettingsBuilder.build();
@@ -71,6 +71,24 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class IntentsSettings extends ClientSettings<IntentsSettings> {
+  /** Returns the object with the settings used for calls to deleteIntent. */
+  public UnaryCallSettings<DeleteIntentRequest, Empty> deleteIntentSettings() {
+    return ((IntentsStubSettings) getStubSettings()).deleteIntentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteIntents. */
+  public UnaryCallSettings<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsSettings() {
+    return ((IntentsStubSettings) getStubSettings()).batchDeleteIntentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteIntents. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<BatchDeleteIntentsRequest, Empty, Struct>
+      batchDeleteIntentsOperationSettings() {
+    return ((IntentsStubSettings) getStubSettings()).batchDeleteIntentsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listIntents. */
   public PagedCallSettings<ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>
       listIntentsSettings() {
@@ -92,11 +110,6 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
     return ((IntentsStubSettings) getStubSettings()).updateIntentSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteIntent. */
-  public UnaryCallSettings<DeleteIntentRequest, Empty> deleteIntentSettings() {
-    return ((IntentsStubSettings) getStubSettings()).deleteIntentSettings();
-  }
-
   /** Returns the object with the settings used for calls to batchUpdateIntents. */
   public UnaryCallSettings<BatchUpdateIntentsRequest, Operation> batchUpdateIntentsSettings() {
     return ((IntentsStubSettings) getStubSettings()).batchUpdateIntentsSettings();
@@ -108,19 +121,6 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
   public OperationCallSettings<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
       batchUpdateIntentsOperationSettings() {
     return ((IntentsStubSettings) getStubSettings()).batchUpdateIntentsOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to batchDeleteIntents. */
-  public UnaryCallSettings<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsSettings() {
-    return ((IntentsStubSettings) getStubSettings()).batchDeleteIntentsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to batchDeleteIntents. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<BatchDeleteIntentsRequest, Empty, Struct>
-      batchDeleteIntentsOperationSettings() {
-    return ((IntentsStubSettings) getStubSettings()).batchDeleteIntentsOperationSettings();
   }
 
   public static final IntentsSettings create(IntentsStubSettings stub) throws IOException {
@@ -219,6 +219,25 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteIntent. */
+    public UnaryCallSettings.Builder<DeleteIntentRequest, Empty> deleteIntentSettings() {
+      return getStubSettingsBuilder().deleteIntentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteIntents. */
+    public UnaryCallSettings.Builder<BatchDeleteIntentsRequest, Operation>
+        batchDeleteIntentsSettings() {
+      return getStubSettingsBuilder().batchDeleteIntentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteIntents. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<BatchDeleteIntentsRequest, Empty, Struct>
+        batchDeleteIntentsOperationSettings() {
+      return getStubSettingsBuilder().batchDeleteIntentsOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listIntents. */
     public PagedCallSettings.Builder<
             ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>
@@ -241,11 +260,6 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
       return getStubSettingsBuilder().updateIntentSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteIntent. */
-    public UnaryCallSettings.Builder<DeleteIntentRequest, Empty> deleteIntentSettings() {
-      return getStubSettingsBuilder().deleteIntentSettings();
-    }
-
     /** Returns the builder for the settings used for calls to batchUpdateIntents. */
     public UnaryCallSettings.Builder<BatchUpdateIntentsRequest, Operation>
         batchUpdateIntentsSettings() {
@@ -259,20 +273,6 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
             BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
         batchUpdateIntentsOperationSettings() {
       return getStubSettingsBuilder().batchUpdateIntentsOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to batchDeleteIntents. */
-    public UnaryCallSettings.Builder<BatchDeleteIntentsRequest, Operation>
-        batchDeleteIntentsSettings() {
-      return getStubSettingsBuilder().batchDeleteIntentsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to batchDeleteIntents. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<BatchDeleteIntentsRequest, Empty, Struct>
-        batchDeleteIntentsOperationSettings() {
-      return getStubSettingsBuilder().batchDeleteIntentsOperationSettings();
     }
 
     @Override

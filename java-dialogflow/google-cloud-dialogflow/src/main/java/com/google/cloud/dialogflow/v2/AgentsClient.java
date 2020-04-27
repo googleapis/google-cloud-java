@@ -353,96 +353,6 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Agent response = agentsClient.getAgent(parent);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The project that the agent to fetch is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Agent getAgent(ProjectName parent) {
-    GetAgentRequest request =
-        GetAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
-    return getAgent(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Agent response = agentsClient.getAgent(parent.toString());
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The project that the agent to fetch is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Agent getAgent(String parent) {
-    GetAgentRequest request = GetAgentRequest.newBuilder().setParent(parent).build();
-    return getAgent(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   GetAgentRequest request = GetAgentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   Agent response = agentsClient.getAgent(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Agent getAgent(GetAgentRequest request) {
-    return getAgentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   GetAgentRequest request = GetAgentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;Agent&gt; future = agentsClient.getAgentCallable().futureCall(request);
-   *   // Do something
-   *   Agent response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetAgentRequest, Agent> getAgentCallable() {
-    return stub.getAgentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Returns the list of agents.
    *
    * <p>Since there is at most one conversational agent per project, this method is useful primarily
@@ -796,8 +706,10 @@ public class AgentsClient implements BackgroundResource {
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String agentUri = "";
    *   ExportAgentRequest request = ExportAgentRequest.newBuilder()
    *     .setParent(parent.toString())
+   *     .setAgentUri(agentUri)
    *     .build();
    *   ExportAgentResponse response = agentsClient.exportAgentAsync(request).get();
    * }
@@ -825,8 +737,10 @@ public class AgentsClient implements BackgroundResource {
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String agentUri = "";
    *   ExportAgentRequest request = ExportAgentRequest.newBuilder()
    *     .setParent(parent.toString())
+   *     .setAgentUri(agentUri)
    *     .build();
    *   OperationFuture&lt;ExportAgentResponse, Struct&gt; future = agentsClient.exportAgentOperationCallable().futureCall(request);
    *   // Do something
@@ -852,8 +766,10 @@ public class AgentsClient implements BackgroundResource {
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String agentUri = "";
    *   ExportAgentRequest request = ExportAgentRequest.newBuilder()
    *     .setParent(parent.toString())
+   *     .setAgentUri(agentUri)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = agentsClient.exportAgentCallable().futureCall(request);
    *   // Do something
@@ -863,91 +779,6 @@ public class AgentsClient implements BackgroundResource {
    */
   public final UnaryCallable<ExportAgentRequest, Operation> exportAgentCallable() {
     return stub.exportAgentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Imports the specified agent from a ZIP file.
-   *
-   * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
-   * types with the same name are replaced with the new versions from ImportAgentRequest.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ImportAgentRequest request = ImportAgentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   agentsClient.importAgentAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Struct> importAgentAsync(ImportAgentRequest request) {
-    return importAgentOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Imports the specified agent from a ZIP file.
-   *
-   * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
-   * types with the same name are replaced with the new versions from ImportAgentRequest.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ImportAgentRequest request = ImportAgentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, Struct&gt; future = agentsClient.importAgentOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<ImportAgentRequest, Empty, Struct> importAgentOperationCallable() {
-    return stub.importAgentOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Imports the specified agent from a ZIP file.
-   *
-   * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
-   * types with the same name are replaced with the new versions from ImportAgentRequest.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ImportAgentRequest request = ImportAgentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = agentsClient.importAgentCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ImportAgentRequest, Operation> importAgentCallable() {
-    return stub.importAgentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1038,6 +869,181 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Retrieves the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   Agent response = agentsClient.getAgent(parent);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The project that the agent to fetch is associated with. Format:
+   *     `projects/&lt;Project ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Agent getAgent(ProjectName parent) {
+    GetAgentRequest request =
+        GetAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return getAgent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   Agent response = agentsClient.getAgent(parent.toString());
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The project that the agent to fetch is associated with. Format:
+   *     `projects/&lt;Project ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Agent getAgent(String parent) {
+    GetAgentRequest request = GetAgentRequest.newBuilder().setParent(parent).build();
+    return getAgent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   GetAgentRequest request = GetAgentRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   Agent response = agentsClient.getAgent(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Agent getAgent(GetAgentRequest request) {
+    return getAgentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   GetAgentRequest request = GetAgentRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;Agent&gt; future = agentsClient.getAgentCallable().futureCall(request);
+   *   // Do something
+   *   Agent response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetAgentRequest, Agent> getAgentCallable() {
+    return stub.getAgentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Imports the specified agent from a ZIP file.
+   *
+   * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
+   * types with the same name are replaced with the new versions from ImportAgentRequest.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ImportAgentRequest request = ImportAgentRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   agentsClient.importAgentAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> importAgentAsync(ImportAgentRequest request) {
+    return importAgentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Imports the specified agent from a ZIP file.
+   *
+   * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
+   * types with the same name are replaced with the new versions from ImportAgentRequest.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ImportAgentRequest request = ImportAgentRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   OperationFuture&lt;Empty, Struct&gt; future = agentsClient.importAgentOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<ImportAgentRequest, Empty, Struct> importAgentOperationCallable() {
+    return stub.importAgentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Imports the specified agent from a ZIP file.
+   *
+   * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
+   * types with the same name are replaced with the new versions from ImportAgentRequest.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ImportAgentRequest request = ImportAgentRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = agentsClient.importAgentCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ImportAgentRequest, Operation> importAgentCallable() {
+    return stub.importAgentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Gets agent validation result. Agent validation is performed during training time and is updated
    * automatically when training is completed.
    *
@@ -1045,7 +1051,10 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   GetValidationResultRequest request = GetValidationResultRequest.newBuilder().build();
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   GetValidationResultRequest request = GetValidationResultRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   ValidationResult response = agentsClient.getValidationResult(request);
    * }
    * </code></pre>
@@ -1066,7 +1075,10 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   GetValidationResultRequest request = GetValidationResultRequest.newBuilder().build();
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   GetValidationResultRequest request = GetValidationResultRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   ApiFuture&lt;ValidationResult&gt; future = agentsClient.getValidationResultCallable().futureCall(request);
    *   // Do something
    *   ValidationResult response = future.get();

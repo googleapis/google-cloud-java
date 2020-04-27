@@ -27,8 +27,10 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. The text to be shown on the screen. This value is passed directly
-   * to `QueryResult.fulfillment_text`.
+   * Optional. The text response message intended for the end-user.
+   * It is recommended to use `fulfillment_messages.text.text[0]` instead.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.fulfillment_text][google.cloud.dialogflow.v2.QueryResult.fulfillment_text] sent to the integration or API caller.
    * </pre>
    *
    * <code>string fulfillment_text = 1;</code>
@@ -40,8 +42,10 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. The text to be shown on the screen. This value is passed directly
-   * to `QueryResult.fulfillment_text`.
+   * Optional. The text response message intended for the end-user.
+   * It is recommended to use `fulfillment_messages.text.text[0]` instead.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.fulfillment_text][google.cloud.dialogflow.v2.QueryResult.fulfillment_text] sent to the integration or API caller.
    * </pre>
    *
    * <code>string fulfillment_text = 1;</code>
@@ -54,8 +58,9 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of rich messages to present to the user. This
-   * value is passed directly to `QueryResult.fulfillment_messages`.
+   * Optional. The rich response messages intended for the end-user.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.fulfillment_messages][google.cloud.dialogflow.v2.QueryResult.fulfillment_messages] sent to the integration or API caller.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 2;</code>
@@ -65,8 +70,9 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of rich messages to present to the user. This
-   * value is passed directly to `QueryResult.fulfillment_messages`.
+   * Optional. The rich response messages intended for the end-user.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.fulfillment_messages][google.cloud.dialogflow.v2.QueryResult.fulfillment_messages] sent to the integration or API caller.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 2;</code>
@@ -76,8 +82,9 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of rich messages to present to the user. This
-   * value is passed directly to `QueryResult.fulfillment_messages`.
+   * Optional. The rich response messages intended for the end-user.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.fulfillment_messages][google.cloud.dialogflow.v2.QueryResult.fulfillment_messages] sent to the integration or API caller.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 2;</code>
@@ -87,8 +94,9 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of rich messages to present to the user. This
-   * value is passed directly to `QueryResult.fulfillment_messages`.
+   * Optional. The rich response messages intended for the end-user.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.fulfillment_messages][google.cloud.dialogflow.v2.QueryResult.fulfillment_messages] sent to the integration or API caller.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 2;</code>
@@ -99,8 +107,9 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of rich messages to present to the user. This
-   * value is passed directly to `QueryResult.fulfillment_messages`.
+   * Optional. The rich response messages intended for the end-user.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.fulfillment_messages][google.cloud.dialogflow.v2.QueryResult.fulfillment_messages] sent to the integration or API caller.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 2;</code>
@@ -111,7 +120,10 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. This value is passed directly to `QueryResult.webhook_source`.
+   * Optional. A custom field used to identify the webhook source.
+   * Arbitrary strings are supported.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.webhook_source][google.cloud.dialogflow.v2.QueryResult.webhook_source] sent to the integration or API caller.
    * </pre>
    *
    * <code>string source = 3;</code>
@@ -123,7 +135,10 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. This value is passed directly to `QueryResult.webhook_source`.
+   * Optional. A custom field used to identify the webhook source.
+   * Arbitrary strings are supported.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.webhook_source][google.cloud.dialogflow.v2.QueryResult.webhook_source] sent to the integration or API caller.
    * </pre>
    *
    * <code>string source = 3;</code>
@@ -136,10 +151,10 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass custom data from your webhook to the API
-   * caller. Arbitrary JSON objects are supported.
+   * Optional. This field can be used to pass custom data from your webhook to the
+   * integration or API caller. Arbitrary JSON objects are supported.
    * When provided, Dialogflow uses this field to populate
-   * `QueryResult.webhook_payload` sent to the API caller.
+   * [QueryResult.webhook_payload][google.cloud.dialogflow.v2.QueryResult.webhook_payload] sent to the integration or API caller.
    * This field is also used by the
    * [Google Assistant
    * integration](https://cloud.google.com/dialogflow/docs/integrations/aog)
@@ -157,10 +172,10 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass custom data from your webhook to the API
-   * caller. Arbitrary JSON objects are supported.
+   * Optional. This field can be used to pass custom data from your webhook to the
+   * integration or API caller. Arbitrary JSON objects are supported.
    * When provided, Dialogflow uses this field to populate
-   * `QueryResult.webhook_payload` sent to the API caller.
+   * [QueryResult.webhook_payload][google.cloud.dialogflow.v2.QueryResult.webhook_payload] sent to the integration or API caller.
    * This field is also used by the
    * [Google Assistant
    * integration](https://cloud.google.com/dialogflow/docs/integrations/aog)
@@ -178,10 +193,10 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. This field can be used to pass custom data from your webhook to the API
-   * caller. Arbitrary JSON objects are supported.
+   * Optional. This field can be used to pass custom data from your webhook to the
+   * integration or API caller. Arbitrary JSON objects are supported.
    * When provided, Dialogflow uses this field to populate
-   * `QueryResult.webhook_payload` sent to the API caller.
+   * [QueryResult.webhook_payload][google.cloud.dialogflow.v2.QueryResult.webhook_payload] sent to the integration or API caller.
    * This field is also used by the
    * [Google Assistant
    * integration](https://cloud.google.com/dialogflow/docs/integrations/aog)
@@ -198,8 +213,10 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of output contexts. This value is passed directly
-   * to `QueryResult.output_contexts`.
+   * Optional. The collection of output contexts that will overwrite currently
+   * active contexts for the session and reset their lifespans.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.output_contexts][google.cloud.dialogflow.v2.QueryResult.output_contexts] sent to the integration or API caller.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 5;</code>
@@ -209,8 +226,10 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of output contexts. This value is passed directly
-   * to `QueryResult.output_contexts`.
+   * Optional. The collection of output contexts that will overwrite currently
+   * active contexts for the session and reset their lifespans.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.output_contexts][google.cloud.dialogflow.v2.QueryResult.output_contexts] sent to the integration or API caller.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 5;</code>
@@ -220,8 +239,10 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of output contexts. This value is passed directly
-   * to `QueryResult.output_contexts`.
+   * Optional. The collection of output contexts that will overwrite currently
+   * active contexts for the session and reset their lifespans.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.output_contexts][google.cloud.dialogflow.v2.QueryResult.output_contexts] sent to the integration or API caller.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 5;</code>
@@ -231,8 +252,10 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of output contexts. This value is passed directly
-   * to `QueryResult.output_contexts`.
+   * Optional. The collection of output contexts that will overwrite currently
+   * active contexts for the session and reset their lifespans.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.output_contexts][google.cloud.dialogflow.v2.QueryResult.output_contexts] sent to the integration or API caller.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 5;</code>
@@ -243,8 +266,10 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of output contexts. This value is passed directly
-   * to `QueryResult.output_contexts`.
+   * Optional. The collection of output contexts that will overwrite currently
+   * active contexts for the session and reset their lifespans.
+   * When provided, Dialogflow uses this field to populate
+   * [QueryResult.output_contexts][google.cloud.dialogflow.v2.QueryResult.output_contexts] sent to the integration or API caller.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 5;</code>
@@ -255,8 +280,7 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. Makes the platform immediately invoke another `DetectIntent` call
-   * internally with the specified event as input.
+   * Optional. Invokes the supplied events.
    * When this field is set, Dialogflow ignores the `fulfillment_text`,
    * `fulfillment_messages`, and `payload` fields.
    * </pre>
@@ -270,8 +294,7 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. Makes the platform immediately invoke another `DetectIntent` call
-   * internally with the specified event as input.
+   * Optional. Invokes the supplied events.
    * When this field is set, Dialogflow ignores the `fulfillment_text`,
    * `fulfillment_messages`, and `payload` fields.
    * </pre>
@@ -285,8 +308,7 @@ public interface WebhookResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. Makes the platform immediately invoke another `DetectIntent` call
-   * internally with the specified event as input.
+   * Optional. Invokes the supplied events.
    * When this field is set, Dialogflow ignores the `fulfillment_text`,
    * `fulfillment_messages`, and `payload` fields.
    * </pre>
@@ -301,9 +323,9 @@ public interface WebhookResponseOrBuilder
    * <pre>
    * Optional. Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
-   * for the session of this query. Setting the session entity types inside
-   * webhook overwrites the session entity types that have been set through
-   * `DetectIntentRequest.query_params.session_entity_types`.
+   * for the session. Setting this data from a webhook overwrites
+   * the session entity types that have been set using `detectIntent`,
+   * `streamingDetectIntent` or [SessionEntityType][google.cloud.dialogflow.v2.SessionEntityType] management methods.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 10;</code>
@@ -315,9 +337,9 @@ public interface WebhookResponseOrBuilder
    * <pre>
    * Optional. Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
-   * for the session of this query. Setting the session entity types inside
-   * webhook overwrites the session entity types that have been set through
-   * `DetectIntentRequest.query_params.session_entity_types`.
+   * for the session. Setting this data from a webhook overwrites
+   * the session entity types that have been set using `detectIntent`,
+   * `streamingDetectIntent` or [SessionEntityType][google.cloud.dialogflow.v2.SessionEntityType] management methods.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 10;</code>
@@ -329,9 +351,9 @@ public interface WebhookResponseOrBuilder
    * <pre>
    * Optional. Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
-   * for the session of this query. Setting the session entity types inside
-   * webhook overwrites the session entity types that have been set through
-   * `DetectIntentRequest.query_params.session_entity_types`.
+   * for the session. Setting this data from a webhook overwrites
+   * the session entity types that have been set using `detectIntent`,
+   * `streamingDetectIntent` or [SessionEntityType][google.cloud.dialogflow.v2.SessionEntityType] management methods.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 10;</code>
@@ -343,9 +365,9 @@ public interface WebhookResponseOrBuilder
    * <pre>
    * Optional. Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
-   * for the session of this query. Setting the session entity types inside
-   * webhook overwrites the session entity types that have been set through
-   * `DetectIntentRequest.query_params.session_entity_types`.
+   * for the session. Setting this data from a webhook overwrites
+   * the session entity types that have been set using `detectIntent`,
+   * `streamingDetectIntent` or [SessionEntityType][google.cloud.dialogflow.v2.SessionEntityType] management methods.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 10;</code>
@@ -358,9 +380,9 @@ public interface WebhookResponseOrBuilder
    * <pre>
    * Optional. Additional session entity types to replace or extend developer
    * entity types with. The entity synonyms apply to all languages and persist
-   * for the session of this query. Setting the session entity types inside
-   * webhook overwrites the session entity types that have been set through
-   * `DetectIntentRequest.query_params.session_entity_types`.
+   * for the session. Setting this data from a webhook overwrites
+   * the session entity types that have been set using `detectIntent`,
+   * `streamingDetectIntent` or [SessionEntityType][google.cloud.dialogflow.v2.SessionEntityType] management methods.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 10;</code>

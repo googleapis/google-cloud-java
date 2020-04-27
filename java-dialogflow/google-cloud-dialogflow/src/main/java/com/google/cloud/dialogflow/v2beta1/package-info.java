@@ -140,6 +140,21 @@
  * </code>
  * </pre>
  *
+ * ================== EnvironmentsClient ==================
+ *
+ * <p>Service Description: Manages agent environments.
+ *
+ * <p>Sample for EnvironmentsClient:
+ *
+ * <pre>
+ * <code>
+ * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+ *   ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder().build();
+ *   ListEnvironmentsResponse response = environmentsClient.listEnvironments(request);
+ * }
+ * </code>
+ * </pre>
+ *
  * ============= IntentsClient =============
  *
  * <p>Service Description: An intent represents a mapping between input from a user and an action to

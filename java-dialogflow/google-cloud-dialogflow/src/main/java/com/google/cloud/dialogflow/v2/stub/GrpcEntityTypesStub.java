@@ -61,6 +61,33 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcEntityTypesStub extends EntityTypesStub {
 
+  private static final MethodDescriptor<DeleteEntityTypeRequest, Empty>
+      deleteEntityTypeMethodDescriptor =
+          MethodDescriptor.<DeleteEntityTypeRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2.EntityTypes/DeleteEntityType")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteEntityTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<BatchDeleteEntityTypesRequest, Operation>
+      batchDeleteEntityTypesMethodDescriptor =
+          MethodDescriptor.<BatchDeleteEntityTypesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2.EntityTypes/BatchDeleteEntityTypes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchDeleteEntityTypesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<BatchDeleteEntitiesRequest, Operation>
+      batchDeleteEntitiesMethodDescriptor =
+          MethodDescriptor.<BatchDeleteEntitiesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2.EntityTypes/BatchDeleteEntities")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchDeleteEntitiesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<ListEntityTypesRequest, ListEntityTypesResponse>
       listEntityTypesMethodDescriptor =
           MethodDescriptor.<ListEntityTypesRequest, ListEntityTypesResponse>newBuilder()
@@ -98,15 +125,6 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   ProtoUtils.marshaller(UpdateEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntityType.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteEntityTypeRequest, Empty>
-      deleteEntityTypeMethodDescriptor =
-          MethodDescriptor.<DeleteEntityTypeRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dialogflow.v2.EntityTypes/DeleteEntityType")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteEntityTypeRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<BatchUpdateEntityTypesRequest, Operation>
       batchUpdateEntityTypesMethodDescriptor =
           MethodDescriptor.<BatchUpdateEntityTypesRequest, Operation>newBuilder()
@@ -114,15 +132,6 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setFullMethodName("google.cloud.dialogflow.v2.EntityTypes/BatchUpdateEntityTypes")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchUpdateEntityTypesRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<BatchDeleteEntityTypesRequest, Operation>
-      batchDeleteEntityTypesMethodDescriptor =
-          MethodDescriptor.<BatchDeleteEntityTypesRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dialogflow.v2.EntityTypes/BatchDeleteEntityTypes")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(BatchDeleteEntityTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<BatchCreateEntitiesRequest, Operation>
@@ -143,19 +152,18 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   ProtoUtils.marshaller(BatchUpdateEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<BatchDeleteEntitiesRequest, Operation>
-      batchDeleteEntitiesMethodDescriptor =
-          MethodDescriptor.<BatchDeleteEntitiesRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dialogflow.v2.EntityTypes/BatchDeleteEntities")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(BatchDeleteEntitiesRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
+  private final UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable;
+  private final UnaryCallable<BatchDeleteEntityTypesRequest, Operation>
+      batchDeleteEntityTypesCallable;
+  private final OperationCallable<BatchDeleteEntityTypesRequest, Empty, Struct>
+      batchDeleteEntityTypesOperationCallable;
+  private final UnaryCallable<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesCallable;
+  private final OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
+      batchDeleteEntitiesOperationCallable;
   private final UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse>
       listEntityTypesCallable;
   private final UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
@@ -163,25 +171,17 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
   private final UnaryCallable<GetEntityTypeRequest, EntityType> getEntityTypeCallable;
   private final UnaryCallable<CreateEntityTypeRequest, EntityType> createEntityTypeCallable;
   private final UnaryCallable<UpdateEntityTypeRequest, EntityType> updateEntityTypeCallable;
-  private final UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable;
   private final UnaryCallable<BatchUpdateEntityTypesRequest, Operation>
       batchUpdateEntityTypesCallable;
   private final OperationCallable<
           BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
       batchUpdateEntityTypesOperationCallable;
-  private final UnaryCallable<BatchDeleteEntityTypesRequest, Operation>
-      batchDeleteEntityTypesCallable;
-  private final OperationCallable<BatchDeleteEntityTypesRequest, Empty, Struct>
-      batchDeleteEntityTypesOperationCallable;
   private final UnaryCallable<BatchCreateEntitiesRequest, Operation> batchCreateEntitiesCallable;
   private final OperationCallable<BatchCreateEntitiesRequest, Empty, Struct>
       batchCreateEntitiesOperationCallable;
   private final UnaryCallable<BatchUpdateEntitiesRequest, Operation> batchUpdateEntitiesCallable;
   private final OperationCallable<BatchUpdateEntitiesRequest, Empty, Struct>
       batchUpdateEntitiesOperationCallable;
-  private final UnaryCallable<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesCallable;
-  private final OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
-      batchDeleteEntitiesOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -223,6 +223,46 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeTransportSettings =
+        GrpcCallSettings.<DeleteEntityTypeRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteEntityTypeMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteEntityTypeRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteEntityTypeRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<BatchDeleteEntityTypesRequest, Operation>
+        batchDeleteEntityTypesTransportSettings =
+            GrpcCallSettings.<BatchDeleteEntityTypesRequest, Operation>newBuilder()
+                .setMethodDescriptor(batchDeleteEntityTypesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<BatchDeleteEntityTypesRequest>() {
+                      @Override
+                      public Map<String, String> extract(BatchDeleteEntityTypesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesTransportSettings =
+        GrpcCallSettings.<BatchDeleteEntitiesRequest, Operation>newBuilder()
+            .setMethodDescriptor(batchDeleteEntitiesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<BatchDeleteEntitiesRequest>() {
+                  @Override
+                  public Map<String, String> extract(BatchDeleteEntitiesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ListEntityTypesRequest, ListEntityTypesResponse>
         listEntityTypesTransportSettings =
             GrpcCallSettings.<ListEntityTypesRequest, ListEntityTypesResponse>newBuilder()
@@ -277,19 +317,6 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeTransportSettings =
-        GrpcCallSettings.<DeleteEntityTypeRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteEntityTypeMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteEntityTypeRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteEntityTypeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<BatchUpdateEntityTypesRequest, Operation>
         batchUpdateEntityTypesTransportSettings =
             GrpcCallSettings.<BatchUpdateEntityTypesRequest, Operation>newBuilder()
@@ -298,20 +325,6 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                     new RequestParamsExtractor<BatchUpdateEntityTypesRequest>() {
                       @Override
                       public Map<String, String> extract(BatchUpdateEntityTypesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<BatchDeleteEntityTypesRequest, Operation>
-        batchDeleteEntityTypesTransportSettings =
-            GrpcCallSettings.<BatchDeleteEntityTypesRequest, Operation>newBuilder()
-                .setMethodDescriptor(batchDeleteEntityTypesMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<BatchDeleteEntityTypesRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchDeleteEntityTypesRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("parent", String.valueOf(request.getParent()));
                         return params.build();
@@ -344,20 +357,32 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   }
                 })
             .build();
-    GrpcCallSettings<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesTransportSettings =
-        GrpcCallSettings.<BatchDeleteEntitiesRequest, Operation>newBuilder()
-            .setMethodDescriptor(batchDeleteEntitiesMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<BatchDeleteEntitiesRequest>() {
-                  @Override
-                  public Map<String, String> extract(BatchDeleteEntitiesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
 
+    this.deleteEntityTypeCallable =
+        callableFactory.createUnaryCallable(
+            deleteEntityTypeTransportSettings, settings.deleteEntityTypeSettings(), clientContext);
+    this.batchDeleteEntityTypesCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteEntityTypesTransportSettings,
+            settings.batchDeleteEntityTypesSettings(),
+            clientContext);
+    this.batchDeleteEntityTypesOperationCallable =
+        callableFactory.createOperationCallable(
+            batchDeleteEntityTypesTransportSettings,
+            settings.batchDeleteEntityTypesOperationSettings(),
+            clientContext,
+            this.operationsStub);
+    this.batchDeleteEntitiesCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteEntitiesTransportSettings,
+            settings.batchDeleteEntitiesSettings(),
+            clientContext);
+    this.batchDeleteEntitiesOperationCallable =
+        callableFactory.createOperationCallable(
+            batchDeleteEntitiesTransportSettings,
+            settings.batchDeleteEntitiesOperationSettings(),
+            clientContext,
+            this.operationsStub);
     this.listEntityTypesCallable =
         callableFactory.createUnaryCallable(
             listEntityTypesTransportSettings, settings.listEntityTypesSettings(), clientContext);
@@ -373,9 +398,6 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     this.updateEntityTypeCallable =
         callableFactory.createUnaryCallable(
             updateEntityTypeTransportSettings, settings.updateEntityTypeSettings(), clientContext);
-    this.deleteEntityTypeCallable =
-        callableFactory.createUnaryCallable(
-            deleteEntityTypeTransportSettings, settings.deleteEntityTypeSettings(), clientContext);
     this.batchUpdateEntityTypesCallable =
         callableFactory.createUnaryCallable(
             batchUpdateEntityTypesTransportSettings,
@@ -385,17 +407,6 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
         callableFactory.createOperationCallable(
             batchUpdateEntityTypesTransportSettings,
             settings.batchUpdateEntityTypesOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.batchDeleteEntityTypesCallable =
-        callableFactory.createUnaryCallable(
-            batchDeleteEntityTypesTransportSettings,
-            settings.batchDeleteEntityTypesSettings(),
-            clientContext);
-    this.batchDeleteEntityTypesOperationCallable =
-        callableFactory.createOperationCallable(
-            batchDeleteEntityTypesTransportSettings,
-            settings.batchDeleteEntityTypesOperationSettings(),
             clientContext,
             this.operationsStub);
     this.batchCreateEntitiesCallable =
@@ -420,17 +431,6 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
             settings.batchUpdateEntitiesOperationSettings(),
             clientContext,
             this.operationsStub);
-    this.batchDeleteEntitiesCallable =
-        callableFactory.createUnaryCallable(
-            batchDeleteEntitiesTransportSettings,
-            settings.batchDeleteEntitiesSettings(),
-            clientContext);
-    this.batchDeleteEntitiesOperationCallable =
-        callableFactory.createOperationCallable(
-            batchDeleteEntitiesTransportSettings,
-            settings.batchDeleteEntitiesOperationSettings(),
-            clientContext,
-            this.operationsStub);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -438,6 +438,30 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  public UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable() {
+    return deleteEntityTypeCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<BatchDeleteEntityTypesRequest, Empty, Struct>
+      batchDeleteEntityTypesOperationCallable() {
+    return batchDeleteEntityTypesOperationCallable;
+  }
+
+  public UnaryCallable<BatchDeleteEntityTypesRequest, Operation> batchDeleteEntityTypesCallable() {
+    return batchDeleteEntityTypesCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
+      batchDeleteEntitiesOperationCallable() {
+    return batchDeleteEntitiesOperationCallable;
+  }
+
+  public UnaryCallable<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesCallable() {
+    return batchDeleteEntitiesCallable;
   }
 
   public UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
@@ -461,10 +485,6 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     return updateEntityTypeCallable;
   }
 
-  public UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable() {
-    return deleteEntityTypeCallable;
-  }
-
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
       batchUpdateEntityTypesOperationCallable() {
@@ -473,16 +493,6 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
 
   public UnaryCallable<BatchUpdateEntityTypesRequest, Operation> batchUpdateEntityTypesCallable() {
     return batchUpdateEntityTypesCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<BatchDeleteEntityTypesRequest, Empty, Struct>
-      batchDeleteEntityTypesOperationCallable() {
-    return batchDeleteEntityTypesOperationCallable;
-  }
-
-  public UnaryCallable<BatchDeleteEntityTypesRequest, Operation> batchDeleteEntityTypesCallable() {
-    return batchDeleteEntityTypesCallable;
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
@@ -503,16 +513,6 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
 
   public UnaryCallable<BatchUpdateEntitiesRequest, Operation> batchUpdateEntitiesCallable() {
     return batchUpdateEntitiesCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
-      batchDeleteEntitiesOperationCallable() {
-    return batchDeleteEntitiesOperationCallable;
-  }
-
-  public UnaryCallable<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesCallable() {
-    return batchDeleteEntitiesCallable;
   }
 
   @Override

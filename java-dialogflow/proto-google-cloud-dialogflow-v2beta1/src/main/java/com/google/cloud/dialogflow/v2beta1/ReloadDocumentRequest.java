@@ -227,7 +227,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The path of gcs source file for reloading document content.
+   * Optional. The path for a Cloud Storage source file for reloading document content.
+   * If not provided, the Document's existing source will be reloaded.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
@@ -241,7 +242,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The path of gcs source file for reloading document content.
+   * Optional. The path for a Cloud Storage source file for reloading document content.
+   * If not provided, the Document's existing source will be reloaded.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
@@ -258,7 +260,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The path of gcs source file for reloading document content.
+   * Optional. The path for a Cloud Storage source file for reloading document content.
+   * If not provided, the Document's existing source will be reloaded.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
@@ -773,7 +776,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The path of gcs source file for reloading document content.
+     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
@@ -787,7 +791,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The path of gcs source file for reloading document content.
+     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
@@ -811,7 +816,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The path of gcs source file for reloading document content.
+     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
@@ -833,7 +839,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The path of gcs source file for reloading document content.
+     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
@@ -853,7 +860,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The path of gcs source file for reloading document content.
+     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
@@ -884,7 +892,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The path of gcs source file for reloading document content.
+     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
@@ -909,7 +918,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The path of gcs source file for reloading document content.
+     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
@@ -921,7 +931,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The path of gcs source file for reloading document content.
+     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
@@ -940,7 +951,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The path of gcs source file for reloading document content.
+     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>

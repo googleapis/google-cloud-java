@@ -40,6 +40,10 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class SessionEntityTypesStub implements BackgroundResource {
 
+  public UnaryCallable<DeleteSessionEntityTypeRequest, Empty> deleteSessionEntityTypeCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSessionEntityTypeCallable()");
+  }
+
   public UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesPagedResponse>
       listSessionEntityTypesPagedCallable() {
     throw new UnsupportedOperationException(
@@ -64,10 +68,6 @@ public abstract class SessionEntityTypesStub implements BackgroundResource {
   public UnaryCallable<UpdateSessionEntityTypeRequest, SessionEntityType>
       updateSessionEntityTypeCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSessionEntityTypeCallable()");
-  }
-
-  public UnaryCallable<DeleteSessionEntityTypeRequest, Empty> deleteSessionEntityTypeCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteSessionEntityTypeCallable()");
   }
 
   @Override

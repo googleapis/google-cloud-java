@@ -587,12 +587,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param sessionEntityType Required. The entity type to update. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
-   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. If
-   *     `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is
-   *     not specified, we assume default '-' user.
+   * @param sessionEntityType Required. The session entity type to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType updateSessionEntityType(SessionEntityType sessionEntityType) {

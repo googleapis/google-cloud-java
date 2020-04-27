@@ -22,8 +22,6 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * ============================================================================
- * Requests and responses for custom methods.
  * The request to detect user's intent.
  * </pre>
  *
@@ -707,8 +705,6 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * ============================================================================
-   * Requests and responses for custom methods.
    * The request to detect user's intent.
    * </pre>
    *

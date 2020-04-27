@@ -29,6 +29,7 @@ import com.google.cloud.dialogflow.v2.stub.ContextsStub;
 import com.google.cloud.dialogflow.v2.stub.ContextsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -58,8 +59,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ContextsClient contextsClient = ContextsClient.create()) {
- *   ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
- *   Context response = contextsClient.getContext(name);
+ *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+ *   contextsClient.deleteContext(name);
  * }
  * </code>
  * </pre>
@@ -168,13 +169,210 @@ public class ContextsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Deletes the specified context.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
+   *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+   *   contextsClient.deleteContext(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the context to delete. Format: `projects/&lt;Project
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;` or
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`. If `Environment ID` is not
+   *     specified, we assume default 'draft' environment. If `User ID` is not specified, we assume
+   *     default '-' user.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteContext(ContextName name) {
+    DeleteContextRequest request =
+        DeleteContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteContext(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified context.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
+   *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+   *   contextsClient.deleteContext(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the context to delete. Format: `projects/&lt;Project
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;` or
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`. If `Environment ID` is not
+   *     specified, we assume default 'draft' environment. If `User ID` is not specified, we assume
+   *     default '-' user.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteContext(String name) {
+    DeleteContextRequest request = DeleteContextRequest.newBuilder().setName(name).build();
+    deleteContext(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified context.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
+   *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+   *   DeleteContextRequest request = DeleteContextRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   contextsClient.deleteContext(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteContext(DeleteContextRequest request) {
+    deleteContextCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified context.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
+   *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+   *   DeleteContextRequest request = DeleteContextRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = contextsClient.deleteContextCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable() {
+    return stub.deleteContextCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes all active contexts in the specified session.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+   *   contextsClient.deleteAllContexts(parent);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the session to delete all contexts from. Format:
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;`. If `Environment ID` is not specified we assume default 'draft' environment. If
+   *     `User ID` is not specified, we assume default '-' user.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAllContexts(SessionName parent) {
+    DeleteAllContextsRequest request =
+        DeleteAllContextsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    deleteAllContexts(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes all active contexts in the specified session.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+   *   contextsClient.deleteAllContexts(parent.toString());
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the session to delete all contexts from. Format:
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;`. If `Environment ID` is not specified we assume default 'draft' environment. If
+   *     `User ID` is not specified, we assume default '-' user.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAllContexts(String parent) {
+    DeleteAllContextsRequest request =
+        DeleteAllContextsRequest.newBuilder().setParent(parent).build();
+    deleteAllContexts(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes all active contexts in the specified session.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+   *   DeleteAllContextsRequest request = DeleteAllContextsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   contextsClient.deleteAllContexts(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAllContexts(DeleteAllContextsRequest request) {
+    deleteAllContextsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes all active contexts in the specified session.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+   *   DeleteAllContextsRequest request = DeleteAllContextsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = contextsClient.deleteAllContextsCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable() {
+    return stub.deleteAllContextsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Returns the list of all contexts in the specified session.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   for (Context element : contextsClient.listContexts(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -204,7 +402,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   for (Context element : contextsClient.listContexts(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -231,7 +429,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   ListContextsRequest request = ListContextsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -256,7 +454,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   ListContextsRequest request = ListContextsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -281,7 +479,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   ListContextsRequest request = ListContextsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -312,7 +510,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
+   *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
    *   Context response = contextsClient.getContext(name);
    * }
    * </code></pre>
@@ -339,7 +537,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
+   *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
    *   Context response = contextsClient.getContext(name.toString());
    * }
    * </code></pre>
@@ -365,7 +563,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
+   *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
    *   GetContextRequest request = GetContextRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -388,7 +586,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
+   *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
    *   GetContextRequest request = GetContextRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -412,7 +610,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   Context context = Context.newBuilder().build();
    *   Context response = contextsClient.createContext(parent, context);
    * }
@@ -445,7 +643,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   Context context = Context.newBuilder().build();
    *   Context response = contextsClient.createContext(parent.toString(), context);
    * }
@@ -475,7 +673,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   Context context = Context.newBuilder().build();
    *   CreateContextRequest request = CreateContextRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -502,7 +700,7 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   Context context = Context.newBuilder().build();
    *   CreateContextRequest request = CreateContextRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -527,15 +725,18 @@ public class ContextsClient implements BackgroundResource {
    * <pre><code>
    * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   Context context = Context.newBuilder().build();
-   *   Context response = contextsClient.updateContext(context);
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Context response = contextsClient.updateContext(context, updateMask);
    * }
    * </code></pre>
    *
    * @param context Required. The context to update.
+   * @param updateMask Optional. The mask to control which fields get updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Context updateContext(Context context) {
-    UpdateContextRequest request = UpdateContextRequest.newBuilder().setContext(context).build();
+  public final Context updateContext(Context context, FieldMask updateMask) {
+    UpdateContextRequest request =
+        UpdateContextRequest.newBuilder().setContext(context).setUpdateMask(updateMask).build();
     return updateContext(request);
   }
 
@@ -582,203 +783,6 @@ public class ContextsClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateContextRequest, Context> updateContextCallable() {
     return stub.updateContextCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified context.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
-   *   contextsClient.deleteContext(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the context to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;` or
-   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   *     ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`. If `Environment ID` is not
-   *     specified, we assume default 'draft' environment. If `User ID` is not specified, we assume
-   *     default '-' user.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteContext(ContextName name) {
-    DeleteContextRequest request =
-        DeleteContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteContext(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified context.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
-   *   contextsClient.deleteContext(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the context to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;` or
-   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   *     ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`. If `Environment ID` is not
-   *     specified, we assume default 'draft' environment. If `User ID` is not specified, we assume
-   *     default '-' user.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteContext(String name) {
-    DeleteContextRequest request = DeleteContextRequest.newBuilder().setName(name).build();
-    deleteContext(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified context.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
-   *   DeleteContextRequest request = DeleteContextRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   contextsClient.deleteContext(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteContext(DeleteContextRequest request) {
-    deleteContextCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified context.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
-   *   DeleteContextRequest request = DeleteContextRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = contextsClient.deleteContextCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable() {
-    return stub.deleteContextCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all active contexts in the specified session.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
-   *   contextsClient.deleteAllContexts(parent);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The name of the session to delete all contexts from. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
-   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-   *     ID&gt;`. If `Environment ID` is not specified we assume default 'draft' environment. If
-   *     `User ID` is not specified, we assume default '-' user.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAllContexts(SessionName parent) {
-    DeleteAllContextsRequest request =
-        DeleteAllContextsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    deleteAllContexts(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all active contexts in the specified session.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
-   *   contextsClient.deleteAllContexts(parent.toString());
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The name of the session to delete all contexts from. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
-   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-   *     ID&gt;`. If `Environment ID` is not specified we assume default 'draft' environment. If
-   *     `User ID` is not specified, we assume default '-' user.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAllContexts(String parent) {
-    DeleteAllContextsRequest request =
-        DeleteAllContextsRequest.newBuilder().setParent(parent).build();
-    deleteAllContexts(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all active contexts in the specified session.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
-   *   DeleteAllContextsRequest request = DeleteAllContextsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   contextsClient.deleteAllContexts(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAllContexts(DeleteAllContextsRequest request) {
-    deleteAllContextsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all active contexts in the specified session.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.create()) {
-   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
-   *   DeleteAllContextsRequest request = DeleteAllContextsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = contextsClient.deleteAllContextsCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable() {
-    return stub.deleteAllContextsCallable();
   }
 
   @Override

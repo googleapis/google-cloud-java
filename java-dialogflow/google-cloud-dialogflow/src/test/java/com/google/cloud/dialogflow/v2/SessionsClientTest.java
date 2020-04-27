@@ -47,6 +47,7 @@ public class SessionsClientTest {
   private static MockAgents mockAgents;
   private static MockContexts mockContexts;
   private static MockEntityTypes mockEntityTypes;
+  private static MockEnvironments mockEnvironments;
   private static MockIntents mockIntents;
   private static MockSessionEntityTypes mockSessionEntityTypes;
   private static MockSessions mockSessions;
@@ -59,6 +60,7 @@ public class SessionsClientTest {
     mockAgents = new MockAgents();
     mockContexts = new MockContexts();
     mockEntityTypes = new MockEntityTypes();
+    mockEnvironments = new MockEnvironments();
     mockIntents = new MockIntents();
     mockSessionEntityTypes = new MockSessionEntityTypes();
     mockSessions = new MockSessions();
@@ -69,6 +71,7 @@ public class SessionsClientTest {
                 mockAgents,
                 mockContexts,
                 mockEntityTypes,
+                mockEnvironments,
                 mockIntents,
                 mockSessionEntityTypes,
                 mockSessions));
@@ -109,7 +112,7 @@ public class SessionsClientTest {
             .build();
     mockSessions.addResponse(expectedResponse);
 
-    SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
+    SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
     QueryInput queryInput = QueryInput.newBuilder().build();
 
     DetectIntentResponse actualResponse = client.detectIntent(session, queryInput);
@@ -134,7 +137,7 @@ public class SessionsClientTest {
     mockSessions.addException(exception);
 
     try {
-      SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
+      SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
       QueryInput queryInput = QueryInput.newBuilder().build();
 
       client.detectIntent(session, queryInput);
@@ -155,11 +158,11 @@ public class SessionsClientTest {
             .setOutputAudio(outputAudio)
             .build();
     mockSessions.addResponse(expectedResponse);
-    String session = "session1984987798";
+    SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
     QueryInput queryInput = QueryInput.newBuilder().build();
     StreamingDetectIntentRequest request =
         StreamingDetectIntentRequest.newBuilder()
-            .setSession(session)
+            .setSession(session.toString())
             .setQueryInput(queryInput)
             .build();
 
@@ -183,11 +186,11 @@ public class SessionsClientTest {
   public void streamingDetectIntentExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSessions.addException(exception);
-    String session = "session1984987798";
+    SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
     QueryInput queryInput = QueryInput.newBuilder().build();
     StreamingDetectIntentRequest request =
         StreamingDetectIntentRequest.newBuilder()
-            .setSession(session)
+            .setSession(session.toString())
             .setQueryInput(queryInput)
             .build();
 

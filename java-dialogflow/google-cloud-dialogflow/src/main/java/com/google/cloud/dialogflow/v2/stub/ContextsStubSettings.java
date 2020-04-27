@@ -72,16 +72,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getContext to 30 seconds:
+ * <p>For example, to set the total timeout of deleteContext to 30 seconds:
  *
  * <pre>
  * <code>
  * ContextsStubSettings.Builder contextsSettingsBuilder =
  *     ContextsStubSettings.newBuilder();
  * contextsSettingsBuilder
- *     .getContextSettings()
+ *     .deleteContextSettings()
  *     .setRetrySettings(
- *         contextsSettingsBuilder.getContextSettings().getRetrySettings().toBuilder()
+ *         contextsSettingsBuilder.deleteContextSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ContextsStubSettings contextsSettings = contextsSettingsBuilder.build();
@@ -98,14 +98,24 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
           .add("https://www.googleapis.com/auth/dialogflow")
           .build();
 
+  private final UnaryCallSettings<DeleteContextRequest, Empty> deleteContextSettings;
+  private final UnaryCallSettings<DeleteAllContextsRequest, Empty> deleteAllContextsSettings;
   private final PagedCallSettings<
           ListContextsRequest, ListContextsResponse, ListContextsPagedResponse>
       listContextsSettings;
   private final UnaryCallSettings<GetContextRequest, Context> getContextSettings;
   private final UnaryCallSettings<CreateContextRequest, Context> createContextSettings;
   private final UnaryCallSettings<UpdateContextRequest, Context> updateContextSettings;
-  private final UnaryCallSettings<DeleteContextRequest, Empty> deleteContextSettings;
-  private final UnaryCallSettings<DeleteAllContextsRequest, Empty> deleteAllContextsSettings;
+
+  /** Returns the object with the settings used for calls to deleteContext. */
+  public UnaryCallSettings<DeleteContextRequest, Empty> deleteContextSettings() {
+    return deleteContextSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAllContexts. */
+  public UnaryCallSettings<DeleteAllContextsRequest, Empty> deleteAllContextsSettings() {
+    return deleteAllContextsSettings;
+  }
 
   /** Returns the object with the settings used for calls to listContexts. */
   public PagedCallSettings<ListContextsRequest, ListContextsResponse, ListContextsPagedResponse>
@@ -126,16 +136,6 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
   /** Returns the object with the settings used for calls to updateContext. */
   public UnaryCallSettings<UpdateContextRequest, Context> updateContextSettings() {
     return updateContextSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteContext. */
-  public UnaryCallSettings<DeleteContextRequest, Empty> deleteContextSettings() {
-    return deleteContextSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteAllContexts. */
-  public UnaryCallSettings<DeleteAllContextsRequest, Empty> deleteAllContextsSettings() {
-    return deleteAllContextsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -206,12 +206,12 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
   protected ContextsStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteContextSettings = settingsBuilder.deleteContextSettings().build();
+    deleteAllContextsSettings = settingsBuilder.deleteAllContextsSettings().build();
     listContextsSettings = settingsBuilder.listContextsSettings().build();
     getContextSettings = settingsBuilder.getContextSettings().build();
     createContextSettings = settingsBuilder.createContextSettings().build();
     updateContextSettings = settingsBuilder.updateContextSettings().build();
-    deleteContextSettings = settingsBuilder.deleteContextSettings().build();
-    deleteAllContextsSettings = settingsBuilder.deleteAllContextsSettings().build();
   }
 
   private static final PagedListDescriptor<ListContextsRequest, ListContextsResponse, Context>
@@ -271,15 +271,15 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
   public static class Builder extends StubSettings.Builder<ContextsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteContextRequest, Empty> deleteContextSettings;
+    private final UnaryCallSettings.Builder<DeleteAllContextsRequest, Empty>
+        deleteAllContextsSettings;
     private final PagedCallSettings.Builder<
             ListContextsRequest, ListContextsResponse, ListContextsPagedResponse>
         listContextsSettings;
     private final UnaryCallSettings.Builder<GetContextRequest, Context> getContextSettings;
     private final UnaryCallSettings.Builder<CreateContextRequest, Context> createContextSettings;
     private final UnaryCallSettings.Builder<UpdateContextRequest, Context> updateContextSettings;
-    private final UnaryCallSettings.Builder<DeleteContextRequest, Empty> deleteContextSettings;
-    private final UnaryCallSettings.Builder<DeleteAllContextsRequest, Empty>
-        deleteAllContextsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -322,6 +322,10 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteAllContextsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listContextsSettings = PagedCallSettings.newBuilder(LIST_CONTEXTS_PAGE_STR_FACT);
 
       getContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -330,18 +334,14 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
 
       updateContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteAllContextsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteContextSettings,
+              deleteAllContextsSettings,
               listContextsSettings,
               getContextSettings,
               createContextSettings,
-              updateContextSettings,
-              deleteContextSettings,
-              deleteAllContextsSettings);
+              updateContextSettings);
 
       initDefaults(this);
     }
@@ -356,6 +356,16 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .deleteContextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteAllContextsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listContextsSettings()
@@ -377,37 +387,27 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .deleteContextSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteAllContextsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
       return builder;
     }
 
     protected Builder(ContextsStubSettings settings) {
       super(settings);
 
+      deleteContextSettings = settings.deleteContextSettings.toBuilder();
+      deleteAllContextsSettings = settings.deleteAllContextsSettings.toBuilder();
       listContextsSettings = settings.listContextsSettings.toBuilder();
       getContextSettings = settings.getContextSettings.toBuilder();
       createContextSettings = settings.createContextSettings.toBuilder();
       updateContextSettings = settings.updateContextSettings.toBuilder();
-      deleteContextSettings = settings.deleteContextSettings.toBuilder();
-      deleteAllContextsSettings = settings.deleteAllContextsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteContextSettings,
+              deleteAllContextsSettings,
               listContextsSettings,
               getContextSettings,
               createContextSettings,
-              updateContextSettings,
-              deleteContextSettings,
-              deleteAllContextsSettings);
+              updateContextSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -424,6 +424,16 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteContext. */
+    public UnaryCallSettings.Builder<DeleteContextRequest, Empty> deleteContextSettings() {
+      return deleteContextSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAllContexts. */
+    public UnaryCallSettings.Builder<DeleteAllContextsRequest, Empty> deleteAllContextsSettings() {
+      return deleteAllContextsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listContexts. */
@@ -446,16 +456,6 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
     /** Returns the builder for the settings used for calls to updateContext. */
     public UnaryCallSettings.Builder<UpdateContextRequest, Context> updateContextSettings() {
       return updateContextSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteContext. */
-    public UnaryCallSettings.Builder<DeleteContextRequest, Empty> deleteContextSettings() {
-      return deleteContextSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteAllContexts. */
-    public UnaryCallSettings.Builder<DeleteAllContextsRequest, Empty> deleteAllContextsSettings() {
-      return deleteAllContextsSettings;
     }
 
     @Override

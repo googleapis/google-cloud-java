@@ -264,10 +264,10 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * @param parent Required. The agent to list all entity types from. Format: `projects/&lt;Project
    *     ID&gt;/agent`.
-   * @param languageCode Optional. The language to list entity synonyms for. If not specified, the
-   *     agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntityTypesPagedResponse listEntityTypes(
@@ -298,10 +298,10 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * @param parent Required. The agent to list all entity types from. Format: `projects/&lt;Project
    *     ID&gt;/agent`.
-   * @param languageCode Optional. The language to list entity synonyms for. If not specified, the
-   *     agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntityTypesPagedResponse listEntityTypes(String parent, String languageCode) {
@@ -453,10 +453,10 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * @param name Required. The name of the entity type. Format: `projects/&lt;Project
    *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
-   * @param languageCode Optional. The language to retrieve entity synonyms for. If not specified,
-   *     the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(EntityTypeName name, String languageCode) {
@@ -484,10 +484,10 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * @param name Required. The name of the entity type. Format: `projects/&lt;Project
    *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
-   * @param languageCode Optional. The language to retrieve entity synonyms for. If not specified,
-   *     the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(String name, String languageCode) {
@@ -612,10 +612,10 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
    *     ID&gt;/agent`.
    * @param entityType Required. The entity type to create.
-   * @param languageCode Optional. The language of entity synonyms defined in `entity_type`. If not
-   *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType createEntityType(
@@ -647,10 +647,10 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
    *     ID&gt;/agent`.
    * @param entityType Required. The entity type to create.
-   * @param languageCode Optional. The language of entity synonyms defined in `entity_type`. If not
-   *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType createEntityType(
@@ -750,10 +750,10 @@ public class EntityTypesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param entityType Required. The entity type to update.
-   * @param languageCode Optional. The language of entity synonyms defined in `entity_type`. If not
-   *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType updateEntityType(EntityType entityType, String languageCode) {
@@ -1219,10 +1219,10 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The name of the entity type to create entities in. Format:
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * @param entities Required. The entities to create.
-   * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
-   *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1258,10 +1258,10 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The name of the entity type to create entities in. Format:
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * @param entities Required. The entities to create.
-   * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
-   *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1447,10 +1447,10 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The name of the entity type to update or create entities in. Format:
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * @param entities Required. The entities to update or create.
-   * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
-   *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1487,10 +1487,10 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The name of the entity type to update or create entities in. Format:
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * @param entities Required. The entities to update or create.
-   * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
-   *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1682,10 +1682,10 @@ public class EntityTypesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * @param entityValues Required. The reference `values` of the entities to delete. Note that these
    *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
-   * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
-   *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1722,10 +1722,10 @@ public class EntityTypesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * @param entityValues Required. The reference `values` of the entities to delete. Note that these
    *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
-   * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
-   *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
-   *     Note: languages must be enabled in the agent before they can be used.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(

@@ -22,8 +22,6 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * ============================================================================
- * Requests and responses for custom methods.
  * The request message for [Agents.SearchAgents][google.cloud.dialogflow.v2.Agents.SearchAgents].
  * </pre>
  *
@@ -425,8 +423,6 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * ============================================================================
-   * Requests and responses for custom methods.
    * The request message for [Agents.SearchAgents][google.cloud.dialogflow.v2.Agents.SearchAgents].
    * </pre>
    *

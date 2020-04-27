@@ -80,8 +80,8 @@
  * <pre>
  * <code>
  * try (ContextsClient contextsClient = ContextsClient.create()) {
- *   ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
- *   Context response = contextsClient.getContext(name);
+ *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+ *   contextsClient.deleteContext(name);
  * }
  * </code>
  * </pre>
@@ -120,7 +120,25 @@
  * <code>
  * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
  *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
- *   EntityType response = entityTypesClient.getEntityType(name);
+ *   entityTypesClient.deleteEntityType(name);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================== EnvironmentsClient ==================
+ *
+ * <p>Service Description: Manages agent environments.
+ *
+ * <p>Sample for EnvironmentsClient:
+ *
+ * <pre>
+ * <code>
+ * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+ *   AgentName parent = AgentName.of("[PROJECT]");
+ *   ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder()
+ *     .setParent(parent.toString())
+ *     .build();
+ *   ListEnvironmentsPagedResponse response = environmentsClient.listEnvironmentsPagedCallable(request);
  * }
  * </code>
  * </pre>
@@ -161,7 +179,7 @@
  * <code>
  * try (IntentsClient intentsClient = IntentsClient.create()) {
  *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
- *   Intent response = intentsClient.getIntent(name);
+ *   intentsClient.deleteIntent(name);
  * }
  * </code>
  * </pre>
@@ -187,8 +205,8 @@
  * <pre>
  * <code>
  * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
- *   SessionEntityTypeName name = SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
- *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
+ *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+ *   sessionEntityTypesClient.deleteSessionEntityType(name);
  * }
  * </code>
  * </pre>
@@ -205,7 +223,7 @@
  * <pre>
  * <code>
  * try (SessionsClient sessionsClient = SessionsClient.create()) {
- *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
+ *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
  *   QueryInput queryInput = QueryInput.newBuilder().build();
  *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
  * }

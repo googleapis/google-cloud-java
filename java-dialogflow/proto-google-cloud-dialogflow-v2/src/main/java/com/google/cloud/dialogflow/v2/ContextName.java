@@ -16,27 +16,40 @@
 
 package com.google.cloud.dialogflow.v2;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class ContextName implements ResourceName {
 
-  private static final PathTemplate PATH_TEMPLATE =
+  @Deprecated
+  protected ContextName() {}
+
+  private static final PathTemplate PROJECT_SESSION_CONTEXT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/agent/sessions/{session}/contexts/{context}");
+  private static final PathTemplate PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}");
 
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
 
-  private final String project;
-  private final String session;
-  private final String context;
+  private String project;
+  private String session;
+  private String context;
+  private String environment;
+  private String user;
 
   public String getProject() {
     return project;
@@ -50,22 +63,77 @@ public class ContextName implements ResourceName {
     return context;
   }
 
-  public static Builder newBuilder() {
-    return new Builder();
+  public String getEnvironment() {
+    return environment;
   }
 
-  public Builder toBuilder() {
-    return new Builder(this);
+  public String getUser() {
+    return user;
   }
 
   private ContextName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     session = Preconditions.checkNotNull(builder.getSession());
     context = Preconditions.checkNotNull(builder.getContext());
+    pathTemplate = PROJECT_SESSION_CONTEXT_PATH_TEMPLATE;
+  }
+
+  private ContextName(ProjectEnvironmentUserSessionContextBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    environment = Preconditions.checkNotNull(builder.getEnvironment());
+    user = Preconditions.checkNotNull(builder.getUser());
+    session = Preconditions.checkNotNull(builder.getSession());
+    context = Preconditions.checkNotNull(builder.getContext());
+    pathTemplate = PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT_PATH_TEMPLATE;
+  }
+
+  public static Builder newBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectSessionContextBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectEnvironmentUserSessionContextBuilder
+      newProjectEnvironmentUserSessionContextBuilder() {
+    return new ProjectEnvironmentUserSessionContextBuilder();
+  }
+
+  public Builder toBuilder() {
+    return new Builder(this);
   }
 
   public static ContextName of(String project, String session, String context) {
-    return newBuilder().setProject(project).setSession(session).setContext(context).build();
+    return newProjectSessionContextBuilder()
+        .setProject(project)
+        .setSession(session)
+        .setContext(context)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static ContextName ofProjectSessionContextName(
+      String project, String session, String context) {
+    return newProjectSessionContextBuilder()
+        .setProject(project)
+        .setSession(session)
+        .setContext(context)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static ContextName ofProjectEnvironmentUserSessionContextName(
+      String project, String environment, String user, String session, String context) {
+    return newProjectEnvironmentUserSessionContextBuilder()
+        .setProject(project)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .setContext(context)
+        .build();
   }
 
   public static String format(String project, String session, String context) {
@@ -77,14 +145,49 @@ public class ContextName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectSessionContextName(
+      String project, String session, String context) {
+    return newBuilder()
+        .setProject(project)
+        .setSession(session)
+        .setContext(context)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectEnvironmentUserSessionContextName(
+      String project, String environment, String user, String session, String context) {
+    return newProjectEnvironmentUserSessionContextBuilder()
+        .setProject(project)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .setContext(context)
+        .build()
+        .toString();
+  }
+
   public static ContextName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
-            formattedString, "ContextName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("session"), matchMap.get("context"));
+    if (PROJECT_SESSION_CONTEXT_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_SESSION_CONTEXT_PATH_TEMPLATE.match(formattedString);
+      return ofProjectSessionContextName(
+          matchMap.get("project"), matchMap.get("session"), matchMap.get("context"));
+    } else if (PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT_PATH_TEMPLATE.match(formattedString);
+      return ofProjectEnvironmentUserSessionContextName(
+          matchMap.get("project"),
+          matchMap.get("environment"),
+          matchMap.get("user"),
+          matchMap.get("session"),
+          matchMap.get("context"));
+    }
+    throw new ValidationException("JobName.parse: formattedString not in valid format");
   }
 
   public static List<ContextName> parseList(List<String> formattedStrings) {
@@ -96,7 +199,7 @@ public class ContextName implements ResourceName {
   }
 
   public static List<String> toStringList(List<ContextName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (ContextName value : values) {
       if (value == null) {
         list.add("");
@@ -108,17 +211,31 @@ public class ContextName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_SESSION_CONTEXT_PATH_TEMPLATE.matches(formattedString)
+        || PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT_PATH_TEMPLATE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("session", session);
-          fieldMapBuilder.put("context", context);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (session != null) {
+            fieldMapBuilder.put("session", session);
+          }
+          if (context != null) {
+            fieldMapBuilder.put("context", context);
+          }
+          if (environment != null) {
+            fieldMapBuilder.put("environment", environment);
+          }
+          if (user != null) {
+            fieldMapBuilder.put("user", user);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -132,15 +249,17 @@ public class ContextName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "session", session, "context", context);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
-  /** Builder for ContextName. */
+  /** Builder for projects/{project}/agent/sessions/{session}/contexts/{context}. */
   public static class Builder {
 
     private String project;
     private String session;
     private String context;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -169,12 +288,79 @@ public class ContextName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(ContextName contextName) {
+      Preconditions.checkArgument(
+          contextName.pathTemplate == PROJECT_SESSION_CONTEXT_PATH_TEMPLATE,
+          "toBuilder is only supported when ContextName has the pattern of "
+              + "projects/{project}/agent/sessions/{session}/contexts/{context}.");
       project = contextName.project;
       session = contextName.session;
       context = contextName.context;
+    }
+
+    public ContextName build() {
+      return new ContextName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectEnvironmentUserSessionContextBuilder {
+
+    private String project;
+    private String environment;
+    private String user;
+    private String session;
+    private String context;
+
+    private ProjectEnvironmentUserSessionContextBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getEnvironment() {
+      return environment;
+    }
+
+    public String getUser() {
+      return user;
+    }
+
+    public String getSession() {
+      return session;
+    }
+
+    public String getContext() {
+      return context;
+    }
+
+    public ProjectEnvironmentUserSessionContextBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectEnvironmentUserSessionContextBuilder setEnvironment(String environment) {
+      this.environment = environment;
+      return this;
+    }
+
+    public ProjectEnvironmentUserSessionContextBuilder setUser(String user) {
+      this.user = user;
+      return this;
+    }
+
+    public ProjectEnvironmentUserSessionContextBuilder setSession(String session) {
+      this.session = session;
+      return this;
+    }
+
+    public ProjectEnvironmentUserSessionContextBuilder setContext(String context) {
+      this.context = context;
+      return this;
     }
 
     public ContextName build() {
@@ -187,11 +373,13 @@ public class ContextName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o instanceof ContextName) {
+    if (o != null || getClass() == o.getClass()) {
       ContextName that = (ContextName) o;
-      return (this.project.equals(that.project))
-          && (this.session.equals(that.session))
-          && (this.context.equals(that.context));
+      return (Objects.equals(this.project, that.project))
+          && (Objects.equals(this.session, that.session))
+          && (Objects.equals(this.context, that.context))
+          && (Objects.equals(this.environment, that.environment))
+          && (Objects.equals(this.user, that.user));
     }
     return false;
   }
@@ -200,11 +388,17 @@ public class ContextName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
-    h ^= project.hashCode();
+    h ^= Objects.hashCode(fixedValue);
     h *= 1000003;
-    h ^= session.hashCode();
+    h ^= Objects.hashCode(project);
     h *= 1000003;
-    h ^= context.hashCode();
+    h ^= Objects.hashCode(session);
+    h *= 1000003;
+    h ^= Objects.hashCode(context);
+    h *= 1000003;
+    h ^= Objects.hashCode(environment);
+    h *= 1000003;
+    h ^= Objects.hashCode(user);
     return h;
   }
 }

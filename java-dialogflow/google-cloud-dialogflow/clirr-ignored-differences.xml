@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- TODO: remove after 2.0.0 is released -->
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/dialogflow/v2/ContextsClient</className>
+    <method>com.google.cloud.dialogflow.v2.Context updateContext(com.google.cloud.dialogflow.v2.Context)</method>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/dialogflow/v2/EntityTypesClient</className>
+    <method>* *EntityType*(com.google.cloud.dialogflow.v2.ProjectAgentName*)</method>
+    <to>* *EntityType*(com.google.cloud.dialogflow.v2.AgentName*)</to>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/dialogflow/v2/IntentsClient</className>
+    <method>* *Intent*(com.google.cloud.dialogflow.v2.ProjectAgentName*)</method>
+    <to>* *Intent*(com.google.cloud.dialogflow.v2.AgentName*)</to>
+  </difference>
+</differences>

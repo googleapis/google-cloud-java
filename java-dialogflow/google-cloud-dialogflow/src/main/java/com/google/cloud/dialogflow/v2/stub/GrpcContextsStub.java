@@ -52,6 +52,22 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcContextsStub extends ContextsStub {
 
+  private static final MethodDescriptor<DeleteContextRequest, Empty> deleteContextMethodDescriptor =
+      MethodDescriptor.<DeleteContextRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.dialogflow.v2.Contexts/DeleteContext")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteContextRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteAllContextsRequest, Empty>
+      deleteAllContextsMethodDescriptor =
+          MethodDescriptor.<DeleteAllContextsRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2.Contexts/DeleteAllContexts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAllContextsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<ListContextsRequest, ListContextsResponse>
       listContextsMethodDescriptor =
           MethodDescriptor.<ListContextsRequest, ListContextsResponse>newBuilder()
@@ -86,33 +102,17 @@ public class GrpcContextsStub extends ContextsStub {
                   ProtoUtils.marshaller(UpdateContextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Context.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteContextRequest, Empty> deleteContextMethodDescriptor =
-      MethodDescriptor.<DeleteContextRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.dialogflow.v2.Contexts/DeleteContext")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteContextRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<DeleteAllContextsRequest, Empty>
-      deleteAllContextsMethodDescriptor =
-          MethodDescriptor.<DeleteAllContextsRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dialogflow.v2.Contexts/DeleteAllContexts")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteAllContextsRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable;
+  private final UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable;
   private final UnaryCallable<ListContextsRequest, ListContextsResponse> listContextsCallable;
   private final UnaryCallable<ListContextsRequest, ListContextsPagedResponse>
       listContextsPagedCallable;
   private final UnaryCallable<GetContextRequest, Context> getContextCallable;
   private final UnaryCallable<CreateContextRequest, Context> createContextCallable;
   private final UnaryCallable<UpdateContextRequest, Context> updateContextCallable;
-  private final UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable;
-  private final UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -150,6 +150,32 @@ public class GrpcContextsStub extends ContextsStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<DeleteContextRequest, Empty> deleteContextTransportSettings =
+        GrpcCallSettings.<DeleteContextRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteContextMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteContextRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteContextRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteAllContextsRequest, Empty> deleteAllContextsTransportSettings =
+        GrpcCallSettings.<DeleteAllContextsRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAllContextsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteAllContextsRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteAllContextsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ListContextsRequest, ListContextsResponse> listContextsTransportSettings =
         GrpcCallSettings.<ListContextsRequest, ListContextsResponse>newBuilder()
             .setMethodDescriptor(listContextsMethodDescriptor)
@@ -202,33 +228,15 @@ public class GrpcContextsStub extends ContextsStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteContextRequest, Empty> deleteContextTransportSettings =
-        GrpcCallSettings.<DeleteContextRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteContextMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteContextRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteContextRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteAllContextsRequest, Empty> deleteAllContextsTransportSettings =
-        GrpcCallSettings.<DeleteAllContextsRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteAllContextsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteAllContextsRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteAllContextsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
 
+    this.deleteContextCallable =
+        callableFactory.createUnaryCallable(
+            deleteContextTransportSettings, settings.deleteContextSettings(), clientContext);
+    this.deleteAllContextsCallable =
+        callableFactory.createUnaryCallable(
+            deleteAllContextsTransportSettings,
+            settings.deleteAllContextsSettings(),
+            clientContext);
     this.listContextsCallable =
         callableFactory.createUnaryCallable(
             listContextsTransportSettings, settings.listContextsSettings(), clientContext);
@@ -244,16 +252,16 @@ public class GrpcContextsStub extends ContextsStub {
     this.updateContextCallable =
         callableFactory.createUnaryCallable(
             updateContextTransportSettings, settings.updateContextSettings(), clientContext);
-    this.deleteContextCallable =
-        callableFactory.createUnaryCallable(
-            deleteContextTransportSettings, settings.deleteContextSettings(), clientContext);
-    this.deleteAllContextsCallable =
-        callableFactory.createUnaryCallable(
-            deleteAllContextsTransportSettings,
-            settings.deleteAllContextsSettings(),
-            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable() {
+    return deleteContextCallable;
+  }
+
+  public UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable() {
+    return deleteAllContextsCallable;
   }
 
   public UnaryCallable<ListContextsRequest, ListContextsPagedResponse> listContextsPagedCallable() {
@@ -274,14 +282,6 @@ public class GrpcContextsStub extends ContextsStub {
 
   public UnaryCallable<UpdateContextRequest, Context> updateContextCallable() {
     return updateContextCallable;
-  }
-
-  public UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable() {
-    return deleteContextCallable;
-  }
-
-  public UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable() {
-    return deleteAllContextsCallable;
   }
 
   @Override
