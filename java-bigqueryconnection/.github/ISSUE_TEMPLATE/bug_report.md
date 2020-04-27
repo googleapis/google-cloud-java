@@ -10,7 +10,7 @@ Thanks for stopping by to let us know something could be better!
 
 Please run down the following list and make sure you've tried the usual "quick fixes":
 
-  - Search the issues already opened: https://github.com/googleapis/java-bigquery-connection/issues
+  - Search the issues already opened: https://github.com/googleapis/java-bigqueryconnections/issues
   - Check for answers on StackOverflow: http://stackoverflow.com/questions/tagged/google-cloud-platform
 
 If you are still having issues, please include as much information as possible:
@@ -21,7 +21,7 @@ If you are still having issues, please include as much information as possible:
    General, Core, and Other are also allowed as types
 2. OS type and version:
 3. Java version:
-4. bigquery-connection version(s):
+4. bigqueryconnections version(s):
 
 #### Steps to reproduce
 

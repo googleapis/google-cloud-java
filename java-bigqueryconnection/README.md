@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-bigquery-connection</artifactId>
+  <artifactId>google-cloud-bigqueryconnections</artifactId>
   <version>0.0.0</version>
 </dependency>
 ```
 
-[//]: # ({x-version-update-start:google-cloud-bigquery-connection:released})
+[//]: # ({x-version-update-start:google-cloud-bigqueryconnections:released})
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquery-connection:0.0.0'
+compile 'com.google.cloud:google-cloud-bigqueryconnections:0.0.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquery-connection" % "0.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigqueryconnections" % "0.0.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -52,8 +52,8 @@ You will need to [enable billing][enable-billing] to use Google Cloud BigQuery C
 
 ### Installation and setup
 
-You'll need to obtain the `google-cloud-bigquery-connection` library.  See the [Quickstart](#quickstart) section
-to add `google-cloud-bigquery-connection` as a dependency in your code.
+You'll need to obtain the `google-cloud-bigqueryconnections` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-bigqueryconnections` as a dependency in your code.
 
 ## About Cloud BigQuery Connections
 
@@ -115,29 +115,29 @@ Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 [product-docs]: https://cloud.google.com
-[javadocs]: https://googleapis.dev/java/google-cloud-bigquery-connection/latest/index.html
-[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery-connection/java7.svg
-[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery-connection/java7.html
-[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery-connection/java8.svg
-[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery-connection/java8.html
-[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery-connection/java8-osx.svg
-[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery-connection/java8-osx.html
-[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery-connection/java8-win.svg
-[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery-connection/java8-win.html
-[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery-connection/java11.svg
-[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquery-connection/java11.html
+[javadocs]: https://googleapis.dev/java/google-cloud-bigqueryconnections/latest/index.html
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryconnections/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryconnections/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryconnections/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryconnections/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryconnections/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryconnections/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryconnections/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryconnections/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryconnections/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryconnections/java11.html
 [stability-image]: https://img.shields.io/badge/stability-beta-yellow
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery-connection.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-bigquery-connection&core=gav
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigqueryconnections.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-bigqueryconnections&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
 [troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting
-[contributing]: https://github.com/googleapis/java-bigquery-connection/blob/master/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-bigquery-connection/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/java-bigquery-connection/blob/master/LICENSE
+[contributing]: https://github.com/googleapis/java-bigqueryconnections/blob/master/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-bigqueryconnections/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-bigqueryconnections/blob/master/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=bigquery-connection.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=bigqueryconnection.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png

@@ -3,23 +3,25 @@
     {
       "git": {
         "name": ".",
-        "remote": "sso://devrel/cloud/libraries/java/repo-splitter",
-        "sha": "18903c5fe1ce7568617af82de4cbd34ca5df159d"
+        "remote": "git@github.com:stephaniewang526/java-bigqueryconnections.git",
+        "sha": "d123424c680f60b1c97207befb1d9adb285ca293"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1d520eaa7bbd8b40f53942ff03b5496fff887b53",
-        "internalRef": "307849529"
+        "sha": "5dca7f1079a4c127245c0f1dbb8293b434fbd0c8",
+        "internalRef": "308671886",
+        "log": "5dca7f1079a4c127245c0f1dbb8293b434fbd0c8\nSupport purchasing capacity commitments in the BigQuery Reservation v1 API.\n\nPiperOrigin-RevId: 308671886\n\n28e76243c23cc282efbb288cb558c174e3e5e9ee\nfeat: integrate gapic generator change in googleapis\n\nPiperOrigin-RevId: 308294748\n\nd14bf59a446c14ef16e9931ebfc8e63ab549bf07\n1. Updated the config file names.\n2. Added a group_by field to the ListBuildsRequest.\n\nPiperOrigin-RevId: 308157960\n\n0d7c3565dd942d0cc41b16e895046486ae29e44e\nbazel: update gapic-generator-go to v0.13.3 in WORKSPACE\n\nChanges include:\n- change plugin use of Unmarshal to be compatible with golang/protobuf v1.4.0\n\nPiperOrigin-RevId: 308113536\n\n"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "716f741f2d307b48cbe8a5bc3bc883571212344a"
+        "sha": "01b6f23d24b27878b48667ce597876d66b59780e",
+        "log": "01b6f23d24b27878b48667ce597876d66b59780e\nfix(python): install testutils from pypi (#503)\n\nhttps://pypi.org/project/google-cloud-testutils/\n"
       }
     }
   ],
