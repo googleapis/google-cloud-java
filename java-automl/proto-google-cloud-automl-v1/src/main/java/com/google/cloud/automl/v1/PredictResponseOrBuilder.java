@@ -143,10 +143,10 @@ public interface PredictResponseOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * AutoML Vision Object Detection
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes to return per image.
-   * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+   * AutoML Natural Language Sentiment Analysis
    * `sentiment_score`
    * : (float, deprecated) A value between -1 and 1,
    *   -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -166,10 +166,10 @@ public interface PredictResponseOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * AutoML Vision Object Detection
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes to return per image.
-   * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+   * AutoML Natural Language Sentiment Analysis
    * `sentiment_score`
    * : (float, deprecated) A value between -1 and 1,
    *   -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -192,10 +192,10 @@ public interface PredictResponseOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * AutoML Vision Object Detection
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes to return per image.
-   * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+   * AutoML Natural Language Sentiment Analysis
    * `sentiment_score`
    * : (float, deprecated) A value between -1 and 1,
    *   -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -215,10 +215,10 @@ public interface PredictResponseOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * AutoML Vision Object Detection
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes to return per image.
-   * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+   * AutoML Natural Language Sentiment Analysis
    * `sentiment_score`
    * : (float, deprecated) A value between -1 and 1,
    *   -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -238,10 +238,10 @@ public interface PredictResponseOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * AutoML Vision Object Detection
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes to return per image.
-   * &lt;h4&gt;AutoML Natural Language Sentiment Analysis&lt;/h4&gt;
+   * AutoML Natural Language Sentiment Analysis
    * `sentiment_score`
    * : (float, deprecated) A value between -1 and 1,
    *   -1 maps to least positive sentiment, while 1 maps to the most positive

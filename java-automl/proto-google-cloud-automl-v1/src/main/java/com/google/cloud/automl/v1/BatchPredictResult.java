@@ -161,10 +161,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * AutoML Vision Object Detection
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per image.
-   * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+   * AutoML Video Intelligence Object Tracking
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>
@@ -187,10 +187,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * AutoML Vision Object Detection
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per image.
-   * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+   * AutoML Video Intelligence Object Tracking
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>
@@ -205,10 +205,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * AutoML Vision Object Detection
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per image.
-   * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+   * AutoML Video Intelligence Object Tracking
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>
@@ -228,10 +228,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
-   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * AutoML Vision Object Detection
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per image.
-   * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+   * AutoML Video Intelligence Object Tracking
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>
@@ -626,10 +626,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per image.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per frame.
      * </pre>
@@ -652,10 +652,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per image.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per frame.
      * </pre>
@@ -670,10 +670,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per image.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per frame.
      * </pre>
@@ -693,10 +693,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per image.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per frame.
      * </pre>
@@ -723,10 +723,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per image.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per frame.
      * </pre>
@@ -750,10 +750,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per image.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per frame.
      * </pre>
@@ -775,10 +775,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per image.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `max_bounding_box_count`
      * : (int64) The maximum number of bounding boxes returned per frame.
      * </pre>

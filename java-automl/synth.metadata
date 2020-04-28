@@ -11,23 +11,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-automl.git",
-        "sha": "2d640bdc34db30431962074dba38c519525e717f"
+        "sha": "5e64098f19839e2bf1e34db93c740e93d95a5e25"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1692c3d51ee7d4366ce81892df1b9ca9846480d3",
-        "internalRef": "305894083"
+        "sha": "371206424e6db4df2cb3734bb1013dcaac9dbe4b",
+        "internalRef": "308716969"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1692c3d51ee7d4366ce81892df1b9ca9846480d3",
-        "internalRef": "305894083"
+        "sha": "371206424e6db4df2cb3734bb1013dcaac9dbe4b",
+        "internalRef": "308716969"
       }
     },
     {

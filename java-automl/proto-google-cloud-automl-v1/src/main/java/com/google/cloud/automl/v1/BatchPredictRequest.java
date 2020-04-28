@@ -357,17 +357,17 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
-   * &lt;h4&gt;AutoML Natural Language Classification&lt;/h4&gt;
+   * AutoML Natural Language Classification
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a text snippet, it will only produce results
    *   that have at least this confidence score. The default is 0.5.
-   * &lt;h4&gt;AutoML Vision Classification&lt;/h4&gt;
+   * AutoML Vision Classification
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for an image, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
-   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * AutoML Vision Object Detection
    * `score_threshold`
    * : (float) When Model detects objects on the image,
    *   it will only produce bounding boxes which have at least this
@@ -376,7 +376,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
-   * &lt;h4&gt;AutoML Video Intelligence Classification&lt;/h4&gt;
+   * AutoML Video Intelligence Classification
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a video, it will only produce results that
@@ -407,7 +407,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *   WARNING: Model evaluation is not done for this classification
    *   type, the quality of it depends on training data, but there are no
    *   metrics provided to describe that quality.
-   * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+   * AutoML Video Intelligence Object Tracking
    * `score_threshold`
    * : (float) When Model detects objects on video frames,
    *   it will only produce bounding boxes which have at least this
@@ -441,17 +441,17 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
-   * &lt;h4&gt;AutoML Natural Language Classification&lt;/h4&gt;
+   * AutoML Natural Language Classification
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a text snippet, it will only produce results
    *   that have at least this confidence score. The default is 0.5.
-   * &lt;h4&gt;AutoML Vision Classification&lt;/h4&gt;
+   * AutoML Vision Classification
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for an image, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
-   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * AutoML Vision Object Detection
    * `score_threshold`
    * : (float) When Model detects objects on the image,
    *   it will only produce bounding boxes which have at least this
@@ -460,7 +460,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
-   * &lt;h4&gt;AutoML Video Intelligence Classification&lt;/h4&gt;
+   * AutoML Video Intelligence Classification
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a video, it will only produce results that
@@ -491,7 +491,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *   WARNING: Model evaluation is not done for this classification
    *   type, the quality of it depends on training data, but there are no
    *   metrics provided to describe that quality.
-   * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+   * AutoML Video Intelligence Object Tracking
    * `score_threshold`
    * : (float) When Model detects objects on video frames,
    *   it will only produce bounding boxes which have at least this
@@ -517,17 +517,17 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
-   * &lt;h4&gt;AutoML Natural Language Classification&lt;/h4&gt;
+   * AutoML Natural Language Classification
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a text snippet, it will only produce results
    *   that have at least this confidence score. The default is 0.5.
-   * &lt;h4&gt;AutoML Vision Classification&lt;/h4&gt;
+   * AutoML Vision Classification
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for an image, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
-   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * AutoML Vision Object Detection
    * `score_threshold`
    * : (float) When Model detects objects on the image,
    *   it will only produce bounding boxes which have at least this
@@ -536,7 +536,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
-   * &lt;h4&gt;AutoML Video Intelligence Classification&lt;/h4&gt;
+   * AutoML Video Intelligence Classification
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a video, it will only produce results that
@@ -567,7 +567,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *   WARNING: Model evaluation is not done for this classification
    *   type, the quality of it depends on training data, but there are no
    *   metrics provided to describe that quality.
-   * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+   * AutoML Video Intelligence Object Tracking
    * `score_threshold`
    * : (float) When Model detects objects on video frames,
    *   it will only produce bounding boxes which have at least this
@@ -597,17 +597,17 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
-   * &lt;h4&gt;AutoML Natural Language Classification&lt;/h4&gt;
+   * AutoML Natural Language Classification
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a text snippet, it will only produce results
    *   that have at least this confidence score. The default is 0.5.
-   * &lt;h4&gt;AutoML Vision Classification&lt;/h4&gt;
+   * AutoML Vision Classification
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for an image, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
-   * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+   * AutoML Vision Object Detection
    * `score_threshold`
    * : (float) When Model detects objects on the image,
    *   it will only produce bounding boxes which have at least this
@@ -616,7 +616,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
-   * &lt;h4&gt;AutoML Video Intelligence Classification&lt;/h4&gt;
+   * AutoML Video Intelligence Classification
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a video, it will only produce results that
@@ -647,7 +647,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *   WARNING: Model evaluation is not done for this classification
    *   type, the quality of it depends on training data, but there are no
    *   metrics provided to describe that quality.
-   * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+   * AutoML Video Intelligence Object Tracking
    * `score_threshold`
    * : (float) When Model detects objects on video frames,
    *   it will only produce bounding boxes which have at least this
@@ -1655,17 +1655,17 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
-     * &lt;h4&gt;AutoML Natural Language Classification&lt;/h4&gt;
+     * AutoML Natural Language Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a text snippet, it will only produce results
      *   that have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Classification&lt;/h4&gt;
+     * AutoML Vision Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for an image, it will only produce results that
      *   have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `score_threshold`
      * : (float) When Model detects objects on the image,
      *   it will only produce bounding boxes which have at least this
@@ -1674,7 +1674,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * : (int64) The maximum number of bounding
      *   boxes returned per image. The default is 100, the
      *   number of bounding boxes returned might be limited by the server.
-     * &lt;h4&gt;AutoML Video Intelligence Classification&lt;/h4&gt;
+     * AutoML Video Intelligence Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a video, it will only produce results that
@@ -1705,7 +1705,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *   WARNING: Model evaluation is not done for this classification
      *   type, the quality of it depends on training data, but there are no
      *   metrics provided to describe that quality.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `score_threshold`
      * : (float) When Model detects objects on video frames,
      *   it will only produce bounding boxes which have at least this
@@ -1739,17 +1739,17 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
-     * &lt;h4&gt;AutoML Natural Language Classification&lt;/h4&gt;
+     * AutoML Natural Language Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a text snippet, it will only produce results
      *   that have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Classification&lt;/h4&gt;
+     * AutoML Vision Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for an image, it will only produce results that
      *   have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `score_threshold`
      * : (float) When Model detects objects on the image,
      *   it will only produce bounding boxes which have at least this
@@ -1758,7 +1758,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * : (int64) The maximum number of bounding
      *   boxes returned per image. The default is 100, the
      *   number of bounding boxes returned might be limited by the server.
-     * &lt;h4&gt;AutoML Video Intelligence Classification&lt;/h4&gt;
+     * AutoML Video Intelligence Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a video, it will only produce results that
@@ -1789,7 +1789,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *   WARNING: Model evaluation is not done for this classification
      *   type, the quality of it depends on training data, but there are no
      *   metrics provided to describe that quality.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `score_threshold`
      * : (float) When Model detects objects on video frames,
      *   it will only produce bounding boxes which have at least this
@@ -1815,17 +1815,17 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
-     * &lt;h4&gt;AutoML Natural Language Classification&lt;/h4&gt;
+     * AutoML Natural Language Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a text snippet, it will only produce results
      *   that have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Classification&lt;/h4&gt;
+     * AutoML Vision Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for an image, it will only produce results that
      *   have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `score_threshold`
      * : (float) When Model detects objects on the image,
      *   it will only produce bounding boxes which have at least this
@@ -1834,7 +1834,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * : (int64) The maximum number of bounding
      *   boxes returned per image. The default is 100, the
      *   number of bounding boxes returned might be limited by the server.
-     * &lt;h4&gt;AutoML Video Intelligence Classification&lt;/h4&gt;
+     * AutoML Video Intelligence Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a video, it will only produce results that
@@ -1865,7 +1865,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *   WARNING: Model evaluation is not done for this classification
      *   type, the quality of it depends on training data, but there are no
      *   metrics provided to describe that quality.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `score_threshold`
      * : (float) When Model detects objects on video frames,
      *   it will only produce bounding boxes which have at least this
@@ -1896,17 +1896,17 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
-     * &lt;h4&gt;AutoML Natural Language Classification&lt;/h4&gt;
+     * AutoML Natural Language Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a text snippet, it will only produce results
      *   that have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Classification&lt;/h4&gt;
+     * AutoML Vision Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for an image, it will only produce results that
      *   have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `score_threshold`
      * : (float) When Model detects objects on the image,
      *   it will only produce bounding boxes which have at least this
@@ -1915,7 +1915,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * : (int64) The maximum number of bounding
      *   boxes returned per image. The default is 100, the
      *   number of bounding boxes returned might be limited by the server.
-     * &lt;h4&gt;AutoML Video Intelligence Classification&lt;/h4&gt;
+     * AutoML Video Intelligence Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a video, it will only produce results that
@@ -1946,7 +1946,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *   WARNING: Model evaluation is not done for this classification
      *   type, the quality of it depends on training data, but there are no
      *   metrics provided to describe that quality.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `score_threshold`
      * : (float) When Model detects objects on video frames,
      *   it will only produce bounding boxes which have at least this
@@ -1984,17 +1984,17 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
-     * &lt;h4&gt;AutoML Natural Language Classification&lt;/h4&gt;
+     * AutoML Natural Language Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a text snippet, it will only produce results
      *   that have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Classification&lt;/h4&gt;
+     * AutoML Vision Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for an image, it will only produce results that
      *   have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `score_threshold`
      * : (float) When Model detects objects on the image,
      *   it will only produce bounding boxes which have at least this
@@ -2003,7 +2003,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * : (int64) The maximum number of bounding
      *   boxes returned per image. The default is 100, the
      *   number of bounding boxes returned might be limited by the server.
-     * &lt;h4&gt;AutoML Video Intelligence Classification&lt;/h4&gt;
+     * AutoML Video Intelligence Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a video, it will only produce results that
@@ -2034,7 +2034,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *   WARNING: Model evaluation is not done for this classification
      *   type, the quality of it depends on training data, but there are no
      *   metrics provided to describe that quality.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `score_threshold`
      * : (float) When Model detects objects on video frames,
      *   it will only produce bounding boxes which have at least this
@@ -2069,17 +2069,17 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
-     * &lt;h4&gt;AutoML Natural Language Classification&lt;/h4&gt;
+     * AutoML Natural Language Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a text snippet, it will only produce results
      *   that have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Classification&lt;/h4&gt;
+     * AutoML Vision Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for an image, it will only produce results that
      *   have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `score_threshold`
      * : (float) When Model detects objects on the image,
      *   it will only produce bounding boxes which have at least this
@@ -2088,7 +2088,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * : (int64) The maximum number of bounding
      *   boxes returned per image. The default is 100, the
      *   number of bounding boxes returned might be limited by the server.
-     * &lt;h4&gt;AutoML Video Intelligence Classification&lt;/h4&gt;
+     * AutoML Video Intelligence Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a video, it will only produce results that
@@ -2119,7 +2119,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *   WARNING: Model evaluation is not done for this classification
      *   type, the quality of it depends on training data, but there are no
      *   metrics provided to describe that quality.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `score_threshold`
      * : (float) When Model detects objects on video frames,
      *   it will only produce bounding boxes which have at least this
@@ -2152,17 +2152,17 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Additional domain-specific parameters for the predictions, any string must
      * be up to 25000 characters long.
-     * &lt;h4&gt;AutoML Natural Language Classification&lt;/h4&gt;
+     * AutoML Natural Language Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a text snippet, it will only produce results
      *   that have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Classification&lt;/h4&gt;
+     * AutoML Vision Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for an image, it will only produce results that
      *   have at least this confidence score. The default is 0.5.
-     * &lt;h4&gt;AutoML Vision Object Detection&lt;/h4&gt;
+     * AutoML Vision Object Detection
      * `score_threshold`
      * : (float) When Model detects objects on the image,
      *   it will only produce bounding boxes which have at least this
@@ -2171,7 +2171,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * : (int64) The maximum number of bounding
      *   boxes returned per image. The default is 100, the
      *   number of bounding boxes returned might be limited by the server.
-     * &lt;h4&gt;AutoML Video Intelligence Classification&lt;/h4&gt;
+     * AutoML Video Intelligence Classification
      * `score_threshold`
      * : (float) A value from 0.0 to 1.0. When the model
      *   makes predictions for a video, it will only produce results that
@@ -2202,7 +2202,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *   WARNING: Model evaluation is not done for this classification
      *   type, the quality of it depends on training data, but there are no
      *   metrics provided to describe that quality.
-     * &lt;h4&gt;AutoML Video Intelligence Object Tracking&lt;/h4&gt;
+     * AutoML Video Intelligence Object Tracking
      * `score_threshold`
      * : (float) When Model detects objects on video frames,
      *   it will only produce bounding boxes which have at least this

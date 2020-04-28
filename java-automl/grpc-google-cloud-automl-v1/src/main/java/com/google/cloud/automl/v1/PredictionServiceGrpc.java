@@ -183,42 +183,25 @@ public final class PredictionServiceGrpc {
      * Perform an online prediction. The prediction result is directly
      * returned in the response.
      * Available for following ML scenarios, and their expected request payloads:
-     * &lt;table&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Vision Classification&lt;/td&gt;
-     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Vision Object Detection&lt;/td&gt;
-     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Natural Language Classification&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
-     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Natural Language Entity Extraction&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document
-     *  in .PDF, .TIF or .TIFF format with size upto 20MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Natural Language Sentiment Analysis&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
-     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Translation&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 25,000 characters, UTF-8 encoded.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Tables&lt;/td&gt;
-     * &lt;td&gt;A row with column values matching
+     * AutoML Vision Classification
+     * * An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+     * AutoML Vision Object Detection
+     * * An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+     * AutoML Natural Language Classification
+     * * A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.
+     * AutoML Natural Language Entity Extraction
+     * * A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document
+     *  in .PDF, .TIF or .TIFF format with size upto 20MB.
+     * AutoML Natural Language Sentiment Analysis
+     * * A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.
+     * AutoML Translation
+     * * A TextSnippet up to 25,000 characters, UTF-8 encoded.
+     * AutoML Tables
+     * * A row with column values matching
      *   the columns of the model, up to 5MB. Not available for FORECASTING
      *   `prediction_type`.
-     * &lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;/table&gt;
      * </pre>
      */
     public void predict(
@@ -300,42 +283,25 @@ public final class PredictionServiceGrpc {
      * Perform an online prediction. The prediction result is directly
      * returned in the response.
      * Available for following ML scenarios, and their expected request payloads:
-     * &lt;table&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Vision Classification&lt;/td&gt;
-     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Vision Object Detection&lt;/td&gt;
-     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Natural Language Classification&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
-     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Natural Language Entity Extraction&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document
-     *  in .PDF, .TIF or .TIFF format with size upto 20MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Natural Language Sentiment Analysis&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
-     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Translation&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 25,000 characters, UTF-8 encoded.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Tables&lt;/td&gt;
-     * &lt;td&gt;A row with column values matching
+     * AutoML Vision Classification
+     * * An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+     * AutoML Vision Object Detection
+     * * An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+     * AutoML Natural Language Classification
+     * * A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.
+     * AutoML Natural Language Entity Extraction
+     * * A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document
+     *  in .PDF, .TIF or .TIFF format with size upto 20MB.
+     * AutoML Natural Language Sentiment Analysis
+     * * A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.
+     * AutoML Translation
+     * * A TextSnippet up to 25,000 characters, UTF-8 encoded.
+     * AutoML Tables
+     * * A row with column values matching
      *   the columns of the model, up to 5MB. Not available for FORECASTING
      *   `prediction_type`.
-     * &lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;/table&gt;
      * </pre>
      */
     public void predict(
@@ -404,42 +370,25 @@ public final class PredictionServiceGrpc {
      * Perform an online prediction. The prediction result is directly
      * returned in the response.
      * Available for following ML scenarios, and their expected request payloads:
-     * &lt;table&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Vision Classification&lt;/td&gt;
-     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Vision Object Detection&lt;/td&gt;
-     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Natural Language Classification&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
-     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Natural Language Entity Extraction&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document
-     *  in .PDF, .TIF or .TIFF format with size upto 20MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Natural Language Sentiment Analysis&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
-     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Translation&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 25,000 characters, UTF-8 encoded.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Tables&lt;/td&gt;
-     * &lt;td&gt;A row with column values matching
+     * AutoML Vision Classification
+     * * An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+     * AutoML Vision Object Detection
+     * * An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+     * AutoML Natural Language Classification
+     * * A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.
+     * AutoML Natural Language Entity Extraction
+     * * A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document
+     *  in .PDF, .TIF or .TIFF format with size upto 20MB.
+     * AutoML Natural Language Sentiment Analysis
+     * * A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.
+     * AutoML Translation
+     * * A TextSnippet up to 25,000 characters, UTF-8 encoded.
+     * AutoML Tables
+     * * A row with column values matching
      *   the columns of the model, up to 5MB. Not available for FORECASTING
      *   `prediction_type`.
-     * &lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;/table&gt;
      * </pre>
      */
     public com.google.cloud.automl.v1.PredictResponse predict(
@@ -501,42 +450,25 @@ public final class PredictionServiceGrpc {
      * Perform an online prediction. The prediction result is directly
      * returned in the response.
      * Available for following ML scenarios, and their expected request payloads:
-     * &lt;table&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Vision Classification&lt;/td&gt;
-     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Vision Object Detection&lt;/td&gt;
-     * &lt;td&gt;An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Natural Language Classification&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
-     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Natural Language Entity Extraction&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document
-     *  in .PDF, .TIF or .TIFF format with size upto 20MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Natural Language Sentiment Analysis&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
-     * .PDF, .TIF or .TIFF format with size upto 2MB.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Translation&lt;/td&gt;
-     * &lt;td&gt;A TextSnippet up to 25,000 characters, UTF-8 encoded.&lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;tr&gt;
-     * &lt;td&gt;AutoML Tables&lt;/td&gt;
-     * &lt;td&gt;A row with column values matching
+     * AutoML Vision Classification
+     * * An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+     * AutoML Vision Object Detection
+     * * An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+     * AutoML Natural Language Classification
+     * * A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.
+     * AutoML Natural Language Entity Extraction
+     * * A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document
+     *  in .PDF, .TIF or .TIFF format with size upto 20MB.
+     * AutoML Natural Language Sentiment Analysis
+     * * A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in
+     * .PDF, .TIF or .TIFF format with size upto 2MB.
+     * AutoML Translation
+     * * A TextSnippet up to 25,000 characters, UTF-8 encoded.
+     * AutoML Tables
+     * * A row with column values matching
      *   the columns of the model, up to 5MB. Not available for FORECASTING
      *   `prediction_type`.
-     * &lt;/td&gt;
-     * &lt;/tr&gt;
-     * &lt;/table&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
