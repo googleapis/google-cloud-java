@@ -98,10 +98,6 @@ import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceClient;
 import com.google.cloud.compute.v1.InstanceGroup;
 import com.google.cloud.compute.v1.InstanceGroupClient;
-import com.google.cloud.compute.v1.InstanceGroupManager;
-import com.google.cloud.compute.v1.InstanceGroupManagerClient;
-import com.google.cloud.compute.v1.InstanceGroupManagerSettings;
-import com.google.cloud.compute.v1.InstanceGroupManagersScopedList;
 import com.google.cloud.compute.v1.InstanceGroupSettings;
 import com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest;
 import com.google.cloud.compute.v1.InstanceGroupsScopedList;
@@ -299,9 +295,6 @@ public class ITComputeTest {
 
   private static InstanceGroupClient instanceGroupClient;
   private static InstanceGroupSettings instanceGroupSettings;
-
-  private static InstanceGroupManagerClient instanceGroupManagerClient;
-  private static InstanceGroupManagerSettings instanceGroupManagerSettings;
 
   private static InstanceTemplateClient instanceTemplateClient;
   private static InstanceTemplateSettings instanceTemplateSettings;
@@ -518,7 +511,6 @@ public class ITComputeTest {
 
   @BeforeClass
   public static void setUp() throws Exception {
-
     Credentials credentials =
         GoogleCredentials.getApplicationDefault()
             .createScoped(DiskTypeSettings.getDefaultServiceScopes());
@@ -721,13 +713,6 @@ public class ITComputeTest {
         InstanceTemplateSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     instanceTemplateClient = InstanceTemplateClient.create(instanceTemplateSettings);
 
-    /* create instanceGroupManagerClient */
-    instanceGroupManagerSettings =
-        InstanceGroupManagerSettings.newBuilder()
-            .setCredentialsProvider(credentialsProvider)
-            .build();
-    instanceGroupManagerClient = InstanceGroupManagerClient.create(instanceGroupManagerSettings);
-
     /* create interconnectAttachmentClient */
     interconnectAttachmentSettings =
         InterconnectAttachmentSettings.newBuilder()
@@ -918,7 +903,6 @@ public class ITComputeTest {
     instanceGroupClient.deleteInstanceGroup(INSTANCE_GROUP_NAME);
     instanceGroupClient.close();
     instanceTemplateClient.close();
-    instanceGroupManagerClient.close();
     interconnectAttachmentClient.close();
     interconnectLocationClient.close();
     interconnectClient.close();
@@ -1877,28 +1861,6 @@ public class ITComputeTest {
         Lists.newArrayList(instanceTemplateClient.listInstanceTemplates(PROJECT_NAME).iterateAll());
     assertThat(templates).isNotNull();
     assertThat(templates.contains(null)).isFalse();
-  }
-
-  @Test
-  public void listInstanceGroupManagersTest() {
-    List<InstanceGroupManager> instanceGroupManagers =
-        Lists.newArrayList(
-            instanceGroupManagerClient.listInstanceGroupManagers(PROJECT_ZONE_NAME).iterateAll());
-    assertThat(instanceGroupManagers).isNotNull();
-    assertThat(instanceGroupManagers.size()).isEqualTo(0);
-    assertThat(instanceGroupManagers.contains(null)).isFalse();
-  }
-
-  @Test
-  public void aggregatedListInstanceGroupManagersTest() {
-    List<InstanceGroupManagersScopedList> managersScopedLists =
-        Lists.newArrayList(
-            instanceGroupManagerClient
-                .aggregatedListInstanceGroupManagers(true, PROJECT_NAME)
-                .iterateAll());
-    assertThat(managersScopedLists).isNotNull();
-    assertThat(managersScopedLists.size()).isGreaterThan(0);
-    assertThat(managersScopedLists.contains(null)).isFalse();
   }
 
   @Test
