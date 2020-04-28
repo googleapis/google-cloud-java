@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/java-bigqueryreservations.git",
-        "sha": "184a305690a58c454b068b3adb7d9aed98025f5c"
+        "remote": "https://github.com/googleapis/java-bigqueryreservations.git",
+        "sha": "7f5665c2091d0966ad928329c22d2c2c11e38b14"
       }
     },
     {
@@ -12,8 +12,7 @@
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
         "sha": "5dca7f1079a4c127245c0f1dbb8293b434fbd0c8",
-        "internalRef": "308671886",
-        "log": "5dca7f1079a4c127245c0f1dbb8293b434fbd0c8\nSupport purchasing capacity commitments in the BigQuery Reservation v1 API.\n\nPiperOrigin-RevId: 308671886\n\n"
+        "internalRef": "308671886"
       }
     },
     {
