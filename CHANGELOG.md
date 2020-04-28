@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.131.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.130.0...v0.131.0) (2020-04-28)
+
+
+### Features
+
+* integrate gapic generator change in googleapis ([#220](https://www.github.com/googleapis/java-bigquerystorage/issues/220)) ([1565dc0](https://www.github.com/googleapis/java-bigquerystorage/commit/1565dc08515d4665b812d86223765f5cf9629b16))
+
+
+### Bug Fixes
+
+* several StreamWriter issues ([#213](https://www.github.com/googleapis/java-bigquerystorage/issues/213)) ([b803863](https://www.github.com/googleapis/java-bigquerystorage/commit/b80386394f3082e9695712343f37afc4d29df76f))
+
+
+### Dependencies
+
+* update dependency com.fasterxml.jackson.core:jackson-core to v2.11.0 ([#224](https://www.github.com/googleapis/java-bigquerystorage/issues/224)) ([87d5248](https://www.github.com/googleapis/java-bigquerystorage/commit/87d52483b7bca906df16b4432a0d7bdde6c23726))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.111.1 ([#210](https://www.github.com/googleapis/java-bigquerystorage/issues/210)) ([d898a61](https://www.github.com/googleapis/java-bigquerystorage/commit/d898a61f1c48e763e37a234364ee1a590187e8ec))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.2.0 ([#207](https://www.github.com/googleapis/java-bigquerystorage/issues/207)) ([ae29920](https://www.github.com/googleapis/java-bigquerystorage/commit/ae299204422ecb0b98747c96a2e9eac2fa1fbd14))
+* update dependency com.google.truth:truth to v1 ([#199](https://www.github.com/googleapis/java-bigquerystorage/issues/199)) ([440d85b](https://www.github.com/googleapis/java-bigquerystorage/commit/440d85bff1930835e1b4d0c13eeb2ce8209d658f))
+
 ## [0.130.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.129.0...v0.130.0) (2020-04-20)
 
 
