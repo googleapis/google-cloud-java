@@ -15,6 +15,8 @@
  */
 package com.google.cloud.dialogflow.v2beta1.stub;
 
+import static com.google.cloud.dialogflow.v2beta1.EnvironmentsClient.ListEnvironmentsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -58,6 +60,8 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
 
   private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable;
+  private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
+      listEnvironmentsPagedCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -116,8 +120,16 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
     this.listEnvironmentsCallable =
         callableFactory.createUnaryCallable(
             listEnvironmentsTransportSettings, settings.listEnvironmentsSettings(), clientContext);
+    this.listEnvironmentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listEnvironmentsTransportSettings, settings.listEnvironmentsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
+      listEnvironmentsPagedCallable() {
+    return listEnvironmentsPagedCallable;
   }
 
   public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>

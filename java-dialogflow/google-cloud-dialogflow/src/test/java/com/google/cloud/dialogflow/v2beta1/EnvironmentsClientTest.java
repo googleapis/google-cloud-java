@@ -15,6 +15,8 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
+import static com.google.cloud.dialogflow.v2beta1.EnvironmentsClient.ListEnvironmentsPagedResponse;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -22,6 +24,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -103,20 +106,29 @@ public class EnvironmentsClientTest {
   @Test
   @SuppressWarnings("all")
   public void listEnvironmentsTest() {
-    String nextPageToken = "nextPageToken-1530815211";
+    String nextPageToken = "";
+    Environment environmentsElement = Environment.newBuilder().build();
+    List<Environment> environments = Arrays.asList(environmentsElement);
     ListEnvironmentsResponse expectedResponse =
-        ListEnvironmentsResponse.newBuilder().setNextPageToken(nextPageToken).build();
+        ListEnvironmentsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllEnvironments(environments)
+            .build();
     mockEnvironments.addResponse(expectedResponse);
 
-    ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder().build();
+    ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
 
-    ListEnvironmentsResponse actualResponse = client.listEnvironments(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    ListEnvironmentsPagedResponse pagedListResponse = client.listEnvironments(parent);
+
+    List<Environment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEnvironmentsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListEnvironmentsRequest actualRequest = (ListEnvironmentsRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -130,9 +142,9 @@ public class EnvironmentsClientTest {
     mockEnvironments.addException(exception);
 
     try {
-      ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder().build();
+      ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
 
-      client.listEnvironments(request);
+      client.listEnvironments(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

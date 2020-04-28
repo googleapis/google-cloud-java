@@ -15,6 +15,8 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
+import static com.google.cloud.dialogflow.v2beta1.EnvironmentsClient.ListEnvironmentsPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -23,6 +25,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2beta1.stub.EnvironmentsStubSettings;
@@ -65,7 +68,8 @@ import javax.annotation.Generated;
 @BetaApi
 public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
   /** Returns the object with the settings used for calls to listEnvironments. */
-  public UnaryCallSettings<ListEnvironmentsRequest, ListEnvironmentsResponse>
+  public PagedCallSettings<
+          ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
       listEnvironmentsSettings() {
     return ((EnvironmentsStubSettings) getStubSettings()).listEnvironmentsSettings();
   }
@@ -168,7 +172,8 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to listEnvironments. */
-    public UnaryCallSettings.Builder<ListEnvironmentsRequest, ListEnvironmentsResponse>
+    public PagedCallSettings.Builder<
+            ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
         listEnvironmentsSettings() {
       return getStubSettingsBuilder().listEnvironmentsSettings();
     }

@@ -149,8 +149,8 @@
  * <pre>
  * <code>
  * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
- *   ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder().build();
- *   ListEnvironmentsResponse response = environmentsClient.listEnvironments(request);
+ *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+ *   ListEnvironmentsPagedResponse response = environmentsClient.listEnvironments(parent);
  * }
  * </code>
  * </pre>

@@ -15,7 +15,10 @@
  */
 package com.google.cloud.dialogflow.v2beta1.stub;
 
+import static com.google.cloud.dialogflow.v2beta1.EnvironmentsClient.ListEnvironmentsPagedResponse;
+
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -24,12 +27,19 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.v2beta1.Environment;
 import com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse;
 import com.google.common.collect.ImmutableList;
@@ -82,11 +92,13 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           .add("https://www.googleapis.com/auth/dialogflow")
           .build();
 
-  private final UnaryCallSettings<ListEnvironmentsRequest, ListEnvironmentsResponse>
+  private final PagedCallSettings<
+          ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
       listEnvironmentsSettings;
 
   /** Returns the object with the settings used for calls to listEnvironments. */
-  public UnaryCallSettings<ListEnvironmentsRequest, ListEnvironmentsResponse>
+  public PagedCallSettings<
+          ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
       listEnvironmentsSettings() {
     return listEnvironmentsSettings;
   }
@@ -163,11 +175,71 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     listEnvironmentsSettings = settingsBuilder.listEnvironmentsSettings().build();
   }
 
+  private static final PagedListDescriptor<
+          ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+      LIST_ENVIRONMENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEnvironmentsRequest injectToken(
+                ListEnvironmentsRequest payload, String token) {
+              return ListEnvironmentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEnvironmentsRequest injectPageSize(
+                ListEnvironmentsRequest payload, int pageSize) {
+              return ListEnvironmentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEnvironmentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEnvironmentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Environment> extractResources(ListEnvironmentsResponse payload) {
+              return payload.getEnvironmentsList() != null
+                  ? payload.getEnvironmentsList()
+                  : ImmutableList.<Environment>of();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
+      LIST_ENVIRONMENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListEnvironmentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse> callable,
+                ListEnvironmentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEnvironmentsResponse> futureResponse) {
+              PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ENVIRONMENTS_PAGE_STR_DESC, request, context);
+              return ListEnvironmentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Builder for EnvironmentsStubSettings. */
   public static class Builder extends StubSettings.Builder<EnvironmentsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<ListEnvironmentsRequest, ListEnvironmentsResponse>
+    private final PagedCallSettings.Builder<
+            ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
         listEnvironmentsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -180,7 +252,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           "idempotent",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+                  StatusCode.Code.INTERNAL, StatusCode.Code.UNAVAILABLE)));
       definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -211,7 +283,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      listEnvironmentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listEnvironmentsSettings = PagedCallSettings.newBuilder(LIST_ENVIRONMENTS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(listEnvironmentsSettings);
@@ -264,7 +336,8 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to listEnvironments. */
-    public UnaryCallSettings.Builder<ListEnvironmentsRequest, ListEnvironmentsResponse>
+    public PagedCallSettings.Builder<
+            ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
         listEnvironmentsSettings() {
       return listEnvironmentsSettings;
     }
