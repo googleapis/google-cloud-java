@@ -3,16 +3,17 @@
     {
       "git": {
         "name": ".",
-        "remote": "https://github.com/googleapis/java-bigqueryreservations.git",
-        "sha": "7f5665c2091d0966ad928329c22d2c2c11e38b14"
+        "remote": "git@github.com:googleapis/java-bigqueryreservations.git",
+        "sha": "db75c11206b18b5d3858a295e7ae5144a9b11a44"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "5dca7f1079a4c127245c0f1dbb8293b434fbd0c8",
-        "internalRef": "308671886"
+        "sha": "756b174de4a122461993c1c583345533d819936d",
+        "internalRef": "308824110",
+        "log": "756b174de4a122461993c1c583345533d819936d\nfix: Add missing method_signature annotations for BigTable Admin Backup RPCs\n\nThe added method_signatures reflect method flattenings in the GAPIC v1 config.\n\nPiperOrigin-RevId: 308824110\n\nc284e4f849e4b085a297d336cef8721ab69ba013\nConfigure retry for Diaglogflow v2.Environments.ListEnvironments and v2beta1.Environments.ListEnvironments.\n\nPiperOrigin-RevId: 308749074\n\nff17eefa184f6985e5d9a8ee3e725da95a06cd23\nchore: add Python target for orgpolicy BUILD.bazel\n\nPiperOrigin-RevId: 308747658\n\n371206424e6db4df2cb3734bb1013dcaac9dbe4b\nRemove raw html from proto comments as this breaks client library documentation generators.\n\nSee https://aip.dev/192\n\n> Any formatting in comments must be in CommonMark. Headings and tables must not be used, as these cause problems for several tools, and are unsuitable for client library reference documentation.\n>\n> Comments should use code font for property names and for literals (such as true).\n>\n> Raw HTML must not be used.\n\nPiperOrigin-RevId: 308716969\n\nc2bfceedfc9f01356229bd206ad25e250aa9551c\nGenerating BUILD.bazel for maps/routes/v1alpha.\n\nPiperOrigin-RevId: 308691010\n\n"
       }
     },
     {

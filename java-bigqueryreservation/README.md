@@ -1,6 +1,6 @@
-# Google Cloud BigQuery Reservations Client for Java
+# Google Cloud BigQuery Reservation Client for Java
 
-Java idiomatic client for [Cloud BigQuery Reservations][product-docs].
+Java idiomatic client for [Cloud BigQuery Reservation][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -13,49 +13,26 @@ Java idiomatic client for [Cloud BigQuery Reservations][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>5.2.0</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
 
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-bigqueryreservations</artifactId>
-    <version>0.0.0</version>
-  </dependency>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-bigqueryreservations</artifactId>
+  <artifactId>google-cloud-bigqueryreservation</artifactId>
   <version>0.0.0</version>
 </dependency>
-
 ```
 
-[//]: # ({x-version-update-start:google-cloud-bigqueryreservations:released})
+[//]: # ({x-version-update-start:google-cloud-bigqueryreservation:released})
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigqueryreservations:0.0.0'
+compile 'com.google.cloud:google-cloud-bigqueryreservation:0.0.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigqueryreservations" % "0.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigqueryreservation" % "0.0.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -67,24 +44,24 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Cloud BigQuery Reservations [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Cloud BigQuery Reservations.
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud BigQuery Reservation [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Cloud BigQuery Reservation.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 ### Installation and setup
 
-You'll need to obtain the `google-cloud-bigqueryreservations` library.  See the [Quickstart](#quickstart) section
-to add `google-cloud-bigqueryreservations` as a dependency in your code.
+You'll need to obtain the `google-cloud-bigqueryreservation` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-bigqueryreservation` as a dependency in your code.
 
-## About Cloud BigQuery Reservations
+## About Cloud BigQuery Reservation
 
 
-[Cloud BigQuery Reservations][product-docs] is about
+[Cloud BigQuery Reservation][product-docs] allows users to manage their flat-rate BigQuery reservations.
 
-See the [Cloud BigQuery Reservations client library docs][javadocs] to learn how to
-use this Cloud BigQuery Reservations Client Library.
+See the [Cloud BigQuery Reservation client library docs][javadocs] to learn how to
+use this Cloud BigQuery Reservation Client Library.
 
 
 
@@ -97,7 +74,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Cloud BigQuery Reservations uses gRPC for the transport layer.
+Cloud BigQuery Reservation uses gRPC for the transport layer.
 
 ## Java Versions
 
@@ -137,29 +114,29 @@ Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
-[product-docs]: https://cloud.google.com
-[javadocs]: https://googleapis.dev/java/google-cloud-bigqueryreservations/latest/index.html
-[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservations/java7.svg
-[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservations/java7.html
-[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservations/java8.svg
-[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservations/java8.html
-[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservations/java8-osx.svg
-[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservations/java8-osx.html
-[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservations/java8-win.svg
-[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservations/java8-win.html
-[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservations/java11.svg
-[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservations/java11.html
+[product-docs]: https://cloud.google.com/bigquery/docs/reference/reservations/rpc
+[javadocs]: https://cloud.google.com/bigquery/docs/reference/reservations/rpc/google.cloud.bigquery.reservation.v1
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservation/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservation/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservation/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservation/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservation/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservation/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservation/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservation/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservation/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigqueryreservation/java11.html
 [stability-image]: https://img.shields.io/badge/stability-beta-yellow
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigqueryreservations.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-bigqueryreservations&core=gav
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigqueryreservation.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-bigqueryreservation&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
 [troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting
-[contributing]: https://github.com/googleapis/java-bigqueryreservations/blob/master/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-bigqueryreservations/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/java-bigqueryreservations/blob/master/LICENSE
+[contributing]: https://github.com/googleapis/java-bigqueryreservation/blob/master/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-bigqueryreservation/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-bigqueryreservation/blob/master/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=bigqueryreservation.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM

@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-bigqueryreservations-bom</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryreservations:current} -->
+  <artifactId>google-cloud-bigqueryreservation-bom</artifactId>
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryreservation:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -11,10 +11,10 @@
     <version>0.5.0</version>
   </parent>
 
-  <name>Google Cloud BigQuery Reservations BOM</name>
-  <url>https://github.com/googleapis/java-bigqueryreservations</url>
+  <name>Google Cloud BigQuery Reservation BOM</name>
+  <url>https://github.com/googleapis/java-bigqueryreservation</url>
   <description>
-    BOM for Cloud BigQuery Reservations
+    BOM for Cloud BigQuery Reservation
   </description>
 
   <organization>
@@ -34,9 +34,9 @@
   </developers>
 
   <scm>
-    <connection>scm:git:https://github.com/googleapis/java-bigqueryreservations.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-bigqueryreservations.git</developerConnection>
-    <url>https://github.com/googleapis/java-bigqueryreservations</url>
+    <connection>scm:git:https://github.com/googleapis/java-bigqueryreservation.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-bigqueryreservation.git</developerConnection>
+    <url>https://github.com/googleapis/java-bigqueryreservation</url>
   </scm>
 
   <distributionManagement>
@@ -63,18 +63,18 @@
 
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bigqueryreservations</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryreservations:current} -->
+        <artifactId>google-cloud-bigqueryreservation</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryreservation:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-bigqueryreservations-v1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigqueryreservations-v1:current} -->
+        <artifactId>proto-google-cloud-bigqueryreservation-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigqueryreservation-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-bigqueryreservations-v1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigqueryreservations-v1:current} -->
+        <artifactId>grpc-google-cloud-bigqueryreservation-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigqueryreservation-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
