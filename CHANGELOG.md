@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.111.2](https://www.github.com/googleapis/java-bigquery/compare/v1.111.1...v1.111.2) (2020-04-29)
+
+
+### Dependencies
+
+* update core transport dependencies to v1.35.0 ([#298](https://www.github.com/googleapis/java-bigquery/issues/298)) ([95f9443](https://www.github.com/googleapis/java-bigquery/commit/95f9443fad2f561df8f8108c3e323729d8195d46))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#293](https://www.github.com/googleapis/java-bigquery/issues/293)) ([21d0c58](https://www.github.com/googleapis/java-bigquery/commit/21d0c588d61ded31cb45ff10bf7824f8203c9314))
+
 ### [1.111.1](https://www.github.com/googleapis/java-bigquery/compare/v1.111.0...v1.111.1) (2020-04-22)
 
 
