@@ -31,8 +31,12 @@
       <artifactId>google-cloud-document-ai</artifactId>
       <version>0.1.1</version>
     </dependency>
-    <!-- [END documentai_install_without_bom] -->
-
+      <!-- [END documentai_install_without_bom] -->
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+      <version>1.103.1</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
