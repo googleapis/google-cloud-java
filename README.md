@@ -20,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>5.2.0</version>
+      <version>5.3.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -50,11 +50,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquerystorage:0.131.0-beta'
+compile 'com.google.cloud:google-cloud-bigquerystorage:0.130.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerystorage" % "0.131.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerystorage" % "0.130.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
