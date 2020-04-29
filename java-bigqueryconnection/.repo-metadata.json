@@ -1,15 +1,15 @@
 {
-  "name": "bigqueryconnections",
-  "name_pretty": "Cloud BigQuery Connections",
-  "product_documentation": "https://cloud.google.com",
-  "api_description": "is about",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-bigqueryconnections/latest/index.html",
+  "name": "bigqueryconnection",
+  "name_pretty": "Cloud BigQuery Connection",
+  "product_documentation": "https://cloud.google.com/bigquery/docs/reference/bigqueryconnection/rest",
+  "api_description": "allows users to manage BigQuery connections to external data sources.",
+  "client_documentation": "https://cloud.google.com/bigquery/docs/reference/reservations/rpc/google.cloud.bigquery.reservation.v1beta1",
   "release_level": "beta",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-bigqueryconnections",
-  "repo_short": "java-bigqueryconnections",
-  "distribution_name": "com.google.cloud:google-cloud-bigqueryconnections",
+  "repo": "googleapis/java-bigqueryconnection",
+  "repo_short": "java-bigqueryconnection",
+  "distribution_name": "com.google.cloud:google-cloud-bigqueryconnection",
   "api_id": "bigqueryconnection.googleapis.com",
   "requires_billing": true
 }

@@ -40,7 +40,7 @@
   <dependencies>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-bigquery-connection</artifactId>
+      <artifactId>google-cloud-bigqueryconnection</artifactId>
     </dependency>
     <!-- [END bigquery-connection_install_with_bom] -->
 

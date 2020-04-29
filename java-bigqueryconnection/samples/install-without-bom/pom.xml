@@ -28,7 +28,7 @@
     <!-- [START bigquery-connection_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-bigquery-connection</artifactId>
+      <artifactId>google-cloud-bigqueryconnection</artifactId>
       <version>0.0.0</version>
     </dependency>
     <!-- [END bigquery-connection_install_without_bom] -->
