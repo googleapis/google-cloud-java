@@ -74,7 +74,7 @@
     <autovalue.version>1.7</autovalue.version>
     <junit.version>4.13</junit.version>
     <truth.version>1.0.1</truth.version>
-    <mockito.version>3.2.0</mockito.version>
+    <mockito.version>3.3.3</mockito.version>
   </properties>
 
   <dependencyManagement>
