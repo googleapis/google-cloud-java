@@ -25,6 +25,16 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class GenerateV4GetObjectSignedUrl {
+  /**
+   * Signing a URL requires Credentials which implement ServiceAccountSigner. These can be set
+   * explicitly using the Storage.SignUrlOption.signWith(ServiceAccountSigner) option. If you
+   * don't, you could also pass a service account signer to StorageOptions, i.e.
+   * StorageOptions().newBuilder().setCredentials(ServiceAccountSignerCredentials). In this
+   * example, neither of these options are used, which means the following code only works when
+   * the credentials are defined via the environment variable GOOGLE_APPLICATION_CREDENTIALS, and
+   * those credentials are authorized to sign a URL. See the documentation for Storage.signUrl for
+   * more details.
+   */
   public static void generateV4GetObjectSignedUrl(
       String projectId, String bucketName, String objectName) throws StorageException {
     // String projectId = "my-project-id";
@@ -36,16 +46,6 @@ public class GenerateV4GetObjectSignedUrl {
     // Define resource
     BlobInfo blobInfo = BlobInfo.newBuilder(BlobId.of(bucketName, objectName)).build();
 
-    /**
-     * Signing a URL requires Credentials which implement ServiceAccountSigner. These can be set
-     * explicitly using the Storage.SignUrlOption.signWith(ServiceAccountSigner) option. If you
-     * don't, you could also pass a service account signer to StorageOptions, i.e.
-     * StorageOptions().newBuilder().setCredentials(ServiceAccountSignerCredentials). In this
-     * example, neither of these options are used, which means the following code only works when
-     * the credentials are defined via the environment variable GOOGLE_APPLICATION_CREDENTIALS, and
-     * those credentials are authorized to sign a URL. See the documentation for Storage.signUrl for
-     * more details.
-     */
     URL url =
         storage.signUrl(blobInfo, 15, TimeUnit.MINUTES, Storage.SignUrlOption.withV4Signature());
 

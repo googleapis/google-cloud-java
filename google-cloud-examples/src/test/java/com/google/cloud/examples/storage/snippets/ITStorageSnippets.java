@@ -37,17 +37,29 @@ import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.Sets;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.file.Files;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -420,5 +432,58 @@ public class ITStorageSnippets {
     String blobName = "kms-encrypted-blob";
     Blob blob = storageSnippets.createKmsEncrpytedBlob(BUCKET, blobName, KMS_KEY_NAME);
     assertNotNull(blob);
+  }
+
+  @Test
+  public void testGenerateSignedPostPolicyV4() throws Exception {
+    PrintStream systemOut = System.out;
+    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(snippetOutputCapture));
+    GenerateSignedPostPolicyV4.generateSignedPostPolicyV4(PROJECT_ID, BUCKET, "my-object");
+    String snippetOutput = snippetOutputCapture.toString();
+    System.setOut(systemOut);
+    assertTrue(snippetOutput.contains("<form action='https://storage.googleapis.com/" + BUCKET + "/'"));
+    assertTrue(snippetOutput.contains("<input name='key' value='my-object'"));
+    assertTrue(snippetOutput.contains("<input name='x-goog-signature'"));
+    assertTrue(snippetOutput.contains("<input name='x-goog-date'"));
+    assertTrue(snippetOutput.contains("<input name='x-goog-credential'"));
+    assertTrue(snippetOutput.contains("<input name='x-goog-algorithm' value='GOOG4-RSA-SHA256'"));
+    assertTrue(snippetOutput.contains("<input name='policy'"));
+    assertTrue(snippetOutput.contains("<input name='x-goog-meta-test' value='data'"));
+    assertTrue(snippetOutput.contains("<input type='file' name='file'/>"));
+
+    String[] output = snippetOutput.split("'");
+    HttpClient client = HttpClientBuilder.create().build();
+    HttpPost request = new HttpPost(output[1]);
+    MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+
+    Map<String, String> policy = new HashMap<>();
+    /**
+     * When splitting by "'", any element in the form has its value two array elements ahead of it, for example
+     * ["x-goog-algorithm", "value=", "GOOG4-RSA-SHA256"]
+     * We take advantage of this to make a map which has any policy element easily accessible. The map also has
+     * a lot of noise, but we just use the parts we need
+     */
+    for(int i = 3; i < output.length - 3; i += 2) {
+      policy.put(output[i], output[i+2]);
+    }
+
+    builder.addTextBody("x-goog-date", policy.get("x-goog-date"));
+    builder.addTextBody("x-goog-meta-test", "data");
+    builder.addTextBody("x-goog-algorithm", "GOOG4-RSA-SHA256");
+    builder.addTextBody("x-goog-credential", policy.get("x-goog-credential"));
+    builder.addTextBody("key", "my-object");
+    builder.addTextBody("x-goog-signature", policy.get("x-goog-signature"));
+    builder.addTextBody("policy", policy.get("policy"));
+
+    File file = File.createTempFile("temp", "file");
+    Files.write(file.toPath(), "hello world".getBytes());
+    builder.addBinaryBody(
+            "file", new FileInputStream(file), ContentType.APPLICATION_OCTET_STREAM, file.getName());
+    request.setEntity(builder.build());
+
+    client.execute(request);
+
+    assertEquals("hello world", new String(storage.get(BUCKET, "my-object").getContent()));
   }
 }
