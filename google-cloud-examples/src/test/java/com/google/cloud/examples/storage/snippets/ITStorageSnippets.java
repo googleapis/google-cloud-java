@@ -421,4 +421,23 @@ public class ITStorageSnippets {
     Blob blob = storageSnippets.createKmsEncrpytedBlob(BUCKET, blobName, KMS_KEY_NAME);
     assertNotNull(blob);
   }
+
+  @Test
+  public void testGenerateSignedPostPolicyV4() {
+    PrintStream systemOut = System.out;
+    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(snippetOutputCapture));
+    GenerateSignedPostPolicyV4.generateSignedPostPolicyV4(PROJECT_ID, "my-bucket", "my-object");
+    String snippetOutput = snippetOutputCapture.toString();
+    System.setOut(systemOut);
+    assertTrue(snippetOutput.contains("<form action='https://storage.googleapis.com/my-bucket/'"));
+    assertTrue(snippetOutput.contains("<input name='key' value='my-object'"));
+    assertTrue(snippetOutput.contains("<input name='x-goog-signature'"));
+    assertTrue(snippetOutput.contains("<input name='x-goog-date'"));
+    assertTrue(snippetOutput.contains("<input name='x-goog-credential'"));
+    assertTrue(snippetOutput.contains("<input name='x-goog-algorithm' value='GOOG4-RSA-SHA256'"));
+    assertTrue(snippetOutput.contains("<input name='policy'"));
+    assertTrue(snippetOutput.contains("<input name='x-goog-meta-test' value='data'"));
+    assertTrue(snippetOutput.contains("<input type='file' name='file'/>"));
+  }
 }
