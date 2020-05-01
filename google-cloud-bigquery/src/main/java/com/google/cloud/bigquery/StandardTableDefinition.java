@@ -285,17 +285,6 @@ public abstract class StandardTableDefinition extends TableDefinition {
                 + " in table "
                 + tablePb.getTableReference().getTableId(),
             e);
-      } catch (NullPointerException e) {
-        throw new NullPointerException(
-            "Null pointer - Got unexpected time partitioning "
-                + tablePb.getTimePartitioning().toString()
-                + " in project "
-                + tablePb.getTableReference().getProjectId()
-                + " in dataset "
-                + tablePb.getTableReference().getDatasetId()
-                + " in table "
-                + tablePb.getTableReference().getTableId()
-                + e.toString());
       }
     }
     if (tablePb.getRangePartitioning() != null) {

@@ -142,7 +142,7 @@ public abstract class TimePartitioning implements Serializable {
     if (Data.isNull(expirationMs)) {
       expirationMs = null;
     }
-    return newBuilder(Type.valueOf(partitioningPb.getType()))
+    return newBuilder(Type.valueOf(firstNonNull(partitioningPb.getType(), Type.DAY.name())))
         .setExpirationMs(expirationMs)
         .setField(partitioningPb.getField())
         .setRequirePartitionFilter(partitioningPb.getRequirePartitionFilter())
