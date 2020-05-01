@@ -238,7 +238,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
                     new RequestParamsExtractor<ReadRowsRequest>() {
                       @Override
                       public Map<String, String> extract(ReadRowsRequest readRowsRequest) {
-                        return ImmutableMap.of("table_name", readRowsRequest.getTableName());
+                        return ImmutableMap.of(
+                            "table_name", readRowsRequest.getTableName(),
+                            "app_profile_id", readRowsRequest.getAppProfileId());
                       }
                     })
                 .build(),
@@ -296,7 +298,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
                       @Override
                       public Map<String, String> extract(
                           SampleRowKeysRequest sampleRowKeysRequest) {
-                        return ImmutableMap.of("table_name", sampleRowKeysRequest.getTableName());
+                        return ImmutableMap.of(
+                            "table_name", sampleRowKeysRequest.getTableName(),
+                            "app_profile_id", sampleRowKeysRequest.getAppProfileId());
                       }
                     })
                 .build(),
@@ -328,7 +332,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
                     new RequestParamsExtractor<MutateRowRequest>() {
                       @Override
                       public Map<String, String> extract(MutateRowRequest mutateRowRequest) {
-                        return ImmutableMap.of("table_name", mutateRowRequest.getTableName());
+                        return ImmutableMap.of(
+                            "table_name", mutateRowRequest.getTableName(),
+                            "app_profile_id", mutateRowRequest.getAppProfileId());
                       }
                     })
                 .build(),
@@ -449,7 +455,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
                     new RequestParamsExtractor<MutateRowsRequest>() {
                       @Override
                       public Map<String, String> extract(MutateRowsRequest mutateRowsRequest) {
-                        return ImmutableMap.of("table_name", mutateRowsRequest.getTableName());
+                        return ImmutableMap.of(
+                            "table_name", mutateRowsRequest.getTableName(),
+                            "app_profile_id", mutateRowsRequest.getAppProfileId());
                       }
                     })
                 .build(),
@@ -490,7 +498,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
                       public Map<String, String> extract(
                           CheckAndMutateRowRequest checkAndMutateRowRequest) {
                         return ImmutableMap.of(
-                            "table_name", checkAndMutateRowRequest.getTableName());
+                            "table_name", checkAndMutateRowRequest.getTableName(),
+                            "app_profile_id", checkAndMutateRowRequest.getAppProfileId());
                       }
                     })
                 .build(),
@@ -522,7 +531,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
                     new RequestParamsExtractor<ReadModifyWriteRowRequest>() {
                       @Override
                       public Map<String, String> extract(ReadModifyWriteRowRequest request) {
-                        return ImmutableMap.of("table_name", request.getTableName());
+                        return ImmutableMap.of(
+                            "table_name", request.getTableName(),
+                            "app_profile_id", request.getAppProfileId());
                       }
                     })
                 .build(),

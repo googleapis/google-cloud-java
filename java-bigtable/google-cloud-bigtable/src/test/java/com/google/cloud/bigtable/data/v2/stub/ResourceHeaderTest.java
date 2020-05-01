@@ -44,13 +44,14 @@ public class ResourceHeaderTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
   private static final String TABLE_ID = "fake-table";
-  private static final String NAME = "resource-header-test:123";
-  private static final Pattern EXPECTED_HEADER_PATTERN =
-      Pattern.compile(".*" + NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID) + ".*");
-  private static final String HEADER_NAME = "x-goog-request-params";
-  private static final String TEST_HEADER_NAME = "simple-header-name";
+  private static final String TABLE_NAME =
+      NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
+  private static final String APP_PROFILE_ID = "fake-profile";
+
+  private static final String CHANNEL_NAME = "resource-header-test:123";
+  private static final String X_GOOG_REQUEST_PARAMS_KEY = "x-goog-request-params";
+  private static final String TEST_HEADER_KEY = "simple-header-name";
   private static final String TEST_HEADER_VALUE = "simple-header-value";
-  private static final Pattern TEST_PATTERN = Pattern.compile(".*" + TEST_HEADER_VALUE + ".*");
 
   private InProcessServer<?> server;
   private LocalChannelProvider channelProvider;
@@ -58,20 +59,21 @@ public class ResourceHeaderTest {
 
   @Before
   public void setUp() throws Exception {
-    server = new InProcessServer<>(new BigtableGrpc.BigtableImplBase() {}, NAME);
+    server = new InProcessServer<>(new BigtableGrpc.BigtableImplBase() {}, CHANNEL_NAME);
     server.start();
-    channelProvider = LocalChannelProvider.create(NAME);
+    channelProvider = LocalChannelProvider.create(CHANNEL_NAME);
 
     BigtableDataSettings.Builder settings =
         BigtableDataSettings.newBuilder()
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
+            .setAppProfileId(APP_PROFILE_ID)
             .setCredentialsProvider(NoCredentialsProvider.create());
 
     settings
         .stubSettings()
         .setTransportChannelProvider(channelProvider)
-        .setHeaderProvider(FixedHeaderProvider.create(TEST_HEADER_NAME, TEST_HEADER_VALUE));
+        .setHeaderProvider(FixedHeaderProvider.create(TEST_HEADER_KEY, TEST_HEADER_VALUE));
 
     // Force immediate flush
     settings
@@ -139,9 +141,21 @@ public class ResourceHeaderTest {
   }
 
   private void verifyHeaderSent() {
-    boolean headerSent = channelProvider.isHeaderSent(HEADER_NAME, EXPECTED_HEADER_PATTERN);
-    assertWithMessage("Header was sent").that(headerSent).isTrue();
-    boolean testHeader = channelProvider.isHeaderSent(TEST_HEADER_NAME, TEST_PATTERN);
+    boolean tableHeaderSent =
+        channelProvider.isHeaderSent(
+            X_GOOG_REQUEST_PARAMS_KEY,
+            Pattern.compile("(^|.*&)table_name=" + TABLE_NAME + "($|&.*)"));
+    assertWithMessage("Tablename header was sent").that(tableHeaderSent).isTrue();
+
+    boolean appProfileHeaderSent =
+        channelProvider.isHeaderSent(
+            X_GOOG_REQUEST_PARAMS_KEY,
+            Pattern.compile("(^|.*&)app_profile_id=" + APP_PROFILE_ID + "($|&.*)"));
+    assertWithMessage("App profile header was sent").that(appProfileHeaderSent).isTrue();
+
+    boolean testHeader =
+        channelProvider.isHeaderSent(
+            TEST_HEADER_KEY, Pattern.compile("^" + TEST_HEADER_VALUE + "$"));
     assertWithMessage("HeaderProvider's header received in Channel").that(testHeader).isTrue();
   }
 }
