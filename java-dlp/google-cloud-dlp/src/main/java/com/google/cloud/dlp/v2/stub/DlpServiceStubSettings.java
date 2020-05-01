@@ -175,21 +175,24 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       listDeidentifyTemplatesSettings;
   private final UnaryCallSettings<DeleteDeidentifyTemplateRequest, Empty>
       deleteDeidentifyTemplateSettings;
-  private final UnaryCallSettings<CreateJobTriggerRequest, JobTrigger> createJobTriggerSettings;
-  private final UnaryCallSettings<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerSettings;
-  private final UnaryCallSettings<HybridInspectJobTriggerRequest, HybridInspectResponse>
-      hybridInspectJobTriggerSettings;
-  private final UnaryCallSettings<GetJobTriggerRequest, JobTrigger> getJobTriggerSettings;
-  private final PagedCallSettings<
-          ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
-      listJobTriggersSettings;
-  private final UnaryCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings;
   private final UnaryCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobSettings;
   private final PagedCallSettings<ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>
       listDlpJobsSettings;
   private final UnaryCallSettings<GetDlpJobRequest, DlpJob> getDlpJobSettings;
   private final UnaryCallSettings<DeleteDlpJobRequest, Empty> deleteDlpJobSettings;
   private final UnaryCallSettings<CancelDlpJobRequest, Empty> cancelDlpJobSettings;
+  private final UnaryCallSettings<FinishDlpJobRequest, Empty> finishDlpJobSettings;
+  private final UnaryCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
+      hybridInspectDlpJobSettings;
+  private final PagedCallSettings<
+          ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
+      listJobTriggersSettings;
+  private final UnaryCallSettings<GetJobTriggerRequest, JobTrigger> getJobTriggerSettings;
+  private final UnaryCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings;
+  private final UnaryCallSettings<HybridInspectJobTriggerRequest, HybridInspectResponse>
+      hybridInspectJobTriggerSettings;
+  private final UnaryCallSettings<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerSettings;
+  private final UnaryCallSettings<CreateJobTriggerRequest, JobTrigger> createJobTriggerSettings;
   private final UnaryCallSettings<CreateStoredInfoTypeRequest, StoredInfoType>
       createStoredInfoTypeSettings;
   private final UnaryCallSettings<UpdateStoredInfoTypeRequest, StoredInfoType>
@@ -200,9 +203,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, ListStoredInfoTypesPagedResponse>
       listStoredInfoTypesSettings;
   private final UnaryCallSettings<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeSettings;
-  private final UnaryCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
-      hybridInspectDlpJobSettings;
-  private final UnaryCallSettings<FinishDlpJobRequest, Empty> finishDlpJobSettings;
 
   /** Returns the object with the settings used for calls to inspectContent. */
   public UnaryCallSettings<InspectContentRequest, InspectContentResponse> inspectContentSettings() {
@@ -296,39 +296,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     return deleteDeidentifyTemplateSettings;
   }
 
-  /** Returns the object with the settings used for calls to createJobTrigger. */
-  public UnaryCallSettings<CreateJobTriggerRequest, JobTrigger> createJobTriggerSettings() {
-    return createJobTriggerSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateJobTrigger. */
-  public UnaryCallSettings<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerSettings() {
-    return updateJobTriggerSettings;
-  }
-
-  /** Returns the object with the settings used for calls to hybridInspectJobTrigger. */
-  public UnaryCallSettings<HybridInspectJobTriggerRequest, HybridInspectResponse>
-      hybridInspectJobTriggerSettings() {
-    return hybridInspectJobTriggerSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getJobTrigger. */
-  public UnaryCallSettings<GetJobTriggerRequest, JobTrigger> getJobTriggerSettings() {
-    return getJobTriggerSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listJobTriggers. */
-  public PagedCallSettings<
-          ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
-      listJobTriggersSettings() {
-    return listJobTriggersSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteJobTrigger. */
-  public UnaryCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings() {
-    return deleteJobTriggerSettings;
-  }
-
   /** Returns the object with the settings used for calls to createDlpJob. */
   public UnaryCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobSettings() {
     return createDlpJobSettings;
@@ -353,6 +320,50 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
   /** Returns the object with the settings used for calls to cancelDlpJob. */
   public UnaryCallSettings<CancelDlpJobRequest, Empty> cancelDlpJobSettings() {
     return cancelDlpJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to finishDlpJob. */
+  public UnaryCallSettings<FinishDlpJobRequest, Empty> finishDlpJobSettings() {
+    return finishDlpJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to hybridInspectDlpJob. */
+  public UnaryCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
+      hybridInspectDlpJobSettings() {
+    return hybridInspectDlpJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listJobTriggers. */
+  public PagedCallSettings<
+          ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
+      listJobTriggersSettings() {
+    return listJobTriggersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getJobTrigger. */
+  public UnaryCallSettings<GetJobTriggerRequest, JobTrigger> getJobTriggerSettings() {
+    return getJobTriggerSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteJobTrigger. */
+  public UnaryCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings() {
+    return deleteJobTriggerSettings;
+  }
+
+  /** Returns the object with the settings used for calls to hybridInspectJobTrigger. */
+  public UnaryCallSettings<HybridInspectJobTriggerRequest, HybridInspectResponse>
+      hybridInspectJobTriggerSettings() {
+    return hybridInspectJobTriggerSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateJobTrigger. */
+  public UnaryCallSettings<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerSettings() {
+    return updateJobTriggerSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createJobTrigger. */
+  public UnaryCallSettings<CreateJobTriggerRequest, JobTrigger> createJobTriggerSettings() {
+    return createJobTriggerSettings;
   }
 
   /** Returns the object with the settings used for calls to createStoredInfoType. */
@@ -382,17 +393,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
   /** Returns the object with the settings used for calls to deleteStoredInfoType. */
   public UnaryCallSettings<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeSettings() {
     return deleteStoredInfoTypeSettings;
-  }
-
-  /** Returns the object with the settings used for calls to hybridInspectDlpJob. */
-  public UnaryCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
-      hybridInspectDlpJobSettings() {
-    return hybridInspectDlpJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to finishDlpJob. */
-  public UnaryCallSettings<FinishDlpJobRequest, Empty> finishDlpJobSettings() {
-    return finishDlpJobSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -479,24 +479,24 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     getDeidentifyTemplateSettings = settingsBuilder.getDeidentifyTemplateSettings().build();
     listDeidentifyTemplatesSettings = settingsBuilder.listDeidentifyTemplatesSettings().build();
     deleteDeidentifyTemplateSettings = settingsBuilder.deleteDeidentifyTemplateSettings().build();
-    createJobTriggerSettings = settingsBuilder.createJobTriggerSettings().build();
-    updateJobTriggerSettings = settingsBuilder.updateJobTriggerSettings().build();
-    hybridInspectJobTriggerSettings = settingsBuilder.hybridInspectJobTriggerSettings().build();
-    getJobTriggerSettings = settingsBuilder.getJobTriggerSettings().build();
-    listJobTriggersSettings = settingsBuilder.listJobTriggersSettings().build();
-    deleteJobTriggerSettings = settingsBuilder.deleteJobTriggerSettings().build();
     createDlpJobSettings = settingsBuilder.createDlpJobSettings().build();
     listDlpJobsSettings = settingsBuilder.listDlpJobsSettings().build();
     getDlpJobSettings = settingsBuilder.getDlpJobSettings().build();
     deleteDlpJobSettings = settingsBuilder.deleteDlpJobSettings().build();
     cancelDlpJobSettings = settingsBuilder.cancelDlpJobSettings().build();
+    finishDlpJobSettings = settingsBuilder.finishDlpJobSettings().build();
+    hybridInspectDlpJobSettings = settingsBuilder.hybridInspectDlpJobSettings().build();
+    listJobTriggersSettings = settingsBuilder.listJobTriggersSettings().build();
+    getJobTriggerSettings = settingsBuilder.getJobTriggerSettings().build();
+    deleteJobTriggerSettings = settingsBuilder.deleteJobTriggerSettings().build();
+    hybridInspectJobTriggerSettings = settingsBuilder.hybridInspectJobTriggerSettings().build();
+    updateJobTriggerSettings = settingsBuilder.updateJobTriggerSettings().build();
+    createJobTriggerSettings = settingsBuilder.createJobTriggerSettings().build();
     createStoredInfoTypeSettings = settingsBuilder.createStoredInfoTypeSettings().build();
     updateStoredInfoTypeSettings = settingsBuilder.updateStoredInfoTypeSettings().build();
     getStoredInfoTypeSettings = settingsBuilder.getStoredInfoTypeSettings().build();
     listStoredInfoTypesSettings = settingsBuilder.listStoredInfoTypesSettings().build();
     deleteStoredInfoTypeSettings = settingsBuilder.deleteStoredInfoTypeSettings().build();
-    hybridInspectDlpJobSettings = settingsBuilder.hybridInspectDlpJobSettings().build();
-    finishDlpJobSettings = settingsBuilder.finishDlpJobSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -585,6 +585,42 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             }
           };
 
+  private static final PagedListDescriptor<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob>
+      LIST_DLP_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDlpJobsRequest injectToken(ListDlpJobsRequest payload, String token) {
+              return ListDlpJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDlpJobsRequest injectPageSize(ListDlpJobsRequest payload, int pageSize) {
+              return ListDlpJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDlpJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDlpJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DlpJob> extractResources(ListDlpJobsResponse payload) {
+              return payload.getJobsList() != null
+                  ? payload.getJobsList()
+                  : ImmutableList.<DlpJob>of();
+            }
+          };
+
   private static final PagedListDescriptor<
           ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger>
       LIST_JOB_TRIGGERS_PAGE_STR_DESC =
@@ -621,42 +657,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               return payload.getJobTriggersList() != null
                   ? payload.getJobTriggersList()
                   : ImmutableList.<JobTrigger>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob>
-      LIST_DLP_JOBS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListDlpJobsRequest injectToken(ListDlpJobsRequest payload, String token) {
-              return ListDlpJobsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListDlpJobsRequest injectPageSize(ListDlpJobsRequest payload, int pageSize) {
-              return ListDlpJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListDlpJobsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListDlpJobsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<DlpJob> extractResources(ListDlpJobsResponse payload) {
-              return payload.getJobsList() != null
-                  ? payload.getJobsList()
-                  : ImmutableList.<DlpJob>of();
             }
           };
 
@@ -752,23 +752,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           };
 
   private static final PagedListResponseFactory<
-          ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
-      LIST_JOB_TRIGGERS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>() {
-            @Override
-            public ApiFuture<ListJobTriggersPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse> callable,
-                ListJobTriggersRequest request,
-                ApiCallContext context,
-                ApiFuture<ListJobTriggersResponse> futureResponse) {
-              PageContext<ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger> pageContext =
-                  PageContext.create(callable, LIST_JOB_TRIGGERS_PAGE_STR_DESC, request, context);
-              return ListJobTriggersPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
           ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>
       LIST_DLP_JOBS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -782,6 +765,23 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> pageContext =
                   PageContext.create(callable, LIST_DLP_JOBS_PAGE_STR_DESC, request, context);
               return ListDlpJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
+      LIST_JOB_TRIGGERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>() {
+            @Override
+            public ApiFuture<ListJobTriggersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse> callable,
+                ListJobTriggersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListJobTriggersResponse> futureResponse) {
+              PageContext<ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger> pageContext =
+                  PageContext.create(callable, LIST_JOB_TRIGGERS_PAGE_STR_DESC, request, context);
+              return ListJobTriggersPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -846,18 +846,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
         listDeidentifyTemplatesSettings;
     private final UnaryCallSettings.Builder<DeleteDeidentifyTemplateRequest, Empty>
         deleteDeidentifyTemplateSettings;
-    private final UnaryCallSettings.Builder<CreateJobTriggerRequest, JobTrigger>
-        createJobTriggerSettings;
-    private final UnaryCallSettings.Builder<UpdateJobTriggerRequest, JobTrigger>
-        updateJobTriggerSettings;
-    private final UnaryCallSettings.Builder<HybridInspectJobTriggerRequest, HybridInspectResponse>
-        hybridInspectJobTriggerSettings;
-    private final UnaryCallSettings.Builder<GetJobTriggerRequest, JobTrigger> getJobTriggerSettings;
-    private final PagedCallSettings.Builder<
-            ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
-        listJobTriggersSettings;
-    private final UnaryCallSettings.Builder<DeleteJobTriggerRequest, Empty>
-        deleteJobTriggerSettings;
     private final UnaryCallSettings.Builder<CreateDlpJobRequest, DlpJob> createDlpJobSettings;
     private final PagedCallSettings.Builder<
             ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>
@@ -865,6 +853,21 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     private final UnaryCallSettings.Builder<GetDlpJobRequest, DlpJob> getDlpJobSettings;
     private final UnaryCallSettings.Builder<DeleteDlpJobRequest, Empty> deleteDlpJobSettings;
     private final UnaryCallSettings.Builder<CancelDlpJobRequest, Empty> cancelDlpJobSettings;
+    private final UnaryCallSettings.Builder<FinishDlpJobRequest, Empty> finishDlpJobSettings;
+    private final UnaryCallSettings.Builder<HybridInspectDlpJobRequest, HybridInspectResponse>
+        hybridInspectDlpJobSettings;
+    private final PagedCallSettings.Builder<
+            ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
+        listJobTriggersSettings;
+    private final UnaryCallSettings.Builder<GetJobTriggerRequest, JobTrigger> getJobTriggerSettings;
+    private final UnaryCallSettings.Builder<DeleteJobTriggerRequest, Empty>
+        deleteJobTriggerSettings;
+    private final UnaryCallSettings.Builder<HybridInspectJobTriggerRequest, HybridInspectResponse>
+        hybridInspectJobTriggerSettings;
+    private final UnaryCallSettings.Builder<UpdateJobTriggerRequest, JobTrigger>
+        updateJobTriggerSettings;
+    private final UnaryCallSettings.Builder<CreateJobTriggerRequest, JobTrigger>
+        createJobTriggerSettings;
     private final UnaryCallSettings.Builder<CreateStoredInfoTypeRequest, StoredInfoType>
         createStoredInfoTypeSettings;
     private final UnaryCallSettings.Builder<UpdateStoredInfoTypeRequest, StoredInfoType>
@@ -878,9 +881,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
         listStoredInfoTypesSettings;
     private final UnaryCallSettings.Builder<DeleteStoredInfoTypeRequest, Empty>
         deleteStoredInfoTypeSettings;
-    private final UnaryCallSettings.Builder<HybridInspectDlpJobRequest, HybridInspectResponse>
-        hybridInspectDlpJobSettings;
-    private final UnaryCallSettings.Builder<FinishDlpJobRequest, Empty> finishDlpJobSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -955,18 +955,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
       deleteDeidentifyTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      createJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      updateJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      hybridInspectJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      listJobTriggersSettings = PagedCallSettings.newBuilder(LIST_JOB_TRIGGERS_PAGE_STR_FACT);
-
-      deleteJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listDlpJobsSettings = PagedCallSettings.newBuilder(LIST_DLP_JOBS_PAGE_STR_FACT);
@@ -976,6 +964,22 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       deleteDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       cancelDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      finishDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      hybridInspectDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listJobTriggersSettings = PagedCallSettings.newBuilder(LIST_JOB_TRIGGERS_PAGE_STR_FACT);
+
+      getJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      hybridInspectJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      createJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createStoredInfoTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -987,10 +991,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           PagedCallSettings.newBuilder(LIST_STORED_INFO_TYPES_PAGE_STR_FACT);
 
       deleteStoredInfoTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      hybridInspectDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      finishDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1009,24 +1009,24 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               getDeidentifyTemplateSettings,
               listDeidentifyTemplatesSettings,
               deleteDeidentifyTemplateSettings,
-              createJobTriggerSettings,
-              updateJobTriggerSettings,
-              hybridInspectJobTriggerSettings,
-              getJobTriggerSettings,
-              listJobTriggersSettings,
-              deleteJobTriggerSettings,
               createDlpJobSettings,
               listDlpJobsSettings,
               getDlpJobSettings,
               deleteDlpJobSettings,
               cancelDlpJobSettings,
+              finishDlpJobSettings,
+              hybridInspectDlpJobSettings,
+              listJobTriggersSettings,
+              getJobTriggerSettings,
+              deleteJobTriggerSettings,
+              hybridInspectJobTriggerSettings,
+              updateJobTriggerSettings,
+              createJobTriggerSettings,
               createStoredInfoTypeSettings,
               updateStoredInfoTypeSettings,
               getStoredInfoTypeSettings,
               listStoredInfoTypesSettings,
-              deleteStoredInfoTypeSettings,
-              hybridInspectDlpJobSettings,
-              finishDlpJobSettings);
+              deleteStoredInfoTypeSettings);
 
       initDefaults(this);
     }
@@ -1044,22 +1044,22 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
       builder
           .inspectContentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .redactImageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .deidentifyContentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .reidentifyContentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -1089,7 +1089,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
       builder
           .deleteInspectTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -1114,37 +1114,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
       builder
           .deleteDeidentifyTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .createJobTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updateJobTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .hybridInspectJobTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getJobTriggerSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listJobTriggersSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteJobTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -1164,11 +1134,51 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
       builder
           .deleteDlpJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .cancelDlpJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .finishDlpJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .hybridInspectDlpJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listJobTriggersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getJobTriggerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteJobTriggerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .hybridInspectJobTriggerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateJobTriggerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createJobTriggerSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -1194,17 +1204,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
       builder
           .deleteStoredInfoTypeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .hybridInspectDlpJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .finishDlpJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
@@ -1228,24 +1228,24 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       getDeidentifyTemplateSettings = settings.getDeidentifyTemplateSettings.toBuilder();
       listDeidentifyTemplatesSettings = settings.listDeidentifyTemplatesSettings.toBuilder();
       deleteDeidentifyTemplateSettings = settings.deleteDeidentifyTemplateSettings.toBuilder();
-      createJobTriggerSettings = settings.createJobTriggerSettings.toBuilder();
-      updateJobTriggerSettings = settings.updateJobTriggerSettings.toBuilder();
-      hybridInspectJobTriggerSettings = settings.hybridInspectJobTriggerSettings.toBuilder();
-      getJobTriggerSettings = settings.getJobTriggerSettings.toBuilder();
-      listJobTriggersSettings = settings.listJobTriggersSettings.toBuilder();
-      deleteJobTriggerSettings = settings.deleteJobTriggerSettings.toBuilder();
       createDlpJobSettings = settings.createDlpJobSettings.toBuilder();
       listDlpJobsSettings = settings.listDlpJobsSettings.toBuilder();
       getDlpJobSettings = settings.getDlpJobSettings.toBuilder();
       deleteDlpJobSettings = settings.deleteDlpJobSettings.toBuilder();
       cancelDlpJobSettings = settings.cancelDlpJobSettings.toBuilder();
+      finishDlpJobSettings = settings.finishDlpJobSettings.toBuilder();
+      hybridInspectDlpJobSettings = settings.hybridInspectDlpJobSettings.toBuilder();
+      listJobTriggersSettings = settings.listJobTriggersSettings.toBuilder();
+      getJobTriggerSettings = settings.getJobTriggerSettings.toBuilder();
+      deleteJobTriggerSettings = settings.deleteJobTriggerSettings.toBuilder();
+      hybridInspectJobTriggerSettings = settings.hybridInspectJobTriggerSettings.toBuilder();
+      updateJobTriggerSettings = settings.updateJobTriggerSettings.toBuilder();
+      createJobTriggerSettings = settings.createJobTriggerSettings.toBuilder();
       createStoredInfoTypeSettings = settings.createStoredInfoTypeSettings.toBuilder();
       updateStoredInfoTypeSettings = settings.updateStoredInfoTypeSettings.toBuilder();
       getStoredInfoTypeSettings = settings.getStoredInfoTypeSettings.toBuilder();
       listStoredInfoTypesSettings = settings.listStoredInfoTypesSettings.toBuilder();
       deleteStoredInfoTypeSettings = settings.deleteStoredInfoTypeSettings.toBuilder();
-      hybridInspectDlpJobSettings = settings.hybridInspectDlpJobSettings.toBuilder();
-      finishDlpJobSettings = settings.finishDlpJobSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1264,24 +1264,24 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               getDeidentifyTemplateSettings,
               listDeidentifyTemplatesSettings,
               deleteDeidentifyTemplateSettings,
-              createJobTriggerSettings,
-              updateJobTriggerSettings,
-              hybridInspectJobTriggerSettings,
-              getJobTriggerSettings,
-              listJobTriggersSettings,
-              deleteJobTriggerSettings,
               createDlpJobSettings,
               listDlpJobsSettings,
               getDlpJobSettings,
               deleteDlpJobSettings,
               cancelDlpJobSettings,
+              finishDlpJobSettings,
+              hybridInspectDlpJobSettings,
+              listJobTriggersSettings,
+              getJobTriggerSettings,
+              deleteJobTriggerSettings,
+              hybridInspectJobTriggerSettings,
+              updateJobTriggerSettings,
+              createJobTriggerSettings,
               createStoredInfoTypeSettings,
               updateStoredInfoTypeSettings,
               getStoredInfoTypeSettings,
               listStoredInfoTypesSettings,
-              deleteStoredInfoTypeSettings,
-              hybridInspectDlpJobSettings,
-              finishDlpJobSettings);
+              deleteStoredInfoTypeSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -1396,41 +1396,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       return deleteDeidentifyTemplateSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createJobTrigger. */
-    public UnaryCallSettings.Builder<CreateJobTriggerRequest, JobTrigger>
-        createJobTriggerSettings() {
-      return createJobTriggerSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateJobTrigger. */
-    public UnaryCallSettings.Builder<UpdateJobTriggerRequest, JobTrigger>
-        updateJobTriggerSettings() {
-      return updateJobTriggerSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to hybridInspectJobTrigger. */
-    public UnaryCallSettings.Builder<HybridInspectJobTriggerRequest, HybridInspectResponse>
-        hybridInspectJobTriggerSettings() {
-      return hybridInspectJobTriggerSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getJobTrigger. */
-    public UnaryCallSettings.Builder<GetJobTriggerRequest, JobTrigger> getJobTriggerSettings() {
-      return getJobTriggerSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listJobTriggers. */
-    public PagedCallSettings.Builder<
-            ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
-        listJobTriggersSettings() {
-      return listJobTriggersSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteJobTrigger. */
-    public UnaryCallSettings.Builder<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings() {
-      return deleteJobTriggerSettings;
-    }
-
     /** Returns the builder for the settings used for calls to createDlpJob. */
     public UnaryCallSettings.Builder<CreateDlpJobRequest, DlpJob> createDlpJobSettings() {
       return createDlpJobSettings;
@@ -1456,6 +1421,52 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     /** Returns the builder for the settings used for calls to cancelDlpJob. */
     public UnaryCallSettings.Builder<CancelDlpJobRequest, Empty> cancelDlpJobSettings() {
       return cancelDlpJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to finishDlpJob. */
+    public UnaryCallSettings.Builder<FinishDlpJobRequest, Empty> finishDlpJobSettings() {
+      return finishDlpJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to hybridInspectDlpJob. */
+    public UnaryCallSettings.Builder<HybridInspectDlpJobRequest, HybridInspectResponse>
+        hybridInspectDlpJobSettings() {
+      return hybridInspectDlpJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listJobTriggers. */
+    public PagedCallSettings.Builder<
+            ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
+        listJobTriggersSettings() {
+      return listJobTriggersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getJobTrigger. */
+    public UnaryCallSettings.Builder<GetJobTriggerRequest, JobTrigger> getJobTriggerSettings() {
+      return getJobTriggerSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteJobTrigger. */
+    public UnaryCallSettings.Builder<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings() {
+      return deleteJobTriggerSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to hybridInspectJobTrigger. */
+    public UnaryCallSettings.Builder<HybridInspectJobTriggerRequest, HybridInspectResponse>
+        hybridInspectJobTriggerSettings() {
+      return hybridInspectJobTriggerSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateJobTrigger. */
+    public UnaryCallSettings.Builder<UpdateJobTriggerRequest, JobTrigger>
+        updateJobTriggerSettings() {
+      return updateJobTriggerSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createJobTrigger. */
+    public UnaryCallSettings.Builder<CreateJobTriggerRequest, JobTrigger>
+        createJobTriggerSettings() {
+      return createJobTriggerSettings;
     }
 
     /** Returns the builder for the settings used for calls to createStoredInfoType. */
@@ -1489,17 +1500,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     public UnaryCallSettings.Builder<DeleteStoredInfoTypeRequest, Empty>
         deleteStoredInfoTypeSettings() {
       return deleteStoredInfoTypeSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to hybridInspectDlpJob. */
-    public UnaryCallSettings.Builder<HybridInspectDlpJobRequest, HybridInspectResponse>
-        hybridInspectDlpJobSettings() {
-      return hybridInspectDlpJobSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to finishDlpJob. */
-    public UnaryCallSettings.Builder<FinishDlpJobRequest, Empty> finishDlpJobSettings() {
-      return finishDlpJobSettings;
     }
 
     @Override

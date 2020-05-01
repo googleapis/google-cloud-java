@@ -964,329 +964,6 @@ public class DlpServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void createJobTriggerTest() {
-    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    JobTrigger expectedResponse =
-        JobTrigger.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .build();
-    mockDlpService.addResponse(expectedResponse);
-
-    ProjectName parent = ProjectName.of("[PROJECT]");
-    JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-
-    JobTrigger actualResponse = client.createJobTrigger(parent, jobTrigger);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateJobTriggerRequest actualRequest = (CreateJobTriggerRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
-    Assert.assertEquals(jobTrigger, actualRequest.getJobTrigger());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createJobTriggerExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-      JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-
-      client.createJobTrigger(parent, jobTrigger);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createJobTriggerTest2() {
-    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    JobTrigger expectedResponse =
-        JobTrigger.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .build();
-    mockDlpService.addResponse(expectedResponse);
-
-    ProjectName parent = ProjectName.of("[PROJECT]");
-    JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-    String locationId = "locationId552319461";
-
-    JobTrigger actualResponse = client.createJobTrigger(parent, jobTrigger, locationId);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateJobTriggerRequest actualRequest = (CreateJobTriggerRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
-    Assert.assertEquals(jobTrigger, actualRequest.getJobTrigger());
-    Assert.assertEquals(locationId, actualRequest.getLocationId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createJobTriggerExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-      JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-      String locationId = "locationId552319461";
-
-      client.createJobTrigger(parent, jobTrigger, locationId);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void updateJobTriggerTest() {
-    JobTriggerName name2 = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    JobTrigger expectedResponse =
-        JobTrigger.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .build();
-    mockDlpService.addResponse(expectedResponse);
-
-    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-    JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
-
-    JobTrigger actualResponse = client.updateJobTrigger(name, jobTrigger, updateMask);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    UpdateJobTriggerRequest actualRequest = (UpdateJobTriggerRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, JobTriggerName.parse(actualRequest.getName()));
-    Assert.assertEquals(jobTrigger, actualRequest.getJobTrigger());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void updateJobTriggerExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-      JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-
-      client.updateJobTrigger(name, jobTrigger, updateMask);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void hybridInspectJobTriggerTest() {
-    HybridInspectResponse expectedResponse = HybridInspectResponse.newBuilder().build();
-    mockDlpService.addResponse(expectedResponse);
-
-    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-
-    HybridInspectResponse actualResponse = client.hybridInspectJobTrigger(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    HybridInspectJobTriggerRequest actualRequest =
-        (HybridInspectJobTriggerRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, JobTriggerName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void hybridInspectJobTriggerExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-
-      client.hybridInspectJobTrigger(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getJobTriggerTest() {
-    JobTriggerName name2 = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    JobTrigger expectedResponse =
-        JobTrigger.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .build();
-    mockDlpService.addResponse(expectedResponse);
-
-    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-
-    JobTrigger actualResponse = client.getJobTrigger(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetJobTriggerRequest actualRequest = (GetJobTriggerRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, JobTriggerName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getJobTriggerExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-
-      client.getJobTrigger(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listJobTriggersTest() {
-    String nextPageToken = "";
-    JobTrigger jobTriggersElement = JobTrigger.newBuilder().build();
-    List<JobTrigger> jobTriggers = Arrays.asList(jobTriggersElement);
-    ListJobTriggersResponse expectedResponse =
-        ListJobTriggersResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllJobTriggers(jobTriggers)
-            .build();
-    mockDlpService.addResponse(expectedResponse);
-
-    ProjectName parent = ProjectName.of("[PROJECT]");
-
-    ListJobTriggersPagedResponse pagedListResponse = client.listJobTriggers(parent);
-
-    List<JobTrigger> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getJobTriggersList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListJobTriggersRequest actualRequest = (ListJobTriggersRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listJobTriggersExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-
-      client.listJobTriggers(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteJobTriggerTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDlpService.addResponse(expectedResponse);
-
-    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-
-    client.deleteJobTrigger(name);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteJobTriggerRequest actualRequest = (DeleteJobTriggerRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, JobTriggerName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteJobTriggerExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-
-      client.deleteJobTrigger(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createDlpJobTest() {
     DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
     String jobTriggerName = "jobTriggerName1819490804";
@@ -1632,6 +1309,407 @@ public class DlpServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void finishDlpJobTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+    FinishDlpJobRequest request = FinishDlpJobRequest.newBuilder().setName(name.toString()).build();
+
+    client.finishDlpJob(request);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FinishDlpJobRequest actualRequest = (FinishDlpJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DlpJobName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void finishDlpJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+      FinishDlpJobRequest request =
+          FinishDlpJobRequest.newBuilder().setName(name.toString()).build();
+
+      client.finishDlpJob(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void hybridInspectDlpJobTest() {
+    HybridInspectResponse expectedResponse = HybridInspectResponse.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+
+    HybridInspectResponse actualResponse = client.hybridInspectDlpJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    HybridInspectDlpJobRequest actualRequest = (HybridInspectDlpJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DlpJobName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void hybridInspectDlpJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+
+      client.hybridInspectDlpJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listJobTriggersTest() {
+    String nextPageToken = "";
+    JobTrigger jobTriggersElement = JobTrigger.newBuilder().build();
+    List<JobTrigger> jobTriggers = Arrays.asList(jobTriggersElement);
+    ListJobTriggersResponse expectedResponse =
+        ListJobTriggersResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllJobTriggers(jobTriggers)
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    ListJobTriggersPagedResponse pagedListResponse = client.listJobTriggers(parent);
+
+    List<JobTrigger> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getJobTriggersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListJobTriggersRequest actualRequest = (ListJobTriggersRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listJobTriggersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+
+      client.listJobTriggers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getJobTriggerTest() {
+    JobTriggerName name2 = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+    String displayName = "displayName1615086568";
+    String description = "description-1724546052";
+    JobTrigger expectedResponse =
+        JobTrigger.newBuilder()
+            .setName(name2.toString())
+            .setDisplayName(displayName)
+            .setDescription(description)
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+
+    JobTrigger actualResponse = client.getJobTrigger(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetJobTriggerRequest actualRequest = (GetJobTriggerRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, JobTriggerName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getJobTriggerExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+
+      client.getJobTrigger(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteJobTriggerTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+
+    client.deleteJobTrigger(name);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteJobTriggerRequest actualRequest = (DeleteJobTriggerRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, JobTriggerName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteJobTriggerExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+
+      client.deleteJobTrigger(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void hybridInspectJobTriggerTest() {
+    HybridInspectResponse expectedResponse = HybridInspectResponse.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+
+    HybridInspectResponse actualResponse = client.hybridInspectJobTrigger(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    HybridInspectJobTriggerRequest actualRequest =
+        (HybridInspectJobTriggerRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, JobTriggerName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void hybridInspectJobTriggerExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+
+      client.hybridInspectJobTrigger(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateJobTriggerTest() {
+    JobTriggerName name2 = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+    String displayName = "displayName1615086568";
+    String description = "description-1724546052";
+    JobTrigger expectedResponse =
+        JobTrigger.newBuilder()
+            .setName(name2.toString())
+            .setDisplayName(displayName)
+            .setDescription(description)
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+    JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    JobTrigger actualResponse = client.updateJobTrigger(name, jobTrigger, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateJobTriggerRequest actualRequest = (UpdateJobTriggerRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, JobTriggerName.parse(actualRequest.getName()));
+    Assert.assertEquals(jobTrigger, actualRequest.getJobTrigger());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateJobTriggerExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+      JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+
+      client.updateJobTrigger(name, jobTrigger, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createJobTriggerTest() {
+    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+    String displayName = "displayName1615086568";
+    String description = "description-1724546052";
+    JobTrigger expectedResponse =
+        JobTrigger.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setDescription(description)
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+
+    JobTrigger actualResponse = client.createJobTrigger(parent, jobTrigger);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateJobTriggerRequest actualRequest = (CreateJobTriggerRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(jobTrigger, actualRequest.getJobTrigger());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createJobTriggerExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+
+      client.createJobTrigger(parent, jobTrigger);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createJobTriggerTest2() {
+    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+    String displayName = "displayName1615086568";
+    String description = "description-1724546052";
+    JobTrigger expectedResponse =
+        JobTrigger.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setDescription(description)
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+    String locationId = "locationId552319461";
+
+    JobTrigger actualResponse = client.createJobTrigger(parent, jobTrigger, locationId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateJobTriggerRequest actualRequest = (CreateJobTriggerRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(jobTrigger, actualRequest.getJobTrigger());
+    Assert.assertEquals(locationId, actualRequest.getLocationId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createJobTriggerExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+      String locationId = "locationId552319461";
+
+      client.createJobTrigger(parent, jobTrigger, locationId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createStoredInfoTypeTest() {
     StoredInfoTypeName name =
         StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
@@ -1893,84 +1971,6 @@ public class DlpServiceClientTest {
               "[ORGANIZATION]", "[STORED_INFO_TYPE]");
 
       client.deleteStoredInfoType(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void hybridInspectDlpJobTest() {
-    HybridInspectResponse expectedResponse = HybridInspectResponse.newBuilder().build();
-    mockDlpService.addResponse(expectedResponse);
-
-    DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
-
-    HybridInspectResponse actualResponse = client.hybridInspectDlpJob(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    HybridInspectDlpJobRequest actualRequest = (HybridInspectDlpJobRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, DlpJobName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void hybridInspectDlpJobExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
-
-      client.hybridInspectDlpJob(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void finishDlpJobTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDlpService.addResponse(expectedResponse);
-
-    DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
-    FinishDlpJobRequest request = FinishDlpJobRequest.newBuilder().setName(name.toString()).build();
-
-    client.finishDlpJob(request);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    FinishDlpJobRequest actualRequest = (FinishDlpJobRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, DlpJobName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void finishDlpJobExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
-      FinishDlpJobRequest request =
-          FinishDlpJobRequest.newBuilder().setName(name.toString()).build();
-
-      client.finishDlpJob(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

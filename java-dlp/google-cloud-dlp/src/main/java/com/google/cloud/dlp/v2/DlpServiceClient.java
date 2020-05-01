@@ -2327,711 +2327,6 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-   *   JobTrigger response = dlpServiceClient.createJobTrigger(parent, jobTrigger);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The parent resource name, for example projects/my-project-id.
-   * @param jobTrigger Required. The JobTrigger to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger createJobTrigger(ProjectName parent, JobTrigger jobTrigger) {
-    CreateJobTriggerRequest request =
-        CreateJobTriggerRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setJobTrigger(jobTrigger)
-            .build();
-    return createJobTrigger(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-   *   JobTrigger response = dlpServiceClient.createJobTrigger(parent.toString(), jobTrigger);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The parent resource name, for example projects/my-project-id.
-   * @param jobTrigger Required. The JobTrigger to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger createJobTrigger(String parent, JobTrigger jobTrigger) {
-    CreateJobTriggerRequest request =
-        CreateJobTriggerRequest.newBuilder().setParent(parent).setJobTrigger(jobTrigger).build();
-    return createJobTrigger(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-   *   String locationId = "";
-   *   JobTrigger response = dlpServiceClient.createJobTrigger(parent, jobTrigger, locationId);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The parent resource name, for example projects/my-project-id.
-   * @param jobTrigger Required. The JobTrigger to create.
-   * @param locationId The geographic location to store the job trigger. Reserved for future
-   *     extensions.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger createJobTrigger(
-      ProjectName parent, JobTrigger jobTrigger, String locationId) {
-    CreateJobTriggerRequest request =
-        CreateJobTriggerRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setJobTrigger(jobTrigger)
-            .setLocationId(locationId)
-            .build();
-    return createJobTrigger(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-   *   String locationId = "";
-   *   JobTrigger response = dlpServiceClient.createJobTrigger(parent.toString(), jobTrigger, locationId);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The parent resource name, for example projects/my-project-id.
-   * @param jobTrigger Required. The JobTrigger to create.
-   * @param locationId The geographic location to store the job trigger. Reserved for future
-   *     extensions.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger createJobTrigger(
-      String parent, JobTrigger jobTrigger, String locationId) {
-    CreateJobTriggerRequest request =
-        CreateJobTriggerRequest.newBuilder()
-            .setParent(parent)
-            .setJobTrigger(jobTrigger)
-            .setLocationId(locationId)
-            .build();
-    return createJobTrigger(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-   *   CreateJobTriggerRequest request = CreateJobTriggerRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setJobTrigger(jobTrigger)
-   *     .build();
-   *   JobTrigger response = dlpServiceClient.createJobTrigger(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger createJobTrigger(CreateJobTriggerRequest request) {
-    return createJobTriggerCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-   *   CreateJobTriggerRequest request = CreateJobTriggerRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setJobTrigger(jobTrigger)
-   *     .build();
-   *   ApiFuture&lt;JobTrigger&gt; future = dlpServiceClient.createJobTriggerCallable().futureCall(request);
-   *   // Do something
-   *   JobTrigger response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<CreateJobTriggerRequest, JobTrigger> createJobTriggerCallable() {
-    return stub.createJobTriggerCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   JobTrigger response = dlpServiceClient.updateJobTrigger(name, jobTrigger, updateMask);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the project and the triggeredJob, for example
-   *     `projects/dlp-test-project/jobTriggers/53234423`.
-   * @param jobTrigger New JobTrigger value.
-   * @param updateMask Mask to control which fields get updated.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger updateJobTrigger(
-      JobTriggerName name, JobTrigger jobTrigger, FieldMask updateMask) {
-    UpdateJobTriggerRequest request =
-        UpdateJobTriggerRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setJobTrigger(jobTrigger)
-            .setUpdateMask(updateMask)
-            .build();
-    return updateJobTrigger(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   JobTrigger response = dlpServiceClient.updateJobTrigger(name.toString(), jobTrigger, updateMask);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the project and the triggeredJob, for example
-   *     `projects/dlp-test-project/jobTriggers/53234423`.
-   * @param jobTrigger New JobTrigger value.
-   * @param updateMask Mask to control which fields get updated.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger updateJobTrigger(
-      String name, JobTrigger jobTrigger, FieldMask updateMask) {
-    UpdateJobTriggerRequest request =
-        UpdateJobTriggerRequest.newBuilder()
-            .setName(name)
-            .setJobTrigger(jobTrigger)
-            .setUpdateMask(updateMask)
-            .build();
-    return updateJobTrigger(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   UpdateJobTriggerRequest request = UpdateJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   JobTrigger response = dlpServiceClient.updateJobTrigger(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger updateJobTrigger(UpdateJobTriggerRequest request) {
-    return updateJobTriggerCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   UpdateJobTriggerRequest request = UpdateJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;JobTrigger&gt; future = dlpServiceClient.updateJobTriggerCallable().futureCall(request);
-   *   // Do something
-   *   JobTrigger response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerCallable() {
-    return stub.updateJobTriggerCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
-   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
-   * feature is in a pre-release state and might change or have limited support. For more
-   * information, see https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   HybridInspectResponse response = dlpServiceClient.hybridInspectJobTrigger(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the trigger to execute a hybrid inspect on, for example
-   *     `projects/dlp-test-project/jobTriggers/53234423`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final HybridInspectResponse hybridInspectJobTrigger(JobTriggerName name) {
-    HybridInspectJobTriggerRequest request =
-        HybridInspectJobTriggerRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return hybridInspectJobTrigger(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
-   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
-   * feature is in a pre-release state and might change or have limited support. For more
-   * information, see https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   HybridInspectResponse response = dlpServiceClient.hybridInspectJobTrigger(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the trigger to execute a hybrid inspect on, for example
-   *     `projects/dlp-test-project/jobTriggers/53234423`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final HybridInspectResponse hybridInspectJobTrigger(String name) {
-    HybridInspectJobTriggerRequest request =
-        HybridInspectJobTriggerRequest.newBuilder().setName(name).build();
-    return hybridInspectJobTrigger(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
-   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
-   * feature is in a pre-release state and might change or have limited support. For more
-   * information, see https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   HybridInspectJobTriggerRequest request = HybridInspectJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   HybridInspectResponse response = dlpServiceClient.hybridInspectJobTrigger(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final HybridInspectResponse hybridInspectJobTrigger(
-      HybridInspectJobTriggerRequest request) {
-    return hybridInspectJobTriggerCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
-   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
-   * feature is in a pre-release state and might change or have limited support. For more
-   * information, see https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   HybridInspectJobTriggerRequest request = HybridInspectJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;HybridInspectResponse&gt; future = dlpServiceClient.hybridInspectJobTriggerCallable().futureCall(request);
-   *   // Do something
-   *   HybridInspectResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<HybridInspectJobTriggerRequest, HybridInspectResponse>
-      hybridInspectJobTriggerCallable() {
-    return stub.hybridInspectJobTriggerCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   JobTrigger response = dlpServiceClient.getJobTrigger(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the project and the triggeredJob, for example
-   *     `projects/dlp-test-project/jobTriggers/53234423`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger getJobTrigger(JobTriggerName name) {
-    GetJobTriggerRequest request =
-        GetJobTriggerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getJobTrigger(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   JobTrigger response = dlpServiceClient.getJobTrigger(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the project and the triggeredJob, for example
-   *     `projects/dlp-test-project/jobTriggers/53234423`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger getJobTrigger(String name) {
-    GetJobTriggerRequest request = GetJobTriggerRequest.newBuilder().setName(name).build();
-    return getJobTrigger(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   GetJobTriggerRequest request = GetJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   JobTrigger response = dlpServiceClient.getJobTrigger(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final JobTrigger getJobTrigger(GetJobTriggerRequest request) {
-    return getJobTriggerCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   GetJobTriggerRequest request = GetJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;JobTrigger&gt; future = dlpServiceClient.getJobTriggerCallable().futureCall(request);
-   *   // Do something
-   *   JobTrigger response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetJobTriggerRequest, JobTrigger> getJobTriggerCallable() {
-    return stub.getJobTriggerCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   for (JobTrigger element : dlpServiceClient.listJobTriggers(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The parent resource name, for example `projects/my-project-id`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListJobTriggersPagedResponse listJobTriggers(ProjectName parent) {
-    ListJobTriggersRequest request =
-        ListJobTriggersRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listJobTriggers(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   for (JobTrigger element : dlpServiceClient.listJobTriggers(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The parent resource name, for example `projects/my-project-id`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListJobTriggersPagedResponse listJobTriggers(String parent) {
-    ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder().setParent(parent).build();
-    return listJobTriggers(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (JobTrigger element : dlpServiceClient.listJobTriggers(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListJobTriggersPagedResponse listJobTriggers(ListJobTriggersRequest request) {
-    return listJobTriggersPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListJobTriggersPagedResponse&gt; future = dlpServiceClient.listJobTriggersPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (JobTrigger element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListJobTriggersRequest, ListJobTriggersPagedResponse>
-      listJobTriggersPagedCallable() {
-    return stub.listJobTriggersPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListJobTriggersResponse response = dlpServiceClient.listJobTriggersCallable().call(request);
-   *     for (JobTrigger element : response.getJobTriggersList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse>
-      listJobTriggersCallable() {
-    return stub.listJobTriggersCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   dlpServiceClient.deleteJobTrigger(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the project and the triggeredJob, for example
-   *     `projects/dlp-test-project/jobTriggers/53234423`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteJobTrigger(JobTriggerName name) {
-    DeleteJobTriggerRequest request =
-        DeleteJobTriggerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteJobTrigger(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   dlpServiceClient.deleteJobTrigger(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the project and the triggeredJob, for example
-   *     `projects/dlp-test-project/jobTriggers/53234423`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteJobTrigger(String name) {
-    DeleteJobTriggerRequest request = DeleteJobTriggerRequest.newBuilder().setName(name).build();
-    deleteJobTrigger(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   DeleteJobTriggerRequest request = DeleteJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   dlpServiceClient.deleteJobTrigger(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteJobTrigger(DeleteJobTriggerRequest request) {
-    deleteJobTriggerCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-   *   DeleteJobTriggerRequest request = DeleteJobTriggerRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = dlpServiceClient.deleteJobTriggerCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable() {
-    return stub.deleteJobTriggerCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Creates a new job to inspect storage or calculate risk metrics. See
    * https://cloud.google.com/dlp/docs/inspecting-storage and
    * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
@@ -3749,6 +3044,868 @@ public class DlpServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CancelDlpJobRequest, Empty> cancelDlpJobCallable() {
     return stub.cancelDlpJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finish a running hybrid DlpJob. Triggers the finalization steps and running of any enabled
+   * actions that have not yet run. Early access feature is in a pre-release state and might change
+   * or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   FinishDlpJobRequest request = FinishDlpJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dlpServiceClient.finishDlpJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void finishDlpJob(FinishDlpJobRequest request) {
+    finishDlpJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finish a running hybrid DlpJob. Triggers the finalization steps and running of any enabled
+   * actions that have not yet run. Early access feature is in a pre-release state and might change
+   * or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   FinishDlpJobRequest request = FinishDlpJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dlpServiceClient.finishDlpJobCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
+    return stub.finishDlpJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
+   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
+   * change or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectDlpJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the job to execute a hybrid inspect on, for example
+   *     `projects/dlp-test-project/dlpJob/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectDlpJob(DlpJobName name) {
+    HybridInspectDlpJobRequest request =
+        HybridInspectDlpJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return hybridInspectDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
+   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
+   * change or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectDlpJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the job to execute a hybrid inspect on, for example
+   *     `projects/dlp-test-project/dlpJob/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectDlpJob(String name) {
+    HybridInspectDlpJobRequest request =
+        HybridInspectDlpJobRequest.newBuilder().setName(name).build();
+    return hybridInspectDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
+   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
+   * change or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   HybridInspectDlpJobRequest request = HybridInspectDlpJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectDlpJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectDlpJob(HybridInspectDlpJobRequest request) {
+    return hybridInspectDlpJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
+   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
+   * change or have limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   HybridInspectDlpJobRequest request = HybridInspectDlpJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;HybridInspectResponse&gt; future = dlpServiceClient.hybridInspectDlpJobCallable().futureCall(request);
+   *   // Do something
+   *   HybridInspectResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
+      hybridInspectDlpJobCallable() {
+    return stub.hybridInspectDlpJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (JobTrigger element : dlpServiceClient.listJobTriggers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example `projects/my-project-id`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListJobTriggersPagedResponse listJobTriggers(ProjectName parent) {
+    ListJobTriggersRequest request =
+        ListJobTriggersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listJobTriggers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (JobTrigger element : dlpServiceClient.listJobTriggers(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example `projects/my-project-id`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListJobTriggersPagedResponse listJobTriggers(String parent) {
+    ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder().setParent(parent).build();
+    return listJobTriggers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (JobTrigger element : dlpServiceClient.listJobTriggers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListJobTriggersPagedResponse listJobTriggers(ListJobTriggersRequest request) {
+    return listJobTriggersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListJobTriggersPagedResponse&gt; future = dlpServiceClient.listJobTriggersPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (JobTrigger element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListJobTriggersRequest, ListJobTriggersPagedResponse>
+      listJobTriggersPagedCallable() {
+    return stub.listJobTriggersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ListJobTriggersRequest request = ListJobTriggersRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListJobTriggersResponse response = dlpServiceClient.listJobTriggersCallable().call(request);
+   *     for (JobTrigger element : response.getJobTriggersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse>
+      listJobTriggersCallable() {
+    return stub.listJobTriggersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   JobTrigger response = dlpServiceClient.getJobTrigger(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the project and the triggeredJob, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger getJobTrigger(JobTriggerName name) {
+    GetJobTriggerRequest request =
+        GetJobTriggerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   JobTrigger response = dlpServiceClient.getJobTrigger(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the project and the triggeredJob, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger getJobTrigger(String name) {
+    GetJobTriggerRequest request = GetJobTriggerRequest.newBuilder().setName(name).build();
+    return getJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   GetJobTriggerRequest request = GetJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   JobTrigger response = dlpServiceClient.getJobTrigger(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger getJobTrigger(GetJobTriggerRequest request) {
+    return getJobTriggerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   GetJobTriggerRequest request = GetJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;JobTrigger&gt; future = dlpServiceClient.getJobTriggerCallable().futureCall(request);
+   *   // Do something
+   *   JobTrigger response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetJobTriggerRequest, JobTrigger> getJobTriggerCallable() {
+    return stub.getJobTriggerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   dlpServiceClient.deleteJobTrigger(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the project and the triggeredJob, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJobTrigger(JobTriggerName name) {
+    DeleteJobTriggerRequest request =
+        DeleteJobTriggerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   dlpServiceClient.deleteJobTrigger(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the project and the triggeredJob, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJobTrigger(String name) {
+    DeleteJobTriggerRequest request = DeleteJobTriggerRequest.newBuilder().setName(name).build();
+    deleteJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   DeleteJobTriggerRequest request = DeleteJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dlpServiceClient.deleteJobTrigger(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJobTrigger(DeleteJobTriggerRequest request) {
+    deleteJobTriggerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   DeleteJobTriggerRequest request = DeleteJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dlpServiceClient.deleteJobTriggerCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable() {
+    return stub.deleteJobTriggerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
+   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
+   * feature is in a pre-release state and might change or have limited support. For more
+   * information, see https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectJobTrigger(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the trigger to execute a hybrid inspect on, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectJobTrigger(JobTriggerName name) {
+    HybridInspectJobTriggerRequest request =
+        HybridInspectJobTriggerRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return hybridInspectJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
+   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
+   * feature is in a pre-release state and might change or have limited support. For more
+   * information, see https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectJobTrigger(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the trigger to execute a hybrid inspect on, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectJobTrigger(String name) {
+    HybridInspectJobTriggerRequest request =
+        HybridInspectJobTriggerRequest.newBuilder().setName(name).build();
+    return hybridInspectJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
+   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
+   * feature is in a pre-release state and might change or have limited support. For more
+   * information, see https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   HybridInspectJobTriggerRequest request = HybridInspectJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   HybridInspectResponse response = dlpServiceClient.hybridInspectJobTrigger(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HybridInspectResponse hybridInspectJobTrigger(
+      HybridInspectJobTriggerRequest request) {
+    return hybridInspectJobTriggerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Inspect hybrid content and store findings to a trigger. The inspection will be processed
+   * asynchronously. To review the findings monitor the jobs within the trigger. Early access
+   * feature is in a pre-release state and might change or have limited support. For more
+   * information, see https://cloud.google.com/products#product-launch-stages.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   HybridInspectJobTriggerRequest request = HybridInspectJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;HybridInspectResponse&gt; future = dlpServiceClient.hybridInspectJobTriggerCallable().futureCall(request);
+   *   // Do something
+   *   HybridInspectResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<HybridInspectJobTriggerRequest, HybridInspectResponse>
+      hybridInspectJobTriggerCallable() {
+    return stub.hybridInspectJobTriggerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   JobTrigger response = dlpServiceClient.updateJobTrigger(name, jobTrigger, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the project and the triggeredJob, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @param jobTrigger New JobTrigger value.
+   * @param updateMask Mask to control which fields get updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger updateJobTrigger(
+      JobTriggerName name, JobTrigger jobTrigger, FieldMask updateMask) {
+    UpdateJobTriggerRequest request =
+        UpdateJobTriggerRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setJobTrigger(jobTrigger)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   JobTrigger response = dlpServiceClient.updateJobTrigger(name.toString(), jobTrigger, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the project and the triggeredJob, for example
+   *     `projects/dlp-test-project/jobTriggers/53234423`.
+   * @param jobTrigger New JobTrigger value.
+   * @param updateMask Mask to control which fields get updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger updateJobTrigger(
+      String name, JobTrigger jobTrigger, FieldMask updateMask) {
+    UpdateJobTriggerRequest request =
+        UpdateJobTriggerRequest.newBuilder()
+            .setName(name)
+            .setJobTrigger(jobTrigger)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   UpdateJobTriggerRequest request = UpdateJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   JobTrigger response = dlpServiceClient.updateJobTrigger(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger updateJobTrigger(UpdateJobTriggerRequest request) {
+    return updateJobTriggerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   UpdateJobTriggerRequest request = UpdateJobTriggerRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;JobTrigger&gt; future = dlpServiceClient.updateJobTriggerCallable().futureCall(request);
+   *   // Do something
+   *   JobTrigger response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerCallable() {
+    return stub.updateJobTriggerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   JobTrigger response = dlpServiceClient.createJobTrigger(parent, jobTrigger);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param jobTrigger Required. The JobTrigger to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger createJobTrigger(ProjectName parent, JobTrigger jobTrigger) {
+    CreateJobTriggerRequest request =
+        CreateJobTriggerRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setJobTrigger(jobTrigger)
+            .build();
+    return createJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   JobTrigger response = dlpServiceClient.createJobTrigger(parent.toString(), jobTrigger);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param jobTrigger Required. The JobTrigger to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger createJobTrigger(String parent, JobTrigger jobTrigger) {
+    CreateJobTriggerRequest request =
+        CreateJobTriggerRequest.newBuilder().setParent(parent).setJobTrigger(jobTrigger).build();
+    return createJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   String locationId = "";
+   *   JobTrigger response = dlpServiceClient.createJobTrigger(parent, jobTrigger, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param jobTrigger Required. The JobTrigger to create.
+   * @param locationId The geographic location to store the job trigger. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger createJobTrigger(
+      ProjectName parent, JobTrigger jobTrigger, String locationId) {
+    CreateJobTriggerRequest request =
+        CreateJobTriggerRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setJobTrigger(jobTrigger)
+            .setLocationId(locationId)
+            .build();
+    return createJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   String locationId = "";
+   *   JobTrigger response = dlpServiceClient.createJobTrigger(parent.toString(), jobTrigger, locationId);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, for example projects/my-project-id.
+   * @param jobTrigger Required. The JobTrigger to create.
+   * @param locationId The geographic location to store the job trigger. Reserved for future
+   *     extensions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger createJobTrigger(
+      String parent, JobTrigger jobTrigger, String locationId) {
+    CreateJobTriggerRequest request =
+        CreateJobTriggerRequest.newBuilder()
+            .setParent(parent)
+            .setJobTrigger(jobTrigger)
+            .setLocationId(locationId)
+            .build();
+    return createJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   CreateJobTriggerRequest request = CreateJobTriggerRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setJobTrigger(jobTrigger)
+   *     .build();
+   *   JobTrigger response = dlpServiceClient.createJobTrigger(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger createJobTrigger(CreateJobTriggerRequest request) {
+    return createJobTriggerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   CreateJobTriggerRequest request = CreateJobTriggerRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setJobTrigger(jobTrigger)
+   *     .build();
+   *   ApiFuture&lt;JobTrigger&gt; future = dlpServiceClient.createJobTriggerCallable().futureCall(request);
+   *   // Do something
+   *   JobTrigger response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateJobTriggerRequest, JobTrigger> createJobTriggerCallable() {
+    return stub.createJobTriggerCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -4663,163 +4820,6 @@ public class DlpServiceClient implements BackgroundResource {
     return stub.deleteStoredInfoTypeCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
-   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
-   * change or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
-   *   HybridInspectResponse response = dlpServiceClient.hybridInspectDlpJob(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the job to execute a hybrid inspect on, for example
-   *     `projects/dlp-test-project/dlpJob/53234423`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final HybridInspectResponse hybridInspectDlpJob(DlpJobName name) {
-    HybridInspectDlpJobRequest request =
-        HybridInspectDlpJobRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return hybridInspectDlpJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
-   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
-   * change or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
-   *   HybridInspectResponse response = dlpServiceClient.hybridInspectDlpJob(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the job to execute a hybrid inspect on, for example
-   *     `projects/dlp-test-project/dlpJob/53234423`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final HybridInspectResponse hybridInspectDlpJob(String name) {
-    HybridInspectDlpJobRequest request =
-        HybridInspectDlpJobRequest.newBuilder().setName(name).build();
-    return hybridInspectDlpJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
-   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
-   * change or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
-   *   HybridInspectDlpJobRequest request = HybridInspectDlpJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   HybridInspectResponse response = dlpServiceClient.hybridInspectDlpJob(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final HybridInspectResponse hybridInspectDlpJob(HybridInspectDlpJobRequest request) {
-    return hybridInspectDlpJobCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Inspect hybrid content and store findings to a job. To review the findings inspect the job.
-   * Inspection will occur asynchronously. Early access feature is in a pre-release state and might
-   * change or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
-   *   HybridInspectDlpJobRequest request = HybridInspectDlpJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;HybridInspectResponse&gt; future = dlpServiceClient.hybridInspectDlpJobCallable().futureCall(request);
-   *   // Do something
-   *   HybridInspectResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
-      hybridInspectDlpJobCallable() {
-    return stub.hybridInspectDlpJobCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Finish a running hybrid DlpJob. Triggers the finalization steps and running of any enabled
-   * actions that have not yet run. Early access feature is in a pre-release state and might change
-   * or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
-   *   FinishDlpJobRequest request = FinishDlpJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   dlpServiceClient.finishDlpJob(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void finishDlpJob(FinishDlpJobRequest request) {
-    finishDlpJobCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Finish a running hybrid DlpJob. Triggers the finalization steps and running of any enabled
-   * actions that have not yet run. Early access feature is in a pre-release state and might change
-   * or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
-   *   FinishDlpJobRequest request = FinishDlpJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = dlpServiceClient.finishDlpJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
-    return stub.finishDlpJobCallable();
-  }
-
   @Override
   public final void close() {
     stub.close();
@@ -5032,6 +5032,86 @@ public class DlpServiceClient implements BackgroundResource {
     }
   }
 
+  public static class ListDlpJobsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDlpJobsRequest,
+          ListDlpJobsResponse,
+          DlpJob,
+          ListDlpJobsPage,
+          ListDlpJobsFixedSizeCollection> {
+
+    public static ApiFuture<ListDlpJobsPagedResponse> createAsync(
+        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
+        ApiFuture<ListDlpJobsResponse> futureResponse) {
+      ApiFuture<ListDlpJobsPage> futurePage =
+          ListDlpJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListDlpJobsPage, ListDlpJobsPagedResponse>() {
+            @Override
+            public ListDlpJobsPagedResponse apply(ListDlpJobsPage input) {
+              return new ListDlpJobsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDlpJobsPagedResponse(ListDlpJobsPage page) {
+      super(page, ListDlpJobsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDlpJobsPage
+      extends AbstractPage<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob, ListDlpJobsPage> {
+
+    private ListDlpJobsPage(
+        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
+        ListDlpJobsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDlpJobsPage createEmptyPage() {
+      return new ListDlpJobsPage(null, null);
+    }
+
+    @Override
+    protected ListDlpJobsPage createPage(
+        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
+        ListDlpJobsResponse response) {
+      return new ListDlpJobsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDlpJobsPage> createPageAsync(
+        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
+        ApiFuture<ListDlpJobsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDlpJobsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDlpJobsRequest,
+          ListDlpJobsResponse,
+          DlpJob,
+          ListDlpJobsPage,
+          ListDlpJobsFixedSizeCollection> {
+
+    private ListDlpJobsFixedSizeCollection(List<ListDlpJobsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDlpJobsFixedSizeCollection createEmptyCollection() {
+      return new ListDlpJobsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDlpJobsFixedSizeCollection createCollection(
+        List<ListDlpJobsPage> pages, int collectionSize) {
+      return new ListDlpJobsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class ListJobTriggersPagedResponse
       extends AbstractPagedListResponse<
           ListJobTriggersRequest,
@@ -5111,86 +5191,6 @@ public class DlpServiceClient implements BackgroundResource {
     protected ListJobTriggersFixedSizeCollection createCollection(
         List<ListJobTriggersPage> pages, int collectionSize) {
       return new ListJobTriggersFixedSizeCollection(pages, collectionSize);
-    }
-  }
-
-  public static class ListDlpJobsPagedResponse
-      extends AbstractPagedListResponse<
-          ListDlpJobsRequest,
-          ListDlpJobsResponse,
-          DlpJob,
-          ListDlpJobsPage,
-          ListDlpJobsFixedSizeCollection> {
-
-    public static ApiFuture<ListDlpJobsPagedResponse> createAsync(
-        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
-        ApiFuture<ListDlpJobsResponse> futureResponse) {
-      ApiFuture<ListDlpJobsPage> futurePage =
-          ListDlpJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListDlpJobsPage, ListDlpJobsPagedResponse>() {
-            @Override
-            public ListDlpJobsPagedResponse apply(ListDlpJobsPage input) {
-              return new ListDlpJobsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
-    }
-
-    private ListDlpJobsPagedResponse(ListDlpJobsPage page) {
-      super(page, ListDlpJobsFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class ListDlpJobsPage
-      extends AbstractPage<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob, ListDlpJobsPage> {
-
-    private ListDlpJobsPage(
-        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
-        ListDlpJobsResponse response) {
-      super(context, response);
-    }
-
-    private static ListDlpJobsPage createEmptyPage() {
-      return new ListDlpJobsPage(null, null);
-    }
-
-    @Override
-    protected ListDlpJobsPage createPage(
-        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
-        ListDlpJobsResponse response) {
-      return new ListDlpJobsPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<ListDlpJobsPage> createPageAsync(
-        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
-        ApiFuture<ListDlpJobsResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class ListDlpJobsFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          ListDlpJobsRequest,
-          ListDlpJobsResponse,
-          DlpJob,
-          ListDlpJobsPage,
-          ListDlpJobsFixedSizeCollection> {
-
-    private ListDlpJobsFixedSizeCollection(List<ListDlpJobsPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static ListDlpJobsFixedSizeCollection createEmptyCollection() {
-      return new ListDlpJobsFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected ListDlpJobsFixedSizeCollection createCollection(
-        List<ListDlpJobsPage> pages, int collectionSize) {
-      return new ListDlpJobsFixedSizeCollection(pages, collectionSize);
     }
   }
 
