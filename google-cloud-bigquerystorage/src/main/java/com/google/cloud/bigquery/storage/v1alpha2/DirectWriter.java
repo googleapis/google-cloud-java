@@ -102,4 +102,9 @@ public class DirectWriter {
       BigQueryWriteClient stub, int maxTableEntry, SchemaCompact schemaCheck) {
     cache = WriterCache.getTestInstance(stub, maxTableEntry, schemaCheck);
   }
+
+  /** Clears the underlying cache and all the transport connections. */
+  public static void clearCache() {
+    cache.clear();
+  }
 }

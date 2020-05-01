@@ -24,15 +24,15 @@ import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.cloud.bigquery.storage.test.Test.*;
+import com.google.common.collect.Sets;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
-import java.util.concurrent.ExecutionException;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -42,6 +42,8 @@ import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class DirectWriterTest {
+  private static final Logger LOG = Logger.getLogger(DirectWriterTest.class.getName());
+
   private static final String TEST_TABLE = "projects/p/datasets/d/tables/t";
   private static final String TEST_STREAM = "projects/p/datasets/d/tables/t/streams/s";
   private static final String TEST_STREAM_2 = "projects/p/datasets/d/tables/t/streams/s2";
@@ -86,7 +88,7 @@ public class DirectWriterTest {
   }
 
   /** Response mocks for create a new writer */
-  void WriterCreationResponseMock(String testStreamName, List<Long> responseOffsets) {
+  void WriterCreationResponseMock(String testStreamName, Set<Long> responseOffsets) {
     // Response from CreateWriteStream
     Stream.WriteStream expectedResponse =
         Stream.WriteStream.newBuilder().setName(testStreamName).build();
@@ -117,7 +119,7 @@ public class DirectWriterTest {
     FooType m1 = FooType.newBuilder().setFoo("m1").build();
     FooType m2 = FooType.newBuilder().setFoo("m2").build();
 
-    WriterCreationResponseMock(TEST_STREAM, Arrays.asList(Long.valueOf(0L)));
+    WriterCreationResponseMock(TEST_STREAM, Sets.newHashSet(Long.valueOf(0L)));
     ApiFuture<Long> ret = DirectWriter.<FooType>append(TEST_TABLE, Arrays.asList(m1, m2));
     verify(schemaCheck).check(TEST_TABLE, FooType.getDescriptor());
     assertEquals(Long.valueOf(0L), ret.get());
@@ -159,7 +161,7 @@ public class DirectWriterTest {
     assertEquals(expectRequest.toString(), actualRequests.get(3).toString());
 
     // Write with a different schema.
-    WriterCreationResponseMock(TEST_STREAM_2, Arrays.asList(Long.valueOf(0L)));
+    WriterCreationResponseMock(TEST_STREAM_2, Sets.newHashSet(Long.valueOf(0L)));
     AllSupportedTypes m3 = AllSupportedTypes.newBuilder().setStringValue("s").build();
     ret = DirectWriter.<AllSupportedTypes>append(TEST_TABLE, Arrays.asList(m3));
     verify(schemaCheck).check(TEST_TABLE, AllSupportedTypes.getDescriptor());
@@ -181,6 +183,8 @@ public class DirectWriterTest {
         ((Storage.CreateWriteStreamRequest) actualRequests.get(4)).getWriteStream().getType());
     assertEquals(TEST_STREAM_2, ((Storage.GetWriteStreamRequest) actualRequests.get(5)).getName());
     assertEquals(expectRequest.toString(), actualRequests.get(6).toString());
+
+    DirectWriter.clearCache();
   }
 
   @Test
@@ -195,15 +199,17 @@ public class DirectWriterTest {
     } catch (IllegalArgumentException expected) {
       assertEquals("Invalid table name: abc", expected.getMessage());
     }
+
+    DirectWriter.clearCache();
   }
 
   @Test
   public void testConcurrentAccess() throws Exception {
-    WriterCache cache = WriterCache.getTestInstance(client, 2, schemaCheck);
+    DirectWriter.testSetStub(client, 2, schemaCheck);
     final FooType m1 = FooType.newBuilder().setFoo("m1").build();
     final FooType m2 = FooType.newBuilder().setFoo("m2").build();
-    final List<Long> expectedOffset =
-        Arrays.asList(
+    final Set<Long> expectedOffset =
+        Sets.newHashSet(
             Long.valueOf(0L),
             Long.valueOf(2L),
             Long.valueOf(4L),
@@ -221,12 +227,21 @@ public class DirectWriterTest {
               try {
                 ApiFuture<Long> result =
                     DirectWriter.<FooType>append(TEST_TABLE, Arrays.asList(m1, m2));
-                assertTrue(expectedOffset.remove(result.get()));
-              } catch (IOException | InterruptedException | ExecutionException e) {
-                fail(e.getMessage());
+                synchronized (expectedOffset) {
+                  assertTrue(expectedOffset.remove(result.get()));
+                }
+              } catch (Exception e) {
+                fail(e.toString());
               }
             }
           });
     }
+    executor.shutdown();
+    try {
+      executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+    } catch (InterruptedException e) {
+      LOG.info(e.toString());
+    }
+    DirectWriter.clearCache();
   }
 }

@@ -20,6 +20,7 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.protobuf.Descriptors.Descriptor;
 import java.io.IOException;
+import java.util.concurrent.ConcurrentMap;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -142,6 +143,22 @@ public class WriterCache {
     }
 
     return writer;
+  }
+
+  /** Clear the cache and close all the writers in the cache. */
+  public void clear() {
+    synchronized (this) {
+      ConcurrentMap<String, Cache<Descriptor, StreamWriter>> map = writerCache.asMap();
+      for (String key : map.keySet()) {
+        Cache<Descriptor, StreamWriter> entry = writerCache.getIfPresent(key);
+        ConcurrentMap<Descriptor, StreamWriter> entryMap = entry.asMap();
+        for (Descriptor descriptor : entryMap.keySet()) {
+          StreamWriter writer = entry.getIfPresent(descriptor);
+          writer.close();
+        }
+      }
+      writerCache.cleanUp();
+    }
   }
 
   @VisibleForTesting

@@ -143,6 +143,7 @@ public class WriterCacheTest {
     assertEquals(TEST_TABLE, writer.getTableNameString());
     assertEquals(TEST_STREAM, writer.getStreamNameString());
     assertEquals(1, cache.cachedTableCount());
+    cache.clear();
   }
 
   @Test
@@ -173,6 +174,7 @@ public class WriterCacheTest {
           "Cannot write to a stream that is already expired: projects/p/datasets/d/tables/t/streams/s",
           e.getMessage());
     }
+    cache.clear();
   }
 
   @Test
@@ -216,6 +218,7 @@ public class WriterCacheTest {
     assertEquals(TEST_STREAM_3, writer4.getStreamNameString());
     assertEquals(TEST_STREAM_4, writer5.getStreamNameString());
     assertEquals(1, cache.cachedTableCount());
+    cache.clear();
   }
 
   @Test
@@ -259,6 +262,7 @@ public class WriterCacheTest {
     assertEquals(TEST_STREAM_31, writer4.getStreamNameString());
     assertEquals(TEST_STREAM, writer5.getStreamNameString());
     assertEquals(2, cache.cachedTableCount());
+    cache.clear();
   }
 
   @Test
@@ -275,7 +279,7 @@ public class WriterCacheTest {
             public void run() {
               try {
                 assertTrue(cache.getTableWriter(TEST_TABLE, FooType.getDescriptor()) != null);
-              } catch (IOException | InterruptedException e) {
+              } catch (Exception e) {
                 fail(e.getMessage());
               }
             }

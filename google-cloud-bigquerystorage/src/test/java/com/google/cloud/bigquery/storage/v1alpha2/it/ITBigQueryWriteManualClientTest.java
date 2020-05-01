@@ -391,5 +391,12 @@ public class ITBigQueryWriteManualClientTest {
       assertTrue(expectedOffset.remove(response.get()));
     }
     assertTrue(expectedOffset.isEmpty());
+    executor.shutdown();
+    try {
+      executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+    } catch (InterruptedException e) {
+      LOG.info(e.toString());
+    }
+    DirectWriter.clearCache();
   }
 }
