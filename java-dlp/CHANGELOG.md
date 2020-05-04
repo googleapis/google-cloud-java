@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.4](https://www.github.com/googleapis/java-dlp/compare/v1.1.3...v1.1.4) (2020-05-01)
+
+
+### Bug Fixes
+
+* replace all retry configs removed during GAPIC config migration ([#165](https://www.github.com/googleapis/java-dlp/issues/165)) ([02da00e](https://www.github.com/googleapis/java-dlp/commit/02da00e9410fb26a00148c5723afa55bffe4e1c3))
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#157](https://www.github.com/googleapis/java-dlp/issues/157)) ([a237797](https://www.github.com/googleapis/java-dlp/commit/a237797960a893fd311f146900d4503ca8074fdc))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#159](https://www.github.com/googleapis/java-dlp/issues/159)) ([c42b4e0](https://www.github.com/googleapis/java-dlp/commit/c42b4e07acaeaf4948ae0b8ff434ac9178c951d9))
+
 ### [1.1.3](https://www.github.com/googleapis/java-dlp/compare/v1.1.2...v1.1.3) (2020-04-20)
 
 
