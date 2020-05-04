@@ -511,6 +511,4 @@ for version in versions:
     java.format_code(f'grpc-google-cloud-{service}-{version}/src')
     java.format_code(f'proto-google-cloud-{service}-{version}/src')
 
-java.common_templates(excludes=[
-    'README.md'
-])
+java.common_templates()

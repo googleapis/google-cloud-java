@@ -1,18 +1,25 @@
 {
-  "updateTime": "2020-03-30T19:22:36.952654Z",
   "sources": [
     {
-      "generator": {
-        "name": "artman",
-        "version": "1.1.1",
-        "dockerImage": "googleapis/artman@sha256:5ef340c8d9334719bc5c6981d95f4a5d2737b0a6a24f2b9a0d430e96fff85c5b"
+      "git": {
+        "name": ".",
+        "remote": "git@github.com:googleapis/java-pubsub.git",
+        "sha": "b4e0b77255ebb04eead8bf3e5c7be0fe76ac4c89"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "b5e9b0b09cc15c263f07da92fa64db31b2e4dd07",
+        "internalRef": "307068250"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "e36822bfa0acb355502dab391b8ef9c4f30208d8"
+        "sha": "f8a9933e5e98202b04ef427f28d1d79221190fa4"
       }
     }
   ],
@@ -23,8 +30,7 @@
         "apiName": "pubsub",
         "apiVersion": "v1",
         "language": "java",
-        "generator": "gapic",
-        "config": "google/pubsub/artman_pubsub.yaml"
+        "generator": "bazel"
       }
     }
   ]
