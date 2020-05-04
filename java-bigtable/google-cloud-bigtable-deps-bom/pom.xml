@@ -71,7 +71,7 @@
   </licenses>
 
   <properties>
-    <autovalue.version>1.7</autovalue.version>
+    <autovalue.version>1.7.1</autovalue.version>
     <!-- when updating, make sure to align the versions of transitive deps below -->
     <gax.version>1.56.0</gax.version>
     <google.api-common.version>1.9.0</google.api-common.version>
