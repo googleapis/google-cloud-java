@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.131.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.131.0...v0.131.1) (2020-05-04)
+
+
+### Bug Fixes
+
+* flaky writeapi manual client tests ([#238](https://www.github.com/googleapis/java-bigquerystorage/issues/238)) ([89c8623](https://www.github.com/googleapis/java-bigquerystorage/commit/89c8623e082cacdc8e0843bffb67da4dc8b79df3))
+* more writeapi manual client test issues ([#241](https://www.github.com/googleapis/java-bigquerystorage/issues/241)) ([65c5ec9](https://www.github.com/googleapis/java-bigquerystorage/commit/65c5ec9c27e901b1633402d5fbbbbb83f956ed97))
+
 ## [0.131.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.130.0...v0.131.0) (2020-04-28)
 
 
