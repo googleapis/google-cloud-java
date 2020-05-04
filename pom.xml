@@ -76,7 +76,7 @@
     <animal-sniffer.version>1.18</animal-sniffer.version>
     <google-api-services-bigquery.version>v2-rev20200415-1.30.9
     </google-api-services-bigquery.version>
-    <auto-value.version>1.7</auto-value.version>
+    <auto-value.version>1.7.1</auto-value.version>
     <auto-value-annotations.version>${auto-value.version}</auto-value-annotations.version>
     <auto-service-annotations.version>1.0-rc6</auto-service-annotations.version>
   </properties>
