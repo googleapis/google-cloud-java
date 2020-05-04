@@ -35,27 +35,6 @@ for version in versions:
       destination_name='bigquerystorage',
   )
 
-java.common_templates()
-
-# TODO: Remove all below s.replace() logic when upstream correction is made in gapic https://github.com/googleapis/gapic-generator/issues/3181
-# Remove line added by gapic generator
-s.replace("google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1alpha2/MockBigQueryWriteImpl.java",
-          "final Object response = responses.remove();",
-          "")
-
-# Add back lines removed by gapic generator
-s.replace("google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1alpha2/MockBigQueryWriteImpl.java",
-          """
-          public void onNext(AppendRowsRequest value) {
-            if (response instanceof AppendRowsResponse) {
-          """,
-          """
-          public void onNext(AppendRowsRequest value) {
-            requests.add(value);
-            final Object response = responses.remove();
-            if (response instanceof AppendRowsResponse) {
-          """
-          )
-
-# Re-run java code formatter after making hacky code change
-os.system("mvn com.coveo:fmt-maven-plugin:format")
+java.common_templates(excludes=[
+    '.kokoro/build.bat' # TODO: remove this when we switch to actions
+])
