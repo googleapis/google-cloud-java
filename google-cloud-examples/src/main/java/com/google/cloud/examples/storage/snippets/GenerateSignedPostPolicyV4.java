@@ -19,6 +19,7 @@ public class GenerateSignedPostPolicyV4 {
      * those credentials are authorized to sign a policy. See the documentation for
      * Storage.generateSignedPostPolicyV4 for more details.
      */
+
   public static void generateSignedPostPolicyV4(
       String projectId, String bucketName, String blobName) {
     // The ID of your GCP project
