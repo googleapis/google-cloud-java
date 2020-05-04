@@ -106,14 +106,11 @@ public class PredictionServiceClientTest {
             .build();
     mockPredictionService.addResponse(expectedResponse);
 
-    String formattedName =
-        PredictionServiceClient.formatPlacementName(
-            "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
+    PlacementName name =
+        PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
     UserEvent userEvent = UserEvent.newBuilder().build();
-    PredictRequest request =
-        PredictRequest.newBuilder().setName(formattedName).setUserEvent(userEvent).build();
 
-    PredictPagedResponse pagedListResponse = client.predict(request);
+    PredictPagedResponse pagedListResponse = client.predict(name, userEvent);
 
     List<PredictResponse.PredictionResult> resources =
         Lists.newArrayList(pagedListResponse.iterateAll());
@@ -124,7 +121,7 @@ public class PredictionServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     PredictRequest actualRequest = (PredictRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, PlacementName.parse(actualRequest.getName()));
     Assert.assertEquals(userEvent, actualRequest.getUserEvent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -139,14 +136,11 @@ public class PredictionServiceClientTest {
     mockPredictionService.addException(exception);
 
     try {
-      String formattedName =
-          PredictionServiceClient.formatPlacementName(
-              "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
+      PlacementName name =
+          PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
       UserEvent userEvent = UserEvent.newBuilder().build();
-      PredictRequest request =
-          PredictRequest.newBuilder().setName(formattedName).setUserEvent(userEvent).build();
 
-      client.predict(request);
+      client.predict(name, userEvent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

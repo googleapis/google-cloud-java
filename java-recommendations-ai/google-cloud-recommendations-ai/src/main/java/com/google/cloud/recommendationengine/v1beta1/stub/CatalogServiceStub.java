@@ -51,6 +51,21 @@ public abstract class CatalogServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  public UnaryCallable<DeleteCatalogItemRequest, Empty> deleteCatalogItemCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCatalogItemCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
+      importCatalogItemsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: importCatalogItemsOperationCallable()");
+  }
+
+  public UnaryCallable<ImportCatalogItemsRequest, Operation> importCatalogItemsCallable() {
+    throw new UnsupportedOperationException("Not implemented: importCatalogItemsCallable()");
+  }
+
   public UnaryCallable<CreateCatalogItemRequest, CatalogItem> createCatalogItemCallable() {
     throw new UnsupportedOperationException("Not implemented: createCatalogItemCallable()");
   }
@@ -71,21 +86,6 @@ public abstract class CatalogServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemCallable() {
     throw new UnsupportedOperationException("Not implemented: updateCatalogItemCallable()");
-  }
-
-  public UnaryCallable<DeleteCatalogItemRequest, Empty> deleteCatalogItemCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteCatalogItemCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
-      importCatalogItemsOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: importCatalogItemsOperationCallable()");
-  }
-
-  public UnaryCallable<ImportCatalogItemsRequest, Operation> importCatalogItemsCallable() {
-    throw new UnsupportedOperationException("Not implemented: importCatalogItemsCallable()");
   }
 
   @Override

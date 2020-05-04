@@ -58,6 +58,26 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcUserEventServiceStub extends UserEventServiceStub {
 
+  private static final MethodDescriptor<PurgeUserEventsRequest, Operation>
+      purgeUserEventsMethodDescriptor =
+          MethodDescriptor.<PurgeUserEventsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recommendationengine.v1beta1.UserEventService/PurgeUserEvents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeUserEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ImportUserEventsRequest, Operation>
+      importUserEventsMethodDescriptor =
+          MethodDescriptor.<ImportUserEventsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recommendationengine.v1beta1.UserEventService/ImportUserEvents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportUserEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<WriteUserEventRequest, UserEvent>
       writeUserEventMethodDescriptor =
           MethodDescriptor.<WriteUserEventRequest, UserEvent>newBuilder()
@@ -89,35 +109,10 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUserEventsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<PurgeUserEventsRequest, Operation>
-      purgeUserEventsMethodDescriptor =
-          MethodDescriptor.<PurgeUserEventsRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.recommendationengine.v1beta1.UserEventService/PurgeUserEvents")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(PurgeUserEventsRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<ImportUserEventsRequest, Operation>
-      importUserEventsMethodDescriptor =
-          MethodDescriptor.<ImportUserEventsRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.recommendationengine.v1beta1.UserEventService/ImportUserEvents")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ImportUserEventsRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
-  private final UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable;
-  private final UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable;
-  private final UnaryCallable<ListUserEventsRequest, ListUserEventsResponse> listUserEventsCallable;
-  private final UnaryCallable<ListUserEventsRequest, ListUserEventsPagedResponse>
-      listUserEventsPagedCallable;
   private final UnaryCallable<PurgeUserEventsRequest, Operation> purgeUserEventsCallable;
   private final OperationCallable<
           PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
@@ -125,6 +120,11 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
   private final UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable;
   private final OperationCallable<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationCallable;
+  private final UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable;
+  private final UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable;
+  private final UnaryCallable<ListUserEventsRequest, ListUserEventsResponse> listUserEventsCallable;
+  private final UnaryCallable<ListUserEventsRequest, ListUserEventsPagedResponse>
+      listUserEventsPagedCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -168,6 +168,32 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsTransportSettings =
+        GrpcCallSettings.<PurgeUserEventsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeUserEventsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PurgeUserEventsRequest>() {
+                  @Override
+                  public Map<String, String> extract(PurgeUserEventsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ImportUserEventsRequest, Operation> importUserEventsTransportSettings =
+        GrpcCallSettings.<ImportUserEventsRequest, Operation>newBuilder()
+            .setMethodDescriptor(importUserEventsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ImportUserEventsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ImportUserEventsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<WriteUserEventRequest, UserEvent> writeUserEventTransportSettings =
         GrpcCallSettings.<WriteUserEventRequest, UserEvent>newBuilder()
             .setMethodDescriptor(writeUserEventMethodDescriptor)
@@ -208,45 +234,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsTransportSettings =
-        GrpcCallSettings.<PurgeUserEventsRequest, Operation>newBuilder()
-            .setMethodDescriptor(purgeUserEventsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<PurgeUserEventsRequest>() {
-                  @Override
-                  public Map<String, String> extract(PurgeUserEventsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<ImportUserEventsRequest, Operation> importUserEventsTransportSettings =
-        GrpcCallSettings.<ImportUserEventsRequest, Operation>newBuilder()
-            .setMethodDescriptor(importUserEventsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<ImportUserEventsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ImportUserEventsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
 
-    this.writeUserEventCallable =
-        callableFactory.createUnaryCallable(
-            writeUserEventTransportSettings, settings.writeUserEventSettings(), clientContext);
-    this.collectUserEventCallable =
-        callableFactory.createUnaryCallable(
-            collectUserEventTransportSettings, settings.collectUserEventSettings(), clientContext);
-    this.listUserEventsCallable =
-        callableFactory.createUnaryCallable(
-            listUserEventsTransportSettings, settings.listUserEventsSettings(), clientContext);
-    this.listUserEventsPagedCallable =
-        callableFactory.createPagedCallable(
-            listUserEventsTransportSettings, settings.listUserEventsSettings(), clientContext);
     this.purgeUserEventsCallable =
         callableFactory.createUnaryCallable(
             purgeUserEventsTransportSettings, settings.purgeUserEventsSettings(), clientContext);
@@ -265,6 +253,18 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
             settings.importUserEventsOperationSettings(),
             clientContext,
             this.operationsStub);
+    this.writeUserEventCallable =
+        callableFactory.createUnaryCallable(
+            writeUserEventTransportSettings, settings.writeUserEventSettings(), clientContext);
+    this.collectUserEventCallable =
+        callableFactory.createUnaryCallable(
+            collectUserEventTransportSettings, settings.collectUserEventSettings(), clientContext);
+    this.listUserEventsCallable =
+        callableFactory.createUnaryCallable(
+            listUserEventsTransportSettings, settings.listUserEventsSettings(), clientContext);
+    this.listUserEventsPagedCallable =
+        callableFactory.createPagedCallable(
+            listUserEventsTransportSettings, settings.listUserEventsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -272,23 +272,6 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  public UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable() {
-    return writeUserEventCallable;
-  }
-
-  public UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable() {
-    return collectUserEventCallable;
-  }
-
-  public UnaryCallable<ListUserEventsRequest, ListUserEventsPagedResponse>
-      listUserEventsPagedCallable() {
-    return listUserEventsPagedCallable;
-  }
-
-  public UnaryCallable<ListUserEventsRequest, ListUserEventsResponse> listUserEventsCallable() {
-    return listUserEventsCallable;
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
@@ -309,6 +292,23 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
 
   public UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable() {
     return importUserEventsCallable;
+  }
+
+  public UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable() {
+    return writeUserEventCallable;
+  }
+
+  public UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable() {
+    return collectUserEventCallable;
+  }
+
+  public UnaryCallable<ListUserEventsRequest, ListUserEventsPagedResponse>
+      listUserEventsPagedCallable() {
+    return listUserEventsPagedCallable;
+  }
+
+  public UnaryCallable<ListUserEventsRequest, ListUserEventsResponse> listUserEventsCallable() {
+    return listUserEventsCallable;
   }
 
   @Override

@@ -52,23 +52,6 @@ public abstract class UserEventServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable() {
-    throw new UnsupportedOperationException("Not implemented: writeUserEventCallable()");
-  }
-
-  public UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable() {
-    throw new UnsupportedOperationException("Not implemented: collectUserEventCallable()");
-  }
-
-  public UnaryCallable<ListUserEventsRequest, ListUserEventsPagedResponse>
-      listUserEventsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listUserEventsPagedCallable()");
-  }
-
-  public UnaryCallable<ListUserEventsRequest, ListUserEventsResponse> listUserEventsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listUserEventsCallable()");
-  }
-
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
       purgeUserEventsOperationCallable() {
@@ -87,6 +70,23 @@ public abstract class UserEventServiceStub implements BackgroundResource {
 
   public UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable() {
     throw new UnsupportedOperationException("Not implemented: importUserEventsCallable()");
+  }
+
+  public UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: writeUserEventCallable()");
+  }
+
+  public UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: collectUserEventCallable()");
+  }
+
+  public UnaryCallable<ListUserEventsRequest, ListUserEventsPagedResponse>
+      listUserEventsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUserEventsPagedCallable()");
+  }
+
+  public UnaryCallable<ListUserEventsRequest, ListUserEventsResponse> listUserEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUserEventsCallable()");
   }
 
   @Override

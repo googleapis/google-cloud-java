@@ -145,7 +145,9 @@ public final class CreatePredictionApiKeyRegistrationRequest
    * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -168,7 +170,9 @@ public final class CreatePredictionApiKeyRegistrationRequest
    * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -195,7 +199,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+   * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the predictionApiKeyRegistration field is set.
@@ -211,7 +215,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+   * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The predictionApiKeyRegistration.
@@ -231,7 +235,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+   * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistrationOrBuilder
@@ -643,7 +647,9 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -666,7 +672,9 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -689,7 +697,9 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -711,7 +721,9 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -729,7 +741,9 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -760,7 +774,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the predictionApiKeyRegistration field is set.
@@ -776,7 +790,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The predictionApiKeyRegistration.
@@ -800,7 +814,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setPredictionApiKeyRegistration(
@@ -825,7 +839,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setPredictionApiKeyRegistration(
@@ -848,7 +862,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergePredictionApiKeyRegistration(
@@ -878,7 +892,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearPredictionApiKeyRegistration() {
@@ -900,7 +914,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration.Builder
@@ -917,7 +931,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistrationOrBuilder
@@ -939,7 +953,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+     * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

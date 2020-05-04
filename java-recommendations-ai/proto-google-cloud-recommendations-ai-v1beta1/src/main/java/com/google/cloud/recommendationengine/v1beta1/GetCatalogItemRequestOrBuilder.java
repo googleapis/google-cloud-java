@@ -31,7 +31,9 @@ public interface GetCatalogItemRequestOrBuilder
    * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -44,7 +46,9 @@ public interface GetCatalogItemRequestOrBuilder
    * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

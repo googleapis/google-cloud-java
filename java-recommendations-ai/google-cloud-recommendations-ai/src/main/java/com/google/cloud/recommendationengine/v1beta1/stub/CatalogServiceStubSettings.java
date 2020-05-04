@@ -80,16 +80,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createCatalogItem to 30 seconds:
+ * <p>For example, to set the total timeout of deleteCatalogItem to 30 seconds:
  *
  * <pre>
  * <code>
  * CatalogServiceStubSettings.Builder catalogServiceSettingsBuilder =
  *     CatalogServiceStubSettings.newBuilder();
  * catalogServiceSettingsBuilder
- *     .createCatalogItemSettings()
+ *     .deleteCatalogItemSettings()
  *     .setRetrySettings(
- *         catalogServiceSettingsBuilder.createCatalogItemSettings().getRetrySettings().toBuilder()
+ *         catalogServiceSettingsBuilder.deleteCatalogItemSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CatalogServiceStubSettings catalogServiceSettings = catalogServiceSettingsBuilder.build();
@@ -103,17 +103,35 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
+  private final UnaryCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings;
+  private final UnaryCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsSettings;
+  private final OperationCallSettings<
+          ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
+      importCatalogItemsOperationSettings;
   private final UnaryCallSettings<CreateCatalogItemRequest, CatalogItem> createCatalogItemSettings;
   private final UnaryCallSettings<GetCatalogItemRequest, CatalogItem> getCatalogItemSettings;
   private final PagedCallSettings<
           ListCatalogItemsRequest, ListCatalogItemsResponse, ListCatalogItemsPagedResponse>
       listCatalogItemsSettings;
   private final UnaryCallSettings<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemSettings;
-  private final UnaryCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings;
-  private final UnaryCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsSettings;
-  private final OperationCallSettings<
+
+  /** Returns the object with the settings used for calls to deleteCatalogItem. */
+  public UnaryCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings() {
+    return deleteCatalogItemSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importCatalogItems. */
+  public UnaryCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsSettings() {
+    return importCatalogItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importCatalogItems. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<
           ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
-      importCatalogItemsOperationSettings;
+      importCatalogItemsOperationSettings() {
+    return importCatalogItemsOperationSettings;
+  }
 
   /** Returns the object with the settings used for calls to createCatalogItem. */
   public UnaryCallSettings<CreateCatalogItemRequest, CatalogItem> createCatalogItemSettings() {
@@ -135,24 +153,6 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
   /** Returns the object with the settings used for calls to updateCatalogItem. */
   public UnaryCallSettings<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemSettings() {
     return updateCatalogItemSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteCatalogItem. */
-  public UnaryCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings() {
-    return deleteCatalogItemSettings;
-  }
-
-  /** Returns the object with the settings used for calls to importCatalogItems. */
-  public UnaryCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsSettings() {
-    return importCatalogItemsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to importCatalogItems. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
-      importCatalogItemsOperationSettings() {
-    return importCatalogItemsOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -224,14 +224,14 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
   protected CatalogServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    createCatalogItemSettings = settingsBuilder.createCatalogItemSettings().build();
-    getCatalogItemSettings = settingsBuilder.getCatalogItemSettings().build();
-    listCatalogItemsSettings = settingsBuilder.listCatalogItemsSettings().build();
-    updateCatalogItemSettings = settingsBuilder.updateCatalogItemSettings().build();
     deleteCatalogItemSettings = settingsBuilder.deleteCatalogItemSettings().build();
     importCatalogItemsSettings = settingsBuilder.importCatalogItemsSettings().build();
     importCatalogItemsOperationSettings =
         settingsBuilder.importCatalogItemsOperationSettings().build();
+    createCatalogItemSettings = settingsBuilder.createCatalogItemSettings().build();
+    getCatalogItemSettings = settingsBuilder.getCatalogItemSettings().build();
+    listCatalogItemsSettings = settingsBuilder.listCatalogItemsSettings().build();
+    updateCatalogItemSettings = settingsBuilder.updateCatalogItemSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -297,6 +297,13 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
   public static class Builder extends StubSettings.Builder<CatalogServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteCatalogItemRequest, Empty>
+        deleteCatalogItemSettings;
+    private final UnaryCallSettings.Builder<ImportCatalogItemsRequest, Operation>
+        importCatalogItemsSettings;
+    private final OperationCallSettings.Builder<
+            ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
+        importCatalogItemsOperationSettings;
     private final UnaryCallSettings.Builder<CreateCatalogItemRequest, CatalogItem>
         createCatalogItemSettings;
     private final UnaryCallSettings.Builder<GetCatalogItemRequest, CatalogItem>
@@ -306,13 +313,6 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
         listCatalogItemsSettings;
     private final UnaryCallSettings.Builder<UpdateCatalogItemRequest, CatalogItem>
         updateCatalogItemSettings;
-    private final UnaryCallSettings.Builder<DeleteCatalogItemRequest, Empty>
-        deleteCatalogItemSettings;
-    private final UnaryCallSettings.Builder<ImportCatalogItemsRequest, Operation>
-        importCatalogItemsSettings;
-    private final OperationCallSettings.Builder<
-            ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
-        importCatalogItemsOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -355,6 +355,12 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteCatalogItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      importCatalogItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      importCatalogItemsOperationSettings = OperationCallSettings.newBuilder();
+
       createCatalogItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getCatalogItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -363,20 +369,14 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
 
       updateCatalogItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteCatalogItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      importCatalogItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      importCatalogItemsOperationSettings = OperationCallSettings.newBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteCatalogItemSettings,
+              importCatalogItemsSettings,
               createCatalogItemSettings,
               getCatalogItemSettings,
               listCatalogItemsSettings,
-              updateCatalogItemSettings,
-              deleteCatalogItemSettings,
-              importCatalogItemsSettings);
+              updateCatalogItemSettings);
 
       initDefaults(this);
     }
@@ -391,6 +391,16 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .deleteCatalogItemSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .importCatalogItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .createCatalogItemSettings()
@@ -409,16 +419,6 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
 
       builder
           .updateCatalogItemSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteCatalogItemSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .importCatalogItemsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
@@ -452,23 +452,23 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     protected Builder(CatalogServiceStubSettings settings) {
       super(settings);
 
-      createCatalogItemSettings = settings.createCatalogItemSettings.toBuilder();
-      getCatalogItemSettings = settings.getCatalogItemSettings.toBuilder();
-      listCatalogItemsSettings = settings.listCatalogItemsSettings.toBuilder();
-      updateCatalogItemSettings = settings.updateCatalogItemSettings.toBuilder();
       deleteCatalogItemSettings = settings.deleteCatalogItemSettings.toBuilder();
       importCatalogItemsSettings = settings.importCatalogItemsSettings.toBuilder();
       importCatalogItemsOperationSettings =
           settings.importCatalogItemsOperationSettings.toBuilder();
+      createCatalogItemSettings = settings.createCatalogItemSettings.toBuilder();
+      getCatalogItemSettings = settings.getCatalogItemSettings.toBuilder();
+      listCatalogItemsSettings = settings.listCatalogItemsSettings.toBuilder();
+      updateCatalogItemSettings = settings.updateCatalogItemSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteCatalogItemSettings,
+              importCatalogItemsSettings,
               createCatalogItemSettings,
               getCatalogItemSettings,
               listCatalogItemsSettings,
-              updateCatalogItemSettings,
-              deleteCatalogItemSettings,
-              importCatalogItemsSettings);
+              updateCatalogItemSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -485,6 +485,26 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCatalogItem. */
+    public UnaryCallSettings.Builder<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings() {
+      return deleteCatalogItemSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importCatalogItems. */
+    public UnaryCallSettings.Builder<ImportCatalogItemsRequest, Operation>
+        importCatalogItemsSettings() {
+      return importCatalogItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importCatalogItems. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
+        importCatalogItemsOperationSettings() {
+      return importCatalogItemsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createCatalogItem. */
@@ -509,26 +529,6 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     public UnaryCallSettings.Builder<UpdateCatalogItemRequest, CatalogItem>
         updateCatalogItemSettings() {
       return updateCatalogItemSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteCatalogItem. */
-    public UnaryCallSettings.Builder<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings() {
-      return deleteCatalogItemSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to importCatalogItems. */
-    public UnaryCallSettings.Builder<ImportCatalogItemsRequest, Operation>
-        importCatalogItemsSettings() {
-      return importCatalogItemsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to importCatalogItems. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
-        importCatalogItemsOperationSettings() {
-      return importCatalogItemsOperationSettings;
     }
 
     @Override

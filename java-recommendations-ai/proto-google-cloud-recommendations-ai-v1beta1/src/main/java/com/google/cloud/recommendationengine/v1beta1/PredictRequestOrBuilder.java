@@ -52,7 +52,9 @@ public interface PredictRequestOrBuilder
    * https://console.cloud.google.com/recommendation/datafeeds/default_catalog/dashboard
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -86,7 +88,9 @@ public interface PredictRequestOrBuilder
    * https://console.cloud.google.com/recommendation/datafeeds/default_catalog/dashboard
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

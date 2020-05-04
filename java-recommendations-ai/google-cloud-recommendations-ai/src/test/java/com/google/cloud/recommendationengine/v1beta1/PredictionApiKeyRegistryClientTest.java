@@ -91,20 +91,69 @@ public class PredictionApiKeyRegistryClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deletePredictionApiKeyRegistrationTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockPredictionApiKeyRegistry.addResponse(expectedResponse);
+
+    PredictionApiKeyRegistrationName name =
+        PredictionApiKeyRegistrationName.of(
+            "[PROJECT]",
+            "[LOCATION]",
+            "[CATALOG]",
+            "[EVENT_STORE]",
+            "[PREDICTION_API_KEY_REGISTRATION]");
+
+    client.deletePredictionApiKeyRegistration(name);
+
+    List<AbstractMessage> actualRequests = mockPredictionApiKeyRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeletePredictionApiKeyRegistrationRequest actualRequest =
+        (DeletePredictionApiKeyRegistrationRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, PredictionApiKeyRegistrationName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deletePredictionApiKeyRegistrationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockPredictionApiKeyRegistry.addException(exception);
+
+    try {
+      PredictionApiKeyRegistrationName name =
+          PredictionApiKeyRegistrationName.of(
+              "[PROJECT]",
+              "[LOCATION]",
+              "[CATALOG]",
+              "[EVENT_STORE]",
+              "[PREDICTION_API_KEY_REGISTRATION]");
+
+      client.deletePredictionApiKeyRegistration(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createPredictionApiKeyRegistrationTest() {
     String apiKey = "apiKey-800085318";
     PredictionApiKeyRegistration expectedResponse =
         PredictionApiKeyRegistration.newBuilder().setApiKey(apiKey).build();
     mockPredictionApiKeyRegistry.addResponse(expectedResponse);
 
-    String formattedParent =
-        PredictionApiKeyRegistryClient.formatEventStoreName(
-            "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+    EventStoreName parent =
+        EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
     PredictionApiKeyRegistration predictionApiKeyRegistration =
         PredictionApiKeyRegistration.newBuilder().build();
 
     PredictionApiKeyRegistration actualResponse =
-        client.createPredictionApiKeyRegistration(formattedParent, predictionApiKeyRegistration);
+        client.createPredictionApiKeyRegistration(parent, predictionApiKeyRegistration);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockPredictionApiKeyRegistry.getRequests();
@@ -112,7 +161,7 @@ public class PredictionApiKeyRegistryClientTest {
     CreatePredictionApiKeyRegistrationRequest actualRequest =
         (CreatePredictionApiKeyRegistrationRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, EventStoreName.parse(actualRequest.getParent()));
     Assert.assertEquals(
         predictionApiKeyRegistration, actualRequest.getPredictionApiKeyRegistration());
     Assert.assertTrue(
@@ -128,13 +177,12 @@ public class PredictionApiKeyRegistryClientTest {
     mockPredictionApiKeyRegistry.addException(exception);
 
     try {
-      String formattedParent =
-          PredictionApiKeyRegistryClient.formatEventStoreName(
-              "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+      EventStoreName parent =
+          EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
       PredictionApiKeyRegistration predictionApiKeyRegistration =
           PredictionApiKeyRegistration.newBuilder().build();
 
-      client.createPredictionApiKeyRegistration(formattedParent, predictionApiKeyRegistration);
+      client.createPredictionApiKeyRegistration(parent, predictionApiKeyRegistration);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -156,12 +204,11 @@ public class PredictionApiKeyRegistryClientTest {
             .build();
     mockPredictionApiKeyRegistry.addResponse(expectedResponse);
 
-    String formattedParent =
-        PredictionApiKeyRegistryClient.formatEventStoreName(
-            "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+    EventStoreName parent =
+        EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
 
     ListPredictionApiKeyRegistrationsPagedResponse pagedListResponse =
-        client.listPredictionApiKeyRegistrations(formattedParent);
+        client.listPredictionApiKeyRegistrations(parent);
 
     List<PredictionApiKeyRegistration> resources =
         Lists.newArrayList(pagedListResponse.iterateAll());
@@ -174,7 +221,7 @@ public class PredictionApiKeyRegistryClientTest {
     ListPredictionApiKeyRegistrationsRequest actualRequest =
         (ListPredictionApiKeyRegistrationsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, EventStoreName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -188,61 +235,10 @@ public class PredictionApiKeyRegistryClientTest {
     mockPredictionApiKeyRegistry.addException(exception);
 
     try {
-      String formattedParent =
-          PredictionApiKeyRegistryClient.formatEventStoreName(
-              "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+      EventStoreName parent =
+          EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
 
-      client.listPredictionApiKeyRegistrations(formattedParent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deletePredictionApiKeyRegistrationTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockPredictionApiKeyRegistry.addResponse(expectedResponse);
-
-    String formattedName =
-        PredictionApiKeyRegistryClient.formatPredictionApiKeyRegistrationName(
-            "[PROJECT]",
-            "[LOCATION]",
-            "[CATALOG]",
-            "[EVENT_STORE]",
-            "[PREDICTION_API_KEY_REGISTRATION]");
-
-    client.deletePredictionApiKeyRegistration(formattedName);
-
-    List<AbstractMessage> actualRequests = mockPredictionApiKeyRegistry.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeletePredictionApiKeyRegistrationRequest actualRequest =
-        (DeletePredictionApiKeyRegistrationRequest) actualRequests.get(0);
-
-    Assert.assertEquals(formattedName, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deletePredictionApiKeyRegistrationExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockPredictionApiKeyRegistry.addException(exception);
-
-    try {
-      String formattedName =
-          PredictionApiKeyRegistryClient.formatPredictionApiKeyRegistrationName(
-              "[PROJECT]",
-              "[LOCATION]",
-              "[CATALOG]",
-              "[EVENT_STORE]",
-              "[PREDICTION_API_KEY_REGISTRATION]");
-
-      client.deletePredictionApiKeyRegistration(formattedName);
+      client.listPredictionApiKeyRegistrations(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

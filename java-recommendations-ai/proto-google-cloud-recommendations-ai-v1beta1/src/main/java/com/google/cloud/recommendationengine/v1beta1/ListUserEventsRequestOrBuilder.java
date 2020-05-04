@@ -31,7 +31,9 @@ public interface ListUserEventsRequestOrBuilder
    * "projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -44,7 +46,9 @@ public interface ListUserEventsRequestOrBuilder
    * "projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

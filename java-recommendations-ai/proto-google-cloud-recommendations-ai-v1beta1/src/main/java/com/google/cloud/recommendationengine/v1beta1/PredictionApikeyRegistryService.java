@@ -60,56 +60,64 @@ public final class PredictionApikeyRegistryService {
           + "ta1/prediction_apikey_registry_service.p"
           + "roto\022)google.cloud.recommendationengine."
           + "v1beta1\032\034google/api/annotations.proto\032\037g"
-          + "oogle/api/field_behavior.proto\032\033google/p"
-          + "rotobuf/empty.proto\032\027google/api/client.p"
-          + "roto\"/\n\034PredictionApiKeyRegistration\022\017\n\007"
-          + "api_key\030\001 \001(\t\"\262\001\n)CreatePredictionApiKey"
-          + "RegistrationRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002"
-          + "\022p\n\037prediction_api_key_registration\030\002 \001("
-          + "\0132G.google.cloud.recommendationengine.v1"
-          + "beta1.PredictionApiKeyRegistration\"p\n(Li"
-          + "stPredictionApiKeyRegistrationsRequest\022\023"
-          + "\n\006parent\030\001 \001(\tB\003\340A\002\022\026\n\tpage_size\030\002 \001(\005B\003"
-          + "\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"\267\001\n)ListPre"
-          + "dictionApiKeyRegistrationsResponse\022q\n pr"
-          + "ediction_api_key_registrations\030\001 \003(\0132G.g"
-          + "oogle.cloud.recommendationengine.v1beta1"
-          + ".PredictionApiKeyRegistration\022\027\n\017next_pa"
-          + "ge_token\030\002 \001(\t\">\n)DeletePredictionApiKey"
-          + "RegistrationRequest\022\021\n\004name\030\001 \001(\tB\003\340A\0022\335"
-          + "\007\n\030PredictionApiKeyRegistry\022\257\002\n\"CreatePr"
-          + "edictionApiKeyRegistration\022T.google.clou"
-          + "d.recommendationengine.v1beta1.CreatePre"
-          + "dictionApiKeyRegistrationRequest\032G.googl"
-          + "e.cloud.recommendationengine.v1beta1.Pre"
-          + "dictionApiKeyRegistration\"j\202\323\344\223\002d\"_/v1be"
-          + "ta1/{parent=projects/*/locations/*/catal"
-          + "ogs/*/eventStores/*}/predictionApiKeyReg"
-          + "istrations:\001*\022\267\002\n!ListPredictionApiKeyRe"
-          + "gistrations\022S.google.cloud.recommendatio"
-          + "nengine.v1beta1.ListPredictionApiKeyRegi"
-          + "strationsRequest\032T.google.cloud.recommen"
-          + "dationengine.v1beta1.ListPredictionApiKe"
-          + "yRegistrationsResponse\"g\202\323\344\223\002a\022_/v1beta1"
-          + "/{parent=projects/*/locations/*/catalogs"
-          + "/*/eventStores/*}/predictionApiKeyRegist"
-          + "rations\022\373\001\n\"DeletePredictionApiKeyRegist"
-          + "ration\022T.google.cloud.recommendationengi"
-          + "ne.v1beta1.DeletePredictionApiKeyRegistr"
-          + "ationRequest\032\026.google.protobuf.Empty\"g\202\323"
-          + "\344\223\002a*_/v1beta1/{name=projects/*/location"
-          + "s/*/catalogs/*/eventStores/*/predictionA"
-          + "piKeyRegistrations/*}\032W\312A#recommendation"
-          + "engine.googleapis.com\322A.https://www.goog"
-          + "leapis.com/auth/cloud-platformB\237\002\n-com.g"
-          + "oogle.cloud.recommendationengine.v1beta1"
-          + "P\001Z]google.golang.org/genproto/googleapi"
-          + "s/cloud/recommendationengine/v1beta1;rec"
-          + "ommendationengine\242\002\005RECAI\252\002)Google.Cloud"
-          + ".RecommendationEngine.V1Beta1\312\002)Google\\C"
-          + "loud\\RecommendationEngine\\V1beta1\352\002,Goog"
-          + "le::Cloud::RecommendationEngine::V1beta1"
-          + "b\006proto3"
+          + "oogle/api/field_behavior.proto\032\031google/a"
+          + "pi/resource.proto\032\033google/protobuf/empty"
+          + ".proto\032\027google/api/client.proto\032Ngoogle/"
+          + "cloud/recommendationengine/v1beta1/recom"
+          + "mendationengine_resources.proto\"/\n\034Predi"
+          + "ctionApiKeyRegistration\022\017\n\007api_key\030\001 \001(\t"
+          + "\"\352\001\n)CreatePredictionApiKeyRegistrationR"
+          + "equest\022F\n\006parent\030\001 \001(\tB6\340A\002\372A0\n.recommen"
+          + "dationengine.googleapis.com/EventStore\022u"
+          + "\n\037prediction_api_key_registration\030\002 \001(\0132"
+          + "G.google.cloud.recommendationengine.v1be"
+          + "ta1.PredictionApiKeyRegistrationB\003\340A\002\"\243\001"
+          + "\n(ListPredictionApiKeyRegistrationsReque"
+          + "st\022F\n\006parent\030\001 \001(\tB6\340A\002\372A0\n.recommendati"
+          + "onengine.googleapis.com/EventStore\022\026\n\tpa"
+          + "ge_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003"
+          + "\340A\001\"\267\001\n)ListPredictionApiKeyRegistration"
+          + "sResponse\022q\n prediction_api_key_registra"
+          + "tions\030\001 \003(\0132G.google.cloud.recommendatio"
+          + "nengine.v1beta1.PredictionApiKeyRegistra"
+          + "tion\022\027\n\017next_page_token\030\002 \001(\t\"\203\001\n)Delete"
+          + "PredictionApiKeyRegistrationRequest\022V\n\004n"
+          + "ame\030\001 \001(\tBH\340A\002\372AB\n@recommendationengine."
+          + "googleapis.com/PredictionApiKeyRegistrat"
+          + "ion2\227\010\n\030PredictionApiKeyRegistry\022\331\002\n\"Cre"
+          + "atePredictionApiKeyRegistration\022T.google"
+          + ".cloud.recommendationengine.v1beta1.Crea"
+          + "tePredictionApiKeyRegistrationRequest\032G."
+          + "google.cloud.recommendationengine.v1beta"
+          + "1.PredictionApiKeyRegistration\"\223\001\202\323\344\223\002d\""
+          + "_/v1beta1/{parent=projects/*/locations/*"
+          + "/catalogs/*/eventStores/*}/predictionApi"
+          + "KeyRegistrations:\001*\332A&parent,prediction_"
+          + "api_key_registration\022\300\002\n!ListPredictionA"
+          + "piKeyRegistrations\022S.google.cloud.recomm"
+          + "endationengine.v1beta1.ListPredictionApi"
+          + "KeyRegistrationsRequest\032T.google.cloud.r"
+          + "ecommendationengine.v1beta1.ListPredicti"
+          + "onApiKeyRegistrationsResponse\"p\202\323\344\223\002a\022_/"
+          + "v1beta1/{parent=projects/*/locations/*/c"
+          + "atalogs/*/eventStores/*}/predictionApiKe"
+          + "yRegistrations\332A\006parent\022\202\002\n\"DeletePredic"
+          + "tionApiKeyRegistration\022T.google.cloud.re"
+          + "commendationengine.v1beta1.DeletePredict"
+          + "ionApiKeyRegistrationRequest\032\026.google.pr"
+          + "otobuf.Empty\"n\202\323\344\223\002a*_/v1beta1/{name=pro"
+          + "jects/*/locations/*/catalogs/*/eventStor"
+          + "es/*/predictionApiKeyRegistrations/*}\332A\004"
+          + "name\032W\312A#recommendationengine.googleapis"
+          + ".com\322A.https://www.googleapis.com/auth/c"
+          + "loud-platformB\237\002\n-com.google.cloud.recom"
+          + "mendationengine.v1beta1P\001Z]google.golang"
+          + ".org/genproto/googleapis/cloud/recommend"
+          + "ationengine/v1beta1;recommendationengine"
+          + "\242\002\005RECAI\252\002)Google.Cloud.RecommendationEn"
+          + "gine.V1Beta1\312\002)Google\\Cloud\\Recommendati"
+          + "onEngine\\V1beta1\352\002,Google::Cloud::Recomm"
+          + "endationEngine::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -117,8 +125,11 @@ public final class PredictionApikeyRegistryService {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
+              google.cloud.recommendationengine.v1beta1.RecommendationengineResources
+                  .getDescriptor(),
             });
     internal_static_google_cloud_recommendationengine_v1beta1_PredictionApiKeyRegistration_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -165,13 +176,17 @@ public final class PredictionApikeyRegistryService {
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
+    google.cloud.recommendationengine.v1beta1.RecommendationengineResources.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

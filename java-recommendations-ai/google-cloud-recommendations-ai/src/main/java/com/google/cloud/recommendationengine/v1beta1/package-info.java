@@ -28,9 +28,8 @@
  * <pre>
  * <code>
  * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
- *   String formattedParent = CatalogServiceClient.formatCatalogName("[PROJECT]", "[LOCATION]", "[CATALOG]");
- *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
- *   CatalogItem response = catalogServiceClient.createCatalogItem(formattedParent, catalogItem);
+ *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
+ *   catalogServiceClient.deleteCatalogItem(name);
  * }
  * </code>
  * </pre>
@@ -47,9 +46,8 @@
  * <pre>
  * <code>
  * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
- *   String formattedParent = PredictionApiKeyRegistryClient.formatEventStoreName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
- *   PredictionApiKeyRegistration predictionApiKeyRegistration = PredictionApiKeyRegistration.newBuilder().build();
- *   PredictionApiKeyRegistration response = predictionApiKeyRegistryClient.createPredictionApiKeyRegistration(formattedParent, predictionApiKeyRegistration);
+ *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
+ *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(name);
  * }
  * </code>
  * </pre>
@@ -63,13 +61,9 @@
  * <pre>
  * <code>
  * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
- *   String formattedName = PredictionServiceClient.formatPlacementName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
+ *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
  *   UserEvent userEvent = UserEvent.newBuilder().build();
- *   PredictRequest request = PredictRequest.newBuilder()
- *     .setName(formattedName)
- *     .setUserEvent(userEvent)
- *     .build();
- *   PredictPagedResponse response = predictionServiceClient.predictPagedCallable(request);
+ *   PredictPagedResponse response = predictionServiceClient.predict(name, userEvent);
  * }
  * </code>
  * </pre>
@@ -83,9 +77,9 @@
  * <pre>
  * <code>
  * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
- *   String formattedParent = UserEventServiceClient.formatEventStoreName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+ *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
  *   UserEvent userEvent = UserEvent.newBuilder().build();
- *   UserEvent response = userEventServiceClient.writeUserEvent(formattedParent, userEvent);
+ *   UserEvent response = userEventServiceClient.writeUserEvent(parent, userEvent);
  * }
  * </code>
  * </pre>

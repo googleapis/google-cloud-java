@@ -71,23 +71,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class UserEventServiceSettings extends ClientSettings<UserEventServiceSettings> {
-  /** Returns the object with the settings used for calls to writeUserEvent. */
-  public UnaryCallSettings<WriteUserEventRequest, UserEvent> writeUserEventSettings() {
-    return ((UserEventServiceStubSettings) getStubSettings()).writeUserEventSettings();
-  }
-
-  /** Returns the object with the settings used for calls to collectUserEvent. */
-  public UnaryCallSettings<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
-    return ((UserEventServiceStubSettings) getStubSettings()).collectUserEventSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listUserEvents. */
-  public PagedCallSettings<
-          ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
-      listUserEventsSettings() {
-    return ((UserEventServiceStubSettings) getStubSettings()).listUserEventsSettings();
-  }
-
   /** Returns the object with the settings used for calls to purgeUserEvents. */
   public UnaryCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsSettings() {
     return ((UserEventServiceStubSettings) getStubSettings()).purgeUserEventsSettings();
@@ -113,6 +96,23 @@ public class UserEventServiceSettings extends ClientSettings<UserEventServiceSet
   public OperationCallSettings<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationSettings() {
     return ((UserEventServiceStubSettings) getStubSettings()).importUserEventsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to writeUserEvent. */
+  public UnaryCallSettings<WriteUserEventRequest, UserEvent> writeUserEventSettings() {
+    return ((UserEventServiceStubSettings) getStubSettings()).writeUserEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to collectUserEvent. */
+  public UnaryCallSettings<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
+    return ((UserEventServiceStubSettings) getStubSettings()).collectUserEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUserEvents. */
+  public PagedCallSettings<
+          ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
+      listUserEventsSettings() {
+    return ((UserEventServiceStubSettings) getStubSettings()).listUserEventsSettings();
   }
 
   public static final UserEventServiceSettings create(UserEventServiceStubSettings stub)
@@ -212,23 +212,6 @@ public class UserEventServiceSettings extends ClientSettings<UserEventServiceSet
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to writeUserEvent. */
-    public UnaryCallSettings.Builder<WriteUserEventRequest, UserEvent> writeUserEventSettings() {
-      return getStubSettingsBuilder().writeUserEventSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to collectUserEvent. */
-    public UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
-      return getStubSettingsBuilder().collectUserEventSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listUserEvents. */
-    public PagedCallSettings.Builder<
-            ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
-        listUserEventsSettings() {
-      return getStubSettingsBuilder().listUserEventsSettings();
-    }
-
     /** Returns the builder for the settings used for calls to purgeUserEvents. */
     public UnaryCallSettings.Builder<PurgeUserEventsRequest, Operation> purgeUserEventsSettings() {
       return getStubSettingsBuilder().purgeUserEventsSettings();
@@ -256,6 +239,23 @@ public class UserEventServiceSettings extends ClientSettings<UserEventServiceSet
             ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
         importUserEventsOperationSettings() {
       return getStubSettingsBuilder().importUserEventsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to writeUserEvent. */
+    public UnaryCallSettings.Builder<WriteUserEventRequest, UserEvent> writeUserEventSettings() {
+      return getStubSettingsBuilder().writeUserEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to collectUserEvent. */
+    public UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
+      return getStubSettingsBuilder().collectUserEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUserEvents. */
+    public PagedCallSettings.Builder<
+            ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
+        listUserEventsSettings() {
+      return getStubSettingsBuilder().listUserEventsSettings();
     }
 
     @Override

@@ -38,6 +38,12 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class PredictionApiKeyRegistryStub implements BackgroundResource {
 
+  public UnaryCallable<DeletePredictionApiKeyRegistrationRequest, Empty>
+      deletePredictionApiKeyRegistrationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deletePredictionApiKeyRegistrationCallable()");
+  }
+
   public UnaryCallable<CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
       createPredictionApiKeyRegistrationCallable() {
     throw new UnsupportedOperationException(
@@ -56,12 +62,6 @@ public abstract class PredictionApiKeyRegistryStub implements BackgroundResource
       listPredictionApiKeyRegistrationsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listPredictionApiKeyRegistrationsCallable()");
-  }
-
-  public UnaryCallable<DeletePredictionApiKeyRegistrationRequest, Empty>
-      deletePredictionApiKeyRegistrationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: deletePredictionApiKeyRegistrationCallable()");
   }
 
   @Override

@@ -25,7 +25,6 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.recommendationengine.v1beta1.stub.PredictionServiceStub;
 import com.google.cloud.recommendationengine.v1beta1.stub.PredictionServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -44,15 +43,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
- *   String formattedName = PredictionServiceClient.formatPlacementName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
+ *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
  *   UserEvent userEvent = UserEvent.newBuilder().build();
- *   PredictRequest request = PredictRequest.newBuilder()
- *     .setName(formattedName)
- *     .setUserEvent(userEvent)
- *     .build();
- *   ApiFuture&lt;PredictPagedResponse&gt; future = predictionServiceClient.predictPagedCallable().futureCall(request);
- *   // Do something
- *   for (PredictResponse.PredictionResult element : future.get().iterateAll()) {
+ *   for (PredictResponse.PredictionResult element : predictionServiceClient.predict(name, userEvent).iterateAll()) {
  *     // doThingsWith(element);
  *   }
  * }
@@ -116,77 +109,6 @@ public class PredictionServiceClient implements BackgroundResource {
   private final PredictionServiceSettings settings;
   private final PredictionServiceStub stub;
 
-  private static final PathTemplate PLACEMENT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/catalogs/{catalog}/eventStores/{event_store}/placements/{placement}");
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a placement resource.
-   *
-   * @deprecated Use the {@link PlacementName} class instead.
-   */
-  @Deprecated
-  public static final String formatPlacementName(
-      String project, String location, String catalog, String eventStore, String placement) {
-    return PLACEMENT_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location,
-        "catalog", catalog,
-        "event_store", eventStore,
-        "placement", placement);
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a placement resource.
-   *
-   * @deprecated Use the {@link PlacementName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromPlacementName(String placementName) {
-    return PLACEMENT_PATH_TEMPLATE.parse(placementName).get("project");
-  }
-
-  /**
-   * Parses the location from the given fully-qualified path which represents a placement resource.
-   *
-   * @deprecated Use the {@link PlacementName} class instead.
-   */
-  @Deprecated
-  public static final String parseLocationFromPlacementName(String placementName) {
-    return PLACEMENT_PATH_TEMPLATE.parse(placementName).get("location");
-  }
-
-  /**
-   * Parses the catalog from the given fully-qualified path which represents a placement resource.
-   *
-   * @deprecated Use the {@link PlacementName} class instead.
-   */
-  @Deprecated
-  public static final String parseCatalogFromPlacementName(String placementName) {
-    return PLACEMENT_PATH_TEMPLATE.parse(placementName).get("catalog");
-  }
-
-  /**
-   * Parses the event_store from the given fully-qualified path which represents a placement
-   * resource.
-   *
-   * @deprecated Use the {@link PlacementName} class instead.
-   */
-  @Deprecated
-  public static final String parseEventStoreFromPlacementName(String placementName) {
-    return PLACEMENT_PATH_TEMPLATE.parse(placementName).get("event_store");
-  }
-
-  /**
-   * Parses the placement from the given fully-qualified path which represents a placement resource.
-   *
-   * @deprecated Use the {@link PlacementName} class instead.
-   */
-  @Deprecated
-  public static final String parsePlacementFromPlacementName(String placementName) {
-    return PLACEMENT_PATH_TEMPLATE.parse(placementName).get("placement");
-  }
-
   /** Constructs an instance of PredictionServiceClient with default settings. */
   public static final PredictionServiceClient create() throws IOException {
     return create(PredictionServiceSettings.newBuilder().build());
@@ -246,10 +168,115 @@ public class PredictionServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   String formattedName = PredictionServiceClient.formatPlacementName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
+   *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
+   *   UserEvent userEvent = UserEvent.newBuilder().build();
+   *   for (PredictResponse.PredictionResult element : predictionServiceClient.predict(name, userEvent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Full resource name of the format:
+   *     {name=projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/&#42;}
+   *     The id of the recommendation engine placement. This id is used to identify the set of
+   *     models that will be used to make the prediction.
+   *     <p>We currently support three placements with the following IDs by default:
+   *     <p>&#42; `shopping_cart`: Predicts items frequently bought together with one or more
+   *     catalog items in the same shopping session. Commonly displayed after `add-to-cart` events,
+   *     on product detail pages, or on the shopping cart page.
+   *     <p>&#42; `home_page`: Predicts the next product that a user will most likely engage with or
+   *     purchase based on the shopping or viewing history of the specified `userId` or `visitorId`.
+   *     For example - Recommendations for you.
+   *     <p>&#42; `product_detail`: Predicts the next product that a user will most likely engage
+   *     with or purchase. The prediction is based on the shopping or viewing history of the
+   *     specified `userId` or `visitorId` and its relevance to a specified `CatalogItem`. Typically
+   *     used on product detail pages. For example - More items like this.
+   *     <p>&#42; `recently_viewed_default`: Returns up to 75 items recently viewed by the specified
+   *     `userId` or `visitorId`, most recent ones first. Returns nothing if neither of them has
+   *     viewed any items yet. For example - Recently viewed.
+   *     <p>The full list of available placements can be seen at
+   *     https://console.cloud.google.com/recommendation/datafeeds/default_catalog/dashboard
+   * @param userEvent Required. Context about the user, what they are looking at and what action
+   *     they took to trigger the predict request. Note that this user event detail won't be
+   *     ingested to userEvent logs. Thus, a separate userEvent write request is required for event
+   *     logging.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PredictPagedResponse predict(PlacementName name, UserEvent userEvent) {
+    PredictRequest request =
+        PredictRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setUserEvent(userEvent)
+            .build();
+    return predict(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Makes a recommendation prediction. If using API Key based authentication, the API Key must be
+   * registered using the
+   * [PredictionApiKeyRegistry][google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistry]
+   * service. [Learn more](/recommendations-ai/docs/setting-up#register-key).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
+   *   UserEvent userEvent = UserEvent.newBuilder().build();
+   *   for (PredictResponse.PredictionResult element : predictionServiceClient.predict(name.toString(), userEvent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Full resource name of the format:
+   *     {name=projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/&#42;}
+   *     The id of the recommendation engine placement. This id is used to identify the set of
+   *     models that will be used to make the prediction.
+   *     <p>We currently support three placements with the following IDs by default:
+   *     <p>&#42; `shopping_cart`: Predicts items frequently bought together with one or more
+   *     catalog items in the same shopping session. Commonly displayed after `add-to-cart` events,
+   *     on product detail pages, or on the shopping cart page.
+   *     <p>&#42; `home_page`: Predicts the next product that a user will most likely engage with or
+   *     purchase based on the shopping or viewing history of the specified `userId` or `visitorId`.
+   *     For example - Recommendations for you.
+   *     <p>&#42; `product_detail`: Predicts the next product that a user will most likely engage
+   *     with or purchase. The prediction is based on the shopping or viewing history of the
+   *     specified `userId` or `visitorId` and its relevance to a specified `CatalogItem`. Typically
+   *     used on product detail pages. For example - More items like this.
+   *     <p>&#42; `recently_viewed_default`: Returns up to 75 items recently viewed by the specified
+   *     `userId` or `visitorId`, most recent ones first. Returns nothing if neither of them has
+   *     viewed any items yet. For example - Recently viewed.
+   *     <p>The full list of available placements can be seen at
+   *     https://console.cloud.google.com/recommendation/datafeeds/default_catalog/dashboard
+   * @param userEvent Required. Context about the user, what they are looking at and what action
+   *     they took to trigger the predict request. Note that this user event detail won't be
+   *     ingested to userEvent logs. Thus, a separate userEvent write request is required for event
+   *     logging.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PredictPagedResponse predict(String name, UserEvent userEvent) {
+    PredictRequest request =
+        PredictRequest.newBuilder().setName(name).setUserEvent(userEvent).build();
+    return predict(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Makes a recommendation prediction. If using API Key based authentication, the API Key must be
+   * registered using the
+   * [PredictionApiKeyRegistry][google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistry]
+   * service. [Learn more](/recommendations-ai/docs/setting-up#register-key).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
    *   UserEvent userEvent = UserEvent.newBuilder().build();
    *   PredictRequest request = PredictRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .setUserEvent(userEvent)
    *     .build();
    *   for (PredictResponse.PredictionResult element : predictionServiceClient.predict(request).iterateAll()) {
@@ -276,10 +303,10 @@ public class PredictionServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   String formattedName = PredictionServiceClient.formatPlacementName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
+   *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
    *   UserEvent userEvent = UserEvent.newBuilder().build();
    *   PredictRequest request = PredictRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .setUserEvent(userEvent)
    *     .build();
    *   ApiFuture&lt;PredictPagedResponse&gt; future = predictionServiceClient.predictPagedCallable().futureCall(request);
@@ -305,10 +332,10 @@ public class PredictionServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   String formattedName = PredictionServiceClient.formatPlacementName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
+   *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
    *   UserEvent userEvent = UserEvent.newBuilder().build();
    *   PredictRequest request = PredictRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .setUserEvent(userEvent)
    *     .build();
    *   while (true) {

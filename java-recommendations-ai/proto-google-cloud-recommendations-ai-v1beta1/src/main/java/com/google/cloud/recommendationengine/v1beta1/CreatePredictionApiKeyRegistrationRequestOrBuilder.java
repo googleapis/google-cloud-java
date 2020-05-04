@@ -31,7 +31,9 @@ public interface CreatePredictionApiKeyRegistrationRequestOrBuilder
    * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -44,7 +46,9 @@ public interface CreatePredictionApiKeyRegistrationRequestOrBuilder
    * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -58,7 +62,7 @@ public interface CreatePredictionApiKeyRegistrationRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+   * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the predictionApiKeyRegistration field is set.
@@ -72,7 +76,7 @@ public interface CreatePredictionApiKeyRegistrationRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+   * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The predictionApiKeyRegistration.
@@ -87,7 +91,7 @@ public interface CreatePredictionApiKeyRegistrationRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2;
+   * .google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistrationOrBuilder

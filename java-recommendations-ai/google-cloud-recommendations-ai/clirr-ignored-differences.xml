@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- TODO: remove after 0.2.0 is released -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommendationengine/v1beta1/CatalogServiceClient</className>
+    <method>java.lang.String format*Name(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommendationengine/v1beta1/CatalogServiceClient</className>
+    <method>java.lang.String parse*Name(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommendationengine/v1beta1/PredictionApiKeyRegistryClient</className>
+    <method>java.lang.String format*Name(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommendationengine/v1beta1/PredictionApiKeyRegistryClient</className>
+    <method>java.lang.String parse*Name(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommendationengine/v1beta1/PredictionServiceClient</className>
+    <method>java.lang.String format*Name(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommendationengine/v1beta1/PredictionServiceClient</className>
+    <method>java.lang.String parse*Name(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommendationengine/v1beta1/UserEventServiceClient</className>
+    <method>java.lang.String format*Name(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommendationengine/v1beta1/UserEventServiceClient</className>
+    <method>java.lang.String parse*Name(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/recommendationengine/v1beta1/CatalogServiceClient</className>
+    <method>com.google.cloud.recommendationengine.v1beta1.CatalogItem updateCatalogItem(java.lang.String, com.google.cloud.recommendationengine.v1beta1.CatalogItem)</method>
+  </difference>
+</differences>

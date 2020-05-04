@@ -96,161 +96,6 @@ public class UserEventServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void writeUserEventTest() {
-    String eventType = "eventType984376767";
-    UserEvent expectedResponse = UserEvent.newBuilder().setEventType(eventType).build();
-    mockUserEventService.addResponse(expectedResponse);
-
-    String formattedParent =
-        UserEventServiceClient.formatEventStoreName(
-            "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-    UserEvent userEvent = UserEvent.newBuilder().build();
-
-    UserEvent actualResponse = client.writeUserEvent(formattedParent, userEvent);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockUserEventService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    WriteUserEventRequest actualRequest = (WriteUserEventRequest) actualRequests.get(0);
-
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
-    Assert.assertEquals(userEvent, actualRequest.getUserEvent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void writeUserEventExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockUserEventService.addException(exception);
-
-    try {
-      String formattedParent =
-          UserEventServiceClient.formatEventStoreName(
-              "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-      UserEvent userEvent = UserEvent.newBuilder().build();
-
-      client.writeUserEvent(formattedParent, userEvent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void collectUserEventTest() {
-    String contentType = "contentType831846208";
-    ByteString data = ByteString.copyFromUtf8("-86");
-    HttpBody expectedResponse =
-        HttpBody.newBuilder().setContentType(contentType).setData(data).build();
-    mockUserEventService.addResponse(expectedResponse);
-
-    String formattedParent =
-        UserEventServiceClient.formatEventStoreName(
-            "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-    String userEvent = "userEvent1921940774";
-    String uri = "uri116076";
-    long ets = 100772L;
-
-    HttpBody actualResponse = client.collectUserEvent(formattedParent, userEvent, uri, ets);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockUserEventService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CollectUserEventRequest actualRequest = (CollectUserEventRequest) actualRequests.get(0);
-
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
-    Assert.assertEquals(userEvent, actualRequest.getUserEvent());
-    Assert.assertEquals(uri, actualRequest.getUri());
-    Assert.assertEquals(ets, actualRequest.getEts());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void collectUserEventExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockUserEventService.addException(exception);
-
-    try {
-      String formattedParent =
-          UserEventServiceClient.formatEventStoreName(
-              "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-      String userEvent = "userEvent1921940774";
-      String uri = "uri116076";
-      long ets = 100772L;
-
-      client.collectUserEvent(formattedParent, userEvent, uri, ets);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listUserEventsTest() {
-    String nextPageToken = "";
-    UserEvent userEventsElement = UserEvent.newBuilder().build();
-    List<UserEvent> userEvents = Arrays.asList(userEventsElement);
-    ListUserEventsResponse expectedResponse =
-        ListUserEventsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllUserEvents(userEvents)
-            .build();
-    mockUserEventService.addResponse(expectedResponse);
-
-    String formattedParent =
-        UserEventServiceClient.formatEventStoreName(
-            "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-    String filter = "filter-1274492040";
-
-    ListUserEventsPagedResponse pagedListResponse = client.listUserEvents(formattedParent, filter);
-
-    List<UserEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getUserEventsList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockUserEventService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListUserEventsRequest actualRequest = (ListUserEventsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
-    Assert.assertEquals(filter, actualRequest.getFilter());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listUserEventsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockUserEventService.addException(exception);
-
-    try {
-      String formattedParent =
-          UserEventServiceClient.formatEventStoreName(
-              "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-      String filter = "filter-1274492040";
-
-      client.listUserEvents(formattedParent, filter);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void purgeUserEventsTest() throws Exception {
     long purgedEventsCount = 310774833L;
     PurgeUserEventsResponse expectedResponse =
@@ -263,21 +108,20 @@ public class UserEventServiceClientTest {
             .build();
     mockUserEventService.addResponse(resultOperation);
 
-    String formattedParent =
-        UserEventServiceClient.formatEventStoreName(
-            "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+    EventStoreName parent =
+        EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
     String filter = "filter-1274492040";
     boolean force = false;
 
     PurgeUserEventsResponse actualResponse =
-        client.purgeUserEventsAsync(formattedParent, filter, force).get();
+        client.purgeUserEventsAsync(parent, filter, force).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockUserEventService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     PurgeUserEventsRequest actualRequest = (PurgeUserEventsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, EventStoreName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertEquals(force, actualRequest.getForce());
     Assert.assertTrue(
@@ -293,13 +137,12 @@ public class UserEventServiceClientTest {
     mockUserEventService.addException(exception);
 
     try {
-      String formattedParent =
-          UserEventServiceClient.formatEventStoreName(
-              "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+      EventStoreName parent =
+          EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
       String filter = "filter-1274492040";
       boolean force = false;
 
-      client.purgeUserEventsAsync(formattedParent, filter, force).get();
+      client.purgeUserEventsAsync(parent, filter, force).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -320,22 +163,21 @@ public class UserEventServiceClientTest {
             .build();
     mockUserEventService.addResponse(resultOperation);
 
-    String formattedParent =
-        UserEventServiceClient.formatEventStoreName(
-            "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+    EventStoreName parent =
+        EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
     String requestId = "requestId37109963";
     InputConfig inputConfig = InputConfig.newBuilder().build();
     ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
 
     ImportUserEventsResponse actualResponse =
-        client.importUserEventsAsync(formattedParent, requestId, inputConfig, errorsConfig).get();
+        client.importUserEventsAsync(parent, requestId, inputConfig, errorsConfig).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockUserEventService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ImportUserEventsRequest actualRequest = (ImportUserEventsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, EventStoreName.parse(actualRequest.getParent()));
     Assert.assertEquals(requestId, actualRequest.getRequestId());
     Assert.assertEquals(inputConfig, actualRequest.getInputConfig());
     Assert.assertEquals(errorsConfig, actualRequest.getErrorsConfig());
@@ -352,19 +194,167 @@ public class UserEventServiceClientTest {
     mockUserEventService.addException(exception);
 
     try {
-      String formattedParent =
-          UserEventServiceClient.formatEventStoreName(
-              "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+      EventStoreName parent =
+          EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
       String requestId = "requestId37109963";
       InputConfig inputConfig = InputConfig.newBuilder().build();
       ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
 
-      client.importUserEventsAsync(formattedParent, requestId, inputConfig, errorsConfig).get();
+      client.importUserEventsAsync(parent, requestId, inputConfig, errorsConfig).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void writeUserEventTest() {
+    String eventType = "eventType984376767";
+    UserEvent expectedResponse = UserEvent.newBuilder().setEventType(eventType).build();
+    mockUserEventService.addResponse(expectedResponse);
+
+    EventStoreName parent =
+        EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+    UserEvent userEvent = UserEvent.newBuilder().build();
+
+    UserEvent actualResponse = client.writeUserEvent(parent, userEvent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockUserEventService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    WriteUserEventRequest actualRequest = (WriteUserEventRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, EventStoreName.parse(actualRequest.getParent()));
+    Assert.assertEquals(userEvent, actualRequest.getUserEvent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void writeUserEventExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockUserEventService.addException(exception);
+
+    try {
+      EventStoreName parent =
+          EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+      UserEvent userEvent = UserEvent.newBuilder().build();
+
+      client.writeUserEvent(parent, userEvent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void collectUserEventTest() {
+    String contentType = "contentType831846208";
+    ByteString data = ByteString.copyFromUtf8("-86");
+    HttpBody expectedResponse =
+        HttpBody.newBuilder().setContentType(contentType).setData(data).build();
+    mockUserEventService.addResponse(expectedResponse);
+
+    EventStoreName parent =
+        EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+    String userEvent = "userEvent1921940774";
+    String uri = "uri116076";
+    long ets = 100772L;
+
+    HttpBody actualResponse = client.collectUserEvent(parent, userEvent, uri, ets);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockUserEventService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CollectUserEventRequest actualRequest = (CollectUserEventRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, EventStoreName.parse(actualRequest.getParent()));
+    Assert.assertEquals(userEvent, actualRequest.getUserEvent());
+    Assert.assertEquals(uri, actualRequest.getUri());
+    Assert.assertEquals(ets, actualRequest.getEts());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void collectUserEventExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockUserEventService.addException(exception);
+
+    try {
+      EventStoreName parent =
+          EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+      String userEvent = "userEvent1921940774";
+      String uri = "uri116076";
+      long ets = 100772L;
+
+      client.collectUserEvent(parent, userEvent, uri, ets);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listUserEventsTest() {
+    String nextPageToken = "";
+    UserEvent userEventsElement = UserEvent.newBuilder().build();
+    List<UserEvent> userEvents = Arrays.asList(userEventsElement);
+    ListUserEventsResponse expectedResponse =
+        ListUserEventsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllUserEvents(userEvents)
+            .build();
+    mockUserEventService.addResponse(expectedResponse);
+
+    EventStoreName parent =
+        EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+    String filter = "filter-1274492040";
+
+    ListUserEventsPagedResponse pagedListResponse = client.listUserEvents(parent, filter);
+
+    List<UserEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getUserEventsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockUserEventService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListUserEventsRequest actualRequest = (ListUserEventsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, EventStoreName.parse(actualRequest.getParent()));
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listUserEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockUserEventService.addException(exception);
+
+    try {
+      EventStoreName parent =
+          EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+      String filter = "filter-1274492040";
+
+      client.listUserEvents(parent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 }

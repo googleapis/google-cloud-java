@@ -70,16 +70,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createPredictionApiKeyRegistration to 30 seconds:
+ * <p>For example, to set the total timeout of deletePredictionApiKeyRegistration to 30 seconds:
  *
  * <pre>
  * <code>
  * PredictionApiKeyRegistryStubSettings.Builder predictionApiKeyRegistrySettingsBuilder =
  *     PredictionApiKeyRegistryStubSettings.newBuilder();
  * predictionApiKeyRegistrySettingsBuilder
- *     .createPredictionApiKeyRegistrationSettings()
+ *     .deletePredictionApiKeyRegistrationSettings()
  *     .setRetrySettings(
- *         predictionApiKeyRegistrySettingsBuilder.createPredictionApiKeyRegistrationSettings().getRetrySettings().toBuilder()
+ *         predictionApiKeyRegistrySettingsBuilder.deletePredictionApiKeyRegistrationSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PredictionApiKeyRegistryStubSettings predictionApiKeyRegistrySettings = predictionApiKeyRegistrySettingsBuilder.build();
@@ -94,6 +94,8 @@ public class PredictionApiKeyRegistryStubSettings
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
+  private final UnaryCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
+      deletePredictionApiKeyRegistrationSettings;
   private final UnaryCallSettings<
           CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
       createPredictionApiKeyRegistrationSettings;
@@ -102,8 +104,12 @@ public class PredictionApiKeyRegistryStubSettings
           ListPredictionApiKeyRegistrationsResponse,
           ListPredictionApiKeyRegistrationsPagedResponse>
       listPredictionApiKeyRegistrationsSettings;
-  private final UnaryCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
-      deletePredictionApiKeyRegistrationSettings;
+
+  /** Returns the object with the settings used for calls to deletePredictionApiKeyRegistration. */
+  public UnaryCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
+      deletePredictionApiKeyRegistrationSettings() {
+    return deletePredictionApiKeyRegistrationSettings;
+  }
 
   /** Returns the object with the settings used for calls to createPredictionApiKeyRegistration. */
   public UnaryCallSettings<CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
@@ -118,12 +124,6 @@ public class PredictionApiKeyRegistryStubSettings
           ListPredictionApiKeyRegistrationsPagedResponse>
       listPredictionApiKeyRegistrationsSettings() {
     return listPredictionApiKeyRegistrationsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deletePredictionApiKeyRegistration. */
-  public UnaryCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
-      deletePredictionApiKeyRegistrationSettings() {
-    return deletePredictionApiKeyRegistrationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -195,12 +195,12 @@ public class PredictionApiKeyRegistryStubSettings
   protected PredictionApiKeyRegistryStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deletePredictionApiKeyRegistrationSettings =
+        settingsBuilder.deletePredictionApiKeyRegistrationSettings().build();
     createPredictionApiKeyRegistrationSettings =
         settingsBuilder.createPredictionApiKeyRegistrationSettings().build();
     listPredictionApiKeyRegistrationsSettings =
         settingsBuilder.listPredictionApiKeyRegistrationsSettings().build();
-    deletePredictionApiKeyRegistrationSettings =
-        settingsBuilder.deletePredictionApiKeyRegistrationSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -290,6 +290,8 @@ public class PredictionApiKeyRegistryStubSettings
       extends StubSettings.Builder<PredictionApiKeyRegistryStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeletePredictionApiKeyRegistrationRequest, Empty>
+        deletePredictionApiKeyRegistrationSettings;
     private final UnaryCallSettings.Builder<
             CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
         createPredictionApiKeyRegistrationSettings;
@@ -298,8 +300,6 @@ public class PredictionApiKeyRegistryStubSettings
             ListPredictionApiKeyRegistrationsResponse,
             ListPredictionApiKeyRegistrationsPagedResponse>
         listPredictionApiKeyRegistrationsSettings;
-    private final UnaryCallSettings.Builder<DeletePredictionApiKeyRegistrationRequest, Empty>
-        deletePredictionApiKeyRegistrationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -342,18 +342,18 @@ public class PredictionApiKeyRegistryStubSettings
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deletePredictionApiKeyRegistrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createPredictionApiKeyRegistrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listPredictionApiKeyRegistrationsSettings =
           PagedCallSettings.newBuilder(LIST_PREDICTION_API_KEY_REGISTRATIONS_PAGE_STR_FACT);
 
-      deletePredictionApiKeyRegistrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deletePredictionApiKeyRegistrationSettings,
               createPredictionApiKeyRegistrationSettings,
-              listPredictionApiKeyRegistrationsSettings,
-              deletePredictionApiKeyRegistrationSettings);
+              listPredictionApiKeyRegistrationsSettings);
 
       initDefaults(this);
     }
@@ -370,6 +370,11 @@ public class PredictionApiKeyRegistryStubSettings
     private static Builder initDefaults(Builder builder) {
 
       builder
+          .deletePredictionApiKeyRegistrationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .createPredictionApiKeyRegistrationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -379,29 +384,24 @@ public class PredictionApiKeyRegistryStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .deletePredictionApiKeyRegistrationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
       return builder;
     }
 
     protected Builder(PredictionApiKeyRegistryStubSettings settings) {
       super(settings);
 
+      deletePredictionApiKeyRegistrationSettings =
+          settings.deletePredictionApiKeyRegistrationSettings.toBuilder();
       createPredictionApiKeyRegistrationSettings =
           settings.createPredictionApiKeyRegistrationSettings.toBuilder();
       listPredictionApiKeyRegistrationsSettings =
           settings.listPredictionApiKeyRegistrationsSettings.toBuilder();
-      deletePredictionApiKeyRegistrationSettings =
-          settings.deletePredictionApiKeyRegistrationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deletePredictionApiKeyRegistrationSettings,
               createPredictionApiKeyRegistrationSettings,
-              listPredictionApiKeyRegistrationsSettings,
-              deletePredictionApiKeyRegistrationSettings);
+              listPredictionApiKeyRegistrationsSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -421,6 +421,14 @@ public class PredictionApiKeyRegistryStubSettings
     }
 
     /**
+     * Returns the builder for the settings used for calls to deletePredictionApiKeyRegistration.
+     */
+    public UnaryCallSettings.Builder<DeletePredictionApiKeyRegistrationRequest, Empty>
+        deletePredictionApiKeyRegistrationSettings() {
+      return deletePredictionApiKeyRegistrationSettings;
+    }
+
+    /**
      * Returns the builder for the settings used for calls to createPredictionApiKeyRegistration.
      */
     public UnaryCallSettings.Builder<
@@ -436,14 +444,6 @@ public class PredictionApiKeyRegistryStubSettings
             ListPredictionApiKeyRegistrationsPagedResponse>
         listPredictionApiKeyRegistrationsSettings() {
       return listPredictionApiKeyRegistrationsSettings;
-    }
-
-    /**
-     * Returns the builder for the settings used for calls to deletePredictionApiKeyRegistration.
-     */
-    public UnaryCallSettings.Builder<DeletePredictionApiKeyRegistrationRequest, Empty>
-        deletePredictionApiKeyRegistrationSettings() {
-      return deletePredictionApiKeyRegistrationSettings;
     }
 
     @Override

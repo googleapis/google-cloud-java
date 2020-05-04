@@ -153,7 +153,9 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
    * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -176,7 +178,9 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
    * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -257,8 +261,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
    * set, will by default update all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -273,8 +276,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
    * set, will by default update all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
    *
    * @return The updateMask.
    */
@@ -289,8 +291,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
    * set, will by default update all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -689,7 +690,9 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -712,7 +715,9 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -735,7 +740,9 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -757,7 +764,9 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -775,7 +784,9 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1021,8 +1032,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * set, will by default update all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -1037,8 +1047,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * set, will by default update all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      *
      * @return The updateMask.
      */
@@ -1059,8 +1068,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * set, will by default update all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1083,8 +1091,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * set, will by default update all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -1104,8 +1111,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * set, will by default update all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1130,8 +1136,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * set, will by default update all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1152,8 +1157,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * set, will by default update all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -1168,8 +1172,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * set, will by default update all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1188,8 +1191,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
      * set, will by default update all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

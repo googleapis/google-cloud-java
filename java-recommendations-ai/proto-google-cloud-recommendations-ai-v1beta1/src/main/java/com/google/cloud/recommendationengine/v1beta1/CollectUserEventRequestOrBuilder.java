@@ -31,7 +31,9 @@ public interface CollectUserEventRequestOrBuilder
    * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -44,7 +46,9 @@ public interface CollectUserEventRequestOrBuilder
    * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -79,10 +83,10 @@ public interface CollectUserEventRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The url including cgi-parameters but excluding the hash fragment. The URL
-   * must be truncated to 1.5K bytes to conservatively be under the 2K bytes.
-   * This is often more useful than the referer url, because many browsers only
-   * send the domain for 3rd party requests.
+   * Optional. The url including cgi-parameters but excluding the hash fragment.
+   * The URL must be truncated to 1.5K bytes to conservatively be under the 2K
+   * bytes. This is often more useful than the referer url, because many
+   * browsers only send the domain for 3rd party requests.
    * </pre>
    *
    * <code>string uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -94,10 +98,10 @@ public interface CollectUserEventRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The url including cgi-parameters but excluding the hash fragment. The URL
-   * must be truncated to 1.5K bytes to conservatively be under the 2K bytes.
-   * This is often more useful than the referer url, because many browsers only
-   * send the domain for 3rd party requests.
+   * Optional. The url including cgi-parameters but excluding the hash fragment.
+   * The URL must be truncated to 1.5K bytes to conservatively be under the 2K
+   * bytes. This is often more useful than the referer url, because many
+   * browsers only send the domain for 3rd party requests.
    * </pre>
    *
    * <code>string uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -110,9 +114,9 @@ public interface CollectUserEventRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The event timestamp in milliseconds. This prevents browser caching of
-   * otherwise identical get requests. The name is abbreviated to reduce the
-   * payload bytes.
+   * Optional. The event timestamp in milliseconds. This prevents browser
+   * caching of otherwise identical get requests. The name is abbreviated to
+   * reduce the payload bytes.
    * </pre>
    *
    * <code>int64 ets = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

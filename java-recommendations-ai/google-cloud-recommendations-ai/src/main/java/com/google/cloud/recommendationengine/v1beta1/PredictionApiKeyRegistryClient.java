@@ -25,7 +25,6 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.recommendationengine.v1beta1.stub.PredictionApiKeyRegistryStub;
 import com.google.cloud.recommendationengine.v1beta1.stub.PredictionApiKeyRegistryStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -48,9 +47,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
- *   String formattedParent = PredictionApiKeyRegistryClient.formatEventStoreName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
- *   PredictionApiKeyRegistration predictionApiKeyRegistration = PredictionApiKeyRegistration.newBuilder().build();
- *   PredictionApiKeyRegistration response = predictionApiKeyRegistryClient.createPredictionApiKeyRegistration(formattedParent, predictionApiKeyRegistration);
+ *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
+ *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(name);
  * }
  * </code>
  * </pre>
@@ -112,162 +110,6 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
   private final PredictionApiKeyRegistrySettings settings;
   private final PredictionApiKeyRegistryStub stub;
 
-  private static final PathTemplate EVENT_STORE_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/catalogs/{catalog}/eventStores/{event_store}");
-
-  private static final PathTemplate PREDICTION_API_KEY_REGISTRATION_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/catalogs/{catalog}/eventStores/{event_store}/predictionApiKeyRegistrations/{prediction_api_key_registration}");
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a event_store resource.
-   *
-   * @deprecated Use the {@link EventStoreName} class instead.
-   */
-  @Deprecated
-  public static final String formatEventStoreName(
-      String project, String location, String catalog, String eventStore) {
-    return EVENT_STORE_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location,
-        "catalog", catalog,
-        "event_store", eventStore);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a
-   * prediction_api_key_registration resource.
-   *
-   * @deprecated Use the {@link PredictionApiKeyRegistrationName} class instead.
-   */
-  @Deprecated
-  public static final String formatPredictionApiKeyRegistrationName(
-      String project,
-      String location,
-      String catalog,
-      String eventStore,
-      String predictionApiKeyRegistration) {
-    return PREDICTION_API_KEY_REGISTRATION_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location,
-        "catalog", catalog,
-        "event_store", eventStore,
-        "prediction_api_key_registration", predictionApiKeyRegistration);
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a event_store resource.
-   *
-   * @deprecated Use the {@link EventStoreName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromEventStoreName(String eventStoreName) {
-    return EVENT_STORE_PATH_TEMPLATE.parse(eventStoreName).get("project");
-  }
-
-  /**
-   * Parses the location from the given fully-qualified path which represents a event_store
-   * resource.
-   *
-   * @deprecated Use the {@link EventStoreName} class instead.
-   */
-  @Deprecated
-  public static final String parseLocationFromEventStoreName(String eventStoreName) {
-    return EVENT_STORE_PATH_TEMPLATE.parse(eventStoreName).get("location");
-  }
-
-  /**
-   * Parses the catalog from the given fully-qualified path which represents a event_store resource.
-   *
-   * @deprecated Use the {@link EventStoreName} class instead.
-   */
-  @Deprecated
-  public static final String parseCatalogFromEventStoreName(String eventStoreName) {
-    return EVENT_STORE_PATH_TEMPLATE.parse(eventStoreName).get("catalog");
-  }
-
-  /**
-   * Parses the event_store from the given fully-qualified path which represents a event_store
-   * resource.
-   *
-   * @deprecated Use the {@link EventStoreName} class instead.
-   */
-  @Deprecated
-  public static final String parseEventStoreFromEventStoreName(String eventStoreName) {
-    return EVENT_STORE_PATH_TEMPLATE.parse(eventStoreName).get("event_store");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a
-   * prediction_api_key_registration resource.
-   *
-   * @deprecated Use the {@link PredictionApiKeyRegistrationName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromPredictionApiKeyRegistrationName(
-      String predictionApiKeyRegistrationName) {
-    return PREDICTION_API_KEY_REGISTRATION_PATH_TEMPLATE
-        .parse(predictionApiKeyRegistrationName)
-        .get("project");
-  }
-
-  /**
-   * Parses the location from the given fully-qualified path which represents a
-   * prediction_api_key_registration resource.
-   *
-   * @deprecated Use the {@link PredictionApiKeyRegistrationName} class instead.
-   */
-  @Deprecated
-  public static final String parseLocationFromPredictionApiKeyRegistrationName(
-      String predictionApiKeyRegistrationName) {
-    return PREDICTION_API_KEY_REGISTRATION_PATH_TEMPLATE
-        .parse(predictionApiKeyRegistrationName)
-        .get("location");
-  }
-
-  /**
-   * Parses the catalog from the given fully-qualified path which represents a
-   * prediction_api_key_registration resource.
-   *
-   * @deprecated Use the {@link PredictionApiKeyRegistrationName} class instead.
-   */
-  @Deprecated
-  public static final String parseCatalogFromPredictionApiKeyRegistrationName(
-      String predictionApiKeyRegistrationName) {
-    return PREDICTION_API_KEY_REGISTRATION_PATH_TEMPLATE
-        .parse(predictionApiKeyRegistrationName)
-        .get("catalog");
-  }
-
-  /**
-   * Parses the event_store from the given fully-qualified path which represents a
-   * prediction_api_key_registration resource.
-   *
-   * @deprecated Use the {@link PredictionApiKeyRegistrationName} class instead.
-   */
-  @Deprecated
-  public static final String parseEventStoreFromPredictionApiKeyRegistrationName(
-      String predictionApiKeyRegistrationName) {
-    return PREDICTION_API_KEY_REGISTRATION_PATH_TEMPLATE
-        .parse(predictionApiKeyRegistrationName)
-        .get("event_store");
-  }
-
-  /**
-   * Parses the prediction_api_key_registration from the given fully-qualified path which represents
-   * a prediction_api_key_registration resource.
-   *
-   * @deprecated Use the {@link PredictionApiKeyRegistrationName} class instead.
-   */
-  @Deprecated
-  public static final String parsePredictionApiKeyRegistrationFromPredictionApiKeyRegistrationName(
-      String predictionApiKeyRegistrationName) {
-    return PREDICTION_API_KEY_REGISTRATION_PATH_TEMPLATE
-        .parse(predictionApiKeyRegistrationName)
-        .get("prediction_api_key_registration");
-  }
-
   /** Constructs an instance of PredictionApiKeyRegistryClient with default settings. */
   public static final PredictionApiKeyRegistryClient create() throws IOException {
     return create(PredictionApiKeyRegistrySettings.newBuilder().build());
@@ -320,15 +162,139 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Unregister an apiKey from using for predict method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
+   *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
+   *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The API key to unregister including full resource path.
+   *     "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deletePredictionApiKeyRegistration(PredictionApiKeyRegistrationName name) {
+    DeletePredictionApiKeyRegistrationRequest request =
+        DeletePredictionApiKeyRegistrationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deletePredictionApiKeyRegistration(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Unregister an apiKey from using for predict method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
+   *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
+   *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The API key to unregister including full resource path.
+   *     "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deletePredictionApiKeyRegistration(String name) {
+    DeletePredictionApiKeyRegistrationRequest request =
+        DeletePredictionApiKeyRegistrationRequest.newBuilder().setName(name).build();
+    deletePredictionApiKeyRegistration(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Unregister an apiKey from using for predict method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
+   *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
+   *   DeletePredictionApiKeyRegistrationRequest request = DeletePredictionApiKeyRegistrationRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deletePredictionApiKeyRegistration(
+      DeletePredictionApiKeyRegistrationRequest request) {
+    deletePredictionApiKeyRegistrationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Unregister an apiKey from using for predict method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
+   *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
+   *   DeletePredictionApiKeyRegistrationRequest request = DeletePredictionApiKeyRegistrationRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = predictionApiKeyRegistryClient.deletePredictionApiKeyRegistrationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeletePredictionApiKeyRegistrationRequest, Empty>
+      deletePredictionApiKeyRegistrationCallable() {
+    return stub.deletePredictionApiKeyRegistrationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Register an API key for use with predict method.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   String formattedParent = PredictionApiKeyRegistryClient.formatEventStoreName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
    *   PredictionApiKeyRegistration predictionApiKeyRegistration = PredictionApiKeyRegistration.newBuilder().build();
-   *   PredictionApiKeyRegistration response = predictionApiKeyRegistryClient.createPredictionApiKeyRegistration(formattedParent, predictionApiKeyRegistration);
+   *   PredictionApiKeyRegistration response = predictionApiKeyRegistryClient.createPredictionApiKeyRegistration(parent, predictionApiKeyRegistration);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource path.
+   *     "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   * @param predictionApiKeyRegistration Required. The prediction API key registration.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PredictionApiKeyRegistration createPredictionApiKeyRegistration(
+      EventStoreName parent, PredictionApiKeyRegistration predictionApiKeyRegistration) {
+    CreatePredictionApiKeyRegistrationRequest request =
+        CreatePredictionApiKeyRegistrationRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPredictionApiKeyRegistration(predictionApiKeyRegistration)
+            .build();
+    return createPredictionApiKeyRegistration(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Register an API key for use with predict method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
+   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   PredictionApiKeyRegistration predictionApiKeyRegistration = PredictionApiKeyRegistration.newBuilder().build();
+   *   PredictionApiKeyRegistration response = predictionApiKeyRegistryClient.createPredictionApiKeyRegistration(parent.toString(), predictionApiKeyRegistration);
    * }
    * </code></pre>
    *
@@ -339,7 +305,6 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    */
   public final PredictionApiKeyRegistration createPredictionApiKeyRegistration(
       String parent, PredictionApiKeyRegistration predictionApiKeyRegistration) {
-    EVENT_STORE_PATH_TEMPLATE.validate(parent, "createPredictionApiKeyRegistration");
     CreatePredictionApiKeyRegistrationRequest request =
         CreatePredictionApiKeyRegistrationRequest.newBuilder()
             .setParent(parent)
@@ -356,10 +321,10 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   String formattedParent = PredictionApiKeyRegistryClient.formatEventStoreName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
    *   PredictionApiKeyRegistration predictionApiKeyRegistration = PredictionApiKeyRegistration.newBuilder().build();
    *   CreatePredictionApiKeyRegistrationRequest request = CreatePredictionApiKeyRegistrationRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setPredictionApiKeyRegistration(predictionApiKeyRegistration)
    *     .build();
    *   PredictionApiKeyRegistration response = predictionApiKeyRegistryClient.createPredictionApiKeyRegistration(request);
@@ -382,10 +347,10 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   String formattedParent = PredictionApiKeyRegistryClient.formatEventStoreName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
    *   PredictionApiKeyRegistration predictionApiKeyRegistration = PredictionApiKeyRegistration.newBuilder().build();
    *   CreatePredictionApiKeyRegistrationRequest request = CreatePredictionApiKeyRegistrationRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setPredictionApiKeyRegistration(predictionApiKeyRegistration)
    *     .build();
    *   ApiFuture&lt;PredictionApiKeyRegistration&gt; future = predictionApiKeyRegistryClient.createPredictionApiKeyRegistrationCallable().futureCall(request);
@@ -408,8 +373,36 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   String formattedParent = PredictionApiKeyRegistryClient.formatEventStoreName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   for (PredictionApiKeyRegistration element : predictionApiKeyRegistryClient.listPredictionApiKeyRegistrations(formattedParent).iterateAll()) {
+   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   for (PredictionApiKeyRegistration element : predictionApiKeyRegistryClient.listPredictionApiKeyRegistrations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent placement resource name such as
+   *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPredictionApiKeyRegistrationsPagedResponse listPredictionApiKeyRegistrations(
+      EventStoreName parent) {
+    ListPredictionApiKeyRegistrationsRequest request =
+        ListPredictionApiKeyRegistrationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listPredictionApiKeyRegistrations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * List the registered apiKeys for use with predict method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
+   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   for (PredictionApiKeyRegistration element : predictionApiKeyRegistryClient.listPredictionApiKeyRegistrations(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -421,7 +414,6 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    */
   public final ListPredictionApiKeyRegistrationsPagedResponse listPredictionApiKeyRegistrations(
       String parent) {
-    EVENT_STORE_PATH_TEMPLATE.validate(parent, "listPredictionApiKeyRegistrations");
     ListPredictionApiKeyRegistrationsRequest request =
         ListPredictionApiKeyRegistrationsRequest.newBuilder().setParent(parent).build();
     return listPredictionApiKeyRegistrations(request);
@@ -435,9 +427,9 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   String formattedParent = PredictionApiKeyRegistryClient.formatEventStoreName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
    *   ListPredictionApiKeyRegistrationsRequest request = ListPredictionApiKeyRegistrationsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (PredictionApiKeyRegistration element : predictionApiKeyRegistryClient.listPredictionApiKeyRegistrations(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -461,9 +453,9 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   String formattedParent = PredictionApiKeyRegistryClient.formatEventStoreName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
    *   ListPredictionApiKeyRegistrationsRequest request = ListPredictionApiKeyRegistrationsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListPredictionApiKeyRegistrationsPagedResponse&gt; future = predictionApiKeyRegistryClient.listPredictionApiKeyRegistrationsPagedCallable().futureCall(request);
    *   // Do something
@@ -487,9 +479,9 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   String formattedParent = PredictionApiKeyRegistryClient.formatEventStoreName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
    *   ListPredictionApiKeyRegistrationsRequest request = ListPredictionApiKeyRegistrationsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListPredictionApiKeyRegistrationsResponse response = predictionApiKeyRegistryClient.listPredictionApiKeyRegistrationsCallable().call(request);
@@ -510,78 +502,6 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
           ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse>
       listPredictionApiKeyRegistrationsCallable() {
     return stub.listPredictionApiKeyRegistrationsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Unregister an apiKey from using for predict method.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   String formattedName = PredictionApiKeyRegistryClient.formatPredictionApiKeyRegistrationName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
-   *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(formattedName);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The API key to unregister including full resource path.
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;"
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deletePredictionApiKeyRegistration(String name) {
-    PREDICTION_API_KEY_REGISTRATION_PATH_TEMPLATE.validate(
-        name, "deletePredictionApiKeyRegistration");
-    DeletePredictionApiKeyRegistrationRequest request =
-        DeletePredictionApiKeyRegistrationRequest.newBuilder().setName(name).build();
-    deletePredictionApiKeyRegistration(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Unregister an apiKey from using for predict method.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   String formattedName = PredictionApiKeyRegistryClient.formatPredictionApiKeyRegistrationName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
-   *   DeletePredictionApiKeyRegistrationRequest request = DeletePredictionApiKeyRegistrationRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .build();
-   *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deletePredictionApiKeyRegistration(
-      DeletePredictionApiKeyRegistrationRequest request) {
-    deletePredictionApiKeyRegistrationCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Unregister an apiKey from using for predict method.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   String formattedName = PredictionApiKeyRegistryClient.formatPredictionApiKeyRegistrationName("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
-   *   DeletePredictionApiKeyRegistrationRequest request = DeletePredictionApiKeyRegistrationRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = predictionApiKeyRegistryClient.deletePredictionApiKeyRegistrationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeletePredictionApiKeyRegistrationRequest, Empty>
-      deletePredictionApiKeyRegistrationCallable() {
-    return stub.deletePredictionApiKeyRegistrationCallable();
   }
 
   @Override

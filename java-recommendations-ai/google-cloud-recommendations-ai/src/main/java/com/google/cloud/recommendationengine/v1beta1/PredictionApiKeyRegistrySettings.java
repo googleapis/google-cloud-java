@@ -50,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createPredictionApiKeyRegistration to 30 seconds:
+ * <p>For example, to set the total timeout of deletePredictionApiKeyRegistration to 30 seconds:
  *
  * <pre>
  * <code>
  * PredictionApiKeyRegistrySettings.Builder predictionApiKeyRegistrySettingsBuilder =
  *     PredictionApiKeyRegistrySettings.newBuilder();
  * predictionApiKeyRegistrySettingsBuilder
- *     .createPredictionApiKeyRegistrationSettings()
+ *     .deletePredictionApiKeyRegistrationSettings()
  *     .setRetrySettings(
- *         predictionApiKeyRegistrySettingsBuilder.createPredictionApiKeyRegistrationSettings().getRetrySettings().toBuilder()
+ *         predictionApiKeyRegistrySettingsBuilder.deletePredictionApiKeyRegistrationSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PredictionApiKeyRegistrySettings predictionApiKeyRegistrySettings = predictionApiKeyRegistrySettingsBuilder.build();
@@ -70,6 +70,13 @@ import javax.annotation.Generated;
 @BetaApi
 public class PredictionApiKeyRegistrySettings
     extends ClientSettings<PredictionApiKeyRegistrySettings> {
+  /** Returns the object with the settings used for calls to deletePredictionApiKeyRegistration. */
+  public UnaryCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
+      deletePredictionApiKeyRegistrationSettings() {
+    return ((PredictionApiKeyRegistryStubSettings) getStubSettings())
+        .deletePredictionApiKeyRegistrationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createPredictionApiKeyRegistration. */
   public UnaryCallSettings<CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
       createPredictionApiKeyRegistrationSettings() {
@@ -85,13 +92,6 @@ public class PredictionApiKeyRegistrySettings
       listPredictionApiKeyRegistrationsSettings() {
     return ((PredictionApiKeyRegistryStubSettings) getStubSettings())
         .listPredictionApiKeyRegistrationsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deletePredictionApiKeyRegistration. */
-  public UnaryCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
-      deletePredictionApiKeyRegistrationSettings() {
-    return ((PredictionApiKeyRegistryStubSettings) getStubSettings())
-        .deletePredictionApiKeyRegistrationSettings();
   }
 
   public static final PredictionApiKeyRegistrySettings create(
@@ -193,6 +193,14 @@ public class PredictionApiKeyRegistrySettings
     }
 
     /**
+     * Returns the builder for the settings used for calls to deletePredictionApiKeyRegistration.
+     */
+    public UnaryCallSettings.Builder<DeletePredictionApiKeyRegistrationRequest, Empty>
+        deletePredictionApiKeyRegistrationSettings() {
+      return getStubSettingsBuilder().deletePredictionApiKeyRegistrationSettings();
+    }
+
+    /**
      * Returns the builder for the settings used for calls to createPredictionApiKeyRegistration.
      */
     public UnaryCallSettings.Builder<
@@ -208,14 +216,6 @@ public class PredictionApiKeyRegistrySettings
             ListPredictionApiKeyRegistrationsPagedResponse>
         listPredictionApiKeyRegistrationsSettings() {
       return getStubSettingsBuilder().listPredictionApiKeyRegistrationsSettings();
-    }
-
-    /**
-     * Returns the builder for the settings used for calls to deletePredictionApiKeyRegistration.
-     */
-    public UnaryCallSettings.Builder<DeletePredictionApiKeyRegistrationRequest, Empty>
-        deletePredictionApiKeyRegistrationSettings() {
-      return getStubSettingsBuilder().deletePredictionApiKeyRegistrationSettings();
     }
 
     @Override

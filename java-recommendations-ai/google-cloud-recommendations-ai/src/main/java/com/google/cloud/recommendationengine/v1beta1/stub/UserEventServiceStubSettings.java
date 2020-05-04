@@ -104,11 +104,6 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<WriteUserEventRequest, UserEvent> writeUserEventSettings;
-  private final UnaryCallSettings<CollectUserEventRequest, HttpBody> collectUserEventSettings;
-  private final PagedCallSettings<
-          ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
-      listUserEventsSettings;
   private final UnaryCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsSettings;
   private final OperationCallSettings<
           PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
@@ -117,23 +112,11 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
   private final OperationCallSettings<
           ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationSettings;
-
-  /** Returns the object with the settings used for calls to writeUserEvent. */
-  public UnaryCallSettings<WriteUserEventRequest, UserEvent> writeUserEventSettings() {
-    return writeUserEventSettings;
-  }
-
-  /** Returns the object with the settings used for calls to collectUserEvent. */
-  public UnaryCallSettings<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
-    return collectUserEventSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listUserEvents. */
-  public PagedCallSettings<
+  private final UnaryCallSettings<WriteUserEventRequest, UserEvent> writeUserEventSettings;
+  private final UnaryCallSettings<CollectUserEventRequest, HttpBody> collectUserEventSettings;
+  private final PagedCallSettings<
           ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
-      listUserEventsSettings() {
-    return listUserEventsSettings;
-  }
+      listUserEventsSettings;
 
   /** Returns the object with the settings used for calls to purgeUserEvents. */
   public UnaryCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsSettings() {
@@ -158,6 +141,23 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
   public OperationCallSettings<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationSettings() {
     return importUserEventsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to writeUserEvent. */
+  public UnaryCallSettings<WriteUserEventRequest, UserEvent> writeUserEventSettings() {
+    return writeUserEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to collectUserEvent. */
+  public UnaryCallSettings<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
+    return collectUserEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listUserEvents. */
+  public PagedCallSettings<
+          ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
+      listUserEventsSettings() {
+    return listUserEventsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -229,13 +229,13 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
   protected UserEventServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    writeUserEventSettings = settingsBuilder.writeUserEventSettings().build();
-    collectUserEventSettings = settingsBuilder.collectUserEventSettings().build();
-    listUserEventsSettings = settingsBuilder.listUserEventsSettings().build();
     purgeUserEventsSettings = settingsBuilder.purgeUserEventsSettings().build();
     purgeUserEventsOperationSettings = settingsBuilder.purgeUserEventsOperationSettings().build();
     importUserEventsSettings = settingsBuilder.importUserEventsSettings().build();
     importUserEventsOperationSettings = settingsBuilder.importUserEventsOperationSettings().build();
+    writeUserEventSettings = settingsBuilder.writeUserEventSettings().build();
+    collectUserEventSettings = settingsBuilder.collectUserEventSettings().build();
+    listUserEventsSettings = settingsBuilder.listUserEventsSettings().build();
   }
 
   private static final PagedListDescriptor<ListUserEventsRequest, ListUserEventsResponse, UserEvent>
@@ -296,13 +296,6 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
   public static class Builder extends StubSettings.Builder<UserEventServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<WriteUserEventRequest, UserEvent>
-        writeUserEventSettings;
-    private final UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody>
-        collectUserEventSettings;
-    private final PagedCallSettings.Builder<
-            ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
-        listUserEventsSettings;
     private final UnaryCallSettings.Builder<PurgeUserEventsRequest, Operation>
         purgeUserEventsSettings;
     private final OperationCallSettings.Builder<
@@ -313,6 +306,13 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
     private final OperationCallSettings.Builder<
             ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
         importUserEventsOperationSettings;
+    private final UnaryCallSettings.Builder<WriteUserEventRequest, UserEvent>
+        writeUserEventSettings;
+    private final UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody>
+        collectUserEventSettings;
+    private final PagedCallSettings.Builder<
+            ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
+        listUserEventsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -355,12 +355,6 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      writeUserEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      collectUserEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      listUserEventsSettings = PagedCallSettings.newBuilder(LIST_USER_EVENTS_PAGE_STR_FACT);
-
       purgeUserEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       purgeUserEventsOperationSettings = OperationCallSettings.newBuilder();
@@ -369,13 +363,19 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
 
       importUserEventsOperationSettings = OperationCallSettings.newBuilder();
 
+      writeUserEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      collectUserEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listUserEventsSettings = PagedCallSettings.newBuilder(LIST_USER_EVENTS_PAGE_STR_FACT);
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              purgeUserEventsSettings,
+              importUserEventsSettings,
               writeUserEventSettings,
               collectUserEventSettings,
-              listUserEventsSettings,
-              purgeUserEventsSettings,
-              importUserEventsSettings);
+              listUserEventsSettings);
 
       initDefaults(this);
     }
@@ -392,6 +392,16 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
     private static Builder initDefaults(Builder builder) {
 
       builder
+          .purgeUserEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .importUserEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .writeUserEventSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -404,16 +414,6 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
       builder
           .listUserEventsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .purgeUserEventsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .importUserEventsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .purgeUserEventsOperationSettings()
@@ -468,21 +468,21 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
     protected Builder(UserEventServiceStubSettings settings) {
       super(settings);
 
-      writeUserEventSettings = settings.writeUserEventSettings.toBuilder();
-      collectUserEventSettings = settings.collectUserEventSettings.toBuilder();
-      listUserEventsSettings = settings.listUserEventsSettings.toBuilder();
       purgeUserEventsSettings = settings.purgeUserEventsSettings.toBuilder();
       purgeUserEventsOperationSettings = settings.purgeUserEventsOperationSettings.toBuilder();
       importUserEventsSettings = settings.importUserEventsSettings.toBuilder();
       importUserEventsOperationSettings = settings.importUserEventsOperationSettings.toBuilder();
+      writeUserEventSettings = settings.writeUserEventSettings.toBuilder();
+      collectUserEventSettings = settings.collectUserEventSettings.toBuilder();
+      listUserEventsSettings = settings.listUserEventsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              purgeUserEventsSettings,
+              importUserEventsSettings,
               writeUserEventSettings,
               collectUserEventSettings,
-              listUserEventsSettings,
-              purgeUserEventsSettings,
-              importUserEventsSettings);
+              listUserEventsSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -499,23 +499,6 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to writeUserEvent. */
-    public UnaryCallSettings.Builder<WriteUserEventRequest, UserEvent> writeUserEventSettings() {
-      return writeUserEventSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to collectUserEvent. */
-    public UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
-      return collectUserEventSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listUserEvents. */
-    public PagedCallSettings.Builder<
-            ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
-        listUserEventsSettings() {
-      return listUserEventsSettings;
     }
 
     /** Returns the builder for the settings used for calls to purgeUserEvents. */
@@ -545,6 +528,23 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
             ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
         importUserEventsOperationSettings() {
       return importUserEventsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to writeUserEvent. */
+    public UnaryCallSettings.Builder<WriteUserEventRequest, UserEvent> writeUserEventSettings() {
+      return writeUserEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to collectUserEvent. */
+    public UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
+      return collectUserEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUserEvents. */
+    public PagedCallSettings.Builder<
+            ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
+        listUserEventsSettings() {
+      return listUserEventsSettings;
     }
 
     @Override

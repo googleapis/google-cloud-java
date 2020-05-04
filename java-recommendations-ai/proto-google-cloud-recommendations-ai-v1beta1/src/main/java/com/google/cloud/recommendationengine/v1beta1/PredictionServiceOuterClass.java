@@ -68,54 +68,56 @@ public final class PredictionServiceOuterClass {
           + "ta1/prediction_service.proto\022)google.clo"
           + "ud.recommendationengine.v1beta1\032\034google/"
           + "api/annotations.proto\032\037google/api/field_"
-          + "behavior.proto\032:google/cloud/recommendat"
-          + "ionengine/v1beta1/user_event.proto\032\034goog"
-          + "le/protobuf/struct.proto\032\027google/api/cli"
-          + "ent.proto\"\374\003\n\016PredictRequest\022\021\n\004name\030\001 \001"
-          + "(\tB\003\340A\002\022M\n\nuser_event\030\002 \001(\01324.google.clo"
-          + "ud.recommendationengine.v1beta1.UserEven"
-          + "tB\003\340A\002\022\026\n\tpage_size\030\007 \001(\005B\003\340A\001\022\027\n\npage_t"
-          + "oken\030\010 \001(\tB\003\340A\001\022\023\n\006filter\030\003 \001(\tB\003\340A\001\022\024\n\007"
-          + "dry_run\030\004 \001(\010B\003\340A\001\022Z\n\006params\030\006 \003(\0132E.goo"
+          + "behavior.proto\032\031google/api/resource.prot"
+          + "o\032:google/cloud/recommendationengine/v1b"
+          + "eta1/user_event.proto\032\034google/protobuf/s"
+          + "truct.proto\032\027google/api/client.proto\"\256\004\n"
+          + "\016PredictRequest\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-r"
+          + "ecommendationengine.googleapis.com/Place"
+          + "ment\022M\n\nuser_event\030\002 \001(\01324.google.cloud."
+          + "recommendationengine.v1beta1.UserEventB\003"
+          + "\340A\002\022\026\n\tpage_size\030\007 \001(\005B\003\340A\001\022\027\n\npage_toke"
+          + "n\030\010 \001(\tB\003\340A\001\022\023\n\006filter\030\003 \001(\tB\003\340A\001\022\024\n\007dry"
+          + "_run\030\004 \001(\010B\003\340A\001\022Z\n\006params\030\006 \003(\0132E.google"
+          + ".cloud.recommendationengine.v1beta1.Pred"
+          + "ictRequest.ParamsEntryB\003\340A\001\022Z\n\006labels\030\t "
+          + "\003(\0132E.google.cloud.recommendationengine."
+          + "v1beta1.PredictRequest.LabelsEntryB\003\340A\001\032"
+          + "E\n\013ParamsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001"
+          + "(\0132\026.google.protobuf.Value:\0028\001\032-\n\013Labels"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\342\004"
+          + "\n\017PredictResponse\022\\\n\007results\030\001 \003(\0132K.goo"
           + "gle.cloud.recommendationengine.v1beta1.P"
-          + "redictRequest.ParamsEntryB\003\340A\001\022Z\n\006labels"
-          + "\030\t \003(\0132E.google.cloud.recommendationengi"
-          + "ne.v1beta1.PredictRequest.LabelsEntryB\003\340"
-          + "A\001\032E\n\013ParamsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030"
-          + "\002 \001(\0132\026.google.protobuf.Value:\0028\001\032-\n\013Lab"
-          + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
-          + "\"\342\004\n\017PredictResponse\022\\\n\007results\030\001 \003(\0132K."
-          + "google.cloud.recommendationengine.v1beta"
-          + "1.PredictResponse.PredictionResult\022\034\n\024re"
-          + "commendation_token\030\002 \001(\t\022 \n\030items_missin"
-          + "g_in_catalog\030\003 \003(\t\022\017\n\007dry_run\030\004 \001(\010\022Z\n\010m"
-          + "etadata\030\005 \003(\0132H.google.cloud.recommendat"
-          + "ionengine.v1beta1.PredictResponse.Metada"
-          + "taEntry\022\027\n\017next_page_token\030\006 \001(\t\032\341\001\n\020Pre"
-          + "dictionResult\022\n\n\002id\030\001 \001(\t\022t\n\ritem_metada"
-          + "ta\030\002 \003(\0132].google.cloud.recommendationen"
-          + "gine.v1beta1.PredictResponse.PredictionR"
-          + "esult.ItemMetadataEntry\032K\n\021ItemMetadataE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.googl"
-          + "e.protobuf.Value:\0028\001\032G\n\rMetadataEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.proto"
-          + "buf.Value:\0028\0012\320\002\n\021PredictionService\022\341\001\n\007"
-          + "Predict\0229.google.cloud.recommendationeng"
-          + "ine.v1beta1.PredictRequest\032:.google.clou"
-          + "d.recommendationengine.v1beta1.PredictRe"
-          + "sponse\"_\202\323\344\223\002Y\"T/v1beta1/{name=projects/"
-          + "*/locations/*/catalogs/*/eventStores/*/p"
-          + "lacements/*}:predict:\001*\032W\312A#recommendati"
-          + "onengine.googleapis.com\322A.https://www.go"
-          + "ogleapis.com/auth/cloud-platformB\237\002\n-com"
-          + ".google.cloud.recommendationengine.v1bet"
-          + "a1P\001Z]google.golang.org/genproto/googlea"
-          + "pis/cloud/recommendationengine/v1beta1;r"
-          + "ecommendationengine\242\002\005RECAI\252\002)Google.Clo"
-          + "ud.RecommendationEngine.V1Beta1\312\002)Google"
-          + "\\Cloud\\RecommendationEngine\\V1beta1\352\002,Go"
-          + "ogle::Cloud::RecommendationEngine::V1bet"
-          + "a1b\006proto3"
+          + "redictResponse.PredictionResult\022\034\n\024recom"
+          + "mendation_token\030\002 \001(\t\022 \n\030items_missing_i"
+          + "n_catalog\030\003 \003(\t\022\017\n\007dry_run\030\004 \001(\010\022Z\n\010meta"
+          + "data\030\005 \003(\0132H.google.cloud.recommendation"
+          + "engine.v1beta1.PredictResponse.MetadataE"
+          + "ntry\022\027\n\017next_page_token\030\006 \001(\t\032\341\001\n\020Predic"
+          + "tionResult\022\n\n\002id\030\001 \001(\t\022t\n\ritem_metadata\030"
+          + "\002 \003(\0132].google.cloud.recommendationengin"
+          + "e.v1beta1.PredictResponse.PredictionResu"
+          + "lt.ItemMetadataEntry\032K\n\021ItemMetadataEntr"
+          + "y\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.p"
+          + "rotobuf.Value:\0028\001\032G\n\rMetadataEntry\022\013\n\003ke"
+          + "y\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.protobuf"
+          + ".Value:\0028\0012\342\002\n\021PredictionService\022\363\001\n\007Pre"
+          + "dict\0229.google.cloud.recommendationengine"
+          + ".v1beta1.PredictRequest\032:.google.cloud.r"
+          + "ecommendationengine.v1beta1.PredictRespo"
+          + "nse\"q\202\323\344\223\002Y\"T/v1beta1/{name=projects/*/l"
+          + "ocations/*/catalogs/*/eventStores/*/plac"
+          + "ements/*}:predict:\001*\332A\017name,user_event\032W"
+          + "\312A#recommendationengine.googleapis.com\322A"
+          + ".https://www.googleapis.com/auth/cloud-p"
+          + "latformB\237\002\n-com.google.cloud.recommendat"
+          + "ionengine.v1beta1P\001Z]google.golang.org/g"
+          + "enproto/googleapis/cloud/recommendatione"
+          + "ngine/v1beta1;recommendationengine\242\002\005REC"
+          + "AI\252\002)Google.Cloud.RecommendationEngine.V"
+          + "1Beta1\312\002)Google\\Cloud\\RecommendationEngi"
+          + "ne\\V1beta1\352\002,Google::Cloud::Recommendati"
+          + "onEngine::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -123,6 +125,7 @@ public final class PredictionServiceOuterClass {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.recommendationengine.v1beta1.UserEventOuterClass.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
@@ -203,11 +206,14 @@ public final class PredictionServiceOuterClass {
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.recommendationengine.v1beta1.UserEventOuterClass.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
