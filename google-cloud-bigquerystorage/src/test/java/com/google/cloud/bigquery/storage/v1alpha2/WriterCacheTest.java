@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import org.junit.*;
 import org.junit.runner.RunWith;
@@ -284,6 +285,12 @@ public class WriterCacheTest {
               }
             }
           });
+    }
+    executor.shutdown();
+    try {
+      executor.awaitTermination(1, TimeUnit.MINUTES);
+    } catch (InterruptedException e) {
+      LOG.info(e.toString());
     }
   }
 }

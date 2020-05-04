@@ -33,6 +33,7 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.DataLossException;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.*;
@@ -439,7 +440,7 @@ public class StreamWriterTest {
   }
 
   @Test
-  public void testStreamReconnection() throws Exception {
+  public void testStreamReconnectionTransient() throws Exception {
     StreamWriter writer =
         getTestStreamWriterBuilder()
             .setBatchingSettings(
@@ -450,7 +451,6 @@ public class StreamWriterTest {
                     .build())
             .build();
 
-    // Case 1: Request succeeded after retry since the error is transient.
     StatusRuntimeException transientError = new StatusRuntimeException(Status.UNAVAILABLE);
     testBigQueryWrite.addException(transientError);
     testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(0).build());
@@ -458,9 +458,20 @@ public class StreamWriterTest {
     assertEquals(false, future1.isDone());
     // Retry is scheduled to be 7 seconds later.
     assertEquals(0L, future1.get().getOffset());
+    writer.close();
+  }
 
-    LOG.info("======CASE II");
-    // Case 2 : Request failed since the error is not transient.
+  @Test
+  public void testStreamReconnectionPermanant() throws Exception {
+    StreamWriter writer =
+        getTestStreamWriterBuilder()
+            .setBatchingSettings(
+                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setDelayThreshold(Duration.ofSeconds(100000))
+                    .setElementCountThreshold(1L)
+                    .build())
+            .build();
     StatusRuntimeException permanentError = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     testBigQueryWrite.addException(permanentError);
     ApiFuture<AppendRowsResponse> future2 = sendTestMessage(writer, new String[] {"m2"});
@@ -470,11 +481,26 @@ public class StreamWriterTest {
     } catch (ExecutionException e) {
       assertEquals(permanentError.toString(), e.getCause().getCause().toString());
     }
+    writer.close();
+  }
 
-    LOG.info("======CASE III");
-    // Case 3: Failed after retried max retry times.
-    testBigQueryWrite.addException(transientError);
-    testBigQueryWrite.addException(transientError);
+  @Test
+  public void testStreamReconnectionExceedRetry() throws Exception {
+    StreamWriter writer =
+        getTestStreamWriterBuilder()
+            .setBatchingSettings(
+                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setDelayThreshold(Duration.ofSeconds(100000))
+                    .setElementCountThreshold(1L)
+                    .build())
+            .setRetrySettings(
+                RetrySettings.newBuilder()
+                    .setMaxRetryDelay(Duration.ofMillis(100))
+                    .setMaxAttempts(1)
+                    .build())
+            .build();
+    StatusRuntimeException transientError = new StatusRuntimeException(Status.UNAVAILABLE);
     testBigQueryWrite.addException(transientError);
     testBigQueryWrite.addException(transientError);
     ApiFuture<AppendRowsResponse> future3 = sendTestMessage(writer, new String[] {"m3"});
@@ -814,5 +840,7 @@ public class StreamWriterTest {
     StreamWriter writer = StreamWriter.newBuilder(TEST_STREAM, client).build();
     writer.close();
     assertFalse(client.isShutdown());
+    client.shutdown();
+    client.awaitTermination(1, TimeUnit.MINUTES);
   }
 }

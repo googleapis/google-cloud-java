@@ -165,10 +165,14 @@ public class StreamWriter implements AutoCloseable {
         Instant.ofEpochSecond(
             stream.getCreateTime().getSeconds(), stream.getCreateTime().getNanos());
     if (stream.getType() == Stream.WriteStream.Type.PENDING && stream.hasCommitTime()) {
+      backgroundResources.shutdown();
+      backgroundResources.awaitTermination(1, TimeUnit.MINUTES);
       throw new IllegalStateException(
           "Cannot write to a stream that is already committed: " + streamName);
     }
     if (createTime.plus(streamTTL).compareTo(Instant.now()) < 0) {
+      backgroundResources.shutdown();
+      backgroundResources.awaitTermination(1, TimeUnit.MINUTES);
       throw new IllegalStateException(
           "Cannot write to a stream that is already expired: " + streamName);
     }
@@ -247,7 +251,7 @@ public class StreamWriter implements AutoCloseable {
    */
   public void refreshAppend() throws IOException, InterruptedException {
     synchronized (this) {
-      Preconditions.checkState(!shutdown.get(), "Cannot append on a shut-down writer.");
+      Preconditions.checkState(!shutdown.get(), "Cannot shut down on a shut-down writer.");
       // There could be a moment, stub is not yet initialized.
       if (clientStream != null) {
         clientStream.closeSend();
@@ -475,6 +479,7 @@ public class StreamWriter implements AutoCloseable {
   public void shutdown() {
     Preconditions.checkState(
         !shutdown.getAndSet(true), "Cannot shut down a writer already shut-down.");
+    LOG.info("Shutdown called on writer");
     if (currentAlarmFuture != null && activeAlarm.getAndSet(false)) {
       currentAlarmFuture.cancel(false);
     }
@@ -684,10 +689,6 @@ public class StreamWriter implements AutoCloseable {
      */
     public Builder setRetrySettings(RetrySettings retrySettings) {
       Preconditions.checkNotNull(retrySettings);
-      Preconditions.checkArgument(
-          retrySettings.getTotalTimeout().compareTo(MIN_TOTAL_TIMEOUT) >= 0);
-      Preconditions.checkArgument(
-          retrySettings.getInitialRpcTimeout().compareTo(MIN_RPC_TIMEOUT) >= 0);
       this.retrySettings = retrySettings;
       return this;
     }
