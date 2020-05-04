@@ -77,7 +77,7 @@
     <errorprone.version>2.3.4</errorprone.version>
     <http-client-bom.version>1.35.0</http-client-bom.version>
     <animal-sniffer.version>1.18</animal-sniffer.version>
-    <autovalue.version>1.7</autovalue.version>
+    <autovalue.version>1.7.1</autovalue.version>
     <opencensus.version>0.26.0</opencensus.version>
   </properties>
 
