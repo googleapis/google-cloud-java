@@ -71,7 +71,7 @@
     <iam.version>0.13.0</iam.version>
     <opencensus.version>0.24.0</opencensus.version>
     <findbugs.version>3.0.2</findbugs.version>
-    <autovalue.version>1.7</autovalue.version>
+    <autovalue.version>1.7.1</autovalue.version>
     <junit.version>4.13</junit.version>
     <truth.version>1.0.1</truth.version>
     <mockito.version>3.3.3</mockito.version>
