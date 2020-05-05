@@ -15,6 +15,10 @@
  */
 package com.google.cloud.osconfig.v1;
 
+import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchDeploymentsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchJobInstanceDetailsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchJobsPagedResponse;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -35,7 +39,10 @@ import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobInstanceDetailsRequest
 import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobInstanceDetailsResponse;
 import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobsRequest;
 import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobsResponse;
+import com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter;
 import com.google.cloud.osconfig.v1.PatchJobs.PatchJob;
+import com.google.cloud.osconfig.v1.PatchJobs.PatchJobInstanceDetails;
+import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.Status;
@@ -92,26 +99,32 @@ public class OsConfigServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void executePatchJobTest() {
-    String name = "name3373707";
+    PatchJobName name = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     boolean dryRun = false;
     String errorMessage = "errorMessage-1938755376";
     double percentComplete = -1.96096922E8;
-    String patchDeployment = "patchDeployment633565980";
+    PatchDeploymentName patchDeployment = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
     PatchJob expectedResponse =
         PatchJob.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setDryRun(dryRun)
             .setErrorMessage(errorMessage)
             .setPercentComplete(percentComplete)
-            .setPatchDeployment(patchDeployment)
+            .setPatchDeployment(patchDeployment.toString())
             .build();
     mockOsConfigService.addResponse(expectedResponse);
 
-    ExecutePatchJobRequest request = ExecutePatchJobRequest.newBuilder().build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    PatchInstanceFilter instanceFilter = PatchInstanceFilter.newBuilder().build();
+    ExecutePatchJobRequest request =
+        ExecutePatchJobRequest.newBuilder()
+            .setParent(parent.toString())
+            .setInstanceFilter(instanceFilter)
+            .build();
 
     PatchJob actualResponse = client.executePatchJob(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -120,6 +133,8 @@ public class OsConfigServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ExecutePatchJobRequest actualRequest = (ExecutePatchJobRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(instanceFilter, actualRequest.getInstanceFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -133,7 +148,13 @@ public class OsConfigServiceClientTest {
     mockOsConfigService.addException(exception);
 
     try {
-      ExecutePatchJobRequest request = ExecutePatchJobRequest.newBuilder().build();
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      PatchInstanceFilter instanceFilter = PatchInstanceFilter.newBuilder().build();
+      ExecutePatchJobRequest request =
+          ExecutePatchJobRequest.newBuilder()
+              .setParent(parent.toString())
+              .setInstanceFilter(instanceFilter)
+              .build();
 
       client.executePatchJob(request);
       Assert.fail("No exception raised");
@@ -145,34 +166,35 @@ public class OsConfigServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getPatchJobTest() {
-    String name = "name3373707";
+    PatchJobName name2 = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     boolean dryRun = false;
     String errorMessage = "errorMessage-1938755376";
     double percentComplete = -1.96096922E8;
-    String patchDeployment = "patchDeployment633565980";
+    PatchDeploymentName patchDeployment = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
     PatchJob expectedResponse =
         PatchJob.newBuilder()
-            .setName(name)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setDryRun(dryRun)
             .setErrorMessage(errorMessage)
             .setPercentComplete(percentComplete)
-            .setPatchDeployment(patchDeployment)
+            .setPatchDeployment(patchDeployment.toString())
             .build();
     mockOsConfigService.addResponse(expectedResponse);
 
-    GetPatchJobRequest request = GetPatchJobRequest.newBuilder().build();
+    PatchJobName name = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
 
-    PatchJob actualResponse = client.getPatchJob(request);
+    PatchJob actualResponse = client.getPatchJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockOsConfigService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetPatchJobRequest actualRequest = (GetPatchJobRequest) actualRequests.get(0);
 
+    Assert.assertEquals(name, PatchJobName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -186,9 +208,9 @@ public class OsConfigServiceClientTest {
     mockOsConfigService.addException(exception);
 
     try {
-      GetPatchJobRequest request = GetPatchJobRequest.newBuilder().build();
+      PatchJobName name = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
 
-      client.getPatchJob(request);
+      client.getPatchJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -198,26 +220,28 @@ public class OsConfigServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void cancelPatchJobTest() {
-    String name = "name3373707";
+    PatchJobName name2 = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     boolean dryRun = false;
     String errorMessage = "errorMessage-1938755376";
     double percentComplete = -1.96096922E8;
-    String patchDeployment = "patchDeployment633565980";
+    PatchDeploymentName patchDeployment = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
     PatchJob expectedResponse =
         PatchJob.newBuilder()
-            .setName(name)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setDryRun(dryRun)
             .setErrorMessage(errorMessage)
             .setPercentComplete(percentComplete)
-            .setPatchDeployment(patchDeployment)
+            .setPatchDeployment(patchDeployment.toString())
             .build();
     mockOsConfigService.addResponse(expectedResponse);
 
-    CancelPatchJobRequest request = CancelPatchJobRequest.newBuilder().build();
+    PatchJobName name = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
+    CancelPatchJobRequest request =
+        CancelPatchJobRequest.newBuilder().setName(name.toString()).build();
 
     PatchJob actualResponse = client.cancelPatchJob(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -226,6 +250,7 @@ public class OsConfigServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CancelPatchJobRequest actualRequest = (CancelPatchJobRequest) actualRequests.get(0);
 
+    Assert.assertEquals(name, PatchJobName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -239,7 +264,9 @@ public class OsConfigServiceClientTest {
     mockOsConfigService.addException(exception);
 
     try {
-      CancelPatchJobRequest request = CancelPatchJobRequest.newBuilder().build();
+      PatchJobName name = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
+      CancelPatchJobRequest request =
+          CancelPatchJobRequest.newBuilder().setName(name.toString()).build();
 
       client.cancelPatchJob(request);
       Assert.fail("No exception raised");
@@ -251,20 +278,29 @@ public class OsConfigServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void listPatchJobsTest() {
-    String nextPageToken = "nextPageToken-1530815211";
+    String nextPageToken = "";
+    PatchJob patchJobsElement = PatchJob.newBuilder().build();
+    List<PatchJob> patchJobs = Arrays.asList(patchJobsElement);
     ListPatchJobsResponse expectedResponse =
-        ListPatchJobsResponse.newBuilder().setNextPageToken(nextPageToken).build();
+        ListPatchJobsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllPatchJobs(patchJobs)
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
-    ListPatchJobsRequest request = ListPatchJobsRequest.newBuilder().build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
-    ListPatchJobsResponse actualResponse = client.listPatchJobs(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    ListPatchJobsPagedResponse pagedListResponse = client.listPatchJobs(parent);
+
+    List<PatchJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPatchJobsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockOsConfigService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListPatchJobsRequest actualRequest = (ListPatchJobsRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -278,9 +314,9 @@ public class OsConfigServiceClientTest {
     mockOsConfigService.addException(exception);
 
     try {
-      ListPatchJobsRequest request = ListPatchJobsRequest.newBuilder().build();
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
-      client.listPatchJobs(request);
+      client.listPatchJobs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -290,23 +326,33 @@ public class OsConfigServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void listPatchJobInstanceDetailsTest() {
-    String nextPageToken = "nextPageToken-1530815211";
+    String nextPageToken = "";
+    PatchJobInstanceDetails patchJobInstanceDetailsElement =
+        PatchJobInstanceDetails.newBuilder().build();
+    List<PatchJobInstanceDetails> patchJobInstanceDetails =
+        Arrays.asList(patchJobInstanceDetailsElement);
     ListPatchJobInstanceDetailsResponse expectedResponse =
-        ListPatchJobInstanceDetailsResponse.newBuilder().setNextPageToken(nextPageToken).build();
+        ListPatchJobInstanceDetailsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllPatchJobInstanceDetails(patchJobInstanceDetails)
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
-    ListPatchJobInstanceDetailsRequest request =
-        ListPatchJobInstanceDetailsRequest.newBuilder().build();
+    PatchJobName parent = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
 
-    ListPatchJobInstanceDetailsResponse actualResponse =
-        client.listPatchJobInstanceDetails(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    ListPatchJobInstanceDetailsPagedResponse pagedListResponse =
+        client.listPatchJobInstanceDetails(parent);
+
+    List<PatchJobInstanceDetails> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPatchJobInstanceDetailsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockOsConfigService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListPatchJobInstanceDetailsRequest actualRequest =
         (ListPatchJobInstanceDetailsRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, PatchJobName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -320,10 +366,9 @@ public class OsConfigServiceClientTest {
     mockOsConfigService.addException(exception);
 
     try {
-      ListPatchJobInstanceDetailsRequest request =
-          ListPatchJobInstanceDetailsRequest.newBuilder().build();
+      PatchJobName parent = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
 
-      client.listPatchJobInstanceDetails(request);
+      client.listPatchJobInstanceDetails(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -333,15 +378,18 @@ public class OsConfigServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createPatchDeploymentTest() {
-    String name = "name3373707";
+    PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
     String description = "description-1724546052";
     PatchDeployment expectedResponse =
-        PatchDeployment.newBuilder().setName(name).setDescription(description).build();
+        PatchDeployment.newBuilder().setName(name.toString()).setDescription(description).build();
     mockOsConfigService.addResponse(expectedResponse);
 
-    CreatePatchDeploymentRequest request = CreatePatchDeploymentRequest.newBuilder().build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    PatchDeployment patchDeployment = PatchDeployment.newBuilder().build();
+    String patchDeploymentId = "patchDeploymentId-1817061090";
 
-    PatchDeployment actualResponse = client.createPatchDeployment(request);
+    PatchDeployment actualResponse =
+        client.createPatchDeployment(parent, patchDeployment, patchDeploymentId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockOsConfigService.getRequests();
@@ -349,6 +397,9 @@ public class OsConfigServiceClientTest {
     CreatePatchDeploymentRequest actualRequest =
         (CreatePatchDeploymentRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(patchDeployment, actualRequest.getPatchDeployment());
+    Assert.assertEquals(patchDeploymentId, actualRequest.getPatchDeploymentId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -362,9 +413,11 @@ public class OsConfigServiceClientTest {
     mockOsConfigService.addException(exception);
 
     try {
-      CreatePatchDeploymentRequest request = CreatePatchDeploymentRequest.newBuilder().build();
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      PatchDeployment patchDeployment = PatchDeployment.newBuilder().build();
+      String patchDeploymentId = "patchDeploymentId-1817061090";
 
-      client.createPatchDeployment(request);
+      client.createPatchDeployment(parent, patchDeployment, patchDeploymentId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -374,21 +427,22 @@ public class OsConfigServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getPatchDeploymentTest() {
-    String name = "name3373707";
+    PatchDeploymentName name2 = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
     String description = "description-1724546052";
     PatchDeployment expectedResponse =
-        PatchDeployment.newBuilder().setName(name).setDescription(description).build();
+        PatchDeployment.newBuilder().setName(name2.toString()).setDescription(description).build();
     mockOsConfigService.addResponse(expectedResponse);
 
-    GetPatchDeploymentRequest request = GetPatchDeploymentRequest.newBuilder().build();
+    PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
 
-    PatchDeployment actualResponse = client.getPatchDeployment(request);
+    PatchDeployment actualResponse = client.getPatchDeployment(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockOsConfigService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetPatchDeploymentRequest actualRequest = (GetPatchDeploymentRequest) actualRequests.get(0);
 
+    Assert.assertEquals(name, PatchDeploymentName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -402,9 +456,9 @@ public class OsConfigServiceClientTest {
     mockOsConfigService.addException(exception);
 
     try {
-      GetPatchDeploymentRequest request = GetPatchDeploymentRequest.newBuilder().build();
+      PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
 
-      client.getPatchDeployment(request);
+      client.getPatchDeployment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -414,20 +468,29 @@ public class OsConfigServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void listPatchDeploymentsTest() {
-    String nextPageToken = "nextPageToken-1530815211";
+    String nextPageToken = "";
+    PatchDeployment patchDeploymentsElement = PatchDeployment.newBuilder().build();
+    List<PatchDeployment> patchDeployments = Arrays.asList(patchDeploymentsElement);
     ListPatchDeploymentsResponse expectedResponse =
-        ListPatchDeploymentsResponse.newBuilder().setNextPageToken(nextPageToken).build();
+        ListPatchDeploymentsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllPatchDeployments(patchDeployments)
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
-    ListPatchDeploymentsRequest request = ListPatchDeploymentsRequest.newBuilder().build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
-    ListPatchDeploymentsResponse actualResponse = client.listPatchDeployments(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    ListPatchDeploymentsPagedResponse pagedListResponse = client.listPatchDeployments(parent);
+
+    List<PatchDeployment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPatchDeploymentsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockOsConfigService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListPatchDeploymentsRequest actualRequest = (ListPatchDeploymentsRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -441,9 +504,9 @@ public class OsConfigServiceClientTest {
     mockOsConfigService.addException(exception);
 
     try {
-      ListPatchDeploymentsRequest request = ListPatchDeploymentsRequest.newBuilder().build();
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
-      client.listPatchDeployments(request);
+      client.listPatchDeployments(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -456,15 +519,16 @@ public class OsConfigServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockOsConfigService.addResponse(expectedResponse);
 
-    DeletePatchDeploymentRequest request = DeletePatchDeploymentRequest.newBuilder().build();
+    PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
 
-    client.deletePatchDeployment(request);
+    client.deletePatchDeployment(name);
 
     List<AbstractMessage> actualRequests = mockOsConfigService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeletePatchDeploymentRequest actualRequest =
         (DeletePatchDeploymentRequest) actualRequests.get(0);
 
+    Assert.assertEquals(name, PatchDeploymentName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -478,9 +542,9 @@ public class OsConfigServiceClientTest {
     mockOsConfigService.addException(exception);
 
     try {
-      DeletePatchDeploymentRequest request = DeletePatchDeploymentRequest.newBuilder().build();
+      PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
 
-      client.deletePatchDeployment(request);
+      client.deletePatchDeployment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

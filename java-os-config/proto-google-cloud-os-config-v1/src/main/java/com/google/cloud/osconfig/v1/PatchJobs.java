@@ -252,7 +252,7 @@ public final class PatchJobs {
    *
    *
    * <pre>
-   * A request message to initiate patching across Google Compute Engine
+   * A request message to initiate patching across Compute Engine
    * instances.
    * </pre>
    *
@@ -961,7 +961,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * A request message to initiate patching across Google Compute Engine
+     * A request message to initiate patching across Compute Engine
      * instances.
      * </pre>
      *
@@ -5567,7 +5567,7 @@ public final class PatchJobs {
    * Patch details for a VM instance. For more information about reviewing VM
    * instance details, see
    * [Listing all VM instance details for a specific patch
-   * job](/compute/docs/os-patch-management/manage-patch-jobs#list-instance-details).
+   * job](https://cloud.google.com/compute/docs/os-patch-management/manage-patch-jobs#list-instance-details).
    * </pre>
    *
    * Protobuf type {@code google.cloud.osconfig.v1.PatchJobInstanceDetails}
@@ -6089,7 +6089,7 @@ public final class PatchJobs {
      * Patch details for a VM instance. For more information about reviewing VM
      * instance details, see
      * [Listing all VM instance details for a specific patch
-     * job](/compute/docs/os-patch-management/manage-patch-jobs#list-instance-details).
+     * job](https://cloud.google.com/compute/docs/os-patch-management/manage-patch-jobs#list-instance-details).
      * </pre>
      *
      * Protobuf type {@code google.cloud.osconfig.v1.PatchJobInstanceDetails}
@@ -9629,7 +9629,8 @@ public final class PatchJobs {
    * Instances details are not included in the job. To paginate through instance
    * details, use ListPatchJobInstanceDetails.
    * For more information about patch jobs, see
-   * [Creating patch jobs](/compute/docs/os-patch-management/create-patch-job).
+   * [Creating patch
+   * jobs](https://cloud.google.com/compute/docs/os-patch-management/create-patch-job).
    * </pre>
    *
    * Protobuf type {@code google.cloud.osconfig.v1.PatchJob}
@@ -13081,7 +13082,8 @@ public final class PatchJobs {
      * Instances details are not included in the job. To paginate through instance
      * details, use ListPatchJobInstanceDetails.
      * For more information about patch jobs, see
-     * [Creating patch jobs](/compute/docs/os-patch-management/create-patch-job).
+     * [Creating patch
+     * jobs](https://cloud.google.com/compute/docs/os-patch-management/create-patch-job).
      * </pre>
      *
      * Protobuf type {@code google.cloud.osconfig.v1.PatchJob}
@@ -28462,7 +28464,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * A Google Cloud Storage object containing the executable.
+     * A Cloud Storage object containing the executable.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -28474,7 +28476,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * A Google Cloud Storage object containing the executable.
+     * A Cloud Storage object containing the executable.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -28486,7 +28488,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * A Google Cloud Storage object containing the executable.
+     * A Cloud Storage object containing the executable.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -28985,7 +28987,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * A Google Cloud Storage object containing the executable.
+     * A Cloud Storage object containing the executable.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -28999,7 +29001,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * A Google Cloud Storage object containing the executable.
+     * A Cloud Storage object containing the executable.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -29016,7 +29018,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * A Google Cloud Storage object containing the executable.
+     * A Cloud Storage object containing the executable.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -29704,7 +29706,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * A Google Cloud Storage object containing the executable.
+       * A Cloud Storage object containing the executable.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -29718,7 +29720,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * A Google Cloud Storage object containing the executable.
+       * A Cloud Storage object containing the executable.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -29742,7 +29744,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * A Google Cloud Storage object containing the executable.
+       * A Cloud Storage object containing the executable.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -29764,7 +29766,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * A Google Cloud Storage object containing the executable.
+       * A Cloud Storage object containing the executable.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -29784,7 +29786,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * A Google Cloud Storage object containing the executable.
+       * A Cloud Storage object containing the executable.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -29816,7 +29818,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * A Google Cloud Storage object containing the executable.
+       * A Cloud Storage object containing the executable.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -29841,7 +29843,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * A Google Cloud Storage object containing the executable.
+       * A Cloud Storage object containing the executable.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -29853,7 +29855,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * A Google Cloud Storage object containing the executable.
+       * A Cloud Storage object containing the executable.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -29872,7 +29874,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * A Google Cloud Storage object containing the executable.
+       * A Cloud Storage object containing the executable.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
@@ -30203,7 +30205,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Required. Bucket of the Google Cloud Storage object.
+     * Required. Bucket of the Cloud Storage object.
      * </pre>
      *
      * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30215,7 +30217,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Required. Bucket of the Google Cloud Storage object.
+     * Required. Bucket of the Cloud Storage object.
      * </pre>
      *
      * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30228,7 +30230,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Required. Name of the Google Cloud Storage object.
+     * Required. Name of the Cloud Storage object.
      * </pre>
      *
      * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30240,7 +30242,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Required. Name of the Google Cloud Storage object.
+     * Required. Name of the Cloud Storage object.
      * </pre>
      *
      * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30253,7 +30255,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Required. Generation number of the Google Cloud Storage object. This is used to
+     * Required. Generation number of the Cloud Storage object. This is used to
      * ensure that the ExecStep specified by this PatchJob does not change.
      * </pre>
      *
@@ -30267,7 +30269,7 @@ public final class PatchJobs {
    *
    *
    * <pre>
-   * Google Cloud Storage object representation.
+   * Cloud Storage object representation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.osconfig.v1.GcsObject}
@@ -30375,7 +30377,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Required. Bucket of the Google Cloud Storage object.
+     * Required. Bucket of the Cloud Storage object.
      * </pre>
      *
      * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30397,7 +30399,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Required. Bucket of the Google Cloud Storage object.
+     * Required. Bucket of the Cloud Storage object.
      * </pre>
      *
      * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30422,7 +30424,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Required. Name of the Google Cloud Storage object.
+     * Required. Name of the Cloud Storage object.
      * </pre>
      *
      * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30444,7 +30446,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Required. Name of the Google Cloud Storage object.
+     * Required. Name of the Cloud Storage object.
      * </pre>
      *
      * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30469,7 +30471,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Required. Generation number of the Google Cloud Storage object. This is used to
+     * Required. Generation number of the Cloud Storage object. This is used to
      * ensure that the ExecStep specified by this PatchJob does not change.
      * </pre>
      *
@@ -30663,7 +30665,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Google Cloud Storage object representation.
+     * Cloud Storage object representation.
      * </pre>
      *
      * Protobuf type {@code google.cloud.osconfig.v1.GcsObject}
@@ -30839,7 +30841,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Required. Bucket of the Google Cloud Storage object.
+       * Required. Bucket of the Cloud Storage object.
        * </pre>
        *
        * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30861,7 +30863,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Required. Bucket of the Google Cloud Storage object.
+       * Required. Bucket of the Cloud Storage object.
        * </pre>
        *
        * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30883,7 +30885,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Required. Bucket of the Google Cloud Storage object.
+       * Required. Bucket of the Cloud Storage object.
        * </pre>
        *
        * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30904,7 +30906,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Required. Bucket of the Google Cloud Storage object.
+       * Required. Bucket of the Cloud Storage object.
        * </pre>
        *
        * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30921,7 +30923,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Required. Bucket of the Google Cloud Storage object.
+       * Required. Bucket of the Cloud Storage object.
        * </pre>
        *
        * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30945,7 +30947,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Required. Name of the Google Cloud Storage object.
+       * Required. Name of the Cloud Storage object.
        * </pre>
        *
        * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30967,7 +30969,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Required. Name of the Google Cloud Storage object.
+       * Required. Name of the Cloud Storage object.
        * </pre>
        *
        * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30989,7 +30991,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Required. Name of the Google Cloud Storage object.
+       * Required. Name of the Cloud Storage object.
        * </pre>
        *
        * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -31010,7 +31012,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Required. Name of the Google Cloud Storage object.
+       * Required. Name of the Cloud Storage object.
        * </pre>
        *
        * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -31027,7 +31029,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Required. Name of the Google Cloud Storage object.
+       * Required. Name of the Cloud Storage object.
        * </pre>
        *
        * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -31051,7 +31053,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Required. Generation number of the Google Cloud Storage object. This is used to
+       * Required. Generation number of the Cloud Storage object. This is used to
        * ensure that the ExecStep specified by this PatchJob does not change.
        * </pre>
        *
@@ -31066,7 +31068,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Required. Generation number of the Google Cloud Storage object. This is used to
+       * Required. Generation number of the Cloud Storage object. This is used to
        * ensure that the ExecStep specified by this PatchJob does not change.
        * </pre>
        *
@@ -31085,7 +31087,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Required. Generation number of the Google Cloud Storage object. This is used to
+       * Required. Generation number of the Cloud Storage object. This is used to
        * ensure that the ExecStep specified by this PatchJob does not change.
        * </pre>
        *
@@ -31175,8 +31177,8 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Targets VM instances matching at least one of these label sets. This allows
-     * targeting of disparate groups, for example "env=prod or env=staging".
+     * Targets VM instances matching ANY of these GroupLabels. This allows
+     * targeting of disparate groups of VM instances.
      * </pre>
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -31188,8 +31190,8 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Targets VM instances matching at least one of these label sets. This allows
-     * targeting of disparate groups, for example "env=prod or env=staging".
+     * Targets VM instances matching ANY of these GroupLabels. This allows
+     * targeting of disparate groups of VM instances.
      * </pre>
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -31200,8 +31202,8 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Targets VM instances matching at least one of these label sets. This allows
-     * targeting of disparate groups, for example "env=prod or env=staging".
+     * Targets VM instances matching ANY of these GroupLabels. This allows
+     * targeting of disparate groups of VM instances.
      * </pre>
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -31212,8 +31214,8 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Targets VM instances matching at least one of these label sets. This allows
-     * targeting of disparate groups, for example "env=prod or env=staging".
+     * Targets VM instances matching ANY of these GroupLabels. This allows
+     * targeting of disparate groups of VM instances.
      * </pre>
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -31227,8 +31229,8 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Targets VM instances matching at least one of these label sets. This allows
-     * targeting of disparate groups, for example "env=prod or env=staging".
+     * Targets VM instances matching ANY of these GroupLabels. This allows
+     * targeting of disparate groups of VM instances.
      * </pre>
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -31578,7 +31580,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
+       * Compute Engine instance labels that must be present for a VM
        * instance to be targeted by this filter.
        * </pre>
        *
@@ -31589,7 +31591,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
+       * Compute Engine instance labels that must be present for a VM
        * instance to be targeted by this filter.
        * </pre>
        *
@@ -31603,7 +31605,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
+       * Compute Engine instance labels that must be present for a VM
        * instance to be targeted by this filter.
        * </pre>
        *
@@ -31614,7 +31616,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
+       * Compute Engine instance labels that must be present for a VM
        * instance to be targeted by this filter.
        * </pre>
        *
@@ -31625,7 +31627,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
+       * Compute Engine instance labels that must be present for a VM
        * instance to be targeted by this filter.
        * </pre>
        *
@@ -31637,8 +31639,13 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Represents a group of VMs that can be identified as having all these
-     * labels, for example "env=prod and app=web".
+     * Targets a group of VM instances by using their [assigned
+     * labels](https://cloud.google.com/compute/docs/labeling-resources). Labels
+     * are key-value pairs. A `GroupLabel` is a combination of labels
+     * that is used to target VMs for a patch job.
+     * For example, a patch job can target VMs that have the following
+     * `GroupLabel`: `{"env":"test", "app":"web"}`. This means that the patch job
+     * is applied to VMs that have both the labels `env=test` and `app=web`.
      * </pre>
      *
      * Protobuf type {@code google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel}
@@ -31776,7 +31783,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
+       * Compute Engine instance labels that must be present for a VM
        * instance to be targeted by this filter.
        * </pre>
        *
@@ -31797,7 +31804,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
+       * Compute Engine instance labels that must be present for a VM
        * instance to be targeted by this filter.
        * </pre>
        *
@@ -31810,7 +31817,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
+       * Compute Engine instance labels that must be present for a VM
        * instance to be targeted by this filter.
        * </pre>
        *
@@ -31828,7 +31835,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
+       * Compute Engine instance labels that must be present for a VM
        * instance to be targeted by this filter.
        * </pre>
        *
@@ -32021,8 +32028,13 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Represents a group of VMs that can be identified as having all these
-       * labels, for example "env=prod and app=web".
+       * Targets a group of VM instances by using their [assigned
+       * labels](https://cloud.google.com/compute/docs/labeling-resources). Labels
+       * are key-value pairs. A `GroupLabel` is a combination of labels
+       * that is used to target VMs for a patch job.
+       * For example, a patch job can target VMs that have the following
+       * `GroupLabel`: `{"env":"test", "app":"web"}`. This means that the patch job
+       * is applied to VMs that have both the labels `env=test` and `app=web`.
        * </pre>
        *
        * Protobuf type {@code google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel}
@@ -32244,7 +32256,7 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
+         * Compute Engine instance labels that must be present for a VM
          * instance to be targeted by this filter.
          * </pre>
          *
@@ -32265,7 +32277,7 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
+         * Compute Engine instance labels that must be present for a VM
          * instance to be targeted by this filter.
          * </pre>
          *
@@ -32278,7 +32290,7 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
+         * Compute Engine instance labels that must be present for a VM
          * instance to be targeted by this filter.
          * </pre>
          *
@@ -32296,7 +32308,7 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
+         * Compute Engine instance labels that must be present for a VM
          * instance to be targeted by this filter.
          * </pre>
          *
@@ -32321,7 +32333,7 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
+         * Compute Engine instance labels that must be present for a VM
          * instance to be targeted by this filter.
          * </pre>
          *
@@ -32343,7 +32355,7 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
+         * Compute Engine instance labels that must be present for a VM
          * instance to be targeted by this filter.
          * </pre>
          *
@@ -32363,7 +32375,7 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
+         * Compute Engine instance labels that must be present for a VM
          * instance to be targeted by this filter.
          * </pre>
          *
@@ -32455,8 +32467,8 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Targets VM instances matching at least one of these label sets. This allows
-     * targeting of disparate groups, for example "env=prod or env=staging".
+     * Targets VM instances matching ANY of these GroupLabels. This allows
+     * targeting of disparate groups of VM instances.
      * </pre>
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -32470,8 +32482,8 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Targets VM instances matching at least one of these label sets. This allows
-     * targeting of disparate groups, for example "env=prod or env=staging".
+     * Targets VM instances matching ANY of these GroupLabels. This allows
+     * targeting of disparate groups of VM instances.
      * </pre>
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -32487,8 +32499,8 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Targets VM instances matching at least one of these label sets. This allows
-     * targeting of disparate groups, for example "env=prod or env=staging".
+     * Targets VM instances matching ANY of these GroupLabels. This allows
+     * targeting of disparate groups of VM instances.
      * </pre>
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -32501,8 +32513,8 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Targets VM instances matching at least one of these label sets. This allows
-     * targeting of disparate groups, for example "env=prod or env=staging".
+     * Targets VM instances matching ANY of these GroupLabels. This allows
+     * targeting of disparate groups of VM instances.
      * </pre>
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -32516,8 +32528,8 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * Targets VM instances matching at least one of these label sets. This allows
-     * targeting of disparate groups, for example "env=prod or env=staging".
+     * Targets VM instances matching ANY of these GroupLabels. This allows
+     * targeting of disparate groups of VM instances.
      * </pre>
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33297,8 +33309,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33316,8 +33328,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33334,8 +33346,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33353,8 +33365,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33378,8 +33390,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33402,8 +33414,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33427,8 +33439,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33452,8 +33464,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33475,8 +33487,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33499,8 +33511,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33523,8 +33535,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33544,8 +33556,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33565,8 +33577,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33580,8 +33592,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33599,8 +33611,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33620,8 +33632,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33638,8 +33650,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
@@ -33657,8 +33669,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Targets VM instances matching at least one of these label sets. This allows
-       * targeting of disparate groups, for example "env=prod or env=staging".
+       * Targets VM instances matching ANY of these GroupLabels. This allows
+       * targeting of disparate groups of VM instances.
        * </pre>
        *
        * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;

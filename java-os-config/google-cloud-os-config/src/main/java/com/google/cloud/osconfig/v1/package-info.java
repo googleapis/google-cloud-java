@@ -31,8 +31,8 @@
  * <pre>
  * <code>
  * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
- *   ExecutePatchJobRequest request = ExecutePatchJobRequest.newBuilder().build();
- *   PatchJob response = osConfigServiceClient.executePatchJob(request);
+ *   PatchJobName name = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
+ *   PatchJob response = osConfigServiceClient.getPatchJob(name);
  * }
  * </code>
  * </pre>

@@ -15,6 +15,10 @@
  */
 package com.google.cloud.osconfig.v1.stub;
 
+import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchDeploymentsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchJobInstanceDetailsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchJobsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -57,8 +61,19 @@ public abstract class OsConfigServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: cancelPatchJobCallable()");
   }
 
+  public UnaryCallable<ListPatchJobsRequest, ListPatchJobsPagedResponse>
+      listPatchJobsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPatchJobsPagedCallable()");
+  }
+
   public UnaryCallable<ListPatchJobsRequest, ListPatchJobsResponse> listPatchJobsCallable() {
     throw new UnsupportedOperationException("Not implemented: listPatchJobsCallable()");
+  }
+
+  public UnaryCallable<ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsPagedResponse>
+      listPatchJobInstanceDetailsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listPatchJobInstanceDetailsPagedCallable()");
   }
 
   public UnaryCallable<ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsResponse>
@@ -74,6 +89,11 @@ public abstract class OsConfigServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetPatchDeploymentRequest, PatchDeployment> getPatchDeploymentCallable() {
     throw new UnsupportedOperationException("Not implemented: getPatchDeploymentCallable()");
+  }
+
+  public UnaryCallable<ListPatchDeploymentsRequest, ListPatchDeploymentsPagedResponse>
+      listPatchDeploymentsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPatchDeploymentsPagedCallable()");
   }
 
   public UnaryCallable<ListPatchDeploymentsRequest, ListPatchDeploymentsResponse>

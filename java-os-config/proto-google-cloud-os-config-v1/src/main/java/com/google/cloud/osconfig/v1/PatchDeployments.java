@@ -300,8 +300,7 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. Time the patch deployment was created. Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
      * <code>
@@ -316,8 +315,7 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. Time the patch deployment was created. Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
      * <code>
@@ -332,8 +330,7 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. Time the patch deployment was created. Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
      * <code>
@@ -347,8 +344,7 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. Time the patch deployment was last updated. Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
      * <code>
@@ -363,8 +359,7 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. Time the patch deployment was last updated. Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
      * <code>
@@ -379,8 +374,7 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. Time the patch deployment was last updated. Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
      * <code>
@@ -394,9 +388,8 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. The last time a patch job was started by this deployment.
-     * Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+     * format.
      * </pre>
      *
      * <code>
@@ -411,9 +404,8 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. The last time a patch job was started by this deployment.
-     * Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+     * format.
      * </pre>
      *
      * <code>
@@ -428,9 +420,8 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. The last time a patch job was started by this deployment.
-     * Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+     * format.
      * </pre>
      *
      * <code>
@@ -450,7 +441,7 @@ public final class PatchDeployments {
    * complete a patch. These configurations include instance filter, package
    * repository settings, and a schedule. For more information about creating and
    * managing patch deployments, see [Scheduling patch
-   * jobs](/compute/docs/os-patch-management/schedule-patch-jobs).
+   * jobs](https://cloud.google.com/compute/docs/os-patch-management/schedule-patch-jobs).
    * </pre>
    *
    * Protobuf type {@code google.cloud.osconfig.v1.PatchDeployment}
@@ -1099,8 +1090,7 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. Time the patch deployment was created. Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
      * <code>
@@ -1117,8 +1107,7 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. Time the patch deployment was created. Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
      * <code>
@@ -1135,8 +1124,7 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. Time the patch deployment was created. Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
      * <code>
@@ -1154,8 +1142,7 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. Time the patch deployment was last updated. Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
      * <code>
@@ -1172,8 +1159,7 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. Time the patch deployment was last updated. Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
      * <code>
@@ -1190,8 +1176,7 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. Time the patch deployment was last updated. Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
      * <code>
@@ -1209,9 +1194,8 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. The last time a patch job was started by this deployment.
-     * Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+     * format.
      * </pre>
      *
      * <code>
@@ -1228,9 +1212,8 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. The last time a patch job was started by this deployment.
-     * Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+     * format.
      * </pre>
      *
      * <code>
@@ -1249,9 +1232,8 @@ public final class PatchDeployments {
      *
      * <pre>
      * Output only. The last time a patch job was started by this deployment.
-     * Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+     * format.
      * </pre>
      *
      * <code>
@@ -1565,7 +1547,7 @@ public final class PatchDeployments {
      * complete a patch. These configurations include instance filter, package
      * repository settings, and a schedule. For more information about creating and
      * managing patch deployments, see [Scheduling patch
-     * jobs](/compute/docs/os-patch-management/schedule-patch-jobs).
+     * jobs](https://cloud.google.com/compute/docs/os-patch-management/schedule-patch-jobs).
      * </pre>
      *
      * Protobuf type {@code google.cloud.osconfig.v1.PatchDeployment}
@@ -3176,8 +3158,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was created. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3194,8 +3175,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was created. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3218,8 +3198,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was created. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3244,8 +3223,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was created. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3267,8 +3245,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was created. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3297,8 +3274,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was created. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3321,8 +3297,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was created. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3339,8 +3314,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was created. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3361,8 +3335,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was created. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3397,8 +3370,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was last updated. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3415,8 +3387,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was last updated. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3439,8 +3410,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was last updated. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3465,8 +3435,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was last updated. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3488,8 +3457,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was last updated. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3518,8 +3486,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was last updated. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3542,8 +3509,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was last updated. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3560,8 +3526,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was last updated. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3582,8 +3547,7 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. Time the patch deployment was last updated. Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
        * </pre>
        *
        * <code>
@@ -3618,9 +3582,8 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. The last time a patch job was started by this deployment.
-       * Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+       * format.
        * </pre>
        *
        * <code>
@@ -3637,9 +3600,8 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. The last time a patch job was started by this deployment.
-       * Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+       * format.
        * </pre>
        *
        * <code>
@@ -3662,9 +3624,8 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. The last time a patch job was started by this deployment.
-       * Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+       * format.
        * </pre>
        *
        * <code>
@@ -3689,9 +3650,8 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. The last time a patch job was started by this deployment.
-       * Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+       * format.
        * </pre>
        *
        * <code>
@@ -3713,9 +3673,8 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. The last time a patch job was started by this deployment.
-       * Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+       * format.
        * </pre>
        *
        * <code>
@@ -3744,9 +3703,8 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. The last time a patch job was started by this deployment.
-       * Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+       * format.
        * </pre>
        *
        * <code>
@@ -3769,9 +3727,8 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. The last time a patch job was started by this deployment.
-       * Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+       * format.
        * </pre>
        *
        * <code>
@@ -3788,9 +3745,8 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. The last time a patch job was started by this deployment.
-       * Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+       * format.
        * </pre>
        *
        * <code>
@@ -3811,9 +3767,8 @@ public final class PatchDeployments {
        *
        * <pre>
        * Output only. The last time a patch job was started by this deployment.
-       * Timestamp is in
-       * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-       * text format.
+       * Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+       * format.
        * </pre>
        *
        * <code>
@@ -3940,8 +3895,7 @@ public final class PatchDeployments {
    *
    * <pre>
    * Sets the time for a one time patch deployment. Timestamp is in
-   * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-   * text format.
+   * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
    * </pre>
    *
    * Protobuf type {@code google.cloud.osconfig.v1.OneTimeSchedule}
@@ -4255,8 +4209,7 @@ public final class PatchDeployments {
      *
      * <pre>
      * Sets the time for a one time patch deployment. Timestamp is in
-     * &lt;a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank"&gt;RFC3339&lt;/a&gt;
-     * text format.
+     * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
      * Protobuf type {@code google.cloud.osconfig.v1.OneTimeSchedule}

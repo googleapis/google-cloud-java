@@ -15,6 +15,10 @@
  */
 package com.google.cloud.osconfig.v1.stub;
 
+import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchDeploymentsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchJobInstanceDetailsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchJobsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -148,15 +152,22 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
   private final UnaryCallable<GetPatchJobRequest, PatchJob> getPatchJobCallable;
   private final UnaryCallable<CancelPatchJobRequest, PatchJob> cancelPatchJobCallable;
   private final UnaryCallable<ListPatchJobsRequest, ListPatchJobsResponse> listPatchJobsCallable;
+  private final UnaryCallable<ListPatchJobsRequest, ListPatchJobsPagedResponse>
+      listPatchJobsPagedCallable;
   private final UnaryCallable<
           ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsResponse>
       listPatchJobInstanceDetailsCallable;
+  private final UnaryCallable<
+          ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsPagedResponse>
+      listPatchJobInstanceDetailsPagedCallable;
   private final UnaryCallable<CreatePatchDeploymentRequest, PatchDeployment>
       createPatchDeploymentCallable;
   private final UnaryCallable<GetPatchDeploymentRequest, PatchDeployment>
       getPatchDeploymentCallable;
   private final UnaryCallable<ListPatchDeploymentsRequest, ListPatchDeploymentsResponse>
       listPatchDeploymentsCallable;
+  private final UnaryCallable<ListPatchDeploymentsRequest, ListPatchDeploymentsPagedResponse>
+      listPatchDeploymentsPagedCallable;
   private final UnaryCallable<DeletePatchDeploymentRequest, Empty> deletePatchDeploymentCallable;
 
   private final GrpcStubCallableFactory callableFactory;
@@ -337,8 +348,16 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
     this.listPatchJobsCallable =
         callableFactory.createUnaryCallable(
             listPatchJobsTransportSettings, settings.listPatchJobsSettings(), clientContext);
+    this.listPatchJobsPagedCallable =
+        callableFactory.createPagedCallable(
+            listPatchJobsTransportSettings, settings.listPatchJobsSettings(), clientContext);
     this.listPatchJobInstanceDetailsCallable =
         callableFactory.createUnaryCallable(
+            listPatchJobInstanceDetailsTransportSettings,
+            settings.listPatchJobInstanceDetailsSettings(),
+            clientContext);
+    this.listPatchJobInstanceDetailsPagedCallable =
+        callableFactory.createPagedCallable(
             listPatchJobInstanceDetailsTransportSettings,
             settings.listPatchJobInstanceDetailsSettings(),
             clientContext);
@@ -354,6 +373,11 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
             clientContext);
     this.listPatchDeploymentsCallable =
         callableFactory.createUnaryCallable(
+            listPatchDeploymentsTransportSettings,
+            settings.listPatchDeploymentsSettings(),
+            clientContext);
+    this.listPatchDeploymentsPagedCallable =
+        callableFactory.createPagedCallable(
             listPatchDeploymentsTransportSettings,
             settings.listPatchDeploymentsSettings(),
             clientContext);
@@ -378,8 +402,18 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
     return cancelPatchJobCallable;
   }
 
+  public UnaryCallable<ListPatchJobsRequest, ListPatchJobsPagedResponse>
+      listPatchJobsPagedCallable() {
+    return listPatchJobsPagedCallable;
+  }
+
   public UnaryCallable<ListPatchJobsRequest, ListPatchJobsResponse> listPatchJobsCallable() {
     return listPatchJobsCallable;
+  }
+
+  public UnaryCallable<ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsPagedResponse>
+      listPatchJobInstanceDetailsPagedCallable() {
+    return listPatchJobInstanceDetailsPagedCallable;
   }
 
   public UnaryCallable<ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsResponse>
@@ -394,6 +428,11 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
 
   public UnaryCallable<GetPatchDeploymentRequest, PatchDeployment> getPatchDeploymentCallable() {
     return getPatchDeploymentCallable;
+  }
+
+  public UnaryCallable<ListPatchDeploymentsRequest, ListPatchDeploymentsPagedResponse>
+      listPatchDeploymentsPagedCallable() {
+    return listPatchDeploymentsPagedCallable;
   }
 
   public UnaryCallable<ListPatchDeploymentsRequest, ListPatchDeploymentsResponse>

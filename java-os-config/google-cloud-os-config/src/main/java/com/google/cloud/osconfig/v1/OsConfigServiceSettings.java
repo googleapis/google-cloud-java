@@ -15,6 +15,10 @@
  */
 package com.google.cloud.osconfig.v1;
 
+import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchDeploymentsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchJobInstanceDetailsPagedResponse;
+import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchJobsPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -23,6 +27,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.osconfig.v1.PatchDeployments.CreatePatchDeploymentRequest;
@@ -60,16 +65,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of executePatchJob to 30 seconds:
+ * <p>For example, to set the total timeout of getPatchJob to 30 seconds:
  *
  * <pre>
  * <code>
  * OsConfigServiceSettings.Builder osConfigServiceSettingsBuilder =
  *     OsConfigServiceSettings.newBuilder();
  * osConfigServiceSettingsBuilder
- *     .executePatchJobSettings()
+ *     .getPatchJobSettings()
  *     .setRetrySettings(
- *         osConfigServiceSettingsBuilder.executePatchJobSettings().getRetrySettings().toBuilder()
+ *         osConfigServiceSettingsBuilder.getPatchJobSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * OsConfigServiceSettings osConfigServiceSettings = osConfigServiceSettingsBuilder.build();
@@ -95,12 +100,16 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
   }
 
   /** Returns the object with the settings used for calls to listPatchJobs. */
-  public UnaryCallSettings<ListPatchJobsRequest, ListPatchJobsResponse> listPatchJobsSettings() {
+  public PagedCallSettings<ListPatchJobsRequest, ListPatchJobsResponse, ListPatchJobsPagedResponse>
+      listPatchJobsSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).listPatchJobsSettings();
   }
 
   /** Returns the object with the settings used for calls to listPatchJobInstanceDetails. */
-  public UnaryCallSettings<ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsResponse>
+  public PagedCallSettings<
+          ListPatchJobInstanceDetailsRequest,
+          ListPatchJobInstanceDetailsResponse,
+          ListPatchJobInstanceDetailsPagedResponse>
       listPatchJobInstanceDetailsSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).listPatchJobInstanceDetailsSettings();
   }
@@ -118,7 +127,10 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
   }
 
   /** Returns the object with the settings used for calls to listPatchDeployments. */
-  public UnaryCallSettings<ListPatchDeploymentsRequest, ListPatchDeploymentsResponse>
+  public PagedCallSettings<
+          ListPatchDeploymentsRequest,
+          ListPatchDeploymentsResponse,
+          ListPatchDeploymentsPagedResponse>
       listPatchDeploymentsSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).listPatchDeploymentsSettings();
   }
@@ -241,14 +253,17 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to listPatchJobs. */
-    public UnaryCallSettings.Builder<ListPatchJobsRequest, ListPatchJobsResponse>
+    public PagedCallSettings.Builder<
+            ListPatchJobsRequest, ListPatchJobsResponse, ListPatchJobsPagedResponse>
         listPatchJobsSettings() {
       return getStubSettingsBuilder().listPatchJobsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listPatchJobInstanceDetails. */
-    public UnaryCallSettings.Builder<
-            ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsResponse>
+    public PagedCallSettings.Builder<
+            ListPatchJobInstanceDetailsRequest,
+            ListPatchJobInstanceDetailsResponse,
+            ListPatchJobInstanceDetailsPagedResponse>
         listPatchJobInstanceDetailsSettings() {
       return getStubSettingsBuilder().listPatchJobInstanceDetailsSettings();
     }
@@ -266,7 +281,10 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to listPatchDeployments. */
-    public UnaryCallSettings.Builder<ListPatchDeploymentsRequest, ListPatchDeploymentsResponse>
+    public PagedCallSettings.Builder<
+            ListPatchDeploymentsRequest,
+            ListPatchDeploymentsResponse,
+            ListPatchDeploymentsPagedResponse>
         listPatchDeploymentsSettings() {
       return getStubSettingsBuilder().listPatchDeploymentsSettings();
     }
