@@ -68,6 +68,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final Long jobTimeoutMs;
   private final Map<String, String> labels;
   private final RangePartitioning rangePartitioning;
+  private final List<ConnectionProperty> connectionProperties;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be {@link
@@ -116,6 +117,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Long jobTimeoutMs;
     private Map<String, String> labels;
     private RangePartitioning rangePartitioning;
+    private List<ConnectionProperty> connectionProperties;
 
     private Builder() {
       super(Type.QUERY);
@@ -147,6 +149,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.jobTimeoutMs = jobConfiguration.jobTimeoutMs;
       this.labels = jobConfiguration.labels;
       this.rangePartitioning = jobConfiguration.rangePartitioning;
+      this.connectionProperties = jobConfiguration.connectionProperties;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -239,6 +242,12 @@ public final class QueryJobConfiguration extends JobConfiguration {
       if (queryConfigurationPb.getRangePartitioning() != null) {
         this.rangePartitioning =
             RangePartitioning.fromPb(queryConfigurationPb.getRangePartitioning());
+      }
+      if (queryConfigurationPb.getConnectionProperties() != null) {
+        this.connectionProperties =
+            Lists.transform(
+                queryConfigurationPb.getConnectionProperties(),
+                ConnectionProperty.FROM_PB_FUNCTION);
       }
     }
 
@@ -579,6 +588,21 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * A connection-level property to customize query behavior. Under JDBC, these correspond
+     * directly to connection properties passed to the DriverManager. Under ODBC, these correspond
+     * to properties in the connection string. Currently, the only supported connection property is
+     * "time_zone", whose value represents the default timezone used to run the query. Additional
+     * properties are allowed, but ignored. Specifying multiple connection properties with the same
+     * key is an error.
+     *
+     * @param connectionProperties connectionProperties or {@code null} for none
+     */
+    public Builder setConnectionProperties(List<ConnectionProperty> connectionProperties) {
+      this.connectionProperties = ImmutableList.copyOf(connectionProperties);
+      return this;
+    }
+
     public QueryJobConfiguration build() {
       return new QueryJobConfiguration(this);
     }
@@ -619,6 +643,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.jobTimeoutMs = builder.jobTimeoutMs;
     this.labels = builder.labels;
     this.rangePartitioning = builder.rangePartitioning;
+    this.connectionProperties = builder.connectionProperties;
   }
 
   /**
@@ -803,6 +828,11 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return rangePartitioning;
   }
 
+  /** Returns the connection properties for connection string with this job */
+  public List<ConnectionProperty> getConnectionProperties() {
+    return connectionProperties;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -834,7 +864,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("clustering", clustering)
         .add("jobTimeoutMs", jobTimeoutMs)
         .add("labels", labels)
-        .add("rangePartitioning", rangePartitioning);
+        .add("rangePartitioning", rangePartitioning)
+        .add("connectionProperties", connectionProperties);
   }
 
   @Override
@@ -869,7 +900,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
         clustering,
         jobTimeoutMs,
         labels,
-        rangePartitioning);
+        rangePartitioning,
+        connectionProperties);
   }
 
   @Override
@@ -967,6 +999,10 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
     if (rangePartitioning != null) {
       queryConfigurationPb.setRangePartitioning(rangePartitioning.toPb());
+    }
+    if (connectionProperties != null) {
+      queryConfigurationPb.setConnectionProperties(
+          Lists.transform(connectionProperties, ConnectionProperty.TO_PB_FUNCTION));
     }
     configurationPb.setQuery(queryConfigurationPb);
     return configurationPb;

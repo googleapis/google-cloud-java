@@ -38,6 +38,12 @@ public class QueryJobConfigurationTest {
   private static final DatasetId DATASET_ID = DatasetId.of("dataset");
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
+  private static final String KEY = "time_zone";
+  private static final String VALUE = "US/Eastern";
+  private static final ConnectionProperty CONNECTION_PROPERTY =
+      ConnectionProperty.newBuilder().setKey(KEY).setValue(VALUE).build();
+  private static final List<ConnectionProperty> CONNECTION_PROPERTIES =
+      ImmutableList.of(CONNECTION_PROPERTY);
   private static final Field FIELD_SCHEMA1 =
       Field.newBuilder("StringField", LegacySQLTypeName.STRING)
           .setMode(Field.Mode.NULLABLE)
@@ -112,6 +118,7 @@ public class QueryJobConfigurationTest {
           .setJobTimeoutMs(TIMEOUT)
           .setLabels(LABELS)
           .setRangePartitioning(RANGE_PARTITIONING)
+          .setConnectionProperties(CONNECTION_PROPERTIES)
           .build();
 
   @Test
@@ -146,6 +153,7 @@ public class QueryJobConfigurationTest {
     assertNotNull(QUERY_JOB_CONFIGURATION.getJobTimeoutMs());
     assertNotNull(QUERY_JOB_CONFIGURATION.getLabels());
     assertNotNull(QUERY_JOB_CONFIGURATION.getRangePartitioning());
+    assertNotNull(QUERY_JOB_CONFIGURATION.getConnectionProperties());
     compareQueryJobConfiguration(
         QUERY_JOB_CONFIGURATION, QueryJobConfiguration.fromPb(QUERY_JOB_CONFIGURATION.toPb()));
     QueryJobConfiguration job = QueryJobConfiguration.of(QUERY);
@@ -204,5 +212,6 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.getJobTimeoutMs(), value.getJobTimeoutMs());
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.getRangePartitioning(), value.getRangePartitioning());
+    assertEquals(expected.getConnectionProperties(), value.getConnectionProperties());
   }
 }

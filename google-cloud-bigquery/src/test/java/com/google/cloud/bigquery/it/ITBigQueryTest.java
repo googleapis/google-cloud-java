@@ -47,6 +47,7 @@ import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.Clustering;
+import com.google.cloud.bigquery.ConnectionProperty;
 import com.google.cloud.bigquery.CopyJobConfiguration;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
@@ -301,6 +302,12 @@ public class ITBigQueryTest {
           + "  \"GeographyField\": \"POINT(-122.35022 47.649154)\","
           + "  \"NumericField\": \"123456.789012345\""
           + "}";
+  private static final String KEY = "time_zone";
+  private static final String VALUE = "US/Eastern";
+  private static final ConnectionProperty CONNECTION_PROPERTY =
+      ConnectionProperty.newBuilder().setKey(KEY).setValue(VALUE).build();
+  private static final List<ConnectionProperty> CONNECTION_PROPERTIES =
+      ImmutableList.of(CONNECTION_PROPERTY);
 
   private static final Set<String> PUBLIC_DATASETS =
       ImmutableSet.of("github_repos", "hacker_news", "noaa_gsod", "samples", "usa_names");
@@ -1797,6 +1804,25 @@ public class ITBigQueryTest {
     Job queryJob = bigquery.getJob(remoteJob.getJobId());
     JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
     assertNotNull(statistics.getQueryPlan());
+  }
+
+  @Test
+  public void testQueryJobWithConnectionProperties() throws InterruptedException {
+    String tableName = "test_query_job_table_connection_properties";
+    String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    QueryJobConfiguration configuration =
+        QueryJobConfiguration.newBuilder(query)
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setDestinationTable(destinationTable)
+            .setConnectionProperties(CONNECTION_PROPERTIES)
+            .build();
+    Job remoteJob = bigquery.create(JobInfo.of(configuration));
+    remoteJob = remoteJob.waitFor();
+    assertNull(remoteJob.getStatus().getError());
+    QueryJobConfiguration jobConfiguration = remoteJob.getConfiguration();
+    assertEquals(CONNECTION_PROPERTIES, jobConfiguration.getConnectionProperties());
+    assertTrue(bigquery.delete(destinationTable));
   }
 
   @Test
