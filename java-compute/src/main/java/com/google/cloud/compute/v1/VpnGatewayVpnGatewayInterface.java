@@ -73,7 +73,7 @@ public final class VpnGatewayVpnGatewayInterface implements ApiMessage {
     return id;
   }
 
-  /** The external IP address for this VPN gateway interface. */
+  /** [Output Only] The external IP address for this VPN gateway interface. */
   public String getIpAddress() {
     return ipAddress;
   }
@@ -133,12 +133,12 @@ public final class VpnGatewayVpnGatewayInterface implements ApiMessage {
       return this;
     }
 
-    /** The external IP address for this VPN gateway interface. */
+    /** [Output Only] The external IP address for this VPN gateway interface. */
     public String getIpAddress() {
       return ipAddress;
     }
 
-    /** The external IP address for this VPN gateway interface. */
+    /** [Output Only] The external IP address for this VPN gateway interface. */
     public Builder setIpAddress(String ipAddress) {
       this.ipAddress = ipAddress;
       return this;

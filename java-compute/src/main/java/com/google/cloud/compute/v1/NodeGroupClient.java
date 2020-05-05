@@ -1248,7 +1248,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patch the node group.
+   * Updates the specified node group.
    *
    * <p>Sample code:
    *
@@ -1288,7 +1288,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patch the node group.
+   * Updates the specified node group.
    *
    * <p>Sample code:
    *
@@ -1328,7 +1328,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patch the node group.
+   * Updates the specified node group.
    *
    * <p>Sample code:
    *
@@ -1356,7 +1356,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patch the node group.
+   * Updates the specified node group.
    *
    * <p>Sample code:
    *

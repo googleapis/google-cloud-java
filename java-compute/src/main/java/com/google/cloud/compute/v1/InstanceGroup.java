@@ -216,7 +216,11 @@ public final class InstanceGroup implements ApiMessage {
     return namedPorts;
   }
 
-  /** The URL of the network to which all instances in the instance group belong. */
+  /**
+   * [Output Only] The URL of the network to which all instances in the instance group belong. If
+   * your instance has multiple network interfaces, then the network and subnetwork fields only
+   * refer to the network and subnet used by your primary interface (nic0).
+   */
   public String getNetwork() {
     return network;
   }
@@ -240,7 +244,9 @@ public final class InstanceGroup implements ApiMessage {
   }
 
   /**
-   * [Output Only] The URL of the subnetwork to which all instances in the instance group belong.
+   * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If
+   * your instance has multiple network interfaces, then the network and subnetwork fields only
+   * refer to the network and subnet used by your primary interface (nic0).
    */
   public String getSubnetwork() {
     return subnetwork;
@@ -485,12 +491,20 @@ public final class InstanceGroup implements ApiMessage {
       return this;
     }
 
-    /** The URL of the network to which all instances in the instance group belong. */
+    /**
+     * [Output Only] The URL of the network to which all instances in the instance group belong. If
+     * your instance has multiple network interfaces, then the network and subnetwork fields only
+     * refer to the network and subnet used by your primary interface (nic0).
+     */
     public String getNetwork() {
       return network;
     }
 
-    /** The URL of the network to which all instances in the instance group belong. */
+    /**
+     * [Output Only] The URL of the network to which all instances in the instance group belong. If
+     * your instance has multiple network interfaces, then the network and subnetwork fields only
+     * refer to the network and subnet used by your primary interface (nic0).
+     */
     public Builder setNetwork(String network) {
       this.network = network;
       return this;
@@ -537,6 +551,8 @@ public final class InstanceGroup implements ApiMessage {
 
     /**
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong.
+     * If your instance has multiple network interfaces, then the network and subnetwork fields only
+     * refer to the network and subnet used by your primary interface (nic0).
      */
     public String getSubnetwork() {
       return subnetwork;
@@ -544,6 +560,8 @@ public final class InstanceGroup implements ApiMessage {
 
     /**
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong.
+     * If your instance has multiple network interfaces, then the network and subnetwork fields only
+     * refer to the network and subnet used by your primary interface (nic0).
      */
     public Builder setSubnetwork(String subnetwork) {
       this.subnetwork = subnetwork;

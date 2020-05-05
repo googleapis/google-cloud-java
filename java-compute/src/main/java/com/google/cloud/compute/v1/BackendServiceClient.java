@@ -747,6 +747,10 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Gets the most recent health check results for this BackendService.
    *
+   * <p>Example request body:
+   *
+   * <p>{ "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -778,6 +782,10 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Gets the most recent health check results for this BackendService.
    *
+   * <p>Example request body:
+   *
+   * <p>{ "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -808,6 +816,10 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Gets the most recent health check results for this BackendService.
    *
+   * <p>Example request body:
+   *
+   * <p>{ "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -834,6 +846,10 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the most recent health check results for this BackendService.
+   *
+   * <p>Example request body:
+   *
+   * <p>{ "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
    *
    * <p>Sample code:
    *

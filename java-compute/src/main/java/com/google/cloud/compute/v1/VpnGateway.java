@@ -173,8 +173,8 @@ public final class VpnGateway implements ApiMessage {
   }
 
   /**
-   * Labels to apply to this VpnGateway resource. These can be later modified by the setLabels
-   * method. Each label key/value must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by the setLabels method. Each
+   * label key/value pair must comply with RFC1035. Label values may be empty.
    */
   public Map<String, String> getLabelsMap() {
     return labels;
@@ -209,7 +209,7 @@ public final class VpnGateway implements ApiMessage {
     return selfLink;
   }
 
-  /** [Output Only] A list of interfaces on this VPN gateway. */
+  /** A list of interfaces on this VPN gateway. */
   public List<VpnGatewayVpnGatewayInterface> getVpnInterfacesList() {
     return vpnInterfaces;
   }
@@ -385,16 +385,16 @@ public final class VpnGateway implements ApiMessage {
     }
 
     /**
-     * Labels to apply to this VpnGateway resource. These can be later modified by the setLabels
-     * method. Each label key/value must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by the setLabels method. Each
+     * label key/value pair must comply with RFC1035. Label values may be empty.
      */
     public Map<String, String> getLabelsMap() {
       return labels;
     }
 
     /**
-     * Labels to apply to this VpnGateway resource. These can be later modified by the setLabels
-     * method. Each label key/value must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by the setLabels method. Each
+     * label key/value pair must comply with RFC1035. Label values may be empty.
      */
     public Builder putAllLabels(Map<String, String> labels) {
       this.labels = labels;
@@ -463,12 +463,12 @@ public final class VpnGateway implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] A list of interfaces on this VPN gateway. */
+    /** A list of interfaces on this VPN gateway. */
     public List<VpnGatewayVpnGatewayInterface> getVpnInterfacesList() {
       return vpnInterfaces;
     }
 
-    /** [Output Only] A list of interfaces on this VPN gateway. */
+    /** A list of interfaces on this VPN gateway. */
     public Builder addAllVpnInterfaces(List<VpnGatewayVpnGatewayInterface> vpnInterfaces) {
       if (this.vpnInterfaces == null) {
         this.vpnInterfaces = new LinkedList<>();
@@ -477,7 +477,7 @@ public final class VpnGateway implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] A list of interfaces on this VPN gateway. */
+    /** A list of interfaces on this VPN gateway. */
     public Builder addVpnInterfaces(VpnGatewayVpnGatewayInterface vpnInterfaces) {
       if (this.vpnInterfaces == null) {
         this.vpnInterfaces = new LinkedList<>();

@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Request object for method compute.nodeGroups.patch. Patch the node group. */
+/** Request object for method compute.nodeGroups.patch. Updates the specified node group. */
 public final class PatchNodeGroupHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

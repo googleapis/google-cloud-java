@@ -179,23 +179,27 @@ public class RegionSslCertificateClientTest {
     String certificate = "certificate1952399767";
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
+    String expireTime = "expireTime-96179731";
     String id = "id3355";
     String kind = "kind3292052";
     String name = "name3373707";
     String privateKey = "privateKey1971943843";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String selfLink = "selfLink-1691268851";
+    String type = "type3575610";
     SslCertificate expectedResponse =
         SslCertificate.newBuilder()
             .setCertificate(certificate)
             .setCreationTimestamp(creationTimestamp)
             .setDescription(description)
+            .setExpireTime(expireTime)
             .setId(id)
             .setKind(kind)
             .setName(name)
             .setPrivateKey(privateKey)
             .setRegion(region.toString())
             .setSelfLink(selfLink)
+            .setType(type)
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-compute.git",
-        "sha": "80e3f582eb3c4fa60913c18ff47ceac6305c5bee"
+        "sha": "26c6d30376c6681038ff3ebd43b6b59fcbf25445"
       }
     },
     {
       "git": {
         "name": "discovery-artifact-manager",
         "remote": "https://github.com/googleapis/discovery-artifact-manager.git",
-        "sha": "56af37988f55b88f8111afa412bbbca1679346da"
+        "sha": "0c2a61db0b5836a0768f1cceef511d5cb625f7bf"
       }
     },
     {

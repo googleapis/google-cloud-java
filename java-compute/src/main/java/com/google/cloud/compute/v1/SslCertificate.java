@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -47,44 +48,64 @@ public final class SslCertificate implements ApiMessage {
   private final String certificate;
   private final String creationTimestamp;
   private final String description;
+  private final String expireTime;
   private final String id;
   private final String kind;
+  private final SslCertificateManagedSslCertificate managed;
   private final String name;
   private final String privateKey;
   private final String region;
   private final String selfLink;
+  private final SslCertificateSelfManagedSslCertificate selfManaged;
+  private final List<String> subjectAlternativeNames;
+  private final String type;
 
   private SslCertificate() {
     this.certificate = null;
     this.creationTimestamp = null;
     this.description = null;
+    this.expireTime = null;
     this.id = null;
     this.kind = null;
+    this.managed = null;
     this.name = null;
     this.privateKey = null;
     this.region = null;
     this.selfLink = null;
+    this.selfManaged = null;
+    this.subjectAlternativeNames = null;
+    this.type = null;
   }
 
   private SslCertificate(
       String certificate,
       String creationTimestamp,
       String description,
+      String expireTime,
       String id,
       String kind,
+      SslCertificateManagedSslCertificate managed,
       String name,
       String privateKey,
       String region,
-      String selfLink) {
+      String selfLink,
+      SslCertificateSelfManagedSslCertificate selfManaged,
+      List<String> subjectAlternativeNames,
+      String type) {
     this.certificate = certificate;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
+    this.expireTime = expireTime;
     this.id = id;
     this.kind = kind;
+    this.managed = managed;
     this.name = name;
     this.privateKey = privateKey;
     this.region = region;
     this.selfLink = selfLink;
+    this.selfManaged = selfManaged;
+    this.subjectAlternativeNames = subjectAlternativeNames;
+    this.type = type;
   }
 
   @Override
@@ -98,11 +119,17 @@ public final class SslCertificate implements ApiMessage {
     if ("description".equals(fieldName)) {
       return description;
     }
+    if ("expireTime".equals(fieldName)) {
+      return expireTime;
+    }
     if ("id".equals(fieldName)) {
       return id;
     }
     if ("kind".equals(fieldName)) {
       return kind;
+    }
+    if ("managed".equals(fieldName)) {
+      return managed;
     }
     if ("name".equals(fieldName)) {
       return name;
@@ -115,6 +142,15 @@ public final class SslCertificate implements ApiMessage {
     }
     if ("selfLink".equals(fieldName)) {
       return selfLink;
+    }
+    if ("selfManaged".equals(fieldName)) {
+      return selfManaged;
+    }
+    if ("subjectAlternativeNames".equals(fieldName)) {
+      return subjectAlternativeNames;
+    }
+    if ("type".equals(fieldName)) {
+      return type;
     }
     return null;
   }
@@ -157,6 +193,11 @@ public final class SslCertificate implements ApiMessage {
     return description;
   }
 
+  /** [Output Only] Expire time of the certificate. RFC3339 */
+  public String getExpireTime() {
+    return expireTime;
+  }
+
   /**
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    */
@@ -167,6 +208,11 @@ public final class SslCertificate implements ApiMessage {
   /** [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates. */
   public String getKind() {
     return kind;
+  }
+
+  /** Configuration and status of a managed SSL certificate. */
+  public SslCertificateManagedSslCertificate getManaged() {
+    return managed;
   }
 
   /**
@@ -198,6 +244,24 @@ public final class SslCertificate implements ApiMessage {
     return selfLink;
   }
 
+  /** Configuration and status of a self-managed SSL certificate. */
+  public SslCertificateSelfManagedSslCertificate getSelfManaged() {
+    return selfManaged;
+  }
+
+  /** [Output Only] Domains associated with the certificate via Subject Alternative Name. */
+  public List<String> getSubjectAlternativeNamesList() {
+    return subjectAlternativeNames;
+  }
+
+  /**
+   * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not
+   * specified, the certificate is self-managed and the fields certificate and private_key are used.
+   */
+  public String getType() {
+    return type;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -224,12 +288,17 @@ public final class SslCertificate implements ApiMessage {
     private String certificate;
     private String creationTimestamp;
     private String description;
+    private String expireTime;
     private String id;
     private String kind;
+    private SslCertificateManagedSslCertificate managed;
     private String name;
     private String privateKey;
     private String region;
     private String selfLink;
+    private SslCertificateSelfManagedSslCertificate selfManaged;
+    private List<String> subjectAlternativeNames;
+    private String type;
 
     Builder() {}
 
@@ -244,11 +313,17 @@ public final class SslCertificate implements ApiMessage {
       if (other.getDescription() != null) {
         this.description = other.description;
       }
+      if (other.getExpireTime() != null) {
+        this.expireTime = other.expireTime;
+      }
       if (other.getId() != null) {
         this.id = other.id;
       }
       if (other.getKind() != null) {
         this.kind = other.kind;
+      }
+      if (other.getManaged() != null) {
+        this.managed = other.managed;
       }
       if (other.getName() != null) {
         this.name = other.name;
@@ -262,6 +337,15 @@ public final class SslCertificate implements ApiMessage {
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
+      if (other.getSelfManaged() != null) {
+        this.selfManaged = other.selfManaged;
+      }
+      if (other.getSubjectAlternativeNamesList() != null) {
+        this.subjectAlternativeNames = other.subjectAlternativeNames;
+      }
+      if (other.getType() != null) {
+        this.type = other.type;
+      }
       return this;
     }
 
@@ -269,12 +353,17 @@ public final class SslCertificate implements ApiMessage {
       this.certificate = source.certificate;
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
+      this.expireTime = source.expireTime;
       this.id = source.id;
       this.kind = source.kind;
+      this.managed = source.managed;
       this.name = source.name;
       this.privateKey = source.privateKey;
       this.region = source.region;
       this.selfLink = source.selfLink;
+      this.selfManaged = source.selfManaged;
+      this.subjectAlternativeNames = source.subjectAlternativeNames;
+      this.type = source.type;
     }
 
     /**
@@ -320,6 +409,17 @@ public final class SslCertificate implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Expire time of the certificate. RFC3339 */
+    public String getExpireTime() {
+      return expireTime;
+    }
+
+    /** [Output Only] Expire time of the certificate. RFC3339 */
+    public Builder setExpireTime(String expireTime) {
+      this.expireTime = expireTime;
+      return this;
+    }
+
     /**
      * [Output Only] The unique identifier for the resource. This identifier is defined by the
      * server.
@@ -345,6 +445,17 @@ public final class SslCertificate implements ApiMessage {
     /** [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates. */
     public Builder setKind(String kind) {
       this.kind = kind;
+      return this;
+    }
+
+    /** Configuration and status of a managed SSL certificate. */
+    public SslCertificateManagedSslCertificate getManaged() {
+      return managed;
+    }
+
+    /** Configuration and status of a managed SSL certificate. */
+    public Builder setManaged(SslCertificateManagedSslCertificate managed) {
+      this.managed = managed;
       return this;
     }
 
@@ -410,18 +521,76 @@ public final class SslCertificate implements ApiMessage {
       return this;
     }
 
+    /** Configuration and status of a self-managed SSL certificate. */
+    public SslCertificateSelfManagedSslCertificate getSelfManaged() {
+      return selfManaged;
+    }
+
+    /** Configuration and status of a self-managed SSL certificate. */
+    public Builder setSelfManaged(SslCertificateSelfManagedSslCertificate selfManaged) {
+      this.selfManaged = selfManaged;
+      return this;
+    }
+
+    /** [Output Only] Domains associated with the certificate via Subject Alternative Name. */
+    public List<String> getSubjectAlternativeNamesList() {
+      return subjectAlternativeNames;
+    }
+
+    /** [Output Only] Domains associated with the certificate via Subject Alternative Name. */
+    public Builder addAllSubjectAlternativeNames(List<String> subjectAlternativeNames) {
+      if (this.subjectAlternativeNames == null) {
+        this.subjectAlternativeNames = new LinkedList<>();
+      }
+      this.subjectAlternativeNames.addAll(subjectAlternativeNames);
+      return this;
+    }
+
+    /** [Output Only] Domains associated with the certificate via Subject Alternative Name. */
+    public Builder addSubjectAlternativeNames(String subjectAlternativeNames) {
+      if (this.subjectAlternativeNames == null) {
+        this.subjectAlternativeNames = new LinkedList<>();
+      }
+      this.subjectAlternativeNames.add(subjectAlternativeNames);
+      return this;
+    }
+
+    /**
+     * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not
+     * specified, the certificate is self-managed and the fields certificate and private_key are
+     * used.
+     */
+    public String getType() {
+      return type;
+    }
+
+    /**
+     * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not
+     * specified, the certificate is self-managed and the fields certificate and private_key are
+     * used.
+     */
+    public Builder setType(String type) {
+      this.type = type;
+      return this;
+    }
+
     public SslCertificate build() {
 
       return new SslCertificate(
           certificate,
           creationTimestamp,
           description,
+          expireTime,
           id,
           kind,
+          managed,
           name,
           privateKey,
           region,
-          selfLink);
+          selfLink,
+          selfManaged,
+          subjectAlternativeNames,
+          type);
     }
 
     public Builder clone() {
@@ -429,12 +598,17 @@ public final class SslCertificate implements ApiMessage {
       newBuilder.setCertificate(this.certificate);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDescription(this.description);
+      newBuilder.setExpireTime(this.expireTime);
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
+      newBuilder.setManaged(this.managed);
       newBuilder.setName(this.name);
       newBuilder.setPrivateKey(this.privateKey);
       newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setSelfManaged(this.selfManaged);
+      newBuilder.addAllSubjectAlternativeNames(this.subjectAlternativeNames);
+      newBuilder.setType(this.type);
       return newBuilder;
     }
   }
@@ -451,11 +625,17 @@ public final class SslCertificate implements ApiMessage {
         + "description="
         + description
         + ", "
+        + "expireTime="
+        + expireTime
+        + ", "
         + "id="
         + id
         + ", "
         + "kind="
         + kind
+        + ", "
+        + "managed="
+        + managed
         + ", "
         + "name="
         + name
@@ -468,6 +648,15 @@ public final class SslCertificate implements ApiMessage {
         + ", "
         + "selfLink="
         + selfLink
+        + ", "
+        + "selfManaged="
+        + selfManaged
+        + ", "
+        + "subjectAlternativeNames="
+        + subjectAlternativeNames
+        + ", "
+        + "type="
+        + type
         + "}";
   }
 
@@ -481,12 +670,17 @@ public final class SslCertificate implements ApiMessage {
       return Objects.equals(this.certificate, that.getCertificate())
           && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.expireTime, that.getExpireTime())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.managed, that.getManaged())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.privateKey, that.getPrivateKey())
           && Objects.equals(this.region, that.getRegion())
-          && Objects.equals(this.selfLink, that.getSelfLink());
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.selfManaged, that.getSelfManaged())
+          && Objects.equals(this.subjectAlternativeNames, that.getSubjectAlternativeNamesList())
+          && Objects.equals(this.type, that.getType());
     }
     return false;
   }
@@ -494,6 +688,19 @@ public final class SslCertificate implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        certificate, creationTimestamp, description, id, kind, name, privateKey, region, selfLink);
+        certificate,
+        creationTimestamp,
+        description,
+        expireTime,
+        id,
+        kind,
+        managed,
+        name,
+        privateKey,
+        region,
+        selfLink,
+        selfManaged,
+        subjectAlternativeNames,
+        type);
   }
 }

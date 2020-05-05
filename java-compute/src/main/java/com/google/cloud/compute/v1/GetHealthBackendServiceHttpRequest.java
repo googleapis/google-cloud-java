@@ -27,6 +27,10 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.backendServices.getHealth. Gets the most recent health check
  * results for this BackendService.
+ *
+ * <p>Example request body:
+ *
+ * <p>{ "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
  */
 public final class GetHealthBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;

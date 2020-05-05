@@ -179,8 +179,8 @@ public final class ExternalVpnGateway implements ApiMessage {
   }
 
   /**
-   * Labels to apply to this ExternalVpnGateway resource. These can be later modified by the
-   * setLabels method. Each label key/value must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by the setLabels method. Each
+   * label key/value pair must comply with RFC1035. Label values may be empty.
    */
   public Map<String, String> getLabelsMap() {
     return labels;
@@ -402,16 +402,16 @@ public final class ExternalVpnGateway implements ApiMessage {
     }
 
     /**
-     * Labels to apply to this ExternalVpnGateway resource. These can be later modified by the
-     * setLabels method. Each label key/value must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by the setLabels method. Each
+     * label key/value pair must comply with RFC1035. Label values may be empty.
      */
     public Map<String, String> getLabelsMap() {
       return labels;
     }
 
     /**
-     * Labels to apply to this ExternalVpnGateway resource. These can be later modified by the
-     * setLabels method. Each label key/value must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by the setLabels method. Each
+     * label key/value pair must comply with RFC1035. Label values may be empty.
      */
     public Builder putAllLabels(Map<String, String> labels) {
       this.labels = labels;

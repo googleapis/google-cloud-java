@@ -33,7 +33,9 @@ public final class NetworkPeering implements ApiMessage {
   private final Boolean autoCreateRoutes;
   private final Boolean exchangeSubnetRoutes;
   private final Boolean exportCustomRoutes;
+  private final Boolean exportSubnetRoutesWithPublicIp;
   private final Boolean importCustomRoutes;
+  private final Boolean importSubnetRoutesWithPublicIp;
   private final String name;
   private final String network;
   private final String state;
@@ -43,7 +45,9 @@ public final class NetworkPeering implements ApiMessage {
     this.autoCreateRoutes = null;
     this.exchangeSubnetRoutes = null;
     this.exportCustomRoutes = null;
+    this.exportSubnetRoutesWithPublicIp = null;
     this.importCustomRoutes = null;
+    this.importSubnetRoutesWithPublicIp = null;
     this.name = null;
     this.network = null;
     this.state = null;
@@ -54,7 +58,9 @@ public final class NetworkPeering implements ApiMessage {
       Boolean autoCreateRoutes,
       Boolean exchangeSubnetRoutes,
       Boolean exportCustomRoutes,
+      Boolean exportSubnetRoutesWithPublicIp,
       Boolean importCustomRoutes,
+      Boolean importSubnetRoutesWithPublicIp,
       String name,
       String network,
       String state,
@@ -62,7 +68,9 @@ public final class NetworkPeering implements ApiMessage {
     this.autoCreateRoutes = autoCreateRoutes;
     this.exchangeSubnetRoutes = exchangeSubnetRoutes;
     this.exportCustomRoutes = exportCustomRoutes;
+    this.exportSubnetRoutesWithPublicIp = exportSubnetRoutesWithPublicIp;
     this.importCustomRoutes = importCustomRoutes;
+    this.importSubnetRoutesWithPublicIp = importSubnetRoutesWithPublicIp;
     this.name = name;
     this.network = network;
     this.state = state;
@@ -80,8 +88,14 @@ public final class NetworkPeering implements ApiMessage {
     if ("exportCustomRoutes".equals(fieldName)) {
       return exportCustomRoutes;
     }
+    if ("exportSubnetRoutesWithPublicIp".equals(fieldName)) {
+      return exportSubnetRoutesWithPublicIp;
+    }
     if ("importCustomRoutes".equals(fieldName)) {
       return importCustomRoutes;
+    }
+    if ("importSubnetRoutesWithPublicIp".equals(fieldName)) {
+      return importSubnetRoutesWithPublicIp;
     }
     if ("name".equals(fieldName)) {
       return name;
@@ -141,9 +155,28 @@ public final class NetworkPeering implements ApiMessage {
     return exportCustomRoutes;
   }
 
+  /**
+   * Whether subnet routes with public IP range are exported. The default value is true, all subnet
+   * routes are exported. The IPv4 special-use ranges
+   * (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not
+   * controlled by this field.
+   */
+  public Boolean getExportSubnetRoutesWithPublicIp() {
+    return exportSubnetRoutesWithPublicIp;
+  }
+
   /** Whether to import the custom routes from peer network. */
   public Boolean getImportCustomRoutes() {
     return importCustomRoutes;
+  }
+
+  /**
+   * Whether subnet routes with public IP range are imported. The default value is false. The IPv4
+   * special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported
+   * from peers and are not controlled by this field.
+   */
+  public Boolean getImportSubnetRoutesWithPublicIp() {
+    return importSubnetRoutesWithPublicIp;
   }
 
   /**
@@ -205,7 +238,9 @@ public final class NetworkPeering implements ApiMessage {
     private Boolean autoCreateRoutes;
     private Boolean exchangeSubnetRoutes;
     private Boolean exportCustomRoutes;
+    private Boolean exportSubnetRoutesWithPublicIp;
     private Boolean importCustomRoutes;
+    private Boolean importSubnetRoutesWithPublicIp;
     private String name;
     private String network;
     private String state;
@@ -224,8 +259,14 @@ public final class NetworkPeering implements ApiMessage {
       if (other.getExportCustomRoutes() != null) {
         this.exportCustomRoutes = other.exportCustomRoutes;
       }
+      if (other.getExportSubnetRoutesWithPublicIp() != null) {
+        this.exportSubnetRoutesWithPublicIp = other.exportSubnetRoutesWithPublicIp;
+      }
       if (other.getImportCustomRoutes() != null) {
         this.importCustomRoutes = other.importCustomRoutes;
+      }
+      if (other.getImportSubnetRoutesWithPublicIp() != null) {
+        this.importSubnetRoutesWithPublicIp = other.importSubnetRoutesWithPublicIp;
       }
       if (other.getName() != null) {
         this.name = other.name;
@@ -246,7 +287,9 @@ public final class NetworkPeering implements ApiMessage {
       this.autoCreateRoutes = source.autoCreateRoutes;
       this.exchangeSubnetRoutes = source.exchangeSubnetRoutes;
       this.exportCustomRoutes = source.exportCustomRoutes;
+      this.exportSubnetRoutesWithPublicIp = source.exportSubnetRoutesWithPublicIp;
       this.importCustomRoutes = source.importCustomRoutes;
+      this.importSubnetRoutesWithPublicIp = source.importSubnetRoutesWithPublicIp;
       this.name = source.name;
       this.network = source.network;
       this.state = source.state;
@@ -306,6 +349,27 @@ public final class NetworkPeering implements ApiMessage {
       return this;
     }
 
+    /**
+     * Whether subnet routes with public IP range are exported. The default value is true, all
+     * subnet routes are exported. The IPv4 special-use ranges
+     * (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are
+     * not controlled by this field.
+     */
+    public Boolean getExportSubnetRoutesWithPublicIp() {
+      return exportSubnetRoutesWithPublicIp;
+    }
+
+    /**
+     * Whether subnet routes with public IP range are exported. The default value is true, all
+     * subnet routes are exported. The IPv4 special-use ranges
+     * (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are
+     * not controlled by this field.
+     */
+    public Builder setExportSubnetRoutesWithPublicIp(Boolean exportSubnetRoutesWithPublicIp) {
+      this.exportSubnetRoutesWithPublicIp = exportSubnetRoutesWithPublicIp;
+      return this;
+    }
+
     /** Whether to import the custom routes from peer network. */
     public Boolean getImportCustomRoutes() {
       return importCustomRoutes;
@@ -314,6 +378,25 @@ public final class NetworkPeering implements ApiMessage {
     /** Whether to import the custom routes from peer network. */
     public Builder setImportCustomRoutes(Boolean importCustomRoutes) {
       this.importCustomRoutes = importCustomRoutes;
+      return this;
+    }
+
+    /**
+     * Whether subnet routes with public IP range are imported. The default value is false. The IPv4
+     * special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported
+     * from peers and are not controlled by this field.
+     */
+    public Boolean getImportSubnetRoutesWithPublicIp() {
+      return importSubnetRoutesWithPublicIp;
+    }
+
+    /**
+     * Whether subnet routes with public IP range are imported. The default value is false. The IPv4
+     * special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported
+     * from peers and are not controlled by this field.
+     */
+    public Builder setImportSubnetRoutesWithPublicIp(Boolean importSubnetRoutesWithPublicIp) {
+      this.importSubnetRoutesWithPublicIp = importSubnetRoutesWithPublicIp;
       return this;
     }
 
@@ -393,7 +476,9 @@ public final class NetworkPeering implements ApiMessage {
           autoCreateRoutes,
           exchangeSubnetRoutes,
           exportCustomRoutes,
+          exportSubnetRoutesWithPublicIp,
           importCustomRoutes,
+          importSubnetRoutesWithPublicIp,
           name,
           network,
           state,
@@ -405,7 +490,9 @@ public final class NetworkPeering implements ApiMessage {
       newBuilder.setAutoCreateRoutes(this.autoCreateRoutes);
       newBuilder.setExchangeSubnetRoutes(this.exchangeSubnetRoutes);
       newBuilder.setExportCustomRoutes(this.exportCustomRoutes);
+      newBuilder.setExportSubnetRoutesWithPublicIp(this.exportSubnetRoutesWithPublicIp);
       newBuilder.setImportCustomRoutes(this.importCustomRoutes);
+      newBuilder.setImportSubnetRoutesWithPublicIp(this.importSubnetRoutesWithPublicIp);
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
       newBuilder.setState(this.state);
@@ -426,8 +513,14 @@ public final class NetworkPeering implements ApiMessage {
         + "exportCustomRoutes="
         + exportCustomRoutes
         + ", "
+        + "exportSubnetRoutesWithPublicIp="
+        + exportSubnetRoutesWithPublicIp
+        + ", "
         + "importCustomRoutes="
         + importCustomRoutes
+        + ", "
+        + "importSubnetRoutesWithPublicIp="
+        + importSubnetRoutesWithPublicIp
         + ", "
         + "name="
         + name
@@ -453,7 +546,11 @@ public final class NetworkPeering implements ApiMessage {
       return Objects.equals(this.autoCreateRoutes, that.getAutoCreateRoutes())
           && Objects.equals(this.exchangeSubnetRoutes, that.getExchangeSubnetRoutes())
           && Objects.equals(this.exportCustomRoutes, that.getExportCustomRoutes())
+          && Objects.equals(
+              this.exportSubnetRoutesWithPublicIp, that.getExportSubnetRoutesWithPublicIp())
           && Objects.equals(this.importCustomRoutes, that.getImportCustomRoutes())
+          && Objects.equals(
+              this.importSubnetRoutesWithPublicIp, that.getImportSubnetRoutesWithPublicIp())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.state, that.getState())
@@ -468,7 +565,9 @@ public final class NetworkPeering implements ApiMessage {
         autoCreateRoutes,
         exchangeSubnetRoutes,
         exportCustomRoutes,
+        exportSubnetRoutesWithPublicIp,
         importCustomRoutes,
+        importSubnetRoutesWithPublicIp,
         name,
         network,
         state,
