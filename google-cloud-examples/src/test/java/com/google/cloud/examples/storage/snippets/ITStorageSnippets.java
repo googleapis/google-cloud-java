@@ -45,7 +45,6 @@ import java.io.PrintStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.file.Files;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,7 +53,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
@@ -442,7 +440,8 @@ public class ITStorageSnippets {
     GenerateSignedPostPolicyV4.generateSignedPostPolicyV4(PROJECT_ID, BUCKET, "my-object");
     String snippetOutput = snippetOutputCapture.toString();
     System.setOut(systemOut);
-    assertTrue(snippetOutput.contains("<form action='https://storage.googleapis.com/" + BUCKET + "/'"));
+    assertTrue(
+        snippetOutput.contains("<form action='https://storage.googleapis.com/" + BUCKET + "/'"));
     assertTrue(snippetOutput.contains("<input name='key' value='my-object'"));
     assertTrue(snippetOutput.contains("<input name='x-goog-signature'"));
     assertTrue(snippetOutput.contains("<input name='x-goog-date'"));
@@ -459,13 +458,13 @@ public class ITStorageSnippets {
 
     Map<String, String> policy = new HashMap<>();
     /**
-     * When splitting by "'", any element in the form has its value two array elements ahead of it, for example
-     * ["x-goog-algorithm", "value=", "GOOG4-RSA-SHA256"]
-     * We take advantage of this to make a map which has any policy element easily accessible. The map also has
-     * a lot of noise, but we just use the parts we need
+     * When splitting by "'", any element in the form has its value two array elements ahead of it,
+     * for example ["x-goog-algorithm", "value=", "GOOG4-RSA-SHA256"] We take advantage of this to
+     * make a map which has any policy element easily accessible. The map also has a lot of noise,
+     * but we just use the parts we need
      */
-    for(int i = 3; i < output.length - 3; i += 2) {
-      policy.put(output[i], output[i+2]);
+    for (int i = 3; i < output.length - 3; i += 2) {
+      policy.put(output[i], output[i + 2]);
     }
 
     builder.addTextBody("x-goog-date", policy.get("x-goog-date"));
@@ -479,7 +478,7 @@ public class ITStorageSnippets {
     File file = File.createTempFile("temp", "file");
     Files.write(file.toPath(), "hello world".getBytes());
     builder.addBinaryBody(
-            "file", new FileInputStream(file), ContentType.APPLICATION_OCTET_STREAM, file.getName());
+        "file", new FileInputStream(file), ContentType.APPLICATION_OCTET_STREAM, file.getName());
     request.setEntity(builder.build());
 
     client.execute(request);
