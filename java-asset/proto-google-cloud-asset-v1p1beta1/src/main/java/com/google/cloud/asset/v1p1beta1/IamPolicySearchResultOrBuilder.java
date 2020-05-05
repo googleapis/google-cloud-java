@@ -89,8 +89,10 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For
-   * each resource, there must be at most one Cloud IAM policy set on it.
+   * The IAM policy directly set on the given resource. Note that the original
+   * IAM policy can contain multiple bindings. This only contains the bindings
+   * that match the given query. For queries that don't contain a constrain on
+   * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -102,8 +104,10 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For
-   * each resource, there must be at most one Cloud IAM policy set on it.
+   * The IAM policy directly set on the given resource. Note that the original
+   * IAM policy can contain multiple bindings. This only contains the bindings
+   * that match the given query. For queries that don't contain a constrain on
+   * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -115,11 +119,52 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For
-   * each resource, there must be at most one Cloud IAM policy set on it.
+   * The IAM policy directly set on the given resource. Note that the original
+   * IAM policy can contain multiple bindings. This only contains the bindings
+   * that match the given query. For queries that don't contain a constrain on
+   * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 4;</code>
    */
   com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Explanation about the IAM policy search result. It contains additional
+   * information to explain why the search result matches the query.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+   *
+   * @return Whether the explanation field is set.
+   */
+  boolean hasExplanation();
+  /**
+   *
+   *
+   * <pre>
+   * Explanation about the IAM policy search result. It contains additional
+   * information to explain why the search result matches the query.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+   *
+   * @return The explanation.
+   */
+  com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation getExplanation();
+  /**
+   *
+   *
+   * <pre>
+   * Explanation about the IAM policy search result. It contains additional
+   * information to explain why the search result matches the query.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+   */
+  com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.ExplanationOrBuilder
+      getExplanationOrBuilder();
 }

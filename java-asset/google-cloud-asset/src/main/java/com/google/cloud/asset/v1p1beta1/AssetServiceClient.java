@@ -180,7 +180,7 @@ public class AssetServiceClient implements BackgroundResource {
    * @param scope Required. The relative name of an asset. The search is limited to the resources
    *     within the `scope`. The allowed value must be: &#42; Organization number (such as
    *     "organizations/123") &#42; Folder number(such as "folders/1234") &#42; Project number (such
-   *     as "projects/12345")
+   *     as "projects/12345") &#42; Project id (such as "projects/abc")
    * @param query Optional. The query statement.
    * @param assetTypes Optional. A list of asset types that this request searches for. If empty, it
    *     will search all the supported asset types.
@@ -315,7 +315,7 @@ public class AssetServiceClient implements BackgroundResource {
    * @param scope Required. The relative name of an asset. The search is limited to the resources
    *     within the `scope`. The allowed value must be: &#42; Organization number (such as
    *     "organizations/123") &#42; Folder number(such as "folders/1234") &#42; Project number (such
-   *     as "projects/12345")
+   *     as "projects/12345") &#42; Project id (such as "projects/abc")
    * @param query Optional. The query statement. Examples: &#42;
    *     "policy:myuser{@literal @}mydomain.com" &#42; "policy:(myuser{@literal @}mydomain.com
    *     viewer)"

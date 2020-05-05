@@ -32,6 +32,7 @@ public interface SearchAllResourcesRequestOrBuilder
    * * Organization number (such as "organizations/123")
    * * Folder number(such as "folders/1234")
    * * Project number (such as "projects/12345")
+   * * Project id (such as "projects/abc")
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -48,6 +49,7 @@ public interface SearchAllResourcesRequestOrBuilder
    * * Organization number (such as "organizations/123")
    * * Folder number(such as "folders/1234")
    * * Project number (such as "projects/12345")
+   * * Project id (such as "projects/abc")
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -182,4 +184,35 @@ public interface SearchAllResourcesRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " desc" after the field name
+   * to indicate descending order. Redundant space characters are ignored. For
+   * example, "  foo ,  bar  desc  ".
+   * </pre>
+   *
+   * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " desc" after the field name
+   * to indicate descending order. Redundant space characters are ignored. For
+   * example, "  foo ,  bar  desc  ".
+   * </pre>
+   *
+   * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }

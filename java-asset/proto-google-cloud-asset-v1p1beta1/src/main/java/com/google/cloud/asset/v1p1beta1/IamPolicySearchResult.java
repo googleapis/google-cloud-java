@@ -99,6 +99,24 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
 
               break;
             }
+          case 42:
+            {
+              com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.Builder
+                  subBuilder = null;
+              if (explanation_ != null) {
+                subBuilder = explanation_.toBuilder();
+              }
+              explanation_ =
+                  input.readMessage(
+                      com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(explanation_);
+                explanation_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -131,6 +149,958 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         .ensureFieldAccessorsInitialized(
             com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.class,
             com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Builder.class);
+  }
+
+  public interface ExplanationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The map from roles to their included permission matching the permission
+     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * "roles/compute.instanceAdmin". The roles can also be found in the
+     * returned `policy` bindings. Note that the map is populated only if
+     * requesting with a permission query.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+     * </code>
+     */
+    int getMatchedPermissionsCount();
+    /**
+     *
+     *
+     * <pre>
+     * The map from roles to their included permission matching the permission
+     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * "roles/compute.instanceAdmin". The roles can also be found in the
+     * returned `policy` bindings. Note that the map is populated only if
+     * requesting with a permission query.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+     * </code>
+     */
+    boolean containsMatchedPermissions(java.lang.String key);
+    /** Use {@link #getMatchedPermissionsMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+        getMatchedPermissions();
+    /**
+     *
+     *
+     * <pre>
+     * The map from roles to their included permission matching the permission
+     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * "roles/compute.instanceAdmin". The roles can also be found in the
+     * returned `policy` bindings. Note that the map is populated only if
+     * requesting with a permission query.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+     * </code>
+     */
+    java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+        getMatchedPermissionsMap();
+    /**
+     *
+     *
+     * <pre>
+     * The map from roles to their included permission matching the permission
+     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * "roles/compute.instanceAdmin". The roles can also be found in the
+     * returned `policy` bindings. Note that the map is populated only if
+     * requesting with a permission query.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+     * </code>
+     */
+    com.google.cloud.asset.v1p1beta1.Permissions getMatchedPermissionsOrDefault(
+        java.lang.String key, com.google.cloud.asset.v1p1beta1.Permissions defaultValue);
+    /**
+     *
+     *
+     * <pre>
+     * The map from roles to their included permission matching the permission
+     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * "roles/compute.instanceAdmin". The roles can also be found in the
+     * returned `policy` bindings. Note that the map is populated only if
+     * requesting with a permission query.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+     * </code>
+     */
+    com.google.cloud.asset.v1p1beta1.Permissions getMatchedPermissionsOrThrow(java.lang.String key);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Explanation about the IAM policy search result.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation}
+   */
+  public static final class Explanation extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation)
+      ExplanationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Explanation.newBuilder() to construct.
+    private Explanation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Explanation() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Explanation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private Explanation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  matchedPermissions_ =
+                      com.google.protobuf.MapField.newMapField(
+                          MatchedPermissionsDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+                    matchedPermissions__ =
+                        input.readMessage(
+                            MatchedPermissionsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                matchedPermissions_
+                    .getMutableMap()
+                    .put(matchedPermissions__.getKey(), matchedPermissions__.getValue());
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.asset.v1p1beta1.AssetProto
+          .internal_static_google_cloud_asset_v1p1beta1_IamPolicySearchResult_Explanation_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 1:
+          return internalGetMatchedPermissions();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.asset.v1p1beta1.AssetProto
+          .internal_static_google_cloud_asset_v1p1beta1_IamPolicySearchResult_Explanation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.class,
+              com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.Builder.class);
+    }
+
+    public static final int MATCHED_PERMISSIONS_FIELD_NUMBER = 1;
+
+    private static final class MatchedPermissionsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+          defaultEntry =
+              com.google.protobuf.MapEntry
+                  .<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+                      newDefaultInstance(
+                          com.google.cloud.asset.v1p1beta1.AssetProto
+                              .internal_static_google_cloud_asset_v1p1beta1_IamPolicySearchResult_Explanation_MatchedPermissionsEntry_descriptor,
+                          com.google.protobuf.WireFormat.FieldType.STRING,
+                          "",
+                          com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                          com.google.cloud.asset.v1p1beta1.Permissions.getDefaultInstance());
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+        matchedPermissions_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+        internalGetMatchedPermissions() {
+      if (matchedPermissions_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MatchedPermissionsDefaultEntryHolder.defaultEntry);
+      }
+      return matchedPermissions_;
+    }
+
+    public int getMatchedPermissionsCount() {
+      return internalGetMatchedPermissions().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map from roles to their included permission matching the permission
+     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * "roles/compute.instanceAdmin". The roles can also be found in the
+     * returned `policy` bindings. Note that the map is populated only if
+     * requesting with a permission query.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+     * </code>
+     */
+    public boolean containsMatchedPermissions(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetMatchedPermissions().getMap().containsKey(key);
+    }
+    /** Use {@link #getMatchedPermissionsMap()} instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+        getMatchedPermissions() {
+      return getMatchedPermissionsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map from roles to their included permission matching the permission
+     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * "roles/compute.instanceAdmin". The roles can also be found in the
+     * returned `policy` bindings. Note that the map is populated only if
+     * requesting with a permission query.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+     * </code>
+     */
+    public java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+        getMatchedPermissionsMap() {
+      return internalGetMatchedPermissions().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map from roles to their included permission matching the permission
+     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * "roles/compute.instanceAdmin". The roles can also be found in the
+     * returned `policy` bindings. Note that the map is populated only if
+     * requesting with a permission query.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+     * </code>
+     */
+    public com.google.cloud.asset.v1p1beta1.Permissions getMatchedPermissionsOrDefault(
+        java.lang.String key, com.google.cloud.asset.v1p1beta1.Permissions defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions> map =
+          internalGetMatchedPermissions().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map from roles to their included permission matching the permission
+     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * "roles/compute.instanceAdmin". The roles can also be found in the
+     * returned `policy` bindings. Note that the map is populated only if
+     * requesting with a permission query.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+     * </code>
+     */
+    public com.google.cloud.asset.v1p1beta1.Permissions getMatchedPermissionsOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions> map =
+          internalGetMatchedPermissions().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output,
+          internalGetMatchedPermissions(),
+          MatchedPermissionsDefaultEntryHolder.defaultEntry,
+          1);
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+          entry : internalGetMatchedPermissions().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+            matchedPermissions__ =
+                MatchedPermissionsDefaultEntryHolder.defaultEntry
+                    .newBuilderForType()
+                    .setKey(entry.getKey())
+                    .setValue(entry.getValue())
+                    .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, matchedPermissions__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation other =
+          (com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation) obj;
+
+      if (!internalGetMatchedPermissions().equals(other.internalGetMatchedPermissions()))
+        return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetMatchedPermissions().getMap().isEmpty()) {
+        hash = (37 * hash) + MATCHED_PERMISSIONS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMatchedPermissions().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation about the IAM policy search result.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation)
+        com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.ExplanationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.asset.v1p1beta1.AssetProto
+            .internal_static_google_cloud_asset_v1p1beta1_IamPolicySearchResult_Explanation_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(int number) {
+        switch (number) {
+          case 1:
+            return internalGetMatchedPermissions();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableMatchedPermissions();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.asset.v1p1beta1.AssetProto
+            .internal_static_google_cloud_asset_v1p1beta1_IamPolicySearchResult_Explanation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.class,
+                com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        internalGetMutableMatchedPermissions().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.asset.v1p1beta1.AssetProto
+            .internal_static_google_cloud_asset_v1p1beta1_IamPolicySearchResult_Explanation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation
+          getDefaultInstanceForType() {
+        return com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation build() {
+        com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation buildPartial() {
+        com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation result =
+            new com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation(this);
+        int from_bitField0_ = bitField0_;
+        result.matchedPermissions_ = internalGetMatchedPermissions();
+        result.matchedPermissions_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation) {
+          return mergeFrom(
+              (com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation other) {
+        if (other
+            == com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation
+                .getDefaultInstance()) return this;
+        internalGetMutableMatchedPermissions().mergeFrom(other.internalGetMatchedPermissions());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.MapField<
+              java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+          matchedPermissions_;
+
+      private com.google.protobuf.MapField<
+              java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+          internalGetMatchedPermissions() {
+        if (matchedPermissions_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              MatchedPermissionsDefaultEntryHolder.defaultEntry);
+        }
+        return matchedPermissions_;
+      }
+
+      private com.google.protobuf.MapField<
+              java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+          internalGetMutableMatchedPermissions() {
+        onChanged();
+        ;
+        if (matchedPermissions_ == null) {
+          matchedPermissions_ =
+              com.google.protobuf.MapField.newMapField(
+                  MatchedPermissionsDefaultEntryHolder.defaultEntry);
+        }
+        if (!matchedPermissions_.isMutable()) {
+          matchedPermissions_ = matchedPermissions_.copy();
+        }
+        return matchedPermissions_;
+      }
+
+      public int getMatchedPermissionsCount() {
+        return internalGetMatchedPermissions().getMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The map from roles to their included permission matching the permission
+       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * "roles/compute.instanceAdmin". The roles can also be found in the
+       * returned `policy` bindings. Note that the map is populated only if
+       * requesting with a permission query.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+       * </code>
+       */
+      public boolean containsMatchedPermissions(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        return internalGetMatchedPermissions().getMap().containsKey(key);
+      }
+      /** Use {@link #getMatchedPermissionsMap()} instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+          getMatchedPermissions() {
+        return getMatchedPermissionsMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The map from roles to their included permission matching the permission
+       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * "roles/compute.instanceAdmin". The roles can also be found in the
+       * returned `policy` bindings. Note that the map is populated only if
+       * requesting with a permission query.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+       * </code>
+       */
+      public java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+          getMatchedPermissionsMap() {
+        return internalGetMatchedPermissions().getMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The map from roles to their included permission matching the permission
+       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * "roles/compute.instanceAdmin". The roles can also be found in the
+       * returned `policy` bindings. Note that the map is populated only if
+       * requesting with a permission query.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+       * </code>
+       */
+      public com.google.cloud.asset.v1p1beta1.Permissions getMatchedPermissionsOrDefault(
+          java.lang.String key, com.google.cloud.asset.v1p1beta1.Permissions defaultValue) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions> map =
+            internalGetMatchedPermissions().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The map from roles to their included permission matching the permission
+       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * "roles/compute.instanceAdmin". The roles can also be found in the
+       * returned `policy` bindings. Note that the map is populated only if
+       * requesting with a permission query.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+       * </code>
+       */
+      public com.google.cloud.asset.v1p1beta1.Permissions getMatchedPermissionsOrThrow(
+          java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions> map =
+            internalGetMatchedPermissions().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearMatchedPermissions() {
+        internalGetMutableMatchedPermissions().getMutableMap().clear();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The map from roles to their included permission matching the permission
+       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * "roles/compute.instanceAdmin". The roles can also be found in the
+       * returned `policy` bindings. Note that the map is populated only if
+       * requesting with a permission query.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+       * </code>
+       */
+      public Builder removeMatchedPermissions(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableMatchedPermissions().getMutableMap().remove(key);
+        return this;
+      }
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
+          getMutableMatchedPermissions() {
+        return internalGetMutableMatchedPermissions().getMutableMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The map from roles to their included permission matching the permission
+       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * "roles/compute.instanceAdmin". The roles can also be found in the
+       * returned `policy` bindings. Note that the map is populated only if
+       * requesting with a permission query.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+       * </code>
+       */
+      public Builder putMatchedPermissions(
+          java.lang.String key, com.google.cloud.asset.v1p1beta1.Permissions value) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        if (value == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableMatchedPermissions().getMutableMap().put(key, value);
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The map from roles to their included permission matching the permission
+       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * "roles/compute.instanceAdmin". The roles can also be found in the
+       * returned `policy` bindings. Note that the map is populated only if
+       * requesting with a permission query.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
+       * </code>
+       */
+      public Builder putAllMatchedPermissions(
+          java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions> values) {
+        internalGetMutableMatchedPermissions().getMutableMap().putAll(values);
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation)
+    private static final com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation();
+    }
+
+    public static com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Explanation> PARSER =
+        new com.google.protobuf.AbstractParser<Explanation>() {
+          @java.lang.Override
+          public Explanation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Explanation(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<Explanation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Explanation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 1;
@@ -245,8 +1215,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For
-   * each resource, there must be at most one Cloud IAM policy set on it.
+   * The IAM policy directly set on the given resource. Note that the original
+   * IAM policy can contain multiple bindings. This only contains the bindings
+   * that match the given query. For queries that don't contain a constrain on
+   * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -260,8 +1232,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For
-   * each resource, there must be at most one Cloud IAM policy set on it.
+   * The IAM policy directly set on the given resource. Note that the original
+   * IAM policy can contain multiple bindings. This only contains the bindings
+   * that match the given query. For queries that don't contain a constrain on
+   * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -275,14 +1249,65 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For
-   * each resource, there must be at most one Cloud IAM policy set on it.
+   * The IAM policy directly set on the given resource. Note that the original
+   * IAM policy can contain multiple bindings. This only contains the bindings
+   * that match the given query. For queries that don't contain a constrain on
+   * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 4;</code>
    */
   public com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder() {
     return getPolicy();
+  }
+
+  public static final int EXPLANATION_FIELD_NUMBER = 5;
+  private com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation_;
+  /**
+   *
+   *
+   * <pre>
+   * Explanation about the IAM policy search result. It contains additional
+   * information to explain why the search result matches the query.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+   *
+   * @return Whether the explanation field is set.
+   */
+  public boolean hasExplanation() {
+    return explanation_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Explanation about the IAM policy search result. It contains additional
+   * information to explain why the search result matches the query.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+   *
+   * @return The explanation.
+   */
+  public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation getExplanation() {
+    return explanation_ == null
+        ? com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.getDefaultInstance()
+        : explanation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Explanation about the IAM policy search result. It contains additional
+   * information to explain why the search result matches the query.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+   */
+  public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.ExplanationOrBuilder
+      getExplanationOrBuilder() {
+    return getExplanation();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -308,6 +1333,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     if (policy_ != null) {
       output.writeMessage(4, getPolicy());
     }
+    if (explanation_ != null) {
+      output.writeMessage(5, getExplanation());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -325,6 +1353,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     }
     if (policy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPolicy());
+    }
+    if (explanation_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getExplanation());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -348,6 +1379,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     if (hasPolicy()) {
       if (!getPolicy().equals(other.getPolicy())) return false;
     }
+    if (hasExplanation() != other.hasExplanation()) return false;
+    if (hasExplanation()) {
+      if (!getExplanation().equals(other.getExplanation())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -366,6 +1401,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     if (hasPolicy()) {
       hash = (37 * hash) + POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getPolicy().hashCode();
+    }
+    if (hasExplanation()) {
+      hash = (37 * hash) + EXPLANATION_FIELD_NUMBER;
+      hash = (53 * hash) + getExplanation().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -523,6 +1562,12 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         policy_ = null;
         policyBuilder_ = null;
       }
+      if (explanationBuilder_ == null) {
+        explanation_ = null;
+      } else {
+        explanation_ = null;
+        explanationBuilder_ = null;
+      }
       return this;
     }
 
@@ -556,6 +1601,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         result.policy_ = policy_;
       } else {
         result.policy_ = policyBuilder_.build();
+      }
+      if (explanationBuilder_ == null) {
+        result.explanation_ = explanation_;
+      } else {
+        result.explanation_ = explanationBuilder_.build();
       }
       onBuilt();
       return result;
@@ -617,6 +1667,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
       if (other.hasPolicy()) {
         mergePolicy(other.getPolicy());
+      }
+      if (other.hasExplanation()) {
+        mergeExplanation(other.getExplanation());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -900,8 +1953,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * The IAM policy directly set on the given resource. Note that the original
+     * IAM policy can contain multiple bindings. This only contains the bindings
+     * that match the given query. For queries that don't contain a constrain on
+     * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
      * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -915,8 +1970,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * The IAM policy directly set on the given resource. Note that the original
+     * IAM policy can contain multiple bindings. This only contains the bindings
+     * that match the given query. For queries that don't contain a constrain on
+     * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
      * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -934,8 +1991,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * The IAM policy directly set on the given resource. Note that the original
+     * IAM policy can contain multiple bindings. This only contains the bindings
+     * that match the given query. For queries that don't contain a constrain on
+     * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
      * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -957,8 +2016,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * The IAM policy directly set on the given resource. Note that the original
+     * IAM policy can contain multiple bindings. This only contains the bindings
+     * that match the given query. For queries that don't contain a constrain on
+     * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
      * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -977,8 +2038,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * The IAM policy directly set on the given resource. Note that the original
+     * IAM policy can contain multiple bindings. This only contains the bindings
+     * that match the given query. For queries that don't contain a constrain on
+     * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
      * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -1001,8 +2064,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * The IAM policy directly set on the given resource. Note that the original
+     * IAM policy can contain multiple bindings. This only contains the bindings
+     * that match the given query. For queries that don't contain a constrain on
+     * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
      * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -1022,8 +2087,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * The IAM policy directly set on the given resource. Note that the original
+     * IAM policy can contain multiple bindings. This only contains the bindings
+     * that match the given query. For queries that don't contain a constrain on
+     * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
      * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -1037,8 +2104,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * The IAM policy directly set on the given resource. Note that the original
+     * IAM policy can contain multiple bindings. This only contains the bindings
+     * that match the given query. For queries that don't contain a constrain on
+     * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
      * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -1054,8 +2123,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For
-     * each resource, there must be at most one Cloud IAM policy set on it.
+     * The IAM policy directly set on the given resource. Note that the original
+     * IAM policy can contain multiple bindings. This only contains the bindings
+     * that match the given query. For queries that don't contain a constrain on
+     * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
      * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -1074,6 +2145,209 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         policy_ = null;
       }
       return policyBuilder_;
+    }
+
+    private com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation,
+            com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.Builder,
+            com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.ExplanationOrBuilder>
+        explanationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Explanation about the IAM policy search result. It contains additional
+     * information to explain why the search result matches the query.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+     *
+     * @return Whether the explanation field is set.
+     */
+    public boolean hasExplanation() {
+      return explanationBuilder_ != null || explanation_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation about the IAM policy search result. It contains additional
+     * information to explain why the search result matches the query.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+     *
+     * @return The explanation.
+     */
+    public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation getExplanation() {
+      if (explanationBuilder_ == null) {
+        return explanation_ == null
+            ? com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation
+                .getDefaultInstance()
+            : explanation_;
+      } else {
+        return explanationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation about the IAM policy search result. It contains additional
+     * information to explain why the search result matches the query.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+     */
+    public Builder setExplanation(
+        com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation value) {
+      if (explanationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        explanation_ = value;
+        onChanged();
+      } else {
+        explanationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation about the IAM policy search result. It contains additional
+     * information to explain why the search result matches the query.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+     */
+    public Builder setExplanation(
+        com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.Builder
+            builderForValue) {
+      if (explanationBuilder_ == null) {
+        explanation_ = builderForValue.build();
+        onChanged();
+      } else {
+        explanationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation about the IAM policy search result. It contains additional
+     * information to explain why the search result matches the query.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+     */
+    public Builder mergeExplanation(
+        com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation value) {
+      if (explanationBuilder_ == null) {
+        if (explanation_ != null) {
+          explanation_ =
+              com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.newBuilder(
+                      explanation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          explanation_ = value;
+        }
+        onChanged();
+      } else {
+        explanationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation about the IAM policy search result. It contains additional
+     * information to explain why the search result matches the query.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+     */
+    public Builder clearExplanation() {
+      if (explanationBuilder_ == null) {
+        explanation_ = null;
+        onChanged();
+      } else {
+        explanation_ = null;
+        explanationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation about the IAM policy search result. It contains additional
+     * information to explain why the search result matches the query.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+     */
+    public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.Builder
+        getExplanationBuilder() {
+
+      onChanged();
+      return getExplanationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation about the IAM policy search result. It contains additional
+     * information to explain why the search result matches the query.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+     */
+    public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.ExplanationOrBuilder
+        getExplanationOrBuilder() {
+      if (explanationBuilder_ != null) {
+        return explanationBuilder_.getMessageOrBuilder();
+      } else {
+        return explanation_ == null
+            ? com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation
+                .getDefaultInstance()
+            : explanation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation about the IAM policy search result. It contains additional
+     * information to explain why the search result matches the query.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation,
+            com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.Builder,
+            com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.ExplanationOrBuilder>
+        getExplanationFieldBuilder() {
+      if (explanationBuilder_ == null) {
+        explanationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation,
+                com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.Builder,
+                com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.ExplanationOrBuilder>(
+                getExplanation(), getParentForChildren(), isClean());
+        explanation_ = null;
+      }
+      return explanationBuilder_;
     }
 
     @java.lang.Override

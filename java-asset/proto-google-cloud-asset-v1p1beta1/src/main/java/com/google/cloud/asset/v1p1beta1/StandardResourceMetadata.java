@@ -44,6 +44,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     displayName_ = "";
     description_ = "";
     additionalAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    location_ = "";
+    networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -121,6 +123,36 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
               additionalAttributes_.add(s);
               break;
             }
+          case 90:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              location_ = s;
+              break;
+            }
+          case 98:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                networkTags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              networkTags_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,6 +170,9 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         additionalAttributes_ = additionalAttributes_.getUnmodifiableView();
       }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        networkTags_ = networkTags_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -146,6 +181,17 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1p1beta1.AssetProto
         .internal_static_google_cloud_asset_v1p1beta1_StandardResourceMetadata_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 12:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -476,6 +522,229 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     return additionalAttributes_.getByteString(index);
   }
 
+  public static final int LOCATION_FIELD_NUMBER = 11;
+  private volatile java.lang.Object location_;
+  /**
+   *
+   *
+   * <pre>
+   * Location can be "global", regional like "us-east1", or zonal like
+   * "us-west1-b".
+   * </pre>
+   *
+   * <code>string location = 11;</code>
+   *
+   * @return The location.
+   */
+  public java.lang.String getLocation() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      location_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Location can be "global", regional like "us-east1", or zonal like
+   * "us-west1-b".
+   * </pre>
+   *
+   * <code>string location = 11;</code>
+   *
+   * @return The bytes for location.
+   */
+  public com.google.protobuf.ByteString getLocationBytes() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      location_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LABELS_FIELD_NUMBER = 12;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.asset.v1p1beta1.AssetProto
+                .internal_static_google_cloud_asset_v1p1beta1_StandardResourceMetadata_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this resource. See [Labelling and grouping GCP
+   * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this resource. See [Labelling and grouping GCP
+   * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this resource. See [Labelling and grouping GCP
+   * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this resource. See [Labelling and grouping GCP
+   * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int NETWORK_TAGS_FIELD_NUMBER = 13;
+  private com.google.protobuf.LazyStringList networkTags_;
+  /**
+   *
+   *
+   * <pre>
+   * Network tags associated with this resource. Like labels, network tags are a
+   * type of annotations used to group GCP resources. See [Labelling GCP
+   * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 13;</code>
+   *
+   * @return A list containing the networkTags.
+   */
+  public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
+    return networkTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Network tags associated with this resource. Like labels, network tags are a
+   * type of annotations used to group GCP resources. See [Labelling GCP
+   * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 13;</code>
+   *
+   * @return The count of networkTags.
+   */
+  public int getNetworkTagsCount() {
+    return networkTags_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Network tags associated with this resource. Like labels, network tags are a
+   * type of annotations used to group GCP resources. See [Labelling GCP
+   * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The networkTags at the given index.
+   */
+  public java.lang.String getNetworkTags(int index) {
+    return networkTags_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Network tags associated with this resource. Like labels, network tags are a
+   * type of annotations used to group GCP resources. See [Labelling GCP
+   * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the networkTags at the given index.
+   */
+  public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
+    return networkTags_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -509,6 +778,14 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 10, additionalAttributes_.getRaw(i));
     }
+    if (!getLocationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, location_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 12);
+    for (int i = 0; i < networkTags_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, networkTags_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -541,6 +818,27 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       size += dataSize;
       size += 1 * getAdditionalAttributesList().size();
     }
+    if (!getLocationBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, location_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, labels__);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < networkTags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(networkTags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getNetworkTagsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -563,6 +861,9 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getAdditionalAttributesList().equals(other.getAdditionalAttributesList())) return false;
+    if (!getLocation().equals(other.getLocation())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getNetworkTagsList().equals(other.getNetworkTagsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -587,6 +888,16 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     if (getAdditionalAttributesCount() > 0) {
       hash = (37 * hash) + ADDITIONAL_ATTRIBUTES_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalAttributesList().hashCode();
+    }
+    hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getLocation().hashCode();
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (getNetworkTagsCount() > 0) {
+      hash = (37 * hash) + NETWORK_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkTagsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -707,6 +1018,26 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
           .internal_static_google_cloud_asset_v1p1beta1_StandardResourceMetadata_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 12:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 12:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -746,6 +1077,11 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
 
       additionalAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      location_ = "";
+
+      internalGetMutableLabels().clear();
+      networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -784,6 +1120,14 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.additionalAttributes_ = additionalAttributes_;
+      result.location_ = location_;
+      result.labels_ = internalGetLabels();
+      result.labels_.makeImmutable();
+      if (((bitField0_ & 0x00000004) != 0)) {
+        networkTags_ = networkTags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.networkTags_ = networkTags_;
       onBuilt();
       return result;
     }
@@ -861,6 +1205,21 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         } else {
           ensureAdditionalAttributesIsMutable();
           additionalAttributes_.addAll(other.additionalAttributes_);
+        }
+        onChanged();
+      }
+      if (!other.getLocation().isEmpty()) {
+        location_ = other.location_;
+        onChanged();
+      }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (!other.networkTags_.isEmpty()) {
+        if (networkTags_.isEmpty()) {
+          networkTags_ = other.networkTags_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureNetworkTagsIsMutable();
+          networkTags_.addAll(other.networkTags_);
         }
         onChanged();
       }
@@ -1643,6 +2002,478 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureAdditionalAttributesIsMutable();
       additionalAttributes_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object location_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Location can be "global", regional like "us-east1", or zonal like
+     * "us-west1-b".
+     * </pre>
+     *
+     * <code>string location = 11;</code>
+     *
+     * @return The location.
+     */
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location can be "global", regional like "us-east1", or zonal like
+     * "us-west1-b".
+     * </pre>
+     *
+     * <code>string location = 11;</code>
+     *
+     * @return The bytes for location.
+     */
+    public com.google.protobuf.ByteString getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location can be "global", regional like "us-east1", or zonal like
+     * "us-west1-b".
+     * </pre>
+     *
+     * <code>string location = 11;</code>
+     *
+     * @param value The location to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      location_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location can be "global", regional like "us-east1", or zonal like
+     * "us-west1-b".
+     * </pre>
+     *
+     * <code>string location = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocation() {
+
+      location_ = getDefaultInstance().getLocation();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location can be "global", regional like "us-east1", or zonal like
+     * "us-west1-b".
+     * </pre>
+     *
+     * <code>string location = 11;</code>
+     *
+     * @param value The bytes for location to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      location_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      onChanged();
+      ;
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels associated with this resource. See [Labelling and grouping GCP
+     * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels associated with this resource. See [Labelling and grouping GCP
+     * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels associated with this resource. See [Labelling and grouping GCP
+     * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    public java.lang.String getLabelsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels associated with this resource. See [Labelling and grouping GCP
+     * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels associated with this resource. See [Labelling and grouping GCP
+     * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels associated with this resource. See [Labelling and grouping GCP
+     * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels associated with this resource. See [Labelling and grouping GCP
+     * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList networkTags_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureNetworkTagsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network tags associated with this resource. Like labels, network tags are a
+     * type of annotations used to group GCP resources. See [Labelling GCP
+     * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 13;</code>
+     *
+     * @return A list containing the networkTags.
+     */
+    public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
+      return networkTags_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network tags associated with this resource. Like labels, network tags are a
+     * type of annotations used to group GCP resources. See [Labelling GCP
+     * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 13;</code>
+     *
+     * @return The count of networkTags.
+     */
+    public int getNetworkTagsCount() {
+      return networkTags_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network tags associated with this resource. Like labels, network tags are a
+     * type of annotations used to group GCP resources. See [Labelling GCP
+     * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 13;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The networkTags at the given index.
+     */
+    public java.lang.String getNetworkTags(int index) {
+      return networkTags_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network tags associated with this resource. Like labels, network tags are a
+     * type of annotations used to group GCP resources. See [Labelling GCP
+     * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 13;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the networkTags at the given index.
+     */
+    public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
+      return networkTags_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network tags associated with this resource. Like labels, network tags are a
+     * type of annotations used to group GCP resources. See [Labelling GCP
+     * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 13;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The networkTags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNetworkTagsIsMutable();
+      networkTags_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network tags associated with this resource. Like labels, network tags are a
+     * type of annotations used to group GCP resources. See [Labelling GCP
+     * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 13;</code>
+     *
+     * @param value The networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNetworkTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNetworkTagsIsMutable();
+      networkTags_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network tags associated with this resource. Like labels, network tags are a
+     * type of annotations used to group GCP resources. See [Labelling GCP
+     * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 13;</code>
+     *
+     * @param values The networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllNetworkTags(java.lang.Iterable<java.lang.String> values) {
+      ensureNetworkTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkTags_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network tags associated with this resource. Like labels, network tags are a
+     * type of annotations used to group GCP resources. See [Labelling GCP
+     * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetworkTags() {
+      networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network tags associated with this resource. Like labels, network tags are a
+     * type of annotations used to group GCP resources. See [Labelling GCP
+     * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+     * for more information.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 13;</code>
+     *
+     * @param value The bytes of the networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNetworkTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureNetworkTagsIsMutable();
+      networkTags_.add(value);
       onChanged();
       return this;
     }

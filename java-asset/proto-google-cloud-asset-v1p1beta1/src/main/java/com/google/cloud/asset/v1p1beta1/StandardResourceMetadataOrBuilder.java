@@ -220,4 +220,158 @@ public interface StandardResourceMetadataOrBuilder
    * @return The bytes of the additionalAttributes at the given index.
    */
   com.google.protobuf.ByteString getAdditionalAttributesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Location can be "global", regional like "us-east1", or zonal like
+   * "us-west1-b".
+   * </pre>
+   *
+   * <code>string location = 11;</code>
+   *
+   * @return The location.
+   */
+  java.lang.String getLocation();
+  /**
+   *
+   *
+   * <pre>
+   * Location can be "global", regional like "us-east1", or zonal like
+   * "us-west1-b".
+   * </pre>
+   *
+   * <code>string location = 11;</code>
+   *
+   * @return The bytes for location.
+   */
+  com.google.protobuf.ByteString getLocationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this resource. See [Labelling and grouping GCP
+   * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this resource. See [Labelling and grouping GCP
+   * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this resource. See [Labelling and grouping GCP
+   * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this resource. See [Labelling and grouping GCP
+   * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Labels associated with this resource. See [Labelling and grouping GCP
+   * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Network tags associated with this resource. Like labels, network tags are a
+   * type of annotations used to group GCP resources. See [Labelling GCP
+   * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 13;</code>
+   *
+   * @return A list containing the networkTags.
+   */
+  java.util.List<java.lang.String> getNetworkTagsList();
+  /**
+   *
+   *
+   * <pre>
+   * Network tags associated with this resource. Like labels, network tags are a
+   * type of annotations used to group GCP resources. See [Labelling GCP
+   * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 13;</code>
+   *
+   * @return The count of networkTags.
+   */
+  int getNetworkTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Network tags associated with this resource. Like labels, network tags are a
+   * type of annotations used to group GCP resources. See [Labelling GCP
+   * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The networkTags at the given index.
+   */
+  java.lang.String getNetworkTags(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Network tags associated with this resource. Like labels, network tags are a
+   * type of annotations used to group GCP resources. See [Labelling GCP
+   * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
+   * for more information.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the networkTags at the given index.
+   */
+  com.google.protobuf.ByteString getNetworkTagsBytes(int index);
 }

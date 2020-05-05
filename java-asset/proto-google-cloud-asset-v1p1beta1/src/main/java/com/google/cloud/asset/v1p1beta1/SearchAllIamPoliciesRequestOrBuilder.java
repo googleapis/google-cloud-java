@@ -32,6 +32,7 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * * Organization number (such as "organizations/123")
    * * Folder number(such as "folders/1234")
    * * Project number (such as "projects/12345")
+   * * Project id (such as "projects/abc")
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -48,6 +49,7 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * * Organization number (such as "organizations/123")
    * * Folder number(such as "folders/1234")
    * * Project number (such as "projects/12345")
+   * * Project id (such as "projects/abc")
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>

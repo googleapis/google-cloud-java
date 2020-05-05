@@ -42,6 +42,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     query_ = "";
     assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     pageToken_ = "";
+    orderBy_ = "";
   }
 
   @java.lang.Override
@@ -110,6 +111,13 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
               pageToken_ = s;
               break;
             }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderBy_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -158,6 +166,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * * Organization number (such as "organizations/123")
    * * Folder number(such as "folders/1234")
    * * Project number (such as "projects/12345")
+   * * Project id (such as "projects/abc")
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -184,6 +193,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * * Organization number (such as "organizations/123")
    * * Folder number(such as "folders/1234")
    * * Project number (such as "projects/12345")
+   * * Project id (such as "projects/abc")
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -387,6 +397,59 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     }
   }
 
+  public static final int ORDER_BY_FIELD_NUMBER = 10;
+  private volatile java.lang.Object orderBy_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " desc" after the field name
+   * to indicate descending order. Redundant space characters are ignored. For
+   * example, "  foo ,  bar  desc  ".
+   * </pre>
+   *
+   * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " desc" after the field name
+   * to indicate descending order. Redundant space characters are ignored. For
+   * example, "  foo ,  bar  desc  ".
+   * </pre>
+   *
+   * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  public com.google.protobuf.ByteString getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -415,6 +478,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     }
     if (!getPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, pageToken_);
+    }
+    if (!getOrderByBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, orderBy_);
     }
     unknownFields.writeTo(output);
   }
@@ -445,6 +511,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, pageToken_);
     }
+    if (!getOrderByBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, orderBy_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -466,6 +535,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     if (!getAssetTypesList().equals(other.getAssetTypesList())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -489,6 +559,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -645,6 +717,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
 
       pageToken_ = "";
 
+      orderBy_ = "";
+
       return this;
     }
 
@@ -682,6 +756,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       result.assetTypes_ = assetTypes_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
+      result.orderBy_ = orderBy_;
       onBuilt();
       return result;
     }
@@ -757,6 +832,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
         pageToken_ = other.pageToken_;
         onChanged();
       }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -799,6 +878,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
+     * * Project id (such as "projects/abc")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -825,6 +905,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
+     * * Project id (such as "projects/abc")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -851,6 +932,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
+     * * Project id (such as "projects/abc")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -876,6 +958,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
+     * * Project id (such as "projects/abc")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -897,6 +980,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
+     * * Project id (such as "projects/abc")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1375,6 +1459,127 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
 
       pageToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object orderBy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " desc" after the field name
+     * to indicate descending order. Redundant space characters are ignored. For
+     * example, "  foo ,  bar  desc  ".
+     * </pre>
+     *
+     * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The orderBy.
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " desc" after the field name
+     * to indicate descending order. Redundant space characters are ignored. For
+     * example, "  foo ,  bar  desc  ".
+     * </pre>
+     *
+     * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for orderBy.
+     */
+    public com.google.protobuf.ByteString getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " desc" after the field name
+     * to indicate descending order. Redundant space characters are ignored. For
+     * example, "  foo ,  bar  desc  ".
+     * </pre>
+     *
+     * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderBy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      orderBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " desc" after the field name
+     * to indicate descending order. Redundant space characters are ignored. For
+     * example, "  foo ,  bar  desc  ".
+     * </pre>
+     *
+     * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrderBy() {
+
+      orderBy_ = getDefaultInstance().getOrderBy();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " desc" after the field name
+     * to indicate descending order. Redundant space characters are ignored. For
+     * example, "  foo ,  bar  desc  ".
+     * </pre>
+     *
+     * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      orderBy_ = value;
       onChanged();
       return this;
     }
