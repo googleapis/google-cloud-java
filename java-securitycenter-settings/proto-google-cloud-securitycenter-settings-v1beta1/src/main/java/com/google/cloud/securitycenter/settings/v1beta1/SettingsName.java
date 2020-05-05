@@ -34,19 +34,19 @@ public class SettingsName implements ResourceName {
   @Deprecated
   protected SettingsName() {}
 
-  private static final PathTemplate ORGANIZATION_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_SETTINGS_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}/settings");
-  private static final PathTemplate FOLDER_PATH_TEMPLATE =
+  private static final PathTemplate FOLDER_SETTINGS_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("folders/{folder}/settings");
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_SETTINGS_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/settings");
-  private static final PathTemplate PROJECT_LOCATION_CLUSTER_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_CLUSTER_SETTINGS_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/clusters/{cluster}/settings");
-  private static final PathTemplate PROJECT_REGION_CLUSTER_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_REGION_CLUSTER_SETTINGS_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/regions/{region}/clusters/{cluster}/settings");
-  private static final PathTemplate PROJECT_ZONE_CLUSTER_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_ZONE_CLUSTER_SETTINGS_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/zones/{zone}/clusters/{cluster}/settings");
 
@@ -92,38 +92,38 @@ public class SettingsName implements ResourceName {
 
   private SettingsName(Builder builder) {
     organization = Preconditions.checkNotNull(builder.getOrganization());
-    pathTemplate = ORGANIZATION_PATH_TEMPLATE;
+    pathTemplate = ORGANIZATION_SETTINGS_PATH_TEMPLATE;
   }
 
-  private SettingsName(FolderBuilder builder) {
+  private SettingsName(FolderSettingsBuilder builder) {
     folder = Preconditions.checkNotNull(builder.getFolder());
-    pathTemplate = FOLDER_PATH_TEMPLATE;
+    pathTemplate = FOLDER_SETTINGS_PATH_TEMPLATE;
   }
 
-  private SettingsName(ProjectBuilder builder) {
+  private SettingsName(ProjectSettingsBuilder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    pathTemplate = PROJECT_PATH_TEMPLATE;
+    pathTemplate = PROJECT_SETTINGS_PATH_TEMPLATE;
   }
 
-  private SettingsName(ProjectLocationClusterBuilder builder) {
+  private SettingsName(ProjectLocationClusterSettingsBuilder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
     cluster = Preconditions.checkNotNull(builder.getCluster());
-    pathTemplate = PROJECT_LOCATION_CLUSTER_PATH_TEMPLATE;
+    pathTemplate = PROJECT_LOCATION_CLUSTER_SETTINGS_PATH_TEMPLATE;
   }
 
-  private SettingsName(ProjectRegionClusterBuilder builder) {
+  private SettingsName(ProjectRegionClusterSettingsBuilder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     region = Preconditions.checkNotNull(builder.getRegion());
     cluster = Preconditions.checkNotNull(builder.getCluster());
-    pathTemplate = PROJECT_REGION_CLUSTER_PATH_TEMPLATE;
+    pathTemplate = PROJECT_REGION_CLUSTER_SETTINGS_PATH_TEMPLATE;
   }
 
-  private SettingsName(ProjectZoneClusterBuilder builder) {
+  private SettingsName(ProjectZoneClusterSettingsBuilder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     zone = Preconditions.checkNotNull(builder.getZone());
     cluster = Preconditions.checkNotNull(builder.getCluster());
-    pathTemplate = PROJECT_ZONE_CLUSTER_PATH_TEMPLATE;
+    pathTemplate = PROJECT_ZONE_CLUSTER_SETTINGS_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -131,33 +131,33 @@ public class SettingsName implements ResourceName {
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static Builder newOrganizationBuilder() {
+  public static Builder newOrganizationSettingsBuilder() {
     return new Builder();
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static FolderBuilder newFolderBuilder() {
-    return new FolderBuilder();
+  public static FolderSettingsBuilder newFolderSettingsBuilder() {
+    return new FolderSettingsBuilder();
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static ProjectBuilder newProjectBuilder() {
-    return new ProjectBuilder();
+  public static ProjectSettingsBuilder newProjectSettingsBuilder() {
+    return new ProjectSettingsBuilder();
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static ProjectLocationClusterBuilder newProjectLocationClusterBuilder() {
-    return new ProjectLocationClusterBuilder();
+  public static ProjectLocationClusterSettingsBuilder newProjectLocationClusterSettingsBuilder() {
+    return new ProjectLocationClusterSettingsBuilder();
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static ProjectRegionClusterBuilder newProjectRegionClusterBuilder() {
-    return new ProjectRegionClusterBuilder();
+  public static ProjectRegionClusterSettingsBuilder newProjectRegionClusterSettingsBuilder() {
+    return new ProjectRegionClusterSettingsBuilder();
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static ProjectZoneClusterBuilder newProjectZoneClusterBuilder() {
-    return new ProjectZoneClusterBuilder();
+  public static ProjectZoneClusterSettingsBuilder newProjectZoneClusterSettingsBuilder() {
+    return new ProjectZoneClusterSettingsBuilder();
   }
 
   public Builder toBuilder() {
@@ -165,28 +165,28 @@ public class SettingsName implements ResourceName {
   }
 
   public static SettingsName of(String organization) {
-    return newOrganizationBuilder().setOrganization(organization).build();
+    return newOrganizationSettingsBuilder().setOrganization(organization).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static SettingsName ofOrganizationName(String organization) {
-    return newOrganizationBuilder().setOrganization(organization).build();
+  public static SettingsName ofOrganizationSettingsName(String organization) {
+    return newOrganizationSettingsBuilder().setOrganization(organization).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static SettingsName ofFolderName(String folder) {
-    return newFolderBuilder().setFolder(folder).build();
+  public static SettingsName ofFolderSettingsName(String folder) {
+    return newFolderSettingsBuilder().setFolder(folder).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static SettingsName ofProjectName(String project) {
-    return newProjectBuilder().setProject(project).build();
+  public static SettingsName ofProjectSettingsName(String project) {
+    return newProjectSettingsBuilder().setProject(project).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static SettingsName ofProjectLocationClusterName(
+  public static SettingsName ofProjectLocationClusterSettingsName(
       String project, String location, String cluster) {
-    return newProjectLocationClusterBuilder()
+    return newProjectLocationClusterSettingsBuilder()
         .setProject(project)
         .setLocation(location)
         .setCluster(cluster)
@@ -194,9 +194,9 @@ public class SettingsName implements ResourceName {
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static SettingsName ofProjectRegionClusterName(
+  public static SettingsName ofProjectRegionClusterSettingsName(
       String project, String region, String cluster) {
-    return newProjectRegionClusterBuilder()
+    return newProjectRegionClusterSettingsBuilder()
         .setProject(project)
         .setRegion(region)
         .setCluster(cluster)
@@ -204,8 +204,9 @@ public class SettingsName implements ResourceName {
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static SettingsName ofProjectZoneClusterName(String project, String zone, String cluster) {
-    return newProjectZoneClusterBuilder()
+  public static SettingsName ofProjectZoneClusterSettingsName(
+      String project, String zone, String cluster) {
+    return newProjectZoneClusterSettingsBuilder()
         .setProject(project)
         .setZone(zone)
         .setCluster(cluster)
@@ -217,24 +218,24 @@ public class SettingsName implements ResourceName {
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatOrganizationName(String organization) {
+  public static String formatOrganizationSettingsName(String organization) {
     return newBuilder().setOrganization(organization).build().toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatFolderName(String folder) {
-    return newFolderBuilder().setFolder(folder).build().toString();
+  public static String formatFolderSettingsName(String folder) {
+    return newFolderSettingsBuilder().setFolder(folder).build().toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatProjectName(String project) {
-    return newProjectBuilder().setProject(project).build().toString();
+  public static String formatProjectSettingsName(String project) {
+    return newProjectSettingsBuilder().setProject(project).build().toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatProjectLocationClusterName(
+  public static String formatProjectLocationClusterSettingsName(
       String project, String location, String cluster) {
-    return newProjectLocationClusterBuilder()
+    return newProjectLocationClusterSettingsBuilder()
         .setProject(project)
         .setLocation(location)
         .setCluster(cluster)
@@ -243,9 +244,9 @@ public class SettingsName implements ResourceName {
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatProjectRegionClusterName(
+  public static String formatProjectRegionClusterSettingsName(
       String project, String region, String cluster) {
-    return newProjectRegionClusterBuilder()
+    return newProjectRegionClusterSettingsBuilder()
         .setProject(project)
         .setRegion(region)
         .setCluster(cluster)
@@ -254,8 +255,9 @@ public class SettingsName implements ResourceName {
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatProjectZoneClusterName(String project, String zone, String cluster) {
-    return newProjectZoneClusterBuilder()
+  public static String formatProjectZoneClusterSettingsName(
+      String project, String zone, String cluster) {
+    return newProjectZoneClusterSettingsBuilder()
         .setProject(project)
         .setZone(zone)
         .setCluster(cluster)
@@ -267,26 +269,29 @@ public class SettingsName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (ORGANIZATION_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = ORGANIZATION_PATH_TEMPLATE.match(formattedString);
-      return ofOrganizationName(matchMap.get("organization"));
-    } else if (FOLDER_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = FOLDER_PATH_TEMPLATE.match(formattedString);
-      return ofFolderName(matchMap.get("folder"));
-    } else if (PROJECT_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_PATH_TEMPLATE.match(formattedString);
-      return ofProjectName(matchMap.get("project"));
-    } else if (PROJECT_LOCATION_CLUSTER_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_LOCATION_CLUSTER_PATH_TEMPLATE.match(formattedString);
-      return ofProjectLocationClusterName(
+    if (ORGANIZATION_SETTINGS_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_SETTINGS_PATH_TEMPLATE.match(formattedString);
+      return ofOrganizationSettingsName(matchMap.get("organization"));
+    } else if (FOLDER_SETTINGS_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_SETTINGS_PATH_TEMPLATE.match(formattedString);
+      return ofFolderSettingsName(matchMap.get("folder"));
+    } else if (PROJECT_SETTINGS_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_SETTINGS_PATH_TEMPLATE.match(formattedString);
+      return ofProjectSettingsName(matchMap.get("project"));
+    } else if (PROJECT_LOCATION_CLUSTER_SETTINGS_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_CLUSTER_SETTINGS_PATH_TEMPLATE.match(formattedString);
+      return ofProjectLocationClusterSettingsName(
           matchMap.get("project"), matchMap.get("location"), matchMap.get("cluster"));
-    } else if (PROJECT_REGION_CLUSTER_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_REGION_CLUSTER_PATH_TEMPLATE.match(formattedString);
-      return ofProjectRegionClusterName(
+    } else if (PROJECT_REGION_CLUSTER_SETTINGS_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_REGION_CLUSTER_SETTINGS_PATH_TEMPLATE.match(formattedString);
+      return ofProjectRegionClusterSettingsName(
           matchMap.get("project"), matchMap.get("region"), matchMap.get("cluster"));
-    } else if (PROJECT_ZONE_CLUSTER_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_ZONE_CLUSTER_PATH_TEMPLATE.match(formattedString);
-      return ofProjectZoneClusterName(
+    } else if (PROJECT_ZONE_CLUSTER_SETTINGS_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_ZONE_CLUSTER_SETTINGS_PATH_TEMPLATE.match(formattedString);
+      return ofProjectZoneClusterSettingsName(
           matchMap.get("project"), matchMap.get("zone"), matchMap.get("cluster"));
     }
     throw new ValidationException("JobName.parse: formattedString not in valid format");
@@ -313,12 +318,12 @@ public class SettingsName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ORGANIZATION_PATH_TEMPLATE.matches(formattedString)
-        || FOLDER_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_LOCATION_CLUSTER_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_REGION_CLUSTER_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_ZONE_CLUSTER_PATH_TEMPLATE.matches(formattedString);
+    return ORGANIZATION_SETTINGS_PATH_TEMPLATE.matches(formattedString)
+        || FOLDER_SETTINGS_PATH_TEMPLATE.matches(formattedString)
+        || PROJECT_SETTINGS_PATH_TEMPLATE.matches(formattedString)
+        || PROJECT_LOCATION_CLUSTER_SETTINGS_PATH_TEMPLATE.matches(formattedString)
+        || PROJECT_REGION_CLUSTER_SETTINGS_PATH_TEMPLATE.matches(formattedString)
+        || PROJECT_ZONE_CLUSTER_SETTINGS_PATH_TEMPLATE.matches(formattedString);
   }
 
   @Override
@@ -382,7 +387,7 @@ public class SettingsName implements ResourceName {
 
     private Builder(SettingsName settingsName) {
       Preconditions.checkArgument(
-          settingsName.pathTemplate == ORGANIZATION_PATH_TEMPLATE,
+          settingsName.pathTemplate == ORGANIZATION_SETTINGS_PATH_TEMPLATE,
           "toBuilder is only supported when SettingsName has the pattern of "
               + "organizations/{organization}/settings.");
       organization = settingsName.organization;
@@ -395,17 +400,17 @@ public class SettingsName implements ResourceName {
 
   /** Builder for folders/{folder}/settings. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class FolderBuilder {
+  public static class FolderSettingsBuilder {
 
     private String folder;
 
-    private FolderBuilder() {}
+    private FolderSettingsBuilder() {}
 
     public String getFolder() {
       return folder;
     }
 
-    public FolderBuilder setFolder(String folder) {
+    public FolderSettingsBuilder setFolder(String folder) {
       this.folder = folder;
       return this;
     }
@@ -417,17 +422,17 @@ public class SettingsName implements ResourceName {
 
   /** Builder for projects/{project}/settings. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class ProjectBuilder {
+  public static class ProjectSettingsBuilder {
 
     private String project;
 
-    private ProjectBuilder() {}
+    private ProjectSettingsBuilder() {}
 
     public String getProject() {
       return project;
     }
 
-    public ProjectBuilder setProject(String project) {
+    public ProjectSettingsBuilder setProject(String project) {
       this.project = project;
       return this;
     }
@@ -439,13 +444,13 @@ public class SettingsName implements ResourceName {
 
   /** Builder for projects/{project}/locations/{location}/clusters/{cluster}/settings. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class ProjectLocationClusterBuilder {
+  public static class ProjectLocationClusterSettingsBuilder {
 
     private String project;
     private String location;
     private String cluster;
 
-    private ProjectLocationClusterBuilder() {}
+    private ProjectLocationClusterSettingsBuilder() {}
 
     public String getProject() {
       return project;
@@ -459,17 +464,17 @@ public class SettingsName implements ResourceName {
       return cluster;
     }
 
-    public ProjectLocationClusterBuilder setProject(String project) {
+    public ProjectLocationClusterSettingsBuilder setProject(String project) {
       this.project = project;
       return this;
     }
 
-    public ProjectLocationClusterBuilder setLocation(String location) {
+    public ProjectLocationClusterSettingsBuilder setLocation(String location) {
       this.location = location;
       return this;
     }
 
-    public ProjectLocationClusterBuilder setCluster(String cluster) {
+    public ProjectLocationClusterSettingsBuilder setCluster(String cluster) {
       this.cluster = cluster;
       return this;
     }
@@ -481,13 +486,13 @@ public class SettingsName implements ResourceName {
 
   /** Builder for projects/{project}/regions/{region}/clusters/{cluster}/settings. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class ProjectRegionClusterBuilder {
+  public static class ProjectRegionClusterSettingsBuilder {
 
     private String project;
     private String region;
     private String cluster;
 
-    private ProjectRegionClusterBuilder() {}
+    private ProjectRegionClusterSettingsBuilder() {}
 
     public String getProject() {
       return project;
@@ -501,17 +506,17 @@ public class SettingsName implements ResourceName {
       return cluster;
     }
 
-    public ProjectRegionClusterBuilder setProject(String project) {
+    public ProjectRegionClusterSettingsBuilder setProject(String project) {
       this.project = project;
       return this;
     }
 
-    public ProjectRegionClusterBuilder setRegion(String region) {
+    public ProjectRegionClusterSettingsBuilder setRegion(String region) {
       this.region = region;
       return this;
     }
 
-    public ProjectRegionClusterBuilder setCluster(String cluster) {
+    public ProjectRegionClusterSettingsBuilder setCluster(String cluster) {
       this.cluster = cluster;
       return this;
     }
@@ -523,13 +528,13 @@ public class SettingsName implements ResourceName {
 
   /** Builder for projects/{project}/zones/{zone}/clusters/{cluster}/settings. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class ProjectZoneClusterBuilder {
+  public static class ProjectZoneClusterSettingsBuilder {
 
     private String project;
     private String zone;
     private String cluster;
 
-    private ProjectZoneClusterBuilder() {}
+    private ProjectZoneClusterSettingsBuilder() {}
 
     public String getProject() {
       return project;
@@ -543,17 +548,17 @@ public class SettingsName implements ResourceName {
       return cluster;
     }
 
-    public ProjectZoneClusterBuilder setProject(String project) {
+    public ProjectZoneClusterSettingsBuilder setProject(String project) {
       this.project = project;
       return this;
     }
 
-    public ProjectZoneClusterBuilder setZone(String zone) {
+    public ProjectZoneClusterSettingsBuilder setZone(String zone) {
       this.zone = zone;
       return this;
     }
 
-    public ProjectZoneClusterBuilder setCluster(String cluster) {
+    public ProjectZoneClusterSettingsBuilder setCluster(String cluster) {
       this.cluster = cluster;
       return this;
     }

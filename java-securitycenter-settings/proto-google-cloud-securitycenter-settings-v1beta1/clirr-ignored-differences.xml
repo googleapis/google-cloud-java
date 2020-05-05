@@ -17,15 +17,43 @@
     <method>boolean has*(*)</method>
   </difference>
 
-  <!-- TODO: remove after 0.121.0 -->
+  <!-- TODO: remove after 0.3.0 -->
   <difference>
     <differenceType>7002</differenceType>
-    <className>com/google/cloud/securitycenter/settings/v1beta1/*SettingsName</className>
-    <method>java.util.List parse(java.util.List)</method>
+    <className>com/google/cloud/securitycenter/settings/v1beta1/ComponentSettingsName</className>
+    <method>java.lang.String format*Name(*)</method>
   </difference>
   <difference>
     <differenceType>7002</differenceType>
-    <className>com/google/cloud/securitycenter/settings/v1beta1/*SettingsName</className>
-    <method>java.util.List toStrings(java.util.List)</method>
+    <className>com/google/cloud/securitycenter/settings/v1beta1/ComponentSettingsName</className>
+    <method>com.google.cloud.securitycenter.settings.v1beta1.ComponentSettingsName of*Name(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/securitycenter/settings/v1beta1/ComponentSettingsName</className>
+    <method>com.google.cloud.securitycenter.settings.v1beta1.ComponentSettingsName$*Builder new*Builder(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/securitycenter/settings/v1beta1/SettingsName</className>
+    <method>java.lang.String format*Name(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/securitycenter/settings/v1beta1/SettingsName</className>
+    <method>com.google.cloud.securitycenter.settings.v1beta1.SettingsName of*Name(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/securitycenter/settings/v1beta1/SettingsName</className>
+    <method>com.google.cloud.securitycenter.settings.v1beta1.SettingsName$*Builder new*Builder(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/settings/v1beta1/ComponentSettingsName$*Builder</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/settings/v1beta1/SettingsName$*Builder</className>
   </difference>
 </differences>

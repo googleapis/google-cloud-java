@@ -292,7 +292,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
    *   Settings response = securityCenterSettingsServiceClient.getSettings(name);
    * }
    * </code></pre>
@@ -319,7 +319,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
    *   Settings response = securityCenterSettingsServiceClient.getSettings(name.toString());
    * }
    * </code></pre>
@@ -345,7 +345,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
    *   GetSettingsRequest request = GetSettingsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -368,7 +368,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
    *   GetSettingsRequest request = GetSettingsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -473,7 +473,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
    *   ResetSettingsRequest request = ResetSettingsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -504,7 +504,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
    *   ResetSettingsRequest request = ResetSettingsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -577,7 +577,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
    *   Settings response = securityCenterSettingsServiceClient.calculateEffectiveSettings(name);
    * }
    * </code></pre>
@@ -611,7 +611,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
    *   Settings response = securityCenterSettingsServiceClient.calculateEffectiveSettings(name.toString());
    * }
    * </code></pre>
@@ -643,7 +643,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
    *   CalculateEffectiveSettingsRequest request = CalculateEffectiveSettingsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -671,7 +671,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
    *   CalculateEffectiveSettingsRequest request = CalculateEffectiveSettingsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -742,7 +742,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
    *   ComponentSettings response = securityCenterSettingsServiceClient.getComponentSettings(name);
    * }
    * </code></pre>
@@ -773,7 +773,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
    *   ComponentSettings response = securityCenterSettingsServiceClient.getComponentSettings(name.toString());
    * }
    * </code></pre>
@@ -802,7 +802,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
    *   GetComponentSettingsRequest request = GetComponentSettingsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -825,7 +825,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
    *   GetComponentSettingsRequest request = GetComponentSettingsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -933,7 +933,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
    *   ResetComponentSettingsRequest request = ResetComponentSettingsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -959,7 +959,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
    *   ResetComponentSettingsRequest request = ResetComponentSettingsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -982,7 +982,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
    *   ComponentSettings response = securityCenterSettingsServiceClient.calculateEffectiveComponentSettings(name);
    * }
    * </code></pre>
@@ -1013,7 +1013,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
    *   ComponentSettings response = securityCenterSettingsServiceClient.calculateEffectiveComponentSettings(name.toString());
    * }
    * </code></pre>
@@ -1042,7 +1042,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
    *   CalculateEffectiveComponentSettingsRequest request = CalculateEffectiveComponentSettingsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1066,7 +1066,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.create()) {
-   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+   *   ComponentSettingsName name = ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
    *   CalculateEffectiveComponentSettingsRequest request = CalculateEffectiveComponentSettingsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();

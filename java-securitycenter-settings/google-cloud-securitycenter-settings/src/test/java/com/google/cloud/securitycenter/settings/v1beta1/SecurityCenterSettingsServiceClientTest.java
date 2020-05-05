@@ -128,7 +128,7 @@ public class SecurityCenterSettingsServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getSettingsTest() {
-    SettingsName name2 = SettingsName.ofOrganizationName("[ORGANIZATION]");
+    SettingsName name2 = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
     String orgServiceAccount = "orgServiceAccount1798582088";
     String etag = "etag3123477";
     Settings expectedResponse =
@@ -139,7 +139,7 @@ public class SecurityCenterSettingsServiceClientTest {
             .build();
     mockSecurityCenterSettingsService.addResponse(expectedResponse);
 
-    SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+    SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
 
     Settings actualResponse = client.getSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -162,7 +162,7 @@ public class SecurityCenterSettingsServiceClientTest {
     mockSecurityCenterSettingsService.addException(exception);
 
     try {
-      SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+      SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
 
       client.getSettings(name);
       Assert.fail("No exception raised");
@@ -174,7 +174,7 @@ public class SecurityCenterSettingsServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateSettingsTest() {
-    SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+    SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
     String orgServiceAccount = "orgServiceAccount1798582088";
     String etag = "etag3123477";
     Settings expectedResponse =
@@ -226,7 +226,7 @@ public class SecurityCenterSettingsServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockSecurityCenterSettingsService.addResponse(expectedResponse);
 
-    SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+    SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
     ResetSettingsRequest request =
         ResetSettingsRequest.newBuilder().setName(name.toString()).build();
 
@@ -250,7 +250,7 @@ public class SecurityCenterSettingsServiceClientTest {
     mockSecurityCenterSettingsService.addException(exception);
 
     try {
-      SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+      SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
       ResetSettingsRequest request =
           ResetSettingsRequest.newBuilder().setName(name.toString()).build();
 
@@ -306,7 +306,7 @@ public class SecurityCenterSettingsServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void calculateEffectiveSettingsTest() {
-    SettingsName name2 = SettingsName.ofOrganizationName("[ORGANIZATION]");
+    SettingsName name2 = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
     String orgServiceAccount = "orgServiceAccount1798582088";
     String etag = "etag3123477";
     Settings expectedResponse =
@@ -317,7 +317,7 @@ public class SecurityCenterSettingsServiceClientTest {
             .build();
     mockSecurityCenterSettingsService.addResponse(expectedResponse);
 
-    SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+    SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
 
     Settings actualResponse = client.calculateEffectiveSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -341,7 +341,7 @@ public class SecurityCenterSettingsServiceClientTest {
     mockSecurityCenterSettingsService.addException(exception);
 
     try {
-      SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+      SettingsName name = SettingsName.ofOrganizationSettingsName("[ORGANIZATION]");
 
       client.calculateEffectiveSettings(name);
       Assert.fail("No exception raised");
@@ -399,7 +399,7 @@ public class SecurityCenterSettingsServiceClientTest {
   @SuppressWarnings("all")
   public void getComponentSettingsTest() {
     ComponentSettingsName name2 =
-        ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+        ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
     String projectServiceAccount = "projectServiceAccount-1288322691";
     String etag = "etag3123477";
     ComponentSettings expectedResponse =
@@ -411,7 +411,7 @@ public class SecurityCenterSettingsServiceClientTest {
     mockSecurityCenterSettingsService.addResponse(expectedResponse);
 
     ComponentSettingsName name =
-        ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+        ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
 
     ComponentSettings actualResponse = client.getComponentSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -435,7 +435,8 @@ public class SecurityCenterSettingsServiceClientTest {
 
     try {
       ComponentSettingsName name =
-          ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+          ComponentSettingsName.ofOrganizationComponentSettingsName(
+              "[ORGANIZATION]", "[COMPONENT]");
 
       client.getComponentSettings(name);
       Assert.fail("No exception raised");
@@ -448,7 +449,7 @@ public class SecurityCenterSettingsServiceClientTest {
   @SuppressWarnings("all")
   public void updateComponentSettingsTest() {
     ComponentSettingsName name =
-        ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+        ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
     String projectServiceAccount = "projectServiceAccount-1288322691";
     String etag = "etag3123477";
     ComponentSettings expectedResponse =
@@ -503,7 +504,7 @@ public class SecurityCenterSettingsServiceClientTest {
     mockSecurityCenterSettingsService.addResponse(expectedResponse);
 
     ComponentSettingsName name =
-        ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+        ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
     ResetComponentSettingsRequest request =
         ResetComponentSettingsRequest.newBuilder().setName(name.toString()).build();
 
@@ -529,7 +530,8 @@ public class SecurityCenterSettingsServiceClientTest {
 
     try {
       ComponentSettingsName name =
-          ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+          ComponentSettingsName.ofOrganizationComponentSettingsName(
+              "[ORGANIZATION]", "[COMPONENT]");
       ResetComponentSettingsRequest request =
           ResetComponentSettingsRequest.newBuilder().setName(name.toString()).build();
 
@@ -544,7 +546,7 @@ public class SecurityCenterSettingsServiceClientTest {
   @SuppressWarnings("all")
   public void calculateEffectiveComponentSettingsTest() {
     ComponentSettingsName name2 =
-        ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+        ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
     String projectServiceAccount = "projectServiceAccount-1288322691";
     String etag = "etag3123477";
     ComponentSettings expectedResponse =
@@ -556,7 +558,7 @@ public class SecurityCenterSettingsServiceClientTest {
     mockSecurityCenterSettingsService.addResponse(expectedResponse);
 
     ComponentSettingsName name =
-        ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+        ComponentSettingsName.ofOrganizationComponentSettingsName("[ORGANIZATION]", "[COMPONENT]");
 
     ComponentSettings actualResponse = client.calculateEffectiveComponentSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -581,7 +583,8 @@ public class SecurityCenterSettingsServiceClientTest {
 
     try {
       ComponentSettingsName name =
-          ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+          ComponentSettingsName.ofOrganizationComponentSettingsName(
+              "[ORGANIZATION]", "[COMPONENT]");
 
       client.calculateEffectiveComponentSettings(name);
       Assert.fail("No exception raised");
