@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.2.0...v0.3.0) (2020-05-05)
+
+
+### Features
+
+* add grpc-testing, mockito and truth extensions ([#25](https://www.github.com/googleapis/java-shared-dependencies/issues/25)) ([e906514](https://www.github.com/googleapis/java-shared-dependencies/commit/e9065147889ec42ac7350e2559fabae9abf335a9))
+
+
+### Dependencies
+
+* update autovalue.version to v1.7.1 ([#29](https://www.github.com/googleapis/java-shared-dependencies/issues/29)) ([c9e80f8](https://www.github.com/googleapis/java-shared-dependencies/commit/c9e80f8e990d42ab4ebace439da2abe93d33afcb))
+* update dependency com.google.http-client:google-http-client-bom to v1.35.0 ([#23](https://www.github.com/googleapis/java-shared-dependencies/issues/23)) ([e1775c2](https://www.github.com/googleapis/java-shared-dependencies/commit/e1775c253b7ef1fdd306b30a6e7698a9370bbf81))
+* update dependency org.mockito:mockito-core to v3.3.3 ([#27](https://www.github.com/googleapis/java-shared-dependencies/issues/27)) ([8dfa3a5](https://www.github.com/googleapis/java-shared-dependencies/commit/8dfa3a5cc8c6a9e2477b63c2174d501a2bdec58a))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#22](https://www.github.com/googleapis/java-shared-dependencies/issues/22)) ([4734794](https://www.github.com/googleapis/java-shared-dependencies/commit/47347943605ad7fdc3340a1a7691c500bbdf1fa2))
+* update google.common-protos.version to v1.18.0 ([#30](https://www.github.com/googleapis/java-shared-dependencies/issues/30)) ([6cb6cc1](https://www.github.com/googleapis/java-shared-dependencies/commit/6cb6cc1304f105307d60c013eaa1604a7537e17a))
+
 ## [0.2.0](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.1.1...v0.2.0) (2020-04-22)
 
 
