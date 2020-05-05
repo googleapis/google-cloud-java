@@ -15,3 +15,5 @@ target/
 __pycache__
 
 .vscode
+
+.flattened-pom.xml

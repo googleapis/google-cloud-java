@@ -49,8 +49,18 @@
         <dependency>
           <groupId>javax.annotation</groupId>
           <artifactId>javax.annotation-api</artifactId>
+          <version>1.3.2</version>
         </dependency>
       </dependencies>
     </profile>
   </profiles>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 </project>
