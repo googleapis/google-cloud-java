@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.113.0](https://www.github.com/googleapis/java-bigquery/compare/v1.112.0...v1.113.0) (2020-05-05)
+
+
+### Features
+
+* switch to use java-shared-deps ([#323](https://www.github.com/googleapis/java-bigquery/issues/323)) ([091a6a9](https://www.github.com/googleapis/java-bigquery/commit/091a6a99a955ae116d61c9cc2663a63cee81e18c))
+
 ## [1.112.0](https://www.github.com/googleapis/java-bigquery/compare/v1.111.3...v1.112.0) (2020-05-05)
 
 
