@@ -89,6 +89,22 @@ use this Document AI Client Library.
 
 
 
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-document-ai/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Batch Parse Form Beta | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta2/BatchParseFormBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta2/BatchParseFormBeta.java) |
+| Batch Parse Table Beta | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta2/BatchParseTableBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta2/BatchParseTableBeta.java) |
+| Parse Form Beta | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta2/ParseFormBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta2/ParseFormBeta.java) |
+| Parse Table Beta | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta2/ParseTableBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta2/ParseTableBeta.java) |
+| Parse With Model Beta | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta2/ParseWithModelBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta2/ParseWithModelBeta.java) |
+| Quick Start | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta2/QuickStart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta2/QuickStart.java) |
+| Set End Point Beta | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta2/SetEndPointBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta2/SetEndPointBeta.java) |
+
+
 
 ## Troubleshooting
 

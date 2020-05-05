@@ -28,4 +28,7 @@ for version in versions:
         destination_name='document-ai',
     )
 
-java.common_templates()
+java.common_templates(exclude=[
+    '.kokoro/nightly/samples.cfg',
+    '.kokoro/presubmit/samples.cfg',
+])
