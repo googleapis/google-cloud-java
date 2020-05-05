@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerystorage</artifactId>
-  <version>0.130.0-beta</version>
+  <version>0.131.0-beta</version>
 </dependency>
 
 ```
