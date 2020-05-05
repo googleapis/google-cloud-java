@@ -6,7 +6,7 @@
   <packaging>pom</packaging>
   <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryreservation:current} -->
   <name>Google Cloud BigQuery Reservations Parent</name>
-  <url>https://github.com/googleapis/java-bigqueryreservations</url>
+  <url>https://github.com/googleapis/java-bigqueryreservation</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
@@ -32,13 +32,13 @@
     <name>Google LLC</name>
   </organization>
   <scm>
-    <connection>scm:git:git@github.com:googleapis/java-bigqueryreservations.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-bigqueryreservations.git</developerConnection>
-    <url>https://github.com/googleapis/java-bigqueryreservations</url>
+    <connection>scm:git:git@github.com:googleapis/java-bigqueryreservation.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-bigqueryreservation.git</developerConnection>
+    <url>https://github.com/googleapis/java-bigqueryreservation</url>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
-    <url>https://github.com/googleapis/java-bigqueryreservations/issues</url>
+    <url>https://github.com/googleapis/java-bigqueryreservation/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
   <distributionManagement>
