@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "sha": "8a6622ceae097e182db1debc2d022c5d536633a3"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "04cb397eb7590ea1e6c10a39fca3d8fe0fb3d256"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "iam",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "iam",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ]
+}

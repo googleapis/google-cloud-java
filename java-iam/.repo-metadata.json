@@ -1,0 +1,14 @@
+{
+  "name": "iam",
+  "name_pretty": "IAM",
+  "product_documentation": "n/a",
+  "api_description": "n/a",
+  "client_documentation": "https://googleapis.dev/java/proto-google-iam-v1/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "requires_billing": true,
+  "language": "java",
+  "repo": "googleapis/java-iam",
+  "repo_short": "java-iam",
+  "distribution_name": "com.google.api.grpc:proto-google-iam-v1"
+}
