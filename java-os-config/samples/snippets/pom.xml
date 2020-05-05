@@ -23,26 +23,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-
-  <!-- [START os-config_install_with_bom] -->
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>libraries-bom</artifactId>
-        <version>4.3.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
   <dependencies>
+    <!-- [START os_config_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-os-config</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
     </dependency>
-    <!-- [END os-config_install_with_bom] -->
+    <!-- [END os_config_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>

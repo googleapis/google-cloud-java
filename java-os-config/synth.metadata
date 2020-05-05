@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "https://github.com/googleapis/java-os-config.git",
-        "sha": "45e54336acce8e430b9a28dd0a3247f10d816ce5"
+        "remote": "git@github.com:googleapis/java-os-config.git",
+        "sha": "91d111abedcbd10c6fd8c9bb4a2d0f8eb87e19c8"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "52638600f387deb98efb5f9c85fec39e82aa9052"
+        "sha": "a2c1c4f89a5e220e7b39420ebea33623c7c72804"
       }
     }
   ],

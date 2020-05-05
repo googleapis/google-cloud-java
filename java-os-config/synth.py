@@ -31,4 +31,6 @@ for version in versions:
       destination_name='os-config',
   )
 
-java.common_templates()
+java.common_templates(excludes=[
+  'samples/install-without-bom/*'
+])
